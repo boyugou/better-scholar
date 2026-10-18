@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Better Scholar: twoje role w autorstwie i rangi miejsc publikacji w Google Scholar</title>
-<meta name="description" content="Bezpłatne rozszerzenie do Chrome, które przy każdej publikacji w profilu Google Scholar zaznacza twoją rolę (pierwszy, współpierwszy, drugi lub ostatni autor) oraz rangę czasopisma lub konferencji według CCF / CORE, a na koniec podsumowuje wszystko w jednej tabeli.">
+<title>Better Scholar: twoja rola w autorstwie i ranking miejsca publikacji w Google Scholar</title>
+<meta name="description" content="Bezpłatne rozszerzenie do Chrome dla profili Google Scholar. Przy każdej pracy pokazuje twoją rolę w autorstwie i ranking miejsca publikacji według CCF / CORE oraz zlicza twoje prace w jednej tabeli.">
 <link rel="canonical" href="https://boyugou.github.io/better-scholar/pl/">
 <link rel="alternate" hreflang="en" href="https://boyugou.github.io/better-scholar/en/">
 <link rel="alternate" hreflang="zh-CN" href="https://boyugou.github.io/better-scholar/zh-CN/">
@@ -40,14 +40,14 @@
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Better Scholar: twoje role w autorstwie i rangi miejsc publikacji w Google Scholar">
-<meta property="og:description" content="Bezpłatne rozszerzenie do Chrome, które przy każdej publikacji w profilu Google Scholar zaznacza twoją rolę (pierwszy, współpierwszy, drugi lub ostatni autor) oraz rangę czasopisma lub konferencji według CCF / CORE, a na koniec podsumowuje wszystko w jednej tabeli.">
+<meta property="og:title" content="Better Scholar: twoja rola w autorstwie i ranking miejsca publikacji w Google Scholar">
+<meta property="og:description" content="Bezpłatne rozszerzenie do Chrome dla profili Google Scholar. Przy każdej pracy pokazuje twoją rolę w autorstwie i ranking miejsca publikacji według CCF / CORE oraz zlicza twoje prace w jednej tabeli.">
 <meta property="og:url" content="https://boyugou.github.io/better-scholar/pl/">
 <meta property="og:image" content="https://boyugou.github.io/better-scholar/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="../assets/styles.css">
 <meta name="theme-color" content="#161d33">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Better Scholar","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Chromium browsers","description":"Bezpłatne rozszerzenie do Chrome, które przy każdej publikacji w profilu Google Scholar zaznacza twoją rolę (pierwszy, współpierwszy, drugi lub ostatni autor) oraz rangę czasopisma lub konferencji według CCF / CORE, a na koniec podsumowuje wszystko w jednej tabeli.","inLanguage":"pl","url":"https://boyugou.github.io/better-scholar/pl/","image":"https://boyugou.github.io/better-scholar/assets/og.png","license":"https://www.apache.org/licenses/LICENSE-2.0","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Better Scholar","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Chromium browsers","description":"Bezpłatne rozszerzenie do Chrome dla profili Google Scholar. Przy każdej pracy pokazuje twoją rolę w autorstwie i ranking miejsca publikacji według CCF / CORE oraz zlicza twoje prace w jednej tabeli.","inLanguage":"pl","url":"https://boyugou.github.io/better-scholar/pl/","image":"https://boyugou.github.io/better-scholar/assets/og.png","license":"https://www.apache.org/licenses/LICENSE-2.0","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 </head>
 <body>
 <header class="top">
@@ -97,16 +97,11 @@
 <main>
   <section class="hero">
     <div class="wrap">
-      <div class="hero-badges">
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg> Manifest V3</span>
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg> Działa w twojej przeglądarce</span>
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg> Bez zależności</span>
-      </div>
       <div class="stripes" aria-hidden="true"><i style="--c:#4d8ff5"></i><i style="--c:#b36cf6"></i><i style="--c:#fbbc04"></i><i style="--c:#34a853"></i></div>
-      <h1>Sprawdź, jak wypadasz przy każdej publikacji</h1>
-      <p class="lead">Rozszerzenie do Chrome dla profili Google Scholar. Przy każdej publikacji zaznacza twoją rolę w autorstwie i rangę miejsca publikacji według CCF / CORE, a wynik zestawia w jednej tabeli: „4 artykuły CCF-A jako pierwszy autor”.</p>
+      <h1>Twoja rola i ranking miejsca publikacji przy każdej pracy</h1>
+      <p class="lead">Bezpłatne rozszerzenie do Chrome dla profili Google Scholar. Koloruje każdą pracę według twojej roli w autorstwie, pokazuje ranking miejsca publikacji według CCF i CORE i zlicza twoje prace w jednej tabeli.</p>
       <p class="cta"><a class="btn" href="#install">Zainstaluj</a> <a class="btn ghost" href="https://github.com/boyugou/better-scholar">Zobacz na GitHub</a></p>
-      <p class="note">Bezpłatne i open source · Chrome oraz inne przeglądarki oparte na Chromium · 30 języków</p>
+      <p class="note">Bezpłatne i open source · Chrome, Edge, Brave oraz inne przeglądarki oparte na Chromium · 30 języków</p>
     </div>
   </section>
 
@@ -114,17 +109,69 @@
     <div class="wrap">
       <figure class="hero-shot">
         <div class="hero-frame" style="aspect-ratio: 1280 / 660">
-          <img src="../assets/hero.jpg" alt="Zmyślony profil (prawdziwe miejsca publikacji, wymyślone artykuły): wiersze pokolorowane według roli, przy każdym miejscu etykieta rangi, podsumowanie po prawej." width="1280" height="800" fetchpriority="high" decoding="async">
+          <img src="../assets/hero.jpg" alt="Zmyślony profil z prawdziwymi miejscami publikacji. Wiersze są pokolorowane według roli, etykiety pokazują ranking, a panel zestawienia po prawej liczy prace." width="1280" height="800" fetchpriority="high" decoding="async">
         </div>
-        <figcaption>Zmyślony profil (prawdziwe miejsca publikacji, wymyślone artykuły): wiersze pokolorowane według roli, przy każdym miejscu etykieta rangi, podsumowanie po prawej.</figcaption>
+        <figcaption>Zmyślony profil z prawdziwymi miejscami publikacji. Wiersze są pokolorowane według roli, etykiety pokazują ranking, a panel zestawienia po prawej liczy prace.</figcaption>
       </figure>
+    </div>
+  </section>
+
+  <section class="how" id="how">
+    <div class="wrap">
+      <h2>Jak to odczytuje pracę</h2>
+      <p class="note">Dwie zmyślone prace w prawdziwych miejscach publikacji. Każdy krok pokazuje, co własny kod rozszerzenia w nich znajduje.</p>
+      <div class="how-grid">
+        <ol class="how-steps">
+          <li><button type="button" data-step="1"><span class="n">1</span><b>Znajdź swoje nazwisko</b><span class="d">Znajduje nazwisko profilu w wierszu autorów. Twoje miejsce w tym wierszu określa twoją rolę: pierwszy, współpierwszy, drugi lub ostatni autor.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="2"><span class="n">2</span><b>Wyszukaj miejsce publikacji</b><span class="d">Szuka miejsca publikacji na listach CCF i CORE, po pełnej nazwie lub po skrócie. Pewne dopasowanie daje etykietę rankingu.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="3"><span class="n">3</span><b>Nigdy nie zgaduj</b><span class="d">Workshop, poster albo praca Findings to nie jest główna konferencja. Miejsce publikacji, którego listy z pewnością nie zawierają, nie dostaje etykiety.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="4" aria-current="step"><span class="n">4</span><b>Zlicz</b><span class="d">Panel zestawienia zlicza każdą pracę raz, według twojej roli i rankingu. Kliknij liczbę, aby zobaczyć jej prace.</span><i class="bar" aria-hidden="true"></i></button></li>
+        </ol>
+        <div class="how-figure">
+        <div class="how-stage" aria-hidden="true">
+          <div class="sr-head" dir="ltr" lang="en"><span>Title</span><span>Cited by</span><span>Year</span></div>
+          <div class="sr on" data-from="1" dir="ltr" data-role="first" style="--rc:#1a73e8">
+            <div class="sr-text" lang="en"><div class="sr-t">Self-Supervised Depth from Casual Video</div><div class="sr-a"><span class="nm on" data-from="1" data-focus="1">A Example</span>, B Writer, C Writer, D Writer</div><div class="sr-v"><span class="vn on" data-from="2" data-focus="2">Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</span>, 2023 <span class="chip on" data-from="2" data-focus="2"><span class="k">CCF</span> <b>A</b></span></div></div>
+            <div class="sr-c">892</div><div class="sr-y">2023</div>
+            <div class="co-slot" dir="ltr"><p class="co" data-from="1" data-to="1"><span class="tag">Pierwszy</span> pozycja 1 z 4</p><p class="co on" data-from="2"><b dir="ltr">CCF A · CORE A*</b> · Dopasowano po nazwie: <span dir="ltr">IEEE/CVF Computer Vision and Pattern Recognition Conference</span></p></div>
+          </div>
+          <div class="sr on" data-from="1" dir="ltr" data-role="second" style="--rc:#f9ab00">
+            <div class="sr-text" lang="en"><div class="sr-t">Cheap Calibration for Retrieval-Augmented Models</div><div class="sr-a">B Writer, <span class="nm on" data-from="1" data-focus="1">A Example</span>, H Writer</div><div class="sr-v"><mark class="sec on" data-from="3" data-focus="3">Findings</mark> of the Association for Computational Linguistics: ACL 2022, 410-423, 2022</div></div>
+            <div class="sr-c">868</div><div class="sr-y">2022</div>
+            <div class="co-slot" dir="ltr"><p class="co" data-from="1" data-to="2"><span class="tag">Drugi</span> pozycja 2 z 3</p><p class="co on" data-from="3"><b dir="ltr">Findings</b> · kategoria drugorzędna: bez rankingu, bez etykiety</p></div>
+          </div>
+          <div class="mini">
+            <div class="mini-h"><b>Prace według roli i rankingu</b><span dir="ltr"><i class="on">CCF</i><i>CORE</i></span></div>
+            <table>
+              <thead><tr><th></th><th>A</th><th>B</th><th>C</th><th>–</th><th>Razem</th></tr></thead>
+              <tbody><tr><th><i style="--rc:#1a73e8"></i>Pierwszy</th><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td><td>·</td><td>·</td><td>·</td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td></tr><tr><th><i style="--rc:#f9ab00"></i>Drugi</th><td>·</td><td>·</td><td>·</td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <button type="button" class="how-play" hidden data-play="Odtwórz" data-pause="Pauza"><svg class="i-play" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg><svg class="i-pause" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z" fill="currentColor"/></svg><span>Odtwórz</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="wrap">
+      <h2>Co jeszcze potrafi</h2>
+      <div class="grid">
+        <article style="--c:#4d8ff5"><h3>Nagrody i wystąpienia</h3><p>Etykiety przy najlepszych pracach, nagrodach za trwały wpływ (test of time) oraz wystąpieniach Oral, Spotlight lub Highlight. Pochodzą one z własnych słów autorów i z oficjalnych stron nagród.</p></article>
+        <article style="--c:#b36cf6"><h3>Pełne listy autorów</h3><p>Scholar skraca długie listy autorów znakiem „…”, a to może ukryć twoją rolę. Jedno kliknięcie odczytuje pełne listy ze stron prac w Scholarze.</p></article>
+        <article style="--c:#fbbc04"><h3>Duplikaty scalone</h3><p>Scholar czasem podaje jedną pracę dwa razy. Przełącznik łączy te wpisy w jeden i sumuje ich cytowania.</p></article>
+        <article style="--c:#34a853"><h3>Własny układ</h3><p>Każda część panelu zestawienia ma własny przełącznik. Wybierz kolory, kolejność części i własne nazwy dla nich.</p></article>
+        <article style="--c:#4d8ff5"><h3>Prywatność</h3><p>Bez konta, bez analityki i bez śledzenia. Cała praca odbywa się w twojej przeglądarce, a listy rankingów są w rozszerzeniu.</p></article>
+        <article style="--c:#b36cf6"><h3>30 języków</h3><p>Rozszerzenie mówi w twoim języku. Może też otworzyć sam Scholar w wybranym przez ciebie języku.</p></article>
+      </div>
     </div>
   </section>
 
   <section class="try" id="try">
     <div class="wrap">
-      <h2>Wypróbuj prawdziwą stronę ustawień</h2>
-      <p class="note">To własna strona ustawień rozszerzenia, działająca właśnie tutaj: przełącz opcję, a podgląd od razu się zmieni. Najedź kursorem na podgląd, aby ukryć część, przesunąć ją lub zmienić jej nazwę, a dwukrotnie kliknij część, aby przejść do jej ustawienia.</p>
+      <h2>Wypróbuj stronę ustawień</h2>
+      <p class="note">To prawdziwa strona ustawień rozszerzenia. Zmień ustawienie, a podgląd zmieni się razem z nim. Najedź kursorem na część podglądu, aby ukryć ją, przesunąć lub zmienić jej nazwę.</p>
       <div class="try-bar">
         <a class="skip" href="#after-try">Pomiń demonstrację</a>
         <p>Twoje zmiany zostają tylko w tej przeglądarce.</p>
@@ -138,15 +185,15 @@
 
   <section class="export-section" id="after-try">
     <div class="wrap">
-      <h2>Eksport akademicki jednym kliknięciem</h2>
-      <p class="note">Gotowe do wklejenia listy publikacji do CV, wniosków grantowych, dokumentów LaTeX, agentów AI i arkuszy kalkulacyjnych.</p>
+      <h2>Kopiuj swoje prace</h2>
+      <p class="note">Jeden przycisk dla każdego formatu: do CV, do wniosku grantowego, w LaTeX-u lub do arkusza kalkulacyjnego. Poniżej prawdziwy wynik dla czterech zmyślonych prac.</p>
       <div class="export-card">
-        <div class="export-tabs" role="tablist" aria-label="Eksport akademicki jednym kliknięciem">
-          <button type="button" class="tab-btn active" role="tab" id="tab-bibtex" aria-selected="true" aria-controls="export-bibtex">BibTeX (LaTeX-Ready)</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-apa" aria-selected="false" aria-controls="export-apa" tabindex="-1">APA 7th Edition</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-json" aria-selected="false" aria-controls="export-json" tabindex="-1">Structured JSON</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-markdown" aria-selected="false" aria-controls="export-markdown" tabindex="-1">GitHub Markdown</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-csv" aria-selected="false" aria-controls="export-csv" tabindex="-1">RFC-4180 CSV</button>
+        <div class="export-tabs" role="tablist" aria-label="Kopiuj swoje prace">
+          <button type="button" class="tab-btn active" role="tab" id="tab-bibtex" aria-selected="true" aria-controls="export-bibtex">BibTeX</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-apa" aria-selected="false" aria-controls="export-apa" tabindex="-1">APA</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-json" aria-selected="false" aria-controls="export-json" tabindex="-1">JSON</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-markdown" aria-selected="false" aria-controls="export-markdown" tabindex="-1">Markdown</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-csv" aria-selected="false" aria-controls="export-csv" tabindex="-1">CSV</button>
         </div>
         <div class="code-preview-wrap">
           <pre class="code-preview" role="tabpanel" id="export-bibtex" aria-labelledby="tab-bibtex" tabindex="0"><code>@inproceedings{author2025sample,
@@ -318,7 +365,7 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
 2024,Sample paper 2,&quot;B Writer, A Author, C Writer&quot;,Second author,NeurIPS 2024,A,A*,Best paper (NeurIPS 2024),133
 2024,Sample paper 3,&quot;A Author*, B Writer*, C Writer&quot;,Co-first author,CVPR 2024 (Highlight),A,A*,Highlight,27
 2023,Sample paper 4,&quot;B Writer, C Writer, D Writer, A Author&quot;,Last author,ACL 2023 (Spotlight),A,A*,Spotlight,215</code></pre>
-          <button type="button" class="copy-code-btn" data-label="Kopiuj do schowka" data-copied="Skopiowano!">Kopiuj do schowka</button>
+          <button type="button" class="copy-code-btn" data-label="Kopiuj" data-copied="Skopiowano">Kopiuj</button>
         </div>
       </div>
     </div>
@@ -326,68 +373,55 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
 
   <section class="operators-section">
     <div class="wrap">
-      <h2>Natychmiastowe wyszukiwanie i operatory zapytań</h2>
-      <p class="note">Naciśnij <kbd>/</kbd> w dowolnym miejscu profilu Scholar, aby przeszukać całą listę naraz.</p>
+      <h2>Wyszukiwanie z operatorami</h2>
+      <p class="note">Naciśnij <kbd>/</kbd> w profilu, aby przeszukać wszystkie jego prace. Dodaj do słów operatory, aby przefiltrować listę.</p>
       <div class="operators-grid">
         <div class="op-card">
-          <div class="op-header"><code>cites:&gt;100</code> <code>cites:&gt;=50</code> <code>cites:&lt;10</code></div>
-          <p class="op-title">Progi cytowań</p>
-          <p class="op-desc">Zachowaj prace z większą lub mniejszą liczbą cytowań niż dowolna wpisana liczba.</p>
+          <div class="op-header" dir="ltr"><code>cites:&gt;100</code> <code>cites:&gt;=50</code> <code>cites:&lt;10</code></div>
+          <h3 class="op-title">Cytowania</h3>
+          <p class="op-desc">Prace z większą lub mniejszą liczbą cytowań niż wpisana liczba.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>ccf:a</code> <code>ccf:b</code> <code>core:a*</code></div>
-          <p class="op-title">Poziomy rang miejsc publikacji</p>
-          <p class="op-desc">Pokaż tylko prace z konferencji i czasopism z rangą CCF lub CORE.</p>
+          <div class="op-header" dir="ltr"><code>ccf:a</code> <code>ccf:b</code> <code>core:a*</code></div>
+          <h3 class="op-title">Ranking</h3>
+          <p class="op-desc">Prace w miejscach publikacji o danym rankingu CCF lub CORE.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>role:first</code> <code>role:last</code> <code>role:cofirst</code></div>
-          <p class="op-title">Role autorskie</p>
-          <p class="op-desc">Filtruj według pierwszego, współpierwszego, drugiego lub ostatniego (starszego) autora.</p>
+          <div class="op-header" dir="ltr"><code>role:first</code> <code>role:last</code> <code>role:cofirst</code></div>
+          <h3 class="op-title">Role</h3>
+          <p class="op-desc">Prace, w których jesteś pierwszym, współpierwszym, drugim lub ostatnim autorem.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>year:&gt;2020</code> <code>year:&gt;=2021</code> <code>year:&lt;=2015</code></div>
-          <p class="op-title">Lata publikacji</p>
-          <p class="op-desc">Prace opublikowane po wybranych latach, przed nimi lub w ich zakresie, lub w ostatnich pięciu latach.</p>
+          <div class="op-header" dir="ltr"><code>year:&gt;=2020</code> <code>year:2023</code> <code>age:&lt;5</code></div>
+          <h3 class="op-title">Rok</h3>
+          <p class="op-desc">Prace sprzed wybranego roku, po nim lub z tego roku, albo z ostatnich kilku lat.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>has:award</code> <code>has:talk</code></div>
-          <p class="op-title">Nagrody i prezentacje</p>
-          <p class="op-desc">Znajdź prace Best Paper, Test of Time, Oral, Spotlight i Highlight.</p>
+          <div class="op-header" dir="ltr"><code>has:award</code> <code>has:talk</code></div>
+          <h3 class="op-title">Nagrody i wystąpienia</h3>
+          <p class="op-desc">Prace z nagrodą Best Paper lub Test of Time albo z wystąpieniem Oral, Spotlight lub Highlight.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><kbd>Escape</kbd></div>
-          <p class="op-title">Reset jednym klawiszem</p>
-          <p class="op-desc">Czyści jednocześnie wszystkie wyszukiwania, zaznaczenia w tabeli i filtry.</p>
+          <div class="op-header" dir="ltr"><kbd>Escape</kbd></div>
+          <h3 class="op-title">Wyczyść wszystko</h3>
+          <p class="op-desc">Jeden klawisz czyści wyszukiwanie, zaznaczoną komórkę i wszystkie filtry.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="features">
-    <div class="wrap grid">
-      <article style="--c:#4d8ff5"><h3>Każda publikacja pokolorowana według twojej roli</h3><p>Wiersze dla pierwszego, współpierwszego, drugiego i ostatniego autora dostają własny kolor, a twoje nazwisko jest wyróżnione w liście autorów.</p></article>
-      <article style="--c:#b36cf6"><h3>Rangi CCF i CORE</h3><p>Rangi CCF 2026 i ICORE 2026 przy każdym miejscu publikacji, z regułą, która je dopasowała. Miejsce publikacji, którego nie da się rozpoznać, pozostaje bez oznaczenia: nigdy nie zgadujemy.</p></article>
-      <article style="--c:#fbbc04"><h3>Tabela rola × ranga</h3><p>Kliknij komórkę, by zobaczyć tylko te publikacje, i skopiuj podsumowanie lub listę do CV albo wniosku grantowego.</p></article>
-      <article style="--c:#34a853"><h3>Nagrody i prezentacje</h3><p>Najlepsze artykuły, nagrody za trwały wpływ (test of time), Oral, Spotlight i Highlight — z własnych słów autorów oraz z oficjalnych stron nagród, dla ponad 7000 publikacji.</p></article>
-      <article style="--c:#4d8ff5"><h3>Ucięte listy autorów, uzupełnione</h3><p>Scholar ukrywa ostatnich autorów w długich listach. Jedno kliknięcie odczytuje ich ze strony publikacji albo z Semantic Scholar, jeśli na to pozwolisz.</p></article>
-      <article style="--c:#b36cf6"><h3>Duplikaty scalone</h3><p>Po włączeniu tej opcji wpisy, w których ta sama publikacja występuje dwa razy, łączą się w jeden, a cytowania są sumowane.</p></article>
-      <article style="--c:#fbbc04"><h3>Dopasuj do siebie</h3><p>Wybierz, co ma być widoczne, ustaw własne kolory i ukryj te części strony Scholar, których nie potrzebujesz.</p></article>
-      <article style="--c:#34a853"><h3>Prywatność z założenia</h3><p>Bez konta, bez analityki i bez śledzenia. Wszystko liczy się w twojej przeglądarce, a listy rang są częścią rozszerzenia.</p></article>
     </div>
   </section>
 
   <section class="numbers">
     <div class="wrap">
       <h2>W liczbach</h2>
-      <p class="note">Policzone automatycznie z kodu i danych rozszerzenia podczas budowania tej strony — niczego nie wpisano ręcznie. Liczby, które rosną z każdą poprawką, są zaokrąglone w dół.</p>
+      <p class="note">Podczas budowania tej strony te liczby są liczone z kodu i danych rozszerzenia. Liczby, które rosną z każdą poprawką, są zaokrąglone w dół.</p>
       <div class="numbers-grid">
-        <div class="num" style="--c:#4d8ff5"><b dir="ltr">153</b><span>ustawienia, które możesz zmienić</span></div>
+        <div class="num" style="--c:#4d8ff5"><b dir="ltr">154</b><span>ustawienia, które możesz zmienić</span></div>
         <div class="num" style="--c:#b36cf6"><b dir="ltr">30</b><span>języki interfejsu</span></div>
-        <div class="num" style="--c:#fbbc04"><b dir="ltr">1178</b><span>miejsca publikacji z rangą na listach CCF i CORE</span></div>
-        <div class="num" style="--c:#34a853"><b dir="ltr">400+</b><span>nazwy miejsc publikacji, które wyświetla Scholar, a których nie ma na oficjalnych listach</span></div>
-        <div class="num" style="--c:#4d8ff5"><b dir="ltr">18</b><span>zabezpieczenia, które nie dopuszczają do pokazania błędnej rangi</span></div>
-        <div class="num" style="--c:#b36cf6"><b dir="ltr">5581</b><span>nagrodzone artykuły rozpoznawane przez rozszerzenie</span></div>
-        <div class="num" style="--c:#fbbc04"><b dir="ltr">22 744</b><span>prawdziwe wpisy miejsc publikacji podawane przez Scholar, każdy z ręcznie sprawdzoną rangą</span></div>
+        <div class="num" style="--c:#fbbc04"><b dir="ltr">1178</b><span>miejsca publikacji z rankingiem na listach CCF i CORE</span></div>
+        <div class="num" style="--c:#34a853"><b dir="ltr">400+</b><span>nazwy miejsc publikacji, które wyświetla Scholar, a których nie ma na listach</span></div>
+        <div class="num" style="--c:#4d8ff5"><b dir="ltr">18</b><span>zabezpieczenia, które zapobiegają błędnemu rankingowi</span></div>
+        <div class="num" style="--c:#b36cf6"><b dir="ltr">5581</b><span>nagrodzone prace, które rozszerzenie zna</span></div>
+        <div class="num" style="--c:#fbbc04"><b dir="ltr">22 744</b><span>prawdziwe wpisy miejsc publikacji podawane przez Scholar, każdy z ręcznie sprawdzonym wynikiem</span></div>
         <div class="num" style="--c:#34a853"><b dir="ltr">500+</b><span>testy jednostkowe oraz zestaw testów end-to-end w prawdziwej przeglądarce</span></div>
       </div>
     </div>
@@ -397,18 +431,22 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
     <div class="wrap">
       <h2>Instalacja</h2>
       <ol>
-        <li>Pobierz projekt z GitHub (zielony przycisk „Code”, potem „Download ZIP”) i rozpakuj go.</li>
+        <li>Pobierz projekt z GitHub: kliknij zielony przycisk „Code”, potem „Download ZIP”. Rozpakuj plik.</li>
         <li>Otwórz <code>chrome://extensions</code> i włącz „Tryb dewelopera”.</li>
-        <li>Kliknij „Załaduj rozpakowane” i wybierz folder src. Następnie otwórz dowolny profil Google Scholar.</li>
+        <li>Kliknij „Załaduj rozpakowane” i wybierz folder src. Następnie otwórz profil Google Scholar.</li>
       </ol>
-      <p class="note">Być może pojawi się też wpis w Chrome Web Store. Edge, Brave i inne przeglądarki oparte na Chromium działają tak samo.</p>
+      <p class="note">Edge, Brave i inne przeglądarki oparte na Chromium działają tak samo. Wersja w Chrome Web Store może pojawić się później.</p>
     </div>
   </section>
 
   <section class="honest">
     <div class="wrap">
-      <h2>Uczciwie o ograniczeniach</h2>
-      <p>Rangi to aktualne listy, a nie ranga z chwili publikacji, a sama lista CCF zaznacza, że nie jest oceną. Rozszerzenie nigdy nie zgaduje miejsca publikacji: to, czego nie potrafi rozpoznać, jest wypisane, a nie oznaczone.</p>
+      <h2>Ograniczenia</h2>
+      <ul class="limits">
+        <li>Rankingi pochodzą z aktualnych list. W roku publikacji miejsce publikacji mogło mieć inny ranking.</li>
+        <li>CCF zastrzega, że jego lista nie jest podstawą oceny naukowej.</li>
+        <li>Nigdy nie zgaduje. Miejsce publikacji, którego nie potrafi umieścić, nie dostaje etykiety, a panel zestawienia je wymienia.</li>
+      </ul>
     </div>
   </section>
 </main>
@@ -416,9 +454,9 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
   <div class="wrap">
     <span>Open source, licencja Apache License 2.0</span>
     <a href="../privacy/">Prywatność</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/ROADMAP.md">Roadmap</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/AGENTS.md">Agent API</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/SECURITY.md">Security</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/ROADMAP.md">Plan rozwoju</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/AGENTS.md">Dla agentów AI</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/SECURITY.md">Bezpieczeństwo</a>
     <a href="https://github.com/boyugou/better-scholar/issues">Zgłoś problem</a>
     <a href="https://github.com/boyugou/better-scholar">GitHub</a>
   </div>

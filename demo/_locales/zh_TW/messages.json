@@ -3,7 +3,7 @@
     "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "Google 學術搜尋作者頁面增強：署名位次、CCF 與 CORE 等級、頂會獎項、年份分布圖與即時檢索。"
+    "message": "在 Google Scholar 個人頁面上，顯示頁面作者在每篇論文的位次，以及發表處的 CCF 與 CORE 等級，並彙整成一張表。"
   },
   "extShortName": {
     "message": "Better Scholar"
@@ -51,7 +51,7 @@
     "message": "最佳論文入圍"
   },
   "marksHint": {
-    "message": "依據作者在 Scholar 上於各論文標題與發表處文字中自行標註的內容（未經查證），以及內建的各大會議獲獎論文清單。"
+    "message": "來自兩個來源：作者在 Scholar 上於各論文標題或發表處那一行自行標註的內容（未經查證），以及內建的各大會議獲獎論文清單。"
   },
   "marksAsWritten": {
     "message": "來自作者自行標註或獲獎清單"
@@ -175,7 +175,7 @@
     "message": "逐一開啟各論文在 Scholar 上的頁面（約每秒一篇），讀取完整作者列表。"
   },
   "resolveHintSemantic": {
-    "message": "先向 Semantic Scholar 查詢每篇論文的作者列表（只傳送論文標題），其餘論文則逐一開啟它們在 Scholar 上的頁面（約每秒一篇）。"
+    "message": "先向 Semantic Scholar 查詢每篇論文的作者列表（只傳送論文標題）。其餘論文則逐一開啟它們在 Scholar 上的頁面，約每秒一篇。"
   },
   "resolving": {
     "message": "正在讀取作者列表… $N1$/$N2$",
@@ -482,7 +482,7 @@
     "message": "要將這些設定全部還原為預設值嗎？"
   },
   "optStorage": {
-    "message": "設定儲存在瀏覽器中，並與您的 Chrome 設定檔同步。擴充功能會讀取您開啟的 Scholar 頁面；您按下「補全」時，也會讀取作者列表被截短的論文頁面；只有開啟 Semantic Scholar 後，論文標題才會傳送給它。"
+    "message": "設定儲存在瀏覽器中，並與您的 Chrome 設定檔同步。擴充功能會讀取您開啟的 Scholar 頁面。您按下「補全」時，它也會讀取作者列表被截短的論文頁面。只有開啟 Semantic Scholar 後，論文標題才會傳送給它。"
   },
   "optSample": {
     "message": "範例論文"
@@ -494,7 +494,7 @@
     "message": "自動載入全部論文"
   },
   "optAutoLoadHint": {
-    "message": "Scholar 起初只顯示前幾篇論文。此選項會代您按下其「顯示更多」按鈕，約每秒一次，直到載入整份列表，Scholar 不再回應時即停止。關閉後，面板會改為提供「全部載入」。"
+    "message": "Scholar 的作者頁面只顯示前幾篇論文。此選項會代您按下 Scholar 自己的「顯示更多」按鈕，約每秒一次，直到載入整份列表。Scholar 不再回應時即停止。關閉後，面板會改為顯示「全部載入」。"
   },
   "loadStalled": {
     "message": "Scholar 沒有再傳來論文（已載入 $N1$ 篇）。請稍後再按一次「全部載入」。",
@@ -583,7 +583,7 @@
     "message": "合併重複項目"
   },
   "optMergeLabelHint": {
-    "message": "標題相同（不計大小寫、重音與標點）且第一作者相同的項目會合併為一筆：保留引用次數最多的，並顯示全部項目的引用總數。面板只計一次。"
+    "message": "標題相同且第一作者相同的項目會合併為一筆（不計大小寫、重音與標點）。保留引用次數最多的項目，並顯示全部項目的引用總數。面板只計一次。"
   },
   "mergedTip": {
     "message": "由 $N1$ 筆項目合併：顯示全部項目的引用總數",
@@ -675,7 +675,7 @@
     "message": "優先用 Semantic Scholar 補全作者列表"
   },
   "optSemanticLabelHint": {
-    "message": "按下「補全」時，先向 Semantic Scholar 詢問每篇論文的完整作者列表（只傳送論文標題，不傳其他資料），它不認得的才去讀 Scholar 自己的頁面。對 Scholar 的請求更少，驗證碼也更少。"
+    "message": "按下「補全」時，先向 Semantic Scholar 詢問每篇論文的完整作者列表。它只會收到論文標題，不會收到其他資料。Semantic Scholar 不認得的論文，才會去讀 Scholar 自己的頁面。對 Scholar 的請求減少，意味著驗證碼也會減少。"
   },
   "yearsTitle": {
     "message": "各年份的已標示論文"
@@ -879,7 +879,7 @@
     "message": "AI 代理"
   },
   "optAgentHint": {
-    "message": "複製一份指南，其中列出所有設定、它們的值以及您目前的選擇。把它貼給您的 AI 助手，說明您的需求，再把它的回覆貼到下方的設定編輯框中，然後按「套用設定」。"
+    "message": "複製一份指南，其中列出所有設定、它們的值以及您目前的選擇。把它連同您的需求一起交給 AI 助手。接著，把它的回覆貼到下方的設定編輯框中，然後按「套用設定」。"
   },
   "optAgentCopy": {
     "message": "複製代理指南"
@@ -993,6 +993,12 @@
   },
   "optFiltersSearch": {
     "message": "搜尋框"
+  },
+  "optFiltersKey": {
+    "message": "“/”鍵跳至搜尋框"
+  },
+  "optFiltersKeyHint": {
+    "message": "在個人頁面的面板中，以及本頁自身的搜尋框中。關閉時：此鍵不會有任何作用。"
   },
   "optOrderPills": {
     "message": "快速篩選的順序"
@@ -1141,7 +1147,7 @@
     "message": "檢查發表處"
   },
   "optVenueHint": {
-    "message": "貼上 Scholar 顯示的發表處（論文下方的灰色文字行），即可查看 CCF 與 CORE 清單如何看待它，以及依據哪條規則。清單無法歸類的發表處不會獲得等級：不做任何猜測。"
+    "message": "貼上 Scholar 顯示的發表處：論文下方的灰色文字行。您會看到 CCF 與 CORE 清單如何看待它，以及依據哪條規則。清單無法歸類的發表處不會獲得等級。不做任何猜測。"
   },
   "optVenuePlaceholder": {
     "message": "例如：Proceedings of the IEEE conference on computer vision and pattern recognition"
@@ -1150,7 +1156,7 @@
     "message": "沒有等級。清單沒有確切收錄這段文字，因此不加標籤。"
   },
   "optVenueSecondary": {
-    "message": "「$N1$」標示次要類別（研討會、海報、短文等）：除非發表處本身的名稱含有該詞，否則不獲得等級。",
+    "message": "「$N1$」標示次要類別，例如研討會、海報或短文。除非發表處本身的名稱含有該詞，否則不獲得等級。",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -1170,7 +1176,7 @@
     "message": "計數隨篩選變化"
   },
   "optFiltersFollowHint": {
-    "message": "表格、獲獎與報告形式的計數，以及複製摘要的計數，只計入篩選後剩下的論文（年份範圍、搜尋、快速篩選、發表處）；選取的儲存格或列不會縮小任何計數。關閉後，一律統計整個作者頁面。"
+    "message": "表格、獲獎與報告形式的計數，以及複製摘要的計數，只計入篩選後剩下的論文（年份範圍、搜尋、快速篩選或發表處）。選取的儲存格或列不會改變任何計數。關閉後，一律統計整個作者頁面。"
   },
   "optPillRecent": {
     "message": "近 5 年"
@@ -1182,7 +1188,7 @@
     "message": "在已複製的摘要中加入作者頁面連結和日期"
   },
   "optCopySourceHint": {
-    "message": "已複製的摘要和已複製的表格會多一行，寫明作者頁面的連結與日期（Source: …），方便歸檔或轉寄這些數字。列表未全部載入時，無論此開關如何設定，複製的內容都會註明。"
+    "message": "已複製的摘要和已複製的表格末尾會多一行，寫明作者頁面的連結與日期（Source: …），方便歸檔或轉寄這些數字。列表未全部載入時，複製的內容中總會註明。"
   },
   "unrankedPreprints": {
     "message": "預印本"
@@ -1197,7 +1203,7 @@
     "message": "兩個清單都有等級時"
   },
   "optPreferHint": {
-    "message": "一個標籤代替兩個：依您選的清單顯示；另一清單的標籤只在您選的清單對該發表處沒有等級時才出現。標籤的工具提示也會寫明另一個等級。"
+    "message": "一個標籤代替兩個：顯示您選的清單的標籤。另一清單的標籤只在您選的清單對該發表處沒有等級時才出現。標籤的工具提示也會寫明另一個等級。"
   },
   "optPreferCcf": {
     "message": "CCF 優先"

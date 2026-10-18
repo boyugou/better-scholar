@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Better Scholar: Google Scholar पर आपकी लेखक-भूमिका और प्रकाशन-स्थलों की रैंक</title>
-<meta name="description" content="Chrome के लिए एक मुफ़्त एक्सटेंशन, जो Google Scholar प्रोफ़ाइल के हर शोधपत्र पर आपकी लेखक-भूमिका (प्रथम, सह-प्रथम, द्वितीय, अंतिम लेखक) और प्रकाशन-स्थल की CCF / CORE रैंक दिखाता है, और सब कुछ एक तालिका में समेट देता है।">
+<title>Better Scholar: Google Scholar पर आपकी लेखक-भूमिका और venues की रैंक</title>
+<meta name="description" content="Google Scholar प्रोफ़ाइलों के लिए एक मुफ़्त Chrome एक्सटेंशन। यह हर पेपर पर आपकी लेखक-भूमिका और venue की CCF / CORE रैंक दिखाता है, और आपके पेपरों की गिनती एक तालिका में करता है।">
 <link rel="canonical" href="https://boyugou.github.io/better-scholar/hi/">
 <link rel="alternate" hreflang="en" href="https://boyugou.github.io/better-scholar/en/">
 <link rel="alternate" hreflang="zh-CN" href="https://boyugou.github.io/better-scholar/zh-CN/">
@@ -40,14 +40,14 @@
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Better Scholar: Google Scholar पर आपकी लेखक-भूमिका और प्रकाशन-स्थलों की रैंक">
-<meta property="og:description" content="Chrome के लिए एक मुफ़्त एक्सटेंशन, जो Google Scholar प्रोफ़ाइल के हर शोधपत्र पर आपकी लेखक-भूमिका (प्रथम, सह-प्रथम, द्वितीय, अंतिम लेखक) और प्रकाशन-स्थल की CCF / CORE रैंक दिखाता है, और सब कुछ एक तालिका में समेट देता है।">
+<meta property="og:title" content="Better Scholar: Google Scholar पर आपकी लेखक-भूमिका और venues की रैंक">
+<meta property="og:description" content="Google Scholar प्रोफ़ाइलों के लिए एक मुफ़्त Chrome एक्सटेंशन। यह हर पेपर पर आपकी लेखक-भूमिका और venue की CCF / CORE रैंक दिखाता है, और आपके पेपरों की गिनती एक तालिका में करता है।">
 <meta property="og:url" content="https://boyugou.github.io/better-scholar/hi/">
 <meta property="og:image" content="https://boyugou.github.io/better-scholar/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="../assets/styles.css">
 <meta name="theme-color" content="#161d33">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Better Scholar","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Chromium browsers","description":"Chrome के लिए एक मुफ़्त एक्सटेंशन, जो Google Scholar प्रोफ़ाइल के हर शोधपत्र पर आपकी लेखक-भूमिका (प्रथम, सह-प्रथम, द्वितीय, अंतिम लेखक) और प्रकाशन-स्थल की CCF / CORE रैंक दिखाता है, और सब कुछ एक तालिका में समेट देता है।","inLanguage":"hi","url":"https://boyugou.github.io/better-scholar/hi/","image":"https://boyugou.github.io/better-scholar/assets/og.png","license":"https://www.apache.org/licenses/LICENSE-2.0","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Better Scholar","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Chromium browsers","description":"Google Scholar प्रोफ़ाइलों के लिए एक मुफ़्त Chrome एक्सटेंशन। यह हर पेपर पर आपकी लेखक-भूमिका और venue की CCF / CORE रैंक दिखाता है, और आपके पेपरों की गिनती एक तालिका में करता है।","inLanguage":"hi","url":"https://boyugou.github.io/better-scholar/hi/","image":"https://boyugou.github.io/better-scholar/assets/og.png","license":"https://www.apache.org/licenses/LICENSE-2.0","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 </head>
 <body>
 <header class="top">
@@ -97,16 +97,11 @@
 <main>
   <section class="hero">
     <div class="wrap">
-      <div class="hero-badges">
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg> Manifest V3</span>
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg> आपके ब्राउज़र में चलता है</span>
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg> कोई डिपेंडेंसी नहीं</span>
-      </div>
       <div class="stripes" aria-hidden="true"><i style="--c:#4d8ff5"></i><i style="--c:#b36cf6"></i><i style="--c:#fbbc04"></i><i style="--c:#34a853"></i></div>
-      <h1>हर शोधपत्र पर अपनी स्थिति देखें</h1>
-      <p class="lead">Google Scholar प्रोफ़ाइलों के लिए एक Chrome एक्सटेंशन। यह हर शोधपत्र पर आपकी लेखक-भूमिका और प्रकाशन-स्थल की CCF / CORE रैंक चिह्नित करता है, और नतीजे को एक तालिका में जोड़ता है: “CCF-A के 4 शोधपत्र, जिनमें मैं प्रथम लेखक हूँ”।</p>
+      <h1>हर पेपर पर आपकी भूमिका और venue की रैंक</h1>
+      <p class="lead">Google Scholar प्रोफ़ाइलों के लिए एक मुफ़्त Chrome एक्सटेंशन। यह हर पेपर को आपकी लेखक-भूमिका के हिसाब से रंगता है, उसके venue की CCF और CORE रैंक दिखाता है, और आपके पेपरों की गिनती एक तालिका में करता है।</p>
       <p class="cta"><a class="btn" href="#install">इंस्टॉल करें</a> <a class="btn ghost" href="https://github.com/boyugou/better-scholar">GitHub पर देखें</a></p>
-      <p class="note">मुफ़्त और ओपन सोर्स · Chrome और अन्य Chromium ब्राउज़र · 30 भाषाएँ</p>
+      <p class="note">मुफ़्त और ओपन सोर्स · Chrome, Edge, Brave और अन्य Chromium ब्राउज़र · 30 भाषाएँ</p>
     </div>
   </section>
 
@@ -114,17 +109,69 @@
     <div class="wrap">
       <figure class="hero-shot">
         <div class="hero-frame" style="aspect-ratio: 1280 / 660">
-          <img src="../assets/hero.jpg" alt="एक काल्पनिक प्रोफ़ाइल (असली प्रकाशन-स्थल, गढ़े हुए शोधपत्र): भूमिका के अनुसार रंगीन पंक्तियाँ, हर प्रकाशन-स्थल के साथ रैंक का चिप, और दाईं ओर सारांश।" width="1280" height="800" fetchpriority="high" decoding="async">
+          <img src="../assets/hero.jpg" alt="एक काल्पनिक प्रोफ़ाइल, जिसमें venue असली हैं। हर पंक्ति का रंग आपकी भूमिका का है, टैग रैंक दिखाते हैं, और दाईं ओर का पैनल पेपर गिनता है।" width="1280" height="800" fetchpriority="high" decoding="async">
         </div>
-        <figcaption>एक काल्पनिक प्रोफ़ाइल (असली प्रकाशन-स्थल, गढ़े हुए शोधपत्र): भूमिका के अनुसार रंगीन पंक्तियाँ, हर प्रकाशन-स्थल के साथ रैंक का चिप, और दाईं ओर सारांश।</figcaption>
+        <figcaption>एक काल्पनिक प्रोफ़ाइल, जिसमें venue असली हैं। हर पंक्ति का रंग आपकी भूमिका का है, टैग रैंक दिखाते हैं, और दाईं ओर का पैनल पेपर गिनता है।</figcaption>
       </figure>
+    </div>
+  </section>
+
+  <section class="how" id="how">
+    <div class="wrap">
+      <h2>यह एक शोधपत्र को कैसे पढ़ता है</h2>
+      <p class="note">असली प्रकाशन-स्थलों पर दो काल्पनिक शोधपत्र। हर चरण दिखाता है कि एक्सटेंशन का अपना कोड उनमें क्या पाता है।</p>
+      <div class="how-grid">
+        <ol class="how-steps">
+          <li><button type="button" data-step="1"><span class="n">1</span><b>अपना नाम खोजें</b><span class="d">यह लेखक-पंक्ति में प्रोफ़ाइल का नाम खोजता है। पंक्ति में आपका स्थान आपकी भूमिका तय करता है: प्रथम, सह-प्रथम, द्वितीय या अंतिम लेखक।</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="2"><span class="n">2</span><b>प्रकाशन-स्थल खोजें</b><span class="d">यह CCF और CORE सूचियों में प्रकाशन-स्थल को उसके पूरे नाम या संक्षिप्त नाम से खोजता है। पक्का मिलान रैंक टैग देता है।</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="3"><span class="n">3</span><b>कभी अनुमान नहीं</b><span class="d">वर्कशॉप, पोस्टर या Findings शोधपत्र मुख्य सम्मेलन नहीं है। जिस प्रकाशन-स्थल को सूचियाँ निश्चित रूप से तय नहीं कर पातीं, उसे कोई टैग नहीं मिलता।</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="4" aria-current="step"><span class="n">4</span><b>गिनती</b><span class="d">पैनल हर शोधपत्र को एक बार गिनता है: आपकी भूमिका के अनुसार और रैंक के अनुसार। किसी संख्या पर क्लिक करें और उसके शोधपत्र देखें।</span><i class="bar" aria-hidden="true"></i></button></li>
+        </ol>
+        <div class="how-figure">
+        <div class="how-stage" aria-hidden="true">
+          <div class="sr-head" dir="ltr" lang="en"><span>Title</span><span>Cited by</span><span>Year</span></div>
+          <div class="sr on" data-from="1" dir="ltr" data-role="first" style="--rc:#1a73e8">
+            <div class="sr-text" lang="en"><div class="sr-t">Self-Supervised Depth from Casual Video</div><div class="sr-a"><span class="nm on" data-from="1" data-focus="1">A Example</span>, B Writer, C Writer, D Writer</div><div class="sr-v"><span class="vn on" data-from="2" data-focus="2">Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</span>, 2023 <span class="chip on" data-from="2" data-focus="2"><span class="k">CCF</span> <b>A</b></span></div></div>
+            <div class="sr-c">892</div><div class="sr-y">2023</div>
+            <div class="co-slot" dir="ltr"><p class="co" data-from="1" data-to="1"><span class="tag">प्रथम</span> स्थान 1 / 4</p><p class="co on" data-from="2"><b dir="ltr">CCF A · CORE A*</b> · नाम से मिलान: <span dir="ltr">IEEE/CVF Computer Vision and Pattern Recognition Conference</span></p></div>
+          </div>
+          <div class="sr on" data-from="1" dir="ltr" data-role="second" style="--rc:#f9ab00">
+            <div class="sr-text" lang="en"><div class="sr-t">Cheap Calibration for Retrieval-Augmented Models</div><div class="sr-a">B Writer, <span class="nm on" data-from="1" data-focus="1">A Example</span>, H Writer</div><div class="sr-v"><mark class="sec on" data-from="3" data-focus="3">Findings</mark> of the Association for Computational Linguistics: ACL 2022, 410-423, 2022</div></div>
+            <div class="sr-c">868</div><div class="sr-y">2022</div>
+            <div class="co-slot" dir="ltr"><p class="co" data-from="1" data-to="2"><span class="tag">द्वितीय</span> स्थान 2 / 3</p><p class="co on" data-from="3"><b dir="ltr">Findings</b> · गौण ट्रैक: कोई रैंक नहीं, कोई टैग नहीं</p></div>
+          </div>
+          <div class="mini">
+            <div class="mini-h"><b>भूमिका और रैंक के अनुसार पेपर</b><span dir="ltr"><i class="on">CCF</i><i>CORE</i></span></div>
+            <table>
+              <thead><tr><th></th><th>A</th><th>B</th><th>C</th><th>–</th><th>कुल</th></tr></thead>
+              <tbody><tr><th><i style="--rc:#1a73e8"></i>प्रथम</th><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td><td>·</td><td>·</td><td>·</td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td></tr><tr><th><i style="--rc:#f9ab00"></i>द्वितीय</th><td>·</td><td>·</td><td>·</td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <button type="button" class="how-play" hidden data-play="चलाएँ" data-pause="रोकें"><svg class="i-play" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg><svg class="i-pause" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z" fill="currentColor"/></svg><span>चलाएँ</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="wrap">
+      <h2>यह और क्या करता है</h2>
+      <div class="grid">
+        <article style="--c:#4d8ff5"><h3>पुरस्कार और टॉक</h3><p>सर्वश्रेष्ठ पेपरों, टेस्ट-ऑफ़-टाइम पुरस्कारों और Oral, Spotlight या Highlight टॉक के टैग। ये लेखकों के अपने शब्दों से और आधिकारिक पुरस्कार-पृष्ठों से आते हैं।</p></article>
+        <article style="--c:#b36cf6"><h3>पूरी लेखक-सूचियाँ</h3><p>Scholar लंबी लेखक-सूचियों को “…” के साथ काट देता है, और इससे आपकी भूमिका छिप सकती है। एक क्लिक में Scholar के पेपर-पेजों से पूरी सूचियाँ पढ़ी जाती हैं।</p></article>
+        <article style="--c:#fbbc04"><h3>दोहरी प्रविष्टियाँ मिलाई गईं</h3><p>Scholar कभी-कभी एक ही पेपर दो बार सूचीबद्ध करता है। एक स्विच इन्हें एक प्रविष्टि बना देता है और उनके उद्धरण जोड़ देता है।</p></article>
+        <article style="--c:#34a853"><h3>आपका अपना लेआउट</h3><p>पैनल के हर भाग का अपना स्विच है। रंग चुनें, भागों का क्रम चुनें, और उनके लिए अपने नाम चुनें।</p></article>
+        <article style="--c:#4d8ff5"><h3>निजी</h3><p>कोई खाता नहीं, कोई एनालिटिक्स नहीं, कोई ट्रैकिंग नहीं। सारा काम आपके ब्राउज़र में होता है, और रैंक-सूचियाँ एक्सटेंशन के भीतर ही हैं।</p></article>
+        <article style="--c:#b36cf6"><h3>30 भाषाएँ</h3><p>एक्सटेंशन आपकी भाषा में बोलता है। यह Scholar को भी आपकी चुनी हुई भाषा में खोल सकता है।</p></article>
+      </div>
     </div>
   </section>
 
   <section class="try" id="try">
     <div class="wrap">
-      <h2>असली सेटिंग्स पेज आज़माएँ</h2>
-      <p class="note">यह एक्सटेंशन का अपना सेटिंग्स पेज है, जो यहीं चल रहा है: कोई स्विच चालू या बंद करें, और पूर्वावलोकन उसी के हिसाब से बदल जाएगा। पूर्वावलोकन पर होवर करके किसी भाग को छिपाएँ, खिसकाएँ या उसका नाम बदलें, और किसी भाग पर डबल-क्लिक करके उसकी सेटिंग पर जाएँ।</p>
+      <h2>सेटिंग्स पेज आज़माएँ</h2>
+      <p class="note">यह एक्सटेंशन का असली सेटिंग्स पेज है। कोई सेटिंग बदलें, और पूर्वावलोकन उसी के हिसाब से बदल जाएगा। पूर्वावलोकन के किसी भाग पर होवर करके उसे छिपाएँ, खिसकाएँ या उसका नाम बदलें।</p>
       <div class="try-bar">
         <a class="skip" href="#after-try">डेमो छोड़ें</a>
         <p>आपके बदलाव केवल इसी ब्राउज़र में रहते हैं।</p>
@@ -138,15 +185,15 @@
 
   <section class="export-section" id="after-try">
     <div class="wrap">
-      <h2>एक क्लिक में अकादमिक एक्सपोर्ट</h2>
-      <p class="note">सीवी, अनुदान फ़ॉर्म, LaTeX दस्तावेज़ों, AI एजेंट और स्प्रेडशीट के लिए सीधे पेस्ट करने योग्य प्रकाशन सूचियाँ।</p>
+      <h2>अपने शोधपत्र कॉपी करें</h2>
+      <p class="note">हर फ़ॉर्मेट के लिए एक बटन: सीवी, अनुदान फ़ॉर्म, LaTeX या स्प्रेडशीट के लिए। नीचे चार काल्पनिक शोधपत्रों का असली आउटपुट है।</p>
       <div class="export-card">
-        <div class="export-tabs" role="tablist" aria-label="एक क्लिक में अकादमिक एक्सपोर्ट">
-          <button type="button" class="tab-btn active" role="tab" id="tab-bibtex" aria-selected="true" aria-controls="export-bibtex">BibTeX (LaTeX-Ready)</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-apa" aria-selected="false" aria-controls="export-apa" tabindex="-1">APA 7th Edition</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-json" aria-selected="false" aria-controls="export-json" tabindex="-1">Structured JSON</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-markdown" aria-selected="false" aria-controls="export-markdown" tabindex="-1">GitHub Markdown</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-csv" aria-selected="false" aria-controls="export-csv" tabindex="-1">RFC-4180 CSV</button>
+        <div class="export-tabs" role="tablist" aria-label="अपने शोधपत्र कॉपी करें">
+          <button type="button" class="tab-btn active" role="tab" id="tab-bibtex" aria-selected="true" aria-controls="export-bibtex">BibTeX</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-apa" aria-selected="false" aria-controls="export-apa" tabindex="-1">APA</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-json" aria-selected="false" aria-controls="export-json" tabindex="-1">JSON</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-markdown" aria-selected="false" aria-controls="export-markdown" tabindex="-1">Markdown</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-csv" aria-selected="false" aria-controls="export-csv" tabindex="-1">CSV</button>
         </div>
         <div class="code-preview-wrap">
           <pre class="code-preview" role="tabpanel" id="export-bibtex" aria-labelledby="tab-bibtex" tabindex="0"><code>@inproceedings{author2025sample,
@@ -318,7 +365,7 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
 2024,Sample paper 2,&quot;B Writer, A Author, C Writer&quot;,Second author,NeurIPS 2024,A,A*,Best paper (NeurIPS 2024),133
 2024,Sample paper 3,&quot;A Author*, B Writer*, C Writer&quot;,Co-first author,CVPR 2024 (Highlight),A,A*,Highlight,27
 2023,Sample paper 4,&quot;B Writer, C Writer, D Writer, A Author&quot;,Last author,ACL 2023 (Spotlight),A,A*,Spotlight,215</code></pre>
-          <button type="button" class="copy-code-btn" data-label="क्लिपबोर्ड पर कॉपी करें" data-copied="कॉपी हो गया!">क्लिपबोर्ड पर कॉपी करें</button>
+          <button type="button" class="copy-code-btn" data-label="कॉपी करें" data-copied="कॉपी हो गया">कॉपी करें</button>
         </div>
       </div>
     </div>
@@ -326,68 +373,55 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
 
   <section class="operators-section">
     <div class="wrap">
-      <h2>तुरंत खोज और क्वेरी ऑपरेटर</h2>
-      <p class="note">Scholar प्रोफ़ाइल पर कहीं भी <kbd>/</kbd> दबाएँ और पूरी सूची में एक साथ खोजें।</p>
+      <h2>क्वेरी ऑपरेटरों के साथ खोजें</h2>
+      <p class="note">किसी प्रोफ़ाइल पर <kbd>/</kbd> दबाएँ और उसके सभी पेपर खोजें। अपने शब्दों में ऑपरेटर जोड़ें और सूची को फ़िल्टर करें।</p>
       <div class="operators-grid">
         <div class="op-card">
-          <div class="op-header"><code>cites:&gt;100</code> <code>cites:&gt;=50</code> <code>cites:&lt;10</code></div>
-          <p class="op-title">उद्धरण सीमा</p>
-          <p class="op-desc">आप जो भी संख्या लिखें, उससे अधिक या कम उद्धरण वाले शोधपत्र रखें।</p>
+          <div class="op-header" dir="ltr"><code>cites:&gt;100</code> <code>cites:&gt;=50</code> <code>cites:&lt;10</code></div>
+          <h3 class="op-title">उद्धरण</h3>
+          <p class="op-desc">किसी संख्या से अधिक या कम उद्धरण वाले पेपर।</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>ccf:a</code> <code>ccf:b</code> <code>core:a*</code></div>
-          <p class="op-title">प्रकाशन स्थल की रैंक श्रेणियाँ</p>
-          <p class="op-desc">केवल CCF या CORE रैंक वाले सम्मेलनों और जर्नलों के शोधपत्र दिखाएँ।</p>
+          <div class="op-header" dir="ltr"><code>ccf:a</code> <code>ccf:b</code> <code>core:a*</code></div>
+          <h3 class="op-title">रैंक</h3>
+          <p class="op-desc">किसी दिए गए CCF या CORE रैंक वाले venues के पेपर।</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>role:first</code> <code>role:last</code> <code>role:cofirst</code></div>
-          <p class="op-title">लेखक की भूमिकाएँ</p>
-          <p class="op-desc">प्रथम, सह-प्रथम, द्वितीय या अंतिम (वरिष्ठ) लेखक के अनुसार फ़िल्टर करें।</p>
+          <div class="op-header" dir="ltr"><code>role:first</code> <code>role:last</code> <code>role:cofirst</code></div>
+          <h3 class="op-title">भूमिका</h3>
+          <p class="op-desc">वे पेपर जिनमें आप प्रथम, सह-प्रथम, द्वितीय या अंतिम लेखक हैं।</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>year:&gt;2020</code> <code>year:&gt;=2021</code> <code>year:&lt;=2015</code></div>
-          <p class="op-title">प्रकाशन वर्ष</p>
-          <p class="op-desc">आपके चुने वर्षों के बाद, पहले या उनके भीतर, या पिछले पाँच वर्षों में प्रकाशित शोधपत्र।</p>
+          <div class="op-header" dir="ltr"><code>year:&gt;=2020</code> <code>year:2023</code> <code>age:&lt;5</code></div>
+          <h3 class="op-title">वर्ष</h3>
+          <p class="op-desc">किसी चुने हुए वर्ष से पहले, उसके बाद या उसी वर्ष में प्रकाशित पेपर, या पिछले कुछ वर्षों के।</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>has:award</code> <code>has:talk</code></div>
-          <p class="op-title">पुरस्कार और वार्ताएँ</p>
-          <p class="op-desc">Best Paper, Test of Time, Oral, Spotlight और Highlight शोधपत्र खोजें।</p>
+          <div class="op-header" dir="ltr"><code>has:award</code> <code>has:talk</code></div>
+          <h3 class="op-title">पुरस्कार और टॉक</h3>
+          <p class="op-desc">Best Paper या टेस्ट-ऑफ़-टाइम पुरस्कार वाले पेपर, या Oral, Spotlight या Highlight टॉक वाले पेपर।</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><kbd>Escape</kbd></div>
-          <p class="op-title">एक कुंजी में रीसेट</p>
-          <p class="op-desc">सभी खोजों, तालिका चयनों और फ़िल्टरों को एक साथ साफ़ करता है।</p>
+          <div class="op-header" dir="ltr"><kbd>Escape</kbd></div>
+          <h3 class="op-title">सब कुछ साफ़ करें</h3>
+          <p class="op-desc">एक कुंजी खोज, चुने गए सेल और हर फ़िल्टर को साफ़ कर देती है।</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="features">
-    <div class="wrap grid">
-      <article style="--c:#4d8ff5"><h3>हर शोधपत्र, आपकी भूमिका के रंग में</h3><p>प्रथम, सह-प्रथम, द्वितीय और अंतिम लेखक की पंक्तियों को अलग-अलग रंग मिलता है, और लेखक-सूची में आपका नाम चिह्नित होता है।</p></article>
-      <article style="--c:#b36cf6"><h3>CCF और CORE रैंक</h3><p>CCF 2026 और ICORE 2026 की रैंक हर प्रकाशन-स्थल के साथ दिखती है, और साथ में वह नियम भी जिससे वह मेल खाया। जिस स्थल को यह तय नहीं कर पाता, वह बिना चिह्न के रहता है: कभी अनुमान नहीं।</p></article>
-      <article style="--c:#fbbc04"><h3>भूमिका × रैंक की तालिका</h3><p>कोई खाना चुनें और केवल उन्हीं शोधपत्रों की सूची देखें, और सारांश या सूची को CV या अनुदान फ़ॉर्म के लिए कॉपी करें।</p></article>
-      <article style="--c:#34a853"><h3>पुरस्कार और वार्ताएँ</h3><p>सर्वश्रेष्ठ शोधपत्र, टेस्ट-ऑफ़-टाइम पुरस्कार, Oral, Spotlight और Highlight, लेखकों के अपने शब्दों से और 7,000 से अधिक शोधपत्रों के आधिकारिक पुरस्कार-पृष्ठों से।</p></article>
-      <article style="--c:#4d8ff5"><h3>कटी हुई लेखक-सूचियाँ, पूरी</h3><p>Scholar लंबी सूचियों के अंतिम लेखक छिपा देता है। एक क्लिक में वे शोधपत्र के पेज से पढ़े जाते हैं, या अनुमति देने पर Semantic Scholar से।</p></article>
-      <article style="--c:#b36cf6"><h3>दोहरी प्रविष्टियाँ मिलाई गईं</h3><p>चालू करने पर, वे प्रविष्टियाँ जिनमें एक ही शोधपत्र दो बार है, एक बन जाती हैं, और उद्धरण जुड़ जाते हैं।</p></article>
-      <article style="--c:#fbbc04"><h3>आपकी पसंद के अनुसार</h3><p>चुनें कि क्या दिखे, अपने रंग चुनें, और Scholar के पेज के वे हिस्से छिपाएँ जिनकी आपको ज़रूरत नहीं।</p></article>
-      <article style="--c:#34a853"><h3>डिज़ाइन से ही निजी</h3><p>कोई खाता नहीं, कोई एनालिटिक्स नहीं, कोई ट्रैकिंग नहीं। सब कुछ आपके ब्राउज़र में गणना होता है, और रैंक-सूचियाँ एक्सटेंशन के भीतर ही आती हैं।</p></article>
     </div>
   </section>
 
   <section class="numbers">
     <div class="wrap">
       <h2>आँकड़ों में</h2>
-      <p class="note">यह पेज बनते समय एक्सटेंशन के कोड और डेटा से गिना गया है। इसमें कुछ भी हाथ से नहीं लिखा गया। हर सुधार के साथ बढ़ने वाली गिनतियों को नीचे की ओर गोल किया गया है।</p>
+      <p class="note">यह पेज बनते समय इन्हें एक्सटेंशन के कोड और डेटा से गिना जाता है। हर सुधार के साथ बढ़ने वाली गिनतियों को नीचे की ओर गोल किया जाता है।</p>
       <div class="numbers-grid">
-        <div class="num" style="--c:#4d8ff5"><b dir="ltr">153</b><span>सेटिंग्स जिन्हें आप बदल सकते हैं</span></div>
+        <div class="num" style="--c:#4d8ff5"><b dir="ltr">154</b><span>सेटिंग्स जिन्हें आप बदल सकते हैं</span></div>
         <div class="num" style="--c:#b36cf6"><b dir="ltr">30</b><span>इंटरफ़ेस की भाषाएँ</span></div>
-        <div class="num" style="--c:#fbbc04"><b dir="ltr">1,178</b><span>CCF और CORE सूचियों में रैंक वाले प्रकाशन-स्थल</span></div>
-        <div class="num" style="--c:#34a853"><b dir="ltr">400+</b><span>Scholar पर दिखने वाले प्रकाशन-स्थलों के नाम, जो आधिकारिक सूचियों में नहीं हैं</span></div>
-        <div class="num" style="--c:#4d8ff5"><b dir="ltr">18</b><span>जाँचें जो गलत रैंक को दिखने से रोकती हैं</span></div>
-        <div class="num" style="--c:#b36cf6"><b dir="ltr">5,581</b><span>पहचाने गए पुरस्कार-विजेता शोधपत्र</span></div>
-        <div class="num" style="--c:#fbbc04"><b dir="ltr">22,744</b><span>Scholar पर दिखने वाले असली प्रकाशन-स्थल के पाठ, जिनके रैंक की जाँच हुई</span></div>
+        <div class="num" style="--c:#fbbc04"><b dir="ltr">1,178</b><span>CCF और CORE सूचियों में रैंक वाले venue</span></div>
+        <div class="num" style="--c:#34a853"><b dir="ltr">400+</b><span>Scholar पर दिखने वाले venues के नाम, जो सूचियों में नहीं हैं</span></div>
+        <div class="num" style="--c:#4d8ff5"><b dir="ltr">18</b><span>जाँचें जो गलत रैंक को रोकती हैं</span></div>
+        <div class="num" style="--c:#b36cf6"><b dir="ltr">5,581</b><span>वे पुरस्कार-विजेता पेपर जिन्हें यह पहचानता है</span></div>
+        <div class="num" style="--c:#fbbc04"><b dir="ltr">22,744</b><span>Scholar पर दिखने वाले असली venue के पाठ, जिनके हर नतीजे की जाँच हुई</span></div>
         <div class="num" style="--c:#34a853"><b dir="ltr">500+</b><span>यूनिट टेस्ट, और असली ब्राउज़र में चलने वाले एंड-टू-एंड टेस्ट</span></div>
       </div>
     </div>
@@ -397,18 +431,22 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
     <div class="wrap">
       <h2>इंस्टॉल करें</h2>
       <ol>
-        <li>GitHub से प्रोजेक्ट डाउनलोड करें (हरा “Code” बटन, फिर “Download ZIP”) और उसे अनज़िप करें।</li>
+        <li>GitHub से प्रोजेक्ट डाउनलोड करें (हरा “Code” बटन, फिर “Download ZIP”) और फ़ाइल को अनज़िप करें।</li>
         <li><code>chrome://extensions</code> खोलें और “डेवलपर मोड” (Developer mode) चालू करें।</li>
-        <li>“अनपैक किया गया लोड करें” (Load unpacked) पर क्लिक करें और src फ़ोल्डर चुनें। फिर कोई भी Google Scholar प्रोफ़ाइल खोलें।</li>
+        <li>“अनपैक किया गया लोड करें” (Load unpacked) पर क्लिक करें और src फ़ोल्डर चुनें। फिर कोई Google Scholar प्रोफ़ाइल खोलें।</li>
       </ol>
-      <p class="note">आगे चलकर Chrome Web Store पर सूची आ सकती है। Edge, Brave और अन्य Chromium ब्राउज़र भी इसी तरह काम करते हैं।</p>
+      <p class="note">Edge, Brave और अन्य Chromium ब्राउज़र भी इन्हीं चरणों का पालन करते हैं। आगे चलकर Chrome Web Store पर एक संस्करण आ सकता है।</p>
     </div>
   </section>
 
   <section class="honest">
     <div class="wrap">
-      <h2>अपनी सीमाओं के बारे में ईमानदार</h2>
-      <p>रैंक आज की सूचियाँ हैं, प्रकाशन के समय की रैंक नहीं, और CCF की सूची स्वयं कहती है कि वह मूल्यांकन नहीं है। एक्सटेंशन कभी अनुमान नहीं लगाता: जो स्थल वह तय नहीं कर पाता, वह सूची में दिखाया जाता है, चिह्नित नहीं किया जाता।</p>
+      <h2>सीमाएँ</h2>
+      <ul class="limits">
+        <li>रैंक आज की सूचियों से ली गई हैं, प्रकाशन के समय की रैंक नहीं। किसी शोधपत्र के प्रकाशन के वर्ष में उसके प्रकाशन-स्थल की रैंक अलग रही हो सकती है।</li>
+        <li>CCF के अनुसार उसकी सूची शैक्षणिक मूल्यांकन का आधार नहीं है।</li>
+        <li>यह कभी अनुमान नहीं लगाता। जिस प्रकाशन-स्थल को यह तय नहीं कर पाता, उसे कोई टैग नहीं मिलता, और पैनल उसे सूची में दिखाता है।</li>
+      </ul>
     </div>
   </section>
 </main>
@@ -416,9 +454,9 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
   <div class="wrap">
     <span>ओपन सोर्स, Apache License 2.0</span>
     <a href="../privacy/">गोपनीयता</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/ROADMAP.md">Roadmap</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/AGENTS.md">Agent API</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/SECURITY.md">Security</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/ROADMAP.md">रोडमैप</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/AGENTS.md">AI एजेंटों के लिए</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/SECURITY.md">सुरक्षा</a>
     <a href="https://github.com/boyugou/better-scholar/issues">समस्या की रिपोर्ट करें</a>
     <a href="https://github.com/boyugou/better-scholar">GitHub</a>
   </div>

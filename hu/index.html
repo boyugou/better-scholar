@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Better Scholar: szerzői szereped és a publikációs helyek rangja a Google Scholaron</title>
-<meta name="description" content="Ingyenes Chrome-bővítmény, amely minden Google Scholar-profilbeli közleménynél megjelöli a szerepedet (első szerző, társ-első szerző, második szerző, utolsó szerző) és a konferencia vagy folyóirat CCF / CORE rangját, majd mindezt egyetlen táblázatban összegzi.">
+<title>Better Scholar: szerzői szereped és a venue rangja a Google Scholaron</title>
+<meta name="description" content="Ingyenes Chrome-bővítmény Google Scholar-profilokhoz. Minden cikknél megmutatja a szerzői szerepedet és a venue CCF / CORE rangját, egyetlen táblázatban pedig összeszámolja a cikkeidet.">
 <link rel="canonical" href="https://boyugou.github.io/better-scholar/hu/">
 <link rel="alternate" hreflang="en" href="https://boyugou.github.io/better-scholar/en/">
 <link rel="alternate" hreflang="zh-CN" href="https://boyugou.github.io/better-scholar/zh-CN/">
@@ -40,14 +40,14 @@
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Better Scholar: szerzői szereped és a publikációs helyek rangja a Google Scholaron">
-<meta property="og:description" content="Ingyenes Chrome-bővítmény, amely minden Google Scholar-profilbeli közleménynél megjelöli a szerepedet (első szerző, társ-első szerző, második szerző, utolsó szerző) és a konferencia vagy folyóirat CCF / CORE rangját, majd mindezt egyetlen táblázatban összegzi.">
+<meta property="og:title" content="Better Scholar: szerzői szereped és a venue rangja a Google Scholaron">
+<meta property="og:description" content="Ingyenes Chrome-bővítmény Google Scholar-profilokhoz. Minden cikknél megmutatja a szerzői szerepedet és a venue CCF / CORE rangját, egyetlen táblázatban pedig összeszámolja a cikkeidet.">
 <meta property="og:url" content="https://boyugou.github.io/better-scholar/hu/">
 <meta property="og:image" content="https://boyugou.github.io/better-scholar/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="../assets/styles.css">
 <meta name="theme-color" content="#161d33">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Better Scholar","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Chromium browsers","description":"Ingyenes Chrome-bővítmény, amely minden Google Scholar-profilbeli közleménynél megjelöli a szerepedet (első szerző, társ-első szerző, második szerző, utolsó szerző) és a konferencia vagy folyóirat CCF / CORE rangját, majd mindezt egyetlen táblázatban összegzi.","inLanguage":"hu","url":"https://boyugou.github.io/better-scholar/hu/","image":"https://boyugou.github.io/better-scholar/assets/og.png","license":"https://www.apache.org/licenses/LICENSE-2.0","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Better Scholar","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Chromium browsers","description":"Ingyenes Chrome-bővítmény Google Scholar-profilokhoz. Minden cikknél megmutatja a szerzői szerepedet és a venue CCF / CORE rangját, egyetlen táblázatban pedig összeszámolja a cikkeidet.","inLanguage":"hu","url":"https://boyugou.github.io/better-scholar/hu/","image":"https://boyugou.github.io/better-scholar/assets/og.png","license":"https://www.apache.org/licenses/LICENSE-2.0","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 </head>
 <body>
 <header class="top">
@@ -97,16 +97,11 @@
 <main>
   <section class="hero">
     <div class="wrap">
-      <div class="hero-badges">
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg> Manifest V3</span>
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg> A böngésződben fut</span>
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg> Nincs függőség</span>
-      </div>
       <div class="stripes" aria-hidden="true"><i style="--c:#4d8ff5"></i><i style="--c:#b36cf6"></i><i style="--c:#fbbc04"></i><i style="--c:#34a853"></i></div>
-      <h1>Lásd, hol állsz minden közleménynél</h1>
-      <p class="lead">Chrome-bővítmény Google Scholar-profilokhoz. Minden közleménynél megjelöli a szerzői szerepedet és a publikációs hely CCF / CORE rangját, majd az eredményt egyetlen táblázatban összesíti: „4 CCF-A cikk, amelyben első szerző vagyok”.</p>
+      <h1>A szereped és a venue rangja minden cikknél</h1>
+      <p class="lead">Ingyenes Chrome-bővítmény Google Scholar-profilokhoz. Minden cikket a szerzői szereped szerint színez, megmutatja a venue CCF- és CORE-rangját, és egyetlen táblázatban összeszámolja a cikkeidet.</p>
       <p class="cta"><a class="btn" href="#install">Telepítés</a> <a class="btn ghost" href="https://github.com/boyugou/better-scholar">Megtekintés a GitHubon</a></p>
-      <p class="note">Ingyenes és nyílt forráskódú · Chrome és más Chromium-alapú böngészők · 30 nyelv</p>
+      <p class="note">Ingyenes és nyílt forráskódú · Chrome, Edge, Brave és más Chromium-alapú böngészők · 30 nyelv</p>
     </div>
   </section>
 
@@ -114,17 +109,69 @@
     <div class="wrap">
       <figure class="hero-shot">
         <div class="hero-frame" style="aspect-ratio: 1280 / 660">
-          <img src="../assets/hero.jpg" alt="Kitalált profil (valódi publikációs helyek, kitalált cikkek): szerep szerint színezett sorok, rangcímkék a publikációs helyek mellett, és az összegzés jobbra." width="1280" height="800" fetchpriority="high" decoding="async">
+          <img src="../assets/hero.jpg" alt="Kitalált profil valódi venue-kkel. Minden sor a szereped színét kapja, a rangcímkék jelzik a rangot, a jobb oldali összesítő panel pedig a cikkeket számolja." width="1280" height="800" fetchpriority="high" decoding="async">
         </div>
-        <figcaption>Kitalált profil (valódi publikációs helyek, kitalált cikkek): szerep szerint színezett sorok, rangcímkék a publikációs helyek mellett, és az összegzés jobbra.</figcaption>
+        <figcaption>Kitalált profil valódi venue-kkel. Minden sor a szereped színét kapja, a rangcímkék jelzik a rangot, a jobb oldali összesítő panel pedig a cikkeket számolja.</figcaption>
       </figure>
+    </div>
+  </section>
+
+  <section class="how" id="how">
+    <div class="wrap">
+      <h2>Így olvassa a cikket</h2>
+      <p class="note">Két kitalált cikk valódi venue-kban. Minden lépés megmutatja, mit talál bennük a bővítmény saját kódja.</p>
+      <div class="how-grid">
+        <ol class="how-steps">
+          <li><button type="button" data-step="1"><span class="n">1</span><b>Keresd meg a neved</b><span class="d">A profil nevét a szerzői soron találja meg. A szerzői sorban elfoglalt helyed határozza meg a szerepedet: első, társelső, második vagy utolsó szerző.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="2"><span class="n">2</span><b>Keresd meg a venue-t</b><span class="d">A venue-t a CCF- és CORE-listákon keresi, teljes nevével vagy rövidítésével. A biztos találat rangcímkét ad.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="3"><span class="n">3</span><b>Soha ne találgass</b><span class="d">Workshop, poszter vagy Findings-cikk nem a fő konferencia. Az a venue, amelyet a listák nem helyeznek el biztosan, nem kap címkét.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="4" aria-current="step"><span class="n">4</span><b>Számolj</b><span class="d">Az összesítő panel minden cikket egyszer számol a szereped és a rang szerint. Kattints egy számra, és lásd a hozzá tartozó cikkeket.</span><i class="bar" aria-hidden="true"></i></button></li>
+        </ol>
+        <div class="how-figure">
+        <div class="how-stage" aria-hidden="true">
+          <div class="sr-head" dir="ltr" lang="en"><span>Title</span><span>Cited by</span><span>Year</span></div>
+          <div class="sr on" data-from="1" dir="ltr" data-role="first" style="--rc:#1a73e8">
+            <div class="sr-text" lang="en"><div class="sr-t">Self-Supervised Depth from Casual Video</div><div class="sr-a"><span class="nm on" data-from="1" data-focus="1">A Example</span>, B Writer, C Writer, D Writer</div><div class="sr-v"><span class="vn on" data-from="2" data-focus="2">Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</span>, 2023 <span class="chip on" data-from="2" data-focus="2"><span class="k">CCF</span> <b>A</b></span></div></div>
+            <div class="sr-c">892</div><div class="sr-y">2023</div>
+            <div class="co-slot" dir="ltr"><p class="co" data-from="1" data-to="1"><span class="tag">Első</span> 1. hely (4 közül)</p><p class="co on" data-from="2"><b dir="ltr">CCF A · CORE A*</b> · Névvel egyeztetve: <span dir="ltr">IEEE/CVF Computer Vision and Pattern Recognition Conference</span></p></div>
+          </div>
+          <div class="sr on" data-from="1" dir="ltr" data-role="second" style="--rc:#f9ab00">
+            <div class="sr-text" lang="en"><div class="sr-t">Cheap Calibration for Retrieval-Augmented Models</div><div class="sr-a">B Writer, <span class="nm on" data-from="1" data-focus="1">A Example</span>, H Writer</div><div class="sr-v"><mark class="sec on" data-from="3" data-focus="3">Findings</mark> of the Association for Computational Linguistics: ACL 2022, 410-423, 2022</div></div>
+            <div class="sr-c">868</div><div class="sr-y">2022</div>
+            <div class="co-slot" dir="ltr"><p class="co" data-from="1" data-to="2"><span class="tag">Második</span> 2. hely (3 közül)</p><p class="co on" data-from="3"><b dir="ltr">Findings</b> · másodlagos kategória: nincs rang, nincs címke</p></div>
+          </div>
+          <div class="mini">
+            <div class="mini-h"><b>Cikkek szerep és rang szerint</b><span dir="ltr"><i class="on">CCF</i><i>CORE</i></span></div>
+            <table>
+              <thead><tr><th></th><th>A</th><th>B</th><th>C</th><th>–</th><th>Összes</th></tr></thead>
+              <tbody><tr><th><i style="--rc:#1a73e8"></i>Első</th><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td><td>·</td><td>·</td><td>·</td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td></tr><tr><th><i style="--rc:#f9ab00"></i>Második</th><td>·</td><td>·</td><td>·</td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <button type="button" class="how-play" hidden data-play="Lejátszás" data-pause="Szünet"><svg class="i-play" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg><svg class="i-pause" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z" fill="currentColor"/></svg><span>Lejátszás</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="wrap">
+      <h2>Mit még tud</h2>
+      <div class="grid">
+        <article style="--c:#4d8ff5"><h3>Díjak és előadások</h3><p>Címkék a legjobb cikkekhez, az idő próbáját kiállt díjakhoz, valamint az Oral, Spotlight vagy Highlight előadásokhoz. A szerzők saját szavaiból és a hivatalos díjoldalakról származnak.</p></article>
+        <article style="--c:#b36cf6"><h3>Teljes szerzőlisták</h3><p>A Scholar „…” jellel csonkítja a hosszú szerzőlistákat, ez pedig elrejtheti a szereped. Egy kattintás a teljes listákat a Scholar cikkoldalairól olvassa be.</p></article>
+        <article style="--c:#fbbc04"><h3>Duplikátumok egyesítve</h3><p>A Scholar néha kétszer is felsorolja ugyanazt a cikket. Egy kapcsoló egyetlen bejegyzéssé vonja össze őket, és összeadja a hivatkozásaikat.</p></article>
+        <article style="--c:#34a853"><h3>Saját elrendezés</h3><p>Az összesítő panel minden részének saját kapcsolója van. Válaszd ki a színeket, a részek sorrendjét és a saját elnevezéseidet.</p></article>
+        <article style="--c:#4d8ff5"><h3>Privát</h3><p>Nincs fiók, nincs elemzés, nincs követés. Minden munka a böngésződben történik, a ranglisták pedig a bővítményen belül vannak.</p></article>
+        <article style="--c:#b36cf6"><h3>30 nyelv</h3><p>A bővítmény a te nyelvedet beszéli. Emellett a Scholart magát is megnyithatja az általad választott nyelven.</p></article>
+      </div>
     </div>
   </section>
 
   <section class="try" id="try">
     <div class="wrap">
-      <h2>Próbáld ki a valódi beállítási oldalt</h2>
-      <p class="note">Ez a bővítmény saját beállítási oldala, amely itt fut élőben: kattints egy kapcsolóra, és az előnézet frissül. Vidd az egeret az előnézet fölé, hogy elrejts, áthelyezz vagy átnevezz egy részt, és kattints duplán egy részre, hogy a beállításához ugorj.</p>
+      <h2>Próbáld ki a beállítási oldalt</h2>
+      <p class="note">Ez a bővítmény valódi beállítási oldala. Változtass egy beállításon, és az előnézet követi. Vidd az egeret az előnézet egy részére, hogy elrejtsd, áthelyezd vagy átnevezd.</p>
       <div class="try-bar">
         <a class="skip" href="#after-try">Demó kihagyása</a>
         <p>A módosításaid csak ebben a böngészőben maradnak.</p>
@@ -138,15 +185,15 @@
 
   <section class="export-section" id="after-try">
     <div class="wrap">
-      <h2>Egykattintásos akadémiai exportálás</h2>
-      <p class="note">Beillesztésre kész publikációs listák önéletrajzokhoz, pályázati űrlapokhoz, LaTeX-dokumentumokhoz, MI-ügynökökhöz és táblázatkezelőkhöz.</p>
+      <h2>Másold ki a cikkeidet</h2>
+      <p class="note">Minden formátumhoz külön gomb: önéletrajzhoz, pályázati űrlaphoz, LaTeX-hez vagy táblázatkezelőhöz. Alul négy kitalált cikk valódi kimenete látható.</p>
       <div class="export-card">
-        <div class="export-tabs" role="tablist" aria-label="Egykattintásos akadémiai exportálás">
-          <button type="button" class="tab-btn active" role="tab" id="tab-bibtex" aria-selected="true" aria-controls="export-bibtex">BibTeX (LaTeX-Ready)</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-apa" aria-selected="false" aria-controls="export-apa" tabindex="-1">APA 7th Edition</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-json" aria-selected="false" aria-controls="export-json" tabindex="-1">Structured JSON</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-markdown" aria-selected="false" aria-controls="export-markdown" tabindex="-1">GitHub Markdown</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-csv" aria-selected="false" aria-controls="export-csv" tabindex="-1">RFC-4180 CSV</button>
+        <div class="export-tabs" role="tablist" aria-label="Másold ki a cikkeidet">
+          <button type="button" class="tab-btn active" role="tab" id="tab-bibtex" aria-selected="true" aria-controls="export-bibtex">BibTeX</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-apa" aria-selected="false" aria-controls="export-apa" tabindex="-1">APA</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-json" aria-selected="false" aria-controls="export-json" tabindex="-1">JSON</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-markdown" aria-selected="false" aria-controls="export-markdown" tabindex="-1">Markdown</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-csv" aria-selected="false" aria-controls="export-csv" tabindex="-1">CSV</button>
         </div>
         <div class="code-preview-wrap">
           <pre class="code-preview" role="tabpanel" id="export-bibtex" aria-labelledby="tab-bibtex" tabindex="0"><code>@inproceedings{author2025sample,
@@ -318,7 +365,7 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
 2024,Sample paper 2,&quot;B Writer, A Author, C Writer&quot;,Second author,NeurIPS 2024,A,A*,Best paper (NeurIPS 2024),133
 2024,Sample paper 3,&quot;A Author*, B Writer*, C Writer&quot;,Co-first author,CVPR 2024 (Highlight),A,A*,Highlight,27
 2023,Sample paper 4,&quot;B Writer, C Writer, D Writer, A Author&quot;,Last author,ACL 2023 (Spotlight),A,A*,Spotlight,215</code></pre>
-          <button type="button" class="copy-code-btn" data-label="Másolás a vágólapra" data-copied="Másolva!">Másolás a vágólapra</button>
+          <button type="button" class="copy-code-btn" data-label="Másolás" data-copied="Másolva">Másolás</button>
         </div>
       </div>
     </div>
@@ -326,69 +373,56 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
 
   <section class="operators-section">
     <div class="wrap">
-      <h2>Azonnali keresés és keresési operátorok</h2>
-      <p class="note">Nyomd meg a <kbd>/</kbd> billentyűt egy Scholar-profil bármely pontján, hogy egyszerre keress az egész listában.</p>
+      <h2>Keresés operátorokkal</h2>
+      <p class="note">Nyomd meg a <kbd>/</kbd> billentyűt egy Scholar-profilon, hogy az összes cikkében keress. Adj a szavaidhoz operátorokat, hogy szűrd a listát.</p>
       <div class="operators-grid">
         <div class="op-card">
-          <div class="op-header"><code>cites:&gt;100</code> <code>cites:&gt;=50</code> <code>cites:&lt;10</code></div>
-          <p class="op-title">Hivatkozási küszöbök</p>
-          <p class="op-desc">Tartsd meg azokat a cikkeket, amelyeknek az általad megadott számnál több vagy kevesebb hivatkozásuk van.</p>
+          <div class="op-header" dir="ltr"><code>cites:&gt;100</code> <code>cites:&gt;=50</code> <code>cites:&lt;10</code></div>
+          <h3 class="op-title">Hivatkozások</h3>
+          <p class="op-desc">Azok a cikkek, amelyeknek az általad megadott számnál több vagy kevesebb hivatkozásuk van.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>ccf:a</code> <code>ccf:b</code> <code>core:a*</code></div>
-          <p class="op-title">Publikációs helyek rangszintjei</p>
-          <p class="op-desc">Csak a CCF vagy CORE rangú konferenciák és folyóiratok cikkeit mutatja.</p>
+          <div class="op-header" dir="ltr"><code>ccf:a</code> <code>ccf:b</code> <code>core:a*</code></div>
+          <h3 class="op-title">Rang</h3>
+          <p class="op-desc">Cikkek olyan venue-kről, amelyek adott CCF- vagy CORE-rangúak.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>role:first</code> <code>role:last</code> <code>role:cofirst</code></div>
-          <p class="op-title">Szerzői szerepek</p>
-          <p class="op-desc">Szűrj első, társ-első, második vagy utolsó (vezető) szerző szerint.</p>
+          <div class="op-header" dir="ltr"><code>role:first</code> <code>role:last</code> <code>role:cofirst</code></div>
+          <h3 class="op-title">Szerepek</h3>
+          <p class="op-desc">Olyan cikkek, amelyekben első, társelső, második vagy utolsó szerző vagy.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>year:&gt;2020</code> <code>year:&gt;=2021</code> <code>year:&lt;=2015</code></div>
-          <p class="op-title">Megjelenési évek</p>
-          <p class="op-desc">A választott évek után, előtt vagy között, vagy az elmúlt öt évben megjelent cikkek.</p>
+          <div class="op-header" dir="ltr"><code>year:&gt;=2020</code> <code>year:2023</code> <code>age:&lt;5</code></div>
+          <h3 class="op-title">Év</h3>
+          <p class="op-desc">A választott év előtt, után vagy abban az évben megjelent cikkek, vagy az elmúlt néhány év cikkei.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>has:award</code> <code>has:talk</code></div>
-          <p class="op-title">Díjak és előadások</p>
-          <p class="op-desc">Keresd a Best Paper, Test of Time, Oral, Spotlight és Highlight cikkeket.</p>
+          <div class="op-header" dir="ltr"><code>has:award</code> <code>has:talk</code></div>
+          <h3 class="op-title">Díjak és előadások</h3>
+          <p class="op-desc">Olyan cikkek, amelyek Best Paper- vagy Test of Time-díjat kaptak, vagy Oral, Spotlight vagy Highlight előadásuk volt.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><kbd>Escape</kbd></div>
-          <p class="op-title">Visszaállítás egy billentyűvel</p>
-          <p class="op-desc">Egyszerre törli az összes keresést, táblázatkijelölést és szűrőt.</p>
+          <div class="op-header" dir="ltr"><kbd>Escape</kbd></div>
+          <h3 class="op-title">Összes törlése</h3>
+          <p class="op-desc">Egy billentyű törli a keresést, a kijelölt cellát és minden szűrőt.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="features">
-    <div class="wrap grid">
-      <article style="--c:#4d8ff5"><h3>Minden közlemény a szereped színével</h3><p>Az első, a társ-első, a második és az utolsó szerzői sorok saját színt kapnak, a szerzői sorban pedig a neved ki van emelve.</p></article>
-      <article style="--c:#b36cf6"><h3>CCF- és CORE-rangok</h3><p>A CCF 2026 és az ICORE 2026 rangja minden publikációs hely mellett megjelenik, azzal a szabállyal együtt, amely párosította. Ahová nem tudja besorolni, az jelöletlen marad: soha nem tippel.</p></article>
-      <article style="--c:#fbbc04"><h3>Szerep × rang táblázat</h3><p>Válassz ki egy cellát, hogy csak az ott található cikkek látszódjanak, és másold az összegzést vagy a listát önéletrajzhoz vagy pályázati űrlaphoz.</p></article>
-      <article style="--c:#34a853"><h3>Díjak és előadások</h3><p>Legjobb cikkek, az idő próbáját kiállt díjak, Oral, Spotlight és Highlight, a szerzők saját szavaiból és több mint 7000 cikk hivatalos díjoldalairól.</p></article>
-      <article style="--c:#4d8ff5"><h3>Csonka szerzőlisták, kiegészítve</h3><p>A Scholar elrejti a hosszú listák utolsó szerzőit. Egy kattintás a cikk oldaláról olvassa be őket, vagy a Semantic Scholarról, ha engedélyezed.</p></article>
-      <article style="--c:#b36cf6"><h3>Duplikátumok egyesítve</h3><p>Ha bekapcsolod, a kétszer szereplő közleményeket egyetlen bejegyzés váltja fel, a hivatkozások pedig összeadódnak.</p></article>
-      <article style="--c:#fbbc04"><h3>A te igényeid szerint</h3><p>Válaszd ki, mi látszódjon, állíts be saját színeket, és rejtsd el a Scholar oldalának azokat a részeit, amelyekre nincs szükséged.</p></article>
-      <article style="--c:#34a853"><h3>Tervezésből adódóan privát</h3><p>Nincs fiók, nincs elemzés, nincs követés. Minden a böngésződben számolódik, a ranglisták pedig a bővítményen belül vannak.</p></article>
     </div>
   </section>
 
   <section class="numbers">
     <div class="wrap">
       <h2>Számokban</h2>
-      <p class="note">Az oldal készítésekor a bővítmény kódjából és adataiból számoltuk ki ezeket a számokat, kézzel egyiket sem írtuk be. A minden javítással bővülő számok lefelé kerekítve szerepelnek.</p>
+      <p class="note">Az oldal készítésekor ezeket a számokat a bővítmény kódjából és adataiból számoljuk ki. A minden javítással bővülő számok lefelé kerekítve szerepelnek.</p>
       <div class="numbers-grid">
-        <div class="num" style="--c:#4d8ff5"><b dir="ltr">153</b><span>módosítható beállítás</span></div>
+        <div class="num" style="--c:#4d8ff5"><b dir="ltr">154</b><span>módosítható beállítás</span></div>
         <div class="num" style="--c:#b36cf6"><b dir="ltr">30</b><span>felületi nyelv</span></div>
-        <div class="num" style="--c:#fbbc04"><b dir="ltr">1178</b><span>rangsorolt publikációs hely a CCF- és CORE-listán</span></div>
-        <div class="num" style="--c:#34a853"><b dir="ltr">400+</b><span>Scholar által megjelenített publikációs hely neve, amely nincs a hivatalos listákon</span></div>
-        <div class="num" style="--c:#4d8ff5"><b dir="ltr">18</b><span>téves rang megjelenését megakadályozó ellenőrzés</span></div>
-        <div class="num" style="--c:#b36cf6"><b dir="ltr">5581</b><span>felismert díjnyertes cikk</span></div>
-        <div class="num" style="--c:#fbbc04"><b dir="ltr">22 744</b><span>valódi Scholar-bejegyzés, amelynek rangját kézzel ellenőrizték</span></div>
-        <div class="num" style="--c:#34a853"><b dir="ltr">500+</b><span>egységteszt, a valódi böngészőben futó végpontok közötti tesztcsomag mellett</span></div>
+        <div class="num" style="--c:#fbbc04"><b dir="ltr">1178</b><span>rangsorolt venue a CCF- és CORE-listán</span></div>
+        <div class="num" style="--c:#34a853"><b dir="ltr">400+</b><span>Scholar által megjelenített venue neve, amely nincs a listákon</span></div>
+        <div class="num" style="--c:#4d8ff5"><b dir="ltr">18</b><span>téves rangot megakadályozó ellenőrzés</span></div>
+        <div class="num" style="--c:#b36cf6"><b dir="ltr">5581</b><span>a bővítmény által ismert díjnyertes cikk</span></div>
+        <div class="num" style="--c:#fbbc04"><b dir="ltr">22 744</b><span>valódi Scholar-bejegyzés, amelynek eredményét kézzel ellenőrizték</span></div>
+        <div class="num" style="--c:#34a853"><b dir="ltr">500+</b><span>egységteszt és a valódi böngészőben futó végpontok közötti tesztcsomag</span></div>
       </div>
     </div>
   </section>
@@ -397,18 +431,22 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
     <div class="wrap">
       <h2>Telepítés</h2>
       <ol>
-        <li>Töltsd le a projektet a GitHubról (a zöld „Code” gomb, majd „Download ZIP”), és csomagold ki.</li>
+        <li>Töltsd le a projektet a GitHubról: kattints a zöld „Code” gombra, majd a „Download ZIP” gombra. Csomagold ki a fájlt.</li>
         <li>Nyisd meg a <code>chrome://extensions</code> oldalt, és kapcsold be a „Fejlesztői mód” (Developer mode) opciót.</li>
-        <li>Kattints a „Kicsomagolt bővítmény betöltése” (Load unpacked) gombra, és válaszd ki az src mappát. Ezután nyiss meg bármely Google Scholar-profilt.</li>
+        <li>Kattints a „Kicsomagolt bővítmény betöltése” (Load unpacked) gombra, és válaszd ki az src mappát. Ezután nyiss meg egy Google Scholar-profilt.</li>
       </ol>
-      <p class="note">Később megjelenhet a Chrome Webáruházban is. Az Edge, a Brave és más Chromium-alapú böngészők ugyanígy működnek.</p>
+      <p class="note">Az Edge, a Brave és más Chromium-alapú böngészők ugyanezeket a lépéseket követik. A Chrome Webáruházas változat később megjelenhet.</p>
     </div>
   </section>
 
   <section class="honest">
     <div class="wrap">
-      <h2>Őszinte a korlátairól</h2>
-      <p>A rangok a mai listák, nem a megjelenés idején érvényes rangok, és maga a CCF-lista is kimondja, hogy nem értékelés. A bővítmény soha nem tippel: amit nem tud besorolni, az fel van sorolva, nem megjelölve.</p>
+      <h2>Korlátok</h2>
+      <ul class="limits">
+        <li>A rangok a mai listákból származnak. A cikk megjelenési évében a venue-nek más rangja lehetett.</li>
+        <li>A CCF kijelenti, hogy listája nem alapja a tudományos értékelésnek.</li>
+        <li>Soha nem találgat. Az a venue, amelyet nem tud besorolni, nem kap címkét, az összesítő panel pedig felsorolja.</li>
+      </ul>
     </div>
   </section>
 </main>
@@ -416,9 +454,9 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
   <div class="wrap">
     <span>Nyílt forráskódú, Apache License 2.0</span>
     <a href="../privacy/">Adatvédelem</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/ROADMAP.md">Roadmap</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/AGENTS.md">Agent API</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/SECURITY.md">Security</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/ROADMAP.md">Ütemterv</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/AGENTS.md">MI-ügynököknek</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/SECURITY.md">Biztonság</a>
     <a href="https://github.com/boyugou/better-scholar/issues">Probléma jelentése</a>
     <a href="https://github.com/boyugou/better-scholar">GitHub</a>
   </div>

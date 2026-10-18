@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Better Scholar：Google Scholar で見る著者の役割と掲載先のランク</title>
-<meta name="description" content="無料の Chrome 拡張機能です。Google Scholar のプロフィールに載る論文ごとに、あなたの役割（筆頭著者、共同筆頭著者、第二著者、最終著者）と掲載先の CCF / CORE ランクを表示し、1 つの表にまとめます。">
+<meta name="description" content="無料の Chrome 拡張機能です。Google Scholar のプロフィールに載る論文ごとに、あなたの著者としての役割と掲載先の CCF / CORE ランクを表示し、論文数を 1 つの表にまとめます。">
 <link rel="canonical" href="https://boyugou.github.io/better-scholar/ja/">
 <link rel="alternate" hreflang="en" href="https://boyugou.github.io/better-scholar/en/">
 <link rel="alternate" hreflang="zh-CN" href="https://boyugou.github.io/better-scholar/zh-CN/">
@@ -41,13 +41,13 @@
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Better Scholar：Google Scholar で見る著者の役割と掲載先のランク">
-<meta property="og:description" content="無料の Chrome 拡張機能です。Google Scholar のプロフィールに載る論文ごとに、あなたの役割（筆頭著者、共同筆頭著者、第二著者、最終著者）と掲載先の CCF / CORE ランクを表示し、1 つの表にまとめます。">
+<meta property="og:description" content="無料の Chrome 拡張機能です。Google Scholar のプロフィールに載る論文ごとに、あなたの著者としての役割と掲載先の CCF / CORE ランクを表示し、論文数を 1 つの表にまとめます。">
 <meta property="og:url" content="https://boyugou.github.io/better-scholar/ja/">
 <meta property="og:image" content="https://boyugou.github.io/better-scholar/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="../assets/styles.css">
 <meta name="theme-color" content="#161d33">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Better Scholar","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Chromium browsers","description":"無料の Chrome 拡張機能です。Google Scholar のプロフィールに載る論文ごとに、あなたの役割（筆頭著者、共同筆頭著者、第二著者、最終著者）と掲載先の CCF / CORE ランクを表示し、1 つの表にまとめます。","inLanguage":"ja","url":"https://boyugou.github.io/better-scholar/ja/","image":"https://boyugou.github.io/better-scholar/assets/og.png","license":"https://www.apache.org/licenses/LICENSE-2.0","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Better Scholar","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Chromium browsers","description":"無料の Chrome 拡張機能です。Google Scholar のプロフィールに載る論文ごとに、あなたの著者としての役割と掲載先の CCF / CORE ランクを表示し、論文数を 1 つの表にまとめます。","inLanguage":"ja","url":"https://boyugou.github.io/better-scholar/ja/","image":"https://boyugou.github.io/better-scholar/assets/og.png","license":"https://www.apache.org/licenses/LICENSE-2.0","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 </head>
 <body>
 <header class="top">
@@ -97,16 +97,11 @@
 <main>
   <section class="hero">
     <div class="wrap">
-      <div class="hero-badges">
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg> Manifest V3</span>
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg> ブラウザ内で動作</span>
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg> 依存関係なし</span>
-      </div>
       <div class="stripes" aria-hidden="true"><i style="--c:#4d8ff5"></i><i style="--c:#b36cf6"></i><i style="--c:#fbbc04"></i><i style="--c:#34a853"></i></div>
-      <h1>どの論文でも自分の立ち位置がわかる</h1>
-      <p class="lead">Google Scholar のプロフィール向けの Chrome 拡張機能です。各論文に著者としての役割と掲載先の CCF / CORE ランクを表示し、その結果を 1 つの表にまとめます：「CCF-A の筆頭著者論文 4 本」。</p>
+      <h1>どの論文でも、あなたの役割と掲載先のランク</h1>
+      <p class="lead">Google Scholar のプロフィール向けの、無料の Chrome 拡張機能です。各論文を著者としての役割で色分けし、掲載先の CCF と CORE のランクを表示して、論文数を 1 つの表で集計します。</p>
       <p class="cta"><a class="btn" href="#install">インストール</a> <a class="btn ghost" href="https://github.com/boyugou/better-scholar">GitHub で見る</a></p>
-      <p class="note">無料・オープンソース · Chrome および他の Chromium 系ブラウザ対応 · 30 言語に対応</p>
+      <p class="note">無料・オープンソース · Chrome、Edge、Brave などの Chromium 系ブラウザ対応 · 30 言語に対応</p>
     </div>
   </section>
 
@@ -114,17 +109,69 @@
     <div class="wrap">
       <figure class="hero-shot">
         <div class="hero-frame" style="aspect-ratio: 1280 / 660">
-          <img src="../assets/hero.jpg" alt="架空のプロフィール（実在の掲載先、架空の論文）：役割ごとに色分けされた行、掲載先ごとのランクのラベル、右側の集計。" width="1280" height="800" fetchpriority="high" decoding="async">
+          <img src="../assets/hero.jpg" alt="架空のプロフィール（実在の掲載先、架空の論文）：各行には、あなたの役割の色が付き、ラベルがランクを示し、右側のパネルで論文数を数えます。" width="1280" height="800" fetchpriority="high" decoding="async">
         </div>
-        <figcaption>架空のプロフィール（実在の掲載先、架空の論文）：役割ごとに色分けされた行、掲載先ごとのランクのラベル、右側の集計。</figcaption>
+        <figcaption>架空のプロフィール（実在の掲載先、架空の論文）：各行には、あなたの役割の色が付き、ラベルがランクを示し、右側のパネルで論文数を数えます。</figcaption>
       </figure>
+    </div>
+  </section>
+
+  <section class="how" id="how">
+    <div class="wrap">
+      <h2>拡張機能が論文を読み取る仕組み</h2>
+      <p class="note">実在の掲載先を持つ、架空の論文 2 本です。各ステップでは、拡張機能のコードが論文の中から見つけたものを示します。</p>
+      <div class="how-grid">
+        <ol class="how-steps">
+          <li><button type="button" data-step="1"><span class="n">1</span><b>自分の名前を見つける</b><span class="d">著者の行の中から、プロフィールの名前を見つけます。行の中での位置で役割が決まります：筆頭著者、共同筆頭著者、2番目の著者、最終著者。</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="2"><span class="n">2</span><b>掲載先を調べる</b><span class="d">掲載先を、正式名称または略称で、CCF と CORE のリストから探します。確実に一致すると、ランクのラベルが付きます。</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="3"><span class="n">3</span><b>推測はしない</b><span class="d">ワークショップ、ポスター、Findings の論文は本会議ではありません。リストに確実に載っていない掲載先には、ラベルが付きません。</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="4" aria-current="step"><span class="n">4</span><b>数える</b><span class="d">パネルは、あなたの役割とランクで、各論文を 1 回だけ数えます。数字をクリックすると、その論文が表示されます。</span><i class="bar" aria-hidden="true"></i></button></li>
+        </ol>
+        <div class="how-figure">
+        <div class="how-stage" aria-hidden="true">
+          <div class="sr-head" dir="ltr" lang="en"><span>Title</span><span>Cited by</span><span>Year</span></div>
+          <div class="sr on" data-from="1" dir="ltr" data-role="first" style="--rc:#1a73e8">
+            <div class="sr-text" lang="en"><div class="sr-t">Self-Supervised Depth from Casual Video</div><div class="sr-a"><span class="nm on" data-from="1" data-focus="1">A Example</span>, B Writer, C Writer, D Writer</div><div class="sr-v"><span class="vn on" data-from="2" data-focus="2">Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</span>, 2023 <span class="chip on" data-from="2" data-focus="2"><span class="k">CCF</span> <b>A</b></span></div></div>
+            <div class="sr-c">892</div><div class="sr-y">2023</div>
+            <div class="co-slot" dir="ltr"><p class="co" data-from="1" data-to="1"><span class="tag">筆頭</span> 4 人中 1 番目</p><p class="co on" data-from="2"><b dir="ltr">CCF A · CORE A*</b> · 名称で一致: <span dir="ltr">IEEE/CVF Computer Vision and Pattern Recognition Conference</span></p></div>
+          </div>
+          <div class="sr on" data-from="1" dir="ltr" data-role="second" style="--rc:#f9ab00">
+            <div class="sr-text" lang="en"><div class="sr-t">Cheap Calibration for Retrieval-Augmented Models</div><div class="sr-a">B Writer, <span class="nm on" data-from="1" data-focus="1">A Example</span>, H Writer</div><div class="sr-v"><mark class="sec on" data-from="3" data-focus="3">Findings</mark> of the Association for Computational Linguistics: ACL 2022, 410-423, 2022</div></div>
+            <div class="sr-c">868</div><div class="sr-y">2022</div>
+            <div class="co-slot" dir="ltr"><p class="co" data-from="1" data-to="2"><span class="tag">2番目</span> 3 人中 2 番目</p><p class="co on" data-from="3"><b dir="ltr">Findings</b> · 副次トラック：ランクなし、ラベルなし</p></div>
+          </div>
+          <div class="mini">
+            <div class="mini-h"><b>著者順・ランク別の論文数</b><span dir="ltr"><i class="on">CCF</i><i>CORE</i></span></div>
+            <table>
+              <thead><tr><th></th><th>A</th><th>B</th><th>C</th><th>–</th><th>合計</th></tr></thead>
+              <tbody><tr><th><i style="--rc:#1a73e8"></i>筆頭</th><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td><td>·</td><td>·</td><td>·</td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td></tr><tr><th><i style="--rc:#f9ab00"></i>2番目</th><td>·</td><td>·</td><td>·</td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <button type="button" class="how-play" hidden data-play="再生" data-pause="一時停止"><svg class="i-play" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg><svg class="i-pause" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z" fill="currentColor"/></svg><span>再生</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="wrap">
+      <h2>その他の機能</h2>
+      <div class="grid">
+        <article style="--c:#4d8ff5"><h3>受賞と発表形式</h3><p>ベストペーパー、時の試練賞、および Oral・Spotlight・Highlight の発表に付くラベルです。そのデータは、著者自身の記述と公式の受賞ページから得ています。</p></article>
+        <article style="--c:#b36cf6"><h3>完全な著者リスト</h3><p>Scholar は長い著者リストを「…」で省略するため、あなたの役割が隠れることがあります。ワンクリックで、Scholar の論文ページから完全なリストを読み取れます。</p></article>
+        <article style="--c:#fbbc04"><h3>重複エントリーの統合</h3><p>Scholar は同じ論文を 2 回載せることがあります。スイッチをオンにすると、それらが 1 件にまとめられ、被引用数が合算されます。</p></article>
+        <article style="--c:#34a853"><h3>自分好みのレイアウト</h3><p>パネルのどの部分にも、それぞれ専用のスイッチがあります。色、各部分の並び順、それぞれの名前を、自分で選べます。</p></article>
+        <article style="--c:#4d8ff5"><h3>プライバシー重視</h3><p>アカウント不要、アクセス解析なし、トラッキングなし。すべての処理はブラウザ内で行われ、ランクの一覧は拡張機能に同梱されています。</p></article>
+        <article style="--c:#b36cf6"><h3>30 言語に対応</h3><p>拡張機能はあなたの言語に対応しています。また、選んだ言語で Scholar 自体を開くこともできます。</p></article>
+      </div>
     </div>
   </section>
 
   <section class="try" id="try">
     <div class="wrap">
-      <h2>実際の設定ページを試す</h2>
-      <p class="note">拡張機能そのものの設定ページがここで動いており、スイッチを切り替えるとプレビューにもすぐ反映されます。プレビューにカーソルを合わせると、部分を非表示にしたり、移動したり、名前を変更したりでき、部分をダブルクリックするとその設定に移動します。</p>
+      <h2>設定ページを試す</h2>
+      <p class="note">これは拡張機能の実際の設定ページです。設定を変えると、プレビューも連動して変わります。プレビューの部分にカーソルを合わせると、その部分を非表示にしたり、移動したり、名前を変えたりできます。</p>
       <div class="try-bar">
         <a class="skip" href="#after-try">デモをスキップ</a>
         <p>変更は、このブラウザ内にのみ保存されます。</p>
@@ -138,15 +185,15 @@
 
   <section class="export-section" id="after-try">
     <div class="wrap">
-      <h2>ワンクリック学術エクスポート</h2>
-      <p class="note">履歴書、助成金申請書、LaTeX 文書、AI エージェント、スプレッドシートにそのまま貼り付けられる業績リスト。</p>
+      <h2>論文をコピー</h2>
+      <p class="note">形式ごとにボタンが 1 つあります。履歴書、助成金申請書、LaTeX、スプレッドシートに使えます。以下は架空の論文 4 本の実際の出力です。</p>
       <div class="export-card">
-        <div class="export-tabs" role="tablist" aria-label="ワンクリック学術エクスポート">
-          <button type="button" class="tab-btn active" role="tab" id="tab-bibtex" aria-selected="true" aria-controls="export-bibtex">BibTeX (LaTeX-Ready)</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-apa" aria-selected="false" aria-controls="export-apa" tabindex="-1">APA 7th Edition</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-json" aria-selected="false" aria-controls="export-json" tabindex="-1">Structured JSON</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-markdown" aria-selected="false" aria-controls="export-markdown" tabindex="-1">GitHub Markdown</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-csv" aria-selected="false" aria-controls="export-csv" tabindex="-1">RFC-4180 CSV</button>
+        <div class="export-tabs" role="tablist" aria-label="論文をコピー">
+          <button type="button" class="tab-btn active" role="tab" id="tab-bibtex" aria-selected="true" aria-controls="export-bibtex">BibTeX</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-apa" aria-selected="false" aria-controls="export-apa" tabindex="-1">APA</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-json" aria-selected="false" aria-controls="export-json" tabindex="-1">JSON</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-markdown" aria-selected="false" aria-controls="export-markdown" tabindex="-1">Markdown</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-csv" aria-selected="false" aria-controls="export-csv" tabindex="-1">CSV</button>
         </div>
         <div class="code-preview-wrap">
           <pre class="code-preview" role="tabpanel" id="export-bibtex" aria-labelledby="tab-bibtex" tabindex="0"><code>@inproceedings{author2025sample,
@@ -318,7 +365,7 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
 2024,Sample paper 2,&quot;B Writer, A Author, C Writer&quot;,Second author,NeurIPS 2024,A,A*,Best paper (NeurIPS 2024),133
 2024,Sample paper 3,&quot;A Author*, B Writer*, C Writer&quot;,Co-first author,CVPR 2024 (Highlight),A,A*,Highlight,27
 2023,Sample paper 4,&quot;B Writer, C Writer, D Writer, A Author&quot;,Last author,ACL 2023 (Spotlight),A,A*,Spotlight,215</code></pre>
-          <button type="button" class="copy-code-btn" data-label="クリップボードにコピー" data-copied="コピーしました！">クリップボードにコピー</button>
+          <button type="button" class="copy-code-btn" data-label="コピー" data-copied="コピーしました">コピー</button>
         </div>
       </div>
     </div>
@@ -326,69 +373,56 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
 
   <section class="operators-section">
     <div class="wrap">
-      <h2>インスタント検索とクエリ演算子</h2>
-      <p class="note">Scholar のプロフィール上ならどこでも <kbd>/</kbd> を押すと、リスト全体を一度に検索できます。</p>
+      <h2>演算子を使った検索</h2>
+      <p class="note">プロフィール上で <kbd>/</kbd> を押すと、すべての論文を検索できます。検索語に演算子を加えると、リストを絞り込めます。</p>
       <div class="operators-grid">
         <div class="op-card">
-          <div class="op-header"><code>cites:&gt;100</code> <code>cites:&gt;=50</code> <code>cites:&lt;10</code></div>
-          <p class="op-title">被引用数のしきい値</p>
-          <p class="op-desc">入力した数より被引用数が多い、または少ない論文だけを残します。</p>
+          <div class="op-header" dir="ltr"><code>cites:&gt;100</code> <code>cites:&gt;=50</code> <code>cites:&lt;10</code></div>
+          <h3 class="op-title">被引用数</h3>
+          <p class="op-desc">ある数より被引用数が多い、または少ない論文。</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>ccf:a</code> <code>ccf:b</code> <code>core:a*</code></div>
-          <p class="op-title">掲載先のランク区分</p>
-          <p class="op-desc">CCF または CORE のランクが付いた会議・ジャーナルの論文だけを表示します。</p>
+          <div class="op-header" dir="ltr"><code>ccf:a</code> <code>ccf:b</code> <code>core:a*</code></div>
+          <h3 class="op-title">ランク</h3>
+          <p class="op-desc">指定した CCF または CORE のランクが付いた掲載先の論文。</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>role:first</code> <code>role:last</code> <code>role:cofirst</code></div>
-          <p class="op-title">著者の役割</p>
-          <p class="op-desc">筆頭著者、共同筆頭著者、第二著者、最終著者（シニア）で絞り込みます。</p>
+          <div class="op-header" dir="ltr"><code>role:first</code> <code>role:last</code> <code>role:cofirst</code></div>
+          <h3 class="op-title">役割</h3>
+          <p class="op-desc">あなたが筆頭著者、共同筆頭著者、2番目の著者、または最終著者である論文。</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>year:&gt;2020</code> <code>year:&gt;=2021</code> <code>year:&lt;=2015</code></div>
-          <p class="op-title">発表年</p>
-          <p class="op-desc">選んだ年より後、前、またはその範囲内、もしくは直近5年間に発表された論文。</p>
+          <div class="op-header" dir="ltr"><code>year:&gt;=2020</code> <code>year:2023</code> <code>age:&lt;5</code></div>
+          <h3 class="op-title">年</h3>
+          <p class="op-desc">ある年より前、後、またはその年に発表された論文、もしくは直近数年の論文。</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>has:award</code> <code>has:talk</code></div>
-          <p class="op-title">受賞と発表</p>
-          <p class="op-desc">ベストペーパー、時の試練賞、Oral、Spotlight、Highlight の論文を探せます。</p>
+          <div class="op-header" dir="ltr"><code>has:award</code> <code>has:talk</code></div>
+          <h3 class="op-title">受賞と発表形式</h3>
+          <p class="op-desc">ベストペーパー賞または時の試練賞を受けた論文、および Oral・Spotlight・Highlight の発表がある論文。</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><kbd>Escape</kbd></div>
-          <p class="op-title">ワンキーでリセット</p>
-          <p class="op-desc">検索、表の選択、フィルターをすべて一度にクリアします。</p>
+          <div class="op-header" dir="ltr"><kbd>Escape</kbd></div>
+          <h3 class="op-title">すべてクリア</h3>
+          <p class="op-desc">1 つのキーで、検索、選択中のセル、すべてのフィルターをクリアします。</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="features">
-    <div class="wrap grid">
-      <article style="--c:#4d8ff5"><h3>役割ごとに色分けされた全論文</h3><p>筆頭著者、共同筆頭著者、第二著者、最終著者の行にそれぞれ色が付き、著者欄ではあなたの名前が目立つように示されます。</p></article>
-      <article style="--c:#b36cf6"><h3>CCF と CORE のランク</h3><p>各掲載先の横に CCF 2026 と ICORE 2026 のランクを、どの規則で一致したかとともに表示します。判定できない掲載先には印を付けず、推測もしません。</p></article>
-      <article style="--c:#fbbc04"><h3>役割 × ランクの表</h3><p>セルを選ぶと該当する論文だけを一覧にできます。集計や一覧をコピーして、業績書や研究助成の申請書にお使いいただけます。</p></article>
-      <article style="--c:#34a853"><h3>受賞と発表</h3><p>ベストペーパー、時の試練賞、Oral・Spotlight・Highlight を、著者自身の記述と、7,000 件を超える論文の公式受賞ページから集めています。</p></article>
-      <article style="--c:#4d8ff5"><h3>途切れた著者リストを補完</h3><p>Scholar は長い著者リストの後ろの著者を省略します。ワンクリックで論文ページから読み取り、許可すれば Semantic Scholar からも補完します。</p></article>
-      <article style="--c:#b36cf6"><h3>重複エントリーの統合</h3><p>オンにすると、同じ論文が 2 回載っているエントリーが 1 件にまとめられ、被引用数は合算されます。</p></article>
-      <article style="--c:#fbbc04"><h3>好みに合わせて調整</h3><p>表示する項目を選び、色を自分好みに変え、Scholar のページで不要な部分を非表示にできます。</p></article>
-      <article style="--c:#34a853"><h3>設計段階からプライバシー重視</h3><p>アカウント不要、アクセス解析なし、トラッキングなし。すべての計算はブラウザ内で行われ、ランクの一覧は拡張機能に同梱されています。</p></article>
     </div>
   </section>
 
   <section class="numbers">
     <div class="wrap">
       <h2>数字で見る</h2>
-      <p class="note">この数字は、このページの作成時に拡張機能のコードとデータから数えたもので、手入力したものは一つもありません。修正のたびに増える数字は、切り捨てて表示しています。</p>
+      <p class="note">この数字は、ページの作成時に拡張機能のコードとデータから数えたものです。修正のたびに増える数字は、切り捨てて表示しています。</p>
       <div class="numbers-grid">
-        <div class="num" style="--c:#4d8ff5"><b dir="ltr">153</b><span>変更できる設定</span></div>
+        <div class="num" style="--c:#4d8ff5"><b dir="ltr">154</b><span>変更できる設定</span></div>
         <div class="num" style="--c:#b36cf6"><b dir="ltr">30</b><span>表示言語</span></div>
         <div class="num" style="--c:#fbbc04"><b dir="ltr">1,178</b><span>CCF と CORE のリストでランク付けされた掲載先</span></div>
-        <div class="num" style="--c:#34a853"><b dir="ltr">400+</b><span>Scholar に表示される掲載先名で、公式リストにないもの</span></div>
-        <div class="num" style="--c:#4d8ff5"><b dir="ltr">18</b><span>誤ったランクの表示を防ぐチェック</span></div>
-        <div class="num" style="--c:#b36cf6"><b dir="ltr">5,581</b><span>拡張機能が認識した受賞論文</span></div>
-        <div class="num" style="--c:#fbbc04"><b dir="ltr">22,744</b><span>Scholar の実際の掲載先表記、人が一件ずつランクを確認したもの</span></div>
-        <div class="num" style="--c:#34a853"><b dir="ltr">500+</b><span>単体テスト（ほかに実ブラウザで動く E2E テスト一式）</span></div>
+        <div class="num" style="--c:#34a853"><b dir="ltr">400+</b><span>Scholar に表示されるが、リストにはない掲載先名</span></div>
+        <div class="num" style="--c:#4d8ff5"><b dir="ltr">18</b><span>誤ったランクを防ぐチェック</span></div>
+        <div class="num" style="--c:#b36cf6"><b dir="ltr">5,581</b><span>拡張機能が把握している受賞論文</span></div>
+        <div class="num" style="--c:#fbbc04"><b dir="ltr">22,744</b><span>Scholar の実際の掲載先表記で、一件ずつ結果を人が確認したもの</span></div>
+        <div class="num" style="--c:#34a853"><b dir="ltr">500+</b><span>単体テストと、実ブラウザで動く E2E テスト一式</span></div>
       </div>
     </div>
   </section>
@@ -397,18 +431,22 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
     <div class="wrap">
       <h2>インストール</h2>
       <ol>
-        <li>GitHub からプロジェクトをダウンロードし（緑色の「&lt;&gt; コード」ボタンから「ZIP をダウンロード」）、解凍します。</li>
+        <li>GitHub からプロジェクトをダウンロードします：緑色の「&lt;&gt; コード」ボタンをクリックし、「ZIP をダウンロード」を選びます。ファイルを解凍します。</li>
         <li><code>chrome://extensions</code> を開き、「デベロッパー モード」をオンにします。</li>
-        <li>「パッケージ化されていない拡張機能を読み込む」をクリックし、src フォルダーを選びます。その後、任意の Google Scholar プロフィールを開きます。</li>
+        <li>「パッケージ化されていない拡張機能を読み込む」をクリックし、src フォルダーを選びます。その後、Google Scholar のプロフィールを一つ開きます。</li>
       </ol>
-      <p class="note">Chrome ウェブストアへの掲載も予定しています。Edge、Brave などの他の Chromium 系ブラウザでも同じ手順で使えます。</p>
+      <p class="note">Edge、Brave などの他の Chromium 系ブラウザも、同じ手順で使えます。Chrome ウェブストア版は後日提供されるかもしれません。</p>
     </div>
   </section>
 
   <section class="honest">
     <div class="wrap">
-      <h2>限界について</h2>
-      <p>ランクは発表時点のものではなく現在のリストに基づいており、CCF のリスト自体も評価を目的としたものではないと明記しています。拡張機能は掲載先を推測しません。判定できないものは印を付けず、一覧で示します。</p>
+      <h2>限界</h2>
+      <ul class="limits">
+        <li>ランクは現在のリストに基づきます。論文の発表年には、掲載先のランクが今と違っていた可能性があります。</li>
+        <li>CCF は、そのリストは学術評価の根拠にはならないと明言しています。</li>
+        <li>推測はしません。ランクを特定できない掲載先にはラベルを付けず、パネルに一覧で表示します。</li>
+      </ul>
     </div>
   </section>
 </main>
@@ -416,9 +454,9 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
   <div class="wrap">
     <span>オープンソース、Apache License 2.0</span>
     <a href="../privacy/">プライバシー</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/ROADMAP.md">Roadmap</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/AGENTS.md">Agent API</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/SECURITY.md">Security</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/ROADMAP.md">ロードマップ</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/AGENTS.md">AI エージェント向け</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/SECURITY.md">セキュリティ</a>
     <a href="https://github.com/boyugou/better-scholar/issues">問題を報告</a>
     <a href="https://github.com/boyugou/better-scholar">GitHub</a>
   </div>

@@ -3,7 +3,7 @@
     "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "Îmbunătățiți Google Scholar: roluri de autor, clasamente CCF și CORE, premii de conferințe, grafice anuale și căutare instantanee."
+    "message": "Pe profilurile Google Scholar: rolul de autor al titularului și rangul CCF și CORE al venue-ului fiecărei lucrări, într-un tabel."
   },
   "extShortName": {
     "message": "Better Scholar"
@@ -51,7 +51,7 @@
     "message": "Finalistă la cea mai bună lucrare"
   },
   "marksHint": {
-    "message": "Din cuvintele autorilor înșiși din titlul și textul venue-ului fiecărei lucrări de pe Scholar (neverificate) și dintr-o listă inclusă de lucrări premiate la conferințe importante."
+    "message": "Din două surse: cuvintele pe care autorii înșiși le scriu în titlul sau în rândul venue-ului fiecărei lucrări de pe Scholar (neverificate) și o listă inclusă de lucrări premiate la conferințe importante."
   },
   "marksAsWritten": {
     "message": "din cuvintele autorilor sau din lista de premii"
@@ -169,7 +169,7 @@
     "message": "Deschide pagina fiecărei lucrări pe Scholar (aproximativ una pe secundă) pentru a citi lista completă de autori."
   },
   "resolveHintSemantic": {
-    "message": "Extensia cere mai întâi de la Semantic Scholar lista de autori a fiecărei lucrări (Semantic Scholar primește doar titlul), apoi deschide pe Scholar paginile lucrărilor rămase (aproximativ una pe secundă)."
+    "message": "Extensia cere mai întâi de la Semantic Scholar lista de autori a fiecărei lucrări (Semantic Scholar primește doar titlul). Apoi deschide pe Scholar paginile celorlalte lucrări, aproximativ una pe secundă."
   },
   "resolving": {
     "message": "Se citesc listele de autori… $N1$/$N2$",
@@ -464,7 +464,7 @@
     "message": "Readuci toate aceste setări la valorile implicite?"
   },
   "optStorage": {
-    "message": "Setările sunt păstrate în browser și se sincronizează cu profilul tău Chrome. Extensia citește paginile Scholar pe care le deschizi și, atunci când apeși „Citește lista completă”, paginile lucrărilor cu lista de autori trunchiată; titlurile lucrărilor sunt trimise către Semantic Scholar doar dacă activezi asta."
+    "message": "Setările rămân în browser și se sincronizează cu profilul tău Chrome. Extensia citește paginile Scholar pe care le deschizi. Când apeși „Citește lista completă”, citește și paginile lucrărilor cu lista de autori trunchiată. Titlurile lucrărilor sunt trimise către Semantic Scholar doar dacă activezi asta."
   },
   "optSample": {
     "message": "Lucrare de exemplu"
@@ -476,7 +476,7 @@
     "message": "Încarcă automat toate lucrările"
   },
   "optAutoLoadHint": {
-    "message": "Scholar arată la început doar primele lucrări. Aceasta apasă în locul tău propriul buton „Afișează mai multe”, aproximativ o dată pe secundă, până se încarcă toată lista, și se oprește dacă Scholar nu mai răspunde. Dezactivat: panoul oferă în schimb „Încarcă tot”."
+    "message": "Scholar arată doar primele lucrări ale unui profil. Aceasta apasă în locul tău propriul buton „Afișează mai multe” de pe Scholar, aproximativ o dată pe secundă, până se încarcă toată lista. Se oprește dacă Scholar nu mai răspunde. Dezactivat: panoul arată „Încarcă tot” în schimb."
   },
   "loadStalled": {
     "message": "Scholar nu a mai trimis lucrări ($N1$ încărcate). Încearcă din nou „Încarcă tot” peste puțin timp.",
@@ -565,7 +565,7 @@
     "message": "Îmbină duplicatele"
   },
   "optMergeLabelHint": {
-    "message": "Intrările cu același titlu (ignorând majusculele, diacriticele și punctuația) și același prim autor devin una singură: cea mai citată rămâne și arată citările tuturor. Panoul o numără o singură dată."
+    "message": "Intrările cu același titlu și același prim autor devin una singură (nu contează majusculele, diacriticele și punctuația). Cea mai citată rămâne și arată citările tuturor. Panoul o numără o singură dată."
   },
   "mergedTip": {
     "message": "Îmbinat din $N1$ intrări: citările tuturor",
@@ -657,7 +657,7 @@
     "message": "Citește mai întâi listele de autori din Semantic Scholar"
   },
   "optSemanticLabelHint": {
-    "message": "Când apeși „Citește lista completă”, extensia cere mai întâi de la Semantic Scholar lista completă de autori a fiecărei lucrări (Semantic Scholar primește doar titlul lucrării și nimic altceva), iar pagina Scholar se deschide doar pentru ce nu știe acesta. Mai puține cereri către Scholar, deci și mai puține CAPTCHA."
+    "message": "Când apeși „Citește lista completă”, extensia cere mai întâi de la Semantic Scholar lista completă de autori a fiecărei lucrări. Semantic Scholar primește doar titlul lucrării și nimic altceva. Pagina Scholar se deschide doar pentru lucrările pe care Semantic Scholar nu le cunoaște. Mai puține cereri către Scholar înseamnă mai puține CAPTCHA."
   },
   "yearsTitle": {
     "message": "Lucrări evidențiate pe an"
@@ -858,7 +858,7 @@
     "message": "Agenți AI"
   },
   "optAgentHint": {
-    "message": "Copiază un ghid care enumeră fiecare setare, valorile ei și alegerile tale actuale. Lipește-l în asistentul tău AI, spune ce vrei, apoi lipește răspunsul în editorul de configurare de mai jos și apasă Aplică configurația."
+    "message": "Copiază un ghid care enumeră fiecare setare, valorile ei și alegerile tale actuale. Dă-l asistentului tău AI, împreună cu ce vrei. Apoi lipește răspunsul în editorul de configurare de mai jos și apasă Aplică configurația."
   },
   "optAgentCopy": {
     "message": "Copiază ghidul pentru AI"
@@ -972,6 +972,12 @@
   },
   "optFiltersSearch": {
     "message": "Câmpul de căutare"
+  },
+  "optFiltersKey": {
+    "message": "Tasta “/” sare la căutare"
+  },
+  "optFiltersKeyHint": {
+    "message": "În panoul de pe o pagină de profil și pe această pagină, pentru propria ei căutare. Oprit: tasta nu face nimic."
   },
   "optOrderPills": {
     "message": "Ordinea filtrelor rapide"
@@ -1120,7 +1126,7 @@
     "message": "Verifică un venue"
   },
   "optVenueHint": {
-    "message": "Lipește un venue așa cum îl afișează Scholar (linia gri de sub o lucrare), ca să vezi ce spun despre el listele CCF și CORE și după ce regulă. Un venue pe care listele nu-l pot plasa nu primește rang: nu se ghicește nimic."
+    "message": "Lipește un venue așa cum îl afișează Scholar: linia gri de sub o lucrare. Vezi ce spun despre el listele CCF și CORE și după ce regulă. Un venue pe care listele nu-l pot plasa nu primește rang. Nu se ghicește nimic."
   },
   "optVenuePlaceholder": {
     "message": "de ex. Proceedings of the IEEE conference on computer vision and pattern recognition"
@@ -1129,7 +1135,7 @@
     "message": "Fără rang. Listele nu plasează acest text cu certitudine, așa că nu primește nicio etichetă."
   },
   "optVenueSecondary": {
-    "message": "Cuvântul „$N1$” marchează o categorie secundară (workshop, poster, lucrare scurtă …): un venue nu primește rang decât dacă numele lui conține acest cuvânt.",
+    "message": "Cuvântul „$N1$” marchează o categorie secundară, cum ar fi un workshop, un poster sau o lucrare scurtă. Un venue nu primește rang decât dacă numele lui conține acest cuvânt.",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -1149,7 +1155,7 @@
     "message": "Cifrele urmează filtrele"
   },
   "optFiltersFollowHint": {
-    "message": "Tabelul, numărătorile pentru premii și prezentări și numărătoarea rezumatului copiat numără doar lucrările rămase după filtre (un interval de ani, o căutare, un filtru rapid, un venue); celula sau rândul selectat nu reduce niciun număr. Dezactivat: numără mereu tot profilul."
+    "message": "Tabelul, numărătorile pentru premii și prezentări și numărătoarea rezumatului copiat numără doar lucrările rămase după filtre: un interval de ani, o căutare, un filtru rapid sau un venue. Celula sau rândul selectat nu modifică niciun număr. Dezactivat: numără mereu tot profilul."
   },
   "optPillRecent": {
     "message": "Ultimii 5 ani"
@@ -1182,7 +1188,7 @@
     "message": "Adaugă linkul profilului și data în rezumatul copiat"
   },
   "optCopySourceHint": {
-    "message": "Rezumatul copiat și tabelul copiat primesc un rând cu linkul profilului și data (Source: …), ca numerele să poată fi arhivate sau trimise mai departe. O listă care nu este încărcată integral o spune acolo, indiferent cum este setat acest comutator."
+    "message": "Rezumatul copiat și tabelul copiat se termină cu un rând care arată linkul profilului și data (Source: …), ca să poți arhiva sau trimite mai departe numerele. O listă care nu este încărcată integral o spune mereu acolo."
   },
   "unrankedPreprints": {
     "message": "Preprinturi"
@@ -1197,7 +1203,7 @@
     "message": "Când locul de publicare are rang în ambele liste"
   },
   "optPreferHint": {
-    "message": "O singură etichetă în loc de două: lista aleasă, iar cealaltă doar acolo unde aceasta nu are rang pentru locul de publicare. Când se trece cu mouse-ul peste etichetă, apare și celălalt rang."
+    "message": "O singură etichetă în loc de două: eticheta listei pe care o alegi. Eticheta celeilalte liste apare doar acolo unde lista aleasă nu are rang pentru locul de publicare. Când se trece cu mouse-ul peste etichetă, apare și celălalt rang."
   },
   "optPreferCcf": {
     "message": "CCF întâi"

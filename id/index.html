@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Better Scholar: peran penulis dan peringkat tempat terbit Anda di Google Scholar</title>
-<meta name="description" content="Ekstensi Chrome gratis yang menandai peran Anda (penulis pertama, penulis pertama bersama, penulis kedua, penulis terakhir) dan peringkat CCF / CORE konferensi atau jurnal tempat setiap makalah pada profil Google Scholar terbit, lalu merangkumnya dalam satu tabel.">
+<title>Better Scholar: peran penulis dan peringkat venue Anda di Google Scholar</title>
+<meta name="description" content="Ekstensi Chrome gratis untuk profil Google Scholar. Ekstensi ini menampilkan peran penulis Anda dan peringkat CCF / CORE venue setiap makalah, lalu menghitung makalah Anda dalam satu tabel.">
 <link rel="canonical" href="https://boyugou.github.io/better-scholar/id/">
 <link rel="alternate" hreflang="en" href="https://boyugou.github.io/better-scholar/en/">
 <link rel="alternate" hreflang="zh-CN" href="https://boyugou.github.io/better-scholar/zh-CN/">
@@ -40,14 +40,14 @@
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Better Scholar: peran penulis dan peringkat tempat terbit Anda di Google Scholar">
-<meta property="og:description" content="Ekstensi Chrome gratis yang menandai peran Anda (penulis pertama, penulis pertama bersama, penulis kedua, penulis terakhir) dan peringkat CCF / CORE konferensi atau jurnal tempat setiap makalah pada profil Google Scholar terbit, lalu merangkumnya dalam satu tabel.">
+<meta property="og:title" content="Better Scholar: peran penulis dan peringkat venue Anda di Google Scholar">
+<meta property="og:description" content="Ekstensi Chrome gratis untuk profil Google Scholar. Ekstensi ini menampilkan peran penulis Anda dan peringkat CCF / CORE venue setiap makalah, lalu menghitung makalah Anda dalam satu tabel.">
 <meta property="og:url" content="https://boyugou.github.io/better-scholar/id/">
 <meta property="og:image" content="https://boyugou.github.io/better-scholar/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="../assets/styles.css">
 <meta name="theme-color" content="#161d33">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Better Scholar","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Chromium browsers","description":"Ekstensi Chrome gratis yang menandai peran Anda (penulis pertama, penulis pertama bersama, penulis kedua, penulis terakhir) dan peringkat CCF / CORE konferensi atau jurnal tempat setiap makalah pada profil Google Scholar terbit, lalu merangkumnya dalam satu tabel.","inLanguage":"id","url":"https://boyugou.github.io/better-scholar/id/","image":"https://boyugou.github.io/better-scholar/assets/og.png","license":"https://www.apache.org/licenses/LICENSE-2.0","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Better Scholar","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Chromium browsers","description":"Ekstensi Chrome gratis untuk profil Google Scholar. Ekstensi ini menampilkan peran penulis Anda dan peringkat CCF / CORE venue setiap makalah, lalu menghitung makalah Anda dalam satu tabel.","inLanguage":"id","url":"https://boyugou.github.io/better-scholar/id/","image":"https://boyugou.github.io/better-scholar/assets/og.png","license":"https://www.apache.org/licenses/LICENSE-2.0","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 </head>
 <body>
 <header class="top">
@@ -97,16 +97,11 @@
 <main>
   <section class="hero">
     <div class="wrap">
-      <div class="hero-badges">
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg> Manifest V3</span>
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg> Berjalan di peramban Anda</span>
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg> Tanpa dependensi</span>
-      </div>
       <div class="stripes" aria-hidden="true"><i style="--c:#4d8ff5"></i><i style="--c:#b36cf6"></i><i style="--c:#fbbc04"></i><i style="--c:#34a853"></i></div>
-      <h1>Lihat posisi Anda di setiap makalah</h1>
-      <p class="lead">Ekstensi Chrome untuk profil Google Scholar. Ekstensi ini menandai peran Anda sebagai penulis dan peringkat CCF / CORE tempat terbit pada setiap makalah, lalu merangkum hasilnya dalam satu tabel: “4 makalah CCF-A sebagai penulis pertama”.</p>
+      <h1>Peran Anda dan peringkat venue di setiap makalah</h1>
+      <p class="lead">Ekstensi Chrome gratis untuk profil Google Scholar. Ekstensi ini mewarnai setiap makalah sesuai peran Anda sebagai penulis, menampilkan peringkat CCF dan CORE venue-nya, lalu menghitung makalah Anda dalam satu tabel.</p>
       <p class="cta"><a class="btn" href="#install">Pasang</a> <a class="btn ghost" href="https://github.com/boyugou/better-scholar">Lihat di GitHub</a></p>
-      <p class="note">Gratis dan open source · Chrome dan peramban Chromium lainnya · 30 bahasa</p>
+      <p class="note">Gratis dan open source · Chrome, Edge, Brave, dan peramban Chromium lainnya · 30 bahasa</p>
     </div>
   </section>
 
@@ -114,17 +109,69 @@
     <div class="wrap">
       <figure class="hero-shot">
         <div class="hero-frame" style="aspect-ratio: 1280 / 660">
-          <img src="../assets/hero.jpg" alt="Profil rekaan (tempat terbit sungguhan, makalah fiktif): baris diwarnai menurut peran, lencana peringkat di samping setiap tempat terbit, dan ringkasan di sebelah kanan." width="1280" height="800" fetchpriority="high" decoding="async">
+          <img src="../assets/hero.jpg" alt="Profil rekaan dengan venue sungguhan. Setiap baris berwarna sesuai peran Anda, label menampilkan peringkat, dan panel ringkasan di sebelah kanan menghitung makalah." width="1280" height="800" fetchpriority="high" decoding="async">
         </div>
-        <figcaption>Profil rekaan (tempat terbit sungguhan, makalah fiktif): baris diwarnai menurut peran, lencana peringkat di samping setiap tempat terbit, dan ringkasan di sebelah kanan.</figcaption>
+        <figcaption>Profil rekaan dengan venue sungguhan. Setiap baris berwarna sesuai peran Anda, label menampilkan peringkat, dan panel ringkasan di sebelah kanan menghitung makalah.</figcaption>
       </figure>
+    </div>
+  </section>
+
+  <section class="how" id="how">
+    <div class="wrap">
+      <h2>Cara ekstensi membaca sebuah makalah</h2>
+      <p class="note">Dua makalah rekaan di tempat terbit sungguhan. Setiap langkah menunjukkan apa yang ditemukan kode ekstensi itu sendiri di dalamnya.</p>
+      <div class="how-grid">
+        <ol class="how-steps">
+          <li><button type="button" data-step="1"><span class="n">1</span><b>Temukan nama Anda</b><span class="d">Ekstensi mencari nama profil di baris penulis. Posisi Anda dalam baris itu menentukan peran Anda: penulis pertama, penulis ko-pertama, penulis kedua, atau penulis terakhir.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="2"><span class="n">2</span><b>Cari tempat terbit</b><span class="d">Ekstensi mencari tempat terbit dalam daftar CCF dan CORE, berdasarkan nama lengkap atau akronimnya. Kecocokan pasti memberi label peringkat.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="3"><span class="n">3</span><b>Tidak pernah menebak</b><span class="d">Workshop, poster, atau makalah Findings bukan konferensi utama. Tempat terbit yang tidak dapat ditempatkan dengan pasti oleh daftar tidak mendapat label.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="4" aria-current="step"><span class="n">4</span><b>Hitung</b><span class="d">Panel ringkasan menghitung setiap makalah satu kali, menurut peran Anda dan peringkat. Klik angka untuk melihat makalahnya.</span><i class="bar" aria-hidden="true"></i></button></li>
+        </ol>
+        <div class="how-figure">
+        <div class="how-stage" aria-hidden="true">
+          <div class="sr-head" dir="ltr" lang="en"><span>Title</span><span>Cited by</span><span>Year</span></div>
+          <div class="sr on" data-from="1" dir="ltr" data-role="first" style="--rc:#1a73e8">
+            <div class="sr-text" lang="en"><div class="sr-t">Self-Supervised Depth from Casual Video</div><div class="sr-a"><span class="nm on" data-from="1" data-focus="1">A Example</span>, B Writer, C Writer, D Writer</div><div class="sr-v"><span class="vn on" data-from="2" data-focus="2">Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</span>, 2023 <span class="chip on" data-from="2" data-focus="2"><span class="k">CCF</span> <b>A</b></span></div></div>
+            <div class="sr-c">892</div><div class="sr-y">2023</div>
+            <div class="co-slot" dir="ltr"><p class="co" data-from="1" data-to="1"><span class="tag">Pertama</span> posisi 1 dari 4</p><p class="co on" data-from="2"><b dir="ltr">CCF A · CORE A*</b> · Cocok menurut nama: <span dir="ltr">IEEE/CVF Computer Vision and Pattern Recognition Conference</span></p></div>
+          </div>
+          <div class="sr on" data-from="1" dir="ltr" data-role="second" style="--rc:#f9ab00">
+            <div class="sr-text" lang="en"><div class="sr-t">Cheap Calibration for Retrieval-Augmented Models</div><div class="sr-a">B Writer, <span class="nm on" data-from="1" data-focus="1">A Example</span>, H Writer</div><div class="sr-v"><mark class="sec on" data-from="3" data-focus="3">Findings</mark> of the Association for Computational Linguistics: ACL 2022, 410-423, 2022</div></div>
+            <div class="sr-c">868</div><div class="sr-y">2022</div>
+            <div class="co-slot" dir="ltr"><p class="co" data-from="1" data-to="2"><span class="tag">Kedua</span> posisi 2 dari 3</p><p class="co on" data-from="3"><b dir="ltr">Findings</b> · jalur sekunder: tanpa peringkat, tanpa label</p></div>
+          </div>
+          <div class="mini">
+            <div class="mini-h"><b>Makalah menurut peran dan peringkat</b><span dir="ltr"><i class="on">CCF</i><i>CORE</i></span></div>
+            <table>
+              <thead><tr><th></th><th>A</th><th>B</th><th>C</th><th>–</th><th>Semua</th></tr></thead>
+              <tbody><tr><th><i style="--rc:#1a73e8"></i>Pertama</th><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td><td>·</td><td>·</td><td>·</td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td></tr><tr><th><i style="--rc:#f9ab00"></i>Kedua</th><td>·</td><td>·</td><td>·</td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <button type="button" class="how-play" hidden data-play="Putar" data-pause="Jeda"><svg class="i-play" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg><svg class="i-pause" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z" fill="currentColor"/></svg><span>Putar</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="wrap">
+      <h2>Fitur lainnya</h2>
+      <div class="grid">
+        <article style="--c:#4d8ff5"><h3>Penghargaan dan presentasi</h3><p>Label untuk makalah terbaik, penghargaan Test of Time, dan presentasi Oral, Spotlight, atau Highlight. Label ini berasal dari kata-kata penulis sendiri dan dari halaman penghargaan resmi.</p></article>
+        <article style="--c:#b36cf6"><h3>Daftar penulis lengkap</h3><p>Scholar memotong daftar penulis yang panjang dengan “…”, dan ini dapat menyembunyikan peran Anda. Satu klik membaca daftar lengkap dari halaman makalah di Scholar.</p></article>
+        <article style="--c:#fbbc04"><h3>Duplikat digabung</h3><p>Scholar terkadang mencantumkan satu makalah dua kali. Sakelar akan menjadikan keduanya satu entri dan menjumlahkan sitasinya.</p></article>
+        <article style="--c:#34a853"><h3>Tata letak sesuai selera Anda</h3><p>Setiap bagian panel memiliki sakelarnya sendiri. Pilih warna, urutan bagian, dan nama Anda sendiri untuk bagian-bagian itu.</p></article>
+        <article style="--c:#4d8ff5"><h3>Privat</h3><p>Tanpa akun, tanpa analitik, tanpa pelacakan. Semua pekerjaan berlangsung di peramban Anda, dan daftar peringkat ada di dalam ekstensi.</p></article>
+        <article style="--c:#b36cf6"><h3>30 bahasa</h3><p>Ekstensi menggunakan bahasa Anda. Ekstensi juga dapat membuka Scholar sendiri dalam bahasa yang Anda pilih.</p></article>
+      </div>
     </div>
   </section>
 
   <section class="try" id="try">
     <div class="wrap">
-      <h2>Coba halaman pengaturan yang sebenarnya</h2>
-      <p class="note">Ini halaman pengaturan ekstensi itu sendiri, yang berjalan langsung di sini: geser sakelar, dan pratinjau ikut berubah. Arahkan kursor ke pratinjau untuk menyembunyikan, memindahkan, atau mengganti nama bagian, dan klik ganda pada bagian untuk melompat ke pengaturannya.</p>
+      <h2>Coba halaman pengaturan</h2>
+      <p class="note">Ini halaman pengaturan ekstensi yang sebenarnya. Ubah satu pengaturan, dan pratinjau ikut berubah. Arahkan kursor ke bagian pratinjau untuk menyembunyikan, memindahkan, atau mengganti namanya.</p>
       <div class="try-bar">
         <a class="skip" href="#after-try">Lewati demo</a>
         <p>Perubahan Anda hanya tersimpan di peramban ini.</p>
@@ -138,15 +185,15 @@
 
   <section class="export-section" id="after-try">
     <div class="wrap">
-      <h2>Ekspor Akademik 1 Klik</h2>
-      <p class="note">Daftar publikasi siap tempel untuk CV, formulir hibah, dokumen LaTeX, agen AI, dan spreadsheet.</p>
+      <h2>Salin makalah Anda</h2>
+      <p class="note">Satu tombol untuk setiap format: untuk CV, formulir hibah, LaTeX, atau spreadsheet. Di bawah ini adalah keluaran asli untuk empat makalah rekaan.</p>
       <div class="export-card">
-        <div class="export-tabs" role="tablist" aria-label="Ekspor Akademik 1 Klik">
-          <button type="button" class="tab-btn active" role="tab" id="tab-bibtex" aria-selected="true" aria-controls="export-bibtex">BibTeX (LaTeX-Ready)</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-apa" aria-selected="false" aria-controls="export-apa" tabindex="-1">APA 7th Edition</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-json" aria-selected="false" aria-controls="export-json" tabindex="-1">Structured JSON</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-markdown" aria-selected="false" aria-controls="export-markdown" tabindex="-1">GitHub Markdown</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-csv" aria-selected="false" aria-controls="export-csv" tabindex="-1">RFC-4180 CSV</button>
+        <div class="export-tabs" role="tablist" aria-label="Salin makalah Anda">
+          <button type="button" class="tab-btn active" role="tab" id="tab-bibtex" aria-selected="true" aria-controls="export-bibtex">BibTeX</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-apa" aria-selected="false" aria-controls="export-apa" tabindex="-1">APA</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-json" aria-selected="false" aria-controls="export-json" tabindex="-1">JSON</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-markdown" aria-selected="false" aria-controls="export-markdown" tabindex="-1">Markdown</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-csv" aria-selected="false" aria-controls="export-csv" tabindex="-1">CSV</button>
         </div>
         <div class="code-preview-wrap">
           <pre class="code-preview" role="tabpanel" id="export-bibtex" aria-labelledby="tab-bibtex" tabindex="0"><code>@inproceedings{author2025sample,
@@ -318,7 +365,7 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
 2024,Sample paper 2,&quot;B Writer, A Author, C Writer&quot;,Second author,NeurIPS 2024,A,A*,Best paper (NeurIPS 2024),133
 2024,Sample paper 3,&quot;A Author*, B Writer*, C Writer&quot;,Co-first author,CVPR 2024 (Highlight),A,A*,Highlight,27
 2023,Sample paper 4,&quot;B Writer, C Writer, D Writer, A Author&quot;,Last author,ACL 2023 (Spotlight),A,A*,Spotlight,215</code></pre>
-          <button type="button" class="copy-code-btn" data-label="Salin ke papan klip" data-copied="Tersalin!">Salin ke papan klip</button>
+          <button type="button" class="copy-code-btn" data-label="Salin" data-copied="Tersalin">Salin</button>
         </div>
       </div>
     </div>
@@ -326,69 +373,56 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
 
   <section class="operators-section">
     <div class="wrap">
-      <h2>Pencarian instan dan operator kueri</h2>
-      <p class="note">Tekan <kbd>/</kbd> di mana saja pada profil Scholar untuk mencari seluruh daftar sekaligus.</p>
+      <h2>Pencarian dengan operator kueri</h2>
+      <p class="note">Tekan <kbd>/</kbd> pada profil untuk mencari semua makalahnya. Tambahkan operator ke kata-kata Anda untuk menyaring daftar.</p>
       <div class="operators-grid">
         <div class="op-card">
-          <div class="op-header"><code>cites:&gt;100</code> <code>cites:&gt;=50</code> <code>cites:&lt;10</code></div>
-          <p class="op-title">Ambang sitasi</p>
-          <p class="op-desc">Pertahankan makalah dengan sitasi lebih banyak atau lebih sedikit dari angka apa pun yang Anda ketik.</p>
+          <div class="op-header" dir="ltr"><code>cites:&gt;100</code> <code>cites:&gt;=50</code> <code>cites:&lt;10</code></div>
+          <h3 class="op-title">Sitasi</h3>
+          <p class="op-desc">Makalah dengan sitasi lebih banyak atau lebih sedikit dari suatu angka.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>ccf:a</code> <code>ccf:b</code> <code>core:a*</code></div>
-          <p class="op-title">Tingkat peringkat tempat terbit</p>
-          <p class="op-desc">Tampilkan hanya makalah di konferensi dan jurnal berperingkat CCF atau CORE.</p>
+          <div class="op-header" dir="ltr"><code>ccf:a</code> <code>ccf:b</code> <code>core:a*</code></div>
+          <h3 class="op-title">Peringkat</h3>
+          <p class="op-desc">Makalah di venue dengan peringkat CCF atau CORE tertentu.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>role:first</code> <code>role:last</code> <code>role:cofirst</code></div>
-          <p class="op-title">Peran kepenulisan</p>
-          <p class="op-desc">Saring berdasarkan penulis pertama, penulis pertama bersama, penulis kedua, atau penulis terakhir (senior).</p>
+          <div class="op-header" dir="ltr"><code>role:first</code> <code>role:last</code> <code>role:cofirst</code></div>
+          <h3 class="op-title">Peran</h3>
+          <p class="op-desc">Makalah tempat Anda menjadi penulis pertama, penulis ko-pertama, penulis kedua, atau penulis terakhir.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>year:&gt;2020</code> <code>year:&gt;=2021</code> <code>year:&lt;=2015</code></div>
-          <p class="op-title">Tahun terbit</p>
-          <p class="op-desc">Makalah yang terbit setelah, sebelum, atau dalam rentang tahun yang Anda pilih, atau dalam lima tahun terakhir.</p>
+          <div class="op-header" dir="ltr"><code>year:&gt;=2020</code> <code>year:2023</code> <code>age:&lt;5</code></div>
+          <h3 class="op-title">Tahun</h3>
+          <p class="op-desc">Makalah yang terbit sebelum, sesudah, atau pada tahun tertentu, atau dalam beberapa tahun terakhir.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>has:award</code> <code>has:talk</code></div>
-          <p class="op-title">Penghargaan dan presentasi</p>
-          <p class="op-desc">Temukan makalah Best Paper, Test of Time, Oral, Spotlight, dan Highlight.</p>
+          <div class="op-header" dir="ltr"><code>has:award</code> <code>has:talk</code></div>
+          <h3 class="op-title">Penghargaan dan presentasi</h3>
+          <p class="op-desc">Makalah yang meraih penghargaan Best Paper atau Test of Time, atau memiliki presentasi Oral, Spotlight, atau Highlight.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><kbd>Escape</kbd></div>
-          <p class="op-title">Reset satu tombol</p>
-          <p class="op-desc">Menghapus semua pencarian, pilihan tabel, dan filter sekaligus.</p>
+          <div class="op-header" dir="ltr"><kbd>Escape</kbd></div>
+          <h3 class="op-title">Hapus semua</h3>
+          <p class="op-desc">Satu tombol menghapus pencarian, sel yang dipilih, dan setiap filter.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="features">
-    <div class="wrap grid">
-      <article style="--c:#4d8ff5"><h3>Setiap makalah, diwarnai sesuai peran Anda</h3><p>Baris penulis pertama, penulis pertama bersama, penulis kedua, dan penulis terakhir masing-masing mendapat warna, dan nama Anda ditandai di daftar penulis.</p></article>
-      <article style="--c:#b36cf6"><h3>Peringkat CCF dan CORE</h3><p>Peringkat CCF 2026 dan ICORE 2026 tampil di samping setiap tempat terbit, beserta aturan yang mencocokkannya. Tempat terbit yang tidak bisa dikenali tetap tanpa tanda: tidak pernah menebak.</p></article>
-      <article style="--c:#fbbc04"><h3>Tabel peran × peringkat</h3><p>Pilih satu sel untuk menampilkan makalah di dalamnya saja, dan salin ringkasan atau daftarnya untuk CV atau formulir hibah.</p></article>
-      <article style="--c:#34a853"><h3>Penghargaan dan presentasi</h3><p>Makalah terbaik, penghargaan Test of Time, Oral, Spotlight, dan Highlight, dari kata-kata penulis sendiri dan dari halaman penghargaan resmi lebih dari 7.000 makalah.</p></article>
-      <article style="--c:#4d8ff5"><h3>Daftar penulis yang terpotong, dilengkapi</h3><p>Scholar menyembunyikan penulis terakhir pada daftar yang panjang. Satu klik membacanya dari halaman makalah, atau dari Semantic Scholar jika Anda mengizinkannya.</p></article>
-      <article style="--c:#b36cf6"><h3>Duplikat digabung</h3><p>Jika diaktifkan, entri yang mencantumkan satu makalah dua kali akan menjadi satu, dengan jumlah sitasinya dijumlahkan.</p></article>
-      <article style="--c:#fbbc04"><h3>Sesuai selera Anda</h3><p>Pilih apa yang ditampilkan, tentukan warna sendiri, dan sembunyikan bagian halaman Scholar yang tidak Anda perlukan.</p></article>
-      <article style="--c:#34a853"><h3>Privat sejak dari desainnya</h3><p>Tanpa akun, tanpa analitik, tanpa pelacakan. Semua dihitung di peramban Anda, dan daftar peringkat sudah termuat di dalam ekstensi.</p></article>
     </div>
   </section>
 
   <section class="numbers">
     <div class="wrap">
       <h2>Dalam angka</h2>
-      <p class="note">Angka-angka ini dihitung dari kode dan data ekstensi saat halaman ini dibuat, dan tidak satu pun diketik manual. Angka yang terus bertambah seiring setiap perbaikan dibulatkan ke bawah.</p>
+      <p class="note">Angka-angka ini dihitung dari kode dan data ekstensi saat halaman ini dibuat. Angka yang terus bertambah seiring setiap perbaikan dibulatkan ke bawah.</p>
       <div class="numbers-grid">
-        <div class="num" style="--c:#4d8ff5"><b dir="ltr">153</b><span>pengaturan yang dapat diubah</span></div>
+        <div class="num" style="--c:#4d8ff5"><b dir="ltr">154</b><span>pengaturan yang dapat diubah</span></div>
         <div class="num" style="--c:#b36cf6"><b dir="ltr">30</b><span>bahasa antarmuka</span></div>
-        <div class="num" style="--c:#fbbc04"><b dir="ltr">1.178</b><span>tempat terbit berperingkat dalam daftar CCF dan CORE</span></div>
-        <div class="num" style="--c:#34a853"><b dir="ltr">400+</b><span>nama tempat terbit yang ditampilkan Scholar dan tidak ada dalam daftar resmi</span></div>
-        <div class="num" style="--c:#4d8ff5"><b dir="ltr">18</b><span>pemeriksaan yang mencegah peringkat keliru ditampilkan</span></div>
-        <div class="num" style="--c:#b36cf6"><b dir="ltr">5.581</b><span>makalah peraih penghargaan yang dikenali</span></div>
-        <div class="num" style="--c:#fbbc04"><b dir="ltr">22.744</b><span>baris tempat terbit nyata dari Scholar, setiap peringkatnya diperiksa secara manual</span></div>
-        <div class="num" style="--c:#34a853"><b dir="ltr">500+</b><span>uji unit, selain rangkaian uji end-to-end di peramban sungguhan</span></div>
+        <div class="num" style="--c:#fbbc04"><b dir="ltr">1.178</b><span>venue berperingkat dalam daftar CCF dan CORE</span></div>
+        <div class="num" style="--c:#34a853"><b dir="ltr">400+</b><span>nama venue yang ditampilkan Scholar tetapi tidak ada dalam daftar</span></div>
+        <div class="num" style="--c:#4d8ff5"><b dir="ltr">18</b><span>pemeriksaan yang mencegah peringkat keliru</span></div>
+        <div class="num" style="--c:#b36cf6"><b dir="ltr">5.581</b><span>makalah peraih penghargaan yang diketahui ekstensi</span></div>
+        <div class="num" style="--c:#fbbc04"><b dir="ltr">22.744</b><span>baris venue nyata dari Scholar, setiap hasilnya diperiksa secara manual</span></div>
+        <div class="num" style="--c:#34a853"><b dir="ltr">500+</b><span>uji unit, dan rangkaian uji end-to-end di peramban sungguhan</span></div>
       </div>
     </div>
   </section>
@@ -397,18 +431,22 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
     <div class="wrap">
       <h2>Pasang</h2>
       <ol>
-        <li>Unduh proyek dari GitHub (tombol hijau “Code”, lalu “Download ZIP”) dan ekstrak berkasnya.</li>
+        <li>Unduh proyek dari GitHub: klik tombol hijau “Code”, lalu “Download ZIP”. Ekstrak berkasnya.</li>
         <li>Buka <code>chrome://extensions</code> dan aktifkan “Mode developer” (Developer mode).</li>
-        <li>Klik “Muat yang belum dikemas” (Load unpacked) dan pilih folder src. Lalu buka profil Google Scholar mana pun.</li>
+        <li>Klik “Muat yang belum dikemas” (Load unpacked) dan pilih folder src. Lalu buka sebuah profil Google Scholar.</li>
       </ol>
-      <p class="note">Daftar di Chrome Web Store mungkin menyusul. Edge, Brave, dan peramban Chromium lainnya berfungsi dengan cara yang sama.</p>
+      <p class="note">Edge, Brave, dan peramban Chromium lainnya menggunakan langkah yang sama. Versi untuk Chrome Web Store mungkin menyusul nanti.</p>
     </div>
   </section>
 
   <section class="honest">
     <div class="wrap">
-      <h2>Jujur tentang batasannya</h2>
-      <p>Peringkat adalah daftar saat ini, bukan peringkat pada saat terbit, dan daftar CCF sendiri menyatakan bahwa itu bukan penilaian. Ekstensi ini tidak pernah menebak tempat terbit: yang tidak bisa dikenali akan dicantumkan, bukan diberi tanda.</p>
+      <h2>Batasan</h2>
+      <ul class="limits">
+        <li>Peringkat berasal dari daftar saat ini, bukan peringkat saat publikasi. Pada tahun makalah itu terbit, tempat terbitnya mungkin memiliki peringkat yang berbeda.</li>
+        <li>CCF menyatakan daftarnya bukan dasar penilaian akademik.</li>
+        <li>Ekstensi tidak pernah menebak. Tempat terbit yang tidak dapat ditempatkan tidak mendapat label, dan panel tetap mencantumkannya.</li>
+      </ul>
     </div>
   </section>
 </main>
@@ -416,9 +454,9 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
   <div class="wrap">
     <span>Open source, Apache License 2.0</span>
     <a href="../privacy/">Privasi</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/ROADMAP.md">Roadmap</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/AGENTS.md">Agent API</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/SECURITY.md">Security</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/ROADMAP.md">Peta jalan</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/AGENTS.md">Untuk agen AI</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/SECURITY.md">Keamanan</a>
     <a href="https://github.com/boyugou/better-scholar/issues">Laporkan masalah</a>
     <a href="https://github.com/boyugou/better-scholar">GitHub</a>
   </div>

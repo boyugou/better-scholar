@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Better Scholar: vaše role v autorství a ranky publikačních míst na Google Scholar</title>
-<meta name="description" content="Bezplatné rozšíření pro Chrome, které u každé publikace v profilu Google Scholar označí vaši roli (první, spoluprvní, druhý nebo poslední autor) a rank časopisu nebo konference podle CCF / CORE a vše shrne do jedné tabulky.">
+<title>Better Scholar: vaše role v autorství a rank publikačního místa na Google Scholar</title>
+<meta name="description" content="Bezplatné rozšíření pro Chrome pro profily Google Scholar. U každé práce zobrazí vaši autorskou roli a rank publikačního místa podle CCF / CORE a v jedné tabulce spočítá vaše práce.">
 <link rel="canonical" href="https://boyugou.github.io/better-scholar/cs/">
 <link rel="alternate" hreflang="en" href="https://boyugou.github.io/better-scholar/en/">
 <link rel="alternate" hreflang="zh-CN" href="https://boyugou.github.io/better-scholar/zh-CN/">
@@ -40,14 +40,14 @@
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Better Scholar: vaše role v autorství a ranky publikačních míst na Google Scholar">
-<meta property="og:description" content="Bezplatné rozšíření pro Chrome, které u každé publikace v profilu Google Scholar označí vaši roli (první, spoluprvní, druhý nebo poslední autor) a rank časopisu nebo konference podle CCF / CORE a vše shrne do jedné tabulky.">
+<meta property="og:title" content="Better Scholar: vaše role v autorství a rank publikačního místa na Google Scholar">
+<meta property="og:description" content="Bezplatné rozšíření pro Chrome pro profily Google Scholar. U každé práce zobrazí vaši autorskou roli a rank publikačního místa podle CCF / CORE a v jedné tabulce spočítá vaše práce.">
 <meta property="og:url" content="https://boyugou.github.io/better-scholar/cs/">
 <meta property="og:image" content="https://boyugou.github.io/better-scholar/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="../assets/styles.css">
 <meta name="theme-color" content="#161d33">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Better Scholar","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Chromium browsers","description":"Bezplatné rozšíření pro Chrome, které u každé publikace v profilu Google Scholar označí vaši roli (první, spoluprvní, druhý nebo poslední autor) a rank časopisu nebo konference podle CCF / CORE a vše shrne do jedné tabulky.","inLanguage":"cs","url":"https://boyugou.github.io/better-scholar/cs/","image":"https://boyugou.github.io/better-scholar/assets/og.png","license":"https://www.apache.org/licenses/LICENSE-2.0","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Better Scholar","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Chromium browsers","description":"Bezplatné rozšíření pro Chrome pro profily Google Scholar. U každé práce zobrazí vaši autorskou roli a rank publikačního místa podle CCF / CORE a v jedné tabulce spočítá vaše práce.","inLanguage":"cs","url":"https://boyugou.github.io/better-scholar/cs/","image":"https://boyugou.github.io/better-scholar/assets/og.png","license":"https://www.apache.org/licenses/LICENSE-2.0","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 </head>
 <body>
 <header class="top">
@@ -97,16 +97,11 @@
 <main>
   <section class="hero">
     <div class="wrap">
-      <div class="hero-badges">
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg> Manifest V3</span>
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg> Běží ve vašem prohlížeči</span>
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg> Žádné závislosti</span>
-      </div>
       <div class="stripes" aria-hidden="true"><i style="--c:#4d8ff5"></i><i style="--c:#b36cf6"></i><i style="--c:#fbbc04"></i><i style="--c:#34a853"></i></div>
-      <h1>Podívejte se, kde stojíte u každé publikace</h1>
-      <p class="lead">Rozšíření pro Chrome pro profily na Google Scholar. U každé publikace označí vaši autorskou roli a rank publikačního místa podle CCF / CORE a výsledek sečte v jedné tabulce: „4 články CCF-A jako první autor“.</p>
+      <h1>Vaše role a rank publikačního místa u každé práce</h1>
+      <p class="lead">Bezplatné rozšíření pro Chrome pro profily na Google Scholar. Každou práci obarví podle vaší autorské role, zobrazí rank CCF a CORE jejího publikačního místa a v jedné tabulce spočítá vaše práce.</p>
       <p class="cta"><a class="btn" href="#install">Instalovat</a> <a class="btn ghost" href="https://github.com/boyugou/better-scholar">Zobrazit na GitHubu</a></p>
-      <p class="note">Zdarma a s otevřeným zdrojovým kódem · Chrome a další prohlížeče na Chromiu · 30 jazyků</p>
+      <p class="note">Zdarma a s otevřeným zdrojovým kódem · Chrome, Edge, Brave a další prohlížeče na Chromiu · 30 jazyků</p>
     </div>
   </section>
 
@@ -114,17 +109,69 @@
     <div class="wrap">
       <figure class="hero-shot">
         <div class="hero-frame" style="aspect-ratio: 1280 / 660">
-          <img src="../assets/hero.jpg" alt="Smyšlený profil (skutečná publikační místa, vymyšlené články): řádky obarvené podle role, u každého místa štítek ranku, souhrn vpravo." width="1280" height="800" fetchpriority="high" decoding="async">
+          <img src="../assets/hero.jpg" alt="Smyšlený profil se skutečnými publikačními místy. Každý řádek má barvu vaší role, štítky ukazují rank a panel s přehledem vpravo počítá práce." width="1280" height="800" fetchpriority="high" decoding="async">
         </div>
-        <figcaption>Smyšlený profil (skutečná publikační místa, vymyšlené články): řádky obarvené podle role, u každého místa štítek ranku, souhrn vpravo.</figcaption>
+        <figcaption>Smyšlený profil se skutečnými publikačními místy. Každý řádek má barvu vaší role, štítky ukazují rank a panel s přehledem vpravo počítá práce.</figcaption>
       </figure>
+    </div>
+  </section>
+
+  <section class="how" id="how">
+    <div class="wrap">
+      <h2>Jak rozšíření čte práci</h2>
+      <p class="note">Dvě vymyšlené práce na skutečných publikačních místech. Každý krok ukazuje, co v nich nachází vlastní kód rozšíření.</p>
+      <div class="how-grid">
+        <ol class="how-steps">
+          <li><button type="button" data-step="1"><span class="n">1</span><b>Najděte své jméno</b><span class="d">Najde jméno profilu v řádku autorů. Vaše místo v tomto řádku určuje roli: první, spoluprvní, druhý nebo poslední autor.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="2"><span class="n">2</span><b>Vyhledejte místo publikace</b><span class="d">Hledá místo publikace v seznamech CCF a CORE podle celého názvu nebo zkratky. Jistá shoda dá štítek ranku.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="3"><span class="n">3</span><b>Nikdy nehádejte</b><span class="d">Workshop, poster nebo práce Findings není hlavní konference. Místo publikace, které seznamy s jistotou neobsahují, nedostane štítek.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="4" aria-current="step"><span class="n">4</span><b>Spočítejte</b><span class="d">Panel s přehledem počítá každou práci jednou podle vaší role a ranku. Kliknutím na číslo zobrazíte jeho práce.</span><i class="bar" aria-hidden="true"></i></button></li>
+        </ol>
+        <div class="how-figure">
+        <div class="how-stage" aria-hidden="true">
+          <div class="sr-head" dir="ltr" lang="en"><span>Title</span><span>Cited by</span><span>Year</span></div>
+          <div class="sr on" data-from="1" dir="ltr" data-role="first" style="--rc:#1a73e8">
+            <div class="sr-text" lang="en"><div class="sr-t">Self-Supervised Depth from Casual Video</div><div class="sr-a"><span class="nm on" data-from="1" data-focus="1">A Example</span>, B Writer, C Writer, D Writer</div><div class="sr-v"><span class="vn on" data-from="2" data-focus="2">Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</span>, 2023 <span class="chip on" data-from="2" data-focus="2"><span class="k">CCF</span> <b>A</b></span></div></div>
+            <div class="sr-c">892</div><div class="sr-y">2023</div>
+            <div class="co-slot" dir="ltr"><p class="co" data-from="1" data-to="1"><span class="tag">První</span> pozice 1 z 4</p><p class="co on" data-from="2"><b dir="ltr">CCF A · CORE A*</b> · Nalezeno podle názvu: <span dir="ltr">IEEE/CVF Computer Vision and Pattern Recognition Conference</span></p></div>
+          </div>
+          <div class="sr on" data-from="1" dir="ltr" data-role="second" style="--rc:#f9ab00">
+            <div class="sr-text" lang="en"><div class="sr-t">Cheap Calibration for Retrieval-Augmented Models</div><div class="sr-a">B Writer, <span class="nm on" data-from="1" data-focus="1">A Example</span>, H Writer</div><div class="sr-v"><mark class="sec on" data-from="3" data-focus="3">Findings</mark> of the Association for Computational Linguistics: ACL 2022, 410-423, 2022</div></div>
+            <div class="sr-c">868</div><div class="sr-y">2022</div>
+            <div class="co-slot" dir="ltr"><p class="co" data-from="1" data-to="2"><span class="tag">Druhý</span> pozice 2 z 3</p><p class="co on" data-from="3"><b dir="ltr">Findings</b> · vedlejší kategorie: bez ranku, bez štítku</p></div>
+          </div>
+          <div class="mini">
+            <div class="mini-h"><b>Práce podle role a ranku</b><span dir="ltr"><i class="on">CCF</i><i>CORE</i></span></div>
+            <table>
+              <thead><tr><th></th><th>A</th><th>B</th><th>C</th><th>–</th><th>Vše</th></tr></thead>
+              <tbody><tr><th><i style="--rc:#1a73e8"></i>První</th><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td><td>·</td><td>·</td><td>·</td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td></tr><tr><th><i style="--rc:#f9ab00"></i>Druhý</th><td>·</td><td>·</td><td>·</td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <button type="button" class="how-play" hidden data-play="Přehrát" data-pause="Pozastavit"><svg class="i-play" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg><svg class="i-pause" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z" fill="currentColor"/></svg><span>Přehrát</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="wrap">
+      <h2>Co dalšího umí</h2>
+      <div class="grid">
+        <article style="--c:#4d8ff5"><h3>Ocenění a přednesy</h3><p>Štítky u nejlepších prací, cen za přetrvávající význam (test of time) a přednesů Oral, Spotlight nebo Highlight. Pocházejí z vlastních slov autorů i z oficiálních stránek ocenění.</p></article>
+        <article style="--c:#b36cf6"><h3>Úplné seznamy autorů</h3><p>Scholar zkracuje dlouhé seznamy autorů znakem „…“, a to může skrýt vaši roli. Jedním kliknutím přečte úplné seznamy ze stránek prací na Scholaru.</p></article>
+        <article style="--c:#fbbc04"><h3>Duplicity sloučeny</h3><p>Scholar občas uvede jednu práci dvakrát. Přepínač z nich udělá jeden záznam a sečte jejich citace.</p></article>
+        <article style="--c:#34a853"><h3>Vlastní rozvržení</h3><p>Každá část panelu s přehledem má vlastní přepínač. Zvolte barvy, pořadí částí a vlastní názvy pro ně.</p></article>
+        <article style="--c:#4d8ff5"><h3>Soukromí</h3><p>Bez účtu, bez analytiky a bez sledování. Veškerá práce probíhá ve vašem prohlížeči a seznamy ranků jsou součástí rozšíření.</p></article>
+        <article style="--c:#b36cf6"><h3>30 jazyků</h3><p>Rozšíření mluví vaším jazykem. Může také otevřít samotný Scholar v jazyce, který si zvolíte.</p></article>
+      </div>
     </div>
   </section>
 
   <section class="try" id="try">
     <div class="wrap">
-      <h2>Vyzkoušejte skutečnou stránku nastavení</h2>
-      <p class="note">Toto je vlastní stránka nastavení rozšíření, která běží přímo tady: zapněte nebo vypněte kterýkoli přepínač a náhled se hned změní. Najetím na náhled část skryjete, přesunete nebo přejmenujete a dvojklikem na ni přejdete k jejímu nastavení.</p>
+      <h2>Vyzkoušejte stránku nastavení</h2>
+      <p class="note">Toto je skutečná stránka nastavení rozšíření. Změňte nastavení a náhled se změní spolu s ním. Najetím kurzoru na část náhledu ji skryjete, přesunete nebo přejmenujete.</p>
       <div class="try-bar">
         <a class="skip" href="#after-try">Přeskočit demo</a>
         <p>Vaše změny zůstanou jen v tomto prohlížeči.</p>
@@ -138,15 +185,15 @@
 
   <section class="export-section" id="after-try">
     <div class="wrap">
-      <h2>Akademický export jedním klikem</h2>
-      <p class="note">Seznamy publikací připravené ke vložení do CV, grantových formulářů, dokumentů LaTeX, AI agentů a tabulek.</p>
+      <h2>Zkopírujte své práce</h2>
+      <p class="note">Jedno tlačítko pro každý formát: pro CV, grantový formulář, LaTeX nebo tabulku. Níže je skutečný výstup pro čtyři vymyšlené práce.</p>
       <div class="export-card">
-        <div class="export-tabs" role="tablist" aria-label="Akademický export jedním klikem">
-          <button type="button" class="tab-btn active" role="tab" id="tab-bibtex" aria-selected="true" aria-controls="export-bibtex">BibTeX (LaTeX-Ready)</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-apa" aria-selected="false" aria-controls="export-apa" tabindex="-1">APA 7th Edition</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-json" aria-selected="false" aria-controls="export-json" tabindex="-1">Structured JSON</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-markdown" aria-selected="false" aria-controls="export-markdown" tabindex="-1">GitHub Markdown</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-csv" aria-selected="false" aria-controls="export-csv" tabindex="-1">RFC-4180 CSV</button>
+        <div class="export-tabs" role="tablist" aria-label="Zkopírujte své práce">
+          <button type="button" class="tab-btn active" role="tab" id="tab-bibtex" aria-selected="true" aria-controls="export-bibtex">BibTeX</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-apa" aria-selected="false" aria-controls="export-apa" tabindex="-1">APA</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-json" aria-selected="false" aria-controls="export-json" tabindex="-1">JSON</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-markdown" aria-selected="false" aria-controls="export-markdown" tabindex="-1">Markdown</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-csv" aria-selected="false" aria-controls="export-csv" tabindex="-1">CSV</button>
         </div>
         <div class="code-preview-wrap">
           <pre class="code-preview" role="tabpanel" id="export-bibtex" aria-labelledby="tab-bibtex" tabindex="0"><code>@inproceedings{author2025sample,
@@ -318,7 +365,7 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
 2024,Sample paper 2,&quot;B Writer, A Author, C Writer&quot;,Second author,NeurIPS 2024,A,A*,Best paper (NeurIPS 2024),133
 2024,Sample paper 3,&quot;A Author*, B Writer*, C Writer&quot;,Co-first author,CVPR 2024 (Highlight),A,A*,Highlight,27
 2023,Sample paper 4,&quot;B Writer, C Writer, D Writer, A Author&quot;,Last author,ACL 2023 (Spotlight),A,A*,Spotlight,215</code></pre>
-          <button type="button" class="copy-code-btn" data-label="Kopírovat do schránky" data-copied="Zkopírováno!">Kopírovat do schránky</button>
+          <button type="button" class="copy-code-btn" data-label="Kopírovat" data-copied="Zkopírováno">Kopírovat</button>
         </div>
       </div>
     </div>
@@ -326,69 +373,56 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
 
   <section class="operators-section">
     <div class="wrap">
-      <h2>Okamžité hledání a vyhledávací operátory</h2>
-      <p class="note">Stiskněte <kbd>/</kbd> kdekoli v profilu Scholar a prohledáte celý seznam najednou.</p>
+      <h2>Hledání pomocí operátorů</h2>
+      <p class="note">Stiskněte <kbd>/</kbd> v profilu Scholar a prohledáte všechny jeho práce. Ke slovům přidejte operátory a seznam se vyfiltruje.</p>
       <div class="operators-grid">
         <div class="op-card">
-          <div class="op-header"><code>cites:&gt;100</code> <code>cites:&gt;=50</code> <code>cites:&lt;10</code></div>
-          <p class="op-title">Prahové hodnoty citací</p>
-          <p class="op-desc">Ponechte články s více nebo méně citacemi, než je libovolné číslo, které zadáte.</p>
+          <div class="op-header" dir="ltr"><code>cites:&gt;100</code> <code>cites:&gt;=50</code> <code>cites:&lt;10</code></div>
+          <h3 class="op-title">Citace</h3>
+          <p class="op-desc">Práce s více nebo méně citacemi, než je zadané číslo.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>ccf:a</code> <code>ccf:b</code> <code>core:a*</code></div>
-          <p class="op-title">Úrovně ranku publikačních míst</p>
-          <p class="op-desc">Zobrazí jen články z konferencí a časopisů s rankem CCF nebo CORE.</p>
+          <div class="op-header" dir="ltr"><code>ccf:a</code> <code>ccf:b</code> <code>core:a*</code></div>
+          <h3 class="op-title">Rank</h3>
+          <p class="op-desc">Práce z míst publikace s daným rankem CCF nebo CORE.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>role:first</code> <code>role:last</code> <code>role:cofirst</code></div>
-          <p class="op-title">Role autorství</p>
-          <p class="op-desc">Filtrujte podle prvního, spoluprvního, druhého nebo posledního (seniorního) autora.</p>
+          <div class="op-header" dir="ltr"><code>role:first</code> <code>role:last</code> <code>role:cofirst</code></div>
+          <h3 class="op-title">Role</h3>
+          <p class="op-desc">Práce, kde jste prvním, spoluprvním, druhým nebo posledním autorem.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>year:&gt;2020</code> <code>year:&gt;=2021</code> <code>year:&lt;=2015</code></div>
-          <p class="op-title">Roky vydání</p>
-          <p class="op-desc">Články vydané po zvolených letech, před nimi nebo v jejich rozmezí, nebo v posledních pěti letech.</p>
+          <div class="op-header" dir="ltr"><code>year:&gt;=2020</code> <code>year:2023</code> <code>age:&lt;5</code></div>
+          <h3 class="op-title">Rok</h3>
+          <p class="op-desc">Práce vydané před zvoleným rokem, po něm nebo v něm, nebo z posledních několika let.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>has:award</code> <code>has:talk</code></div>
-          <p class="op-title">Ocenění a přednášky</p>
-          <p class="op-desc">Najděte články Best Paper, Test of Time, Oral, Spotlight a Highlight.</p>
+          <div class="op-header" dir="ltr"><code>has:award</code> <code>has:talk</code></div>
+          <h3 class="op-title">Ocenění a přednesy</h3>
+          <p class="op-desc">Práce s oceněním Best Paper nebo Test of Time, případně s přednesem Oral, Spotlight nebo Highlight.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><kbd>Escape</kbd></div>
-          <p class="op-title">Reset jedním stisknutím</p>
-          <p class="op-desc">Najednou smaže veškeré hledání, výběr v tabulce i filtry.</p>
+          <div class="op-header" dir="ltr"><kbd>Escape</kbd></div>
+          <h3 class="op-title">Smazat vše</h3>
+          <p class="op-desc">Jedním stisknutím smažete hledání, vybranou buňku a všechny filtry.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="features">
-    <div class="wrap grid">
-      <article style="--c:#4d8ff5"><h3>Každý článek obarvený podle vaší role</h3><p>Řádky pro prvního, spoluprvního, druhého a posledního autora dostanou vlastní barvu a vaše jméno je v seznamu autorů zvýrazněno.</p></article>
-      <article style="--c:#b36cf6"><h3>Ranky CCF a CORE</h3><p>Ranky CCF 2026 a ICORE 2026 u každého místa spolu s pravidlem, které ho určilo. Místo, které nelze zařadit, zůstane bez označení: nikdy nic nehádáme.</p></article>
-      <article style="--c:#fbbc04"><h3>Tabulka role × rank</h3><p>Klikněte na buňku a zobrazí se jen tyto články; souhrn nebo seznam můžete zkopírovat do životopisu nebo grantové přihlášky.</p></article>
-      <article style="--c:#34a853"><h3>Ocenění a přednášky</h3><p>Nejlepší články, ceny za přetrvávající význam (test of time), Oral, Spotlight a Highlight — z vlastních slov autorů i z oficiálních stránek ocenění více než 7 000 článků.</p></article>
-      <article style="--c:#4d8ff5"><h3>Oříznuté seznamy autorů doplněny</h3><p>Scholar u dlouhých seznamů skrývá poslední autory. Jedním kliknutím je přečte ze stránky publikace nebo ze Semantic Scholar, pokud to povolíte.</p></article>
-      <article style="--c:#b36cf6"><h3>Duplicity sloučeny</h3><p>Pokud to zapnete, záznamy, kde je jedna publikace uvedena dvakrát, se spojí v jeden a citace se sečtou.</p></article>
-      <article style="--c:#fbbc04"><h3>Upravte si podle sebe</h3><p>Vyberte, co se zobrazuje, zvolte si vlastní barvy a skryjte části stránky Scholar, které nepotřebujete.</p></article>
-      <article style="--c:#34a853"><h3>Soukromí už od návrhu</h3><p>Bez účtu, bez analytiky a bez sledování. Vše se počítá ve vašem prohlížeči a seznamy ranků jsou součástí rozšíření.</p></article>
     </div>
   </section>
 
   <section class="numbers">
     <div class="wrap">
       <h2>V číslech</h2>
-      <p class="note">Spočítáno z kódu a dat rozšíření při vytváření této stránky, nic z toho nikdo nezadává ručně. Počty, které rostou s každou opravou, jsou zaokrouhleny dolů.</p>
+      <p class="note">Při sestavování této stránky se tyto počty spočítají z kódu a dat rozšíření. Počty, které rostou s každou opravou, jsou zaokrouhleny dolů.</p>
       <div class="numbers-grid">
-        <div class="num" style="--c:#4d8ff5"><b dir="ltr">153</b><span>nastavení, která můžete změnit</span></div>
+        <div class="num" style="--c:#4d8ff5"><b dir="ltr">154</b><span>nastavení, která můžete změnit</span></div>
         <div class="num" style="--c:#b36cf6"><b dir="ltr">30</b><span>jazyky rozhraní</span></div>
         <div class="num" style="--c:#fbbc04"><b dir="ltr">1 178</b><span>publikační místa s ranky v seznamech CCF a CORE</span></div>
-        <div class="num" style="--c:#34a853"><b dir="ltr">400+</b><span>názvy publikačních míst, které Scholar zobrazuje a oficiální seznamy nemají</span></div>
-        <div class="num" style="--c:#4d8ff5"><b dir="ltr">18</b><span>kontroly, které brání zobrazení chybného ranku</span></div>
-        <div class="num" style="--c:#b36cf6"><b dir="ltr">5 581</b><span>oceněné články uznané rozšířením</span></div>
-        <div class="num" style="--c:#fbbc04"><b dir="ltr">22 744</b><span>skutečné záznamy míst ze Scholaru, každý s ručně zkontrolovaným rankem</span></div>
-        <div class="num" style="--c:#34a853"><b dir="ltr">500+</b><span>jednotkové testy, k tomu end-to-end testy ve skutečném prohlížeči</span></div>
+        <div class="num" style="--c:#34a853"><b dir="ltr">400+</b><span>názvy publikačních míst, které Scholar zobrazuje a seznamy nemají</span></div>
+        <div class="num" style="--c:#4d8ff5"><b dir="ltr">18</b><span>kontroly, které brání chybnému ranku</span></div>
+        <div class="num" style="--c:#b36cf6"><b dir="ltr">5 581</b><span>oceněné práce, které rozšíření zná</span></div>
+        <div class="num" style="--c:#fbbc04"><b dir="ltr">22 744</b><span>skutečné záznamy míst ze Scholaru, každý s ručně zkontrolovaným výsledkem</span></div>
+        <div class="num" style="--c:#34a853"><b dir="ltr">500+</b><span>jednotkové testy a end-to-end testy ve skutečném prohlížeči</span></div>
       </div>
     </div>
   </section>
@@ -397,18 +431,22 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
     <div class="wrap">
       <h2>Instalace</h2>
       <ol>
-        <li>Stáhněte projekt z GitHubu (zelené tlačítko „Code“, pak „Download ZIP“) a rozbalte ho.</li>
+        <li>Stáhněte projekt z GitHubu: klikněte na zelené tlačítko „Code“, pak na „Download ZIP“. Rozbalte soubor.</li>
         <li>Otevřete <code>chrome://extensions</code> a zapněte „Režim pro vývojáře“.</li>
-        <li>Klikněte na „Načíst rozbalené rozšíření“ a vyberte složku src. Poté otevřete libovolný profil Google Scholar.</li>
+        <li>Klikněte na „Načíst rozbalené rozšíření“ a vyberte složku src. Poté otevřete profil Google Scholar.</li>
       </ol>
-      <p class="note">Možná později přibude záznam v Internetovém obchodě Chrome. Edge, Brave a další prohlížeče na Chromiu fungují stejně.</p>
+      <p class="note">Edge, Brave a další prohlížeče na Chromiu postupují stejně. Verze v Internetovém obchodě Chrome může přibýt později.</p>
     </div>
   </section>
 
   <section class="honest">
     <div class="wrap">
-      <h2>Upřímně o omezeních</h2>
-      <p>Ranky jsou aktuální seznamy, nikoli rank v době publikace, a samotný seznam CCF uvádí, že nejde o hodnocení. Rozšíření nikdy nehádá místo: co nelze zařadit, je uvedeno, ale neoznačeno.</p>
+      <h2>Omezení</h2>
+      <ul class="limits">
+        <li>Ranky pocházejí z aktuálních seznamů. V roce vydání práce mohlo mít její místo publikace jiný rank.</li>
+        <li>CCF uvádí, že její seznam není podkladem pro akademické hodnocení.</li>
+        <li>Nikdy nehádá. Místo publikace, které nedokáže zařadit, nedostane štítek a panel s přehledem ho uvede.</li>
+      </ul>
     </div>
   </section>
 </main>
@@ -416,9 +454,9 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
   <div class="wrap">
     <span>Open source, licence Apache License 2.0</span>
     <a href="../privacy/">Ochrana soukromí</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/ROADMAP.md">Roadmap</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/AGENTS.md">Agent API</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/SECURITY.md">Security</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/ROADMAP.md">Plán vývoje</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/AGENTS.md">Pro AI agenty</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/SECURITY.md">Bezpečnost</a>
     <a href="https://github.com/boyugou/better-scholar/issues">Nahlásit problém</a>
     <a href="https://github.com/boyugou/better-scholar">GitHub</a>
   </div>

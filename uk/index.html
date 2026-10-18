@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Better Scholar: ваші ролі в авторстві та ранги видань у Google Scholar</title>
-<meta name="description" content="Безкоштовне розширення для Chrome: на кожній статті в профілі Google Scholar воно позначає вашу роль (перший, співперший, другий або останній автор) і ранг видання за CCF / CORE, а потім зводить усе в одну таблицю.">
+<title>Better Scholar: ваша роль в авторстві та ранг видання у Google Scholar</title>
+<meta name="description" content="Безкоштовне розширення для Chrome для профілів Google Scholar. Воно показує вашу роль в авторстві та ранг видання за CCF / CORE на кожній статті і рахує ваші статті в одній таблиці.">
 <link rel="canonical" href="https://boyugou.github.io/better-scholar/uk/">
 <link rel="alternate" hreflang="en" href="https://boyugou.github.io/better-scholar/en/">
 <link rel="alternate" hreflang="zh-CN" href="https://boyugou.github.io/better-scholar/zh-CN/">
@@ -40,14 +40,14 @@
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Better Scholar: ваші ролі в авторстві та ранги видань у Google Scholar">
-<meta property="og:description" content="Безкоштовне розширення для Chrome: на кожній статті в профілі Google Scholar воно позначає вашу роль (перший, співперший, другий або останній автор) і ранг видання за CCF / CORE, а потім зводить усе в одну таблицю.">
+<meta property="og:title" content="Better Scholar: ваша роль в авторстві та ранг видання у Google Scholar">
+<meta property="og:description" content="Безкоштовне розширення для Chrome для профілів Google Scholar. Воно показує вашу роль в авторстві та ранг видання за CCF / CORE на кожній статті і рахує ваші статті в одній таблиці.">
 <meta property="og:url" content="https://boyugou.github.io/better-scholar/uk/">
 <meta property="og:image" content="https://boyugou.github.io/better-scholar/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="../assets/styles.css">
 <meta name="theme-color" content="#161d33">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Better Scholar","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Chromium browsers","description":"Безкоштовне розширення для Chrome: на кожній статті в профілі Google Scholar воно позначає вашу роль (перший, співперший, другий або останній автор) і ранг видання за CCF / CORE, а потім зводить усе в одну таблицю.","inLanguage":"uk","url":"https://boyugou.github.io/better-scholar/uk/","image":"https://boyugou.github.io/better-scholar/assets/og.png","license":"https://www.apache.org/licenses/LICENSE-2.0","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Better Scholar","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Chromium browsers","description":"Безкоштовне розширення для Chrome для профілів Google Scholar. Воно показує вашу роль в авторстві та ранг видання за CCF / CORE на кожній статті і рахує ваші статті в одній таблиці.","inLanguage":"uk","url":"https://boyugou.github.io/better-scholar/uk/","image":"https://boyugou.github.io/better-scholar/assets/og.png","license":"https://www.apache.org/licenses/LICENSE-2.0","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 </head>
 <body>
 <header class="top">
@@ -97,16 +97,11 @@
 <main>
   <section class="hero">
     <div class="wrap">
-      <div class="hero-badges">
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg> Manifest V3</span>
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg> Працює у вашому браузері</span>
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg> Без залежностей</span>
-      </div>
       <div class="stripes" aria-hidden="true"><i style="--c:#4d8ff5"></i><i style="--c:#b36cf6"></i><i style="--c:#fbbc04"></i><i style="--c:#34a853"></i></div>
-      <h1>Побачте своє місце в кожній статті</h1>
-      <p class="lead">Розширення для Chrome для профілів Google Scholar. Воно позначає вашу роль в авторстві та ранг видання за CCF / CORE на кожній статті й підсумовує результат в одній таблиці: «4 статті CCF-A, де я перший автор».</p>
+      <h1>Ваша роль і ранг видання в кожній статті</h1>
+      <p class="lead">Безкоштовне розширення для Chrome для профілів Google Scholar. Воно забарвлює кожну статтю за вашою роллю в авторстві, показує ранг видання за CCF і CORE і рахує ваші статті в одній таблиці.</p>
       <p class="cta"><a class="btn" href="#install">Встановити</a> <a class="btn ghost" href="https://github.com/boyugou/better-scholar">Переглянути на GitHub</a></p>
-      <p class="note">Безкоштовно та з відкритим кодом · Chrome та інші браузери на Chromium · 30 мов</p>
+      <p class="note">Безкоштовно та з відкритим кодом · Chrome, Edge, Brave та інші браузери на Chromium · 30 мов</p>
     </div>
   </section>
 
@@ -114,17 +109,69 @@
     <div class="wrap">
       <figure class="hero-shot">
         <div class="hero-frame" style="aspect-ratio: 1280 / 660">
-          <img src="../assets/hero.jpg" alt="Вигаданий профіль (справжні видання, придумані статті): рядки забарвлені за роллю, поруч із кожним виданням — позначка рангу, підсумок праворуч." width="1280" height="800" fetchpriority="high" decoding="async">
+          <img src="../assets/hero.jpg" alt="Вигаданий профіль зі справжніми виданнями: кожен рядок забарвлений у колір вашої ролі, мітки показують ранг, а панель праворуч рахує статті." width="1280" height="800" fetchpriority="high" decoding="async">
         </div>
-        <figcaption>Вигаданий профіль (справжні видання, придумані статті): рядки забарвлені за роллю, поруч із кожним виданням — позначка рангу, підсумок праворуч.</figcaption>
+        <figcaption>Вигаданий профіль зі справжніми виданнями: кожен рядок забарвлений у колір вашої ролі, мітки показують ранг, а панель праворуч рахує статті.</figcaption>
       </figure>
+    </div>
+  </section>
+
+  <section class="how" id="how">
+    <div class="wrap">
+      <h2>Як розширення читає статтю</h2>
+      <p class="note">Дві вигадані статті у справжніх виданнях. Кожен крок показує, що знаходить у них власний код розширення.</p>
+      <div class="how-grid">
+        <ol class="how-steps">
+          <li><button type="button" data-step="1"><span class="n">1</span><b>Знайдіть своє ім'я</b><span class="d">Розширення знаходить ім'я власника профілю в рядку авторів. Ваше місце в рядку визначає роль: перший, співперший, другий або останній автор.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="2"><span class="n">2</span><b>Знайдіть видання</b><span class="d">Розширення шукає видання у списках CCF і CORE за повною назвою або абревіатурою. Однозначний збіг дає мітку рангу.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="3"><span class="n">3</span><b>Жодних здогадок</b><span class="d">Workshop, poster або стаття Findings — це не основна конференція. Видання, яке списки не визначають напевно, мітки не отримує.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="4" aria-current="step"><span class="n">4</span><b>Підрахунок</b><span class="d">Панель рахує кожну статтю один раз: за вашою роллю та рангом. Натисніть на число, щоб побачити статті.</span><i class="bar" aria-hidden="true"></i></button></li>
+        </ol>
+        <div class="how-figure">
+        <div class="how-stage" aria-hidden="true">
+          <div class="sr-head" dir="ltr" lang="en"><span>Title</span><span>Cited by</span><span>Year</span></div>
+          <div class="sr on" data-from="1" dir="ltr" data-role="first" style="--rc:#1a73e8">
+            <div class="sr-text" lang="en"><div class="sr-t">Self-Supervised Depth from Casual Video</div><div class="sr-a"><span class="nm on" data-from="1" data-focus="1">A Example</span>, B Writer, C Writer, D Writer</div><div class="sr-v"><span class="vn on" data-from="2" data-focus="2">Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</span>, 2023 <span class="chip on" data-from="2" data-focus="2"><span class="k">CCF</span> <b>A</b></span></div></div>
+            <div class="sr-c">892</div><div class="sr-y">2023</div>
+            <div class="co-slot" dir="ltr"><p class="co" data-from="1" data-to="1"><span class="tag">Перший</span> позиція 1 з 4</p><p class="co on" data-from="2"><b dir="ltr">CCF A · CORE A*</b> · Знайдено за назвою: <span dir="ltr">IEEE/CVF Computer Vision and Pattern Recognition Conference</span></p></div>
+          </div>
+          <div class="sr on" data-from="1" dir="ltr" data-role="second" style="--rc:#f9ab00">
+            <div class="sr-text" lang="en"><div class="sr-t">Cheap Calibration for Retrieval-Augmented Models</div><div class="sr-a">B Writer, <span class="nm on" data-from="1" data-focus="1">A Example</span>, H Writer</div><div class="sr-v"><mark class="sec on" data-from="3" data-focus="3">Findings</mark> of the Association for Computational Linguistics: ACL 2022, 410-423, 2022</div></div>
+            <div class="sr-c">868</div><div class="sr-y">2022</div>
+            <div class="co-slot" dir="ltr"><p class="co" data-from="1" data-to="2"><span class="tag">Другий</span> позиція 2 з 3</p><p class="co on" data-from="3"><b dir="ltr">Findings</b> · другорядна категорія: без рангу, без мітки</p></div>
+          </div>
+          <div class="mini">
+            <div class="mini-h"><b>Статті за роллю та рангом</b><span dir="ltr"><i class="on">CCF</i><i>CORE</i></span></div>
+            <table>
+              <thead><tr><th></th><th>A</th><th>B</th><th>C</th><th>–</th><th>Усі</th></tr></thead>
+              <tbody><tr><th><i style="--rc:#1a73e8"></i>Перший</th><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td><td>·</td><td>·</td><td>·</td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td></tr><tr><th><i style="--rc:#f9ab00"></i>Другий</th><td>·</td><td>·</td><td>·</td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <button type="button" class="how-play" hidden data-play="Відтворити" data-pause="Пауза"><svg class="i-play" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg><svg class="i-pause" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z" fill="currentColor"/></svg><span>Відтворити</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="wrap">
+      <h2>Що ще вміє розширення</h2>
+      <div class="grid">
+        <article style="--c:#4d8ff5"><h3>Нагороди та доповіді</h3><p>Мітки для найкращих статей, премій «за перевірку часом» і доповідей Oral, Spotlight або Highlight. Вони взяті зі слів самих авторів і з офіційних сторінок нагород.</p></article>
+        <article style="--c:#b36cf6"><h3>Повні списки авторів</h3><p>Scholar обрізає довгі списки авторів знаком «…», і це може приховати вашу роль. Одне натискання зчитує повні списки зі сторінок статей у Scholar.</p></article>
+        <article style="--c:#fbbc04"><h3>Дублікати об'єднано</h3><p>Scholar інколи двічі вказує одну статтю. Перемикач робить із них один запис і додає їхні цитування.</p></article>
+        <article style="--c:#34a853"><h3>Власна компоновка</h3><p>Кожна частина панелі має власний перемикач. Оберіть кольори, порядок частин і власні назви для них.</p></article>
+        <article style="--c:#4d8ff5"><h3>Приватність</h3><p>Без облікового запису, без аналітики й стеження. Уся робота відбувається у вашому браузері, а списки рангів містяться в самому розширенні.</p></article>
+        <article style="--c:#b36cf6"><h3>30 мов</h3><p>Розширення підтримує вашу мову. Воно також може відкрити сам Scholar мовою, яку ви оберете.</p></article>
+      </div>
     </div>
   </section>
 
   <section class="try" id="try">
     <div class="wrap">
-      <h2>Спробуйте справжню сторінку налаштувань</h2>
-      <p class="note">Це власна сторінка налаштувань розширення, що працює просто тут: увімкніть або вимкніть перемикач, і попередній перегляд одразу оновиться. Наведіть курсор на попередній перегляд, щоб приховати, перемістити або перейменувати розділ, а двічі клацніть розділ, щоб перейти до його налаштування.</p>
+      <h2>Спробуйте сторінку налаштувань</h2>
+      <p class="note">Це справжня сторінка налаштувань розширення. Змініть налаштування, і попередній перегляд зміниться разом із ним. Наведіть курсор на розділ попереднього перегляду, щоб приховати, перемістити або перейменувати його.</p>
       <div class="try-bar">
         <a class="skip" href="#after-try">Пропустити демонстрацію</a>
         <p>Ваші зміни залишаються лише в цьому браузері.</p>
@@ -138,15 +185,15 @@
 
   <section class="export-section" id="after-try">
     <div class="wrap">
-      <h2>Академічний експорт в один клік</h2>
-      <p class="note">Готові до вставлення списки публікацій для резюме, грантових заявок, документів LaTeX, ШІ-агентів і електронних таблиць.</p>
+      <h2>Копіюйте свої статті</h2>
+      <p class="note">Одна кнопка для кожного формату: для резюме, грантової заявки, LaTeX або електронної таблиці. Нижче наведено справжній результат для чотирьох вигаданих статей.</p>
       <div class="export-card">
-        <div class="export-tabs" role="tablist" aria-label="Академічний експорт в один клік">
-          <button type="button" class="tab-btn active" role="tab" id="tab-bibtex" aria-selected="true" aria-controls="export-bibtex">BibTeX (LaTeX-Ready)</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-apa" aria-selected="false" aria-controls="export-apa" tabindex="-1">APA 7th Edition</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-json" aria-selected="false" aria-controls="export-json" tabindex="-1">Structured JSON</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-markdown" aria-selected="false" aria-controls="export-markdown" tabindex="-1">GitHub Markdown</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-csv" aria-selected="false" aria-controls="export-csv" tabindex="-1">RFC-4180 CSV</button>
+        <div class="export-tabs" role="tablist" aria-label="Копіюйте свої статті">
+          <button type="button" class="tab-btn active" role="tab" id="tab-bibtex" aria-selected="true" aria-controls="export-bibtex">BibTeX</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-apa" aria-selected="false" aria-controls="export-apa" tabindex="-1">APA</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-json" aria-selected="false" aria-controls="export-json" tabindex="-1">JSON</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-markdown" aria-selected="false" aria-controls="export-markdown" tabindex="-1">Markdown</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-csv" aria-selected="false" aria-controls="export-csv" tabindex="-1">CSV</button>
         </div>
         <div class="code-preview-wrap">
           <pre class="code-preview" role="tabpanel" id="export-bibtex" aria-labelledby="tab-bibtex" tabindex="0"><code>@inproceedings{author2025sample,
@@ -318,7 +365,7 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
 2024,Sample paper 2,&quot;B Writer, A Author, C Writer&quot;,Second author,NeurIPS 2024,A,A*,Best paper (NeurIPS 2024),133
 2024,Sample paper 3,&quot;A Author*, B Writer*, C Writer&quot;,Co-first author,CVPR 2024 (Highlight),A,A*,Highlight,27
 2023,Sample paper 4,&quot;B Writer, C Writer, D Writer, A Author&quot;,Last author,ACL 2023 (Spotlight),A,A*,Spotlight,215</code></pre>
-          <button type="button" class="copy-code-btn" data-label="Копіювати в буфер обміну" data-copied="Скопійовано!">Копіювати в буфер обміну</button>
+          <button type="button" class="copy-code-btn" data-label="Копіювати" data-copied="Скопійовано">Копіювати</button>
         </div>
       </div>
     </div>
@@ -326,67 +373,54 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
 
   <section class="operators-section">
     <div class="wrap">
-      <h2>Миттєвий пошук і оператори запитів</h2>
-      <p class="note">Натисніть <kbd>/</kbd> будь-де в профілі Scholar, щоб шукати одразу по всьому списку.</p>
+      <h2>Пошук з операторами</h2>
+      <p class="note">Натисніть <kbd>/</kbd> у профілі, щоб шукати по всіх його статтях. Додайте до слів оператори, щоб відфільтрувати список.</p>
       <div class="operators-grid">
         <div class="op-card">
-          <div class="op-header"><code>cites:&gt;100</code> <code>cites:&gt;=50</code> <code>cites:&lt;10</code></div>
-          <p class="op-title">Порогові значення цитувань</p>
-          <p class="op-desc">Залишайте статті з більшою або меншою кількістю цитувань, ніж будь-яке введене вами число.</p>
+          <div class="op-header" dir="ltr"><code>cites:&gt;100</code> <code>cites:&gt;=50</code> <code>cites:&lt;10</code></div>
+          <h3 class="op-title">Цитування</h3>
+          <p class="op-desc">Статті з більшою або меншою кількістю цитувань, ніж задане число.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>ccf:a</code> <code>ccf:b</code> <code>core:a*</code></div>
-          <p class="op-title">Рівні рангу видань</p>
-          <p class="op-desc">Показуйте лише статті з конференцій і журналів із рангом CCF або CORE.</p>
+          <div class="op-header" dir="ltr"><code>ccf:a</code> <code>ccf:b</code> <code>core:a*</code></div>
+          <h3 class="op-title">Ранг</h3>
+          <p class="op-desc">Статті у виданнях із заданим рангом CCF або CORE.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>role:first</code> <code>role:last</code> <code>role:cofirst</code></div>
-          <p class="op-title">Ролі автора</p>
-          <p class="op-desc">Фільтруйте за першим, співпершим, другим або останнім (старшим) автором.</p>
+          <div class="op-header" dir="ltr"><code>role:first</code> <code>role:last</code> <code>role:cofirst</code></div>
+          <h3 class="op-title">Роль</h3>
+          <p class="op-desc">Статті, у яких ви перший, співперший, другий або останній автор.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>year:&gt;2020</code> <code>year:&gt;=2021</code> <code>year:&lt;=2015</code></div>
-          <p class="op-title">Роки публікації</p>
-          <p class="op-desc">Статті, опубліковані після, до або в межах вибраних вами років, або за останні п'ять років.</p>
+          <div class="op-header" dir="ltr"><code>year:&gt;=2020</code> <code>year:2023</code> <code>age:&lt;5</code></div>
+          <h3 class="op-title">Рік</h3>
+          <p class="op-desc">Статті, опубліковані до, після або в заданий рік, або за останні кілька років.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>has:award</code> <code>has:talk</code></div>
-          <p class="op-title">Нагороди та доповіді</p>
-          <p class="op-desc">Знаходьте статті Best Paper, Test of Time, Oral, Spotlight і Highlight.</p>
+          <div class="op-header" dir="ltr"><code>has:award</code> <code>has:talk</code></div>
+          <h3 class="op-title">Нагороди та доповіді</h3>
+          <p class="op-desc">Статті з нагородою Best Paper або Test of Time, а також з доповіддю Oral, Spotlight або Highlight.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><kbd>Escape</kbd></div>
-          <p class="op-title">Скидання однією клавішею</p>
-          <p class="op-desc">Одразу очищає всі пошукові запити, вибрані рядки таблиці та фільтри.</p>
+          <div class="op-header" dir="ltr"><kbd>Escape</kbd></div>
+          <h3 class="op-title">Очистити все</h3>
+          <p class="op-desc">Одна клавіша очищає пошук, вибрану клітинку та всі фільтри.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="features">
-    <div class="wrap grid">
-      <article style="--c:#4d8ff5"><h3>Кожна стаття забарвлена за вашою роллю</h3><p>Рядки для першого, співпершого, другого та останнього автора мають власний колір, а ваше ім'я позначено в переліку авторів.</p></article>
-      <article style="--c:#b36cf6"><h3>Ранги CCF і CORE</h3><p>Ранги CCF 2026 та ICORE 2026 поруч із кожним виданням, із правилом, яке його визначило. Видання, яке не вдалося визначити, лишається без позначки: жодних припущень.</p></article>
-      <article style="--c:#fbbc04"><h3>Таблиця «роль × ранг»</h3><p>Оберіть клітинку, щоб побачити лише ці статті, і скопіюйте підсумок або список для CV чи заявки на грант.</p></article>
-      <article style="--c:#34a853"><h3>Нагороди та доповіді</h3><p>Найкращі статті, премії «за перевірку часом», Oral, Spotlight і Highlight — зі слів самих авторів і з офіційних сторінок нагород для понад 7000 статей.</p></article>
-      <article style="--c:#4d8ff5"><h3>Обрізані списки авторів, доповнені</h3><p>Scholar приховує останніх авторів у довгих списках. Одне натискання зчитує їх зі сторінки статті або з Semantic Scholar, якщо ви дозволите.</p></article>
-      <article style="--c:#b36cf6"><h3>Дублікати об'єднано</h3><p>Якщо увімкнути цей параметр, записи, де одна стаття вказана двічі, стають одним, а цитування додаються.</p></article>
-      <article style="--c:#fbbc04"><h3>Налаштуйте під себе</h3><p>Оберіть, що показувати, задайте власні кольори та приховайте зайве зі сторінки Scholar.</p></article>
-      <article style="--c:#34a853"><h3>Приватність за задумом</h3><p>Без облікового запису, без аналітики й стеження. Усе обчислюється у вашому браузері, а списки рангів містяться в самому розширенні.</p></article>
     </div>
   </section>
 
   <section class="numbers">
     <div class="wrap">
       <h2>У цифрах</h2>
-      <p class="note">Підраховано з коду та даних розширення під час збирання цієї сторінки — жодне число не введено вручну. Лічильники, що зростають із кожним виправленням, округлено вниз.</p>
+      <p class="note">Під час збирання цієї сторінки їх підраховують із коду та даних розширення. Числа, що зростають із кожним виправленням, округлено вниз.</p>
       <div class="numbers-grid">
-        <div class="num" style="--c:#4d8ff5"><b dir="ltr">153</b><span>налаштування, які можна змінити</span></div>
+        <div class="num" style="--c:#4d8ff5"><b dir="ltr">154</b><span>налаштування, які можна змінити</span></div>
         <div class="num" style="--c:#b36cf6"><b dir="ltr">30</b><span>мови інтерфейсу</span></div>
         <div class="num" style="--c:#fbbc04"><b dir="ltr">1 178</b><span>видання з рангом у списках CCF і CORE</span></div>
-        <div class="num" style="--c:#34a853"><b dir="ltr">400+</b><span>назви видань у Scholar, яких немає в офіційних списках</span></div>
+        <div class="num" style="--c:#34a853"><b dir="ltr">400+</b><span>назви видань у Scholar, яких немає в списках</span></div>
         <div class="num" style="--c:#4d8ff5"><b dir="ltr">18</b><span>перевірки, що не дають показати хибний ранг</span></div>
-        <div class="num" style="--c:#b36cf6"><b dir="ltr">5 581</b><span>розпізнані статті з нагородами</span></div>
+        <div class="num" style="--c:#b36cf6"><b dir="ltr">5 581</b><span>відомі розширенню статті з нагородами</span></div>
         <div class="num" style="--c:#fbbc04"><b dir="ltr">22 744</b><span>справжні рядки видань у Scholar з перевіреним рангом</span></div>
         <div class="num" style="--c:#34a853"><b dir="ltr">500+</b><span>модульні тести, а також набір наскрізних тестів у справжньому браузері</span></div>
       </div>
@@ -397,18 +431,22 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
     <div class="wrap">
       <h2>Встановлення</h2>
       <ol>
-        <li>Завантажте проєкт із GitHub (зелена кнопка «Code», потім «Download ZIP») і розпакуйте архів.</li>
+        <li>Завантажте проєкт із GitHub: натисніть зелену кнопку «Code», потім «Download ZIP». Розпакуйте архів.</li>
         <li>Відкрийте <code>chrome://extensions</code> і увімкніть «Режим розробника».</li>
-        <li>Натисніть «Завантажити розпаковане розширення» і виберіть папку src. Потім відкрийте будь-який профіль Google Scholar.</li>
+        <li>Натисніть «Завантажити розпаковане розширення» і виберіть папку src. Потім відкрийте профіль Google Scholar.</li>
       </ol>
-      <p class="note">Згодом може з'явитися сторінка в Інтернет-магазині Chrome. Edge, Brave та інші браузери на Chromium встановлюються так само.</p>
+      <p class="note">Edge, Brave та інші браузери на Chromium встановлюються так само. Версія в Інтернет-магазині Chrome може з'явитися пізніше.</p>
     </div>
   </section>
 
   <section class="honest">
     <div class="wrap">
-      <h2>Чесно про межі</h2>
-      <p>Ранги — це чинні списки, а не ранг на момент публікації, і сам список CCF каже, що він не є оцінкою. Розширення ніколи не вгадує видання: те, що не вдалося визначити, просто не позначається.</p>
+      <h2>Обмеження</h2>
+      <ul class="limits">
+        <li>Ранги беруться з актуальних списків. У рік публікації статті її видання могло мати інший ранг.</li>
+        <li>CCF зазначає, що його список не є підставою для академічного оцінювання.</li>
+        <li>Розширення ніколи не вгадує. Видання, яке воно не може визначити, мітки не отримує, а панель його перелічує.</li>
+      </ul>
     </div>
   </section>
 </main>
@@ -416,9 +454,9 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
   <div class="wrap">
     <span>Відкритий код, ліцензія Apache License 2.0</span>
     <a href="../privacy/">Конфіденційність</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/ROADMAP.md">Roadmap</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/AGENTS.md">Agent API</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/SECURITY.md">Security</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/ROADMAP.md">Дорожня карта</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/AGENTS.md">Для ШІ-агентів</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/SECURITY.md">Безпека</a>
     <a href="https://github.com/boyugou/better-scholar/issues">Повідомити про проблему</a>
     <a href="https://github.com/boyugou/better-scholar">GitHub</a>
   </div>

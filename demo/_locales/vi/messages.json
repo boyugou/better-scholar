@@ -3,7 +3,7 @@
     "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "Nâng cao Google Scholar: vai trò tác giả, xếp hạng CCF & CORE, giải thưởng hội nghị, biểu đồ theo năm và tìm kiếm tức thì."
+    "message": "Trên hồ sơ Google Scholar: vai trò tác giả của chủ hồ sơ và hạng CCF & CORE của venue mỗi bài báo, tổng hợp trong một bảng."
   },
   "extShortName": {
     "message": "Better Scholar"
@@ -51,7 +51,7 @@
     "message": "Lọt chung kết bài báo xuất sắc nhất"
   },
   "marksHint": {
-    "message": "Dựa trên chính lời của tác giả trong tiêu đề và phần venue của từng bài trên Scholar (không kiểm chứng), và danh sách kèm theo các bài đoạt giải tại hội nghị lớn."
+    "message": "Từ hai nguồn: chính lời tác giả viết trong tiêu đề hoặc dòng venue của từng bài trên Scholar (không kiểm chứng), và danh sách kèm theo các bài đoạt giải tại hội nghị lớn."
   },
   "marksAsWritten": {
     "message": "từ lời của tác giả hoặc danh sách giải thưởng"
@@ -169,7 +169,7 @@
     "message": "Mở trang của từng bài trên Scholar (khoảng một bài mỗi giây) để đọc danh sách tác giả đầy đủ."
   },
   "resolveHintSemantic": {
-    "message": "Trước hết hỏi Semantic Scholar danh sách tác giả của từng bài (chỉ gửi tiêu đề bài báo), sau đó mở trang của các bài còn lại trên Scholar (khoảng một bài mỗi giây)."
+    "message": "Trước hết hỏi Semantic Scholar danh sách tác giả của từng bài (chỉ gửi tiêu đề bài báo). Sau đó mở trang của các bài còn lại trên Scholar, khoảng một bài mỗi giây."
   },
   "resolving": {
     "message": "Đang đọc danh sách tác giả… $N1$/$N2$",
@@ -464,7 +464,7 @@
     "message": "Đặt lại tất cả cài đặt này về mặc định?"
   },
   "optStorage": {
-    "message": "Cài đặt được lưu trong trình duyệt và đồng bộ với hồ sơ Chrome của bạn. Tiện ích đọc các trang Scholar mà bạn mở, và khi bạn nhấn “Đọc danh sách đầy đủ”, cũng đọc các trang bài báo có danh sách tác giả bị rút gọn; tiêu đề bài báo chỉ được gửi tới Semantic Scholar nếu bạn bật tính năng đó."
+    "message": "Cài đặt được lưu trong trình duyệt và đồng bộ với hồ sơ Chrome của bạn. Tiện ích đọc các trang Scholar mà bạn mở. Khi bạn nhấn “Đọc danh sách đầy đủ”, tiện ích cũng đọc các trang bài báo có danh sách tác giả bị rút gọn. Tiêu đề bài báo chỉ được gửi tới Semantic Scholar nếu bạn bật tính năng đó."
   },
   "optSample": {
     "message": "Bài mẫu"
@@ -476,7 +476,7 @@
     "message": "Tự động tải tất cả bài báo"
   },
   "optAutoLoadHint": {
-    "message": "Ban đầu Scholar chỉ hiện vài bài đầu. Tùy chọn này bấm nút “Hiển thị thêm” của chính Scholar thay bạn, khoảng một lần mỗi giây, cho đến khi tải hết danh sách, và dừng nếu Scholar ngừng phản hồi. Tắt: bảng sẽ đưa ra nút “Tải tất cả”."
+    "message": "Scholar chỉ hiện vài bài đầu của một hồ sơ. Tùy chọn này bấm nút “Hiển thị thêm” của chính Scholar thay bạn, khoảng một lần mỗi giây, cho đến khi tải hết danh sách. Nó dừng nếu Scholar ngừng phản hồi. Tắt: bảng sẽ hiện nút “Tải tất cả” thay thế."
   },
   "loadStalled": {
     "message": "Scholar không gửi thêm bài nào (đã tải $N1$). Hãy thử “Tải tất cả” lại sau giây lát.",
@@ -565,7 +565,7 @@
     "message": "Gộp mục trùng lặp"
   },
   "optMergeLabelHint": {
-    "message": "Các mục cùng tiêu đề (không kể chữ hoa, dấu và dấu câu) và cùng tác giả đầu được gộp thành một: mục được trích dẫn nhiều nhất giữ lại và hiện trích dẫn của tất cả. Bảng tóm tắt chỉ đếm một lần."
+    "message": "Các mục có cùng tiêu đề và cùng tác giả đầu được gộp thành một (không tính chữ hoa, dấu và dấu câu). Mục được trích dẫn nhiều nhất giữ lại và hiện trích dẫn của tất cả. Bảng tóm tắt chỉ đếm một lần."
   },
   "mergedTip": {
     "message": "Gộp từ $N1$ mục: trích dẫn của tất cả",
@@ -657,7 +657,7 @@
     "message": "Đọc danh sách tác giả từ Semantic Scholar trước"
   },
   "optSemanticLabelHint": {
-    "message": "Khi nhấn “Đọc danh sách đầy đủ”, trước hết hỏi Semantic Scholar danh sách tác giả đầy đủ của từng bài (chỉ gửi tiêu đề bài báo), và chỉ đọc trang của Scholar cho những gì nó không biết. Ít yêu cầu gửi đến Scholar hơn, nên cũng ít CAPTCHA hơn."
+    "message": "Khi nhấn “Đọc danh sách đầy đủ”, trước hết hỏi Semantic Scholar danh sách tác giả đầy đủ của từng bài. Semantic Scholar chỉ nhận tiêu đề bài báo, không nhận gì khác. Trang của Scholar chỉ được mở cho những bài mà Semantic Scholar không biết. Ít yêu cầu gửi đến Scholar nghĩa là ít CAPTCHA hơn."
   },
   "yearsTitle": {
     "message": "Bài được tô nổi theo năm"
@@ -858,7 +858,7 @@
     "message": "Tác nhân AI"
   },
   "optAgentHint": {
-    "message": "Sao chép một hướng dẫn liệt kê mọi cài đặt, giá trị và lựa chọn hiện tại của bạn. Dán vào trợ lý AI, nêu điều bạn muốn, rồi dán câu trả lời vào trình soạn thảo JSON bên dưới và nhấn “Áp dụng cấu hình”."
+    "message": "Sao chép một hướng dẫn liệt kê mọi cài đặt, giá trị và lựa chọn hiện tại của bạn. Đưa cho trợ lý AI cùng với điều bạn muốn. Sau đó, dán câu trả lời vào trình soạn thảo JSON bên dưới và nhấn “Áp dụng cấu hình”."
   },
   "optAgentCopy": {
     "message": "Sao chép hướng dẫn"
@@ -972,6 +972,12 @@
   },
   "optFiltersSearch": {
     "message": "Ô tìm kiếm"
+  },
+  "optFiltersKey": {
+    "message": "Phím “/” nhảy đến ô tìm kiếm"
+  },
+  "optFiltersKeyHint": {
+    "message": "Trong bảng trên trang hồ sơ, và trên trang này cho ô tìm kiếm của chính nó. Tắt: phím không làm gì cả."
   },
   "optOrderPills": {
     "message": "Thứ tự bộ lọc nhanh"
@@ -1120,7 +1126,7 @@
     "message": "Kiểm tra venue"
   },
   "optVenueHint": {
-    "message": "Dán venue như Scholar hiển thị (dòng màu xám dưới một bài báo) để xem danh sách CCF và CORE đánh giá thế nào và theo quy tắc nào. Venue mà các danh sách không xác định được vị trí thì không được xếp hạng: không suy đoán gì cả."
+    "message": "Dán venue như Scholar hiển thị: dòng màu xám dưới một bài báo. Bạn sẽ thấy danh sách CCF và CORE đánh giá nó thế nào và theo quy tắc nào. Venue mà các danh sách không xác định được vị trí thì không được xếp hạng. Không suy đoán gì cả."
   },
   "optVenuePlaceholder": {
     "message": "ví dụ: Proceedings of the IEEE conference on computer vision and pattern recognition"
@@ -1129,7 +1135,7 @@
     "message": "Chưa xếp hạng. Các danh sách không xác định chắc chắn văn bản này, nên không có nhãn."
   },
   "optVenueSecondary": {
-    "message": "Từ “$N1$” cho biết một hạng mục phụ (workshop, poster, bài ngắn …): venue sẽ không được xếp hạng trừ khi tên của chính venue đó có từ này.",
+    "message": "Từ “$N1$” cho biết một hạng mục phụ, chẳng hạn workshop, poster hoặc bài ngắn. Venue sẽ không được xếp hạng trừ khi tên của chính venue đó có từ này.",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -1149,7 +1155,7 @@
     "message": "Số liệu theo bộ lọc"
   },
   "optFiltersFollowHint": {
-    "message": "Bảng, số đếm giải thưởng và báo cáo cùng bản tóm tắt sao chép chỉ tính các bài báo còn lại sau bộ lọc (khoảng năm, tìm kiếm, bộ lọc nhanh, venue); ô hoặc hàng được chọn không thu hẹp bất kỳ số đếm nào. Tắt: luôn tính trên toàn bộ hồ sơ."
+    "message": "Bảng, số đếm giải thưởng và báo cáo cùng bản tóm tắt sao chép chỉ tính các bài báo còn lại sau bộ lọc: khoảng năm, tìm kiếm, bộ lọc nhanh hoặc venue. Ô hoặc hàng được chọn không thay đổi bất kỳ số đếm nào. Tắt: luôn tính trên toàn bộ hồ sơ."
   },
   "optPillRecent": {
     "message": "5 năm gần đây"
@@ -1182,7 +1188,7 @@
     "message": "Thêm liên kết hồ sơ và ngày vào tóm tắt đã sao chép"
   },
   "optCopySourceHint": {
-    "message": "Tóm tắt đã sao chép và bảng đã sao chép sẽ có thêm một dòng ghi liên kết hồ sơ và ngày (Source: …), để có thể lưu hoặc chuyển tiếp các con số. Danh sách chưa tải đủ sẽ ghi điều đó ngay tại đó, bất kể công tắc này đang ở trạng thái nào."
+    "message": "Bản tóm tắt đã sao chép và bảng đã sao chép kết thúc bằng một dòng ghi liên kết hồ sơ và ngày (Source: …), để có thể lưu hoặc chuyển tiếp các con số. Danh sách chưa tải đủ luôn được ghi chú ngay tại đó."
   },
   "unrankedPreprints": {
     "message": "Preprint"
@@ -1197,7 +1203,7 @@
     "message": "Khi cả hai danh sách đều xếp hạng nơi công bố"
   },
   "optPreferHint": {
-    "message": "Một nhãn thay vì hai: danh sách bạn chọn, và danh sách kia chỉ hiện khi danh sách bạn chọn không có hạng cho nơi công bố đó. Chú thích của nhãn cũng nêu hạng của danh sách kia."
+    "message": "Một nhãn thay vì hai: nhãn của danh sách bạn chọn. Nhãn của danh sách kia chỉ hiện khi danh sách bạn chọn không có hạng cho nơi công bố đó. Chú thích của nhãn cũng nêu hạng của danh sách kia."
   },
   "optPreferCcf": {
     "message": "Ưu tiên CCF"

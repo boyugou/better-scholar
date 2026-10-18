@@ -3,7 +3,7 @@
     "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "Verbeter Google Scholar: auteursrollen, CCF- en CORE-rangen, conferentieprijzen, jaargrafieken en direct zoeken."
+    "message": "Op profielen van Google Scholar: auteursrol van de eigenaar en CCF- en CORE-rang van de venue per paper, geteld in één tabel."
   },
   "extShortName": {
     "message": "Better Scholar"
@@ -51,7 +51,7 @@
     "message": "Finalist beste paper"
   },
   "marksHint": {
-    "message": "Gebaseerd op de eigen woorden van de auteurs in de titel en venue-tekst van elke paper op Scholar (niet gecontroleerd) en op een meegeleverde lijst van bekroonde papers op grote conferenties."
+    "message": "Uit twee bronnen: de woorden die auteurs zelf schrijven in de titel of venue-regel van een paper op Scholar (niet gecontroleerd), en een meegeleverde lijst van bekroonde papers op grote conferenties."
   },
   "marksAsWritten": {
     "message": "uit de eigen woorden van de auteurs of de prijzenlijst"
@@ -175,7 +175,7 @@
     "message": "Opent de pagina van elke paper op Scholar (ongeveer één per seconde) om de volledige auteurslijst te lezen."
   },
   "resolveHintSemantic": {
-    "message": "Vraagt eerst Semantic Scholar om de auteurslijst van elke paper (het ontvangt alleen de titel), en opent daarna de pagina’s van de overige papers op Scholar (ongeveer één per seconde)."
+    "message": "Vraagt eerst Semantic Scholar om de auteurslijst van elke paper (Semantic Scholar krijgt alleen de titel). Daarna opent de extensie de pagina’s van de overige papers op Scholar, ongeveer één per seconde."
   },
   "resolving": {
     "message": "Auteurslijsten lezen… $N1$/$N2$",
@@ -482,7 +482,7 @@
     "message": "Al deze instellingen terugzetten naar de standaardwaarden?"
   },
   "optStorage": {
-    "message": "Instellingen worden in je browser opgeslagen en synchroniseren met je Chrome-profiel. De extensie leest de Scholar-pagina's die je opent, en wanneer je op “Hele lijsten lezen” drukt, ook de pagina's van papers met een afgekapte auteurslijst; paper-titels worden alleen naar Semantic Scholar gestuurd als je dat aanzet."
+    "message": "Je instellingen blijven in je browser en synchroniseren met je Chrome-profiel. De extensie leest de Scholar-pagina’s die je opent. Als je op “Hele lijsten lezen” drukt, leest de extensie ook de pagina’s van papers met een afgekapte auteurslijst. Paper-titels worden alleen naar Semantic Scholar gestuurd als je dat aanzet."
   },
   "optSample": {
     "message": "Voorbeeldpaper"
@@ -494,7 +494,7 @@
     "message": "Alle papers automatisch laden"
   },
   "optAutoLoadHint": {
-    "message": "Scholar toont eerst alleen de eerste papers. Dit drukt voor jou op de eigen knop “Meer weergeven”, ongeveer één keer per seconde, tot de hele lijst is geladen, en stopt als Scholar niet meer antwoordt. Uit: het paneel biedt “Alles laden” aan."
+    "message": "Scholar toont van een profiel alleen de eerste papers. Dit drukt voor jou op de knop “Meer weergeven” van Scholar zelf, ongeveer één keer per seconde, tot de hele lijst is geladen. Het stopt als Scholar niet meer antwoordt. Uit: het paneel toont “Alles laden”."
   },
   "loadStalled": {
     "message": "Scholar stuurde geen papers meer ($N1$ geladen). Probeer zo meteen “Alles laden” opnieuw.",
@@ -583,7 +583,7 @@
     "message": "Dubbelen samenvoegen"
   },
   "optMergeLabelHint": {
-    "message": "Vermeldingen met dezelfde titel (hoofdletters, accenten en leestekens daargelaten) en dezelfde eerste auteur worden één: de meest geciteerde blijft en toont de citaties van alle. Het paneel telt hem één keer."
+    "message": "Vermeldingen met dezelfde titel en dezelfde eerste auteur worden één vermelding (hoofdletters, accenten en leestekens tellen niet mee). De meest geciteerde vermelding blijft en toont de citaties van alle. Het paneel telt hem één keer."
   },
   "mergedTip": {
     "message": "Samengevoegd uit $N1$ vermeldingen: de citaties van alle",
@@ -675,7 +675,7 @@
     "message": "Auteurslijsten eerst lezen via Semantic Scholar"
   },
   "optSemanticLabelHint": {
-    "message": "Bij “Hele lijsten lezen” vraagt de extensie eerst Semantic Scholar om de volledige auteurslijst van elke paper (het ontvangt de titel van de paper en verder niets), en opent de eigen pagina van Scholar alleen voor wat het niet kent. Minder verzoeken aan Scholar, dus minder CAPTCHA’s."
+    "message": "Bij “Hele lijsten lezen” vraagt de extensie eerst Semantic Scholar om de volledige auteurslijst van elke paper. Semantic Scholar krijgt alleen de titel van de paper en verder niets. De eigen pagina van Scholar wordt daarna alleen geopend voor de papers die Semantic Scholar niet kent. Minder verzoeken aan Scholar betekent minder CAPTCHA’s."
   },
   "yearsTitle": {
     "message": "Gemarkeerde papers per jaar"
@@ -879,7 +879,7 @@
     "message": "AI-agents"
   },
   "optAgentHint": {
-    "message": "Kopieer een gids met elke instelling, de waarden ervan en je huidige keuzes. Plak die in je AI-assistent, zeg wat je wilt en plak het antwoord daarna in de configuratie-editor hieronder en druk op Configuratie toepassen."
+    "message": "Kopieer een gids met elke instelling, de waarden ervan en je huidige keuzes. Geef die aan je AI-assistent, samen met wat je wilt. Plak daarna het antwoord in de configuratie-editor hieronder en druk op Configuratie toepassen."
   },
   "optAgentCopy": {
     "message": "Agentengids kopiëren"
@@ -993,6 +993,12 @@
   },
   "optFiltersSearch": {
     "message": "Zoekvak"
+  },
+  "optFiltersKey": {
+    "message": "De “/”-toets springt naar het zoekvak"
+  },
+  "optFiltersKeyHint": {
+    "message": "In het paneel op een profielpagina en op deze pagina voor het eigen zoekvak. Uit: de toets doet niets."
   },
   "optOrderPills": {
     "message": "Volgorde van de snelfilters"
@@ -1141,7 +1147,7 @@
     "message": "Venue controleren"
   },
   "optVenueHint": {
-    "message": "Plak een venue zoals Scholar die toont (de grijze regel onder een paper) om te zien wat de CCF- en CORE-lijsten ervan vinden, en volgens welke regel. Een venue die ze niet kunnen plaatsen krijgt geen rang: er wordt niets geraden."
+    "message": "Plak een venue zoals Scholar die toont: de grijze regel onder een paper. Je ziet wat de CCF- en CORE-lijsten ervan vinden, en volgens welke regel. Een venue die ze niet kunnen plaatsen krijgt geen rang. Er wordt niets geraden."
   },
   "optVenuePlaceholder": {
     "message": "bijv. Proceedings of the IEEE conference on computer vision and pattern recognition"
@@ -1150,7 +1156,7 @@
     "message": "Geen rang. De lijsten plaatsen deze tekst niet met zekerheid, dus krijgt hij geen label."
   },
   "optVenueSecondary": {
-    "message": "Het woord “$N1$” duidt een secundaire categorie aan (workshop, poster, kort paper …): een venue krijgt geen rang, tenzij de eigen naam dat woord bevat.",
+    "message": "Het woord “$N1$” duidt een secundaire categorie aan, zoals een workshop, een poster of een kort paper. Een venue krijgt geen rang, tenzij de eigen naam dat woord bevat.",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -1170,7 +1176,7 @@
     "message": "De aantallen volgen de filters"
   },
   "optFiltersFollowHint": {
-    "message": "De tabel, de tellingen voor prijzen en talks en het overzicht om te kopiëren tellen alleen de papers die de filters overlaten (een jaarbereik, een zoekopdracht, een snelfilter, een venue); de geselecteerde cel of rij verkleint geen enkele telling. Uit: ze tellen altijd het hele profiel."
+    "message": "De tabel, de tellingen voor prijzen en talks en het overzicht om te kopiëren tellen alleen de papers die de filters overlaten: een jaarbereik, een zoekopdracht, een snelfilter of een venue. De geselecteerde cel of rij verandert geen enkele telling. Uit: ze tellen altijd het hele profiel."
   },
   "optPillRecent": {
     "message": "Laatste 5 jaar"
@@ -1182,7 +1188,7 @@
     "message": "Profiellink en datum toevoegen aan het gekopieerde overzicht"
   },
   "optCopySourceHint": {
-    "message": "Het gekopieerde overzicht en de gekopieerde tabel krijgen een regel met de profiellink en de datum (Source: …), zodat de cijfers kunnen worden opgeslagen of doorgestuurd. Een lijst die niet helemaal is geladen, meldt dat daar, ongeacht de stand van deze schakelaar."
+    "message": "Het gekopieerde overzicht en de gekopieerde tabel eindigen met een regel met de profiellink en de datum (Source: …), zodat je de cijfers kunt opslaan of doorsturen. Een lijst die niet helemaal is geladen, meldt dat daar altijd."
   },
   "unrankedPreprints": {
     "message": "Voorpublicaties"
@@ -1197,7 +1203,7 @@
     "message": "Als een publicatiekanaal in beide lijsten een rang heeft"
   },
   "optPreferHint": {
-    "message": "Eén label in plaats van twee: de lijst die je kiest, en de andere alleen waar die lijst geen rang heeft voor het publicatiekanaal. De tooltip van het label noemt nog steeds de andere rang."
+    "message": "Eén label in plaats van twee: het label van de lijst die je kiest. Het label van de andere lijst verschijnt alleen waar de gekozen lijst geen rang heeft voor het publicatiekanaal. De tooltip van het label noemt nog steeds de andere rang."
   },
   "optPreferCcf": {
     "message": "CCF eerst"

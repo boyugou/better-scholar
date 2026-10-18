@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Better Scholar: Google Scholar'da yazarlık rolleriniz ve yayın yeri sıralamalarınız</title>
-<meta name="description" content="Google Scholar profilinizdeki her yayında rolünüzü (birinci, ortak birinci, ikinci veya son yazar) ve dergi ya da konferansın CCF / CORE sıralamasını işaretleyip hepsini tek bir tabloda özetleyen ücretsiz bir Chrome eklentisi.">
+<title>Better Scholar: Google Scholar'da yazarlık rolünüz ve yayın yeri sıralamanız</title>
+<meta name="description" content="Google Scholar profilleri için ücretsiz bir Chrome eklentisi. Her makalede yazarlık rolünüzü ve yayın yerinin CCF / CORE sıralamasını gösterir, makalelerinizi tek bir tabloda sayar.">
 <link rel="canonical" href="https://boyugou.github.io/better-scholar/tr/">
 <link rel="alternate" hreflang="en" href="https://boyugou.github.io/better-scholar/en/">
 <link rel="alternate" hreflang="zh-CN" href="https://boyugou.github.io/better-scholar/zh-CN/">
@@ -40,14 +40,14 @@
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Better Scholar: Google Scholar'da yazarlık rolleriniz ve yayın yeri sıralamalarınız">
-<meta property="og:description" content="Google Scholar profilinizdeki her yayında rolünüzü (birinci, ortak birinci, ikinci veya son yazar) ve dergi ya da konferansın CCF / CORE sıralamasını işaretleyip hepsini tek bir tabloda özetleyen ücretsiz bir Chrome eklentisi.">
+<meta property="og:title" content="Better Scholar: Google Scholar'da yazarlık rolünüz ve yayın yeri sıralamanız">
+<meta property="og:description" content="Google Scholar profilleri için ücretsiz bir Chrome eklentisi. Her makalede yazarlık rolünüzü ve yayın yerinin CCF / CORE sıralamasını gösterir, makalelerinizi tek bir tabloda sayar.">
 <meta property="og:url" content="https://boyugou.github.io/better-scholar/tr/">
 <meta property="og:image" content="https://boyugou.github.io/better-scholar/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="../assets/styles.css">
 <meta name="theme-color" content="#161d33">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Better Scholar","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Chromium browsers","description":"Google Scholar profilinizdeki her yayında rolünüzü (birinci, ortak birinci, ikinci veya son yazar) ve dergi ya da konferansın CCF / CORE sıralamasını işaretleyip hepsini tek bir tabloda özetleyen ücretsiz bir Chrome eklentisi.","inLanguage":"tr","url":"https://boyugou.github.io/better-scholar/tr/","image":"https://boyugou.github.io/better-scholar/assets/og.png","license":"https://www.apache.org/licenses/LICENSE-2.0","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Better Scholar","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Chromium browsers","description":"Google Scholar profilleri için ücretsiz bir Chrome eklentisi. Her makalede yazarlık rolünüzü ve yayın yerinin CCF / CORE sıralamasını gösterir, makalelerinizi tek bir tabloda sayar.","inLanguage":"tr","url":"https://boyugou.github.io/better-scholar/tr/","image":"https://boyugou.github.io/better-scholar/assets/og.png","license":"https://www.apache.org/licenses/LICENSE-2.0","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 </head>
 <body>
 <header class="top">
@@ -97,16 +97,11 @@
 <main>
   <section class="hero">
     <div class="wrap">
-      <div class="hero-badges">
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg> Manifest V3</span>
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg> Tarayıcınızda çalışır</span>
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg> Bağımlılık yok</span>
-      </div>
       <div class="stripes" aria-hidden="true"><i style="--c:#4d8ff5"></i><i style="--c:#b36cf6"></i><i style="--c:#fbbc04"></i><i style="--c:#34a853"></i></div>
-      <h1>Her yayında nerede durduğunuzu görün</h1>
-      <p class="lead">Google Scholar profilleri için bir Chrome eklentisi. Her yayında yazarlık rolünüzü ve yayın yerinin CCF / CORE sıralamasını işaretler, sonucu tek bir tabloda toplar: “4 CCF-A yayınında birinci yazar”.</p>
+      <h1>Her makalede rolünüz ve yayın yerinin sıralaması</h1>
+      <p class="lead">Google Scholar profilleri için ücretsiz bir Chrome eklentisi. Her makaleyi yazarlık rolünüze göre renklendirir, yayın yerinin CCF ve CORE sıralamasını gösterir ve makalelerinizi tek bir tabloda sayar.</p>
       <p class="cta"><a class="btn" href="#install">Yükle</a> <a class="btn ghost" href="https://github.com/boyugou/better-scholar">GitHub'da görüntüle</a></p>
-      <p class="note">Ücretsiz ve açık kaynak · Chrome ve diğer Chromium tarayıcıları · 30 dil</p>
+      <p class="note">Ücretsiz ve açık kaynak · Chrome, Edge, Brave ve diğer Chromium tarayıcıları · 30 dil</p>
     </div>
   </section>
 
@@ -114,17 +109,69 @@
     <div class="wrap">
       <figure class="hero-shot">
         <div class="hero-frame" style="aspect-ratio: 1280 / 660">
-          <img src="../assets/hero.jpg" alt="Uydurma bir profil (gerçek yayın yerleri, uydurma yayınlar): satırlar role göre renklendirilmiş, her yayın yerinin yanında sıralama etiketi ve sağda özet." width="1280" height="800" fetchpriority="high" decoding="async">
+          <img src="../assets/hero.jpg" alt="Gerçek yayın yerleriyle uydurma bir profil: her satır rolünüzün rengini taşır, etiketler sıralamayı gösterir ve sağdaki panel makaleleri sayar." width="1280" height="800" fetchpriority="high" decoding="async">
         </div>
-        <figcaption>Uydurma bir profil (gerçek yayın yerleri, uydurma yayınlar): satırlar role göre renklendirilmiş, her yayın yerinin yanında sıralama etiketi ve sağda özet.</figcaption>
+        <figcaption>Gerçek yayın yerleriyle uydurma bir profil: her satır rolünüzün rengini taşır, etiketler sıralamayı gösterir ve sağdaki panel makaleleri sayar.</figcaption>
       </figure>
+    </div>
+  </section>
+
+  <section class="how" id="how">
+    <div class="wrap">
+      <h2>Eklenti bir makaleyi nasıl okur</h2>
+      <p class="note">Gerçek yayın yerlerinde iki uydurma makale. Her adım, eklentinin kendi kodunun bu makalelerde neyi bulduğunu gösterir.</p>
+      <div class="how-grid">
+        <ol class="how-steps">
+          <li><button type="button" data-step="1"><span class="n">1</span><b>Adınızı bulun</b><span class="d">Eklenti, profil sahibinin adını yazar satırında bulur. Satırdaki yeriniz rolünüzü belirler: birinci, eş birinci, ikinci veya son yazar.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="2"><span class="n">2</span><b>Yayın yerini bulun</b><span class="d">Eklenti yayın yerini CCF ve CORE listelerinde arar: tam adıyla veya kısaltmasıyla. Kesin bir eşleşme sıralama etiketi verir.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="3"><span class="n">3</span><b>Asla tahmin yürütmez</b><span class="d">Bir workshop, bir poster veya bir Findings makalesi ana konferans değildir. Listelerin kesin olarak yerleştiremediği bir yayın yerine etiket verilmez.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="4" aria-current="step"><span class="n">4</span><b>Sayım</b><span class="d">Panel her makaleyi bir kez sayar: rolünüze ve sıralamaya göre. Makalelerini görmek için bir sayıya tıklayın.</span><i class="bar" aria-hidden="true"></i></button></li>
+        </ol>
+        <div class="how-figure">
+        <div class="how-stage" aria-hidden="true">
+          <div class="sr-head" dir="ltr" lang="en"><span>Title</span><span>Cited by</span><span>Year</span></div>
+          <div class="sr on" data-from="1" dir="ltr" data-role="first" style="--rc:#1a73e8">
+            <div class="sr-text" lang="en"><div class="sr-t">Self-Supervised Depth from Casual Video</div><div class="sr-a"><span class="nm on" data-from="1" data-focus="1">A Example</span>, B Writer, C Writer, D Writer</div><div class="sr-v"><span class="vn on" data-from="2" data-focus="2">Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</span>, 2023 <span class="chip on" data-from="2" data-focus="2"><span class="k">CCF</span> <b>A</b></span></div></div>
+            <div class="sr-c">892</div><div class="sr-y">2023</div>
+            <div class="co-slot" dir="ltr"><p class="co" data-from="1" data-to="1"><span class="tag">Birinci</span> 4 yazardan 1. sıra</p><p class="co on" data-from="2"><b dir="ltr">CCF A · CORE A*</b> · Ada göre eşleşti: <span dir="ltr">IEEE/CVF Computer Vision and Pattern Recognition Conference</span></p></div>
+          </div>
+          <div class="sr on" data-from="1" dir="ltr" data-role="second" style="--rc:#f9ab00">
+            <div class="sr-text" lang="en"><div class="sr-t">Cheap Calibration for Retrieval-Augmented Models</div><div class="sr-a">B Writer, <span class="nm on" data-from="1" data-focus="1">A Example</span>, H Writer</div><div class="sr-v"><mark class="sec on" data-from="3" data-focus="3">Findings</mark> of the Association for Computational Linguistics: ACL 2022, 410-423, 2022</div></div>
+            <div class="sr-c">868</div><div class="sr-y">2022</div>
+            <div class="co-slot" dir="ltr"><p class="co" data-from="1" data-to="2"><span class="tag">İkinci</span> 3 yazardan 2. sıra</p><p class="co on" data-from="3"><b dir="ltr">Findings</b> · ikincil kategori: sıralama yok, etiket yok</p></div>
+          </div>
+          <div class="mini">
+            <div class="mini-h"><b>Role ve sıralamaya göre makaleler</b><span dir="ltr"><i class="on">CCF</i><i>CORE</i></span></div>
+            <table>
+              <thead><tr><th></th><th>A</th><th>B</th><th>C</th><th>–</th><th>Tümü</th></tr></thead>
+              <tbody><tr><th><i style="--rc:#1a73e8"></i>Birinci</th><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td><td>·</td><td>·</td><td>·</td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td></tr><tr><th><i style="--rc:#f9ab00"></i>İkinci</th><td>·</td><td>·</td><td>·</td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <button type="button" class="how-play" hidden data-play="Oynat" data-pause="Duraklat"><svg class="i-play" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg><svg class="i-pause" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z" fill="currentColor"/></svg><span>Oynat</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="wrap">
+      <h2>Başka neler yapar</h2>
+      <div class="grid">
+        <article style="--c:#4d8ff5"><h3>Ödüller ve sunumlar</h3><p>En iyi makaleler, test-of-time ödülleri ve Oral, Spotlight veya Highlight sunumları için etiketler. Bunlar yazarların kendi sözlerinden ve resmi ödül sayfalarından gelir.</p></article>
+        <article style="--c:#b36cf6"><h3>Tam yazar listeleri</h3><p>Scholar, uzun yazar listelerini “…” ile kısaltır; bu da rolünüzü gizleyebilir. Tek tıkla tam listeleri Scholar'daki makale sayfalarından okur.</p></article>
+        <article style="--c:#fbbc04"><h3>Yinelenen kayıtlar birleştirildi</h3><p>Scholar bazen aynı makaleyi iki kez listeler. Bir anahtar bunları tek kayda dönüştürür ve atıf sayılarını toplar.</p></article>
+        <article style="--c:#34a853"><h3>Kendi düzeniniz</h3><p>Panelin her bölümünün kendi anahtarı vardır. Renkleri, bölümlerin sırasını ve onlara verdiğiniz adları seçin.</p></article>
+        <article style="--c:#4d8ff5"><h3>Gizlilik</h3><p>Hesap yok, analitik yok, izleme yok. Bütün işlemler tarayıcınızda yapılır ve sıralama listeleri eklentinin içindedir.</p></article>
+        <article style="--c:#b36cf6"><h3>30 dil</h3><p>Eklenti sizin dilinizde kullanılabilir. Ayrıca Scholar'ın kendisini seçtiğiniz bir dilde açabilir.</p></article>
+      </div>
     </div>
   </section>
 
   <section class="try" id="try">
     <div class="wrap">
-      <h2>Gerçek ayarlar sayfasını deneyin</h2>
-      <p class="note">Eklentinin kendi ayarlar sayfası burada çalışıyor: bir seçeneği açıp kapatın, önizleme de buna göre değişir. Bir bölümü gizlemek, taşımak veya yeniden adlandırmak için önizlemenin üzerine gelin; bir bölüme çift tıklayarak da ayarına gidin.</p>
+      <h2>Ayarlar sayfasını deneyin</h2>
+      <p class="note">Bu, eklentinin gerçek ayarlar sayfasıdır. Bir ayarı değiştirin, önizleme de onunla birlikte değişir. Bir bölümü gizlemek, taşımak veya yeniden adlandırmak için önizlemedeki bir bölümün üzerine gelin.</p>
       <div class="try-bar">
         <a class="skip" href="#after-try">Demoyu atla</a>
         <p>Değişiklikleriniz yalnızca tarayıcınızda kalır.</p>
@@ -138,15 +185,15 @@
 
   <section class="export-section" id="after-try">
     <div class="wrap">
-      <h2>Tek tıkla akademik dışa aktarma</h2>
-      <p class="note">CV'ler, hibe formları, LaTeX belgeleri, yapay zekâ ajanları ve e-tablolar için yapıştırmaya hazır yayın listeleri.</p>
+      <h2>Makalelerinizi kopyalayın</h2>
+      <p class="note">Her biçim için bir düğme: CV, hibe formu, LaTeX veya e-tablo için. Aşağıda dört uydurma makale için gerçek çıktı var.</p>
       <div class="export-card">
-        <div class="export-tabs" role="tablist" aria-label="Tek tıkla akademik dışa aktarma">
-          <button type="button" class="tab-btn active" role="tab" id="tab-bibtex" aria-selected="true" aria-controls="export-bibtex">BibTeX (LaTeX-Ready)</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-apa" aria-selected="false" aria-controls="export-apa" tabindex="-1">APA 7th Edition</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-json" aria-selected="false" aria-controls="export-json" tabindex="-1">Structured JSON</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-markdown" aria-selected="false" aria-controls="export-markdown" tabindex="-1">GitHub Markdown</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-csv" aria-selected="false" aria-controls="export-csv" tabindex="-1">RFC-4180 CSV</button>
+        <div class="export-tabs" role="tablist" aria-label="Makalelerinizi kopyalayın">
+          <button type="button" class="tab-btn active" role="tab" id="tab-bibtex" aria-selected="true" aria-controls="export-bibtex">BibTeX</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-apa" aria-selected="false" aria-controls="export-apa" tabindex="-1">APA</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-json" aria-selected="false" aria-controls="export-json" tabindex="-1">JSON</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-markdown" aria-selected="false" aria-controls="export-markdown" tabindex="-1">Markdown</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-csv" aria-selected="false" aria-controls="export-csv" tabindex="-1">CSV</button>
         </div>
         <div class="code-preview-wrap">
           <pre class="code-preview" role="tabpanel" id="export-bibtex" aria-labelledby="tab-bibtex" tabindex="0"><code>@inproceedings{author2025sample,
@@ -318,7 +365,7 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
 2024,Sample paper 2,&quot;B Writer, A Author, C Writer&quot;,Second author,NeurIPS 2024,A,A*,Best paper (NeurIPS 2024),133
 2024,Sample paper 3,&quot;A Author*, B Writer*, C Writer&quot;,Co-first author,CVPR 2024 (Highlight),A,A*,Highlight,27
 2023,Sample paper 4,&quot;B Writer, C Writer, D Writer, A Author&quot;,Last author,ACL 2023 (Spotlight),A,A*,Spotlight,215</code></pre>
-          <button type="button" class="copy-code-btn" data-label="Panoya kopyala" data-copied="Kopyalandı!">Panoya kopyala</button>
+          <button type="button" class="copy-code-btn" data-label="Kopyala" data-copied="Kopyalandı">Kopyala</button>
         </div>
       </div>
     </div>
@@ -326,69 +373,56 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
 
   <section class="operators-section">
     <div class="wrap">
-      <h2>Anında arama ve sorgu operatörleri</h2>
-      <p class="note">Bir Scholar profilinde herhangi bir yerde <kbd>/</kbd> tuşuna basarak tüm listede bir anda arama yapın.</p>
+      <h2>Operatörlerle arama</h2>
+      <p class="note">Bir profilde <kbd>/</kbd> tuşuna basarak tüm makalelerinde arama yapın. Listeyi filtrelemek için kelimelerinize operatörler ekleyin.</p>
       <div class="operators-grid">
         <div class="op-card">
-          <div class="op-header"><code>cites:&gt;100</code> <code>cites:&gt;=50</code> <code>cites:&lt;10</code></div>
-          <p class="op-title">Atıf eşikleri</p>
-          <p class="op-desc">Yazdığınız herhangi bir sayıdan daha fazla veya daha az atıf alan makaleleri tutun.</p>
+          <div class="op-header" dir="ltr"><code>cites:&gt;100</code> <code>cites:&gt;=50</code> <code>cites:&lt;10</code></div>
+          <h3 class="op-title">Atıflar</h3>
+          <p class="op-desc">Belirli bir sayıdan daha fazla veya daha az atıf alan makaleler.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>ccf:a</code> <code>ccf:b</code> <code>core:a*</code></div>
-          <p class="op-title">Yayın yeri sıralama kademeleri</p>
-          <p class="op-desc">Yalnızca CCF veya CORE sıralamalı konferans ve dergilerdeki makaleleri gösterin.</p>
+          <div class="op-header" dir="ltr"><code>ccf:a</code> <code>ccf:b</code> <code>core:a*</code></div>
+          <h3 class="op-title">Sıralama</h3>
+          <p class="op-desc">Belirli bir CCF veya CORE sıralamasına sahip yayın yerlerindeki makaleler.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>role:first</code> <code>role:last</code> <code>role:cofirst</code></div>
-          <p class="op-title">Yazarlık rolleri</p>
-          <p class="op-desc">Birinci, ortak birinci, ikinci veya son (kıdemli) yazara göre filtreleyin.</p>
+          <div class="op-header" dir="ltr"><code>role:first</code> <code>role:last</code> <code>role:cofirst</code></div>
+          <h3 class="op-title">Rol</h3>
+          <p class="op-desc">Birinci, eş birinci, ikinci veya son yazar olduğunuz makaleler.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>year:&gt;2020</code> <code>year:&gt;=2021</code> <code>year:&lt;=2015</code></div>
-          <p class="op-title">Yayın yılları</p>
-          <p class="op-desc">Seçtiğiniz yıllardan sonra, önce veya o yıllar içinde ya da son beş yılda yayımlanan makaleler.</p>
+          <div class="op-header" dir="ltr"><code>year:&gt;=2020</code> <code>year:2023</code> <code>age:&lt;5</code></div>
+          <h3 class="op-title">Yıl</h3>
+          <p class="op-desc">Belirli bir yıldan önce, sonra veya o yılda ya da son birkaç yılda yayımlanan makaleler.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>has:award</code> <code>has:talk</code></div>
-          <p class="op-title">Ödüller ve sunumlar</p>
-          <p class="op-desc">Best Paper, Test of Time, Oral, Spotlight ve Highlight makalelerini bulun.</p>
+          <div class="op-header" dir="ltr"><code>has:award</code> <code>has:talk</code></div>
+          <h3 class="op-title">Ödüller ve sunumlar</h3>
+          <p class="op-desc">Best Paper veya Test of Time ödülü ya da Oral, Spotlight veya Highlight sunumu olan makaleler.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><kbd>Escape</kbd></div>
-          <p class="op-title">Tek tuşla sıfırlama</p>
-          <p class="op-desc">Tüm aramaları, tablo seçimlerini ve filtreleri bir anda temizler.</p>
+          <div class="op-header" dir="ltr"><kbd>Escape</kbd></div>
+          <h3 class="op-title">Hepsini temizle</h3>
+          <p class="op-desc">Bir tuş, aramayı, seçili hücreyi ve tüm filtreleri temizler.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="features">
-    <div class="wrap grid">
-      <article style="--c:#4d8ff5"><h3>Her yayın rolünüze göre renklendirilmiş</h3><p>Birinci, ortak birinci, ikinci ve son yazar satırları kendi renklerini alır; adınız yazar satırında vurgulanır.</p></article>
-      <article style="--c:#b36cf6"><h3>CCF ve CORE sıralamaları</h3><p>Her yayın yerinin yanında CCF 2026 ve ICORE 2026 sıralaması, eşleşmesini sağlayan kuralla birlikte gösterilir. Yerleştirilemeyen bir yayın yeri işaretsiz kalır: asla tahmin yürütülmez.</p></article>
-      <article style="--c:#fbbc04"><h3>Rol × sıralama tablosu</h3><p>Yalnızca o yayınları görmek için bir hücre seçin; özeti ya da listeyi bir CV veya hibe başvurusu için kopyalayın.</p></article>
-      <article style="--c:#34a853"><h3>Ödüller ve sunumlar</h3><p>En iyi yayınlar, test-of-time ödülleri, Oral, Spotlight ve Highlight; yazarların kendi sözlerinden ve 7.000'den fazla yayının resmi ödül sayfalarından.</p></article>
-      <article style="--c:#4d8ff5"><h3>Kesilmiş yazar listeleri tamamlandı</h3><p>Scholar, uzun listelerde son yazarları gizler. Tek tıkla bunları yayının sayfasından okur; izin verirseniz Semantic Scholar'dan da okuyabilir.</p></article>
-      <article style="--c:#b36cf6"><h3>Yinelenen kayıtlar birleştirildi</h3><p>Açarsanız, aynı yayını iki kez listeleyen kayıtlar tek kayda dönüşür ve atıf sayıları toplanır.</p></article>
-      <article style="--c:#fbbc04"><h3>Size göre şekillendirin</h3><p>Neyin gösterileceğini seçin, kendi renklerinizi belirleyin ve Scholar sayfasının ihtiyacınız olmayan bölümlerini gizleyin.</p></article>
-      <article style="--c:#34a853"><h3>Tasarımı gereği gizlilik</h3><p>Hesap yok, analitik yok, izleme yok. Her şey tarayıcınızda hesaplanır ve sıralama listeleri eklentinin kendisinde gelir.</p></article>
     </div>
   </section>
 
   <section class="numbers">
     <div class="wrap">
       <h2>Rakamlarla</h2>
-      <p class="note">Bu rakamlar, sayfa oluşturulurken eklentinin kodundan ve verilerinden hesaplanmıştır; hiçbiri elle girilmemiştir. Her düzeltmeyle artan sayılar aşağı yuvarlanmıştır.</p>
+      <p class="note">Bu rakamlar, sayfa oluşturulurken eklentinin kodundan ve verilerinden hesaplanır. Her düzeltmeyle artan sayılar aşağı yuvarlanır.</p>
       <div class="numbers-grid">
-        <div class="num" style="--c:#4d8ff5"><b dir="ltr">153</b><span>değiştirebileceğiniz ayar</span></div>
+        <div class="num" style="--c:#4d8ff5"><b dir="ltr">154</b><span>değiştirebileceğiniz ayar</span></div>
         <div class="num" style="--c:#b36cf6"><b dir="ltr">30</b><span>arayüz dili</span></div>
         <div class="num" style="--c:#fbbc04"><b dir="ltr">1.178</b><span>CCF ve CORE listelerinde sıralaması olan yayın yeri</span></div>
-        <div class="num" style="--c:#34a853"><b dir="ltr">400+</b><span>Scholar'ın yazdığı, resmi listelerde bulunmayan yayın yeri adı</span></div>
+        <div class="num" style="--c:#34a853"><b dir="ltr">400+</b><span>Scholar'ın yazdığı ama listelerde bulunmayan yayın yeri adı</span></div>
         <div class="num" style="--c:#4d8ff5"><b dir="ltr">18</b><span>yanlış sıralamanın gösterilmesini engelleyen kontrol</span></div>
-        <div class="num" style="--c:#b36cf6"><b dir="ltr">5.581</b><span>eklentinin tanıdığı ödüllü yayın</span></div>
+        <div class="num" style="--c:#b36cf6"><b dir="ltr">5.581</b><span>eklentinin bildiği ödüllü makale</span></div>
         <div class="num" style="--c:#fbbc04"><b dir="ltr">22.744</b><span>sıralaması elle kontrol edilmiş gerçek Scholar yayın yeri satırı</span></div>
-        <div class="num" style="--c:#34a853"><b dir="ltr">500+</b><span>birim testi, ayrıca gerçek tarayıcıda uçtan uca test takımı</span></div>
+        <div class="num" style="--c:#34a853"><b dir="ltr">500+</b><span>birim testi ve gerçek tarayıcıda uçtan uca test takımı</span></div>
       </div>
     </div>
   </section>
@@ -397,18 +431,22 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
     <div class="wrap">
       <h2>Yükleme</h2>
       <ol>
-        <li>Projeyi GitHub'dan indirin (yeşil “Code” düğmesi, ardından “Download ZIP”) ve zip dosyasını açın.</li>
+        <li>Projeyi GitHub'dan indirin: yeşil “Code” düğmesine, ardından “Download ZIP” düğmesine tıklayın. Zip dosyasını açın.</li>
         <li><code>chrome://extensions</code> adresini açın ve Geliştirici modunu etkinleştirin.</li>
-        <li>“Paketlenmemiş öğe yükle” düğmesine tıklayın ve src klasörünü seçin. Ardından herhangi bir Google Scholar profilini açın.</li>
+        <li>“Paketlenmemiş öğe yükle” düğmesine tıklayın ve src klasörünü seçin. Ardından bir Google Scholar profilini açın.</li>
       </ol>
-      <p class="note">Chrome Web Mağazası'nda bir listeleme daha sonra gelebilir. Edge, Brave ve diğer Chromium tarayıcıları aynı şekilde çalışır.</p>
+      <p class="note">Edge, Brave ve diğer Chromium tarayıcıları aynı adımları izler. Chrome Web Mağazası sürümü daha sonra gelebilir.</p>
     </div>
   </section>
 
   <section class="honest">
     <div class="wrap">
-      <h2>Sınırları konusunda dürüst</h2>
-      <p>Sıralamalar, yayın tarihindeki değil, bugünkü listelerdir ve CCF listesinin kendisi bir değerlendirme olmadığını belirtir. Eklenti asla bir yayın yerini tahmin etmez: yerleştirilemeyenler listelenir, işaretlenmez.</p>
+      <h2>Sınırlar</h2>
+      <ul class="limits">
+        <li>Sıralamalar bugünkü listelerden gelir. Bir makalenin yayımlandığı yılda yayın yerinin sıralaması farklı olmuş olabilir.</li>
+        <li>CCF, listesinin akademik değerlendirmeye esas olmadığını belirtir.</li>
+        <li>Eklenti asla tahmin yürütmez. Yerleştiremediği bir yayın yerine etiket verilmez ve panel onu listeler.</li>
+      </ul>
     </div>
   </section>
 </main>
@@ -416,9 +454,9 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
   <div class="wrap">
     <span>Açık kaynak, Apache License 2.0</span>
     <a href="../privacy/">Gizlilik</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/ROADMAP.md">Roadmap</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/AGENTS.md">Agent API</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/SECURITY.md">Security</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/ROADMAP.md">Yol haritası</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/AGENTS.md">Yapay zekâ ajanları için</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/SECURITY.md">Güvenlik</a>
     <a href="https://github.com/boyugou/better-scholar/issues">Sorun bildir</a>
     <a href="https://github.com/boyugou/better-scholar">GitHub</a>
   </div>

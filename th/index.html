@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Better Scholar: บทบาทการเขียนและอันดับแหล่งตีพิมพ์ของคุณบน Google Scholar</title>
-<meta name="description" content="ส่วนขยาย Chrome ฟรีที่แสดงบทบาทของคุณ (ผู้เขียนคนแรก ผู้เขียนร่วมคนแรก ผู้เขียนคนที่สอง ผู้เขียนคนสุดท้าย) และอันดับ CCF / CORE ของการประชุมหรือวารสารในทุกบทความของโปรไฟล์ Google Scholar แล้วสรุปไว้ในตารางเดียว">
+<title>Better Scholar: บทบาทการเขียนและอันดับ venue ของคุณบน Google Scholar</title>
+<meta name="description" content="ส่วนขยาย Chrome ฟรีสำหรับโปรไฟล์ Google Scholar แสดงบทบาทผู้เขียนของคุณและอันดับ CCF / CORE ของ venue ในแต่ละงานวิจัย แล้วนับงานวิจัยของคุณในตารางเดียว">
 <link rel="canonical" href="https://boyugou.github.io/better-scholar/th/">
 <link rel="alternate" hreflang="en" href="https://boyugou.github.io/better-scholar/en/">
 <link rel="alternate" hreflang="zh-CN" href="https://boyugou.github.io/better-scholar/zh-CN/">
@@ -40,14 +40,14 @@
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Better Scholar: บทบาทการเขียนและอันดับแหล่งตีพิมพ์ของคุณบน Google Scholar">
-<meta property="og:description" content="ส่วนขยาย Chrome ฟรีที่แสดงบทบาทของคุณ (ผู้เขียนคนแรก ผู้เขียนร่วมคนแรก ผู้เขียนคนที่สอง ผู้เขียนคนสุดท้าย) และอันดับ CCF / CORE ของการประชุมหรือวารสารในทุกบทความของโปรไฟล์ Google Scholar แล้วสรุปไว้ในตารางเดียว">
+<meta property="og:title" content="Better Scholar: บทบาทการเขียนและอันดับ venue ของคุณบน Google Scholar">
+<meta property="og:description" content="ส่วนขยาย Chrome ฟรีสำหรับโปรไฟล์ Google Scholar แสดงบทบาทผู้เขียนของคุณและอันดับ CCF / CORE ของ venue ในแต่ละงานวิจัย แล้วนับงานวิจัยของคุณในตารางเดียว">
 <meta property="og:url" content="https://boyugou.github.io/better-scholar/th/">
 <meta property="og:image" content="https://boyugou.github.io/better-scholar/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="../assets/styles.css">
 <meta name="theme-color" content="#161d33">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Better Scholar","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Chromium browsers","description":"ส่วนขยาย Chrome ฟรีที่แสดงบทบาทของคุณ (ผู้เขียนคนแรก ผู้เขียนร่วมคนแรก ผู้เขียนคนที่สอง ผู้เขียนคนสุดท้าย) และอันดับ CCF / CORE ของการประชุมหรือวารสารในทุกบทความของโปรไฟล์ Google Scholar แล้วสรุปไว้ในตารางเดียว","inLanguage":"th","url":"https://boyugou.github.io/better-scholar/th/","image":"https://boyugou.github.io/better-scholar/assets/og.png","license":"https://www.apache.org/licenses/LICENSE-2.0","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Better Scholar","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Chromium browsers","description":"ส่วนขยาย Chrome ฟรีสำหรับโปรไฟล์ Google Scholar แสดงบทบาทผู้เขียนของคุณและอันดับ CCF / CORE ของ venue ในแต่ละงานวิจัย แล้วนับงานวิจัยของคุณในตารางเดียว","inLanguage":"th","url":"https://boyugou.github.io/better-scholar/th/","image":"https://boyugou.github.io/better-scholar/assets/og.png","license":"https://www.apache.org/licenses/LICENSE-2.0","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 </head>
 <body>
 <header class="top">
@@ -97,16 +97,11 @@
 <main>
   <section class="hero">
     <div class="wrap">
-      <div class="hero-badges">
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg> Manifest V3</span>
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg> ทำงานในเบราว์เซอร์ของคุณ</span>
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg> ไม่พึ่งพาไลบรารีภายนอก</span>
-      </div>
       <div class="stripes" aria-hidden="true"><i style="--c:#4d8ff5"></i><i style="--c:#b36cf6"></i><i style="--c:#fbbc04"></i><i style="--c:#34a853"></i></div>
-      <h1>ดูตำแหน่งของคุณในทุกบทความ</h1>
-      <p class="lead">ส่วนขยาย Chrome สำหรับโปรไฟล์ Google Scholar แสดงบทบาทการเขียนของคุณและอันดับ CCF / CORE ของแหล่งตีพิมพ์ในแต่ละบทความ แล้วสรุปผลในตารางเดียว: “บทความ CCF-A 4 เรื่องที่คุณเป็นผู้เขียนคนแรก”</p>
+      <h1>บทบาทของคุณและอันดับ venue ในทุกงานวิจัย</h1>
+      <p class="lead">ส่วนขยาย Chrome ฟรีสำหรับโปรไฟล์ Google Scholar ระบายสีแต่ละงานวิจัยตามบทบาทการเขียนของคุณ แสดงอันดับ CCF และ CORE ของ venue นั้น และนับงานวิจัยของคุณในตารางเดียว</p>
       <p class="cta"><a class="btn" href="#install">ติดตั้ง</a> <a class="btn ghost" href="https://github.com/boyugou/better-scholar">ดูบน GitHub</a></p>
-      <p class="note">ฟรีและโอเพนซอร์ส · Chrome และเบราว์เซอร์ Chromium อื่น ๆ · 30 ภาษา</p>
+      <p class="note">ฟรีและโอเพนซอร์ส · Chrome, Edge, Brave และเบราว์เซอร์ Chromium อื่น ๆ · 30 ภาษา</p>
     </div>
   </section>
 
@@ -114,17 +109,69 @@
     <div class="wrap">
       <figure class="hero-shot">
         <div class="hero-frame" style="aspect-ratio: 1280 / 660">
-          <img src="../assets/hero.jpg" alt="โปรไฟล์จำลอง (แหล่งตีพิมพ์จริง บทความสมมติ): แถวที่ระบายสีตามบทบาท ป้ายอันดับข้างแหล่งตีพิมพ์แต่ละแห่ง และสรุปอยู่ด้านขวา" width="1280" height="800" fetchpriority="high" decoding="async">
+          <img src="../assets/hero.jpg" alt="โปรไฟล์จำลองที่มี venue จริง แต่ละแถวมีสีตามบทบาทของคุณ ป้ายอันดับแสดงอันดับ และแผงสรุปทางขวานับจำนวนงานวิจัย" width="1280" height="800" fetchpriority="high" decoding="async">
         </div>
-        <figcaption>โปรไฟล์จำลอง (แหล่งตีพิมพ์จริง บทความสมมติ): แถวที่ระบายสีตามบทบาท ป้ายอันดับข้างแหล่งตีพิมพ์แต่ละแห่ง และสรุปอยู่ด้านขวา</figcaption>
+        <figcaption>โปรไฟล์จำลองที่มี venue จริง แต่ละแถวมีสีตามบทบาทของคุณ ป้ายอันดับแสดงอันดับ และแผงสรุปทางขวานับจำนวนงานวิจัย</figcaption>
       </figure>
+    </div>
+  </section>
+
+  <section class="how" id="how">
+    <div class="wrap">
+      <h2>ส่วนขยายอ่านบทความอย่างไร</h2>
+      <p class="note">บทความสมมติสองเรื่องที่ตีพิมพ์ในแหล่งตีพิมพ์จริง แต่ละขั้นแสดงสิ่งที่โค้ดของส่วนขยายพบในบทความเหล่านั้น</p>
+      <div class="how-grid">
+        <ol class="how-steps">
+          <li><button type="button" data-step="1"><span class="n">1</span><b>ค้นหาชื่อของคุณ</b><span class="d">ส่วนขยายค้นหาชื่อโปรไฟล์ในบรรทัดผู้เขียน ตำแหน่งของคุณในบรรทัดนั้นกำหนดบทบาทของคุณ ได้แก่ คนแรก ร่วมคนแรก คนที่สอง หรือคนสุดท้าย</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="2"><span class="n">2</span><b>ค้นหาแหล่งตีพิมพ์</b><span class="d">ส่วนขยายค้นหาแหล่งตีพิมพ์ในรายชื่อ CCF และ CORE ทั้งจากชื่อเต็มและจากตัวย่อ การจับคู่ที่แน่นอนจะให้ป้ายกำกับอันดับ</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="3"><span class="n">3</span><b>ไม่เดาเด็ดขาด</b><span class="d">workshop, poster หรือ Findings paper ไม่ใช่การประชุมหลัก แหล่งตีพิมพ์ที่รายชื่อระบุไม่แน่ชัดจะไม่มีป้ายกำกับ</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="4" aria-current="step"><span class="n">4</span><b>การนับ</b><span class="d">แผงสรุปนับบทความแต่ละเรื่องเพียงครั้งเดียว ตามบทบาทของคุณและตามอันดับ คลิกตัวเลขเพื่อดูบทความในกลุ่มนั้น</span><i class="bar" aria-hidden="true"></i></button></li>
+        </ol>
+        <div class="how-figure">
+        <div class="how-stage" aria-hidden="true">
+          <div class="sr-head" dir="ltr" lang="en"><span>Title</span><span>Cited by</span><span>Year</span></div>
+          <div class="sr on" data-from="1" dir="ltr" data-role="first" style="--rc:#1a73e8">
+            <div class="sr-text" lang="en"><div class="sr-t">Self-Supervised Depth from Casual Video</div><div class="sr-a"><span class="nm on" data-from="1" data-focus="1">A Example</span>, B Writer, C Writer, D Writer</div><div class="sr-v"><span class="vn on" data-from="2" data-focus="2">Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</span>, 2023 <span class="chip on" data-from="2" data-focus="2"><span class="k">CCF</span> <b>A</b></span></div></div>
+            <div class="sr-c">892</div><div class="sr-y">2023</div>
+            <div class="co-slot" dir="ltr"><p class="co" data-from="1" data-to="1"><span class="tag">คนแรก</span> ตำแหน่งที่ 1 จาก 4</p><p class="co on" data-from="2"><b dir="ltr">CCF A · CORE A*</b> · จับคู่จากชื่อ: <span dir="ltr">IEEE/CVF Computer Vision and Pattern Recognition Conference</span></p></div>
+          </div>
+          <div class="sr on" data-from="1" dir="ltr" data-role="second" style="--rc:#f9ab00">
+            <div class="sr-text" lang="en"><div class="sr-t">Cheap Calibration for Retrieval-Augmented Models</div><div class="sr-a">B Writer, <span class="nm on" data-from="1" data-focus="1">A Example</span>, H Writer</div><div class="sr-v"><mark class="sec on" data-from="3" data-focus="3">Findings</mark> of the Association for Computational Linguistics: ACL 2022, 410-423, 2022</div></div>
+            <div class="sr-c">868</div><div class="sr-y">2022</div>
+            <div class="co-slot" dir="ltr"><p class="co" data-from="1" data-to="2"><span class="tag">คนที่สอง</span> ตำแหน่งที่ 2 จาก 3</p><p class="co on" data-from="3"><b dir="ltr">Findings</b> · สายรอง: ไม่มีอันดับและไม่มีป้ายกำกับ</p></div>
+          </div>
+          <div class="mini">
+            <div class="mini-h"><b>งานวิจัยตามบทบาทและอันดับ</b><span dir="ltr"><i class="on">CCF</i><i>CORE</i></span></div>
+            <table>
+              <thead><tr><th></th><th>A</th><th>B</th><th>C</th><th>–</th><th>ทั้งหมด</th></tr></thead>
+              <tbody><tr><th><i style="--rc:#1a73e8"></i>คนแรก</th><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td><td>·</td><td>·</td><td>·</td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td></tr><tr><th><i style="--rc:#f9ab00"></i>คนที่สอง</th><td>·</td><td>·</td><td>·</td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <button type="button" class="how-play" hidden data-play="เล่น" data-pause="หยุดชั่วคราว"><svg class="i-play" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg><svg class="i-pause" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z" fill="currentColor"/></svg><span>เล่น</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="wrap">
+      <h2>ฟีเจอร์อื่น ๆ</h2>
+      <div class="grid">
+        <article style="--c:#4d8ff5"><h3>รางวัลและการนำเสนอ</h3><p>ป้ายกำกับสำหรับงานวิจัยดีเด่น รางวัล Test of Time และการนำเสนอแบบ Oral, Spotlight หรือ Highlight ป้ายเหล่านี้มาจากคำพูดของผู้เขียนเอง และจากหน้ารางวัลทางการ</p></article>
+        <article style="--c:#b36cf6"><h3>รายชื่อผู้เขียนฉบับเต็ม</h3><p>Scholar ตัดรายชื่อผู้เขียนที่ยาวด้วย “…” ซึ่งอาจซ่อนบทบาทของคุณ คลิกเดียวก็อ่านรายชื่อฉบับเต็มจากหน้าของงานวิจัยบน Scholar</p></article>
+        <article style="--c:#fbbc04"><h3>รวมรายการซ้ำ</h3><p>Scholar บางครั้งระบุงานวิจัยเดียวกันสองครั้ง สวิตช์จะรวมรายการเหล่านั้นเป็นรายการเดียว และนับจำนวนการอ้างอิงรวมกัน</p></article>
+        <article style="--c:#34a853"><h3>จัดวางตามแบบของคุณ</h3><p>ทุกส่วนของแผงมีสวิตช์ของตัวเอง เลือกสี ลำดับของแต่ละส่วน และชื่อของคุณเองสำหรับส่วนเหล่านั้น</p></article>
+        <article style="--c:#4d8ff5"><h3>ความเป็นส่วนตัว</h3><p>ไม่ต้องมีบัญชี ไม่เก็บข้อมูลการใช้งาน ไม่มีการติดตาม งานทั้งหมดเกิดขึ้นในเบราว์เซอร์ของคุณ และรายการอันดับอยู่ภายในส่วนขยาย</p></article>
+        <article style="--c:#b36cf6"><h3>30 ภาษา</h3><p>ส่วนขยายใช้ภาษาของคุณ และยังเปิด Scholar เองด้วยภาษาที่คุณเลือกได้</p></article>
+      </div>
     </div>
   </section>
 
   <section class="try" id="try">
     <div class="wrap">
-      <h2>ลองใช้หน้าการตั้งค่าจริง</h2>
-      <p class="note">นี่คือหน้าการตั้งค่าของส่วนขยายเอง ทำงานอยู่ที่นี่ ลองเปิดหรือปิดสวิตช์ แล้วตัวอย่างจะเปลี่ยนตาม เลื่อนเมาส์ไปที่ตัวอย่างเพื่อซ่อน ย้าย หรือเปลี่ยนชื่อส่วน และดับเบิลคลิกที่ส่วนเพื่อไปยังการตั้งค่าของส่วนนั้น</p>
+      <h2>ลองใช้หน้าการตั้งค่า</h2>
+      <p class="note">นี่คือหน้าการตั้งค่าจริงของส่วนขยาย เปลี่ยนการตั้งค่าแล้วตัวอย่างจะเปลี่ยนตาม เลื่อนเมาส์ไปที่ส่วนหนึ่งของตัวอย่างเพื่อซ่อน ย้าย หรือเปลี่ยนชื่อ</p>
       <div class="try-bar">
         <a class="skip" href="#after-try">ข้ามการสาธิต</a>
         <p>การเปลี่ยนแปลงของคุณจะอยู่ในเบราว์เซอร์ของคุณเท่านั้น</p>
@@ -138,15 +185,15 @@
 
   <section class="export-section" id="after-try">
     <div class="wrap">
-      <h2>ส่งออกข้อมูลวิชาการด้วยคลิกเดียว</h2>
-      <p class="note">รายการผลงานตีพิมพ์พร้อมวางลงใน CV แบบฟอร์มขอทุน เอกสาร LaTeX เอเจนต์ AI และสเปรดชีตได้ทันที</p>
+      <h2>คัดลอกบทความของคุณ</h2>
+      <p class="note">ปุ่มหนึ่งปุ่มต่อหนึ่งรูปแบบ สำหรับ CV แบบฟอร์มขอทุน LaTeX หรือสเปรดชีต ด้านล่างคือผลลัพธ์จริงของบทความสมมติสี่เรื่อง</p>
       <div class="export-card">
-        <div class="export-tabs" role="tablist" aria-label="ส่งออกข้อมูลวิชาการด้วยคลิกเดียว">
-          <button type="button" class="tab-btn active" role="tab" id="tab-bibtex" aria-selected="true" aria-controls="export-bibtex">BibTeX (LaTeX-Ready)</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-apa" aria-selected="false" aria-controls="export-apa" tabindex="-1">APA 7th Edition</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-json" aria-selected="false" aria-controls="export-json" tabindex="-1">Structured JSON</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-markdown" aria-selected="false" aria-controls="export-markdown" tabindex="-1">GitHub Markdown</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-csv" aria-selected="false" aria-controls="export-csv" tabindex="-1">RFC-4180 CSV</button>
+        <div class="export-tabs" role="tablist" aria-label="คัดลอกบทความของคุณ">
+          <button type="button" class="tab-btn active" role="tab" id="tab-bibtex" aria-selected="true" aria-controls="export-bibtex">BibTeX</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-apa" aria-selected="false" aria-controls="export-apa" tabindex="-1">APA</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-json" aria-selected="false" aria-controls="export-json" tabindex="-1">JSON</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-markdown" aria-selected="false" aria-controls="export-markdown" tabindex="-1">Markdown</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-csv" aria-selected="false" aria-controls="export-csv" tabindex="-1">CSV</button>
         </div>
         <div class="code-preview-wrap">
           <pre class="code-preview" role="tabpanel" id="export-bibtex" aria-labelledby="tab-bibtex" tabindex="0"><code>@inproceedings{author2025sample,
@@ -318,7 +365,7 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
 2024,Sample paper 2,&quot;B Writer, A Author, C Writer&quot;,Second author,NeurIPS 2024,A,A*,Best paper (NeurIPS 2024),133
 2024,Sample paper 3,&quot;A Author*, B Writer*, C Writer&quot;,Co-first author,CVPR 2024 (Highlight),A,A*,Highlight,27
 2023,Sample paper 4,&quot;B Writer, C Writer, D Writer, A Author&quot;,Last author,ACL 2023 (Spotlight),A,A*,Spotlight,215</code></pre>
-          <button type="button" class="copy-code-btn" data-label="คัดลอกไปยังคลิปบอร์ด" data-copied="คัดลอกแล้ว!">คัดลอกไปยังคลิปบอร์ด</button>
+          <button type="button" class="copy-code-btn" data-label="คัดลอก" data-copied="คัดลอกแล้ว">คัดลอก</button>
         </div>
       </div>
     </div>
@@ -326,69 +373,56 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
 
   <section class="operators-section">
     <div class="wrap">
-      <h2>ค้นหาทันทีและตัวดำเนินการค้นหา</h2>
-      <p class="note">กด <kbd>/</kbd> ที่ใดก็ได้บนโปรไฟล์ Scholar เพื่อค้นหาทั้งรายการในครั้งเดียว</p>
+      <h2>ค้นหาด้วยตัวดำเนินการ</h2>
+      <p class="note">กด <kbd>/</kbd> บนโปรไฟล์เพื่อค้นหาในบทความทั้งหมดของโปรไฟล์นั้น เพิ่มตัวดำเนินการในคำที่คุณพิมพ์เพื่อกรองรายการ</p>
       <div class="operators-grid">
         <div class="op-card">
-          <div class="op-header"><code>cites:&gt;100</code> <code>cites:&gt;=50</code> <code>cites:&lt;10</code></div>
-          <p class="op-title">เกณฑ์จำนวนการอ้างอิง</p>
-          <p class="op-desc">เก็บเฉพาะบทความที่มีการอ้างอิงมากกว่าหรือน้อยกว่าตัวเลขใดก็ได้ที่คุณพิมพ์</p>
+          <div class="op-header" dir="ltr"><code>cites:&gt;100</code> <code>cites:&gt;=50</code> <code>cites:&lt;10</code></div>
+          <h3 class="op-title">การอ้างอิง</h3>
+          <p class="op-desc">งานวิจัยที่มีการอ้างอิงมากกว่าหรือน้อยกว่าตัวเลขที่กำหนด</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>ccf:a</code> <code>ccf:b</code> <code>core:a*</code></div>
-          <p class="op-title">ระดับอันดับของแหล่งตีพิมพ์</p>
-          <p class="op-desc">แสดงเฉพาะบทความในการประชุมและวารสารที่มีอันดับ CCF หรือ CORE</p>
+          <div class="op-header" dir="ltr"><code>ccf:a</code> <code>ccf:b</code> <code>core:a*</code></div>
+          <h3 class="op-title">อันดับ</h3>
+          <p class="op-desc">งานวิจัยใน venue ที่มีอันดับ CCF หรือ CORE ที่กำหนด</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>role:first</code> <code>role:last</code> <code>role:cofirst</code></div>
-          <p class="op-title">บทบาทผู้เขียน</p>
-          <p class="op-desc">กรองตามผู้เขียนคนแรก ผู้เขียนร่วมคนแรก ผู้เขียนคนที่สอง หรือผู้เขียนคนสุดท้าย (อาวุโส)</p>
+          <div class="op-header" dir="ltr"><code>role:first</code> <code>role:last</code> <code>role:cofirst</code></div>
+          <h3 class="op-title">บทบาท</h3>
+          <p class="op-desc">งานวิจัยที่คุณเป็นผู้เขียนคนแรก ผู้เขียนร่วมคนแรก ผู้เขียนคนที่สอง หรือผู้เขียนคนสุดท้าย</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>year:&gt;2020</code> <code>year:&gt;=2021</code> <code>year:&lt;=2015</code></div>
-          <p class="op-title">ปีที่ตีพิมพ์</p>
-          <p class="op-desc">บทความที่ตีพิมพ์หลัง ก่อน หรือภายในช่วงปีที่คุณเลือก หรือในช่วงห้าปีล่าสุด</p>
+          <div class="op-header" dir="ltr"><code>year:&gt;=2020</code> <code>year:2023</code> <code>age:&lt;5</code></div>
+          <h3 class="op-title">ปี</h3>
+          <p class="op-desc">งานวิจัยที่ตีพิมพ์ก่อน หลัง หรือในปีที่คุณเลือก หรือในช่วงไม่กี่ปีที่ผ่านมา</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>has:award</code> <code>has:talk</code></div>
-          <p class="op-title">รางวัลและการนำเสนอ</p>
-          <p class="op-desc">ค้นหาบทความ Best Paper, Test of Time, Oral, Spotlight และ Highlight</p>
+          <div class="op-header" dir="ltr"><code>has:award</code> <code>has:talk</code></div>
+          <h3 class="op-title">รางวัลและการนำเสนอ</h3>
+          <p class="op-desc">งานวิจัยที่ได้รับรางวัล Best Paper หรือ Test of Time หรือมีการนำเสนอแบบ Oral, Spotlight หรือ Highlight</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><kbd>Escape</kbd></div>
-          <p class="op-title">รีเซ็ตด้วยปุ่มเดียว</p>
-          <p class="op-desc">ล้างการค้นหา การเลือกในตาราง และตัวกรองทั้งหมดพร้อมกัน</p>
+          <div class="op-header" dir="ltr"><kbd>Escape</kbd></div>
+          <h3 class="op-title">ล้างทั้งหมด</h3>
+          <p class="op-desc">ปุ่มเดียวล้างการค้นหา เซลล์ที่เลือก และตัวกรองทั้งหมด</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="features">
-    <div class="wrap grid">
-      <article style="--c:#4d8ff5"><h3>ทุกบทความ ระบายสีตามบทบาทของคุณ</h3><p>แถวของผู้เขียนคนแรก ผู้เขียนร่วมคนแรก ผู้เขียนคนที่สอง และผู้เขียนคนสุดท้าย แต่ละแถวมีสีของตัวเอง และชื่อของคุณจะถูกทำเครื่องหมายในบรรทัดผู้เขียน</p></article>
-      <article style="--c:#b36cf6"><h3>อันดับ CCF และ CORE</h3><p>อันดับ CCF 2026 และ ICORE 2026 แสดงข้างแหล่งตีพิมพ์แต่ละแห่ง พร้อมกฎที่จับคู่ได้ แหล่งที่ระบุไม่ได้จะไม่มีป้าย: ไม่มีการเดาเด็ดขาด</p></article>
-      <article style="--c:#fbbc04"><h3>ตารางบทบาท × อันดับ</h3><p>เลือกช่องหนึ่งเพื่อแสดงเฉพาะบทความในช่องนั้น และคัดลอกสรุปหรือรายการไปใส่ใน CV หรือแบบฟอร์มขอทุนได้</p></article>
-      <article style="--c:#34a853"><h3>รางวัลและการนำเสนอ</h3><p>บทความดีเด่น รางวัล Test of Time Oral, Spotlight และ Highlight จากคำพูดของผู้เขียนเอง และจากหน้ารางวัลทางการของบทความกว่า 7,000 เรื่อง</p></article>
-      <article style="--c:#4d8ff5"><h3>รายชื่อผู้เขียนที่ถูกตัด ทำให้ครบ</h3><p>Scholar ซ่อนผู้เขียนท้าย ๆ ของรายชื่อที่ยาว คลิกเดียวก็อ่านรายชื่อเหล่านั้นจากหน้าของบทความ หรือจาก Semantic Scholar หากคุณอนุญาต</p></article>
-      <article style="--c:#b36cf6"><h3>รวมรายการซ้ำ</h3><p>หากเปิดใช้ รายการที่ระบุบทความเดียวกันสองครั้งจะรวมเป็นรายการเดียว และนับจำนวนการอ้างอิงรวมกัน</p></article>
-      <article style="--c:#fbbc04"><h3>ปรับให้เป็นของคุณ</h3><p>เลือกสิ่งที่จะแสดง เลือกสีของคุณเอง และซ่อนส่วนของหน้า Scholar ที่คุณไม่ต้องการ</p></article>
-      <article style="--c:#34a853"><h3>ความเป็นส่วนตัวตั้งแต่การออกแบบ</h3><p>ไม่ต้องมีบัญชี ไม่เก็บข้อมูลการใช้งาน ไม่มีการติดตาม ทุกการคำนวณเกิดขึ้นในเบราว์เซอร์ของคุณ และรายการอันดับมาพร้อมกับส่วนขยาย</p></article>
     </div>
   </section>
 
   <section class="numbers">
     <div class="wrap">
       <h2>ตัวเลขสำคัญ</h2>
-      <p class="note">ตัวเลขเหล่านี้นับจากโค้ดและข้อมูลของส่วนขยายตอนสร้างหน้านี้ ไม่มีตัวเลขใดพิมพ์ด้วยมือ และตัวเลขที่เพิ่มขึ้นทุกครั้งที่มีการแก้ไขจะปัดเศษลง</p>
+      <p class="note">ตัวเลขเหล่านี้นับจากโค้ดและข้อมูลของส่วนขยายตอนสร้างหน้านี้ ตัวเลขที่เพิ่มขึ้นทุกครั้งที่มีการแก้ไขจะปัดเศษลง</p>
       <div class="numbers-grid">
-        <div class="num" style="--c:#4d8ff5"><b dir="ltr">153</b><span>การตั้งค่าที่เปลี่ยนได้</span></div>
+        <div class="num" style="--c:#4d8ff5"><b dir="ltr">154</b><span>การตั้งค่าที่เปลี่ยนได้</span></div>
         <div class="num" style="--c:#b36cf6"><b dir="ltr">30</b><span>ภาษาของอินเทอร์เฟซ</span></div>
-        <div class="num" style="--c:#fbbc04"><b dir="ltr">1,178</b><span>แหล่งตีพิมพ์ที่มีอันดับในรายการ CCF และ CORE</span></div>
-        <div class="num" style="--c:#34a853"><b dir="ltr">400+</b><span>ชื่อแหล่งตีพิมพ์จาก Scholar ที่ไม่มีในรายการอย่างเป็นทางการ</span></div>
-        <div class="num" style="--c:#4d8ff5"><b dir="ltr">18</b><span>การตรวจสอบที่ป้องกันไม่ให้แสดงอันดับที่ผิด</span></div>
-        <div class="num" style="--c:#b36cf6"><b dir="ltr">5,581</b><span>บทความที่ได้รับรางวัลซึ่งส่วนขยายระบุได้</span></div>
-        <div class="num" style="--c:#fbbc04"><b dir="ltr">22,744</b><span>บรรทัดแหล่งตีพิมพ์จริงจาก Scholar ที่ตรวจอันดับแล้ว</span></div>
-        <div class="num" style="--c:#34a853"><b dir="ltr">500+</b><span>การทดสอบหน่วย พร้อมชุดทดสอบ end-to-end ในเบราว์เซอร์จริง</span></div>
+        <div class="num" style="--c:#fbbc04"><b dir="ltr">1,178</b><span>venue ที่มีอันดับในรายการ CCF และ CORE</span></div>
+        <div class="num" style="--c:#34a853"><b dir="ltr">400+</b><span>ชื่อ venue จาก Scholar ที่ไม่มีในรายการ</span></div>
+        <div class="num" style="--c:#4d8ff5"><b dir="ltr">18</b><span>การตรวจสอบที่ป้องกันอันดับที่ผิด</span></div>
+        <div class="num" style="--c:#b36cf6"><b dir="ltr">5,581</b><span>งานวิจัยที่ได้รับรางวัลซึ่งส่วนขยายรู้จัก</span></div>
+        <div class="num" style="--c:#fbbc04"><b dir="ltr">22,744</b><span>บรรทัด venue จริงจาก Scholar ที่ตรวจผลลัพธ์ของแต่ละรายการแล้ว</span></div>
+        <div class="num" style="--c:#34a853"><b dir="ltr">500+</b><span>การทดสอบหน่วย และชุดทดสอบ end-to-end ในเบราว์เซอร์จริง</span></div>
       </div>
     </div>
   </section>
@@ -397,18 +431,22 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
     <div class="wrap">
       <h2>ติดตั้ง</h2>
       <ol>
-        <li>ดาวน์โหลดโปรเจกต์จาก GitHub (ปุ่มสีเขียว “Code” แล้วเลือก “Download ZIP”) และแตกไฟล์</li>
+        <li>ดาวน์โหลดโปรเจกต์จาก GitHub: คลิกปุ่มสีเขียว “Code” แล้วเลือก “Download ZIP” จากนั้นแตกไฟล์</li>
         <li>เปิด <code>chrome://extensions</code> แล้วเปิด “โหมดนักพัฒนาซอฟต์แวร์” (Developer mode)</li>
-        <li>คลิก “โหลดแบบไม่แพ็ก” (Load unpacked) แล้วเลือกโฟลเดอร์ src จากนั้นเปิดโปรไฟล์ Google Scholar ใดก็ได้</li>
+        <li>คลิก “โหลดแบบไม่แพ็ก” (Load unpacked) แล้วเลือกโฟลเดอร์ src จากนั้นเปิดโปรไฟล์ Google Scholar</li>
       </ol>
-      <p class="note">อาจมีหน้ารายการใน Chrome Web Store ตามมาในภายหลัง Edge, Brave และเบราว์เซอร์ Chromium อื่น ๆ ใช้งานได้ในลักษณะเดียวกัน</p>
+      <p class="note">Edge, Brave และเบราว์เซอร์ Chromium อื่น ๆ ใช้ขั้นตอนเดียวกัน อาจมีเวอร์ชันบน Chrome Web Store ตามมาในภายหลัง</p>
     </div>
   </section>
 
   <section class="honest">
     <div class="wrap">
-      <h2>ตรงไปตรงมาเกี่ยวกับข้อจำกัด</h2>
-      <p>อันดับคือรายการในปัจจุบัน ไม่ใช่อันดับ ณ เวลาที่ตีพิมพ์ และตัวรายการ CCF เองก็ระบุว่าไม่ใช่การประเมิน ส่วนขยายไม่เคยเดาแหล่งตีพิมพ์: สิ่งที่ระบุไม่ได้จะแสดงในรายการ ไม่ได้ทำเครื่องหมาย</p>
+      <h2>ข้อจำกัด</h2>
+      <ul class="limits">
+        <li>อันดับมาจากรายชื่อปัจจุบัน ไม่ใช่อันดับ ณ เวลาที่ตีพิมพ์ ในปีที่บทความตีพิมพ์ แหล่งตีพิมพ์นั้นอาจมีอันดับต่างออกไป</li>
+        <li>CCF ระบุว่ารายชื่อของตนไม่ใช่เกณฑ์ประเมินทางวิชาการ</li>
+        <li>ไม่มีการเดาใด ๆ แหล่งตีพิมพ์ที่ระบุไม่ได้จะไม่มีป้ายกำกับ และแผงจะแสดงรายการนั้น</li>
+      </ul>
     </div>
   </section>
 </main>
@@ -416,9 +454,9 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
   <div class="wrap">
     <span>โอเพนซอร์ส ใบอนุญาต Apache License 2.0</span>
     <a href="../privacy/">ความเป็นส่วนตัว</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/ROADMAP.md">Roadmap</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/AGENTS.md">Agent API</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/SECURITY.md">Security</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/ROADMAP.md">โรดแมป</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/AGENTS.md">สำหรับเอเจนต์ AI</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/SECURITY.md">ความปลอดภัย</a>
     <a href="https://github.com/boyugou/better-scholar/issues">รายงานปัญหา</a>
     <a href="https://github.com/boyugou/better-scholar">GitHub</a>
   </div>

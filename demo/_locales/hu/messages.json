@@ -3,7 +3,7 @@
     "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "Google Scholar bővítmény: szerzőségi szerepek, CCF és CORE rangok, konferenciadíjak, éves diagramok és azonnali keresés."
+    "message": "Google Scholar-profilokon: tulajdonos szerzőségi szerepe, valamint cikkenként a venue CCF- és CORE-rangja, egy táblázatban."
   },
   "extShortName": {
     "message": "Better Scholar"
@@ -51,7 +51,7 @@
     "message": "Legjobb cikk döntőse"
   },
   "marksHint": {
-    "message": "A szerzők saját szavaiból a Scholaron az egyes cikkek címében és venue-szövegében (nincs ellenőrizve), valamint a nagy konferenciák díjnyertes cikkeinek beépített listájából."
+    "message": "Két forrásból: a szerzők saját szavaiból, amelyeket a Scholaron az egyes cikkek címében vagy venue-sorában írnak (nincs ellenőrizve), valamint a nagy konferenciák díjnyertes cikkeinek beépített listájából."
   },
   "marksAsWritten": {
     "message": "a szerzők saját szavaiból vagy a díjlistából"
@@ -169,7 +169,7 @@
     "message": "Megnyitja az egyes cikkek oldalát a Scholaron (kb. másodpercenként egyet), hogy elolvassa a teljes szerzői listát."
   },
   "resolveHintSemantic": {
-    "message": "Először a Semantic Scholartól kéri le minden cikk szerzői listáját (csak a cikk címe kerül elküldésre), majd a többinél megnyitja az egyes cikkek oldalát a Scholaron (kb. másodpercenként egyet)."
+    "message": "Először a Semantic Scholartól kéri le minden cikk szerzői listáját (csak a cikk címe kerül elküldésre). Ezután a többi cikk oldalát nyitja meg a Scholaron, kb. másodpercenként egyet."
   },
   "resolving": {
     "message": "Szerzői listák olvasása… $N1$/$N2$",
@@ -464,7 +464,7 @@
     "message": "Visszaállítod az összes beállítást az alapértékekre?"
   },
   "optStorage": {
-    "message": "A beállítások a böngészőben tárolódnak, és szinkronizálódnak a Chrome-profilddal. A bővítmény beolvassa a Scholar-oldalakat, amelyeket megnyitsz, a „Teljes listák olvasása” gomb megnyomásakor a csonka szerzőlistájú cikkek oldalait is; a cikkek címei pedig csak akkor kerülnek a Semantic Scholarhoz, ha bekapcsolod ezt."
+    "message": "A beállítások a böngészőben tárolódnak, és szinkronizálódnak a Chrome-profilddal. A bővítmény beolvassa a Scholar-oldalakat, amelyeket megnyitsz. A „Teljes listák olvasása” gomb megnyomásakor a csonka szerzőlistájú cikkek oldalait is beolvassa. A cikkek címei csak akkor kerülnek a Semantic Scholarhoz, ha ezt bekapcsolod."
   },
   "optSample": {
     "message": "Minta cikk"
@@ -476,7 +476,7 @@
     "message": "Az összes cikk automatikus betöltése"
   },
   "optAutoLoadHint": {
-    "message": "A Scholar eleinte csak az első cikkeket mutatja. Ez helyetted megnyomja a saját „Továbbiak megjelenítése” gombját, kb. másodpercenként, amíg az egész lista be nem töltődik, és megáll, ha a Scholar nem válaszol. Kikapcsolva: a panel az „Összes betöltése” gombot kínálja."
+    "message": "A Scholar csak a profil első cikkeit mutatja. Ez helyetted megnyomja a Scholar saját „Továbbiak megjelenítése” gombját, kb. másodpercenként, amíg az egész lista be nem töltődik. Megáll, ha a Scholar nem válaszol. Kikapcsolva: a panel helyette az „Összes betöltése” gombot mutatja."
   },
   "loadStalled": {
     "message": "A Scholar nem küldött több cikket ($N1$ betöltve). Próbáld újra az „Összes betöltése” gombot egy kis idő múlva.",
@@ -565,7 +565,7 @@
     "message": "Duplák összevonása"
   },
   "optMergeLabelHint": {
-    "message": "Az azonos című (a nagybetűket, ékezeteket és írásjeleket figyelmen kívül hagyva) és azonos első szerzős bejegyzések eggyé válnak: a legtöbbet idézett marad, és mindegyik hivatkozásait mutatja. A panel egyszer számolja."
+    "message": "Az azonos című és azonos első szerzőjű bejegyzések egy bejegyzéssé válnak (a nagybetűk, az ékezetek és az írásjelek nem számítanak). A legtöbbet idézett bejegyzés marad, és mindegyik hivatkozásait mutatja. A panel egyszer számolja."
   },
   "mergedTip": {
     "message": "$N1$ bejegyzésből összevonva: mindegyik hivatkozásai",
@@ -657,7 +657,7 @@
     "message": "Szerzői listák olvasása először a Semantic Scholarból"
   },
   "optSemanticLabelHint": {
-    "message": "A „Teljes listák olvasása” gombra kattintva először a Semantic Scholartól kéri le minden cikk teljes szerzői listáját (csak a cikk címe kerül elküldésre), a Scholar saját oldalát pedig csak arra nyitja meg, amit az nem ismer. Kevesebb kérés megy a Scholarhoz, így kevesebb CAPTCHA is."
+    "message": "A „Teljes listák olvasása” gombra kattintva először a Semantic Scholartól kéri le minden cikk teljes szerzői listáját. Csak a cikk címe kerül elküldésre, semmi más. A Scholar saját oldalát csak azokhoz a cikkekhez nyitja meg, amelyeket a Semantic Scholar nem ismer. Kevesebb kérés megy a Scholarhoz, így kevesebb CAPTCHA is."
   },
   "yearsTitle": {
     "message": "Kiemelt cikkek évenként"
@@ -858,7 +858,7 @@
     "message": "AI-ügynökök"
   },
   "optAgentHint": {
-    "message": "Másold ki az útmutatót, amely felsorolja az összes beállítást, azok értékeit és a jelenlegi választásaidat. Illeszd be az AI-asszisztensedbe, mondd el, mit szeretnél, majd az asszisztens válaszát illeszd be az alábbi konfigurációszerkesztőbe, és nyomd meg a Konfiguráció alkalmazása gombot."
+    "message": "Másold ki az útmutatót, amely felsorolja az összes beállítást, azok értékeit és a jelenlegi választásaidat. Add oda az AI-asszisztensednek azzal együtt, amit szeretnél. Ezután illeszd be a válaszát az alábbi konfigurációszerkesztőbe, és nyomd meg a Konfiguráció alkalmazása gombot."
   },
   "optAgentCopy": {
     "message": "AI-útmutató másolása"
@@ -972,6 +972,12 @@
   },
   "optFiltersSearch": {
     "message": "Keresőmező"
+  },
+  "optFiltersKey": {
+    "message": "A “/” billentyű a keresőmezőre ugrik"
+  },
+  "optFiltersKeyHint": {
+    "message": "A profiloldal panelén, és ezen az oldalon a saját keresésére. Ki: a billentyű nem csinál semmit."
   },
   "optOrderPills": {
     "message": "A gyorsszűrők sorrendje"
@@ -1120,7 +1126,7 @@
     "message": "Venue ellenőrzése"
   },
   "optVenueHint": {
-    "message": "Illeszd be a venue-t úgy, ahogy a Scholar megjeleníti (a cikk alatti szürke sor), hogy lásd, mit mondanak róla a CCF- és CORE-listák, és melyik szabály alapján. Az a venue, amelyet nem tudnak elhelyezni, nem kap rangot: nincs találgatás."
+    "message": "Illeszd be a venue-t úgy, ahogy a Scholar megjeleníti: a cikk alatti szürke sort. Így látod, mit mondanak róla a CCF- és CORE-listák, és melyik szabály alapján. Az a venue, amelyet nem tudnak elhelyezni, nem kap rangot. Nincs találgatás."
   },
   "optVenuePlaceholder": {
     "message": "pl. Proceedings of the IEEE conference on computer vision and pattern recognition"
@@ -1129,7 +1135,7 @@
     "message": "Nincs rang. A listák nem helyezik el biztosan ezt a szöveget, ezért nem kap címkét."
   },
   "optVenueSecondary": {
-    "message": "A(z) „$N1$” szó másodlagos kategóriát jelöl (workshop, poszter, rövid cikk …): az a venue csak akkor kap rangot, ha a saját neve tartalmazza ezt a szót.",
+    "message": "A(z) „$N1$” szó másodlagos kategóriát jelöl, például workshop, poster vagy rövid cikk. Az a venue csak akkor kap rangot, ha a saját neve tartalmazza ezt a szót.",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -1149,7 +1155,7 @@
     "message": "A számok a szűrőkhöz igazodnak"
   },
   "optFiltersFollowHint": {
-    "message": "A táblázat, a díjak és előadások számlálói, valamint a másolandó összesítés száma csak azokat a cikkeket számolják, amelyek átjutnak a szűrőkön (évtartomány, keresés, gyorsszűrő, venue); a kiválasztott cella vagy sor egyik számlálót sem szűkíti. Kikapcsolva: mindig az egész profilt számolják."
+    "message": "A táblázat, a díjak és előadások számlálói, valamint a másolt összesítés csak azokat a cikkeket számolják, amelyek átjutnak a szűrőkön: évtartomány, keresés, gyorsszűrő vagy venue. A kiválasztott cella vagy sor nem változtat egyetlen számlálón sem. Kikapcsolva: mindig az egész profilt számolják."
   },
   "optPillRecent": {
     "message": "Elmúlt 5 év"
@@ -1182,7 +1188,7 @@
     "message": "A profil linkjének és a dátumnak a hozzáadása a másolt összesítéshez"
   },
   "optCopySourceHint": {
-    "message": "A másolt összesítés és a másolt táblázat egy sort kap a profil linkjével és a dátummal (Source: …), hogy a számokat el lehessen tárolni vagy tovább lehessen küldeni. Ha a lista nincs teljesen betöltve, a másolat ott ezt jelzi, a kapcsoló állásától függetlenül."
+    "message": "A másolt összesítés és a másolt táblázat egy sorral végződik, amely megadja a profil linkjét és a dátumot (Source: …), hogy el tudd tárolni vagy tovább tudd küldeni a számokat. Ha a lista nincs teljesen betöltve, a másolat ott mindig jelzi ezt."
   },
   "unrankedPreprints": {
     "message": "Preprintek"
@@ -1197,7 +1203,7 @@
     "message": "Ha mindkét lista rangsorolja a venue-t"
   },
   "optPreferHint": {
-    "message": "Két címke helyett egy: a kiválasztott lista, a másik pedig csak akkor, ha a kiválasztott listán nincs rangsorolva a venue. A címke súgószövege továbbra is megnevezi a másik rangot."
+    "message": "Két címke helyett egy: a kiválasztott lista címkéje, a másik listáé pedig csak akkor, ha a kiválasztott listán nincs rangja a venue-nek. A címke súgószövege továbbra is megnevezi a másik rangot."
   },
   "optPreferCcf": {
     "message": "CCF előnyben"

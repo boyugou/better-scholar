@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Better Scholar: jouw auteursrollen en de rang van je publicatiemedia op Google Scholar</title>
-<meta name="description" content="Een gratis Chrome-extensie die bij elke publicatie in een Google Scholar-profiel je rol markeert (eerste, gedeeld eerste, tweede of laatste auteur) en de CCF- / CORE-rang van het tijdschrift of de conferentie, en alles samenvat in één tabel.">
+<title>Better Scholar: jouw auteursrol en de rang van je venue op Google Scholar</title>
+<meta name="description" content="Een gratis Chrome-extensie voor Google Scholar-profielen. Het toont je auteursrol en de CCF- / CORE-rang van de venue bij elk paper, en telt je papers samen in één tabel.">
 <link rel="canonical" href="https://boyugou.github.io/better-scholar/nl/">
 <link rel="alternate" hreflang="en" href="https://boyugou.github.io/better-scholar/en/">
 <link rel="alternate" hreflang="zh-CN" href="https://boyugou.github.io/better-scholar/zh-CN/">
@@ -40,14 +40,14 @@
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Better Scholar: jouw auteursrollen en de rang van je publicatiemedia op Google Scholar">
-<meta property="og:description" content="Een gratis Chrome-extensie die bij elke publicatie in een Google Scholar-profiel je rol markeert (eerste, gedeeld eerste, tweede of laatste auteur) en de CCF- / CORE-rang van het tijdschrift of de conferentie, en alles samenvat in één tabel.">
+<meta property="og:title" content="Better Scholar: jouw auteursrol en de rang van je venue op Google Scholar">
+<meta property="og:description" content="Een gratis Chrome-extensie voor Google Scholar-profielen. Het toont je auteursrol en de CCF- / CORE-rang van de venue bij elk paper, en telt je papers samen in één tabel.">
 <meta property="og:url" content="https://boyugou.github.io/better-scholar/nl/">
 <meta property="og:image" content="https://boyugou.github.io/better-scholar/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="../assets/styles.css">
 <meta name="theme-color" content="#161d33">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Better Scholar","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Chromium browsers","description":"Een gratis Chrome-extensie die bij elke publicatie in een Google Scholar-profiel je rol markeert (eerste, gedeeld eerste, tweede of laatste auteur) en de CCF- / CORE-rang van het tijdschrift of de conferentie, en alles samenvat in één tabel.","inLanguage":"nl","url":"https://boyugou.github.io/better-scholar/nl/","image":"https://boyugou.github.io/better-scholar/assets/og.png","license":"https://www.apache.org/licenses/LICENSE-2.0","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Better Scholar","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Chromium browsers","description":"Een gratis Chrome-extensie voor Google Scholar-profielen. Het toont je auteursrol en de CCF- / CORE-rang van de venue bij elk paper, en telt je papers samen in één tabel.","inLanguage":"nl","url":"https://boyugou.github.io/better-scholar/nl/","image":"https://boyugou.github.io/better-scholar/assets/og.png","license":"https://www.apache.org/licenses/LICENSE-2.0","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 </head>
 <body>
 <header class="top">
@@ -97,16 +97,11 @@
 <main>
   <section class="hero">
     <div class="wrap">
-      <div class="hero-badges">
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg> Manifest V3</span>
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg> Werkt in je browser</span>
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg> Geen afhankelijkheden</span>
-      </div>
       <div class="stripes" aria-hidden="true"><i style="--c:#4d8ff5"></i><i style="--c:#b36cf6"></i><i style="--c:#fbbc04"></i><i style="--c:#34a853"></i></div>
-      <h1>Zie waar je staat bij elke publicatie</h1>
-      <p class="lead">Een Chrome-extensie voor Google Scholar-profielen. Bij elke publicatie markeert het je auteursrol en de CCF- / CORE-rang van het medium, en telt het resultaat op in één tabel: “4 CCF-A-artikelen als eerste auteur”.</p>
+      <h1>Je rol en de rang van de venue bij elk paper</h1>
+      <p class="lead">Een gratis Chrome-extensie voor Google Scholar-profielen. Het kleurt elk paper op basis van je auteursrol, toont de CCF- en CORE-rang van de venue en telt je papers samen in één tabel.</p>
       <p class="cta"><a class="btn" href="#install">Installeren</a> <a class="btn ghost" href="https://github.com/boyugou/better-scholar">Bekijk op GitHub</a></p>
-      <p class="note">Gratis en open source · Chrome en andere Chromium-browsers · 30 talen</p>
+      <p class="note">Gratis en open source · Chrome, Edge, Brave en andere Chromium-browsers · 30 talen</p>
     </div>
   </section>
 
@@ -114,17 +109,69 @@
     <div class="wrap">
       <figure class="hero-shot">
         <div class="hero-frame" style="aspect-ratio: 1280 / 660">
-          <img src="../assets/hero.jpg" alt="Een verzonnen profiel (echte media, verzonnen artikelen): rijen gekleurd op rol, rangchips naast elk medium, de samenvatting rechts." width="1280" height="800" fetchpriority="high" decoding="async">
+          <img src="../assets/hero.jpg" alt="Een verzonnen profiel met echte venues. Elke rij heeft de kleur van je rol, labels tonen de rang, en het overzichtspaneel rechts telt de papers." width="1280" height="800" fetchpriority="high" decoding="async">
         </div>
-        <figcaption>Een verzonnen profiel (echte media, verzonnen artikelen): rijen gekleurd op rol, rangchips naast elk medium, de samenvatting rechts.</figcaption>
+        <figcaption>Een verzonnen profiel met echte venues. Elke rij heeft de kleur van je rol, labels tonen de rang, en het overzichtspaneel rechts telt de papers.</figcaption>
       </figure>
+    </div>
+  </section>
+
+  <section class="how" id="how">
+    <div class="wrap">
+      <h2>Zo leest het een paper</h2>
+      <p class="note">Twee verzonnen papers bij echte venues. Elke stap toont wat de eigen code van de extensie erin vindt.</p>
+      <div class="how-grid">
+        <ol class="how-steps">
+          <li><button type="button" data-step="1"><span class="n">1</span><b>Je naam vinden</b><span class="d">Het vindt de naam van het profiel in de auteursregel. Je plek in die regel bepaalt je rol: eerste, gedeeld eerste, tweede of laatste auteur.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="2"><span class="n">2</span><b>De venue opzoeken</b><span class="d">Het zoekt naar de venue in de CCF- en CORE-lijsten, op de volledige naam of op de afkorting. Een zekere match geeft een rang-label.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="3"><span class="n">3</span><b>Nooit raden</b><span class="d">Een workshop, een poster of een Findings-paper is niet de hoofdconferentie. Een venue die de lijsten niet met zekerheid bevat, krijgt geen label.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="4" aria-current="step"><span class="n">4</span><b>Tellen</b><span class="d">Het overzichtspaneel telt elk paper één keer, op rol en op rang. Klik op een getal om de papers te zien.</span><i class="bar" aria-hidden="true"></i></button></li>
+        </ol>
+        <div class="how-figure">
+        <div class="how-stage" aria-hidden="true">
+          <div class="sr-head" dir="ltr" lang="en"><span>Title</span><span>Cited by</span><span>Year</span></div>
+          <div class="sr on" data-from="1" dir="ltr" data-role="first" style="--rc:#1a73e8">
+            <div class="sr-text" lang="en"><div class="sr-t">Self-Supervised Depth from Casual Video</div><div class="sr-a"><span class="nm on" data-from="1" data-focus="1">A Example</span>, B Writer, C Writer, D Writer</div><div class="sr-v"><span class="vn on" data-from="2" data-focus="2">Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</span>, 2023 <span class="chip on" data-from="2" data-focus="2"><span class="k">CCF</span> <b>A</b></span></div></div>
+            <div class="sr-c">892</div><div class="sr-y">2023</div>
+            <div class="co-slot" dir="ltr"><p class="co" data-from="1" data-to="1"><span class="tag">Eerste</span> positie 1 van 4</p><p class="co on" data-from="2"><b dir="ltr">CCF A · CORE A*</b> · Gevonden op naam: <span dir="ltr">IEEE/CVF Computer Vision and Pattern Recognition Conference</span></p></div>
+          </div>
+          <div class="sr on" data-from="1" dir="ltr" data-role="second" style="--rc:#f9ab00">
+            <div class="sr-text" lang="en"><div class="sr-t">Cheap Calibration for Retrieval-Augmented Models</div><div class="sr-a">B Writer, <span class="nm on" data-from="1" data-focus="1">A Example</span>, H Writer</div><div class="sr-v"><mark class="sec on" data-from="3" data-focus="3">Findings</mark> of the Association for Computational Linguistics: ACL 2022, 410-423, 2022</div></div>
+            <div class="sr-c">868</div><div class="sr-y">2022</div>
+            <div class="co-slot" dir="ltr"><p class="co" data-from="1" data-to="2"><span class="tag">Tweede</span> positie 2 van 3</p><p class="co on" data-from="3"><b dir="ltr">Findings</b> · secundaire categorie: geen rang, geen label</p></div>
+          </div>
+          <div class="mini">
+            <div class="mini-h"><b>Papers per rol en rang</b><span dir="ltr"><i class="on">CCF</i><i>CORE</i></span></div>
+            <table>
+              <thead><tr><th></th><th>A</th><th>B</th><th>C</th><th>–</th><th>Alle</th></tr></thead>
+              <tbody><tr><th><i style="--rc:#1a73e8"></i>Eerste</th><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td><td>·</td><td>·</td><td>·</td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td></tr><tr><th><i style="--rc:#f9ab00"></i>Tweede</th><td>·</td><td>·</td><td>·</td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <button type="button" class="how-play" hidden data-play="Afspelen" data-pause="Pauzeren"><svg class="i-play" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg><svg class="i-pause" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z" fill="currentColor"/></svg><span>Afspelen</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="wrap">
+      <h2>Wat het verder doet</h2>
+      <div class="grid">
+        <article style="--c:#4d8ff5"><h3>Prijzen en talks</h3><p>Labels voor beste paper, test-of-time-prijzen en Oral-, Spotlight- of Highlight-presentaties. Ze komen uit de eigen woorden van de auteurs en van de officiële prijzenpagina's.</p></article>
+        <article style="--c:#b36cf6"><h3>Volledige auteurslijsten</h3><p>Scholar knipt lange auteurslijsten af met “…”, en dat kan je rol verbergen. Eén klik leest de volledige lijsten van de paperpagina's bij Scholar.</p></article>
+        <article style="--c:#fbbc04"><h3>Dubbele items samengevoegd</h3><p>Scholar vermeldt soms één paper twee keer. Met de schakelaar “Dubbelen samenvoegen” worden ze één vermelding, en de citaties worden opgeteld.</p></article>
+        <article style="--c:#34a853"><h3>Je eigen indeling</h3><p>Elk onderdeel van het overzichtspaneel heeft zijn eigen schakelaar. Kies de kleuren, de volgorde van de onderdelen en je eigen namen daarvoor.</p></article>
+        <article style="--c:#4d8ff5"><h3>Privé</h3><p>Geen account, geen analytics, geen tracking. Al het werk gebeurt in je browser, en de ranglijsten zitten in de extensie.</p></article>
+        <article style="--c:#b36cf6"><h3>30 talen</h3><p>De extensie spreekt je taal. Ze kan Scholar zelf ook openen in een taal die je kiest.</p></article>
+      </div>
     </div>
   </section>
 
   <section class="try" id="try">
     <div class="wrap">
-      <h2>Probeer de echte instellingenpagina</h2>
-      <p class="note">Dit is de eigen instellingenpagina van de extensie, die hier gewoon draait: zet een schakelaar om en het voorbeeld past zich direct aan. Wijs het voorbeeld aan om een onderdeel te verbergen, te verplaatsen of te hernoemen, en dubbelklik op een onderdeel om naar de instelling ervan te gaan.</p>
+      <h2>Probeer de instellingenpagina</h2>
+      <p class="note">Dit is de echte instellingenpagina van de extensie. Wijzig een instelling en het voorbeeld verandert mee. Wijs een onderdeel van het voorbeeld aan om het te verbergen, te verplaatsen of te hernoemen.</p>
       <div class="try-bar">
         <a class="skip" href="#after-try">Demo overslaan</a>
         <p>Je wijzigingen worden alleen in deze browser opgeslagen.</p>
@@ -138,15 +185,15 @@
 
   <section class="export-section" id="after-try">
     <div class="wrap">
-      <h2>Academische export met één klik</h2>
-      <p class="note">Kant-en-klare publicatielijsten om te plakken in cv's, subsidieformulieren, LaTeX-documenten, AI-agents en spreadsheets.</p>
+      <h2>Kopieer je papers</h2>
+      <p class="note">Eén knop voor elk formaat: voor een cv, een subsidieformulier, LaTeX of een spreadsheet. Hieronder staat de echte uitvoer voor vier verzonnen papers.</p>
       <div class="export-card">
-        <div class="export-tabs" role="tablist" aria-label="Academische export met één klik">
-          <button type="button" class="tab-btn active" role="tab" id="tab-bibtex" aria-selected="true" aria-controls="export-bibtex">BibTeX (LaTeX-Ready)</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-apa" aria-selected="false" aria-controls="export-apa" tabindex="-1">APA 7th Edition</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-json" aria-selected="false" aria-controls="export-json" tabindex="-1">Structured JSON</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-markdown" aria-selected="false" aria-controls="export-markdown" tabindex="-1">GitHub Markdown</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-csv" aria-selected="false" aria-controls="export-csv" tabindex="-1">RFC-4180 CSV</button>
+        <div class="export-tabs" role="tablist" aria-label="Kopieer je papers">
+          <button type="button" class="tab-btn active" role="tab" id="tab-bibtex" aria-selected="true" aria-controls="export-bibtex">BibTeX</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-apa" aria-selected="false" aria-controls="export-apa" tabindex="-1">APA</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-json" aria-selected="false" aria-controls="export-json" tabindex="-1">JSON</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-markdown" aria-selected="false" aria-controls="export-markdown" tabindex="-1">Markdown</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-csv" aria-selected="false" aria-controls="export-csv" tabindex="-1">CSV</button>
         </div>
         <div class="code-preview-wrap">
           <pre class="code-preview" role="tabpanel" id="export-bibtex" aria-labelledby="tab-bibtex" tabindex="0"><code>@inproceedings{author2025sample,
@@ -318,7 +365,7 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
 2024,Sample paper 2,&quot;B Writer, A Author, C Writer&quot;,Second author,NeurIPS 2024,A,A*,Best paper (NeurIPS 2024),133
 2024,Sample paper 3,&quot;A Author*, B Writer*, C Writer&quot;,Co-first author,CVPR 2024 (Highlight),A,A*,Highlight,27
 2023,Sample paper 4,&quot;B Writer, C Writer, D Writer, A Author&quot;,Last author,ACL 2023 (Spotlight),A,A*,Spotlight,215</code></pre>
-          <button type="button" class="copy-code-btn" data-label="Kopiëren naar klembord" data-copied="Gekopieerd!">Kopiëren naar klembord</button>
+          <button type="button" class="copy-code-btn" data-label="Kopiëren" data-copied="Gekopieerd">Kopiëren</button>
         </div>
       </div>
     </div>
@@ -326,69 +373,56 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
 
   <section class="operators-section">
     <div class="wrap">
-      <h2>Direct zoeken en zoekoperatoren</h2>
-      <p class="note">Druk overal op een Scholar-profiel op <kbd>/</kbd> om de hele lijst in één keer te doorzoeken.</p>
+      <h2>Zoeken met operatoren</h2>
+      <p class="note">Druk op <kbd>/</kbd> in een profiel om alle papers te doorzoeken. Voeg operatoren toe aan je zoektermen om de lijst te filteren.</p>
       <div class="operators-grid">
         <div class="op-card">
-          <div class="op-header"><code>cites:&gt;100</code> <code>cites:&gt;=50</code> <code>cites:&lt;10</code></div>
-          <p class="op-title">Citatiedrempels</p>
-          <p class="op-desc">Houd papers over met meer of minder citaties dan elk getal dat je invoert.</p>
+          <div class="op-header" dir="ltr"><code>cites:&gt;100</code> <code>cites:&gt;=50</code> <code>cites:&lt;10</code></div>
+          <h3 class="op-title">Citaties</h3>
+          <p class="op-desc">Papers met meer of minder citaties dan een bepaald getal.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>ccf:a</code> <code>ccf:b</code> <code>core:a*</code></div>
-          <p class="op-title">Rangniveaus van publicatiemedia</p>
-          <p class="op-desc">Toon alleen papers uit conferenties en tijdschriften met een CCF- of CORE-rang.</p>
+          <div class="op-header" dir="ltr"><code>ccf:a</code> <code>ccf:b</code> <code>core:a*</code></div>
+          <h3 class="op-title">Rang</h3>
+          <p class="op-desc">Papers van venues met een bepaalde CCF- of CORE-rang.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>role:first</code> <code>role:last</code> <code>role:cofirst</code></div>
-          <p class="op-title">Auteursrollen</p>
-          <p class="op-desc">Filter op eerste, gedeeld eerste, tweede of laatste (senior) auteur.</p>
+          <div class="op-header" dir="ltr"><code>role:first</code> <code>role:last</code> <code>role:cofirst</code></div>
+          <h3 class="op-title">Rol</h3>
+          <p class="op-desc">Papers waarin je eerste, gedeeld eerste, tweede of laatste auteur bent.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>year:&gt;2020</code> <code>year:&gt;=2021</code> <code>year:&lt;=2015</code></div>
-          <p class="op-title">Publicatiejaren</p>
-          <p class="op-desc">Papers gepubliceerd na, vóór of binnen de jaren die je kiest, of in de laatste vijf jaar.</p>
+          <div class="op-header" dir="ltr"><code>year:&gt;=2020</code> <code>year:2023</code> <code>age:&lt;5</code></div>
+          <h3 class="op-title">Jaar</h3>
+          <p class="op-desc">Papers van vóór, na of in een bepaald jaar, of uit de laatste paar jaar.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>has:award</code> <code>has:talk</code></div>
-          <p class="op-title">Prijzen en presentaties</p>
-          <p class="op-desc">Vind Best Paper-, Test of Time-, Oral-, Spotlight- en Highlight-papers.</p>
+          <div class="op-header" dir="ltr"><code>has:award</code> <code>has:talk</code></div>
+          <h3 class="op-title">Prijzen en talks</h3>
+          <p class="op-desc">Papers met een prijs voor beste paper of test of time, of met een Oral-, Spotlight- of Highlight-presentatie.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><kbd>Escape</kbd></div>
-          <p class="op-title">Resetten met één toets</p>
-          <p class="op-desc">Wist in één keer alle zoekopdrachten, tabelselecties en filters.</p>
+          <div class="op-header" dir="ltr"><kbd>Escape</kbd></div>
+          <h3 class="op-title">Alles wissen</h3>
+          <p class="op-desc">Eén toets wist de zoekopdracht, de geselecteerde cel en elk filter.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="features">
-    <div class="wrap grid">
-      <article style="--c:#4d8ff5"><h3>Elke publicatie gekleurd naar jouw rol</h3><p>Rijen voor eerste, gedeeld eerste, tweede en laatste auteur krijgen elk een eigen kleur, en je naam wordt gemarkeerd in de auteursregel.</p></article>
-      <article style="--c:#b36cf6"><h3>CCF- en CORE-rangen</h3><p>De CCF 2026- en ICORE 2026-rang staat naast elk medium, met de regel die erop paste. Een medium dat niet kan worden geplaatst, blijft ongemarkeerd: nooit een gok.</p></article>
-      <article style="--c:#fbbc04"><h3>Een tabel rol × rang</h3><p>Kies een cel om alleen die artikelen te zien, en kopieer de samenvatting of de lijst voor een cv of subsidieaanvraag.</p></article>
-      <article style="--c:#34a853"><h3>Prijzen en presentaties</h3><p>Beste artikelen, test-of-time-prijzen, Oral, Spotlight en Highlight, uit de eigen woorden van de auteurs en van de officiële prijzenpagina's van meer dan 7.000 artikelen.</p></article>
-      <article style="--c:#4d8ff5"><h3>Afgekapte auteurslijsten, aangevuld</h3><p>Scholar verbergt de laatste auteurs van lange lijsten. Eén klik leest ze uit de pagina van het artikel, of uit Semantic Scholar als je dat toestaat.</p></article>
-      <article style="--c:#b36cf6"><h3>Dubbele items samengevoegd</h3><p>Als je dit aanzet, worden items die één artikel twee keer vermelden, één item, met de citaties opgeteld.</p></article>
-      <article style="--c:#fbbc04"><h3>Naar jouw wens</h3><p>Kies wat er getoond wordt, kies je eigen kleuren en verberg de delen van de Scholar-pagina die je niet nodig hebt.</p></article>
-      <article style="--c:#34a853"><h3>Privé van nature</h3><p>Geen account, geen analytics, geen tracking. Alles wordt in je browser berekend en de ranglijsten zitten in de extensie zelf.</p></article>
     </div>
   </section>
 
   <section class="numbers">
     <div class="wrap">
       <h2>In cijfers</h2>
-      <p class="note">Geteld uit de code en gegevens van de extensie bij het bouwen van deze pagina; niets daarvan is met de hand ingetypt. Aantallen die bij elke correctie groeien, zijn naar beneden afgerond.</p>
+      <p class="note">Geteld uit de code en gegevens van de extensie bij het bouwen van deze pagina. Getallen die bij elke correctie groeien, zijn naar beneden afgerond.</p>
       <div class="numbers-grid">
-        <div class="num" style="--c:#4d8ff5"><b dir="ltr">153</b><span>instellingen die je kunt aanpassen</span></div>
+        <div class="num" style="--c:#4d8ff5"><b dir="ltr">154</b><span>instellingen die je kunt aanpassen</span></div>
         <div class="num" style="--c:#b36cf6"><b dir="ltr">30</b><span>interfacetalen</span></div>
-        <div class="num" style="--c:#fbbc04"><b dir="ltr">1.178</b><span>publicatiemedia met een rang in de CCF- en CORE-lijsten</span></div>
-        <div class="num" style="--c:#34a853"><b dir="ltr">400+</b><span>namen van publicatiemedia zoals Scholar ze toont, die in de officiële lijsten ontbreken</span></div>
-        <div class="num" style="--c:#4d8ff5"><b dir="ltr">18</b><span>controles die voorkomen dat een verkeerde rang wordt getoond</span></div>
-        <div class="num" style="--c:#b36cf6"><b dir="ltr">5.581</b><span>prijswinnende artikelen die worden herkend</span></div>
-        <div class="num" style="--c:#fbbc04"><b dir="ltr">22.744</b><span>echte Scholar-vermeldingen van publicatiemedia, elk met een nagekeken rang</span></div>
-        <div class="num" style="--c:#34a853"><b dir="ltr">500+</b><span>unittests, naast een end-to-end-testsuite in een echte browser</span></div>
+        <div class="num" style="--c:#fbbc04"><b dir="ltr">1.178</b><span>venues met een rang in de CCF- en CORE-lijsten</span></div>
+        <div class="num" style="--c:#34a853"><b dir="ltr">400+</b><span>namen van venues zoals Scholar ze toont, die in de lijsten ontbreken</span></div>
+        <div class="num" style="--c:#4d8ff5"><b dir="ltr">18</b><span>controles die een verkeerde rang tegenhouden</span></div>
+        <div class="num" style="--c:#b36cf6"><b dir="ltr">5.581</b><span>prijswinnende papers die de extensie kent</span></div>
+        <div class="num" style="--c:#fbbc04"><b dir="ltr">22.744</b><span>echte Scholar-vermeldingen van venues, elk resultaat nagekeken</span></div>
+        <div class="num" style="--c:#34a853"><b dir="ltr">500+</b><span>unittests, en een end-to-end-testsuite in een echte browser</span></div>
       </div>
     </div>
   </section>
@@ -397,18 +431,22 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
     <div class="wrap">
       <h2>Installeren</h2>
       <ol>
-        <li>Download het project van GitHub (de groene knop “Code”, dan “Download ZIP”) en pak het uit.</li>
+        <li>Download het project van GitHub: klik op de groene knop “Code” en daarna op “Download ZIP”. Pak het bestand uit.</li>
         <li>Open <code>chrome://extensions</code> en zet Ontwikkelaarsmodus aan.</li>
-        <li>Klik op “Uitgepakte extensie laden” en kies de map src. Open daarna een willekeurig Google Scholar-profiel.</li>
+        <li>Klik op “Uitgepakte extensie laden” en kies de map src. Open daarna een Google Scholar-profiel.</li>
       </ol>
-      <p class="note">Een vermelding in de Chrome Web Store volgt misschien. Edge, Brave en andere Chromium-browsers werken op dezelfde manier.</p>
+      <p class="note">Edge, Brave en andere Chromium-browsers volgen dezelfde stappen. Een versie voor de Chrome Web Store kan later komen.</p>
     </div>
   </section>
 
   <section class="honest">
     <div class="wrap">
-      <h2>Eerlijk over de beperkingen</h2>
-      <p>Rangen zijn de huidige lijsten, niet de rang op het moment van publicatie, en de CCF-lijst zelf zegt dat het geen beoordeling is. De extensie raadt nooit een medium: wat niet geplaatst kan worden, wordt vermeld, niet gemarkeerd.</p>
+      <h2>Beperkingen</h2>
+      <ul class="limits">
+        <li>De rangen komen uit de huidige lijsten. In het jaar van een paper had de venue misschien een andere rang.</li>
+        <li>CCF zegt dat de lijst geen basis is voor academische evaluatie.</li>
+        <li>Het raadt nooit. Een venue die het niet kan plaatsen, krijgt geen label, en het overzichtspaneel toont hem.</li>
+      </ul>
     </div>
   </section>
 </main>
@@ -417,8 +455,8 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
     <span>Open source, Apache License 2.0</span>
     <a href="../privacy/">Privacy</a>
     <a href="https://github.com/boyugou/better-scholar/blob/main/ROADMAP.md">Roadmap</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/AGENTS.md">Agent API</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/SECURITY.md">Security</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/AGENTS.md">Voor AI-agents</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/SECURITY.md">Beveiliging</a>
     <a href="https://github.com/boyugou/better-scholar/issues">Een probleem melden</a>
     <a href="https://github.com/boyugou/better-scholar">GitHub</a>
   </div>

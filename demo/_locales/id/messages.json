@@ -3,7 +3,7 @@
     "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "Tingkatkan Google Scholar: peran penulis, peringkat CCF & CORE, penghargaan konferensi, grafik tahunan, dan pencarian instan."
+    "message": "Di profil Google Scholar: peran penulis pemilik serta peringkat CCF dan CORE dari venue tiap makalah, dihitung dalam satu tabel."
   },
   "extShortName": {
     "message": "Better Scholar"
@@ -51,7 +51,7 @@
     "message": "Finalis makalah terbaik"
   },
   "marksHint": {
-    "message": "Dari kata-kata penulis sendiri pada judul dan teks venue tiap makalah di Scholar (tidak diverifikasi), dan dari daftar bawaan makalah pemenang penghargaan di konferensi besar."
+    "message": "Dari dua sumber: kata-kata yang ditulis penulis sendiri pada judul makalah atau baris venue di Scholar (tidak diverifikasi), dan daftar bawaan makalah pemenang penghargaan di konferensi besar."
   },
   "marksAsWritten": {
     "message": "dari kata-kata penulis sendiri atau daftar penghargaan"
@@ -169,7 +169,7 @@
     "message": "Membuka halaman tiap makalah di Scholar (sekitar satu per detik) untuk membaca daftar penulis lengkap."
   },
   "resolveHintSemantic": {
-    "message": "Meminta daftar penulis tiap makalah ke Semantic Scholar lebih dulu (hanya judul makalah yang dikirim), lalu membuka halaman tiap makalah di Scholar (sekitar satu per detik) untuk sisanya."
+    "message": "Meminta daftar penulis tiap makalah ke Semantic Scholar lebih dulu (hanya judul makalah yang dikirim). Lalu membuka halaman Scholar untuk makalah lainnya, sekitar satu per detik."
   },
   "resolving": {
     "message": "Membaca daftar penulis… $N1$/$N2$",
@@ -464,7 +464,7 @@
     "message": "Kembalikan semua pengaturan ini ke default?"
   },
   "optStorage": {
-    "message": "Pengaturan disimpan di browser dan disinkronkan dengan profil Chrome Anda. Ekstensi membaca halaman Scholar yang Anda buka dan, saat Anda menekan tombol “Baca daftar lengkap”, halaman makalah dengan daftar penulis yang terpotong; judul makalah hanya dikirim ke Semantic Scholar jika Anda mengaktifkannya."
+    "message": "Pengaturan Anda tetap tersimpan di browser dan disinkronkan dengan profil Chrome Anda. Ekstensi membaca halaman Scholar yang Anda buka. Saat Anda menekan “Baca daftar lengkap”, ekstensi juga membaca halaman makalah dengan daftar penulis yang terpotong. Judul makalah hanya dikirim ke Semantic Scholar jika Anda mengaktifkannya."
   },
   "optSample": {
     "message": "Contoh makalah"
@@ -476,7 +476,7 @@
     "message": "Muat semua makalah otomatis"
   },
   "optAutoLoadHint": {
-    "message": "Awalnya Scholar hanya menampilkan beberapa makalah pertama. Ini menekan tombol “Tampilkan lebih banyak” milik Scholar untuk Anda, sekitar sekali per detik, sampai seluruh daftar termuat, dan berhenti jika Scholar tidak merespons. Nonaktif: panel menawarkan “Muat semua”."
+    "message": "Scholar hanya menampilkan makalah pertama dari sebuah profil. Ini menekan tombol “Tampilkan lebih banyak” milik Scholar sendiri untuk Anda, sekitar sekali per detik, sampai seluruh daftar termuat. Ini berhenti jika Scholar tidak merespons. Nonaktif: panel menampilkan “Muat semua” sebagai gantinya."
   },
   "loadStalled": {
     "message": "Scholar tidak mengirim makalah lagi ($N1$ dimuat). Coba “Muat semua” lagi sebentar lagi.",
@@ -565,7 +565,7 @@
     "message": "Gabungkan entri ganda"
   },
   "optMergeLabelHint": {
-    "message": "Entri dengan judul yang sama (tanpa memperhitungkan huruf besar, aksen, dan tanda baca) dan penulis pertama yang sama digabung menjadi satu: yang paling banyak dikutip dipertahankan dan menampilkan sitasi semuanya. Panel menghitungnya satu kali."
+    "message": "Entri dengan judul yang sama dan penulis pertama yang sama digabung menjadi satu entri (huruf besar, aksen, dan tanda baca tidak diperhitungkan). Entri yang paling banyak dikutip tetap ada dan menampilkan sitasi semuanya. Panel menghitungnya satu kali."
   },
   "mergedTip": {
     "message": "Digabung dari $N1$ entri: sitasi semuanya",
@@ -657,7 +657,7 @@
     "message": "Baca daftar penulis dari Semantic Scholar lebih dulu"
   },
   "optSemanticLabelHint": {
-    "message": "Saat menekan tombol “Baca daftar lengkap”, Semantic Scholar lebih dulu ditanya tentang daftar penulis lengkap tiap makalah (hanya judul makalah yang dikirim), dan halaman Scholar sendiri hanya dibuka untuk yang tidak diketahuinya. Permintaan ke Scholar lebih sedikit, jadi CAPTCHA juga lebih sedikit."
+    "message": "Saat Anda menekan “Baca daftar lengkap”, Semantic Scholar lebih dulu ditanya tentang daftar penulis lengkap setiap makalah. Hanya judul makalah yang dikirim, tidak ada yang lain. Halaman Scholar sendiri hanya dibuka untuk makalah yang tidak diketahui Semantic Scholar. Permintaan ke Scholar berkurang, jadi CAPTCHA juga berkurang."
   },
   "yearsTitle": {
     "message": "Makalah yang disorot per tahun"
@@ -858,7 +858,7 @@
     "message": "Agen AI"
   },
   "optAgentHint": {
-    "message": "Salin panduan yang memuat semua pengaturan, nilainya, dan pilihan Anda saat ini. Tempel ke asisten AI Anda, sampaikan apa yang Anda inginkan, lalu tempel jawabannya ke editor konfigurasi di bawah dan tekan Terapkan konfigurasi."
+    "message": "Salin panduan yang memuat semua pengaturan, nilainya, dan pilihan Anda saat ini. Berikan kepada asisten AI Anda bersama apa yang Anda inginkan. Lalu tempel jawabannya ke editor konfigurasi di bawah dan tekan Terapkan konfigurasi."
   },
   "optAgentCopy": {
     "message": "Salin panduan agen AI"
@@ -972,6 +972,12 @@
   },
   "optFiltersSearch": {
     "message": "Kotak pencarian"
+  },
+  "optFiltersKey": {
+    "message": "Tombol “/” melompat ke kotak pencarian"
+  },
+  "optFiltersKeyHint": {
+    "message": "Di panel pada halaman profil, dan di halaman ini untuk pencariannya sendiri. Mati: tombol tidak melakukan apa-apa."
   },
   "optOrderPills": {
     "message": "Urutan filter cepat"
@@ -1120,7 +1126,7 @@
     "message": "Periksa venue"
   },
   "optVenueHint": {
-    "message": "Tempelkan venue sebagaimana Scholar menampilkannya (baris abu-abu di bawah makalah) untuk melihat apa kata daftar CCF dan CORE tentangnya, dan menurut aturan apa. Venue yang tidak dapat mereka tempatkan tidak mendapat peringkat: tidak ada yang ditebak."
+    "message": "Tempelkan venue sebagaimana Scholar menampilkannya: baris abu-abu di bawah makalah. Anda akan melihat apa kata daftar CCF dan CORE tentangnya, dan menurut aturan apa. Venue yang tidak dapat mereka tempatkan tidak mendapat peringkat. Tidak ada yang ditebak."
   },
   "optVenuePlaceholder": {
     "message": "mis. Proceedings of the IEEE conference on computer vision and pattern recognition"
@@ -1129,7 +1135,7 @@
     "message": "Tanpa peringkat. Daftar tidak menempatkan teks ini dengan pasti, sehingga tidak mendapat label."
   },
   "optVenueSecondary": {
-    "message": "Kata “$N1$” menandai jalur sekunder (workshop, poster, makalah pendek …): venue itu tidak mendapat peringkat kecuali nama venue itu sendiri memuat kata tersebut.",
+    "message": "Kata “$N1$” menandai jalur sekunder, seperti workshop, poster, atau makalah pendek. Venue itu tidak mendapat peringkat kecuali nama venue itu sendiri memuat kata tersebut.",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -1149,7 +1155,7 @@
     "message": "Jumlah mengikuti filter"
   },
   "optFiltersFollowHint": {
-    "message": "Tabel, hitungan penghargaan dan presentasi, serta hitungan ringkasan yang disalin hanya menghitung makalah yang tersisa setelah difilter (rentang tahun, pencarian, filter cepat, venue); sel atau baris yang dipilih tidak mempersempit hitungan mana pun. Nonaktif: selalu menghitung seluruh profil."
+    "message": "Tabel, hitungan penghargaan dan presentasi, serta ringkasan yang disalin hanya menghitung makalah yang tersisa setelah difilter: rentang tahun, pencarian, filter cepat, atau venue. Sel atau baris yang dipilih tidak mengubah hitungan apa pun. Nonaktif: selalu menghitung seluruh profil."
   },
   "optPillRecent": {
     "message": "5 tahun terakhir"
@@ -1182,7 +1188,7 @@
     "message": "Tambahkan tautan profil dan tanggal ke ringkasan yang disalin"
   },
   "optCopySourceHint": {
-    "message": "Ringkasan yang disalin dan tabel yang disalin mendapat satu baris berisi tautan profil dan tanggal (Source: …), agar angka-angkanya bisa diarsipkan atau diteruskan. Daftar yang belum sepenuhnya dimuat akan menyebutkannya di sana, apa pun posisi sakelar ini."
+    "message": "Ringkasan yang disalin dan tabel yang disalin diakhiri dengan satu baris yang memuat tautan profil dan tanggal (Source: …), agar Anda dapat mengarsipkan atau meneruskan angka-angkanya. Daftar yang belum sepenuhnya dimuat selalu disebutkan di sana."
   },
   "unrankedPreprints": {
     "message": "Preprint"
@@ -1197,7 +1203,7 @@
     "message": "Jika kedua daftar memberi peringkat pada venue"
   },
   "optPreferHint": {
-    "message": "Satu label, bukan dua: daftar yang dipilih, dan daftar lainnya hanya jika daftar yang dipilih tidak memberi peringkat untuk venue tersebut. Tooltip label tetap menyebut peringkat lainnya."
+    "message": "Satu label, bukan dua: label dari daftar yang Anda pilih, dan label daftar lainnya hanya jika daftar yang dipilih tidak memberi peringkat untuk venue tersebut. Tooltip label tetap menyebut peringkat dari daftar lainnya."
   },
   "optPreferCcf": {
     "message": "Prioritaskan CCF"

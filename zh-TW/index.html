@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Better Scholar：你在 Google Scholar 上的作者角色與期刊會議等級</title>
-<meta name="description" content="免費的 Chrome 擴充功能，在 Google Scholar 個人頁面的每篇論文上標示你的角色（第一、共同第一、第二、末位作者）及發表場所的 CCF / CORE 等級，並以一張表格彙整。">
+<title>Better Scholar：你在 Google Scholar 上的作者角色與發表處等級</title>
+<meta name="description" content="免費的 Chrome 擴充功能，在 Google Scholar 個人頁面的每篇論文上顯示你的作者角色及發表處的 CCF / CORE 等級，並以一張表格統計你的論文。">
 <link rel="canonical" href="https://boyugou.github.io/better-scholar/zh-TW/">
 <link rel="alternate" hreflang="en" href="https://boyugou.github.io/better-scholar/en/">
 <link rel="alternate" hreflang="zh-CN" href="https://boyugou.github.io/better-scholar/zh-CN/">
@@ -40,14 +40,14 @@
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Better Scholar：你在 Google Scholar 上的作者角色與期刊會議等級">
-<meta property="og:description" content="免費的 Chrome 擴充功能，在 Google Scholar 個人頁面的每篇論文上標示你的角色（第一、共同第一、第二、末位作者）及發表場所的 CCF / CORE 等級，並以一張表格彙整。">
+<meta property="og:title" content="Better Scholar：你在 Google Scholar 上的作者角色與發表處等級">
+<meta property="og:description" content="免費的 Chrome 擴充功能，在 Google Scholar 個人頁面的每篇論文上顯示你的作者角色及發表處的 CCF / CORE 等級，並以一張表格統計你的論文。">
 <meta property="og:url" content="https://boyugou.github.io/better-scholar/zh-TW/">
 <meta property="og:image" content="https://boyugou.github.io/better-scholar/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="../assets/styles.css">
 <meta name="theme-color" content="#161d33">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Better Scholar","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Chromium browsers","description":"免費的 Chrome 擴充功能，在 Google Scholar 個人頁面的每篇論文上標示你的角色（第一、共同第一、第二、末位作者）及發表場所的 CCF / CORE 等級，並以一張表格彙整。","inLanguage":"zh-TW","url":"https://boyugou.github.io/better-scholar/zh-TW/","image":"https://boyugou.github.io/better-scholar/assets/og.png","license":"https://www.apache.org/licenses/LICENSE-2.0","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Better Scholar","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Chromium browsers","description":"免費的 Chrome 擴充功能，在 Google Scholar 個人頁面的每篇論文上顯示你的作者角色及發表處的 CCF / CORE 等級，並以一張表格統計你的論文。","inLanguage":"zh-TW","url":"https://boyugou.github.io/better-scholar/zh-TW/","image":"https://boyugou.github.io/better-scholar/assets/og.png","license":"https://www.apache.org/licenses/LICENSE-2.0","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 </head>
 <body>
 <header class="top">
@@ -97,16 +97,11 @@
 <main>
   <section class="hero">
     <div class="wrap">
-      <div class="hero-badges">
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg> Manifest V3</span>
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg> 在瀏覽器中執行</span>
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg> 零依賴</span>
-      </div>
       <div class="stripes" aria-hidden="true"><i style="--c:#4d8ff5"></i><i style="--c:#b36cf6"></i><i style="--c:#fbbc04"></i><i style="--c:#34a853"></i></div>
-      <h1>一眼看清每篇論文的狀況</h1>
-      <p class="lead">一款適用於 Google Scholar 個人頁面的 Chrome 擴充功能。它在每篇論文上標示你的作者角色與發表場所的 CCF / CORE 等級，並以一張表格彙整結果：「4 篇 CCF-A 類第一作者論文」。</p>
+      <h1>你在每篇論文中的角色與發表處等級</h1>
+      <p class="lead">一款免費的 Chrome 擴充功能，適用於 Google Scholar 個人頁面。它依你的作者角色為每篇論文著色，顯示其發表處的 CCF 與 CORE 等級，並以一張表格統計你的論文。</p>
       <p class="cta"><a class="btn" href="#install">安裝</a> <a class="btn ghost" href="https://github.com/boyugou/better-scholar">在 GitHub 上檢視</a></p>
-      <p class="note">免費開源 · 支援 Chrome 及其他 Chromium 核心瀏覽器 · 30 種介面語言</p>
+      <p class="note">免費開源 · 支援 Chrome、Edge、Brave 及其他 Chromium 核心瀏覽器 · 30 種介面語言</p>
     </div>
   </section>
 
@@ -114,17 +109,69 @@
     <div class="wrap">
       <figure class="hero-shot">
         <div class="hero-frame" style="aspect-ratio: 1280 / 660">
-          <img src="../assets/hero.jpg" alt="一個虛構的個人頁面（真實的場所，虛構的論文）：依角色著色的列、每個場所旁的等級標籤，右側為彙整。" width="1280" height="800" fetchpriority="high" decoding="async">
+          <img src="../assets/hero.jpg" alt="一個虛構的個人頁面（真實的發表處，虛構的論文）：每列都帶有你所屬角色的顏色，標籤顯示等級，右側的面板統計論文數。" width="1280" height="800" fetchpriority="high" decoding="async">
         </div>
-        <figcaption>一個虛構的個人頁面（真實的場所，虛構的論文）：依角色著色的列、每個場所旁的等級標籤，右側為彙整。</figcaption>
+        <figcaption>一個虛構的個人頁面（真實的發表處，虛構的論文）：每列都帶有你所屬角色的顏色，標籤顯示等級，右側的面板統計論文數。</figcaption>
       </figure>
+    </div>
+  </section>
+
+  <section class="how" id="how">
+    <div class="wrap">
+      <h2>擴充功能如何讀取一篇論文</h2>
+      <p class="note">兩篇虛構的論文，發表於真實的發表處。每一步都顯示擴充功能本身的程式碼在其中找到了什麼。</p>
+      <div class="how-grid">
+        <ol class="how-steps">
+          <li><button type="button" data-step="1"><span class="n">1</span><b>找到你的名字</b><span class="d">它在作者行中找到個人頁面的名字。你在作者行中的位置決定你的角色：第一作者、共同第一作者、第二作者或末位作者。</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="2"><span class="n">2</span><b>查詢發表處</b><span class="d">它依發表處的全名或縮寫，在 CCF 與 CORE 名單中查詢。確定無疑的比對會顯示一個等級標籤。</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="3"><span class="n">3</span><b>絕不猜測</b><span class="d">研討會、海報或 Findings 論文不等於主會議。名單無法確定收錄的發表處，不會顯示標籤。</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="4" aria-current="step"><span class="n">4</span><b>計數</b><span class="d">面板依你的角色與等級，每篇論文只計算一次。點選數字即可看到對應的論文。</span><i class="bar" aria-hidden="true"></i></button></li>
+        </ol>
+        <div class="how-figure">
+        <div class="how-stage" aria-hidden="true">
+          <div class="sr-head" dir="ltr" lang="en"><span>Title</span><span>Cited by</span><span>Year</span></div>
+          <div class="sr on" data-from="1" dir="ltr" data-role="first" style="--rc:#1a73e8">
+            <div class="sr-text" lang="en"><div class="sr-t">Self-Supervised Depth from Casual Video</div><div class="sr-a"><span class="nm on" data-from="1" data-focus="1">A Example</span>, B Writer, C Writer, D Writer</div><div class="sr-v"><span class="vn on" data-from="2" data-focus="2">Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</span>, 2023 <span class="chip on" data-from="2" data-focus="2"><span class="k">CCF</span> <b>A</b></span></div></div>
+            <div class="sr-c">892</div><div class="sr-y">2023</div>
+            <div class="co-slot" dir="ltr"><p class="co" data-from="1" data-to="1"><span class="tag">第一作者</span> 第 1 位，共 4 位</p><p class="co on" data-from="2"><b dir="ltr">CCF A · CORE A*</b> · 依名稱比對: <span dir="ltr">IEEE/CVF Computer Vision and Pattern Recognition Conference</span></p></div>
+          </div>
+          <div class="sr on" data-from="1" dir="ltr" data-role="second" style="--rc:#f9ab00">
+            <div class="sr-text" lang="en"><div class="sr-t">Cheap Calibration for Retrieval-Augmented Models</div><div class="sr-a">B Writer, <span class="nm on" data-from="1" data-focus="1">A Example</span>, H Writer</div><div class="sr-v"><mark class="sec on" data-from="3" data-focus="3">Findings</mark> of the Association for Computational Linguistics: ACL 2022, 410-423, 2022</div></div>
+            <div class="sr-c">868</div><div class="sr-y">2022</div>
+            <div class="co-slot" dir="ltr"><p class="co" data-from="1" data-to="2"><span class="tag">第二作者</span> 第 2 位，共 3 位</p><p class="co on" data-from="3"><b dir="ltr">Findings</b> · 次要類別：無等級，無標籤</p></div>
+          </div>
+          <div class="mini">
+            <div class="mini-h"><b>依位次與等級統計論文</b><span dir="ltr"><i class="on">CCF</i><i>CORE</i></span></div>
+            <table>
+              <thead><tr><th></th><th>A</th><th>B</th><th>C</th><th>–</th><th>合計</th></tr></thead>
+              <tbody><tr><th><i style="--rc:#1a73e8"></i>第一作者</th><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td><td>·</td><td>·</td><td>·</td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td></tr><tr><th><i style="--rc:#f9ab00"></i>第二作者</th><td>·</td><td>·</td><td>·</td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <button type="button" class="how-play" hidden data-play="播放" data-pause="暫停"><svg class="i-play" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg><svg class="i-pause" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z" fill="currentColor"/></svg><span>播放</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="wrap">
+      <h2>它還能做什麼</h2>
+      <div class="grid">
+        <article style="--c:#4d8ff5"><h3>獎項與報告</h3><p>最佳論文、時間考驗獎，以及 Oral、Spotlight 或 Highlight 報告的標籤。資料來自作者本人的說明和官方獎項頁面。</p></article>
+        <article style="--c:#b36cf6"><h3>完整的作者列表</h3><p>Scholar 會以「…」省略較長的作者列表，這可能會隱藏你的角色。按一下即可從 Scholar 的論文頁面讀取完整列表。</p></article>
+        <article style="--c:#fbbc04"><h3>合併重複條目</h3><p>Scholar 有時會把同一篇論文列出兩次。開啟開關後，這些條目會合併為一筆，引用次數加總。</p></article>
+        <article style="--c:#34a853"><h3>自訂版面</h3><p>面板的每個部分都有自己的開關。可以選擇顏色、各部分的順序，以及為它們取你自己的名稱。</p></article>
+        <article style="--c:#4d8ff5"><h3>保護隱私</h3><p>無需帳號，沒有分析工具，也沒有追蹤。所有工作都在你的瀏覽器中完成，等級名單都收錄在擴充功能裡。</p></article>
+        <article style="--c:#b36cf6"><h3>30 種介面語言</h3><p>擴充功能支援你的語言。它也能以你選擇的語言開啟 Scholar 本身。</p></article>
+      </div>
     </div>
   </section>
 
   <section class="try" id="try">
     <div class="wrap">
-      <h2>試用真正的設定頁面</h2>
-      <p class="note">這是擴充功能本身的設定頁面，直接在這裡運作：切換一個開關，預覽隨之變化。將滑鼠移到預覽上，即可隱藏、移動或重新命名某個部分；雙擊某個部分，即可跳到它的設定。</p>
+      <h2>試用設定頁面</h2>
+      <p class="note">這是擴充功能真正的設定頁面。變更一項設定，預覽就隨之改變。將滑鼠指向預覽中的某個部分，即可隱藏、移動或重新命名它。</p>
       <div class="try-bar">
         <a class="skip" href="#after-try">跳過示範</a>
         <p>你的變更只會儲存在這個瀏覽器中。</p>
@@ -138,15 +185,15 @@
 
   <section class="export-section" id="after-try">
     <div class="wrap">
-      <h2>一鍵匯出學術成果</h2>
-      <p class="note">可直接貼上的論文清單，適用於履歷、研究計畫申請表、LaTeX 文件、AI 代理程式與試算表。</p>
+      <h2>複製你的論文</h2>
+      <p class="note">每種格式一個按鈕：適用於履歷、研究計畫申請表、LaTeX 或試算表。以下是四篇虛構論文的實際輸出。</p>
       <div class="export-card">
-        <div class="export-tabs" role="tablist" aria-label="一鍵匯出學術成果">
-          <button type="button" class="tab-btn active" role="tab" id="tab-bibtex" aria-selected="true" aria-controls="export-bibtex">BibTeX (LaTeX-Ready)</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-apa" aria-selected="false" aria-controls="export-apa" tabindex="-1">APA 7th Edition</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-json" aria-selected="false" aria-controls="export-json" tabindex="-1">Structured JSON</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-markdown" aria-selected="false" aria-controls="export-markdown" tabindex="-1">GitHub Markdown</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-csv" aria-selected="false" aria-controls="export-csv" tabindex="-1">RFC-4180 CSV</button>
+        <div class="export-tabs" role="tablist" aria-label="複製你的論文">
+          <button type="button" class="tab-btn active" role="tab" id="tab-bibtex" aria-selected="true" aria-controls="export-bibtex">BibTeX</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-apa" aria-selected="false" aria-controls="export-apa" tabindex="-1">APA</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-json" aria-selected="false" aria-controls="export-json" tabindex="-1">JSON</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-markdown" aria-selected="false" aria-controls="export-markdown" tabindex="-1">Markdown</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-csv" aria-selected="false" aria-controls="export-csv" tabindex="-1">CSV</button>
         </div>
         <div class="code-preview-wrap">
           <pre class="code-preview" role="tabpanel" id="export-bibtex" aria-labelledby="tab-bibtex" tabindex="0"><code>@inproceedings{author2025sample,
@@ -318,7 +365,7 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
 2024,Sample paper 2,&quot;B Writer, A Author, C Writer&quot;,Second author,NeurIPS 2024,A,A*,Best paper (NeurIPS 2024),133
 2024,Sample paper 3,&quot;A Author*, B Writer*, C Writer&quot;,Co-first author,CVPR 2024 (Highlight),A,A*,Highlight,27
 2023,Sample paper 4,&quot;B Writer, C Writer, D Writer, A Author&quot;,Last author,ACL 2023 (Spotlight),A,A*,Spotlight,215</code></pre>
-          <button type="button" class="copy-code-btn" data-label="複製到剪貼簿" data-copied="已複製！">複製到剪貼簿</button>
+          <button type="button" class="copy-code-btn" data-label="複製" data-copied="已複製">複製</button>
         </div>
       </div>
     </div>
@@ -326,69 +373,56 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
 
   <section class="operators-section">
     <div class="wrap">
-      <h2>即時搜尋與查詢運算子</h2>
-      <p class="note">在 Scholar 個人檔案的任何位置按 <kbd>/</kbd> 鍵，即可一次搜尋整份清單。</p>
+      <h2>用運算子搜尋</h2>
+      <p class="note">在個人頁面上按 <kbd>/</kbd> 鍵，即可搜尋其全部論文。在搜尋字詞中加入運算子，即可篩選清單。</p>
       <div class="operators-grid">
         <div class="op-card">
-          <div class="op-header"><code>cites:&gt;100</code> <code>cites:&gt;=50</code> <code>cites:&lt;10</code></div>
-          <p class="op-title">引用次數門檻</p>
-          <p class="op-desc">輸入任意數字，保留引用次數高於或低於該值的論文。</p>
+          <div class="op-header" dir="ltr"><code>cites:&gt;100</code> <code>cites:&gt;=50</code> <code>cites:&lt;10</code></div>
+          <h3 class="op-title">引用次數</h3>
+          <p class="op-desc">引用次數高於或低於某個數字的論文。</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>ccf:a</code> <code>ccf:b</code> <code>core:a*</code></div>
-          <p class="op-title">期刊會議等級</p>
-          <p class="op-desc">只顯示發表於 CCF 或 CORE 評級之會議與期刊的論文。</p>
+          <div class="op-header" dir="ltr"><code>ccf:a</code> <code>ccf:b</code> <code>core:a*</code></div>
+          <h3 class="op-title">等級</h3>
+          <p class="op-desc">發表於指定 CCF 或 CORE 等級發表處的論文。</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>role:first</code> <code>role:last</code> <code>role:cofirst</code></div>
-          <p class="op-title">作者角色</p>
-          <p class="op-desc">依第一作者、共同第一作者、第二作者或末位（資深）作者篩選。</p>
+          <div class="op-header" dir="ltr"><code>role:first</code> <code>role:last</code> <code>role:cofirst</code></div>
+          <h3 class="op-title">角色</h3>
+          <p class="op-desc">你是第一作者、共同第一作者、第二作者或末位作者的論文。</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>year:&gt;2020</code> <code>year:&gt;=2021</code> <code>year:&lt;=2015</code></div>
-          <p class="op-title">發表年份</p>
-          <p class="op-desc">篩選在所選年份之後、之前或期間，或近五年內發表的論文。</p>
+          <div class="op-header" dir="ltr"><code>year:&gt;=2020</code> <code>year:2023</code> <code>age:&lt;5</code></div>
+          <h3 class="op-title">年份</h3>
+          <p class="op-desc">發表於某一年之前、之後或當年的論文，或近幾年發表的論文。</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>has:award</code> <code>has:talk</code></div>
-          <p class="op-title">獎項與報告</p>
-          <p class="op-desc">找出 Best Paper、時間考驗獎、Oral、Spotlight 與 Highlight 論文。</p>
+          <div class="op-header" dir="ltr"><code>has:award</code> <code>has:talk</code></div>
+          <h3 class="op-title">獎項與報告</h3>
+          <p class="op-desc">獲得最佳論文獎或時間考驗獎的論文，以及有 Oral、Spotlight 或 Highlight 報告的論文。</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><kbd>Escape</kbd></div>
-          <p class="op-title">一鍵重設</p>
-          <p class="op-desc">一次清除所有搜尋、表格選取與篩選條件。</p>
+          <div class="op-header" dir="ltr"><kbd>Escape</kbd></div>
+          <h3 class="op-title">全部清除</h3>
+          <p class="op-desc">按一個鍵即可清除搜尋、選取的儲存格和所有篩選條件。</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="features">
-    <div class="wrap grid">
-      <article style="--c:#4d8ff5"><h3>每篇論文，依你的角色著色</h3><p>第一、共同第一、第二與末位作者的列各有一種顏色，你的名字會在作者列中標示出來。</p></article>
-      <article style="--c:#b36cf6"><h3>CCF 與 CORE 等級</h3><p>每個場所旁顯示 CCF 2026 與 ICORE 2026 的等級，並附上比對所依據的規則。無法判定的場所不做標示：絕不臆測。</p></article>
-      <article style="--c:#fbbc04"><h3>角色 × 等級表</h3><p>點選任一格即可只列出該類論文，並可複製彙整或清單，用於履歷或研究計畫申請表。</p></article>
-      <article style="--c:#34a853"><h3>獎項與報告</h3><p>最佳論文、時間考驗獎，以及 Oral、Spotlight、Highlight，資料來自作者本人的說明，以及超過 7,000 篇論文的官方獎項頁面。</p></article>
-      <article style="--c:#4d8ff5"><h3>補全被隱藏的作者列表</h3><p>Scholar 會隱藏長作者列表的末位作者。按一下即可從論文頁面讀取，若你允許，也可從 Semantic Scholar 讀取。</p></article>
-      <article style="--c:#b36cf6"><h3>合併重複條目</h3><p>開啟後，列出同一篇論文兩次的條目會合併為一筆，引用次數加總。</p></article>
-      <article style="--c:#fbbc04"><h3>由你自訂</h3><p>選擇顯示內容、自選顏色，並隱藏你不需要的 Scholar 頁面部分。</p></article>
-      <article style="--c:#34a853"><h3>設計上即保護隱私</h3><p>無需帳號，沒有分析工具，也沒有追蹤。所有運算都在你的瀏覽器中完成，等級名單隨擴充功能一併提供。</p></article>
     </div>
   </section>
 
   <section class="numbers">
     <div class="wrap">
       <h2>數字一覽</h2>
-      <p class="note">這些數字在建置本頁時由擴充功能的程式碼與資料統計得出，沒有一個是手動輸入的。會隨每次修正而增加的數字均已無條件捨去。</p>
+      <p class="note">這些數字在建置時由擴充功能的程式碼與資料統計得出。會隨每次修正而增加的數字均已無條件捨去。</p>
       <div class="numbers-grid">
-        <div class="num" style="--c:#4d8ff5"><b dir="ltr">153</b><span>可變更的設定</span></div>
+        <div class="num" style="--c:#4d8ff5"><b dir="ltr">154</b><span>可變更的設定</span></div>
         <div class="num" style="--c:#b36cf6"><b dir="ltr">30</b><span>介面語言</span></div>
-        <div class="num" style="--c:#fbbc04"><b dir="ltr">1,178</b><span>CCF 與 CORE 名單中有等級的場所</span></div>
-        <div class="num" style="--c:#34a853"><b dir="ltr">400+</b><span>Scholar 顯示但官方名單沒有的場所名稱</span></div>
-        <div class="num" style="--c:#4d8ff5"><b dir="ltr">18</b><span>防止顯示錯誤等級的檢查</span></div>
-        <div class="num" style="--c:#b36cf6"><b dir="ltr">5,581</b><span>已識別的獲獎論文</span></div>
-        <div class="num" style="--c:#fbbc04"><b dir="ltr">22,744</b><span>經人工核對等級的真實 Scholar 場所條目</span></div>
-        <div class="num" style="--c:#34a853"><b dir="ltr">500+</b><span>單元測試，另有真實瀏覽器中的端對端測試套件</span></div>
+        <div class="num" style="--c:#fbbc04"><b dir="ltr">1,178</b><span>CCF 與 CORE 名單中有等級的發表處</span></div>
+        <div class="num" style="--c:#34a853"><b dir="ltr">400+</b><span>Scholar 顯示但名單沒有的發表處名稱</span></div>
+        <div class="num" style="--c:#4d8ff5"><b dir="ltr">18</b><span>防止錯誤等級的檢查</span></div>
+        <div class="num" style="--c:#b36cf6"><b dir="ltr">5,581</b><span>它已識別的獲獎論文</span></div>
+        <div class="num" style="--c:#fbbc04"><b dir="ltr">22,744</b><span>經人工核對每個結果的真實 Scholar 發表處條目</span></div>
+        <div class="num" style="--c:#34a853"><b dir="ltr">500+</b><span>單元測試，以及真實瀏覽器中的端對端測試套件</span></div>
       </div>
     </div>
   </section>
@@ -397,18 +431,22 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
     <div class="wrap">
       <h2>安裝</h2>
       <ol>
-        <li>從 GitHub 下載專案（點選綠色的「Code」按鈕，再選擇「Download ZIP」），然後解壓縮。</li>
+        <li>從 GitHub 下載專案：點選綠色的「Code」按鈕，再選擇「Download ZIP」。然後解壓縮檔案。</li>
         <li>開啟 <code>chrome://extensions</code>，並開啟「開發人員模式」。</li>
-        <li>點選「載入未封裝項目」，選擇 src 資料夾。然後開啟任一 Google Scholar 個人頁面。</li>
+        <li>點選「載入未封裝項目」，選擇 src 資料夾。然後開啟一個 Google Scholar 個人頁面。</li>
       </ol>
-      <p class="note">之後可能會上架 Chrome 線上應用程式商店。Edge、Brave 及其他 Chromium 瀏覽器的安裝方式相同。</p>
+      <p class="note">Edge、Brave 及其他 Chromium 瀏覽器的安裝步驟相同。之後可能會有 Chrome 線上應用程式商店版本。</p>
     </div>
   </section>
 
   <section class="honest">
     <div class="wrap">
-      <h2>坦白說明其限制</h2>
-      <p>等級採用的是目前的名單，而非發表當時的等級；CCF 名單本身也聲明它並非學術評鑑。擴充功能從不臆測場所：無法判定的會列出，但不加標示。</p>
+      <h2>限制</h2>
+      <ul class="limits">
+        <li>等級取自目前的名單。論文發表當年，其發表處的等級可能不同。</li>
+        <li>CCF 表示，其名單不應作為學術評價的依據。</li>
+        <li>它從不猜測。無法判定等級的發表處不顯示標籤，並會列在面板中。</li>
+      </ul>
     </div>
   </section>
 </main>
@@ -416,9 +454,9 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
   <div class="wrap">
     <span>開放原始碼，採用 Apache License 2.0</span>
     <a href="../privacy/">隱私權</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/ROADMAP.md">Roadmap</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/AGENTS.md">Agent API</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/SECURITY.md">Security</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/ROADMAP.md">路線圖</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/AGENTS.md">給 AI 代理程式</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/SECURITY.md">安全性</a>
     <a href="https://github.com/boyugou/better-scholar/issues">回報問題</a>
     <a href="https://github.com/boyugou/better-scholar">GitHub</a>
   </div>

@@ -3,7 +3,7 @@
     "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "Google Scholar profilini geliştirin: yazar rolleri, CCF ve CORE sıralamaları, konferans ödülleri, yıl grafiği ve anında arama."
+    "message": "Google Scholar profillerinde: sahibinin yazar rolü, her makalenin yayın yerinin CCF ve CORE sıralaması, tek tabloda sayılır."
   },
   "extShortName": {
     "message": "Better Scholar"
@@ -51,7 +51,7 @@
     "message": "En iyi makale finalisti"
   },
   "marksHint": {
-    "message": "Scholar'da her makalenin başlığındaki ve yayın yeri metnindeki yazarların kendi sözlerinden (doğrulanmadı) ve büyük konferanslardaki ödüllü makalelerin yerleşik bir listesinden alınır."
+    "message": "İki kaynaktan alınır: yazarların Scholar'da her makalenin başlığına veya yayın yeri satırına yazdığı sözler (doğrulanmadı) ve büyük konferanslardaki ödüllü makalelerin yerleşik bir listesi."
   },
   "marksAsWritten": {
     "message": "yazarların kendi sözlerinden veya ödül listesinden"
@@ -175,7 +175,7 @@
     "message": "Tam yazar listesini okumak için her makalenin Scholar'daki sayfasını açar (saniyede yaklaşık bir)."
   },
   "resolveHintSemantic": {
-    "message": "Önce her makalenin yazar listesini Semantic Scholar'a sorar (yalnızca makalenin başlığı gönderilir), ardından kalan makalelerin Scholar'daki sayfalarını açar (saniyede yaklaşık bir)."
+    "message": "Önce her makalenin yazar listesini Semantic Scholar'a sorar (yalnızca makalenin başlığı gönderilir). Ardından diğer makalelerin Scholar'daki sayfalarını saniyede yaklaşık bir tane açar."
   },
   "resolving": {
     "message": "Yazar listeleri okunuyor… $N1$/$N2$",
@@ -482,7 +482,7 @@
     "message": "Bu ayarların tümü varsayılanlara sıfırlansın mı?"
   },
   "optStorage": {
-    "message": "Ayarlar tarayıcınızda saklanır ve Chrome profilinizle eşitlenir. Eklenti, açtığınız Scholar sayfalarını okur ve “Tam listeleri oku” düğmesine bastığınızda yazar listesi kısaltılmış makalelerin sayfalarını da okur; makale başlıkları ise yalnızca bu seçeneği açarsanız Semantic Scholar'a gönderilir."
+    "message": "Ayarlar tarayıcınızda saklanır ve Chrome profilinizle eşitlenir. Eklenti, açtığınız Scholar sayfalarını okur. “Tam listeleri oku” düğmesine bastığınızda, yazar listesi kısaltılmış makalelerin sayfalarını da okur. Makale başlıkları yalnızca bu seçeneği açarsanız Semantic Scholar'a gönderilir."
   },
   "optSample": {
     "message": "Örnek makale"
@@ -494,7 +494,7 @@
     "message": "Tüm makaleleri otomatik yükle"
   },
   "optAutoLoadHint": {
-    "message": "Scholar başlangıçta yalnızca ilk makaleleri gösterir. Eklenti, listenin tamamı yüklenene kadar Scholar'ın kendi “Daha fazla göster” düğmesine sizin yerinize yaklaşık saniyede bir basar; Scholar yanıt vermeyi keserse durur. Kapalı: panel bunun yerine “Tümünü yükle” sunar."
+    "message": "Scholar bir profilde yalnızca ilk makaleleri gösterir. Eklenti, listenin tamamı yüklenene kadar Scholar'ın kendi “Daha fazla göster” düğmesine sizin yerinize yaklaşık saniyede bir basar. Scholar yanıt vermeyi keserse durur. Kapalı: panel bunun yerine “Tümünü yükle” gösterir."
   },
   "loadStalled": {
     "message": "Scholar daha fazla makale göndermedi ($N1$ yüklendi). Biraz sonra “Tümünü yükle”yi yeniden deneyin.",
@@ -583,7 +583,7 @@
     "message": "Yinelenenleri birleştir"
   },
   "optMergeLabelHint": {
-    "message": "Başlığı (büyük harf, vurgu ve noktalama dışında) ve birinci yazarı aynı olan kayıtlar tek kayıt olur: en çok atıf alan kalır ve hepsinin atıflarını gösterir. Panel onu bir kez sayar."
+    "message": "Başlığı ve birinci yazarı aynı olan kayıtlar tek kayıt olur (büyük harf, vurgu ve noktalama sayılmaz). En çok atıf alan kayıt kalır ve hepsinin atıflarını gösterir. Panel onu bir kez sayar."
   },
   "mergedTip": {
     "message": "$N1$ kayıttan birleştirildi: hepsinin atıfları",
@@ -675,7 +675,7 @@
     "message": "Yazar listelerini önce Semantic Scholar'dan oku"
   },
   "optSemanticLabelHint": {
-    "message": "“Tam listeleri oku”ya basıldığında önce her makalenin tam yazar listesi için Semantic Scholar'a sorulur (yalnızca makalenin başlığı gönderilir). Scholar'ın kendi sayfası yalnızca Semantic Scholar'ın bilmediği kısım için okunur. Scholar'a daha az istek gider, dolayısıyla daha az CAPTCHA çıkar."
+    "message": "“Tam listeleri oku”ya basıldığında önce her makalenin tam yazar listesi için Semantic Scholar'a sorulur. Semantic Scholar yalnızca makalenin başlığını alır, başka bir şey almaz. Scholar'ın kendi sayfası yalnızca Semantic Scholar'ın bilmediği makaleler için açılır. Scholar'a daha az istek gitmesi, daha az CAPTCHA demektir."
   },
   "yearsTitle": {
     "message": "Yıllara göre vurgulanan makaleler"
@@ -879,7 +879,7 @@
     "message": "Yapay zekâ ajanları"
   },
   "optAgentHint": {
-    "message": "Her ayarı, değerlerini ve şu anki seçimlerinizi listeleyen bir rehber kopyalayın. Bunu yapay zekâ asistanınıza yapıştırın, ne istediğinizi söyleyin, sonra yanıtını aşağıdaki JSON düzenleyicisine yapıştırıp “Yapılandırmayı uygula” düğmesine basın."
+    "message": "Her ayarı, değerlerini ve şu anki seçimlerinizi listeleyen bir rehber kopyalayın. Bunu, ne istediğinizle birlikte yapay zekâ asistanınıza verin. Ardından yanıtını aşağıdaki JSON düzenleyicisine yapıştırın ve “Yapılandırmayı uygula” düğmesine basın."
   },
   "optAgentCopy": {
     "message": "Ajan rehberini kopyala"
@@ -993,6 +993,12 @@
   },
   "optFiltersSearch": {
     "message": "Arama kutusu"
+  },
+  "optFiltersKey": {
+    "message": "“/” tuşu arama kutusuna atlar"
+  },
+  "optFiltersKeyHint": {
+    "message": "Profil sayfasındaki panelde ve bu sayfada, sayfanın kendi aramasında. Kapalı: tuş hiçbir şey yapmaz."
   },
   "optOrderPills": {
     "message": "Hızlı filtrelerin sırası"
@@ -1141,7 +1147,7 @@
     "message": "Yayın yerini kontrol et"
   },
   "optVenueHint": {
-    "message": "Scholar'ın gösterdiği biçimiyle bir yayın yeri yapıştırın (bir makalenin altındaki gri satır); CCF ve CORE listelerinin bu yayın yeri hakkında ne düşündüğünü ve hangi kurala göre düşündüğünü görün. Listelerin yerleştiremediği bir yayın yerine sıralama verilmez: hiçbir şey tahmin edilmez."
+    "message": "Scholar'ın gösterdiği biçimiyle bir yayın yeri yapıştırın: bir makalenin altındaki gri satır. CCF ve CORE listelerinin bu yayın yeri hakkında ne düşündüğünü ve hangi kurala göre düşündüğünü görürsünüz. Listelerin yerleştiremediği bir yayın yerine sıralama verilmez. Hiçbir şey tahmin edilmez."
   },
   "optVenuePlaceholder": {
     "message": "örn. Proceedings of the IEEE conference on computer vision and pattern recognition"
@@ -1150,7 +1156,7 @@
     "message": "Sıralama yok. Listeler bu metni kesin olarak yerleştiremiyor, bu yüzden etiket verilmez."
   },
   "optVenueSecondary": {
-    "message": "“$N1$” kelimesi ikincil bir kategoriyi belirtir (workshop, poster, kısa makale …): yayın yerinin kendi adında bu kelime yoksa sıralama verilmez.",
+    "message": "“$N1$” kelimesi ikincil bir kategoriyi belirtir: workshop, poster veya kısa makale gibi. Yayın yerinin kendi adında bu kelime yoksa sıralama verilmez.",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -1170,7 +1176,7 @@
     "message": "Sayılar filtreleri takip eder"
   },
   "optFiltersFollowHint": {
-    "message": "Tablo, ödül ve sunum sayıları ile kopyalanacak özetteki sayı yalnızca filtrelerin bıraktığı makaleleri sayar (yıl aralığı, arama, hızlı filtre, yayın yeri); seçili hücre veya satır hiçbir sayıyı daraltmaz. Kapalı: her zaman tüm profil sayılır."
+    "message": "Tablo, ödül ve sunum sayıları ile kopyalanacak özetteki sayı yalnızca filtrelerin bıraktığı makaleleri sayar: yıl aralığı, arama, hızlı filtre veya yayın yeri. Seçili hücre veya satır hiçbir sayıyı değiştirmez. Kapalı: her zaman tüm profil sayılır."
   },
   "optPillRecent": {
     "message": "Son 5 yıl"
@@ -1182,7 +1188,7 @@
     "message": "Kopyalanan özete profilin bağlantısını ve tarihi ekle"
   },
   "optCopySourceHint": {
-    "message": "Kopyalanan özete ve kopyalanan tabloya profilin bağlantısı ile tarihi (Source: …) içeren bir satır eklenir; böylece sayılar dosyalanabilir veya iletilebilir. Tamamı yüklenmemiş bir liste bunu, bu anahtarın durumu ne olursa olsun, orada belirtir."
+    "message": "Kopyalanan özet ve kopyalanan tablo, profilin bağlantısı ile tarihi (Source: …) gösteren bir satırla biter; böylece sayılar dosyalanabilir veya iletilebilir. Tamamı yüklenmemiş bir liste bunu her zaman orada belirtir."
   },
   "unrankedPreprints": {
     "message": "Ön baskılar"
@@ -1197,7 +1203,7 @@
     "message": "Yayın yerinin her iki listede de sıralaması olduğunda"
   },
   "optPreferHint": {
-    "message": "İki etiket yerine tek etiket gösterilir: seçtiğiniz listenin etiketi, diğer listenin etiketi ise yalnızca seçtiğiniz listede yayın yerinin sıralaması yoksa gösterilir. Etiketin üzerine gelindiğinde diğer sıralama yine görünür."
+    "message": "İki etiket yerine tek etiket gösterilir: seçtiğiniz listenin etiketi. Diğer listenin etiketi yalnızca seçtiğiniz listede yayın yerinin sıralaması yoksa gösterilir. Etiketin üzerine gelindiğinde diğer sıralama yine görünür."
   },
   "optPreferCcf": {
     "message": "Önce CCF"

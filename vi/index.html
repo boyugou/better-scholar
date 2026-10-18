@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Better Scholar: vai trò tác giả và xếp hạng nơi công bố của bạn trên Google Scholar</title>
-<meta name="description" content="Tiện ích Chrome miễn phí, đánh dấu vai trò của bạn (tác giả đầu, đồng tác giả đầu, tác giả thứ hai, tác giả cuối) và xếp hạng CCF / CORE của hội nghị hoặc tạp chí cho mỗi bài báo trong hồ sơ Google Scholar, rồi tổng hợp trong một bảng.">
+<title>Better Scholar: vai trò tác giả và xếp hạng venue của bạn trên Google Scholar</title>
+<meta name="description" content="Tiện ích Chrome miễn phí cho hồ sơ Google Scholar. Tiện ích hiển thị vai trò tác giả của bạn và xếp hạng CCF / CORE của venue cho mỗi bài báo, rồi đếm các bài báo của bạn trong một bảng.">
 <link rel="canonical" href="https://boyugou.github.io/better-scholar/vi/">
 <link rel="alternate" hreflang="en" href="https://boyugou.github.io/better-scholar/en/">
 <link rel="alternate" hreflang="zh-CN" href="https://boyugou.github.io/better-scholar/zh-CN/">
@@ -40,14 +40,14 @@
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Better Scholar: vai trò tác giả và xếp hạng nơi công bố của bạn trên Google Scholar">
-<meta property="og:description" content="Tiện ích Chrome miễn phí, đánh dấu vai trò của bạn (tác giả đầu, đồng tác giả đầu, tác giả thứ hai, tác giả cuối) và xếp hạng CCF / CORE của hội nghị hoặc tạp chí cho mỗi bài báo trong hồ sơ Google Scholar, rồi tổng hợp trong một bảng.">
+<meta property="og:title" content="Better Scholar: vai trò tác giả và xếp hạng venue của bạn trên Google Scholar">
+<meta property="og:description" content="Tiện ích Chrome miễn phí cho hồ sơ Google Scholar. Tiện ích hiển thị vai trò tác giả của bạn và xếp hạng CCF / CORE của venue cho mỗi bài báo, rồi đếm các bài báo của bạn trong một bảng.">
 <meta property="og:url" content="https://boyugou.github.io/better-scholar/vi/">
 <meta property="og:image" content="https://boyugou.github.io/better-scholar/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="../assets/styles.css">
 <meta name="theme-color" content="#161d33">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Better Scholar","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Chromium browsers","description":"Tiện ích Chrome miễn phí, đánh dấu vai trò của bạn (tác giả đầu, đồng tác giả đầu, tác giả thứ hai, tác giả cuối) và xếp hạng CCF / CORE của hội nghị hoặc tạp chí cho mỗi bài báo trong hồ sơ Google Scholar, rồi tổng hợp trong một bảng.","inLanguage":"vi","url":"https://boyugou.github.io/better-scholar/vi/","image":"https://boyugou.github.io/better-scholar/assets/og.png","license":"https://www.apache.org/licenses/LICENSE-2.0","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Better Scholar","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Chromium browsers","description":"Tiện ích Chrome miễn phí cho hồ sơ Google Scholar. Tiện ích hiển thị vai trò tác giả của bạn và xếp hạng CCF / CORE của venue cho mỗi bài báo, rồi đếm các bài báo của bạn trong một bảng.","inLanguage":"vi","url":"https://boyugou.github.io/better-scholar/vi/","image":"https://boyugou.github.io/better-scholar/assets/og.png","license":"https://www.apache.org/licenses/LICENSE-2.0","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 </head>
 <body>
 <header class="top">
@@ -97,16 +97,11 @@
 <main>
   <section class="hero">
     <div class="wrap">
-      <div class="hero-badges">
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg> Manifest V3</span>
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg> Chạy trên trình duyệt</span>
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg> Không dùng thư viện ngoài</span>
-      </div>
       <div class="stripes" aria-hidden="true"><i style="--c:#4d8ff5"></i><i style="--c:#b36cf6"></i><i style="--c:#fbbc04"></i><i style="--c:#34a853"></i></div>
-      <h1>Xem vị trí của bạn ở từng bài báo</h1>
-      <p class="lead">Tiện ích Chrome cho hồ sơ Google Scholar. Tiện ích đánh dấu vai trò tác giả của bạn và xếp hạng CCF / CORE của nơi công bố trên từng bài báo, rồi tổng hợp kết quả trong một bảng: “4 bài CCF-A mà bạn là tác giả đầu”.</p>
+      <h1>Vai trò của bạn và xếp hạng venue ở từng bài báo</h1>
+      <p class="lead">Tiện ích Chrome miễn phí cho hồ sơ Google Scholar. Tiện ích tô màu từng bài báo theo vai trò tác giả của bạn, hiển thị xếp hạng CCF và CORE của venue, rồi đếm các bài báo của bạn trong một bảng.</p>
       <p class="cta"><a class="btn" href="#install">Cài đặt</a> <a class="btn ghost" href="https://github.com/boyugou/better-scholar">Xem trên GitHub</a></p>
-      <p class="note">Miễn phí và mã nguồn mở · Chrome và các trình duyệt Chromium khác · 30 ngôn ngữ</p>
+      <p class="note">Miễn phí và mã nguồn mở · Chrome, Edge, Brave và các trình duyệt Chromium khác · 30 ngôn ngữ</p>
     </div>
   </section>
 
@@ -114,17 +109,69 @@
     <div class="wrap">
       <figure class="hero-shot">
         <div class="hero-frame" style="aspect-ratio: 1280 / 660">
-          <img src="../assets/hero.jpg" alt="Một hồ sơ giả lập (nơi công bố thật, bài báo hư cấu): các dòng được tô màu theo vai trò, nhãn xếp hạng cạnh mỗi nơi công bố, và bảng tổng hợp bên phải." width="1280" height="800" fetchpriority="high" decoding="async">
+          <img src="../assets/hero.jpg" alt="Một hồ sơ giả lập với venue thật. Mỗi dòng mang màu theo vai trò của bạn, nhãn xếp hạng hiển thị hạng, và bảng tóm tắt bên phải đếm số bài báo." width="1280" height="800" fetchpriority="high" decoding="async">
         </div>
-        <figcaption>Một hồ sơ giả lập (nơi công bố thật, bài báo hư cấu): các dòng được tô màu theo vai trò, nhãn xếp hạng cạnh mỗi nơi công bố, và bảng tổng hợp bên phải.</figcaption>
+        <figcaption>Một hồ sơ giả lập với venue thật. Mỗi dòng mang màu theo vai trò của bạn, nhãn xếp hạng hiển thị hạng, và bảng tóm tắt bên phải đếm số bài báo.</figcaption>
       </figure>
+    </div>
+  </section>
+
+  <section class="how" id="how">
+    <div class="wrap">
+      <h2>Cách tiện ích đọc một bài báo</h2>
+      <p class="note">Hai bài báo giả lập tại các nơi công bố thật. Mỗi bước cho thấy mã nguồn của chính tiện ích tìm thấy gì trong đó.</p>
+      <div class="how-grid">
+        <ol class="how-steps">
+          <li><button type="button" data-step="1"><span class="n">1</span><b>Tìm tên của bạn</b><span class="d">Tiện ích tìm tên hồ sơ trong dòng tác giả. Vị trí của bạn trong dòng này quyết định vai trò: tác giả đầu, đồng tác giả đầu, tác giả thứ hai hoặc tác giả cuối.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="2"><span class="n">2</span><b>Tra cứu nơi công bố</b><span class="d">Tiện ích tìm nơi công bố trong danh sách CCF và CORE, theo tên đầy đủ hoặc theo tên viết tắt. Kết quả khớp chắc chắn sẽ cho một nhãn xếp hạng.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="3"><span class="n">3</span><b>Không bao giờ suy đoán</b><span class="d">Workshop, poster hay bài Findings không phải là hội nghị chính. Nơi công bố mà danh sách không xác định chắc chắn sẽ không có nhãn.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="4" aria-current="step"><span class="n">4</span><b>Đếm</b><span class="d">Bảng tóm tắt đếm mỗi bài báo một lần, theo vai trò của bạn và theo xếp hạng. Nhấn vào một con số để xem các bài báo của nó.</span><i class="bar" aria-hidden="true"></i></button></li>
+        </ol>
+        <div class="how-figure">
+        <div class="how-stage" aria-hidden="true">
+          <div class="sr-head" dir="ltr" lang="en"><span>Title</span><span>Cited by</span><span>Year</span></div>
+          <div class="sr on" data-from="1" dir="ltr" data-role="first" style="--rc:#1a73e8">
+            <div class="sr-text" lang="en"><div class="sr-t">Self-Supervised Depth from Casual Video</div><div class="sr-a"><span class="nm on" data-from="1" data-focus="1">A Example</span>, B Writer, C Writer, D Writer</div><div class="sr-v"><span class="vn on" data-from="2" data-focus="2">Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</span>, 2023 <span class="chip on" data-from="2" data-focus="2"><span class="k">CCF</span> <b>A</b></span></div></div>
+            <div class="sr-c">892</div><div class="sr-y">2023</div>
+            <div class="co-slot" dir="ltr"><p class="co" data-from="1" data-to="1"><span class="tag">Đầu</span> vị trí 1 trên 4</p><p class="co on" data-from="2"><b dir="ltr">CCF A · CORE A*</b> · Khớp theo tên: <span dir="ltr">IEEE/CVF Computer Vision and Pattern Recognition Conference</span></p></div>
+          </div>
+          <div class="sr on" data-from="1" dir="ltr" data-role="second" style="--rc:#f9ab00">
+            <div class="sr-text" lang="en"><div class="sr-t">Cheap Calibration for Retrieval-Augmented Models</div><div class="sr-a">B Writer, <span class="nm on" data-from="1" data-focus="1">A Example</span>, H Writer</div><div class="sr-v"><mark class="sec on" data-from="3" data-focus="3">Findings</mark> of the Association for Computational Linguistics: ACL 2022, 410-423, 2022</div></div>
+            <div class="sr-c">868</div><div class="sr-y">2022</div>
+            <div class="co-slot" dir="ltr"><p class="co" data-from="1" data-to="2"><span class="tag">Thứ hai</span> vị trí 2 trên 3</p><p class="co on" data-from="3"><b dir="ltr">Findings</b> · Hạng mục phụ: không xếp hạng, không có nhãn</p></div>
+          </div>
+          <div class="mini">
+            <div class="mini-h"><b>Bài báo theo vai trò và hạng</b><span dir="ltr"><i class="on">CCF</i><i>CORE</i></span></div>
+            <table>
+              <thead><tr><th></th><th>A</th><th>B</th><th>C</th><th>–</th><th>Tất cả</th></tr></thead>
+              <tbody><tr><th><i style="--rc:#1a73e8"></i>Đầu</th><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td><td>·</td><td>·</td><td>·</td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td></tr><tr><th><i style="--rc:#f9ab00"></i>Thứ hai</th><td>·</td><td>·</td><td>·</td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <button type="button" class="how-play" hidden data-play="Phát" data-pause="Tạm dừng"><svg class="i-play" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg><svg class="i-pause" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z" fill="currentColor"/></svg><span>Phát</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="wrap">
+      <h2>Các tính năng khác</h2>
+      <div class="grid">
+        <article style="--c:#4d8ff5"><h3>Giải thưởng và báo cáo</h3><p>Nhãn cho bài báo xuất sắc, giải thưởng Test of Time và báo cáo Oral, Spotlight hoặc Highlight. Chúng đến từ lời của chính tác giả và từ trang giải thưởng chính thức.</p></article>
+        <article style="--c:#b36cf6"><h3>Danh sách tác giả đầy đủ</h3><p>Scholar cắt các danh sách tác giả dài bằng “…”, và điều này có thể ẩn vai trò của bạn. Một cú nhấp chuột đọc đầy đủ danh sách từ các trang bài báo trên Scholar.</p></article>
+        <article style="--c:#fbbc04"><h3>Gộp mục trùng lặp</h3><p>Scholar đôi khi liệt kê một bài báo hai lần. Một công tắc sẽ gộp chúng thành một mục và cộng số trích dẫn lại.</p></article>
+        <article style="--c:#34a853"><h3>Bố cục theo ý bạn</h3><p>Mỗi phần của bảng tóm tắt đều có công tắc riêng. Chọn màu sắc, thứ tự các phần và tên riêng của bạn cho từng phần.</p></article>
+        <article style="--c:#4d8ff5"><h3>Riêng tư</h3><p>Không tài khoản, không phân tích, không theo dõi. Mọi việc đều diễn ra trong trình duyệt của bạn, và danh sách xếp hạng nằm sẵn trong tiện ích.</p></article>
+        <article style="--c:#b36cf6"><h3>30 ngôn ngữ</h3><p>Tiện ích hiển thị bằng ngôn ngữ của bạn. Tiện ích cũng có thể mở chính Scholar bằng ngôn ngữ mà bạn chọn.</p></article>
+      </div>
     </div>
   </section>
 
   <section class="try" id="try">
     <div class="wrap">
-      <h2>Dùng thử trang cài đặt thật</h2>
-      <p class="note">Đây là trang cài đặt của chính tiện ích, đang chạy ngay tại đây: bật hoặc tắt một công tắc, phần “Xem trước” sẽ cập nhật theo. Rê chuột lên “Xem trước” để ẩn, di chuyển hoặc đổi tên một phần, và nhấp đúp vào một phần để chuyển đến cài đặt của phần đó.</p>
+      <h2>Dùng thử trang cài đặt</h2>
+      <p class="note">Đây là trang cài đặt thật của tiện ích. Thay đổi một cài đặt, và phần “Xem trước” sẽ cập nhật theo. Rê chuột lên một phần của “Xem trước” để ẩn, di chuyển hoặc đổi tên phần đó.</p>
       <div class="try-bar">
         <a class="skip" href="#after-try">Bỏ qua bản demo</a>
         <p>Mọi thay đổi của bạn chỉ được lưu trong trình duyệt này.</p>
@@ -138,15 +185,15 @@
 
   <section class="export-section" id="after-try">
     <div class="wrap">
-      <h2>Xuất dữ liệu học thuật chỉ một cú nhấp</h2>
-      <p class="note">Danh sách công bố sẵn sàng để dán vào CV, đơn xin tài trợ, tài liệu LaTeX, tác tử AI và bảng tính.</p>
+      <h2>Sao chép bài báo của bạn</h2>
+      <p class="note">Mỗi định dạng có một nút: cho CV, đơn xin tài trợ, LaTeX hoặc bảng tính. Dưới đây là kết quả thật với bốn bài báo giả lập.</p>
       <div class="export-card">
-        <div class="export-tabs" role="tablist" aria-label="Xuất dữ liệu học thuật chỉ một cú nhấp">
-          <button type="button" class="tab-btn active" role="tab" id="tab-bibtex" aria-selected="true" aria-controls="export-bibtex">BibTeX (LaTeX-Ready)</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-apa" aria-selected="false" aria-controls="export-apa" tabindex="-1">APA 7th Edition</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-json" aria-selected="false" aria-controls="export-json" tabindex="-1">Structured JSON</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-markdown" aria-selected="false" aria-controls="export-markdown" tabindex="-1">GitHub Markdown</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-csv" aria-selected="false" aria-controls="export-csv" tabindex="-1">RFC-4180 CSV</button>
+        <div class="export-tabs" role="tablist" aria-label="Sao chép bài báo của bạn">
+          <button type="button" class="tab-btn active" role="tab" id="tab-bibtex" aria-selected="true" aria-controls="export-bibtex">BibTeX</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-apa" aria-selected="false" aria-controls="export-apa" tabindex="-1">APA</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-json" aria-selected="false" aria-controls="export-json" tabindex="-1">JSON</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-markdown" aria-selected="false" aria-controls="export-markdown" tabindex="-1">Markdown</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-csv" aria-selected="false" aria-controls="export-csv" tabindex="-1">CSV</button>
         </div>
         <div class="code-preview-wrap">
           <pre class="code-preview" role="tabpanel" id="export-bibtex" aria-labelledby="tab-bibtex" tabindex="0"><code>@inproceedings{author2025sample,
@@ -318,7 +365,7 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
 2024,Sample paper 2,&quot;B Writer, A Author, C Writer&quot;,Second author,NeurIPS 2024,A,A*,Best paper (NeurIPS 2024),133
 2024,Sample paper 3,&quot;A Author*, B Writer*, C Writer&quot;,Co-first author,CVPR 2024 (Highlight),A,A*,Highlight,27
 2023,Sample paper 4,&quot;B Writer, C Writer, D Writer, A Author&quot;,Last author,ACL 2023 (Spotlight),A,A*,Spotlight,215</code></pre>
-          <button type="button" class="copy-code-btn" data-label="Sao chép vào bộ nhớ tạm" data-copied="Đã sao chép!">Sao chép vào bộ nhớ tạm</button>
+          <button type="button" class="copy-code-btn" data-label="Sao chép" data-copied="Đã sao chép">Sao chép</button>
         </div>
       </div>
     </div>
@@ -326,69 +373,56 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
 
   <section class="operators-section">
     <div class="wrap">
-      <h2>Tìm kiếm tức thì và toán tử truy vấn</h2>
-      <p class="note">Nhấn <kbd>/</kbd> ở bất cứ đâu trên trang hồ sơ Scholar để tìm trong toàn bộ danh sách cùng lúc.</p>
+      <h2>Tìm kiếm với toán tử truy vấn</h2>
+      <p class="note">Nhấn <kbd>/</kbd> trên hồ sơ để tìm trong tất cả bài báo của hồ sơ đó. Thêm toán tử vào từ khóa của bạn để lọc danh sách.</p>
       <div class="operators-grid">
         <div class="op-card">
-          <div class="op-header"><code>cites:&gt;100</code> <code>cites:&gt;=50</code> <code>cites:&lt;10</code></div>
-          <p class="op-title">Ngưỡng trích dẫn</p>
-          <p class="op-desc">Giữ lại các bài có số trích dẫn nhiều hơn hoặc ít hơn bất kỳ con số nào bạn nhập.</p>
+          <div class="op-header" dir="ltr"><code>cites:&gt;100</code> <code>cites:&gt;=50</code> <code>cites:&lt;10</code></div>
+          <h3 class="op-title">Trích dẫn</h3>
+          <p class="op-desc">Các bài có số trích dẫn nhiều hơn hoặc ít hơn một con số.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>ccf:a</code> <code>ccf:b</code> <code>core:a*</code></div>
-          <p class="op-title">Các bậc xếp hạng nơi công bố</p>
-          <p class="op-desc">Chỉ hiển thị các bài đăng ở hội nghị và tạp chí được xếp hạng CCF hoặc CORE.</p>
+          <div class="op-header" dir="ltr"><code>ccf:a</code> <code>ccf:b</code> <code>core:a*</code></div>
+          <h3 class="op-title">Xếp hạng</h3>
+          <p class="op-desc">Các bài ở venue có xếp hạng CCF hoặc CORE nhất định.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>role:first</code> <code>role:last</code> <code>role:cofirst</code></div>
-          <p class="op-title">Vai trò tác giả</p>
-          <p class="op-desc">Lọc theo tác giả đầu, đồng tác giả đầu, tác giả thứ hai hoặc tác giả cuối (senior).</p>
+          <div class="op-header" dir="ltr"><code>role:first</code> <code>role:last</code> <code>role:cofirst</code></div>
+          <h3 class="op-title">Vai trò</h3>
+          <p class="op-desc">Các bài mà bạn là tác giả đầu, đồng tác giả đầu, tác giả thứ hai hoặc tác giả cuối.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>year:&gt;2020</code> <code>year:&gt;=2021</code> <code>year:&lt;=2015</code></div>
-          <p class="op-title">Năm công bố</p>
-          <p class="op-desc">Các bài được công bố sau, trước hoặc trong khoảng năm bạn chọn, hoặc trong 5 năm gần đây.</p>
+          <div class="op-header" dir="ltr"><code>year:&gt;=2020</code> <code>year:2023</code> <code>age:&lt;5</code></div>
+          <h3 class="op-title">Năm</h3>
+          <p class="op-desc">Các bài được công bố trước, sau hoặc trong một năm nhất định, hoặc trong vài năm gần đây.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>has:award</code> <code>has:talk</code></div>
-          <p class="op-title">Giải thưởng và báo cáo</p>
-          <p class="op-desc">Tìm các bài Best Paper, Test of Time, Oral, Spotlight và Highlight.</p>
+          <div class="op-header" dir="ltr"><code>has:award</code> <code>has:talk</code></div>
+          <h3 class="op-title">Giải thưởng và báo cáo</h3>
+          <p class="op-desc">Các bài đoạt giải Best Paper hoặc Test of Time, hoặc có báo cáo Oral, Spotlight hoặc Highlight.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><kbd>Escape</kbd></div>
-          <p class="op-title">Đặt lại chỉ bằng một phím</p>
-          <p class="op-desc">Xóa mọi tìm kiếm, lựa chọn trong bảng và bộ lọc cùng một lúc.</p>
+          <div class="op-header" dir="ltr"><kbd>Escape</kbd></div>
+          <h3 class="op-title">Xóa tất cả</h3>
+          <p class="op-desc">Một phím xóa tìm kiếm, ô đang chọn và mọi bộ lọc.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="features">
-    <div class="wrap grid">
-      <article style="--c:#4d8ff5"><h3>Mọi bài báo, tô màu theo vai trò của bạn</h3><p>Các dòng tác giả đầu, đồng tác giả đầu, tác giả thứ hai và tác giả cuối đều có màu riêng, và tên bạn được đánh dấu trong dòng tác giả.</p></article>
-      <article style="--c:#b36cf6"><h3>Xếp hạng CCF và CORE</h3><p>Xếp hạng CCF 2026 và ICORE 2026 hiển thị cạnh mỗi nơi công bố, kèm quy tắc đã khớp với nó. Nơi công bố không xác định được sẽ không có nhãn: không bao giờ đoán mò.</p></article>
-      <article style="--c:#fbbc04"><h3>Bảng vai trò × xếp hạng</h3><p>Chọn một ô để chỉ liệt kê các bài báo trong ô đó, và sao chép bản tóm tắt hoặc danh sách cho CV hay hồ sơ xin tài trợ.</p></article>
-      <article style="--c:#34a853"><h3>Giải thưởng và báo cáo</h3><p>Bài báo xuất sắc, giải thưởng Test of Time, Oral, Spotlight và Highlight, từ lời của chính tác giả và từ trang giải thưởng chính thức của hơn 7.000 bài báo.</p></article>
-      <article style="--c:#4d8ff5"><h3>Danh sách tác giả bị cắt, đã đầy đủ</h3><p>Scholar ẩn các tác giả cuối của danh sách dài. Một cú nhấp chuột đọc chúng từ trang của bài báo, hoặc từ Semantic Scholar nếu bạn cho phép.</p></article>
-      <article style="--c:#b36cf6"><h3>Gộp mục trùng lặp</h3><p>Nếu bật, các mục liệt kê cùng một bài báo hai lần sẽ gộp thành một, với số trích dẫn được cộng lại.</p></article>
-      <article style="--c:#fbbc04"><h3>Theo ý bạn</h3><p>Chọn những gì hiển thị, tự chọn màu sắc, và ẩn các phần trang Scholar mà bạn không cần.</p></article>
-      <article style="--c:#34a853"><h3>Riêng tư ngay từ thiết kế</h3><p>Không tài khoản, không phân tích, không theo dõi. Mọi thứ được tính toán trong trình duyệt của bạn, và danh sách xếp hạng nằm sẵn trong tiện ích.</p></article>
     </div>
   </section>
 
   <section class="numbers">
     <div class="wrap">
       <h2>Qua các con số</h2>
-      <p class="note">Được đếm từ mã nguồn và dữ liệu của tiện ích khi trang này được xây dựng, không số nào được nhập tay. Những con số tăng theo mỗi lần sửa lỗi được làm tròn xuống.</p>
+      <p class="note">Khi trang này được xây dựng, các số này được đếm từ mã nguồn và dữ liệu của tiện ích. Những con số tăng theo mỗi lần sửa lỗi được làm tròn xuống.</p>
       <div class="numbers-grid">
-        <div class="num" style="--c:#4d8ff5"><b dir="ltr">153</b><span>cài đặt có thể tùy chỉnh</span></div>
+        <div class="num" style="--c:#4d8ff5"><b dir="ltr">154</b><span>cài đặt có thể tùy chỉnh</span></div>
         <div class="num" style="--c:#b36cf6"><b dir="ltr">30</b><span>ngôn ngữ giao diện</span></div>
-        <div class="num" style="--c:#fbbc04"><b dir="ltr">1.178</b><span>nơi công bố có xếp hạng trong danh sách CCF và CORE</span></div>
-        <div class="num" style="--c:#34a853"><b dir="ltr">400+</b><span>tên nơi công bố Scholar hiển thị mà danh sách chính thức không có</span></div>
-        <div class="num" style="--c:#4d8ff5"><b dir="ltr">18</b><span>các kiểm tra chặn việc hiển thị xếp hạng sai</span></div>
-        <div class="num" style="--c:#b36cf6"><b dir="ltr">5.581</b><span>bài báo đoạt giải được nhận diện</span></div>
-        <div class="num" style="--c:#fbbc04"><b dir="ltr">22.744</b><span>dòng nơi công bố thật từ Scholar, mỗi dòng đã được kiểm tra xếp hạng</span></div>
-        <div class="num" style="--c:#34a853"><b dir="ltr">500+</b><span>kiểm thử đơn vị, ngoài bộ kiểm thử đầu cuối trên trình duyệt thật</span></div>
+        <div class="num" style="--c:#fbbc04"><b dir="ltr">1.178</b><span>venue có xếp hạng trong danh sách CCF và CORE</span></div>
+        <div class="num" style="--c:#34a853"><b dir="ltr">400+</b><span>tên venue mà Scholar hiển thị nhưng danh sách không có</span></div>
+        <div class="num" style="--c:#4d8ff5"><b dir="ltr">18</b><span>các kiểm tra chặn xếp hạng sai</span></div>
+        <div class="num" style="--c:#b36cf6"><b dir="ltr">5.581</b><span>bài báo đoạt giải mà tiện ích nhận biết</span></div>
+        <div class="num" style="--c:#fbbc04"><b dir="ltr">22.744</b><span>dòng venue thật từ Scholar, mỗi kết quả đã được xem xét</span></div>
+        <div class="num" style="--c:#34a853"><b dir="ltr">500+</b><span>kiểm thử đơn vị, và bộ kiểm thử đầu cuối trên trình duyệt thật</span></div>
       </div>
     </div>
   </section>
@@ -397,18 +431,22 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
     <div class="wrap">
       <h2>Cài đặt</h2>
       <ol>
-        <li>Tải dự án từ GitHub (nút xanh “Code”, rồi “Download ZIP”) và giải nén.</li>
+        <li>Tải dự án từ GitHub: nhấn nút xanh “Code”, rồi “Download ZIP”. Giải nén tệp.</li>
         <li>Mở <code>chrome://extensions</code> và bật “Chế độ dành cho nhà phát triển” (Developer mode).</li>
-        <li>Nhấn “Tải tiện ích đã giải nén” (Load unpacked) và chọn thư mục src. Sau đó mở bất kỳ hồ sơ Google Scholar nào.</li>
+        <li>Nhấn “Tải tiện ích đã giải nén” (Load unpacked) và chọn thư mục src. Sau đó mở một hồ sơ Google Scholar.</li>
       </ol>
-      <p class="note">Có thể sẽ có trang trên Chrome Web Store sau này. Edge, Brave và các trình duyệt Chromium khác hoạt động theo cách tương tự.</p>
+      <p class="note">Edge, Brave và các trình duyệt Chromium khác thực hiện các bước tương tự. Có thể sẽ có phiên bản trên Chrome Web Store sau này.</p>
     </div>
   </section>
 
   <section class="honest">
     <div class="wrap">
-      <h2>Thẳng thắn về giới hạn</h2>
-      <p>Xếp hạng là danh sách hiện tại, không phải xếp hạng tại thời điểm công bố, và chính danh sách CCF cũng nói rằng nó không phải là đánh giá. Tiện ích không bao giờ đoán nơi công bố: những gì không xác định được sẽ được liệt kê, không được đánh dấu.</p>
+      <h2>Giới hạn</h2>
+      <ul class="limits">
+        <li>Hạng lấy từ danh sách hiện hành, không phải hạng tại thời điểm xuất bản. Trong năm công bố của một bài báo, nơi công bố của bài đó có thể đã có hạng khác.</li>
+        <li>CCF nêu rõ danh sách của họ không phải căn cứ đánh giá học thuật.</li>
+        <li>Tiện ích không bao giờ suy đoán. Nơi công bố mà tiện ích không xác định được vị trí sẽ không có nhãn, và bảng tóm tắt liệt kê nơi đó.</li>
+      </ul>
     </div>
   </section>
 </main>
@@ -416,9 +454,9 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
   <div class="wrap">
     <span>Mã nguồn mở, Apache License 2.0</span>
     <a href="../privacy/">Quyền riêng tư</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/ROADMAP.md">Roadmap</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/AGENTS.md">Agent API</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/SECURITY.md">Security</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/ROADMAP.md">Lộ trình</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/AGENTS.md">Dành cho tác nhân AI</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/SECURITY.md">Bảo mật</a>
     <a href="https://github.com/boyugou/better-scholar/issues">Báo cáo sự cố</a>
     <a href="https://github.com/boyugou/better-scholar">GitHub</a>
   </div>

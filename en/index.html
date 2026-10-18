@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Better Scholar: your authorship and venue ranks on Google Scholar</title>
-<meta name="description" content="A free Chrome extension that marks your role (first, co-first, second, last author) and the CCF / CORE rank of the venue on every paper of a Google Scholar profile, and sums it up in one table.">
+<title>Better Scholar: your author role and venue rank on Google Scholar</title>
+<meta name="description" content="A free Chrome extension for Google Scholar profiles. It shows your author role and the CCF / CORE rank of the venue on each paper, and counts your papers in one table.">
 <link rel="canonical" href="https://boyugou.github.io/better-scholar/en/">
 <link rel="alternate" hreflang="en" href="https://boyugou.github.io/better-scholar/en/">
 <link rel="alternate" hreflang="zh-CN" href="https://boyugou.github.io/better-scholar/zh-CN/">
@@ -40,14 +40,14 @@
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Better Scholar: your authorship and venue ranks on Google Scholar">
-<meta property="og:description" content="A free Chrome extension that marks your role (first, co-first, second, last author) and the CCF / CORE rank of the venue on every paper of a Google Scholar profile, and sums it up in one table.">
+<meta property="og:title" content="Better Scholar: your author role and venue rank on Google Scholar">
+<meta property="og:description" content="A free Chrome extension for Google Scholar profiles. It shows your author role and the CCF / CORE rank of the venue on each paper, and counts your papers in one table.">
 <meta property="og:url" content="https://boyugou.github.io/better-scholar/en/">
 <meta property="og:image" content="https://boyugou.github.io/better-scholar/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="../assets/styles.css">
 <meta name="theme-color" content="#161d33">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Better Scholar","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Chromium browsers","description":"A free Chrome extension that marks your role (first, co-first, second, last author) and the CCF / CORE rank of the venue on every paper of a Google Scholar profile, and sums it up in one table.","inLanguage":"en","url":"https://boyugou.github.io/better-scholar/en/","image":"https://boyugou.github.io/better-scholar/assets/og.png","license":"https://www.apache.org/licenses/LICENSE-2.0","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Better Scholar","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Chromium browsers","description":"A free Chrome extension for Google Scholar profiles. It shows your author role and the CCF / CORE rank of the venue on each paper, and counts your papers in one table.","inLanguage":"en","url":"https://boyugou.github.io/better-scholar/en/","image":"https://boyugou.github.io/better-scholar/assets/og.png","license":"https://www.apache.org/licenses/LICENSE-2.0","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 </head>
 <body>
 <header class="top">
@@ -97,16 +97,11 @@
 <main>
   <section class="hero">
     <div class="wrap">
-      <div class="hero-badges">
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg> Manifest V3</span>
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg> Runs in your browser</span>
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg> No dependencies</span>
-      </div>
       <div class="stripes" aria-hidden="true"><i style="--c:#4d8ff5"></i><i style="--c:#b36cf6"></i><i style="--c:#fbbc04"></i><i style="--c:#34a853"></i></div>
-      <h1>See where you stand on every paper</h1>
-      <p class="lead">A Chrome extension for Google Scholar profiles. It marks your authorship role and the venue's CCF / CORE rank on each paper, and adds up the result in one table: “4 first-author CCF-A papers”.</p>
+      <h1>Your role and the venue rank on every paper</h1>
+      <p class="lead">A free Chrome extension for Google Scholar profiles. It colours each paper by your author role, shows the CCF and CORE rank of its venue, and counts your papers in one table.</p>
       <p class="cta"><a class="btn" href="#install">Install</a> <a class="btn ghost" href="https://github.com/boyugou/better-scholar">View on GitHub</a></p>
-      <p class="note">Free and open source · Chrome and other Chromium browsers · 30 languages</p>
+      <p class="note">Free and open source · Chrome, Edge, Brave and other Chromium browsers · 30 languages</p>
     </div>
   </section>
 
@@ -114,17 +109,69 @@
     <div class="wrap">
       <figure class="hero-shot">
         <div class="hero-frame" style="aspect-ratio: 1280 / 660">
-          <img src="../assets/hero.jpg" alt="An invented profile (real venues, made-up papers): rows coloured by role, rank chips beside each venue, the summary on the right." width="1280" height="800" fetchpriority="high" decoding="async">
+          <img src="../assets/hero.jpg" alt="A made-up profile with real venues. Each row has the colour of your role, chips show the rank, and the panel on the right counts the papers." width="1280" height="800" fetchpriority="high" decoding="async">
         </div>
-        <figcaption>An invented profile (real venues, made-up papers): rows coloured by role, rank chips beside each venue, the summary on the right.</figcaption>
+        <figcaption>A made-up profile with real venues. Each row has the colour of your role, chips show the rank, and the panel on the right counts the papers.</figcaption>
       </figure>
+    </div>
+  </section>
+
+  <section class="how" id="how">
+    <div class="wrap">
+      <h2>How it reads a paper</h2>
+      <p class="note">Two made-up papers at real venues. Each step shows what the extension's own code finds in them.</p>
+      <div class="how-grid">
+        <ol class="how-steps">
+          <li><button type="button" data-step="1"><span class="n">1</span><b>Find your name</b><span class="d">It finds the profile's name in the author line. Your place in the line gives your role: first, co-first, second or last author.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="2"><span class="n">2</span><b>Look up the venue</b><span class="d">It looks for the venue in the CCF and CORE lists, by its full name or by its acronym. A sure match gives a rank chip.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="3"><span class="n">3</span><b>Never guess</b><span class="d">A workshop, a poster or a Findings paper is not the main conference. A venue that the lists do not hold for certain gets no chip.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="4" aria-current="step"><span class="n">4</span><b>Count</b><span class="d">The panel counts each paper once, by your role and by the rank. Click a number to see its papers.</span><i class="bar" aria-hidden="true"></i></button></li>
+        </ol>
+        <div class="how-figure">
+        <div class="how-stage" aria-hidden="true">
+          <div class="sr-head" dir="ltr" lang="en"><span>Title</span><span>Cited by</span><span>Year</span></div>
+          <div class="sr on" data-from="1" dir="ltr" data-role="first" style="--rc:#1a73e8">
+            <div class="sr-text" lang="en"><div class="sr-t">Self-Supervised Depth from Casual Video</div><div class="sr-a"><span class="nm on" data-from="1" data-focus="1">A Example</span>, B Writer, C Writer, D Writer</div><div class="sr-v"><span class="vn on" data-from="2" data-focus="2">Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</span>, 2023 <span class="chip on" data-from="2" data-focus="2"><span class="k">CCF</span> <b>A</b></span></div></div>
+            <div class="sr-c">892</div><div class="sr-y">2023</div>
+            <div class="co-slot" dir="ltr"><p class="co" data-from="1" data-to="1"><span class="tag">First</span> position 1 of 4</p><p class="co on" data-from="2"><b dir="ltr">CCF A · CORE A*</b> · Matched by name: <span dir="ltr">IEEE/CVF Computer Vision and Pattern Recognition Conference</span></p></div>
+          </div>
+          <div class="sr on" data-from="1" dir="ltr" data-role="second" style="--rc:#f9ab00">
+            <div class="sr-text" lang="en"><div class="sr-t">Cheap Calibration for Retrieval-Augmented Models</div><div class="sr-a">B Writer, <span class="nm on" data-from="1" data-focus="1">A Example</span>, H Writer</div><div class="sr-v"><mark class="sec on" data-from="3" data-focus="3">Findings</mark> of the Association for Computational Linguistics: ACL 2022, 410-423, 2022</div></div>
+            <div class="sr-c">868</div><div class="sr-y">2022</div>
+            <div class="co-slot" dir="ltr"><p class="co" data-from="1" data-to="2"><span class="tag">Second</span> position 2 of 3</p><p class="co on" data-from="3"><b dir="ltr">Findings</b> · secondary track: no rank, no chip</p></div>
+          </div>
+          <div class="mini">
+            <div class="mini-h"><b>Papers by role and rank</b><span dir="ltr"><i class="on">CCF</i><i>CORE</i></span></div>
+            <table>
+              <thead><tr><th></th><th>A</th><th>B</th><th>C</th><th>–</th><th>All</th></tr></thead>
+              <tbody><tr><th><i style="--rc:#1a73e8"></i>First</th><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td><td>·</td><td>·</td><td>·</td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td></tr><tr><th><i style="--rc:#f9ab00"></i>Second</th><td>·</td><td>·</td><td>·</td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <button type="button" class="how-play" hidden data-play="Play" data-pause="Pause"><svg class="i-play" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg><svg class="i-pause" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z" fill="currentColor"/></svg><span>Play</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="wrap">
+      <h2>What else it does</h2>
+      <div class="grid">
+        <article style="--c:#4d8ff5"><h3>Awards and talks</h3><p>Chips for best papers, test-of-time awards and Oral, Spotlight or Highlight talks. They come from the authors' own words and from official award pages.</p></article>
+        <article style="--c:#b36cf6"><h3>Full author lists</h3><p>Scholar cuts long author lists with “…”, and this can hide your role. One click reads the full lists from Scholar's paper pages.</p></article>
+        <article style="--c:#fbbc04"><h3>Duplicates merged</h3><p>Scholar sometimes lists one paper two times. A switch makes them one entry and adds up their citations.</p></article>
+        <article style="--c:#34a853"><h3>Your own layout</h3><p>Every part of the panel has its own switch. Choose the colours, the order of the parts and your own names for them.</p></article>
+        <article style="--c:#4d8ff5"><h3>Private</h3><p>No account, no analytics, no tracking. All the work happens in your browser, and the rank lists are inside the extension.</p></article>
+        <article style="--c:#b36cf6"><h3>30 languages</h3><p>The extension speaks your language. It can also open Scholar itself in a language that you choose.</p></article>
+      </div>
     </div>
   </section>
 
   <section class="try" id="try">
     <div class="wrap">
-      <h2>Try the real settings page</h2>
-      <p class="note">This is the extension's own settings page, running right here: flip a switch and the preview follows. Hover the preview to hide, move or rename a part, and double-click a part to jump to its setting.</p>
+      <h2>Try the settings page</h2>
+      <p class="note">This is the real settings page of the extension. Change a setting and the preview changes with it. Point at a part of the preview to hide, move or rename it.</p>
       <div class="try-bar">
         <a class="skip" href="#after-try">Skip the demo</a>
         <p>Your changes stay in this browser.</p>
@@ -138,15 +185,15 @@
 
   <section class="export-section" id="after-try">
     <div class="wrap">
-      <h2>1-Click Academic Export</h2>
-      <p class="note">Ready-to-paste publication lists for CVs, grant forms, LaTeX documents, AI agents and spreadsheets.</p>
+      <h2>Copy your papers</h2>
+      <p class="note">One button for each format: for a CV, a grant form, LaTeX or a spreadsheet. Below is the real output for four made-up papers.</p>
       <div class="export-card">
-        <div class="export-tabs" role="tablist" aria-label="1-Click Academic Export">
-          <button type="button" class="tab-btn active" role="tab" id="tab-bibtex" aria-selected="true" aria-controls="export-bibtex">BibTeX (LaTeX-Ready)</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-apa" aria-selected="false" aria-controls="export-apa" tabindex="-1">APA 7th Edition</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-json" aria-selected="false" aria-controls="export-json" tabindex="-1">Structured JSON</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-markdown" aria-selected="false" aria-controls="export-markdown" tabindex="-1">GitHub Markdown</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-csv" aria-selected="false" aria-controls="export-csv" tabindex="-1">RFC-4180 CSV</button>
+        <div class="export-tabs" role="tablist" aria-label="Copy your papers">
+          <button type="button" class="tab-btn active" role="tab" id="tab-bibtex" aria-selected="true" aria-controls="export-bibtex">BibTeX</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-apa" aria-selected="false" aria-controls="export-apa" tabindex="-1">APA</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-json" aria-selected="false" aria-controls="export-json" tabindex="-1">JSON</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-markdown" aria-selected="false" aria-controls="export-markdown" tabindex="-1">Markdown</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-csv" aria-selected="false" aria-controls="export-csv" tabindex="-1">CSV</button>
         </div>
         <div class="code-preview-wrap">
           <pre class="code-preview" role="tabpanel" id="export-bibtex" aria-labelledby="tab-bibtex" tabindex="0"><code>@inproceedings{author2025sample,
@@ -318,7 +365,7 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
 2024,Sample paper 2,&quot;B Writer, A Author, C Writer&quot;,Second author,NeurIPS 2024,A,A*,Best paper (NeurIPS 2024),133
 2024,Sample paper 3,&quot;A Author*, B Writer*, C Writer&quot;,Co-first author,CVPR 2024 (Highlight),A,A*,Highlight,27
 2023,Sample paper 4,&quot;B Writer, C Writer, D Writer, A Author&quot;,Last author,ACL 2023 (Spotlight),A,A*,Spotlight,215</code></pre>
-          <button type="button" class="copy-code-btn" data-label="Copy to clipboard" data-copied="Copied!">Copy to clipboard</button>
+          <button type="button" class="copy-code-btn" data-label="Copy" data-copied="Copied">Copy</button>
         </div>
       </div>
     </div>
@@ -326,69 +373,56 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
 
   <section class="operators-section">
     <div class="wrap">
-      <h2>Instant search and query operators</h2>
-      <p class="note">Press <kbd>/</kbd> anywhere on a Scholar profile to search the whole list at once.</p>
+      <h2>Search with operators</h2>
+      <p class="note">Press <kbd>/</kbd> on a profile to search all its papers. Add operators to your words to filter the list.</p>
       <div class="operators-grid">
         <div class="op-card">
-          <div class="op-header"><code>cites:&gt;100</code> <code>cites:&gt;=50</code> <code>cites:&lt;10</code></div>
-          <p class="op-title">Citation thresholds</p>
-          <p class="op-desc">Keep papers with more or fewer citations than any number you type.</p>
+          <div class="op-header" dir="ltr"><code>cites:&gt;100</code> <code>cites:&gt;=50</code> <code>cites:&lt;10</code></div>
+          <h3 class="op-title">Citations</h3>
+          <p class="op-desc">Papers with more or fewer citations than a number.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>ccf:a</code> <code>ccf:b</code> <code>core:a*</code></div>
-          <p class="op-title">Venue rank tiers</p>
-          <p class="op-desc">Show only papers in CCF or CORE ranked conferences and journals.</p>
+          <div class="op-header" dir="ltr"><code>ccf:a</code> <code>ccf:b</code> <code>core:a*</code></div>
+          <h3 class="op-title">Rank</h3>
+          <p class="op-desc">Papers at venues with a given CCF or CORE rank.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>role:first</code> <code>role:last</code> <code>role:cofirst</code></div>
-          <p class="op-title">Authorship roles</p>
-          <p class="op-desc">Filter by first, co-first, second or last (senior) author.</p>
+          <div class="op-header" dir="ltr"><code>role:first</code> <code>role:last</code> <code>role:cofirst</code></div>
+          <h3 class="op-title">Role</h3>
+          <p class="op-desc">Papers where you are the first, co-first, second or last author.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>year:&gt;2020</code> <code>year:&gt;=2021</code> <code>year:&lt;=2015</code></div>
-          <p class="op-title">Publication years</p>
-          <p class="op-desc">Papers published after, before or within the years you choose, or in the last five years.</p>
+          <div class="op-header" dir="ltr"><code>year:&gt;=2020</code> <code>year:2023</code> <code>age:&lt;5</code></div>
+          <h3 class="op-title">Year</h3>
+          <p class="op-desc">Papers from before, after or in a year, or from the last few years.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>has:award</code> <code>has:talk</code></div>
-          <p class="op-title">Awards and talks</p>
-          <p class="op-desc">Find Best Paper, Test of Time, Oral, Spotlight and Highlight papers.</p>
+          <div class="op-header" dir="ltr"><code>has:award</code> <code>has:talk</code></div>
+          <h3 class="op-title">Awards and talks</h3>
+          <p class="op-desc">Papers with a best-paper or test-of-time award, or with an Oral, Spotlight or Highlight talk.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><kbd>Escape</kbd></div>
-          <p class="op-title">One-key reset</p>
-          <p class="op-desc">Clears every search, table selection and filter at once.</p>
+          <div class="op-header" dir="ltr"><kbd>Escape</kbd></div>
+          <h3 class="op-title">Clear all</h3>
+          <p class="op-desc">One key clears the search, the selected cell and every filter.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="features">
-    <div class="wrap grid">
-      <article style="--c:#4d8ff5"><h3>Every paper, coloured by your role</h3><p>First, co-first, second and last author rows each get a colour, and your name is marked in the author line.</p></article>
-      <article style="--c:#b36cf6"><h3>CCF and CORE ranks</h3><p>The CCF 2026 and ICORE 2026 rank beside each venue, with the rule that matched it. A venue it cannot place stays unmarked: never a guess.</p></article>
-      <article style="--c:#fbbc04"><h3>A role × rank table</h3><p>Pick a cell to list just those papers, and copy the summary or the list for a CV or a grant form.</p></article>
-      <article style="--c:#34a853"><h3>Awards and talks</h3><p>Best papers, test-of-time awards, Oral, Spotlight and Highlight, from the authors' own words and from the official award pages of over 7,000 papers.</p></article>
-      <article style="--c:#4d8ff5"><h3>Cut-off author lists, completed</h3><p>Scholar hides the last authors of long lists. One click reads them from the paper's page, or from Semantic Scholar if you allow it.</p></article>
-      <article style="--c:#b36cf6"><h3>Duplicates merged</h3><p>If you switch it on, entries that list one paper twice become one, with the citations added up.</p></article>
-      <article style="--c:#fbbc04"><h3>Yours to shape</h3><p>Choose what is shown, pick your own colours, hide the parts of Scholar's page you do not need.</p></article>
-      <article style="--c:#34a853"><h3>Private by design</h3><p>No account, no analytics, no tracking. Everything is computed in your browser, and the rank lists ship inside the extension.</p></article>
     </div>
   </section>
 
   <section class="numbers">
     <div class="wrap">
       <h2>By the numbers</h2>
-      <p class="note">Counted from the extension's code and data when this page is built — none of it typed by hand. Counts that grow with every fix are rounded down.</p>
+      <p class="note">The build counts these from the extension's code and data. Numbers that grow with each fix are rounded down.</p>
       <div class="numbers-grid">
-        <div class="num" style="--c:#4d8ff5"><b dir="ltr">153</b><span>settings you can change</span></div>
+        <div class="num" style="--c:#4d8ff5"><b dir="ltr">154</b><span>settings you can change</span></div>
         <div class="num" style="--c:#b36cf6"><b dir="ltr">30</b><span>interface languages</span></div>
         <div class="num" style="--c:#fbbc04"><b dir="ltr">1,178</b><span>ranked venues in the CCF and CORE lists</span></div>
-        <div class="num" style="--c:#34a853"><b dir="ltr">400+</b><span>venue names Scholar prints that the official lists do not have</span></div>
-        <div class="num" style="--c:#4d8ff5"><b dir="ltr">18</b><span>checks that stop a wrong rank from being shown</span></div>
-        <div class="num" style="--c:#b36cf6"><b dir="ltr">5,581</b><span>award-winning papers recognised</span></div>
-        <div class="num" style="--c:#fbbc04"><b dir="ltr">22,744</b><span>real Scholar venue lines, each one's rank looked at</span></div>
-        <div class="num" style="--c:#34a853"><b dir="ltr">500+</b><span>unit tests, besides an end-to-end suite in a real browser</span></div>
+        <div class="num" style="--c:#34a853"><b dir="ltr">400+</b><span>venue names that Scholar prints but the lists do not have</span></div>
+        <div class="num" style="--c:#4d8ff5"><b dir="ltr">18</b><span>checks that stop a wrong rank</span></div>
+        <div class="num" style="--c:#b36cf6"><b dir="ltr">5,581</b><span>award-winning papers that it knows</span></div>
+        <div class="num" style="--c:#fbbc04"><b dir="ltr">22,744</b><span>real venue lines from Scholar, each result looked at</span></div>
+        <div class="num" style="--c:#34a853"><b dir="ltr">500+</b><span>unit tests, and an end-to-end suite in a real browser</span></div>
       </div>
     </div>
   </section>
@@ -397,18 +431,22 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
     <div class="wrap">
       <h2>Install</h2>
       <ol>
-        <li>Download the project from GitHub (the green Code button, then Download ZIP) and unzip it.</li>
+        <li>Download the project from GitHub: click the green Code button, then Download ZIP. Unzip the file.</li>
         <li>Open <code>chrome://extensions</code> and turn on Developer mode.</li>
-        <li>Click “Load unpacked” and choose the src folder. Then open any Google Scholar profile.</li>
+        <li>Click “Load unpacked” and select the src folder. Then open a Google Scholar profile.</li>
       </ol>
-      <p class="note">A Chrome Web Store listing may follow. Edge, Brave and other Chromium browsers work the same way.</p>
+      <p class="note">Edge, Brave and other Chromium browsers use the same steps. A Chrome Web Store version may come later.</p>
     </div>
   </section>
 
   <section class="honest">
     <div class="wrap">
-      <h2>Honest about its limits</h2>
-      <p>Ranks are today's lists, not the rank at the time of publication, and the CCF list itself says it is not an evaluation. The extension never guesses a venue: what it cannot place is listed, not marked.</p>
+      <h2>Limits</h2>
+      <ul class="limits">
+        <li>The ranks come from today's lists. In the year of a paper, its venue may have had a different rank.</li>
+        <li>CCF says that its list is not a basis for academic evaluation.</li>
+        <li>It never guesses. A venue that it cannot place gets no chip, and the panel lists it.</li>
+      </ul>
     </div>
   </section>
 </main>
@@ -417,7 +455,7 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
     <span>Open source, Apache License 2.0</span>
     <a href="../privacy/">Privacy</a>
     <a href="https://github.com/boyugou/better-scholar/blob/main/ROADMAP.md">Roadmap</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/AGENTS.md">Agent API</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/AGENTS.md">For AI agents</a>
     <a href="https://github.com/boyugou/better-scholar/blob/main/SECURITY.md">Security</a>
     <a href="https://github.com/boyugou/better-scholar/issues">Report a problem</a>
     <a href="https://github.com/boyugou/better-scholar">GitHub</a>

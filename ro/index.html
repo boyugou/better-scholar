@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Better Scholar: rolul tău de autor și rangul publicațiilor tale pe Google Scholar</title>
-<meta name="description" content="Extensie gratuită pentru Chrome care marchează rolul tău (primul autor, co-primul autor, al doilea autor, ultimul autor) și rangul CCF / CORE al conferinței sau revistei pentru fiecare lucrare dintr-un profil Google Scholar, apoi le rezumă într-un singur tabel.">
+<title>Better Scholar: rolul tău de autor și rangul venue-ului tău pe Google Scholar</title>
+<meta name="description" content="Extensie gratuită pentru Chrome, pentru profiluri Google Scholar. Afișează rolul tău de autor și rangul CCF / CORE al venue-ului pentru fiecare lucrare și numără lucrările tale într-un singur tabel.">
 <link rel="canonical" href="https://boyugou.github.io/better-scholar/ro/">
 <link rel="alternate" hreflang="en" href="https://boyugou.github.io/better-scholar/en/">
 <link rel="alternate" hreflang="zh-CN" href="https://boyugou.github.io/better-scholar/zh-CN/">
@@ -40,14 +40,14 @@
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Better Scholar: rolul tău de autor și rangul publicațiilor tale pe Google Scholar">
-<meta property="og:description" content="Extensie gratuită pentru Chrome care marchează rolul tău (primul autor, co-primul autor, al doilea autor, ultimul autor) și rangul CCF / CORE al conferinței sau revistei pentru fiecare lucrare dintr-un profil Google Scholar, apoi le rezumă într-un singur tabel.">
+<meta property="og:title" content="Better Scholar: rolul tău de autor și rangul venue-ului tău pe Google Scholar">
+<meta property="og:description" content="Extensie gratuită pentru Chrome, pentru profiluri Google Scholar. Afișează rolul tău de autor și rangul CCF / CORE al venue-ului pentru fiecare lucrare și numără lucrările tale într-un singur tabel.">
 <meta property="og:url" content="https://boyugou.github.io/better-scholar/ro/">
 <meta property="og:image" content="https://boyugou.github.io/better-scholar/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="../assets/styles.css">
 <meta name="theme-color" content="#161d33">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Better Scholar","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Chromium browsers","description":"Extensie gratuită pentru Chrome care marchează rolul tău (primul autor, co-primul autor, al doilea autor, ultimul autor) și rangul CCF / CORE al conferinței sau revistei pentru fiecare lucrare dintr-un profil Google Scholar, apoi le rezumă într-un singur tabel.","inLanguage":"ro","url":"https://boyugou.github.io/better-scholar/ro/","image":"https://boyugou.github.io/better-scholar/assets/og.png","license":"https://www.apache.org/licenses/LICENSE-2.0","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Better Scholar","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Chromium browsers","description":"Extensie gratuită pentru Chrome, pentru profiluri Google Scholar. Afișează rolul tău de autor și rangul CCF / CORE al venue-ului pentru fiecare lucrare și numără lucrările tale într-un singur tabel.","inLanguage":"ro","url":"https://boyugou.github.io/better-scholar/ro/","image":"https://boyugou.github.io/better-scholar/assets/og.png","license":"https://www.apache.org/licenses/LICENSE-2.0","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 </head>
 <body>
 <header class="top">
@@ -97,16 +97,11 @@
 <main>
   <section class="hero">
     <div class="wrap">
-      <div class="hero-badges">
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg> Manifest V3</span>
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg> Rulează în browserul tău</span>
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg> Fără dependențe</span>
-      </div>
       <div class="stripes" aria-hidden="true"><i style="--c:#4d8ff5"></i><i style="--c:#b36cf6"></i><i style="--c:#fbbc04"></i><i style="--c:#34a853"></i></div>
-      <h1>Vezi unde te afli la fiecare lucrare</h1>
-      <p class="lead">O extensie Chrome pentru profilurile Google Scholar. Marchează rolul tău de autor și rangul CCF / CORE al publicației la fiecare lucrare și adună rezultatul într-un singur tabel: „4 lucrări CCF-A în care sunt primul autor”.</p>
+      <h1>Rolul tău și rangul venue-ului la fiecare lucrare</h1>
+      <p class="lead">O extensie Chrome gratuită pentru profilurile Google Scholar. Colorează fiecare lucrare după rolul tău de autor, afișează rangul CCF și CORE al venue-ului și numără lucrările tale într-un singur tabel.</p>
       <p class="cta"><a class="btn" href="#install">Instalare</a> <a class="btn ghost" href="https://github.com/boyugou/better-scholar">Vezi pe GitHub</a></p>
-      <p class="note">Gratuită și open source · Chrome și alte browsere Chromium · 30 de limbi</p>
+      <p class="note">Gratuită și open source · Chrome, Edge, Brave și alte browsere Chromium · 30 de limbi</p>
     </div>
   </section>
 
@@ -114,17 +109,69 @@
     <div class="wrap">
       <figure class="hero-shot">
         <div class="hero-frame" style="aspect-ratio: 1280 / 660">
-          <img src="../assets/hero.jpg" alt="Un profil inventat (publicații reale, lucrări fictive): rânduri colorate după rol, etichete de rang lângă fiecare publicație și rezumatul în dreapta." width="1280" height="800" fetchpriority="high" decoding="async">
+          <img src="../assets/hero.jpg" alt="Un profil inventat cu venue-uri reale. Fiecare rând are culoarea rolului tău, etichetele de rang arată rangul, iar panoul de rezumat din dreapta numără lucrările." width="1280" height="800" fetchpriority="high" decoding="async">
         </div>
-        <figcaption>Un profil inventat (publicații reale, lucrări fictive): rânduri colorate după rol, etichete de rang lângă fiecare publicație și rezumatul în dreapta.</figcaption>
+        <figcaption>Un profil inventat cu venue-uri reale. Fiecare rând are culoarea rolului tău, etichetele de rang arată rangul, iar panoul de rezumat din dreapta numără lucrările.</figcaption>
       </figure>
+    </div>
+  </section>
+
+  <section class="how" id="how">
+    <div class="wrap">
+      <h2>Cum citește extensia o lucrare</h2>
+      <p class="note">Două lucrări inventate la venue-uri reale. Fiecare pas arată ce găsește în ele codul propriu al extensiei.</p>
+      <div class="how-grid">
+        <ol class="how-steps">
+          <li><button type="button" data-step="1"><span class="n">1</span><b>Găsește-ți numele</b><span class="d">Găsește numele profilului în șirul autorilor. Locul tău în șir îți dă rolul: primul, coprimul, al doilea sau ultimul autor.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="2"><span class="n">2</span><b>Caută venue-ul</b><span class="d">Caută venue-ul în listele CCF și CORE, după numele întreg sau după acronim. O potrivire sigură dă o etichetă de rang.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="3"><span class="n">3</span><b>Nu ghici niciodată</b><span class="d">Un workshop, un poster sau o lucrare Findings nu este conferința principală. Un venue pe care listele nu îl includ cu certitudine nu primește nicio etichetă.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="4" aria-current="step"><span class="n">4</span><b>Numără</b><span class="d">Panoul de rezumat numără fiecare lucrare o singură dată, după rolul tău și după rang. Apasă pe un număr ca să vezi lucrările lui.</span><i class="bar" aria-hidden="true"></i></button></li>
+        </ol>
+        <div class="how-figure">
+        <div class="how-stage" aria-hidden="true">
+          <div class="sr-head" dir="ltr" lang="en"><span>Title</span><span>Cited by</span><span>Year</span></div>
+          <div class="sr on" data-from="1" dir="ltr" data-role="first" style="--rc:#1a73e8">
+            <div class="sr-text" lang="en"><div class="sr-t">Self-Supervised Depth from Casual Video</div><div class="sr-a"><span class="nm on" data-from="1" data-focus="1">A Example</span>, B Writer, C Writer, D Writer</div><div class="sr-v"><span class="vn on" data-from="2" data-focus="2">Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</span>, 2023 <span class="chip on" data-from="2" data-focus="2"><span class="k">CCF</span> <b>A</b></span></div></div>
+            <div class="sr-c">892</div><div class="sr-y">2023</div>
+            <div class="co-slot" dir="ltr"><p class="co" data-from="1" data-to="1"><span class="tag">Prim</span> poziția 1 din 4</p><p class="co on" data-from="2"><b dir="ltr">CCF A · CORE A*</b> · Potrivit după nume: <span dir="ltr">IEEE/CVF Computer Vision and Pattern Recognition Conference</span></p></div>
+          </div>
+          <div class="sr on" data-from="1" dir="ltr" data-role="second" style="--rc:#f9ab00">
+            <div class="sr-text" lang="en"><div class="sr-t">Cheap Calibration for Retrieval-Augmented Models</div><div class="sr-a">B Writer, <span class="nm on" data-from="1" data-focus="1">A Example</span>, H Writer</div><div class="sr-v"><mark class="sec on" data-from="3" data-focus="3">Findings</mark> of the Association for Computational Linguistics: ACL 2022, 410-423, 2022</div></div>
+            <div class="sr-c">868</div><div class="sr-y">2022</div>
+            <div class="co-slot" dir="ltr"><p class="co" data-from="1" data-to="2"><span class="tag">Al doilea</span> poziția 2 din 3</p><p class="co on" data-from="3"><b dir="ltr">Findings</b> · categorie secundară: fără rang, fără etichetă</p></div>
+          </div>
+          <div class="mini">
+            <div class="mini-h"><b>Lucrări după rol și rang</b><span dir="ltr"><i class="on">CCF</i><i>CORE</i></span></div>
+            <table>
+              <thead><tr><th></th><th>A</th><th>B</th><th>C</th><th>–</th><th>Toate</th></tr></thead>
+              <tbody><tr><th><i style="--rc:#1a73e8"></i>Prim</th><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td><td>·</td><td>·</td><td>·</td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td></tr><tr><th><i style="--rc:#f9ab00"></i>Al doilea</th><td>·</td><td>·</td><td>·</td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <button type="button" class="how-play" hidden data-play="Redă" data-pause="Pauză"><svg class="i-play" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg><svg class="i-pause" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z" fill="currentColor"/></svg><span>Redă</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="wrap">
+      <h2>Ce mai face</h2>
+      <div class="grid">
+        <article style="--c:#4d8ff5"><h3>Premii și prezentări</h3><p>Etichete pentru cele mai bune lucrări, premiile Test of Time și prezentările Oral, Spotlight sau Highlight. Provin din cuvintele autorilor și din paginile oficiale de premiere.</p></article>
+        <article style="--c:#b36cf6"><h3>Liste complete de autori</h3><p>Scholar taie listele lungi de autori cu „…”, iar asta îți poate ascunde rolul. Un clic citește listele complete de pe paginile lucrărilor din Scholar.</p></article>
+        <article style="--c:#fbbc04"><h3>Duplicate unite</h3><p>Scholar trece uneori aceeași lucrare de două ori. Un comutator le transformă într-o singură intrare și adună citările.</p></article>
+        <article style="--c:#34a853"><h3>Dispunerea ta</h3><p>Fiecare parte a panoului de rezumat are propriul comutator. Alege culorile, ordinea părților și propriile nume pentru ele.</p></article>
+        <article style="--c:#4d8ff5"><h3>Privat</h3><p>Fără cont, fără statistici de utilizare, fără urmărire. Toată munca se face în browserul tău, iar listele de ranguri sunt incluse în extensie.</p></article>
+        <article style="--c:#b36cf6"><h3>30 de limbi</h3><p>Extensia vorbește limba ta. Poate deschide și Scholar însuși în limba pe care o alegi.</p></article>
+      </div>
     </div>
   </section>
 
   <section class="try" id="try">
     <div class="wrap">
-      <h2>Încearcă pagina reală de setări</h2>
-      <p class="note">Aceasta este propria pagină de setări a extensiei, care rulează chiar aici: schimbă un comutator, iar previzualizarea se actualizează. Treci cu cursorul peste previzualizare ca să ascunzi, să muți sau să redenumești o parte, iar dublu clic pe o parte te duce la setarea ei.</p>
+      <h2>Încearcă pagina de setări</h2>
+      <p class="note">Aceasta este pagina reală de setări a extensiei. Schimbă o setare, iar previzualizarea se schimbă odată cu ea. Treci cu cursorul peste o parte a previzualizării ca să o ascunzi, să o muți sau să o redenumești.</p>
       <div class="try-bar">
         <a class="skip" href="#after-try">Sari peste demonstrație</a>
         <p>Modificările tale rămân doar în acest browser.</p>
@@ -138,15 +185,15 @@
 
   <section class="export-section" id="after-try">
     <div class="wrap">
-      <h2>Export academic cu un singur clic</h2>
-      <p class="note">Liste de publicații gata de lipit în CV-uri, formulare de granturi, documente LaTeX, agenți AI și foi de calcul.</p>
+      <h2>Copiază lucrările tale</h2>
+      <p class="note">Câte un buton pentru fiecare format: pentru CV, formular de grant, LaTeX sau foaie de calcul. Mai jos este rezultatul real pentru patru lucrări inventate.</p>
       <div class="export-card">
-        <div class="export-tabs" role="tablist" aria-label="Export academic cu un singur clic">
-          <button type="button" class="tab-btn active" role="tab" id="tab-bibtex" aria-selected="true" aria-controls="export-bibtex">BibTeX (LaTeX-Ready)</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-apa" aria-selected="false" aria-controls="export-apa" tabindex="-1">APA 7th Edition</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-json" aria-selected="false" aria-controls="export-json" tabindex="-1">Structured JSON</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-markdown" aria-selected="false" aria-controls="export-markdown" tabindex="-1">GitHub Markdown</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-csv" aria-selected="false" aria-controls="export-csv" tabindex="-1">RFC-4180 CSV</button>
+        <div class="export-tabs" role="tablist" aria-label="Copiază lucrările tale">
+          <button type="button" class="tab-btn active" role="tab" id="tab-bibtex" aria-selected="true" aria-controls="export-bibtex">BibTeX</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-apa" aria-selected="false" aria-controls="export-apa" tabindex="-1">APA</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-json" aria-selected="false" aria-controls="export-json" tabindex="-1">JSON</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-markdown" aria-selected="false" aria-controls="export-markdown" tabindex="-1">Markdown</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-csv" aria-selected="false" aria-controls="export-csv" tabindex="-1">CSV</button>
         </div>
         <div class="code-preview-wrap">
           <pre class="code-preview" role="tabpanel" id="export-bibtex" aria-labelledby="tab-bibtex" tabindex="0"><code>@inproceedings{author2025sample,
@@ -318,7 +365,7 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
 2024,Sample paper 2,&quot;B Writer, A Author, C Writer&quot;,Second author,NeurIPS 2024,A,A*,Best paper (NeurIPS 2024),133
 2024,Sample paper 3,&quot;A Author*, B Writer*, C Writer&quot;,Co-first author,CVPR 2024 (Highlight),A,A*,Highlight,27
 2023,Sample paper 4,&quot;B Writer, C Writer, D Writer, A Author&quot;,Last author,ACL 2023 (Spotlight),A,A*,Spotlight,215</code></pre>
-          <button type="button" class="copy-code-btn" data-label="Copiază în clipboard" data-copied="Copiat!">Copiază în clipboard</button>
+          <button type="button" class="copy-code-btn" data-label="Copiază" data-copied="Copiat">Copiază</button>
         </div>
       </div>
     </div>
@@ -326,69 +373,56 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
 
   <section class="operators-section">
     <div class="wrap">
-      <h2>Căutare instantanee și operatori de interogare</h2>
-      <p class="note">Apasă <kbd>/</kbd> oriunde pe un profil Scholar pentru a căuta în toată lista deodată.</p>
+      <h2>Căutare cu operatori</h2>
+      <p class="note">Apasă <kbd>/</kbd> pe un profil Scholar ca să cauți în toate lucrările lui. Adaugă operatori la cuvinte ca să filtrezi lista.</p>
       <div class="operators-grid">
         <div class="op-card">
-          <div class="op-header"><code>cites:&gt;100</code> <code>cites:&gt;=50</code> <code>cites:&lt;10</code></div>
-          <p class="op-title">Praguri de citări</p>
-          <p class="op-desc">Păstrează lucrările cu mai multe sau mai puține citări decât orice număr introduci.</p>
+          <div class="op-header" dir="ltr"><code>cites:&gt;100</code> <code>cites:&gt;=50</code> <code>cites:&lt;10</code></div>
+          <h3 class="op-title">Citări</h3>
+          <p class="op-desc">Lucrările cu mai multe sau mai puține citări decât numărul introdus.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>ccf:a</code> <code>ccf:b</code> <code>core:a*</code></div>
-          <p class="op-title">Niveluri de rang ale publicațiilor</p>
-          <p class="op-desc">Afișează doar lucrările din conferințe și reviste cu rang CCF sau CORE.</p>
+          <div class="op-header" dir="ltr"><code>ccf:a</code> <code>ccf:b</code> <code>core:a*</code></div>
+          <h3 class="op-title">Rang</h3>
+          <p class="op-desc">Lucrările din venue-uri cu un anumit rang CCF sau CORE.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>role:first</code> <code>role:last</code> <code>role:cofirst</code></div>
-          <p class="op-title">Roluri de autor</p>
-          <p class="op-desc">Filtrează după primul, co-primul, al doilea sau ultimul autor (senior).</p>
+          <div class="op-header" dir="ltr"><code>role:first</code> <code>role:last</code> <code>role:cofirst</code></div>
+          <h3 class="op-title">Roluri</h3>
+          <p class="op-desc">Lucrările în care ești primul, coprimul, al doilea sau ultimul autor.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>year:&gt;2020</code> <code>year:&gt;=2021</code> <code>year:&lt;=2015</code></div>
-          <p class="op-title">Anii publicării</p>
-          <p class="op-desc">Lucrări publicate după, înainte sau în anii pe care îi alegi, sau în ultimii cinci ani.</p>
+          <div class="op-header" dir="ltr"><code>year:&gt;=2020</code> <code>year:2023</code> <code>age:&lt;5</code></div>
+          <h3 class="op-title">An</h3>
+          <p class="op-desc">Lucrări publicate înainte de anul ales, după el sau în acel an, ori în ultimii câțiva ani.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>has:award</code> <code>has:talk</code></div>
-          <p class="op-title">Premii și prezentări</p>
-          <p class="op-desc">Găsește lucrările Best Paper, Test of Time, Oral, Spotlight și Highlight.</p>
+          <div class="op-header" dir="ltr"><code>has:award</code> <code>has:talk</code></div>
+          <h3 class="op-title">Premii și prezentări</h3>
+          <p class="op-desc">Lucrările cu premiul Best Paper sau Test of Time, ori cu prezentarea Oral, Spotlight sau Highlight.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><kbd>Escape</kbd></div>
-          <p class="op-title">Resetare dintr-o singură tastă</p>
-          <p class="op-desc">Șterge deodată toate căutările, selecțiile din tabel și filtrele.</p>
+          <div class="op-header" dir="ltr"><kbd>Escape</kbd></div>
+          <h3 class="op-title">Șterge tot</h3>
+          <p class="op-desc">O tastă șterge căutarea, celula selectată și fiecare filtru.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="features">
-    <div class="wrap grid">
-      <article style="--c:#4d8ff5"><h3>Fiecare lucrare, colorată după rolul tău</h3><p>Rândurile pentru primul autor, co-primul autor, al doilea autor și ultimul autor primesc fiecare o culoare, iar numele tău este marcat în lista autorilor.</p></article>
-      <article style="--c:#b36cf6"><h3>Ranguri CCF și CORE</h3><p>Rangurile CCF 2026 și ICORE 2026 apar lângă fiecare publicație, împreună cu regula care a potrivit-o. Ce nu poate identifica rămâne nemarcat: niciodată o presupunere.</p></article>
-      <article style="--c:#fbbc04"><h3>Tabel rol × rang</h3><p>Alege o celulă pentru a vedea doar lucrările din ea și copiază rezumatul sau lista pentru un CV sau un formular de grant.</p></article>
-      <article style="--c:#34a853"><h3>Premii și prezentări</h3><p>Cele mai bune lucrări, premiile Test of Time, Oral, Spotlight și Highlight, din cuvintele autorilor și din paginile oficiale de premiere ale peste 7.000 de lucrări.</p></article>
-      <article style="--c:#4d8ff5"><h3>Liste de autori tăiate, completate</h3><p>Scholar ascunde ultimii autori din listele lungi. Un clic îi citește de pe pagina lucrării sau de pe Semantic Scholar, dacă permiți.</p></article>
-      <article style="--c:#b36cf6"><h3>Duplicate unite</h3><p>Dacă activezi opțiunea, intrările care trec aceeași lucrare de două ori devin una singură, iar citările se adună.</p></article>
-      <article style="--c:#fbbc04"><h3>Personalizabil</h3><p>Alege ce se afișează, alege-ți culorile și ascunde părțile paginii Scholar de care nu ai nevoie.</p></article>
-      <article style="--c:#34a853"><h3>Privat prin design</h3><p>Fără cont, fără statistici de utilizare, fără urmărire. Totul se calculează în browserul tău, iar listele de ranguri sunt incluse în extensie.</p></article>
     </div>
   </section>
 
   <section class="numbers">
     <div class="wrap">
       <h2>În cifre</h2>
-      <p class="note">Numărate din codul și datele extensiei la construirea paginii — nimic nu este introdus manual. Cifrele care cresc odată cu fiecare corecție sunt rotunjite în jos.</p>
+      <p class="note">La construirea paginii, aceste cifre sunt numărate din codul și datele extensiei. Cifrele care cresc odată cu fiecare corecție sunt rotunjite în jos.</p>
       <div class="numbers-grid">
-        <div class="num" style="--c:#4d8ff5"><b dir="ltr">153</b><span>setări pe care le poți schimba</span></div>
+        <div class="num" style="--c:#4d8ff5"><b dir="ltr">154</b><span>setări pe care le poți schimba</span></div>
         <div class="num" style="--c:#b36cf6"><b dir="ltr">30</b><span>limbi ale interfeței</span></div>
-        <div class="num" style="--c:#fbbc04"><b dir="ltr">1.178</b><span>publicații cu rang în listele CCF și CORE</span></div>
-        <div class="num" style="--c:#34a853"><b dir="ltr">400+</b><span>nume de publicații afișate de Scholar, care nu apar în listele oficiale</span></div>
-        <div class="num" style="--c:#4d8ff5"><b dir="ltr">18</b><span>verificări care împiedică afișarea unui rang greșit</span></div>
-        <div class="num" style="--c:#b36cf6"><b dir="ltr">5.581</b><span>lucrări premiate pe care extensia le recunoaște</span></div>
-        <div class="num" style="--c:#fbbc04"><b dir="ltr">22.744</b><span>înregistrări reale de publicații din Scholar, fiecare cu rangul verificat</span></div>
-        <div class="num" style="--c:#34a853"><b dir="ltr">500+</b><span>teste unitare, plus o suită end-to-end într-un browser real</span></div>
+        <div class="num" style="--c:#fbbc04"><b dir="ltr">1.178</b><span>venue-uri cu rang în listele CCF și CORE</span></div>
+        <div class="num" style="--c:#34a853"><b dir="ltr">400+</b><span>nume de venue-uri afișate de Scholar, care nu apar în liste</span></div>
+        <div class="num" style="--c:#4d8ff5"><b dir="ltr">18</b><span>verificări care împiedică un rang greșit</span></div>
+        <div class="num" style="--c:#b36cf6"><b dir="ltr">5.581</b><span>lucrări premiate pe care extensia le cunoaște</span></div>
+        <div class="num" style="--c:#fbbc04"><b dir="ltr">22.744</b><span>înregistrări reale de venue-uri din Scholar, fiecare cu rezultatul verificat</span></div>
+        <div class="num" style="--c:#34a853"><b dir="ltr">500+</b><span>teste unitare și o suită end-to-end într-un browser real</span></div>
       </div>
     </div>
   </section>
@@ -397,18 +431,22 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
     <div class="wrap">
       <h2>Instalare</h2>
       <ol>
-        <li>Descarcă proiectul de pe GitHub (butonul verde „Code”, apoi „Download ZIP”) și dezarhivează-l.</li>
+        <li>Descarcă proiectul de pe GitHub: apasă pe butonul verde „Code”, apoi pe „Download ZIP”. Dezarhivează fișierul.</li>
         <li>Deschide <code>chrome://extensions</code> și activează „Modul dezvoltator” (Developer mode).</li>
-        <li>Apasă „Încarcă extensie despachetată” (Load unpacked) și alege folderul src. Apoi deschide orice profil Google Scholar.</li>
+        <li>Apasă „Încarcă extensie despachetată” (Load unpacked) și selectează folderul src. Apoi deschide un profil Google Scholar.</li>
       </ol>
-      <p class="note">Este posibil să apară ulterior o listare în Chrome Web Store. Edge, Brave și celelalte browsere Chromium funcționează la fel.</p>
+      <p class="note">Edge, Brave și celelalte browsere Chromium urmează aceiași pași. Este posibil să apară ulterior o versiune în Chrome Web Store.</p>
     </div>
   </section>
 
   <section class="honest">
     <div class="wrap">
-      <h2>Sinceră cu privire la limite</h2>
-      <p>Rangurile sunt listele de astăzi, nu rangul de la data publicării, iar lista CCF însăși spune că nu este o evaluare. Extensia nu ghicește niciodată o publicație: ce nu poate identifica este listat, nu marcat.</p>
+      <h2>Limite</h2>
+      <ul class="limits">
+        <li>Rangurile provin din listele de azi. În anul publicării lucrării, venue-ul ei ar fi putut avea alt rang.</li>
+        <li>CCF precizează că lista sa nu este o bază pentru evaluarea academică.</li>
+        <li>Nu ghicește niciodată. Un venue pe care nu îl poate încadra nu primește nicio etichetă, iar panoul de rezumat îl listează.</li>
+      </ul>
     </div>
   </section>
 </main>
@@ -416,9 +454,9 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
   <div class="wrap">
     <span>Open source, Apache License 2.0</span>
     <a href="../privacy/">Confidențialitate</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/ROADMAP.md">Roadmap</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/AGENTS.md">Agent API</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/SECURITY.md">Security</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/ROADMAP.md">Plan de dezvoltare</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/AGENTS.md">Pentru agenți AI</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/SECURITY.md">Securitate</a>
     <a href="https://github.com/boyugou/better-scholar/issues">Raportează o problemă</a>
     <a href="https://github.com/boyugou/better-scholar">GitHub</a>
   </div>

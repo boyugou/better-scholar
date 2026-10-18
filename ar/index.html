@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Better Scholar: دورك في التأليف وتصنيف نشرك على Google Scholar</title>
-<meta name="description" content="إضافة مجانية لمتصفح Chrome تُبيّن دورك في التأليف (المؤلف الأول، والمؤلف الأول المشارك، والمؤلف الثاني، والمؤلف الأخير) وتصنيف CCF / CORE للمؤتمر أو المجلة عند كل ورقة في ملف Google Scholar، وتجمع ذلك كله في جدول واحد.">
+<title>Better Scholar: دورك في التأليف وتصنيف منصة نشرك على Google Scholar</title>
+<meta name="description" content="إضافة مجانية لمتصفح Chrome لملفات Google Scholar الشخصية. تُبيّن دورك في التأليف وتصنيف CCF / CORE لمنصة النشر عند كل ورقة، وتُحصي أوراقك في جدول واحد.">
 <link rel="canonical" href="https://boyugou.github.io/better-scholar/ar/">
 <link rel="alternate" hreflang="en" href="https://boyugou.github.io/better-scholar/en/">
 <link rel="alternate" hreflang="zh-CN" href="https://boyugou.github.io/better-scholar/zh-CN/">
@@ -40,14 +40,14 @@
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Better Scholar: دورك في التأليف وتصنيف نشرك على Google Scholar">
-<meta property="og:description" content="إضافة مجانية لمتصفح Chrome تُبيّن دورك في التأليف (المؤلف الأول، والمؤلف الأول المشارك، والمؤلف الثاني، والمؤلف الأخير) وتصنيف CCF / CORE للمؤتمر أو المجلة عند كل ورقة في ملف Google Scholar، وتجمع ذلك كله في جدول واحد.">
+<meta property="og:title" content="Better Scholar: دورك في التأليف وتصنيف منصة نشرك على Google Scholar">
+<meta property="og:description" content="إضافة مجانية لمتصفح Chrome لملفات Google Scholar الشخصية. تُبيّن دورك في التأليف وتصنيف CCF / CORE لمنصة النشر عند كل ورقة، وتُحصي أوراقك في جدول واحد.">
 <meta property="og:url" content="https://boyugou.github.io/better-scholar/ar/">
 <meta property="og:image" content="https://boyugou.github.io/better-scholar/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="../assets/styles.css">
 <meta name="theme-color" content="#161d33">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Better Scholar","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Chromium browsers","description":"إضافة مجانية لمتصفح Chrome تُبيّن دورك في التأليف (المؤلف الأول، والمؤلف الأول المشارك، والمؤلف الثاني، والمؤلف الأخير) وتصنيف CCF / CORE للمؤتمر أو المجلة عند كل ورقة في ملف Google Scholar، وتجمع ذلك كله في جدول واحد.","inLanguage":"ar","url":"https://boyugou.github.io/better-scholar/ar/","image":"https://boyugou.github.io/better-scholar/assets/og.png","license":"https://www.apache.org/licenses/LICENSE-2.0","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Better Scholar","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Chromium browsers","description":"إضافة مجانية لمتصفح Chrome لملفات Google Scholar الشخصية. تُبيّن دورك في التأليف وتصنيف CCF / CORE لمنصة النشر عند كل ورقة، وتُحصي أوراقك في جدول واحد.","inLanguage":"ar","url":"https://boyugou.github.io/better-scholar/ar/","image":"https://boyugou.github.io/better-scholar/assets/og.png","license":"https://www.apache.org/licenses/LICENSE-2.0","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 </head>
 <body>
 <header class="top">
@@ -97,16 +97,11 @@
 <main>
   <section class="hero">
     <div class="wrap">
-      <div class="hero-badges">
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg> Manifest V3</span>
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg> يعمل في متصفحك</span>
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg> بلا تبعيات</span>
-      </div>
       <div class="stripes" aria-hidden="true"><i style="--c:#4d8ff5"></i><i style="--c:#b36cf6"></i><i style="--c:#fbbc04"></i><i style="--c:#34a853"></i></div>
-      <h1>اعرف موقعك في كل ورقة بحثية</h1>
-      <p class="lead">إضافة لمتصفح Chrome لملفات Google Scholar الشخصية. تُبيّن دورك في التأليف وتصنيف CCF / CORE للمكان الذي نُشرت فيه كل ورقة، وتجمع النتيجة في جدول واحد: “4 أوراق من فئة CCF-A بوصفك المؤلف الأول”.</p>
+      <h1>دورك وتصنيف منصة النشر في كل ورقة</h1>
+      <p class="lead">إضافة مجانية لمتصفح Chrome لملفات Google Scholar الشخصية. تُلوِّن كل ورقة بحسب دورك في التأليف، وتُظهر تصنيف CCF وCORE لمنصة نشرها، وتُحصي أوراقك في جدول واحد.</p>
       <p class="cta"><a class="btn" href="#install">التثبيت</a> <a class="btn ghost" href="https://github.com/boyugou/better-scholar">عرض على GitHub</a></p>
-      <p class="note">مجانية ومفتوحة المصدر · Chrome والمتصفحات الأخرى المبنية على Chromium · 30 لغة</p>
+      <p class="note">مجانية ومفتوحة المصدر · Chrome وEdge وBrave والمتصفحات الأخرى المبنية على Chromium · 30 لغة</p>
     </div>
   </section>
 
@@ -114,17 +109,69 @@
     <div class="wrap">
       <figure class="hero-shot">
         <div class="hero-frame" style="aspect-ratio: 1280 / 660">
-          <img src="../assets/hero.jpg" alt="ملف شخصي متخيَّل (مؤتمرات ومجلات حقيقية وأوراق من نسج الخيال): صفوف ملوّنة بحسب الدور، وشارات التصنيف بجانب كل مكان نشر، والملخص على اليمين." width="1280" height="800" fetchpriority="high" decoding="async">
+          <img src="../assets/hero.jpg" alt="ملف شخصي متخيَّل بمنصات نشر حقيقية. لكل صف لون دورك، والشارات تُظهر التصنيف، واللوحة على اليمين تُحصي الأوراق." width="1280" height="800" fetchpriority="high" decoding="async">
         </div>
-        <figcaption>ملف شخصي متخيَّل (مؤتمرات ومجلات حقيقية وأوراق من نسج الخيال): صفوف ملوّنة بحسب الدور، وشارات التصنيف بجانب كل مكان نشر، والملخص على اليمين.</figcaption>
+        <figcaption>ملف شخصي متخيَّل بمنصات نشر حقيقية. لكل صف لون دورك، والشارات تُظهر التصنيف، واللوحة على اليمين تُحصي الأوراق.</figcaption>
       </figure>
+    </div>
+  </section>
+
+  <section class="how" id="how">
+    <div class="wrap">
+      <h2>كيف تقرأ الإضافة الورقة</h2>
+      <p class="note">ورقتان متخيّلتان بمنصات نشر حقيقية. تُظهر كل خطوة ما تجده شيفرة الإضافة نفسها فيهما.</p>
+      <div class="how-grid">
+        <ol class="how-steps">
+          <li><button type="button" data-step="1"><span class="n">1</span><b>ابحث عن اسمك</b><span class="d">تبحث الإضافة عن اسم الملف الشخصي في سطر المؤلفين. ومكانك في السطر يحدد دورك: المؤلف الأول، أو مؤلف أول مشارك، أو المؤلف الثاني، أو المؤلف الأخير.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="2"><span class="n">2</span><b>ابحث عن منصة النشر</b><span class="d">تبحث الإضافة عن منصة النشر في قائمتي CCF وCORE، بالاسم الكامل أو بالاختصار. المطابقة المؤكدة تمنح شارة التصنيف.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="3"><span class="n">3</span><b>لا تخمين أبدًا</b><span class="d">ورشة عمل، أو ملصق، أو ورقة Findings ليست المؤتمر الرئيسي. والمنصة التي لا تحدّد القائمتان موقعها بيقين لا تنال شارة.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="4" aria-current="step"><span class="n">4</span><b>العدّ</b><span class="d">تحسب اللوحة كل ورقة مرة واحدة، حسب دورك وحسب التصنيف. انقر على رقم لترى أوراقه.</span><i class="bar" aria-hidden="true"></i></button></li>
+        </ol>
+        <div class="how-figure">
+        <div class="how-stage" aria-hidden="true">
+          <div class="sr-head" dir="ltr" lang="en"><span>Title</span><span>Cited by</span><span>Year</span></div>
+          <div class="sr on" data-from="1" dir="ltr" data-role="first" style="--rc:#1a73e8">
+            <div class="sr-text" lang="en"><div class="sr-t">Self-Supervised Depth from Casual Video</div><div class="sr-a"><span class="nm on" data-from="1" data-focus="1">A Example</span>, B Writer, C Writer, D Writer</div><div class="sr-v"><span class="vn on" data-from="2" data-focus="2">Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</span>, 2023 <span class="chip on" data-from="2" data-focus="2"><span class="k">CCF</span> <b>A</b></span></div></div>
+            <div class="sr-c">892</div><div class="sr-y">2023</div>
+            <div class="co-slot" dir="rtl"><p class="co" data-from="1" data-to="1"><span class="tag">الأول</span> الترتيب 1 من 4</p><p class="co on" data-from="2"><b dir="ltr">CCF A · CORE A*</b> · طابق بالاسم: <span dir="ltr">IEEE/CVF Computer Vision and Pattern Recognition Conference</span></p></div>
+          </div>
+          <div class="sr on" data-from="1" dir="ltr" data-role="second" style="--rc:#f9ab00">
+            <div class="sr-text" lang="en"><div class="sr-t">Cheap Calibration for Retrieval-Augmented Models</div><div class="sr-a">B Writer, <span class="nm on" data-from="1" data-focus="1">A Example</span>, H Writer</div><div class="sr-v"><mark class="sec on" data-from="3" data-focus="3">Findings</mark> of the Association for Computational Linguistics: ACL 2022, 410-423, 2022</div></div>
+            <div class="sr-c">868</div><div class="sr-y">2022</div>
+            <div class="co-slot" dir="rtl"><p class="co" data-from="1" data-to="2"><span class="tag">الثاني</span> الترتيب 2 من 3</p><p class="co on" data-from="3"><b dir="ltr">Findings</b> · مسار ثانوي: بلا تصنيف ولا شارة</p></div>
+          </div>
+          <div class="mini">
+            <div class="mini-h"><b>الأبحاث حسب الدور والتصنيف</b><span dir="ltr"><i class="on">CCF</i><i>CORE</i></span></div>
+            <table>
+              <thead><tr><th></th><th>A</th><th>B</th><th>C</th><th>–</th><th>الكل</th></tr></thead>
+              <tbody><tr><th><i style="--rc:#1a73e8"></i>الأول</th><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td><td>·</td><td>·</td><td>·</td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td></tr><tr><th><i style="--rc:#f9ab00"></i>الثاني</th><td>·</td><td>·</td><td>·</td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <button type="button" class="how-play" hidden data-play="تشغيل" data-pause="إيقاف مؤقت"><svg class="i-play" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg><svg class="i-pause" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z" fill="currentColor"/></svg><span>تشغيل</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="wrap">
+      <h2>ميزات أخرى</h2>
+      <div class="grid">
+        <article style="--c:#4d8ff5"><h3>الجوائز والعروض</h3><p>شارات لأفضل الأوراق، ولجوائز اختبار الزمن، ولعروض Oral أو Spotlight أو Highlight. تأتي من كلمات المؤلفين أنفسهم ومن الصفحات الرسمية للجوائز.</p></article>
+        <article style="--c:#b36cf6"><h3>قوائم المؤلفين الكاملة</h3><p>يقطع Scholar قوائم المؤلفين الطويلة بعلامة “…”، وقد يُخفي ذلك دورك. نقرة واحدة تقرأ القوائم كاملةً من صفحات الأوراق في Scholar.</p></article>
+        <article style="--c:#fbbc04"><h3>دمج المكررات</h3><p>يسرد Scholar الورقة نفسها مرتين أحيانًا. مفتاح التبديل يجعلهما مدخلًا واحدًا، ويجمع استشهاداتهما.</p></article>
+        <article style="--c:#34a853"><h3>تخطيطك الخاص</h3><p>لكل جزء في اللوحة مفتاح تبديل خاص به. اختر الألوان وترتيب الأجزاء والأسماء التي تريدها لها.</p></article>
+        <article style="--c:#4d8ff5"><h3>الخصوصية</h3><p>بلا حساب، وبلا تحليلات، وبلا تتبّع. تجري كل المعالجة داخل متصفحك، وقوائم التصنيف مضمّنة في الإضافة نفسها.</p></article>
+        <article style="--c:#b36cf6"><h3>30 لغة</h3><p>تتحدث الإضافة بلغتك. ويمكنها أيضًا فتح Scholar نفسه بلغة تختارها.</p></article>
+      </div>
     </div>
   </section>
 
   <section class="try" id="try">
     <div class="wrap">
-      <h2>جرّب صفحة الإعدادات الحقيقية</h2>
-      <p class="note">هذه صفحة إعدادات الإضافة نفسها، وهي تعمل هنا: فعِّل خيارًا أو أوقِفه، وتتغيّر المعاينة فورًا. مرّر المؤشر فوق المعاينة لإخفاء جزء أو نقله أو إعادة تسميته، وانقر مرتين على جزء للانتقال إلى إعداده.</p>
+      <h2>جرّب صفحة الإعدادات</h2>
+      <p class="note">هذه صفحة الإعدادات الحقيقية للإضافة. غيّر إعدادًا فتتغيّر المعاينة معه. مرّر المؤشر فوق جزء من المعاينة لإخفائه أو نقله أو إعادة تسميته.</p>
       <div class="try-bar">
         <a class="skip" href="#after-try">تخطّي العرض التوضيحي</a>
         <p>تبقى تغييراتك داخل متصفحك وحده.</p>
@@ -138,15 +185,15 @@
 
   <section class="export-section" id="after-try">
     <div class="wrap">
-      <h2>تصدير أكاديمي بنقرة واحدة</h2>
-      <p class="note">قوائم منشورات جاهزة للصق في السير الذاتية ونماذج المنح ومستندات LaTeX ووكلاء الذكاء الاصطناعي وجداول البيانات.</p>
+      <h2>نسخ أوراقك</h2>
+      <p class="note">زر لكل تنسيق: سيرة ذاتية، أو نموذج منحة، أو LaTeX، أو جدول بيانات. وفيما يلي الناتج الفعلي لأربع أوراق متخيّلة.</p>
       <div class="export-card">
-        <div class="export-tabs" role="tablist" aria-label="تصدير أكاديمي بنقرة واحدة">
-          <button type="button" class="tab-btn active" role="tab" id="tab-bibtex" aria-selected="true" aria-controls="export-bibtex">BibTeX (LaTeX-Ready)</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-apa" aria-selected="false" aria-controls="export-apa" tabindex="-1">APA 7th Edition</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-json" aria-selected="false" aria-controls="export-json" tabindex="-1">Structured JSON</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-markdown" aria-selected="false" aria-controls="export-markdown" tabindex="-1">GitHub Markdown</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-csv" aria-selected="false" aria-controls="export-csv" tabindex="-1">RFC-4180 CSV</button>
+        <div class="export-tabs" role="tablist" aria-label="نسخ أوراقك">
+          <button type="button" class="tab-btn active" role="tab" id="tab-bibtex" aria-selected="true" aria-controls="export-bibtex">BibTeX</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-apa" aria-selected="false" aria-controls="export-apa" tabindex="-1">APA</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-json" aria-selected="false" aria-controls="export-json" tabindex="-1">JSON</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-markdown" aria-selected="false" aria-controls="export-markdown" tabindex="-1">Markdown</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-csv" aria-selected="false" aria-controls="export-csv" tabindex="-1">CSV</button>
         </div>
         <div class="code-preview-wrap">
           <pre class="code-preview" role="tabpanel" id="export-bibtex" aria-labelledby="tab-bibtex" tabindex="0"><code>@inproceedings{author2025sample,
@@ -318,7 +365,7 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
 2024,Sample paper 2,&quot;B Writer, A Author, C Writer&quot;,Second author,NeurIPS 2024,A,A*,Best paper (NeurIPS 2024),133
 2024,Sample paper 3,&quot;A Author*, B Writer*, C Writer&quot;,Co-first author,CVPR 2024 (Highlight),A,A*,Highlight,27
 2023,Sample paper 4,&quot;B Writer, C Writer, D Writer, A Author&quot;,Last author,ACL 2023 (Spotlight),A,A*,Spotlight,215</code></pre>
-          <button type="button" class="copy-code-btn" data-label="نسخ إلى الحافظة" data-copied="تم النسخ!">نسخ إلى الحافظة</button>
+          <button type="button" class="copy-code-btn" data-label="نسخ" data-copied="تم النسخ">نسخ</button>
         </div>
       </div>
     </div>
@@ -326,69 +373,56 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
 
   <section class="operators-section">
     <div class="wrap">
-      <h2>بحث فوري وعوامل استعلام</h2>
-      <p class="note">اضغط <kbd>/</kbd> في أي مكان على ملف Scholar الشخصي للبحث في القائمة كاملة دفعة واحدة.</p>
+      <h2>البحث بعوامل الاستعلام</h2>
+      <p class="note">اضغط <kbd>/</kbd> في ملف شخصي للبحث في كل أوراقه. وأضف عوامل إلى كلماتك لتصفية القائمة.</p>
       <div class="operators-grid">
         <div class="op-card">
-          <div class="op-header"><code>cites:&gt;100</code> <code>cites:&gt;=50</code> <code>cites:&lt;10</code></div>
-          <p class="op-title">حدود الاستشهادات</p>
-          <p class="op-desc">احتفظ بالأوراق التي لها استشهادات أكثر أو أقل من أي رقم تكتبه.</p>
+          <div class="op-header" dir="ltr"><code>cites:&gt;100</code> <code>cites:&gt;=50</code> <code>cites:&lt;10</code></div>
+          <h3 class="op-title">الاستشهادات</h3>
+          <p class="op-desc">أوراق لها استشهادات أكثر من رقم تحدده، أو أقل منه.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>ccf:a</code> <code>ccf:b</code> <code>core:a*</code></div>
-          <p class="op-title">مستويات تصنيف أماكن النشر</p>
-          <p class="op-desc">اعرض فقط الأوراق المنشورة في مؤتمرات ومجلات مصنَّفة ضمن CCF أو CORE.</p>
+          <div class="op-header" dir="ltr"><code>ccf:a</code> <code>ccf:b</code> <code>core:a*</code></div>
+          <h3 class="op-title">التصنيف</h3>
+          <p class="op-desc">أوراق في منصات نشر ذات تصنيف CCF أو CORE معيّن.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>role:first</code> <code>role:last</code> <code>role:cofirst</code></div>
-          <p class="op-title">أدوار التأليف</p>
-          <p class="op-desc">صفِّ حسب المؤلف الأول أو الأول المشارك أو الثاني أو الأخير (الرئيسي).</p>
+          <div class="op-header" dir="ltr"><code>role:first</code> <code>role:last</code> <code>role:cofirst</code></div>
+          <h3 class="op-title">الدور</h3>
+          <p class="op-desc">أوراق أنت فيها المؤلف الأول، أو مؤلف أول مشارك، أو المؤلف الثاني، أو المؤلف الأخير.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>year:&gt;2020</code> <code>year:&gt;=2021</code> <code>year:&lt;=2015</code></div>
-          <p class="op-title">سنوات النشر</p>
-          <p class="op-desc">أوراق نُشرت بعد السنوات التي تختارها أو قبلها أو ضمنها، أو في آخر خمس سنوات.</p>
+          <div class="op-header" dir="ltr"><code>year:&gt;=2020</code> <code>year:2023</code> <code>age:&lt;5</code></div>
+          <h3 class="op-title">السنة</h3>
+          <p class="op-desc">أوراق نُشرت قبل سنة تحدّدها أو بعدها أو فيها، أو في السنوات القليلة الأخيرة.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>has:award</code> <code>has:talk</code></div>
-          <p class="op-title">الجوائز والمحاضرات</p>
-          <p class="op-desc">اعثر على أوراق Best Paper وTest of Time وOral وSpotlight وHighlight.</p>
+          <div class="op-header" dir="ltr"><code>has:award</code> <code>has:talk</code></div>
+          <h3 class="op-title">الجوائز والعروض</h3>
+          <p class="op-desc">أوراق حازت جائزة أفضل ورقة أو جائزة اختبار الزمن، أو لها عرض Oral أو Spotlight أو Highlight.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><kbd>Escape</kbd></div>
-          <p class="op-title">إعادة ضبط بمفتاح واحد</p>
-          <p class="op-desc">تمسح كل بحث وتحديد في الجدول وكل عامل تصفية دفعة واحدة.</p>
+          <div class="op-header" dir="ltr"><kbd>Escape</kbd></div>
+          <h3 class="op-title">مسح الكل</h3>
+          <p class="op-desc">مفتاح واحد يمسح البحث والخلية المحددة وكل المرشّحات.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="features">
-    <div class="wrap grid">
-      <article style="--c:#4d8ff5"><h3>كل ورقة ملوّنة بحسب دورك</h3><p>تحصل صفوف المؤلف الأول والمؤلف الأول المشارك والمؤلف الثاني والمؤلف الأخير على ألوان خاصة بها، ويُعلَّم اسمك في سطر المؤلفين.</p></article>
-      <article style="--c:#b36cf6"><h3>تصنيفات CCF وCORE</h3><p>يظهر تصنيف CCF 2026 وICORE 2026 بجانب كل مكان نشر، مع القاعدة التي طابقته. أما ما لا تستطيع الإضافة تحديده فيبقى بلا علامة، فلا تخمين أبدًا.</p></article>
-      <article style="--c:#fbbc04"><h3>جدول الدور × التصنيف</h3><p>اختر خانة لعرض الأوراق التي تحتويها فقط، وانسخ الملخص أو القائمة لاستخدامها في السيرة الذاتية أو في طلب المنحة.</p></article>
-      <article style="--c:#34a853"><h3>الجوائز والمحاضرات</h3><p>أفضل الأوراق، وجوائز اختبار الزمن، وOral وSpotlight وHighlight، من كلمات المؤلفين أنفسهم ومن الصفحات الرسمية للجوائز لأكثر من 7,000 ورقة.</p></article>
-      <article style="--c:#4d8ff5"><h3>قوائم المؤلفين المقطوعة، مكتملة</h3><p>يُخفي Scholar المؤلفين الأخيرين في القوائم الطويلة. نقرة واحدة تقرأهم من صفحة الورقة، أو من Semantic Scholar إن سمحت بذلك.</p></article>
-      <article style="--c:#b36cf6"><h3>دمج المكررات</h3><p>إذا فعّلته، تتحول المدخلات التي تسرد الورقة نفسها مرتين إلى مدخل واحد، مع جمع الاستشهادات.</p></article>
-      <article style="--c:#fbbc04"><h3>قابلة للتخصيص وفق رغبتك</h3><p>اختر ما يظهر، وحدد ألوانك، وأخفِ أجزاء صفحة Scholar التي لا تحتاجها.</p></article>
-      <article style="--c:#34a853"><h3>الخصوصية من التصميم</h3><p>بلا حساب، وبلا تحليلات، وبلا تتبّع. تُحسب كل النتائج داخل متصفحك، وقوائم التصنيف مضمّنة في الإضافة نفسها.</p></article>
     </div>
   </section>
 
   <section class="numbers">
     <div class="wrap">
       <h2>بالأرقام</h2>
-      <p class="note">تُحسب من شيفرة الإضافة وبياناتها عند إنشاء هذه الصفحة، ولا يُكتب منها شيء يدويًا. والأعداد التي تزيد مع كل إصلاح تُقرَّب إلى الأدنى.</p>
+      <p class="note">تُحسب هذه الأرقام من شيفرة الإضافة وبياناتها عند إنشاء الصفحة. والأعداد التي تزيد مع كل إصلاح تُقرَّب إلى الأدنى.</p>
       <div class="numbers-grid">
-        <div class="num" style="--c:#4d8ff5"><b dir="ltr">153</b><span>إعدادات يمكنك تغييرها</span></div>
+        <div class="num" style="--c:#4d8ff5"><b dir="ltr">154</b><span>إعدادات يمكنك تغييرها</span></div>
         <div class="num" style="--c:#b36cf6"><b dir="ltr">30</b><span>لغات الواجهة</span></div>
-        <div class="num" style="--c:#fbbc04"><b dir="ltr">1,178</b><span>أماكن نشر مصنّفة في قائمتَيْ CCF وCORE</span></div>
-        <div class="num" style="--c:#34a853"><b dir="ltr">400+</b><span>أسماء أماكن نشر يعرضها Scholar ولا ترد في القوائم الرسمية</span></div>
-        <div class="num" style="--c:#4d8ff5"><b dir="ltr">18</b><span>فحوص تمنع ظهور تصنيف خاطئ</span></div>
-        <div class="num" style="--c:#b36cf6"><b dir="ltr">5,581</b><span>أوراق حائزة على جوائز تعترف بها الإضافة</span></div>
-        <div class="num" style="--c:#fbbc04"><b dir="ltr">22,744</b><span>سطور أماكن نشر حقيقية من Scholar، مع مراجعة تصنيف كل منها</span></div>
-        <div class="num" style="--c:#34a853"><b dir="ltr">500+</b><span>اختبارات وحدات، إلى جانب اختبارات من طرف إلى طرف في متصفح حقيقي</span></div>
+        <div class="num" style="--c:#fbbc04"><b dir="ltr">1,178</b><span>منصات نشر مصنّفة في قائمتَيْ CCF وCORE</span></div>
+        <div class="num" style="--c:#34a853"><b dir="ltr">400+</b><span>أسماء منصات نشر يعرضها Scholar لكنها لا ترد في القوائم</span></div>
+        <div class="num" style="--c:#4d8ff5"><b dir="ltr">18</b><span>فحوص تمنع تصنيفًا خاطئًا</span></div>
+        <div class="num" style="--c:#b36cf6"><b dir="ltr">5,581</b><span>أوراق حائزة على جوائز تعرفها الإضافة</span></div>
+        <div class="num" style="--c:#fbbc04"><b dir="ltr">22,744</b><span>سطور منصات نشر حقيقية من Scholar، مع مراجعة نتيجة كل منها</span></div>
+        <div class="num" style="--c:#34a853"><b dir="ltr">500+</b><span>اختبارات وحدات، واختبارات من طرف إلى طرف في متصفح حقيقي</span></div>
       </div>
     </div>
   </section>
@@ -397,18 +431,22 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
     <div class="wrap">
       <h2>التثبيت</h2>
       <ol>
-        <li>حمّل المشروع من GitHub (زر “Code” الأخضر، ثم “Download ZIP”) وفُكّ ضغطه.</li>
+        <li>حمّل المشروع من GitHub: انقر على زر “Code” الأخضر، ثم على “Download ZIP”. فُكّ ضغط الملف.</li>
         <li>افتح <code>chrome://extensions</code> وفعّل وضع المطوّر (Developer mode).</li>
-        <li>انقر “تحميل إضافة غير مضغوطة” (Load unpacked) واختر المجلد src. ثم افتح أي ملف شخصي في Google Scholar.</li>
+        <li>انقر “تحميل إضافة غير مضغوطة” (Load unpacked) واختر المجلد src. ثم افتح ملفًا شخصيًا في Google Scholar.</li>
       </ol>
-      <p class="note">قد تُنشر لاحقًا صفحة في متجر Chrome الإلكتروني. وتعمل Edge وBrave والمتصفحات الأخرى المبنية على Chromium بالطريقة نفسها.</p>
+      <p class="note">تتبع Edge وBrave والمتصفحات الأخرى المبنية على Chromium الخطوات نفسها. وقد تُنشر لاحقًا نسخة في متجر Chrome الإلكتروني.</p>
     </div>
   </section>
 
   <section class="honest">
     <div class="wrap">
-      <h2>صراحة بشأن حدودها</h2>
-      <p>التصنيفات هي القوائم الحالية، وليست التصنيف وقت النشر، وقائمة CCF نفسها تقول إنها ليست تقييمًا. والإضافة لا تخمّن أبدًا: ما لا تستطيع تحديده يُدرج في القائمة ولا يُعلَّم.</p>
+      <h2>الحدود</h2>
+      <ul class="limits">
+        <li>التصنيفات مأخوذة من القوائم الحالية. في سنة نشر الورقة، قد يكون لمنصتها تصنيف مختلف.</li>
+        <li>تذكر CCF أن قائمتها ليست أساسًا للتقييم الأكاديمي.</li>
+        <li>لا تُخمِّن الإضافة أبدًا. المنصة التي لا تستطيع تحديد موقعها لا تنال شارة، وتسردها اللوحة.</li>
+      </ul>
     </div>
   </section>
 </main>
@@ -416,9 +454,9 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
   <div class="wrap">
     <span>مفتوحة المصدر، ترخيص Apache License 2.0</span>
     <a href="../privacy/">الخصوصية</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/ROADMAP.md">Roadmap</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/AGENTS.md">Agent API</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/SECURITY.md">Security</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/ROADMAP.md">خارطة الطريق</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/AGENTS.md">لوكلاء الذكاء الاصطناعي</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/SECURITY.md">الأمان</a>
     <a href="https://github.com/boyugou/better-scholar/issues">الإبلاغ عن مشكلة</a>
     <a href="https://github.com/boyugou/better-scholar">GitHub</a>
   </div>

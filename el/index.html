@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Better Scholar: ο ρόλος σας ως συγγραφέα και η κατάταξη των χώρων δημοσίευσης στο Google Scholar</title>
-<meta name="description" content="Δωρεάν επέκταση για Chrome που σημειώνει τον ρόλο σας (πρώτος συγγραφέας, συν-πρώτος συγγραφέας, δεύτερος συγγραφέας, τελευταίος συγγραφέας) και την κατάταξη CCF / CORE του συνεδρίου ή του περιοδικού για κάθε εργασία ενός προφίλ του Google Scholar, και τα συνοψίζει σε έναν πίνακα.">
+<title>Better Scholar: ο ρόλος σας ως συγγραφέα και η βαθμίδα του μέσου δημοσίευσης στο Google Scholar</title>
+<meta name="description" content="Δωρεάν επέκταση για Chrome για προφίλ του Google Scholar. Εμφανίζει τον ρόλο σας ως συγγραφέα και τη βαθμίδα CCF / CORE του μέσου δημοσίευσης σε κάθε εργασία, και μετρά τις εργασίες σας σε έναν πίνακα.">
 <link rel="canonical" href="https://boyugou.github.io/better-scholar/el/">
 <link rel="alternate" hreflang="en" href="https://boyugou.github.io/better-scholar/en/">
 <link rel="alternate" hreflang="zh-CN" href="https://boyugou.github.io/better-scholar/zh-CN/">
@@ -40,14 +40,14 @@
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Better Scholar: ο ρόλος σας ως συγγραφέα και η κατάταξη των χώρων δημοσίευσης στο Google Scholar">
-<meta property="og:description" content="Δωρεάν επέκταση για Chrome που σημειώνει τον ρόλο σας (πρώτος συγγραφέας, συν-πρώτος συγγραφέας, δεύτερος συγγραφέας, τελευταίος συγγραφέας) και την κατάταξη CCF / CORE του συνεδρίου ή του περιοδικού για κάθε εργασία ενός προφίλ του Google Scholar, και τα συνοψίζει σε έναν πίνακα.">
+<meta property="og:title" content="Better Scholar: ο ρόλος σας ως συγγραφέα και η βαθμίδα του μέσου δημοσίευσης στο Google Scholar">
+<meta property="og:description" content="Δωρεάν επέκταση για Chrome για προφίλ του Google Scholar. Εμφανίζει τον ρόλο σας ως συγγραφέα και τη βαθμίδα CCF / CORE του μέσου δημοσίευσης σε κάθε εργασία, και μετρά τις εργασίες σας σε έναν πίνακα.">
 <meta property="og:url" content="https://boyugou.github.io/better-scholar/el/">
 <meta property="og:image" content="https://boyugou.github.io/better-scholar/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="../assets/styles.css">
 <meta name="theme-color" content="#161d33">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Better Scholar","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Chromium browsers","description":"Δωρεάν επέκταση για Chrome που σημειώνει τον ρόλο σας (πρώτος συγγραφέας, συν-πρώτος συγγραφέας, δεύτερος συγγραφέας, τελευταίος συγγραφέας) και την κατάταξη CCF / CORE του συνεδρίου ή του περιοδικού για κάθε εργασία ενός προφίλ του Google Scholar, και τα συνοψίζει σε έναν πίνακα.","inLanguage":"el","url":"https://boyugou.github.io/better-scholar/el/","image":"https://boyugou.github.io/better-scholar/assets/og.png","license":"https://www.apache.org/licenses/LICENSE-2.0","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Better Scholar","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Chromium browsers","description":"Δωρεάν επέκταση για Chrome για προφίλ του Google Scholar. Εμφανίζει τον ρόλο σας ως συγγραφέα και τη βαθμίδα CCF / CORE του μέσου δημοσίευσης σε κάθε εργασία, και μετρά τις εργασίες σας σε έναν πίνακα.","inLanguage":"el","url":"https://boyugou.github.io/better-scholar/el/","image":"https://boyugou.github.io/better-scholar/assets/og.png","license":"https://www.apache.org/licenses/LICENSE-2.0","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 </head>
 <body>
 <header class="top">
@@ -97,16 +97,11 @@
 <main>
   <section class="hero">
     <div class="wrap">
-      <div class="hero-badges">
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg> Manifest V3</span>
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg> Λειτουργεί στον περιηγητή σας</span>
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg> Χωρίς εξαρτήσεις</span>
-      </div>
       <div class="stripes" aria-hidden="true"><i style="--c:#4d8ff5"></i><i style="--c:#b36cf6"></i><i style="--c:#fbbc04"></i><i style="--c:#34a853"></i></div>
-      <h1>Δείτε πού βρίσκεστε σε κάθε εργασία</h1>
-      <p class="lead">Επέκταση για Chrome για προφίλ του Google Scholar. Σημειώνει τον ρόλο σας ως συγγραφέα και την κατάταξη CCF / CORE του χώρου δημοσίευσης σε κάθε εργασία, και συνοψίζει το αποτέλεσμα σε έναν πίνακα: “4 εργασίες CCF-A με εσάς ως πρώτο συγγραφέα”.</p>
+      <h1>Ο ρόλος σας και η βαθμίδα του μέσου δημοσίευσης σε κάθε εργασία</h1>
+      <p class="lead">Δωρεάν επέκταση για Chrome για προφίλ του Google Scholar. Χρωματίζει κάθε εργασία ανάλογα με τον ρόλο σας ως συγγραφέα, εμφανίζει τη βαθμίδα CCF και CORE του μέσου δημοσίευσης και μετρά τις εργασίες σας σε έναν πίνακα.</p>
       <p class="cta"><a class="btn" href="#install">Εγκατάσταση</a> <a class="btn ghost" href="https://github.com/boyugou/better-scholar">Προβολή στο GitHub</a></p>
-      <p class="note">Δωρεάν και ανοιχτού κώδικα · Chrome και άλλοι περιηγητές Chromium · 30 γλώσσες</p>
+      <p class="note">Δωρεάν και ανοιχτού κώδικα · Chrome, Edge, Brave και άλλοι περιηγητές Chromium · 30 γλώσσες</p>
     </div>
   </section>
 
@@ -114,17 +109,69 @@
     <div class="wrap">
       <figure class="hero-shot">
         <div class="hero-frame" style="aspect-ratio: 1280 / 660">
-          <img src="../assets/hero.jpg" alt="Ένα επινοημένο προφίλ (πραγματικοί χώροι δημοσίευσης, πλασματικές εργασίες): γραμμές χρωματισμένες ανά ρόλο, ετικέτες κατάταξης δίπλα σε κάθε χώρο, η σύνοψη δεξιά." width="1280" height="800" fetchpriority="high" decoding="async">
+          <img src="../assets/hero.jpg" alt="Ένα επινοημένο προφίλ με πραγματικά μέσα δημοσίευσης: κάθε γραμμή έχει το χρώμα του ρόλου σας, οι ετικέτες δείχνουν τη βαθμίδα και ο πίνακας δεξιά μετρά τις εργασίες." width="1280" height="800" fetchpriority="high" decoding="async">
         </div>
-        <figcaption>Ένα επινοημένο προφίλ (πραγματικοί χώροι δημοσίευσης, πλασματικές εργασίες): γραμμές χρωματισμένες ανά ρόλο, ετικέτες κατάταξης δίπλα σε κάθε χώρο, η σύνοψη δεξιά.</figcaption>
+        <figcaption>Ένα επινοημένο προφίλ με πραγματικά μέσα δημοσίευσης: κάθε γραμμή έχει το χρώμα του ρόλου σας, οι ετικέτες δείχνουν τη βαθμίδα και ο πίνακας δεξιά μετρά τις εργασίες.</figcaption>
       </figure>
+    </div>
+  </section>
+
+  <section class="how" id="how">
+    <div class="wrap">
+      <h2>Πώς διαβάζει μια εργασία</h2>
+      <p class="note">Δύο επινοημένες εργασίες σε πραγματικά μέσα δημοσίευσης. Κάθε βήμα δείχνει τι βρίσκει μέσα τους ο ίδιος ο κώδικας της επέκτασης.</p>
+      <div class="how-grid">
+        <ol class="how-steps">
+          <li><button type="button" data-step="1"><span class="n">1</span><b>Βρείτε το όνομά σας</b><span class="d">Η επέκταση βρίσκει το όνομα του κατόχου του προφίλ στη γραμμή των συγγραφέων. Η θέση σας στη γραμμή καθορίζει τον ρόλο σας: πρώτος, κοινός πρώτος, δεύτερος ή τελευταίος συγγραφέας.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="2"><span class="n">2</span><b>Βρείτε το μέσο δημοσίευσης</b><span class="d">Η επέκταση ψάχνει το μέσο δημοσίευσης στις λίστες CCF και CORE, με το πλήρες όνομά του ή με το ακρωνύμιό του. Μια βέβαιη αντιστοίχιση δίνει ετικέτα βαθμίδας.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="3"><span class="n">3</span><b>Καμία εικασία</b><span class="d">Ένα workshop, ένα poster ή μια εργασία Findings δεν είναι το κύριο συνέδριο. Ένα μέσο δημοσίευσης που οι λίστες δεν τοποθετούν με βεβαιότητα δεν παίρνει ετικέτα.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="4" aria-current="step"><span class="n">4</span><b>Καταμέτρηση</b><span class="d">Ο πίνακας μετρά κάθε εργασία μία φορά, ανά ρόλο και ανά βαθμίδα. Πατήστε έναν αριθμό για να δείτε τις εργασίες του.</span><i class="bar" aria-hidden="true"></i></button></li>
+        </ol>
+        <div class="how-figure">
+        <div class="how-stage" aria-hidden="true">
+          <div class="sr-head" dir="ltr" lang="en"><span>Title</span><span>Cited by</span><span>Year</span></div>
+          <div class="sr on" data-from="1" dir="ltr" data-role="first" style="--rc:#1a73e8">
+            <div class="sr-text" lang="en"><div class="sr-t">Self-Supervised Depth from Casual Video</div><div class="sr-a"><span class="nm on" data-from="1" data-focus="1">A Example</span>, B Writer, C Writer, D Writer</div><div class="sr-v"><span class="vn on" data-from="2" data-focus="2">Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</span>, 2023 <span class="chip on" data-from="2" data-focus="2"><span class="k">CCF</span> <b>A</b></span></div></div>
+            <div class="sr-c">892</div><div class="sr-y">2023</div>
+            <div class="co-slot" dir="ltr"><p class="co" data-from="1" data-to="1"><span class="tag">Πρώτος</span> θέση 1 από 4</p><p class="co on" data-from="2"><b dir="ltr">CCF A · CORE A*</b> · Αντιστοίχιση με όνομα: <span dir="ltr">IEEE/CVF Computer Vision and Pattern Recognition Conference</span></p></div>
+          </div>
+          <div class="sr on" data-from="1" dir="ltr" data-role="second" style="--rc:#f9ab00">
+            <div class="sr-text" lang="en"><div class="sr-t">Cheap Calibration for Retrieval-Augmented Models</div><div class="sr-a">B Writer, <span class="nm on" data-from="1" data-focus="1">A Example</span>, H Writer</div><div class="sr-v"><mark class="sec on" data-from="3" data-focus="3">Findings</mark> of the Association for Computational Linguistics: ACL 2022, 410-423, 2022</div></div>
+            <div class="sr-c">868</div><div class="sr-y">2022</div>
+            <div class="co-slot" dir="ltr"><p class="co" data-from="1" data-to="2"><span class="tag">Δεύτερος</span> θέση 2 από 3</p><p class="co on" data-from="3"><b dir="ltr">Findings</b> · δευτερεύουσα κατηγορία: χωρίς βαθμίδα, χωρίς ετικέτα</p></div>
+          </div>
+          <div class="mini">
+            <div class="mini-h"><b>Εργασίες ανά ρόλο και βαθμίδα</b><span dir="ltr"><i class="on">CCF</i><i>CORE</i></span></div>
+            <table>
+              <thead><tr><th></th><th>A</th><th>B</th><th>C</th><th>–</th><th>Όλες</th></tr></thead>
+              <tbody><tr><th><i style="--rc:#1a73e8"></i>Πρώτος</th><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td><td>·</td><td>·</td><td>·</td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td></tr><tr><th><i style="--rc:#f9ab00"></i>Δεύτερος</th><td>·</td><td>·</td><td>·</td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <button type="button" class="how-play" hidden data-play="Αναπαραγωγή" data-pause="Παύση"><svg class="i-play" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg><svg class="i-pause" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z" fill="currentColor"/></svg><span>Αναπαραγωγή</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="wrap">
+      <h2>Τι άλλο κάνει</h2>
+      <div class="grid">
+        <article style="--c:#4d8ff5"><h3>Βραβεία και ομιλίες</h3><p>Ετικέτες για τις καλύτερες εργασίες, τα βραβεία δοκιμασίας του χρόνου και τις ομιλίες Oral, Spotlight ή Highlight. Προέρχονται από τα ίδια τα λόγια των συγγραφέων και από τις επίσημες σελίδες βραβείων.</p></article>
+        <article style="--c:#b36cf6"><h3>Πλήρεις λίστες συγγραφέων</h3><p>Το Scholar κόβει τις μεγάλες λίστες συγγραφέων με «…», και αυτό μπορεί να κρύψει τον ρόλο σας. Ένα κλικ διαβάζει τις πλήρεις λίστες από τις σελίδες των εργασιών του Scholar.</p></article>
+        <article style="--c:#fbbc04"><h3>Συγχωνευμένα διπλότυπα</h3><p>Το Scholar καταγράφει μερικές φορές μία εργασία δύο φορές. Ένας διακόπτης κάνει τις καταχωρίσεις μία και αθροίζει τις αναφορές τους.</p></article>
+        <article style="--c:#34a853"><h3>Η δική σας διάταξη</h3><p>Κάθε τμήμα του πίνακα έχει τον δικό του διακόπτη. Επιλέξτε τα χρώματα, τη σειρά των τμημάτων και τα δικά σας ονόματα για αυτά.</p></article>
+        <article style="--c:#4d8ff5"><h3>Ιδιωτικό</h3><p>Χωρίς λογαριασμό, χωρίς αναλυτικά στοιχεία, χωρίς παρακολούθηση. Όλη η επεξεργασία γίνεται στον περιηγητή σας, και οι λίστες κατατάξεων βρίσκονται μέσα στην επέκταση.</p></article>
+        <article style="--c:#b36cf6"><h3>30 γλώσσες</h3><p>Η επέκταση υποστηρίζει τη γλώσσα σας. Μπορεί επίσης να ανοίξει το ίδιο το Scholar στη γλώσσα που επιλέγετε.</p></article>
+      </div>
     </div>
   </section>
 
   <section class="try" id="try">
     <div class="wrap">
-      <h2>Δοκιμάστε την πραγματική σελίδα ρυθμίσεων</h2>
-      <p class="note">Αυτή είναι η ίδια η σελίδα ρυθμίσεων της επέκτασης, που λειτουργεί ακριβώς εδώ: αλλάξτε έναν διακόπτη και η προεπισκόπηση ενημερώνεται. Φέρτε τον δείκτη πάνω στην προεπισκόπηση για να αποκρύψετε, να μετακινήσετε ή να μετονομάσετε ένα τμήμα, και κάντε διπλό κλικ σε ένα τμήμα για να μεταβείτε στη ρύθμισή του.</p>
+      <h2>Δοκιμάστε τη σελίδα ρυθμίσεων</h2>
+      <p class="note">Αυτή είναι η πραγματική σελίδα ρυθμίσεων της επέκτασης. Αλλάξτε μια ρύθμιση και η προεπισκόπηση αλλάζει μαζί της. Φέρτε τον δείκτη σε ένα τμήμα της προεπισκόπησης για να το αποκρύψετε, να το μετακινήσετε ή να το μετονομάσετε.</p>
       <div class="try-bar">
         <a class="skip" href="#after-try">Παράλειψη επίδειξης</a>
         <p>Οι αλλαγές σας μένουν μόνο σε αυτόν τον περιηγητή.</p>
@@ -138,15 +185,15 @@
 
   <section class="export-section" id="after-try">
     <div class="wrap">
-      <h2>Ακαδημαϊκή εξαγωγή με ένα κλικ</h2>
-      <p class="note">Λίστες δημοσιεύσεων έτοιμες για επικόλληση σε βιογραφικά, αιτήσεις χρηματοδότησης, έγγραφα LaTeX, πράκτορες AI και υπολογιστικά φύλλα.</p>
+      <h2>Αντιγράψτε τις εργασίες σας</h2>
+      <p class="note">Ένα κουμπί για κάθε μορφή: για βιογραφικό, αίτηση χρηματοδότησης, LaTeX ή υπολογιστικό φύλλο. Παρακάτω φαίνεται το πραγματικό αποτέλεσμα για τέσσερις επινοημένες εργασίες.</p>
       <div class="export-card">
-        <div class="export-tabs" role="tablist" aria-label="Ακαδημαϊκή εξαγωγή με ένα κλικ">
-          <button type="button" class="tab-btn active" role="tab" id="tab-bibtex" aria-selected="true" aria-controls="export-bibtex">BibTeX (LaTeX-Ready)</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-apa" aria-selected="false" aria-controls="export-apa" tabindex="-1">APA 7th Edition</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-json" aria-selected="false" aria-controls="export-json" tabindex="-1">Structured JSON</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-markdown" aria-selected="false" aria-controls="export-markdown" tabindex="-1">GitHub Markdown</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-csv" aria-selected="false" aria-controls="export-csv" tabindex="-1">RFC-4180 CSV</button>
+        <div class="export-tabs" role="tablist" aria-label="Αντιγράψτε τις εργασίες σας">
+          <button type="button" class="tab-btn active" role="tab" id="tab-bibtex" aria-selected="true" aria-controls="export-bibtex">BibTeX</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-apa" aria-selected="false" aria-controls="export-apa" tabindex="-1">APA</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-json" aria-selected="false" aria-controls="export-json" tabindex="-1">JSON</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-markdown" aria-selected="false" aria-controls="export-markdown" tabindex="-1">Markdown</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-csv" aria-selected="false" aria-controls="export-csv" tabindex="-1">CSV</button>
         </div>
         <div class="code-preview-wrap">
           <pre class="code-preview" role="tabpanel" id="export-bibtex" aria-labelledby="tab-bibtex" tabindex="0"><code>@inproceedings{author2025sample,
@@ -318,7 +365,7 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
 2024,Sample paper 2,&quot;B Writer, A Author, C Writer&quot;,Second author,NeurIPS 2024,A,A*,Best paper (NeurIPS 2024),133
 2024,Sample paper 3,&quot;A Author*, B Writer*, C Writer&quot;,Co-first author,CVPR 2024 (Highlight),A,A*,Highlight,27
 2023,Sample paper 4,&quot;B Writer, C Writer, D Writer, A Author&quot;,Last author,ACL 2023 (Spotlight),A,A*,Spotlight,215</code></pre>
-          <button type="button" class="copy-code-btn" data-label="Αντιγραφή στο πρόχειρο" data-copied="Αντιγράφηκε!">Αντιγραφή στο πρόχειρο</button>
+          <button type="button" class="copy-code-btn" data-label="Αντιγραφή" data-copied="Αντιγράφηκε">Αντιγραφή</button>
         </div>
       </div>
     </div>
@@ -326,69 +373,56 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
 
   <section class="operators-section">
     <div class="wrap">
-      <h2>Άμεση αναζήτηση και τελεστές ερωτημάτων</h2>
-      <p class="note">Πατήστε <kbd>/</kbd> οπουδήποτε σε ένα προφίλ Scholar για να αναζητήσετε σε ολόκληρη τη λίστα ταυτόχρονα.</p>
+      <h2>Αναζήτηση με τελεστές</h2>
+      <p class="note">Πατήστε <kbd>/</kbd> σε ένα προφίλ για να αναζητήσετε σε όλες τις εργασίες του. Προσθέστε τελεστές στις λέξεις σας για να φιλτράρετε τη λίστα.</p>
       <div class="operators-grid">
         <div class="op-card">
-          <div class="op-header"><code>cites:&gt;100</code> <code>cites:&gt;=50</code> <code>cites:&lt;10</code></div>
-          <p class="op-title">Όρια παραπομπών</p>
-          <p class="op-desc">Κρατήστε εργασίες με περισσότερες ή λιγότερες παραπομπές από οποιονδήποτε αριθμό πληκτρολογήσετε.</p>
+          <div class="op-header" dir="ltr"><code>cites:&gt;100</code> <code>cites:&gt;=50</code> <code>cites:&lt;10</code></div>
+          <h3 class="op-title">Αναφορές</h3>
+          <p class="op-desc">Εργασίες με περισσότερες ή λιγότερες αναφορές από έναν αριθμό.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>ccf:a</code> <code>ccf:b</code> <code>core:a*</code></div>
-          <p class="op-title">Βαθμίδες κατάταξης χώρων δημοσίευσης</p>
-          <p class="op-desc">Εμφανίστε μόνο εργασίες από συνέδρια και περιοδικά με κατάταξη CCF ή CORE.</p>
+          <div class="op-header" dir="ltr"><code>ccf:a</code> <code>ccf:b</code> <code>core:a*</code></div>
+          <h3 class="op-title">Βαθμίδα</h3>
+          <p class="op-desc">Εργασίες σε μέσα δημοσίευσης με δεδομένη βαθμίδα CCF ή CORE.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>role:first</code> <code>role:last</code> <code>role:cofirst</code></div>
-          <p class="op-title">Ρόλοι συγγραφέα</p>
-          <p class="op-desc">Φιλτράρετε ανά πρώτο, συν-πρώτο, δεύτερο ή τελευταίο (senior) συγγραφέα.</p>
+          <div class="op-header" dir="ltr"><code>role:first</code> <code>role:last</code> <code>role:cofirst</code></div>
+          <h3 class="op-title">Ρόλος</h3>
+          <p class="op-desc">Εργασίες όπου είστε ο πρώτος, ο κοινός πρώτος, ο δεύτερος ή ο τελευταίος συγγραφέας.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>year:&gt;2020</code> <code>year:&gt;=2021</code> <code>year:&lt;=2015</code></div>
-          <p class="op-title">Έτη δημοσίευσης</p>
-          <p class="op-desc">Εργασίες που δημοσιεύτηκαν μετά, πριν ή μέσα στα έτη που επιλέγετε, ή στα τελευταία πέντε έτη.</p>
+          <div class="op-header" dir="ltr"><code>year:&gt;=2020</code> <code>year:2023</code> <code>age:&lt;5</code></div>
+          <h3 class="op-title">Έτος</h3>
+          <p class="op-desc">Εργασίες που δημοσιεύτηκαν πριν, μετά ή μέσα σε ένα δεδομένο έτος, ή στα τελευταία λίγα έτη.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>has:award</code> <code>has:talk</code></div>
-          <p class="op-title">Βραβεία και ομιλίες</p>
-          <p class="op-desc">Βρείτε εργασίες Best Paper, Test of Time, Oral, Spotlight και Highlight.</p>
+          <div class="op-header" dir="ltr"><code>has:award</code> <code>has:talk</code></div>
+          <h3 class="op-title">Βραβεία και ομιλίες</h3>
+          <p class="op-desc">Εργασίες με βραβείο Best Paper ή Test of Time, ή με ομιλία Oral, Spotlight ή Highlight.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><kbd>Escape</kbd></div>
-          <p class="op-title">Επαναφορά με ένα πλήκτρο</p>
-          <p class="op-desc">Καθαρίζει ταυτόχρονα κάθε αναζήτηση, επιλογή πίνακα και φίλτρο.</p>
+          <div class="op-header" dir="ltr"><kbd>Escape</kbd></div>
+          <h3 class="op-title">Εκκαθάριση όλων</h3>
+          <p class="op-desc">Ένα πλήκτρο καθαρίζει την αναζήτηση, το επιλεγμένο κελί και κάθε φίλτρο.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="features">
-    <div class="wrap grid">
-      <article style="--c:#4d8ff5"><h3>Κάθε εργασία, χρωματισμένη με τον ρόλο σας</h3><p>Οι γραμμές του πρώτου, του συν-πρώτου, του δεύτερου και του τελευταίου συγγραφέα παίρνουν η καθεμία δικό της χρώμα, και το όνομά σας σημειώνεται στη γραμμή των συγγραφέων.</p></article>
-      <article style="--c:#b36cf6"><h3>Κατατάξεις CCF και CORE</h3><p>Οι κατατάξεις CCF 2026 και ICORE 2026 εμφανίζονται δίπλα σε κάθε χώρο δημοσίευσης, με τον κανόνα που τον αντιστοίχισε. Ό,τι δεν μπορεί να τοποθετηθεί μένει χωρίς σήμανση: ποτέ μια εικασία.</p></article>
-      <article style="--c:#fbbc04"><h3>Πίνακας ρόλου × κατάταξης</h3><p>Επιλέξτε ένα κελί για να δείτε μόνο τις εργασίες του, και αντιγράψτε τη σύνοψη ή τη λίστα για βιογραφικό ή αίτηση χρηματοδότησης.</p></article>
-      <article style="--c:#34a853"><h3>Βραβεία και ομιλίες</h3><p>Καλύτερες εργασίες, βραβεία δοκιμασίας του χρόνου, Oral, Spotlight και Highlight, από τα ίδια τα λόγια των συγγραφέων και από τις επίσημες σελίδες βραβείων για πάνω από 7.000 εργασίες.</p></article>
-      <article style="--c:#4d8ff5"><h3>Περικομμένες λίστες συγγραφέων, συμπληρωμένες</h3><p>Το Scholar κρύβει τους τελευταίους συγγραφείς σε μεγάλες λίστες. Ένα κλικ τους διαβάζει από τη σελίδα της εργασίας, ή από το Semantic Scholar αν το επιτρέψετε.</p></article>
-      <article style="--c:#b36cf6"><h3>Συγχωνευμένα διπλότυπα</h3><p>Αν το ενεργοποιήσετε, οι καταχωρίσεις που αναφέρουν μία εργασία δύο φορές γίνονται μία, με τις αναφορές αθροισμένες.</p></article>
-      <article style="--c:#fbbc04"><h3>Προσαρμόστε το στα μέτρα σας</h3><p>Επιλέξτε τι εμφανίζεται, διαλέξτε τα δικά σας χρώματα και κρύψτε τα μέρη της σελίδας του Scholar που δεν χρειάζεστε.</p></article>
-      <article style="--c:#34a853"><h3>Ιδιωτικό από τον σχεδιασμό του</h3><p>Χωρίς λογαριασμό, χωρίς αναλυτικά στοιχεία, χωρίς παρακολούθηση. Όλα υπολογίζονται στον περιηγητή σας, και οι λίστες κατατάξεων είναι ενσωματωμένες στην επέκταση.</p></article>
     </div>
   </section>
 
   <section class="numbers">
     <div class="wrap">
       <h2>Με αριθμούς</h2>
-      <p class="note">Υπολογίζεται από τον κώδικα και τα δεδομένα της επέκτασης κατά τη δημιουργία αυτής της σελίδας — τίποτα από αυτά δεν έχει γραφτεί με το χέρι. Οι αριθμοί που αυξάνονται με κάθε διόρθωση στρογγυλοποιούνται προς τα κάτω.</p>
+      <p class="note">Κατά τη δημιουργία αυτής της σελίδας, υπολογίζονται από τον κώδικα και τα δεδομένα της επέκτασης. Οι αριθμοί που αυξάνονται με κάθε διόρθωση στρογγυλοποιούνται προς τα κάτω.</p>
       <div class="numbers-grid">
-        <div class="num" style="--c:#4d8ff5"><b dir="ltr">153</b><span>ρυθμίσεις που μπορείτε να αλλάξετε</span></div>
+        <div class="num" style="--c:#4d8ff5"><b dir="ltr">154</b><span>ρυθμίσεις που μπορείτε να αλλάξετε</span></div>
         <div class="num" style="--c:#b36cf6"><b dir="ltr">30</b><span>γλώσσες διεπαφής</span></div>
-        <div class="num" style="--c:#fbbc04"><b dir="ltr">1.178</b><span>χώροι δημοσίευσης με κατάταξη στις λίστες CCF και CORE</span></div>
-        <div class="num" style="--c:#34a853"><b dir="ltr">400+</b><span>ονόματα χώρων που εμφανίζει το Scholar και δεν υπάρχουν στις επίσημες λίστες</span></div>
-        <div class="num" style="--c:#4d8ff5"><b dir="ltr">18</b><span>έλεγχοι που εμποδίζουν την εμφάνιση λανθασμένης κατάταξης</span></div>
-        <div class="num" style="--c:#b36cf6"><b dir="ltr">5.581</b><span>βραβευμένες εργασίες που αναγνωρίζει η επέκταση</span></div>
-        <div class="num" style="--c:#fbbc04"><b dir="ltr">22.744</b><span>πραγματικές καταχωρίσεις χώρων από το Scholar, καθεμία με ελεγμένη κατάταξη</span></div>
-        <div class="num" style="--c:#34a853"><b dir="ltr">500+</b><span>δοκιμές μονάδων, εκτός από δοκιμές end-to-end σε πραγματικό πρόγραμμα περιήγησης</span></div>
+        <div class="num" style="--c:#fbbc04"><b dir="ltr">1.178</b><span>μέσα δημοσίευσης με βαθμίδα στις λίστες CCF και CORE</span></div>
+        <div class="num" style="--c:#34a853"><b dir="ltr">400+</b><span>ονόματα μέσων δημοσίευσης που εμφανίζει το Scholar, αλλά δεν υπάρχουν στις λίστες</span></div>
+        <div class="num" style="--c:#4d8ff5"><b dir="ltr">18</b><span>έλεγχοι που εμποδίζουν την εμφάνιση λανθασμένης βαθμίδας</span></div>
+        <div class="num" style="--c:#b36cf6"><b dir="ltr">5.581</b><span>βραβευμένες εργασίες που γνωρίζει η επέκταση</span></div>
+        <div class="num" style="--c:#fbbc04"><b dir="ltr">22.744</b><span>πραγματικές καταχωρίσεις μέσων δημοσίευσης από το Scholar, καθεμία με ελεγμένη βαθμίδα</span></div>
+        <div class="num" style="--c:#34a853"><b dir="ltr">500+</b><span>δοκιμές μονάδων και ένα σύνολο δοκιμών end-to-end σε πραγματικό πρόγραμμα περιήγησης</span></div>
       </div>
     </div>
   </section>
@@ -397,18 +431,22 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
     <div class="wrap">
       <h2>Εγκατάσταση</h2>
       <ol>
-        <li>Κατεβάστε το έργο από το GitHub (το πράσινο κουμπί “Code”, μετά “Download ZIP”) και αποσυμπιέστε το.</li>
+        <li>Κατεβάστε το έργο από το GitHub: πατήστε το πράσινο κουμπί “Code”, μετά “Download ZIP”. Αποσυμπιέστε το αρχείο.</li>
         <li>Ανοίξτε το <code>chrome://extensions</code> και ενεργοποιήστε τη «Λειτουργία προγραμματιστή» (Developer mode).</li>
-        <li>Πατήστε «Φόρτωση μη συμπιεσμένης» (Load unpacked) και επιλέξτε τον φάκελο src. Έπειτα ανοίξτε οποιοδήποτε προφίλ του Google Scholar.</li>
+        <li>Πατήστε «Φόρτωση μη συμπιεσμένης» (Load unpacked) και επιλέξτε τον φάκελο src. Έπειτα ανοίξτε ένα προφίλ του Google Scholar.</li>
       </ol>
-      <p class="note">Ενδέχεται να ακολουθήσει καταχώριση στο Chrome Web Store. Το Edge, το Brave και άλλοι περιηγητές Chromium λειτουργούν με τον ίδιο τρόπο.</p>
+      <p class="note">Το Edge, το Brave και άλλοι περιηγητές Chromium ακολουθούν τα ίδια βήματα. Ενδέχεται αργότερα να κυκλοφορήσει έκδοση για το Chrome Web Store.</p>
     </div>
   </section>
 
   <section class="honest">
     <div class="wrap">
-      <h2>Ειλικρινής για τα όριά της</h2>
-      <p>Οι κατατάξεις είναι οι σημερινές λίστες, όχι η κατάταξη κατά τη στιγμή της δημοσίευσης, και η ίδια η λίστα CCF λέει ότι δεν είναι αξιολόγηση. Η επέκταση δεν μαντεύει ποτέ έναν χώρο: ό,τι δεν μπορεί να τοποθετήσει εμφανίζεται στη λίστα, δεν σημειώνεται.</p>
+      <h2>Όρια</h2>
+      <ul class="limits">
+        <li>Οι βαθμίδες προέρχονται από τις σημερινές λίστες. Τη χρονιά δημοσίευσης μιας εργασίας, το μέσο δημοσίευσής της μπορεί να είχε άλλη βαθμίδα.</li>
+        <li>Η CCF δηλώνει ότι η λίστα της δεν αποτελεί βάση για ακαδημαϊκή αξιολόγηση.</li>
+        <li>Η επέκταση δεν μαντεύει ποτέ. Ένα μέσο δημοσίευσης που δεν μπορεί να τοποθετήσει δεν παίρνει ετικέτα, και ο πίνακας το καταγράφει.</li>
+      </ul>
     </div>
   </section>
 </main>
@@ -416,9 +454,9 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
   <div class="wrap">
     <span>Ανοιχτού κώδικα, Apache License 2.0</span>
     <a href="../privacy/">Απόρρητο</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/ROADMAP.md">Roadmap</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/AGENTS.md">Agent API</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/SECURITY.md">Security</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/ROADMAP.md">Οδικός χάρτης</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/AGENTS.md">Για πράκτορες AI</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/SECURITY.md">Ασφάλεια</a>
     <a href="https://github.com/boyugou/better-scholar/issues">Αναφορά προβλήματος</a>
     <a href="https://github.com/boyugou/better-scholar">GitHub</a>
   </div>

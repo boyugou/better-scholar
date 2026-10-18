@@ -3,7 +3,7 @@
     "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "Améliorez Google Scholar : rôles d’auteur, rangs CCF & CORE, prix de conférences, graphiques annuels et recherche instantanée."
+    "message": "Profils Google Scholar : rôle d’auteur du titulaire et rangs CCF/CORE de la revue ou conférence par article, en un tableau."
   },
   "extShortName": {
     "message": "Better Scholar"
@@ -51,7 +51,7 @@
     "message": "Finaliste du meilleur article"
   },
   "marksHint": {
-    "message": "D’après ce que les auteurs écrivent eux-mêmes dans le titre et les informations de publication de chaque article sur Scholar (non vérifié), et d’après une liste intégrée d’articles primés dans les grandes conférences."
+    "message": "De deux sources : ce que les auteurs écrivent eux-mêmes dans le titre ou dans la ligne de publication de chaque article sur Scholar (non vérifié), et une liste intégrée d’articles primés dans les grandes conférences."
   },
   "marksAsWritten": {
     "message": "d’après les auteurs ou la liste des prix"
@@ -175,7 +175,7 @@
     "message": "Ouvre la page de chaque article sur Scholar (environ un par seconde) pour lire la liste complète des auteurs."
   },
   "resolveHintSemantic": {
-    "message": "Demande d’abord à Semantic Scholar la liste d’auteurs de chaque article (il ne reçoit que le titre), puis ouvre la page de chaque article sur Scholar pour le reste (environ un par seconde)."
+    "message": "Demande d’abord à Semantic Scholar la liste d’auteurs de chaque article (il ne reçoit que le titre). Ouvre ensuite la page des autres articles sur Scholar, environ un par seconde."
   },
   "resolving": {
     "message": "Lecture des listes d’auteurs… $N1$/$N2$",
@@ -482,7 +482,7 @@
     "message": "Rétablir tous ces réglages à leurs valeurs par défaut ?"
   },
   "optStorage": {
-    "message": "Les réglages sont stockés dans votre navigateur et synchronisés avec votre profil Chrome. L’extension lit les pages Scholar que vous ouvrez et, lorsque vous cliquez sur « Lire la liste complète », les pages des articles dont la liste d’auteurs est tronquée ; les titres des articles ne sont envoyés à Semantic Scholar que si vous l’activez."
+    "message": "Les réglages sont stockés dans votre navigateur et synchronisés avec votre profil Chrome. L’extension lit les pages Scholar que vous ouvrez. Lorsque vous cliquez sur « Lire la liste complète », elle lit aussi les pages des articles dont la liste d’auteurs est tronquée. Les titres des articles ne sont envoyés à Semantic Scholar que si vous l’activez."
   },
   "optSample": {
     "message": "Article d’exemple"
@@ -494,7 +494,7 @@
     "message": "Charger automatiquement tous les articles"
   },
   "optAutoLoadHint": {
-    "message": "Au départ, Scholar n’affiche que les premiers articles. Cette option appuie pour vous sur son bouton « Afficher plus », environ une fois par seconde, jusqu’à charger toute la liste, et s’arrête si Scholar ne répond plus. Désactivée : le panneau propose « Tout charger »."
+    "message": "Scholar n’affiche que les premiers articles d’un profil. Cette option appuie pour vous sur le propre bouton « Afficher plus » de Scholar, environ une fois par seconde, jusqu’à charger toute la liste. Elle s’arrête si Scholar ne répond plus. Désactivée : le panneau affiche « Tout charger » à la place."
   },
   "loadStalled": {
     "message": "Scholar n’a plus envoyé d’articles ($N1$ chargés). Réessayez « Tout charger » dans un instant.",
@@ -583,7 +583,7 @@
     "message": "Fusionner les doublons"
   },
   "optMergeLabelHint": {
-    "message": "Les entrées de même titre (hors majuscules, accents et ponctuation) et de même premier auteur n’en font plus qu’une : la plus citée reste et affiche les citations de toutes. Le panneau ne la compte qu’une fois."
+    "message": "Les entrées de même titre et de même premier auteur n’en font plus qu’une (les majuscules, les accents et la ponctuation ne comptent pas). L’entrée la plus citée reste et affiche les citations de toutes. Le panneau ne la compte qu’une fois."
   },
   "mergedTip": {
     "message": "Fusion de $N1$ entrées : les citations de toutes",
@@ -675,7 +675,7 @@
     "message": "Lire d’abord les listes d’auteurs sur Semantic Scholar"
   },
   "optSemanticLabelHint": {
-    "message": "Quand vous cliquez sur le bouton « Lire la liste complète », la liste complète des auteurs de chaque article est d’abord demandée à Semantic Scholar (seul le titre de l’article est envoyé), et la page de Scholar n’est ouverte que pour ce que Semantic Scholar ne connaît pas. Moins de requêtes vers Scholar, donc moins de CAPTCHA."
+    "message": "Quand vous cliquez sur le bouton « Lire la liste complète », la liste complète des auteurs de chaque article est d’abord demandée à Semantic Scholar. Seul le titre de l’article est envoyé, rien d’autre. La propre page de Scholar n’est ensuite ouverte que pour les articles que Semantic Scholar ne connaît pas. Moins de requêtes vers Scholar, donc moins de CAPTCHA."
   },
   "yearsTitle": {
     "message": "Articles mis en évidence par année"
@@ -879,7 +879,7 @@
     "message": "Agents IA"
   },
   "optAgentHint": {
-    "message": "Copiez un guide qui énumère chaque réglage, ses valeurs et vos choix actuels. Collez-le dans votre assistant IA, dites-lui ce que vous voulez, puis collez sa réponse dans l’éditeur de configuration ci-dessous et appuyez sur Appliquer la configuration."
+    "message": "Copiez un guide qui énumère chaque réglage, ses valeurs et vos choix actuels. Donnez-le à votre assistant IA avec ce que vous voulez. Puis collez sa réponse dans l’éditeur de configuration ci-dessous et appuyez sur Appliquer la configuration."
   },
   "optAgentCopy": {
     "message": "Copier le guide IA"
@@ -993,6 +993,12 @@
   },
   "optFiltersSearch": {
     "message": "Champ de recherche"
+  },
+  "optFiltersKey": {
+    "message": "La touche “/” mène à la recherche"
+  },
+  "optFiltersKeyHint": {
+    "message": "Dans le panneau d’une page de profil, et sur cette page pour sa propre recherche. Désactivée : la touche ne fait rien."
   },
   "optOrderPills": {
     "message": "Ordre des filtres rapides"
@@ -1141,7 +1147,7 @@
     "message": "Vérifier une conférence/revue"
   },
   "optVenueHint": {
-    "message": "Collez une conférence ou revue telle que Scholar l’affiche (la ligne grise sous un article) pour voir ce qu’en disent les listes CCF et CORE, et selon quelle règle. Une conférence ou revue qu’elles ne peuvent pas placer ne reçoit aucun rang : rien n’est deviné."
+    "message": "Collez une conférence ou revue telle que Scholar l’affiche : la ligne grise sous un article. Vous voyez alors ce qu’en disent les listes CCF et CORE, et selon quelle règle. Une conférence ou revue qu’elles ne peuvent pas placer ne reçoit aucun rang. Rien n’est deviné."
   },
   "optVenuePlaceholder": {
     "message": "p. ex. Proceedings of the IEEE conference on computer vision and pattern recognition"
@@ -1150,7 +1156,7 @@
     "message": "Sans rang. Les listes ne placent pas ce texte avec certitude : il ne reçoit donc pas de pastille."
   },
   "optVenueSecondary": {
-    "message": "Le mot « $N1$ » désigne une catégorie secondaire (atelier, poster, article court …) : la conférence ou la revue ne reçoit aucun rang, sauf si son propre nom contient ce mot.",
+    "message": "Le mot « $N1$ » désigne une catégorie secondaire, comme un atelier, un poster ou un article court. La conférence ou la revue ne reçoit aucun rang, sauf si son propre nom contient ce mot.",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -1170,7 +1176,7 @@
     "message": "Les compteurs suivent les filtres"
   },
   "optFiltersFollowHint": {
-    "message": "Le tableau, les compteurs de prix et présentations et le récapitulatif copié ne comptent que les articles que laissent les filtres (une plage d’années, une recherche, un filtre rapide, une conférence ou une revue) ; la cellule ou la ligne sélectionnée ne réduit aucun compteur. Désactivée : ils comptent toujours tout le profil."
+    "message": "Le tableau, les compteurs de prix et présentations et le récapitulatif copié ne comptent que les articles que laissent les filtres : une plage d’années, une recherche, un filtre rapide ou une conférence ou revue. La cellule ou la ligne sélectionnée ne modifie aucun compteur. Désactivée : ils comptent toujours tout le profil."
   },
   "optPillRecent": {
     "message": "5 dernières années"
@@ -1182,7 +1188,7 @@
     "message": "Ajouter le lien du profil et la date au récapitulatif copié"
   },
   "optCopySourceHint": {
-    "message": "Le récapitulatif copié et le tableau copié reçoivent une ligne avec le lien du profil et la date (Source: …), pour que les chiffres puissent être classés ou transmis. Une liste qui n’est pas entièrement chargée le signale à cet endroit, quel que soit l’état de cet interrupteur."
+    "message": "Le récapitulatif copié et le tableau copié se terminent par une ligne qui donne le lien du profil et la date (Source: …), pour que vous puissiez classer ou transmettre les chiffres. Une liste qui n’est pas entièrement chargée le signale toujours à cet endroit."
   },
   "unrankedPreprints": {
     "message": "Préprints"
@@ -1197,7 +1203,7 @@
     "message": "Quand une conférence ou une revue a un rang dans les deux listes"
   },
   "optPreferHint": {
-    "message": "Une pastille au lieu de deux : la liste choisie, et l’autre seulement là où la première n’a pas de rang pour la conférence ou la revue. L’info-bulle de la pastille indique toujours l’autre rang."
+    "message": "Une pastille au lieu de deux : la pastille de la liste que vous choisissez, et celle de l’autre liste seulement là où la liste choisie n’a pas de rang pour la conférence ou la revue. L’info-bulle de la pastille indique toujours l’autre rang."
   },
   "optPreferCcf": {
     "message": "CCF d’abord"

@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Better Scholar: מעמדך כמחבר ודירוג הפרסומים שלך ב-Google Scholar</title>
-<meta name="description" content="תוסף חינמי ל-Chrome שמסמן את תפקידך כמחבר (מחבר ראשון, מחבר ראשון שותף, מחבר שני, מחבר אחרון) ואת דירוג CCF / CORE של הכנס או כתב העת בכל מאמר בפרופיל Google Scholar, ומסכם הכול בטבלה אחת.">
+<title>Better Scholar: תפקידך כמחבר ודירוג במת הפרסום שלך ב-Google Scholar</title>
+<meta name="description" content="תוסף חינמי ל-Chrome לפרופילים של Google Scholar. הוא מציג את תפקידך כמחבר ואת דירוג CCF / CORE של במת הפרסום בכל מאמר, וסופר את המאמרים שלך בטבלה אחת.">
 <link rel="canonical" href="https://boyugou.github.io/better-scholar/he/">
 <link rel="alternate" hreflang="en" href="https://boyugou.github.io/better-scholar/en/">
 <link rel="alternate" hreflang="zh-CN" href="https://boyugou.github.io/better-scholar/zh-CN/">
@@ -40,14 +40,14 @@
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Better Scholar: מעמדך כמחבר ודירוג הפרסומים שלך ב-Google Scholar">
-<meta property="og:description" content="תוסף חינמי ל-Chrome שמסמן את תפקידך כמחבר (מחבר ראשון, מחבר ראשון שותף, מחבר שני, מחבר אחרון) ואת דירוג CCF / CORE של הכנס או כתב העת בכל מאמר בפרופיל Google Scholar, ומסכם הכול בטבלה אחת.">
+<meta property="og:title" content="Better Scholar: תפקידך כמחבר ודירוג במת הפרסום שלך ב-Google Scholar">
+<meta property="og:description" content="תוסף חינמי ל-Chrome לפרופילים של Google Scholar. הוא מציג את תפקידך כמחבר ואת דירוג CCF / CORE של במת הפרסום בכל מאמר, וסופר את המאמרים שלך בטבלה אחת.">
 <meta property="og:url" content="https://boyugou.github.io/better-scholar/he/">
 <meta property="og:image" content="https://boyugou.github.io/better-scholar/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="../assets/styles.css">
 <meta name="theme-color" content="#161d33">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Better Scholar","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Chromium browsers","description":"תוסף חינמי ל-Chrome שמסמן את תפקידך כמחבר (מחבר ראשון, מחבר ראשון שותף, מחבר שני, מחבר אחרון) ואת דירוג CCF / CORE של הכנס או כתב העת בכל מאמר בפרופיל Google Scholar, ומסכם הכול בטבלה אחת.","inLanguage":"he","url":"https://boyugou.github.io/better-scholar/he/","image":"https://boyugou.github.io/better-scholar/assets/og.png","license":"https://www.apache.org/licenses/LICENSE-2.0","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Better Scholar","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Chromium browsers","description":"תוסף חינמי ל-Chrome לפרופילים של Google Scholar. הוא מציג את תפקידך כמחבר ואת דירוג CCF / CORE של במת הפרסום בכל מאמר, וסופר את המאמרים שלך בטבלה אחת.","inLanguage":"he","url":"https://boyugou.github.io/better-scholar/he/","image":"https://boyugou.github.io/better-scholar/assets/og.png","license":"https://www.apache.org/licenses/LICENSE-2.0","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 </head>
 <body>
 <header class="top">
@@ -97,16 +97,11 @@
 <main>
   <section class="hero">
     <div class="wrap">
-      <div class="hero-badges">
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg> Manifest V3</span>
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg> פועל בדפדפן שלך</span>
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg> ללא תלויות</span>
-      </div>
       <div class="stripes" aria-hidden="true"><i style="--c:#4d8ff5"></i><i style="--c:#b36cf6"></i><i style="--c:#fbbc04"></i><i style="--c:#34a853"></i></div>
-      <h1>ראה איפה אתה עומד בכל מאמר</h1>
-      <p class="lead">תוסף Chrome לפרופילים של Google Scholar. הוא מסמן את תפקידך כמחבר ואת דירוג הכנס או כתב העת לפי CCF / CORE בכל מאמר, ומסכם את התוצאה בטבלה אחת: “4 מאמרים בדירוג CCF-A שבהם אני המחבר הראשון”.</p>
+      <h1>תפקידך ודירוג מקום הפרסום בכל מאמר</h1>
+      <p class="lead">תוסף Chrome חינמי לפרופילים של Google Scholar. הוא צובע כל מאמר לפי תפקידך כמחבר, מציג את דירוג CCF ו-CORE של במת הפרסום שבה פורסם, וסופר את המאמרים שלך בטבלה אחת.</p>
       <p class="cta"><a class="btn" href="#install">התקנה</a> <a class="btn ghost" href="https://github.com/boyugou/better-scholar">לצפייה ב-GitHub</a></p>
-      <p class="note">חינמי וקוד פתוח · Chrome ודפדפנים אחרים מבוססי Chromium · 30 שפות</p>
+      <p class="note">חינמי וקוד פתוח · Chrome, Edge, Brave ודפדפנים אחרים מבוססי Chromium · 30 שפות</p>
     </div>
   </section>
 
@@ -114,17 +109,69 @@
     <div class="wrap">
       <figure class="hero-shot">
         <div class="hero-frame" style="aspect-ratio: 1280 / 660">
-          <img src="../assets/hero.jpg" alt="פרופיל בדוי (כנסים וכתבי עת אמיתיים, מאמרים מומצאים): שורות צבועות לפי תפקיד, תגיות דירוג ליד כל מקום פרסום, והסיכום מימין." width="1280" height="800" fetchpriority="high" decoding="async">
+          <img src="../assets/hero.jpg" alt="פרופיל בדוי עם במות פרסום אמיתיות. לכל שורה הצבע של תפקידך, התגיות מציגות את הדירוג, ולוח הסיכום מימין סופר את המאמרים." width="1280" height="800" fetchpriority="high" decoding="async">
         </div>
-        <figcaption>פרופיל בדוי (כנסים וכתבי עת אמיתיים, מאמרים מומצאים): שורות צבועות לפי תפקיד, תגיות דירוג ליד כל מקום פרסום, והסיכום מימין.</figcaption>
+        <figcaption>פרופיל בדוי עם במות פרסום אמיתיות. לכל שורה הצבע של תפקידך, התגיות מציגות את הדירוג, ולוח הסיכום מימין סופר את המאמרים.</figcaption>
       </figure>
+    </div>
+  </section>
+
+  <section class="how" id="how">
+    <div class="wrap">
+      <h2>איך התוסף קורא מאמר</h2>
+      <p class="note">שני מאמרים בדויים במקומות פרסום אמיתיים. בכל שלב מוצג מה שהקוד של התוסף עצמו מוצא בהם.</p>
+      <div class="how-grid">
+        <ol class="how-steps">
+          <li><button type="button" data-step="1"><span class="n">1</span><b>איתור השם שלך</b><span class="d">התוסף מאתר את שם הפרופיל בשורת המחברים. המקום שלך בשורה קובע את תפקידך: מחבר ראשון, ראשון משותף, מחבר שני או מחבר אחרון.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="2"><span class="n">2</span><b>איתור מקום הפרסום</b><span class="d">התוסף מחפש את מקום הפרסום ברשימות CCF ו-CORE, לפי שמו המלא או לפי ראשי התיבות שלו. התאמה ודאית נותנת תגית דירוג.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="3"><span class="n">3</span><b>לא מנחשים לעולם</b><span class="d">סדנה, פוסטר או מאמר Findings אינם הכנס המרכזי. מקום פרסום שהרשימות אינן ממקמות בוודאות לא יקבל תגית.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="4" aria-current="step"><span class="n">4</span><b>ספירה</b><span class="d">לוח הסיכום סופר כל מאמר פעם אחת, לפי תפקידך ולפי הדירוג. לחצו על מספר כדי לראות את המאמרים שלו.</span><i class="bar" aria-hidden="true"></i></button></li>
+        </ol>
+        <div class="how-figure">
+        <div class="how-stage" aria-hidden="true">
+          <div class="sr-head" dir="ltr" lang="en"><span>Title</span><span>Cited by</span><span>Year</span></div>
+          <div class="sr on" data-from="1" dir="ltr" data-role="first" style="--rc:#1a73e8">
+            <div class="sr-text" lang="en"><div class="sr-t">Self-Supervised Depth from Casual Video</div><div class="sr-a"><span class="nm on" data-from="1" data-focus="1">A Example</span>, B Writer, C Writer, D Writer</div><div class="sr-v"><span class="vn on" data-from="2" data-focus="2">Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</span>, 2023 <span class="chip on" data-from="2" data-focus="2"><span class="k">CCF</span> <b>A</b></span></div></div>
+            <div class="sr-c">892</div><div class="sr-y">2023</div>
+            <div class="co-slot" dir="rtl"><p class="co" data-from="1" data-to="1"><span class="tag">ראשון</span> מקום 1 מתוך 4</p><p class="co on" data-from="2"><b dir="ltr">CCF A · CORE A*</b> · הותאם לפי שם: <span dir="ltr">IEEE/CVF Computer Vision and Pattern Recognition Conference</span></p></div>
+          </div>
+          <div class="sr on" data-from="1" dir="ltr" data-role="second" style="--rc:#f9ab00">
+            <div class="sr-text" lang="en"><div class="sr-t">Cheap Calibration for Retrieval-Augmented Models</div><div class="sr-a">B Writer, <span class="nm on" data-from="1" data-focus="1">A Example</span>, H Writer</div><div class="sr-v"><mark class="sec on" data-from="3" data-focus="3">Findings</mark> of the Association for Computational Linguistics: ACL 2022, 410-423, 2022</div></div>
+            <div class="sr-c">868</div><div class="sr-y">2022</div>
+            <div class="co-slot" dir="rtl"><p class="co" data-from="1" data-to="2"><span class="tag">שני</span> מקום 2 מתוך 3</p><p class="co on" data-from="3"><b dir="ltr">Findings</b> · מסלול משני: בלי דירוג ובלי תגית</p></div>
+          </div>
+          <div class="mini">
+            <div class="mini-h"><b>מאמרים לפי תפקיד ודירוג</b><span dir="ltr"><i class="on">CCF</i><i>CORE</i></span></div>
+            <table>
+              <thead><tr><th></th><th>A</th><th>B</th><th>C</th><th>–</th><th>הכול</th></tr></thead>
+              <tbody><tr><th><i style="--rc:#1a73e8"></i>ראשון</th><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td><td>·</td><td>·</td><td>·</td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td></tr><tr><th><i style="--rc:#f9ab00"></i>שני</th><td>·</td><td>·</td><td>·</td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <button type="button" class="how-play" hidden data-play="הפעלה" data-pause="השהיה"><svg class="i-play" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg><svg class="i-pause" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z" fill="currentColor"/></svg><span>הפעלה</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="wrap">
+      <h2>מה עוד התוסף עושה</h2>
+      <div class="grid">
+        <article style="--c:#4d8ff5"><h3>פרסים והרצאות</h3><p>תגיות למאמרים מצטיינים, לפרסי מבחן הזמן ולהרצאות Oral, Spotlight או Highlight. הן מגיעות מדברי המחברים עצמם ומדפי הפרסים הרשמיים.</p></article>
+        <article style="--c:#b36cf6"><h3>רשימות מחברים מלאות</h3><p>Scholar מקצר רשימות מחברים ארוכות עם “…”, וזה עלול להסתיר את תפקידך. לחיצה אחת קוראת את הרשימות המלאות מדפי המאמרים ב-Scholar.</p></article>
+        <article style="--c:#fbbc04"><h3>כפילויות אוחדו</h3><p>Scholar לפעמים מציין את אותו מאמר פעמיים. מתג אחד הופך את הרשומות הכפולות לרשומה אחת, ומסכם את הציטוטים שלהן.</p></article>
+        <article style="--c:#34a853"><h3>הפריסה שלך</h3><p>לכל חלק בלוח יש מתג משלו. בחר צבעים, סדר חלקים ושמות משלך להם.</p></article>
+        <article style="--c:#4d8ff5"><h3>פרטיות</h3><p>בלי חשבון, בלי אנליטיקה, בלי מעקב. כל העבודה נעשית בדפדפן שלך, ורשימות הדירוג נמצאות בתוך התוסף.</p></article>
+        <article style="--c:#b36cf6"><h3>30 שפות</h3><p>התוסף מדבר בשפה שלך. הוא יכול גם לפתוח את Scholar עצמו בשפה שתבחר.</p></article>
+      </div>
     </div>
   </section>
 
   <section class="try" id="try">
     <div class="wrap">
-      <h2>נסו את דף ההגדרות האמיתי</h2>
-      <p class="note">זהו דף ההגדרות של התוסף עצמו, והוא פועל כאן: הפעילו או כבו מתג, והתצוגה המקדימה תתעדכן בהתאם. העבירו את הסמן מעל התצוגה המקדימה כדי להסתיר, להזיז או לשנות שם של חלק, ולחצו לחיצה כפולה על חלק כדי לעבור להגדרה שלו.</p>
+      <h2>נסו את דף ההגדרות</h2>
+      <p class="note">זהו דף ההגדרות האמיתי של התוסף. שנו הגדרה, והתצוגה המקדימה תשתנה בהתאם. העבירו את הסמן מעל חלק בתצוגה המקדימה כדי להסתיר אותו, להזיז אותו או לשנות את שמו.</p>
       <div class="try-bar">
         <a class="skip" href="#after-try">דילוג על ההדגמה</a>
         <p>השינויים נשארים רק בדפדפן הזה.</p>
@@ -138,15 +185,15 @@
 
   <section class="export-section" id="after-try">
     <div class="wrap">
-      <h2>ייצוא אקדמי בלחיצה אחת</h2>
-      <p class="note">רשימות פרסומים מוכנות להדבקה בקורות חיים, בטפסי מענקים, במסמכי LaTeX, בסוכני בינה מלאכותית ובגיליונות אלקטרוניים.</p>
+      <h2>העתקת המאמרים שלך</h2>
+      <p class="note">כפתור לכל פורמט: לקורות חיים, לטופס מענק, ל-LaTeX או לגיליון אלקטרוני. להלן הפלט האמיתי של ארבעה מאמרים בדויים.</p>
       <div class="export-card">
-        <div class="export-tabs" role="tablist" aria-label="ייצוא אקדמי בלחיצה אחת">
-          <button type="button" class="tab-btn active" role="tab" id="tab-bibtex" aria-selected="true" aria-controls="export-bibtex">BibTeX (LaTeX-Ready)</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-apa" aria-selected="false" aria-controls="export-apa" tabindex="-1">APA 7th Edition</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-json" aria-selected="false" aria-controls="export-json" tabindex="-1">Structured JSON</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-markdown" aria-selected="false" aria-controls="export-markdown" tabindex="-1">GitHub Markdown</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-csv" aria-selected="false" aria-controls="export-csv" tabindex="-1">RFC-4180 CSV</button>
+        <div class="export-tabs" role="tablist" aria-label="העתקת המאמרים שלך">
+          <button type="button" class="tab-btn active" role="tab" id="tab-bibtex" aria-selected="true" aria-controls="export-bibtex">BibTeX</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-apa" aria-selected="false" aria-controls="export-apa" tabindex="-1">APA</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-json" aria-selected="false" aria-controls="export-json" tabindex="-1">JSON</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-markdown" aria-selected="false" aria-controls="export-markdown" tabindex="-1">Markdown</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-csv" aria-selected="false" aria-controls="export-csv" tabindex="-1">CSV</button>
         </div>
         <div class="code-preview-wrap">
           <pre class="code-preview" role="tabpanel" id="export-bibtex" aria-labelledby="tab-bibtex" tabindex="0"><code>@inproceedings{author2025sample,
@@ -318,7 +365,7 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
 2024,Sample paper 2,&quot;B Writer, A Author, C Writer&quot;,Second author,NeurIPS 2024,A,A*,Best paper (NeurIPS 2024),133
 2024,Sample paper 3,&quot;A Author*, B Writer*, C Writer&quot;,Co-first author,CVPR 2024 (Highlight),A,A*,Highlight,27
 2023,Sample paper 4,&quot;B Writer, C Writer, D Writer, A Author&quot;,Last author,ACL 2023 (Spotlight),A,A*,Spotlight,215</code></pre>
-          <button type="button" class="copy-code-btn" data-label="העתקה ללוח" data-copied="הועתק!">העתקה ללוח</button>
+          <button type="button" class="copy-code-btn" data-label="העתקה" data-copied="הועתק">העתקה</button>
         </div>
       </div>
     </div>
@@ -326,69 +373,56 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
 
   <section class="operators-section">
     <div class="wrap">
-      <h2>חיפוש מיידי ואופרטורים לשאילתות</h2>
-      <p class="note">לחצו על <kbd>/</kbd> בכל מקום בפרופיל Scholar כדי לחפש ברשימה כולה בבת אחת.</p>
+      <h2>חיפוש עם אופרטורים</h2>
+      <p class="note">לחצו על <kbd>/</kbd> בפרופיל כדי לחפש בכל המאמרים שלו. הוסיפו אופרטורים למילים שלכם כדי לסנן את הרשימה.</p>
       <div class="operators-grid">
         <div class="op-card">
-          <div class="op-header"><code>cites:&gt;100</code> <code>cites:&gt;=50</code> <code>cites:&lt;10</code></div>
-          <p class="op-title">ספי ציטוטים</p>
-          <p class="op-desc">השאירו מאמרים עם יותר או פחות ציטוטים מכל מספר שתקלידו.</p>
+          <div class="op-header" dir="ltr"><code>cites:&gt;100</code> <code>cites:&gt;=50</code> <code>cites:&lt;10</code></div>
+          <h3 class="op-title">ציטוטים</h3>
+          <p class="op-desc">מאמרים עם יותר ציטוטים ממספר מסוים, או עם פחות ממנו.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>ccf:a</code> <code>ccf:b</code> <code>core:a*</code></div>
-          <p class="op-title">רמות דירוג של מקומות פרסום</p>
-          <p class="op-desc">הציגו רק מאמרים בכנסים ובכתבי עת מדורגי CCF או CORE.</p>
+          <div class="op-header" dir="ltr"><code>ccf:a</code> <code>ccf:b</code> <code>core:a*</code></div>
+          <h3 class="op-title">דירוג</h3>
+          <p class="op-desc">מאמרים בבמות פרסום עם דירוג CCF או CORE מסוים.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>role:first</code> <code>role:last</code> <code>role:cofirst</code></div>
-          <p class="op-title">תפקידי מחברים</p>
-          <p class="op-desc">סננו לפי מחבר ראשון, ראשון שותף, שני או אחרון (בכיר).</p>
+          <div class="op-header" dir="ltr"><code>role:first</code> <code>role:last</code> <code>role:cofirst</code></div>
+          <h3 class="op-title">תפקיד</h3>
+          <p class="op-desc">מאמרים שבהם אתה המחבר הראשון, ראשון משותף, מחבר שני או מחבר אחרון.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>year:&gt;2020</code> <code>year:&gt;=2021</code> <code>year:&lt;=2015</code></div>
-          <p class="op-title">שנות פרסום</p>
-          <p class="op-desc">מאמרים שפורסמו אחרי השנים שתבחרו, לפניהן או במהלכן, או בחמש השנים האחרונות.</p>
+          <div class="op-header" dir="ltr"><code>year:&gt;=2020</code> <code>year:2023</code> <code>age:&lt;5</code></div>
+          <h3 class="op-title">שנה</h3>
+          <p class="op-desc">מאמרים שפורסמו לפני שנה מסוימת, אחריה או באותה שנה, או בשנים האחרונות.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>has:award</code> <code>has:talk</code></div>
-          <p class="op-title">פרסים והרצאות</p>
-          <p class="op-desc">מצאו מאמרי Best Paper, Test of Time, Oral, Spotlight ו-Highlight.</p>
+          <div class="op-header" dir="ltr"><code>has:award</code> <code>has:talk</code></div>
+          <h3 class="op-title">פרסים והרצאות</h3>
+          <p class="op-desc">מאמרים שזכו בפרס מאמר מצטיין או בפרס מבחן הזמן, או שיש להם הרצאת Oral, Spotlight או Highlight.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><kbd>Escape</kbd></div>
-          <p class="op-title">איפוס במקש אחד</p>
-          <p class="op-desc">מנקה בבת אחת כל חיפוש, בחירה בטבלה וכל מסנן.</p>
+          <div class="op-header" dir="ltr"><kbd>Escape</kbd></div>
+          <h3 class="op-title">ניקוי הכול</h3>
+          <p class="op-desc">מקש אחד מנקה את החיפוש, את התא שנבחר ואת כל המסננים.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="features">
-    <div class="wrap grid">
-      <article style="--c:#4d8ff5"><h3>כל מאמר, צבוע לפי תפקידך</h3><p>לשורות של מחבר ראשון, מחבר ראשון שותף, מחבר שני ומחבר אחרון יש צבע משלהן, ושמך מסומן בשורת המחברים.</p></article>
-      <article style="--c:#b36cf6"><h3>דירוגי CCF ו-CORE</h3><p>דירוג CCF 2026 ו-ICORE 2026 מופיע ליד כל מקום פרסום, יחד עם הכלל שהתאים לו. מקום שהתוסף אינו יכול לשייך נשאר ללא סימון: לעולם לא ניחוש.</p></article>
-      <article style="--c:#fbbc04"><h3>טבלת תפקיד × דירוג</h3><p>בחר תא כדי להציג רק את המאמרים שבו, והעתק את הסיכום או הרשימה לקורות חיים או לטופס מענק.</p></article>
-      <article style="--c:#34a853"><h3>פרסים והרצאות</h3><p>מאמרים מצטיינים, פרסי מבחן הזמן, Oral, Spotlight ו-Highlight, מדברי המחברים עצמם ומדפי הפרסים הרשמיים של יותר מ-7,000 מאמרים.</p></article>
-      <article style="--c:#4d8ff5"><h3>רשימות מחברים קטועות, מושלמות</h3><p>Scholar מסתיר את המחברים האחרונים ברשימות ארוכות. לחיצה אחת קוראת אותם מדף המאמר, או מ-Semantic Scholar אם תאשר זאת.</p></article>
-      <article style="--c:#b36cf6"><h3>כפילויות אוחדו</h3><p>אם תפעיל זאת, רשומות שמציינות את אותו מאמר פעמיים יהפכו לרשומה אחת, וציטוטיהן יסוכמו.</p></article>
-      <article style="--c:#fbbc04"><h3>מותאם אישית</h3><p>בחר מה יוצג, בחר צבעים משלך, והסתר את החלקים בדף Scholar שאינך צריך.</p></article>
-      <article style="--c:#34a853"><h3>פרטיות מובנית</h3><p>בלי חשבון, בלי אנליטיקה, בלי מעקב. הכול מחושב בדפדפן שלך, ורשימות הדירוג נמצאות בתוך התוסף.</p></article>
     </div>
   </section>
 
   <section class="numbers">
     <div class="wrap">
       <h2>במספרים</h2>
-      <p class="note">מחושב מתוך הקוד והנתונים של התוסף בזמן בניית הדף הזה, ואף מספר לא הוקלד ביד. מספרים שגדלים עם כל תיקון מעוגלים כלפי מטה.</p>
+      <p class="note">מחושבים מתוך הקוד והנתונים של התוסף בזמן בניית הדף הזה. מספרים שגדלים עם כל תיקון מעוגלים כלפי מטה.</p>
       <div class="numbers-grid">
-        <div class="num" style="--c:#4d8ff5"><b dir="ltr">153</b><span>הגדרות שאפשר לשנות</span></div>
+        <div class="num" style="--c:#4d8ff5"><b dir="ltr">154</b><span>הגדרות שאפשר לשנות</span></div>
         <div class="num" style="--c:#b36cf6"><b dir="ltr">30</b><span>שפות ממשק</span></div>
-        <div class="num" style="--c:#fbbc04"><b dir="ltr">1,178</b><span>מקומות פרסום מדורגים ברשימות CCF ו-CORE</span></div>
-        <div class="num" style="--c:#34a853"><b dir="ltr">400+</b><span>שמות מקומות פרסום שמציג Scholar ואינם מופיעים ברשימות הרשמיות</span></div>
-        <div class="num" style="--c:#4d8ff5"><b dir="ltr">18</b><span>בדיקות שמונעות הצגה של דירוג שגוי</span></div>
-        <div class="num" style="--c:#b36cf6"><b dir="ltr">5,581</b><span>מאמרים זוכי פרס שזוהו</span></div>
-        <div class="num" style="--c:#fbbc04"><b dir="ltr">22,744</b><span>טקסטים אמיתיים של מקום פרסום מ-Scholar, שהדירוג של כל אחד מהם נבדק</span></div>
-        <div class="num" style="--c:#34a853"><b dir="ltr">500+</b><span>בדיקות יחידה, בנוסף לבדיקות מקצה לקצה בדפדפן אמיתי</span></div>
+        <div class="num" style="--c:#fbbc04"><b dir="ltr">1,178</b><span>במות פרסום מדורגות ברשימות CCF ו-CORE</span></div>
+        <div class="num" style="--c:#34a853"><b dir="ltr">400+</b><span>שמות במות פרסום ש-Scholar מציג, אבל אינם מופיעים ברשימות</span></div>
+        <div class="num" style="--c:#4d8ff5"><b dir="ltr">18</b><span>בדיקות שמונעות דירוג שגוי</span></div>
+        <div class="num" style="--c:#b36cf6"><b dir="ltr">5,581</b><span>מאמרים זוכי פרס שהתוסף מכיר</span></div>
+        <div class="num" style="--c:#fbbc04"><b dir="ltr">22,744</b><span>טקסטים אמיתיים של במת פרסום מ-Scholar, שהתוצאה של כל אחד מהם נבדקה</span></div>
+        <div class="num" style="--c:#34a853"><b dir="ltr">500+</b><span>בדיקות יחידה, וגם בדיקות מקצה לקצה בדפדפן אמיתי</span></div>
       </div>
     </div>
   </section>
@@ -397,18 +431,22 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
     <div class="wrap">
       <h2>התקנה</h2>
       <ol>
-        <li>הורד את הפרויקט מ-GitHub (לחצן ה-“Code” הירוק, ואז “Download ZIP”) וחלץ את הקבצים מקובץ ה-ZIP.</li>
+        <li>הורד את הפרויקט מ-GitHub: לחץ על לחצן ה-“Code” הירוק, ואז על “Download ZIP”. חלץ את קובץ ה-ZIP.</li>
         <li>פתח את <code>chrome://extensions</code> והפעל את מצב מפתחים (Developer mode).</li>
-        <li>לחץ על “Load unpacked” (טעינת תוסף לא ארוז) ובחר את התיקייה src. לאחר מכן פתח כל פרופיל של Google Scholar.</li>
+        <li>לחץ על “Load unpacked” (טעינת תוסף לא ארוז) ובחר את התיקייה src. לאחר מכן פתח פרופיל של Google Scholar.</li>
       </ol>
-      <p class="note">ייתכן שייווסף בהמשך דף ב-Chrome Web Store. Edge, Brave ודפדפנים אחרים מבוססי Chromium פועלים באותו אופן.</p>
+      <p class="note">Edge, Brave ודפדפנים אחרים מבוססי Chromium פועלים לפי אותם שלבים. ייתכן שגרסה ב-Chrome Web Store תיווסף בהמשך.</p>
     </div>
   </section>
 
   <section class="honest">
     <div class="wrap">
-      <h2>כנים לגבי מגבלותיו</h2>
-      <p>הדירוגים הם הרשימות של היום, לא הדירוג בזמן הפרסום, ורשימת CCF עצמה אומרת שאינה הערכה. התוסף לעולם לא מנחש כנס: מה שאינו יכול לשייך מופיע ברשימה, ואינו מסומן.</p>
+      <h2>מגבלות</h2>
+      <ul class="limits">
+        <li>הדירוגים לקוחים מהרשימות של היום. בשנה שבה פורסם המאמר, ייתכן שלמקום הפרסום שלו היה דירוג אחר.</li>
+        <li>CCF מציינת שהרשימה שלה אינה בסיס להערכה אקדמית.</li>
+        <li>התוסף לא מנחש לעולם. מקום פרסום שהוא אינו מצליח למקם לא יקבל תגית, והלוח מפרט אותו.</li>
+      </ul>
     </div>
   </section>
 </main>
@@ -416,9 +454,9 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
   <div class="wrap">
     <span>קוד פתוח, רישיון Apache License 2.0</span>
     <a href="../privacy/">פרטיות</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/ROADMAP.md">Roadmap</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/AGENTS.md">Agent API</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/SECURITY.md">Security</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/ROADMAP.md">מפת דרכים</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/AGENTS.md">לסוכני AI</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/SECURITY.md">אבטחה</a>
     <a href="https://github.com/boyugou/better-scholar/issues">דיווח על בעיה</a>
     <a href="https://github.com/boyugou/better-scholar">GitHub</a>
   </div>

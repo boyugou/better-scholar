@@ -3,7 +3,7 @@
     "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "Förbättra Google Scholar: författarroller, CCF- och CORE-rankningar, konferenspriser, årsdiagram och snabbsökning."
+    "message": "På Google Scholar-profiler: ägarens författarroll och CCF- och CORE-rank för varje artikels publiceringsställe, i en tabell."
   },
   "extShortName": {
     "message": "Better Scholar"
@@ -51,7 +51,7 @@
     "message": "Finalist för bästa artikel"
   },
   "marksHint": {
-    "message": "Hämtas från författarnas egna ord i varje artikels titel och publiceringsställe på Scholar (inte kontrollerat) samt från en inbyggd lista över prisbelönta artiklar vid stora konferenser."
+    "message": "Från två källor: de ord som författarna själva skriver i varje artikels titel eller på raden för publiceringsstället på Scholar (inte kontrollerat), och en inbyggd lista över prisbelönta artiklar vid stora konferenser."
   },
   "marksAsWritten": {
     "message": "från författarnas egna ord eller prislistan"
@@ -175,7 +175,7 @@
     "message": "Öppnar varje artikels sida på Scholar (ungefär en per sekund) för att läsa hela författarlistan."
   },
   "resolveHintSemantic": {
-    "message": "Frågar först Semantic Scholar efter varje artikels författarlista (den får bara artikelns titel) och öppnar sedan artikelns sida på Scholar för resten (ungefär en per sekund)."
+    "message": "Frågar först Semantic Scholar efter varje artikels författarlista (den får bara artikelns titel). Öppnar sedan sidorna för de övriga artiklarna på Scholar, ungefär en per sekund."
   },
   "resolving": {
     "message": "Läser författarlistor… $N1$/$N2$",
@@ -482,7 +482,7 @@
     "message": "Återställa alla dessa inställningar till standardvärdena?"
   },
   "optStorage": {
-    "message": "Inställningarna lagras i din webbläsare och synkas med din Chrome-profil. Tillägget läser de Scholar-sidor du öppnar, och när du trycker på ”Läs hela listorna” även sidorna för artiklar med en kortad författarlista; artikeltitlar skickas till Semantic Scholar bara om du aktiverar det."
+    "message": "Inställningarna lagras i din webbläsare och synkas med din Chrome-profil. Tillägget läser de Scholar-sidor du öppnar. När du trycker på ”Läs hela listorna” läser det även sidorna för artiklar med en kortad författarlista. Artikeltitlar skickas till Semantic Scholar bara om du aktiverar det."
   },
   "optSample": {
     "message": "Exempelartikel"
@@ -494,7 +494,7 @@
     "message": "Läs in alla artiklar automatiskt"
   },
   "optAutoLoadHint": {
-    "message": "Scholar visar först bara de första artiklarna. Tillägget trycker på Scholars egen knapp ”Visa fler” åt dig, ungefär en gång i sekunden, tills hela listan är inläst, och slutar om Scholar slutar svara. Av: panelen erbjuder ”Läs in alla” i stället."
+    "message": "Scholar visar bara de första artiklarna i en profil. Tillägget trycker på Scholars egen knapp ”Visa fler” åt dig, ungefär en gång i sekunden, tills hela listan är inläst. Det slutar om Scholar slutar svara. Av: panelen visar ”Läs in alla” i stället."
   },
   "loadStalled": {
     "message": "Scholar skickade inga fler artiklar ($N1$ inlästa). Försök med ”Läs in alla” igen om en stund.",
@@ -583,7 +583,7 @@
     "message": "Slå ihop dubbletter"
   },
   "optMergeLabelHint": {
-    "message": "Poster med samma titel (bortsett från versaler, accenter och skiljetecken) och samma förstaförfattare blir en: den mest citerade blir kvar och visar allas citeringar. Panelen räknar den en gång."
+    "message": "Poster med samma titel och samma förstaförfattare blir en (versaler, accenter och skiljetecken räknas inte). Den mest citerade blir kvar och visar allas citeringar. Panelen räknar den en gång."
   },
   "mergedTip": {
     "message": "Sammanslagen från $N1$ poster: citeringarna från alla",
@@ -675,7 +675,7 @@
     "message": "Läs först författarlistor från Semantic Scholar"
   },
   "optSemanticLabelHint": {
-    "message": "När du trycker på ”Läs hela listorna” frågar tillägget först Semantic Scholar efter varje artikels fullständiga författarlista (det skickar bara artikelns titel). Scholars egen sida läses bara för det Semantic Scholar inte känner till. Det innebär färre förfrågningar till Scholar och färre CAPTCHA-kontroller."
+    "message": "När du trycker på ”Läs hela listorna” frågar tillägget först Semantic Scholar efter varje artikels fullständiga författarlista. Semantic Scholar får bara artikelns titel och inget annat. Scholars egen sida läses bara för de artiklar som Semantic Scholar inte känner till. Färre förfrågningar till Scholar betyder färre CAPTCHA-kontroller."
   },
   "yearsTitle": {
     "message": "Markerade artiklar per år"
@@ -879,7 +879,7 @@
     "message": "AI-agenter"
   },
   "optAgentHint": {
-    "message": "Kopiera en guide som listar varje inställning, dess värden och dina nuvarande val. Klistra in den i din AI-assistent, säg vad du vill ha och klistra sedan in svaret i konfigredigeraren nedan och tryck på ”Tillämpa konfiguration”."
+    "message": "Kopiera en guide som listar varje inställning, dess värden och dina nuvarande val. Ge den till din AI-assistent tillsammans med det du vill ha. Klistra sedan in svaret i konfigredigeraren nedan och tryck på ”Tillämpa konfiguration”."
   },
   "optAgentCopy": {
     "message": "Kopiera agentguide"
@@ -993,6 +993,12 @@
   },
   "optFiltersSearch": {
     "message": "Sökruta"
+  },
+  "optFiltersKey": {
+    "message": "Tangenten “/” hoppar till sökrutan"
+  },
+  "optFiltersKeyHint": {
+    "message": "I panelen på en profilsida och på den här sidan för dess egen sökning. Av: tangenten gör ingenting."
   },
   "optOrderPills": {
     "message": "Ordning på snabbfiltren"
@@ -1141,7 +1147,7 @@
     "message": "Kontrollera ett publiceringsställe"
   },
   "optVenueHint": {
-    "message": "Klistra in ett publiceringsställe så som Scholar visar det (den grå raden under en artikel) för att se vad CCF- och CORE-listorna säger om det, och enligt vilken regel. Ett publiceringsställe som listorna inte kan placera får ingen rank: ingenting gissas."
+    "message": "Klistra in ett publiceringsställe så som Scholar visar det: den grå raden under en artikel. Du ser vad CCF- och CORE-listorna säger om det, och enligt vilken regel. Ett publiceringsställe som listorna inte kan placera får ingen rank. Ingenting gissas."
   },
   "optVenuePlaceholder": {
     "message": "t.ex. Proceedings of the IEEE conference on computer vision and pattern recognition"
@@ -1150,7 +1156,7 @@
     "message": "Ingen rank. Listorna placerar inte denna text med säkerhet, så den får ingen etikett."
   },
   "optVenueSecondary": {
-    "message": "Ordet ”$N1$” markerar ett sekundärt spår (workshop, poster, kort artikel …). Publiceringsstället får ingen rank om inte dess eget namn innehåller ordet.",
+    "message": "Ordet ”$N1$” markerar ett sekundärt spår, till exempel en workshop, en poster eller en kort artikel. Publiceringsstället får ingen rank om inte dess eget namn innehåller ordet.",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -1170,7 +1176,7 @@
     "message": "Antalen följer filtren"
   },
   "optFiltersFollowHint": {
-    "message": "Tabellen, antalen för priser och presentationer och sammanfattningen som kopieras räknar bara de artiklar som filtren lämnar kvar (ett årsintervall, en sökning, ett snabbfilter, ett publiceringsställe); den valda cellen eller raden minskar inget antal. Av: de räknar alltid hela profilen."
+    "message": "Tabellen, antalen för priser och presentationer och sammanfattningen som kopieras räknar bara de artiklar som filtren lämnar kvar: ett årsintervall, en sökning, ett snabbfilter eller ett publiceringsställe. Den valda cellen eller raden ändrar inget antal. Av: de räknar alltid hela profilen."
   },
   "optPillRecent": {
     "message": "Senaste 5 åren"
@@ -1182,7 +1188,7 @@
     "message": "Lägg till profilens länk och datumet i den kopierade sammanfattningen"
   },
   "optCopySourceHint": {
-    "message": "Den kopierade sammanfattningen och den kopierade tabellen får en rad med profilens länk och datumet (Source: …), så att siffrorna kan arkiveras eller skickas vidare. En lista som inte är helt inläst säger det där, oavsett hur reglaget är inställt."
+    "message": "Den kopierade sammanfattningen och den kopierade tabellen slutar med en rad som visar profilens länk och datumet (Source: …), så att du kan arkivera eller skicka vidare siffrorna. En lista som inte är helt inläst säger det alltid där."
   },
   "unrankedPreprints": {
     "message": "Förhandstryck"
@@ -1197,7 +1203,7 @@
     "message": "När publiceringsstället har rank i båda listorna"
   },
   "optPreferHint": {
-    "message": "En etikett i stället för två: listan du väljer, och den andra listan bara där den valda listan saknar rank för publiceringsstället. När du håller muspekaren över etiketten visas fortfarande den andra ranken."
+    "message": "En etikett i stället för två: etiketten för listan du väljer. Etiketten för den andra listan visas bara där den valda listan saknar rank för publiceringsstället. När du håller muspekaren över etiketten visas fortfarande den andra ranken."
   },
   "optPreferCcf": {
     "message": "CCF först"

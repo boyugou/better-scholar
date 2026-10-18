@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Better Scholar : votre rôle d'auteur et le classement de vos publications sur Google Scholar</title>
-<meta name="description" content="Extension Chrome gratuite qui indique, sur chaque article d'un profil Google Scholar, votre rôle (premier auteur, co-premier auteur, deuxième auteur, dernier auteur) et le classement CCF / CORE de la revue ou de la conférence, puis en fait la synthèse dans un seul tableau.">
+<title>Better Scholar : votre rôle d'auteur et le classement des revues ou conférences sur Google Scholar</title>
+<meta name="description" content="Extension Chrome gratuite pour les profils Google Scholar. Elle indique votre rôle d'auteur et le classement CCF / CORE de la revue ou de la conférence pour chaque article, et compte vos articles dans un seul tableau.">
 <link rel="canonical" href="https://boyugou.github.io/better-scholar/fr/">
 <link rel="alternate" hreflang="en" href="https://boyugou.github.io/better-scholar/en/">
 <link rel="alternate" hreflang="zh-CN" href="https://boyugou.github.io/better-scholar/zh-CN/">
@@ -40,14 +40,14 @@
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Better Scholar : votre rôle d'auteur et le classement de vos publications sur Google Scholar">
-<meta property="og:description" content="Extension Chrome gratuite qui indique, sur chaque article d'un profil Google Scholar, votre rôle (premier auteur, co-premier auteur, deuxième auteur, dernier auteur) et le classement CCF / CORE de la revue ou de la conférence, puis en fait la synthèse dans un seul tableau.">
+<meta property="og:title" content="Better Scholar : votre rôle d'auteur et le classement des revues ou conférences sur Google Scholar">
+<meta property="og:description" content="Extension Chrome gratuite pour les profils Google Scholar. Elle indique votre rôle d'auteur et le classement CCF / CORE de la revue ou de la conférence pour chaque article, et compte vos articles dans un seul tableau.">
 <meta property="og:url" content="https://boyugou.github.io/better-scholar/fr/">
 <meta property="og:image" content="https://boyugou.github.io/better-scholar/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="../assets/styles.css">
 <meta name="theme-color" content="#161d33">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Better Scholar","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Chromium browsers","description":"Extension Chrome gratuite qui indique, sur chaque article d'un profil Google Scholar, votre rôle (premier auteur, co-premier auteur, deuxième auteur, dernier auteur) et le classement CCF / CORE de la revue ou de la conférence, puis en fait la synthèse dans un seul tableau.","inLanguage":"fr","url":"https://boyugou.github.io/better-scholar/fr/","image":"https://boyugou.github.io/better-scholar/assets/og.png","license":"https://www.apache.org/licenses/LICENSE-2.0","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Better Scholar","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Chromium browsers","description":"Extension Chrome gratuite pour les profils Google Scholar. Elle indique votre rôle d'auteur et le classement CCF / CORE de la revue ou de la conférence pour chaque article, et compte vos articles dans un seul tableau.","inLanguage":"fr","url":"https://boyugou.github.io/better-scholar/fr/","image":"https://boyugou.github.io/better-scholar/assets/og.png","license":"https://www.apache.org/licenses/LICENSE-2.0","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 </head>
 <body>
 <header class="top">
@@ -97,16 +97,11 @@
 <main>
   <section class="hero">
     <div class="wrap">
-      <div class="hero-badges">
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg> Manifest V3</span>
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg> Fonctionne dans votre navigateur</span>
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg> Aucune dépendance</span>
-      </div>
       <div class="stripes" aria-hidden="true"><i style="--c:#4d8ff5"></i><i style="--c:#b36cf6"></i><i style="--c:#fbbc04"></i><i style="--c:#34a853"></i></div>
-      <h1>Voyez où vous en êtes sur chaque article</h1>
-      <p class="lead">Une extension Chrome pour les profils Google Scholar. Elle indique votre rôle d'auteur et le classement CCF / CORE de la revue ou de la conférence pour chaque article, puis récapitule le tout dans un tableau : « 4 articles CCF-A en premier auteur ».</p>
+      <h1>Votre rôle et le classement des revues ou conférences de vos articles</h1>
+      <p class="lead">Une extension Chrome gratuite pour les profils Google Scholar. Elle colore chaque article selon votre rôle d'auteur, indique le classement CCF et CORE de sa revue ou conférence, et compte vos articles dans un seul tableau.</p>
       <p class="cta"><a class="btn" href="#install">Installer</a> <a class="btn ghost" href="https://github.com/boyugou/better-scholar">Voir sur GitHub</a></p>
-      <p class="note">Gratuite et open source · Chrome et autres navigateurs Chromium · 30 langues</p>
+      <p class="note">Gratuite et open source · Chrome, Edge, Brave et autres navigateurs Chromium · 30 langues</p>
     </div>
   </section>
 
@@ -114,17 +109,69 @@
     <div class="wrap">
       <figure class="hero-shot">
         <div class="hero-frame" style="aspect-ratio: 1280 / 660">
-          <img src="../assets/hero.jpg" alt="Un profil fictif (de vraies revues et conférences, des articles inventés) : lignes colorées selon le rôle, pastilles de classement à côté de chaque publication, synthèse à droite." width="1280" height="800" fetchpriority="high" decoding="async">
+          <img src="../assets/hero.jpg" alt="Un profil fictif avec de vraies revues et conférences. Chaque ligne a la couleur de votre rôle, les pastilles indiquent le classement, et le panneau à droite compte les articles." width="1280" height="800" fetchpriority="high" decoding="async">
         </div>
-        <figcaption>Un profil fictif (de vraies revues et conférences, des articles inventés) : lignes colorées selon le rôle, pastilles de classement à côté de chaque publication, synthèse à droite.</figcaption>
+        <figcaption>Un profil fictif avec de vraies revues et conférences. Chaque ligne a la couleur de votre rôle, les pastilles indiquent le classement, et le panneau à droite compte les articles.</figcaption>
       </figure>
+    </div>
+  </section>
+
+  <section class="how" id="how">
+    <div class="wrap">
+      <h2>Comment l'extension lit un article</h2>
+      <p class="note">Deux articles fictifs dans de vraies revues et conférences. Chaque étape montre ce que le code de l'extension y trouve.</p>
+      <div class="how-grid">
+        <ol class="how-steps">
+          <li><button type="button" data-step="1"><span class="n">1</span><b>Trouvez votre nom</b><span class="d">Elle trouve le nom du profil dans la ligne des auteurs. Votre place dans cette ligne vous donne votre rôle : premier auteur, co-premier auteur, deuxième auteur ou dernier auteur.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="2"><span class="n">2</span><b>Cherchez la revue ou la conférence</b><span class="d">Elle la cherche dans les listes CCF et CORE, par son nom complet ou par son sigle. Une correspondance sûre donne une pastille de classement.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="3"><span class="n">3</span><b>Ne jamais deviner</b><span class="d">Un atelier, un poster ou un article de Findings n'est pas la conférence principale. Une revue ou conférence que les listes ne placent pas avec certitude ne reçoit pas de pastille.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="4" aria-current="step"><span class="n">4</span><b>Comptage</b><span class="d">Le panneau compte chaque article une seule fois, selon votre rôle et le classement. Cliquez sur un nombre pour voir ses articles.</span><i class="bar" aria-hidden="true"></i></button></li>
+        </ol>
+        <div class="how-figure">
+        <div class="how-stage" aria-hidden="true">
+          <div class="sr-head" dir="ltr" lang="en"><span>Title</span><span>Cited by</span><span>Year</span></div>
+          <div class="sr on" data-from="1" dir="ltr" data-role="first" style="--rc:#1a73e8">
+            <div class="sr-text" lang="en"><div class="sr-t">Self-Supervised Depth from Casual Video</div><div class="sr-a"><span class="nm on" data-from="1" data-focus="1">A Example</span>, B Writer, C Writer, D Writer</div><div class="sr-v"><span class="vn on" data-from="2" data-focus="2">Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</span>, 2023 <span class="chip on" data-from="2" data-focus="2"><span class="k">CCF</span> <b>A</b></span></div></div>
+            <div class="sr-c">892</div><div class="sr-y">2023</div>
+            <div class="co-slot" dir="ltr"><p class="co" data-from="1" data-to="1"><span class="tag">Premier</span> position 1 sur 4</p><p class="co on" data-from="2"><b dir="ltr">CCF A · CORE A*</b> · Trouvé par le nom: <span dir="ltr">IEEE/CVF Computer Vision and Pattern Recognition Conference</span></p></div>
+          </div>
+          <div class="sr on" data-from="1" dir="ltr" data-role="second" style="--rc:#f9ab00">
+            <div class="sr-text" lang="en"><div class="sr-t">Cheap Calibration for Retrieval-Augmented Models</div><div class="sr-a">B Writer, <span class="nm on" data-from="1" data-focus="1">A Example</span>, H Writer</div><div class="sr-v"><mark class="sec on" data-from="3" data-focus="3">Findings</mark> of the Association for Computational Linguistics: ACL 2022, 410-423, 2022</div></div>
+            <div class="sr-c">868</div><div class="sr-y">2022</div>
+            <div class="co-slot" dir="ltr"><p class="co" data-from="1" data-to="2"><span class="tag">Deuxième</span> position 2 sur 3</p><p class="co on" data-from="3"><b dir="ltr">Findings</b> · catégorie secondaire : sans classement, sans pastille</p></div>
+          </div>
+          <div class="mini">
+            <div class="mini-h"><b>Articles par rôle et par rang</b><span dir="ltr"><i class="on">CCF</i><i>CORE</i></span></div>
+            <table>
+              <thead><tr><th></th><th>A</th><th>B</th><th>C</th><th>–</th><th>Tous</th></tr></thead>
+              <tbody><tr><th><i style="--rc:#1a73e8"></i>Premier</th><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td><td>·</td><td>·</td><td>·</td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td></tr><tr><th><i style="--rc:#f9ab00"></i>Deuxième</th><td>·</td><td>·</td><td>·</td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <button type="button" class="how-play" hidden data-play="Lecture" data-pause="Pause"><svg class="i-play" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg><svg class="i-pause" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z" fill="currentColor"/></svg><span>Lecture</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="wrap">
+      <h2>Ce qu'elle fait en plus</h2>
+      <div class="grid">
+        <article style="--c:#4d8ff5"><h3>Prix et présentations</h3><p>Pastilles de meilleur article, de prix « test of time » et de présentations Oral, Spotlight ou Highlight. Elles viennent des propres mots des auteurs et des pages officielles des prix.</p></article>
+        <article style="--c:#b36cf6"><h3>Listes d'auteurs complètes</h3><p>Scholar tronque les longues listes d'auteurs avec « … », ce qui peut masquer votre rôle. Un clic lit les listes complètes sur les pages des articles de Scholar.</p></article>
+        <article style="--c:#fbbc04"><h3>Doublons fusionnés</h3><p>Scholar liste parfois deux fois le même article. Un interrupteur les fusionne en une seule entrée et additionne leurs citations.</p></article>
+        <article style="--c:#34a853"><h3>Votre mise en page</h3><p>Chaque partie du panneau a son propre interrupteur. Choisissez les couleurs, l'ordre des parties et vos propres noms pour elles.</p></article>
+        <article style="--c:#4d8ff5"><h3>Confidentialité</h3><p>Pas de compte, pas d'analyse d'audience, pas de pistage. Tout le travail se fait dans votre navigateur, et les listes de classement sont incluses dans l'extension.</p></article>
+        <article style="--c:#b36cf6"><h3>30 langues</h3><p>L'extension parle votre langue. Elle peut aussi ouvrir Scholar lui-même dans la langue de votre choix.</p></article>
+      </div>
     </div>
   </section>
 
   <section class="try" id="try">
     <div class="wrap">
-      <h2>Essayez la vraie page de réglages</h2>
-      <p class="note">Voici la page de réglages de l'extension, qui fonctionne ici même : basculez un interrupteur et l'aperçu se met à jour. Survolez l'aperçu pour masquer, déplacer ou renommer une partie, et double-cliquez sur une partie pour accéder à son réglage.</p>
+      <h2>Essayez la page de réglages</h2>
+      <p class="note">Voici la page de réglages réelle de l'extension. Modifiez un réglage et l'aperçu change avec lui. Survolez une partie de l'aperçu pour la masquer, la déplacer ou la renommer.</p>
       <div class="try-bar">
         <a class="skip" href="#after-try">Passer la démonstration</a>
         <p>Vos modifications restent dans ce navigateur.</p>
@@ -138,15 +185,15 @@
 
   <section class="export-section" id="after-try">
     <div class="wrap">
-      <h2>Export académique en 1 clic</h2>
-      <p class="note">Des listes de publications prêtes à coller dans vos CV, dossiers de financement, documents LaTeX, agents IA et tableurs.</p>
+      <h2>Copiez vos articles</h2>
+      <p class="note">Un bouton pour chaque format : pour un CV, un dossier de financement, LaTeX ou un tableur. Ci-dessous, le résultat réel pour quatre articles fictifs.</p>
       <div class="export-card">
-        <div class="export-tabs" role="tablist" aria-label="Export académique en 1 clic">
-          <button type="button" class="tab-btn active" role="tab" id="tab-bibtex" aria-selected="true" aria-controls="export-bibtex">BibTeX (LaTeX-Ready)</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-apa" aria-selected="false" aria-controls="export-apa" tabindex="-1">APA 7th Edition</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-json" aria-selected="false" aria-controls="export-json" tabindex="-1">Structured JSON</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-markdown" aria-selected="false" aria-controls="export-markdown" tabindex="-1">GitHub Markdown</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-csv" aria-selected="false" aria-controls="export-csv" tabindex="-1">RFC-4180 CSV</button>
+        <div class="export-tabs" role="tablist" aria-label="Copiez vos articles">
+          <button type="button" class="tab-btn active" role="tab" id="tab-bibtex" aria-selected="true" aria-controls="export-bibtex">BibTeX</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-apa" aria-selected="false" aria-controls="export-apa" tabindex="-1">APA</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-json" aria-selected="false" aria-controls="export-json" tabindex="-1">JSON</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-markdown" aria-selected="false" aria-controls="export-markdown" tabindex="-1">Markdown</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-csv" aria-selected="false" aria-controls="export-csv" tabindex="-1">CSV</button>
         </div>
         <div class="code-preview-wrap">
           <pre class="code-preview" role="tabpanel" id="export-bibtex" aria-labelledby="tab-bibtex" tabindex="0"><code>@inproceedings{author2025sample,
@@ -318,7 +365,7 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
 2024,Sample paper 2,&quot;B Writer, A Author, C Writer&quot;,Second author,NeurIPS 2024,A,A*,Best paper (NeurIPS 2024),133
 2024,Sample paper 3,&quot;A Author*, B Writer*, C Writer&quot;,Co-first author,CVPR 2024 (Highlight),A,A*,Highlight,27
 2023,Sample paper 4,&quot;B Writer, C Writer, D Writer, A Author&quot;,Last author,ACL 2023 (Spotlight),A,A*,Spotlight,215</code></pre>
-          <button type="button" class="copy-code-btn" data-label="Copier dans le presse-papiers" data-copied="Copié !">Copier dans le presse-papiers</button>
+          <button type="button" class="copy-code-btn" data-label="Copier" data-copied="Copié">Copier</button>
         </div>
       </div>
     </div>
@@ -326,69 +373,56 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
 
   <section class="operators-section">
     <div class="wrap">
-      <h2>Recherche instantanée et opérateurs de requête</h2>
-      <p class="note">Appuyez sur <kbd>/</kbd> n'importe où sur un profil Scholar pour rechercher dans toute la liste d'un coup.</p>
+      <h2>Recherche avec opérateurs</h2>
+      <p class="note">Appuyez sur <kbd>/</kbd> sur un profil pour rechercher dans tous ses articles. Ajoutez des opérateurs à vos mots pour filtrer la liste.</p>
       <div class="operators-grid">
         <div class="op-card">
-          <div class="op-header"><code>cites:&gt;100</code> <code>cites:&gt;=50</code> <code>cites:&lt;10</code></div>
-          <p class="op-title">Seuils de citations</p>
-          <p class="op-desc">Gardez les articles qui ont plus ou moins de citations que le nombre que vous saisissez.</p>
+          <div class="op-header" dir="ltr"><code>cites:&gt;100</code> <code>cites:&gt;=50</code> <code>cites:&lt;10</code></div>
+          <h3 class="op-title">Citations</h3>
+          <p class="op-desc">Articles avec plus ou moins de citations qu'un nombre donné.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>ccf:a</code> <code>ccf:b</code> <code>core:a*</code></div>
-          <p class="op-title">Niveaux de classement des publications</p>
-          <p class="op-desc">N'affichez que les articles parus dans des conférences et revues classées CCF ou CORE.</p>
+          <div class="op-header" dir="ltr"><code>ccf:a</code> <code>ccf:b</code> <code>core:a*</code></div>
+          <h3 class="op-title">Classement</h3>
+          <p class="op-desc">Articles parus dans des conférences ou revues ayant un classement CCF ou CORE donné.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>role:first</code> <code>role:last</code> <code>role:cofirst</code></div>
-          <p class="op-title">Rôles d'auteur</p>
-          <p class="op-desc">Filtrez par premier auteur, co-premier auteur, deuxième auteur ou dernier auteur (senior).</p>
+          <div class="op-header" dir="ltr"><code>role:first</code> <code>role:last</code> <code>role:cofirst</code></div>
+          <h3 class="op-title">Rôle</h3>
+          <p class="op-desc">Articles où vous êtes premier, co-premier, deuxième ou dernier auteur.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>year:&gt;2020</code> <code>year:&gt;=2021</code> <code>year:&lt;=2015</code></div>
-          <p class="op-title">Années de publication</p>
-          <p class="op-desc">Les articles publiés après, avant ou pendant les années que vous choisissez, ou au cours des cinq dernières années.</p>
+          <div class="op-header" dir="ltr"><code>year:&gt;=2020</code> <code>year:2023</code> <code>age:&lt;5</code></div>
+          <h3 class="op-title">Année</h3>
+          <p class="op-desc">Articles publiés avant, après ou pendant une année donnée, ou au cours des dernières années.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>has:award</code> <code>has:talk</code></div>
-          <p class="op-title">Prix et présentations</p>
-          <p class="op-desc">Retrouvez les articles Best Paper, Test of Time, Oral, Spotlight et Highlight.</p>
+          <div class="op-header" dir="ltr"><code>has:award</code> <code>has:talk</code></div>
+          <h3 class="op-title">Prix et présentations</h3>
+          <p class="op-desc">Articles avec un prix de meilleur article ou « test of time », ou une présentation Oral, Spotlight ou Highlight.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><kbd>Escape</kbd></div>
-          <p class="op-title">Réinitialisation en une touche</p>
-          <p class="op-desc">Efface d'un coup toutes les recherches, sélections de tableau et filtres.</p>
+          <div class="op-header" dir="ltr"><kbd>Escape</kbd></div>
+          <h3 class="op-title">Tout effacer</h3>
+          <p class="op-desc">Une touche efface la recherche, la cellule sélectionnée et tous les filtres.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="features">
-    <div class="wrap grid">
-      <article style="--c:#4d8ff5"><h3>Chaque article, coloré selon votre rôle</h3><p>Les lignes premier auteur, co-premier auteur, deuxième auteur et dernier auteur ont chacune leur couleur, et votre nom est mis en évidence dans la liste des auteurs.</p></article>
-      <article style="--c:#b36cf6"><h3>Classements CCF et CORE</h3><p>Les classements CCF 2026 et ICORE 2026 s'affichent à côté de chaque publication, avec la règle qui l'a identifiée. Une publication non identifiable reste sans marque : jamais de supposition.</p></article>
-      <article style="--c:#fbbc04"><h3>Un tableau rôle × classement</h3><p>Cliquez sur une case pour ne lister que ces articles, et copiez la synthèse ou la liste pour un CV ou un dossier de financement.</p></article>
-      <article style="--c:#34a853"><h3>Prix et communications</h3><p>Meilleurs articles, prix du test du temps, Oral, Spotlight et Highlight, d'après les propres mots des auteurs et les pages officielles des prix, pour plus de 7 000 articles.</p></article>
-      <article style="--c:#4d8ff5"><h3>Listes d'auteurs tronquées, complétées</h3><p>Scholar masque les derniers auteurs des longues listes. Un clic les lit sur la page de l'article, ou sur Semantic Scholar si vous l'autorisez.</p></article>
-      <article style="--c:#b36cf6"><h3>Doublons fusionnés</h3><p>Si vous l'activez, les entrées qui listent deux fois le même article n'en forment plus qu'une, et les citations sont additionnées.</p></article>
-      <article style="--c:#fbbc04"><h3>À votre mesure</h3><p>Choisissez ce qui s'affiche, vos propres couleurs, et masquez les parties de la page Scholar dont vous n'avez pas besoin.</p></article>
-      <article style="--c:#34a853"><h3>Confidentialité dès la conception</h3><p>Pas de compte, pas d'analyse d'audience, pas de pistage. Tout est calculé dans votre navigateur, et les listes de classement sont incluses dans l'extension.</p></article>
     </div>
   </section>
 
   <section class="numbers">
     <div class="wrap">
       <h2>En chiffres</h2>
-      <p class="note">Calculé à partir du code et des données de l'extension lors de la génération de cette page, rien n'est saisi à la main. Les chiffres qui augmentent à chaque correctif sont arrondis à la baisse.</p>
+      <p class="note">Ces chiffres sont calculés à partir du code et des données de l'extension lors de la génération de cette page. Les chiffres qui augmentent à chaque correctif sont arrondis à la baisse.</p>
       <div class="numbers-grid">
-        <div class="num" style="--c:#4d8ff5"><b dir="ltr">153</b><span>réglages que vous pouvez modifier</span></div>
+        <div class="num" style="--c:#4d8ff5"><b dir="ltr">154</b><span>réglages que vous pouvez modifier</span></div>
         <div class="num" style="--c:#b36cf6"><b dir="ltr">30</b><span>langues de l'interface</span></div>
-        <div class="num" style="--c:#fbbc04"><b dir="ltr">1 178</b><span>publications classées dans les listes CCF et CORE</span></div>
-        <div class="num" style="--c:#34a853"><b dir="ltr">400+</b><span>noms de publications affichés par Scholar, absents des listes officielles</span></div>
-        <div class="num" style="--c:#4d8ff5"><b dir="ltr">18</b><span>contrôles qui empêchent d'afficher un classement erroné</span></div>
-        <div class="num" style="--c:#b36cf6"><b dir="ltr">5 581</b><span>articles primés identifiés</span></div>
-        <div class="num" style="--c:#fbbc04"><b dir="ltr">22 744</b><span>textes réels de publication de Scholar, chacun avec son classement vérifié</span></div>
-        <div class="num" style="--c:#34a853"><b dir="ltr">500+</b><span>tests unitaires, en plus de tests de bout en bout dans un vrai navigateur</span></div>
+        <div class="num" style="--c:#fbbc04"><b dir="ltr">1 178</b><span>conférences et revues classées dans les listes CCF et CORE</span></div>
+        <div class="num" style="--c:#34a853"><b dir="ltr">400+</b><span>noms de revues ou de conférences affichés par Scholar, mais absents des listes</span></div>
+        <div class="num" style="--c:#4d8ff5"><b dir="ltr">18</b><span>contrôles qui empêchent un classement erroné</span></div>
+        <div class="num" style="--c:#b36cf6"><b dir="ltr">5 581</b><span>articles primés que l'extension connaît</span></div>
+        <div class="num" style="--c:#fbbc04"><b dir="ltr">22 744</b><span>lignes réelles de revues et conférences sur Scholar, chaque résultat vérifié</span></div>
+        <div class="num" style="--c:#34a853"><b dir="ltr">500+</b><span>tests unitaires et tests de bout en bout dans un vrai navigateur</span></div>
       </div>
     </div>
   </section>
@@ -397,18 +431,22 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
     <div class="wrap">
       <h2>Installer</h2>
       <ol>
-        <li>Téléchargez le projet depuis GitHub (bouton vert « Code », puis « Télécharger le ZIP ») et décompressez-le.</li>
+        <li>Téléchargez le projet depuis GitHub : cliquez sur le bouton vert « Code », puis sur « Télécharger le ZIP ». Décompressez le fichier.</li>
         <li>Ouvrez <code>chrome://extensions</code> et activez le « Mode développeur ».</li>
-        <li>Cliquez sur « Charger l'extension non empaquetée » et choisissez le dossier src. Ouvrez ensuite n'importe quel profil Google Scholar.</li>
+        <li>Cliquez sur « Charger l'extension non empaquetée » et sélectionnez le dossier src. Ouvrez ensuite un profil Google Scholar.</li>
       </ol>
-      <p class="note">Une fiche sur le Chrome Web Store pourrait suivre. Edge, Brave et les autres navigateurs Chromium s'installent de la même façon.</p>
+      <p class="note">Edge, Brave et les autres navigateurs Chromium suivent les mêmes étapes. Une version pour le Chrome Web Store pourra arriver plus tard.</p>
     </div>
   </section>
 
   <section class="honest">
     <div class="wrap">
-      <h2>Honnête sur ses limites</h2>
-      <p>Les classements sont les listes actuelles, et non le rang à la date de publication ; la liste CCF elle-même précise qu'elle n'est pas une évaluation. L'extension ne devine jamais une publication : ce qu'elle ne peut pas situer est listé, sans être marqué.</p>
+      <h2>Limites</h2>
+      <ul class="limits">
+        <li>Les classements proviennent des listes actuelles. L'année de publication d'un article, sa revue ou sa conférence pouvait avoir un autre classement.</li>
+        <li>La CCF précise que sa liste ne doit pas servir de base à l'évaluation académique.</li>
+        <li>Elle ne devine jamais. Une revue ou conférence qu'elle ne peut pas placer n'obtient pas de pastille, et le panneau la signale.</li>
+      </ul>
     </div>
   </section>
 </main>
@@ -416,9 +454,9 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
   <div class="wrap">
     <span>Open source, Apache License 2.0</span>
     <a href="../privacy/">Confidentialité</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/ROADMAP.md">Roadmap</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/AGENTS.md">Agent API</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/SECURITY.md">Security</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/ROADMAP.md">Feuille de route</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/AGENTS.md">Pour les agents IA</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/SECURITY.md">Sécurité</a>
     <a href="https://github.com/boyugou/better-scholar/issues">Signaler un problème</a>
     <a href="https://github.com/boyugou/better-scholar">GitHub</a>
   </div>

@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Better Scholar: Google Scholar에서 확인하는 나의 저자 역할과 학술지·학회 등급</title>
-<meta name="description" content="무료 Chrome 확장 프로그램으로, Google Scholar 프로필의 모든 논문에 나의 역할(제1저자, 공동 제1저자, 제2저자, 마지막 저자)과 게재 학술지·학회의 CCF / CORE 등급을 표시하고 한 표로 정리해 줍니다.">
+<title>Better Scholar: Google Scholar에서 확인하는 나의 저자 역할과 게재처 등급</title>
+<meta name="description" content="무료 Chrome 확장 프로그램으로, Google Scholar 프로필의 모든 논문에 나의 저자 역할과 게재처의 CCF / CORE 등급을 표시하고, 논문 수를 한 표로 정리해 줍니다.">
 <link rel="canonical" href="https://boyugou.github.io/better-scholar/ko/">
 <link rel="alternate" hreflang="en" href="https://boyugou.github.io/better-scholar/en/">
 <link rel="alternate" hreflang="zh-CN" href="https://boyugou.github.io/better-scholar/zh-CN/">
@@ -40,14 +40,14 @@
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Better Scholar: Google Scholar에서 확인하는 나의 저자 역할과 학술지·학회 등급">
-<meta property="og:description" content="무료 Chrome 확장 프로그램으로, Google Scholar 프로필의 모든 논문에 나의 역할(제1저자, 공동 제1저자, 제2저자, 마지막 저자)과 게재 학술지·학회의 CCF / CORE 등급을 표시하고 한 표로 정리해 줍니다.">
+<meta property="og:title" content="Better Scholar: Google Scholar에서 확인하는 나의 저자 역할과 게재처 등급">
+<meta property="og:description" content="무료 Chrome 확장 프로그램으로, Google Scholar 프로필의 모든 논문에 나의 저자 역할과 게재처의 CCF / CORE 등급을 표시하고, 논문 수를 한 표로 정리해 줍니다.">
 <meta property="og:url" content="https://boyugou.github.io/better-scholar/ko/">
 <meta property="og:image" content="https://boyugou.github.io/better-scholar/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="../assets/styles.css">
 <meta name="theme-color" content="#161d33">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Better Scholar","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Chromium browsers","description":"무료 Chrome 확장 프로그램으로, Google Scholar 프로필의 모든 논문에 나의 역할(제1저자, 공동 제1저자, 제2저자, 마지막 저자)과 게재 학술지·학회의 CCF / CORE 등급을 표시하고 한 표로 정리해 줍니다.","inLanguage":"ko","url":"https://boyugou.github.io/better-scholar/ko/","image":"https://boyugou.github.io/better-scholar/assets/og.png","license":"https://www.apache.org/licenses/LICENSE-2.0","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Better Scholar","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Chromium browsers","description":"무료 Chrome 확장 프로그램으로, Google Scholar 프로필의 모든 논문에 나의 저자 역할과 게재처의 CCF / CORE 등급을 표시하고, 논문 수를 한 표로 정리해 줍니다.","inLanguage":"ko","url":"https://boyugou.github.io/better-scholar/ko/","image":"https://boyugou.github.io/better-scholar/assets/og.png","license":"https://www.apache.org/licenses/LICENSE-2.0","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 </head>
 <body>
 <header class="top">
@@ -97,16 +97,11 @@
 <main>
   <section class="hero">
     <div class="wrap">
-      <div class="hero-badges">
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg> Manifest V3</span>
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg> 브라우저에서 실행</span>
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg> 의존성 없음</span>
-      </div>
       <div class="stripes" aria-hidden="true"><i style="--c:#4d8ff5"></i><i style="--c:#b36cf6"></i><i style="--c:#fbbc04"></i><i style="--c:#34a853"></i></div>
-      <h1>모든 논문에서 나의 위치를 한눈에</h1>
-      <p class="lead">Google Scholar 프로필을 위한 Chrome 확장 프로그램입니다. 논문마다 저자 역할과 게재처의 CCF / CORE 등급을 표시하고, 그 결과를 한 표로 합산합니다: “CCF-A 제1저자 논문 4편”.</p>
+      <h1>모든 논문에서 나의 역할과 게재처 등급</h1>
+      <p class="lead">Google Scholar 프로필을 위한 무료 Chrome 확장 프로그램입니다. 나의 저자 역할에 따라 각 논문에 색을 입히고, 게재처의 CCF와 CORE 등급을 보여 주며, 논문 수를 한 표로 집계합니다.</p>
       <p class="cta"><a class="btn" href="#install">설치</a> <a class="btn ghost" href="https://github.com/boyugou/better-scholar">GitHub에서 보기</a></p>
-      <p class="note">무료 · 오픈 소스 · Chrome 및 기타 Chromium 브라우저 지원 · 30개 언어</p>
+      <p class="note">무료 · 오픈 소스 · Chrome, Edge, Brave 및 기타 Chromium 브라우저 지원 · 30개 언어</p>
     </div>
   </section>
 
@@ -114,17 +109,69 @@
     <div class="wrap">
       <figure class="hero-shot">
         <div class="hero-frame" style="aspect-ratio: 1280 / 660">
-          <img src="../assets/hero.jpg" alt="가상의 프로필(실제 게재처, 가상의 논문): 역할별로 색이 입혀진 행, 게재처 옆의 등급 표시, 오른쪽의 요약." width="1280" height="800" fetchpriority="high" decoding="async">
+          <img src="../assets/hero.jpg" alt="가상의 프로필(실제 게재처, 가상의 논문): 행마다 나의 역할에 따른 색이 입혀지고, 라벨에 등급이 표시되며, 오른쪽 패널에서 논문 수를 셉니다." width="1280" height="800" fetchpriority="high" decoding="async">
         </div>
-        <figcaption>가상의 프로필(실제 게재처, 가상의 논문): 역할별로 색이 입혀진 행, 게재처 옆의 등급 표시, 오른쪽의 요약.</figcaption>
+        <figcaption>가상의 프로필(실제 게재처, 가상의 논문): 행마다 나의 역할에 따른 색이 입혀지고, 라벨에 등급이 표시되며, 오른쪽 패널에서 논문 수를 셉니다.</figcaption>
       </figure>
+    </div>
+  </section>
+
+  <section class="how" id="how">
+    <div class="wrap">
+      <h2>확장 프로그램이 논문을 읽는 방법</h2>
+      <p class="note">실제 게재처를 가진 가상의 논문 두 편입니다. 각 단계는 확장 프로그램 자체의 코드가 그 논문들에서 찾아낸 내용을 보여 줍니다.</p>
+      <div class="how-grid">
+        <ol class="how-steps">
+          <li><button type="button" data-step="1"><span class="n">1</span><b>내 이름 찾기</b><span class="d">저자 줄에서 프로필의 이름을 찾습니다. 저자 줄에서 나의 자리가 나의 역할을 정합니다: 제1저자, 공동 제1저자, 제2저자 또는 마지막(시니어) 저자.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="2"><span class="n">2</span><b>게재처 찾아보기</b><span class="d">CCF와 CORE 목록에서 게재처를 정식 명칭이나 약어로 찾습니다. 확실히 일치하면 등급 라벨이 표시됩니다.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="3"><span class="n">3</span><b>추측하지 않음</b><span class="d">워크숍, 포스터, Findings 논문은 본 학회가 아닙니다. 목록에 확실히 있다고 확인되지 않은 게재처에는 라벨이 붙지 않습니다.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="4" aria-current="step"><span class="n">4</span><b>집계</b><span class="d">패널은 나의 역할과 등급을 기준으로 각 논문을 한 번만 셉니다. 숫자를 클릭하면 그 논문들을 볼 수 있습니다.</span><i class="bar" aria-hidden="true"></i></button></li>
+        </ol>
+        <div class="how-figure">
+        <div class="how-stage" aria-hidden="true">
+          <div class="sr-head" dir="ltr" lang="en"><span>Title</span><span>Cited by</span><span>Year</span></div>
+          <div class="sr on" data-from="1" dir="ltr" data-role="first" style="--rc:#1a73e8">
+            <div class="sr-text" lang="en"><div class="sr-t">Self-Supervised Depth from Casual Video</div><div class="sr-a"><span class="nm on" data-from="1" data-focus="1">A Example</span>, B Writer, C Writer, D Writer</div><div class="sr-v"><span class="vn on" data-from="2" data-focus="2">Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</span>, 2023 <span class="chip on" data-from="2" data-focus="2"><span class="k">CCF</span> <b>A</b></span></div></div>
+            <div class="sr-c">892</div><div class="sr-y">2023</div>
+            <div class="co-slot" dir="ltr"><p class="co" data-from="1" data-to="1"><span class="tag">제1저자</span> 4명 중 1번째</p><p class="co on" data-from="2"><b dir="ltr">CCF A · CORE A*</b> · 이름으로 일치: <span dir="ltr">IEEE/CVF Computer Vision and Pattern Recognition Conference</span></p></div>
+          </div>
+          <div class="sr on" data-from="1" dir="ltr" data-role="second" style="--rc:#f9ab00">
+            <div class="sr-text" lang="en"><div class="sr-t">Cheap Calibration for Retrieval-Augmented Models</div><div class="sr-a">B Writer, <span class="nm on" data-from="1" data-focus="1">A Example</span>, H Writer</div><div class="sr-v"><mark class="sec on" data-from="3" data-focus="3">Findings</mark> of the Association for Computational Linguistics: ACL 2022, 410-423, 2022</div></div>
+            <div class="sr-c">868</div><div class="sr-y">2022</div>
+            <div class="co-slot" dir="ltr"><p class="co" data-from="1" data-to="2"><span class="tag">제2저자</span> 3명 중 2번째</p><p class="co on" data-from="3"><b dir="ltr">Findings</b> · 부차 트랙: 등급 없음, 라벨 없음</p></div>
+          </div>
+          <div class="mini">
+            <div class="mini-h"><b>저자 순서·등급별 논문</b><span dir="ltr"><i class="on">CCF</i><i>CORE</i></span></div>
+            <table>
+              <thead><tr><th></th><th>A</th><th>B</th><th>C</th><th>–</th><th>전체</th></tr></thead>
+              <tbody><tr><th><i style="--rc:#1a73e8"></i>제1저자</th><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td><td>·</td><td>·</td><td>·</td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td></tr><tr><th><i style="--rc:#f9ab00"></i>제2저자</th><td>·</td><td>·</td><td>·</td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td><td class="hit on" data-from="4" data-focus="4"><span class="z">·</span><span class="v">1</span></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <button type="button" class="how-play" hidden data-play="재생" data-pause="일시정지"><svg class="i-play" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg><svg class="i-pause" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z" fill="currentColor"/></svg><span>재생</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="wrap">
+      <h2>그 밖의 기능</h2>
+      <div class="grid">
+        <article style="--c:#4d8ff5"><h3>수상 및 발표</h3><p>최우수 논문, 시간의 검증상, Oral·Spotlight·Highlight 발표에 붙는 라벨입니다. 자료는 저자 본인의 설명과 공식 수상 페이지에서 가져왔습니다.</p></article>
+        <article style="--c:#b36cf6"><h3>전체 저자 목록</h3><p>Scholar는 긴 저자 목록을 “…”로 줄이며, 이 때문에 나의 역할이 가려질 수 있습니다. 클릭 한 번으로 Scholar의 논문 페이지에서 전체 목록을 읽어 옵니다.</p></article>
+        <article style="--c:#fbbc04"><h3>중복 항목 병합</h3><p>Scholar는 같은 논문을 두 번 나열하기도 합니다. 스위치를 켜면 그런 항목을 하나로 합치고 인용 수를 더해 줍니다.</p></article>
+        <article style="--c:#34a853"><h3>나만의 레이아웃</h3><p>패널의 모든 부분에 각각 스위치가 있습니다. 색, 부분의 순서, 각 부분의 이름을 직접 정할 수 있습니다.</p></article>
+        <article style="--c:#4d8ff5"><h3>개인정보 보호</h3><p>계정 불필요, 분석 도구 없음, 추적 없음. 모든 작업은 브라우저 안에서 이루어지며, 등급 목록은 확장 프로그램 안에 들어 있습니다.</p></article>
+        <article style="--c:#b36cf6"><h3>30개 언어</h3><p>확장 프로그램은 나의 언어로 표시됩니다. 또한 선택한 언어로 Scholar 자체를 열 수도 있습니다.</p></article>
+      </div>
     </div>
   </section>
 
   <section class="try" id="try">
     <div class="wrap">
-      <h2>실제 설정 페이지 체험하기</h2>
-      <p class="note">확장 프로그램 자체의 설정 페이지가 여기에서 그대로 실행되며, 스위치를 켜거나 끄면 미리보기에도 바로 반영됩니다. 미리보기 위에 마우스를 올리면 부분을 숨기거나 이동하거나 이름을 바꿀 수 있고, 부분을 두 번 클릭하면 해당 설정으로 이동합니다.</p>
+      <h2>설정 페이지 체험하기</h2>
+      <p class="note">이것은 확장 프로그램의 실제 설정 페이지입니다. 설정을 바꾸면 미리보기도 그에 따라 바뀝니다. 미리보기의 한 부분에 커서를 올리면 그 부분을 숨기거나, 옮기거나, 이름을 바꿀 수 있습니다.</p>
       <div class="try-bar">
         <a class="skip" href="#after-try">데모 건너뛰기</a>
         <p>변경 사항은 이 브라우저에만 저장됩니다.</p>
@@ -138,15 +185,15 @@
 
   <section class="export-section" id="after-try">
     <div class="wrap">
-      <h2>원클릭 학술 내보내기</h2>
-      <p class="note">이력서, 연구비 신청서, LaTeX 문서, AI 에이전트, 스프레드시트에 바로 붙여넣을 수 있는 논문 목록입니다.</p>
+      <h2>논문 복사</h2>
+      <p class="note">형식마다 버튼이 하나씩 있습니다. 이력서, 연구비 신청서, LaTeX, 스프레드시트용입니다. 아래는 가상의 논문 네 편에 대한 실제 출력입니다.</p>
       <div class="export-card">
-        <div class="export-tabs" role="tablist" aria-label="원클릭 학술 내보내기">
-          <button type="button" class="tab-btn active" role="tab" id="tab-bibtex" aria-selected="true" aria-controls="export-bibtex">BibTeX (LaTeX-Ready)</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-apa" aria-selected="false" aria-controls="export-apa" tabindex="-1">APA 7th Edition</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-json" aria-selected="false" aria-controls="export-json" tabindex="-1">Structured JSON</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-markdown" aria-selected="false" aria-controls="export-markdown" tabindex="-1">GitHub Markdown</button>
-          <button type="button" class="tab-btn" role="tab" id="tab-csv" aria-selected="false" aria-controls="export-csv" tabindex="-1">RFC-4180 CSV</button>
+        <div class="export-tabs" role="tablist" aria-label="논문 복사">
+          <button type="button" class="tab-btn active" role="tab" id="tab-bibtex" aria-selected="true" aria-controls="export-bibtex">BibTeX</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-apa" aria-selected="false" aria-controls="export-apa" tabindex="-1">APA</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-json" aria-selected="false" aria-controls="export-json" tabindex="-1">JSON</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-markdown" aria-selected="false" aria-controls="export-markdown" tabindex="-1">Markdown</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-csv" aria-selected="false" aria-controls="export-csv" tabindex="-1">CSV</button>
         </div>
         <div class="code-preview-wrap">
           <pre class="code-preview" role="tabpanel" id="export-bibtex" aria-labelledby="tab-bibtex" tabindex="0"><code>@inproceedings{author2025sample,
@@ -318,7 +365,7 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
 2024,Sample paper 2,&quot;B Writer, A Author, C Writer&quot;,Second author,NeurIPS 2024,A,A*,Best paper (NeurIPS 2024),133
 2024,Sample paper 3,&quot;A Author*, B Writer*, C Writer&quot;,Co-first author,CVPR 2024 (Highlight),A,A*,Highlight,27
 2023,Sample paper 4,&quot;B Writer, C Writer, D Writer, A Author&quot;,Last author,ACL 2023 (Spotlight),A,A*,Spotlight,215</code></pre>
-          <button type="button" class="copy-code-btn" data-label="클립보드에 복사" data-copied="복사되었습니다!">클립보드에 복사</button>
+          <button type="button" class="copy-code-btn" data-label="복사" data-copied="복사되었습니다">복사</button>
         </div>
       </div>
     </div>
@@ -326,69 +373,56 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
 
   <section class="operators-section">
     <div class="wrap">
-      <h2>즉시 검색과 검색 연산자</h2>
-      <p class="note">Scholar 프로필 어디서든 <kbd>/</kbd> 키를 누르면 전체 목록을 한 번에 검색할 수 있습니다.</p>
+      <h2>연산자로 검색</h2>
+      <p class="note">프로필에서 <kbd>/</kbd> 키를 누르면 모든 논문을 검색할 수 있습니다. 검색어에 연산자를 더하면 목록을 거를 수 있습니다.</p>
       <div class="operators-grid">
         <div class="op-card">
-          <div class="op-header"><code>cites:&gt;100</code> <code>cites:&gt;=50</code> <code>cites:&lt;10</code></div>
-          <p class="op-title">피인용 수 기준</p>
-          <p class="op-desc">입력한 숫자보다 피인용 수가 많거나 적은 논문만 남깁니다.</p>
+          <div class="op-header" dir="ltr"><code>cites:&gt;100</code> <code>cites:&gt;=50</code> <code>cites:&lt;10</code></div>
+          <h3 class="op-title">인용 수</h3>
+          <p class="op-desc">어떤 숫자보다 인용 수가 많거나 적은 논문.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>ccf:a</code> <code>ccf:b</code> <code>core:a*</code></div>
-          <p class="op-title">학술지·학회 등급</p>
-          <p class="op-desc">CCF 또는 CORE 등급이 매겨진 학회와 학술지의 논문만 표시합니다.</p>
+          <div class="op-header" dir="ltr"><code>ccf:a</code> <code>ccf:b</code> <code>core:a*</code></div>
+          <h3 class="op-title">등급</h3>
+          <p class="op-desc">지정한 CCF 또는 CORE 등급 게재처의 논문.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>role:first</code> <code>role:last</code> <code>role:cofirst</code></div>
-          <p class="op-title">저자 역할</p>
-          <p class="op-desc">제1저자, 공동 제1저자, 제2저자, 마지막(시니어) 저자로 필터링합니다.</p>
+          <div class="op-header" dir="ltr"><code>role:first</code> <code>role:last</code> <code>role:cofirst</code></div>
+          <h3 class="op-title">역할</h3>
+          <p class="op-desc">내가 제1저자, 공동 제1저자, 제2저자 또는 마지막(시니어) 저자인 논문.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>year:&gt;2020</code> <code>year:&gt;=2021</code> <code>year:&lt;=2015</code></div>
-          <p class="op-title">출판 연도</p>
-          <p class="op-desc">선택한 연도 이후, 이전 또는 해당 기간에, 혹은 최근 5년 이내에 출판된 논문을 보여줍니다.</p>
+          <div class="op-header" dir="ltr"><code>year:&gt;=2020</code> <code>year:2023</code> <code>age:&lt;5</code></div>
+          <h3 class="op-title">연도</h3>
+          <p class="op-desc">특정 연도 이전, 이후 또는 그 해에 출판된 논문, 혹은 최근 몇 년간의 논문.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><code>has:award</code> <code>has:talk</code></div>
-          <p class="op-title">수상 및 발표</p>
-          <p class="op-desc">Best Paper, Test of Time, Oral, Spotlight, Highlight 논문을 찾아보세요.</p>
+          <div class="op-header" dir="ltr"><code>has:award</code> <code>has:talk</code></div>
+          <h3 class="op-title">수상 및 발표</h3>
+          <p class="op-desc">최우수 논문상 또는 시간의 검증상을 받은 논문, 그리고 Oral·Spotlight·Highlight 발표가 있는 논문.</p>
         </div>
         <div class="op-card">
-          <div class="op-header"><kbd>Escape</kbd></div>
-          <p class="op-title">키 하나로 초기화</p>
-          <p class="op-desc">모든 검색, 표 선택, 필터를 한 번에 해제합니다.</p>
+          <div class="op-header" dir="ltr"><kbd>Escape</kbd></div>
+          <h3 class="op-title">모두 지우기</h3>
+          <p class="op-desc">키 하나로 검색, 선택한 셀, 모든 필터를 해제합니다.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="features">
-    <div class="wrap grid">
-      <article style="--c:#4d8ff5"><h3>모든 논문을 나의 역할별 색으로</h3><p>제1저자, 공동 제1저자, 제2저자, 마지막 저자 행마다 색이 지정되며, 저자 목록에서는 내 이름이 표시됩니다.</p></article>
-      <article style="--c:#b36cf6"><h3>CCF 및 CORE 등급</h3><p>게재처마다 CCF 2026과 ICORE 2026 등급을 해당 규칙과 함께 표시합니다. 등급을 확정할 수 없는 곳은 표시하지 않습니다. 추측은 하지 않습니다.</p></article>
-      <article style="--c:#fbbc04"><h3>역할 × 등급 표</h3><p>칸을 선택하면 해당 논문만 목록으로 보여 주며, 요약이나 목록을 복사해 이력서나 연구비 신청서에 활용할 수 있습니다.</p></article>
-      <article style="--c:#34a853"><h3>수상 및 발표</h3><p>최우수 논문, 시간의 검증상, Oral·Spotlight·Highlight를 저자 본인의 설명과 7,000편이 넘는 논문의 공식 수상 페이지에서 모았습니다.</p></article>
-      <article style="--c:#4d8ff5"><h3>잘린 저자 목록 완성</h3><p>Scholar는 긴 저자 목록의 뒷부분 저자를 숨깁니다. 클릭 한 번으로 논문 페이지에서 읽어 오며, 허용하면 Semantic Scholar에서도 가져옵니다.</p></article>
-      <article style="--c:#b36cf6"><h3>중복 항목 병합</h3><p>켜 두면 같은 논문이 두 번 나열된 항목을 하나로 합치고, 인용 수는 더해 줍니다.</p></article>
-      <article style="--c:#fbbc04"><h3>나에게 맞게 설정</h3><p>표시할 항목을 고르고, 색을 직접 정하고, 필요 없는 Scholar 페이지 부분은 숨길 수 있습니다.</p></article>
-      <article style="--c:#34a853"><h3>설계부터 개인정보 보호</h3><p>계정 불필요, 분석 도구 없음, 추적 없음. 모든 계산은 브라우저 안에서 이루어지며, 등급 목록은 확장 프로그램에 포함되어 있습니다.</p></article>
     </div>
   </section>
 
   <section class="numbers">
     <div class="wrap">
       <h2>숫자로 보기</h2>
-      <p class="note">이 숫자들은 페이지를 만들 때 확장 프로그램의 코드와 데이터에서 집계한 것이며, 손으로 입력한 값은 없습니다. 수정할 때마다 늘어나는 숫자는 내림해서 표시합니다.</p>
+      <p class="note">이 숫자들은 페이지를 만들 때 확장 프로그램의 코드와 데이터에서 집계합니다. 수정할 때마다 늘어나는 숫자는 내림해서 표시합니다.</p>
       <div class="numbers-grid">
-        <div class="num" style="--c:#4d8ff5"><b dir="ltr">153</b><span>바꿀 수 있는 설정</span></div>
+        <div class="num" style="--c:#4d8ff5"><b dir="ltr">154</b><span>바꿀 수 있는 설정</span></div>
         <div class="num" style="--c:#b36cf6"><b dir="ltr">30</b><span>표시 언어</span></div>
         <div class="num" style="--c:#fbbc04"><b dir="ltr">1,178</b><span>CCF 및 CORE 목록에 등급이 매겨진 게재처</span></div>
-        <div class="num" style="--c:#34a853"><b dir="ltr">400+</b><span>Scholar에 표시되지만 공식 목록에 없는 게재처 이름</span></div>
-        <div class="num" style="--c:#4d8ff5"><b dir="ltr">18</b><span>잘못된 등급이 표시되지 않도록 막는 검사</span></div>
-        <div class="num" style="--c:#b36cf6"><b dir="ltr">5,581</b><span>확장 프로그램이 인식한 수상 논문</span></div>
-        <div class="num" style="--c:#fbbc04"><b dir="ltr">22,744</b><span>사람이 등급을 하나하나 확인한 실제 Scholar 게재처 표시</span></div>
-        <div class="num" style="--c:#34a853"><b dir="ltr">500+</b><span>단위 테스트 (그 밖에 실제 브라우저에서 실행하는 E2E 테스트 모음)</span></div>
+        <div class="num" style="--c:#34a853"><b dir="ltr">400+</b><span>Scholar에 표시되지만 목록에 없는 게재처 이름</span></div>
+        <div class="num" style="--c:#4d8ff5"><b dir="ltr">18</b><span>잘못된 등급을 막는 검사</span></div>
+        <div class="num" style="--c:#b36cf6"><b dir="ltr">5,581</b><span>확장 프로그램이 알고 있는 수상 논문</span></div>
+        <div class="num" style="--c:#fbbc04"><b dir="ltr">22,744</b><span>사람이 결과를 하나하나 확인한 실제 Scholar 게재처 표시</span></div>
+        <div class="num" style="--c:#34a853"><b dir="ltr">500+</b><span>단위 테스트, 그리고 실제 브라우저에서 실행하는 E2E 테스트 모음</span></div>
       </div>
     </div>
   </section>
@@ -397,18 +431,22 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
     <div class="wrap">
       <h2>설치</h2>
       <ol>
-        <li>GitHub에서 프로젝트를 내려받고(녹색 “코드” 버튼 → “ZIP 다운로드”), 압축을 풉니다.</li>
+        <li>GitHub에서 프로젝트를 내려받습니다: 녹색 “코드” 버튼을 클릭한 다음 “ZIP 다운로드”를 누릅니다. 파일의 압축을 풉니다.</li>
         <li><code>chrome://extensions</code>를 열고 “개발자 모드”를 켭니다.</li>
-        <li>“압축해제된 확장 프로그램을 로드”를 클릭하고 src 폴더를 선택합니다. 그다음 아무 Google Scholar 프로필을 엽니다.</li>
+        <li>“압축해제된 확장 프로그램을 로드”를 클릭하고 src 폴더를 선택합니다. 그다음 Google Scholar 프로필 하나를 엽니다.</li>
       </ol>
-      <p class="note">Chrome 웹 스토어 등록도 예정되어 있습니다. Edge, Brave 등 다른 Chromium 브라우저도 같은 방식으로 사용할 수 있습니다.</p>
+      <p class="note">Edge, Brave 등 다른 Chromium 브라우저도 같은 단계를 따릅니다. Chrome 웹 스토어 버전은 나중에 나올 수 있습니다.</p>
     </div>
   </section>
 
   <section class="honest">
     <div class="wrap">
-      <h2>한계에 대해 솔직하게</h2>
-      <p>등급은 발표 당시가 아니라 현재 목록 기준이며, CCF 목록 자체도 평가가 아님을 밝히고 있습니다. 이 확장 프로그램은 학술지·학회를 추측하지 않습니다. 판단할 수 없는 것은 표시하지 않고 목록으로 보여 줍니다.</p>
+      <h2>한계</h2>
+      <ul class="limits">
+        <li>등급은 현재의 목록에서 가져옵니다. 논문이 출판된 해에는 게재처의 등급이 지금과 달랐을 수 있습니다.</li>
+        <li>CCF는 그 목록이 학술 평가의 근거가 되지 않는다고 밝히고 있습니다.</li>
+        <li>추측하지 않습니다. 등급을 특정할 수 없는 게재처에는 라벨을 붙이지 않고, 패널에 목록으로 표시합니다.</li>
+      </ul>
     </div>
   </section>
 </main>
@@ -416,9 +454,9 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
   <div class="wrap">
     <span>오픈 소스, Apache License 2.0</span>
     <a href="../privacy/">개인정보 처리방침</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/ROADMAP.md">Roadmap</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/AGENTS.md">Agent API</a>
-    <a href="https://github.com/boyugou/better-scholar/blob/main/SECURITY.md">Security</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/ROADMAP.md">로드맵</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/AGENTS.md">AI 에이전트용</a>
+    <a href="https://github.com/boyugou/better-scholar/blob/main/SECURITY.md">보안</a>
     <a href="https://github.com/boyugou/better-scholar/issues">문제 신고</a>
     <a href="https://github.com/boyugou/better-scholar">GitHub</a>
   </div>

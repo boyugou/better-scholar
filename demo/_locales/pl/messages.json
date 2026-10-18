@@ -3,7 +3,7 @@
     "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "Ulepsz Google Scholar: role autorów, rankingi CCF i CORE, nagrody konferencyjne, wykresy roczne i błyskawiczne wyszukiwanie."
+    "message": "Na profilach Google Scholar: rola autorska właściciela i ranking CCF i CORE miejsc publikacji prac, zliczone w jednej tabeli."
   },
   "extShortName": {
     "message": "Better Scholar"
@@ -51,7 +51,7 @@
     "message": "Finalista najlepszej pracy"
   },
   "marksHint": {
-    "message": "Na podstawie słów samych autorów w tytule i opisie miejsca publikacji każdej pracy w Scholar (niesprawdzanych) oraz wbudowanej listy nagrodzonych prac z dużych konferencji."
+    "message": "Z dwóch źródeł: słów, które sami autorzy wpisują w tytule lub w wierszu miejsca publikacji pracy na Scholar (niesprawdzanych), oraz wbudowanej listy nagrodzonych prac z dużych konferencji."
   },
   "marksAsWritten": {
     "message": "ze słów autorów lub z listy nagród"
@@ -169,7 +169,7 @@
     "message": "Otwiera stronę każdej pracy w Scholar (mniej więcej jedną na sekundę), aby odczytać pełną listę autorów."
   },
   "resolveHintSemantic": {
-    "message": "Najpierw pyta Semantic Scholar o listę autorów każdej pracy (on dostaje tylko tytuł), a potem otwiera strony pozostałych prac w Scholar (mniej więcej jedną na sekundę)."
+    "message": "Najpierw pyta Semantic Scholar o listę autorów każdej pracy (on dostaje tylko tytuł). Potem otwiera strony pozostałych prac w Scholar, mniej więcej jedną na sekundę."
   },
   "resolving": {
     "message": "Odczytywanie list autorów… $N1$/$N2$",
@@ -464,7 +464,7 @@
     "message": "Przywrócić wszystkie te ustawienia do wartości domyślnych?"
   },
   "optStorage": {
-    "message": "Ustawienia są przechowywane w przeglądarce i synchronizowane z profilem Chrome. Rozszerzenie odczytuje strony Scholar, które otwierasz, a gdy naciśniesz „Odczytaj pełne listy”, także strony prac ze skróconą listą autorów; tytuły prac trafiają do Semantic Scholar tylko wtedy, gdy to włączysz."
+    "message": "Ustawienia zostają w przeglądarce i są synchronizowane z profilem Chrome. Rozszerzenie odczytuje strony Scholar, które otwierasz. Gdy naciśniesz „Odczytaj pełne listy”, odczytuje także strony prac ze skróconą listą autorów. Tytuły prac trafiają do Semantic Scholar tylko wtedy, gdy to włączysz."
   },
   "optSample": {
     "message": "Przykładowa praca"
@@ -476,7 +476,7 @@
     "message": "Wczytuj wszystkie prace automatycznie"
   },
   "optAutoLoadHint": {
-    "message": "Scholar najpierw pokazuje tylko pierwsze prace. Rozszerzenie samo naciska jego przycisk „Pokaż więcej” mniej więcej raz na sekundę, aż cała lista się wczyta, i przestaje, gdy Scholar przestaje odpowiadać. Wył.: panel oferuje „Wczytaj wszystko”."
+    "message": "Scholar pokazuje tylko pierwsze prace z profilu. To naciska za ciebie przycisk „Pokaż więcej” samego Scholar, mniej więcej raz na sekundę, aż cała lista się wczyta. Zatrzymuje się, gdy Scholar przestaje odpowiadać. Wył.: zamiast tego panel pokazuje „Wczytaj wszystko”."
   },
   "loadStalled": {
     "message": "Scholar nie przysłał więcej prac (wczytano: $N1$). Spróbuj „Wczytaj wszystko” ponownie za chwilę.",
@@ -565,7 +565,7 @@
     "message": "Scalaj duplikaty"
   },
   "optMergeLabelHint": {
-    "message": "Wpisy o tym samym tytule (z pominięciem wielkości liter, akcentów i interpunkcji) i tym samym pierwszym autorze stają się jednym: zostaje najczęściej cytowany, z cytowaniami wszystkich. Panel liczy go raz."
+    "message": "Wpisy o tym samym tytule i tym samym pierwszym autorze stają się jednym wpisem (wielkość liter, akcenty i interpunkcja się nie liczą). Zostaje najczęściej cytowany i pokazuje cytowania wszystkich. Panel liczy go raz."
   },
   "mergedTip": {
     "message": "Scalono wpisów: $N1$; uwzględniono cytowania wszystkich",
@@ -657,7 +657,7 @@
     "message": "Najpierw odczytuj listy autorów z Semantic Scholar"
   },
   "optSemanticLabelHint": {
-    "message": "Po naciśnięciu „Odczytaj pełne listy” najpierw pytamy Semantic Scholar o pełną listę autorów każdej pracy (dostaje tylko tytuł pracy i nic więcej), a stronę samego Scholar otwieramy tylko dla tego, czego nie zna Semantic Scholar. Mniej zapytań do Scholar, więc mniej CAPTCHA."
+    "message": "Po naciśnięciu „Odczytaj pełne listy” najpierw pytamy Semantic Scholar o pełną listę autorów każdej pracy. Semantic Scholar dostaje tylko tytuł pracy i nic więcej. Strona samego Scholar jest otwierana tylko dla prac, których Semantic Scholar nie zna. Mniej zapytań do Scholar oznacza mniej CAPTCHA."
   },
   "yearsTitle": {
     "message": "Wyróżnione prace według lat"
@@ -858,7 +858,7 @@
     "message": "Agenci AI"
   },
   "optAgentHint": {
-    "message": "Skopiuj przewodnik, który wymienia wszystkie ustawienia, ich wartości i bieżące wybory. Wklej go do asystenta AI, napisz, czego chcesz, a następnie wklej jego odpowiedź do edytora konfiguracji poniżej i naciśnij Zastosuj konfigurację."
+    "message": "Skopiuj przewodnik, który wymienia wszystkie ustawienia, ich wartości i bieżące wybory. Przekaż go asystentowi AI razem z tym, czego chcesz. Następnie wklej jego odpowiedź do edytora konfiguracji poniżej i naciśnij Zastosuj konfigurację."
   },
   "optAgentCopy": {
     "message": "Kopiuj przewodnik dla AI"
@@ -972,6 +972,12 @@
   },
   "optFiltersSearch": {
     "message": "Pole wyszukiwania"
+  },
+  "optFiltersKey": {
+    "message": "Klawisz “/” przenosi do pola wyszukiwania"
+  },
+  "optFiltersKeyHint": {
+    "message": "W panelu na stronie profilu i na tej stronie, do jej własnego wyszukiwania. Wyłączony: klawisz nie robi nic."
   },
   "optOrderPills": {
     "message": "Kolejność szybkich filtrów"
@@ -1120,7 +1126,7 @@
     "message": "Sprawdź miejsce publikacji"
   },
   "optVenueHint": {
-    "message": "Wklej miejsce publikacji tak, jak wyświetla je Scholar (szary wiersz pod pracą), aby zobaczyć, co o nim mówią listy CCF i CORE oraz według jakiej zasady. Miejsce publikacji, którego listy nie potrafią umieścić, nie dostaje rankingu: nic nie jest zgadywane."
+    "message": "Wklej miejsce publikacji tak, jak wyświetla je Scholar: szary wiersz pod pracą. Zobaczysz, co o nim mówią listy CCF i CORE oraz według jakiej zasady. Miejsce publikacji, którego listy nie potrafią umieścić, nie dostaje rankingu. Nic nie jest zgadywane."
   },
   "optVenuePlaceholder": {
     "message": "np. Proceedings of the IEEE conference on computer vision and pattern recognition"
@@ -1129,7 +1135,7 @@
     "message": "Bez rankingu. Listy nie umieszczają tego tekstu z pewnością, więc nie dostaje etykiety."
   },
   "optVenueSecondary": {
-    "message": "Słowo „$N1$” oznacza kategorię drugorzędną (workshop, poster, krótka praca …). Miejsce publikacji nie dostaje rankingu, chyba że jego własna nazwa zawiera to słowo.",
+    "message": "Słowo „$N1$” oznacza kategorię drugorzędną, na przykład workshop, poster albo krótką pracę. Miejsce publikacji nie dostaje rankingu, chyba że jego własna nazwa zawiera to słowo.",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -1149,7 +1155,7 @@
     "message": "Liczby zależą od filtrów"
   },
   "optFiltersFollowHint": {
-    "message": "Tabela, liczniki nagród i wystąpień oraz zestawienie do skopiowania liczą tylko te prace, które pozostają po filtrach (zakres lat, wyszukiwanie, szybki filtr, miejsce publikacji); wybrana komórka lub wiersz nie zawęża żadnego licznika. Wył.: zawsze liczą cały profil."
+    "message": "Tabela, liczniki nagród i wystąpień oraz zestawienie do skopiowania liczą tylko te prace, które pozostają po filtrach: zakres lat, wyszukiwanie, szybki filtr lub miejsce publikacji. Wybrana komórka lub wiersz nie zmienia żadnego licznika. Wył.: zawsze liczą cały profil."
   },
   "optPillRecent": {
     "message": "Ostatnie 5 lat"
@@ -1182,7 +1188,7 @@
     "message": "Dodaj link do profilu i datę do skopiowanego zestawienia"
   },
   "optCopySourceHint": {
-    "message": "Skopiowane zestawienie i skopiowana tabela dostają wiersz z linkiem do profilu i datą (Source: …), żeby liczby można było zarchiwizować albo przesłać dalej. Lista, która nie jest w całości wczytana, mówi o tym w tym miejscu, niezależnie od ustawienia tego przełącznika."
+    "message": "Skopiowane zestawienie i skopiowana tabela kończą się wierszem z linkiem do profilu i datą (Source: …), żeby liczby można było zarchiwizować albo przesłać dalej. Lista, która nie jest w całości wczytana, zawsze mówi o tym w tym miejscu."
   },
   "unrankedPreprints": {
     "message": "Preprinty"
@@ -1197,7 +1203,7 @@
     "message": "Gdy miejsce publikacji ma ranking na obu listach"
   },
   "optPreferHint": {
-    "message": "Jedna etykieta zamiast dwóch: wybrana lista, a druga tylko tam, gdzie wybrana nie ma rankingu dla miejsca publikacji. Podpowiedź etykiety nadal podaje drugi ranking."
+    "message": "Jedna etykieta zamiast dwóch: etykieta z listy, którą wybierasz. Etykieta drugiej listy pojawia się tylko tam, gdzie wybrana lista nie ma rankingu dla miejsca publikacji. Podpowiedź etykiety nadal podaje drugi ranking."
   },
   "optPreferCcf": {
     "message": "Najpierw CCF"

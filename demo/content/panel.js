@@ -115,7 +115,7 @@
     const queryInput = h("input", { type: "search", class: "rr-search-input", "data-act": "filter-query", maxlength: "500", spellcheck: "false", autocomplete: "off", autocapitalize: "off", autocorrect: "off", dir: "auto",          // (operators are code, not words: no red squiggles; its direction follows what is typed)
       role: "combobox", "aria-autocomplete": "list", "aria-expanded": "false", "aria-controls": "rr-suggest" });
     const searchCount = h("span", { class: "rr-search-count", "data-rr": "search-count", hidden: true, "aria-live": "polite" });
-    const kbdHint = h("kbd", { class: "rr-search-kbd", "aria-hidden": "true", onClick: () => {
+    const kbdHint = h("kbd", { class: "rr-search-kbd", "aria-hidden": "true", ...P("panel.filters.key"), onClick: () => {
       queryInput.focus();
       openPopularSuggestions();
     } }, "/");
@@ -286,10 +286,12 @@
     }));
     const searchPills = h("div", { class: "rr-search-pills", role: "group", "data-rr-order": "panel.filters.pills.order", "data-rr-axis": "x" });
 
+    let slashOn = true;                    // (the "/" key and its hint: a setting)
     function syncSearchUI(m) {
+      if (m && m.prefs) slashOn = m.prefs.panel.filters.key !== false;
       const hasText = !!queryInput.value;
       clearSearchBtn.hidden = !hasText;
-      kbdHint.hidden = hasText;
+      kbdHint.hidden = hasText || !slashOn;
       for (const btn of pillEls.values()) {
         const active = B.query.hasValue(queryInput.value, btn.getAttribute("data-op"));
         btn.classList.toggle("rr-spill-active", active);
