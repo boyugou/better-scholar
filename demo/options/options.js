@@ -15,6 +15,7 @@
       if (k === "class") el.setAttribute("class", v);
       else el.setAttribute(k, String(v));
     }
+    if (tag === "svg" && !el.hasAttribute("aria-hidden")) el.setAttribute("aria-hidden", "true");          // (every icon of this page sits beside the words that name its control: a picture to a screen reader is noise)
     for (const c of children.flat(Infinity)) {
       if (c == null || c === false) continue;
       el.append(c.nodeType ? c : document.createTextNode(String(c)));
@@ -418,6 +419,7 @@
       chips.forEach(({ preset, el }) => {
         const matches = Object.entries(preset.colors).every(([r, c]) => (prefs.colors[r] || ROLE_DEFAULT[r]).toLowerCase() === c.toLowerCase());
         el.classList.toggle("active", matches);
+        el.setAttribute("aria-pressed", String(matches));          // (the selected look is said, not only drawn)
       });
     };
     syncers.push(sync);
@@ -576,10 +578,7 @@
     onClick: async () => {
       const m = chrome.runtime.getManifest();
       const text = ["Better Scholar " + m.version, navigator.userAgent, "interface language: " + B.dom.langTag(), "settings: " + JSON.stringify(prefs)].join("\n");
-      if (await B.dom.copyText(text)) {
-        diagBtn.textContent = t("copied");
-        setTimeout(() => { diagBtn.textContent = t("optCopyDiagnostics"); }, 1400);
-      }
+      if (await B.dom.copyText(text)) done(diagBtn, t("optCopyDiagnostics"));
     }
   }, t("optCopyDiagnostics"));
 
@@ -640,10 +639,7 @@
       "data-act": "copy-cache-json",
       "aria-label": t("optCacheCopy"),
       onClick: async () => {
-        if (await B.dom.copyText(JSON.stringify(resolved, null, 2))) {
-          copyJsonBtn.textContent = t("copied");
-          setTimeout(() => { copyJsonBtn.textContent = t("optCacheCopy"); }, 1400);
-        }
+        if (await B.dom.copyText(JSON.stringify(resolved, null, 2))) done(copyJsonBtn, t("optCacheCopy"));
       }
     }, t("optCacheCopy"));
 
@@ -698,7 +694,13 @@
     try { patch = JSON.parse(text); } catch (e) { say([t("optConfigError", [String(e.message).slice(0, 120)])], true); return; }
     await applyPatch(patch);
   }
-  const done = (button, label) => { button.textContent = t("copied"); setTimeout(() => { button.textContent = label; }, 1400); };
+  // (a button that changes its words is not read out — and the one with an aria-label never changes its name: the status says "Copied")
+  const done = (button, label) => {
+    button.textContent = t("copied");
+    const live = document.getElementById("live");
+    if (live) { live.textContent = t("copied"); setTimeout(() => { live.textContent = ""; }, 1500); }
+    setTimeout(() => { button.textContent = label; }, 1400);
+  };
   const recordJson = () => JSON.stringify(prefs, null, 2);
 
   const copyConfigBtn = h("button", { class: "btn", type: "button", "data-act": "config-copy", onClick: async () => { if (await B.dom.copyText(recordJson())) done(copyConfigBtn, t("optConfigCopy")); } }, t("optConfigCopy"));
@@ -774,7 +776,7 @@
         chipSample(classes, { more: true, colors: theme.patch.colors }), h("span", { class: "chip-theme-name" }, t(theme.name)));
       return { theme, btn };
     });
-    const sync = () => buttons.forEach(({ theme, btn }) => btn.classList.toggle("active", (({ applied, ignored }) => !applied.length && !ignored.length)(B.prefs.apply(prefs, theme.patch))));
+    const sync = () => buttons.forEach(({ theme, btn }) => { const on = (({ applied, ignored }) => !applied.length && !ignored.length)(B.prefs.apply(prefs, theme.patch)); btn.classList.toggle("active", on); btn.setAttribute("aria-pressed", String(on)); });
     syncers.push(sync);
     sync();
     return h("div", { class: "chip-themes", role: "group", "aria-label": t("optChipThemes") }, ...buttons.map((b) => b.btn));
@@ -921,6 +923,7 @@
             top: Math.max(0, c.getBoundingClientRect().top + scrollY - covered - 14),
             behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"
           });
+          if (e.detail === 0) { c.setAttribute("tabindex", "-1"); c.focus({ preventScroll: true }); }          // (a key press goes with the page: the next Tab is the first control of the section, not of the page)
         }
       }, titleText);
     }));

@@ -32,6 +32,10 @@
     const draw = () => {
       const cur = options.find((o) => o.value === value);
       label.textContent = cur ? cur.label : value || placeholder;                  // (a value the list does not have, set by a page call, is shown as it is)
+      // (the name of the choice is the label of its empty option — "From", "To": once a year is chosen the button reads "From: 2025", not "2025")
+      const base = (options.find((o) => o.value === "") || {}).label || placeholder || "";
+      el.setAttribute("aria-label", cur && cur.value !== "" && base ? `${base}: ${cur.label}` : base || label.textContent);
+      if (base) list.setAttribute("aria-label", base);
       el.classList.toggle("rr-dd-set", !!(cur && cur.value !== ""));
       list.replaceChildren(...options.map((o, i) => h("li", { role: "option", tabindex: "-1", "data-value": o.value, "aria-selected": String(o.value === value),
         onClick: () => choose(i) }, o.label)));
@@ -203,10 +207,8 @@
           role: "option",
           "aria-selected": "false",
           "data-op": item.op,
-          onPointerdown: (e) => {
-            e.preventDefault();
-            applySuggestion(item);
-          }
+          onPointerdown: (e) => e.preventDefault(),          // (the focus stays in the box; the suggestion is taken on the click, so that a press can be given up by moving off it)
+          onClick: () => applySuggestion(item)
         }, catBadge, opCode, descText);
       }));
     }
@@ -296,8 +298,12 @@
       // (a query that says nothing — spaces — has no count; an operator the panel could not read says so on the box)
       const sm = m && m.searchMatch;
       if (m) {
-        queryInput.setAttribute("aria-invalid", sm && sm.errors.length ? "true" : "false");
-        queryInput.title = sm && sm.errors.length ? sm.errors.join("\n") : "";
+        const wrong = !!(sm && sm.errors.length);
+        queryInput.setAttribute("aria-invalid", wrong ? "true" : "false");
+        queryInput.title = wrong ? sm.errors.join("\n") : "";
+        searchError.textContent = wrong ? sm.errors.join(" · ") : "";
+        searchError.hidden = !wrong;
+        if (wrong) queryInput.setAttribute("aria-describedby", "rr-search-error"); else queryInput.removeAttribute("aria-describedby");
       }
       if (sm) {
         searchCount.hidden = false;
@@ -365,6 +371,7 @@
       }
     });
     const searchRow = h("div", { class: "rr-search", ...P("panel.filters.search") }, queryInput, searchCount, kbdHint, clearSearchBtn, suggestList);
+    const searchError = h("div", { class: "rr-search-error", id: "rr-search-error", hidden: true });          // (what could not be read of the query, in words: the box says it is invalid, and by this)
 
     const onlyCb = h("input", { type: "checkbox", role: "switch", "data-act": "only", onChange: (e) => cb.onOnly(e.target.checked) });
     const onlyLabel = h("label", { class: "rr-check", ...L("onlyHighlighted") }, onlyCb);
@@ -376,7 +383,7 @@
     const yearLabel = h("span", { class: "rr-label", ...L("yearLabel") });
     yearStart.el.setAttribute("data-rr-label", "yearStart"); yearEnd.el.setAttribute("data-rr-label", "yearEnd");
     const yearRow = h("div", { class: "rr-year", ...P("panel.filters.years") }, yearLabel, yearStart.el, h("span", { class: "rr-dash" }, "–"), yearEnd.el, yearStart.list, yearEnd.list);
-    const filtersSec = h("div", { class: "rr-sec rr-filters", "data-rr": "filters", ...P("panel.filters.show") }, searchRow, searchPills, onlyRow, yearRow);
+    const filtersSec = h("div", { class: "rr-sec rr-filters", "data-rr": "filters", ...P("panel.filters.show") }, searchRow, searchError, searchPills, onlyRow, yearRow);
 
     const metricsSec = h("div", { class: "rr-sec rr-metrics", "data-rr": "metrics", ...P("panel.metrics.show") });
     const yearsSec = h("div", { class: "rr-sec rr-years", "data-rr": "years", ...P("panel.years.show") });
@@ -400,7 +407,7 @@
     // a bar that says the list is filtered, by how much, and clears every filter
     const fbCount = document.createTextNode(""), fbWhat = h("span", { class: "rr-fb-what" });
     const fbText = h("span", { class: "rr-fb-text", role: "status" }, fbCount, fbWhat);          // (a status: what the filters leave is said when it changes)
-    const fbClear = h("button", { class: "rr-link", type: "button", "data-act": "clear-filters", onClick: () => cb.onClearFilters() });
+    const fbClear = h("button", { class: "rr-link", type: "button", "data-act": "clear-filters", onClick: (e) => { cb.onClearFilters(); if (e.detail === 0) queryInput.focus({ preventScroll: true }); } });          // (the bar goes with the filters: a key press goes on in the search box, not to the page)
     let fbSig = "";
     const filterBar = h("div", { class: "rr-filterbar", "data-rr": "filterbar", hidden: true, ...P("panel.filters.bar") }, fbText, fbClear);
     // Scholar's page changed under us: the warning is the first thing in the panel
@@ -477,12 +484,14 @@
       const s = m.summary, sel = m.selection;
       const pressed = (x) => String(sameSel(sel, x));
       const cols = s.columns.filter((c) => c !== "none" || tp.unranked);                    // (the tiers belong to the list's tab; the "not ranked" column has its own switch)
+      const srcName = m.source ? t(m.source === "ccf" ? "srcCcf" : "srcCore") : "";
       const showTotal = tp.total || !cols.length;                                           // (a table with no tier column has no number but the total: it is drawn whatever its switch says)
       const tierPart = (c) => (c === "none" ? P("panel.table.unranked") : m.source ? P("panel.table." + m.source) : {});
       const totalHead = showTotal ? h("th", { class: "rr-col-total", ...P("panel.table.total"), ...L("colTotal") }, t("colTotal")) : null;
       const headRow = h("tr", {}, h("th", {}, h("span", { class: "rr-sr" }, t("colRole"))),
         ...cols.map((c) => h("th", { ...tierPart(c) },
           h("button", { class: "rr-rolebtn", type: "button", style: "padding:1px 5px", "data-tier": c, "aria-pressed": pressed({ role: undefined, tier: c }),
+            "aria-label": c === "none" ? t("tipUnranked") : [srcName, tierText(c)].filter(Boolean).join(" "),          // (the list and the tier, in words; "–" is the column of what is not ranked)
             title: c === "none" ? [t("tipUnranked"), unrankedWords(s)].filter(Boolean).join("\n") : "", onClick: () => cb.onSelect({ role: undefined, tier: c }) }, tierText(c)))),
         totalHead);
       const rows = s.rows.filter((r) => r.role !== "middle" || tp.other);
@@ -491,7 +500,7 @@
           onClick: () => cb.onSelect({ role: r.role, tier: undefined }) }, dot(r.role), t(ROLE_KEY[r.role]))),
         ...cols.map((c) => h("td", { ...tierPart(c) },
           h("button", { class: "rr-cell" + (r[c] ? "" : " rr-zero"), type: "button", tabindex: r[c] ? null : "-1", "data-role": r.role, "data-tier": c,
-            "aria-pressed": pressed({ role: r.role, tier: c }), "aria-label": `${t(ROLE_KEY[r.role])} ${tierText(c)}: ${r[c]}`,
+            "aria-pressed": pressed({ role: r.role, tier: c }), "aria-label": `${t(ROLE_KEY[r.role])}, ${c === "none" ? t("tipUnranked") : [srcName, tierText(c)].filter(Boolean).join(" ")}: ${r[c]}`,
             onClick: () => cb.onSelect({ role: r.role, tier: c }) }, r[c] ? String(r[c]) : "·"))),
         showTotal ? h("td", { class: "rr-total", ...P("panel.table.total") }, String(r.total)) : null));
       let hiddenRow = null;
@@ -505,7 +514,8 @@
       }
       const foot = showTotal ? h("tr", { ...P("panel.table.total") }, h("th", { ...L("colTotal") }, t("colTotal")), ...cols.map((c) => h("td", {}, String(s.totals[c]))), h("td", {}, String(s.totals.total))) : null;
       // (the papers whose position is not known are not in the total: their row comes after it)
-      matrixBox.replaceChildren(h("table", { class: "rr-matrix" + (showTotal ? "" : " rr-no-total") }, h("thead", {}, headRow), h("tbody", {}, ...bodyRows), h("tfoot", {}, foot, hiddenRow)));
+      const tableName = (summaryHead.querySelector(".rr-sec-title") || {}).textContent || t(m.noRanks || !m.sources.length ? "summaryTitleRoles" : "summaryTitle");
+      matrixBox.replaceChildren(h("table", { class: "rr-matrix" + (showTotal ? "" : " rr-no-total"), "aria-label": tableName }, h("thead", {}, headRow), h("tbody", {}, ...bodyRows), h("tfoot", {}, foot, hiddenRow)));
     }
 
     function renderActions(m) {
@@ -813,11 +823,13 @@
       const lists = (m.sources.length ? m.sources : ["ccf", "core"]).map((s) => listName(m.edition[s])).join(" · ");
       noteBox.textContent = m.noRanks ? t("noRanksNote", [lists]) : m.sources.length ? t("dataNote", [lists]) : "";        // (no lists on: nothing to say about where ranks come from)
       noteBox.hidden = !m.prefs.panel.table.note || !noteBox.textContent;
+      // the titles of the parts are headings (a screen reader lists them and jumps between them); the panel's own name is the title bar's
+      for (const n of el.querySelectorAll(".rr-sec-title")) if (!n.hasAttribute("role")) { n.setAttribute("role", "heading"); n.setAttribute("aria-level", "3"); }
       restoreFocus(focused);
     }
 
     // A control the panel draws again keeps the keyboard where it was: when the focus fell to the page with the old control, it is put on the one with the same name
-    const FOCUS_ATTRS = ["data-year", "data-metric", "data-venue", "data-mark-group", "data-role", "data-tier", "data-act", "data-src", "data-focus"];          // (data-focus: a place that holds one button at a time — "Load all", then "Cancel")
+    const FOCUS_ATTRS = ["data-year", "data-metric", "data-venue", "data-mark-group", "data-role", "data-tier", "data-act", "data-src", "data-pill", "data-focus"];          // (data-focus: a place that holds one button at a time — "Load all", then "Cancel")
     const sectionOf = (node) => { const sec = node.closest("[data-rr]"); return sec ? sec.getAttribute("data-rr") : ""; };
     function focusKeyOf(node) {
       if (!node || node === document.body || !el.contains(node)) return null;

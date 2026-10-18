@@ -27,7 +27,7 @@
   --sub: #f8fafc;
   --hover: #f1f5f9;
   --btn-line: #cbd5e1;        /* Slate 300 */
-  --sw-off: #94a3b8;          /* Slate 400 */
+  --sw-off: #8392a7;          /* 3.2:1 on the white card (Slate 400, #94a3b8, was 2.6:1: the edge of a control is 3:1) */
   --sw-thumb-on: #ffffff;
   --chip-bg: #f1f5f9;
   --chip-border: #e2e8f0;
@@ -259,11 +259,16 @@ body {
   .card, .opt, .role-studio-card {
     scroll-margin-top: calc(min(40vh, 420px) + 16px);
   }
+  html { scroll-padding-top: calc(min(40vh, 420px) + 16px); }
 }
 
 /* ==========================================================================
    Cards & Sections
    ========================================================================== */
+
+.card:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }          /* (a section the keyboard was taken to) */
+/* a control the keyboard reaches is not left under the sticky strip: the row of section links (wide), the preview (one column — see the media query) */
+html { scroll-padding-top: 72px; }
 
 .card {
   background: var(--card);
@@ -828,6 +833,8 @@ select.sel:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
+/* (the chosen swatch has its ring already: the focus is drawn outside it, not on it) */
+.curated-dot-btn.active:focus-visible { outline-offset: 5px; }
 
 /* Hex input pill & native picker wrapper */
 .hex-input-pill {
@@ -1666,3 +1673,7 @@ button.btn.preset-chip:hover {
     outline: 2px solid Highlight;
   }
 }
+
+/* text for screen readers only */
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
