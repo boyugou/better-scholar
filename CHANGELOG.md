@@ -25,6 +25,9 @@
   Addison-Wesley are no periodicals now (*Electronic Notes in Theoretical Computer Science* still is); "Proc. ACM" is a journal only by the
   journals' own abbreviations ("Proc. ACM Program. Lang.", not "Proc. ACM SIGMOD Int. Conf."); "12 (Article 1047)" is volume 12, article
   1047; an issue in capitals needs no label before it and is no status ("IN PRESS").
+- **GB/T keeps a proceedings' number**: "Advances in Neural Information Processing Systems 35", "AAAI … 36 (3)", "IJCAI 16" had lost
+  the number in [C] (APA and IEEE print it as a volume). It now follows the name as printed, without a label, since the line does
+  not say whether it is a volume or an edition (534 snapshot lines).
 - **Two wrong badges from the same audit**: a venue line that opens with its year is IEEE's title for a meeting's proceedings, so it
   is no journal's ("2010 Internet of Things (IOT)" had CCF's IEEE Internet of Things Journal, started 2014; the cut "2011 7th
   international wireless communications and mobile computing …" had the journal of those words and now has CORE's IWCMC). The real

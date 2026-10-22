@@ -409,7 +409,8 @@
     const mark = type === "article" ? "J" : type === "inproceedings" ? "C" : /\bpatent\b/i.test(line) ? "P" : /\b(?:thesis|dissertation)\b/i.test(line) ? "D" : /\b(?:tech(?:nical|\.)?\s*rep(?:ort)?|report)\b/i.test(line) ? "R" : isPublisher(line) ? "M" : "Z";
     let where = "";
     if (type === "article") where = [venue, [year, volume && volume + (issue ? `(${issue})` : "")].filter(Boolean).join(", ")].filter(Boolean).join(", ") + (pages ? `: ${pages}` : "");
-    else if (type === "inproceedings") where = (venue ? `//${venue}. ` : "") + year + (year && pages.includes("-") ? `: ${pages}` : "");
+    // (a proceedings' number is given after its name as printed — "IJCAI 16" is an edition, "ISPA 1" a volume, and the line does not say which)
+    else if (type === "inproceedings") where = (venue ? `//${[venue, volume && volume + (issue ? ` (${issue})` : "")].filter(Boolean).join(" ")}. ` : "") + year + (year && pages.includes("-") ? `: ${pages}` : "");
     else where = [venue, year].filter(Boolean).join(", ");
     const head = `[${n}] ${by ? by + ". " : ""}${title}[${mark}]`;
     return (type === "inproceedings" ? head + where : head + (where ? ". " + where : "")).replace(/[.\s]*$/, "") + ".";

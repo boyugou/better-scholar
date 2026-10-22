@@ -471,7 +471,9 @@ test("the venue line, from an audit of the reference-style snapshot: journals ti
 
 test("the venue line: a name that opens with its year is a meeting's, a web address is no periodical, section-numbered pages", () => {
   const paper = (venue, type) => ({ title: "T", authors: "K He", venue, year: 2018, type, url: "", rank: {}, marks: [] });
-  assert.equal(f.gbt([paper("2015 IEEE Trustcom/BigDataSE/ISPA 1, 238-245, 2015")]), "[1] HE K. T[C]//2015 IEEE Trustcom/BigDataSE/ISPA. 2018: 238-245.");
+  assert.equal(f.gbt([paper("2015 IEEE Trustcom/BigDataSE/ISPA 1, 238-245, 2015")]), "[1] HE K. T[C]//2015 IEEE Trustcom/BigDataSE/ISPA 1. 2018: 238-245.", "a proceedings' number stays after its name, as printed");
+  assert.match(f.gbt([paper("IJCAI 16, 740-747, 1999", "conference")]), /T\[C\]\/\/IJCAI 16\. 2018: 740-747\.$/, "an edition or a volume: the line does not say which, so it is not labelled");
+  assert.match(f.gbt([paper("Proceedings of the AAAI Conference on Artificial Intelligence 36 (3), 2964-2972, 2022", "conference")]), /T\[C\]\/\/Proceedings of the AAAI Conference on Artificial Intelligence 36 \(3\)\. 2018: 2964-2972\.$/);
   assert.match(f.gbt([paper("2010 Internet of Things (IOT), 1-8, 2010")]), /T\[C\]\/\/2010 Internet of Things \(IOT\)\. 2018: 1-8\.$/);
   assert.match(f.gbt([paper("2019 IEEE Transactions on Mobile Computing 18 (3), 1-10, 2019")]), /T\[J\]\./, "a year-led name that says it is a journal is one");
   assert.match(f.gbt([paper("URL https://code. google. com/p/word2vec 22, 795, 2013")]), /T\[Z\]\. URL https:\/\/code\. google\. com\/p\/word2vec 22, 795, 2018\.$/);
