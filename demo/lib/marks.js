@@ -226,7 +226,21 @@
         if (!b || score < b.score) best.set(k, { i, score });
       }
     });
-    return rows.map((r, i) => (r.marks || []).filter((m) => m.source !== "list" || best.get(keyOf(r, m)).i === i));
+    const out = rows.map((r, i) => (r.marks || []).filter((m) => m.source !== "list" || best.get(keyOf(r, m)).i === i));
+    // a hidden duplicate's award that no other row holds goes to the row that stands for it (`into`), so that it is still counted and drawn
+    rows.forEach((r, i) => {
+      if (!r.hidden || !Number.isInteger(r.into) || r.into === i || !rows[r.into]) return;
+      const moving = out[i].filter((m) => m.source === "list");
+      if (!moving.length) return;
+      out[i] = out[i].filter((m) => m.source !== "list");
+      const kinds = new Set(out[r.into].filter((m) => m.source === "list").map((m) => [m.kind, m.venue, m.year].join("|")));
+      const arriving = moving.filter((m) => !kinds.has([m.kind, m.venue, m.year].join("|")));
+      // (as merge does for one row: the list's mark takes the place of the authors' own mark of the same kind, and remembers its words)
+      const typed = new Map(out[r.into].filter((m) => m.source !== "list").map((m) => [m.kind, m]));
+      const replaced = new Set(arriving.map((m) => m.kind).filter((k) => typed.has(k)));
+      out[r.into] = [...out[r.into].filter((m) => m.source === "list" || !replaced.has(m.kind)), ...arriving.map((m) => (typed.has(m.kind) && !m.declared ? { ...m, declared: typed.get(m.kind).text } : m))];
+    });
+    return out;
   }
 
   return { KINDS, GROUPS, rows, members, LABEL, groupOf, scan, detect, merge, listedOnce, summarize, summarizeKinds, inGroup };
