@@ -498,6 +498,9 @@
   "copyApa": {
     "message": "คัดลอก APA"
   },
+  "copyIeee": {
+    "message": "คัดลอก IEEE"
+  },
   "copyMarkdown": {
     "message": "คัดลอก Markdown"
   },

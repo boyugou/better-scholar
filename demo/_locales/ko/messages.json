@@ -516,6 +516,9 @@
   "copyApa": {
     "message": "APA 복사"
   },
+  "copyIeee": {
+    "message": "IEEE 복사"
+  },
   "copyMarkdown": {
     "message": "Markdown 복사"
   },

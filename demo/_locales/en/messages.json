@@ -516,6 +516,9 @@
   "copyApa": {
     "message": "Copy APA"
   },
+  "copyIeee": {
+    "message": "Copy IEEE"
+  },
   "copyMarkdown": {
     "message": "Copy Markdown"
   },

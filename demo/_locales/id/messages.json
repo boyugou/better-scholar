@@ -498,6 +498,9 @@
   "copyApa": {
     "message": "Salin APA"
   },
+  "copyIeee": {
+    "message": "Salin IEEE"
+  },
   "copyMarkdown": {
     "message": "Salin Markdown"
   },

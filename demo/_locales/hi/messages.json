@@ -501,6 +501,9 @@
   "copyApa": {
     "message": "APA कॉपी करें"
   },
+  "copyIeee": {
+    "message": "IEEE कॉपी करें"
+  },
   "copyMarkdown": {
     "message": "Markdown कॉपी करें"
   },

@@ -498,6 +498,9 @@
   "copyApa": {
     "message": "Copiază APA"
   },
+  "copyIeee": {
+    "message": "Copiază IEEE"
+  },
   "copyMarkdown": {
     "message": "Copiază Markdown"
   },

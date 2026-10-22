@@ -191,6 +191,7 @@
         <div class="export-tabs" role="tablist" aria-label="논문 복사">
           <button type="button" class="tab-btn active" role="tab" id="tab-bibtex" aria-selected="true" aria-controls="export-bibtex">BibTeX</button>
           <button type="button" class="tab-btn" role="tab" id="tab-apa" aria-selected="false" aria-controls="export-apa" tabindex="-1">APA</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-ieee" aria-selected="false" aria-controls="export-ieee" tabindex="-1">IEEE</button>
           <button type="button" class="tab-btn" role="tab" id="tab-json" aria-selected="false" aria-controls="export-json" tabindex="-1">JSON</button>
           <button type="button" class="tab-btn" role="tab" id="tab-markdown" aria-selected="false" aria-controls="export-markdown" tabindex="-1">Markdown</button>
           <button type="button" class="tab-btn" role="tab" id="tab-csv" aria-selected="false" aria-controls="export-csv" tabindex="-1">CSV</button>
@@ -234,6 +235,13 @@ Writer, B., Author, A., &amp; Writer, C. (2024). Sample paper 2. *NeurIPS 2024*.
 Author*, A., Writer*, B., &amp; Writer, C. (2024). Sample paper 3. *CVPR 2024 (Highlight)*.
 
 Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *ACL 2023 (Spotlight)*.</code></pre>
+          <pre class="code-preview" role="tabpanel" id="export-ieee" aria-labelledby="tab-ieee" tabindex="0" hidden><code>[1] A. Author, B. Writer, C. Writer, and D. Writer, &quot;Sample paper 1,&quot; in *ICLR 2025 (Oral)*, 2025.
+
+[2] B. Writer, A. Author, and C. Writer, &quot;Sample paper 2,&quot; in *NeurIPS 2024*, 2024.
+
+[3] A. Author*, B. Writer*, and C. Writer, &quot;Sample paper 3,&quot; in *CVPR 2024 (Highlight)*, 2024.
+
+[4] B. Writer, C. Writer, D. Writer, and A. Author, &quot;Sample paper 4,&quot; in *ACL 2023 (Spotlight)*, 2023.</code></pre>
           <pre class="code-preview" role="tabpanel" id="export-json" aria-labelledby="tab-json" tabindex="0" hidden><code>{
   &quot;owner&quot;: &quot;A Author&quot;,
   &quot;source&quot;: &quot;ccf&quot;,
@@ -415,7 +423,7 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
       <h2>숫자로 보기</h2>
       <p class="note">이 숫자들은 페이지를 만들 때 확장 프로그램의 코드와 데이터에서 집계합니다. 수정할 때마다 늘어나는 숫자는 내림해서 표시합니다.</p>
       <div class="numbers-grid">
-        <div class="num" style="--c:#4d8ff5"><b dir="ltr">154</b><span>바꿀 수 있는 설정</span></div>
+        <div class="num" style="--c:#4d8ff5"><b dir="ltr">156</b><span>바꿀 수 있는 설정</span></div>
         <div class="num" style="--c:#b36cf6"><b dir="ltr">30</b><span>표시 언어</span></div>
         <div class="num" style="--c:#fbbc04"><b dir="ltr">1,178</b><span>CCF 및 CORE 목록에 등급이 매겨진 게재처</span></div>
         <div class="num" style="--c:#34a853"><b dir="ltr">400+</b><span>Scholar에 표시되지만 목록에 없는 게재처 이름</span></div>
