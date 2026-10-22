@@ -179,14 +179,21 @@
     let s = whole, year = "", pages = "", volume = "", issue = "", m;
     if ((m = /,\s*((?:19|20)\d{2})$/.exec(s))) { year = m[1]; s = s.slice(0, m.index).trim(); }
     const keep = () => ({ name: s.replace(/[,;:]\s*$/, ""), volume: "", issue: "", pages: "", year });
-    if (/…|\.\.\./.test(s)) return keep();
+    if (/…|\.\.\./.test(s)) {
+      // (Scholar cut the line inside the issue, "TODAES 11 (1 …": the volume before it is whole, the cut issue is left out)
+      if ((m = /\s(\d{1,4})\s\(\d+\s?…$/.exec(s)) && !/…|\.\.\./.test(s.slice(0, m.index)) && (!/^(?:19|20)\d{2}$/.test(m[1]) || /\b(?:journal|transactions|proceedings on)\b/i.test(s.slice(0, m.index)))
+        && !CHAPTER.test(s.slice(0, m.index)) && !LABEL_BEFORE.test(s.slice(0, m.index)) && !editionYear(m[1], s.slice(0, m.index + 1), year)) return { name: s.slice(0, m.index).replace(/[,;:]\s*$/, ""), volume: m[1], issue: "", pages: "", year };
+      return keep();
+    }
+    if ((m = /,\s*(?:\d{1,3}\s*pp\.?|(?:article|art\.)(?:\s*no\.?:?)?\s*(\d{1,6})|no\.:?\s*(\d{1,6})|(\d{1,4}[:.]\s?\d{1,3}\s*-\s*\d{1,4}[:.]\s?\d{1,3}))$/i.exec(s))) { pages = (m[1] || m[2] || m[3] || "").replace(/\s+/g, ""); s = s.slice(0, m.index).trim(); }
     // (Scholar puts ", " between its fields: "US Patent 10,007,785" and "11,985-11,993" are one number each)
-    if ((m = /,\s+([A-Za-z]{0,2}\d{1,7}(?:\s*-\s*[A-Za-z]{0,2}\d{1,7})?)$/.exec(s)) && !/^(?:19|20)\d{2}$/.test(m[1])) {
+    if (!pages && (m = /,\s+([A-Za-z]{0,4}\d{1,16}(?:\s*-{1,2}\s*[A-Za-z]{0,4}\d{1,16})?(?:\.\s?e\d{1,3})?)$/.exec(s)) && (!/^(?:19|20)\d{2}$/.test(m[1]) || /\s\d{1,4}\s*\([^()]+\)$/.test(s.slice(0, m.index)))) {
       if (LABEL_BEFORE.test(s.slice(0, m.index)) || /\d,\d{1,3}$/.test(s)) return keep();
-      if (!/^0+$/.test(m[1])) pages = m[1].replace(/\s*-\s*/, "-");
+      if (!/^0+$/.test(m[1])) pages = m[1].replace(/\s*-{1,2}\s*/, "-").replace(/\.\s?(e\d+)$/, ".$1");          // (Cell's "158-170. e12" is "158-170.e12")
       s = s.slice(0, m.index).trim();
     }
-    if ((m = /\s(\d{1,4})\s*\((\d{1,4}(?:\s*-\s*\d{1,4})?|[A-Za-z]{1,4})\)$/.exec(s)) && !/^(?:19|20)\d{2}$/.test(m[1]) && !CHAPTER.test(s.slice(0, m.index)) && !LABEL_BEFORE.test(s.slice(0, m.index))) {
+    if ((m = /\s(\d{1,4})\s\((\d{1,2})\s\([A-Z]{2,10}\)$/.exec(s))) { volume = m[1]; issue = m[2]; s = s.slice(0, m.index).trim(); }        // (PACMMOD's "4 (1 (SIGMOD)", one bracket short)
+    else if ((m = /\s(\d{1,4})\s*\((\d{1,4}(?:\s*[-‐–]\s*\d{1,4})?|[A-Za-z]{1,4}|[A-Za-z]{0,10}[ _]?\d{1,4}[A-Za-z]{0,3}\d?|\d{1,2}\s?(?:pt|Pt)\.?\s?\d|\d{1,2}\s?[/&]\s?\d{1,2}|[A-Za-z]+_\d|(?:suppl?|supplement)[ _]?\d*)\)$/i.exec(s)) && (!/^(?:19|20)\d{2}$/.test(m[1]) || (/^\d{1,2}$/.test(m[2]) && /\b(?:journal|transactions|proceedings on)\b/i.test(s.slice(0, m.index)))) && !CHAPTER.test(s.slice(0, m.index)) && !LABEL_BEFORE.test(s.slice(0, m.index))) {
       volume = m[1]; issue = m[2].replace(/\s*-\s*/, "-"); s = s.slice(0, m.index).trim();
     } else if ((m = /[^,\s]\s(\d{1,3})$/.exec(s)) && !MONTH.test(s.slice(0, m.index + 1)) && !CHAPTER.test(s.slice(0, m.index + 1)) && !LABEL_BEFORE.test(s.slice(0, m.index + 1))
       && !editionYear(m[1], s.slice(0, m.index + 1), year)) {
@@ -201,12 +208,12 @@
     const venue = venueParts(p.venue).name;
     if (!venue) return { type: "misc", field: "" };
     if (/patent\b/i.test(venue)) return { type: "misc", field: "howpublished" };
-    if (/^proceedings of the (?:ieee|national academy of sciences)$/i.test(venue)) return { type: "article", field: "journal" };   // (journals literally titled so)
-    if (/arxiv\b|biorxiv\b|medrxiv\b/i.test(venue) || p.type === "journal") return { type: "article", field: "journal" };
+    if (/^proceedings of the (?:ieee|national academy of sciences)(?:\s*\([^()]*\))?$/i.test(venue) || /^(?:[\w-]+:\s*)?(?:proceedings of the (?:acm on (?!web conference)|vldb endowment)|proceedings on privacy enhancing technologies)\b/i.test(venue)) return { type: "article", field: "journal" };   // (journals literally titled so)
+    if (p.type === "journal" || (p.type !== "conference" && /arxiv\b|biorxiv\b|medrxiv\b/i.test(venue))) return { type: "article", field: "journal" };
     if (p.type === "conference") return { type: "inproceedings", field: "booktitle" };
-    if (venueParts(p.venue).issue && !/\b(?:conference|symposium|workshop)\b/i.test(venue)) return { type: "article", field: "journal" };           // ("44 (8)": a volume with an issue is a periodical's)
-    if (/journal|transactions|letters|review|annals|magazine|ieee\/acm trans/i.test(venue)) return { type: "article", field: "journal" };
-    if (/conference|symposium|proceedings|workshop|annual|proc\./i.test(venue)) return { type: "inproceedings", field: "booktitle" };
+    if ((venueParts(p.venue).issue || /\s\d{1,4}\s\(\d+\s?…/.test(p.venue)) && !/\b(?:conference|symposium|workshop|tech(?:nical|\.)?\s*rep(?:ort)?)\b/i.test(venue)) return { type: "article", field: "journal" };           // ("44 (8)", or cut "44 (8 …": a volume with an issue is a periodical's)
+    if (/journal(?!is)|transactions|letters|review|annals|magazine|ieee\/acm trans/i.test(venue)) return { type: "article", field: "journal" };
+    if (/conference|symposi(?:um|a)|proceedings?\b|workshop|annual|proc\.|\bcongress\b|extended abstracts|^findings of the|companion proceedings/i.test(venue)) return { type: "inproceedings", field: "booktitle" };
     return { type: "misc", field: "howpublished" };
   }
 
@@ -386,7 +393,7 @@
     const { name, volume, issue, pages } = venueParts(p.venue), kind = entryType(p), year = p.year ? String(p.year) : "";
     // (an unclassified line with a volume is a periodical's, as in the other styles; any other unclassified line keeps all its fields as printed)
     const type = periodical(p) ? "article" : kind.type;
-    const venue = type === "misc" ? asPrinted(p.venue) : name, line = clean(p.venue);
+    const venue = type === "misc" ? asPrinted(p.venue) : type === "inproceedings" ? name.replace(/\.$/, "") : name, line = clean(p.venue);
     // the type code of Appendix B: patent [P], thesis [D], report [R], journal [J], proceedings [C], anything else [Z]
     const mark = type === "article" ? "J" : type === "inproceedings" ? "C" : /\bpatent\b/i.test(line) ? "P" : /\b(?:thesis|dissertation)\b/i.test(line) ? "D" : /\b(?:tech(?:nical|\.)?\s*rep(?:ort)?|report)\b/i.test(line) ? "R" : isPublisher(line) ? "M" : "Z";
     let where = "";

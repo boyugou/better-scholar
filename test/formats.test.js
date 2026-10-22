@@ -324,7 +324,7 @@ test("over the 22,744 real venue lines, the parts keep every word of the line an
   const squash = (s) => s.replace(/[–—]/g, "-").replace(/[\s,()]+/g, "");          // (an en dash between numbers is read as a hyphen)
   for (const line of lines) {
     const r = f.venueParts(line);
-    for (const f of ["volume", "issue", "pages", "year"]) assert.ok(!r[f] || line.includes(r[f].split("-")[0]), `${line}: ${f} ${r[f]} is not in the line`);
+    for (const f of ["volume", "issue", "pages", "year"]) assert.ok(!r[f] || line.replace(/\s+/g, "").includes(r[f].split("-")[0].replace(/\s+/g, "")), `${line}: ${f} ${r[f]} is not in the line`);
     assert.ok(r.name || !line.trim() || /^[\d,\s-]+$/.test(line), `${line}: no name left`);
     assert.ok(squash(line).startsWith(squash(r.name).replace(/…$/, "")), `${line}: the name ${r.name} is not where the line begins`);
     // a split never leaves a label or half a number behind it ("Article No.", "Vol.", "10,007" of a patent's "10,007,785")
@@ -378,8 +378,8 @@ test("the venue line, from an independent review: what is not a part stays in th
   const vp = f.venueParts;
   assert.equal(vp("US Patent 10,007,785, 2018").name, "US Patent 10,007,785");
   assert.equal(vp("Geophysical Research Letters 44 (23), 11,985-11,993, 2017").pages, "");
-  assert.deepEqual(vp("ACM Transactions on Computer Systems 44 (1), Article No. 1, 2026"), { name: "ACM Transactions on Computer Systems 44 (1), Article No. 1", volume: "", issue: "", pages: "", year: "2026" });
-  assert.equal(vp("ACM Transactions on Graphics (ToG) 39 (4), 62: 1-62: 14, 2020").volume, "");
+  assert.deepEqual(vp("ACM Transactions on Computer Systems 44 (1), Article No. 1, 2026"), { name: "ACM Transactions on Computer Systems", volume: "44", issue: "1", pages: "1", year: "2026" }, "the article number is read as such, and the volume and issue before it");
+  assert.deepEqual(vp("ACM Transactions on Graphics (ToG) 39 (4), 62: 1-62: 14, 2020"), { name: "ACM Transactions on Graphics (ToG)", volume: "39", issue: "4", pages: "62:1-62:14", year: "2020" });
   assert.deepEqual(vp("STOC 18, 2018"), { name: "STOC 18", volume: "", issue: "", pages: "", year: "2018" });
   assert.equal(vp("Applied Cryptography and Network Security, 117, 0").volume, "");
   const paper = (venue, type, over) => ({ title: "A Title", authors: "K He, X Zhang", venue, year: 2018, type, url: "", rank: {}, marks: [], ...over });
@@ -451,3 +451,21 @@ test("fifth review: \"Nature 428\" is a journal, \"…SIGCHI Chapter, 66-73\" ke
   for (const v of ["AK Peters/CRC Press, 2010", "Pearson/Prentice Hall, 2009", "McGraw-Hill, Inc., 2006"]) assert.match(f.gbt([paper(v)]), /T\[M\]\./, v);
   assert.match(f.gbt([paper("Lab on a Chip 20, 1-10, 2020")]), /T\[J\]\./);
 });
+
+test("the venue line, from an audit of the reference-style snapshot: journals titled Proceedings, other page and issue shapes, cut issues", () => {
+  const vp = f.venueParts;
+  const paper = (venue, type) => ({ title: "T", authors: "K He", venue, year: 2020, type, url: "", rank: {}, marks: [] });
+  assert.equal(f.gbt([paper("Proceedings of the VLDB Endowment 14 (7), 1241-1253, 2021", "conference")]), "[1] HE K. T[J]. Proceedings of the VLDB Endowment, 2020, 14(7): 1241-1253.");
+  assert.match(f.gbt([paper("Proceedings of the National Academy of Sciences 120 (8), e2218605120, 2023")]), /T\[J\]\. Proceedings of the National Academy of Sciences, 2020, 120\(8\): e2218605120\.$/);
+  assert.deepEqual(vp("Nucleic acids research 44 (D1), D231-D238, 2016"), { name: "Nucleic acids research", volume: "44", issue: "D1", pages: "D231-D238", year: "2016" });
+  assert.deepEqual(vp("Proceedings of the ACM on Management of Data 4 (1 (SIGMOD), 1-29, 2026"), { name: "Proceedings of the ACM on Management of Data", volume: "4", issue: "1", pages: "1-29", year: "2026" });
+  assert.deepEqual(vp("ACM Transactions on Design Automation of Electronic Systems (TODAES) 11 (1 …, 2006"), { name: "ACM Transactions on Design Automation of Electronic Systems (TODAES)", volume: "11", issue: "", pages: "", year: "2006" });
+  assert.equal(vp("ASP-DAC 2004: Asia and South Pacific Design Automation Conference 2004 (IEEE …, 2004").volume, "", "a cut word is no issue, and an edition year no volume");
+  assert.equal(vp("Empirical Software Engineering 23 (5), 2948--2979, 2018").pages, "2948-2979");
+  assert.match(f.gbt([paper("Findings of the Association for Computational Linguistics: EMNLP 2020, 708-718, 2020")]), /T\[C\]\/\/Findings of the Association for Computational Linguistics: EMNLP 2020\. 2020: 708-718\.$/);
+  assert.match(f.gbt([paper("CHI'05 Extended Abstracts on Human Factors in Computing Systems, 2134-2135, 2005")]), /T\[C\]\/\//);
+  assert.match(f.gbt([paper("Proceedings of the USENIX Security Symposium, 2013., 2013", "conference")]), /Symposium, 2013\. 2020\.$/, "no second full stop");
+  assert.match(f.gbt([paper("2006 IEEE International Symposium on Circuits and Systems (ISCAS), 4 pp., 2006", "conference")]), /\(ISCAS\)\. 2020\.$/);
+  assert.match(f.gbt([paper("International Conference on Learning Representations, arXiv:1412.6980, 2015", "conference")]), /T\[C\]\/\//, "a conference with an arXiv number stays a conference");
+});
+

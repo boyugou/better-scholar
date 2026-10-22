@@ -5,6 +5,13 @@
 - **A reviewed snapshot of the reference styles** (`test/formats-snapshot.test.js`, `test/fixtures/formats.expected.json`): how APA, IEEE,
   GB/T 7714 and BibTeX read each of the 22,744 real venue lines (type code, name, volume, issue, pages), so that a change to `formats.js`
   shows its exact effect, as the venue snapshot does for the matcher. CONTRIBUTING.md says how to review it.
+- **The reference styles, from an audit of that snapshot** (800 of the 22,744 lines read better): the journals literally titled
+  *Proceedings of the VLDB Endowment*, *Proceedings of the ACM on …* (PACMMOD, POMACS, PACMHCI …), *Proceedings on Privacy Enhancing
+  Technologies* and *PNAS* are journals ([J] with volume and issue, not [C]); page fields Scholar prints in other shapes are pages
+  ("e2218605120", "D231-D238", "2948--2979", "62: 1-62: 14", Cell's "158-170. e12", "Article No.: 137", "Article No. 1"); issue labels
+  are issues ("D1", "suppl_1", "CSCW2", "3&4", "1 (SIGMOD)"); a line Scholar cut inside the issue keeps its volume ("TODAES 11 (1 …" is
+  volume 11); *Findings of the ACL*, extended abstracts, symposia, congresses and companion proceedings are proceedings ([C]); a
+  conference with an arXiv number stays a conference; "4 pp." and a second full stop are no longer printed.
 - **The fifth review** (of the fourth's fixes): the meeting-acronym test was case-blind, so "Nature 428", eLife, PeerJ, Energy lost their
   journal layout — it is case-sensitive now; "chapter" counts only before its own number ("…Italian SIGCHI Chapter, 66-73" keeps its pages); a
   slash or a hyphen in a publisher ("AK Peters/CRC Press", "McGraw-Hill, Inc.") is a publisher again; "Lab", "Laboratory" and "Institute" no
