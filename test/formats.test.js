@@ -321,7 +321,7 @@ test("the venue line splits into name, volume, issue, pages and year only in the
 
 test("over the 22,744 real venue lines, the parts keep every word of the line and add none", () => {
   const lines = Object.keys(require("./fixtures/venues.expected.json"));
-  const squash = (s) => s.replace(/[\s,()]+/g, "");
+  const squash = (s) => s.replace(/[–—]/g, "-").replace(/[\s,()]+/g, "");          // (an en dash between numbers is read as a hyphen)
   for (const line of lines) {
     const r = f.venueParts(line);
     for (const f of ["volume", "issue", "pages", "year"]) assert.ok(!r[f] || line.includes(r[f].split("-")[0]), `${line}: ${f} ${r[f]} is not in the line`);

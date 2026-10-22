@@ -147,11 +147,11 @@
   // page "0" is no page, and a number after a month is a day ("Cediti, September 5, 2003"): those stay out.
   const MONTH = /\b(?:jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|june?|july?|aug(?:ust)?|sep(?:t(?:ember)?)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)\.?$/i;
   // (a number that belongs to a label or to an article-local page range is not a part: "Article No. 1", "Vol. 2", "62: 1-62: 14", "15.6. 1-15.6. 4")
-  const LABEL_BEFORE = /(?:\b(?:no|vol|volume|article|art|paper|heft|band|issue|nr)\.?:?|\d[:.]\s?\d*\s*-\s*\d*[:.]?)$/i;
+  const LABEL_BEFORE = /(?:\b(?:no|vol|volume|article|art|paper|heft|band|issue|nr|pages|pp)\.?:?|\d[:.]\s?\d*\s*-\s*\d*[:.]?)$/i;
   // the venue line as Scholar printed it, without the year at its end (for a patent, a thesis or a publisher, which no rule splits)
   const asPrinted = (text) => clean(text).replace(/\s+/g, " ").replace(/,\s*(?:19|20)\d{2}$/, "").trim();
   function venueParts(text) {
-    const whole = clean(text).replace(/\s+/g, " ");
+    const whole = clean(text).replace(/\s+/g, " ").replace(/(\d)\s*[–—]\s*(\d)/g, "$1-$2");          // (an en dash between numbers is a range: "344–354")
     let s = whole, year = "", pages = "", volume = "", issue = "", m;
     if ((m = /,\s*((?:19|20)\d{2})$/.exec(s))) { year = m[1]; s = s.slice(0, m.index).trim(); }
     const keep = () => ({ name: s.replace(/[,;:]\s*$/, ""), volume: "", issue: "", pages: "", year });
