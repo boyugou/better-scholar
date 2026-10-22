@@ -153,7 +153,7 @@
   }
 
   // the words on the copy buttons (panel, toolbar popup, settings page): one per format of lib/prefs.js COPY_BUTTONS
-  const COPY_LABEL = { summary: "copySummary", table: "copyTable", papers: "copyPapers", apa: "copyApa", ieee: "copyIeee", bibtex: "copyBibtex", markdown: "copyMarkdown", json: "copyJson", csv: "exportCsv" };
+  const COPY_LABEL = { summary: "copySummary", table: "copyTable", papers: "copyPapers", apa: "copyApa", ieee: "copyIeee", gbt: "copyGbt", bibtex: "copyBibtex", markdown: "copyMarkdown", json: "copyJson", csv: "exportCsv" };
 
   B.dom = { h, t, tn, tDefault, setLabels, COPY_LABEL, applyColors, applyRowStyle, applyChips, useLanguage, dir, langTag, colon, comma, quote, copyText, downloadFile, sleep, frame, issueUrl, REPO };
 })();

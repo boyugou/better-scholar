@@ -501,6 +501,9 @@
   "copyIeee": {
     "message": "Sao chép IEEE"
   },
+  "copyGbt": {
+    "message": "Sao chép GB/T 7714"
+  },
   "copyMarkdown": {
     "message": "Sao chép Markdown"
   },

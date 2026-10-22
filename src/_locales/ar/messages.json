@@ -501,6 +501,9 @@
   "copyIeee": {
     "message": "نسخ IEEE"
   },
+  "copyGbt": {
+    "message": "نسخ GB/T 7714"
+  },
   "copyMarkdown": {
     "message": "نسخ Markdown"
   },

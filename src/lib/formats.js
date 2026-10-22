@@ -325,8 +325,34 @@
   const ieee = (papers) => papers.map((p, i) => ieeeLine(p, i, (t) => `*${t}*`)).join("\n\n");
   const ieeeHtml = (papers) => papers.map((p, i) => `<p style="margin:0 0 0.6em 2.2em;text-indent:-2.2em">${ieeeLine(p, i, (t) => `\u0000${t}\u0001`).split(/(\u0000[^\u0001]*\u0001)/).map((s) => (s.startsWith("\u0000") ? `<i>${esc(s.slice(1, -1))}</i>` : esc(s))).join("")}</p>`).join("\n");
 
+  // ---- GB/T 7714-2015 ---------------------------------------------------------------------------------------------------------------------------------
+  // The Chinese national standard for references (NSFC and most Chinese forms ask for it):
+  // [1] HE K, ZHANG X, REN S, et al. Deep residual learning for image recognition[C]//Proceedings of …. 2016: 770-778.
+  // [2] AUTHOR A, WRITER B. Title[J]. Journal, 2022, 44(8): 4012-4025.
+  // Surname in capitals and initials without full stops; more than three authors, or a cut list: the first three and "et al."
+  const gbAuthor = (name) => {
+    if (/[\u3400-\u9fff]/.test(name)) return clean(name);                    // (a name in Chinese characters stays as it is written)
+    const [last, initials, suffix] = apaAuthor(name).split(", ");
+    return last ? [last.toUpperCase(), (initials || "").replace(/\./g, "").replace(/\s+/g, " ").trim(), suffix ? suffix.replace(/\./g, "") : ""].filter(Boolean).join(" ") : "";
+  };
+  function gbLine(p, n) {
+    const { names, cut } = authorList(p.authors);
+    const list = names.map(gbAuthor).filter(Boolean);
+    const by = list.length > 3 || (cut && list.length) ? `${list.slice(0, 3).join(", ")}, et al` : list.join(", ");
+    const title = clean(p.title).replace(/[.]$/, "");
+    const { name: venue, volume, issue, pages } = venueParts(p.venue), type = entryType(p).type, year = p.year ? String(p.year) : "";
+    const mark = type === "article" ? "J" : type === "inproceedings" ? "C" : "Z";
+    let where = "";
+    if (type === "article") where = [venue, [year, volume && volume + (issue ? `(${issue})` : "")].filter(Boolean).join(", ")].filter(Boolean).join(", ") + (pages ? `: ${pages}` : "");
+    else if (type === "inproceedings") where = (venue ? `//${venue}. ` : "") + year + (year && pages.includes("-") ? `: ${pages}` : "");
+    else where = [venue, year].filter(Boolean).join(", ");
+    const head = `[${n}] ${by ? by + ". " : ""}${title}[${mark}]`;
+    return (type === "inproceedings" ? head + where : head + (where ? ". " + where : "")).replace(/[.\s]*$/, "") + ".";
+  }
+  const gbt = (papers) => papers.map((p, i) => gbLine(p, i + 1)).join("\n");
+
   // ---- JSON ---------------------------------------------------------------------------------------------------------------------------------------
   const json = ({ owner, source, papers }) => JSON.stringify({ owner, source, total: papers.length, papers }, null, 2);
 
-  return { ROLE_LABEL, summaryText, summaryTable, summaryTsv, summaryHtml, rowsTsv, rowsCsv, rowsHtml, table, papersTsv, papersCsv, papersHtml, bibtex, markdown, apa, apaHtml, apaAuthor, ieee, ieeeHtml, venueParts, json };
+  return { ROLE_LABEL, summaryText, summaryTable, summaryTsv, summaryHtml, rowsTsv, rowsCsv, rowsHtml, table, papersTsv, papersCsv, papersHtml, bibtex, markdown, apa, apaHtml, apaAuthor, ieee, ieeeHtml, gbt, venueParts, json };
 });

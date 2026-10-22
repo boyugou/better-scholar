@@ -427,6 +427,7 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
       case "markdown": return formats.markdown(records, ctx);
       case "apa": return formats.apa(records);
       case "ieee": return formats.ieee(records);
+      case "gbt": return formats.gbt(records);
       default: return formats.json({ owner: headerName, source: currentSource(), papers: records });          // "json" (a call's format is checked before it gets here)
     }
   }

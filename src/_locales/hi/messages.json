@@ -504,6 +504,9 @@
   "copyIeee": {
     "message": "IEEE कॉपी करें"
   },
+  "copyGbt": {
+    "message": "GB/T 7714 कॉपी करें"
+  },
   "copyMarkdown": {
     "message": "Markdown कॉपी करें"
   },

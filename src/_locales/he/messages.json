@@ -519,6 +519,9 @@
   "copyIeee": {
     "message": "העתק IEEE"
   },
+  "copyGbt": {
+    "message": "העתק GB/T 7714"
+  },
   "copyMarkdown": {
     "message": "העתק Markdown"
   },

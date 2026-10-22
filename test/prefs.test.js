@@ -19,7 +19,7 @@ test("defaults: complete, in the table's order, and a fresh object each time", (
   assert.deepEqual(d.chips, { style: "outline", shape: "pill", label: "full" });
   assert.deepEqual(d.rows, { name: true, style: "full", ccf: true, core: true, prefer: "ccf", award: true, oral: true, spotlight: true, highlight: true });
   assert.deepEqual(d.panel.order, ["table", "copy", "marks", "filters", "metrics", "years", "venues", "status", "names"]);
-  assert.deepEqual(d.panel.copy.order, ["summary", "table", "papers", "apa", "ieee", "bibtex", "markdown", "json", "csv"]);
+  assert.deepEqual(d.panel.copy.order, ["summary", "table", "papers", "apa", "ieee", "gbt", "bibtex", "markdown", "json", "csv"]);
   assert.deepEqual(d.panel.filters.pills.order, ["ccfA", "coreA", "cites100", "recent", "first", "cofirst", "second", "last", "award", "talk"]);
   assert.equal(d.panel.venues.show, false, "the venue list is off until asked");
   assert.equal(d.panel.marks.grouping, "separate");
@@ -28,7 +28,7 @@ test("defaults: complete, in the table's order, and a fresh object each time", (
   assert.equal(Object.values(d.hide).some(Boolean), false, "nothing of Scholar's own is hidden until asked");
   // every part and every thing in it is on, except what is off for a reason
   for (const p of prefs.SETTINGS.filter((s) => s.kind === "bool" && /^(panel|rows|roles)\./.test(s.path) && !s.path.startsWith("panel.filters.pills."))) {
-    assert.equal(prefs.normalize({})[p.path.split(".")[0]] !== undefined && p.def, !["panel.venues.show", "panel.copy.ieee"].includes(p.path), p.path);
+    assert.equal(prefs.normalize({})[p.path.split(".")[0]] !== undefined && p.def, !["panel.venues.show", "panel.copy.ieee", "panel.copy.gbt"].includes(p.path), p.path);
   }
   d.roles.first = false;
   d.panel.order.reverse();
@@ -58,7 +58,7 @@ test("the table of settings: every row is whole, the cards hold them in the orde
   }
   assert.deepEqual(prefs.flatten(prefs.defaults()).map((x) => x.path), paths, "the record has exactly the table's settings");
   assert.deepEqual([prefs.ROLES, prefs.RANKS, prefs.MARK_GROUPS], [["first", "cofirst", "second", "last"], ["ccf", "core"], ["award", "oral", "spotlight", "highlight"]]);
-  assert.deepEqual(prefs.COPY_BUTTONS, ["summary", "table", "papers", "apa", "ieee", "bibtex", "markdown", "json", "csv"]);
+  assert.deepEqual(prefs.COPY_BUTTONS, ["summary", "table", "papers", "apa", "ieee", "gbt", "bibtex", "markdown", "json", "csv"]);
   assert.deepEqual(prefs.HIDE_PARTS, ["cited", "citedTable", "citedChart", "coauthors", "access"]);
   // a part of the panel has a card of its own, and the cards follow the panel's default order
   assert.deepEqual(prefs.SECTIONS.map((id) => prefs.CARDS.findIndex((c) => c.id === id)).every((i) => i >= 0), true);
@@ -106,7 +106,7 @@ test("an order is always a whole permutation: ids left out follow in the default
   assert.deepEqual(prefs.normalize({ panel: { order: ["names", "table", "names"] } }).panel.order, prefs.defaults().panel.order, "a repeated id: the default");
   assert.deepEqual(prefs.normalize({ panel: { order: ["table", "bogus"] } }).panel.order, prefs.defaults().panel.order, "an unknown id: the default");
   assert.deepEqual(prefs.normalize({ panel: { order: "table" } }).panel.order, prefs.defaults().panel.order);
-  assert.deepEqual(prefs.normalize({ panel: { copy: { order: ["json", "csv"] } } }).panel.copy.order, ["json", "csv", "summary", "table", "papers", "apa", "ieee", "bibtex", "markdown"]);
+  assert.deepEqual(prefs.normalize({ panel: { copy: { order: ["json", "csv"] } } }).panel.copy.order, ["json", "csv", "summary", "table", "papers", "apa", "ieee", "gbt", "bibtex", "markdown"]);
   // switching a part off never takes it out of its list
   const off = prefs.apply(prefs.defaults(), { panel: { years: { show: false }, copy: { json: false } } }).prefs;
   assert.deepEqual([off.panel.order, off.panel.copy.order], [prefs.defaults().panel.order, prefs.defaults().panel.copy.order]);

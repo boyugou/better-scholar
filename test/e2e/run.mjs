@@ -1033,7 +1033,15 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     await setPref(opts, "panel.copy.ieee", false);
     await page.bringToFront();
     await page.locator('[data-act="copy-ieee"]').waitFor({ state: "detached" });
-    ok("Copy IEEE (off by default) writes a numbered IEEE reference list once switched on");
+    await setPref(opts, "panel.copy.gbt", true);
+    await page.bringToFront();
+    await page.locator('[data-act="copy-gbt"]').waitFor();
+    await page.click('[data-act="copy-gbt"]');
+    await copied("copy-gbt");
+    assert.match(await page.evaluate(() => navigator.clipboard.readText()), /^\[1\] [A-Z][A-Z' -]+ [A-Z]/, "a GB/T 7714 reference: the surname in capitals");
+    await setPref(opts, "panel.copy.gbt", false);
+    await page.bringToFront();
+    ok("Copy IEEE and Copy GB/T 7714 (off by default) write their reference lists once switched on");
 
     // "Copy JSON": structured JSON for papers shown
     await page.click('[data-act="copy-json"]');
@@ -2020,7 +2028,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
       } finally { await pc.close(); }
     };
     const panelButtons = () => page.locator('[data-rr="export-row"] button').evaluateAll((els) => els.map((e) => e.dataset.act));
-    const ALL_COPY = prefsLib.COPY_BUTTONS.map((k) => "copy-" + k), ON_COPY = ALL_COPY.filter((a) => a !== "copy-ieee");          // (IEEE is off until asked for)
+    const ALL_COPY = prefsLib.COPY_BUTTONS.map((k) => "copy-" + k), ON_COPY = ALL_COPY.filter((a) => a !== "copy-ieee" && a !== "copy-gbt");          // (IEEE and GB/T 7714 are off until asked for)
     assert.deepEqual(await panelButtons(), ON_COPY, "the panel's copy row: every format that is on by default, in the order of the settings");
     assert.deepEqual(await popupButtons(), ON_COPY, "and the popup's");
     await setPref(opts, "panel.copy.bibtex", false);

@@ -357,3 +357,17 @@ test("IEEE: numbered references, initials first, \"in\" for proceedings, vol./no
   const html = f.ieeeHtml([paper({ title: "<b>x</b>", venue: "IEEE Transactions on Computers 66 (3), 515-530, 2017", type: "journal" })]);
   assert.match(html, /^<p style="[^"]*text-indent:-2\.2em">\[1\] .*&quot;&lt;b&gt;x&lt;\/b&gt;,&quot; <i>IEEE Transactions on Computers<\/i>, vol\. 66/);
 });
+
+test("GB/T 7714-2015: capitals and bare initials, [C]// for proceedings, [J] with year, volume(issue): pages, et al. after three authors or for a cut list", () => {
+  const paper = (over) => ({ title: "A Title", authors: "MF Kaashoek, L van der Maaten", venue: "", year: 2016, type: null, ...over });
+  const out = f.gbt([
+    paper({ authors: "K He, X Zhang, S Ren, J Sun", venue: "Proceedings of the IEEE conference on computer vision and pattern recognition, 770-778, 2016", type: "conference" }),
+    paper({ venue: "IEEE Transactions on Computers 66 (3), 515-530, 2017", year: 2017, type: "journal" }),
+    paper({ authors: "张伟, 李娜", venue: "Automation in Construction 141, 104387, 2022", year: 2022, type: "journal" }),
+    paper({ authors: "A Author, …", venue: "", year: null })
+  ]).split("\n");
+  assert.equal(out[0], "[1] HE K, ZHANG X, REN S, et al. A Title[C]//Proceedings of the IEEE conference on computer vision and pattern recognition. 2016: 770-778.");
+  assert.equal(out[1], "[2] KAASHOEK M F, VAN DER MAATEN L. A Title[J]. IEEE Transactions on Computers, 2017, 66(3): 515-530.");
+  assert.equal(out[2], "[3] 张伟, 李娜. A Title[J]. Automation in Construction, 2022, 141: 104387.");
+  assert.equal(out[3], "[4] AUTHOR A, et al. A Title[Z].");
+});

@@ -2,6 +2,8 @@
 
 ## 2.41.0 — 2026-10-15
 
+- **Copy GB/T 7714**: the Chinese national reference standard (GB/T 7714-2015) that NSFC and most Chinese forms ask for — `HE K, ZHANG X,
+  REN S, et al. Title[C]//Proceedings …. 2016: 770-778.`, `Title[J]. Journal, 2022, 44(8): 4012-4025.` — off by default, like IEEE.
 - **Copy IEEE**, a ninth copy format (off by default, so that the copy row stays eight buttons until asked for): a numbered IEEE reference
   list — initials first, `et al.` above six authors or for a cut list, `in *Proceedings*, 2016, pp. 770–778.`, `*Journal*, vol. 44, no. 8,
   pp. 4012–4025, 2022.`, `Art. no.` for an article number — built on the venue line's parts; with real italics for a word processor, in the
