@@ -1926,3 +1926,23 @@ test("an acronym with its year glued on, in front of the venue's own name (\"TCC
   assert.deepEqual([...lost], ["USENIX"], "the spaced form names a venue where the glued one names none: only USENIX (its own name is also an organisation)");
 });
 
+
+test("seventeenth review: a title-cased acronym with a glued year is the event, an ampersand venue needs its own spelling, a glued year after a word is a year", () => {
+  const got = (v) => { const r = resolver.resolve(v); return [r.ccf ? `${r.ccf.abbr}${r.ccf.kind === "J" ? "(J)" : ""}` : "-", r.core ? r.core.abbr : "-"].join(" | "); };
+  // the conference, not the journal of the same acronym (CCF lists both)
+  for (const [v, want] of [["Ase'19", "ASE | ASE"], ["Ase2019", "ASE | ASE"], ["Www2019", "WWW | WWW"], ["Cscw'19", "CSCW | CSCW"], ["Tcc'19", "TCC | TCC"], ["Aamas2019", "AAMAS | AAMAS"]]) assert.equal(got(v), want, v);
+  // journal volumes keep the journal
+  assert.equal(got("Tog38 (4)"), "TOG(J) | -");
+  assert.equal(got("Tpami42 (3), 1-14, 2020"), "TPAMI(J) | -");
+  // "CC" is Compiler Construction and "IM" Integrated Network Management, not C&C or I&M
+  for (const v of ["Cc'19", "Cc2019", "CC19"]) assert.equal(got(v), "CC | CC", v);
+  for (const v of ["Im2019", "IM19"]) assert.equal(got(v), "IM | IM", v);
+  // long words with an accent or a prime before the year keep their chip
+  assert.equal(got("Collaboratecom´19"), "CollaborateCom | CollaborateCom");
+  assert.equal(got("Evoapplications´19"), "- | EvoApplications");
+  // a word that is also an acronym, with its year glued on, is still a word
+  for (const v of ["Fast2019", "Micro2019", "Crisis2020", "Data", "Data 5 (2), 45, 2020"]) assert.equal(got(v), "- | -", v);
+  // a year glued on after a track word or "Asia" is read as a year: the track or the Asia edition, never the main venue
+  assert.equal(got("SIGGRAPH Asia2019"), "- | SiggraphA");
+  for (const v of ["CVPR Workshops2020", "ICCV Workshops2019", "EMNLP Findings2020", "ICSE Companion2019"]) assert.equal(got(v), "- | -", v);
+});

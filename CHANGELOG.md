@@ -2,6 +2,15 @@
 
 ## 2.41.0 — 2026-10-15
 
+- **Matching, seventeenth independent review** (of the glued-year and accent commits; 39,576 generated forms, the 75,521 real lines): four
+  defects, all from my own rules of 2026-10-17, fixed: (1) *a title-cased acronym with a glued year took the journal of the same acronym*:
+  `Ase'19`, `Cscw'19`, `Tcc'19`, `Aamas2019` got CCF's journal (B) instead of the conference (A) — the one-word rule now marks a glued year as an
+  event and as weak lead evidence, so journal volumes (`Tog38 (4)`, `Tpami42 (3)`) stay journals; (2) `Cc2019`, `Im2019`, `CC19`, `IM19` took the
+  ampersand venues C&C and I&M — the printed acronym must spell the venue's (any case), on the buried-acronym path too; (3) `Collaboratecom´19`,
+  `Evoapplications´19` lost their chip (the length cap counted the year); (4) the English-word guard did not see words with a year glued on
+  (`Fast2019`, `Crisis2020`) — it does again. Also: a year glued to a word ("SIGGRAPH Asia2019", "CVPR Workshops2020") is read as a year, and
+  "Data" (MDPI's journal) is a word. No real line changes (`npm run diff:matcher`). Left: "CHI '19 EA" (EA as a track word would hit other
+  acronyms).
 - **Copy GB/T 7714**: the Chinese national reference standard (GB/T 7714-2015) that NSFC and most Chinese forms ask for — `HE K, ZHANG X,
   REN S, et al. Title[C]//Proceedings …. 2016: 770-778.`, `Title[J]. Journal, 2022, 44(8): 4012-4025.` — off by default, like IEEE.
 - **Copy IEEE**, a ninth copy format (off by default, so that the copy row stays eight buttons until asked for): a numbered IEEE reference
