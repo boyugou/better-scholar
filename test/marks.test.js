@@ -267,3 +267,10 @@ test("a moved award takes the place of the kept row's own mark of the same kind,
   assert.equal(once[0][0].declared, "Best Paper");
   assert.deepEqual(once[1], []);
 });
+
+test("a moved award follows merge's rules across kinds: a listed runner-up drops the typed best, a listed best drops the typed finalist", () => {
+  const L = (kind) => ({ kind, venue: "KDD", year: 2010, awardLabel: "" });
+  const move = (typed, listed) => marks.listedOnce([{ title: "A", year: 2012, marks: marks.merge(typed, []) }, { title: "A", year: 2010, hidden: true, into: 0, marks: marks.merge([], [L(listed)]) }])[0].map((m) => `${m.kind}/${m.source}`);
+  assert.deepEqual(move([{ kind: "best", text: "Best Paper", source: "author" }], "runner-up"), ["runner-up/list"]);
+  assert.deepEqual(move([{ kind: "finalist", text: "Best Paper Finalist", source: "author" }], "best"), ["best/list"]);
+});

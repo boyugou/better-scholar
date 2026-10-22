@@ -438,3 +438,16 @@ test("fourth review: a publisher before Scholar's numbers is a book's, a meeting
   assert.match(f.gbt([paper("time publisher/subscriber inter-process communication model, 2019")]), /T\[Z\]\./);
   assert.match(f.gbt([paper("Scientific Reports 6, 29545, 2016")]), /T\[J\]\. Scientific Reports, 2019, 6: 29545\.$/);
 });
+
+test("a journal titled with a publishing word is no publisher", () => {
+  assert.doesNotMatch(f.gbt([{ title: "T", authors: "A Author", venue: "Learned Publishing 31, 1-9, 2018", year: 2018, type: null }]), /\[M\]/);
+});
+
+test("fifth review: \"Nature 428\" is a journal, \"…SIGCHI Chapter, 66-73\" keeps its pages, publishers with a slash are publishers", () => {
+  const paper = (venue) => ({ title: "T", authors: "A Author", venue, year: 2004, type: null, url: "", rank: {}, marks: [] });
+  assert.match(f.gbt([paper("Nature 428, 493-521, 2004")]), /T\[J\]\. Nature, 2004, 428: 493-521\.$/);
+  assert.match(f.gbt([paper("eLife 9, e52345, 2020")]), /T\[J\]\./);
+  assert.equal(f.venueParts("Proceedings of the 11th Biannual Conference of the Italian SIGCHI Chapter, 66-73, 2015").pages, "66-73");
+  for (const v of ["AK Peters/CRC Press, 2010", "Pearson/Prentice Hall, 2009", "McGraw-Hill, Inc., 2006"]) assert.match(f.gbt([paper(v)]), /T\[M\]\./, v);
+  assert.match(f.gbt([paper("Lab on a Chip 20, 1-10, 2020")]), /T\[J\]\./);
+});

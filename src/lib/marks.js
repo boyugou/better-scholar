@@ -238,7 +238,10 @@
       // (as merge does for one row: the list's mark takes the place of the authors' own mark of the same kind, and remembers its words)
       const typed = new Map(out[r.into].filter((m) => m.source !== "list").map((m) => [m.kind, m]));
       const replaced = new Set(arriving.map((m) => m.kind).filter((k) => typed.has(k)));
+      if (arriving.some((m) => TOP.has(m.kind))) replaced.add("finalist");          // (merge's two rules across kinds: a winner is no finalist, a runner-up no winner)
+      else if (arriving.some((m) => m.kind === "runner-up" || m.kind === "finalist")) for (const k of TOP) replaced.add(k);
       out[r.into] = [...out[r.into].filter((m) => m.source === "list" || !replaced.has(m.kind)), ...arriving.map((m) => (typed.has(m.kind) && !m.declared ? { ...m, declared: typed.get(m.kind).text } : m))];
+      out[r.into].sort((x, y) => KINDS.indexOf(x.kind) - KINDS.indexOf(y.kind));          // (in the order merge gives: most notable first)
     });
     return out;
   }

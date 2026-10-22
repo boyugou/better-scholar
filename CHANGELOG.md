@@ -2,6 +2,11 @@
 
 ## 2.41.0 — 2026-10-15
 
+- **The fifth review** (of the fourth's fixes): the meeting-acronym test was case-blind, so "Nature 428", eLife, PeerJ, Energy lost their
+  journal layout — it is case-sensitive now; "chapter" counts only before its own number ("…Italian SIGCHI Chapter, 66-73" keeps its pages); a
+  slash or a hyphen in a publisher ("AK Peters/CRC Press", "McGraw-Hill, Inc.") is a publisher again; "Lab", "Laboratory" and "Institute" no
+  longer keep a journal out of the periodical layout ("Lab on a Chip 20"); a moved award follows merge's rules across kinds (a listed runner-up
+  drops the typed best, a listed best the typed finalist) and keeps merge's order; "Learned Publishing" is a journal.
 - **The fourth review** (of the last three fixes; it also found nothing wrong in most of them): a moved award no longer stands beside the kept
   row's own mark of the same kind (it takes its place, as one row's merge does); a publisher before Scholar's numbers ("Morgan & Claypool
   Publishers 13, 1-187") is a book's; an unclassified line with a volume is a periodical's only when its name is no meeting's, book's or place's

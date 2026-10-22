@@ -147,17 +147,21 @@
   // page "0" is no page, and a number after a month is a day ("Cediti, September 5, 2003"): those stay out.
   const MONTH = /\b(?:jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|june?|july?|aug(?:ust)?|sep(?:t(?:ember)?)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)\.?$/i;
   // (a number that belongs to a label or to an article-local page range is not a part: "Article No. 1", "Vol. 2", "62: 1-62: 14", "15.6. 1-15.6. 4")
-  const LABEL_BEFORE = /(?:\b(?:no|vol|volume|article|heft|band|issue|nr|pages|pp|chapter|ch)\.?:?|\bart\.:?|,\s*paper|\d[:.]\s?\d*\s*-\s*\d*[:.]?)$/i;          // ("Art." with its full stop, "paper" as a field of its own: "the state of the art" and "Pulp & Paper" are names)
+  const LABEL_BEFORE = /(?:\b(?:no|vol|volume|article|heft|band|issue|nr|pages|pp)\.?:?|\bart\.:?|,\s*paper|\d[:.]\s?\d*\s*-\s*\d*[:.]?)$/i;          // ("Art." with its full stop, "paper" as a field of its own: "the state of the art" and "Pulp & Paper" are names)
   // a patent, a thesis or a report: a document that is no journal and no proceedings, given as Scholar printed it
   const DOCUMENT = /\bpatent\b|\b(?:thesis|dissertation)\b|\b(?:tech(?:nical|\.)?\s*rep(?:ort)?|report)\b/i;
   // a publisher's name on its own ("MIT Press", "Springer", "O'Reilly Media, Inc."): a book, given as printed too (APA does not italicise a publisher)
-  const PUBLISHER = /^(?:the\s)?[^,/]*\b(?:press|springer|wiley|elsevier|o'?reilly|publish(?:ing|ers?)|verlag|routledge|cengage|pearson|mcgraw)\b(?![/-])(?![^,]*\b(?:quarterly|gazette|bulletin|research|letters|journal|review|news)\b)[^,]*(?:,\s*(?:inc|ltd|llc|gmbh)\.?)?$/i;
-  const isPublisher = (text) => PUBLISHER.test(asPrinted(text)) || PUBLISHER.test(venueParts(text).name);          // ("Morgan & Claypool Publishers 13, 1-187": the name before Scholar's numbers)
+  const CHAPTER = /\b(?:chapter|ch)\.?:?$/i;          // ("chapter 13": the number right after it is a chapter's, not a volume — "…SIGCHI Chapter, 66-73" keeps its pages)
+  const PUBLISHER = /^(?:the\s)?[^,]*\b(?:press|springer|wiley|elsevier|o'?reilly|publish(?:ing|ers?)|verlag|routledge|cengage|pearson|mcgraw)\b(?![/-]subscri)(?![^,]*\b(?:quarterly|gazette|bulletin|research|letters|journal|review|news)\b)[^,]*(?:,\s*(?:inc|ltd|llc|gmbh)\.?)?$/i;
+  // (journals whose title is a publishing word: no publisher)
+  const PUBLISHING_JOURNAL = /^(?:learned publishing|publishing research quarterly|logos|publishers weekly)\b/i;
+  const isPublisher = (text) => !PUBLISHING_JOURNAL.test(asPrinted(text)) && (PUBLISHER.test(asPrinted(text)) || PUBLISHER.test(venueParts(text).name));          // ("Morgan & Claypool Publishers 13, 1-187": the name before Scholar's numbers)
   const isDocument = (p) => entryType(p).type === "misc" && (DOCUMENT.test(clean(p.venue)) || isPublisher(p.venue));
   // an unclassified line with a volume is a periodical's ("Scientific Reports 6, 29545") — unless its name says it is a meeting, a book or a place: "BMVC 1, 2",
   // "Robotics: Science and Systems VIII 8", a handbook, an encyclopedia, a university's report
-  const NOT_PERIODICAL = /\b(?:conference|conf|symposi(?:um|a)|workshop|proceedings|proc|summit|meeting|congress|handbook|encyclopa?edia|university|universit[aäéy]|institute|laborator(?:y|ies)|lab|chapter|lecture|tutorial|science and systems)\b|^[A-Z]{2,6}(?:\s\d{2,4})?$/i;
-  const periodical = (p) => { if (entryType(p).type !== "misc" || isDocument(p)) return false; const { name, volume } = venueParts(p.venue); return !!volume && !NOT_PERIODICAL.test(name); };
+  const NOT_PERIODICAL = /\b(?:conference|conf|symposi(?:um|a)|workshop|proceedings|proc|summit|meeting|congress|handbook|encyclopa?edia|university|universit[aäéy]|chapter|lecture|tutorial|science and systems)\b/i;
+  const ACRONYM = /^[A-Z]{2,6}(?:\s\d{2,4})?$/;          // (case-sensitive: "BMVC" is a meeting's acronym, "Nature" and "eLife" are journals)
+  const periodical = (p) => { if (entryType(p).type !== "misc" || isDocument(p)) return false; const { name, volume } = venueParts(p.venue); return !!volume && !NOT_PERIODICAL.test(name) && !ACRONYM.test(name); };
   // the venue line as Scholar printed it, without the year at its end (for such a document, which no rule splits)
   const asPrinted = (text) => { const s = clean(text).replace(/\s+/g, " ").replace(/,\s*(?:19|20)\d{2}$/, "").replace(/,\s*0$/, "").trim();          // (Scholar's ", 0" stands for no year)
       return /[\p{L}\p{N}]/u.test(s) ? s : ""; };
@@ -182,9 +186,9 @@
       if (!/^0+$/.test(m[1])) pages = m[1].replace(/\s*-\s*/, "-");
       s = s.slice(0, m.index).trim();
     }
-    if ((m = /\s(\d{1,4})\s*\((\d{1,4}(?:\s*-\s*\d{1,4})?|[A-Za-z]{1,4})\)$/.exec(s)) && !/^(?:19|20)\d{2}$/.test(m[1]) && !LABEL_BEFORE.test(s.slice(0, m.index))) {
+    if ((m = /\s(\d{1,4})\s*\((\d{1,4}(?:\s*-\s*\d{1,4})?|[A-Za-z]{1,4})\)$/.exec(s)) && !/^(?:19|20)\d{2}$/.test(m[1]) && !CHAPTER.test(s.slice(0, m.index)) && !LABEL_BEFORE.test(s.slice(0, m.index))) {
       volume = m[1]; issue = m[2].replace(/\s*-\s*/, "-"); s = s.slice(0, m.index).trim();
-    } else if ((m = /[^,\s]\s(\d{1,3})$/.exec(s)) && !MONTH.test(s.slice(0, m.index + 1)) && !LABEL_BEFORE.test(s.slice(0, m.index + 1))
+    } else if ((m = /[^,\s]\s(\d{1,3})$/.exec(s)) && !MONTH.test(s.slice(0, m.index + 1)) && !CHAPTER.test(s.slice(0, m.index + 1)) && !LABEL_BEFORE.test(s.slice(0, m.index + 1))
       && !editionYear(m[1], s.slice(0, m.index + 1), year)) {
       volume = m[1]; s = s.slice(0, m.index + 1).trim();
     }
