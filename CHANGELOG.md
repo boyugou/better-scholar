@@ -2,6 +2,9 @@
 
 ## 2.41.0 — 2026-10-15
 
+- **A reviewed snapshot of the reference styles** (`test/formats-snapshot.test.js`, `test/fixtures/formats.expected.json`): how APA, IEEE,
+  GB/T 7714 and BibTeX read each of the 22,744 real venue lines (type code, name, volume, issue, pages), so that a change to `formats.js`
+  shows its exact effect, as the venue snapshot does for the matcher. CONTRIBUTING.md says how to review it.
 - **The fifth review** (of the fourth's fixes): the meeting-acronym test was case-blind, so "Nature 428", eLife, PeerJ, Energy lost their
   journal layout — it is case-sensitive now; "chapter" counts only before its own number ("…Italian SIGCHI Chapter, 66-73" keeps its pages); a
   slash or a hyphen in a publisher ("AK Peters/CRC Press", "McGraw-Hill, Inc.") is a publisher again; "Lab", "Laboratory" and "Institute" no

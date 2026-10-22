@@ -92,6 +92,14 @@ badge removed on purpose or a regression; the unit tests never see the second ki
 (`scripts/pull-real-titles.mjs`) refreshes the file from Crossref and OpenAlex, resumably, into the git-ignored
 `.cache/real-titles/`.
 
+## Changing the reference styles
+
+APA, IEEE, GB/T 7714 and BibTeX share one reading of Scholar's venue line (`formats.venueParts`, `entryType`, the periodical / document /
+publisher rules). `test/formats-snapshot.test.js` keeps a reviewed snapshot of that reading for every line of the venue corpus
+(`test/fixtures/formats.expected.json`, as the GB/T line of an invented paper, which shows the type code and every field). A change to
+`src/lib/formats.js` fails it with the exact lines it changes: read each one, then `npm run test:update`. Five rounds of review on
+2026-10-22 showed that each rule meant for a few lines moves others; the snapshot is how you see them.
+
 ## Adding a setting
 
 The settings are one table, `SETTINGS` in `src/lib/prefs.js`. Defaults, validation (`normalize`), patches
