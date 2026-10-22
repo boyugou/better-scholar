@@ -529,3 +529,16 @@ test("the venue line, second review of the fixes: meetings, drafts and series ar
   assert.equal(vp("Journal of Things 5 (IN PRESS), 1-10, 2020").issue, "", "a status is no issue");
 });
 
+test("a proceedings named by its acronym alone keeps its number as printed: an edition, a year or another series' volume", () => {
+  const paper = (venue) => ({ title: "T", authors: "K He", venue, year: 1999, type: "conference", url: "", rank: {}, marks: [] });
+  assert.match(f.apa([paper("IJCAI 16, 740-747, 1999")]), /In \*IJCAI 16\* \(pp\. 740–747\)\.$/);
+  assert.match(f.ieee([paper("OOPSLA 47 (10), 163-178, 2012")]), /in \*OOPSLA 47 \(10\)\*, 1999, pp\. 163–178\.$/);
+  assert.match(f.bibtex([paper("IJCAI 16, 740-747, 1999")]), /booktitle = \{IJCAI 16\},\n  pages = \{740--747\}/);
+  assert.doesNotMatch(f.bibtex([paper("IJCAI 16, 740-747, 1999")]), /volume/);
+  // a long name's number is its proceedings' volume
+  assert.match(f.apa([paper("Advances in Neural Information Processing Systems 34, 26804-26817, 2021")]), /\(Vol\. 34, pp\. 26804–26817\)\.$/);
+  // LIPIcs and ACM page labels with a double hyphen
+  assert.equal(f.venueParts("20th International Workshop on Worst-Case Execution Time Analysis, 2: 1--2: 17, 2022").pages, "2:1-2:17");
+  assert.deepEqual(f.venueParts("ACM Transactions on Graphics (TOG) 36 (2), 19:1--19:19, 2017"), { name: "ACM Transactions on Graphics (TOG)", volume: "36", issue: "2", pages: "19:1-19:19", year: "2017" });
+});
+

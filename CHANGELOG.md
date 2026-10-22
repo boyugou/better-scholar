@@ -28,6 +28,10 @@
 - **GB/T keeps a proceedings' number**: "Advances in Neural Information Processing Systems 35", "AAAI … 36 (3)", "IJCAI 16" had lost
   the number in [C] (APA and IEEE print it as a volume). It now follows the name as printed, without a label, since the line does
   not say whether it is a volume or an edition (534 snapshot lines).
+- **APA, IEEE and BibTeX no longer call a bare acronym's number a volume**: "IJCAI 16" is IJCAI's 16th meeting, "OOPSLA 47 (10)" is SIGPLAN
+  Notices' volume, "Ijcai 93 (2)" a year; such a number stays after the name as printed ("In *IJCAI 16* (pp. 740–747)"). A long name's
+  number is still its proceedings' volume ("Vol. 34" for NeurIPS). Page labels with a double hyphen ("19:1--19:19", LIPIcs' "2: 1--2: 17")
+  are pages.
 - **Two wrong badges from the same audit**: a venue line that opens with its year is IEEE's title for a meeting's proceedings, so it
   is no journal's ("2010 Internet of Things (IOT)" had CCF's IEEE Internet of Things Journal, started 2014; the cut "2011 7th
   international wireless communications and mobile computing …" had the journal of those words and now has CORE's IWCMC). The real

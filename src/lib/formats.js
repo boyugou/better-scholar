@@ -186,9 +186,9 @@
         && !CHAPTER.test(s.slice(0, m.index)) && !LABEL_BEFORE.test(s.slice(0, m.index)) && !editionYear(m[1], s.slice(0, m.index + 1), year)) return { name: s.slice(0, m.index).replace(/[,;:]\s*$/, ""), volume: m[1], issue: "", pages: "", year };
       return keep();
     }
-    if ((m = /,\s*(?:\d{1,3}\s*pp\.?|(?:article|art\.)(?:\s*no\.?:?)?\s*(\d{1,6})|no\.:?\s*(\d{1,6})|(\d{1,4}(?:\.\d{1,3})?[:.]\s?\d{1,3}\s*-\s*\d{1,4}(?:\.\d{1,3})?[:.]\s?\d{1,3}))$/i.exec(s))) {
+    if ((m = /,\s*(?:\d{1,3}\s*pp\.?|(?:article|art\.)(?:\s*no\.?:?)?\s*(\d{1,6})|no\.:?\s*(\d{1,6})|(\d{1,4}(?:\.\d{1,3})?[:.]\s?\d{1,3}\s*-{1,2}\s*\d{1,4}(?:\.\d{1,3})?[:.]\s?\d{1,3}))$/i.exec(s))) {
       if (m[2] && !/\)$/.test(s.slice(0, m.index).trim())) return keep();          // (a bare "no. 3" after a volume is its issue: "Neural Computation 12, no. 3" is given as printed)
-      pages = (m[1] || m[2] || m[3] || "").replace(/\s+/g, ""); s = s.slice(0, m.index).trim(); }
+      pages = (m[1] || m[2] || m[3] || "").replace(/\s+/g, "").replace("--", "-"); s = s.slice(0, m.index).trim(); }
     // (Scholar puts ", " between its fields: "US Patent 10,007,785" and "11,985-11,993" are one number each)
     if (!pages && (m = /,\s+([A-Za-z]{0,4}\d{1,16}(?:\s*-{1,2}\s*[A-Za-z]{0,4}\d{1,16})?(?:\.\s?e\d{1,3})?)$/.exec(s)) && (!/^(?:19|20)\d{2}$/.test(m[1]) || /\s\d{1,4}\s*\([^()]+\)$/.test(s.slice(0, m.index)))) {
       if (LABEL_BEFORE.test(s.slice(0, m.index)) || /\d,\d{1,3}$/.test(s)) return keep();
@@ -212,6 +212,12 @@
     const name = s.replace(/[,;:]\s*$/, "");
     return /[\p{L}\p{N}]/u.test(name) && !JUNK.test(name) ? { name, volume, issue, pages, year } : { name: "", volume: "", issue: "", pages: "", year };          // (a line of dashes is no venue, nor Scholar's placeholder: no numbers of its own either)
   }
+
+  // A proceedings named by its acronym alone ("IJCAI 16", "OOPSLA 47 (10)", "Ijcai 93 (2)"): its number may be an edition, a year or another series'
+  // volume (OOPSLA's is SIGPLAN Notices'), so it stays after the name as printed; a long name's number is its proceedings' volume ("NeurIPS 34", "ICPR'06 2")
+  const BARE_ACRONYM = /^[A-Z][A-Za-z]{1,7}$/;          // (with its year — "ICPR'06 1" — the number is the volume)
+  const procParts = (text) => { const v = venueParts(text); return v.volume && BARE_ACRONYM.test(v.name) ? { ...v, name: `${v.name} ${v.volume}${v.issue ? ` (${v.issue})` : ""}`, volume: "", issue: "" } : v; };
+  const partsFor = (p, type) => (type === "inproceedings" ? procParts(p.venue) : venueParts(p.venue));
 
   function entryType(p) {
     const venue = venueParts(p.venue).name;
@@ -244,7 +250,7 @@
       used.add(key);
 
       const { type, field } = periodical(p) ? { type: "article", field: "journal" } : entryType(p);          // (as in the other styles: "Scientific Reports 6, 29545" is a periodical's)
-      const parts = venueParts(p.venue), venue = tex(field === "howpublished" ? clean(p.venue) : parts.name);
+      const parts = partsFor(p, type), venue = tex(field === "howpublished" ? clean(p.venue) : parts.name);
       const notes = [...rankNotes(p, ctx), ...p.marks.map(tex)];
       const fields = [
         `  title = {${tex(p.title)}}`,
@@ -333,7 +339,7 @@
     if (title && !/[.?!]$/.test(title)) title += ".";
     // the venue in italics, then (APA 7) a journal's volume in italics, its issue and pages, or "In *Proceedings* (Vol. 1, pp. 1–10)"; the year is the one above.
     // A line that is neither (a patent, a thesis, a publisher) is given as Scholar printed it, without its year and without italics.
-    const { name: venue, volume, issue, pages } = venueParts(p.venue), kind = entryType(p), journal = kind.type === "article";
+    const kind = entryType(p), { name: venue, volume, issue, pages } = partsFor(p, periodical(p) ? "article" : kind.type), journal = kind.type === "article";
     const range = pages.replace("-", "–"), venuePieces = [];
     if (isDocument(p)) { const raw = asPrinted(p.venue); if (raw) venuePieces.push({ t: raw + (/[.]$/.test(raw) ? "" : ".") }); }
     else if (venue && (journal || periodical(p)) && (volume || pages)) {          // (an unclassified line with a volume is a periodical's: "Scientific Reports 6, 29545")
@@ -370,7 +376,7 @@
     const list = names.map(ieeeAuthor).filter(Boolean);
     const by = !list.length ? "" : list.length > 6 || cut ? `${list[0]} et al.` : list.length === 1 ? list[0] : list.length === 2 ? `${list[0]} and ${list[1]}` : `${list.slice(0, -1).join(", ")}, and ${list[list.length - 1]}`;
     const title = clean(p.title).replace(/[.]$/, "");
-    const { name, volume, issue, pages } = venueParts(p.venue), kind = entryType(p), type = kind.type, year = p.year ? String(p.year) : "";
+    const kind = entryType(p), type = kind.type, { name, volume, issue, pages } = partsFor(p, periodical(p) ? "article" : type), year = p.year ? String(p.year) : "";
     const misc = isDocument(p), venue = misc ? asPrinted(p.venue) : name;
     const range = pages.replace("-", "–"), where = [], page = pages && (pages.includes("-") ? `pp. ${range}` : `Art. no. ${pages}`);
     if (type === "article" || periodical(p)) where.push(volume && `vol. ${volume}`, issue && `no. ${issue}`, page, year);
@@ -401,7 +407,7 @@
     // (et al. is "等" when the names are Chinese: the word of the reference's own language, §8.1.2)
     const by = list.length > 3 || (cut && list.length) ? `${list.slice(0, 3).join(", ")}, ${list.some((x) => /[\u3400-\u9fff]/.test(x)) ? "等" : "et al"}` : list.join(", ");
     const title = clean(p.title).replace(/[.]$/, "");
-    const { name, volume, issue, pages } = venueParts(p.venue), kind = entryType(p), year = p.year ? String(p.year) : "";
+    const kind = entryType(p), { name, volume, issue, pages } = partsFor(p, periodical(p) ? "article" : kind.type), year = p.year ? String(p.year) : "";
     // (an unclassified line with a volume is a periodical's, as in the other styles; any other unclassified line keeps all its fields as printed)
     const type = periodical(p) ? "article" : kind.type;
     const venue = type === "misc" ? asPrinted(p.venue) : type === "inproceedings" ? name.replace(/\.$/, "") : name, line = clean(p.venue);
