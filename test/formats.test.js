@@ -506,3 +506,10 @@ test("the venue line, from an independent review of the snapshot fixes: issues i
   assert.match(f.gbt([paper("2014 IEEE Network 28 (4), 1-8, 2014")]), /T\[J\]\. 2014 IEEE Network, 2018, 28\(4\): 1-8\.$/);
 });
 
+test("BibTeX types an unclassified line with a volume as the other styles do", () => {
+  const p = { title: "T", authors: "K He", venue: "Scientific Reports 6, 29545, 2016", year: 2016, type: null, url: "", rank: {}, marks: [] };
+  assert.match(f.gbt([p]), /T\[J\]\. Scientific Reports, 2016, 6: 29545\.$/);
+  assert.match(f.bibtex([p]), /^@article\{he2016t,[\s\S]*journal = \{Scientific Reports\},\n  volume = \{6\},\n  pages = \{29545\}/);
+  assert.match(f.bibtex([{ ...p, venue: "BMVC 1, 2, 2016" }]), /^@misc\{/, "a meeting's acronym with a number is no periodical, in BibTeX too");
+});
+

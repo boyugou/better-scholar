@@ -18,6 +18,8 @@
   read; the short forms *Proc. VLDB Endow.* and *Proc. ACM Program. Lang.* are journals; Scholar's "# PLACEHOLDER_PARENT_METADATA_VALUE#"
   is no venue and its numbers are none; a bare "no. 3" after a volume is its issue, so the line is given as printed; a preprint cut
   inside its issue gets no volume; a year-led thesis, report or journal with an issue keeps its own type.
+- **BibTeX types a line as the other three styles do**: an unclassified line with a volume ("Scientific Reports 6, 29545") is an
+  `@article` with its volume and pages, not a `@misc` with the line as printed.
 - **Two wrong badges from the same audit**: a venue line that opens with its year is IEEE's title for a meeting's proceedings, so it
   is no journal's ("2010 Internet of Things (IOT)" had CCF's IEEE Internet of Things Journal, started 2014; the cut "2011 7th
   international wireless communications and mobile computing …" had the journal of those words and now has CORE's IWCMC). The real

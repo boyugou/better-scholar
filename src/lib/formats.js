@@ -241,7 +241,7 @@
       for (let i = 1; used.has(key); i++) key = base + (i <= 25 ? String.fromCharCode(97 + i) : i + 1);       // b … z, then 27, 28, …
       used.add(key);
 
-      const { type, field } = entryType(p);
+      const { type, field } = periodical(p) ? { type: "article", field: "journal" } : entryType(p);          // (as in the other styles: "Scientific Reports 6, 29545" is a periodical's)
       const parts = venueParts(p.venue), venue = tex(field === "howpublished" ? clean(p.venue) : parts.name);
       const notes = [...rankNotes(p, ctx), ...p.marks.map(tex)];
       const fields = [
