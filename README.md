@@ -102,8 +102,8 @@ The extension finds the profile's name in each author line. Your place in the li
 |---|---|
 | First | You are the first author. |
 | Co-first | You are in a leading group of two or more authors that share a mark, such as `*` or `†`: `A*, B*, C`. |
-| Second | You are the second author. |
-| Last | You are the last author, and the author list is complete. In a two-author paper, the second author is also the last author. |
+| Second | You are the second author, and the paper has three or more authors. |
+| Last | You are the last author, and the author list is complete. In a two-author paper the second author counts as last, not second. |
 | Other | Any other place. The row stays plain. |
 
 - **Initials match.** Scholar prints `GE Hinton` for Geoffrey Hinton. The extension matches it.
@@ -128,10 +128,10 @@ flowchart LR
   T -- no --> R["Rank chip, with the<br/>rule that found it"]
 ```
 
-Real examples. A test checks each row against the code:
+Real examples. The middle column is what the lists give; by default the panel draws one chip (see *One chip, not two*). A test checks each row against the code:
 
 <!-- examples:begin -->
-| Scholar prints | Chip | Found by |
+| Scholar prints | Rank (CCF · CORE) | Found by |
 |---|---|---|
 | `Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2023` | CCF A · CORE A* | `name` |
 | `ISCA 2014 42 (3), 361-372, 2014` | CCF A · CORE A* | `acronym` |
@@ -226,7 +226,7 @@ Press `/` on a profile to jump to the search box. (The panel and its filters mus
 | `core:` | `core:a*`, `core:a`, `core:b`, `core:c` | The venue's CORE rank. |
 | `role:` | `role:first`, `role:cofirst`, `role:second`, `role:last`, `role:middle` | Your place in the author list. `middle` is none of the other four. |
 | `type:` | `type:conference`, `type:journal` | The kind of venue, as the rank lists say. A venue without a rank has no kind. |
-| `has:` | `has:award`, `has:talk` | A best-paper award or finalist mark; an Oral, Spotlight or Highlight mark. |
+| `has:` | `has:award`, `has:talk` | An award mark (best paper, test of time, honorable mention, a category award or a finalist); an Oral, Spotlight or Highlight mark. |
 | words | `ccf:a role:first cites:>100 detection` | All terms together: every term must match. |
 
 - **A comma means "or".** `role:first,last` is first or last author. `ccf:a,b` is a CCF A or B venue. Separate words must all match. Two quick buttons of the same operator join into one word: *First author* and *Last author* give `role:first,last`.
@@ -327,7 +327,7 @@ What the extension is made of, counted from its code and its data. Nothing here 
 | Number | What | Counted from |
 |---:|---|---|
 | **154** | settings you can change, in 18 cards: 87 switches, 48 names you can set, and 19 colours, choices, orders and languages | the settings tree (`src/lib/prefs.js`) |
-| **172** | nodes in that tree, 5 levels deep: card, part switch, item, name | cards and rows; each row hangs on its part's switch |
+| **172** | nodes in that tree, 5 levels deep: card, panel switch, part switch, item, sub-item | cards and rows; each row hangs on its part's switch |
 | **9 · 8 · 10 · 6 · 4** | panel parts, copy formats and quick filters (each with a switch, most in an order you set), then chip looks and presets | `SECTIONS`, `COPY_BUTTONS`, `PILLS`, `CHIP_THEMES`, `PRESETS` |
 | **30** | interface languages: 353 strings each, 29 translated from English | `src/_locales/*/messages.json` |
 | **1,178** | ranked venues in 1,481 rows of the two lists (386 CCF conferences, 295 CCF journals, 800 CORE conferences); 299 venues have a row in both | the rows of `src/data/ccf.js` and `src/data/core.js`, linked by `idx.partners` |

@@ -879,7 +879,7 @@
     "message": "AI agents"
   },
   "optAgentHint": {
-    "message": "Copy a guide that lists every setting, its values and your current choices. Give it to your AI assistant with what you want. Then paste its answer into the configuration editor below, and press Apply."
+    "message": "Copy a guide that lists every setting, its values and your current choices. Give it to your AI assistant with what you want. Then paste its answer into the configuration editor below, and press Apply configuration."
   },
   "optAgentCopy": {
     "message": "Copy guide for agents"

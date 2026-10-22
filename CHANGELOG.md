@@ -14,6 +14,12 @@
   - *PRIVACY.md*: an "In short" table on top, and shorter sentences with the same facts. One fact was wrong: the load lock is ignored after twelve
     seconds, not five (the code changed, the page did not).
   - *docs/ARCHITECTURE.md* and *CONTRIBUTING.md*: the module map, the order of the roles and the matcher-fix loop as Mermaid diagrams.
+  - *An independent review of the batch* found no wrong fact and these smaller things, fixed: the Japanese hints named the "Read full
+    lists" button by a name it does not have; the README's example column is the lists' rank, not the drawn chip (one by default); a
+    two-author paper's second author counts as last, not second (the README said "also"); `has:award` holds every award mark, not only
+    best paper; the "In short" privacy row now names Read full lists' own requests; the numbers row names the five levels it counts;
+    the explainer's table is the panel's own summary (First, Second, Last and the All row, from `metrics.summarize`); the README test
+    checks every row and the reason for a missing rank; the store kit's quotes and lengths.
   - The website, in its own repository: a new section, "How it reads a paper" (two made-up papers, four steps, filled at build time by the
     extension's own code and strings; it plays when in view, has a pause button, and stays still with reduced motion); shorter text in all 30
     languages, one term per concept in each; no English left in the other languages (the export tabs, the footer); the privacy page draws its

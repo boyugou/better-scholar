@@ -17,7 +17,10 @@ function examples(file) {
   const text = fs.readFileSync(path.join(__dirname, "..", file), "utf8");
   const block = /<!-- examples:begin -->([\s\S]*?)<!-- examples:end -->/.exec(text);
   assert.ok(block, `${file} has no examples block`);
-  return block[1].split("\n").filter((line) => /^\|\s*`/.test(line)).map((line) => line.split("|").slice(1, -1).map((cell) => cell.trim()));
+  const lines = block[1].split("\n").filter((line) => line.startsWith("|")).slice(2);          // (the header and the |---| line)
+  const rows = lines.filter((line) => /^\|\s*`/.test(line));
+  assert.equal(rows.length, lines.length, `${file}: every row of the examples begins with the venue line in backticks`);
+  return rows.map((line) => line.split("|").slice(1, -1).map((cell) => cell.trim()));
 }
 
 for (const file of ["README.md", "README.zh-CN.md"]) {
@@ -31,7 +34,10 @@ for (const file of ["README.md", "README.zh-CN.md"]) {
       assert.equal(chip, gets, `${line}: the README says ${chip}, the matcher gives ${gets}`);
       const word = (/`([^`]+)`/.exec(rule) || [])[1] || "—";
       if (r.ccf || r.core) assert.deepEqual([...new Set([r.ccf && r.ccf.rule, r.core && r.core.rule].filter(Boolean))], [word], `${line}: the README says it is found by ${word}`);
-      else if (r.secondary) assert.ok([r.secondary, r.secondary + "s"].includes(word.toLowerCase()), `${line}: the track word is ${r.secondary}, the README says ${word}`);
+      else if (r.secondary) {
+        assert.ok([r.secondary, r.secondary + "s"].includes(word.toLowerCase()), `${line}: the track word is ${r.secondary}, the README says ${word}`);
+        assert.match(rule, /track word|次要类别词/, `${line}: the README says why there is no rank (a track word)`);
+      }
       else assert.equal(word, "—", `${line}: no rank and no track word, the README says ${word}`);
     }
   });

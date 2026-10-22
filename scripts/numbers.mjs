@@ -112,7 +112,7 @@ const TEXT = {
     head: ["Number", "What", "Counted from"],
     rows: (n, f, p) => [
       [`**${n.settings.total}**`, `settings you can change, in ${n.settings.cards} cards: ${n.settings.switches} switches, ${n.settings.names} names you can set, and ${n.settings.other} colours, choices, orders and languages`, "the settings tree (`src/lib/prefs.js`)"],
-      [`**${n.settings.nodes}**`, `nodes in that tree, ${n.settings.levels} levels deep: card, part switch, item, name`, "cards and rows; each row hangs on its part's switch"],
+      [`**${n.settings.nodes}**`, `nodes in that tree, ${n.settings.levels} levels deep: card, panel switch, part switch, item, sub-item`, "cards and rows; each row hangs on its part's switch"],
       [`**${n.arrange.parts} · ${n.arrange.copy} · ${n.arrange.filters} · ${n.arrange.looks} · ${n.arrange.presets}**`, "panel parts, copy formats and quick filters (each with a switch, most in an order you set), then chip looks and presets", "`SECTIONS`, `COPY_BUTTONS`, `PILLS`, `CHIP_THEMES`, `PRESETS`"],
       [`**${n.languages.total}**`, `interface languages: ${f(n.languages.strings)} strings each, ${n.languages.total - 1} translated from English`, "`src/_locales/*/messages.json`"],
       [`**${f(n.lists.distinct)}**`, `ranked venues in ${f(n.lists.total)} rows of the two lists (${n.lists.ccfConferences} CCF conferences, ${n.lists.ccfJournals} CCF journals, ${n.lists.coreConferences} CORE conferences); ${f(n.matching.linked)} venues have a row in both`, "the rows of `src/data/ccf.js` and `src/data/core.js`, linked by `idx.partners`"],
@@ -131,7 +131,7 @@ const TEXT = {
     head: ["数字", "含义", "统计自"],
     rows: (n, f, p) => [
       [`**${n.settings.total}**`, `项可调整的设置，分布在 ${n.settings.cards} 张卡片中：${n.settings.switches} 个开关、${n.settings.names} 处可自定义名称，以及 ${n.settings.other} 项颜色、选项、顺序和语言`, "设置树的各行（`src/lib/prefs.js`）"],
-      [`**${n.settings.nodes}**`, `个节点，共 ${n.settings.levels} 层：卡片、某个部分的开关、其中的一项、它的名字`, "卡片和各行；每一行挂在所属部分的开关下"],
+      [`**${n.settings.nodes}**`, `个节点，共 ${n.settings.levels} 层：卡片、面板开关、部分开关、其中一项、项下的子项`, "卡片和各行；每一行挂在所属部分的开关下"],
       [`**${n.arrange.parts} · ${n.arrange.copy} · ${n.arrange.filters} · ${n.arrange.looks} · ${n.arrange.presets}**`, "个面板部分、复制格式和快捷筛选——每一项都有自己的开关，多数还能排顺序——以及可选的标签样式和预设", "`SECTIONS`、`COPY_BUTTONS`、`PILLS`、`CHIP_THEMES`、`PRESETS`"],
       [`**${n.languages.total}**`, `种界面语言——每种 ${f(n.languages.strings)} 条文案，${n.languages.total - 1} 种译文`, "`src/_locales/*/messages.json`"],
       [`**${f(n.lists.distinct)}**`, `个有等级的发表场所，来自两份内置名录的 ${f(n.lists.total)} 行（CCF 会议 ${n.lists.ccfConferences}、CCF 期刊 ${n.lists.ccfJournals}、CORE 会议 ${n.lists.coreConferences}）；其中 ${f(n.matching.linked)} 个在两份名录中各有一行`, "`src/data/ccf.js` 和 `src/data/core.js` 的各行，由 `idx.partners` 关联"],

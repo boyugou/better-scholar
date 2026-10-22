@@ -482,7 +482,7 @@
     "message": "これらの設定をすべて初期設定に戻しますか？"
   },
   "optStorage": {
-    "message": "設定はブラウザに保存され、Chrome のプロフィールと同期されます。拡張機能は、開いた Scholar のページを読み取ります。「完全なリストを読み取る」を押したときには、著者リストが途中で切れている論文のページも読み取ります。論文のタイトルが Semantic Scholar に送られるのは、それをオンにした場合だけです。"
+    "message": "設定はブラウザに保存され、Chrome のプロフィールと同期されます。拡張機能は、開いた Scholar のページを読み取ります。「著者リストを補完」を押したときには、著者リストが途中で切れている論文のページも読み取ります。論文のタイトルが Semantic Scholar に送られるのは、それをオンにした場合だけです。"
   },
   "optSample": {
     "message": "サンプル論文"
@@ -675,7 +675,7 @@
     "message": "まず Semantic Scholar から著者リストを読み取る"
   },
   "optSemanticLabelHint": {
-    "message": "「完全なリストを読み取る」を押すと、まず Semantic Scholar に各論文の完全な著者リストを問い合わせます。送るのは論文のタイトルだけで、ほかは送りません。Scholar 自身のページは、Semantic Scholar が知らない論文についてだけ開きます。Scholar へのリクエストが減り、CAPTCHA も減ります。"
+    "message": "「著者リストを補完」を押すと、まず Semantic Scholar に各論文の完全な著者リストを問い合わせます。送るのは論文のタイトルだけで、ほかは送りません。Scholar 自身のページは、Semantic Scholar が知らない論文についてだけ開きます。Scholar へのリクエストが減り、CAPTCHA も減ります。"
   },
   "yearsTitle": {
     "message": "年別のハイライト論文"
@@ -1034,7 +1034,7 @@
     "message": "読み込んだ論文と「すべて読み込む」"
   },
   "optStatusCutoff": {
-    "message": "途中で切れた著者リストと「完全なリストを読み取る」"
+    "message": "途中で切れた著者リストと「著者リストを補完」"
   },
   "optStatusRepeats": {
     "message": "重複したエントリ"

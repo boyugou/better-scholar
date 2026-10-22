@@ -9,7 +9,7 @@ The file names in parentheses point at the code that does each thing, in the ext
 |---|---|
 | Account, analytics, tracking, advertising? | None. |
 | Where does the work happen? | In your browser. The rank lists and the award list are inside the extension. |
-| What goes over the network? | Requests to the Google Scholar site that you have open, made as Scholar's own page makes them. A paper's title to Semantic Scholar, only if you turn that on (it is off by default). |
+| What goes over the network? | Requests to the Google Scholar site that you have open: Scholar's own *Show more* button, and the paper pages that *Read full lists* asks for after your click. A paper's title to Semantic Scholar, only if you turn that on (it is off by default). |
 | What is stored? | Your settings and your name spellings (Chrome's synced storage). The full author lists that *Read full lists* found, for 90 days (this device only). |
 | What is never sent? | Your settings, your name spellings, the saved paper details, and anything from your clipboard. |
 | Which permissions? | One: `storage`. |

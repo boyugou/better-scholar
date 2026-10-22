@@ -223,7 +223,7 @@ AGENTS.md is generated from `src/lib/agent.js` (`npm run agents:doc`); docs/ARCH
 | Sev. | Finding | Detail |
 |---|---|---|
 | Minor | `short_name` is 14 characters | "Better Scholar"; the manifest reference recommends at most 12 ("maximum of 12 characters recommended"). Only a recommendation; it does not block upload. |
-| Minor (fixed 2026-10-17) | Spanish description was exactly 132 characters | The new summary is 122 characters in English and at most 129 in the other locales (`test/i18n.test.js` checks every locale against 132). |
+| Minor (fixed 2026-10-17) | Spanish description was exactly 132 characters | The new summary is 122 characters in English and at most 132 in the other locales (Italian is exactly 132) (`test/i18n.test.js` checks every locale against 132). |
 | None | Permissions, host permissions, web-accessible resources | `storage` only; no `host_permissions`, `optional_permissions`, `web_accessible_resources` or `externally_connectable`. Nothing to remove. |
 | Note | Bundled third-party data | `NOTICE`: "CORE's terms of use have not been confirmed". Not a review item, but it is the one intellectual-property question in the package. |
 

@@ -218,8 +218,8 @@ Tick all three. The wording below is the form's as reported since its introducti
 | I do not use or transfer user data for purposes that are unrelated to my item's single purpose | Every use is the profile view, its loading and its exports. |
 | I do not use or transfer user data to determine creditworthiness or for lending purposes | None. |
 
-The opt-in itself: the setting is off by default (`semanticScholar: false`) and its own text says "(it receives the
-paper's title and nothing else)"; once it is on, the panel's hint under "Read full lists" says the same before the click
+The opt-in itself: the setting is off by default (`semanticScholar: false`) and its own text says "It gets the paper's
+title and nothing else."; once it is on, the panel's hint under "Read full lists" says the same before the click
 ("First asks Semantic Scholar for each paper's author list (it gets only the title)"); no preset turns it on. That is
 the in-interface disclosure and affirmative action the User Data FAQ (FAQ 10) asks for.
 

@@ -102,8 +102,8 @@ flowchart LR
 |---|---|
 | 一作 | 你是第一作者。 |
 | 共一 | 你位于开头的一组作者之中。这一组至少两人，且共享同一个标记，例如 `*` 或 `†`：`A*, B*, C`。 |
-| 二作 | 你是第二作者。 |
-| 末位 | 你是末位作者，且作者列表完整。在两位作者的论文中，第二作者同时也是末位作者。 |
+| 二作 | 你是第二作者，且论文有三位或更多作者。 |
+| 末位 | 你是末位作者，且作者列表完整。在两位作者的论文中，第二作者计为末位，而不是二作。 |
 | 其他 | 其他任何位置。这一行保持原样。 |
 
 - **首字母缩写也能匹配。** Scholar 显示的是 `GE Hinton`，即 Geoffrey Hinton。扩展能识别出来。
@@ -128,10 +128,10 @@ flowchart LR
   T -- 否 --> R["等级标签，附带<br/>找到它的规则"]
 ```
 
-真实示例。测试会将每一行与代码对照检查：
+真实示例。中间一列是名录给出的等级；面板默认只画一个标签（见“一个标签，而非两个”）。测试会将每一行与代码对照检查：
 
 <!-- examples:begin -->
-| Scholar 显示的文字 | 标签 | 依据 |
+| Scholar 显示的文字 | 等级（CCF · CORE） | 依据 |
 |---|---|---|
 | `Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2023` | CCF A · CORE A* | `name` |
 | `ISCA 2014 42 (3), 361-372, 2014` | CCF A · CORE A* | `acronym` |
@@ -226,7 +226,7 @@ flowchart LR
 | `core:` | `core:a*`、`core:a`、`core:b`、`core:c` | 场所的 CORE 等级。 |
 | `role:` | `role:first`、`role:cofirst`、`role:second`、`role:last`、`role:middle` | 你在作者列表中的位置。`middle` 指不属于其他四种的位置。 |
 | `type:` | `type:conference`、`type:journal` | 名录所记的场所类型。没有等级的场所没有类型。 |
-| `has:` | `has:award`、`has:talk` | 最佳论文奖或最佳论文入围标记；Oral、Spotlight 或 Highlight 标记。 |
+| `has:` | `has:award`、`has:talk` | 获奖标记（最佳论文、时间检验奖、荣誉提名、类别奖或入围）；Oral、Spotlight 或 Highlight 标记。 |
 | 普通词 | `ccf:a role:first cites:>100 detection` | 所有条件组合使用：每个条件都必须匹配。 |
 
 - **逗号表示“或”。** `role:first,last` 表示一作或末位作者。`ccf:a,b` 表示 CCF A 或 B 类场所。用空格分开的各个词必须全部匹配。同一运算符的两个快捷按钮会合并成一个词：*一作* 和 *末位* 合成 `role:first,last`。
@@ -327,7 +327,7 @@ const { ok, result, error } = await answer;   // result.text is the BibTeX
 | 数字 | 含义 | 统计自 |
 |---:|---|---|
 | **154** | 项可调整的设置，分布在 18 张卡片中：87 个开关、48 处可自定义名称，以及 19 项颜色、选项、顺序和语言 | 设置树的各行（`src/lib/prefs.js`） |
-| **172** | 个节点，共 5 层：卡片、某个部分的开关、其中的一项、它的名字 | 卡片和各行；每一行挂在所属部分的开关下 |
+| **172** | 个节点，共 5 层：卡片、面板开关、部分开关、其中一项、项下的子项 | 卡片和各行；每一行挂在所属部分的开关下 |
 | **9 · 8 · 10 · 6 · 4** | 个面板部分、复制格式和快捷筛选——每一项都有自己的开关，多数还能排顺序——以及可选的标签样式和预设 | `SECTIONS`、`COPY_BUTTONS`、`PILLS`、`CHIP_THEMES`、`PRESETS` |
 | **30** | 种界面语言——每种 353 条文案，29 种译文 | `src/_locales/*/messages.json` |
 | **1,178** | 个有等级的发表场所，来自两份内置名录的 1,481 行（CCF 会议 386、CCF 期刊 295、CORE 会议 800）；其中 299 个在两份名录中各有一行 | `src/data/ccf.js` 和 `src/data/core.js` 的各行，由 `idx.partners` 关联 |
