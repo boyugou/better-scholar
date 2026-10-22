@@ -125,7 +125,6 @@ test("no real venue string in the corpora is marked unless its author wrote the 
   assert.deepEqual(hits.map(([s, m]) => s + " -> " + m.map((x) => x.kind)), [
     "2025 International Conference on Learning Representations (spotlight), 2025 -> spotlight",
     // one real profile's own annotations in the venue field (the author wrote the level)
-    "WWW 2024 (🌟 Top-1 Most Influential Paper), 2024 -> tot",
     "WSDM 2022 (🌟 Best Paper Nomination & Top-3 Most Cited Papers), 2022 -> finalist",
     "MM 2024 (🌟 Best Paper Honorable Mention Award), 2024 -> runner-up",
     // more real authors' own award notes written in front of the venue
@@ -219,3 +218,24 @@ test("'Highlights' in a name is no Highlight talk; a paper the list says won is 
   assert.deepEqual(marks.merge(declared, [{ kind: "runner-up", venue: "CVPR", year: 2016, awardLabel: "Honorable Mention" }]).map((m) => m.kind).sort(), ["finalist", "runner-up"]);
 });
 
+
+test("an independent review of the award fixes: a runner-up or a finalist written any way is that, a ranking is no award, the list's lesser honour wins over typed words, one award marks one row", () => {
+  const kinds = (venue) => marks.detect({ title: "", venue: ["CHI 2020, " + venue] }).map((m) => m.kind).join(",");
+  for (const v of ["Best Paper Award (Runner-up)", "Best Paper Award [Runner-up]", "Best Paper Award - Runner Up", "Best Paper Award – Runner-up", "Best Paper Award: Honorable Mention", "Best Paper (Honorable Mention)", "Best Paper Runners-up", "Best Paper (2nd place)"]) assert.equal(kinds(v), "runner-up", v);
+  for (const v of ["Best Paper Award (Finalist)", "Best Paper (Nominee)", "Best Paper Shortlist", "Best Paper Shortlisted", "Best Paper Semi-finalist", "Best Paper Top-3 Finalist"]) assert.equal(kinds(v), "finalist", v);
+  assert.equal(kinds("Best Paper Award (AI for Social Impact track)"), "best");
+  assert.deepEqual(marks.detect({ title: "", venue: ["WWW 2024 (🌟 Top-1 Most Influential Paper), 2024"] }), [], "a ranking of influential papers is no test-of-time award");
+  // the list says runner-up: the typed "Best Paper" does not stand beside it
+  const merged = marks.merge([{ kind: "best", text: "Best Paper Award" }], [{ kind: "runner-up", venue: "ICDM", year: 2013, awardLabel: "" }]);
+  assert.deepEqual(merged.map((m) => m.kind), ["runner-up"]);
+  // one award of the list, one row: the earliest for test of time, the closest year for a conference award
+  const L = (kind, venue, year) => ({ kind, venue, year, awardLabel: "", source: "list" });
+  const once = marks.listedOnce([
+    { title: "MapReduce: simplified data processing", year: 2004, marks: [L("tot", "SIGOPS", 2015)] },
+    { title: "MapReduce: Simplified Data Processing", year: 2008, marks: [L("tot", "SIGOPS", 2015), { kind: "oral", source: "author" }] },
+    { title: "Mask R-CNN", year: 2018, marks: [L("best", "ICCV", 2017)] },
+    { title: "Mask R-CNN", year: 2017, marks: [L("best", "ICCV", 2017)] },
+    { title: "Another paper", year: 2009, marks: [L("tot", "SIGOPS", 2015)] }
+  ]);
+  assert.deepEqual(once.map((ms) => ms.map((m) => m.kind)), [["tot"], ["oral"], [], ["best"], ["tot"]]);
+});

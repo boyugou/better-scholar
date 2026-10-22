@@ -390,3 +390,23 @@ test("a spelling in initials that was accepted or typed in is that print form an
   assert.equal(roleOf("Zhang Wei", "Wei Zhang, A Lee", { alternates: ["W. Zhang"] }), "absent", "… and nothing but that: the full name is not in the list of alternates");
 });
 
+
+test("an independent review of the 2026-10-17 fixes: joined surnames compare whole, a spelling in capitals is itself, no co-first group across a cut", () => {
+  const role = (line, owner) => { const r = names.classifyRow(line, typeof owner === "string" ? { name: owner } : owner); return r.status === "found" ? r.role : r.status; };
+  // a joined surname is another person's when its first part differs ("Perez-Lopez" is not "Garcia-Lopez"), and the owner's own forms still match
+  assert.equal(role("MG Perez-Lopez, A B, C D", "Maria Garcia-Lopez"), "absent");
+  assert.equal(role("HG Ruiz-Molina, A B", "Hector Garcia-Molina"), "absent");
+  assert.equal(role("M O'Brien-Connell, A B", "Mary O'Connell"), "absent");
+  assert.equal(role("H Garcia-Molina, A B", "Hector Garcia-Molina"), "first");
+  assert.equal(role("MR O'Connell, A B", "Mary O'Connell"), "first");
+  assert.equal(role("M Carreira-Perpinan, A B", "Miguel A. Carreira-Perpinan"), "first");
+  assert.equal(role("MA Carreira-Perpinan, A B", "Miguel Perpinan"), "absent");
+  // "JA DOUDNA" accepted as a spelling is that print form only: not "JOHN A DOUDNA"
+  const doudna = { name: "Jennifer Doudna", alternates: ["JA DOUDNA"] };
+  assert.equal(role("A B, JOHN A DOUDNA, C D", doudna), "absent");
+  assert.equal(role("A B, JA DOUDNA, C D", doudna), "second");
+  // a name after a cut is in no leading group, and a cut list whose visible authors are all marked has none either
+  assert.equal(role("A Smith#, . . ., D Molina#", "Alice Smith"), "first");
+  assert.equal(role("A Smith*, B Jones*, …", "Alice Smith"), "first");
+  assert.equal(role("A Smith*, B Jones*, C Lee, …", "Alice Smith"), "cofirst");
+});

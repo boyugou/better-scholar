@@ -121,7 +121,7 @@ test("the documentation quotes the real size of the list: data/README.md's cover
 });
 
 test("the bundled list round-trips: every entry is found by its own title and first author", () => {
-  const items = data.entries.map((e) => [awards.titleKey(e.title), awards.surnameKey(e.authors[0]), e.venue, e.year, e.award, e.awardLabel || ""]);
+  const items = data.entries.map((e) => [awards.titleKey(e.title), awards.surnameKey(e.authors[0]), e.venue, e.year, e.award, e.awardLabel || "", ...(e.paperYear ? [e.paperYear] : [])]);
   const idx = awards.createIndex(items);
   for (const e of data.entries) {
     const hit = idx.lookup({ title: e.title, authorsText: e.authors.join(", ") }).some((m) => m.venue === e.venue && m.year === e.year && m.kind === awards.KIND[e.award]);
@@ -467,3 +467,9 @@ test("the ICSE 2008 distinguished paper is found under its whole title (the page
   assert.deepEqual(found.map((a) => [a.kind, a.venue, a.year]), [["distinguished", "ICSE", 2008]]);
 });
 
+
+test("a test-of-time award whose page names the paper's year is for that publication, not a reprint of the title years later", () => {
+  const idx = awards.createIndex([[awards.titleKey("A Classic Paper"), awards.surnameKey("A Author"), "VLDB", 2019, "tot", "", 2009]]);
+  const at = (year) => idx.lookup({ title: "A Classic Paper", authorsText: "A Author, B Writer", year }).length;
+  assert.deepEqual([at(2009), at(2010), at(2013)], [1, 1, 0]);
+});

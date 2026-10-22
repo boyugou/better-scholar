@@ -2,6 +2,17 @@
 
 ## 2.41.0 — 2026-10-15
 
+- **Roles and awards, an independent review of the 2026-10-17 fixes** (654 real rows, ~60,000 generated author lines, the venue and title
+  corpora): (1) *a joined surname matched another that only shared its last part* — "MG Perez-Lopez" was "Maria Garcia-Lopez", read through
+  the "G" — the parts before the last now belong to the surname and must be equal (and the owner's own "M Carreira-Perpinan" is found again);
+  (2) an accepted spelling in capitals ("JA DOUDNA") matched "JOHN A DOUDNA" — in capitals "JA" is two initials; (3) a runner-up, an honorable
+  mention or a finalist written with a bracket or a dash ("Best Paper Award (Runner-up)", "… – Runner Up", "Runners-up", "Shortlisted",
+  "Top-3 Finalist", "(2nd place)") was read as the best paper; where the list names a lesser honour, typed "Best Paper" no longer stands beside
+  it; (4) a test-of-time award marked a reprint of the title years later (MapReduce's CACM version, AlexNet's): the bundle now carries the
+  paper's year where the award page gives it, and one award of the list marks one row of a profile (the earliest for test of time, the closest
+  year otherwise — `marks.listedOnce`); (5) a co-first group could take a name after a cut, or a cut list whose visible authors are all marked;
+  (6) "Top-1 Most Influential Paper" (a ranking) is no test-of-time award. Left: a journal version one year after a conference best paper still
+  takes it (within the one-year window that proceedings need).
 - **The new reference styles, from an independent review** (the four formats over the 22,744 real lines, ~400 judged by eye): (1) *a patent's
   number was cut at its thousands comma* (`US Patent 10,007,785` → "US Patent 10,007", 425 real lines) — Scholar puts ", " between fields, so a
   comma with no space is part of a number; (2) a label's number (`Article No. 1`, `Vol. 2`, `62: 1-62: 14`) was read as a volume; (3) an edition's

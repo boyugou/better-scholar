@@ -38,14 +38,15 @@
   function createIndex(items) {
     const byTitle = new Map();
     for (const it of items || []) {
-      const [k, s, v, y, a, l] = it;
+      const [k, s, v, y, a, l, py] = it;
       if (!KIND[a]) continue;
       if (!byTitle.has(k)) byTitle.set(k, []);
-      byTitle.get(k).push({ s, v, y, a, l: l || "" });
+      byTitle.get(k).push({ s, v, y, a, l: l || "", py: py || 0 });
     }
     // A row's year is the year of its publication: the award of a conference is for a paper of that year's event (one more for the proceedings that come out after it), and a test-of-time
     // award is for a paper that is older than the award. A row of another year is another publication of the same title — the journal version of a conference's best paper.
-    const yearFits = (h, year) => (h.a === "tot" ? year <= h.y : Math.abs(year - h.y) <= 1);
+    // (a test-of-time award whose page names the paper's year is for that publication, not for a reprint of the title years later: MapReduce's CACM version of 2008)
+    const yearFits = (h, year) => (h.a === "tot" ? (h.py ? Math.abs(year - h.py) <= 1 : year <= h.y) : Math.abs(year - h.y) <= 1);
     // fields: { title, authorsText, year? } — authorsText is the list view's text, or a paper page's full list; year: the row's own (none: no check)
     function lookup({ title, authorsText, year }) {
       const hits = byTitle.get(titleKey(title));

@@ -86,19 +86,24 @@
     return toks.join(" ");
   }
 
-  // { givens: [tokens], particles: [..], last: surname token, compound: the surname is joined by a hyphen or an apostrophe ("Carreira-Perpinan", "O'Connell") }
+  // { givens: [tokens], particles: [..], last: surname token, compound: the surname is joined by a hyphen or an apostrophe ("Carreira-Perpinan", "O'Connell"),
+  //   head: the parts of a joined surname before its last one ("carreira", "o"), which are no given names }
   function nameParts(s, { owner = false } = {}) {
     const raw = owner ? cleanOwnerHeader(s) : String(s == null ? "" : s);
     const toks = normalize(raw).split(" ").filter(Boolean);
-    if (!toks.length) return { givens: [], particles: [], last: "", compound: false };
+    if (!toks.length) return { givens: [], particles: [], last: "", compound: false, head: "" };
     const lastWord = fold(raw).trim().split(/\s+/).pop().replace(/^[-'’.]+|[-'’.]+$/g, "");
     const compound = /[-'’]/.test(lastWord);
     const last = toks[toks.length - 1];
-    let end = toks.length - 1;
+    // (the parts of the joined surname are the tokens just before the last one: they are taken out of the given names, so that "MG Perez-Lopez" is
+    // not "Maria Garcia-Lopez" by reading "G" against "garcia")
+    const headParts = compound ? lastWord.split(/[-'’]+/).slice(0, -1).flatMap((w) => normalize(w).split(" ").filter(Boolean)) : [];
+    const take = headParts.length && headParts.length < toks.length && headParts.every((w, i) => toks[toks.length - 1 - headParts.length + i] === w) ? headParts.length : 0;
+    let end = toks.length - 1 - take;
     const particles = [];
     // A particle only counts when something (a given name) precedes it.
     while (end > 1 && PARTICLES.has(toks[end - 1])) particles.unshift(toks[--end]);
-    return { givens: toks.slice(0, end), particles, last, compound };
+    return { givens: toks.slice(0, end), particles, last, compound, head: take ? headParts.join(" ") : "" };
   }
 
   // True when a concatenated-initials token (one side) lines up letter by letter
@@ -131,7 +136,7 @@
 
   // (a surname joined by a hyphen or an apostrophe is another surname than its last part: "Carreira-Perpinan" and "O'Connell" are not "Perpinan" and "Connell")
   const sameSurname = (a, b) =>
-    a.last === b.last && !!a.compound === !!b.compound &&
+    a.last === b.last && !!a.compound === !!b.compound && (a.head || "") === (b.head || "") &&
     (!a.particles.length || !b.particles.length || a.particles.join(" ") === b.particles.join(" "));
 
   // How strongly does the displayed author text match one owner name variant?
@@ -182,7 +187,8 @@
       }
       // a spelling written in initials ("SY Philip", offered from the papers or typed in) is that print form and no other: "S Philip" and "Sam Philip" are other people
       const form = ownerForm(v);
-      if (v !== owner.name && form.parts.givens.length && form.parts.givens.every((g) => g.length === 1)) { if (a.norm === undefined) a.norm = normalize(a.raw); best = Math.max(best, a.norm === form.norm ? 3 : 0); continue; }
+      if (v !== owner.name && form.parts.givens.length && form.parts.givens.every((g) => g.length === 1 || (form.caps && g.length <= 3))) {          // ("JA DOUDNA": in capitals "JA" is two initials, not a name)
+       if (a.norm === undefined) a.norm = normalize(a.raw); best = Math.max(best, a.norm === form.norm ? 3 : 0); continue; }
       // (the name as printed, once the page has chosen its rearrangement: only the identical name is still the owner's — "L Wei" is not "Li Wei" where "W Li" is)
       if (owner.exactName && v === owner.name) { if (a.norm === undefined) a.norm = normalize(a.raw); best = Math.max(best, a.norm === ownerForm(v).norm ? 3 : 0); continue; }
       best = Math.max(best, strength(a, v));
@@ -213,14 +219,15 @@
   // How many authors at the front share a mark ("A*, B*, C": 2). The marks of the group are the ones the first two authors have in common, and it goes on while
   // an author carries one of them; fewer than two is no group: a lone mark on the first author is a note or a corresponding author, and marks that begin
   // further down (or another symbol, or an extra symbol of the first author — "A*†, B*, C†": C is the corresponding author) are not equal contribution.
-  function leadingGroup(tokens) {
+  // (truncated: the list was cut, so "every author marked" cannot be told from "the first few": then there is no leading group either)
+  function leadingGroup(tokens, truncated = false) {
     const a = tokens[0] && tokens[0].marks, b = tokens[1] && tokens[1].marks;
-    if (!a || !a.length || !b || !b.length) return 0;
+    if (!a || !a.length || !b || !b.length || tokens[1].afterCut) return 0;          // (a name after a cut has no known place: "A Smith#, …, D Molina#" is no group)
     const shared = a.filter((m) => b.includes(m));
     if (!shared.length) return 0;
     let k = 2;
     while (k < tokens.length && !tokens[k].afterCut && shared.some((m) => (tokens[k].marks || []).includes(m))) k++;
-    return k === tokens.length && k > 2 ? 0 : k;          // (every author marked: the mark is no equal contribution of a leading few)
+    return k === tokens.length && (k > 2 || truncated) ? 0 : k;          // (every author marked: the mark is no equal contribution of a leading few)
   }
 
   // Parse "A Smith, B Jones, C Lee" into ordered tokens with co-first flags.
@@ -267,7 +274,7 @@
   // truncated list never claims the last slot.
   function roleFor(idx, tokens, truncated) {
     if (tokens[idx].afterCut) return "middle";
-    if (tokens[idx].cofirst && idx < leadingGroup(tokens)) return "cofirst";
+    if (tokens[idx].cofirst && idx < leadingGroup(tokens, truncated)) return "cofirst";
     if (idx === 0) return "first";
     if (idx === tokens.length - 1 && !truncated) return "last";
     if (idx === 1) return "second";
@@ -355,7 +362,7 @@
     if (v === undefined) { if (cache.size >= CACHE_LIMIT) cache.clear(); v = make(); cache.set(key, v); }
     return v;
   };
-  const ownerKey = (o) => [o.name, ...(o.alternates || [])].join("\u0001");
+  const ownerKey = (o) => [o.exactName ? "=" : "~", o.name, ...(o.alternates || [])].join("\u0001");          // (an exact name matches fewer lines: its own cache)
   function suggestVariants(authorTexts, owner) {
     const lists = authorTexts.map((text) => remember(parsedCache, text, () => parseAuthors(text)));
     const found = (l, text, o, key) => remember(foundCache, key + "\u0002" + text, () => findOwner(l.tokens, o));

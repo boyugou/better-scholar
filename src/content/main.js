@@ -84,6 +84,7 @@
     state.rows = state.rows.filter((r) => r.raw.tr.isConnected);
     const removed = state.rows.length !== before;          // (the owner deleting an article of the profile: Scholar takes its row away)
     if (added && updateHints()) reanalyze();
+    if (added || removed) awardsOnce();
     return added || removed;
   }
 
@@ -113,7 +114,12 @@
     });
   }
 
-  const reanalyze = () => state.rows.forEach((r) => { r.a = analyzeRaw(r.raw); });
+  // (one award of the list marks one row: a title listed twice, a paper and its reprint, gets it on one of them — marks.listedOnce)
+  function awardsOnce() {
+    const kept = marks.listedOnce(state.rows.map((r) => ({ title: r.raw.title, year: r.raw.year, marks: r.a.allMarks || (r.a.allMarks = r.a.marks) })));
+    state.rows.forEach((r, i) => { r.a.marks = kept[i]; });
+  }
+  const reanalyze = () => { state.rows.forEach((r) => { r.a = analyzeRaw(r.raw); }); awardsOnce(); };
   // the spelling list or the author lists changed: look again at what the rows say, then analyse every row
   const rehint = () => { updateHints(); reanalyze(); };
 
@@ -532,7 +538,7 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
         onProgress: (done, total) => { state.resolving = { done, total }; },
         onResult: (id) => {
           const row = state.rows.find((r) => r.raw.id === id);
-          if (row) row.a = analyzeRaw(row.raw);
+          if (row) { row.a = analyzeRaw(row.raw); awardsOnce(); }
           scheduleRefresh();
         }
       });

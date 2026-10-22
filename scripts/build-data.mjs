@@ -56,7 +56,7 @@ const awards = JSON.parse(readFileSync(join(root, "data", "awards-2026.json"), "
 const awardsLib = require(join(root, "src", "lib", "awards.js"));
 emit("awards.js", "awards", {
   meta: { label: awards.meta.label, edition: awards.meta.edition, count: awards.entries.length },
-  items: awards.entries.map((e) => [awardsLib.titleKey(e.title), awardsLib.surnameKey(e.authors[0]), e.venue, e.year, e.award, e.awardLabel || ""])
+  items: awards.entries.map((e) => [awardsLib.titleKey(e.title), awardsLib.surnameKey(e.authors[0]), e.venue, e.year, e.award, e.awardLabel || "", ...(e.paperYear ? [e.paperYear] : [])])          // (the paper's own year, where the award page gives it: a test-of-time award is for that publication)
 }, "data/awards-2026.json");
 
 if (check && stale) process.exit(1);
