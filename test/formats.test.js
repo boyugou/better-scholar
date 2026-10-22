@@ -434,7 +434,7 @@ test("fourth review: a publisher before Scholar's numbers is a book's, a meeting
   const paper = (venue) => ({ title: "T", authors: "A Author", venue, year: 2019, type: null, url: "", rank: {}, marks: [] });
   assert.match(f.gbt([paper("Morgan & Claypool Publishers 13, 1-187, 2019")]), /T\[M\]\./);
   for (const v of ["BMVC 1, 2, 2019", "Robotics: Science and Systems VIII 8, 2012", "Introduction to information retrieval, chapter 13, 234-265, 2008"]) assert.match(f.gbt([paper(v)]), /T\[Z\]\./, v);
-  assert.match(f.gbt([paper("2021 Fall Central Sectional Meeting, 0")]), /Meeting, 2019\.$/);
+  assert.match(f.gbt([paper("2021 Fall Central Sectional Meeting, 0")]), /T\[C\]\/\/2021 Fall Central Sectional Meeting\. 2019\.$/, "Scholar's \", 0\" is no field; a name that opens with its year is a meeting's");
   assert.match(f.gbt([paper("time publisher/subscriber inter-process communication model, 2019")]), /T\[Z\]\./);
   assert.match(f.gbt([paper("Scientific Reports 6, 29545, 2016")]), /T\[J\]\. Scientific Reports, 2019, 6: 29545\.$/);
 });
@@ -467,5 +467,16 @@ test("the venue line, from an audit of the reference-style snapshot: journals ti
   assert.match(f.gbt([paper("Proceedings of the USENIX Security Symposium, 2013., 2013", "conference")]), /Symposium, 2013\. 2020\.$/, "no second full stop");
   assert.match(f.gbt([paper("2006 IEEE International Symposium on Circuits and Systems (ISCAS), 4 pp., 2006", "conference")]), /\(ISCAS\)\. 2020\.$/);
   assert.match(f.gbt([paper("International Conference on Learning Representations, arXiv:1412.6980, 2015", "conference")]), /T\[C\]\/\//, "a conference with an arXiv number stays a conference");
+});
+
+test("the venue line: a name that opens with its year is a meeting's, a web address is no periodical, section-numbered pages", () => {
+  const paper = (venue, type) => ({ title: "T", authors: "K He", venue, year: 2018, type, url: "", rank: {}, marks: [] });
+  assert.equal(f.gbt([paper("2015 IEEE Trustcom/BigDataSE/ISPA 1, 238-245, 2015")]), "[1] HE K. T[C]//2015 IEEE Trustcom/BigDataSE/ISPA. 2018: 238-245.");
+  assert.match(f.gbt([paper("2010 Internet of Things (IOT), 1-8, 2010")]), /T\[C\]\/\/2010 Internet of Things \(IOT\)\. 2018: 1-8\.$/);
+  assert.match(f.gbt([paper("2019 IEEE Transactions on Mobile Computing 18 (3), 1-10, 2019")]), /T\[J\]\./, "a year-led name that says it is a journal is one");
+  assert.match(f.gbt([paper("URL https://code. google. com/p/word2vec 22, 795, 2013")]), /T\[Z\]\. URL https:\/\/code\. google\. com\/p\/word2vec 22, 795, 2018\.$/);
+  assert.match(f.gbt([paper("URL https://llava-vl. github. io/blog/2024-01-30-llava-next 1 (8), 2024")]), /T\[Z\]\./);
+  assert.equal(f.venueParts("2018 IEEE International Electron Devices Meeting (IEDM), 15.6. 1-15.6. 4, 2018").pages, "15.6.1-15.6.4");
+  assert.deepEqual(f.venueParts("Current protocols in bioinformatics 55 (1), 12.14. 1-12.14. 18, 2016"), { name: "Current protocols in bioinformatics", volume: "55", issue: "1", pages: "12.14.1-12.14.18", year: "2016" });
 });
 

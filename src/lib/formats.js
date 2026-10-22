@@ -159,7 +159,7 @@
   const isDocument = (p) => entryType(p).type === "misc" && (DOCUMENT.test(clean(p.venue)) || isPublisher(p.venue));
   // an unclassified line with a volume is a periodical's ("Scientific Reports 6, 29545") — unless its name says it is a meeting, a book or a place: "BMVC 1, 2",
   // "Robotics: Science and Systems VIII 8", a handbook, an encyclopedia, a university's report
-  const NOT_PERIODICAL = /\b(?:conference|conf|symposi(?:um|a)|workshop|proceedings|proc|summit|meeting|congress|handbook|encyclopa?edia|university|universit[aäéy]|chapter|lecture|tutorial|science and systems)\b/i;
+  const NOT_PERIODICAL = /https?:|\bwww\.|\b(?:conference|conf|symposi(?:um|a)|workshop|proceedings|proc|summit|meeting|congress|handbook|encyclopa?edia|university|universit[aäéy]|chapter|lecture|tutorial|science and systems)\b/i;
   const ACRONYM = /^[A-Z]{2,6}(?:\s\d{2,4})?$/;          // (case-sensitive: "BMVC" is a meeting's acronym, "Nature" and "eLife" are journals)
   const periodical = (p) => { if (entryType(p).type !== "misc" || isDocument(p)) return false; const { name, volume } = venueParts(p.venue); return !!volume && !NOT_PERIODICAL.test(name) && !ACRONYM.test(name); };
   // the venue line as Scholar printed it, without the year at its end (for such a document, which no rule splits)
@@ -185,7 +185,7 @@
         && !CHAPTER.test(s.slice(0, m.index)) && !LABEL_BEFORE.test(s.slice(0, m.index)) && !editionYear(m[1], s.slice(0, m.index + 1), year)) return { name: s.slice(0, m.index).replace(/[,;:]\s*$/, ""), volume: m[1], issue: "", pages: "", year };
       return keep();
     }
-    if ((m = /,\s*(?:\d{1,3}\s*pp\.?|(?:article|art\.)(?:\s*no\.?:?)?\s*(\d{1,6})|no\.:?\s*(\d{1,6})|(\d{1,4}[:.]\s?\d{1,3}\s*-\s*\d{1,4}[:.]\s?\d{1,3}))$/i.exec(s))) { pages = (m[1] || m[2] || m[3] || "").replace(/\s+/g, ""); s = s.slice(0, m.index).trim(); }
+    if ((m = /,\s*(?:\d{1,3}\s*pp\.?|(?:article|art\.)(?:\s*no\.?:?)?\s*(\d{1,6})|no\.:?\s*(\d{1,6})|(\d{1,4}(?:\.\d{1,3})?[:.]\s?\d{1,3}\s*-\s*\d{1,4}(?:\.\d{1,3})?[:.]\s?\d{1,3}))$/i.exec(s))) { pages = (m[1] || m[2] || m[3] || "").replace(/\s+/g, ""); s = s.slice(0, m.index).trim(); }
     // (Scholar puts ", " between its fields: "US Patent 10,007,785" and "11,985-11,993" are one number each)
     if (!pages && (m = /,\s+([A-Za-z]{0,4}\d{1,16}(?:\s*-{1,2}\s*[A-Za-z]{0,4}\d{1,16})?(?:\.\s?e\d{1,3})?)$/.exec(s)) && (!/^(?:19|20)\d{2}$/.test(m[1]) || /\s\d{1,4}\s*\([^()]+\)$/.test(s.slice(0, m.index)))) {
       if (LABEL_BEFORE.test(s.slice(0, m.index)) || /\d,\d{1,3}$/.test(s)) return keep();
@@ -211,7 +211,9 @@
     if (/^proceedings of the (?:ieee|national academy of sciences)(?:\s*\([^()]*\))?$/i.test(venue) || /^(?:[\w-]+:\s*)?(?:proceedings of the (?:acm on (?!web conference)|vldb endowment)|proceedings on privacy enhancing technologies)\b/i.test(venue)) return { type: "article", field: "journal" };   // (journals literally titled so)
     if (p.type === "journal" || (p.type !== "conference" && /arxiv\b|biorxiv\b|medrxiv\b/i.test(venue))) return { type: "article", field: "journal" };
     if (p.type === "conference") return { type: "inproceedings", field: "booktitle" };
-    if ((venueParts(p.venue).issue || /\s\d{1,4}\s\(\d+\s?…/.test(p.venue)) && !/\b(?:conference|symposium|workshop|tech(?:nical|\.)?\s*rep(?:ort)?)\b/i.test(venue)) return { type: "article", field: "journal" };           // ("44 (8)", or cut "44 (8 …": a volume with an issue is a periodical's)
+    // ("2015 IEEE Trustcom/BigDataSE/ISPA 1", "2010 Internet of Things (IOT)": a name that opens with its year is the title of a meeting's proceedings, IEEE's form)
+    if (/^(?:19|20)\d{2}\s+\S/.test(venue) && !/journal|transactions|letters|magazine/i.test(venue)) return { type: "inproceedings", field: "booktitle" };
+    if ((venueParts(p.venue).issue || /\s\d{1,4}\s\(\d+\s?…/.test(p.venue)) && !/\b(?:conference|symposium|workshop|tech(?:nical|\.)?\s*rep(?:ort)?)\b|https?:|\bwww\./i.test(venue)) return { type: "article", field: "journal" };           // ("44 (8)", or cut "44 (8 …": a volume with an issue is a periodical's)
     if (/journal(?!is)|transactions|letters|review|annals|magazine|ieee\/acm trans/i.test(venue)) return { type: "article", field: "journal" };
     if (/conference|symposi(?:um|a)|proceedings?\b|workshop|annual|proc\.|\bcongress\b|extended abstracts|^findings of the|companion proceedings/i.test(venue)) return { type: "inproceedings", field: "booktitle" };
     return { type: "misc", field: "howpublished" };

@@ -1946,3 +1946,15 @@ test("seventeenth review: a title-cased acronym with a glued year is the event, 
   assert.equal(got("SIGGRAPH Asia2019"), "- | SiggraphA");
   for (const v of ["CVPR Workshops2020", "ICCV Workshops2019", "EMNLP Findings2020", "ICSE Companion2019"]) assert.equal(got(v), "- | -", v);
 });
+
+test("a name that opens with its year is a meeting's proceedings, not a journal (from the audit of the reference-style snapshot)", () => {
+  // IEEE titles its proceedings "2010 Internet of Things (IOT)", "2011 7th International Wireless Communications and Mobile Computing Conference";
+  // CCF's IEEE Internet of Things Journal (2014–) and the journal Wireless Communications and Mobile Computing had taken them
+  assert.equal(brief("2010 Internet of Things (IOT), 1-8, 2010"), "");
+  assert.equal(brief("2011 7th international wireless communications and mobile computing …, 2011"), "CORE B IWCMC");
+  assert.equal(brief("2011 7th international wireless communications and mobile computing conference, 2011"), "CORE B IWCMC");
+  // a journal's own line keeps its badge, and so does a year-led name that says it is a journal
+  assert.equal(brief("IEEE Internet of Things Journal 7 (5), 4021-4030, 2020"), "CCF C IOT");
+  assert.equal(brief("Wireless Communications and Mobile Computing 2021, 2021"), "CCF C WCMC");
+  assert.match(brief("2019 IEEE Transactions on Mobile Computing 18 (3), 1-10, 2019"), /^CCF A TMC/);
+});

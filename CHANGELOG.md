@@ -12,6 +12,11 @@
   are issues ("D1", "suppl_1", "CSCW2", "3&4", "1 (SIGMOD)"); a line Scholar cut inside the issue keeps its volume ("TODAES 11 (1 …" is
   volume 11); *Findings of the ACL*, extended abstracts, symposia, congresses and companion proceedings are proceedings ([C]); a
   conference with an arXiv number stays a conference; "4 pp." and a second full stop are no longer printed.
+- **Two wrong badges from the same audit**: a venue line that opens with its year is IEEE's title for a meeting's proceedings, so it
+  is no journal's ("2010 Internet of Things (IOT)" had CCF's IEEE Internet of Things Journal, started 2014; the cut "2011 7th
+  international wireless communications and mobile computing …" had the journal of those words and now has CORE's IWCMC). The real
+  corpus changes in exactly these two lines. In the reference styles such a line is a [C], a web address is no periodical ([Z] as
+  printed), and IEDM's section-numbered pages "15.6. 1-15.6. 4" are pages.
 - **The fifth review** (of the fourth's fixes): the meeting-acronym test was case-blind, so "Nature 428", eLife, PeerJ, Energy lost their
   journal layout — it is case-sensitive now; "chapter" counts only before its own number ("…Italian SIGCHI Chapter, 66-73" keeps its pages); a
   slash or a hyphen in a publisher ("AK Peters/CRC Press", "McGraw-Hill, Inc.") is a publisher again; "Lab", "Laboratory" and "Institute" no
