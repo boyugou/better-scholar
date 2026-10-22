@@ -302,3 +302,41 @@ test("BibTeX citation keys are ASCII, as the README says: the first word of thre
   assert.equal(key("\u6df1\u5ea6\u5b66\u4e60"), "smith2020paper", "no letters of ASCII: a word that says so");
 });
 
+
+test("the venue line splits into name, volume, issue, pages and year only in the shapes Scholar prints", () => {
+  const vp = f.venueParts;
+  assert.deepEqual(vp("IEEE Transactions on Pattern Analysis and Machine Intelligence 44 (8), 4012-4025, 2022"), { name: "IEEE Transactions on Pattern Analysis and Machine Intelligence", volume: "44", issue: "8", pages: "4012-4025", year: "2022" });
+  assert.deepEqual(vp("Proceedings of the IEEE conference on computer vision and pattern recognition, 770-778, 2016"), { name: "Proceedings of the IEEE conference on computer vision and pattern recognition", volume: "", issue: "", pages: "770-778", year: "2016" });
+  assert.deepEqual(vp("Advances in Neural Information Processing Systems 36, 314-330, 2023"), { name: "Advances in Neural Information Processing Systems", volume: "36", issue: "", pages: "314-330", year: "2023" });
+  assert.deepEqual(vp("AI Communications 21 (2-3), 195-202, 2008"), { name: "AI Communications", volume: "21", issue: "2-3", pages: "195-202", year: "2008" });
+  assert.equal(vp("Bioinformatics 19, i225-i231, 2003").pages, "i225-i231");
+  assert.equal(vp("2020 IEEE international conference on robotics and automation (ICRA), 9164-9170, 2020").name, "2020 IEEE international conference on robotics and automation (ICRA)");
+  // what stays in the name: the edition's year, a preprint's number, a day after a month, a cut line's end; a page "0" is no page
+  assert.equal(vp("AMIA Annual Symposium Proceedings 2006, 11, 2006").name, "AMIA Annual Symposium Proceedings 2006");
+  assert.deepEqual(vp("arXiv preprint arXiv:2411.10109 52, 2024"), { name: "arXiv preprint arXiv:2411.10109", volume: "", issue: "", pages: "", year: "2024" });
+  assert.equal(vp("Cediti, September 5, 2003").volume, "");
+  assert.deepEqual(vp("Proceedings of the 2022 ACM SIGSAC Conference on Computer and …, 2022"), { name: "Proceedings of the 2022 ACM SIGSAC Conference on Computer and …", volume: "", issue: "", pages: "", year: "2022" });
+  assert.equal(vp("Advances in neural information processing systems, 0").pages, "");
+});
+
+test("over the 22,744 real venue lines, the parts keep every word of the line and add none", () => {
+  const lines = Object.keys(require("./fixtures/venues.expected.json"));
+  const squash = (s) => s.replace(/[\s,()]+/g, "");
+  for (const line of lines) {
+    const r = f.venueParts(line);
+    for (const f of ["volume", "issue", "pages", "year"]) assert.ok(!r[f] || line.includes(r[f].split("-")[0]), `${line}: ${f} ${r[f]} is not in the line`);
+    assert.ok(r.name || !line.trim() || /^[\d,\s-]+$/.test(line), `${line}: no name left`);
+    assert.ok(squash(line).startsWith(squash(r.name).replace(/…$/, "")), `${line}: the name ${r.name} is not where the line begins`);
+  }
+});
+
+test("APA and BibTeX use the parts: italics for a journal's volume, (pp. …) for proceedings, and volume, number and pages fields", () => {
+  const paper = (venue, type) => ({ title: "A Title", authors: "A Author, B Writer", venue, year: 2022, type, url: "", rank: {}, marks: [] });
+  assert.match(f.apa([paper("IEEE Transactions on Computers 66 (3), 515-530, 2022", "journal")]), /\*IEEE Transactions on Computers\*, \*66\*\(3\), 515–530\.$/);
+  assert.match(f.apa([paper("Conference on Robot Learning, 734-743, 2022", "conference")]), /\*Conference on Robot Learning\* \(pp\. 734–743\)\.$/);
+  assert.match(f.apa([paper("Automation in Construction 141, 104387, 2022", "journal")]), /\*Automation in Construction\*, \*141\*, Article 104387\.$/);
+  const bib = f.bibtex([paper("IEEE Transactions on Computers 66 (3), 515-530, 2022", "journal")]);
+  assert.match(bib, /journal = \{IEEE Transactions on Computers\},\n  volume = \{66\},\n  number = \{3\},\n  pages = \{515--530\}/);
+  // "Proceedings of the IEEE" is a journal also when Scholar adds its volume and pages
+  assert.match(f.bibtex([paper("Proceedings of the IEEE 105 (3), 1-10, 2017", null)]), /^@article\{/);
+});

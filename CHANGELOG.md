@@ -2,6 +2,12 @@
 
 ## 2.41.0 — 2026-10-15
 
+- **APA and BibTeX read the venue line's parts.** Scholar prints a venue as one line ("Journal 44 (8), 4012-4025, 2022"), and both formats
+  used to put all of it, pages and year included, in the venue: `*Proceedings of the IEEE conference on …, 770-778, 2016*`,
+  `booktitle = {…, 770-778, 2016}`. `formats.venueParts` now splits the name, volume, issue, pages and year, only in the shapes Scholar prints
+  (a cut line, a preprint's number and a day after a month stay out). APA 7: `*Journal*, *44*(8), 4012–4025.`, `Article 102838.`,
+  `*Proceedings* (pp. 770–778).`; BibTeX: `volume`, `number`, `pages = {770--778}`. Side fix: "Proceedings of the IEEE 105 (3), …" is an
+  `@article` again (its rule compared the whole line), and a volume with an issue marks a journal. A test runs the split over the 22,744 real lines.
 - **Plain words, and pictures instead of prose** (after Andrej Karpathy's note on readable output: a controlled language in the spirit of
   ASD-STE100, diagrams, interactive pages, explainers):
   - *README.md*: the install steps near the top; a table of what the extension adds to each paper; an animated explainer

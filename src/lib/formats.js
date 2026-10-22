@@ -142,13 +142,35 @@
   const ASCII_LETTERS = { "ł": "l", "Ł": "L", "ø": "o", "Ø": "O", "đ": "d", "Đ": "D", "ð": "d", "Ð": "D", "þ": "th", "Þ": "Th", "ß": "ss", "æ": "ae", "Æ": "AE", "œ": "oe", "Œ": "OE", "ı": "i", "ħ": "h", "Ħ": "H" };
   const ascii = (s) => String(s == null ? "" : s).normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[łŁøØđĐðÐþÞßæÆœŒıħĦ]/g, (c) => ASCII_LETTERS[c]);
 
+  // Scholar's venue line → { name, volume, issue, pages, year }. Scholar prints "Journal 44 (8), 4012-4025, 2022" and "Conference name, 770-778, 2016";
+  // the tail is read only in those shapes, and a cut line ("…") keeps its end in the name. A preprint's number after its arXiv id is not a volume, a
+  // page "0" is no page, and a number after a month is a day ("Cediti, September 5, 2003"): those stay out.
+  const MONTH = /\b(?:jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|june?|july?|aug(?:ust)?|sep(?:t(?:ember)?)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)\.?$/i;
+  function venueParts(text) {
+    let s = clean(text).replace(/\s+/g, " "), year = "", pages = "", volume = "", issue = "", m;
+    if ((m = /,\s*((?:19|20)\d{2})$/.exec(s))) { year = m[1]; s = s.slice(0, m.index).trim(); }
+    if (/…|\.\.\./.test(s)) return { name: s, volume, issue, pages, year };
+    if ((m = /,\s*([A-Za-z]{0,2}\d{1,7}(?:\s*-\s*[A-Za-z]{0,2}\d{1,7})?)$/.exec(s)) && !/^(?:19|20)\d{2}$/.test(m[1])) {
+      if (!/^0+$/.test(m[1])) pages = m[1].replace(/\s*-\s*/, "-");
+      s = s.slice(0, m.index).trim();
+    }
+    if ((m = /\s(\d{1,4})\s*\((\d{1,4}(?:\s*-\s*\d{1,4})?|[A-Za-z]{1,4})\)$/.exec(s)) && !/^(?:19|20)\d{2}$/.test(m[1])) {
+      volume = m[1]; issue = m[2].replace(/\s*-\s*/, "-"); s = s.slice(0, m.index).trim();
+    } else if ((m = /\s(\d{1,3})$/.exec(s)) && !MONTH.test(s.slice(0, m.index))) {
+      volume = m[1]; s = s.slice(0, m.index).trim();
+    }
+    if (/\b(?:arxiv|biorxiv|medrxiv|preprint)\b/i.test(s)) { volume = ""; issue = ""; }
+    return { name: s.replace(/[,;:]\s*$/, ""), volume, issue, pages, year };
+  }
+
   function entryType(p) {
-    const venue = clean(p.venue);
+    const venue = venueParts(p.venue).name;
     if (!venue) return { type: "misc", field: "" };
     if (/patent\b/i.test(venue)) return { type: "misc", field: "howpublished" };
     if (/^proceedings of the (?:ieee|national academy of sciences)$/i.test(venue)) return { type: "article", field: "journal" };   // (journals literally titled so)
     if (/arxiv\b|biorxiv\b|medrxiv\b/i.test(venue) || p.type === "journal") return { type: "article", field: "journal" };
     if (p.type === "conference") return { type: "inproceedings", field: "booktitle" };
+    if (venueParts(p.venue).issue) return { type: "article", field: "journal" };           // ("44 (8)": a volume with an issue is a periodical's)
     if (/journal|transactions|letters|review|annals|magazine|ieee\/acm trans/i.test(venue)) return { type: "article", field: "journal" };
     if (/conference|symposium|proceedings|workshop|annual|proc\./i.test(venue)) return { type: "inproceedings", field: "booktitle" };
     return { type: "misc", field: "howpublished" };
@@ -170,12 +192,15 @@
       used.add(key);
 
       const { type, field } = entryType(p);
-      const venue = tex(p.venue);
+      const parts = venueParts(p.venue), venue = tex(field === "howpublished" ? clean(p.venue) : parts.name);
       const notes = [...rankNotes(p, ctx), ...p.marks.map(tex)];
       const fields = [
         `  title = {${tex(p.title)}}`,
         names.length ? `  author = {${[...names.map((n) => (/\band\b/i.test(n) ? "{" + tex(n) + "}" : tex(n))), ...(cut ? ["others"] : [])].join(" and ")}}` : null,
         field && venue ? `  ${field} = {${venue}}` : null,
+        field && field !== "howpublished" && parts.volume ? `  volume = {${parts.volume}}` : null,
+        field && field !== "howpublished" && parts.issue ? `  number = {${tex(parts.issue)}}` : null,
+        field && field !== "howpublished" && parts.pages ? `  pages = {${tex(parts.pages).replace("-", "--")}}` : null,
         year ? `  year = {${year}}` : null,
         p.url ? `  url = {${clean(p.url).replace(/[{}\\]/g, (c) => encodeURIComponent(c))}}` : null,          // (an address whose braces or backslash would unbalance the field or run a command)
         notes.length ? `  note = {${notes.join(", ")}}` : null
@@ -254,21 +279,30 @@
     if (by && !/[.!?…]$/.test(by)) by += ".";
     let title = clean(p.title);
     if (title && !/[.?!]$/.test(title)) title += ".";
-    const venue = clean(p.venue);
-    return [by && { t: by }, { t: p.year ? `(${p.year}).` : "(n.d.)." }, title && { t: title }, venue && { t: venue, em: true, dot: !venue.endsWith(".") }, p.url && { t: p.url, url: true }].filter(Boolean);
+    // the venue in italics, then (APA 7) a journal's volume in italics, its issue and pages, or a proceedings' pages; the year is the one above
+    const { name: venue, volume, issue, pages } = venueParts(p.venue), journal = entryType(p).type === "article";
+    const range = pages.replace("-", "–"), venuePieces = [];
+    if (venue && journal && (volume || pages)) {
+      venuePieces.push({ t: venue, em: true, comma: true });
+      if (volume) venuePieces.push({ t: volume, em: true, tail: (issue ? `(${issue})` : "") + (pages ? "," : ".") });
+      if (pages) venuePieces.push({ t: (/-/.test(pages) ? range : `Article ${pages}`) + "." });
+    } else if (venue && pages.includes("-")) venuePieces.push({ t: venue, em: true, tail: ` (pp. ${range}).`, plain: true });
+    else if (venue) venuePieces.push({ t: venue, em: true, dot: !venue.endsWith(".") });
+    return [by && { t: by }, { t: p.year ? `(${p.year}).` : "(n.d.)." }, title && { t: title }, ...venuePieces, p.url && { t: p.url, url: true }].filter(Boolean);
   }
 
   // Reference-list entries: Authors (Year). Title. *Venue*. url   (the asterisks mark the italics, as in a Markdown or plain-text reference list)
-  const apa = (papers) => papers.map((p) => apaPieces(p).map((x) => (x.em ? `*${x.t}*${x.dot ? "." : ""}` : x.t)).join(" ")).join("\n\n");
+  const apaPiece = (x, em) => (x.em ? em(x.t) + (x.comma ? "," : "") + (x.tail || "") + (x.dot ? "." : "") : x.t);
+  const apa = (papers) => papers.map((p) => apaPieces(p).map((x) => apaPiece(x, (t) => `*${t}*`)).join(" ")).join("\n\n");
 
   // The same list for a word processor: a paragraph each, the venue in real italics, the address a link (web addresses only), a hanging indent of half an inch (APA 7)
   const apaHtml = (papers) => papers.map((p) => {
-    const html = apaPieces(p).map((x) => (x.em ? `<i>${esc(x.t)}</i>${x.dot ? "." : ""}` : x.url && /^https?:\/\//i.test(x.t) ? `<a href="${esc(x.t)}">${esc(x.t)}</a>` : esc(x.t))).join(" ");
+    const html = apaPieces(p).map((x) => (x.em ? apaPiece({ ...x, tail: esc(x.tail || "") }, (t) => `<i>${esc(t)}</i>`) : x.url && /^https?:\/\//i.test(x.t) ? `<a href="${esc(x.t)}">${esc(x.t)}</a>` : esc(x.t))).join(" ");
     return `<p style="margin:0 0 0.6em 0.5in;text-indent:-0.5in">${html}</p>`;
   }).join("\n");
 
   // ---- JSON ---------------------------------------------------------------------------------------------------------------------------------------
   const json = ({ owner, source, papers }) => JSON.stringify({ owner, source, total: papers.length, papers }, null, 2);
 
-  return { ROLE_LABEL, summaryText, summaryTable, summaryTsv, summaryHtml, rowsTsv, rowsCsv, rowsHtml, table, papersTsv, papersCsv, papersHtml, bibtex, markdown, apa, apaHtml, apaAuthor, json };
+  return { ROLE_LABEL, summaryText, summaryTable, summaryTsv, summaryHtml, rowsTsv, rowsCsv, rowsHtml, table, papersTsv, papersCsv, papersHtml, bibtex, markdown, apa, apaHtml, apaAuthor, venueParts, json };
 });
