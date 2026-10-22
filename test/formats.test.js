@@ -429,3 +429,12 @@ test("a publisher's name is a book's, given as printed (GB/T [M]); a line of das
   assert.match(f.gbt([paper("-, 2018")]), /T\[Z\]\. 2018\.$/);
   assert.match(f.apa([paper("Journal of Pressure Vessel Technology 12 (3), 1-10, 2018")]), /\*Journal of Pressure Vessel Technology\*, \*12\*\(3\), 1–10\.$/, "a journal whose name holds \"Press\" is no publisher");
 });
+
+test("fourth review: a publisher before Scholar's numbers is a book's, a meeting's or a book's volume is no periodical's, Scholar's \", 0\" is no field", () => {
+  const paper = (venue) => ({ title: "T", authors: "A Author", venue, year: 2019, type: null, url: "", rank: {}, marks: [] });
+  assert.match(f.gbt([paper("Morgan & Claypool Publishers 13, 1-187, 2019")]), /T\[M\]\./);
+  for (const v of ["BMVC 1, 2, 2019", "Robotics: Science and Systems VIII 8, 2012", "Introduction to information retrieval, chapter 13, 234-265, 2008"]) assert.match(f.gbt([paper(v)]), /T\[Z\]\./, v);
+  assert.match(f.gbt([paper("2021 Fall Central Sectional Meeting, 0")]), /Meeting, 2019\.$/);
+  assert.match(f.gbt([paper("time publisher/subscriber inter-process communication model, 2019")]), /T\[Z\]\./);
+  assert.match(f.gbt([paper("Scientific Reports 6, 29545, 2016")]), /T\[J\]\. Scientific Reports, 2019, 6: 29545\.$/);
+});

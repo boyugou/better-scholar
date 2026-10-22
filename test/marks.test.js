@@ -258,3 +258,12 @@ test("a hidden duplicate's award that no other row holds goes to the row that st
   const once = marks.listedOnce([{ title: "A", year: 2021, marks: [] }, { title: "A", year: 2024, hidden: true, into: 0, marks: [L("best", "AAAI", 2024)] }]);
   assert.deepEqual(once.map((ms) => ms.map((m) => m.kind)), [["best"], []]);
 });
+
+test("a moved award takes the place of the kept row's own mark of the same kind, as merge does", () => {
+  const kept = marks.merge([{ kind: "best", text: "Best Paper", source: "author" }], []);
+  const hidden = marks.merge([], [{ kind: "best", venue: "KDD", year: 2010, awardLabel: "" }]);
+  const once = marks.listedOnce([{ title: "A", year: 2012, marks: kept }, { title: "A", year: 2010, hidden: true, into: 0, marks: hidden }]);
+  assert.deepEqual(once[0].map((m) => `${m.kind}/${m.source}`), ["best/list"]);
+  assert.equal(once[0][0].declared, "Best Paper");
+  assert.deepEqual(once[1], []);
+});

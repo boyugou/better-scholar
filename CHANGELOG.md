@@ -2,6 +2,11 @@
 
 ## 2.41.0 — 2026-10-15
 
+- **The fourth review** (of the last three fixes; it also found nothing wrong in most of them): a moved award no longer stands beside the kept
+  row's own mark of the same kind (it takes its place, as one row's merge does); a publisher before Scholar's numbers ("Morgan & Claypool
+  Publishers 13, 1-187") is a book's; an unclassified line with a volume is a periodical's only when its name is no meeting's, book's or place's
+  (`BMVC 1, 2`, "Robotics: Science and Systems VIII 8", a book chapter, a handbook — about 109 of 472 lines — stay as printed, `[Z]` in GB/T);
+  "chapter" is a label; Scholar's ", 0" (no year) is dropped; "publisher/subscriber" is no publisher.
 - **Three small things the third review noted:** a publisher's name on its own ("MIT Press", "O'Reilly Media, Inc.") is a book's, given as
   printed (APA does not italicise a publisher; GB/T marks it `[M]`); a venue line of dashes is no venue (it printed as `*-*`); and with *Merge
   duplicates* on, an award that only the hidden copy holds moves to the row that stands for it (`duplicates.plan` now says which: `into`).
