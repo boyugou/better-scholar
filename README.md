@@ -250,7 +250,7 @@ Press `/` on a profile to jump to the search box. (The panel and its filters mus
 
 ## Copy and export
 
-Each format is a button in the panel's copy row and in the toolbar popup. Each has its own switch under *Settings → Copy & export* (all are on by default).
+Each format is a button in the panel's copy row and in the toolbar popup. Each has its own switch under *Settings → Copy & export* (all are on by default, except IEEE).
 
 - The paper formats take the papers that the page shows now, after the filters. They use the full author lists that *Read full lists* saved.
 - The summary and the table count the papers that the filters leave (in the panel; the popup counts every loaded paper). They say what they counted: "Showing 25 of 100 papers · 2021–…".
@@ -262,6 +262,7 @@ Each format is a button in the panel's copy row and in the toolbar popup. Each h
 | *Copy as table* | The role × rank table, tab-separated for a spreadsheet, and as a real table for a word processor |
 | *Copy papers* | The papers, tab-separated: year, title, authors, role, venue, CCF, CORE, awards, citations (headers in the interface language). Also a real table for a word processor, with your name in bold. |
 | *Copy APA* | APA 7th edition references: `Authors (Year). Title. *Venue*, *Volume*(Issue), Pages. URL` for a journal, `*Venue* (pp. Pages).` for proceedings. Also with real italics for a word processor. |
+| *Copy IEEE* | A numbered IEEE reference list: `[1] A. Author and B. Writer, "Title," in *Venue*, Year, pp. 1–10.`; for a journal `*Journal*, vol. 44, no. 8, pp. 4012–4025, Year.` Also with real italics for a word processor. Off by default: turn it on under *Settings → Copy & export*. |
 | *Copy BibTeX* | BibTeX entries |
 | *Copy Markdown* | A numbered Markdown list: the linked title, authors, venue and year, ranks, awards, citations |
 | *Copy JSON* | `{ owner, source, total, papers }`: one record per paper, with its role, ranks and marks |
@@ -273,9 +274,10 @@ Each format is a button in the panel's copy row and in the toolbar popup. Each h
 - **BibTeX.** The key is the first author's surname, the year, and the first title word of three or more letters that is not a common word (`the`, `for`, `with`, `towards` …), in lower-case ASCII: `vaswani2017attention`, `he2016deep`. Without a year the key says `nodate`. A key that repeats gets `b`, `c` … (`he2016deepb`). The entry is `@inproceedings` (booktitle) or `@article` (journal), as the rank lists or the venue's words say; else it is `@misc`. Fields: title, author (joined with `and`, and ending with `and others` where Scholar cut the list), booktitle or journal, volume, number and pages, year, url (the paper's Scholar page), and a note with the CCF and CORE ranks and the awards. Every character that TeX reads (`\ { } $ & # ^ _ ~ %`) is escaped, so a title cannot carry a command.
 - **The venue line.** Scholar prints a venue as one line: `Journal 44 (8), 4012-4025, 2022` or `Conference name, 770-778, 2016`. APA and BibTeX split it into the name, the volume, the issue, the pages and the year, but only in these shapes. A cut line (`…`) keeps its end in the name. A preprint's number after its arXiv id is not read as a volume. A test runs the split over all 22,744 real lines and checks that no word is lost or added.
 - **APA 7th edition.** `I Stoica` → `Stoica, I.`; `MF Kaashoek` → `Kaashoek, M. F.`; `L van der Maaten` → `van der Maaten, L.`. Two authors are joined with `&`. Above 20 authors: the first 19, `…`, and the last. A cut list ends with `…`. No year gives `(n.d.)`. The asterisks mark the italics.
+- **IEEE.** Initials first (`MF Kaashoek` → `M. F. Kaashoek`). Two authors are joined with `and`, three to six with commas and `and`. Above six authors, or when Scholar cut the list, the first author and `et al.` The title is in quotes; proceedings get `in`; a journal gets `vol.`, `no.` and `pp.` (or `Art. no.` for an article number) from the venue line.
 - **Markdown.** Every character that Markdown reads is escaped, so a title cannot become a link or markup.
 - **CSV.** RFC 4180, with a UTF-8 byte-order mark (so that Excel reads non-Latin text) and CRLF line ends. A field with a comma, a quote, a semicolon or a line break is quoted.
-- **Word, Google Docs, Pages.** The table, papers and APA buttons put HTML on the clipboard beside the text. A word processor then pastes a real table (with borders), or a reference list with real italics, a link and a hanging indent. A spreadsheet or a text box takes the text. All text in the HTML is escaped. A cell that looks like a formula is made text, as in the tab-separated form. The other formats are text only. The toolbar popup and the `export` call (`html: true`) give the same.
+- **Word, Google Docs, Pages.** The table, papers, APA and IEEE buttons put HTML on the clipboard beside the text. A word processor then pastes a real table (with borders), or a reference list with real italics, a link and a hanging indent. A spreadsheet or a text box takes the text. All text in the HTML is escaped. A cell that looks like a formula is made text, as in the tab-separated form. The other formats are text only. The toolbar popup and the `export` call (`html: true`) give the same.
 - **Spreadsheet formulas.** In the CSV and the tab-separated formats, a cell that starts with `=`, `+`, `-` or `@` (and is not a plain number) gets a leading apostrophe. A spreadsheet then shows it as text.
 - When the filters leave no paper, nothing is copied, and the button says *Nothing to copy*.
 
@@ -312,7 +314,7 @@ The request's `detail` is `{ id, method, params }`. An `id` that is a string or 
 | `ping` | none | `{ version, owner, loaded, complete }` |
 | `summary` | `filtered` (`true`: the tables and the award counts of the papers that the filters leave, as the panel counts them; default `false`: every loaded paper) | The role × rank tables (CCF, CORE, by role only), the awards and talks counts, the citation totals, and `counted` (how many papers the tables count) |
 | `papers` | `filtered` (default `true`: the papers that the page shows; `false`: every loaded paper) | `{ owner, total, papers: [{ id, title, authors, me, venue, year, citations, role, status, highlighted, type, rank, marks, url }] }` |
-| `export` | `format` (required: `summary`, `table`, `papers`, `apa`, `bibtex`, `markdown`, `json`, `csv`); `source` (`ccf`, `core`, `none`; for the summary and the table); `html` (`true`: also return `html` for `table`, `papers` and `apa`); `filtered` (`true`: the summary and the table count the papers that the filters leave) | `{ format, text, html? }` |
+| `export` | `format` (required: `summary`, `table`, `papers`, `apa`, `ieee`, `bibtex`, `markdown`, `json`, `csv`); `source` (`ccf`, `core`, `none`; for the summary and the table); `html` (`true`: also return `html` for `table`, `papers`, `apa` and `ieee`); `filtered` (`true`: the summary and the table count the papers that the filters leave) | `{ format, text, html? }` |
 | `filter` | `query`, `onlyHighlighted`, `yearStart`, `yearEnd`, `minCitations`, `impact` (`h` or `i10`); `null` clears a number | `{ shown, total, filters, errors, ignored }` (`ignored`: the filters that the settings left without a control) |
 | `clearFilters` | none | `{ shown, total, filters, errors }` |
 
@@ -327,10 +329,10 @@ What the extension is made of, counted from its code and its data. Nothing here 
 <!-- numbers:begin -->
 | Number | What | Counted from |
 |---:|---|---|
-| **154** | settings you can change, in 18 cards: 87 switches, 48 names you can set, and 19 colours, choices, orders and languages | the settings tree (`src/lib/prefs.js`) |
-| **172** | nodes in that tree, 5 levels deep: card, panel switch, part switch, item, sub-item | cards and rows; each row hangs on its part's switch |
-| **9 · 8 · 10 · 6 · 4** | panel parts, copy formats and quick filters (each with a switch, most in an order you set), then chip looks and presets | `SECTIONS`, `COPY_BUTTONS`, `PILLS`, `CHIP_THEMES`, `PRESETS` |
-| **30** | interface languages: 353 strings each, 29 translated from English | `src/_locales/*/messages.json` |
+| **156** | settings you can change, in 18 cards: 88 switches, 49 names you can set, and 19 colours, choices, orders and languages | the settings tree (`src/lib/prefs.js`) |
+| **174** | nodes in that tree, 5 levels deep: card, panel switch, part switch, item, sub-item | cards and rows; each row hangs on its part's switch |
+| **9 · 9 · 10 · 6 · 4** | panel parts, copy formats and quick filters (each with a switch, most in an order you set), then chip looks and presets | `SECTIONS`, `COPY_BUTTONS`, `PILLS`, `CHIP_THEMES`, `PRESETS` |
+| **30** | interface languages: 354 strings each, 29 translated from English | `src/_locales/*/messages.json` |
 | **1,178** | ranked venues in 1,481 rows of the two lists (386 CCF conferences, 295 CCF journals, 800 CORE conferences); 299 venues have a row in both | the rows of `src/data/ccf.js` and `src/data/core.js`, linked by `idx.partners` |
 | **400+** | venue names that Scholar prints but the lists do not have, in 250+ curated entries: old and renamed venues, other spellings, the lists' own typos, and look-alike events that get no chip | `src/data/aliases.js` |
 | **2,500+** · **1,100+** | name forms and acronyms that the matcher looks up | the keys of its indexes |

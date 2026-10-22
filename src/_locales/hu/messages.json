@@ -498,6 +498,9 @@
   "copyApa": {
     "message": "APA másolása"
   },
+  "copyIeee": {
+    "message": "IEEE másolása"
+  },
   "copyMarkdown": {
     "message": "Markdown másolása"
   },

@@ -2,6 +2,10 @@
 
 ## 2.41.0 — 2026-10-15
 
+- **Copy IEEE**, a ninth copy format (off by default, so that the copy row stays eight buttons until asked for): a numbered IEEE reference
+  list — initials first, `et al.` above six authors or for a cut list, `in *Proceedings*, 2016, pp. 770–778.`, `*Journal*, vol. 44, no. 8,
+  pp. 4012–4025, 2022.`, `Art. no.` for an article number — built on the venue line's parts; with real italics for a word processor, in the
+  toolbar popup and as the `export` format `ieee`. Its label in 30 languages is each language's own "Copy APA" with the style's name.
 - **APA and BibTeX read the venue line's parts.** Scholar prints a venue as one line ("Journal 44 (8), 4012-4025, 2022"), and both formats
   used to put all of it, pages and year included, in the venue: `*Proceedings of the IEEE conference on …, 770-778, 2016*`,
   `booktitle = {…, 770-778, 2016}`. `formats.venueParts` now splits the name, volume, issue, pages and year, only in the shapes Scholar prints

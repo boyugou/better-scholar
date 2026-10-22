@@ -1020,6 +1020,21 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     assert.equal(await page.locator('[data-act="copy-apa"]').textContent(), "Copied");
     ok("Copy APA generates standard APA 7th reference list with authors, year, title and venue");
 
+    // "Copy IEEE" (off by default): once its switch is on, a button that writes a numbered IEEE list, with real italics for a word processor
+    assert.equal(await page.locator('[data-act="copy-ieee"]').count(), 0, "Copy IEEE is off until asked for");
+    await setPref(opts, "panel.copy.ieee", true);
+    await page.bringToFront();
+    await page.locator('[data-act="copy-ieee"]').waitFor();
+    await page.click('[data-act="copy-ieee"]');
+    await copied("copy-ieee");
+    const ieee = await page.evaluate(() => navigator.clipboard.readText());
+    assert.match(ieee, /^\[1\] .+, ".+," /, "a numbered IEEE reference");
+    assert.match((await flavours())["text/html"], /^<p style="[^"]*text-indent:-2\.2em">\[1\] /, "the IEEE list also for a word processor");
+    await setPref(opts, "panel.copy.ieee", false);
+    await page.bringToFront();
+    await page.locator('[data-act="copy-ieee"]').waitFor({ state: "detached" });
+    ok("Copy IEEE (off by default) writes a numbered IEEE reference list once switched on");
+
     // "Copy JSON": structured JSON for papers shown
     await page.click('[data-act="copy-json"]');
     const jsonStr = await page.evaluate(() => navigator.clipboard.readText());
@@ -2005,14 +2020,14 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
       } finally { await pc.close(); }
     };
     const panelButtons = () => page.locator('[data-rr="export-row"] button').evaluateAll((els) => els.map((e) => e.dataset.act));
-    const ALL_COPY = prefsLib.COPY_BUTTONS.map((k) => "copy-" + k);
-    assert.deepEqual(await panelButtons(), ALL_COPY, "the panel's copy row: every format, in the order of the settings");
-    assert.deepEqual(await popupButtons(), ALL_COPY, "and the popup's");
+    const ALL_COPY = prefsLib.COPY_BUTTONS.map((k) => "copy-" + k), ON_COPY = ALL_COPY.filter((a) => a !== "copy-ieee");          // (IEEE is off until asked for)
+    assert.deepEqual(await panelButtons(), ON_COPY, "the panel's copy row: every format that is on by default, in the order of the settings");
+    assert.deepEqual(await popupButtons(), ON_COPY, "and the popup's");
     await setPref(opts, "panel.copy.bibtex", false);
     await setPref(opts, "panel.copy.csv", false);
     await eventually(page, () => !document.querySelector('[data-act="copy-bibtex"]') && !document.querySelector('[data-act="copy-csv"]') && !!document.querySelector('[data-act="copy-json"]'));
-    assert.deepEqual(await panelButtons(), ALL_COPY.filter((a) => a !== "copy-bibtex" && a !== "copy-csv"));
-    assert.deepEqual(await popupButtons(), ALL_COPY.filter((a) => a !== "copy-bibtex" && a !== "copy-csv"));
+    assert.deepEqual(await panelButtons(), ON_COPY.filter((a) => a !== "copy-bibtex" && a !== "copy-csv"));
+    assert.deepEqual(await popupButtons(), ON_COPY.filter((a) => a !== "copy-bibtex" && a !== "copy-csv"));
     await setPref(opts, "panel.table.show", false);                                    // (the row does not belong to the table)
     await eventually(page, () => document.querySelector('[data-rr="matrix"]').closest(".rr-sec").hidden && !document.querySelector('[data-rr="export-row"]').hidden);
     assert.equal(await page.locator('[data-act="copy-json"]').count(), 1, "the copy row stays without the table");

@@ -33,12 +33,12 @@
     export: {
       doc: "The papers or the summary as text, in the format of a copy button.",
       params: {
-        format: { type: "choice", values: FORMATS, required: true, doc: "summary: the summary as text · table: the summary table, tab-separated · papers: the papers, tab-separated · apa · bibtex · markdown · json (the `papers` records) · csv (RFC 4180)." },
+        format: { type: "choice", values: FORMATS, required: true, doc: "summary: the summary as text · table: the summary table, tab-separated · papers: the papers, tab-separated · apa · ieee (a numbered IEEE reference list) · bibtex · markdown · json (the `papers` records) · csv (RFC 4180)." },
         source: { type: "choice", values: ["ccf", "core", "none"], doc: "Which ranking summary and table use (default: the one the panel shows; none: by role only; a list that nothing draws is not used, the default is used instead). The other formats ignore it." },
-        html: { type: "boolean", doc: "true: for table, papers and apa also return `html`, the same content for a word processor (a real table, real italics): what the copy buttons put on the clipboard next to the text." },
+        html: { type: "boolean", doc: "true: for table, papers, apa and ieee also return `html`, the same content for a word processor (a real table, real italics): what the copy buttons put on the clipboard next to the text." },
         filtered: { type: "boolean", doc: "true: summary and table count only the papers the filters leave, as the panel's own buttons do (when `panel.filters.follow` is on; the text then says what it counted); false (the default): every paper. The other formats always use the papers the page shows." }
       },
-      result: "{ format, text, html? } — `html` only when asked for, and only for table, papers and apa."
+      result: "{ format, text, html? } — `html` only when asked for, and only for table, papers, apa and ieee."
     },
     filter: {
       doc: "Narrow the list the page shows (the filters of the panel). Only the filters named are changed; null clears a number.",

@@ -426,6 +426,7 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
       case "bibtex": return formats.bibtex(records, ctx);
       case "markdown": return formats.markdown(records, ctx);
       case "apa": return formats.apa(records);
+      case "ieee": return formats.ieee(records);
       default: return formats.json({ owner: headerName, source: currentSource(), papers: records });          // "json" (a call's format is checked before it gets here)
     }
   }
@@ -435,6 +436,7 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
     if (kind === "table") return formats.summaryHtml(summaryOf(source, filtered).summary, summaryWords(filtered));
     if (kind === "papers") return formats.papersHtml(paperRecords(), { labels: tableLabels(), ccfOn: B.prefs.lists(prefs).ccf, coreOn: B.prefs.lists(prefs).core, markMe: !!prefs.rows.name });
     if (kind === "apa") return formats.apaHtml(paperRecords());
+    if (kind === "ieee") return formats.ieeeHtml(paperRecords());
     return "";
   }
 

@@ -301,8 +301,32 @@
     return `<p style="margin:0 0 0.6em 0.5in;text-indent:-0.5in">${html}</p>`;
   }).join("\n");
 
+  // ---- IEEE ----------------------------------------------------------------------------------------------------------------------------------------
+  // [1] K. He, X. Zhang, S. Ren, and J. Sun, "Deep residual learning for image recognition," in *Proc. Name*, 2016, pp. 770–778.
+  // A journal: *Name*, vol. 44, no. 8, pp. 4012–4025, 2022. More than six authors, or a cut list: the first author and "et al." (IEEE's own rule).
+  const ieeeAuthor = (name) => {
+    const [last, initials, suffix] = apaAuthor(name).split(", ");
+    return initials ? `${initials} ${last}${suffix ? " " + suffix : ""}` : last || "";
+  };
+  function ieeePieces(p, n) {
+    const { names, cut } = authorList(p.authors);
+    const list = names.map(ieeeAuthor).filter(Boolean);
+    const by = !list.length ? "" : list.length > 6 || cut ? `${list[0]} et al.` : list.length === 1 ? list[0] : list.length === 2 ? `${list[0]} and ${list[1]}` : `${list.slice(0, -1).join(", ")}, and ${list[list.length - 1]}`;
+    const title = clean(p.title).replace(/[.]$/, "");
+    const { name: venue, volume, issue, pages } = venueParts(p.venue), type = entryType(p).type, year = p.year ? String(p.year) : "";
+    const range = pages.replace("-", "–"), where = [];
+    if (type === "article") where.push(volume && `vol. ${volume}`, issue && `no. ${issue}`, pages && (pages.includes("-") ? `pp. ${range}` : `Art. no. ${pages}`), year);
+    else where.push(year, pages.includes("-") && `pp. ${range}`);
+    const tail = where.filter(Boolean).join(", ");
+    return [{ t: `[${n}]` }, by && { t: by + "," }, title && { t: `"${title},"` }, venue && type === "inproceedings" && { t: "in" }, venue && { t: venue, em: true, comma: !!tail }, { t: (tail || (venue ? "" : "n.d")) + "." }].filter(Boolean);
+  }
+  // (a piece that is only the closing full stop joins the one before it)
+  const ieeeLine = (p, i, em) => ieeePieces(p, i + 1).map((x) => (x.em ? em(x.t) + (x.comma ? "," : "") : x.t)).join(" ").replace(/ \.$/, ".");
+  const ieee = (papers) => papers.map((p, i) => ieeeLine(p, i, (t) => `*${t}*`)).join("\n\n");
+  const ieeeHtml = (papers) => papers.map((p, i) => `<p style="margin:0 0 0.6em 2.2em;text-indent:-2.2em">${ieeeLine(p, i, (t) => `\u0000${t}\u0001`).split(/(\u0000[^\u0001]*\u0001)/).map((s) => (s.startsWith("\u0000") ? `<i>${esc(s.slice(1, -1))}</i>` : esc(s))).join("")}</p>`).join("\n");
+
   // ---- JSON ---------------------------------------------------------------------------------------------------------------------------------------
   const json = ({ owner, source, papers }) => JSON.stringify({ owner, source, total: papers.length, papers }, null, 2);
 
-  return { ROLE_LABEL, summaryText, summaryTable, summaryTsv, summaryHtml, rowsTsv, rowsCsv, rowsHtml, table, papersTsv, papersCsv, papersHtml, bibtex, markdown, apa, apaHtml, apaAuthor, venueParts, json };
+  return { ROLE_LABEL, summaryText, summaryTable, summaryTsv, summaryHtml, rowsTsv, rowsCsv, rowsHtml, table, papersTsv, papersCsv, papersHtml, bibtex, markdown, apa, apaHtml, apaAuthor, ieee, ieeeHtml, venueParts, json };
 });

@@ -340,3 +340,20 @@ test("APA and BibTeX use the parts: italics for a journal's volume, (pp. …) fo
   // "Proceedings of the IEEE" is a journal also when Scholar adds its volume and pages
   assert.match(f.bibtex([paper("Proceedings of the IEEE 105 (3), 1-10, 2017", null)]), /^@article\{/);
 });
+
+test("IEEE: numbered references, initials first, \"in\" for proceedings, vol./no./pp. for a journal, et al. above six authors or for a cut list", () => {
+  const paper = (over) => ({ title: "A Title", authors: "MF Kaashoek, L van der Maaten, B Writer", venue: "", year: 2016, type: null, url: "", rank: {}, marks: [], ...over });
+  const out = f.ieee([
+    paper({ venue: "Proceedings of the IEEE conference on computer vision and pattern recognition, 770-778, 2016", type: "conference" }),
+    paper({ authors: "A Author, B Writer", venue: "IEEE Transactions on Computers 66 (3), 515-530, 2017", year: 2017, type: "journal" }),
+    paper({ authors: "A A, B B, C C, D D, E E, F F, G G", venue: "Automation in Construction 141, 104387, 2022", year: 2022, type: "journal" }),
+    paper({ authors: "A Author, B Writer, …", venue: "", year: null })
+  ]).split("\n\n");
+  assert.equal(out[0], '[1] M. F. Kaashoek, L. van der Maaten, and B. Writer, "A Title," in *Proceedings of the IEEE conference on computer vision and pattern recognition*, 2016, pp. 770–778.');
+  assert.equal(out[1], '[2] A. Author and B. Writer, "A Title," *IEEE Transactions on Computers*, vol. 66, no. 3, pp. 515–530, 2017.');
+  assert.equal(out[2], '[3] A. A et al., "A Title," *Automation in Construction*, vol. 141, Art. no. 104387, 2022.');
+  assert.equal(out[3], '[4] A. Author et al., "A Title," n.d.');
+  // the same for a word processor: real italics, every text escaped
+  const html = f.ieeeHtml([paper({ title: "<b>x</b>", venue: "IEEE Transactions on Computers 66 (3), 515-530, 2017", type: "journal" })]);
+  assert.match(html, /^<p style="[^"]*text-indent:-2\.2em">\[1\] .*&quot;&lt;b&gt;x&lt;\/b&gt;,&quot; <i>IEEE Transactions on Computers<\/i>, vol\. 66/);
+});

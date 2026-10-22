@@ -28,7 +28,7 @@
   const ROLES = ["first", "cofirst", "second", "last"];
   const RANKS = ["ccf", "core"];
   const MARK_GROUPS = ["award", "oral", "spotlight", "highlight"];
-  const COPY_BUTTONS = ["summary", "table", "papers", "apa", "bibtex", "markdown", "json", "csv"];
+  const COPY_BUTTONS = ["summary", "table", "papers", "apa", "ieee", "bibtex", "markdown", "json", "csv"];
   const HIDE_PARTS = ["cited", "citedTable", "citedChart", "coauthors", "access"];
   // The parts of the panel, in their default order (the panel's `order` setting is a permutation of these; each is also a card below)
   const SECTIONS = ["table", "copy", "marks", "filters", "metrics", "years", "venues", "status", "names"];
@@ -70,6 +70,7 @@
     copyTable: ["the Copy as table button", "Copy as table"],
     copyPapers: ["the Copy papers button", "Copy papers"],
     copyApa: ["the Copy APA button", "Copy APA"],
+    copyIeee: ["the Copy IEEE button", "Copy IEEE"],
     copyBibtex: ["the Copy BibTeX button", "Copy BibTeX"],
     copyMarkdown: ["the Copy Markdown button", "Copy Markdown"],
     copyJson: ["the Copy JSON button", "Copy JSON"],
@@ -127,12 +128,15 @@
     second: "Highlight the rows where you are the second author.",
     last: "Highlight the rows where you are the last author."
   };
-  const COPY_LABEL = { summary: "copySummary", table: "copyTable", papers: "copyPapers", apa: "copyApa", bibtex: "copyBibtex", markdown: "copyMarkdown", json: "copyJson", csv: "exportCsv" };
+  const COPY_LABEL = { summary: "copySummary", table: "copyTable", papers: "copyPapers", apa: "copyApa", ieee: "copyIeee", bibtex: "copyBibtex", markdown: "copyMarkdown", json: "copyJson", csv: "exportCsv" };
+  // (off until asked for: an eighth reference style would make the copy row nine buttons, one alone on its last line)
+  const COPY_OFF = ["ieee"];
   const COPY_DOC = {
     summary: "Copy button: the summary table as plain text (panel and toolbar popup).",
     table: "Copy button: the summary table as tab-separated cells, for a spreadsheet.",
     papers: "Copy button: the list of papers shown, as plain text.",
     apa: "Copy button: the papers shown as APA 7th edition references.",
+    ieee: "Copy button: the papers shown as a numbered IEEE reference list.",
     bibtex: "Copy button: the papers shown as BibTeX entries.",
     markdown: "Copy button: the papers shown as a Markdown list.",
     json: "Copy button: the papers shown as JSON, with roles, ranks and marks.",
@@ -206,7 +210,7 @@
       bool("panel.copy.show", true, "The row of copy and export buttons (also the toolbar popup's).", { label: "optShowSection" }),
       order("panel.copy.order", COPY_BUTTONS, "The copy buttons, left to right: a list of ids (" + COPY_BUTTONS.join(", ") + "). Ids left out follow in the default order; a button's own switch hides it without changing its place.",
         { label: "optOrderButtons", parent: "panel.copy.show" }),
-      ...COPY_BUTTONS.flatMap((k) => [bool(`panel.copy.${k}`, true, COPY_DOC[k], { label: COPY_LABEL[k], parent: "panel.copy.show" }), { parent: "panel.copy.show", ...named(COPY_LABEL[k]) }]),
+      ...COPY_BUTTONS.flatMap((k) => [bool(`panel.copy.${k}`, !COPY_OFF.includes(k), COPY_DOC[k], { label: COPY_LABEL[k], parent: "panel.copy.show" }), { parent: "panel.copy.show", ...named(COPY_LABEL[k]) }]),
       bool("panel.copy.source", true, "A line in the copied summary and the copied table with the profile's link (nothing else of the address) and the day, so that the numbers can be filed or sent on. A list that is not all loaded says so in the same place whatever this says.",
         { label: "optCopySource", hint: "optCopySourceHint", parent: "panel.copy.show" })
     ]),
