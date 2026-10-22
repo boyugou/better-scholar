@@ -87,9 +87,9 @@
     const test = (row) => {
       if (!parsed.terms.length) return true;
       const hit = row.raw && memo.get(row.raw);
-      if (hit && hit.a === row.a && hit.shown === row.shown) return hit.ok;
+      if (hit && hit.a === row.a && hit.marks === row.a.marks && hit.shown === row.shown) return hit.ok;          // (the marks: one award of the list moves between a paper and its duplicate)
       const ok = query.matches(parsed, fields(row));
-      if (row.raw) memo.set(row.raw, { a: row.a, shown: row.shown, ok });
+      if (row.raw) memo.set(row.raw, { a: row.a, marks: row.a && row.a.marks, shown: row.shown, ok });
       return ok;
     };
     return { test, errors: parsed.errors, empty: !parsed.terms.length };

@@ -153,6 +153,14 @@
   const isDocument = (p) => entryType(p).type === "misc" && DOCUMENT.test(clean(p.venue));
   // the venue line as Scholar printed it, without the year at its end (for such a document, which no rule splits)
   const asPrinted = (text) => clean(text).replace(/\s+/g, " ").replace(/,\s*(?:19|20)\d{2}$/, "").trim();
+  // A number equal to the year's last two digits after a name is that edition's year, not a volume: "STOC 18, 2018", "Proc. IEEE Globecom 98", "ISCA 12".
+  // Two digits: after a short name or one that says it is a meeting; one digit ("INFOCOM 2004 4", "Results in Engineering 24" aside): after a short name only.
+  function editionYear(n, before, year) {
+    if (!year || +n !== +year % 100) return false;
+    const words = before.trim().split(/\s+/).length, dated = /\b(?:19|20)\d{2}\b/.test(before);
+    if (n.length === 2) return !dated && (words <= 2 || /\b(?:proc|proceedings|conf|conference|workshop|symp|symposium|summit|meeting|congress|tr|rep)\b/i.test(before));
+    return !dated && words <= 2;
+  }
   function venueParts(text) {
     // (an en dash between numbers is a range — "344–354", "(3–4)" — in the fields at the end; in the name it stays: "January 5–7, 1983")
     const whole = clean(text).replace(/\s+/g, " ").replace(/((?:\s\d+\s*\([^()]*\))?(?:,\s+[^,]*){0,2})$/, (tail) => tail.replace(/(\d)\s*[–—]\s*(\d)/g, "$1-$2"));
@@ -169,7 +177,7 @@
     if ((m = /\s(\d{1,4})\s*\((\d{1,4}(?:\s*-\s*\d{1,4})?|[A-Za-z]{1,4})\)$/.exec(s)) && !/^(?:19|20)\d{2}$/.test(m[1]) && !LABEL_BEFORE.test(s.slice(0, m.index))) {
       volume = m[1]; issue = m[2].replace(/\s*-\s*/, "-"); s = s.slice(0, m.index).trim();
     } else if ((m = /[^,\s]\s(\d{1,3})$/.exec(s)) && !MONTH.test(s.slice(0, m.index + 1)) && !LABEL_BEFORE.test(s.slice(0, m.index + 1))
-      && !(year && +m[1] === +year % 100 && !/\b(?:19|20)\d{2}\b/.test(s.slice(0, m.index + 1)) && s.slice(0, m.index + 1).trim().split(/\s+/).length <= 2)) {          // ("STOC 18, 2018", "IJCAI 15": a short name's edition year, not a volume; "Results in Engineering 24, …, 2024" is volume 24)
+      && !editionYear(m[1], s.slice(0, m.index + 1), year)) {
       volume = m[1]; s = s.slice(0, m.index + 1).trim();
     }
     if (/\b(?:arxiv|biorxiv|medrxiv|preprint)\b/i.test(s)) { volume = ""; issue = ""; }
@@ -297,7 +305,7 @@
     const { name: venue, volume, issue, pages } = venueParts(p.venue), kind = entryType(p), journal = kind.type === "article";
     const range = pages.replace("-", "–"), venuePieces = [];
     if (isDocument(p)) { const raw = asPrinted(p.venue); if (raw) venuePieces.push({ t: raw + (/[.]$/.test(raw) ? "" : ".") }); }
-    else if (venue && journal && (volume || pages)) {
+    else if (venue && (journal || (kind.type === "misc" && volume)) && (volume || pages)) {          // (an unclassified line with a volume is a periodical's: "Scientific Reports 6, 29545")
       venuePieces.push({ t: venue, em: true, comma: true });
       if (volume) venuePieces.push({ t: volume, em: true, tail: (issue ? `(${issue})` : "") + (pages ? "," : ".") });
       if (pages) venuePieces.push({ t: (/-/.test(pages) ? range : `Article ${pages}`) + "." });
@@ -334,7 +342,7 @@
     const { name, volume, issue, pages } = venueParts(p.venue), kind = entryType(p), type = kind.type, year = p.year ? String(p.year) : "";
     const misc = isDocument(p), venue = misc ? asPrinted(p.venue) : name;
     const range = pages.replace("-", "–"), where = [], page = pages && (pages.includes("-") ? `pp. ${range}` : `Art. no. ${pages}`);
-    if (type === "article") where.push(volume && `vol. ${volume}`, issue && `no. ${issue}`, page, year);
+    if (type === "article" || (!misc && type === "misc" && volume)) where.push(volume && `vol. ${volume}`, issue && `no. ${issue}`, page, year);
     else if (type === "inproceedings") where.push(year, pages.includes("-") && volume && `vol. ${volume}`, pages.includes("-") && page);          // (a lone number after a proceedings' name is not printed)
     else where.push(year, !misc && pages.includes("-") && page);
     const tail = where.filter(Boolean).join(", ");
@@ -362,8 +370,10 @@
     // (et al. is "等" when the names are Chinese: the word of the reference's own language, §8.1.2)
     const by = list.length > 3 || (cut && list.length) ? `${list.slice(0, 3).join(", ")}, ${list.some((x) => /[\u3400-\u9fff]/.test(x)) ? "等" : "et al"}` : list.join(", ");
     const title = clean(p.title).replace(/[.]$/, "");
-    const { name, volume, issue, pages } = venueParts(p.venue), kind = entryType(p), type = kind.type, year = p.year ? String(p.year) : "";
-    const venue = isDocument(p) ? asPrinted(p.venue) : name, line = clean(p.venue);
+    const { name, volume, issue, pages } = venueParts(p.venue), kind = entryType(p), year = p.year ? String(p.year) : "";
+    // (an unclassified line with a volume is a periodical's, as in the other styles; any other unclassified line keeps all its fields as printed)
+    const type = kind.type === "misc" && volume && !isDocument(p) ? "article" : kind.type;
+    const venue = type === "misc" ? asPrinted(p.venue) : name, line = clean(p.venue);
     // the type code of Appendix B: patent [P], thesis [D], report [R], journal [J], proceedings [C], anything else [Z]
     const mark = type === "article" ? "J" : type === "inproceedings" ? "C" : /\bpatent\b/i.test(line) ? "P" : /\b(?:thesis|dissertation)\b/i.test(line) ? "D" : /\b(?:tech(?:nical|\.)?\s*rep(?:ort)?|report)\b/i.test(line) ? "R" : "Z";
     let where = "";

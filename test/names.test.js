@@ -418,3 +418,12 @@ test("a profile header in capitals keeps its rearranged spelling: \"TANG JIE\" f
   assert.ok(plain > 50, `Tang Jie: ${plain} rows`);
   assert.equal(found({ name: "TANG JIE", alternates: ["JIE TANG"] }), plain);
 });
+
+test("a header in capitals with an accepted spelling in capitals initials: the spelling is still only itself (\"JA DOUDNA\" is not \"JOHN A DOUDNA\"), while \"JIE\" of \"TANG JIE\" stays a name", () => {
+  const role = (line, owner) => { const r = names.classifyRow(line, owner); return r.status === "found" ? r.role : r.status; };
+  const doudna = { name: "JENNIFER DOUDNA", alternates: ["JA DOUDNA"] };
+  assert.equal(role("A B, JOHN A DOUDNA, C D", doudna), "absent");
+  assert.equal(role("A B, JA DOUDNA, C D", doudna), "second");
+  assert.equal(role("Paul S Yu, A B", { name: "PHILIP S. YU", alternates: ["PS YU"] }), "absent");
+  assert.equal(role("J Tang, A B", { name: "TANG JIE", alternates: ["JIE TANG"] }), "first");
+});

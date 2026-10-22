@@ -2,6 +2,12 @@
 
 ## 2.41.0 — 2026-10-15
 
+- **The third review of today's fixes** (four defects, ~1,000 real lines): GB/T dropped the pages and volumes of unclassified lines, and APA and
+  IEEE their volumes — an unclassified line with a volume is now laid out as a periodical's in all three ("Scientific Reports, 6, Article 29545"),
+  GB/T marks it `[J]` and keeps every field of any other line; the relaxed edition-year rule had turned conference years into volumes ("Proc. IEEE
+  Globecom 98", "ISCA 12") — two digits equal to the year after a meeting's name are its edition again; a capitals header let a capitals initials
+  spelling match other people ("JA DOUDNA" vs "JOHN A DOUDNA") — a given name is a name only when it is a word of the header itself; and a search
+  answer is no longer kept when a row's awards move to or from its duplicate.
 - **Today's fixes, reviewed again** (eight regressions, each found by running the code): (1) *a profile header in capitals* ("TANG JIE", "WANG
   WEI") *found its owner in no row* — its rearranged spelling "JIE TANG" was read as initials by the new capitals rule (76 of 100 rows again);
   (2) a test-of-time award on the list deleted the "Best Paper" the authors typed — only a listed runner-up or finalist does that now; (3) with

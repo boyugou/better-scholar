@@ -410,3 +410,13 @@ test("the venue line, second review: a long name's number is a volume, the bare 
   assert.match(f.apa([paper("ISMIR, 260-265, 2015", null)]), /\*ISMIR\* \(pp\. 260–265\)\.$/);
   assert.match(f.ieee([paper("USENIX security symposium 49, 50, 2015", "conference")]), /in \*USENIX security symposium\*, 2015\.$/);
 });
+
+test("the venue line, third review: a meeting's two-digit edition year, a periodical's volume on an unclassified line, GB/T keeps every field", () => {
+  for (const v of ["Proc. IEEE Globecom 98, 1-5, 1998", "FSE 99, 1999", "ISCA 12, 2012"]) assert.equal(f.venueParts(v).volume, "", v);
+  assert.equal(f.venueParts("IEEE INFOCOM 2004 4, 2004").volume, "4");
+  const paper = (venue) => ({ title: "T", authors: "A Author", venue, year: 2018, type: null, url: "", rank: {}, marks: [] });
+  assert.match(f.apa([paper("Scientific Reports 6, 29545, 2018")]), /\*Scientific Reports\*, \*6\*, Article 29545\.$/);
+  assert.match(f.ieee([paper("IEEE Access 6, 52754-52765, 2018")]), /\*IEEE Access\*, vol\. 6, pp\. 52754–52765, 2018\.$/);
+  assert.match(f.gbt([paper("IEEE Access 6, 52754-52765, 2018")]), /T\[J\]\. IEEE Access, 2018, 6: 52754-52765\.$/);
+  assert.match(f.gbt([paper("ISMIR, 260-265, 2018")]), /T\[Z\]\. ISMIR, 260-265, 2018\.$/);
+});
