@@ -326,21 +326,21 @@ What the extension is made of, counted from its code and its data. Nothing here 
 <!-- numbers:begin -->
 | Number | What | Counted from |
 |---:|---|---|
-| **154** | settings you can change, in 18 cards — 87 switches, 48 names you can give things, 19 colours, choices, orders and languages | the rows of the settings tree (`src/lib/prefs.js`) |
-| **172** | nodes in that tree, 5 levels deep: a card, the switch of a part, a thing in it, its name | cards and rows; a row hangs on the switch of its part |
-| **9 · 8 · 10 · 6 · 4** | panel parts, copy formats and quick filters — each with its own switch, most with a place in an order you set — and chip looks and presets to pick from | `SECTIONS`, `COPY_BUTTONS`, `PILLS`, `CHIP_THEMES`, `PRESETS` |
-| **30** | interface languages — 353 strings each, 29 translations of the English | `src/_locales/*/messages.json` |
-| **1,178** | ranked venues, in 1,481 rows of the two bundled lists (386 CCF conferences, 295 CCF journals, 800 CORE conferences): 299 venues are a row in both | the rows of `src/data/ccf.js` and `src/data/core.js`, linked by `idx.partners` |
-| **400+** | names Scholar prints that the lists do not have, in 250+ curated entries (older and renamed venues, other spellings, a list's own typos, look-alike events that get no badge) | `src/data/aliases.js` |
-| **2,500+** · **1,100+** | name forms and acronyms the matcher looks up | the keys of its indexes |
-| **50+** | venues that the two lists word differently and the matcher knows are one: a badge found by one list's wording brings the other's | `idx.partners` |
-| **5 · 18** | recognition stages (name, journal word-bag, acronym, the visible start of a cut name, name and subtitle) and guards that stop a weaker reading from beating a stronger one | the labelled stages of `src/lib/venues.js` and the guard table of `docs/ARCHITECTURE.md` |
-| **5,581** | award-winning papers, and 2,143 more with an honorable mention or a runner-up place (7,830 awards in all), from 194 venues and series, 1990–2026 | `src/data/awards.js` |
-| **22,744** | real Scholar venue lines whose badge was each looked at and written down | `test/fixtures/venues.expected.json` |
-| **500+ · 90+ · 15** | unit tests, end-to-end checks in a real Chromium with the extension loaded, checks of the web demo | `test/*.test.js`, `test/e2e/` |
+| **154** | settings you can change, in 18 cards: 87 switches, 48 names you can set, and 19 colours, choices, orders and languages | the settings tree (`src/lib/prefs.js`) |
+| **172** | nodes in that tree, 5 levels deep: card, part switch, item, name | cards and rows; each row hangs on its part's switch |
+| **9 · 8 · 10 · 6 · 4** | panel parts, copy formats and quick filters (each with a switch, most in an order you set), then chip looks and presets | `SECTIONS`, `COPY_BUTTONS`, `PILLS`, `CHIP_THEMES`, `PRESETS` |
+| **30** | interface languages: 353 strings each, 29 translated from English | `src/_locales/*/messages.json` |
+| **1,178** | ranked venues in 1,481 rows of the two lists (386 CCF conferences, 295 CCF journals, 800 CORE conferences); 299 venues have a row in both | the rows of `src/data/ccf.js` and `src/data/core.js`, linked by `idx.partners` |
+| **400+** | venue names that Scholar prints but the lists do not have, in 250+ curated entries: old and renamed venues, other spellings, the lists' own typos, and look-alike events that get no chip | `src/data/aliases.js` |
+| **2,500+** · **1,100+** | name forms and acronyms that the matcher looks up | the keys of its indexes |
+| **50+** | venues that the two lists name differently; a match in one list brings the other list's rank | `idx.partners` |
+| **5 · 18** | recognition stages (name, journal word set, acronym, start of a cut name, name with subtitle) and guards that stop a weaker reading from beating a stronger one | the labelled stages of `src/lib/venues.js` and the guard table of `docs/ARCHITECTURE.md` |
+| **5,581** | award-winning papers, plus 2,143 with an honorable mention or a runner-up place (7,830 awards in all), from 194 venues and series, 1990–2026 | `src/data/awards.js` |
+| **22,744** | real venue lines from Scholar; each result was looked at and recorded | `test/fixtures/venues.expected.json` |
+| **500+ · 90+ · 15** | unit tests, end-to-end checks in Chromium with the extension loaded, and checks of the web demo | `test/*.test.js`, `test/e2e/` |
 | **0** | dependencies, and no build step | `package.json` |
 
-Counted from the code and the data by `npm run numbers`; a test keeps this table true. Counts that grow with every fix are given rounded down.
+`npm run numbers` counts these from the code and the data, and a test keeps the table true. Counts that grow with each fix are rounded down.
 <!-- numbers:end -->
 
 ## Data sources
