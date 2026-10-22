@@ -369,7 +369,7 @@
     "message": "Meine Paper hervorheben"
   },
   "optRolesHint": {
-    "message": "Jede Position bekommt eine eigene Zeilenfarbe. Paper, bei denen du in der Mitte stehst, bleiben unverändert."
+    "message": "Jede Rolle bekommt eine eigene Zeilenfarbe. Paper, bei denen du in der Mitte stehst, bleiben unverändert."
   },
   "optMarkName": {
     "message": "Meinen Namen in der Autorenzeile markieren"
@@ -414,7 +414,7 @@
     "message": "Tabelle Rolle × Rang"
   },
   "optPanelSummaryHint": {
-    "message": "Die Tabelle deiner Paper nach Position und Rang, mit dem Hinweis, woher die Ränge stammen."
+    "message": "Die Tabelle deiner Paper nach Rolle und Rang, mit dem Hinweis, woher die Ränge stammen."
   },
   "optPanelMarksHint": {
     "message": "Die Anzahl preisgekrönter Paper und Vortragsarten, per Klick aufzulisten."
@@ -770,7 +770,7 @@
     }
   },
   "noRolesHint": {
-    "message": "Keine Autorenposition ist eingeschaltet, daher wird nichts hervorgehoben."
+    "message": "Keine Autorenrolle ist eingeschaltet, daher wird nichts hervorgehoben."
   },
   "metricsOfN": {
     "message": "$N1$ von $N2$",
@@ -1028,7 +1028,7 @@
     "message": "Leiste „N von M Paper angezeigt“"
   },
   "optMetricsScope": {
-    "message": "Zeile mit den gezählten Positionen"
+    "message": "Zeile mit den gezählten Rollen"
   },
   "optMetricsOf": {
     "message": "„von N“ neben jeder Zahl"

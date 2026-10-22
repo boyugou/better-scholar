@@ -354,7 +354,7 @@
     "message": "Zvýrazňovat moje práce"
   },
   "optRolesHint": {
-    "message": "Každá pozice má vlastní barvu řádku. Práce, kde jste uprostřed seznamu, zůstanou bez zvýraznění."
+    "message": "Každá role má vlastní barvu řádku. Práce, kde jste uprostřed seznamu, zůstanou bez zvýraznění."
   },
   "optMarkName": {
     "message": "Označit mé jméno v řádku autorů"
@@ -399,7 +399,7 @@
     "message": "Tabulka role × rank"
   },
   "optPanelSummaryHint": {
-    "message": "Tabulka vašich prací podle pozice a ranku, s poznámkou o tom, odkud ranky pocházejí."
+    "message": "Tabulka vašich prací podle role a ranku, s poznámkou o tom, odkud ranky pocházejí."
   },
   "optPanelMarksHint": {
     "message": "Počet oceněných prací a druhů přednesů; jedním kliknutím je vypíšete."
@@ -749,7 +749,7 @@
     }
   },
   "noRolesHint": {
-    "message": "Není zapnutá žádná autorská pozice, takže nic není zvýrazněno."
+    "message": "Není zapnutá žádná autorská role, takže nic není zvýrazněno."
   },
   "metricsOfN": {
     "message": "$N1$ z $N2$",
@@ -1007,7 +1007,7 @@
     "message": "Lišta „Zobrazené práce: N / M“"
   },
   "optMetricsScope": {
-    "message": "Řádek s pozicemi, které se počítají"
+    "message": "Řádek s rolemi, které se počítají"
   },
   "optMetricsOf": {
     "message": "„z N“ u každého čísla"

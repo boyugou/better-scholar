@@ -354,7 +354,7 @@
     "message": "Sorot makalah saya"
   },
   "optRolesHint": {
-    "message": "Setiap posisi punya warna baris sendiri. Makalah dengan posisi Anda di tengah tetap polos."
+    "message": "Setiap peran punya warna baris sendiri. Makalah dengan posisi Anda di tengah tetap polos."
   },
   "optMarkName": {
     "message": "Tandai nama saya di baris penulis"
@@ -399,7 +399,7 @@
     "message": "Tabel peran × peringkat"
   },
   "optPanelSummaryHint": {
-    "message": "Tabel makalah Anda menurut posisi dan peringkat, dengan catatan tentang sumber peringkat."
+    "message": "Tabel makalah Anda menurut peran dan peringkat, dengan catatan tentang sumber peringkat."
   },
   "optPanelMarksHint": {
     "message": "Jumlah makalah pemenang penghargaan dan tingkat presentasi, satu klik untuk melihat daftarnya."
@@ -749,7 +749,7 @@
     }
   },
   "noRolesHint": {
-    "message": "Tidak ada posisi penulis yang aktif, jadi tidak ada yang disorot."
+    "message": "Tidak ada peran penulis yang aktif, jadi tidak ada yang disorot."
   },
   "metricsOfN": {
     "message": "$N1$ dari $N2$",
@@ -1007,7 +1007,7 @@
     "message": "Bilah “Menampilkan N dari M makalah”"
   },
   "optMetricsScope": {
-    "message": "Baris yang menyebut posisi yang dihitung"
+    "message": "Baris yang menyebut peran yang dihitung"
   },
   "optMetricsOf": {
     "message": "“dari N” di samping setiap angka"

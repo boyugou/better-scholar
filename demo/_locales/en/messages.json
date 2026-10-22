@@ -369,7 +369,7 @@
     "message": "Highlight my papers"
   },
   "optRolesHint": {
-    "message": "Each position gets its own row colour. Papers where you are in the middle stay plain."
+    "message": "Each role gets its own row colour. Papers where you are in the middle stay plain."
   },
   "optMarkName": {
     "message": "Mark my name in the author line"
@@ -414,7 +414,7 @@
     "message": "Role × rank table"
   },
   "optPanelSummaryHint": {
-    "message": "The table of your papers by position and rank, with the note on where the ranks come from."
+    "message": "The table of your papers by role and rank, with the note on where the ranks come from."
   },
   "optPanelMarksHint": {
     "message": "The count of award-winning papers and talk levels, one click to list them."
@@ -770,7 +770,7 @@
     }
   },
   "noRolesHint": {
-    "message": "No author position is switched on, so nothing is highlighted."
+    "message": "No author role is switched on, so nothing is highlighted."
   },
   "metricsOfN": {
     "message": "$N1$ of $N2$",
@@ -1028,7 +1028,7 @@
     "message": "“Showing N of M” bar"
   },
   "optMetricsScope": {
-    "message": "Line naming the positions that count"
+    "message": "Line naming the roles that count"
   },
   "optMetricsOf": {
     "message": "“of N” beside each number"

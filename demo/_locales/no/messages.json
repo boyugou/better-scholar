@@ -369,7 +369,7 @@
     "message": "Utheve artiklene mine"
   },
   "optRolesHint": {
-    "message": "Hver plass får sin egen radfarge. Artikler der du står i midten forblir uten markering."
+    "message": "Hver rolle får sin egen radfarge. Artikler der du står i midten forblir uten markering."
   },
   "optMarkName": {
     "message": "Marker navnet mitt i forfatterlinjen"
@@ -414,7 +414,7 @@
     "message": "Tabell over rolle × rang"
   },
   "optPanelSummaryHint": {
-    "message": "Tabellen over artiklene dine etter plass og rang, med en merknad om hvor rangene kommer fra."
+    "message": "Tabellen over artiklene dine etter rolle og rang, med en merknad om hvor rangene kommer fra."
   },
   "optPanelMarksHint": {
     "message": "Antall prisvinnende artikler og foredragsnivåer, ett klikk viser dem."
@@ -770,7 +770,7 @@
     }
   },
   "noRolesHint": {
-    "message": "Ingen forfatterplass er slått på, så ingenting blir uthevet."
+    "message": "Ingen forfatterrolle er slått på, så ingenting blir uthevet."
   },
   "metricsOfN": {
     "message": "$N1$ av $N2$",

@@ -369,7 +369,7 @@
     "message": "Markera mina artiklar"
   },
   "optRolesHint": {
-    "message": "Varje plats får sin egen radfärg. Artiklar där du står i mitten förblir omarkerade."
+    "message": "Varje roll får sin egen radfärg. Artiklar där du står i mitten förblir omarkerade."
   },
   "optMarkName": {
     "message": "Markera mitt namn i författarraden"
@@ -414,7 +414,7 @@
     "message": "Roll × rank-tabell"
   },
   "optPanelSummaryHint": {
-    "message": "Tabellen över dina artiklar efter position och rank, med en notis om varifrån rankningarna kommer."
+    "message": "Tabellen över dina artiklar efter roll och rank, med en notis om varifrån rankningarna kommer."
   },
   "optPanelMarksHint": {
     "message": "Antalet prisbelönta artiklar och presentationsnivåer, ett klick listar dem."
@@ -770,7 +770,7 @@
     }
   },
   "noRolesHint": {
-    "message": "Ingen författarplats är påslagen, så ingenting markeras."
+    "message": "Ingen författarroll är påslagen, så ingenting markeras."
   },
   "metricsOfN": {
     "message": "$N1$ av $N2$",
@@ -1028,7 +1028,7 @@
     "message": "Raden ”Visade artiklar: N / M”"
   },
   "optMetricsScope": {
-    "message": "Raden som anger vilka positioner som räknas"
+    "message": "Raden som anger vilka roller som räknas"
   },
   "optMetricsOf": {
     "message": "”av N” bredvid varje tal"

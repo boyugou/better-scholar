@@ -369,7 +369,7 @@
     "message": "Evidenzia i miei articoli"
   },
   "optRolesHint": {
-    "message": "Ogni posizione ha un proprio colore di riga. Gli articoli in cui sei in posizione intermedia restano neutri."
+    "message": "Ogni ruolo ha un proprio colore di riga. Gli articoli in cui sei in posizione intermedia restano neutri."
   },
   "optMarkName": {
     "message": "Segna il mio nome nella riga degli autori"
@@ -414,7 +414,7 @@
     "message": "Tabella ruolo × ranking"
   },
   "optPanelSummaryHint": {
-    "message": "La tabella dei tuoi articoli per posizione e ranking, con la nota sull’origine dei ranking."
+    "message": "La tabella dei tuoi articoli per ruolo e ranking, con la nota sull’origine dei ranking."
   },
   "optPanelMarksHint": {
     "message": "Il numero di articoli premiati e di presentazioni per tipo, con un clic per elencarli."
@@ -770,7 +770,7 @@
     }
   },
   "noRolesHint": {
-    "message": "Nessuna posizione d’autore è attivata, quindi non viene evidenziato nulla."
+    "message": "Nessun ruolo d’autore è attivato, quindi non viene evidenziato nulla."
   },
   "metricsOfN": {
     "message": "$N1$ di $N2$",
@@ -1028,7 +1028,7 @@
     "message": "Barra «Articoli mostrati: N / M»"
   },
   "optMetricsScope": {
-    "message": "Riga che indica le posizioni conteggiate"
+    "message": "Riga che indica i ruoli conteggiati"
   },
   "optMetricsOf": {
     "message": "«di N» accanto a ogni cifra"

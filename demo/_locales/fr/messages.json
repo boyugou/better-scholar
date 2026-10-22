@@ -369,7 +369,7 @@
     "message": "Mettre mes articles en évidence"
   },
   "optRolesHint": {
-    "message": "Chaque position a sa propre couleur de ligne. Les articles où vous êtes au milieu restent neutres."
+    "message": "Chaque rôle a sa propre couleur de ligne. Les articles où vous êtes au milieu restent neutres."
   },
   "optMarkName": {
     "message": "Repérer mon nom dans la ligne des auteurs"
@@ -414,7 +414,7 @@
     "message": "Tableau rôle × rang"
   },
   "optPanelSummaryHint": {
-    "message": "Le tableau de vos articles par position et par rang, avec la note sur l’origine des rangs."
+    "message": "Le tableau de vos articles par rôle et par rang, avec la note sur l’origine des rangs."
   },
   "optPanelMarksHint": {
     "message": "Le nombre d’articles primés et de présentations par niveau, à lister d’un clic."
@@ -770,7 +770,7 @@
     }
   },
   "noRolesHint": {
-    "message": "Aucune position d’auteur n’est activée, donc rien n’est mis en évidence."
+    "message": "Aucun rôle d’auteur n’est activé, donc rien n’est mis en évidence."
   },
   "metricsOfN": {
     "message": "$N1$ sur $N2$",
@@ -1028,7 +1028,7 @@
     "message": "Barre « Articles affichés : N / M »"
   },
   "optMetricsScope": {
-    "message": "Ligne qui nomme les positions comptées"
+    "message": "Ligne qui nomme les rôles comptés"
   },
   "optMetricsOf": {
     "message": "« sur N » après chaque nombre"

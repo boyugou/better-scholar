@@ -354,7 +354,7 @@
     "message": "Evidențiază lucrările mele"
   },
   "optRolesHint": {
-    "message": "Fiecare poziție are culoarea ei de rând. Lucrările în care ești la mijloc rămân simple."
+    "message": "Fiecare rol are culoarea lui de rând. Lucrările în care ești la mijloc rămân simple."
   },
   "optMarkName": {
     "message": "Marchează-mi numele în rândul autorilor"
@@ -749,7 +749,7 @@
     }
   },
   "noRolesHint": {
-    "message": "Nicio poziție de autor nu este activată, așa că nimic nu este evidențiat."
+    "message": "Niciun rol de autor nu este activat, așa că nimic nu este evidențiat."
   },
   "metricsOfN": {
     "message": "$N1$ din $N2$",
@@ -1007,7 +1007,7 @@
     "message": "Bara „Lucrări afișate: N / M”"
   },
   "optMetricsScope": {
-    "message": "Rândul cu pozițiile care contează"
+    "message": "Rândul cu rolurile care contează"
   },
   "optMetricsOf": {
     "message": "„din N” lângă fiecare număr"
