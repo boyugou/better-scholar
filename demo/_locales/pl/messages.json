@@ -657,7 +657,7 @@
     "message": "Najpierw odczytuj listy autorów z Semantic Scholar"
   },
   "optSemanticLabelHint": {
-    "message": "Po naciśnięciu „Odczytaj pełne listy” najpierw pytamy Semantic Scholar o pełną listę autorów każdej pracy. Semantic Scholar dostaje tylko tytuł pracy i nic więcej. Strona samego Scholar jest otwierana tylko dla prac, których Semantic Scholar nie zna. Mniej zapytań do Scholar oznacza mniej CAPTCHA."
+    "message": "Po naciśnięciu „Odczytaj pełne listy” rozszerzenie najpierw pyta Semantic Scholar o pełną listę autorów każdej pracy. Semantic Scholar dostaje tylko tytuł pracy i nic więcej. Strona samego Scholar jest otwierana tylko dla prac, których Semantic Scholar nie zna. Mniej zapytań do Scholar oznacza mniej CAPTCHA."
   },
   "yearsTitle": {
     "message": "Wyróżnione prace według lat"
@@ -1132,7 +1132,7 @@
     "message": "np. Proceedings of the IEEE conference on computer vision and pattern recognition"
   },
   "optVenueNone": {
-    "message": "Bez rankingu. Listy nie umieszczają tego tekstu z pewnością, więc nie dostaje etykiety."
+    "message": "Bez rankingu. Listy nie dają pewności co do tego tekstu, więc nie dostaje etykiety."
   },
   "optVenueSecondary": {
     "message": "Słowo „$N1$” oznacza kategorię drugorzędną, na przykład workshop, poster albo krótką pracę. Miejsce publikacji nie dostaje rankingu, chyba że jego własna nazwa zawiera to słowo.",

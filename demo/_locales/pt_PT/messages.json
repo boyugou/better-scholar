@@ -3,7 +3,7 @@
     "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "Nos perfis do Google Scholar: a posição de autor do titular e o ranking CCF e CORE do veículo por artigo, numa só tabela."
+    "message": "Nos perfis do Google Scholar: a posição de autor do titular e o ranking CCF e CORE do veículo por artigo, contados numa só tabela."
   },
   "extShortName": {
     "message": "Better Scholar"
@@ -121,7 +121,7 @@
     "message": "Sem ranking"
   },
   "tipHidden": {
-    "message": "O Scholar truncou a lista de autores, pelo que a posição do dono do perfil não está visível"
+    "message": "O Scholar truncou a lista de autores, pelo que a posição do titular do perfil não está visível"
   },
   "copySummary": {
     "message": "Copiar resumo"
@@ -494,7 +494,7 @@
     "message": "Carregar todos os artigos automaticamente"
   },
   "optAutoLoadHint": {
-    "message": "O Scholar mostra apenas os primeiros artigos de um perfil. Isto prime por si o botão “Mostrar mais” do próprio Scholar, cerca de uma vez por segundo, até carregar a lista toda. O processo pára se o Scholar deixar de responder. Desativado: o painel mostra “Carregar tudo” em vez disso."
+    "message": "O Scholar mostra apenas os primeiros artigos de um perfil. Isto prime por si o botão “Mostrar mais” do próprio Scholar, cerca de uma vez por segundo, até carregar a lista toda. O processo para se o Scholar deixar de responder. Desativado: o painel mostra “Carregar tudo” em vez disso."
   },
   "loadStalled": {
     "message": "O Scholar não enviou mais artigos ($N1$ carregados). Tente “Carregar tudo” de novo daqui a pouco.",
@@ -675,7 +675,7 @@
     "message": "Ler primeiro as listas de autores do Semantic Scholar"
   },
   "optSemanticLabelHint": {
-    "message": "Ao premir “Ler listas completas”, pergunta primeiro ao Semantic Scholar a lista completa de autores de cada artigo. Ele recebe apenas o título do artigo e nada mais. A página do próprio Scholar só é aberta para os artigos que o Semantic Scholar não conhece. Menos pedidos ao Scholar significam menos CAPTCHAs."
+    "message": "Ao premir “Ler listas completas”, pergunta primeiro ao Semantic Scholar a lista completa de autores de cada artigo. O Semantic Scholar recebe apenas o título do artigo e nada mais. A página do próprio Scholar só é aberta para os artigos que o Semantic Scholar não conhece. Menos pedidos ao Scholar significam menos CAPTCHAs."
   },
   "yearsTitle": {
     "message": "Artigos destacados por ano"
@@ -1176,7 +1176,7 @@
     "message": "As contagens seguem os filtros"
   },
   "optFiltersFollowHint": {
-    "message": "A tabela, as contagens de prémios e apresentações e a contagem do resumo copiado contam apenas os artigos que os filtros deixam: um intervalo de anos, uma pesquisa, um filtro rápido ou um veículo. A célula ou linha selecionada não altera nenhuma contagem. Desativado: contam sempre o perfil inteiro."
+    "message": "A tabela, as contagens de prémios e apresentações e o resumo copiado contam apenas os artigos que os filtros deixam: um intervalo de anos, uma pesquisa, um filtro rápido ou um veículo. A célula ou linha selecionada não altera nenhuma contagem. Desativado: contam sempre o perfil inteiro."
   },
   "optPillRecent": {
     "message": "Últimos 5 anos"

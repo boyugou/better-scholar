@@ -122,9 +122,9 @@
       <p class="note">Due articoli inventati in conferenze e riviste reali. Ogni passo mostra ciò che il codice dell'estensione trova in essi.</p>
       <div class="how-grid">
         <ol class="how-steps">
-          <li><button type="button" data-step="1"><span class="n">1</span><b>Trova il tuo nome</b><span class="d">Trova il nome del profilo nella riga degli autori. Il tuo posto nella riga determina il tuo ruolo: primo autore, co-primo autore, secondo autore o ultimo autore.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="1"><span class="n">1</span><b>Trova il tuo nome</b><span class="d">Trova il nome del profilo nella riga degli autori. La tua posizione nella riga determina il tuo ruolo: primo autore, co-primo autore, secondo autore o ultimo autore.</span><i class="bar" aria-hidden="true"></i></button></li>
           <li><button type="button" data-step="2"><span class="n">2</span><b>Cerca la conferenza o rivista</b><span class="d">Cerca la conferenza o rivista negli elenchi CCF e CORE, per nome completo o per sigla. Una corrispondenza sicura dà un'etichetta di ranking.</span><i class="bar" aria-hidden="true"></i></button></li>
-          <li><button type="button" data-step="3"><span class="n">3</span><b>Non indovina mai</b><span class="d">Un workshop, un poster o un articolo di Findings non è la conferenza principale. Una conferenza o rivista che le liste non collocano con certezza non riceve etichetta.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="3"><span class="n">3</span><b>Non indovina mai</b><span class="d">Un workshop, un poster o un articolo di Findings non è la conferenza principale. Una conferenza o rivista che gli elenchi non collocano con certezza non riceve etichetta.</span><i class="bar" aria-hidden="true"></i></button></li>
           <li><button type="button" data-step="4" aria-current="step"><span class="n">4</span><b>Conteggio</b><span class="d">Il pannello conta ogni articolo una sola volta, per ruolo e per ranking. Clicca su un numero per vederne gli articoli.</span><i class="bar" aria-hidden="true"></i></button></li>
         </ol>
         <div class="how-figure">
@@ -162,7 +162,7 @@
         <article style="--c:#b36cf6"><h3>Elenchi di autori completi</h3><p>Scholar tronca gli elenchi lunghi di autori con “…”, e così può nascondere il tuo ruolo. Un clic legge gli elenchi completi dalle pagine degli articoli su Scholar.</p></article>
         <article style="--c:#fbbc04"><h3>Duplicati uniti</h3><p>Scholar a volte elenca due volte lo stesso articolo. Un interruttore unisce le due voci in una sola e somma le citazioni.</p></article>
         <article style="--c:#34a853"><h3>Il tuo layout</h3><p>Ogni parte del pannello ha il suo interruttore. Scegli i colori, l'ordine delle parti e i tuoi nomi per ognuna.</p></article>
-        <article style="--c:#4d8ff5"><h3>Privacy</h3><p>Nessun account, nessuna analisi, nessun tracciamento. Tutto il lavoro avviene nel tuo browser, e le liste di ranking sono incluse nell'estensione.</p></article>
+        <article style="--c:#4d8ff5"><h3>Privacy</h3><p>Nessun account, nessuna analisi, nessun tracciamento. Tutto il lavoro avviene nel tuo browser, e gli elenchi di ranking sono inclusi nell'estensione.</p></article>
         <article style="--c:#b36cf6"><h3>30 lingue</h3><p>L'estensione parla la tua lingua. Può anche aprire Scholar stesso nella lingua che scegli.</p></article>
       </div>
     </div>
@@ -374,7 +374,7 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
   <section class="operators-section">
     <div class="wrap">
       <h2>Ricerca con operatori</h2>
-      <p class="note">Premi <kbd>/</kbd> su un profilo per cercare in tutti i suoi articoli. Aggiungi operatori alle parole per filtrare la lista.</p>
+      <p class="note">Premi <kbd>/</kbd> su un profilo per cercare in tutti i suoi articoli. Aggiungi operatori alle parole per filtrare l'elenco.</p>
       <div class="operators-grid">
         <div class="op-card">
           <div class="op-header" dir="ltr"><code>cites:&gt;100</code> <code>cites:&gt;=50</code> <code>cites:&lt;10</code></div>
@@ -417,8 +417,8 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
       <div class="numbers-grid">
         <div class="num" style="--c:#4d8ff5"><b dir="ltr">154</b><span>impostazioni modificabili</span></div>
         <div class="num" style="--c:#b36cf6"><b dir="ltr">30</b><span>lingue dell'interfaccia</span></div>
-        <div class="num" style="--c:#fbbc04"><b dir="ltr">1178</b><span>conferenze e riviste con ranking nelle liste CCF e CORE</span></div>
-        <div class="num" style="--c:#34a853"><b dir="ltr">400+</b><span>nomi di conferenze e riviste mostrati da Scholar, assenti dalle liste</span></div>
+        <div class="num" style="--c:#fbbc04"><b dir="ltr">1178</b><span>conferenze e riviste con ranking negli elenchi CCF e CORE</span></div>
+        <div class="num" style="--c:#34a853"><b dir="ltr">400+</b><span>nomi di conferenze e riviste mostrati da Scholar, assenti dagli elenchi</span></div>
         <div class="num" style="--c:#4d8ff5"><b dir="ltr">18</b><span>controlli che evitano un ranking errato</span></div>
         <div class="num" style="--c:#b36cf6"><b dir="ltr">5581</b><span>articoli premiati che l'estensione conosce</span></div>
         <div class="num" style="--c:#fbbc04"><b dir="ltr">22.744</b><span>righe reali di conferenze e riviste su Scholar, ciascuna con il risultato verificato</span></div>
@@ -435,7 +435,7 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
         <li>Apri <code>chrome://extensions</code> e attiva la Modalità sviluppatore.</li>
         <li>Clicca su “Carica estensione non pacchettizzata” e seleziona la cartella src. Poi apri un profilo di Google Scholar.</li>
       </ol>
-      <p class="note">Edge, Brave e gli altri browser Chromium seguono gli stessi passaggi. Più avanti potrebbe arrivare una scheda nel Chrome Web Store.</p>
+      <p class="note">Edge, Brave e gli altri browser Chromium seguono gli stessi passaggi. Più avanti potrebbe arrivare una versione sul Chrome Web Store.</p>
     </div>
   </section>
 
