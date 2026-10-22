@@ -12,6 +12,12 @@
   are issues ("D1", "suppl_1", "CSCW2", "3&4", "1 (SIGMOD)"); a line Scholar cut inside the issue keeps its volume ("TODAES 11 (1 …" is
   volume 11); *Findings of the ACL*, extended abstracts, symposia, congresses and companion proceedings are proceedings ([C]); a
   conference with an arXiv number stays a conference; "4 pp." and a second full stop are no longer printed.
+- **An independent review of those fixes** (5 misread real lines, 3 rules too broad): issues named in capitals are issues
+  ("1 (OOPSLA)", "8 (CHI PLAY)"), as are "2--3", "11_Supplement", "2, Part 1" and "Special Centennial Issue"; where the pages are read but
+  the "V (…)" before them is not ("55 (1.2)", "38 (4 : SIGGRAPH 2019)", "12 (Article 1047)") the line is given as printed, not half
+  read; the short forms *Proc. VLDB Endow.* and *Proc. ACM Program. Lang.* are journals; Scholar's "# PLACEHOLDER_PARENT_METADATA_VALUE#"
+  is no venue and its numbers are none; a bare "no. 3" after a volume is its issue, so the line is given as printed; a preprint cut
+  inside its issue gets no volume; a year-led thesis, report or journal with an issue keeps its own type.
 - **Two wrong badges from the same audit**: a venue line that opens with its year is IEEE's title for a meeting's proceedings, so it
   is no journal's ("2010 Internet of Things (IOT)" had CCF's IEEE Internet of Things Journal, started 2014; the cut "2011 7th
   international wireless communications and mobile computing …" had the journal of those words and now has CORE's IWCMC). The real

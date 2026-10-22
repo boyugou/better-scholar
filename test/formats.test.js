@@ -325,8 +325,8 @@ test("over the 22,744 real venue lines, the parts keep every word of the line an
   for (const line of lines) {
     const r = f.venueParts(line);
     for (const f of ["volume", "issue", "pages", "year"]) assert.ok(!r[f] || line.replace(/\s+/g, "").includes(r[f].split("-")[0].replace(/\s+/g, "")), `${line}: ${f} ${r[f]} is not in the line`);
-    assert.ok(r.name || !line.trim() || /^[\d,\s-]+$/.test(line), `${line}: no name left`);
-    assert.ok(squash(line).startsWith(squash(r.name).replace(/…$/, "")), `${line}: the name ${r.name} is not where the line begins`);
+    assert.ok(r.name || !line.trim() || /^[\d,\s-]+$/.test(line) || /^#\s*PLACEHOLDER_/.test(line), `${line}: no name left`);
+    if (r.name) assert.ok(squash(line).startsWith(squash(r.name).replace(/…$/, "")), `${line}: the name ${r.name} is not where the line begins`);
     // a split never leaves a label or half a number behind it ("Article No.", "Vol.", "10,007" of a patent's "10,007,785")
     if (r.volume || r.pages) assert.doesNotMatch(r.name, /(?:\b(?:no|vol|article)\.?:?|\bart\.|,\s*paper|\d,\d{1,3}|\d+:\s?\d*\s*-\s*\d*:?)$/i, `${line}: the name ${r.name} ends in a label or half a number`);
   }
@@ -478,5 +478,31 @@ test("the venue line: a name that opens with its year is a meeting's, a web addr
   assert.match(f.gbt([paper("URL https://llava-vl. github. io/blog/2024-01-30-llava-next 1 (8), 2024")]), /T\[Z\]\./);
   assert.equal(f.venueParts("2018 IEEE International Electron Devices Meeting (IEDM), 15.6. 1-15.6. 4, 2018").pages, "15.6.1-15.6.4");
   assert.deepEqual(f.venueParts("Current protocols in bioinformatics 55 (1), 12.14. 1-12.14. 18, 2016"), { name: "Current protocols in bioinformatics", volume: "55", issue: "1", pages: "12.14.1-12.14.18", year: "2016" });
+});
+
+test("the venue line, from an independent review of the snapshot fixes: issues in capitals, half-read lines, short Proc. forms, junk, bare no.", () => {
+  const vp = f.venueParts;
+  const paper = (venue, type) => ({ title: "T", authors: "K He", venue, year: 2018, type, url: "", rank: {}, marks: [] });
+  assert.deepEqual(vp("Proceedings of the ACM on Programming Languages 1 (OOPSLA), 1-22, 2017"), { name: "Proceedings of the ACM on Programming Languages", volume: "1", issue: "OOPSLA", pages: "1-22", year: "2017" });
+  assert.equal(vp("Proceedings of the ACM on Human-Computer Interaction 8 (CHI PLAY), 1-30, 2024").issue, "CHI PLAY");
+  assert.equal(vp("IEEE transactions on software engineering 18 (March), 190-205, 1992").issue, "", "a month in brackets is no issue");
+  assert.deepEqual(vp("Information Retrieval Journal 21 (2--3), 111--182, 2018"), { name: "Information Retrieval Journal", volume: "21", issue: "2-3", pages: "111-182", year: "2018" });
+  for (const v of ["IBM Journal of Research and Development 55 (1.2), 6: 1-6: 14, 2011", "ACM Transactions on Graphics 38 (4 : SIGGRAPH 2019), Article 28, 2019", "Frontiers in Neuroscience 12 (Article 1047), 1-19, 2019"])
+    assert.equal(vp(v).pages, "", `${v}: the pages are not read where the "V (…)" before them is not: the line as printed, not half of it`);
+  assert.equal(vp("Proceedings of the Web Conference 2021 (WWW 2021), 1516-1527, 2021").pages, "1516-1527", "a year's brackets are the name's");
+  assert.equal(vp("Annals of internal medicine 172 (11_Supplement), S137-S144, 2020").issue, "11_Supplement");
+  assert.equal(vp("Journal of political economy 82 (2, Part 1), 225-249, 1974").issue, "2, Part 1");
+  assert.equal(vp("Proceedings of the IEEE 100 (Special Centennial Issue), 1309-1312, 2012").issue, "Special Centennial Issue");
+  assert.match(f.gbt([paper("Proc. VLDB Endow. 15 (10), 2019-2031, 2022", "conference")]), /T\[J\]\. Proc\. VLDB Endow\., 2018, 15\(10\): 2019-2031\.$/);
+  assert.match(f.gbt([paper("Proc. ACM Program. Lang. 6 (POPL), 1-29, 2022", "conference")]), /T\[J\]\. Proc\. ACM Program\. Lang\., 2018, 6\(POPL\): 1-29\.$/);
+  // Scholar's placeholder is no venue, and its numbers are none either
+  for (const style of ["gbt", "apa", "ieee", "bibtex"]) assert.doesNotMatch(f[style]([paper("# PLACEHOLDER_PARENT_METADATA_VALUE# 271, 8: 1-8: 13, 2023")]), /PLACEHOLDER|271/, style);
+  // a bare "no." after a volume is its issue: given as printed
+  assert.deepEqual(vp("Neural Computation 12, no. 3, 2000"), { name: "Neural Computation 12, no. 3", volume: "", issue: "", pages: "", year: "2000" });
+  assert.equal(vp("ACM Transactions on Computer Systems 44 (1), Article No. 1, 2026").pages, "1");
+  // a preprint cut inside its issue has no volume; a year-led thesis, report or journal with an issue keeps its own type
+  assert.equal(vp("arXiv preprint arXiv:2108.00154 1 (2 …, 2021").volume, "");
+  assert.match(f.gbt([paper("2018 PhD Thesis, University of Oxford, 2018")]), /T\[D\]\./);
+  assert.match(f.gbt([paper("2014 IEEE Network 28 (4), 1-8, 2014")]), /T\[J\]\. 2014 IEEE Network, 2018, 28\(4\): 1-8\.$/);
 });
 

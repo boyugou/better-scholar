@@ -163,7 +163,8 @@
   const ACRONYM = /^[A-Z]{2,6}(?:\s\d{2,4})?$/;          // (case-sensitive: "BMVC" is a meeting's acronym, "Nature" and "eLife" are journals)
   const periodical = (p) => { if (entryType(p).type !== "misc" || isDocument(p)) return false; const { name, volume } = venueParts(p.venue); return !!volume && !NOT_PERIODICAL.test(name) && !ACRONYM.test(name); };
   // the venue line as Scholar printed it, without the year at its end (for such a document, which no rule splits)
-  const asPrinted = (text) => { const s = clean(text).replace(/\s+/g, " ").replace(/,\s*(?:19|20)\d{2}$/, "").replace(/,\s*0$/, "").trim();          // (Scholar's ", 0" stands for no year)
+  const JUNK = /^#\s*PLACEHOLDER_/;          // (Scholar's "# PLACEHOLDER_PARENT_METADATA_VALUE#" where it has no venue)
+  const asPrinted = (text) => { if (JUNK.test(clean(text))) return ""; const s = clean(text).replace(/\s+/g, " ").replace(/,\s*(?:19|20)\d{2}$/, "").replace(/,\s*0$/, "").trim();          // (Scholar's ", 0" stands for no year)
       return /[\p{L}\p{N}]/u.test(s) ? s : ""; };
   // A number equal to the year's last two digits after a name is that edition's year, not a volume: "STOC 18, 2018", "Proc. IEEE Globecom 98", "ISCA 12".
   // Two digits: after a short name or one that says it is a meeting; one digit ("INFOCOM 2004 4", "Results in Engineering 24" aside): after a short name only.
@@ -181,11 +182,13 @@
     const keep = () => ({ name: s.replace(/[,;:]\s*$/, ""), volume: "", issue: "", pages: "", year });
     if (/…|\.\.\./.test(s)) {
       // (Scholar cut the line inside the issue, "TODAES 11 (1 …": the volume before it is whole, the cut issue is left out)
-      if ((m = /\s(\d{1,4})\s\(\d+\s?…$/.exec(s)) && !/…|\.\.\./.test(s.slice(0, m.index)) && (!/^(?:19|20)\d{2}$/.test(m[1]) || /\b(?:journal|transactions|proceedings on)\b/i.test(s.slice(0, m.index)))
+      if ((m = /\s(\d{1,4})\s\(\d+\s?…$/.exec(s)) && !/\b(?:arxiv|biorxiv|medrxiv|preprint)\b/i.test(s) && !/…|\.\.\./.test(s.slice(0, m.index)) && (!/^(?:19|20)\d{2}$/.test(m[1]) || /\b(?:journal|transactions|proceedings on)\b/i.test(s.slice(0, m.index)))
         && !CHAPTER.test(s.slice(0, m.index)) && !LABEL_BEFORE.test(s.slice(0, m.index)) && !editionYear(m[1], s.slice(0, m.index + 1), year)) return { name: s.slice(0, m.index).replace(/[,;:]\s*$/, ""), volume: m[1], issue: "", pages: "", year };
       return keep();
     }
-    if ((m = /,\s*(?:\d{1,3}\s*pp\.?|(?:article|art\.)(?:\s*no\.?:?)?\s*(\d{1,6})|no\.:?\s*(\d{1,6})|(\d{1,4}(?:\.\d{1,3})?[:.]\s?\d{1,3}\s*-\s*\d{1,4}(?:\.\d{1,3})?[:.]\s?\d{1,3}))$/i.exec(s))) { pages = (m[1] || m[2] || m[3] || "").replace(/\s+/g, ""); s = s.slice(0, m.index).trim(); }
+    if ((m = /,\s*(?:\d{1,3}\s*pp\.?|(?:article|art\.)(?:\s*no\.?:?)?\s*(\d{1,6})|no\.:?\s*(\d{1,6})|(\d{1,4}(?:\.\d{1,3})?[:.]\s?\d{1,3}\s*-\s*\d{1,4}(?:\.\d{1,3})?[:.]\s?\d{1,3}))$/i.exec(s))) {
+      if (m[2] && !/\)$/.test(s.slice(0, m.index).trim())) return keep();          // (a bare "no. 3" after a volume is its issue: "Neural Computation 12, no. 3" is given as printed)
+      pages = (m[1] || m[2] || m[3] || "").replace(/\s+/g, ""); s = s.slice(0, m.index).trim(); }
     // (Scholar puts ", " between its fields: "US Patent 10,007,785" and "11,985-11,993" are one number each)
     if (!pages && (m = /,\s+([A-Za-z]{0,4}\d{1,16}(?:\s*-{1,2}\s*[A-Za-z]{0,4}\d{1,16})?(?:\.\s?e\d{1,3})?)$/.exec(s)) && (!/^(?:19|20)\d{2}$/.test(m[1]) || /\s\d{1,4}\s*\([^()]+\)$/.test(s.slice(0, m.index)))) {
       if (LABEL_BEFORE.test(s.slice(0, m.index)) || /\d,\d{1,3}$/.test(s)) return keep();
@@ -193,26 +196,30 @@
       s = s.slice(0, m.index).trim();
     }
     if ((m = /\s(\d{1,4})\s\((\d{1,2})\s\([A-Z]{2,10}\)$/.exec(s))) { volume = m[1]; issue = m[2]; s = s.slice(0, m.index).trim(); }        // (PACMMOD's "4 (1 (SIGMOD)", one bracket short)
-    else if ((m = /\s(\d{1,4})\s*\((\d{1,4}(?:\s*[-‐–]\s*\d{1,4})?|[A-Za-z]{1,4}|[A-Za-z]{0,10}[ _]?\d{1,4}[A-Za-z]{0,3}\d?|\d{1,2}\s?(?:pt|Pt)\.?\s?\d|\d{1,2}\s?[/&]\s?\d{1,2}|[A-Za-z]+_\d|(?:suppl?|supplement)[ _]?\d*)\)$/i.exec(s)) && (!/^(?:19|20)\d{2}$/.test(m[1]) || (/^\d{1,2}$/.test(m[2]) && /\b(?:journal|transactions|proceedings on)\b/i.test(s.slice(0, m.index)))) && !CHAPTER.test(s.slice(0, m.index)) && !LABEL_BEFORE.test(s.slice(0, m.index))) {
-      volume = m[1]; issue = m[2].replace(/\s*-\s*/, "-"); s = s.slice(0, m.index).trim();
+    else if ((m = /\s(\d{1,4})\s*\((\d{1,4}(?:\s*(?:--|[-‐–])\s*\d{1,4})?|[A-Za-z]{1,4}|(?!art)[A-Za-z]{0,10}[ _]?\d{1,4}[A-Za-z]{0,3}\d?|\d{1,2},?\s?(?:pt\.?|part)\s?\d|\d{1,3}[ _]?(?:suppl?\.?|supplement)|[A-Za-z]+(?: [A-Za-z]+){0,3} issue|\d{1,2}\s?[/&]\s?\d{1,2}|[A-Za-z]+_\d|(?:suppl?|supplement)[ _]?\d*)\)$/i.exec(s)) && (!/^(?:19|20)\d{2}$/.test(m[1]) || (/^\d{1,2}$/.test(m[2]) && /\b(?:journal|transactions|proceedings on)\b/i.test(s.slice(0, m.index)))) && !CHAPTER.test(s.slice(0, m.index)) && !LABEL_BEFORE.test(s.slice(0, m.index))) {
+      volume = m[1]; issue = m[2].replace(/\s*-{1,2}\s*/, "-"); s = s.slice(0, m.index).trim();
+    } else if ((m = /\s(\d{1,4})\s\(([A-Z]{2,10}(?: [A-Z]{2,6})?)\)$/.exec(s)) && !/^(?:19|20)\d{2}$/.test(m[1]) && !CHAPTER.test(s.slice(0, m.index))) {
+      volume = m[1]; issue = m[2]; s = s.slice(0, m.index).trim();          // (an issue named in capitals: "1 (OOPSLA)", "8 (CHI PLAY)"; case-sensitive, so "(March)" is not one)
+    } else if (pages && (m = /\s(\d{1,4})\s*\([^()]*\)$/.exec(s)) && !/^(?:19|20)\d{2}$/.test(m[1])) {
+      s = whole.replace(/,\s*(?:19|20)\d{2}$/, ""); return keep();          // (pages read but not the "V (…)" before them — "21 (2.3)", "38 (4 : SIGGRAPH 2019)": the line as printed, not half of it; a year's brackets are the name's: "Web Conference 2021 (WWW 2021)")
     } else if ((m = /[^,\s]\s(\d{1,3})$/.exec(s)) && !MONTH.test(s.slice(0, m.index + 1)) && !CHAPTER.test(s.slice(0, m.index + 1)) && !LABEL_BEFORE.test(s.slice(0, m.index + 1))
       && !editionYear(m[1], s.slice(0, m.index + 1), year)) {
       volume = m[1]; s = s.slice(0, m.index + 1).trim();
     }
     if (/\b(?:arxiv|biorxiv|medrxiv|preprint)\b/i.test(s)) { volume = ""; issue = ""; }
     const name = s.replace(/[,;:]\s*$/, "");
-    return { name: /[\p{L}\p{N}]/u.test(name) ? name : "", volume, issue, pages, year };          // (a line of dashes is no venue)
+    return /[\p{L}\p{N}]/u.test(name) && !JUNK.test(name) ? { name, volume, issue, pages, year } : { name: "", volume: "", issue: "", pages: "", year };          // (a line of dashes is no venue, nor Scholar's placeholder: no numbers of its own either)
   }
 
   function entryType(p) {
     const venue = venueParts(p.venue).name;
     if (!venue) return { type: "misc", field: "" };
     if (/patent\b/i.test(venue)) return { type: "misc", field: "howpublished" };
-    if (/^proceedings of the (?:ieee|national academy of sciences)(?:\s*\([^()]*\))?$/i.test(venue) || /^(?:[\w-]+:\s*)?(?:proceedings of the (?:acm on (?!web conference)|vldb endowment)|proceedings on privacy enhancing technologies)\b/i.test(venue)) return { type: "article", field: "journal" };   // (journals literally titled so)
+    if (/^proceedings of the (?:ieee|national academy of sciences)(?:\s*\([^()]*\))?$/i.test(venue) || /^(?:[\w-]+:\s*)?(?:proceedings of the (?:acm on (?!web conference)|vldb endowment)|proceedings on privacy enhancing technologies|proc\.? acm [a-z]\w*|proc\.? vldb endow)\b/i.test(venue)) return { type: "article", field: "journal" };   // (journals literally titled so)
     if (p.type === "journal" || (p.type !== "conference" && /arxiv\b|biorxiv\b|medrxiv\b/i.test(venue))) return { type: "article", field: "journal" };
     if (p.type === "conference") return { type: "inproceedings", field: "booktitle" };
     // ("2015 IEEE Trustcom/BigDataSE/ISPA 1", "2010 Internet of Things (IOT)": a name that opens with its year is the title of a meeting's proceedings, IEEE's form)
-    if (/^(?:19|20)\d{2}\s+\S/.test(venue) && !/journal|transactions|letters|magazine/i.test(venue)) return { type: "inproceedings", field: "booktitle" };
+    if (/^(?:19|20)\d{2}\s+\S/.test(venue) && !/journal|transactions|letters|magazine/i.test(venue) && !DOCUMENT.test(venue) && !venueParts(p.venue).issue) return { type: "inproceedings", field: "booktitle" };
     if ((venueParts(p.venue).issue || /\s\d{1,4}\s\(\d+\s?…/.test(p.venue)) && !/\b(?:conference|symposium|workshop|tech(?:nical|\.)?\s*rep(?:ort)?)\b|https?:|\bwww\./i.test(venue)) return { type: "article", field: "journal" };           // ("44 (8)", or cut "44 (8 …": a volume with an issue is a periodical's)
     if (/journal(?!is)|transactions|letters|review|annals|magazine|ieee\/acm trans/i.test(venue)) return { type: "article", field: "journal" };
     if (/conference|symposi(?:um|a)|proceedings?\b|workshop|annual|proc\.|\bcongress\b|extended abstracts|^findings of the|companion proceedings/i.test(venue)) return { type: "inproceedings", field: "booktitle" };
