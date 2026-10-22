@@ -239,3 +239,16 @@ test("an independent review of the award fixes: a runner-up or a finalist writte
   ]);
   assert.deepEqual(once.map((ms) => ms.map((m) => m.kind)), [["tot"], ["oral"], [], ["best"], ["tot"]]);
 });
+
+test("a test-of-time award on the list leaves the authors' own \"Best Paper\" standing; a hidden duplicate keeps no award; one title key with the lookup", () => {
+  const merged = marks.merge([{ kind: "best", text: "Best Paper Award" }], [{ kind: "tot", venue: "SIGOPS", year: 2015, awardLabel: "" }]);
+  assert.deepEqual(merged.map((m) => m.kind).sort(), ["best", "tot"]);
+  const L = (kind, venue, year) => ({ kind, venue, year, awardLabel: "", source: "list" });
+  const once = marks.listedOnce([
+    { title: "MapReduce", year: 2004, hidden: true, marks: [L("tot", "SIGOPS", 2015)] },
+    { title: "MapReduce", year: 2008, marks: [L("tot", "SIGOPS", 2015)] }
+  ]);
+  assert.deepEqual(once.map((ms) => ms.length), [0, 1], "the row that stays holds the award");
+  const fold = (t) => t.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "");
+  assert.deepEqual(marks.listedOnce([{ title: "Naïve Bayes", year: 2001, marks: [L("best", "X", 2001)] }, { title: "Naive Bayes", year: 2003, marks: [L("best", "X", 2001)] }], fold).map((ms) => ms.length), [1, 0]);
+});

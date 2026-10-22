@@ -2,6 +2,15 @@
 
 ## 2.41.0 — 2026-10-15
 
+- **Today's fixes, reviewed again** (eight regressions, each found by running the code): (1) *a profile header in capitals* ("TANG JIE", "WANG
+  WEI") *found its owner in no row* — its rearranged spelling "JIE TANG" was read as initials by the new capitals rule (76 of 100 rows again);
+  (2) a test-of-time award on the list deleted the "Best Paper" the authors typed — only a listed runner-up or finalist does that now; (3) with
+  *Merge duplicates* on, the award could stay on the hidden copy — a hidden row now holds no award another row can, and the rule runs again after
+  the merge; (4) only patents, theses and reports are given as Scholar printed them (2,052 other unclassified lines kept their italics and pages
+  again); (5) the edition-year rule took real volumes ("Results in Engineering 24", "IEEE INFOCOM 2004 4") — now only for a short name without a
+  year; (6) "art" and "paper" are words ("the state of the art", "Pulp & Paper") — the labels are "Art." and a field "paper"; (7) one title key with
+  the award lookup ("Naïve" = "Naive"); (8) an en dash in a venue's name stays one, and a lone number after a proceedings' name is no longer
+  printed as a volume or an article number. Regression tests for each.
 - **Roles and awards, an independent review of the 2026-10-17 fixes** (654 real rows, ~60,000 generated author lines, the venue and title
   corpora): (1) *a joined surname matched another that only shared its last part* — "MG Perez-Lopez" was "Maria Garcia-Lopez", read through
   the "G" — the parts before the last now belong to the surname and must be equal (and the owner's own "M Carreira-Perpinan" is found again);

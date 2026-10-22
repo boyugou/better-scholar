@@ -112,11 +112,12 @@
         link.classList.remove("rr-merged");
       }
     });
+    awardsOnce();          // (a row now hidden as a duplicate gives its award to the one that stays)
   }
 
   // (one award of the list marks one row: a title listed twice, a paper and its reprint, gets it on one of them — marks.listedOnce)
   function awardsOnce() {
-    const kept = marks.listedOnce(state.rows.map((r) => ({ title: r.raw.title, year: r.raw.year, marks: r.a.allMarks || (r.a.allMarks = r.a.marks) })));
+    const kept = marks.listedOnce(state.rows.map((r) => ({ title: r.raw.title, year: r.raw.year, hidden: !!r.dupHidden, marks: r.a.allMarks || (r.a.allMarks = r.a.marks) })), B.awards ? B.awards.titleKey : undefined);
     state.rows.forEach((r, i) => { r.a.marks = kept[i]; });
   }
   const reanalyze = () => { state.rows.forEach((r) => { r.a = analyzeRaw(r.raw); }); awardsOnce(); };

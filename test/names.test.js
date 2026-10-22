@@ -410,3 +410,11 @@ test("an independent review of the 2026-10-17 fixes: joined surnames compare who
   assert.equal(role("A Smith*, B Jones*, …", "Alice Smith"), "first");
   assert.equal(role("A Smith*, B Jones*, C Lee, …", "Alice Smith"), "cofirst");
 });
+
+test("a profile header in capitals keeps its rearranged spelling: \"TANG JIE\" finds \"Jie Tang\" in its rows as \"Tang Jie\" does (a short given name in capitals is a name there, not initials)", () => {
+  const rows = require("./fixtures/profiles/tang-jie.json").rows.map((r) => r[0]);
+  const found = (owner) => rows.filter((t) => names.classifyRow(t, owner).status === "found").length;
+  const plain = found({ name: "Tang Jie", alternates: ["Jie Tang"] });
+  assert.ok(plain > 50, `Tang Jie: ${plain} rows`);
+  assert.equal(found({ name: "TANG JIE", alternates: ["JIE TANG"] }), plain);
+});

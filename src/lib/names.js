@@ -187,7 +187,7 @@
       }
       // a spelling written in initials ("SY Philip", offered from the papers or typed in) is that print form and no other: "S Philip" and "Sam Philip" are other people
       const form = ownerForm(v);
-      if (v !== owner.name && form.parts.givens.length && form.parts.givens.every((g) => g.length === 1 || (form.caps && g.length <= 3))) {          // ("JA DOUDNA": in capitals "JA" is two initials, not a name)
+      if (v !== owner.name && form.parts.givens.length && form.parts.givens.every((g) => g.length === 1 || (form.caps && !ownerForm(owner.name).caps && g.length <= 3))) {          // ("JA DOUDNA": in capitals "JA" is two initials, not a name)
        if (a.norm === undefined) a.norm = normalize(a.raw); best = Math.max(best, a.norm === form.norm ? 3 : 0); continue; }
       // (the name as printed, once the page has chosen its rearrangement: only the identical name is still the owner's — "L Wei" is not "Li Wei" where "W Li" is)
       if (owner.exactName && v === owner.name) { if (a.norm === undefined) a.norm = normalize(a.raw); best = Math.max(best, a.norm === ownerForm(v).norm ? 3 : 0); continue; }

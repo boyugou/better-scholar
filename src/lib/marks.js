@@ -164,7 +164,7 @@
     const byKind = new Map();
     for (const m of declared || []) byKind.set(m.kind, m);
     if ((listed || []).some((m) => TOP.has(m.kind))) byKind.delete("finalist");          // (a paper the list says won is no mere finalist, whatever its authors typed)
-    else if ((listed || []).length) for (const k of TOP) byKind.delete(k);          // (and one the list names only as a runner-up or a finalist did not win, whatever its authors typed)
+    else if ((listed || []).some((m) => m.kind === "runner-up" || m.kind === "finalist")) for (const k of TOP) byKind.delete(k);          // (and one the list names as a runner-up or a finalist did not win, whatever its authors typed; a test-of-time award says nothing of that)
     for (const m of listed || []) {
       const prev = byKind.get(m.kind);
       byKind.set(m.kind, {
@@ -212,15 +212,16 @@
   // One award of the list marks one row of a profile. A title the profile lists twice — the conference paper and its journal or magazine reprint
   // ("MapReduce" 2004 and 2008, AlexNet 2012 and 2017) — gets it once: a test-of-time award on the earliest row, any other on the row whose year is
   // closest to the award's. rows: [{ title, year, marks }] → the marks of each row, without the award copies the other row keeps.
+  // (titleKey: the award list's own key of a title, so that "Naïve" and "Naive" are one title here as in the lookup; a row hidden as a duplicate keeps no award another row can hold)
   const titleOf = (t) => String(t || "").toLowerCase().replace(/[^\p{L}\p{N}]+/gu, "");
-  function listedOnce(rows) {
-    const keyOf = (r, m) => [titleOf(r.title), m.kind, m.venue, m.year, m.awardLabel].join("|");
+  function listedOnce(rows, titleKey = titleOf) {
+    const keyOf = (r, m) => [titleKey(r.title), m.kind, m.venue, m.year, m.awardLabel].join("|");
     const best = new Map();
     rows.forEach((r, i) => {
       const y = Number(r.year);
       for (const m of r.marks || []) {
         if (m.source !== "list") continue;
-        const score = !Number.isFinite(y) || !y ? Infinity : m.kind === "tot" ? y : Math.abs(y - m.year);
+        const score = r.hidden ? Infinity : !Number.isFinite(y) || !y ? 1e9 : m.kind === "tot" ? y : Math.abs(y - m.year);
         const k = keyOf(r, m), b = best.get(k);
         if (!b || score < b.score) best.set(k, { i, score });
       }

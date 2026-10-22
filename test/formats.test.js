@@ -158,7 +158,7 @@ test("apa: authors, year, title, venue, address; a particle stays with the surna
   assert.ok(apa.includes("Stoica, I., Morris, R., Karger, D., Kaashoek, M. F., & Balakrishnan, H. (2001). Chord: A scalable peer-to-peer lookup service for internet applications. In *ACM SIGCOMM Computer Communication Review*. https://scholar.google.com"));
   assert.ok(apa.includes("Shannon, C. E. (1948). A Mathematical Theory of Communication. *The Bell System Technical Journal*."));
   assert.ok(apa.includes("Vaswani, A., & Shazeer, N. (2017). Attention Is All You Need. In *Advances in Neural Information Processing Systems*."));
-  assert.ok(apa.includes("Alpha, A., Beta, B., Gamma, C., Delta, D., … (n.d.). Massive Multi-Author Study. Preprint."));
+  assert.ok(apa.includes("Alpha, A., Beta, B., Gamma, C., Delta, D., … (n.d.). Massive Multi-Author Study. *Preprint*."));
   assert.equal(f.apaAuthor("L van der Maaten"), "van der Maaten, L.");
   assert.equal(f.apaAuthor("MD de León Derby"), "de León Derby, M. D.");
   assert.equal(f.apaAuthor("J Van Der Oost"), "Van Der Oost, J.");
@@ -328,7 +328,7 @@ test("over the 22,744 real venue lines, the parts keep every word of the line an
     assert.ok(r.name || !line.trim() || /^[\d,\s-]+$/.test(line), `${line}: no name left`);
     assert.ok(squash(line).startsWith(squash(r.name).replace(/…$/, "")), `${line}: the name ${r.name} is not where the line begins`);
     // a split never leaves a label or half a number behind it ("Article No.", "Vol.", "10,007" of a patent's "10,007,785")
-    if (r.volume || r.pages) assert.doesNotMatch(r.name, /(?:\b(?:no|vol|article|art|paper)\.?:?|\d,\d{1,3}|\d+:\s?\d*\s*-\s*\d*:?)$/i, `${line}: the name ${r.name} ends in a label or half a number`);
+    if (r.volume || r.pages) assert.doesNotMatch(r.name, /(?:\b(?:no|vol|article)\.?:?|\bart\.|,\s*paper|\d,\d{1,3}|\d+:\s?\d*\s*-\s*\d*:?)$/i, `${line}: the name ${r.name} ends in a label or half a number`);
   }
 });
 
@@ -390,10 +390,23 @@ test("the venue line, from an independent review: what is not a part stays in th
   assert.match(f.gbt([paper("PhD thesis, Massachusetts Institute of Technology, 2018", null)]), /\[D\]\. PhD thesis/);
   // proceedings: APA "In … (Vol., pp.)", IEEE "vol." and "Art. no."
   assert.match(f.apa([paper("ICPR'06 1, 139-142, 2018", "conference")]), /In \*ICPR'06\* \(Vol\. 1, pp\. 139–142\)\.$/);
-  assert.match(f.ieee([paper("CHI Conference on Human Factors in Computing Systems, 42, 2018", "conference")]), /2018, Art\. no\. 42\.$/);
+  assert.match(f.ieee([paper("CHI Conference on Human Factors in Computing Systems, 42, 2018", "conference")]), /Systems\*, 2018\.$/, "a lone number after a proceedings' name is not printed");
   // IEEE: a title's own question mark takes no comma; GB/T: "等" after Chinese names
   assert.match(f.ieee([paper("", null, { title: "Why does it work?" })]), /"Why does it work\?" /);
   assert.match(f.gbt([paper("", null, { authors: "何恺明, 张祥雨, 任少卿, 孙剑" })]), /任少卿, 等\. A Title/);
   // a conference name with a volume and an issue is still a conference
   assert.match(f.bibtex([paper("Proceedings of IASEAI Conference 2 (1), 2025", null)]), /^@inproceedings\{/);
+});
+
+test("the venue line, second review: a long name's number is a volume, the bare words art and paper are names, the fields of a line not a document stay structured", () => {
+  const vp = f.venueParts;
+  assert.equal(vp("Results in Engineering 24, 103212, 2024").volume, "24");
+  assert.equal(vp("IEEE INFOCOM 2004 4, 2004").volume, "4");
+  assert.equal(vp("STOC 18, 2018").volume, "");
+  assert.equal(vp("Data visualization: The state of the art, 201-212, 2003").pages, "201-212");
+  assert.equal(vp("Pulp & Paper 34 (2), 10-12, 2010").volume, "34");
+  assert.equal(vp("Proceedings of the workshop, January 5–7, 1983, 12–14, 1983").name, "Proceedings of the workshop, January 5–7, 1983");
+  const paper = (venue, type) => ({ title: "T", authors: "A Author", venue, year: 2015, type, url: "", rank: {}, marks: [] });
+  assert.match(f.apa([paper("ISMIR, 260-265, 2015", null)]), /\*ISMIR\* \(pp\. 260–265\)\.$/);
+  assert.match(f.ieee([paper("USENIX security symposium 49, 50, 2015", "conference")]), /in \*USENIX security symposium\*, 2015\.$/);
 });
