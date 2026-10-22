@@ -3,7 +3,7 @@
     "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "Google Scholar -profiileissa: omistajan tekijärooli ja artikkelin julkaisufoorumin CCF- ja CORE-luokitus, yhdessä taulukossa."
+    "message": "Google Scholar -profiileissa: omistajan kirjoittajarooli ja artikkelin foorumin CCF- ja CORE-luokka, laskettuna yhteen taulukkoon."
   },
   "extShortName": {
     "message": "Better Scholar"
@@ -51,7 +51,7 @@
     "message": "Parhaan artikkelin finalisti"
   },
   "marksHint": {
-    "message": "Perustuu kahteen lähteeseen: kirjoittajien omiin sanoihin artikkelin otsikossa tai julkaisupaikkarivillä Scholarissa (ei tarkistettu) ja mukana tulevaan luetteloon suurten konferenssien palkituista artikkeleista."
+    "message": "Perustuu kahteen lähteeseen: kirjoittajien omiin sanoihin artikkelin otsikossa tai julkaisufoorumin rivillä Scholarissa (ei tarkistettu) ja mukana tulevaan luetteloon suurten konferenssien palkituista artikkeleista."
   },
   "marksAsWritten": {
     "message": "kirjoittajien omista sanoista tai palkintoluettelosta"
@@ -121,7 +121,7 @@
     "message": "Ei luokkaa"
   },
   "tipHidden": {
-    "message": "Scholar lyhensi kirjoittajaluettelon, joten profiilin omistajan paikka ei näy"
+    "message": "Scholar katkaisi kirjoittajaluettelon, joten profiilin omistajan paikka ei näy"
   },
   "copySummary": {
     "message": "Kopioi yhteenveto"
@@ -158,7 +158,7 @@
     "message": "Peruuta"
   },
   "coverHidden": {
-    "message": "$N1$ roolia piilossa lyhennettyjen kirjoittajaluetteloiden vuoksi",
+    "message": "$N1$ roolia piilossa katkaistujen kirjoittajaluetteloiden vuoksi",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -166,7 +166,7 @@
     }
   },
   "coverHiddenOne": {
-    "message": "1 rooli piilossa lyhennetyn kirjoittajaluettelon vuoksi"
+    "message": "1 rooli piilossa katkaistun kirjoittajaluettelon vuoksi"
   },
   "resolveBtn": {
     "message": "Lue täydet luettelot"
@@ -175,7 +175,7 @@
     "message": "Avaa jokaisen artikkelin sivun Scholarissa (noin yksi sekunnissa) koko kirjoittajaluettelon lukemiseksi."
   },
   "resolveHintSemantic": {
-    "message": "Kysyy ensin Semantic Scholarilta kunkin artikkelin kirjoittajaluettelon (lähetetään vain artikkelin otsikko). Avaa sitten Scholarissa muiden artikkelien sivut, noin yksi sekunnissa."
+    "message": "Kysyy ensin Semantic Scholarilta kunkin artikkelin kirjoittajaluetteloa (lähetetään vain artikkelin otsikko). Avaa sitten Scholarissa muiden artikkelien sivut, noin yksi sekunnissa."
   },
   "resolving": {
     "message": "Luetaan kirjoittajaluetteloita… $N1$/$N2$",
@@ -290,7 +290,7 @@
     "message": "Täsmäsi lyhenteen perusteella"
   },
   "rulePrefix": {
-    "message": "Täsmäsi lyhennetyn nimen näkyvän osan perusteella"
+    "message": "Täsmäsi katkaistun nimen näkyvän osan perusteella"
   },
   "tipToday": {
     "message": "nykyinen luettelo, ei julkaisuhetken luokka"
@@ -482,7 +482,7 @@
     "message": "Palautetaanko kaikki nämä asetukset oletusarvoihin?"
   },
   "optStorage": {
-    "message": "Asetukset tallennetaan selaimeesi ja synkronoidaan Chrome-profiilisi kanssa. Laajennus lukee Scholar-sivut, jotka avaat. Kun painat “Lue täydet luettelot”, se lukee myös sivut artikkeleista, joiden tekijäluettelo on katkaistu. Artikkelien otsikot lähetetään Semantic Scholarille vain, jos otat sen käyttöön."
+    "message": "Asetukset tallennetaan selaimeesi ja synkronoidaan Chrome-profiilisi kanssa. Laajennus lukee Scholar-sivut, jotka avaat. Kun painat “Lue täydet luettelot”, se lukee myös sivut artikkeleista, joiden kirjoittajaluettelo on katkaistu. Artikkelien otsikot lähetetään Semantic Scholarille vain, jos otat sen käyttöön."
   },
   "optSample": {
     "message": "Esimerkkiartikkeli"
@@ -778,7 +778,7 @@
     }
   },
   "tipFilterH": {
-    "message": "Suodata h-ydinjulkaisuihin (≥$N1$ viittausta)",
+    "message": "Suodata h-ydinartikkeleihin (≥$N1$ viittausta)",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -786,7 +786,7 @@
     }
   },
   "tipFilterI10": {
-    "message": "Suodata i10-julkaisuihin (≥10 viittausta)"
+    "message": "Suodata i10-artikkeleihin (≥10 viittausta)"
   },
   "popupPapersOf": {
     "message": "$N1$ / $N2$ artikkelia",
@@ -1034,7 +1034,7 @@
     "message": "Ladatut artikkelit ja “Lataa kaikki”"
   },
   "optStatusCutoff": {
-    "message": "Katkaistut tekijälistat ja “Lue täydet luettelot”"
+    "message": "Katkaistut kirjoittajaluettelot ja “Lue täydet luettelot”"
   },
   "optStatusRepeats": {
     "message": "Toistuvat merkinnät"
@@ -1188,7 +1188,7 @@
     "message": "Lisää profiilin linkki ja päivämäärä kopioituun yhteenvetoon"
   },
   "optCopySourceHint": {
-    "message": "Kopioitu yhteenveto ja kopioitu taulukko päättyvät riviin, jossa on profiilin linkki ja päivämäärä (Source: …), jotta voit arkistoida tai lähettää luvut eteenpäin. Lista, jota ei ole ladattu kokonaan, kertoo siitä aina siinä kohdassa."
+    "message": "Kopioitu yhteenveto ja kopioitu taulukko päättyvät riviin, jossa on profiilin linkki ja päivämäärä (Source: …), jotta voit arkistoida tai lähettää luvut eteenpäin. Luettelo, jota ei ole ladattu kokonaan, kertoo siitä aina siinä kohdassa."
   },
   "unrankedPreprints": {
     "message": "Preprintit"

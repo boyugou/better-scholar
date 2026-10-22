@@ -423,7 +423,7 @@
     "message": "Geladen papers en venues zonder rang"
   },
   "optPanelStatusHint": {
-    "message": "Hoeveel papers er geladen zijn, de knop “Alles laden”, wat niet gelezen kon worden, en de lijst met papers bij publicatiekanalen zonder rang."
+    "message": "Hoeveel papers er geladen zijn, de knop “Alles laden”, wat niet gelezen kon worden, en de lijst met papers bij venues zonder rang."
   },
   "optPanelNames": {
     "message": "Hulp bij naamspelling"
@@ -482,7 +482,7 @@
     "message": "Al deze instellingen terugzetten naar de standaardwaarden?"
   },
   "optStorage": {
-    "message": "Je instellingen blijven in je browser en synchroniseren met je Chrome-profiel. De extensie leest de Scholar-pagina’s die je opent. Als je op “Hele lijsten lezen” drukt, leest de extensie ook de pagina’s van papers met een afgekapte auteurslijst. Paper-titels worden alleen naar Semantic Scholar gestuurd als je dat aanzet."
+    "message": "Je instellingen blijven in je browser en synchroniseren met je Chrome-profiel. De extensie leest de Scholar-pagina’s die je opent. Als je op “Hele lijsten lezen” drukt, leest de extensie ook de pagina’s van papers met een afgekapte auteurslijst. Papertitels worden alleen naar Semantic Scholar gestuurd als je dat aanzet."
   },
   "optSample": {
     "message": "Voorbeeldpaper"
@@ -583,7 +583,7 @@
     "message": "Dubbelen samenvoegen"
   },
   "optMergeLabelHint": {
-    "message": "Vermeldingen met dezelfde titel en dezelfde eerste auteur worden één vermelding (hoofdletters, accenten en leestekens tellen niet mee). De meest geciteerde vermelding blijft en toont de citaties van alle. Het paneel telt hem één keer."
+    "message": "Vermeldingen met dezelfde titel en dezelfde eerste auteur worden één vermelding (hoofdletters, accenten en leestekens tellen niet mee). De meest geciteerde vermelding blijft staan en toont de citaties van alle vermeldingen samen. Het paneel telt die vermelding één keer."
   },
   "mergedTip": {
     "message": "Samengevoegd uit $N1$ vermeldingen: de citaties van alle",
@@ -944,7 +944,7 @@
     "message": "Labels bij elk paper"
   },
   "optChipsHint": {
-    "message": "De kleine labels na het publicatiekanaal van een paper: de rangen, en prijzen of presentaties."
+    "message": "De kleine labels na de venue van een paper: de rangen, en prijzen of presentaties."
   },
   "optPanelOrder": {
     "message": "Volgorde van de onderdelen"
@@ -1043,7 +1043,7 @@
     "message": "Papers zonder jouw naam"
   },
   "optStatusUnranked": {
-    "message": "Papers bij publicatiekanalen zonder rang"
+    "message": "Papers bij venues zonder rang"
   },
   "optNamesHints": {
     "message": "Spellingen die in je papers staan"
@@ -1156,7 +1156,7 @@
     "message": "Geen rang. De lijsten plaatsen deze tekst niet met zekerheid, dus krijgt hij geen label."
   },
   "optVenueSecondary": {
-    "message": "Het woord “$N1$” duidt een secundaire categorie aan, zoals een workshop, een poster of een kort paper. Een venue krijgt geen rang, tenzij de eigen naam dat woord bevat.",
+    "message": "Het woord “$N1$” duidt een secundaire categorie aan, zoals een workshop, een poster of een kort paper. Zo’n venue krijgt geen rang, tenzij de naam van de venue zelf dat woord bevat.",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -1176,7 +1176,7 @@
     "message": "De aantallen volgen de filters"
   },
   "optFiltersFollowHint": {
-    "message": "De tabel, de tellingen voor prijzen en talks en het overzicht om te kopiëren tellen alleen de papers die de filters overlaten: een jaarbereik, een zoekopdracht, een snelfilter of een venue. De geselecteerde cel of rij verandert geen enkele telling. Uit: ze tellen altijd het hele profiel."
+    "message": "De tabel, de tellingen voor prijzen en talks en het gekopieerde overzicht tellen alleen de papers die de filters overlaten: een jaarbereik, een zoekopdracht, een snelfilter of een venue. De geselecteerde cel of rij verandert geen enkele telling. Uit: ze tellen altijd het hele profiel."
   },
   "optPillRecent": {
     "message": "Laatste 5 jaar"
@@ -1200,10 +1200,10 @@
     "message": "Overige venues"
   },
   "optPrefer": {
-    "message": "Als een publicatiekanaal in beide lijsten een rang heeft"
+    "message": "Als een venue in beide lijsten een rang heeft"
   },
   "optPreferHint": {
-    "message": "Eén label in plaats van twee: het label van de lijst die je kiest. Het label van de andere lijst verschijnt alleen waar de gekozen lijst geen rang heeft voor het publicatiekanaal. De tooltip van het label noemt nog steeds de andere rang."
+    "message": "Eén label in plaats van twee: het label van de lijst die je kiest. Het label van de andere lijst verschijnt alleen waar de gekozen lijst geen rang heeft voor de venue. De tooltip van het label noemt nog steeds de andere rang."
   },
   "optPreferCcf": {
     "message": "CCF eerst"

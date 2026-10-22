@@ -3,7 +3,7 @@
     "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "Nei profili Google Scholar: ruolo d’autore del titolare e ranking CCF e CORE di rivista/conferenza per articolo, in una tabella."
+    "message": "Nei profili Google Scholar: ruolo d’autore del titolare e ranking CCF e CORE di conferenza/rivista per articolo, contati in tabella."
   },
   "extShortName": {
     "message": "Better Scholar"
@@ -51,7 +51,7 @@
     "message": "Finalista best paper"
   },
   "marksHint": {
-    "message": "Da due fonti: le parole che gli autori scrivono nel titolo o nella riga di pubblicazione di ogni articolo su Scholar (non verificate), e da un elenco incluso di articoli premiati nelle principali conferenze."
+    "message": "Da due fonti: le parole che gli autori scrivono nel titolo o nella riga della conferenza o rivista di ogni articolo su Scholar (non verificate) e un elenco incluso di articoli premiati nelle principali conferenze."
   },
   "marksAsWritten": {
     "message": "dalle indicazioni degli autori o dall’elenco dei premi"
@@ -1147,13 +1147,13 @@
     "message": "Verifica conferenza/rivista"
   },
   "optVenueHint": {
-    "message": "Incolla una conferenza o rivista come la mostra Scholar: la riga grigia sotto un articolo. Così vedrai cosa ne pensano le liste CCF e CORE, e secondo quale regola. Una conferenza o rivista che non riescono a collocare non riceve alcun ranking. Non si tira a indovinare nulla."
+    "message": "Incolla una conferenza o rivista come la mostra Scholar: la riga grigia sotto un articolo. Così vedrai cosa ne pensano gli elenchi CCF e CORE, e secondo quale regola. Una conferenza o rivista che non riescono a collocare non riceve alcun ranking. Non si tira a indovinare nulla."
   },
   "optVenuePlaceholder": {
     "message": "ad es. Proceedings of the IEEE conference on computer vision and pattern recognition"
   },
   "optVenueNone": {
-    "message": "Senza ranking. Le liste non collocano questo testo con certezza, quindi non riceve alcuna etichetta."
+    "message": "Senza ranking. Gli elenchi non collocano questo testo con certezza, quindi non riceve alcuna etichetta."
   },
   "optVenueSecondary": {
     "message": "La parola «$N1$» indica una categoria secondaria, come workshop, poster o articolo breve. La conferenza o rivista non riceve un ranking, a meno che il suo nome non contenga quella parola.",
@@ -1197,7 +1197,7 @@
     "message": "Categorie secondarie"
   },
   "unrankedOther": {
-    "message": "Altre sedi"
+    "message": "Altre conferenze e riviste"
   },
   "optPrefer": {
     "message": "Quando entrambi gli elenchi classificano una conferenza o una rivista"
