@@ -69,7 +69,7 @@ const FEATURES = ["awards", "complete", "merge", "yours", "private", "lang"];
 const formats = createRequire(import.meta.url)(FORMATS);
 const words = JSON.parse(readFileSync(EXT_WORDS, "utf8"));
 const w = (key) => { if (!words[key]) throw new Error(`the extension's English strings have no "${key}"`); return words[key].message; };
-const EXPORTS = [["bibtex", "BibTeX"], ["apa", "APA"], ["json", "JSON"], ["markdown", "Markdown"], ["csv", "CSV"]];      // (the formats' own names, the same in every language)
+const EXPORTS = [["bibtex", "BibTeX"], ["apa", "APA"], ["ieee", "IEEE"], ["json", "JSON"], ["markdown", "Markdown"], ["csv", "CSV"]];      // (the formats' own names, the same in every language)
 
 function exportSamples() {
   const ranked = (name, ccf, core) => ({ ccf: { tier: ccf, name }, core: { rank: core, name } });
@@ -92,6 +92,7 @@ function exportSamples() {
   return {
     bibtex: formats.bibtex(papers, ctx),
     apa: formats.apa(papers),
+    ieee: formats.ieee(papers),
     json: formats.json({ owner: "A Author", source: "ccf", papers }),
     markdown: formats.markdown(papers, ctx),
     csv: formats.papersCsv(papers, { labels, ...ctx }).replace(/^\ufeff/, "").replace(/\r\n/g, "\n")      // (the byte-order mark is for Excel, the line ends for a file)
