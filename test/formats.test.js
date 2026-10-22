@@ -151,14 +151,14 @@ test("markdown: a publication list; what a title says cannot become a link or ma
 test("apa: authors, year, title, venue, address; a particle stays with the surname; a cut list ends with an ellipsis", () => {
   const apa = f.apa([
     paper({ title: "Chord: A scalable peer-to-peer lookup service for internet applications", authors: "I Stoica, R Morris, D Karger, MF Kaashoek, H Balakrishnan", year: 2001, venue: "ACM SIGCOMM Computer Communication Review" }),
-    paper({ title: "A Mathematical Theory of Communication", authors: "CE Shannon", year: 1948, venue: "The Bell System Technical Journal", url: "" }),
+    paper({ title: "A Mathematical Theory of Communication", authors: "CE Shannon", year: 1948, venue: "The Bell System Technical Journal", url: "", type: "journal" }),
     paper({ title: "Attention Is All You Need", authors: "A Vaswani, N Shazeer", year: 2017, venue: "Advances in Neural Information Processing Systems", url: "" }),
-    paper({ title: "Massive Multi-Author Study", authors: "A Alpha, B Beta, C Gamma, D Delta, ...", year: null, venue: "Preprint", url: "" })
+    paper({ title: "Massive Multi-Author Study", authors: "A Alpha, B Beta, C Gamma, D Delta, ...", year: null, venue: "Preprint", url: "", type: null })
   ]);
-  assert.ok(apa.includes("Stoica, I., Morris, R., Karger, D., Kaashoek, M. F., & Balakrishnan, H. (2001). Chord: A scalable peer-to-peer lookup service for internet applications. *ACM SIGCOMM Computer Communication Review*. https://scholar.google.com"));
+  assert.ok(apa.includes("Stoica, I., Morris, R., Karger, D., Kaashoek, M. F., & Balakrishnan, H. (2001). Chord: A scalable peer-to-peer lookup service for internet applications. In *ACM SIGCOMM Computer Communication Review*. https://scholar.google.com"));
   assert.ok(apa.includes("Shannon, C. E. (1948). A Mathematical Theory of Communication. *The Bell System Technical Journal*."));
-  assert.ok(apa.includes("Vaswani, A., & Shazeer, N. (2017). Attention Is All You Need. *Advances in Neural Information Processing Systems*."));
-  assert.ok(apa.includes("Alpha, A., Beta, B., Gamma, C., Delta, D., … (n.d.). Massive Multi-Author Study. *Preprint*."));
+  assert.ok(apa.includes("Vaswani, A., & Shazeer, N. (2017). Attention Is All You Need. In *Advances in Neural Information Processing Systems*."));
+  assert.ok(apa.includes("Alpha, A., Beta, B., Gamma, C., Delta, D., … (n.d.). Massive Multi-Author Study. Preprint."));
   assert.equal(f.apaAuthor("L van der Maaten"), "van der Maaten, L.");
   assert.equal(f.apaAuthor("MD de León Derby"), "de León Derby, M. D.");
   assert.equal(f.apaAuthor("J Van Der Oost"), "Van Der Oost, J.");
@@ -214,13 +214,13 @@ test("html: the reference list has real italics for the venue (the full stop sta
   const list = [paper({ authors: "I Stoica, R Morris", year: 2001, venue: "ACM SIGCOMM <CCR>", title: "Chord & co" }), paper({ venue: "Nature.", url: "javascript:alert(1)" }), paper({ venue: "", url: "" })];
   const html = f.apaHtml(list).split("\n");
   assert.equal(html.length, 3, "a paragraph each");
-  assert.ok(html[0].startsWith('<p style="margin:0 0 0.6em 0.5in;text-indent:-0.5in">Stoica, I., &amp; Morris, R. (2001). Chord &amp; co. <i>ACM SIGCOMM &lt;CCR&gt;</i>. <a href="https://scholar.google.com/citations?view_op=view_citation&amp;citation_for_view=123">'), html[0]);
-  assert.ok(html[1].includes("<i>Nature.</i> javascript:alert(1)</p>"), "the venue's own full stop is inside the italics, and a script address is only text");
+  assert.ok(html[0].startsWith('<p style="margin:0 0 0.6em 0.5in;text-indent:-0.5in">Stoica, I., &amp; Morris, R. (2001). Chord &amp; co. In <i>ACM SIGCOMM &lt;CCR&gt;</i>. <a href="https://scholar.google.com/citations?view_op=view_citation&amp;citation_for_view=123">'), html[0]);
+  assert.ok(html[1].includes("In <i>Nature.</i> javascript:alert(1)</p>"), "the venue's own full stop is inside the italics, and a script address is only text");
   assert.doesNotMatch(html[1], /<a /);
   assert.doesNotMatch(html[2], /<i>|<a /, "no venue, no address: nothing to italicise or link");
   // the text form (asterisks for the italics) is what it was
-  assert.equal(f.apa(list).split("\n\n")[0], "Stoica, I., & Morris, R. (2001). Chord & co. *ACM SIGCOMM <CCR>*. https://scholar.google.com/citations?view_op=view_citation&citation_for_view=123");
-  assert.ok(f.apa(list).split("\n\n")[1].includes("*Nature.* javascript:alert(1)"));
+  assert.equal(f.apa(list).split("\n\n")[0], "Stoica, I., & Morris, R. (2001). Chord & co. In *ACM SIGCOMM <CCR>*. https://scholar.google.com/citations?view_op=view_citation&citation_for_view=123");
+  assert.ok(f.apa(list).split("\n\n")[1].includes("In *Nature.* javascript:alert(1)"));
 });
 
 test("html: the owner's name is in bold in the author cells when the page marks it, as a whole name of the line and never in the text forms", () => {
@@ -327,13 +327,15 @@ test("over the 22,744 real venue lines, the parts keep every word of the line an
     for (const f of ["volume", "issue", "pages", "year"]) assert.ok(!r[f] || line.includes(r[f].split("-")[0]), `${line}: ${f} ${r[f]} is not in the line`);
     assert.ok(r.name || !line.trim() || /^[\d,\s-]+$/.test(line), `${line}: no name left`);
     assert.ok(squash(line).startsWith(squash(r.name).replace(/…$/, "")), `${line}: the name ${r.name} is not where the line begins`);
+    // a split never leaves a label or half a number behind it ("Article No.", "Vol.", "10,007" of a patent's "10,007,785")
+    if (r.volume || r.pages) assert.doesNotMatch(r.name, /(?:\b(?:no|vol|article|art|paper)\.?:?|\d,\d{1,3}|\d+:\s?\d*\s*-\s*\d*:?)$/i, `${line}: the name ${r.name} ends in a label or half a number`);
   }
 });
 
 test("APA and BibTeX use the parts: italics for a journal's volume, (pp. …) for proceedings, and volume, number and pages fields", () => {
   const paper = (venue, type) => ({ title: "A Title", authors: "A Author, B Writer", venue, year: 2022, type, url: "", rank: {}, marks: [] });
   assert.match(f.apa([paper("IEEE Transactions on Computers 66 (3), 515-530, 2022", "journal")]), /\*IEEE Transactions on Computers\*, \*66\*\(3\), 515–530\.$/);
-  assert.match(f.apa([paper("Conference on Robot Learning, 734-743, 2022", "conference")]), /\*Conference on Robot Learning\* \(pp\. 734–743\)\.$/);
+  assert.match(f.apa([paper("Conference on Robot Learning, 734-743, 2022", "conference")]), /In \*Conference on Robot Learning\* \(pp\. 734–743\)\.$/);
   assert.match(f.apa([paper("Automation in Construction 141, 104387, 2022", "journal")]), /\*Automation in Construction\*, \*141\*, Article 104387\.$/);
   const bib = f.bibtex([paper("IEEE Transactions on Computers 66 (3), 515-530, 2022", "journal")]);
   assert.match(bib, /journal = \{IEEE Transactions on Computers\},\n  volume = \{66\},\n  number = \{3\},\n  pages = \{515--530\}/);
@@ -370,4 +372,28 @@ test("GB/T 7714-2015: capitals and bare initials, [C]// for proceedings, [J] wit
   assert.equal(out[1], "[2] KAASHOEK M F, VAN DER MAATEN L. A Title[J]. IEEE Transactions on Computers, 2017, 66(3): 515-530.");
   assert.equal(out[2], "[3] 张伟, 李娜. A Title[J]. Automation in Construction, 2022, 141: 104387.");
   assert.equal(out[3], "[4] AUTHOR A, et al. A Title[Z].");
+});
+
+test("the venue line, from an independent review: what is not a part stays in the line, and each style says what it is", () => {
+  const vp = f.venueParts;
+  assert.equal(vp("US Patent 10,007,785, 2018").name, "US Patent 10,007,785");
+  assert.equal(vp("Geophysical Research Letters 44 (23), 11,985-11,993, 2017").pages, "");
+  assert.deepEqual(vp("ACM Transactions on Computer Systems 44 (1), Article No. 1, 2026"), { name: "ACM Transactions on Computer Systems 44 (1), Article No. 1", volume: "", issue: "", pages: "", year: "2026" });
+  assert.equal(vp("ACM Transactions on Graphics (ToG) 39 (4), 62: 1-62: 14, 2020").volume, "");
+  assert.deepEqual(vp("STOC 18, 2018"), { name: "STOC 18", volume: "", issue: "", pages: "", year: "2018" });
+  assert.equal(vp("Applied Cryptography and Network Security, 117, 0").volume, "");
+  const paper = (venue, type, over) => ({ title: "A Title", authors: "K He, X Zhang", venue, year: 2018, type, url: "", rank: {}, marks: [], ...over });
+  // a patent or a thesis is given as Scholar printed it; GB/T 7714 gives it its own type code
+  assert.match(f.apa([paper("US Patent 10,007,785, 2018", null)]), /A Title\. US Patent 10,007,785\.$/);
+  assert.match(f.ieee([paper("US Patent 10,007,785, 2018", null)]), /"A Title," US Patent 10,007,785, 2018\.$/);
+  assert.match(f.gbt([paper("US Patent 10,007,785, 2018", null)]), /A Title\[P\]\. US Patent 10,007,785, 2018\.$/);
+  assert.match(f.gbt([paper("PhD thesis, Massachusetts Institute of Technology, 2018", null)]), /\[D\]\. PhD thesis/);
+  // proceedings: APA "In … (Vol., pp.)", IEEE "vol." and "Art. no."
+  assert.match(f.apa([paper("ICPR'06 1, 139-142, 2018", "conference")]), /In \*ICPR'06\* \(Vol\. 1, pp\. 139–142\)\.$/);
+  assert.match(f.ieee([paper("CHI Conference on Human Factors in Computing Systems, 42, 2018", "conference")]), /2018, Art\. no\. 42\.$/);
+  // IEEE: a title's own question mark takes no comma; GB/T: "等" after Chinese names
+  assert.match(f.ieee([paper("", null, { title: "Why does it work?" })]), /"Why does it work\?" /);
+  assert.match(f.gbt([paper("", null, { authors: "何恺明, 张祥雨, 任少卿, 孙剑" })]), /任少卿, 等\. A Title/);
+  // a conference name with a volume and an issue is still a conference
+  assert.match(f.bibtex([paper("Proceedings of IASEAI Conference 2 (1), 2025", null)]), /^@inproceedings\{/);
 });

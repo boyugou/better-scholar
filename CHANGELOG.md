@@ -2,6 +2,13 @@
 
 ## 2.41.0 — 2026-10-15
 
+- **The new reference styles, from an independent review** (the four formats over the 22,744 real lines, ~400 judged by eye): (1) *a patent's
+  number was cut at its thousands comma* (`US Patent 10,007,785` → "US Patent 10,007", 425 real lines) — Scholar puts ", " between fields, so a
+  comma with no space is part of a number; (2) a label's number (`Article No. 1`, `Vol. 2`, `62: 1-62: 14`) was read as a volume; (3) an edition's
+  short year (`STOC 18, 2018`) as a volume; (4) a patent, a thesis or a publisher is now given as Scholar printed it (APA and IEEE in plain text,
+  GB/T with its type code `[P]`, `[D]`, `[R]`); (5) APA proceedings read `In *Proceedings* (Vol. 1, pp. 1–10).`, IEEE gives a proceedings volume
+  and `Art. no.`, a title's own `?` takes no comma, GB/T writes `等` after Chinese names; (6) a conference name with a volume and an issue stays a
+  conference. The corpus test now also checks that no split leaves a label or half a number behind.
 - **Matching, seventeenth independent review** (of the glued-year and accent commits; 39,576 generated forms, the 75,521 real lines): four
   defects, all from my own rules of 2026-10-17, fixed: (1) *a title-cased acronym with a glued year took the journal of the same acronym*:
   `Ase'19`, `Cscw'19`, `Tcc'19`, `Aamas2019` got CCF's journal (B) instead of the conference (A) — the one-word rule now marks a glued year as an

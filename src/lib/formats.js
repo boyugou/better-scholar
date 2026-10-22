@@ -146,18 +146,27 @@
   // the tail is read only in those shapes, and a cut line ("…") keeps its end in the name. A preprint's number after its arXiv id is not a volume, a
   // page "0" is no page, and a number after a month is a day ("Cediti, September 5, 2003"): those stay out.
   const MONTH = /\b(?:jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|june?|july?|aug(?:ust)?|sep(?:t(?:ember)?)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)\.?$/i;
+  // (a number that belongs to a label or to an article-local page range is not a part: "Article No. 1", "Vol. 2", "62: 1-62: 14", "15.6. 1-15.6. 4")
+  const LABEL_BEFORE = /(?:\b(?:no|vol|volume|article|art|paper|heft|band|issue|nr)\.?:?|\d[:.]\s?\d*\s*-\s*\d*[:.]?)$/i;
+  // the venue line as Scholar printed it, without the year at its end (for a patent, a thesis or a publisher, which no rule splits)
+  const asPrinted = (text) => clean(text).replace(/\s+/g, " ").replace(/,\s*(?:19|20)\d{2}$/, "").trim();
   function venueParts(text) {
-    let s = clean(text).replace(/\s+/g, " "), year = "", pages = "", volume = "", issue = "", m;
+    const whole = clean(text).replace(/\s+/g, " ");
+    let s = whole, year = "", pages = "", volume = "", issue = "", m;
     if ((m = /,\s*((?:19|20)\d{2})$/.exec(s))) { year = m[1]; s = s.slice(0, m.index).trim(); }
-    if (/…|\.\.\./.test(s)) return { name: s, volume, issue, pages, year };
-    if ((m = /,\s*([A-Za-z]{0,2}\d{1,7}(?:\s*-\s*[A-Za-z]{0,2}\d{1,7})?)$/.exec(s)) && !/^(?:19|20)\d{2}$/.test(m[1])) {
+    const keep = () => ({ name: s.replace(/[,;:]\s*$/, ""), volume: "", issue: "", pages: "", year });
+    if (/…|\.\.\./.test(s)) return keep();
+    // (Scholar puts ", " between its fields: "US Patent 10,007,785" and "11,985-11,993" are one number each)
+    if ((m = /,\s+([A-Za-z]{0,2}\d{1,7}(?:\s*-\s*[A-Za-z]{0,2}\d{1,7})?)$/.exec(s)) && !/^(?:19|20)\d{2}$/.test(m[1])) {
+      if (LABEL_BEFORE.test(s.slice(0, m.index)) || /\d,\d{1,3}$/.test(s)) return keep();
       if (!/^0+$/.test(m[1])) pages = m[1].replace(/\s*-\s*/, "-");
       s = s.slice(0, m.index).trim();
     }
-    if ((m = /\s(\d{1,4})\s*\((\d{1,4}(?:\s*-\s*\d{1,4})?|[A-Za-z]{1,4})\)$/.exec(s)) && !/^(?:19|20)\d{2}$/.test(m[1])) {
+    if ((m = /\s(\d{1,4})\s*\((\d{1,4}(?:\s*-\s*\d{1,4})?|[A-Za-z]{1,4})\)$/.exec(s)) && !/^(?:19|20)\d{2}$/.test(m[1]) && !LABEL_BEFORE.test(s.slice(0, m.index))) {
       volume = m[1]; issue = m[2].replace(/\s*-\s*/, "-"); s = s.slice(0, m.index).trim();
-    } else if ((m = /\s(\d{1,3})$/.exec(s)) && !MONTH.test(s.slice(0, m.index))) {
-      volume = m[1]; s = s.slice(0, m.index).trim();
+    } else if ((m = /[^,\s]\s(\d{1,3})$/.exec(s)) && !MONTH.test(s.slice(0, m.index + 1)) && !LABEL_BEFORE.test(s.slice(0, m.index + 1))
+      && !(year && +m[1] === +year % 100)) {          // ("STOC 18, 2018", "IJCAI 15": the edition's year, not a volume)
+      volume = m[1]; s = s.slice(0, m.index + 1).trim();
     }
     if (/\b(?:arxiv|biorxiv|medrxiv|preprint)\b/i.test(s)) { volume = ""; issue = ""; }
     return { name: s.replace(/[,;:]\s*$/, ""), volume, issue, pages, year };
@@ -170,7 +179,7 @@
     if (/^proceedings of the (?:ieee|national academy of sciences)$/i.test(venue)) return { type: "article", field: "journal" };   // (journals literally titled so)
     if (/arxiv\b|biorxiv\b|medrxiv\b/i.test(venue) || p.type === "journal") return { type: "article", field: "journal" };
     if (p.type === "conference") return { type: "inproceedings", field: "booktitle" };
-    if (venueParts(p.venue).issue) return { type: "article", field: "journal" };           // ("44 (8)": a volume with an issue is a periodical's)
+    if (venueParts(p.venue).issue && !/\b(?:conference|symposium|workshop)\b/i.test(venue)) return { type: "article", field: "journal" };           // ("44 (8)": a volume with an issue is a periodical's)
     if (/journal|transactions|letters|review|annals|magazine|ieee\/acm trans/i.test(venue)) return { type: "article", field: "journal" };
     if (/conference|symposium|proceedings|workshop|annual|proc\./i.test(venue)) return { type: "inproceedings", field: "booktitle" };
     return { type: "misc", field: "howpublished" };
@@ -279,15 +288,19 @@
     if (by && !/[.!?…]$/.test(by)) by += ".";
     let title = clean(p.title);
     if (title && !/[.?!]$/.test(title)) title += ".";
-    // the venue in italics, then (APA 7) a journal's volume in italics, its issue and pages, or a proceedings' pages; the year is the one above
-    const { name: venue, volume, issue, pages } = venueParts(p.venue), journal = entryType(p).type === "article";
+    // the venue in italics, then (APA 7) a journal's volume in italics, its issue and pages, or "In *Proceedings* (Vol. 1, pp. 1–10)"; the year is the one above.
+    // A line that is neither (a patent, a thesis, a publisher) is given as Scholar printed it, without its year and without italics.
+    const { name: venue, volume, issue, pages } = venueParts(p.venue), kind = entryType(p), journal = kind.type === "article";
     const range = pages.replace("-", "–"), venuePieces = [];
-    if (venue && journal && (volume || pages)) {
+    if (kind.field === "howpublished") { const raw = asPrinted(p.venue); if (raw) venuePieces.push({ t: raw + (/[.]$/.test(raw) ? "" : ".") }); }
+    else if (venue && journal && (volume || pages)) {
       venuePieces.push({ t: venue, em: true, comma: true });
       if (volume) venuePieces.push({ t: volume, em: true, tail: (issue ? `(${issue})` : "") + (pages ? "," : ".") });
       if (pages) venuePieces.push({ t: (/-/.test(pages) ? range : `Article ${pages}`) + "." });
-    } else if (venue && pages.includes("-")) venuePieces.push({ t: venue, em: true, tail: ` (pp. ${range}).`, plain: true });
-    else if (venue) venuePieces.push({ t: venue, em: true, dot: !venue.endsWith(".") });
+    } else if (venue && kind.type === "inproceedings") {
+      const inner = [volume && `Vol. ${volume}`, pages.includes("-") && `pp. ${range}`].filter(Boolean).join(", ");
+      venuePieces.push({ t: "In" }, { t: venue, em: true, tail: inner ? ` (${inner}).` : "", dot: !inner && !venue.endsWith(".") });
+    } else if (venue) venuePieces.push({ t: venue, em: true, dot: !venue.endsWith(".") });
     return [by && { t: by }, { t: p.year ? `(${p.year}).` : "(n.d.)." }, title && { t: title }, ...venuePieces, p.url && { t: p.url, url: true }].filter(Boolean);
   }
 
@@ -313,12 +326,15 @@
     const list = names.map(ieeeAuthor).filter(Boolean);
     const by = !list.length ? "" : list.length > 6 || cut ? `${list[0]} et al.` : list.length === 1 ? list[0] : list.length === 2 ? `${list[0]} and ${list[1]}` : `${list.slice(0, -1).join(", ")}, and ${list[list.length - 1]}`;
     const title = clean(p.title).replace(/[.]$/, "");
-    const { name: venue, volume, issue, pages } = venueParts(p.venue), type = entryType(p).type, year = p.year ? String(p.year) : "";
-    const range = pages.replace("-", "–"), where = [];
-    if (type === "article") where.push(volume && `vol. ${volume}`, issue && `no. ${issue}`, pages && (pages.includes("-") ? `pp. ${range}` : `Art. no. ${pages}`), year);
-    else where.push(year, pages.includes("-") && `pp. ${range}`);
+    const { name, volume, issue, pages } = venueParts(p.venue), kind = entryType(p), type = kind.type, year = p.year ? String(p.year) : "";
+    const misc = kind.field === "howpublished", venue = misc ? asPrinted(p.venue) : name;
+    const range = pages.replace("-", "–"), where = [], page = pages && (pages.includes("-") ? `pp. ${range}` : `Art. no. ${pages}`);
+    if (type === "article") where.push(volume && `vol. ${volume}`, issue && `no. ${issue}`, page, year);
+    else if (type === "inproceedings") where.push(year, volume && `vol. ${volume}`, page);
+    else where.push(year);
     const tail = where.filter(Boolean).join(", ");
-    return [{ t: `[${n}]` }, by && { t: by + "," }, title && { t: `"${title},"` }, venue && type === "inproceedings" && { t: "in" }, venue && { t: venue, em: true, comma: !!tail }, { t: (tail || (venue ? "" : "n.d")) + "." }].filter(Boolean);
+    // ("Why does it work?" takes no comma after its own question mark)
+    return [{ t: `[${n}]` }, by && { t: by + "," }, title && { t: /[?!]$/.test(title) ? `"${title}"` : `"${title},"` }, venue && type === "inproceedings" && { t: "in" }, venue && (misc ? { t: venue + (tail ? "," : "") } : { t: venue, em: true, comma: !!tail }), { t: (tail || (venue ? "" : "n.d")) + "." }].filter(Boolean);
   }
   // (a piece that is only the closing full stop joins the one before it)
   const ieeeLine = (p, i, em) => ieeePieces(p, i + 1).map((x) => (x.em ? em(x.t) + (x.comma ? "," : "") : x.t)).join(" ").replace(/ \.$/, ".");
@@ -338,10 +354,13 @@
   function gbLine(p, n) {
     const { names, cut } = authorList(p.authors);
     const list = names.map(gbAuthor).filter(Boolean);
-    const by = list.length > 3 || (cut && list.length) ? `${list.slice(0, 3).join(", ")}, et al` : list.join(", ");
+    // (et al. is "等" when the names are Chinese: the word of the reference's own language, §8.1.2)
+    const by = list.length > 3 || (cut && list.length) ? `${list.slice(0, 3).join(", ")}, ${list.some((x) => /[\u3400-\u9fff]/.test(x)) ? "等" : "et al"}` : list.join(", ");
     const title = clean(p.title).replace(/[.]$/, "");
-    const { name: venue, volume, issue, pages } = venueParts(p.venue), type = entryType(p).type, year = p.year ? String(p.year) : "";
-    const mark = type === "article" ? "J" : type === "inproceedings" ? "C" : "Z";
+    const { name, volume, issue, pages } = venueParts(p.venue), kind = entryType(p), type = kind.type, year = p.year ? String(p.year) : "";
+    const venue = kind.field === "howpublished" ? asPrinted(p.venue) : name, line = clean(p.venue);
+    // the type code of Appendix B: patent [P], thesis [D], report [R], journal [J], proceedings [C], anything else [Z]
+    const mark = type === "article" ? "J" : type === "inproceedings" ? "C" : /\bpatent\b/i.test(line) ? "P" : /\b(?:thesis|dissertation)\b/i.test(line) ? "D" : /\b(?:tech(?:nical|\.)?\s*rep(?:ort)?|report)\b/i.test(line) ? "R" : "Z";
     let where = "";
     if (type === "article") where = [venue, [year, volume && volume + (issue ? `(${issue})` : "")].filter(Boolean).join(", ")].filter(Boolean).join(", ") + (pages ? `: ${pages}` : "");
     else if (type === "inproceedings") where = (venue ? `//${venue}. ` : "") + year + (year && pages.includes("-") ? `: ${pages}` : "");

@@ -261,7 +261,7 @@ flowchart LR
 | *复制摘要* | 纯文本的角色 × 等级表，附“未收录”列所含内容、获奖与报告形式一行，以及名录版本 |
 | *复制为表格* | 角色 × 等级表，以制表符分隔，便于粘贴进电子表格；同时附带一份真正的表格，供文字处理软件粘贴 |
 | *复制论文列表* | 论文列表，以制表符分隔：年份、标题、作者、角色、场所、CCF、CORE、获奖与报告形式、引用数（表头使用界面语言）。同时附带一份真正的表格，供文字处理软件粘贴，其中你的名字为粗体。 |
-| *复制 APA* | APA 第 7 版参考文献：期刊为 `Authors (Year). Title. *Venue*, *Volume*(Issue), Pages. URL`，会议论文集为 `*Venue* (pp. Pages).`。同时附带真正的斜体，供文字处理软件粘贴。 |
+| *复制 APA* | APA 第 7 版参考文献：期刊为 `Authors (Year). Title. *Venue*, *Volume*(Issue), Pages. URL`，会议论文集为 `In *Venue* (Vol. 1, pp. Pages).`；专利或学位论文按 Scholar 原样给出。同时附带真正的斜体，供文字处理软件粘贴。 |
 | *复制 IEEE* | 带编号的 IEEE 参考文献列表：`[1] A. Author and B. Writer, "Title," in *Venue*, Year, pp. 1–10.`；期刊为 `*Journal*, vol. 44, no. 8, pp. 4012–4025, Year.`。同时附带真正的斜体，供文字处理软件粘贴。默认关闭，可在 *设置 → 复制与导出* 中打开。 |
 | *复制 GB/T 7714* | GB/T 7714-2015 参考文献列表（国家标准，国自然等大多数中文表格要求的格式）：`[1] HE K, ZHANG X, REN S, et al. Title[C]//Venue. 2016: 770-778.`；`Title[J]. Journal, 2022, 44(8): 4012-4025.`。默认关闭。 |
 | *复制 BibTeX* | BibTeX 条目 |
@@ -273,7 +273,7 @@ flowchart LR
 <summary>各格式的规则</summary>
 
 - **BibTeX。** 引用键由第一作者的姓、年份，以及标题中第一个至少三个字母、且不是常见词（如 `the`、`for`、`with`、`towards` …）的单词组成，全部为小写 ASCII：`vaswani2017attention`、`he2016deep`。没有年份时，引用键为 `nodate`。重复的引用键依次加上 `b`、`c` 等（`he2016deepb`）。条目类型按名录或场所名称中的用词，定为 `@inproceedings`（booktitle）或 `@article`（journal），否则为 `@misc`。字段包括：title、author（用 `and` 连接；在 Scholar 截断列表处以 `and others` 结尾）、booktitle 或 journal、volume、number 和 pages、year、url（论文在 Scholar 上的页面），以及一条 note，写明 CCF 与 CORE 等级和获奖情况。TeX 会解读的每个字符（`\ { } $ & # ^ _ ~ %`）都会被转义，因此标题不能夹带命令。
-- **发表场所行。** Scholar 把发表场所印成一行：`Journal 44 (8), 4012-4025, 2022` 或 `Conference name, 770-778, 2016`。APA 和 BibTeX 会把它拆成名称、卷、期、页码和年份，但只在这两种格式下拆分。被截断的行（`…`）把末尾保留在名称里。arXiv 编号后的数字不当作卷号。有测试对全部 22,744 行真实数据运行拆分，确认没有丢字或多字。
+- **发表场所行。** Scholar 把发表场所印成一行：`Journal 44 (8), 4012-4025, 2022` 或 `Conference name, 770-778, 2016`。APA 和 BibTeX 会把它拆成名称、卷、期、页码和年份，但只在这两种格式下拆分。被截断的行（`…`）把末尾保留在名称里。arXiv 编号后的数字、标签里的数字（`Article No. 1`、`Vol. 2`）、届次的两位年份（`STOC 18`）以及带千位分隔符的数字（`US Patent 10,007,785`）都留在名称里。有测试对全部 22,744 行真实数据运行拆分，确认没有丢字或多字。
 - **APA 第 7 版。** `I Stoica` → `Stoica, I.`；`MF Kaashoek` → `Kaashoek, M. F.`；`L van der Maaten` → `van der Maaten, L.`。两位作者之间用 `&` 连接。超过 20 位作者时，列出前 19 位、`…` 和最后一位。被截断的列表以 `…` 结尾。没有年份时写 `(n.d.)`。星号标出斜体部分。
 - **IEEE。** 名字的首字母在前（`MF Kaashoek` → `M. F. Kaashoek`）。两位作者用 `and` 连接，三到六位用逗号和 `and`。超过六位作者，或 Scholar 截断了列表时，写第一作者加 `et al.`。标题加引号；会议论文写 `in`；期刊从发表场所行中取 `vol.`、`no.` 和 `pp.`（文章编号写 `Art. no.`）。
 - **GB/T 7714-2015。** 姓全大写，名的首字母不加点（`MF Kaashoek` → `KAASHOEK M F`）；中文姓名保持原样。超过三位作者，或 Scholar 截断了列表时，写前三位加 `et al`。期刊标 `[J]`，会议论文集标 `[C]//`，其他标 `[Z]`。
