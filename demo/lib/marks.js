@@ -39,16 +39,20 @@
   // Order matters: a lesser honour is tried before the award it contains, and a span that
   // is already taken is never read twice ("Best Paper Runner-up" is not "Best Paper").
   // (the qualifiers a best paper takes: "Best Student Paper", "Best Research Paper"; a runner-up or a finalist of any of them is that, not the award itself)
+  // (the words of a lesser honour, which a bracket after the award is not to swallow)
+  const LESSER = "(?:runners?|honou?rable|finalist|semi|nomin|shortlist|top[-\\s]?\\d|2nd|second|3rd|third)";
   const Q = `(?:(?:student|short|long|full|research|main${S}track|application|applied|systems?|theory|industry|dataset|resource)${S})*`;
-  const BEST = `(?:best|outstanding|distinguished)${S}${Q}paper(?:${S}awards?)?(?:\\s\\([^()]{1,40}\\))?`;          // (… "Best Paper Awards", "Best Paper (AI for Social Impact track)")
-  const RUNNER = `(?:runner${S}?ups?|honou?rable${S}mentions?)`;
-  const FINAL = `(?:finalists?|nominees?|nominations?|candidates?)`;
+  const BEST = `(?:best|outstanding|distinguished)${S}${Q}paper(?:${S}awards?)?(?:\\s\\((?!\\s*${LESSER})[^()]{1,40}\\))?`;          // (… "Best Paper Awards", "Best Paper (AI for Social Impact track)")
+  const RUNNER = `(?:runners?${S}?ups?|honou?rable${S}mentions?|(?:2nd|second|3rd|third)${S}place)`;
+  const FINAL = `(?:(?:top${S}?\\d+${S})?(?:semi${S}?)?finalists?|nominees?|nominations?|candidates?|shortlist(?:ed)?)`;
+  // (between the award and its lesser honour: "Best Paper Runner-up", "Best Paper Award (Runner-up)", "… - Runner Up", "…: Honorable Mention")
+  const SEP = "\\s*[-–—:,(\\[]?\\s*";
   const FOR = `(?:${S}(?:for|of|in)|,)?${S}(?:the${S})?`;          // "Honorable Mention for Best Paper", "Runner-up, Best Paper Award", "Nominee for the Best Paper Award"
   const PHRASES = [
     { kind: "finalist", label: "Best paper finalist",
-      re: new RegExp(`\\b(?:${BEST}${S}${FINAL}|(?:award${S})?${FINAL}${FOR}${BEST}|(?:nominated|shortlisted)${S}for${S}(?:the${S})?${BEST}|(?:best${S}paper|award)${S}(?:finalist|nominee|candidate)|award${S}candidates?)\\b`, "gi") },
+      re: new RegExp(`\\b(?:${BEST}${SEP}${FINAL}|(?:award${S})?${FINAL}${FOR}${BEST}|(?:nominated|shortlisted)${S}for${S}(?:the${S})?${BEST}|(?:best${S}paper|award)${S}(?:finalist|nominee|candidate)|award${S}candidates?)\\b`, "gi") },
     { kind: "runner-up", label: (m) => (/runner/i.test(m) ? "Best paper runner-up" : "Honorable mention"),
-      re: new RegExp(`\\b(?:${BEST}${S}${RUNNER}|(?:second|2nd|third|3rd)${S}best${S}paper(?:${S}award)?|${RUNNER}${FOR}${BEST}|test${S}of${S}time(?:${S}paper)?(?:${S}award)?${S}${RUNNER}|honou?rable${S}mentions?(?:${S}award)?)\\b`, "gi") },
+      re: new RegExp(`\\b(?:${BEST}${SEP}${RUNNER}|(?:second|2nd|third|3rd)${S}best${S}paper(?:${S}award)?|${RUNNER}${FOR}${BEST}|test${S}of${S}time(?:${S}paper)?(?:${S}award)?${S}${RUNNER}|honou?rable${S}mentions?(?:${S}award)?)\\b`, "gi") },
     { kind: "best-student", label: "Best student paper", re: new RegExp(`\\b(?:best|outstanding)${S}student${S}paper(?:${S}award)?\\b`, "gi") },
     { kind: "best", label: "Best short paper", re: new RegExp(`\\bbest${S}short${S}paper(?:${S}award)?\\b`, "gi") },
     { kind: "best", label: "Best paper",
@@ -57,7 +61,7 @@
       re: new RegExp(`\\boutstanding${S}(?:(?:long|short|main${S}track|research)${S})*paper(?:${S}award)?\\b`, "gi") },
     { kind: "distinguished", label: "Distinguished paper", re: new RegExp(`\\bdistinguished${S}(?:student${S})?paper(?:${S}award)?\\b`, "gi") },
     { kind: "tot", label: "Test of time",
-      re: new RegExp(`\\b(?:test${S}of${S}time(?:${S}(?:paper${S})?award)?|most${S}influential${S}paper(?:${S}award)?|(?:10|ten)${S}years?${S}(?:most${S}influential|test${S}of${S}time)(?:${S}paper)?(?:${S}award)?|classic${S}paper${S}award)\\b`, "gi") },
+      re: new RegExp(`\\b(?:test${S}of${S}time(?:${S}(?:paper${S})?award)?|(?<!\\btop[-\\s]?\\d{1,3}\\s{0,3})most${S}influential${S}paper(?:${S}award)?|(?:10|ten)${S}years?${S}(?:most${S}influential|test${S}of${S}time)(?:${S}paper)?(?:${S}award)?|classic${S}paper${S}award)\\b`, "gi") },
     // ICLR's own wording for orals and spotlights
     { kind: "oral", label: "Oral", talk: true, re: /\bnotable[-\s]top[-\s]?5\s*%/gi },
     { kind: "spotlight", label: "Spotlight", talk: true, re: /\bnotable[-\s]top[-\s]?25\s*%/gi },
@@ -160,6 +164,7 @@
     const byKind = new Map();
     for (const m of declared || []) byKind.set(m.kind, m);
     if ((listed || []).some((m) => TOP.has(m.kind))) byKind.delete("finalist");          // (a paper the list says won is no mere finalist, whatever its authors typed)
+    else if ((listed || []).length) for (const k of TOP) byKind.delete(k);          // (and one the list names only as a runner-up or a finalist did not win, whatever its authors typed)
     for (const m of listed || []) {
       const prev = byKind.get(m.kind);
       byKind.set(m.kind, {
@@ -204,5 +209,24 @@
 
   const inGroup = (paper, group) => members(group).some((g) => (paper.marks || []).some((m) => m.group === g));
 
-  return { KINDS, GROUPS, rows, members, LABEL, groupOf, scan, detect, merge, summarize, summarizeKinds, inGroup };
+  // One award of the list marks one row of a profile. A title the profile lists twice — the conference paper and its journal or magazine reprint
+  // ("MapReduce" 2004 and 2008, AlexNet 2012 and 2017) — gets it once: a test-of-time award on the earliest row, any other on the row whose year is
+  // closest to the award's. rows: [{ title, year, marks }] → the marks of each row, without the award copies the other row keeps.
+  const titleOf = (t) => String(t || "").toLowerCase().replace(/[^\p{L}\p{N}]+/gu, "");
+  function listedOnce(rows) {
+    const keyOf = (r, m) => [titleOf(r.title), m.kind, m.venue, m.year, m.awardLabel].join("|");
+    const best = new Map();
+    rows.forEach((r, i) => {
+      const y = Number(r.year);
+      for (const m of r.marks || []) {
+        if (m.source !== "list") continue;
+        const score = !Number.isFinite(y) || !y ? Infinity : m.kind === "tot" ? y : Math.abs(y - m.year);
+        const k = keyOf(r, m), b = best.get(k);
+        if (!b || score < b.score) best.set(k, { i, score });
+      }
+    });
+    return rows.map((r, i) => (r.marks || []).filter((m) => m.source !== "list" || best.get(keyOf(r, m)).i === i));
+  }
+
+  return { KINDS, GROUPS, rows, members, LABEL, groupOf, scan, detect, merge, listedOnce, summarize, summarizeKinds, inGroup };
 });
