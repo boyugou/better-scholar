@@ -20,6 +20,11 @@
   inside its issue gets no volume; a year-led thesis, report or journal with an issue keeps its own type.
 - **BibTeX types a line as the other three styles do**: an unclassified line with a volume ("Scientific Reports 6, 29545") is an
   `@article` with its volume and pages, not a `@misc` with the line as printed.
+- **A second review of those fixes**: with BibTeX following the periodical rule, the rule's false periodicals mattered in four styles —
+  conventions, competitions, challenges, compendia, books of abstracts, manuscripts, datasets, series, drafts, a "Round 3" and
+  Addison-Wesley are no periodicals now (*Electronic Notes in Theoretical Computer Science* still is); "Proc. ACM" is a journal only by the
+  journals' own abbreviations ("Proc. ACM Program. Lang.", not "Proc. ACM SIGMOD Int. Conf."); "12 (Article 1047)" is volume 12, article
+  1047; an issue in capitals needs no label before it and is no status ("IN PRESS").
 - **Two wrong badges from the same audit**: a venue line that opens with its year is IEEE's title for a meeting's proceedings, so it
   is no journal's ("2010 Internet of Things (IOT)" had CCF's IEEE Internet of Things Journal, started 2014; the cut "2011 7th
   international wireless communications and mobile computing …" had the journal of those words and now has CORE's IWCMC). The real

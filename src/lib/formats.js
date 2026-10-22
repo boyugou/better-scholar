@@ -152,14 +152,14 @@
   const DOCUMENT = /\bpatent\b|\b(?:thesis|dissertation)\b|\b(?:tech(?:nical|\.)?\s*rep(?:ort)?|report)\b/i;
   // a publisher's name on its own ("MIT Press", "Springer", "O'Reilly Media, Inc."): a book, given as printed too (APA does not italicise a publisher)
   const CHAPTER = /\b(?:chapter|ch)\.?:?$/i;          // ("chapter 13": the number right after it is a chapter's, not a volume — "…SIGCHI Chapter, 66-73" keeps its pages)
-  const PUBLISHER = /^(?:the\s)?[^,]*\b(?:press|springer|wiley|elsevier|o'?reilly|publish(?:ing|ers?)|verlag|routledge|cengage|pearson|mcgraw)\b(?![/-]subscri)(?![^,]*\b(?:quarterly|gazette|bulletin|research|letters|journal|review|news)\b)[^,]*(?:,\s*(?:inc|ltd|llc|gmbh)\.?)?$/i;
+  const PUBLISHER = /^(?:the\s)?[^,]*\b(?:press|springer|wiley|elsevier|o'?reilly|publish(?:ing|ers?)|verlag|addison[- ]wesley|routledge|cengage|pearson|mcgraw)\b(?![/-]subscri)(?![^,]*\b(?:quarterly|gazette|bulletin|research|letters|journal|review|news)\b)[^,]*(?:,\s*(?:inc|ltd|llc|gmbh)\.?)?$/i;
   // (journals whose title is a publishing word: no publisher)
   const PUBLISHING_JOURNAL = /^(?:learned publishing|publishing research quarterly|logos|publishers weekly)\b/i;
   const isPublisher = (text) => !PUBLISHING_JOURNAL.test(asPrinted(text)) && (PUBLISHER.test(asPrinted(text)) || PUBLISHER.test(venueParts(text).name));          // ("Morgan & Claypool Publishers 13, 1-187": the name before Scholar's numbers)
   const isDocument = (p) => entryType(p).type === "misc" && (DOCUMENT.test(clean(p.venue)) || isPublisher(p.venue));
   // an unclassified line with a volume is a periodical's ("Scientific Reports 6, 29545") — unless its name says it is a meeting, a book or a place: "BMVC 1, 2",
   // "Robotics: Science and Systems VIII 8", a handbook, an encyclopedia, a university's report
-  const NOT_PERIODICAL = /https?:|\bwww\.|\b(?:conference|conf|symposi(?:um|a)|workshop|proceedings|proc|summit|meeting|congress|handbook|encyclopa?edia|university|universit[aäéy]|chapter|lecture|tutorial|science and systems)\b/i;
+  const NOT_PERIODICAL = /https?:|\bwww\.|\b(?:conference|conf|symposi(?:um|a)|workshop|proceedings|proc|summit|meeting|congress|handbook|encyclopa?edia|university|universit[aäéy]|chapter|lecture|tutorial|science and systems|convention|competition|challenge|compendium|abstracts|manuscript|dataset|series|draft|konferenz\w*)\b|\bround$/i;
   const ACRONYM = /^[A-Z]{2,6}(?:\s\d{2,4})?$/;          // (case-sensitive: "BMVC" is a meeting's acronym, "Nature" and "eLife" are journals)
   const periodical = (p) => { if (entryType(p).type !== "misc" || isDocument(p)) return false; const { name, volume } = venueParts(p.venue); return !!volume && !NOT_PERIODICAL.test(name) && !ACRONYM.test(name); };
   // the venue line as Scholar printed it, without the year at its end (for such a document, which no rule splits)
@@ -198,8 +198,10 @@
     if ((m = /\s(\d{1,4})\s\((\d{1,2})\s\([A-Z]{2,10}\)$/.exec(s))) { volume = m[1]; issue = m[2]; s = s.slice(0, m.index).trim(); }        // (PACMMOD's "4 (1 (SIGMOD)", one bracket short)
     else if ((m = /\s(\d{1,4})\s*\((\d{1,4}(?:\s*(?:--|[-‐–])\s*\d{1,4})?|[A-Za-z]{1,4}|(?!art)[A-Za-z]{0,10}[ _]?\d{1,4}[A-Za-z]{0,3}\d?|\d{1,2},?\s?(?:pt\.?|part)\s?\d|\d{1,3}[ _]?(?:suppl?\.?|supplement)|[A-Za-z]+(?: [A-Za-z]+){0,3} issue|\d{1,2}\s?[/&]\s?\d{1,2}|[A-Za-z]+_\d|(?:suppl?|supplement)[ _]?\d*)\)$/i.exec(s)) && (!/^(?:19|20)\d{2}$/.test(m[1]) || (/^\d{1,2}$/.test(m[2]) && /\b(?:journal|transactions|proceedings on)\b/i.test(s.slice(0, m.index)))) && !CHAPTER.test(s.slice(0, m.index)) && !LABEL_BEFORE.test(s.slice(0, m.index))) {
       volume = m[1]; issue = m[2].replace(/\s*-{1,2}\s*/, "-"); s = s.slice(0, m.index).trim();
-    } else if ((m = /\s(\d{1,4})\s\(([A-Z]{2,10}(?: [A-Z]{2,6})?)\)$/.exec(s)) && !/^(?:19|20)\d{2}$/.test(m[1]) && !CHAPTER.test(s.slice(0, m.index))) {
+    } else if ((m = /\s(\d{1,4})\s\((?!IN PRESS|ONLINE FIRST|TO APPEAR)([A-Z]{2,10}(?: [A-Z]{2,6})?)\)$/.exec(s)) && !/^(?:19|20)\d{2}$/.test(m[1]) && !CHAPTER.test(s.slice(0, m.index)) && !LABEL_BEFORE.test(s.slice(0, m.index))) {
       volume = m[1]; issue = m[2]; s = s.slice(0, m.index).trim();          // (an issue named in capitals: "1 (OOPSLA)", "8 (CHI PLAY)"; case-sensitive, so "(March)" is not one)
+    } else if ((m = /\s(\d{1,4})\s\((?:article|art\.?)\s*(?:no\.?\s*)?(\d{1,6})\)$/i.exec(s)) && !/^(?:19|20)\d{2}$/.test(m[1])) {
+      volume = m[1]; pages = m[2]; s = s.slice(0, m.index).trim();          // ("Frontiers in Neuroscience 12 (Article 1047), 1-19": the article number is its place, the page range only its length)
     } else if (pages && (m = /\s(\d{1,4})\s*\([^()]*\)$/.exec(s)) && !/^(?:19|20)\d{2}$/.test(m[1])) {
       s = whole.replace(/,\s*(?:19|20)\d{2}$/, ""); return keep();          // (pages read but not the "V (…)" before them — "21 (2.3)", "38 (4 : SIGGRAPH 2019)": the line as printed, not half of it; a year's brackets are the name's: "Web Conference 2021 (WWW 2021)")
     } else if ((m = /[^,\s]\s(\d{1,3})$/.exec(s)) && !MONTH.test(s.slice(0, m.index + 1)) && !CHAPTER.test(s.slice(0, m.index + 1)) && !LABEL_BEFORE.test(s.slice(0, m.index + 1))
@@ -215,7 +217,7 @@
     const venue = venueParts(p.venue).name;
     if (!venue) return { type: "misc", field: "" };
     if (/patent\b/i.test(venue)) return { type: "misc", field: "howpublished" };
-    if (/^proceedings of the (?:ieee|national academy of sciences)(?:\s*\([^()]*\))?$/i.test(venue) || /^(?:[\w-]+:\s*)?(?:proceedings of the (?:acm on (?!web conference)|vldb endowment)|proceedings on privacy enhancing technologies|proc\.? acm [a-z]\w*|proc\.? vldb endow)\b/i.test(venue)) return { type: "article", field: "journal" };   // (journals literally titled so)
+    if (/^proceedings of the (?:ieee|national academy of sciences)(?:\s*\([^()]*\))?$/i.test(venue) || /^(?:[\w-]+:\s*)?(?:proceedings of the (?:acm on (?!web conference)|vldb endowment)|proceedings on privacy enhancing technologies|proc\.? acm (?:program|hum|meas|manag|interact|softw|comput|netw)\b|proc\.? vldb endow)\b/i.test(venue)) return { type: "article", field: "journal" };   // (journals literally titled so)
     if (p.type === "journal" || (p.type !== "conference" && /arxiv\b|biorxiv\b|medrxiv\b/i.test(venue))) return { type: "article", field: "journal" };
     if (p.type === "conference") return { type: "inproceedings", field: "booktitle" };
     // ("2015 IEEE Trustcom/BigDataSE/ISPA 1", "2010 Internet of Things (IOT)": a name that opens with its year is the title of a meeting's proceedings, IEEE's form)

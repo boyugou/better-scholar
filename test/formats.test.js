@@ -487,7 +487,7 @@ test("the venue line, from an independent review of the snapshot fixes: issues i
   assert.equal(vp("Proceedings of the ACM on Human-Computer Interaction 8 (CHI PLAY), 1-30, 2024").issue, "CHI PLAY");
   assert.equal(vp("IEEE transactions on software engineering 18 (March), 190-205, 1992").issue, "", "a month in brackets is no issue");
   assert.deepEqual(vp("Information Retrieval Journal 21 (2--3), 111--182, 2018"), { name: "Information Retrieval Journal", volume: "21", issue: "2-3", pages: "111-182", year: "2018" });
-  for (const v of ["IBM Journal of Research and Development 55 (1.2), 6: 1-6: 14, 2011", "ACM Transactions on Graphics 38 (4 : SIGGRAPH 2019), Article 28, 2019", "Frontiers in Neuroscience 12 (Article 1047), 1-19, 2019"])
+  for (const v of ["IBM Journal of Research and Development 55 (1.2), 6: 1-6: 14, 2011", "ACM Transactions on Graphics 38 (4 : SIGGRAPH 2019), Article 28, 2019"])
     assert.equal(vp(v).pages, "", `${v}: the pages are not read where the "V (…)" before them is not: the line as printed, not half of it`);
   assert.equal(vp("Proceedings of the Web Conference 2021 (WWW 2021), 1516-1527, 2021").pages, "1516-1527", "a year's brackets are the name's");
   assert.equal(vp("Annals of internal medicine 172 (11_Supplement), S137-S144, 2020").issue, "11_Supplement");
@@ -511,5 +511,19 @@ test("BibTeX types an unclassified line with a volume as the other styles do", (
   assert.match(f.gbt([p]), /T\[J\]\. Scientific Reports, 2016, 6: 29545\.$/);
   assert.match(f.bibtex([p]), /^@article\{he2016t,[\s\S]*journal = \{Scientific Reports\},\n  volume = \{6\},\n  pages = \{29545\}/);
   assert.match(f.bibtex([{ ...p, venue: "BMVC 1, 2, 2016" }]), /^@misc\{/, "a meeting's acronym with a number is no periodical, in BibTeX too");
+});
+
+test("the venue line, second review of the fixes: meetings, drafts and series are no periodicals; Proc. ACM journals by their abbreviations", () => {
+  const vp = f.venueParts;
+  const paper = (venue, type) => ({ title: "T", authors: "K He", venue, year: 2018, type, url: "", rank: {}, marks: [] });
+  for (const v of ["Audio Engineering Society Convention 110, 2001", "SAT Competition 67, 2023", "ECML PKDD Discovery Challenge 9, 275-284, 2009", "Abstracts of the ICA 6, 1, 2023", "Unpublished manuscript 45, 105, 1988", "Online dataset 90, 2004", "Software Foundations series 1, 2018", "NIST PQC Round 3, 2019", "Draft 0.5 14, 2655, 2020", "Addison-Wesley 520, 131-141, 2010"])
+    for (const style of ["gbt", "bibtex"]) assert.doesNotMatch(f[style]([paper(v)]), /\[J\]|@article/, `${v} (${style})`);
+  for (const v of ["Electronic Notes in Theoretical Computer Science 62, 24-37, 2002", "Scientific Reports 6, 29545, 2016", "The Round Table 104, 1-10, 2015"])
+    assert.match(f.bibtex([paper(v)]), /^@article/, v);
+  for (const v of ["Proc. ACM SIGMOD Int. Conf. on Management of Data, 1-12, 2020", "Proc ACM Symposium on Theory of Computing, 1-10, 2020"]) assert.match(f.bibtex([paper(v)]), /^@inproceedings/, v);
+  for (const v of ["Proc. ACM Hum.-Comput. Interact. 5 (CSCW1), 1-20, 2021", "Proc. ACM Netw. 1 (2), 1-20, 2023"]) assert.match(f.bibtex([paper(v, "conference")]), /^@article/, v);
+  assert.deepEqual(vp("Frontiers in Neuroscience 12 (Article 1047), 1-19, 2019"), { name: "Frontiers in Neuroscience", volume: "12", issue: "", pages: "1047", year: "2019" });
+  assert.equal(vp("Lecture Notes Vol. 5 (LNCS), 1-10, 2020").volume, "", "no label before a volume");
+  assert.equal(vp("Journal of Things 5 (IN PRESS), 1-10, 2020").issue, "", "a status is no issue");
 });
 
