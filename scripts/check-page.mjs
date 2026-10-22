@@ -139,13 +139,16 @@ try {
   {
     const { context, page } = await open("en", 1360);
     const shown = () => page.locator('.export-card [role="tabpanel"]:not([hidden])');
-    assert.equal(await page.locator('.export-card [role="tabpanel"]').count(), 6);
+    assert.equal(await page.locator('.export-card [role="tabpanel"]').count(), 7);
     assert.match(await shown().textContent(), /^@inproceedings\{author2025sample,/);
     await page.locator("#tab-apa").click();
     assert.match(await shown().textContent(), /^Author, A\., Writer, B\./);
     await page.locator("#tab-apa").press("ArrowRight");
     assert.equal(await page.evaluate(() => document.activeElement.id), "tab-ieee");
     assert.match(await shown().textContent(), /^\[1\] A\. Author, B\. Writer, C\. Writer, and D\. Writer, "Sample paper 1," in \*ICLR 2025 \(Oral\)\*, 2025\./);
+    await page.keyboard.press("ArrowRight");
+    assert.equal(await page.evaluate(() => document.activeElement.id), "tab-gbt");
+    assert.match(await shown().textContent(), /^\[1\] AUTHOR A, WRITER B, WRITER C, et al\. Sample paper 1\[C\]\/\/ICLR 2025 \(Oral\)\. 2025\./);
     await page.keyboard.press("ArrowRight");
     assert.equal(await page.evaluate(() => document.activeElement.id), "tab-json");
     assert.match(await shown().textContent(), /"owner": "A Author"/);
