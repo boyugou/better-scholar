@@ -398,7 +398,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     await eventually(page, () => Array.from(document.querySelectorAll("#gsc_a_b tr.gsc_a_tr")).every((r) => getComputedStyle(r).display !== "none"));
     await page.bringToFront();
     await page.bringToFront(); await page.locator("#rr-panel").screenshot({ path: path.join(outDir, "state-no-roles.png") });
-    assert.match(await page.locator('[data-rr="no-roles"]').textContent(), /No author position is switched on/, "with every role off the panel says why nothing is highlighted");
+    assert.match(await page.locator('[data-rr="no-roles"]').textContent(), /No author role is switched on/, "with every role off the panel says why nothing is highlighted");
     for (const r of ["first", "cofirst", "second", "last"]) await setPref(opts, "roles." + r, true);
     await setPref(opts, "panel.venues.show", false);
     ok("venue list: off by default; on, it lists the ranked venues most papers first, and a click shows just that venue's papers");

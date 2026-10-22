@@ -354,7 +354,7 @@
     "message": "Tô nổi bài của tôi"
   },
   "optRolesHint": {
-    "message": "Mỗi vị trí có một màu dòng riêng. Bài mà bạn ở giữa danh sách giữ nguyên."
+    "message": "Mỗi vai trò có một màu dòng riêng. Bài mà bạn ở giữa danh sách giữ nguyên."
   },
   "optMarkName": {
     "message": "Đánh dấu tên tôi trong dòng tác giả"
@@ -399,7 +399,7 @@
     "message": "Bảng vai trò × hạng"
   },
   "optPanelSummaryHint": {
-    "message": "Bảng các bài báo của bạn theo vị trí và hạng, kèm ghi chú về nguồn gốc các hạng."
+    "message": "Bảng các bài báo của bạn theo vai trò và hạng, kèm ghi chú về nguồn gốc các hạng."
   },
   "optPanelMarksHint": {
     "message": "Số bài đoạt giải và các mức báo cáo, một cú nhấp để xem danh sách."
@@ -749,7 +749,7 @@
     }
   },
   "noRolesHint": {
-    "message": "Chưa bật vị trí tác giả nào, nên không có bài nào được tô nổi."
+    "message": "Chưa bật vai trò tác giả nào, nên không có bài nào được tô nổi."
   },
   "metricsOfN": {
     "message": "$N1$ trên $N2$",

@@ -3,7 +3,7 @@
     "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "在 Google Scholar 学者主页上显示主页作者在每篇论文中的位置，以及期刊/会议的 CCF 与 CORE 等级，并汇总成一张表。"
+    "message": "在 Google Scholar 学者主页上显示主页作者在每篇论文中的角色，以及期刊/会议的 CCF 与 CORE 等级，并汇总成一张表。"
   },
   "extShortName": {
     "message": "Better Scholar"
@@ -112,7 +112,7 @@
     "message": "未显示"
   },
   "colRole": {
-    "message": "作者位置"
+    "message": "角色"
   },
   "colTotal": {
     "message": "合计"
@@ -354,7 +354,7 @@
     "message": "高亮我的论文"
   },
   "optRolesHint": {
-    "message": "每种作者位次对应一种行颜色；你排在中间的论文保持原样。"
+    "message": "每种作者角色对应一种行颜色；你排在中间的论文保持原样。"
   },
   "optMarkName": {
     "message": "在作者行里标出我的名字"
@@ -606,7 +606,7 @@
     "message": "颜色"
   },
   "optColorsHint": {
-    "message": "每种作者位次的颜色：论文行、名字标记、面板和工具栏弹窗。"
+    "message": "每种作者角色的颜色：论文行、名字标记、面板和工具栏弹窗。"
   },
   "optColorsReset": {
     "message": "恢复默认颜色"
@@ -680,7 +680,7 @@
     "message": "按年份统计"
   },
   "optPanelYearsHint": {
-    "message": "每年一根柱，用各位次的颜色。"
+    "message": "每年一根柱，用各角色的颜色。"
   },
   "coverRepeats": {
     "message": "与另一篇重复的条目：$N1$",
@@ -749,7 +749,7 @@
     }
   },
   "noRolesHint": {
-    "message": "没有打开任何作者位次，所以没有高亮的论文。"
+    "message": "没有打开任何作者角色，所以没有高亮的论文。"
   },
   "metricsOfN": {
     "message": "$N1$ / $N2$",
@@ -1007,7 +1007,7 @@
     "message": "“显示 N / M 篇论文”横条"
   },
   "optMetricsScope": {
-    "message": "列出计入统计的作者位置的一行"
+    "message": "列出计入统计的作者角色的一行"
   },
   "optMetricsOf": {
     "message": "每个数字旁的“/ N”"

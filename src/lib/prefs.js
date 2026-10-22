@@ -245,7 +245,7 @@
     ]),
     card("metrics", "optPanelMetrics", "optPanelMetricsHint", part("metrics", "Citation totals (papers, citations, h-index, i10-index) of all papers and of the highlighted ones.", [
       ["title", true, "optPartTitle", "The title line of the citation totals.", { name: "metricsTitle" }],
-      ["scope", true, "optMetricsScope", "The line that says which positions the numbers count (\"First, Co-first, Second and Last\")."],
+      ["scope", true, "optMetricsScope", "The line that says which roles the numbers count (\"First, Co-first, Second and Last\")."],
       ["papers", true, "mPapers", "The number of papers.", { name: "mPapers" }],
       ["citations", true, "mCitations", "The number of citations.", { name: "mCitations" }],
       ["h", true, "mH", "The h-index, a button that lists the papers behind it.", { name: "mH" }],

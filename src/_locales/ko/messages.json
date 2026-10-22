@@ -762,7 +762,7 @@
     "message": "지우기"
   },
   "filterMinCites": {
-    "message": "인용수 ≥ $N1$",
+    "message": "인용 수 ≥ $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -784,7 +784,7 @@
     }
   },
   "tipFilterH": {
-    "message": "h-코어 논문 필터링 (인용수 ≥ $N1$)",
+    "message": "h-코어 논문 필터링 (인용 수 ≥ $N1$)",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -792,7 +792,7 @@
     }
   },
   "tipFilterI10": {
-    "message": "i10 논문 필터링 (인용수 ≥ 10)"
+    "message": "i10 논문 필터링 (인용 수 ≥ 10)"
   },
   "popupPapersOf": {
     "message": "논문 $N2$편 중 $N1$편",
@@ -830,7 +830,7 @@
     "message": "인용 지표 테이블"
   },
   "optHideCitedTableHint": {
-    "message": "사이드바의 인용수, h-index 및 i10-index 테이블입니다."
+    "message": "사이드바의 인용 수, h-index 및 i10-index 테이블입니다."
   },
   "optHideCitedChart": {
     "message": "연도별 인용 차트"
@@ -1019,7 +1019,7 @@
     "message": "CORE A*"
   },
   "optPillCites": {
-    "message": "인용수 100 초과"
+    "message": "인용 수 100 초과"
   },
   "optFiltersYears": {
     "message": "연도 범위"

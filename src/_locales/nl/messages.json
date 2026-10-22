@@ -369,7 +369,7 @@
     "message": "Mijn papers markeren"
   },
   "optRolesHint": {
-    "message": "Elke positie krijgt een eigen rijkleur. Papers waarin je in het midden staat, blijven neutraal."
+    "message": "Elke rol krijgt een eigen rijkleur. Papers waarin je in het midden staat, blijven neutraal."
   },
   "optMarkName": {
     "message": "Mijn naam markeren in de auteursregel"
@@ -414,7 +414,7 @@
     "message": "Tabel rol × rang"
   },
   "optPanelSummaryHint": {
-    "message": "De tabel van je papers op positie en rang, met de toelichting over waar de rangen vandaan komen."
+    "message": "De tabel van je papers op rol en rang, met de toelichting over waar de rangen vandaan komen."
   },
   "optPanelMarksHint": {
     "message": "Het aantal bekroonde papers en talkniveaus; met één klik zie je de lijst."
@@ -770,7 +770,7 @@
     }
   },
   "noRolesHint": {
-    "message": "Geen auteurspositie staat aan, dus er wordt niets gemarkeerd."
+    "message": "Geen auteursrol staat aan, dus er wordt niets gemarkeerd."
   },
   "metricsOfN": {
     "message": "$N1$ van $N2$",

@@ -369,7 +369,7 @@
     "message": "Fremhæv mine artikler"
   },
   "optRolesHint": {
-    "message": "Hver placering får sin egen rækkefarve. Artikler, hvor du står i midten, forbliver uden markering."
+    "message": "Hver rolle får sin egen rækkefarve. Artikler, hvor du står i midten, forbliver uden markering."
   },
   "optMarkName": {
     "message": "Markér mit navn i forfatterlinjen"
@@ -414,7 +414,7 @@
     "message": "Tabel over rolle × rang"
   },
   "optPanelSummaryHint": {
-    "message": "Tabel over dine artikler efter placering og rang, med noten om, hvor rangerne kommer fra."
+    "message": "Tabel over dine artikler efter rolle og rang, med noten om, hvor rangerne kommer fra."
   },
   "optPanelMarksHint": {
     "message": "Antallet af prisvindende artikler og oplægsniveauer, ét klik viser dem."
@@ -770,7 +770,7 @@
     }
   },
   "noRolesHint": {
-    "message": "Ingen forfatterplacering er slået til, så intet fremhæves."
+    "message": "Ingen forfatterrolle er slået til, så intet fremhæves."
   },
   "metricsOfN": {
     "message": "$N1$ af $N2$",
@@ -1028,7 +1028,7 @@
     "message": "Linjen “Viste artikler: N / M”"
   },
   "optMetricsScope": {
-    "message": "Linje, der nævner de positioner, der tæller"
+    "message": "Linje, der nævner de roller, der tæller"
   },
   "optMetricsOf": {
     "message": "“af N” ved hvert tal"

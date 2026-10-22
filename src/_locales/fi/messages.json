@@ -369,7 +369,7 @@
     "message": "Korosta artikkelini"
   },
   "optRolesHint": {
-    "message": "Jokaisella paikalla on oma rivinvärinsä. Artikkelit, joissa olet keskellä, pysyvät tavallisina."
+    "message": "Jokaisella roolilla on oma rivinvärinsä. Artikkelit, joissa olet keskellä, pysyvät tavallisina."
   },
   "optMarkName": {
     "message": "Merkitse nimeni kirjoittajariville"
@@ -414,7 +414,7 @@
     "message": "Rooli × luokka -taulukko"
   },
   "optPanelSummaryHint": {
-    "message": "Taulukko artikkeleistasi paikan ja luokan mukaan sekä huomautus siitä, mistä luokat ovat peräisin."
+    "message": "Taulukko artikkeleistasi roolin ja luokan mukaan sekä huomautus siitä, mistä luokat ovat peräisin."
   },
   "optPanelMarksHint": {
     "message": "Palkittujen artikkelien ja esitystasojen määrä; yksi napsautus näyttää ne."
@@ -770,7 +770,7 @@
     }
   },
   "noRolesHint": {
-    "message": "Yhtäkään kirjoittajapaikkaa ei ole kytketty päälle, joten mitään ei korosteta."
+    "message": "Yhtäkään kirjoittajaroolia ei ole kytketty päälle, joten mitään ei korosteta."
   },
   "metricsOfN": {
     "message": "$N1$ / $N2$",
@@ -1028,7 +1028,7 @@
     "message": "Palkki “Näytetyt artikkelit: N / M”"
   },
   "optMetricsScope": {
-    "message": "Rivi, joka nimeää lasketut asemat"
+    "message": "Rivi, joka nimeää lasketut roolit"
   },
   "optMetricsOf": {
     "message": "“/ N” jokaisen luvun vieressä"

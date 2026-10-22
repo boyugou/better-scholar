@@ -369,7 +369,7 @@
     "message": "Makalelerimi vurgula"
   },
   "optRolesHint": {
-    "message": "Her sıranın kendi satır rengi vardır. Ortada olduğunuz makaleler sade kalır."
+    "message": "Her rolün kendi satır rengi vardır. Ortada olduğunuz makaleler sade kalır."
   },
   "optMarkName": {
     "message": "Yazar satırında adımı işaretle"
@@ -414,7 +414,7 @@
     "message": "Rol × sıralama tablosu"
   },
   "optPanelSummaryHint": {
-    "message": "Makalelerinizin konum ve sıralamaya göre tablosu; sıralamaların nereden geldiğine dair bir notla birlikte."
+    "message": "Makalelerinizin rol ve sıralamaya göre tablosu; sıralamaların nereden geldiğine dair bir notla birlikte."
   },
   "optPanelMarksHint": {
     "message": "Ödüllü makale ve sunum düzeyi sayısı; tek tıkla listelenir."
@@ -770,7 +770,7 @@
     }
   },
   "noRolesHint": {
-    "message": "Hiçbir yazar sırası açık değil, bu yüzden hiçbir şey vurgulanmıyor."
+    "message": "Hiçbir yazar rolü açık değil, bu yüzden hiçbir şey vurgulanmıyor."
   },
   "metricsOfN": {
     "message": "$N1$ / $N2$",
@@ -1028,7 +1028,7 @@
     "message": "“Gösterilen makale: N / M” çubuğu"
   },
   "optMetricsScope": {
-    "message": "Hangi konumların sayıldığını belirten satır"
+    "message": "Hangi rollerin sayıldığını belirten satır"
   },
   "optMetricsOf": {
     "message": "Her sayının yanındaki “/ N”"

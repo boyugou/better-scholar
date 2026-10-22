@@ -155,7 +155,7 @@ Rules:
 | `panel.metrics.show` | true / false | `true` | Citation totals (papers, citations, h-index, i10-index) of all papers and of the highlighted ones. |
 | `panel.metrics.title` | true / false | `true` | The title line of the citation totals. |
 | `labels.metricsTitle` | text, at most 30 characters | `""` | The text of the title of the citation totals (default: "Highlighted papers"): your own words, in every language; "" brings the built-in text back. |
-| `panel.metrics.scope` | true / false | `true` | The line that says which positions the numbers count ("First, Co-first, Second and Last"). |
+| `panel.metrics.scope` | true / false | `true` | The line that says which roles the numbers count ("First, Co-first, Second and Last"). |
 | `panel.metrics.papers` | true / false | `true` | The number of papers. |
 | `labels.mPapers` | text, at most 30 characters | `""` | The text of the number of papers (default: "Papers"): your own words, in every language; "" brings the built-in text back. |
 | `panel.metrics.citations` | true / false | `true` | The number of citations. |

@@ -354,7 +354,7 @@
     "message": "Cikkeim kiemelése"
   },
   "optRolesHint": {
-    "message": "Minden pozíciónak saját sorszíne van. Azok a cikkek, ahol középen állsz, egyszerűek maradnak."
+    "message": "Minden szerepnek saját sorszíne van. Azok a cikkek, ahol középen állsz, egyszerűek maradnak."
   },
   "optMarkName": {
     "message": "Nevem jelölése a szerzői sorban"
@@ -399,7 +399,7 @@
     "message": "Szerep × rang táblázat"
   },
   "optPanelSummaryHint": {
-    "message": "A cikkeid táblázata pozíció és rang szerint, a rangok eredetére vonatkozó megjegyzéssel."
+    "message": "A cikkeid táblázata szerep és rang szerint, a rangok eredetére vonatkozó megjegyzéssel."
   },
   "optPanelMarksHint": {
     "message": "A díjnyertes cikkek és az előadásszintek száma, egy kattintással listázható."
@@ -749,7 +749,7 @@
     }
   },
   "noRolesHint": {
-    "message": "Egyetlen szerzői pozíció sincs bekapcsolva, ezért semmi sincs kiemelve."
+    "message": "Egyetlen szerzői szerep sincs bekapcsolva, ezért semmi sincs kiemelve."
   },
   "metricsOfN": {
     "message": "$N1$ / $N2$",
@@ -1007,7 +1007,7 @@
     "message": "„Megjelenített cikkek: N / M” sáv"
   },
   "optMetricsScope": {
-    "message": "A számításba vett helyezéseket megnevező sor"
+    "message": "A számításba vett szerepeket megnevező sor"
   },
   "optMetricsOf": {
     "message": "„/ N” minden szám mellett"

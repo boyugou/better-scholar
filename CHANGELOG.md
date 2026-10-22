@@ -32,6 +32,10 @@
   Notices' volume, "Ijcai 93 (2)" a year; such a number stays after the name as printed ("In *IJCAI 16* (pp. 740–747)"). A long name's
   number is still its proceedings' volume ("Vol. 34" for NeurIPS). Page labels with a double hyphen ("19:1--19:19", LIPIcs' "2: 1--2: 17")
   are pages.
+- **One word for one thing: "role"**: the settings hints called the author's role (first, co-first, second, last) a "position" in five
+  places while the table and its title said "role"; they say "role" now, in English and in the 26 languages whose word for it differed
+  (Chinese 角色 also in the table header, the store description and the colour hints; Russian and Ukrainian colour hints). Korean writes
+  인용 수 everywhere. "Position 3 of 7" on hover is the place in the author list and keeps its word.
 - **Two wrong badges from the same audit**: a venue line that opens with its year is IEEE's title for a meeting's proceedings, so it
   is no journal's ("2010 Internet of Things (IOT)" had CCF's IEEE Internet of Things Journal, started 2014; the cut "2011 7th
   international wireless communications and mobile computing …" had the journal of those words and now has CORE's IWCMC). The real

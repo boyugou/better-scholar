@@ -354,7 +354,7 @@
     "message": "Wyróżniaj moje prace"
   },
   "optRolesHint": {
-    "message": "Każda pozycja ma własny kolor wiersza. Prace, w których jesteś w środku listy, pozostają bez wyróżnienia."
+    "message": "Każda rola ma własny kolor wiersza. Prace, w których jesteś w środku listy, pozostają bez wyróżnienia."
   },
   "optMarkName": {
     "message": "Zaznaczaj moje nazwisko w wierszu autorów"
@@ -399,7 +399,7 @@
     "message": "Tabela rola × ranking"
   },
   "optPanelSummaryHint": {
-    "message": "Tabela prac według pozycji i rankingu, wraz z notą o tym, skąd pochodzą rankingi."
+    "message": "Tabela prac według roli i rankingu, wraz z notą o tym, skąd pochodzą rankingi."
   },
   "optPanelMarksHint": {
     "message": "Liczba nagrodzonych prac i rodzajów wystąpień; jednym kliknięciem pokażesz listę."
@@ -749,7 +749,7 @@
     }
   },
   "noRolesHint": {
-    "message": "Żadna pozycja autora nie jest włączona, więc nic nie jest wyróżnione."
+    "message": "Żadna rola autora nie jest włączona, więc nic nie jest wyróżnione."
   },
   "metricsOfN": {
     "message": "$N1$ z $N2$",
@@ -1007,7 +1007,7 @@
     "message": "Pasek „Wyświetlone prace: N / M”"
   },
   "optMetricsScope": {
-    "message": "Wiersz z nazwami pozycji, które się liczą"
+    "message": "Wiersz z nazwami ról, które się liczą"
   },
   "optMetricsOf": {
     "message": "„z N” przy każdej liczbie"
