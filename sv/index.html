@@ -192,6 +192,7 @@
           <button type="button" class="tab-btn active" role="tab" id="tab-bibtex" aria-selected="true" aria-controls="export-bibtex">BibTeX</button>
           <button type="button" class="tab-btn" role="tab" id="tab-apa" aria-selected="false" aria-controls="export-apa" tabindex="-1">APA</button>
           <button type="button" class="tab-btn" role="tab" id="tab-ieee" aria-selected="false" aria-controls="export-ieee" tabindex="-1">IEEE</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-gbt" aria-selected="false" aria-controls="export-gbt" tabindex="-1">GB/T 7714</button>
           <button type="button" class="tab-btn" role="tab" id="tab-json" aria-selected="false" aria-controls="export-json" tabindex="-1">JSON</button>
           <button type="button" class="tab-btn" role="tab" id="tab-markdown" aria-selected="false" aria-controls="export-markdown" tabindex="-1">Markdown</button>
           <button type="button" class="tab-btn" role="tab" id="tab-csv" aria-selected="false" aria-controls="export-csv" tabindex="-1">CSV</button>
@@ -242,6 +243,10 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
 [3] A. Author*, B. Writer*, and C. Writer, &quot;Sample paper 3,&quot; in *CVPR 2024 (Highlight)*, 2024.
 
 [4] B. Writer, C. Writer, D. Writer, and A. Author, &quot;Sample paper 4,&quot; in *ACL 2023 (Spotlight)*, 2023.</code></pre>
+          <pre class="code-preview" role="tabpanel" id="export-gbt" aria-labelledby="tab-gbt" tabindex="0" hidden><code>[1] AUTHOR A, WRITER B, WRITER C, et al. Sample paper 1[C]//ICLR 2025 (Oral). 2025.
+[2] WRITER B, AUTHOR A, WRITER C. Sample paper 2[C]//NeurIPS 2024. 2024.
+[3] AUTHOR* A, WRITER* B, WRITER C. Sample paper 3[C]//CVPR 2024 (Highlight). 2024.
+[4] WRITER B, WRITER C, WRITER D, et al. Sample paper 4[C]//ACL 2023 (Spotlight). 2023.</code></pre>
           <pre class="code-preview" role="tabpanel" id="export-json" aria-labelledby="tab-json" tabindex="0" hidden><code>{
   &quot;owner&quot;: &quot;A Author&quot;,
   &quot;source&quot;: &quot;ccf&quot;,
@@ -423,7 +428,7 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. *AC
       <h2>I siffror</h2>
       <p class="note">Räknat från tilläggets kod och data när sidan byggs. Siffror som växer med varje rättelse är avrundade nedåt.</p>
       <div class="numbers-grid">
-        <div class="num" style="--c:#4d8ff5"><b dir="ltr">156</b><span>inställningar du kan ändra</span></div>
+        <div class="num" style="--c:#4d8ff5"><b dir="ltr">158</b><span>inställningar du kan ändra</span></div>
         <div class="num" style="--c:#b36cf6"><b dir="ltr">30</b><span>gränssnittsspråk</span></div>
         <div class="num" style="--c:#fbbc04"><b dir="ltr">1 178</b><span>rankade publikationskanaler i CCF- och CORE-listorna</span></div>
         <div class="num" style="--c:#34a853"><b dir="ltr">400+</b><span>namn på publikationskanaler från Scholar som saknas i listorna</span></div>

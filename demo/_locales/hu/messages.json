@@ -501,6 +501,9 @@
   "copyIeee": {
     "message": "IEEE másolása"
   },
+  "copyGbt": {
+    "message": "GB/T 7714 másolása"
+  },
   "copyMarkdown": {
     "message": "Markdown másolása"
   },

@@ -501,6 +501,9 @@
   "copyIeee": {
     "message": "Kopírovat IEEE"
   },
+  "copyGbt": {
+    "message": "Kopírovat GB/T 7714"
+  },
   "copyMarkdown": {
     "message": "Kopírovat Markdown"
   },

@@ -501,6 +501,9 @@
   "copyIeee": {
     "message": "Salin IEEE"
   },
+  "copyGbt": {
+    "message": "Salin GB/T 7714"
+  },
   "copyMarkdown": {
     "message": "Salin Markdown"
   },

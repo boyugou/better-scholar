@@ -455,7 +455,7 @@
   // not — "Crisis" is a psychology journal, "Spin" and "Image" are journals, "Fast" is a word, not the Conference on File and Storage Technologies
   const ENGLISH_ACRONYMS = new Set(["fast", "cluster", "group", "wine", "spin", "paste", "image", "mass", "networking", "middleware", "models", "informs",
     "acta", "wise", "cases", "assets", "forte", "crisis", "compass", "time", "chase", "onward", "raid", "pets", "scam", "ease", "concur", "colt",
-    "mabs", "cloud", "ideas", "seams", "forum", "micro", "science", "cognition", "networks", "metrics", "security", "learning", "robotics", "vision", "language"]);
+    "mabs", "cloud", "ideas", "seams", "forum", "micro", "science", "cognition", "networks", "metrics", "security", "learning", "robotics", "vision", "language", "data"]);
 
   // All-caps / camel-case acronym signals present in the string, strongest first.
   // an acronym with its year written against it: "ASE'19", "CC'19", "ICLR2020", "ICML24" — an event, as with a space (two letters and a two-digit year without an apostrophe — "SC18", "CC19" — are left to the other rules: "DS 75" is a report)
@@ -516,7 +516,7 @@
     if (acmDl && /[A-Z]/.test(acmAcr) && !(acmAcr.length <= 2 && /\s/.test(acmDl[2]) && !/['’]/.test(acmDl[2]))) for (const k of keys(acmAcr)) out.push({ key: k, kind: "lead", event: true, raw: acmAcr });
     // a one-word venue equal to an acronym: "Ndss", "Osdi 8 (4), 7, 2008", "ICLR" (with its year glued on, "ICLR2020", the lead rule above has read it; a title-cased one — "Ijcai15", "Nips2016" — is not the shape of an acronym there, and stays here)
     const words = p.plain.split(/\s+/).filter(Boolean);
-    if (!placed && words.length === 1 && /^[A-Za-z][A-Za-z0-9&'’-]{3,14}$/.test(words[0]) && !(glued(words[0]) && ((a) => /[A-Z].*[A-Z]/.test(a) || a === a.toUpperCase() || /^[A-Z][a-z]+[A-Z]/.test(a))(unglue(words[0]))) && !(ENGLISH_ACRONYMS.has(words[0].toLowerCase()) && words[0] !== words[0].toUpperCase())) for (const k of keys(words[0])) out.push({ key: k, kind: "lead", event: false });
+    if (!placed && words.length === 1 && (/^[A-Za-z][A-Za-z0-9&'’-]{3,14}$/.test(words[0]) || (glued(words[0]) && /^[A-Za-z][A-Za-z0-9&'’-]{3,14}$/.test(unglue(words[0])))) && !(glued(words[0]) && ((a) => /[A-Z].*[A-Z]/.test(a) || a === a.toUpperCase() || /^[A-Z][a-z]+[A-Z]/.test(a))(unglue(words[0]))) && !(ENGLISH_ACRONYMS.has(unglue(words[0]).toLowerCase()) && words[0] !== words[0].toUpperCase())) for (const k of keys(words[0])) out.push({ key: k, kind: "lead", event: glued(words[0]), weak: glued(words[0]), raw: unglue(words[0]) });
     return out;
   }
 
@@ -837,7 +837,7 @@
     // the acronym as printed names its own venue: "C&C" is Creativity and Cognition, not Compiler Construction ("CC") — unless the lists say the two spellings are one venue ("S&P", "SP")
     const rawNamesVenue = (raw, k, d) => {
       if (!raw || raw.includes("&") === (d.abbr || "").includes("&")) return true;          // (only an ampersand set the two apart: "ASP-DAC" and "ASPDAC" are one venue)
-      const exact = Object.keys(idx.sources).flatMap((sn) => Object.keys(idx.sources[sn]).flatMap((kd) => (idx.sources[sn][kd].abbrs.get(k) || []).filter((e) => e.abbr === raw)));
+      const exact = Object.keys(idx.sources).flatMap((sn) => Object.keys(idx.sources[sn]).flatMap((kd) => (idx.sources[sn][kd].abbrs.get(k) || []).filter((e) => String(e.abbr).toLowerCase() === raw.replace(/['’]?\d+:?$/, "").toLowerCase())));
       return !exact.length || exact.some((e) => e === d || e.abbr === d.abbr || (e.src !== d.src && (d.src === "ccf" ? idx.sameVenue(d.abbr, e.abbr) : idx.sameVenue(e.abbr, d.abbr))));
     };
     for (const { key, part, kind, issue, raw } of signals) {
@@ -893,7 +893,7 @@
           // (ISWC)" is not the Semantic Web conference of that acronym (a single stray word — "ACL-08: HLT", "VLDB Endowment" — proves nothing)
           // (a line that ends in a volume and an issue is a journal's unless what stands beside the acronym is the venue's own: "PLOS Biology 3 (9)" is not the workshop PLOS, "VLDB Endowment 8 (7)" is VLDB)
           const foreign = d && d !== "ambiguous" && ((spelledEvent && left.length >= 2 && !left.some((w) => vocabOf(d).has(w))) || (d && d !== "ambiguous" && subjectIsNotOwn(d, key)) || namedElsewhere(key, left, d) || parenNameIsAnotherVenueOf(raw, key, d, false) || (p.hasIssue && !CONF_SIGNAL.test(p.plain) && left.length >= 1 && !left.every((w) => vocabOf(d).has(w))));          // (no entry to judge — "ambiguous", or none — is no foreign one)
-          if (d && d !== "ambiguous" && !foreign && !parenContradicts(d) && !(p.truncated && !left.every((w) => vocabOf(d).has(w)))) return { entry: d, rule: "acronym" };
+          if (d && d !== "ambiguous" && !foreign && rawNamesVenue(raw, key, d) && !parenContradicts(d) && !(p.truncated && !left.every((w) => vocabOf(d).has(w)))) return { entry: d, rule: "acronym" };
         }
       }
     }
@@ -1173,7 +1173,7 @@
       // and the late-breaking track they are, not as the conference they would be taken for if the rule that spots them did not see them.) Every scan below is linear: the text is cut at the
       // length `prepare` reads first.
       let key = String(raw == null ? "" : raw).slice(0, 1000).replace(/[\u00ad\u200b-\u200d\u2060\ufeff]/g, "").replace(/[\u2010-\u2015\u2212\ufe58\ufe63\uff0d]/g, "-")
-        .replace(/[\u2018\u2019\u201b\u02bc]/g, "'").replace(/([A-Za-z])[\u00b4`\u2032\u02b9](?=\d{2}\b)/g, "$1'").replace(/[\u201c\u201d\u201f]/g, '"').replace(/\.{3,}/g, "…").replace(/\s+/g, " ");
+        .replace(/[\u2018\u2019\u201b\u02bc]/g, "'").replace(/([A-Za-z])[\u00b4`\u2032\u02b9](?=\d{2}\b)/g, "$1'").replace(/(\s[A-Z]?[a-z]{2,})((?:19|20)\d{2})\b/g, "$1 $2").replace(/[\u201c\u201d\u201f]/g, '"').replace(/\.{3,}/g, "…").replace(/\s+/g, " ");
       let end = key.length;
       while (end > 0 && /[\s,;:.]/.test(key[end - 1])) end--;
       key = key.slice(0, end).trim();
