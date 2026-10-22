@@ -150,9 +150,11 @@
   const LABEL_BEFORE = /(?:\b(?:no|vol|volume|article|heft|band|issue|nr|pages|pp)\.?:?|\bart\.:?|,\s*paper|\d[:.]\s?\d*\s*-\s*\d*[:.]?)$/i;          // ("Art." with its full stop, "paper" as a field of its own: "the state of the art" and "Pulp & Paper" are names)
   // a patent, a thesis or a report: a document that is no journal and no proceedings, given as Scholar printed it
   const DOCUMENT = /\bpatent\b|\b(?:thesis|dissertation)\b|\b(?:tech(?:nical|\.)?\s*rep(?:ort)?|report)\b/i;
-  const isDocument = (p) => entryType(p).type === "misc" && DOCUMENT.test(clean(p.venue));
+  // a publisher's name on its own ("MIT Press", "Springer", "O'Reilly Media, Inc."): a book, given as printed too (APA does not italicise a publisher)
+  const PUBLISHER = /^(?:the\s)?[^,]*\b(?:press|springer|wiley|elsevier|o'?reilly|publish(?:ing|ers?)|verlag|routledge|cengage|pearson|mcgraw)\b[^,]*(?:,\s*(?:inc|ltd|llc|gmbh)\.?)?$/i;
+  const isDocument = (p) => entryType(p).type === "misc" && (DOCUMENT.test(clean(p.venue)) || PUBLISHER.test(asPrinted(p.venue)));
   // the venue line as Scholar printed it, without the year at its end (for such a document, which no rule splits)
-  const asPrinted = (text) => clean(text).replace(/\s+/g, " ").replace(/,\s*(?:19|20)\d{2}$/, "").trim();
+  const asPrinted = (text) => { const s = clean(text).replace(/\s+/g, " ").replace(/,\s*(?:19|20)\d{2}$/, "").trim(); return /[\p{L}\p{N}]/u.test(s) ? s : ""; };
   // A number equal to the year's last two digits after a name is that edition's year, not a volume: "STOC 18, 2018", "Proc. IEEE Globecom 98", "ISCA 12".
   // Two digits: after a short name or one that says it is a meeting; one digit ("INFOCOM 2004 4", "Results in Engineering 24" aside): after a short name only.
   function editionYear(n, before, year) {
@@ -181,7 +183,8 @@
       volume = m[1]; s = s.slice(0, m.index + 1).trim();
     }
     if (/\b(?:arxiv|biorxiv|medrxiv|preprint)\b/i.test(s)) { volume = ""; issue = ""; }
-    return { name: s.replace(/[,;:]\s*$/, ""), volume, issue, pages, year };
+    const name = s.replace(/[,;:]\s*$/, "");
+    return { name: /[\p{L}\p{N}]/u.test(name) ? name : "", volume, issue, pages, year };          // (a line of dashes is no venue)
   }
 
   function entryType(p) {
@@ -375,7 +378,7 @@
     const type = kind.type === "misc" && volume && !isDocument(p) ? "article" : kind.type;
     const venue = type === "misc" ? asPrinted(p.venue) : name, line = clean(p.venue);
     // the type code of Appendix B: patent [P], thesis [D], report [R], journal [J], proceedings [C], anything else [Z]
-    const mark = type === "article" ? "J" : type === "inproceedings" ? "C" : /\bpatent\b/i.test(line) ? "P" : /\b(?:thesis|dissertation)\b/i.test(line) ? "D" : /\b(?:tech(?:nical|\.)?\s*rep(?:ort)?|report)\b/i.test(line) ? "R" : "Z";
+    const mark = type === "article" ? "J" : type === "inproceedings" ? "C" : /\bpatent\b/i.test(line) ? "P" : /\b(?:thesis|dissertation)\b/i.test(line) ? "D" : /\b(?:tech(?:nical|\.)?\s*rep(?:ort)?|report)\b/i.test(line) ? "R" : PUBLISHER.test(asPrinted(line)) ? "M" : "Z";
     let where = "";
     if (type === "article") where = [venue, [year, volume && volume + (issue ? `(${issue})` : "")].filter(Boolean).join(", ")].filter(Boolean).join(", ") + (pages ? `: ${pages}` : "");
     else if (type === "inproceedings") where = (venue ? `//${venue}. ` : "") + year + (year && pages.includes("-") ? `: ${pages}` : "");

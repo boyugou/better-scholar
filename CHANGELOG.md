@@ -2,6 +2,9 @@
 
 ## 2.41.0 — 2026-10-15
 
+- **Three small things the third review noted:** a publisher's name on its own ("MIT Press", "O'Reilly Media, Inc.") is a book's, given as
+  printed (APA does not italicise a publisher; GB/T marks it `[M]`); a venue line of dashes is no venue (it printed as `*-*`); and with *Merge
+  duplicates* on, an award that only the hidden copy holds moves to the row that stands for it (`duplicates.plan` now says which: `into`).
 - **The third review of today's fixes** (four defects, ~1,000 real lines): GB/T dropped the pages and volumes of unclassified lines, and APA and
   IEEE their volumes — an unclassified line with a volume is now laid out as a periodical's in all three ("Scientific Reports, 6, Article 29545"),
   GB/T marks it `[J]` and keeps every field of any other line; the relaxed edition-year rule had turned conference years into volumes ("Proc. IEEE

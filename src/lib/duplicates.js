@@ -32,15 +32,15 @@
       if (!groups.has(k)) groups.set(k, []);
       groups.get(k).push(i);
     });
-    const keep = entries.map(() => true), citations = entries.map((e) => e.citations || 0), merged = entries.map(() => 1);
+    const keep = entries.map(() => true), citations = entries.map((e) => e.citations || 0), merged = entries.map(() => 1), into = entries.map((e, i) => i);
     for (const idx of groups.values()) {
       if (idx.length < 2) continue;
       const top = idx.reduce((best, i) => ((entries[i].citations || 0) > (entries[best].citations || 0) ? i : best), idx[0]);
-      for (const i of idx) if (i !== top) keep[i] = false;
+      for (const i of idx) if (i !== top) { keep[i] = false; into[i] = top; }          // (into: the entry that stands for it)
       citations[top] = idx.reduce((n, i) => n + (entries[i].citations || 0), 0);
       merged[top] = idx.length;
     }
-    return { keep, citations, merged };
+    return { keep, citations, merged, into };
   }
 
   return { key, plan };

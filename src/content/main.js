@@ -97,6 +97,7 @@
     const plan = on ? B.duplicates.plan(state.rows.map(dupEntry)) : null;
     state.rows.forEach((r, i) => {
       r.dupHidden = !!plan && !plan.keep[i];
+      r.dupInto = plan ? plan.into[i] : i;
       r.shown = plan ? plan.citations[i] : r.raw.citations;
       r.raw.tr.classList.toggle("rr-dup", r.dupHidden);
       const link = r.raw.tr.querySelector("td.gsc_a_c a");
@@ -117,7 +118,7 @@
 
   // (one award of the list marks one row: a title listed twice, a paper and its reprint, gets it on one of them — marks.listedOnce)
   function awardsOnce() {
-    const kept = marks.listedOnce(state.rows.map((r) => ({ title: r.raw.title, year: r.raw.year, hidden: !!r.dupHidden, marks: r.a.allMarks || (r.a.allMarks = r.a.marks) })), B.awards ? B.awards.titleKey : undefined);
+    const kept = marks.listedOnce(state.rows.map((r) => ({ title: r.raw.title, year: r.raw.year, hidden: !!r.dupHidden, into: r.dupInto, marks: r.a.allMarks || (r.a.allMarks = r.a.marks) })), B.awards ? B.awards.titleKey : undefined);
     state.rows.forEach((r, i) => { const cur = r.a.marks; if (!(cur && cur.length === kept[i].length && cur.every((m, j) => m === kept[i][j]))) r.a.marks = kept[i]; });
   }
   const reanalyze = () => { state.rows.forEach((r) => { r.a = analyzeRaw(r.raw); }); awardsOnce(); };

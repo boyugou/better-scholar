@@ -252,3 +252,9 @@ test("a test-of-time award on the list leaves the authors' own \"Best Paper\" st
   const fold = (t) => t.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "");
   assert.deepEqual(marks.listedOnce([{ title: "Naïve Bayes", year: 2001, marks: [L("best", "X", 2001)] }, { title: "Naive Bayes", year: 2003, marks: [L("best", "X", 2001)] }], fold).map((ms) => ms.length), [1, 0]);
 });
+
+test("a hidden duplicate's award that no other row holds goes to the row that stands for it", () => {
+  const L = (kind, venue, year) => ({ kind, venue, year, awardLabel: "", source: "list" });
+  const once = marks.listedOnce([{ title: "A", year: 2021, marks: [] }, { title: "A", year: 2024, hidden: true, into: 0, marks: [L("best", "AAAI", 2024)] }]);
+  assert.deepEqual(once.map((ms) => ms.map((m) => m.kind)), [["best"], []]);
+});

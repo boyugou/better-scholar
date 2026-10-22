@@ -420,3 +420,12 @@ test("the venue line, third review: a meeting's two-digit edition year, a period
   assert.match(f.gbt([paper("IEEE Access 6, 52754-52765, 2018")]), /T\[J\]\. IEEE Access, 2018, 6: 52754-52765\.$/);
   assert.match(f.gbt([paper("ISMIR, 260-265, 2018")]), /T\[Z\]\. ISMIR, 260-265, 2018\.$/);
 });
+
+test("a publisher's name is a book's, given as printed (GB/T [M]); a line of dashes is no venue", () => {
+  const paper = (venue) => ({ title: "T", authors: "A Author", venue, year: 2018, type: null, url: "", rank: {}, marks: [] });
+  assert.match(f.apa([paper("MIT Press, 2018")]), /T\. MIT Press\.$/);
+  assert.match(f.gbt([paper("O'Reilly Media, Inc., 2018")]), /T\[M\]\. O'Reilly Media, Inc\., 2018\.$/);
+  assert.match(f.apa([paper("-, 2018")]), /\(2018\)\. T\.$/);
+  assert.match(f.gbt([paper("-, 2018")]), /T\[Z\]\. 2018\.$/);
+  assert.match(f.apa([paper("Journal of Pressure Vessel Technology 12 (3), 1-10, 2018")]), /\*Journal of Pressure Vessel Technology\*, \*12\*\(3\), 1–10\.$/, "a journal whose name holds \"Press\" is no publisher");
+});
