@@ -270,6 +270,9 @@ mark.sec.on { background: #e8eaed; color: var(--ink); box-shadow: inset 0 -2px 0
 .mini td.hit .z, .mini td.hit .v { transition: opacity 0.3s ease; }
 .mini td.hit .v { position: absolute; inset: 0; display: grid; place-items: center; opacity: 0; }
 .mini td.hit.on { background: color-mix(in srgb, #1a73e8 10%, transparent); }
+.mini td.hit.sum.on { background: transparent; }
+.mini tr.all th, .mini tr.all td { border-top: 1px solid #e8eaed; color: var(--grey); }
+.mini tr.all td.hit.on { color: var(--ink); }
 .mini td.hit.on .z { opacity: 0; }
 .mini td.hit.on .v { opacity: 1; }
 .how-play {

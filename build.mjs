@@ -145,8 +145,8 @@ const ext = (code, key, ...subs) => {
   return m.message.replace(/\$(\w+)\$/g, (whole, name) => { const ph = m.placeholders && m.placeholders[name.toLowerCase()]; return ph ? String(subs[Number(ph.content.slice(1)) - 1]) : whole; });
 };
 // The role colours are the extension's defaults (src/content/styles.css there); the chip is its rank chip as it is drawn until a look is chosen.
-const ROLE_COLOUR = { first: "#1a73e8", cofirst: "#a142f4", second: "#f9ab00", last: "#1e8e3e" };
-const ROLE_WORD = { first: "roleFirst", cofirst: "roleCofirst", second: "roleSecond", last: "roleLast" };
+const ROLE_COLOUR = { first: "#1a73e8", cofirst: "#a142f4", second: "#f9ab00", last: "#1e8e3e", middle: "#9aa0a6" };
+const ROLE_WORD = { first: "roleFirst", cofirst: "roleCofirst", second: "roleSecond", last: "roleLast", middle: "roleMiddle" };
 
 // The stage is a picture of what the steps say (the steps hold the words, so a screen reader is given those and not the picture twice). An element with
 // data-from / data-to is shown at those steps (the script switches it; the page is written at step 4, the whole story, for a reader with no script or no motion).
@@ -170,16 +170,14 @@ function explainer(lang, t) {
             <div class="co-slot" dir="${lang.dir}">${notes.join("")}</div>
           </div>`;
   }).join("\n");
-  // the table: a row for each role the papers have, a column for each CCF tier and one for no rank, each paper counted once (what the panel's table does)
-  const roles = Object.keys(ROLE_WORD).filter((r) => HOW.some((p) => p.a.role === r));
-  const cols = ["A", "B", "C", ""];
-  const cell = (n) => (n ? `<td ${on("hit", 4)} data-focus="4"><span class="z">·</span><span class="v">${n}</span></td>` : "<td>·</td>");
+  // the table: the extension's own summary of the two papers (metrics.summarize, as the panel draws it: the rows First, Second and Last always, a column
+  // for each CCF tier and one for no rank, and the "All" row and column), so that it cannot drift from what the panel shows
+  const sum = extLib("lib/metrics.js").summarize(HOW.map((p) => p.a), "ccf");
+  const cell = (n, total) => (n ? `<td ${on("hit" + (total ? " sum" : ""), 4)} data-focus="4"><span class="z">·</span><span class="v">${n}</span></td>` : "<td>·</td>");
+  const line = (label, swatch, counts, total) => `<tr${total ? ' class="all"' : ""}><th>${swatch}${label}</th>${sum.columns.map((col) => cell(counts[col], total)).join("")}${cell(counts.total, true)}</tr>`;
   const table = `<table>
-              <thead><tr><th></th>${cols.map((c) => `<th>${c || "–"}</th>`).join("")}<th>${esc(ext(code, "colTotal"))}</th></tr></thead>
-              <tbody>${roles.map((r) => {
-    const mine = HOW.filter((p) => p.a.role === r);
-    return `<tr><th><i style="--rc:${ROLE_COLOUR[r]}"></i>${esc(ext(code, ROLE_WORD[r]))}</th>${cols.map((c) => cell(mine.filter((p) => (p.a.venue.ccf ? p.a.venue.ccf.tier : "") === c).length)).join("")}${cell(mine.length)}</tr>`;
-  }).join("")}</tbody>
+              <thead><tr><th></th>${sum.columns.map((col) => `<th>${col === "none" ? "–" : esc(col)}</th>`).join("")}<th>${esc(ext(code, "colTotal"))}</th></tr></thead>
+              <tbody>${sum.rows.map((r) => line(esc(ext(code, ROLE_WORD[r.role])), `<i style="--rc:${ROLE_COLOUR[r.role]}"></i>`, r, false)).join("")}${line(esc(ext(code, "colTotal")), "", sum.totals, true)}</tbody>
             </table>`;
   const steps = [1, 2, 3, 4].map((n) => `          <li><button type="button" data-step="${n}"${n === 4 ? ' aria-current="step"' : ""}><span class="n">${n}</span><b>${t(`how.s${n}.title`)}</b><span class="d">${t(`how.s${n}.text`)}</span><i class="bar" aria-hidden="true"></i></button></li>`).join("\n");
   return `  <section class="how" id="how">
