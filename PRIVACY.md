@@ -113,7 +113,8 @@ Links, which open only when you click them:
   text: the unranked venue strings that it lists or, when Scholar's page layout cannot be read, the page's address without the
   host, with the profile's `user=` id replaced by "…".
 - The footer of the settings page links to the privacy page, the issue tracker and the GitHub repository. The toolbar popup
-  links to Google Scholar when the open tab is not a profile.
+  links to Google Scholar and to Scholar's own "My profile" page (`scholar.google.com/citations`) when the open tab is not a
+  profile.
 - For a CCF venue, *Check a venue* on the settings page shows a link to the venue's page on DBLP (`https://dblp.org/db/…`, the
   address that the CCF list itself gives). It is a plain link with `rel="noopener noreferrer"`. The extension sends nothing, and
   the page opens only when you click the link.

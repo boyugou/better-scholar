@@ -1290,5 +1290,8 @@
   },
   "optMineChange": {
     "message": "更改…"
+  },
+  "popupMyProfile": {
+    "message": "開啟我的作者頁面"
   }
 }

@@ -35,6 +35,9 @@
   pages), the paper page's bare venue only where Scholar cut that line, so the page range lands where it should; *Change…* is shown;
   Enter picks only what is shown; the summary's title counts the loaded papers and has one colon in every language; "Findings" is
   proceedings only beside an ACL-family acronym ("Clinical Findings" is not); every co-first mark is stripped (`∗`, `#`, `⁎` too).
+- **The popup off a profile offers *Open my profile*** (Scholar's own "My profile" address, the person's profile when signed in) beside
+  *Open Google Scholar*: most people look at their own profile first. CI pins its runner to Ubuntu 24.04 and runs the unit tests on Node 22
+  and 24 (Node 20 reached its end of life).
 - **Your name in bold in the references you paste**: *Copy APA*, *Copy IEEE* and now *Copy GB/T 7714* put HTML beside the text, with the
   profile owner's name in bold while the panel marks it in the author lines (the same setting as the papers table) — what NSFC's forms
   and most CVs ask for. The plain text stays plain.

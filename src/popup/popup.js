@@ -23,7 +23,9 @@
   function notProfile() {
     main.replaceChildren(
       h("p", { class: "empty" }, t("popupNotProfile")),
-      h("div", { class: "actions" }, h("a", { class: "btn primary", href: "https://scholar.google.com/", target: "_blank", rel: "noopener" }, t("popupOpenScholar"))));
+      // (Scholar's own "My profile" address: the person's profile when signed in; most people look at their own first)
+      h("div", { class: "actions" }, h("a", { class: "btn primary", href: "https://scholar.google.com/citations", target: "_blank", rel: "noopener" }, t("popupMyProfile")),
+        h("a", { class: "btn", href: "https://scholar.google.com/", target: "_blank", rel: "noopener" }, t("popupOpenScholar"))));
   }
 
   // The page's own tab (?tab=<id> lets the end-to-end test aim the popup at a specific tab) and a call to it: { ok: true, result } | { ok: false, error }
