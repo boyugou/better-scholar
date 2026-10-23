@@ -568,7 +568,7 @@
     "message": "Beberapa profil mencantumkan satu makalah berkali-kali."
   },
   "optMergeLabel": {
-    "message": "Gabungkan entri ganda"
+    "message": "Gabungkan entri duplikat"
   },
   "optMergeLabelHint": {
     "message": "Entri dengan judul yang sama dan penulis pertama yang sama digabung menjadi satu entri (huruf besar, aksen, dan tanda baca tidak diperhitungkan). Entri yang paling banyak disitasi tetap ada dan menampilkan sitasi semuanya. Panel menghitungnya satu kali."
