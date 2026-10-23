@@ -1262,5 +1262,13 @@
   },
   "coverMappedAction": {
     "message": "Muokkaa…"
+  },
+  "optMineFull": {
+    "message": "Chrome säilyttää noin viisikymmentä kohdistusta: $N1$ vanhinta poistettiin tilan vapauttamiseksi.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
   }
 }

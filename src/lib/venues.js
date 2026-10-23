@@ -1162,10 +1162,20 @@
   // "IEEE MultiMedia" is a magazine, "IEEE International Symposium on Multimedia" is ISM. Read as what they are, they are not taken for the conference.
   const PERIODICALS = new Set(["ieee multimedia"]);
 
+  // The text every reading starts from (see resolve): the same for a line of the page and for a line the person saved
+  function cleanText(raw) {
+    let key = String(raw == null ? "" : raw).slice(0, 1000).replace(/[\u00ad\u200b-\u200d\u2060\ufeff]/g, "").replace(/[\u2010-\u2015\u2212\ufe58\ufe63\uff0d]/g, "-")
+      .replace(/[\u2018\u2019\u201b\u02bc]/g, "'").replace(/([A-Za-z])[\u00b4`\u2032\u02b9](?=\d{2}\b)/g, "$1'").replace(/(\s[A-Z]?[a-z]{2,})((?:19|20)\d{2})\b/g, "$1 $2").replace(/[\u201c\u201d\u201f]/g, '"').replace(/\.{3,}/g, "…").replace(/\s+/g, " ");
+    let end = key.length;
+    while (end > 0 && /[\s,;:.]/.test(key[end - 1])) end--;
+    return key.slice(0, end).trim();
+  }
+
   // The key of the person's own venue mappings (`data.mine`): the venue's name as printed, the same in every edition — without its numbers, years, ordinals,
   // "Proceedings of (the)" and an acronym in brackets ("(COLM)"), in lower case — and nothing looser: "Workshop on Things" is not "Conference on Things", nor a cut "Workshop on …" the whole name
   function mineKey(text) {
-    const words = fold(prepare(text).name).toLowerCase().replace(/\s*\([a-z][a-z0-9&'-]{1,14}\)/g, " ").replace(/^proceedings\s+of\s+(?:the\s+)?/, "").replace(/\b(?:19|20)\d{2}\b|'\d{2}\b|\b\d{1,3}(?:st|nd|rd|th)\b/g, " ")
+    const words = fold(prepare(cleanText(text)).name).toLowerCase().replace(/\b(?:19|20)\d{2}\b|'\d{2}\b|\b\d{1,3}(?:st|nd|rd|th)\b/g, " ")
+      .replace(/\(\s*[a-z][a-z0-9&'-]{1,14}\s*\)/g, " ").replace(/^\s*proceedings\s+of\s+(?:the\s+)?/, "")
       .replace(/[^\p{L}\p{N}&+…]+/gu, " ").trim().split(" ").filter((w) => w && !ORDINAL_WORDS.has(w) && !TENS.has(w));
     return words.join(" ");
   }
@@ -1178,7 +1188,7 @@
     const mine = new Map();
     for (const m of Array.isArray(data && data.mine) ? data.mine : []) {
       const side = m && idx.sources[m.list], key = m && mineKey(m.text);
-      const row = side && [...((side.C && side.C.all) || []), ...((side.J && side.J.all) || [])].find((e) => e.name === m.name);
+      const row = side && [...((side.C && side.C.all) || []), ...((side.J && side.J.all) || [])].find((e) => e.name === m.name && (!m.kind || e.kind === m.kind));          // (two rows may share a name: CVM the conference, CVMJ the journal)
       if (row && key && !mine.has(key)) mine.set(key, { list: m.list, row });
     }
 
@@ -1188,11 +1198,7 @@
       // are the ellipsis that marks a cut name, and a string does not end in punctuation. ("AAAI  Fall Symposium", "AAAI Fall​ Symposium" and "Late–Breaking" must be read as the symposium
       // and the late-breaking track they are, not as the conference they would be taken for if the rule that spots them did not see them.) Every scan below is linear: the text is cut at the
       // length `prepare` reads first.
-      let key = String(raw == null ? "" : raw).slice(0, 1000).replace(/[\u00ad\u200b-\u200d\u2060\ufeff]/g, "").replace(/[\u2010-\u2015\u2212\ufe58\ufe63\uff0d]/g, "-")
-        .replace(/[\u2018\u2019\u201b\u02bc]/g, "'").replace(/([A-Za-z])[\u00b4`\u2032\u02b9](?=\d{2}\b)/g, "$1'").replace(/(\s[A-Z]?[a-z]{2,})((?:19|20)\d{2})\b/g, "$1 $2").replace(/[\u201c\u201d\u201f]/g, '"').replace(/\.{3,}/g, "…").replace(/\s+/g, " ");
-      let end = key.length;
-      while (end > 0 && /[\s,;:.]/.test(key[end - 1])) end--;
-      key = key.slice(0, end).trim();
+      const key = cleanText(raw);
       if (cache.has(key)) return cache.get(key);
       let res;
       try { res = resolveUncached(key); }
@@ -1289,8 +1295,10 @@
         else if (out.core.rule === "prefix" && out.ccf.rule === "name") { if (clashed.ccf) { out.ccf = null; out.core = null; } else out.core = null; }
       }
       // the person's own mapping of a line no rule ranks: that row, and the other list's row of the same venue; marked as theirs (rule "mine") wherever a rank goes
-      if (!inner && mine.size && !out.ccf && !out.core && !out.refused && !secs.length) {
-        const m = mine.get(mineKey(raw));
+      // (`assignable`: a line the person may tie to a listed venue — no list ranks it, it is no track, not refused and not cut off, and it has a name; a cut line's visible start would take every line that starts the same)
+      if (!inner && !out.ccf && !out.core && !out.refused && !secs.length && !p.truncated && mineKey(raw)) {
+        out.assignable = true;
+        const m = mine.size && mine.get(mineKey(raw));
         if (m) {
           out[m.list] = badge(m.list, m.row, "mine");
           const rows = idx.partners.get(m.row) || [], other = m.list === "ccf" ? "core" : "ccf";

@@ -22,10 +22,12 @@
     const cls = names.classifyRow(authorsText, ctx.owner);
     const venueText = raw.venueText || "";
     let venue = ctx.resolver.resolve(venueText);
-    // A truncated or odd list-view venue may become matchable via the detail page's own field.
-    if (!venue.ccf && !venue.core && resolved && resolved.venue) {
+    // A truncated or odd list-view venue may become matchable via the detail page's own field. (A rank from the person's own mapping is no list's: the
+    // paper page's line read by the lists' rules goes first — the mappings fill gaps only)
+    const byList = (v) => [v.ccf, v.core].some((x) => x && x.rule !== "mine");
+    if (!byList(venue) && resolved && resolved.venue) {
       const alt = ctx.resolver.resolve(resolved.venue);
-      if (alt.ccf || alt.core) venue = alt;
+      if (byList(alt) || (!venue.ccf && !venue.core && (alt.ccf || alt.core))) venue = alt;
     }
     return {
       status: cls.status,

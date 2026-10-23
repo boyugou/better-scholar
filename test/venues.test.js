@@ -1981,3 +1981,32 @@ test("the person's own venue mappings fill gaps only, by the whole name, marked 
   assert.equal(venues.mineKey("Symposium on Odd Things (SOT), 2016"), "symposium on odd things", "an acronym in brackets is the same venue");
   assert.notEqual(venues.mineKey("Symposium on Odd Things (Short Papers), 2016"), "symposium on odd things", "words in brackets are not");
 });
+
+test("the venue mappings, from an independent review: the paper page's ranked line wins, cut lines are never mapped, a row is its name and its kind, a saved line is read like the page's", () => {
+  const analysis = require("../src/lib/analysis.js");
+  const ijcai = "International Joint Conference on Artificial Intelligence";
+  const r = venues.createResolver({ ccf: ccf.venues, core: core.venues, aliases, strict: true, mine: [
+    { text: "Proceedings of the Twenty-Seventh International Joint Conference on …, 2018", list: "ccf", name: ijcai },
+    { text: "2018 International Joint Conference on Things, 2018", list: "ccf", name: ijcai },
+    { text: "Computational Visual Things, 2020", list: "ccf", name: "Computational Visual Media", kind: "J" },
+    { text: "Constraint Modelling and Reformulation (ModRef’09), 132, 2009", list: "core", name: "International Conference on Principles and Practice of Constraint Programming" }
+  ] });
+  // a cut line is no key: neither the saved one nor any line that starts the same
+  for (const v of ["International Joint Conference on …, 2016", "Proceedings of the 2019 International Joint Conference on …, 2019"]) { const x = r.resolve(v); assert.ok(!x.ccf && !x.core && !x.assignable, v); }
+  // the paper page's own line, ranked by the lists' rules, goes before the person's mapping of the profile line
+  const owner = { name: "A Author" };
+  const a = analysis.analyzeRow({ authorsText: "A Author", venueText: "2018 International Joint Conference on Things, 2018", title: "T", year: 2018 },
+    { owner, resolver: r, resolved: { venue: "2018 International Joint Conference on Neural Networks (IJCNN), 1-8, 2018" } });
+  assert.equal(a.venue.ccf.abbr, "IJCNN"); assert.notEqual(a.venue.ccf.rule, "mine");
+  // without a ranked page line, the mapping stands
+  const b = analysis.analyzeRow({ authorsText: "A Author", venueText: "2018 International Joint Conference on Things, 2018", title: "T", year: 2018 }, { owner, resolver: r });
+  assert.equal(b.venue.ccf.rule, "mine");
+  // the journal picked is the journal, not the conference of the same name
+  const c = r.resolve("Computational Visual Things, 2021");
+  assert.equal(c.ccf.kind, "J"); assert.equal(c.ccf.abbr, "CVMJ");
+  // the saved text is cleaned as the page's line is ("’09"), and the edition in the bracket is the same venue
+  for (const v of ["Constraint Modelling and Reformulation (ModRef’09), 132, 2009", "Constraint Modelling and Reformulation (ModRef 2010), 1-5, 2010"]) assert.equal(r.resolve(v).core && r.resolve(v).core.rule, "mine", v);
+  // what can be assigned: a named line no list ranks, not a preprint, not a nameless one
+  assert.equal(!!r.resolve("TMLR, 2024").assignable, true);
+  for (const v of ["arXiv preprint arXiv:2101.00001, 2021", "Proceedings of the 12th, 2004", "CVPR Workshops, 2019", "PPoPP 2019, 2019"]) assert.equal(!!r.resolve(v).assignable, false, v);
+});

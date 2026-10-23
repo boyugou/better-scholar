@@ -1262,5 +1262,13 @@
   },
   "coverMappedAction": {
     "message": "Redigér…"
+  },
+  "optMineFull": {
+    "message": "Chrome gemmer omkring halvtreds koblinger: de $N1$ ældste blev fjernet for at skabe plads.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
   }
 }

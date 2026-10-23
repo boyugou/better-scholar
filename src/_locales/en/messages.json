@@ -1262,5 +1262,13 @@
   },
   "coverMappedAction": {
     "message": "Edit…"
+  },
+  "optMineFull": {
+    "message": "Chrome keeps about fifty mappings: the $N1$ oldest were removed to make room.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
   }
 }

@@ -1262,5 +1262,13 @@
   },
   "coverMappedAction": {
     "message": "Sửa…"
+  },
+  "optMineFull": {
+    "message": "Chrome giữ khoảng năm mươi ánh xạ: $N1$ ánh xạ cũ nhất đã bị xóa để nhường chỗ.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
   }
 }

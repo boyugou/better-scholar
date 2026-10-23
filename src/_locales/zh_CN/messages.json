@@ -1262,5 +1262,13 @@
   },
   "coverMappedAction": {
     "message": "编辑…"
+  },
+  "optMineFull": {
+    "message": "Chrome 只保留约五十条对应：为腾出空间，已删除最早的 $N1$ 条。",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
   }
 }

@@ -1262,5 +1262,13 @@
   },
   "coverMappedAction": {
     "message": "संपादित करें…"
+  },
+  "optMineFull": {
+    "message": "Chrome लगभग पचास मैपिंग रखता है: जगह बनाने के लिए सबसे पुरानी $N1$ मैपिंग हटा दी गईं।",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
   }
 }

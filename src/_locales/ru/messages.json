@@ -1262,5 +1262,13 @@
   },
   "coverMappedAction": {
     "message": "Изменить…"
+  },
+  "optMineFull": {
+    "message": "Chrome хранит около пятидесяти сопоставлений: чтобы освободить место, удалены $N1$ самых старых.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
   }
 }

@@ -1262,5 +1262,13 @@
   },
   "coverMappedAction": {
     "message": "עריכה…"
+  },
+  "optMineFull": {
+    "message": "Chrome שומר כחמישים שיוכים: $N1$ הישנים ביותר הוסרו כדי לפנות מקום.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
   }
 }

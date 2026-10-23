@@ -505,7 +505,7 @@ Four buttons put a second flavour on the clipboard: *Copy as table* (`summaryHtm
 |---|---|---|---|
 | `chrome.storage.sync` | `prefs` | The settings record (`SETTINGS`), names and orders included: under 7 KB at its worst (a test); the item limit is 8 KB, counted as Chrome counts it (`sizeOf`: a `<` is six bytes), and a record over it is not written, not retried, and the page says so | the settings page only |
 | `chrome.storage.sync` | `variants` | `{ profileId: [spellings] }`, at most 8 per profile, 40 profiles | the Scholar page |
-| `chrome.storage.sync` | `mine` | the person's venue mappings `[{ text, list, name }]`, at most 100 | the settings page |
+| `chrome.storage.sync` | `mine` | the person's venue mappings `[{ text, list, name, kind }]`, as many as fit 8 KB (about fifty; the page says when the oldest go) | the settings page |
 | `chrome.storage.local` | `ui` | `{ collapsed, source }` | the Scholar page only |
 | `chrome.storage.local` | `resolved` | `{ paperId: { authors, venue, ts, via? } }` from *Read full lists*; 90 days, at most 3,000 | the Scholar page; cleared from the settings page |
 | `chrome.storage.local` | `s2key` | The optional Semantic Scholar API key (never synced) | the settings page |

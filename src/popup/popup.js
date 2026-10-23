@@ -107,7 +107,7 @@
               : s.absent > 0 ? t("popupPapersOf", [String(data.loaded - s.absent), String(data.loaded)]) : tn("popupPapers", data.loaded, [String(data.loaded)]))),
         tp.show ? seg : null, tp.show ? table : null,
         tp.show && source !== "none" && tp.unranked ? h("p", { class: "legend" }, "– " + t("tipUnranked")) : null,
-        tp.show && source !== "none" && data.mapped ? h("p", { class: "legend", "data-rr": "mapped" }, t("popupMapped", [String(data.mapped)])) : null,          // (ranks the person mapped by hand are counted, and said to be)
+        tp.show && source !== "none" && data.mapped && data.mapped[source] ? h("p", { class: "legend", "data-rr": "mapped" }, t("popupMapped", [String(data.mapped[source])])) : null,          // (ranks the person mapped by hand are counted, and said to be)
         markParts.length ? h("p", { class: "marks", title: t("marksHint") }, mp.title ? h("b", {}, t("marksTitle") + B.dom.colon()) : null, markParts.join(" · ")) : null,
         copyBar,
         tp.show && tp.note && (data.noRanks || sources.length) ? h("p", { class: "note" }, t(data.noRanks ? "noRanksNote" : "dataNote", [(listed.length ? listed : ["ccf", "core"]).map((k) => listName(data.edition[k])).join(" · ")])) : null

@@ -1262,5 +1262,13 @@
   },
   "coverMappedAction": {
     "message": "Змінити…"
+  },
+  "optMineFull": {
+    "message": "Chrome зберігає близько пʼятдесяти зіставлень: щоб звільнити місце, видалено найстаріші ($N1$).",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
   }
 }

@@ -345,7 +345,7 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
         loaded: list.length, canLoadMore: B.scholar.canLoadMore(), complete: listComplete(), loadingAll: state.loadingAll, loadMessage: state.loadMessage,
         repeats: prefs.mergeDuplicates ? 0 : B.duplicates.plan(state.rows.map(dupEntry)).keep.filter((k) => !k).length,
         hidden: whole.hidden, absent: whole.absent, resolving: state.resolving, resolveMessage: state.resolveMessage, layoutBroken: layoutBroken(),
-        unmatched: metrics.unmatchedVenues(list), mapped: mappedCount()
+        unmatched: metrics.unmatchedVenues(list), mapped: source ? mappedCount(tableRows(true), [source]) : 0
       },
       variants, nameHints: hints
     };
@@ -410,18 +410,20 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
   }
   // What a copied summary says about where it is from, so that it can be filed or sent on: the profile's own link (nothing else of the address) and the day, when the setting is on; and,
   // when the list is not all here, that it is not (the count is of what is loaded)
-  // how many loaded papers have a rank from the person's own venue mappings (rule "mine"), not from a list's rule
-  const mappedCount = () => live().filter((r) => [r.a.venue && r.a.venue.ccf, r.a.venue && r.a.venue.core].some((x) => x && x.rule === "mine")).length;
-  function copyNotes() {
+  // How many papers have a rank from the person's own venue mappings (rule "mine"), not from a list's rule — in the lists given, among the rows a table counts
+  // (the papers the filters leave, when the counts follow them): a number counts what it names
+  const tableRows = (filtered) => (filtered && prefs.panel.filters.follow && scopeFiltering() ? counted() : live());
+  const mappedCount = (rows, lists) => rows.filter((r) => lists.some((l) => r.a.venue && r.a.venue[l] && r.a.venue[l].rule === "mine")).length;
+  function copyNotes(src = null, filtered = false) {
     const notes = [];
     const id = new URLSearchParams(location.search).get("user"), d = new Date();
     if (prefs.panel.copy.source && id) notes.push(`Source: ${location.origin}/citations?user=${encodeURIComponent(id)} · ${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`);
     if (!listComplete()) notes.push(`Not fully loaded: ${live().length} papers so far`);
-    const mapped = mappedCount();
+    const mapped = src ? mappedCount(tableRows(filtered), [src]) : 0;
     if (mapped) notes.push(`Ranked by your own venue mappings, not by the lists: ${mapped} paper${mapped === 1 ? "" : "s"}`);
     return notes;
   }
-  const summaryWords = (filtered) => ({ label: copyLabels(), header: t("tsvRole"), total: t("tsvTotal"), notRanked: td("tipUnranked"), scope: filtered ? scopeLine() : "", notes: copyNotes() });
+  const summaryWords = (filtered, src) => ({ label: copyLabels(), header: t("tsvRole"), total: t("tsvTotal"), notRanked: td("tipUnranked"), scope: filtered ? scopeLine() : "", notes: copyNotes(src, filtered) });
 
   // The text of one copy button; the button's name is the format (lib/prefs.js COPY_BUTTONS). `source`: the ranking the summary and the table use
   // (default: the panel's own; "none": by role only).
@@ -430,9 +432,9 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
     if (kind === "summary" || kind === "table") {
       const { summary, src } = summaryOf(source, filtered);
       return kind === "table"
-        ? formats.summaryTsv(summary, summaryWords(filtered))
+        ? formats.summaryTsv(summary, summaryWords(filtered, src))
         : formats.summaryText(summary, { owner: headerName, label: copyLabels(), notRanked: td("tipUnranked").toLowerCase(), extra: [marksLine(markCounts(filtered))].filter(Boolean),
-          edition: src ? `${edition[src]} — ${t("tipToday")}` : "", scope: filtered ? scopeLine() : "", notes: copyNotes() });
+          edition: src ? `${edition[src]} — ${t("tipToday")}` : "", scope: filtered ? scopeLine() : "", notes: copyNotes(src, filtered) });
     }
     const records = paperRecords();
     switch (kind) {
@@ -449,7 +451,7 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
 
   // The second flavour of a copy button, for a word processor: a real table for the table and the papers, real italics for APA; "" for the others (their text is the whole of it)
   function exportHtml(kind, { source, filtered = false } = {}) {
-    if (kind === "table") return formats.summaryHtml(summaryOf(source, filtered).summary, summaryWords(filtered));
+    if (kind === "table") { const s = summaryOf(source, filtered); return formats.summaryHtml(s.summary, summaryWords(filtered, s.src)); }
     if (kind === "papers") return formats.papersHtml(paperRecords(), { labels: tableLabels(), ccfOn: B.prefs.lists(prefs).ccf, coreOn: B.prefs.lists(prefs).core, markMe: !!prefs.rows.name });
     if (kind === "apa") return formats.apaHtml(paperRecords());
     if (kind === "ieee") return formats.ieeeHtml(paperRecords());
@@ -737,7 +739,7 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
       const table = (src) => { const whole = metrics.summarize(list, src); return rows === list ? whole : metrics.summarize(rows, src, { keep: whole.rows.map((r) => r.role) }); };
       return {
         owner: headerName, loaded: list.length, counted: rows.length, shown: shownRows().length, loadingAll: state.loadingAll, layoutBroken: layoutBroken(), edition,
-        noRanks: noRanks(list), mapped: mappedCount(),
+        noRanks: noRanks(list), mapped: { ccf: mappedCount(tableRows(filtered), ["ccf"]), core: mappedCount(tableRows(filtered), ["core"]) },
         summaries: { ccf: table("ccf"), core: table("core"), none: table(null) },
         marks: markCounts(rows !== list),
         metrics: { highlighted: metrics.citationMetrics(scoped(source, { skipImpact: true })).highlighted, all: metrics.citationMetrics(list).all }

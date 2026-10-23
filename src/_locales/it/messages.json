@@ -1262,5 +1262,13 @@
   },
   "coverMappedAction": {
     "message": "Modifica…"
+  },
+  "optMineFull": {
+    "message": "Chrome conserva circa cinquanta associazioni: le $N1$ più vecchie sono state rimosse per fare spazio.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
   }
 }

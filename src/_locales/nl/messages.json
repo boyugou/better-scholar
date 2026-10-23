@@ -1262,5 +1262,13 @@
   },
   "coverMappedAction": {
     "message": "Bewerken…"
+  },
+  "optMineFull": {
+    "message": "Chrome bewaart ongeveer vijftig koppelingen: de $N1$ oudste zijn verwijderd om ruimte te maken.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
   }
 }

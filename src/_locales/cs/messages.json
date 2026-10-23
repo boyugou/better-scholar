@@ -1262,5 +1262,13 @@
   },
   "coverMappedAction": {
     "message": "Upravit…"
+  },
+  "optMineFull": {
+    "message": "Chrome uchovává asi padesát přiřazení. Kvůli místu byla odstraněna nejstarší přiřazení ($N1$).",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
   }
 }

@@ -1262,5 +1262,13 @@
   },
   "coverMappedAction": {
     "message": "Editar…"
+  },
+  "optMineFull": {
+    "message": "Chrome guarda unas cincuenta asignaciones: se borraron las $N1$ más antiguas para hacer sitio.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
   }
 }

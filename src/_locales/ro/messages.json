@@ -1262,5 +1262,13 @@
   },
   "coverMappedAction": {
     "message": "Editează…"
+  },
+  "optMineFull": {
+    "message": "Chrome păstrează aproximativ cincizeci de mapări. Ca să facă loc, au fost șterse cele mai vechi ($N1$).",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
   }
 }

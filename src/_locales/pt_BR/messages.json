@@ -1262,5 +1262,13 @@
   },
   "coverMappedAction": {
     "message": "Editar…"
+  },
+  "optMineFull": {
+    "message": "O Chrome guarda cerca de cinquenta mapeamentos: os $N1$ mais antigos foram removidos para abrir espaço.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
   }
 }

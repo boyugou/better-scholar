@@ -66,13 +66,13 @@
   // The person's own venue mappings (lib/venues.js `data.mine`): [{ text, list, name }], synced like the spellings. A line no rule ranks, tied by the person to a list's row.
   const MINE_MAX = 100;
   const cleanMine = (list) => (Array.isArray(list) ? list : []).filter((m) => m && typeof m.text === "string" && (m.list === "ccf" || m.list === "core") && typeof m.name === "string")
-    .map((m) => ({ text: m.text.replace(/\s+/g, " ").trim().slice(0, 200), list: m.list, name: m.name.slice(0, 300) })).filter((m) => m.text);
+    .map((m) => ({ text: m.text.replace(/\s+/g, " ").trim().slice(0, 160), list: m.list, name: m.name.slice(0, 300), ...(m.kind === "C" || m.kind === "J" ? { kind: m.kind } : {}) })).filter((m) => m.text);
   const loadMine = async () => cleanMine(await get("sync", "mine"));
+  // → { ok, kept, dropped }: what was written, and how many of the oldest did not fit (8 KB for an item, about fifty mappings: the page says so)
   async function saveMine(list) {
-    const all = cleanMine(list).slice(-MINE_MAX);
-    // (8 KB for an item: the oldest go first)
-    while (all.length > 1 && B.prefs.sizeOf(all) > B.prefs.SYNC_LIMIT - 20) all.shift();
-    return set("sync", "mine", all);
+    const all = cleanMine(list), n = all.length;
+    while (all.length > MINE_MAX || (all.length > 1 && B.prefs.sizeOf(all) > B.prefs.SYNC_LIMIT - 20)) all.shift();
+    return { ok: await set("sync", "mine", all), kept: all, dropped: n - all.length };
   }
   function onMineChanged(fn) {
     if (!live()) return () => {};
@@ -114,7 +114,7 @@
   async function takeVenue() {
     const v = await get("local", "askVenue");
     if (v !== undefined) await remove("local", "askVenue");
-    return v && typeof v.text === "string" && Date.now() - v.at < 30000 ? v.text : "";
+    return v && typeof v.text === "string" && Date.now() - v.at < 30000 ? v.text : null;          // (null: nothing asked; "" asks for the card itself — the panel's venue mappings line)
   }
   function onVenueAsked(fn) {
     if (!live()) return () => {};

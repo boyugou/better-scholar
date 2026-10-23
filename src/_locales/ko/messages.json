@@ -1262,5 +1262,13 @@
   },
   "coverMappedAction": {
     "message": "편집…"
+  },
+  "optMineFull": {
+    "message": "Chrome은 약 50개의 연결을 보관합니다. 공간을 확보하려고 가장 오래된 $N1$개를 삭제했습니다.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
   }
 }
