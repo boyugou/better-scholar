@@ -54,6 +54,8 @@
   word order, a Hebrew "stage name", a Romanian article, Norwegian *utheving*), Greek's panel and table are no longer one word (πάνελ
   and πίνακας), the last other words for "paper", "duplicate" and "configuration" in a dozen languages, Finnish *julkaisufoorumi*
   and Hungarian *hivatkozás* everywhere, and the last Chinese strays (期刊/会议, 無等級, 側欄).
+  The website's texts in all 30 languages now use the extension's words too (231 strings: venue, profile owner, cut author list,
+  role, award names, page titles).
 - **Two wrong badges from the same audit**: a venue line that opens with its year is IEEE's title for a meeting's proceedings, so it
   is no journal's ("2010 Internet of Things (IOT)" had CCF's IEEE Internet of Things Journal, started 2014; the cut "2011 7th
   international wireless communications and mobile computing …" had the journal of those words and now has CORE's IWCMC). The real
