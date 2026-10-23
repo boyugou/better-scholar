@@ -13,7 +13,7 @@
   "how.title": "Come l'estensione legge un articolo",
   "how.note": "Due articoli inventati in conferenze e riviste reali. Ogni passo mostra ciò che il codice dell'estensione trova in essi.",
   "how.s1.title": "Trova il tuo nome",
-  "how.s1.text": "Trova il nome del profilo nella riga degli autori. La tua posizione nella riga determina il tuo ruolo: primo autore, co-primo autore, secondo autore o ultimo autore.",
+  "how.s1.text": "Trova il nome del titolare del profilo nella riga degli autori. La tua posizione nella riga determina il tuo ruolo: primo autore, co-primo autore, secondo autore o ultimo autore.",
   "how.s2.title": "Cerca la conferenza o rivista",
   "how.s2.text": "Cerca la conferenza o rivista negli elenchi CCF e CORE, per nome completo o per sigla. Una corrispondenza sicura dà un'etichetta di ranking.",
   "how.s3.title": "Non indovina mai",

@@ -13,7 +13,7 @@
   "how.title": "Näin se lukee artikkelin",
   "how.note": "Kaksi keksittyä artikkelia oikeilla foorumeilla. Jokainen vaihe näyttää, mitä laajennuksen oma koodi niissä löytää.",
   "how.s1.title": "Etsi nimesi",
-  "how.s1.text": "Se löytää profiilin nimen kirjoittajarivistä. Paikkasi rivissä antaa roolisi: ensimmäinen, yhteisensimmäinen, toinen tai viimeinen kirjoittaja.",
+  "how.s1.text": "Se löytää profiilin omistajan nimen kirjoittajarivistä. Paikkasi rivissä antaa roolisi: ensimmäinen, yhteisensimmäinen, toinen tai viimeinen kirjoittaja.",
   "how.s2.title": "Etsi foorumi",
   "how.s2.text": "Se etsii foorumia CCF- ja CORE-luetteloista koko nimen tai lyhenteen perusteella. Varma osuma antaa luokkatunnisteen.",
   "how.s3.title": "Älä koskaan arvaa",
