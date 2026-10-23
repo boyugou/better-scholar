@@ -115,7 +115,7 @@
     "message": "Vai trò"
   },
   "colTotal": {
-    "message": "Tất cả"
+    "message": "Tổng"
   },
   "tipUnranked": {
     "message": "Chưa xếp hạng"
@@ -189,7 +189,7 @@
     "message": "Xong."
   },
   "coverAbsent": {
-    "message": "$N1$ bài có danh sách tác giả không chứa tên hồ sơ",
+    "message": "$N1$ bài có danh sách tác giả không chứa tên chủ hồ sơ",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -402,13 +402,13 @@
     "message": "Bảng các bài báo của bạn theo vai trò và hạng, kèm ghi chú về nguồn gốc các hạng."
   },
   "optPanelMarksHint": {
-    "message": "Số bài đoạt giải và các mức báo cáo, một cú nhấp để xem danh sách."
+    "message": "Số bài đoạt giải và các loại báo cáo, một cú nhấp để xem danh sách."
   },
   "optPanelStatus": {
     "message": "Bài đã tải và venue chưa xếp hạng"
   },
   "optPanelStatusHint": {
-    "message": "Số bài đã tải, nút “Tải tất cả”, những gì không đọc được, và danh sách bài báo ở nơi công bố chưa xếp hạng."
+    "message": "Số bài đã tải, nút “Tải tất cả”, những gì không đọc được, và danh sách bài báo ở venue chưa xếp hạng."
   },
   "optPanelNames": {
     "message": "Hỗ trợ cách viết tên"
@@ -642,7 +642,7 @@
     "message": "Số dòng trong bảng"
   },
   "optTalkRowsHint": {
-    "message": "Cách đếm các mức báo cáo. Bài báo có nhiều hơn một mức được tính một lần."
+    "message": "Cách đếm các loại báo cáo. Bài báo có nhiều hơn một loại được tính một lần."
   },
   "optTalkSeparate": {
     "message": "Oral, Spotlight, Highlight riêng"
@@ -657,7 +657,7 @@
     "message": "Semantic Scholar"
   },
   "optSemanticHint": {
-    "message": "Nơi thứ hai để tìm những gì Scholar bị cắt bớt."
+    "message": "Nơi thứ hai để tìm những gì Scholar bị rút gọn."
   },
   "optSemanticLabel": {
     "message": "Đọc danh sách tác giả từ Semantic Scholar trước"
@@ -683,7 +683,7 @@
     "message": "Một cột cho mỗi năm, theo màu vai trò."
   },
   "coverRepeats": {
-    "message": "Mục trùng với bài khác: $N1$",
+    "message": "Mục trùng lặp: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -715,7 +715,7 @@
     "message": "Semantic Scholar yêu cầu chậm lại, nên phần còn lại đã dùng trang của chính Scholar."
   },
   "optRowStyle": {
-    "message": "Tô sáng dòng"
+    "message": "Tô nổi dòng"
   },
   "optRowStyleFull": {
     "message": "Nền và thanh"
@@ -794,7 +794,7 @@
     "message": "Báo cáo sự cố"
   },
   "filterPlaceholder": {
-    "message": "Lọc theo tiêu đề hoặc tác giả…"
+    "message": "Tìm theo tiêu đề hoặc tác giả…"
   },
   "searchShortcut": {
     "message": "Nhấn / để tìm kiếm"
@@ -809,7 +809,7 @@
     "message": "Bảng số liệu trích dẫn"
   },
   "optHideCitedTableHint": {
-    "message": "Bảng trích dẫn, chỉ số h và chỉ số i10 ở thanh bên."
+    "message": "Bảng trích dẫn, h-index và i10-index ở thanh bên."
   },
   "optHideCitedChart": {
     "message": "Biểu đồ trích dẫn theo năm"
@@ -900,10 +900,10 @@
     "message": "Chi tiết bài báo đã lưu"
   },
   "optCacheSearch": {
-    "message": "Lọc các bài báo đã lưu…"
+    "message": "Tìm các bài báo đã lưu…"
   },
   "optCacheCopy": {
-    "message": "Sao chép bộ nhớ đệm (JSON)"
+    "message": "Sao chép chi tiết đã lưu (JSON)"
   },
   "optCacheEmpty": {
     "message": "Chưa có chi tiết bài báo nào được lưu trên thiết bị này."
@@ -929,7 +929,7 @@
     "message": "Nhãn trên mỗi bài báo"
   },
   "optChipsHint": {
-    "message": "Nhãn nhỏ sau nơi công bố của bài báo: hạng, và giải thưởng hoặc báo cáo."
+    "message": "Nhãn nhỏ sau venue của bài báo: hạng, và giải thưởng hoặc báo cáo."
   },
   "optPanelOrder": {
     "message": "Thứ tự các phần"
@@ -971,7 +971,7 @@
     "message": "Hàng “Bị ẩn”"
   },
   "optTableNote": {
-    "message": "Ghi chú về nguồn xếp hạng"
+    "message": "Ghi chú về nguồn gốc các hạng"
   },
   "optOrderButtons": {
     "message": "Thứ tự các nút"
@@ -1022,13 +1022,13 @@
     "message": "Danh sách tác giả bị rút gọn và Đọc danh sách đầy đủ"
   },
   "optStatusRepeats": {
-    "message": "Các mục bị lặp"
+    "message": "Các mục trùng lặp"
   },
   "optStatusAbsent": {
     "message": "Bài không có tên bạn"
   },
   "optStatusUnranked": {
-    "message": "Bài báo ở nơi công bố chưa xếp hạng"
+    "message": "Bài báo ở venue chưa xếp hạng"
   },
   "optNamesHints": {
     "message": "Các cách viết tìm thấy trong bài của bạn"
@@ -1085,7 +1085,7 @@
     "message": "Vuông"
   },
   "optChipLabel": {
-    "message": "Chữ trên nhãn xếp hạng"
+    "message": "Chữ trên nhãn hạng"
   },
   "optChipLabelFull": {
     "message": "Danh sách và hạng (CCF A)"
@@ -1173,7 +1173,7 @@
     "message": "1 vai trò bị ẩn do danh sách tác giả bị rút gọn"
   },
   "coverAbsentOne": {
-    "message": "1 bài có danh sách tác giả không chứa tên hồ sơ"
+    "message": "1 bài có danh sách tác giả không chứa tên chủ hồ sơ"
   },
   "coverUnmatchedOne": {
     "message": "1 bài ở venue chưa xếp hạng"
@@ -1206,10 +1206,10 @@
     "message": "Venue khác"
   },
   "optPrefer": {
-    "message": "Khi cả hai danh sách đều xếp hạng nơi công bố"
+    "message": "Khi cả hai danh sách đều xếp hạng venue"
   },
   "optPreferHint": {
-    "message": "Một nhãn thay vì hai: nhãn của danh sách bạn chọn. Nhãn của danh sách kia chỉ hiện khi danh sách bạn chọn không có hạng cho nơi công bố đó. Chú thích của nhãn cũng nêu hạng của danh sách kia."
+    "message": "Một nhãn thay vì hai: nhãn của danh sách bạn chọn. Nhãn của danh sách kia chỉ hiện khi danh sách bạn chọn không có hạng cho venue đó. Chú thích của nhãn cũng nêu hạng của danh sách kia."
   },
   "optPreferCcf": {
     "message": "Ưu tiên CCF"

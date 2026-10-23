@@ -3,7 +3,7 @@
     "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "Na profilach Google Scholar: rola autorska właściciela i ranking CCF i CORE miejsc publikacji prac, zliczone w jednej tabeli."
+    "message": "Na profilach Google Scholar: rola autorska właściciela profilu i ranking CCF i CORE miejsc publikacji prac, zliczone w tabeli."
   },
   "extShortName": {
     "message": "Better Scholar"
@@ -189,7 +189,7 @@
     "message": "Gotowe."
   },
   "coverAbsent": {
-    "message": "Prace, w których nie ma nazwiska z profilu: $N1$",
+    "message": "Prace, w których nie ma nazwiska właściciela profilu: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -606,7 +606,7 @@
     "message": "Kolory"
   },
   "optColorsHint": {
-    "message": "Kolor każdej pozycji autorskiej: wiersze, zaznaczenia nazwiska, panel i okienko na pasku narzędzi."
+    "message": "Kolor każdej roli autora: wiersze, zaznaczenia nazwiska, panel i okienko na pasku narzędzi."
   },
   "optColorsReset": {
     "message": "Przywróć standardowe kolory"
@@ -657,7 +657,7 @@
     "message": "Semantic Scholar"
   },
   "optSemanticHint": {
-    "message": "Drugie miejsce, w którym sprawdzisz to, co Scholar ucina."
+    "message": "Drugie miejsce, w którym sprawdzisz to, co Scholar skraca."
   },
   "optSemanticLabel": {
     "message": "Najpierw odczytuj listy autorów z Semantic Scholar"
@@ -683,7 +683,7 @@
     "message": "Słupek dla każdego roku, w kolorach ról."
   },
   "coverRepeats": {
-    "message": "Wpisy powtarzające inną pracę: $N1$",
+    "message": "Zduplikowane wpisy: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -700,7 +700,7 @@
     "message": "Najczęstsze miejsca publikacji"
   },
   "optPanelVenuesHint": {
-    "message": "Sklasyfikowane miejsca publikacji wyróżnionych prac, od najczęstszych; kliknij jedno, aby zobaczyć jego prace."
+    "message": "Miejsca publikacji z rankingiem wyróżnionych prac, od najczęstszych; kliknij jedno, aby zobaczyć jego prace."
   },
   "optCopyDiagnostics": {
     "message": "Skopiuj szczegóły do zgłoszenia błędu"
@@ -794,7 +794,7 @@
     "message": "Zgłoś problem"
   },
   "filterPlaceholder": {
-    "message": "Filtruj według tytułu lub autora…"
+    "message": "Szukaj według tytułu lub autora…"
   },
   "searchShortcut": {
     "message": "Naciśnij /, aby szukać"
@@ -900,10 +900,10 @@
     "message": "Zapisane szczegóły publikacji"
   },
   "optCacheSearch": {
-    "message": "Filtruj zapisane publikacje…"
+    "message": "Szukaj w zapisanych publikacjach…"
   },
   "optCacheCopy": {
-    "message": "Kopiuj pamięć podręczną (JSON)"
+    "message": "Kopiuj zapisane szczegóły (JSON)"
   },
   "optCacheEmpty": {
     "message": "Na tym urządzeniu nie zapisano jeszcze szczegółów żadnej publikacji."
@@ -1022,7 +1022,7 @@
     "message": "Skrócone listy autorów oraz Odczytaj pełne listy"
   },
   "optStatusRepeats": {
-    "message": "Powtarzające się wpisy"
+    "message": "Zduplikowane wpisy"
   },
   "optStatusAbsent": {
     "message": "Prace bez Twojego nazwiska"
@@ -1088,10 +1088,10 @@
     "message": "Tekst etykiety rankingu"
   },
   "optChipLabelFull": {
-    "message": "Lista i kategoria (CCF A)"
+    "message": "Lista i ranking (CCF A)"
   },
   "optChipLabelTier": {
-    "message": "Tylko kategoria (A)"
+    "message": "Tylko ranking (A)"
   },
   "optChipThemes": {
     "message": "Gotowe style"
@@ -1173,7 +1173,7 @@
     "message": "Rola ukryta przez skróconą listę autorów: 1"
   },
   "coverAbsentOne": {
-    "message": "Praca, w której nie ma nazwiska z profilu: 1"
+    "message": "Praca, w której nie ma nazwiska właściciela profilu: 1"
   },
   "coverUnmatchedOne": {
     "message": "Praca w miejscu publikacji bez rankingu: 1"
@@ -1203,7 +1203,7 @@
     "message": "Kategorie drugorzędne"
   },
   "unrankedOther": {
-    "message": "Pozostałe miejsca"
+    "message": "Pozostałe miejsca publikacji"
   },
   "optPrefer": {
     "message": "Gdy miejsce publikacji ma ranking na obu listach"

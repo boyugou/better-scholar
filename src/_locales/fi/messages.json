@@ -115,7 +115,7 @@
     "message": "Rooli"
   },
   "colTotal": {
-    "message": "Kaikki"
+    "message": "Yhteensä"
   },
   "tipUnranked": {
     "message": "Ei luokkaa"
@@ -195,7 +195,7 @@
     "message": "Valmis."
   },
   "coverAbsent": {
-    "message": "$N1$ artikkelia, joissa profiilin nimeä ei ole kirjoittajaluettelossa",
+    "message": "$N1$ artikkelia, joissa profiilin omistajan nimeä ei ole kirjoittajaluettelossa",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -203,7 +203,7 @@
     }
   },
   "coverAbsentOne": {
-    "message": "1 artikkeli, jossa profiilin nimeä ei ole kirjoittajaluettelossa"
+    "message": "1 artikkeli, jossa profiilin omistajan nimeä ei ole kirjoittajaluettelossa"
   },
   "coverUnmatched": {
     "message": "$N1$ artikkelia foorumeilla ilman luokkaa",
@@ -214,7 +214,7 @@
     }
   },
   "coverUnmatchedOne": {
-    "message": "1 artikkeli foorumilla ilman luokkaa"
+    "message": "1 artikkeli julkaisufoorumilla ilman luokkaa"
   },
   "copyUnmatched": {
     "message": "Kopioi luettelo"
@@ -417,10 +417,10 @@
     "message": "Taulukko artikkeleistasi roolin ja luokan mukaan sekä huomautus siitä, mistä luokat ovat peräisin."
   },
   "optPanelMarksHint": {
-    "message": "Palkittujen artikkelien ja esitystasojen määrä; yksi napsautus näyttää ne."
+    "message": "Palkittujen artikkelien ja esitystyyppien määrä; yksi napsautus näyttää ne."
   },
   "optPanelStatus": {
-    "message": "Ladatut artikkelit ja luokittelemattomat foorumit"
+    "message": "Ladatut artikkelit ja luokittelemattomat julkaisufoorumit"
   },
   "optPanelStatusHint": {
     "message": "Montako artikkelia on ladattu, “Lataa kaikki” -painike, mitä ei voitu lukea ja luettelo artikkeleista luokittelemattomilla foorumeilla."
@@ -660,7 +660,7 @@
     "message": "Rivit paneelissa"
   },
   "optTalkRowsHint": {
-    "message": "Näin esitystasot lasketaan. Artikkeli, jolla on useampi kuin yksi taso, lasketaan kerran."
+    "message": "Näin esitystyypit lasketaan. Artikkeli, jolla on useampi kuin yksi tyyppi, lasketaan kerran."
   },
   "optTalkSeparate": {
     "message": "Oral, spotlight ja highlight erikseen"
@@ -704,7 +704,7 @@
     "message": "Palkki jokaiselle vuodelle roolien väreillä."
   },
   "coverRepeats": {
-    "message": "Toisen artikkelin kaksoiskappaleet: $N1$",
+    "message": "Kaksoiskappaleet: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -718,10 +718,10 @@
     "message": "Missä korostetut artikkelit ilmestyvät"
   },
   "optPanelVenues": {
-    "message": "Yleisimmät foorumit"
+    "message": "Yleisimmät julkaisufoorumit"
   },
   "optPanelVenuesHint": {
-    "message": "Korostettujesi artikkelien luokitellut foorumit, yleisimmät ensin; napsauta yhtä listataksesi sen artikkelit."
+    "message": "Korostettujesi artikkelien luokitellut julkaisufoorumit, yleisimmät ensin; napsauta yhtä listataksesi sen artikkelit."
   },
   "optCopyDiagnostics": {
     "message": "Kopioi tiedot virheraporttia varten"
@@ -815,7 +815,7 @@
     "message": "Ilmoita ongelmasta"
   },
   "filterPlaceholder": {
-    "message": "Suodata otsikon tai kirjoittajan mukaan…"
+    "message": "Hae otsikon tai kirjoittajan mukaan…"
   },
   "searchShortcut": {
     "message": "Hae painamalla /"
@@ -921,10 +921,10 @@
     "message": "Tallennetut artikkelitiedot"
   },
   "optCacheSearch": {
-    "message": "Suodata tallennettuja artikkeleita…"
+    "message": "Hae tallennettuja artikkeleita…"
   },
   "optCacheCopy": {
-    "message": "Kopioi välimuisti (JSON)"
+    "message": "Kopioi tallennetut tiedot (JSON)"
   },
   "optCacheEmpty": {
     "message": "Tälle laitteelle ei ole vielä tallennettu artikkelitietoja."
@@ -950,7 +950,7 @@
     "message": "Tunnisteet jokaisessa artikkelissa"
   },
   "optChipsHint": {
-    "message": "Pienet tunnisteet artikkelin foorumin jälkeen: sen luokat sekä palkinnot tai esitykset."
+    "message": "Pienet tunnisteet artikkelin julkaisufoorumin jälkeen: sen luokat sekä palkinnot tai esitykset."
   },
   "optPanelOrder": {
     "message": "Osien järjestys"
@@ -1043,7 +1043,7 @@
     "message": "Katkaistut kirjoittajaluettelot ja “Lue täydet luettelot”"
   },
   "optStatusRepeats": {
-    "message": "Toistuvat merkinnät"
+    "message": "Kaksoiskappaleet"
   },
   "optStatusAbsent": {
     "message": "Artikkelit ilman nimeäsi"
@@ -1109,10 +1109,10 @@
     "message": "Luokkatunnisteen teksti"
   },
   "optChipLabelFull": {
-    "message": "Luettelo ja taso (CCF A)"
+    "message": "Luettelo ja luokka (CCF A)"
   },
   "optChipLabelTier": {
-    "message": "Vain taso (A)"
+    "message": "Vain luokka (A)"
   },
   "optChipThemes": {
     "message": "Valmiit ulkoasut"
@@ -1203,10 +1203,10 @@
     "message": "Toissijaiset kategoriat"
   },
   "unrankedOther": {
-    "message": "Muut foorumit"
+    "message": "Muut julkaisufoorumit"
   },
   "optPrefer": {
-    "message": "Kun molemmissa luetteloissa on foorumille luokka"
+    "message": "Kun molemmissa luetteloissa on julkaisufoorumille luokka"
   },
   "optPreferHint": {
     "message": "Yksi tunniste kahden sijaan: valitun luettelon tunniste, ja toisen luettelon tunniste vain silloin, kun valitussa luettelossa ei ole julkaisufoorumille luokkaa. Tunnisteen ohjeteksti mainitsee silti toisen luettelon luokan."

@@ -3,7 +3,7 @@
     "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "På Google Scholar-profiler: ägarens författarroll och CCF- och CORE-rank för varje artikels publiceringsställe, i en tabell."
+    "message": "På Google Scholar-profiler: profilägarens författarroll och CCF- och CORE-rank för varje artikels publiceringsställe, i en tabell."
   },
   "extShortName": {
     "message": "Better Scholar"
@@ -115,7 +115,7 @@
     "message": "Roll"
   },
   "colTotal": {
-    "message": "Alla"
+    "message": "Totalt"
   },
   "tipUnranked": {
     "message": "Ingen rank"
@@ -195,7 +195,7 @@
     "message": "Klart."
   },
   "coverAbsent": {
-    "message": "$N1$ artiklar där profilnamnet inte finns i författarlistan",
+    "message": "$N1$ artiklar där profilägarens namn inte finns i författarlistan",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -203,10 +203,10 @@
     }
   },
   "coverAbsentOne": {
-    "message": "1 artikel där profilnamnet inte finns i författarlistan"
+    "message": "1 artikel där profilägarens namn inte finns i författarlistan"
   },
   "coverUnmatched": {
-    "message": "$N1$ artiklar på ställen utan rank",
+    "message": "$N1$ artiklar på publiceringsställen utan rank",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -214,7 +214,7 @@
     }
   },
   "coverUnmatchedOne": {
-    "message": "1 artikel på ett ställe utan rank"
+    "message": "1 artikel på ett publiceringsställe utan rank"
   },
   "copyUnmatched": {
     "message": "Kopiera lista"
@@ -268,7 +268,7 @@
     "message": "i10-index"
   },
   "dataNote": {
-    "message": "Rankerna kommer från dagens $N1$-listor, inte rankningen vid publiceringen. CCF anger att listan inte är en grund för akademisk utvärdering.",
+    "message": "Rankerna kommer från dagens $N1$-listor, inte ranken vid publiceringen. CCF anger att listan inte är en grund för akademisk utvärdering.",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -293,7 +293,7 @@
     "message": "Matchad på den synliga delen av ett kortat namn"
   },
   "tipToday": {
-    "message": "aktuell lista, inte rankningen vid publiceringen"
+    "message": "aktuell lista, inte ranken vid publiceringen"
   },
   "tipPosition": {
     "message": "plats $N1$ av $N2$",
@@ -414,13 +414,13 @@
     "message": "Roll × rank-tabell"
   },
   "optPanelSummaryHint": {
-    "message": "Tabellen över dina artiklar efter roll och rank, med en notis om varifrån rankningarna kommer."
+    "message": "Tabellen över dina artiklar efter roll och rank, med en notis om varifrån rankerna kommer."
   },
   "optPanelMarksHint": {
-    "message": "Antalet prisbelönta artiklar och presentationsnivåer, ett klick listar dem."
+    "message": "Antalet prisbelönta artiklar och presentationstyper, ett klick listar dem."
   },
   "optPanelStatus": {
-    "message": "Inlästa artiklar och orankade ställen"
+    "message": "Inlästa artiklar och orankade publiceringsställen"
   },
   "optPanelStatusHint": {
     "message": "Hur många artiklar som lästs in, knappen ”Läs in alla”, vad som inte gick att läsa och listan över artiklar på publiceringsställen utan rank."
@@ -456,7 +456,7 @@
     "message": "Sparad data"
   },
   "optClearCache": {
-    "message": "Rensa sparade artikeldetaljer"
+    "message": "Rensa sparade artikeluppgifter"
   },
   "optCacheCount": {
     "message": "Författarlistor för $N1$ artiklar är sparade på den här enheten (behålls i 90 dagar).",
@@ -470,7 +470,7 @@
     "message": "Författarlistan för 1 artikel är sparad på den här enheten (behålls i 90 dagar)."
   },
   "optCacheNone": {
-    "message": "Inga artikeldetaljer är sparade."
+    "message": "Inga artikeluppgifter är sparade."
   },
   "optCleared": {
     "message": "Rensat"
@@ -660,7 +660,7 @@
     "message": "Rader i panelen"
   },
   "optTalkRowsHint": {
-    "message": "Så räknas nivåerna för presentationer. En artikel som har fler än en av dem räknas en gång."
+    "message": "Så räknas presentationstyperna. En artikel som har fler än en av dem räknas en gång."
   },
   "optTalkSeparate": {
     "message": "Oral, spotlight och highlight var för sig"
@@ -675,7 +675,7 @@
     "message": "Semantic Scholar"
   },
   "optSemanticHint": {
-    "message": "En andra plats att leta på för det Scholar klipper av."
+    "message": "En andra plats att leta på för det Scholar kortar."
   },
   "optSemanticLabel": {
     "message": "Läs först författarlistor från Semantic Scholar"
@@ -704,7 +704,7 @@
     "message": "En stapel för varje år, i rollfärgerna."
   },
   "coverRepeats": {
-    "message": "Poster som upprepar en annan artikel: $N1$",
+    "message": "Dubblettposter: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -784,7 +784,7 @@
     }
   },
   "tipFilterH": {
-    "message": "Filtrera till h-kärnartiklar (≥$N1$ citeringer)",
+    "message": "Filtrera till h-kärnartiklar (≥$N1$ citeringar)",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -792,7 +792,7 @@
     }
   },
   "tipFilterI10": {
-    "message": "Filtrera till i10-artiklar (≥10 citeringer)"
+    "message": "Filtrera till i10-artiklar (≥10 citeringar)"
   },
   "popupPapersOf": {
     "message": "$N1$ av $N2$ artiklar",
@@ -815,7 +815,7 @@
     "message": "Rapportera ett problem"
   },
   "filterPlaceholder": {
-    "message": "Filtrera efter titel eller författare…"
+    "message": "Sök efter titel eller författare…"
   },
   "searchShortcut": {
     "message": "Tryck / för att söka"
@@ -854,7 +854,7 @@
     "message": "Importera fil"
   },
   "optConfigEditor": {
-    "message": "Klistra in konfig (JSON)"
+    "message": "Klistra in konfiguration (JSON)"
   },
   "optConfigApply": {
     "message": "Tillämpa konfiguration"
@@ -885,7 +885,7 @@
     "message": "AI-agenter"
   },
   "optAgentHint": {
-    "message": "Kopiera en guide som listar varje inställning, dess värden och dina nuvarande val. Ge den till din AI-assistent tillsammans med det du vill ha. Klistra sedan in svaret i konfigredigeraren nedan och tryck på ”Tillämpa konfiguration”."
+    "message": "Kopiera en guide som listar varje inställning, dess värden och dina nuvarande val. Ge den till din AI-assistent tillsammans med det du vill ha. Klistra sedan in svaret i konfigurationsredigeraren nedan och tryck på ”Tillämpa konfiguration”."
   },
   "optAgentCopy": {
     "message": "Kopiera agentguide"
@@ -921,10 +921,10 @@
     "message": "Sparade artikeluppgifter"
   },
   "optCacheSearch": {
-    "message": "Filtrera sparade artiklar…"
+    "message": "Sök i sparade artiklar…"
   },
   "optCacheCopy": {
-    "message": "Kopiera cache (JSON)"
+    "message": "Kopiera sparade artikeluppgifter (JSON)"
   },
   "optCacheEmpty": {
     "message": "Inga artikeluppgifter har sparats på den här enheten än."
@@ -992,7 +992,7 @@
     "message": "Raden ”Dold”"
   },
   "optTableNote": {
-    "message": "Anteckning om varifrån rankningarna kommer"
+    "message": "Anteckning om varifrån rankerna kommer"
   },
   "optOrderButtons": {
     "message": "Ordning på knapparna"
@@ -1043,13 +1043,13 @@
     "message": "Kortade författarlistor och Läs hela listorna"
   },
   "optStatusRepeats": {
-    "message": "Upprepade poster"
+    "message": "Dubblettposter"
   },
   "optStatusAbsent": {
     "message": "Artiklar utan ditt namn"
   },
   "optStatusUnranked": {
-    "message": "Artiklar på ställen utan rank"
+    "message": "Artiklar på publiceringsställen utan rank"
   },
   "optNamesHints": {
     "message": "Stavningar som hittats i dina artiklar"
@@ -1109,10 +1109,10 @@
     "message": "Text på rank-etiketten"
   },
   "optChipLabelFull": {
-    "message": "Lista och nivå (CCF A)"
+    "message": "Lista och rank (CCF A)"
   },
   "optChipLabelTier": {
-    "message": "Endast nivå (A)"
+    "message": "Endast rank (A)"
   },
   "optChipThemes": {
     "message": "Färdiga stilar"
@@ -1203,7 +1203,7 @@
     "message": "Sekundära spår"
   },
   "unrankedOther": {
-    "message": "Andra ställen"
+    "message": "Andra publiceringsställen"
   },
   "optPrefer": {
     "message": "När publiceringsstället har rank i båda listorna"

@@ -50,7 +50,7 @@ test("the role × rank table of the live page, from the same rows", () => {
   assert.equal(s.absent, 0);
 });
 
-test("talk levels the authors wrote in the venue field: three Orals, nothing else", () => {
+test("talk kinds the authors wrote in the venue field: three Orals, nothing else", () => {
   assert.deepEqual(analysed.map((a) => a.marks.map((m) => m.kind).join("+")), ["", "oral", "", "", "", "", "", "", "", "oral", "", "oral", ""]);
 });
 

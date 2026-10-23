@@ -41,7 +41,7 @@ the official CCF file or the ICORE export changed, is gone, or a newer edition i
 be reached (no verdict). Regenerating the data stays a manual, reviewed step (`data/README.md`): a new CCF PDF needs
 its extraction checked, as the 2022 layout showed (see *Tier at publication time* under *Considered and set aside*).
 
-## Awards and talk levels
+## Awards and talk kinds
 
 **Built — what the authors wrote** (`src/lib/marks.js`, 2026-10-11). A paper whose title or venue text
 says Oral / Spotlight / Highlight / Best, Outstanding or Distinguished Paper / Test of Time gets a chip

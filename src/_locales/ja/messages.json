@@ -3,7 +3,7 @@
     "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "Google Scholar の著者プロフィール：本人の著者順と、論文ごとの掲載先の CCF / CORE ランクを 1つの表に集計します。"
+    "message": "Google Scholar の著者プロフィール：プロフィール本人の著者順と、論文ごとの掲載先の CCF / CORE ランクを 1つの表に集計します。"
   },
   "extShortName": {
     "message": "Better Scholar"
@@ -195,7 +195,7 @@
     "message": "完了しました。"
   },
   "coverAbsent": {
-    "message": "$N1$ 件は著者リストにプロフィールの名前がありません",
+    "message": "$N1$ 件は著者リストにプロフィール本人の名前がありません",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -203,7 +203,7 @@
     }
   },
   "coverAbsentOne": {
-    "message": "1 件は著者リストにプロフィールの名前がありません"
+    "message": "1 件は著者リストにプロフィール本人の名前がありません"
   },
   "coverUnmatched": {
     "message": "$N1$ 件はランクのない掲載先の論文です",
@@ -456,7 +456,7 @@
     "message": "保存データ"
   },
   "optClearCache": {
-    "message": "保存した論文情報を消去"
+    "message": "保存した論文詳細を消去"
   },
   "optCacheCount": {
     "message": "$N1$ 件の論文の著者リストをこの端末に保存しています（90 日間保持）。",
@@ -470,7 +470,7 @@
     "message": "1 件の論文の著者リストをこの端末に保存しています（90 日間保持）。"
   },
   "optCacheNone": {
-    "message": "保存された論文情報はありません。"
+    "message": "保存された論文詳細はありません。"
   },
   "optCleared": {
     "message": "消去しました"
@@ -482,7 +482,7 @@
     "message": "これらの設定をすべて初期設定に戻しますか？"
   },
   "optStorage": {
-    "message": "設定はブラウザに保存され、Chrome のプロフィールと同期されます。拡張機能は、開いた Scholar のページを読み取ります。「著者リストを補完」を押したときには、著者リストが途中で切れている論文のページも読み取ります。論文のタイトルが Semantic Scholar に送られるのは、それをオンにした場合だけです。"
+    "message": "設定はブラウザに保存され、Chrome のプロフィールと同期されます。拡張機能は、開いた Scholar のページを読み取ります。「著者リストを補完」を押したときには、著者リストが省略されている論文のページも読み取ります。論文のタイトルが Semantic Scholar に送られるのは、それをオンにした場合だけです。"
   },
   "optSample": {
     "message": "サンプル論文"
@@ -675,7 +675,7 @@
     "message": "Semantic Scholar"
   },
   "optSemanticHint": {
-    "message": "Scholar で途切れた内容を確認できる、もう一つの場所です。"
+    "message": "Scholar で省略された内容を確認できる、もう一つの場所です。"
   },
   "optSemanticLabel": {
     "message": "まず Semantic Scholar から著者リストを読み取る"
@@ -704,7 +704,7 @@
     "message": "年ごとに棒を表示し、著者順の色で塗り分けます。"
   },
   "coverRepeats": {
-    "message": "別の論文と重複する項目：$N1$ 件",
+    "message": "重複エントリ：$N1$ 件",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -736,7 +736,7 @@
     "message": "Semantic Scholar が速度を落とすよう求めたため、残りは Scholar 自身のページを使用しました。"
   },
   "optRowStyle": {
-    "message": "行の強調"
+    "message": "行のハイライト"
   },
   "optRowStyleFull": {
     "message": "背景色とバー"
@@ -762,7 +762,7 @@
     "message": "クリア"
   },
   "filterMinCites": {
-    "message": "引用数 ≥ $N1$",
+    "message": "被引用数 ≥ $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -784,7 +784,7 @@
     }
   },
   "tipFilterH": {
-    "message": "hコア論文に絞り込み（引用数 ≥ $N1$）",
+    "message": "hコア論文に絞り込み（被引用数 ≥ $N1$）",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -792,7 +792,7 @@
     }
   },
   "tipFilterI10": {
-    "message": "i10論文に絞り込み（引用数 ≥ 10）"
+    "message": "i10論文に絞り込み（被引用数 ≥ 10）"
   },
   "popupPapersOf": {
     "message": "$N2$ 件中 $N1$ 件の論文",
@@ -815,7 +815,7 @@
     "message": "問題を報告"
   },
   "filterPlaceholder": {
-    "message": "タイトルまたは著者で絞り込み…"
+    "message": "タイトルまたは著者で検索…"
   },
   "searchShortcut": {
     "message": "/ キーで検索"
@@ -827,16 +827,16 @@
     "message": "折りたたむ"
   },
   "optHideCitedTable": {
-    "message": "引用指標テーブル"
+    "message": "引用指標表"
   },
   "optHideCitedTableHint": {
-    "message": "サイドバーの引用数、h-index、i10-index のテーブル。"
+    "message": "サイドバーの被引用数、h-index、i10-index の表。"
   },
   "optHideCitedChart": {
-    "message": "年別引用数グラフ"
+    "message": "年別被引用数グラフ"
   },
   "optHideCitedChartHint": {
-    "message": "サイドバーの年別引用数ヒストグラム。"
+    "message": "サイドバーの年別被引用数ヒストグラム。"
   },
   "optConfigTitle": {
     "message": "設定とプリセット"
@@ -921,13 +921,13 @@
     "message": "保存済み論文詳細"
   },
   "optCacheSearch": {
-    "message": "キャッシュされた論文を検索…"
+    "message": "保存済みの論文を検索…"
   },
   "optCacheCopy": {
-    "message": "キャッシュをコピー (JSON)"
+    "message": "保存済み詳細をコピー (JSON)"
   },
   "optCacheEmpty": {
-    "message": "このデバイスにはまだ論文の詳細が保存されていません。"
+    "message": "この端末にはまだ論文の詳細が保存されていません。"
   },
   "optCacheShown": {
     "message": "表示中：$N1$ / $N2$",
@@ -1019,7 +1019,7 @@
     "message": "CORE A*"
   },
   "optPillCites": {
-    "message": "引用数 100 超"
+    "message": "被引用数 100 超"
   },
   "optFiltersYears": {
     "message": "年の範囲"
@@ -1040,7 +1040,7 @@
     "message": "読み込んだ論文と「すべて読み込む」"
   },
   "optStatusCutoff": {
-    "message": "途中で切れた著者リストと「著者リストを補完」"
+    "message": "省略された著者リストと「著者リストを補完」"
   },
   "optStatusRepeats": {
     "message": "重複したエントリ"
@@ -1109,10 +1109,10 @@
     "message": "ランクラベルの文字"
   },
   "optChipLabelFull": {
-    "message": "リストと等級（CCF A）"
+    "message": "リストとランク（CCF A）"
   },
   "optChipLabelTier": {
-    "message": "等級のみ（A）"
+    "message": "ランクのみ（A）"
   },
   "optChipThemes": {
     "message": "プリセット"

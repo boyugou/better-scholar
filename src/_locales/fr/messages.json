@@ -3,7 +3,7 @@
     "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "Profils Google Scholar : rôle d’auteur du titulaire et rangs CCF/CORE de la revue ou conférence par article, en un tableau."
+    "message": "Profils Google Scholar : rôle d’auteur du titulaire du profil et rangs CCF/CORE de la revue ou conférence par article, en tableau."
   },
   "extShortName": {
     "message": "Better Scholar"
@@ -115,7 +115,7 @@
     "message": "Rôle"
   },
   "colTotal": {
-    "message": "Tous"
+    "message": "Total"
   },
   "tipUnranked": {
     "message": "Sans rang"
@@ -195,7 +195,7 @@
     "message": "Terminé."
   },
   "coverAbsent": {
-    "message": "$N1$ articles où le nom du profil ne figure pas dans la liste des auteurs",
+    "message": "$N1$ articles où le nom du titulaire du profil ne figure pas dans la liste des auteurs",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -203,7 +203,7 @@
     }
   },
   "coverAbsentOne": {
-    "message": "1 article où le nom du profil ne figure pas dans la liste des auteurs"
+    "message": "1 article où le nom du titulaire du profil ne figure pas dans la liste des auteurs"
   },
   "coverUnmatched": {
     "message": "$N1$ articles dans des conférences ou revues sans rang",
@@ -417,7 +417,7 @@
     "message": "Le tableau de vos articles par rôle et par rang, avec la note sur l’origine des rangs."
   },
   "optPanelMarksHint": {
-    "message": "Le nombre d’articles primés et de présentations par niveau, à lister d’un clic."
+    "message": "Le nombre d’articles primés et de présentations par type, à lister d’un clic."
   },
   "optPanelStatus": {
     "message": "Articles chargés et conférences ou revues sans rang"
@@ -704,7 +704,7 @@
     "message": "Une barre par année, dans les couleurs des rôles."
   },
   "coverRepeats": {
-    "message": "Entrées en double d’un autre article : $N1$",
+    "message": "Entrées en double : $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -736,7 +736,7 @@
     "message": "Semantic Scholar a demandé de ralentir ; pour la suite, les pages de Scholar ont été utilisées."
   },
   "optRowStyle": {
-    "message": "Surlignage des lignes"
+    "message": "Mise en évidence des lignes"
   },
   "optRowStyleFull": {
     "message": "Fond et barre"
@@ -815,7 +815,7 @@
     "message": "Signaler un problème"
   },
   "filterPlaceholder": {
-    "message": "Filtrer par titre ou auteur…"
+    "message": "Rechercher par titre ou auteur…"
   },
   "searchShortcut": {
     "message": "Appuyez sur / pour rechercher"
@@ -915,16 +915,16 @@
     "message": "Effacer la recherche"
   },
   "optSearchNone": {
-    "message": "Aucun paramètre ne correspond à cette recherche."
+    "message": "Aucun réglage ne correspond à cette recherche."
   },
   "optCacheTitle": {
     "message": "Détails des articles enregistrés"
   },
   "optCacheSearch": {
-    "message": "Filtrer les articles en cache…"
+    "message": "Rechercher dans les articles enregistrés…"
   },
   "optCacheCopy": {
-    "message": "Copier le cache (JSON)"
+    "message": "Copier les détails enregistrés (JSON)"
   },
   "optCacheEmpty": {
     "message": "Aucun détail d'article n'a encore été enregistré sur cet appareil."
@@ -1109,10 +1109,10 @@
     "message": "Texte des pastilles de rang"
   },
   "optChipLabelFull": {
-    "message": "Liste et niveau (CCF A)"
+    "message": "Liste et rang (CCF A)"
   },
   "optChipLabelTier": {
-    "message": "Niveau seul (A)"
+    "message": "Rang seul (A)"
   },
   "optChipThemes": {
     "message": "Modèles"
@@ -1203,7 +1203,7 @@
     "message": "Catégories secondaires"
   },
   "unrankedOther": {
-    "message": "Autres supports"
+    "message": "Autres conférences et revues"
   },
   "optPrefer": {
     "message": "Quand une conférence ou une revue a un rang dans les deux listes"

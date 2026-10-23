@@ -199,7 +199,7 @@ try {
 
   // -- 7b. what the page asks of the browser itself works in a web page: the clipboard, a download, a modal dialog
   await A.click('button[data-act="config-copy"]');
-  assert.deepEqual(JSON.parse(await A.evaluate(() => navigator.clipboard.readText())), await stored(A), "Copy config (JSON) puts the settings on the clipboard");
+  assert.deepEqual(JSON.parse(await A.evaluate(() => navigator.clipboard.readText())), await stored(A), "Copy configuration (JSON) puts the settings on the clipboard");
   await A.click('button[data-act="agent-guide-copy"]');
   const guide = await A.evaluate(() => navigator.clipboard.readText());
   assert.ok(guide.length > 1000 && guide.includes("roles.first"), "the guide for AI agents is on the clipboard");

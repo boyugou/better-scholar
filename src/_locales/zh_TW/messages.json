@@ -3,7 +3,7 @@
     "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "在 Google Scholar 個人頁面上，顯示頁面作者在每篇論文的位次，以及發表處的 CCF 與 CORE 等級，並彙整成一張表。"
+    "message": "在 Google Scholar 個人頁面上，顯示本人在每篇論文的位次，以及發表處的 CCF 與 CORE 等級，並彙整成一張表。"
   },
   "extShortName": {
     "message": "Better Scholar"
@@ -118,10 +118,10 @@
     "message": "合計"
   },
   "tipUnranked": {
-    "message": "未收錄等級"
+    "message": "沒有等級"
   },
   "tipHidden": {
-    "message": "Scholar 截短了作者列表，看不到本頁擁有者的排序位置"
+    "message": "Scholar 截短了作者列表，看不到本人的排序位置"
   },
   "copySummary": {
     "message": "複製摘要"
@@ -195,7 +195,7 @@
     "message": "完成。"
   },
   "coverAbsent": {
-    "message": "$N1$ 篇論文的作者列表中找不到本頁姓名",
+    "message": "$N1$ 篇論文的作者列表中找不到本人姓名",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -203,7 +203,7 @@
     }
   },
   "coverAbsentOne": {
-    "message": "1 篇論文的作者列表中找不到本頁姓名"
+    "message": "1 篇論文的作者列表中找不到本人姓名"
   },
   "coverUnmatched": {
     "message": "$N1$ 篇論文的發表處沒有等級",
@@ -238,7 +238,7 @@
     "message": "移除"
   },
   "variantAutoTip": {
-    "message": "已自動新增：將頁面姓名前後對調後，可在 $1 篇論文中找到您"
+    "message": "已自動新增：將本人姓名前後對調後，可在 $1 篇論文中找到您"
   },
   "variantSuggest": {
     "message": "可能是您："
@@ -408,7 +408,7 @@
     "message": "顯示摘要面板"
   },
   "optPanelShowHint": {
-    "message": "個人頁面右側欄中的面板。關閉時：只標示論文列表。"
+    "message": "作者頁面右側欄中的面板。關閉時：只標示論文列表。"
   },
   "optPanelSummary": {
     "message": "位次×等級表"
@@ -417,7 +417,7 @@
     "message": "您的論文表格，依位次與等級列出，並附等級來源的說明。"
   },
   "optPanelMarksHint": {
-    "message": "獲獎論文與各級報告的數量，點一下即可列出。"
+    "message": "獲獎論文與報告形式的數量，點一下即可列出。"
   },
   "optPanelStatus": {
     "message": "已載入論文與無等級的發表處"
@@ -456,7 +456,7 @@
     "message": "已儲存的資料"
   },
   "optClearCache": {
-    "message": "清除已儲存的論文資料"
+    "message": "清除已儲存的論文詳情"
   },
   "optCacheCount": {
     "message": "此裝置上儲存了 $N1$ 篇論文的作者列表（保留 90 天）。",
@@ -470,7 +470,7 @@
     "message": "此裝置上儲存了 1 篇論文的作者列表（保留 90 天）。"
   },
   "optCacheNone": {
-    "message": "沒有儲存任何論文資料。"
+    "message": "沒有儲存任何論文詳情。"
   },
   "optCleared": {
     "message": "已清除"
@@ -704,7 +704,7 @@
     "message": "每年一根柱，用各位次的顏色。"
   },
   "coverRepeats": {
-    "message": "與另一篇重複的項目：$N1$",
+    "message": "重複項目：$N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -815,7 +815,7 @@
     "message": "回報問題"
   },
   "filterPlaceholder": {
-    "message": "依標題或作者篩選…"
+    "message": "依標題或作者搜尋…"
   },
   "searchShortcut": {
     "message": "按 / 鍵搜尋"
@@ -830,7 +830,7 @@
     "message": "引用指標表格"
   },
   "optHideCitedTableHint": {
-    "message": "側邊欄中的引用數、h-index 與 i10-index 表格。"
+    "message": "側邊欄中的引用次數、h 指數與 i10 指數表格。"
   },
   "optHideCitedChart": {
     "message": "每年引用統計圖"
@@ -921,10 +921,10 @@
     "message": "已儲存論文詳情"
   },
   "optCacheSearch": {
-    "message": "搜尋已快取論文…"
+    "message": "搜尋已儲存論文…"
   },
   "optCacheCopy": {
-    "message": "複製快取 (JSON)"
+    "message": "複製已儲存詳情 (JSON)"
   },
   "optCacheEmpty": {
     "message": "此裝置上尚未儲存任何論文詳情。"
@@ -980,7 +980,7 @@
     "message": "CORE 分頁及欄"
   },
   "optTableUnranked": {
-    "message": "「未收錄等級」欄"
+    "message": "「沒有等級」欄"
   },
   "optTableTotal": {
     "message": "合計（欄和列）"
@@ -1004,7 +1004,7 @@
     "message": "“/”鍵跳至搜尋框"
   },
   "optFiltersKeyHint": {
-    "message": "在個人頁面的面板中，以及本頁自身的搜尋框中。關閉時：此鍵不會有任何作用。"
+    "message": "在作者頁面的面板中，以及本頁自身的搜尋框中。關閉時：此鍵不會有任何作用。"
   },
   "optOrderPills": {
     "message": "快速篩選的順序"
@@ -1188,7 +1188,7 @@
     "message": "近 5 年"
   },
   "filterAbsent": {
-    "message": "作者列表中找不到本頁姓名"
+    "message": "作者列表中找不到本人姓名"
   },
   "optCopySource": {
     "message": "在已複製的摘要中加入作者頁面連結和日期"

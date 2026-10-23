@@ -359,7 +359,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     assert.deepEqual(await rowsOf(), ["award=2", "oral+spotlight+highlight=3"]);
     await opts.click('label.seg-btn:has(input[data-pref="panel.marks.grouping"][value="separate"])');
     await pollPage(opts, () => document.querySelectorAll(".preview [data-mark-group]").length === 4);
-    ok("talk rows: spotlight + highlight, or all three talk levels, can share one row of the panel; the counts follow");
+    ok("talk rows: spotlight + highlight, or all three talk kinds, can share one row of the panel; the counts follow");
 
     // -- 6a2c. the venue list (off until asked): the ranked venues of the highlighted papers, most papers first; a click lists just those papers
     assert.equal(await page.locator('[data-rr="venues"]').isVisible(), false, "the venue list is off by default");
@@ -2440,12 +2440,12 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
       assert.equal(await pg.locator("#rr-panel [data-tier]").count(), 0, "nothing in this field is on a list: no tier columns");
       const before = await readMatrix(pg);
       assert.deepEqual([before.first.total, before.second.total, before.last.total, before.middle.total, before.hidden], [5, 0, 42, 11, 38], "the numbers of the live panel");
-      assert.match(await pg.locator('[data-rr="absent"]').textContent(), /^4 papers where the profile name is not in the author list/);
+      assert.match(await pg.locator('[data-rr="absent"]').textContent(), /^4 papers where the profile owner's name is not in the author list/);
       const pill = pg.locator('[data-act="suggest-variant"]');
       assert.equal(await pill.count(), 1);
       assert.equal((await pill.textContent()).trim(), "JA DOUDNA (3)");
       await pill.click();
-      await eventually(pg, () => /^1 paper where the profile name is not in the author list/.test(document.querySelector('[data-rr="absent"]').textContent));
+      await eventually(pg, () => /^1 paper where the profile owner's name is not in the author list/.test(document.querySelector('[data-rr="absent"]').textContent));
       const after = await readMatrix(pg);
       assert.deepEqual([after.first.total, after.second.total, after.last.total, after.middle.total, after.hidden], [6, 1, 42, 12, 38], "the three patents are counted now");
       ok("a biologist's real profile: by role only, and 'JA DOUDNA' (three patents) is one click from being counted");
@@ -2485,7 +2485,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     const pill = (g) => page.locator(`#rr-panel button[data-mark-group="${g}"]`);
     assert.match(await pill("award").textContent(), /Awards\s*4/);
     assert.match(await pill("award").getAttribute("title"), /^Best paper \d+/, "the Awards count says what it is made of, on hover");
-    assert.equal(await pill("oral").getAttribute("title"), null, "talk levels have no breakdown");
+    assert.equal(await pill("oral").getAttribute("title"), null, "talk kinds have no breakdown");
     assert.match(await pill("oral").textContent(), /Oral\s*2/);
     assert.match(await pill("spotlight").textContent(), /Spotlight\s*1/);
     assert.equal(await pill("highlight").count(), 0, "no pill for a group nobody has");
@@ -2534,7 +2534,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     assert.equal(await visibleRows(page), 10, "switching a group off also ends a filter on it");
     assert.equal(await page.locator('#rr-panel .rr-markrow[data-mark-group="award"]').count(), 0);
     assert.equal(await page.locator('#rr-panel .rr-markrow[data-mark-group="oral"]').count(), 1);
-    assert.ok((await page.locator('.rr-chip-mark[data-group="oral"]').count()) > 0, "talk levels keep their own switch");
+    assert.ok((await page.locator('.rr-chip-mark[data-group="oral"]').count()) > 0, "talk kinds keep their own switch");
     await page.click('[data-act="copy-summary"]');
     assert.match(await page.evaluate(() => navigator.clipboard.readText()), /^Awards & talks: Oral 2, Spotlight 1 /m);
     for (const g of ["oral", "spotlight"]) await setMark(optsM, g, false);

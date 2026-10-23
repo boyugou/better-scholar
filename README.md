@@ -151,7 +151,7 @@ Real examples. The middle column is what the lists give; by default the panel dr
 ### Awards and talks
 
 - **The award list.** The extension holds 7,830 paper awards from official pages: best papers, best student papers, outstanding and distinguished papers, honorable mentions and test-of-time awards. The sources are the ACL Anthology's award data, the Computer Vision Foundation, and the award pages of the conferences and their societies (NeurIPS, ICML, ICLR, CVPR, ICCV, ECCV, ACL, EMNLP, NAACL, AAAI, IJCAI, SIGCOMM, S&P, CCS, USENIX Security, SIGMOD, VLDB, OSDI, SOSP, CHI and many more). A paper matches an award only when the titles are identical and the award's first author is one of the paper's authors.
-- **The authors' own words.** The extension reads award words (Best Paper, Outstanding Paper, Test of Time, a best-paper finalist) and the talk levels Oral, Spotlight and Highlight in the title or the venue line. Its rules leave ordinary words alone: *Oral Oncology* is a journal.
+- **The authors' own words.** The extension reads award words (Best Paper, Outstanding Paper, Test of Time, a best-paper finalist) and the talk kinds Oral, Spotlight and Highlight in the title or the venue line. Its rules leave ordinary words alone: *Oral Oncology* is a journal.
 
 ## Features
 
@@ -164,7 +164,7 @@ Real examples. The middle column is what the lists give; by default the panel dr
 - **Citation totals**: papers, citations, h-index and i10-index of your highlighted papers, beside the totals of all papers. The **h-index** and **i10-index** buttons list the papers behind the number.
 - **Papers by year**: a bar for each year (at most 50 years), in the role colours. Click a bar to filter to that year.
 - **Top venues** (off by default): the ranked venues of your highlighted papers, most papers first. Click a venue to list its papers.
-- **Status lines**: how many papers are loaded; the roles that cut author lists hide (**Read full lists**); entries that repeat another paper; papers at venues without a rank, with **Copy list**, **Report**, and a **Check** link for each venue.
+- **Status lines**: how many papers are loaded; the roles that cut author lists hide (**Read full lists**); duplicate entries; papers at venues without a rank, with **Copy list**, **Report**, and a **Check** link for each venue.
 - **The whole list.** Scholar shows the first papers of a profile, and more when you press its **Show more** button. By default the extension presses that button for you until the list is complete: one press at a time, about once a second, and only in the tab that you look at. It stops at the first press that brings no new papers. With **Load all papers automatically** off, the panel shows a **Load all** button.
 - A bar at the top of the panel says how many papers the filters show, and clears them. `Escape` on the page clears all filters too.
 - **Toolbar popup**: the table, the award counts and the copy buttons, for the profile in the open tab.
@@ -200,7 +200,7 @@ All settings are on one page. A change is saved at once, and open Scholar tabs r
 | Semantic Scholar | *Read author lists from Semantic Scholar first* (off by default); an optional API key |
 | Check a venue | A text box for a venue line, and what the lists make of it |
 | AI agents | *Copy guide for agents* |
-| Configuration & presets | The presets; *Copy config (JSON)*, *Export file*, *Import file*; a JSON editor |
+| Configuration & presets | The presets; *Copy configuration (JSON)*, *Export file*, *Import file*; a JSON editor |
 | Saved data | *View saved details*, *Clear saved paper details*, *Reset to defaults*, *Copy details for a bug report* |
 
 - **The configuration is JSON.** The editor and *Import file* take a patch in the shape of the exported record, for example `{ "panel": { "years": { "show": false }, "copy": { "order": ["bibtex", "summary"] } }, "rows": { "style": "bar" }, "labels": { "metricsTitle": "My papers" } }`. The page says what it applied, what it ignored, and why. A preset changes only the settings that it names. No preset turns on Semantic Scholar.
@@ -245,7 +245,7 @@ Press `/` on a profile to jump to the search box. (The panel and its filters mus
 | Award papers of the last ten years | `has:award age:<10` | Those papers, and their count in the table. |
 | Papers at ranked journals with more than 100 citations | `type:journal cites:>100` | The list, and the citation totals of the highlighted ones. |
 | The papers with a given co-author | Press *Read full lists* once, then type the surname | Every paper with that name anywhere in its author list. |
-| The papers that may not be the person's | Click the status line "N papers where the profile name is not in the author list" | Those papers, to check or to report. |
+| The papers that may not be the person's | Click the status line "N papers where the profile owner's name is not in the author list" | Those papers, to check or to report. |
 | A summary to file or send | *Copy summary* or *Copy as table* | The table as text (or as a real table in Word), the lists' edition, what was counted, and a line with the profile's link and the date. |
 
 ## Copy and export

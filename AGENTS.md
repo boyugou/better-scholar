@@ -83,7 +83,7 @@ Rules:
 | `panel.table.unranked` | true / false | `true` | The column of papers whose venue has no rank (drawn as “–”). |
 | `labels.tipUnranked` | text, at most 30 characters | `""` | The text of the name of the unranked column (its tooltip, the popup's legend) (default: "Not ranked"): your own words, in every language; "" brings the built-in text back. |
 | `panel.table.total` | true / false | `true` | The totals: the All column and the All row. |
-| `labels.colTotal` | text, at most 30 characters | `""` | The text of the totals column and row of the table (default: "All"): your own words, in every language; "" brings the built-in text back. |
+| `labels.colTotal` | text, at most 30 characters | `""` | The text of the totals column and row of the table (default: "Total"): your own words, in every language; "" brings the built-in text back. |
 | `labels.roleFirst` | text, at most 30 characters | `""` | The text of the first-author role wherever the panel names it (table, quick filter, filter bar, chart) (default: "First"): your own words, in every language; "" brings the built-in text back. |
 | `labels.roleCofirst` | text, at most 30 characters | `""` | The text of the co-first role wherever the panel names it (default: "Co-first"): your own words, in every language; "" brings the built-in text back. |
 | `labels.roleSecond` | text, at most 30 characters | `""` | The text of the second-author role wherever the panel names it (default: "Second"): your own words, in every language; "" brings the built-in text back. |
@@ -132,7 +132,7 @@ Rules:
 | `panel.marks.grouping` | "separate" / "pair" / "talks" | `"separate"` | How the panel counts talks: "separate" one row each for oral, spotlight and highlight; "pair" spotlight and highlight together; "talks" all three together. |
 | `panel.filters.show` | true / false | `true` | The search box and the filters. |
 | `panel.filters.search` | true / false | `true` | The search box, with its suggestions and the number of papers it finds. |
-| `labels.filterPlaceholder` | text, at most 30 characters | `""` | The text of the hint in the search box (default: "Filter title or author…"): your own words, in every language; "" brings the built-in text back. |
+| `labels.filterPlaceholder` | text, at most 30 characters | `""` | The text of the hint in the search box (default: "Search title or author…"): your own words, in every language; "" brings the built-in text back. |
 | `panel.filters.key` | true / false | `true` | The "/" key jumps to the search box — on a profile, and on this settings page for its own search. Off: the key does nothing (a character key that does something is one a person can switch off). |
 | `panel.filters.pills.order` | list of ids | `["ccfA","coreA","cites100","recent","first","cofirst","second","last","award","talk"]` | The quick-filter buttons under the search box, left to right: a list of ids (ccfA, coreA, cites100, recent, first, cofirst, second, last, award, talk). Ids left out follow in the default order; a button's own switch hides it without changing its place. |
 | `panel.filters.pills.ccfA` | true / false | `true` | Quick filter: a button that adds ccf:a to the search (left out while nothing of that kind is drawn, and on a profile with no paper that it would find). |
@@ -177,7 +177,7 @@ Rules:
 | `labels.loadAll` | text, at most 30 characters | `""` | The text of the Load all button (default: "Load all"): your own words, in every language; "" brings the built-in text back. |
 | `panel.status.cutoff` | true / false | `true` | The papers whose author list Scholar cut off, and the button that reads the full lists. |
 | `labels.resolveBtn` | text, at most 30 characters | `""` | The text of the Read full lists button (default: "Read full lists"): your own words, in every language; "" brings the built-in text back. |
-| `panel.status.repeats` | true / false | `true` | The line about entries that repeat another paper. |
+| `panel.status.repeats` | true / false | `true` | The line about duplicate entries. |
 | `panel.status.absent` | true / false | `true` | The line about papers whose author list does not name you. |
 | `panel.status.unranked` | true / false | `true` | The list of papers at venues without a rank, with its Copy and Report buttons. |
 | `panel.names.show` | true / false | `true` | Help with spellings of your name that Scholar prints differently. |

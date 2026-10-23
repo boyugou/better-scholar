@@ -31,7 +31,7 @@ Each of the 30 locales supplies its own translation, and the store shows the one
 plain sentence of what it does. A package built before that change still has the old one.)
 
 ```text
-On Google Scholar profiles: the owner's author role and the venue's CCF and CORE rank on each paper, counted in one table.
+On Google Scholar profiles: the profile owner's author role and the venue's CCF and CORE rank on each paper, counted in one table.
 ```
 
 ### Description

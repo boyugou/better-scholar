@@ -104,7 +104,7 @@ test("detect returns the author's own text for tooltips and counts papers once p
     { marks: [] }, {}
   ];
   assert.deepEqual(marks.summarize(papers), { award: 2, oral: 1, spotlight: 1 });
-  // what the "Awards" count is made of: a paper counts once per kind, talk levels are not awards
+  // what the "Awards" count is made of: a paper counts once per kind, talk kinds are not awards
   const mk = (kind, group = "award") => ({ kind, group });
   assert.deepEqual(marks.summarizeKinds([{ marks: [mk("best"), mk("tot")] }, { marks: [mk("runner-up")] }, { marks: [mk("runner-up"), mk("runner-up"), mk("oral", "oral")] }, { marks: [] }, {}]),
     { best: 1, tot: 1, "runner-up": 2 });

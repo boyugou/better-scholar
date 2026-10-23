@@ -3,7 +3,7 @@
     "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "Nei profili Google Scholar: ruolo d’autore del titolare e ranking CCF e CORE di conferenza/rivista per articolo, contati in tabella."
+    "message": "Profili Google Scholar: ruolo d’autore del titolare del profilo e ranking CCF/CORE di conferenza/rivista per articolo, in tabella."
   },
   "extShortName": {
     "message": "Better Scholar"
@@ -115,7 +115,7 @@
     "message": "Ruolo"
   },
   "colTotal": {
-    "message": "Tutti"
+    "message": "Totale"
   },
   "tipUnranked": {
     "message": "Senza ranking"
@@ -195,7 +195,7 @@
     "message": "Fatto."
   },
   "coverAbsent": {
-    "message": "$N1$ articoli in cui il nome del profilo non compare tra gli autori",
+    "message": "$N1$ articoli in cui il nome del titolare del profilo non compare tra gli autori",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -203,7 +203,7 @@
     }
   },
   "coverAbsentOne": {
-    "message": "1 articolo in cui il nome del profilo non compare tra gli autori"
+    "message": "1 articolo in cui il nome del titolare del profilo non compare tra gli autori"
   },
   "coverUnmatched": {
     "message": "$N1$ articoli in conferenze o riviste senza ranking",
@@ -387,7 +387,7 @@
     "message": "Ranking CORE"
   },
   "optCoreHint": {
-    "message": "Classifica delle conferenze CORE, ICORE 2026."
+    "message": "Ranking delle conferenze CORE, ICORE 2026."
   },
   "optMarksTitle": {
     "message": "Premi e presentazioni"
@@ -675,7 +675,7 @@
     "message": "Semantic Scholar"
   },
   "optSemanticHint": {
-    "message": "Un secondo posto dove cercare ciò che Scholar taglia."
+    "message": "Un secondo posto dove cercare ciò che Scholar tronca."
   },
   "optSemanticLabel": {
     "message": "Leggi prima gli elenchi degli autori da Semantic Scholar"
@@ -704,7 +704,7 @@
     "message": "Una barra per anno, nei colori dei ruoli."
   },
   "coverRepeats": {
-    "message": "Voci che ripetono un altro articolo: $N1$",
+    "message": "Voci duplicate: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -815,7 +815,7 @@
     "message": "Segnala un problema"
   },
   "filterPlaceholder": {
-    "message": "Filtra per titolo o autore…"
+    "message": "Cerca per titolo o autore…"
   },
   "searchShortcut": {
     "message": "Premi / per cercare"
@@ -830,7 +830,7 @@
     "message": "Tabella delle metriche di citazione"
   },
   "optHideCitedTableHint": {
-    "message": "La tabella delle citazioni, h-index e i10-index nella barra laterale."
+    "message": "La tabella delle citazioni, indice h e indice i10 nella barra laterale."
   },
   "optHideCitedChart": {
     "message": "Grafico delle citazioni per anno"
@@ -921,10 +921,10 @@
     "message": "Dettagli degli articoli salvati"
   },
   "optCacheSearch": {
-    "message": "Filtra articoli memorizzati…"
+    "message": "Cerca tra gli articoli salvati…"
   },
   "optCacheCopy": {
-    "message": "Copia cache (JSON)"
+    "message": "Copia dettagli salvati (JSON)"
   },
   "optCacheEmpty": {
     "message": "Nessun dettaglio dell'articolo è stato ancora salvato su questo dispositivo."
@@ -1043,7 +1043,7 @@
     "message": "Elenchi di autori troncati e «Leggi elenchi completi»"
   },
   "optStatusRepeats": {
-    "message": "Voci ripetute"
+    "message": "Voci duplicate"
   },
   "optStatusAbsent": {
     "message": "Articoli senza il tuo nome"
@@ -1109,10 +1109,10 @@
     "message": "Testo dell’etichetta di ranking"
   },
   "optChipLabelFull": {
-    "message": "Elenco e classe (CCF A)"
+    "message": "Elenco e ranking (CCF A)"
   },
   "optChipLabelTier": {
-    "message": "Solo classe (A)"
+    "message": "Solo ranking (A)"
   },
   "optChipThemes": {
     "message": "Modelli"
@@ -1206,7 +1206,7 @@
     "message": "Altre conferenze e riviste"
   },
   "optPrefer": {
-    "message": "Quando entrambi gli elenchi classificano una conferenza o una rivista"
+    "message": "Quando una conferenza o una rivista ha un ranking in entrambi gli elenchi"
   },
   "optPreferHint": {
     "message": "Un'etichetta invece di due: quella dell'elenco che scegli, e quella dell'altro elenco solo dove l'elenco scelto non ha un ranking per la conferenza o la rivista. Il suggerimento dell'etichetta riporta comunque l'altro ranking."

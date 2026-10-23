@@ -402,7 +402,7 @@
     "message": "你的论文表格，按角色和等级列出，并附等级来源的说明。"
   },
   "optPanelMarksHint": {
-    "message": "获奖论文和各级报告（Oral 等）的数量，点击即可列出。"
+    "message": "获奖论文和报告形式（Oral 等）的数量，点击即可列出。"
   },
   "optPanelStatus": {
     "message": "已加载论文与未收录的发表场所"
@@ -529,13 +529,13 @@
     "message": "作者"
   },
   "tsvVenue": {
-    "message": "期刊/会议"
+    "message": "发表场所"
   },
   "tsvAwards": {
     "message": "获奖与报告形式"
   },
   "tsvCitations": {
-    "message": "引用"
+    "message": "引用数"
   },
   "optHideTitle": {
     "message": "Scholar 自带的区块"
@@ -683,7 +683,7 @@
     "message": "每年一根柱，用各角色的颜色。"
   },
   "coverRepeats": {
-    "message": "与另一篇重复的条目：$N1$",
+    "message": "重复的条目：$N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -700,7 +700,7 @@
     "message": "常见发表场所"
   },
   "optPanelVenuesHint": {
-    "message": "高亮论文所在的、有等级的场所，按篇数从多到少；点一个即可只看它的论文。"
+    "message": "高亮论文所在的、有等级的发表场所，按篇数从多到少；点一个即可只看它的论文。"
   },
   "optCopyDiagnostics": {
     "message": "复制问题报告所需的信息"
@@ -794,7 +794,7 @@
     "message": "反馈问题"
   },
   "filterPlaceholder": {
-    "message": "按标题或作者筛选…"
+    "message": "按标题或作者搜索…"
   },
   "searchShortcut": {
     "message": "按 / 键搜索"
@@ -809,13 +809,13 @@
     "message": "引用指标表格"
   },
   "optHideCitedTableHint": {
-    "message": "侧栏中的引用量、h-index 和 i10-index 表格。"
+    "message": "侧栏中的引用数、h 指数和 i10 指数表格。"
   },
   "optHideCitedChart": {
     "message": "每年引用统计图"
   },
   "optHideCitedChartHint": {
-    "message": "边栏中的历年引用统计柱状图。"
+    "message": "侧栏中的历年引用统计柱状图。"
   },
   "optConfigTitle": {
     "message": "配置与预设"
@@ -900,10 +900,10 @@
     "message": "已保存论文详情"
   },
   "optCacheSearch": {
-    "message": "搜索已缓存论文…"
+    "message": "搜索已保存论文…"
   },
   "optCacheCopy": {
-    "message": "复制缓存 (JSON)"
+    "message": "复制已保存的论文详情 (JSON)"
   },
   "optCacheEmpty": {
     "message": "此设备上尚未保存任何论文详情。"
@@ -1129,7 +1129,7 @@
     "message": "Enter 保留 · Esc 取消 · 留空：标准名称"
   },
   "optVenueTitle": {
-    "message": "核对期刊/会议"
+    "message": "核对发表场所"
   },
   "optVenueHint": {
     "message": "粘贴 Scholar 显示的发表场所：论文下方的灰色文字行。你会看到 CCF 和 CORE 名录如何看待它，以及依据哪条规则。名录无法归类的发表场所不获得等级。不做任何猜测。"
@@ -1138,7 +1138,7 @@
     "message": "如 Proceedings of the IEEE conference on computer vision and pattern recognition"
   },
   "optVenueNone": {
-    "message": "没有等级。名录没有确切收录这段文字，因此不加标签。"
+    "message": "未收录。名录没有确切收录这段文字，因此不加标签。"
   },
   "optVenueSecondary": {
     "message": "“$N1$”标示次要类别，例如研讨会、海报或短文。除非发表场所自身的名称含有该词，否则不获得等级。",

@@ -115,7 +115,7 @@
     "message": "Rolle"
   },
   "colTotal": {
-    "message": "Alle"
+    "message": "Totalt"
   },
   "tipUnranked": {
     "message": "Uten rang"
@@ -195,7 +195,7 @@
     "message": "Ferdig."
   },
   "coverAbsent": {
-    "message": "$N1$ artikler der profilnavnet ikke står i forfatterlisten",
+    "message": "$N1$ artikler der profileierens navn ikke står i forfatterlisten",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -203,10 +203,10 @@
     }
   },
   "coverAbsentOne": {
-    "message": "1 artikkel der profilnavnet ikke står i forfatterlisten"
+    "message": "1 artikkel der profileierens navn ikke står i forfatterlisten"
   },
   "coverUnmatched": {
-    "message": "$N1$ artikler på steder uten rang",
+    "message": "$N1$ artikler på publiseringssteder uten rang",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -214,7 +214,7 @@
     }
   },
   "coverUnmatchedOne": {
-    "message": "1 artikkel på et sted uten rang"
+    "message": "1 artikkel på et publiseringssted uten rang"
   },
   "copyUnmatched": {
     "message": "Kopier liste"
@@ -417,13 +417,13 @@
     "message": "Tabellen over artiklene dine etter rolle og rang, med en merknad om hvor rangene kommer fra."
   },
   "optPanelMarksHint": {
-    "message": "Antall prisvinnende artikler og foredragsnivåer, ett klikk viser dem."
+    "message": "Antall prisvinnende artikler og foredragstyper, ett klikk viser dem."
   },
   "optPanelStatus": {
-    "message": "Lastede artikler og steder uten rang"
+    "message": "Lastede artikler og publiseringssteder uten rang"
   },
   "optPanelStatusHint": {
-    "message": "Hvor mange artikler som er lastet, knappen «Last alle», hva som ikke kunne leses, og listen over artikler på steder uten rang."
+    "message": "Hvor mange artikler som er lastet, knappen «Last alle», hva som ikke kunne leses, og listen over artikler på publiseringssteder uten rang."
   },
   "optPanelNames": {
     "message": "Hjelp med navneskrivemåte"
@@ -660,7 +660,7 @@
     "message": "Rader i panelet"
   },
   "optTalkRowsHint": {
-    "message": "Slik telles foredragsnivåene. En artikkel som har mer enn ett av dem, telles én gang."
+    "message": "Slik telles foredragstypene. En artikkel som har mer enn én av dem, telles én gang."
   },
   "optTalkSeparate": {
     "message": "Oral, spotlight og highlight hver for seg"
@@ -675,7 +675,7 @@
     "message": "Semantic Scholar"
   },
   "optSemanticHint": {
-    "message": "Et annet sted å lete etter det Scholar kutter av."
+    "message": "Et annet sted å lete etter det Scholar forkorter."
   },
   "optSemanticLabel": {
     "message": "Les forfatterlister først fra Semantic Scholar"
@@ -704,7 +704,7 @@
     "message": "En stolpe for hvert år, i rollefargene."
   },
   "coverRepeats": {
-    "message": "Oppføringer som gjentar en annen artikkel: $N1$",
+    "message": "Dupliserte oppføringer: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -721,7 +721,7 @@
     "message": "Vanligste publiseringssteder"
   },
   "optPanelVenuesHint": {
-    "message": "De rangerte stedene for de uthevede artiklene dine, flest først; klikk på ett for å liste artiklene."
+    "message": "De rangerte publiseringsstedene for de uthevede artiklene dine, flest først; klikk på ett for å liste artiklene."
   },
   "optCopyDiagnostics": {
     "message": "Kopier detaljer til feilrapport"
@@ -736,7 +736,7 @@
     "message": "Semantic Scholar ba om å senke farten, så resten ble hentet fra Scholars egne sider."
   },
   "optRowStyle": {
-    "message": "Radmarkering"
+    "message": "Raduthevning"
   },
   "optRowStyleFull": {
     "message": "Bakgrunn og stolpe"
@@ -815,7 +815,7 @@
     "message": "Rapporter et problem"
   },
   "filterPlaceholder": {
-    "message": "Filtrer etter tittel eller forfatter…"
+    "message": "Søk etter tittel eller forfatter…"
   },
   "searchShortcut": {
     "message": "Trykk / for å søke"
@@ -921,10 +921,10 @@
     "message": "Lagrede artikkeldetaljer"
   },
   "optCacheSearch": {
-    "message": "Filtrer lagrede artikler…"
+    "message": "Søk i lagrede artikler…"
   },
   "optCacheCopy": {
-    "message": "Kopier hurtigbuffer (JSON)"
+    "message": "Kopier lagrede detaljer (JSON)"
   },
   "optCacheEmpty": {
     "message": "Ingen artikkeldetaljer er lagret på denne enheten ennå."
@@ -1043,13 +1043,13 @@
     "message": "Forkortede forfatterlister og Les fulle lister"
   },
   "optStatusRepeats": {
-    "message": "Gjentatte oppføringer"
+    "message": "Dupliserte oppføringer"
   },
   "optStatusAbsent": {
     "message": "Artikler uten navnet ditt"
   },
   "optStatusUnranked": {
-    "message": "Artikler på steder uten rang"
+    "message": "Artikler på publiseringssteder uten rang"
   },
   "optNamesHints": {
     "message": "Skrivemåter som finnes i artiklene dine"
@@ -1109,10 +1109,10 @@
     "message": "Tekst på rangmerkelappen"
   },
   "optChipLabelFull": {
-    "message": "Liste og nivå (CCF A)"
+    "message": "Liste og rang (CCF A)"
   },
   "optChipLabelTier": {
-    "message": "Bare nivå (A)"
+    "message": "Bare rang (A)"
   },
   "optChipThemes": {
     "message": "Ferdige stiler"
@@ -1203,7 +1203,7 @@
     "message": "Sekundære spor"
   },
   "unrankedOther": {
-    "message": "Andre steder"
+    "message": "Andre publiseringssteder"
   },
   "optPrefer": {
     "message": "Når et publiseringssted har rang i begge listene"
