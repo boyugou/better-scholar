@@ -1241,14 +1241,6 @@
   "optMineRemove": {
     "message": "刪除"
   },
-  "popupMapped": {
-    "message": "$N1$ 依你自己設定的對應有等級",
-    "placeholders": {
-      "n1": {
-        "content": "$1"
-      }
-    }
-  },
   "coverMapped": {
     "message": "$N1$ 篇論文依你自己設定的對應有等級",
     "placeholders": {

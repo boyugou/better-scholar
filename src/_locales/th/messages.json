@@ -1241,14 +1241,6 @@
   "optMineRemove": {
     "message": "ลบ"
   },
-  "popupMapped": {
-    "message": "$N1$ มีอันดับจากการจับคู่ของคุณเอง",
-    "placeholders": {
-      "n1": {
-        "content": "$1"
-      }
-    }
-  },
   "coverMapped": {
     "message": "$N1$ เรื่องมีอันดับจากการจับคู่ของคุณเอง",
     "placeholders": {

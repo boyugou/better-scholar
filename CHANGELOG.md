@@ -26,6 +26,8 @@
   German "einer gelisteten Venue"; Lawrence Erlbaum is a publisher.
   Then the checker says why a line of sponsors or publishers alone ("IEEE, 2020") cannot be assigned, offers *Change…* for a line
   already mapped, and gives a dashed chip room on its swatch.
+  The copied summary uses the language's punctuation too (Chinese and Japanese "一作：1（A：1，未收录：1）"); the popup's mapped line is the
+  panel's; each mapping's *Remove* sits beside it.
 - **The unranked-venue list names the paper page's whole line** once *Read full lists* has read it, instead of the profile's cut line:
   *Check*, *Copy list* and *Report* carry the whole name, and such a venue can then be assigned.
 - **A reviewed snapshot of the reference styles** (`test/formats-snapshot.test.js`, `test/fixtures/formats.expected.json`): how APA, IEEE,

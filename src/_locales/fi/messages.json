@@ -1241,14 +1241,6 @@
   "optMineRemove": {
     "message": "Poista"
   },
-  "popupMapped": {
-    "message": "$N1$ luokiteltu omien kohdistusten mukaan",
-    "placeholders": {
-      "n1": {
-        "content": "$1"
-      }
-    }
-  },
   "coverMapped": {
     "message": "$N1$ artikkelia luokiteltu omien kohdistusten mukaan",
     "placeholders": {

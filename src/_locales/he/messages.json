@@ -1241,14 +1241,6 @@
   "optMineRemove": {
     "message": "הסרה"
   },
-  "popupMapped": {
-    "message": "$N1$ מדורגים לפי השיוכים העצמיים לבמות",
-    "placeholders": {
-      "n1": {
-        "content": "$1"
-      }
-    }
-  },
   "coverMapped": {
     "message": "$N1$ מאמרים מדורגים לפי השיוכים העצמיים לבמות",
     "placeholders": {

@@ -1241,14 +1241,6 @@
   "optMineRemove": {
     "message": "Удалить"
   },
-  "popupMapped": {
-    "message": "С рангом по вашим сопоставлениям: $N1$",
-    "placeholders": {
-      "n1": {
-        "content": "$1"
-      }
-    }
-  },
   "coverMapped": {
     "message": "Статей с рангом по вашим сопоставлениям: $N1$",
     "placeholders": {

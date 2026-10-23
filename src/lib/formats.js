@@ -40,18 +40,20 @@
   // owner's name, `unranked` the "Not ranked" line and its three kinds, `unseen` the lines of the papers the table does not count by role
   function summaryText(summary, { owner = "", edition = "", label = ROLE_LABEL, notRanked = "unranked", extra = [], scope = "", notes = [], words = {} } = {}) {
     const src = summary.source === "core" ? "CORE" : summary.source === null ? "" : "CCF";
+    // (the language's own punctuation: "一作：1（A：1）" in Chinese and Japanese)
+    const col = words.colon || ": ", [po, pc] = words.paren || [" (", ")"], sep = words.comma || ", ";
     const lines = [];
     lines.push((owner ? owner + " — " : "") + (words.title ? words.title(src, summary.papers) : `${summary.papers} papers on Google Scholar, by authorship role${src ? ` and ${src} rank` : ""}`));
     if (scope) lines.push(scope);
     for (const note of notes) lines.push(note);
     for (const r of summary.rows) {
       if (!r.total) continue;
-      const parts = summary.columns.filter((c) => r[c]).map((c) => `${c === NONE ? notRanked : c}: ${r[c]}`);
-      lines.push(`${label[r.role]}: ${r.total}${parts.length ? ` (${parts.join(", ")})` : ""}`);
+      const parts = summary.columns.filter((c) => r[c]).map((c) => `${c === NONE ? notRanked : c}${col}${r[c]}`);
+      lines.push(`${label[r.role]}${col}${r.total}${parts.length ? `${po}${parts.join(sep)}${pc}` : ""}`);
     }
     const u = summary.unranked;
     const uw = words.unranked || { title: "Not ranked", preprint: "preprints", secondary: "secondary tracks of ranked venues", other: "other venues" };
-    if (u && summary.totals[NONE]) lines.push(`${uw.title}: ${summary.totals[NONE]} (${[[uw.preprint, u.preprint], [uw.secondary, u.secondary], [uw.other, u.other]].filter(([, n]) => n).map(([w, n]) => `${w} ${n}`).join(", ")})`);
+    if (u && summary.totals[NONE]) lines.push(`${uw.title}${col}${summary.totals[NONE]}${po}${[[uw.preprint, u.preprint], [uw.secondary, u.secondary], [uw.other, u.other]].filter(([, n]) => n).map(([w, n]) => `${w} ${n}`).join(sep)}${pc}`);
     lines.push(...unseenLines(summary, words.unseen));
     for (const line of extra) lines.push(line);
     if (edition) lines.push(edition);

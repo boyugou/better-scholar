@@ -358,9 +358,11 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
   });
 
   const MARK_KEY = { award: "markAward", oral: "markOral", spotlight: "markSpotlight", highlight: "markHighlight", "spotlight+highlight": "markSpotlightHighlight", "oral+spotlight+highlight": "markTalks" };
+  // the punctuation of the interface language, for the copied summary ("：", "（…）", "，" in Chinese and Japanese)
+  const punct = () => { const cjk = /^(?:zh|ja)/i.test(B.dom.langTag()); return { colon: B.dom.colon(), paren: cjk ? ["（", "）"] : [" (", ")"], comma: B.dom.comma() }; };
   const marksLine = (counts) => {
-    const parts = marks.rows(prefs.panel.marks.grouping).filter((g) => counts[g]).map((g) => td(MARK_KEY[g]) + " " + counts[g]);
-    return parts.length ? td("marksTitle") + ": " + parts.join(", ") + " (" + td("marksAsWritten") + ")" : "";
+    const parts = marks.rows(prefs.panel.marks.grouping).filter((g) => counts[g]).map((g) => td(MARK_KEY[g]) + " " + counts[g]), p = punct();
+    return parts.length ? td("marksTitle") + p.colon + parts.join(p.comma) + p.paren[0] + td("marksAsWritten") + p.paren[1] : "";
   };
 
   // ---- what the page shows, as records and as text --------------------------------------------------------------------------------------------
@@ -436,7 +438,7 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
       const { summary, src } = summaryOf(source, filtered);
       return kind === "table"
         ? formats.summaryTsv(summary, summaryWords(filtered, src))
-        : formats.summaryText(summary, { owner: headerName, label: copyLabels(), notRanked: td("tipUnranked"), words: { title: (s, n) => `${td(s ? "summaryTitle" : "summaryTitleRoles")}${s ? " (" + s + ")" : ""}: ${tdn("coverLoaded", n)}`,
+        : formats.summaryText(summary, { owner: headerName, label: copyLabels(), notRanked: td("tipUnranked"), words: { ...punct(), title: (s, n) => { const p = punct(); return `${td(s ? "summaryTitle" : "summaryTitleRoles")}${s ? p.paren[0] + s + p.paren[1] : ""}${p.colon}${tdn("coverLoaded", n)}`; },
             unranked: { title: td("tipUnranked"), preprint: td("unrankedPreprints"), secondary: td("unrankedSecondary"), other: td("unrankedOther") }, unseen: unseenWords }, extra: [marksLine(markCounts(filtered))].filter(Boolean),
           edition: src ? `${edition[src]} — ${t("tipToday")}` : "", scope: filtered ? scopeLine() : "", notes: copyNotes(src, filtered) });
     }

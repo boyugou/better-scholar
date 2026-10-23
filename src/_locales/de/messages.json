@@ -1241,14 +1241,6 @@
   "optMineRemove": {
     "message": "Entfernen"
   },
-  "popupMapped": {
-    "message": "$N1$ mit Rang durch eigene Venue-Zuordnungen",
-    "placeholders": {
-      "n1": {
-        "content": "$1"
-      }
-    }
-  },
   "coverMapped": {
     "message": "$N1$ Paper mit Rang durch eigene Venue-Zuordnungen",
     "placeholders": {

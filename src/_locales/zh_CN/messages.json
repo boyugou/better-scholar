@@ -1241,16 +1241,8 @@
   "optMineRemove": {
     "message": "删除"
   },
-  "popupMapped": {
-    "message": "$N1$ 按你自己设定的对应有等级",
-    "placeholders": {
-      "n1": {
-        "content": "$1"
-      }
-    }
-  },
   "coverMapped": {
-    "message": "$N1$ 篇按你自己设定的对应有等级",
+    "message": "$N1$ 篇论文的等级来自你设定的场所对应",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -1258,7 +1250,7 @@
     }
   },
   "coverMappedOne": {
-    "message": "1 篇按你自己设定的对应有等级"
+    "message": "1 篇论文的等级来自你设定的场所对应"
   },
   "coverMappedAction": {
     "message": "编辑…"

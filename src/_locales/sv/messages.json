@@ -1241,14 +1241,6 @@
   "optMineRemove": {
     "message": "Ta bort"
   },
-  "popupMapped": {
-    "message": "$N1$ rankade efter dina egna kopplingar",
-    "placeholders": {
-      "n1": {
-        "content": "$1"
-      }
-    }
-  },
   "coverMapped": {
     "message": "$N1$ artiklar rankade efter dina egna kopplingar",
     "placeholders": {

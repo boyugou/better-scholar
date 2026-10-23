@@ -1241,14 +1241,6 @@
   "optMineRemove": {
     "message": "हटाएँ"
   },
-  "popupMapped": {
-    "message": "$N1$ को अपनी venue मैपिंग से रैंक मिला",
-    "placeholders": {
-      "n1": {
-        "content": "$1"
-      }
-    }
-  },
   "coverMapped": {
     "message": "अपनी venue मैपिंग से रैंक वाले $N1$ पेपर",
     "placeholders": {

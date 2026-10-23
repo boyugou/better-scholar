@@ -1391,10 +1391,11 @@ button.btn.preset-chip:hover {
 .mine-title { margin: 4px 0 2px; font-size: 13px; font-weight: 600; }
 .mine-list > .faint { margin: 0 0 8px; font-size: 12px; line-height: 1.5; color: var(--muted); }
 .mine-items { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
-.mine-item { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 6px; font-size: 13px; line-height: 1.5; }
+.mine-item { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 4px 12px; font-size: 13px; line-height: 1.5; }          /* (the mapping in one column, its Remove beside it) */
+.mine-what { min-width: 0; }
 .mine-item .faint { color: var(--muted); overflow-wrap: anywhere; min-width: 0; }
 .mine-text { overflow-wrap: anywhere; min-width: 0; }
-.mine-remove { margin-inline-start: auto; }
+.mine-remove { justify-self: end; }
 .mine-status { margin: 0; padding: 0 20px; font-size: 12.5px; color: var(--muted); }
 .mine-status:not(:empty) { padding-bottom: 16px; }
 

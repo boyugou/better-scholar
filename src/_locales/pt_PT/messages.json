@@ -1241,14 +1241,6 @@
   "optMineRemove": {
     "message": "Remover"
   },
-  "popupMapped": {
-    "message": "$N1$ com ranking pelos seus mapeamentos de veículos",
-    "placeholders": {
-      "n1": {
-        "content": "$1"
-      }
-    }
-  },
   "coverMapped": {
     "message": "$N1$ artigos com ranking pelos seus mapeamentos de veículos",
     "placeholders": {

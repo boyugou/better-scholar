@@ -881,7 +881,7 @@
     mineOut.append(h("h3", { class: "mine-title" }, t("optMineTitle")), h("p", { class: "faint" }, t("optMineHint")),
       h("ul", { class: "mine-items" }, ...mine.map((m, i) => {
         const r = ROWS.find((x) => x.list === m.list && x.name === m.name && (!m.kind || x.kind === m.kind));
-        return h("li", { class: "mine-item", "data-mine": String(i) }, h("bdi", { class: "mine-text" }, m.text), h("span", { class: "faint" }, B.dom.dir() === "rtl" ? " ← " : " → ", h("bdi", {}, r ? rowText(r) : m.name)),
+        return h("li", { class: "mine-item", "data-mine": String(i) }, h("span", { class: "mine-what" }, h("bdi", { class: "mine-text" }, m.text), h("span", { class: "faint" }, B.dom.dir() === "rtl" ? " ← " : " → ", h("bdi", {}, r ? rowText(r) : m.name))),
           h("button", { type: "button", class: "btn mine-remove", "data-act": "mine-remove", "aria-label": `${t("optMineRemove")}: ${m.text}`,
             onClick: () => setMine(mine.filter((_, j) => j !== i)).then(() => { const rest = mineOut.querySelectorAll(".mine-remove"); (rest[Math.min(i, rest.length - 1)] || venueInput).focus(); }) }, t("optMineRemove")));
       })));

@@ -1241,14 +1241,6 @@
   "optMineRemove": {
     "message": "إزالة"
   },
-  "popupMapped": {
-    "message": "$N1$ مصنّفة بربطك الخاص بالمنصات",
-    "placeholders": {
-      "n1": {
-        "content": "$1"
-      }
-    }
-  },
   "coverMapped": {
     "message": "$N1$ ورقة مصنّفة بربطك الخاص بالمنصات",
     "placeholders": {
