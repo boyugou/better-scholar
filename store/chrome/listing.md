@@ -204,7 +204,7 @@ printed on a public page, and the spellings are spellings of that printed name).
 information" on the listing; the privacy policy then explains that it never leaves the browser.
 
 The clipboard and files are not a data type on the form. For the record: the extension writes to the clipboard only when the
-user clicks a copy button (the table, papers and APA buttons write the text and an HTML version of the same data, so that a
+user clicks a copy button (the table, papers, APA, IEEE and GB/T 7714 buttons write the text and an HTML version of the same data, so that a
 word processor pastes a real table or real italics), saves a CSV or the settings as a file only on a click, and never reads
 the clipboard (`claims.md` L36, P19). PRIVACY.md says so under "Clipboard" and "Files".
 
