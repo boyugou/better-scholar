@@ -7,7 +7,7 @@ on:
 
 jobs:
   unit:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04          # (pinned: a new Ubuntu under "latest" can break playwright install --with-deps; move on deliberately)
     strategy:
       matrix:
         node: [20, 22]
@@ -22,7 +22,7 @@ jobs:
       - run: scripts/package-chrome.sh
 
   e2e:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04          # (pinned: a new Ubuntu under "latest" can break playwright install --with-deps; move on deliberately)
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
