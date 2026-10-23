@@ -1270,5 +1270,8 @@
         "content": "$1"
       }
     }
+  },
+  "optVenueCut": {
+    "message": "Scholar har skåret denne linje af (…), så den ikke kan tilknyttes: indsæt publikationsstedets hele navn fra artiklens egen side."
   }
 }

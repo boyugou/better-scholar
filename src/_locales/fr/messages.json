@@ -1270,5 +1270,8 @@
         "content": "$1"
       }
     }
+  },
+  "optVenueCut": {
+    "message": "Scholar a coupé cette ligne (…), elle ne peut donc pas être associée : collez le nom complet de la conférence/revue depuis la page de l'article."
   }
 }

@@ -1270,5 +1270,8 @@
         "content": "$1"
       }
     }
+  },
+  "optVenueCut": {
+    "message": "Scholar cut this line off (…), so it cannot be assigned: paste the venue's whole name from the paper's own page."
   }
 }

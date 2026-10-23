@@ -1270,5 +1270,8 @@
         "content": "$1"
       }
     }
+  },
+  "optVenueCut": {
+    "message": "Scholar hat diese Zeile abgeschnitten (…), daher kann sie nicht zugeordnet werden: Den vollständigen Venue-Namen von der Seite der Arbeit einfügen."
   }
 }

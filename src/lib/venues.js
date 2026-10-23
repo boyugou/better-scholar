@@ -1180,6 +1180,8 @@
     return words.join(" ");
   }
 
+  const MINE_TEXT = 300;          // (the longest venue line a mapping keeps: store.js saves at most this much, so a longer line could not be found again)
+
   function createResolver(data) {
     const idx = buildIndex(data);
     const cache = new Map();
@@ -1187,7 +1189,8 @@
     // a row that the list no longer has drops the mapping). They fill gaps only: never a line the lists rank, nor a track or a line refused (see the end of resolveUncached).
     const mine = new Map();
     for (const m of Array.isArray(data && data.mine) ? data.mine : []) {
-      const side = m && idx.sources[m.list], key = m && mineKey(m.text);
+      // (a saved line that is cut off is no key — the page cannot save one; a stored one is skipped all the same)
+      const side = m && idx.sources[m.list], key = m && !prepare(cleanText(m.text)).truncated && mineKey(m.text);
       const row = side && [...((side.C && side.C.all) || []), ...((side.J && side.J.all) || [])].find((e) => e.name === m.name && (!m.kind || e.kind === m.kind));          // (two rows may share a name: CVM the conference, CVMJ the journal)
       if (row && key && !mine.has(key)) mine.set(key, { list: m.list, row });
     }
@@ -1296,7 +1299,7 @@
       }
       // the person's own mapping of a line no rule ranks: that row, and the other list's row of the same venue; marked as theirs (rule "mine") wherever a rank goes
       // (`assignable`: a line the person may tie to a listed venue — no list ranks it, it is no track, not refused and not cut off, and it has a name; a cut line's visible start would take every line that starts the same)
-      if (!inner && !out.ccf && !out.core && !out.refused && !secs.length && !p.truncated && mineKey(raw)) {
+      if (!inner && !out.ccf && !out.core && !out.refused && !secs.length && !p.truncated && raw.length <= MINE_TEXT && mineKey(raw)) {
         out.assignable = true;
         const m = mine.size && mine.get(mineKey(raw));
         if (m) {
@@ -1317,5 +1320,5 @@
     return { resolve, index: idx };
   }
 
-  return { createResolver, prepare, canonTokens, secondaryWord, secondaryWords, squash, mineKey };
+  return { createResolver, prepare, canonTokens, secondaryWord, secondaryWords, squash, mineKey, MINE_TEXT };
 });

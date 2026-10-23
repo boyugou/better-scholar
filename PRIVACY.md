@@ -40,7 +40,7 @@ In `chrome.storage.sync`. When Chrome sync is on, Chrome copies this storage to 
 - `variants`: the extra spellings of the profile owner's name that you add in the panel. They are kept per profile, by the
   `user=` id in the profile's address: at most 8 spellings per profile, and at most 40 profiles.
 - `mine`: your venue mappings, which you add on the settings page (*Check a venue* → *Assign it to a listed venue…*). Each is
-  a venue line as Scholar printed it (at most 160 characters), the list (CCF or CORE), and the name and kind of the row you chose.
+  a venue line as Scholar printed it (at most 300 characters), the list (CCF or CORE), and the name and kind of the row you chose.
   As many as fit Chrome's 8 KB for one item (about fifty); when a new one does not fit, the oldest go, and the page says so.
 
 In `chrome.storage.local`, on this device only (`content/store.js`):

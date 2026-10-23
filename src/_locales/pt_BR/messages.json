@@ -1270,5 +1270,8 @@
         "content": "$1"
       }
     }
+  },
+  "optVenueCut": {
+    "message": "O Scholar cortou esta linha (…), então ela não pode ser atribuída: cole o nome completo do veículo a partir da página do próprio artigo."
   }
 }

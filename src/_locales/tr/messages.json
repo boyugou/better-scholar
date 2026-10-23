@@ -1270,5 +1270,8 @@
         "content": "$1"
       }
     }
+  },
+  "optVenueCut": {
+    "message": "Scholar bu satırı kesti (…), bu yüzden atanamaz: makalenin kendi sayfasından yayın yerinin tam adını yapıştırın."
   }
 }

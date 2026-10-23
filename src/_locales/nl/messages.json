@@ -1270,5 +1270,8 @@
         "content": "$1"
       }
     }
+  },
+  "optVenueCut": {
+    "message": "Scholar heeft deze regel afgekapt (…), dus hij kan niet worden gekoppeld: plak de volledige naam van de venue uit de eigen pagina van het artikel."
   }
 }

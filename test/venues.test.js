@@ -2010,3 +2010,21 @@ test("the venue mappings, from an independent review: the paper page's ranked li
   assert.equal(!!r.resolve("TMLR, 2024").assignable, true);
   for (const v of ["arXiv preprint arXiv:2101.00001, 2021", "Proceedings of the 12th, 2004", "CVPR Workshops, 2019", "PPoPP 2019, 2019"]) assert.equal(!!r.resolve(v).assignable, false, v);
 });
+
+test("the venue mappings, second review: a page line that is a track goes first, a saved line keeps its whole length, a stored cut text is no key", () => {
+  const analysis = require("../src/lib/analysis.js");
+  const ijcai = "International Joint Conference on Artificial Intelligence";
+  const r = venues.createResolver({ ccf: ccf.venues, core: core.venues, aliases, strict: true, mine: [
+    { text: "Odd Things Meeting, 2018", list: "ccf", name: ijcai },
+    { text: "Proceedings of the Twenty-Seventh International Joint Conference on …, 2018", list: "ccf", name: ijcai }
+  ] });
+  const owner = { name: "A Author" };
+  for (const page of ["IJCAI Workshop on Odd Things, 2018", "Proceedings of the IJCAI 2018 Workshops, 2018", "Companion of The Web Conference 2018, 2018"]) {
+    const a = analysis.analyzeRow({ authorsText: "A Author", venueText: "Odd Things Meeting, 2018", title: "T", year: 2018 }, { owner, resolver: r, resolved: { venue: page } });
+    assert.ok(!a.venue.ccf && !a.venue.core, page);
+  }
+  assert.equal(r.resolve("International Joint Conference on, 2020").ccf, null, "a stored cut text is no key");
+  const long = "Proceedings of the " + "Very Long Name ".repeat(25) + "Symposium, 2020";
+  assert.equal(!!r.resolve(long).assignable, false, "a line longer than a mapping keeps is not offered");
+  assert.equal(venues.MINE_TEXT, 300);
+});

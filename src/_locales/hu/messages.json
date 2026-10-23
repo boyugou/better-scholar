@@ -1270,5 +1270,8 @@
         "content": "$1"
       }
     }
+  },
+  "optVenueCut": {
+    "message": "A Scholar levágta ezt a sort (…), ezért nem rendelhető hozzá: illessze be a venue teljes nevét a cikk saját oldaláról."
   }
 }

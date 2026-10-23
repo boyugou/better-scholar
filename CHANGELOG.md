@@ -12,7 +12,9 @@
   An independent review of the first version made it stricter: the paper page's own line, ranked by the lists' rules, goes before a
   mapping; a cut line can never be mapped (its visible start would take every line that starts the same); a row is its name and its kind
   (CVM the conference, CVMJ the journal); a saved line is cleaned as the page's is; *Assign* is offered only where a mapping can apply;
-  and the counts count what the table beside them counts.
+  and the counts count what the table beside them counts. A second review: a paper page that shows a track (a workshop, a companion)
+  also goes before a mapping; a line longer than a mapping keeps is not offered; a cut line in the checker says why it cannot be
+  assigned and what to paste instead.
 - **A reviewed snapshot of the reference styles** (`test/formats-snapshot.test.js`, `test/fixtures/formats.expected.json`): how APA, IEEE,
   GB/T 7714 and BibTeX read each of the 22,744 real venue lines (type code, name, volume, issue, pages), so that a change to `formats.js`
   shows its exact effect, as the venue snapshot does for the matcher. CONTRIBUTING.md says how to review it.

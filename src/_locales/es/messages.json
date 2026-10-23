@@ -1270,5 +1270,8 @@
         "content": "$1"
       }
     }
+  },
+  "optVenueCut": {
+    "message": "Scholar cortó esta línea (…), así que no se puede asignar: pega el nombre completo del congreso/revista desde la página del artículo."
   }
 }

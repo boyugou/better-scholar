@@ -27,7 +27,8 @@
     const byList = (v) => [v.ccf, v.core].some((x) => x && x.rule !== "mine");
     if (!byList(venue) && resolved && resolved.venue) {
       const alt = ctx.resolver.resolve(resolved.venue);
-      if (byList(alt) || (!venue.ccf && !venue.core && (alt.ccf || alt.core))) venue = alt;
+      // (a page line the lists read as a track or refuse — a workshop, a companion — is unranked on purpose: it goes before a mapping too)
+      if (byList(alt) || (!venue.ccf && !venue.core && (alt.ccf || alt.core)) || ((venue.ccf || venue.core) && (alt.secondary || alt.refused))) venue = alt;
     }
     return {
       status: cls.status,
