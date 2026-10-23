@@ -1262,5 +1262,13 @@
   },
   "coverMappedAction": {
     "message": "編集…"
+  },
+  "optMineFull": {
+    "message": "Chrome は約 50 件の割り当てを保持します。容量を空けるため、古い $N1$ 件を削除しました。",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
   }
 }

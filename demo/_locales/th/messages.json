@@ -1262,5 +1262,13 @@
   },
   "coverMappedAction": {
     "message": "แก้ไข…"
+  },
+  "optMineFull": {
+    "message": "Chrome เก็บการจับคู่ไว้ประมาณห้าสิบรายการ จึงลบ $N1$ รายการที่เก่าที่สุดออกเพื่อให้มีที่ว่าง",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
   }
 }

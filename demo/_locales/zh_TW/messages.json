@@ -1262,5 +1262,13 @@
   },
   "coverMappedAction": {
     "message": "編輯…"
+  },
+  "optMineFull": {
+    "message": "Chrome 大約保留五十筆對應：為了騰出空間，已刪除最舊的 $N1$ 筆。",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
   }
 }

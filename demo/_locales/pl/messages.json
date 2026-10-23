@@ -1262,5 +1262,13 @@
   },
   "coverMappedAction": {
     "message": "Edytuj…"
+  },
+  "optMineFull": {
+    "message": "Chrome przechowuje około pięćdziesięciu przypisań. Aby zrobić miejsce, usunięto najstarsze ($N1$).",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
   }
 }

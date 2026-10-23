@@ -1262,5 +1262,13 @@
   },
   "coverMappedAction": {
     "message": "Bearbeiten…"
+  },
+  "optMineFull": {
+    "message": "Chrome behält etwa fünfzig Zuordnungen: Die $N1$ ältesten wurden entfernt, um Platz zu schaffen.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
   }
 }

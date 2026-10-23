@@ -1262,5 +1262,13 @@
   },
   "coverMappedAction": {
     "message": "Redigera…"
+  },
+  "optMineFull": {
+    "message": "Chrome sparar omkring femtio kopplingar: de $N1$ äldsta togs bort för att skapa plats.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
   }
 }

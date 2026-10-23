@@ -580,7 +580,7 @@
         h("button", { class: "rr-link", type: "button", "data-act": "repeats-settings", onClick: () => cb.onSettings() }, t("coverRepeatsAction"))));
       // ranks from the person's own venue mappings: counted, and said to be (with the unranked line's switch: they are the lines the lists do not rank)
       if (sp.unranked && c.mapped > 0) status.push(h("div", { class: "rr-cover-line", "data-rr": "mapped", ...P("panel.status.unranked") }, h("span", { class: "rr-note" }, tn("coverMapped", c.mapped, [String(c.mapped)])), " ",
-        h("button", { class: "rr-link", type: "button", "data-act": "mapped-settings", onClick: () => cb.onSettings() }, t("coverMappedAction"))));
+        h("button", { class: "rr-link", type: "button", "data-act": "mapped-settings", onClick: () => cb.onCheckVenue("") }, t("coverMappedAction"))));          // (the settings page, at its venue card)
       if (sp.absent && c.absent > 0 && !c.layoutBroken) status.push(h("div", { class: "rr-note", "data-rr": "absent", ...P("panel.status.absent") },
         h("button", { class: "rr-link", type: "button", "data-focus": "absent", "aria-pressed": String(sameSel(m.selection, { role: "absent", tier: undefined })), onClick: () => cb.onSelect({ role: "absent", tier: undefined }) }, tn("coverAbsent", c.absent, [String(c.absent)]))));          // (a click lists them)        // (when the layout is broken every paper is "absent": that is the warning's news)
       // (the count of the papers is in the totals above: a lone line that only says it again, in a section of its own, is noise; it stays while papers are still coming and whenever the totals are not shown)
