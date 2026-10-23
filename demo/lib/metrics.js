@@ -162,7 +162,8 @@
   function unmatchedVenues(papers) {
     const counts = new Map();
     for (const p of papers) {
-      const v = p.venueText;
+      // (the paper page's line where it is known: whole, where the profile's line may be cut — what "Check", the copied list and the report then carry)
+      const v = p.pageVenueText || p.venueText;
       if (!v) continue;
       const r = p.venue || {};
       if (!r.ccf && !r.core && !r.secondary && !/^(?:arxiv|biorxiv|medrxiv|technical report|tech\.? rep|https?:|url\b)/i.test(v.trim())) {
