@@ -1270,5 +1270,8 @@
         "content": "$1"
       }
     }
+  },
+  "optVenueCut": {
+    "message": "Scholar a tăiat această linie (…), așa că nu poate fi atribuită: lipiți numele complet al venue-ului de pe pagina articolului."
   }
 }

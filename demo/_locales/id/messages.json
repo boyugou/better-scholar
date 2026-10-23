@@ -1270,5 +1270,8 @@
         "content": "$1"
       }
     }
+  },
+  "optVenueCut": {
+    "message": "Scholar memotong baris ini (…), sehingga tidak dapat ditetapkan: tempel nama venue lengkap dari halaman makalah itu sendiri."
   }
 }

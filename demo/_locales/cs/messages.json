@@ -1270,5 +1270,8 @@
         "content": "$1"
       }
     }
+  },
+  "optVenueCut": {
+    "message": "Scholar tento řádek zkrátil (…), takže ho nelze přiřadit: vložte celý název místa ze stránky článku."
   }
 }

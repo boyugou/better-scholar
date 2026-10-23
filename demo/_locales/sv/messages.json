@@ -1270,5 +1270,8 @@
         "content": "$1"
       }
     }
+  },
+  "optVenueCut": {
+    "message": "Scholar kapade av den här raden (…), så den kan inte kopplas till: klistra in publiceringsställets hela namn från artikelns egen sida."
   }
 }

@@ -1270,5 +1270,8 @@
         "content": "$1"
       }
     }
+  },
+  "optVenueCut": {
+    "message": "Scholar đã cắt dòng này (…) nên không thể gán: hãy dán toàn bộ tên venue từ chính trang của bài báo."
   }
 }

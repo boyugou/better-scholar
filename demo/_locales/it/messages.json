@@ -1270,5 +1270,8 @@
         "content": "$1"
       }
     }
+  },
+  "optVenueCut": {
+    "message": "Scholar ha tagliato questa riga (…), quindi non può essere assegnata: incolla il nome completo della conferenza/rivista dalla pagina dell'articolo."
   }
 }

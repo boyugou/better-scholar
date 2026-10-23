@@ -66,7 +66,7 @@
   // The person's own venue mappings (lib/venues.js `data.mine`): [{ text, list, name }], synced like the spellings. A line no rule ranks, tied by the person to a list's row.
   const MINE_MAX = 100;
   const cleanMine = (list) => (Array.isArray(list) ? list : []).filter((m) => m && typeof m.text === "string" && (m.list === "ccf" || m.list === "core") && typeof m.name === "string")
-    .map((m) => ({ text: m.text.replace(/\s+/g, " ").trim().slice(0, 160), list: m.list, name: m.name.slice(0, 300), ...(m.kind === "C" || m.kind === "J" ? { kind: m.kind } : {}) })).filter((m) => m.text);
+    .map((m) => ({ text: m.text.replace(/\s+/g, " ").trim().slice(0, 300), list: m.list, name: m.name.slice(0, 300), ...(m.kind === "C" || m.kind === "J" ? { kind: m.kind } : {}) })).filter((m) => m.text);
   const loadMine = async () => cleanMine(await get("sync", "mine"));
   // → { ok, kept, dropped }: what was written, and how many of the oldest did not fit (8 KB for an item, about fifty mappings: the page says so)
   async function saveMine(list) {
