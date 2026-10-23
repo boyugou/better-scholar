@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Better Scholar: din författarroll och publikationskanalens rank på Google Scholar</title>
-<meta name="description" content="Ett gratis Chrome-tillägg för Google Scholar-profiler. Det visar din författarroll och CCF- / CORE-rank för publikationskanalen på varje artikel och räknar dina artiklar i en tabell.">
+<meta name="description" content="Ett gratis Chrome-tillägg för Google Scholar-profiler. Det visar din författarroll och CCF- / CORE-rank för publiceringsstället på varje artikel och räknar dina artiklar i en tabell.">
 <link rel="canonical" href="https://boyugou.github.io/better-scholar/sv/">
 <link rel="alternate" hreflang="en" href="https://boyugou.github.io/better-scholar/en/">
 <link rel="alternate" hreflang="zh-CN" href="https://boyugou.github.io/better-scholar/zh-CN/">
@@ -41,13 +41,13 @@
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Better Scholar: din författarroll och publikationskanalens rank på Google Scholar">
-<meta property="og:description" content="Ett gratis Chrome-tillägg för Google Scholar-profiler. Det visar din författarroll och CCF- / CORE-rank för publikationskanalen på varje artikel och räknar dina artiklar i en tabell.">
+<meta property="og:description" content="Ett gratis Chrome-tillägg för Google Scholar-profiler. Det visar din författarroll och CCF- / CORE-rank för publiceringsstället på varje artikel och räknar dina artiklar i en tabell.">
 <meta property="og:url" content="https://boyugou.github.io/better-scholar/sv/">
 <meta property="og:image" content="https://boyugou.github.io/better-scholar/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="../assets/styles.css">
 <meta name="theme-color" content="#161d33">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Better Scholar","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Chromium browsers","description":"Ett gratis Chrome-tillägg för Google Scholar-profiler. Det visar din författarroll och CCF- / CORE-rank för publikationskanalen på varje artikel och räknar dina artiklar i en tabell.","inLanguage":"sv","url":"https://boyugou.github.io/better-scholar/sv/","image":"https://boyugou.github.io/better-scholar/assets/og.png","license":"https://www.apache.org/licenses/LICENSE-2.0","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Better Scholar","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Chromium browsers","description":"Ett gratis Chrome-tillägg för Google Scholar-profiler. Det visar din författarroll och CCF- / CORE-rank för publiceringsstället på varje artikel och räknar dina artiklar i en tabell.","inLanguage":"sv","url":"https://boyugou.github.io/better-scholar/sv/","image":"https://boyugou.github.io/better-scholar/assets/og.png","license":"https://www.apache.org/licenses/LICENSE-2.0","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 </head>
 <body>
 <header class="top">
@@ -98,8 +98,8 @@
   <section class="hero">
     <div class="wrap">
       <div class="stripes" aria-hidden="true"><i style="--c:#4d8ff5"></i><i style="--c:#b36cf6"></i><i style="--c:#fbbc04"></i><i style="--c:#34a853"></i></div>
-      <h1>Din roll och publikationskanalens rank på varje artikel</h1>
-      <p class="lead">Ett gratis Chrome-tillägg för Google Scholar-profiler. Det färgar varje artikel efter din författarroll, visar CCF- och CORE-rank för dess publikationskanal och räknar dina artiklar i en tabell.</p>
+      <h1>Din roll och publiceringsställets rank på varje artikel</h1>
+      <p class="lead">Ett gratis Chrome-tillägg för Google Scholar-profiler. Det färgar varje artikel efter din författarroll, visar CCF- och CORE-rank för dess publiceringsställe och räknar dina artiklar i en tabell.</p>
       <p class="cta"><a class="btn" href="#install">Installera</a> <a class="btn ghost" href="https://github.com/boyugou/better-scholar">Visa på GitHub</a></p>
       <p class="note">Gratis och öppen källkod · Chrome, Edge, Brave och andra Chromium-webbläsare · 30 språk</p>
     </div>
@@ -109,9 +109,9 @@
     <div class="wrap">
       <figure class="hero-shot">
         <div class="hero-frame" style="aspect-ratio: 1280 / 660">
-          <img src="../assets/hero.jpg" alt="En påhittad profil med riktiga publikationskanaler. Varje rad har färgen för din roll, etiketterna visar rank och sammanfattningspanelen till höger räknar artiklarna." width="1280" height="800" fetchpriority="high" decoding="async">
+          <img src="../assets/hero.jpg" alt="En påhittad profil med riktiga publiceringsställen. Varje rad har färgen för din roll, etiketterna visar rank och sammanfattningspanelen till höger räknar artiklarna." width="1280" height="800" fetchpriority="high" decoding="async">
         </div>
-        <figcaption>En påhittad profil med riktiga publikationskanaler. Varje rad har färgen för din roll, etiketterna visar rank och sammanfattningspanelen till höger räknar artiklarna.</figcaption>
+        <figcaption>En påhittad profil med riktiga publiceringsställen. Varje rad har färgen för din roll, etiketterna visar rank och sammanfattningspanelen till höger räknar artiklarna.</figcaption>
       </figure>
     </div>
   </section>
@@ -119,12 +119,12 @@
   <section class="how" id="how">
     <div class="wrap">
       <h2>Så läser det en artikel</h2>
-      <p class="note">Två påhittade artiklar i riktiga publikationskanaler. Varje steg visar vad tilläggets egen kod hittar i dem.</p>
+      <p class="note">Två påhittade artiklar på riktiga publiceringsställen. Varje steg visar vad tilläggets egen kod hittar i dem.</p>
       <div class="how-grid">
         <ol class="how-steps">
-          <li><button type="button" data-step="1"><span class="n">1</span><b>Hitta ditt namn</b><span class="d">Det hittar profilens namn på författarraden. Din plats på raden ger din roll: första, delad första, andra eller sista författare.</span><i class="bar" aria-hidden="true"></i></button></li>
-          <li><button type="button" data-step="2"><span class="n">2</span><b>Slå upp publikationskanalen</b><span class="d">Det letar efter publikationskanalen i CCF- och CORE-listorna, med fullständigt namn eller akronym. En säker matchning ger en rank-etikett.</span><i class="bar" aria-hidden="true"></i></button></li>
-          <li><button type="button" data-step="3"><span class="n">3</span><b>Gissa aldrig</b><span class="d">En workshop, en poster eller en Findings-artikel är inte huvudkonferensen. En publikationskanal som listorna inte med säkerhet innehåller får ingen etikett.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="1"><span class="n">1</span><b>Hitta ditt namn</b><span class="d">Det hittar profilägarens namn på författarraden. Din plats på raden ger din roll: första, delad första, andra eller sista författare.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="2"><span class="n">2</span><b>Slå upp publiceringsstället</b><span class="d">Det letar efter publiceringsstället i CCF- och CORE-listorna, med fullständigt namn eller akronym. En säker matchning ger en rank-etikett.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="3"><span class="n">3</span><b>Gissa aldrig</b><span class="d">En workshop, en poster eller en Findings-artikel är inte huvudkonferensen. Ett publiceringsställe som listorna inte med säkerhet innehåller får ingen etikett.</span><i class="bar" aria-hidden="true"></i></button></li>
           <li><button type="button" data-step="4" aria-current="step"><span class="n">4</span><b>Räkna</b><span class="d">Sammanfattningspanelen räknar varje artikel en gång, efter din roll och efter rank. Klicka på ett tal för att se dess artiklar.</span><i class="bar" aria-hidden="true"></i></button></li>
         </ol>
         <div class="how-figure">
@@ -158,8 +158,8 @@
     <div class="wrap">
       <h2>Vad tillägget gör mer</h2>
       <div class="grid">
-        <article style="--c:#4d8ff5"><h3>Priser och presentationer</h3><p>Etiketter för bästa artikel, pris för hållbar betydelse (test of time) och Oral-, Spotlight- eller Highlight-presentationer. De kommer från författarnas egna ord och från officiella prissidor.</p></article>
-        <article style="--c:#b36cf6"><h3>Fullständiga författarlistor</h3><p>Scholar klipper av långa författarlistor med ”…”, och det kan dölja din roll. Ett klick läser in de fullständiga listorna från artikelsidorna på Scholar.</p></article>
+        <article style="--c:#4d8ff5"><h3>Priser och presentationer</h3><p>Etiketter för bästa artikel, test of time-priser och Oral-, Spotlight- eller Highlight-presentationer. De kommer från författarnas egna ord och från officiella prissidor.</p></article>
+        <article style="--c:#b36cf6"><h3>Fullständiga författarlistor</h3><p>Scholar kortar långa författarlistor med ”…”, och det kan dölja din roll. Ett klick läser in de fullständiga listorna från artikelsidorna på Scholar.</p></article>
         <article style="--c:#fbbc04"><h3>Dubbletter sammanslagna</h3><p>Scholar listar ibland en artikel två gånger. Med reglaget ”Slå ihop dubbletter” blir de en post, och citeringarna adderas.</p></article>
         <article style="--c:#34a853"><h3>Din egen layout</h3><p>Varje del av sammanfattningspanelen har ett eget reglage. Välj färgerna, ordningen på delarna och dina egna namn för dem.</p></article>
         <article style="--c:#4d8ff5"><h3>Privat</h3><p>Inget konto, ingen analys, ingen spårning. Allt arbete sker i din webbläsare, och rankningslistorna finns i tillägget.</p></article>
@@ -397,7 +397,7 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. In 
         <div class="op-card">
           <div class="op-header" dir="ltr"><code>ccf:a</code> <code>ccf:b</code> <code>core:a*</code></div>
           <h3 class="op-title">Rank</h3>
-          <p class="op-desc">Artiklar från publikationskanaler med en viss CCF- eller CORE-rank.</p>
+          <p class="op-desc">Artiklar från publiceringsställen med en viss CCF- eller CORE-rank.</p>
         </div>
         <div class="op-card">
           <div class="op-header" dir="ltr"><code>role:first</code> <code>role:last</code> <code>role:cofirst</code></div>
@@ -412,7 +412,7 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. In 
         <div class="op-card">
           <div class="op-header" dir="ltr"><code>has:award</code> <code>has:talk</code></div>
           <h3 class="op-title">Priser och presentationer</h3>
-          <p class="op-desc">Artiklar med pris för bästa artikel eller pris för hållbar betydelse, eller med en Oral-, Spotlight- eller Highlight-presentation.</p>
+          <p class="op-desc">Artiklar med pris för bästa artikel eller test of time-pris, eller med en Oral-, Spotlight- eller Highlight-presentation.</p>
         </div>
         <div class="op-card">
           <div class="op-header" dir="ltr"><kbd>Escape</kbd></div>
@@ -430,8 +430,8 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. In 
       <div class="numbers-grid">
         <div class="num" style="--c:#4d8ff5"><b dir="ltr">158</b><span>inställningar du kan ändra</span></div>
         <div class="num" style="--c:#b36cf6"><b dir="ltr">30</b><span>gränssnittsspråk</span></div>
-        <div class="num" style="--c:#fbbc04"><b dir="ltr">1 178</b><span>rankade publikationskanaler i CCF- och CORE-listorna</span></div>
-        <div class="num" style="--c:#34a853"><b dir="ltr">400+</b><span>namn på publikationskanaler från Scholar som saknas i listorna</span></div>
+        <div class="num" style="--c:#fbbc04"><b dir="ltr">1 178</b><span>rankade publiceringsställen i CCF- och CORE-listorna</span></div>
+        <div class="num" style="--c:#34a853"><b dir="ltr">400+</b><span>namn på publiceringsställen från Scholar som saknas i listorna</span></div>
         <div class="num" style="--c:#4d8ff5"><b dir="ltr">18</b><span>kontroller som hindrar en felaktig rank</span></div>
         <div class="num" style="--c:#b36cf6"><b dir="ltr">5 581</b><span>prisbelönta artiklar som tillägget känner till</span></div>
         <div class="num" style="--c:#fbbc04"><b dir="ltr">22 744</b><span>riktiga publikationsrader från Scholar, varje resultat kontrollerat</span></div>
@@ -456,9 +456,9 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. In 
     <div class="wrap">
       <h2>Begränsningar</h2>
       <ul class="limits">
-        <li>Rankerna kommer från dagens listor. Under det år en artikel publicerades kan dess publikationskanal ha haft en annan rank.</li>
+        <li>Rankerna kommer från dagens listor. Under det år en artikel publicerades kan dess publiceringsställe ha haft en annan rank.</li>
         <li>CCF säger att listan inte är en grund för akademisk utvärdering.</li>
-        <li>Det gissar aldrig. En publikationskanal som det inte kan placera får ingen etikett, och sammanfattningspanelen listar den.</li>
+        <li>Det gissar aldrig. Ett publiceringsställe som det inte kan placera får ingen etikett, och sammanfattningspanelen listar det.</li>
       </ul>
     </div>
   </section>

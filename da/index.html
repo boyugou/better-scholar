@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Better Scholar: din forfatterrolle og publikationskanalens rang på Google Scholar</title>
-<meta name="description" content="En gratis Chrome-udvidelse til Google Scholar-profiler. Den viser din forfatterrolle og publikationskanalens CCF- / CORE-rang ved hver artikel og tæller dine artikler op i én tabel.">
+<meta name="description" content="En gratis Chrome-udvidelse til Google Scholar-profiler. Den viser din forfatterrolle og publikationsstedets CCF- / CORE-rang ved hver artikel og tæller dine artikler op i én tabel.">
 <link rel="canonical" href="https://boyugou.github.io/better-scholar/da/">
 <link rel="alternate" hreflang="en" href="https://boyugou.github.io/better-scholar/en/">
 <link rel="alternate" hreflang="zh-CN" href="https://boyugou.github.io/better-scholar/zh-CN/">
@@ -41,13 +41,13 @@
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Better Scholar: din forfatterrolle og publikationskanalens rang på Google Scholar">
-<meta property="og:description" content="En gratis Chrome-udvidelse til Google Scholar-profiler. Den viser din forfatterrolle og publikationskanalens CCF- / CORE-rang ved hver artikel og tæller dine artikler op i én tabel.">
+<meta property="og:description" content="En gratis Chrome-udvidelse til Google Scholar-profiler. Den viser din forfatterrolle og publikationsstedets CCF- / CORE-rang ved hver artikel og tæller dine artikler op i én tabel.">
 <meta property="og:url" content="https://boyugou.github.io/better-scholar/da/">
 <meta property="og:image" content="https://boyugou.github.io/better-scholar/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="../assets/styles.css">
 <meta name="theme-color" content="#161d33">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Better Scholar","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Chromium browsers","description":"En gratis Chrome-udvidelse til Google Scholar-profiler. Den viser din forfatterrolle og publikationskanalens CCF- / CORE-rang ved hver artikel og tæller dine artikler op i én tabel.","inLanguage":"da","url":"https://boyugou.github.io/better-scholar/da/","image":"https://boyugou.github.io/better-scholar/assets/og.png","license":"https://www.apache.org/licenses/LICENSE-2.0","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Better Scholar","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Chromium browsers","description":"En gratis Chrome-udvidelse til Google Scholar-profiler. Den viser din forfatterrolle og publikationsstedets CCF- / CORE-rang ved hver artikel og tæller dine artikler op i én tabel.","inLanguage":"da","url":"https://boyugou.github.io/better-scholar/da/","image":"https://boyugou.github.io/better-scholar/assets/og.png","license":"https://www.apache.org/licenses/LICENSE-2.0","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 </head>
 <body>
 <header class="top">
@@ -98,8 +98,8 @@
   <section class="hero">
     <div class="wrap">
       <div class="stripes" aria-hidden="true"><i style="--c:#4d8ff5"></i><i style="--c:#b36cf6"></i><i style="--c:#fbbc04"></i><i style="--c:#34a853"></i></div>
-      <h1>Din rolle og publikationskanalens rang ved hver artikel</h1>
-      <p class="lead">En gratis Chrome-udvidelse til Google Scholar-profiler. Den farver hver artikel efter din forfatterrolle, viser CCF- og CORE-rangen for dens publikationskanal og tæller dine artikler op i én tabel.</p>
+      <h1>Din rolle og publikationsstedets rang ved hver artikel</h1>
+      <p class="lead">En gratis Chrome-udvidelse til Google Scholar-profiler. Den farver hver artikel efter din forfatterrolle, viser CCF- og CORE-rangen for dens publikationssted og tæller dine artikler op i én tabel.</p>
       <p class="cta"><a class="btn" href="#install">Installer</a> <a class="btn ghost" href="https://github.com/boyugou/better-scholar">Se på GitHub</a></p>
       <p class="note">Gratis og open source · Chrome, Edge, Brave og andre Chromium-browsere · 30 sprog</p>
     </div>
@@ -109,9 +109,9 @@
     <div class="wrap">
       <figure class="hero-shot">
         <div class="hero-frame" style="aspect-ratio: 1280 / 660">
-          <img src="../assets/hero.jpg" alt="En opdigtet profil med rigtige kanaler. Hver række har farven for din rolle, mærkerne viser rangen, og oversigtspanelet til højre tæller artiklerne." width="1280" height="800" fetchpriority="high" decoding="async">
+          <img src="../assets/hero.jpg" alt="En opdigtet profil med rigtige publikationssteder. Hver række har farven for din rolle, mærkerne viser rangen, og oversigtspanelet til højre tæller artiklerne." width="1280" height="800" fetchpriority="high" decoding="async">
         </div>
-        <figcaption>En opdigtet profil med rigtige kanaler. Hver række har farven for din rolle, mærkerne viser rangen, og oversigtspanelet til højre tæller artiklerne.</figcaption>
+        <figcaption>En opdigtet profil med rigtige publikationssteder. Hver række har farven for din rolle, mærkerne viser rangen, og oversigtspanelet til højre tæller artiklerne.</figcaption>
       </figure>
     </div>
   </section>
@@ -119,12 +119,12 @@
   <section class="how" id="how">
     <div class="wrap">
       <h2>Sådan læser den en artikel</h2>
-      <p class="note">To opdigtede artikler i rigtige kanaler. Hvert trin viser, hvad udvidelsens egen kode finder i dem.</p>
+      <p class="note">To opdigtede artikler på rigtige publikationssteder. Hvert trin viser, hvad udvidelsens egen kode finder i dem.</p>
       <div class="how-grid">
         <ol class="how-steps">
-          <li><button type="button" data-step="1"><span class="n">1</span><b>Find dit navn</b><span class="d">Den finder profilens navn på forfatterlinjen. Din plads på linjen giver din rolle: første, delt første, anden eller sidste forfatter.</span><i class="bar" aria-hidden="true"></i></button></li>
-          <li><button type="button" data-step="2"><span class="n">2</span><b>Slå kanalen op</b><span class="d">Den søger efter kanalen i CCF- og CORE-listerne, med det fulde navn eller akronymet. Et sikkert fund giver et rangmærke.</span><i class="bar" aria-hidden="true"></i></button></li>
-          <li><button type="button" data-step="3"><span class="n">3</span><b>Gæt aldrig</b><span class="d">En workshop, en poster eller en Findings-artikel er ikke hovedkonferencen. En kanal, som listerne ikke med sikkerhed indeholder, får intet mærke.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="1"><span class="n">1</span><b>Find dit navn</b><span class="d">Den finder profilejerens navn på forfatterlinjen. Din plads på linjen giver din rolle: første, delt første, anden eller sidste forfatter.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="2"><span class="n">2</span><b>Slå publikationsstedet op</b><span class="d">Den søger efter publikationsstedet i CCF- og CORE-listerne, med det fulde navn eller akronymet. Et sikkert fund giver et rangmærke.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="3"><span class="n">3</span><b>Gæt aldrig</b><span class="d">En workshop, en poster eller en Findings-artikel er ikke hovedkonferencen. Et publikationssted, som listerne ikke med sikkerhed indeholder, får intet mærke.</span><i class="bar" aria-hidden="true"></i></button></li>
           <li><button type="button" data-step="4" aria-current="step"><span class="n">4</span><b>Tæl</b><span class="d">Oversigtspanelet tæller hver artikel én gang, efter din rolle og efter rangen. Klik på et tal for at se dets artikler.</span><i class="bar" aria-hidden="true"></i></button></li>
         </ol>
         <div class="how-figure">
@@ -159,7 +159,7 @@
       <h2>Hvad den ellers gør</h2>
       <div class="grid">
         <article style="--c:#4d8ff5"><h3>Priser og oplæg</h3><p>Mærker for bedste artikler, test-of-time-priser og Oral-, Spotlight- eller Highlight-oplæg. De stammer fra forfatternes egne ord og fra de officielle prissider.</p></article>
-        <article style="--c:#b36cf6"><h3>Fulde forfatterlister</h3><p>Scholar skærer lange forfatterlister af med „…“, og det kan skjule din rolle. Ét klik læser de fulde lister fra Scholars artikelsider.</p></article>
+        <article style="--c:#b36cf6"><h3>Fulde forfatterlister</h3><p>Scholar afkorter lange forfatterlister med „…“, og det kan skjule din rolle. Ét klik læser de fulde lister fra Scholars artikelsider.</p></article>
         <article style="--c:#fbbc04"><h3>Dubletter slået sammen</h3><p>Scholar lister nogle gange den samme artikel to gange. Med kontakten „Slå dubletter sammen“ bliver de til én post, og citationerne lægges sammen.</p></article>
         <article style="--c:#34a853"><h3>Din egen opsætning</h3><p>Hver del af oversigtspanelet har sin egen kontakt. Vælg farverne, rækkefølgen af delene og dine egne navne til dem.</p></article>
         <article style="--c:#4d8ff5"><h3>Privat</h3><p>Ingen konto, ingen analyse, ingen sporing. Alt arbejdet foregår i din browser, og rangeringslisterne ligger i udvidelsen.</p></article>
@@ -397,7 +397,7 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. In 
         <div class="op-card">
           <div class="op-header" dir="ltr"><code>ccf:a</code> <code>ccf:b</code> <code>core:a*</code></div>
           <h3 class="op-title">Rang</h3>
-          <p class="op-desc">Artikler i kanaler med en bestemt CCF- eller CORE-rang.</p>
+          <p class="op-desc">Artikler på publikationssteder med en bestemt CCF- eller CORE-rang.</p>
         </div>
         <div class="op-card">
           <div class="op-header" dir="ltr"><code>role:first</code> <code>role:last</code> <code>role:cofirst</code></div>
@@ -430,11 +430,11 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. In 
       <div class="numbers-grid">
         <div class="num" style="--c:#4d8ff5"><b dir="ltr">158</b><span>indstillinger, du kan ændre</span></div>
         <div class="num" style="--c:#b36cf6"><b dir="ltr">30</b><span>sprog i brugerfladen</span></div>
-        <div class="num" style="--c:#fbbc04"><b dir="ltr">1.178</b><span>rangerede kanaler i CCF- og CORE-listerne</span></div>
-        <div class="num" style="--c:#34a853"><b dir="ltr">400+</b><span>kanalnavne, som Scholar viser, men som listerne ikke har</span></div>
+        <div class="num" style="--c:#fbbc04"><b dir="ltr">1.178</b><span>rangerede publikationssteder i CCF- og CORE-listerne</span></div>
+        <div class="num" style="--c:#34a853"><b dir="ltr">400+</b><span>navne på publikationssteder, som Scholar viser, men som listerne ikke har</span></div>
         <div class="num" style="--c:#4d8ff5"><b dir="ltr">18</b><span>kontroller, der forhindrer en forkert rang</span></div>
         <div class="num" style="--c:#b36cf6"><b dir="ltr">5.581</b><span>prisbelønnede artikler, som udvidelsen kender til</span></div>
-        <div class="num" style="--c:#fbbc04"><b dir="ltr">22.744</b><span>rigtige linjer med kanalnavne fra Scholar, hvert resultat gennemgået</span></div>
+        <div class="num" style="--c:#fbbc04"><b dir="ltr">22.744</b><span>rigtige linjer med publikationssteder fra Scholar, hvert resultat gennemgået</span></div>
         <div class="num" style="--c:#34a853"><b dir="ltr">500+</b><span>enhedstests og end-to-end-tests i en rigtig browser</span></div>
       </div>
     </div>
@@ -456,9 +456,9 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. In 
     <div class="wrap">
       <h2>Begrænsninger</h2>
       <ul class="limits">
-        <li>Rangerne kommer fra dagens lister. I det år en artikel blev udgivet, kan dens kanal have haft en anden rang.</li>
+        <li>Rangerne kommer fra dagens lister. I det år en artikel blev udgivet, kan dens publikationssted have haft en anden rang.</li>
         <li>CCF siger, at listen ikke er et grundlag for akademisk evaluering.</li>
-        <li>Den gætter aldrig. En kanal, den ikke kan placere, får intet mærke, og oversigtspanelet viser den.</li>
+        <li>Den gætter aldrig. Et publikationssted, den ikke kan placere, får intet mærke, og oversigtspanelet viser det.</li>
       </ul>
     </div>
   </section>

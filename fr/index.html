@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Better Scholar : votre rôle d'auteur et le classement des revues ou conférences sur Google Scholar</title>
-<meta name="description" content="Extension Chrome gratuite pour les profils Google Scholar. Elle indique votre rôle d'auteur et le classement CCF / CORE de la revue ou de la conférence pour chaque article, et compte vos articles dans un seul tableau.">
+<meta name="description" content="Extension Chrome gratuite pour les profils Google Scholar. Elle indique votre rôle d'auteur et le rang CCF / CORE de la revue ou de la conférence pour chaque article, et compte vos articles dans un seul tableau.">
 <link rel="canonical" href="https://boyugou.github.io/better-scholar/fr/">
 <link rel="alternate" hreflang="en" href="https://boyugou.github.io/better-scholar/en/">
 <link rel="alternate" hreflang="zh-CN" href="https://boyugou.github.io/better-scholar/zh-CN/">
@@ -41,13 +41,13 @@
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Better Scholar : votre rôle d'auteur et le classement des revues ou conférences sur Google Scholar">
-<meta property="og:description" content="Extension Chrome gratuite pour les profils Google Scholar. Elle indique votre rôle d'auteur et le classement CCF / CORE de la revue ou de la conférence pour chaque article, et compte vos articles dans un seul tableau.">
+<meta property="og:description" content="Extension Chrome gratuite pour les profils Google Scholar. Elle indique votre rôle d'auteur et le rang CCF / CORE de la revue ou de la conférence pour chaque article, et compte vos articles dans un seul tableau.">
 <meta property="og:url" content="https://boyugou.github.io/better-scholar/fr/">
 <meta property="og:image" content="https://boyugou.github.io/better-scholar/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="../assets/styles.css">
 <meta name="theme-color" content="#161d33">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Better Scholar","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Chromium browsers","description":"Extension Chrome gratuite pour les profils Google Scholar. Elle indique votre rôle d'auteur et le classement CCF / CORE de la revue ou de la conférence pour chaque article, et compte vos articles dans un seul tableau.","inLanguage":"fr","url":"https://boyugou.github.io/better-scholar/fr/","image":"https://boyugou.github.io/better-scholar/assets/og.png","license":"https://www.apache.org/licenses/LICENSE-2.0","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Better Scholar","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Chromium browsers","description":"Extension Chrome gratuite pour les profils Google Scholar. Elle indique votre rôle d'auteur et le rang CCF / CORE de la revue ou de la conférence pour chaque article, et compte vos articles dans un seul tableau.","inLanguage":"fr","url":"https://boyugou.github.io/better-scholar/fr/","image":"https://boyugou.github.io/better-scholar/assets/og.png","license":"https://www.apache.org/licenses/LICENSE-2.0","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 </head>
 <body>
 <header class="top">
@@ -98,8 +98,8 @@
   <section class="hero">
     <div class="wrap">
       <div class="stripes" aria-hidden="true"><i style="--c:#4d8ff5"></i><i style="--c:#b36cf6"></i><i style="--c:#fbbc04"></i><i style="--c:#34a853"></i></div>
-      <h1>Votre rôle et le classement des revues ou conférences de vos articles</h1>
-      <p class="lead">Une extension Chrome gratuite pour les profils Google Scholar. Elle colore chaque article selon votre rôle d'auteur, indique le classement CCF et CORE de sa revue ou conférence, et compte vos articles dans un seul tableau.</p>
+      <h1>Votre rôle et le rang des revues ou conférences de vos articles</h1>
+      <p class="lead">Une extension Chrome gratuite pour les profils Google Scholar. Elle colore chaque article selon votre rôle d'auteur, indique le rang CCF et CORE de sa revue ou conférence, et compte vos articles dans un seul tableau.</p>
       <p class="cta"><a class="btn" href="#install">Installer</a> <a class="btn ghost" href="https://github.com/boyugou/better-scholar">Voir sur GitHub</a></p>
       <p class="note">Gratuite et open source · Chrome, Edge, Brave et autres navigateurs Chromium · 30 langues</p>
     </div>
@@ -109,9 +109,9 @@
     <div class="wrap">
       <figure class="hero-shot">
         <div class="hero-frame" style="aspect-ratio: 1280 / 660">
-          <img src="../assets/hero.jpg" alt="Un profil fictif avec de vraies revues et conférences. Chaque ligne a la couleur de votre rôle, les pastilles indiquent le classement, et le panneau à droite compte les articles." width="1280" height="800" fetchpriority="high" decoding="async">
+          <img src="../assets/hero.jpg" alt="Un profil fictif avec de vraies revues et conférences. Chaque ligne a la couleur de votre rôle, les pastilles indiquent le rang, et le panneau à droite compte les articles." width="1280" height="800" fetchpriority="high" decoding="async">
         </div>
-        <figcaption>Un profil fictif avec de vraies revues et conférences. Chaque ligne a la couleur de votre rôle, les pastilles indiquent le classement, et le panneau à droite compte les articles.</figcaption>
+        <figcaption>Un profil fictif avec de vraies revues et conférences. Chaque ligne a la couleur de votre rôle, les pastilles indiquent le rang, et le panneau à droite compte les articles.</figcaption>
       </figure>
     </div>
   </section>
@@ -122,10 +122,10 @@
       <p class="note">Deux articles fictifs dans de vraies revues et conférences. Chaque étape montre ce que le code de l'extension y trouve.</p>
       <div class="how-grid">
         <ol class="how-steps">
-          <li><button type="button" data-step="1"><span class="n">1</span><b>Trouvez votre nom</b><span class="d">Elle trouve le nom du profil dans la ligne des auteurs. Votre place dans cette ligne vous donne votre rôle : premier auteur, co-premier auteur, deuxième auteur ou dernier auteur.</span><i class="bar" aria-hidden="true"></i></button></li>
-          <li><button type="button" data-step="2"><span class="n">2</span><b>Cherchez la revue ou la conférence</b><span class="d">Elle la cherche dans les listes CCF et CORE, par son nom complet ou par son sigle. Une correspondance sûre donne une pastille de classement.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="1"><span class="n">1</span><b>Trouvez votre nom</b><span class="d">Elle trouve le nom du titulaire du profil dans la ligne des auteurs. Votre place dans cette ligne vous donne votre rôle : premier auteur, co-premier auteur, deuxième auteur ou dernier auteur.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="2"><span class="n">2</span><b>Cherchez la revue ou la conférence</b><span class="d">Elle la cherche dans les listes CCF et CORE, par son nom complet ou par son sigle. Une correspondance sûre donne une pastille de rang.</span><i class="bar" aria-hidden="true"></i></button></li>
           <li><button type="button" data-step="3"><span class="n">3</span><b>Ne jamais deviner</b><span class="d">Un atelier, un poster ou un article de Findings n'est pas la conférence principale. Une revue ou conférence que les listes ne placent pas avec certitude ne reçoit pas de pastille.</span><i class="bar" aria-hidden="true"></i></button></li>
-          <li><button type="button" data-step="4" aria-current="step"><span class="n">4</span><b>Comptage</b><span class="d">Le panneau compte chaque article une seule fois, selon votre rôle et le classement. Cliquez sur un nombre pour voir ses articles.</span><i class="bar" aria-hidden="true"></i></button></li>
+          <li><button type="button" data-step="4" aria-current="step"><span class="n">4</span><b>Comptage</b><span class="d">Le panneau compte chaque article une seule fois, selon votre rôle et le rang. Cliquez sur un nombre pour voir ses articles.</span><i class="bar" aria-hidden="true"></i></button></li>
         </ol>
         <div class="how-figure">
         <div class="how-stage" aria-hidden="true">
@@ -138,7 +138,7 @@
           <div class="sr on" data-from="1" dir="ltr" data-role="second" style="--rc:#f9ab00">
             <div class="sr-text" lang="en"><div class="sr-t">Cheap Calibration for Retrieval-Augmented Models</div><div class="sr-a">B Writer, <span class="nm on" data-from="1" data-focus="1">A Example</span>, H Writer</div><div class="sr-v"><mark class="sec on" data-from="3" data-focus="3">Findings</mark> of the Association for Computational Linguistics: ACL 2022, 410-423, 2022</div></div>
             <div class="sr-c">868</div><div class="sr-y">2022</div>
-            <div class="co-slot" dir="ltr"><p class="co" data-from="1" data-to="2"><span class="tag">Deuxième</span> position 2 sur 3</p><p class="co on" data-from="3"><b dir="ltr">Findings</b> · catégorie secondaire : sans classement, sans pastille</p></div>
+            <div class="co-slot" dir="ltr"><p class="co" data-from="1" data-to="2"><span class="tag">Deuxième</span> position 2 sur 3</p><p class="co on" data-from="3"><b dir="ltr">Findings</b> · catégorie secondaire : sans rang, sans pastille</p></div>
           </div>
           <div class="mini">
             <div class="mini-h"><b>Articles par rôle et par rang</b><span dir="ltr"><i class="on">CCF</i><i>CORE</i></span></div>
@@ -396,8 +396,8 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. In 
         </div>
         <div class="op-card">
           <div class="op-header" dir="ltr"><code>ccf:a</code> <code>ccf:b</code> <code>core:a*</code></div>
-          <h3 class="op-title">Classement</h3>
-          <p class="op-desc">Articles parus dans des conférences ou revues ayant un classement CCF ou CORE donné.</p>
+          <h3 class="op-title">Rang</h3>
+          <p class="op-desc">Articles parus dans des conférences ou revues ayant un rang CCF ou CORE donné.</p>
         </div>
         <div class="op-card">
           <div class="op-header" dir="ltr"><code>role:first</code> <code>role:last</code> <code>role:cofirst</code></div>
@@ -430,9 +430,9 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. In 
       <div class="numbers-grid">
         <div class="num" style="--c:#4d8ff5"><b dir="ltr">158</b><span>réglages que vous pouvez modifier</span></div>
         <div class="num" style="--c:#b36cf6"><b dir="ltr">30</b><span>langues de l'interface</span></div>
-        <div class="num" style="--c:#fbbc04"><b dir="ltr">1 178</b><span>conférences et revues classées dans les listes CCF et CORE</span></div>
+        <div class="num" style="--c:#fbbc04"><b dir="ltr">1 178</b><span>conférences et revues ayant un rang dans les listes CCF et CORE</span></div>
         <div class="num" style="--c:#34a853"><b dir="ltr">400+</b><span>noms de revues ou de conférences affichés par Scholar, mais absents des listes</span></div>
-        <div class="num" style="--c:#4d8ff5"><b dir="ltr">18</b><span>contrôles qui empêchent un classement erroné</span></div>
+        <div class="num" style="--c:#4d8ff5"><b dir="ltr">18</b><span>contrôles qui empêchent un rang erroné</span></div>
         <div class="num" style="--c:#b36cf6"><b dir="ltr">5 581</b><span>articles primés que l'extension connaît</span></div>
         <div class="num" style="--c:#fbbc04"><b dir="ltr">22 744</b><span>lignes réelles de revues et conférences sur Scholar, chaque résultat vérifié</span></div>
         <div class="num" style="--c:#34a853"><b dir="ltr">500+</b><span>tests unitaires et tests de bout en bout dans un vrai navigateur</span></div>
@@ -456,7 +456,7 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. In 
     <div class="wrap">
       <h2>Limites</h2>
       <ul class="limits">
-        <li>Les classements proviennent des listes actuelles. L'année de publication d'un article, sa revue ou sa conférence pouvait avoir un autre classement.</li>
+        <li>Les rangs proviennent des listes actuelles. L'année de publication d'un article, sa revue ou sa conférence pouvait avoir un autre rang.</li>
         <li>La CCF précise que sa liste ne doit pas servir de base à l'évaluation académique.</li>
         <li>Elle ne devine jamais. Une revue ou conférence qu'elle ne peut pas placer n'obtient pas de pastille, et le panneau la signale.</li>
       </ul>
