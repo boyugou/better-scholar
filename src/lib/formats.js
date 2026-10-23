@@ -23,9 +23,11 @@
     return { names: parts.filter((a) => !CUT.test(a)), cut: parts.some((a) => CUT.test(a)) || /(?:\.\.\.|…)$/.test(clean(line)) };
   }
   // `prefer`: the list that stands alone where both rank the venue (the settings' `rows.prefer`, as the chips draw it), or null for both
+  // (a rank the person mapped by hand — the venue mappings of the settings page — is never passed off as the list's)
+  const OWN = (r) => (r && r.mine ? " (your mapping)" : "");
   const rankNotes = (p, { ccfOn = true, coreOn = true, prefer = null } = {}) => {
     const ccf = ccfOn && p.rank.ccf && p.rank.ccf.tier, core = coreOn && p.rank.core && p.rank.core.rank, both = ccf && core;
-    return [ccf && !(both && prefer === "core") ? `CCF ${ccf}` : "", core && !(both && prefer === "ccf") ? `CORE ${core}` : ""].filter(Boolean);
+    return [ccf && !(both && prefer === "core") ? `CCF ${ccf}${OWN(p.rank.ccf)}` : "", core && !(both && prefer === "ccf") ? `CORE ${core}${OWN(p.rank.core)}` : ""].filter(Boolean);
   };
 
   // ---- the summary --------------------------------------------------------------------------------------------------------------------------
@@ -100,7 +102,7 @@
     const roleOf = (p) => (p.status === "found" ? labels.roles[p.role] || p.role : p.status === "hidden" ? labels.hidden : "");   // (a cut list: the role is not known; no name in the list: no role)
     return {
       header: [labels.year, labels.title, labels.authors, labels.role, labels.venue, ...(ccfOn ? [labels.ccf] : []), ...(coreOn ? [labels.core] : []), labels.awards, labels.citations],
-      rows: papers.map((p) => [p.year, p.title, p.authors, roleOf(p), p.venue, ...(ccfOn ? [p.rank.ccf ? p.rank.ccf.tier : ""] : []), ...(coreOn ? [p.rank.core ? p.rank.core.rank : ""] : []), p.marks.join(", "), p.citations])
+      rows: papers.map((p) => [p.year, p.title, p.authors, roleOf(p), p.venue, ...(ccfOn ? [p.rank.ccf ? p.rank.ccf.tier + OWN(p.rank.ccf) : ""] : []), ...(coreOn ? [p.rank.core ? p.rank.core.rank + OWN(p.rank.core) : ""] : []), p.marks.join(", "), p.citations])
     };
   }
   const papersTsv = (papers, ctx) => { const t = table(papers, ctx); return rowsTsv(t.header, t.rows); };

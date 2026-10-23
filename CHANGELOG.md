@@ -2,6 +2,13 @@
 
 ## 2.41.0 — 2026-10-15
 
+- **Your own venue mappings** (settings → *Check a venue* → *Assign it to a listed venue…*). A venue line that no rule ranks can now be
+  tied by you to a row of the CCF or CORE list; the same venue in other editions (years, ordinals, "Proceedings of the" and a bracketed acronym aside) gets that
+  rank too. It is never passed off as the lists' rank: the chip is dashed with a dotted tier and its tooltip says "Your own mapping", a
+  status line in the panel and a line in the popup count such papers, every copy writes "(your mapping)" after the rank, the copied
+  summary carries a note, and the `papers` call marks the rank `mine: true`. Mappings fill gaps only — never a line the lists rank, a
+  track, or a cut name — and a row the list drops drops the mapping. They are synced like the name spellings (`mine`, at most 100;
+  PRIVACY.md says so) and listed under the box with *Remove*.
 - **A reviewed snapshot of the reference styles** (`test/formats-snapshot.test.js`, `test/fixtures/formats.expected.json`): how APA, IEEE,
   GB/T 7714 and BibTeX read each of the 22,744 real venue lines (type code, name, volume, issue, pages), so that a change to `formats.js`
   shows its exact effect, as the venue snapshot does for the matcher. CONTRIBUTING.md says how to review it.

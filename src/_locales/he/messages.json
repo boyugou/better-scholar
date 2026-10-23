@@ -1219,5 +1219,48 @@
   },
   "optPreferBoth": {
     "message": "שתיהן"
+  },
+  "ruleMine": {
+    "message": "שיוך עצמי (הגדרות ← בדיקת במה), לא כלל הרשימה"
+  },
+  "optMineAssign": {
+    "message": "שיוך לבמה מהרשימה…"
+  },
+  "optMinePick": {
+    "message": "חיפוש ברשימות CCF ו-CORE: שם או ראשי תיבות"
+  },
+  "optMineNoMatch": {
+    "message": "אף במה ברשימה לא מכילה את המילים האלה."
+  },
+  "optMineTitle": {
+    "message": "השיוכים העצמיים לבמות"
+  },
+  "optMineHint": {
+    "message": "שורות במה שאף כלל לא מדרג ושויכו לבמה מהרשימה. התגיות שלהן מקווקוות, ובכל עותק הדירוג שלהן מסומן ב-“(your mapping)”. הן ממלאות רק פערים: שורה שהרשימות מדרגות שומרת על הדירוג של הרשימות."
+  },
+  "optMineRemove": {
+    "message": "הסרה"
+  },
+  "popupMapped": {
+    "message": "$N1$ מדורגים לפי השיוכים העצמיים לבמות",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMapped": {
+    "message": "$N1$ מאמרים מדורגים לפי השיוכים העצמיים לבמות",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMappedOne": {
+    "message": "מאמר אחד מדורג לפי השיוכים העצמיים לבמות"
+  },
+  "coverMappedAction": {
+    "message": "עריכה…"
   }
 }

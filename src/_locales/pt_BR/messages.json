@@ -1219,5 +1219,48 @@
   },
   "optPreferBoth": {
     "message": "Ambas"
+  },
+  "ruleMine": {
+    "message": "Mapeamento próprio (Configurações → Verificar um veículo), não a regra da lista"
+  },
+  "optMineAssign": {
+    "message": "Atribuir a um veículo da lista…"
+  },
+  "optMinePick": {
+    "message": "Pesquisar nas listas CCF e CORE: nome ou sigla"
+  },
+  "optMineNoMatch": {
+    "message": "Nenhum veículo da lista tem essas palavras."
+  },
+  "optMineTitle": {
+    "message": "Seus mapeamentos de veículos"
+  },
+  "optMineHint": {
+    "message": "Linhas de veículo que nenhuma regra classifica e que você associou a um veículo da lista. As etiquetas ficam tracejadas, e cada cópia marca a classificação com “(your mapping)”. Elas só preenchem lacunas: uma linha que as listas classificam mantém a classificação das listas."
+  },
+  "optMineRemove": {
+    "message": "Remover"
+  },
+  "popupMapped": {
+    "message": "$N1$ com ranking pelos seus mapeamentos de veículos",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMapped": {
+    "message": "$N1$ artigos com ranking pelos seus mapeamentos de veículos",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMappedOne": {
+    "message": "1 artigo com ranking pelos seus mapeamentos de veículos"
+  },
+  "coverMappedAction": {
+    "message": "Editar…"
   }
 }

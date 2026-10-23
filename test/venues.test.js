@@ -1958,3 +1958,26 @@ test("a name that opens with its year is a meeting's proceedings, not a journal 
   assert.equal(brief("Wireless Communications and Mobile Computing 2021, 2021"), "CCF C WCMC");
   assert.match(brief("2019 IEEE Transactions on Mobile Computing 18 (3), 1-10, 2019"), /^CCF A TMC/);
 });
+
+test("the person's own venue mappings fill gaps only, by the whole name, marked as theirs", () => {
+  const ppopp = "ACM SIGPLAN Symposium on Principles & Practice of Parallel Programming";
+  const mine = [
+    { text: "Proceedings of the 2015 Symposium on Odd Things 3, 1-10, 2015", list: "ccf", name: ppopp },
+    { text: "PPoPP 2019", list: "core", name: "National Conference of the American Association for Artificial Intelligence" },
+    { text: "Konferenz der Dinge", list: "core", name: "No Such Row" }
+  ];
+  const r = venues.createResolver({ ccf: ccf.venues, core: core.venues, aliases, mine, strict: true });
+  const got = (v) => { const x = r.resolve(v); return [x.ccf ? `${x.ccf.abbr}:${x.ccf.rule}` : "-", x.core ? `${x.core.abbr}:${x.core.rule}` : "-"].join(" | "); };
+  // the same venue in other editions: years, ordinals and "Proceedings of the" aside; the other list's row of the same venue comes along, marked too
+  for (const v of ["Proceedings of the 2016 Symposium on Odd Things, 2016", "17th Symposium on Odd Things, 1-5, 2017", "Twenty-Fifth Symposium on Odd Things, 2019"]) assert.equal(got(v), "PPoPP:mine | PPoPP:mine", v);
+  // nothing looser: another event word, a track, a cut name
+  for (const v of ["Conference on Odd Things, 2016", "Symposium on Odd Things Workshops, 2016", "Symposium on Odd …, 2016"]) assert.equal(got(v), "- | -", v);
+  // never over a rank the lists give, and never to a row the list does not have
+  assert.equal(got("PPoPP 2019, 2019"), "PPoPP:acronym | PPoPP:acronym");
+  assert.equal(got("Konferenz der Dinge, 2019"), "- | -");
+  // without mappings the resolver is the bundled one
+  assert.equal(brief("Proceedings of the 2016 Symposium on Odd Things, 2016"), "");
+  assert.equal(venues.mineKey("Proceedings of the Twenty-Fifth Symposium on Odd Things 3, 1-10, 2016"), "symposium on odd things");
+  assert.equal(venues.mineKey("Symposium on Odd Things (SOT), 2016"), "symposium on odd things", "an acronym in brackets is the same venue");
+  assert.notEqual(venues.mineKey("Symposium on Odd Things (Short Papers), 2016"), "symposium on odd things", "words in brackets are not");
+});

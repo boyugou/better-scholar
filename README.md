@@ -179,7 +179,7 @@ All settings are on one page. A change is saved at once, and open Scholar tabs r
 - **Your own names** for titles, columns, buttons and chip words. A name replaces the translation in every language. Exports, search operators and page calls keep the standard words.
 - **Colours**: five colour themes, or a colour for each role. Each role colour shows its contrast with Scholar's white page, and warns below 3:1 (the WCAG minimum for graphics).
 - **Chip looks**: outline, soft, solid or text only; rounded or square; with the list's name or the tier only; a colour for CCF, CORE, awards and talks; six ready-made looks.
-- **Check a venue**: paste a venue line as Scholar prints it. The page shows the CCF and CORE rank, the name it matched and the rule. For a CCF venue it also shows the research area and a link to its DBLP page. When there is no rank, it says why.
+- **Check a venue**: paste a venue line as Scholar prints it. The page shows the CCF and CORE rank, the name it matched and the rule. For a CCF venue it also shows the research area and a link to its DBLP page. When there is no rank, it says why. A line no rule ranks can be tied by you to a listed venue (*Assign it to a listed venue…*): it then gets that venue's rank in every edition of the same name, as *your mapping* — a dashed chip, a status line, "(your mapping)" in every copy — and never over a rank the lists give. The mappings are listed below the box, each with *Remove*.
 - **Presets and JSON**: *All features*, *Last author focus*, *First author focus*, *Minimalist*; copy, export, import or edit the configuration as JSON.
 - A search box above the cards filters the settings. `/` jumps to it (a switch turns the key off).
 
@@ -198,7 +198,7 @@ All settings are on one page. A change is saved at once, and open Scholar tabs r
 | Duplicate entries | *Merge duplicates* |
 | Paper list | *Load all papers automatically* |
 | Semantic Scholar | *Read author lists from Semantic Scholar first* (off by default); an optional API key |
-| Check a venue | A text box for a venue line, and what the lists make of it |
+| Check a venue | A text box for a venue line, and what the lists make of it; your venue mappings |
 | AI agents | *Copy guide for agents* |
 | Configuration & presets | The presets; *Copy configuration (JSON)*, *Export file*, *Import file*; a JSON editor |
 | Saved data | *View saved details*, *Clear saved paper details*, *Reset to defaults*, *Copy details for a bug report* |
@@ -334,7 +334,7 @@ What the extension is made of, counted from its code and its data. Nothing here 
 | **158** | settings you can change, in 18 cards: 89 switches, 50 names you can set, and 19 colours, choices, orders and languages | the settings tree (`src/lib/prefs.js`) |
 | **176** | nodes in that tree, 5 levels deep: card, panel switch, part switch, item, sub-item | cards and rows; each row hangs on its part's switch |
 | **9 · 10 · 10 · 6 · 4** | panel parts, copy formats and quick filters (each with a switch, most in an order you set), then chip looks and presets | `SECTIONS`, `COPY_BUTTONS`, `PILLS`, `CHIP_THEMES`, `PRESETS` |
-| **30** | interface languages: 355 strings each, 29 translated from English | `src/_locales/*/messages.json` |
+| **30** | interface languages: 366 strings each, 29 translated from English | `src/_locales/*/messages.json` |
 | **1,178** | ranked venues in 1,481 rows of the two lists (386 CCF conferences, 295 CCF journals, 800 CORE conferences); 299 venues have a row in both | the rows of `src/data/ccf.js` and `src/data/core.js`, linked by `idx.partners` |
 | **400+** | venue names that Scholar prints but the lists do not have, in 250+ curated entries: old and renamed venues, other spellings, the lists' own typos, and look-alike events that get no chip | `src/data/aliases.js` |
 | **2,500+** · **1,100+** | name forms and acronyms that the matcher looks up | the keys of its indexes |

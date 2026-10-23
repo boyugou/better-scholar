@@ -140,6 +140,9 @@
       }
     }
   },
+  "coverLoadedOne": {
+    "message": "Načtená práce: 1"
+  },
   "loadingAll": {
     "message": "Načítání… $N1$",
     "placeholders": {
@@ -161,6 +164,9 @@
         "content": "$1"
       }
     }
+  },
+  "coverHiddenOne": {
+    "message": "Role skrytá zkráceným seznamem autorů: 1"
   },
   "resolveBtn": {
     "message": "Přečíst celé seznamy"
@@ -196,6 +202,9 @@
       }
     }
   },
+  "coverAbsentOne": {
+    "message": "Práce, kde jméno majitele profilu není mezi autory: 1"
+  },
   "coverUnmatched": {
     "message": "Práce v místech publikace bez ranku: $N1$",
     "placeholders": {
@@ -203,6 +212,9 @@
         "content": "$1"
       }
     }
+  },
+  "coverUnmatchedOne": {
+    "message": "Práce v místě publikace bez ranku: 1"
   },
   "copyUnmatched": {
     "message": "Kopírovat seznam"
@@ -332,6 +344,9 @@
       }
     }
   },
+  "popupPapersOne": {
+    "message": "Práce: 1"
+  },
   "popupOpenScholar": {
     "message": "Otevřít Google Scholar"
   },
@@ -450,6 +465,9 @@
         "content": "$1"
       }
     }
+  },
+  "optCacheCountOne": {
+    "message": "Seznam autorů práce uložený na tomto zařízení: 1 (uchován 90 dní)."
   },
   "optCacheNone": {
     "message": "Nejsou uloženy žádné podrobnosti o pracích."
@@ -675,6 +693,9 @@
         "content": "$1"
       }
     }
+  },
+  "yearsOlderOne": {
+    "message": "Nevykreslená starší práce: 1"
   },
   "optPanelYears": {
     "message": "Práce podle roku"
@@ -1166,27 +1187,6 @@
   "optPillRecent": {
     "message": "Posledních 5 let"
   },
-  "coverLoadedOne": {
-    "message": "Načtená práce: 1"
-  },
-  "coverHiddenOne": {
-    "message": "Role skrytá zkráceným seznamem autorů: 1"
-  },
-  "coverAbsentOne": {
-    "message": "Práce, kde jméno majitele profilu není mezi autory: 1"
-  },
-  "coverUnmatchedOne": {
-    "message": "Práce v místě publikace bez ranku: 1"
-  },
-  "popupPapersOne": {
-    "message": "Práce: 1"
-  },
-  "optCacheCountOne": {
-    "message": "Seznam autorů práce uložený na tomto zařízení: 1 (uchován 90 dní)."
-  },
-  "yearsOlderOne": {
-    "message": "Nevykreslená starší práce: 1"
-  },
   "filterAbsent": {
     "message": "Jméno z profilu není mezi autory"
   },
@@ -1219,5 +1219,48 @@
   },
   "optPreferBoth": {
     "message": "Obojí"
+  },
+  "ruleMine": {
+    "message": "Vlastní přiřazení (Nastavení → Ověřit místo publikace), ne pravidlo seznamu"
+  },
+  "optMineAssign": {
+    "message": "Přiřadit k místu ze seznamu…"
+  },
+  "optMinePick": {
+    "message": "Hledat v seznamech CCF a CORE: název nebo zkratka"
+  },
+  "optMineNoMatch": {
+    "message": "V seznamech není žádné místo s těmito slovy."
+  },
+  "optMineTitle": {
+    "message": "Vlastní přiřazení míst publikace"
+  },
+  "optMineHint": {
+    "message": "Řádky míst publikace, které žádné pravidlo nezařadí, ale které byly přiřazeny k místu ze seznamu. Jejich štítky jsou čárkované a každá kopie označuje jejich rank „(your mapping)“. Doplňují jen mezery: řádek, který seznamy zařazují, si ponechá jejich rank."
+  },
+  "optMineRemove": {
+    "message": "Odebrat"
+  },
+  "popupMapped": {
+    "message": "$N1$ zařazeno podle vlastního přiřazení",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMapped": {
+    "message": "Práce zařazené podle vlastního přiřazení: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMappedOne": {
+    "message": "Práce zařazená podle vlastního přiřazení: 1"
+  },
+  "coverMappedAction": {
+    "message": "Upravit…"
   }
 }

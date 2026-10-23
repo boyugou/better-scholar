@@ -19,7 +19,9 @@
   let variants = await B.store.loadVariants(profileId);
   const resolvedCache = await B.store.loadResolved();
 
-  const resolver = venues.createResolver({ ccf: B.data.ccf.venues, core: B.data.core.venues, aliases: B.aliases });
+  // (the person's own venue mappings fill the lines no rule ranks, marked as theirs: rule "mine"; a change on the settings page builds the resolver again)
+  const makeResolver = (mine) => venues.createResolver({ ccf: B.data.ccf.venues, core: B.data.core.venues, aliases: B.aliases, mine });
+  let resolver = makeResolver(await B.store.loadMine());
   // venue names/acronyms the dataset knows, so "(Interspeech 2022 Oral)" in a title reads as a marker
   const venueWords = new Set([...B.data.ccf.venues.map((v) => v.abbr), ...B.data.core.venues.map((v) => v.acronym)].filter(Boolean).map((w) => w.toLowerCase()));
   const venueWord = (w) => venueWords.has(w);
@@ -343,7 +345,7 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
         loaded: list.length, canLoadMore: B.scholar.canLoadMore(), complete: listComplete(), loadingAll: state.loadingAll, loadMessage: state.loadMessage,
         repeats: prefs.mergeDuplicates ? 0 : B.duplicates.plan(state.rows.map(dupEntry)).keep.filter((k) => !k).length,
         hidden: whole.hidden, absent: whole.absent, resolving: state.resolving, resolveMessage: state.resolveMessage, layoutBroken: layoutBroken(),
-        unmatched: metrics.unmatchedVenues(list)
+        unmatched: metrics.unmatchedVenues(list), mapped: mappedCount()
       },
       variants, nameHints: hints
     };
@@ -379,7 +381,8 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
         venue: (resolved && resolved.venue) || r.raw.venueText,
         year: a.year, citations: r.shown, role: a.role, status: a.status, highlighted: r.highlighted,
         type: KIND[(shown.ccf && v.ccf && v.ccf.kind) || (shown.core && v.core && v.core.kind)] || null,          // (a list that is switched off does not tell the kind, as in the search)
-        rank: { ccf: shown.ccf && v.ccf ? { tier: v.ccf.tier, name: v.ccf.name } : null, core: shown.core && v.core ? { rank: v.core.rank, name: v.core.name } : null },
+        rank: { ccf: shown.ccf && v.ccf ? { tier: v.ccf.tier, name: v.ccf.name, ...(v.ccf.rule === "mine" ? { mine: true } : {}) } : null,
+          core: shown.core && v.core ? { rank: v.core.rank, name: v.core.name, ...(v.core.rule === "mine" ? { mine: true } : {}) } : null },          // (mine: the person's own mapping, not the list's)
         marks: markLabels(a),
         url: r.raw.href ? new URL(r.raw.href, location.origin).href : ""
       };
@@ -407,11 +410,15 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
   }
   // What a copied summary says about where it is from, so that it can be filed or sent on: the profile's own link (nothing else of the address) and the day, when the setting is on; and,
   // when the list is not all here, that it is not (the count is of what is loaded)
+  // how many loaded papers have a rank from the person's own venue mappings (rule "mine"), not from a list's rule
+  const mappedCount = () => live().filter((r) => [r.a.venue && r.a.venue.ccf, r.a.venue && r.a.venue.core].some((x) => x && x.rule === "mine")).length;
   function copyNotes() {
     const notes = [];
     const id = new URLSearchParams(location.search).get("user"), d = new Date();
     if (prefs.panel.copy.source && id) notes.push(`Source: ${location.origin}/citations?user=${encodeURIComponent(id)} · ${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`);
     if (!listComplete()) notes.push(`Not fully loaded: ${live().length} papers so far`);
+    const mapped = mappedCount();
+    if (mapped) notes.push(`Ranked by your own venue mappings, not by the lists: ${mapped} paper${mapped === 1 ? "" : "s"}`);
     return notes;
   }
   const summaryWords = (filtered) => ({ label: copyLabels(), header: t("tsvRole"), total: t("tsvTotal"), notRanked: td("tipUnranked"), scope: filtered ? scopeLine() : "", notes: copyNotes() });
@@ -640,6 +647,9 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
     if (f.impact && !(p.metrics.show && p.metrics[f.impact] && Object.values(prefs.roles).some(Boolean))) f.impact = null;          // (the h-index and i10 buttons are not drawn while no position is highlighted)
   }
 
+  // The person's venue mappings changed (the settings page, in any tab): every row is read again
+  B.store.onMineChanged((mine) => { resolver = makeResolver(mine); reanalyze(); refresh(); });
+
   // The settings page saved something (in this or any other tab): show it at once.
   B.store.onPrefsChanged((next) => {
     if (next.language !== prefs.language || next.scholarLanguage !== prefs.scholarLanguage) { location.reload(); return; }      // the panel's words (or Scholar's) are changed at once by a fresh load
@@ -727,7 +737,7 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
       const table = (src) => { const whole = metrics.summarize(list, src); return rows === list ? whole : metrics.summarize(rows, src, { keep: whole.rows.map((r) => r.role) }); };
       return {
         owner: headerName, loaded: list.length, counted: rows.length, shown: shownRows().length, loadingAll: state.loadingAll, layoutBroken: layoutBroken(), edition,
-        noRanks: noRanks(list),
+        noRanks: noRanks(list), mapped: mappedCount(),
         summaries: { ccf: table("ccf"), core: table("core"), none: table(null) },
         marks: markCounts(rows !== list),
         metrics: { highlighted: metrics.citationMetrics(scoped(source, { skipImpact: true })).highlighted, all: metrics.citationMetrics(list).all }

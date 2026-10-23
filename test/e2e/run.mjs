@@ -2421,6 +2421,18 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
       const askedVenue = await checkPage.inputValue('[data-act="venue-check"]');
       assert.ok((await pg.locator('[data-rr="unmatched"] li').first().textContent()).includes(askedVenue), "the box holds the venue's text: " + askedVenue);
       assert.match(await checkPage.locator("#card-venue .venue-none").innerText(), /^No rank/, "a venue of the unranked list gets no rank, and the card says so");
+      // the person ties it to a listed venue: the profile page shows a dashed chip that says whose rank it is, a status line counts it, the unranked list loses it; removing it undoes all of it
+      await checkPage.click('[data-act="mine-assign"]');
+      await checkPage.fill('[data-act="mine-search"]', "Neural Information Processing");
+      await checkPage.locator('[data-act="mine-pick"]').first().click();
+      await pollPage(checkPage, () => !!document.querySelector('#card-venue .venue-line') && document.querySelectorAll(".mine-item").length === 1);
+      await eventually(pg, () => document.querySelectorAll("#gsc_a_b .rr-chip-mine").length >= 1 && !!document.querySelector('[data-rr="mapped"]'));
+      assert.match(await pg.locator("#gsc_a_b .rr-chip-mine").first().getAttribute("title"), /Your own mapping/, "the chip's tooltip says the rank is the person's mapping");
+      assert.match(await pg.locator('[data-rr="mapped"]').textContent(), /ranked by your own venue mappings/);
+      assert.match(await pg.locator('[data-rr="unmatched"] summary').textContent(), /^1 paper at a venue without a rank/, "the mapped venue is no longer unranked");
+      await checkPage.click('[data-act="mine-remove"]');
+      await eventually(pg, () => document.querySelectorAll("#gsc_a_b .rr-chip-mine").length === 0 && !document.querySelector('[data-rr="mapped"]'));
+      assert.equal(await checkPage.locator(".mine-item").count(), 0, "the list of mappings is empty again");
       await checkPage.close();
       assert.match(await pg.locator('[data-rr="unmatched"] summary').textContent(), /^2 papers at venues without a rank/, "COLM and TMLR are on no list; Findings and demo tracks are not counted as missing");
       ok("a real profile read on the live page: the table is the one the live panel showed (First 1, Co-first 2, Second 1, Other 7, 2 hidden)");

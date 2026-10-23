@@ -64,6 +64,9 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
 /* The colours of the chips. Each family has the colours below until a colour is picked (settings → Chips): the settings page and this page then set the custom properties
    named here on <html> (lib/palette.js makes them from the one colour), and these are only the fallbacks. ink: the text, edge: the outline, fill: the solid look's background,
    on: the text on that fill. A rank chip is white with an outline; its tiers fade from the strongest (1) to the weakest (4). */
+/* a rank from the person's own venue mapping (settings → Check a venue), not from a list's rule: dashed where there is an outline, a dotted tier in every look */
+.rr-chip-mine { border-style: dashed; }
+.rr-chip-mine b { text-decoration: underline dotted; text-underline-offset: 2px; }
 .rr-chip-rank {
   background: color-mix(in srgb, color-mix(in srgb, var(--fill) var(--look-fill, 0%), #fff) var(--look-paint, 100%), transparent);
   color: color-mix(in srgb, var(--on) var(--look-solid, 0%), var(--ink));

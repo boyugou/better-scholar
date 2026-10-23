@@ -1219,5 +1219,48 @@
   },
   "optPreferBoth": {
     "message": "İkisi de"
+  },
+  "ruleMine": {
+    "message": "Kendi eşlemen (ayarlar → Yayın yerini kontrol et), listenin kuralı değil"
+  },
+  "optMineAssign": {
+    "message": "Listedeki bir yayın yerine ata…"
+  },
+  "optMinePick": {
+    "message": "CCF ve CORE listelerinde ara: ad veya kısaltma"
+  },
+  "optMineNoMatch": {
+    "message": "Bu kelimeleri içeren listelenmiş bir yayın yeri yok."
+  },
+  "optMineTitle": {
+    "message": "Yayın yeri eşlemelerin"
+  },
+  "optMineHint": {
+    "message": "Hiçbir kuralın sıralamadığı, ama senin listedeki bir yayın yerine bağladığın yayın yeri satırları. Etiketleri kesik çizgili olur ve her kopya sıralamasını “(your mapping)” diye işaretler. Bunlar yalnızca boşlukları doldurur: listelerin zaten sıraladığı bir satır, listelerin sıralamasını korur."
+  },
+  "optMineRemove": {
+    "message": "Kaldır"
+  },
+  "popupMapped": {
+    "message": "$N1$ kendi yayın yeri eşlemelerinle sıralandı",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMapped": {
+    "message": "$N1$ makale kendi yayın yeri eşlemelerinle sıralandı",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMappedOne": {
+    "message": "1 makale kendi yayın yeri eşlemelerinle sıralandı"
+  },
+  "coverMappedAction": {
+    "message": "Düzenle…"
   }
 }

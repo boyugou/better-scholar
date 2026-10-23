@@ -1219,5 +1219,48 @@
   },
   "optPreferBoth": {
     "message": "Begge"
+  },
+  "ruleMine": {
+    "message": "Din egen kobling (Innstillinger → Sjekk et publiseringssted), ikke listenes regel"
+  },
+  "optMineAssign": {
+    "message": "Knytt til et publiseringssted på listen…"
+  },
+  "optMinePick": {
+    "message": "Søk i CCF- og CORE-listene: navn eller forkortelse"
+  },
+  "optMineNoMatch": {
+    "message": "Ingen publiseringssted på listen har disse ordene."
+  },
+  "optMineTitle": {
+    "message": "Dine koblinger til publiseringssteder"
+  },
+  "optMineHint": {
+    "message": "Publiseringssted-linjer som ingen regel rangerer, og som du har koblet til et publiseringssted på listen. Merkelappene er stiplet, og hver kopi merker rangen sin med «(your mapping)». De fyller bare hull: en linje listene rangerer, beholder listenes rang."
+  },
+  "optMineRemove": {
+    "message": "Fjern"
+  },
+  "popupMapped": {
+    "message": "$N1$ med rang fra dine egne koblinger",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMapped": {
+    "message": "$N1$ artikler med rang fra dine egne koblinger",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMappedOne": {
+    "message": "1 artikkel med rang fra dine egne koblinger"
+  },
+  "coverMappedAction": {
+    "message": "Rediger…"
   }
 }

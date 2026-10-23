@@ -140,6 +140,9 @@
       }
     }
   },
+  "coverLoadedOne": {
+    "message": "1 cikk betöltve"
+  },
   "loadingAll": {
     "message": "Betöltés… $N1$",
     "placeholders": {
@@ -161,6 +164,9 @@
         "content": "$1"
       }
     }
+  },
+  "coverHiddenOne": {
+    "message": "1 szerep rejtve a megcsonkított szerzői lista miatt"
   },
   "resolveBtn": {
     "message": "Teljes listák olvasása"
@@ -196,6 +202,9 @@
       }
     }
   },
+  "coverAbsentOne": {
+    "message": "1 cikk, amelynek szerzői listájában nincs ott a profil tulajdonosának neve"
+  },
   "coverUnmatched": {
     "message": "$N1$ cikk rang nélküli venue-ban",
     "placeholders": {
@@ -203,6 +212,9 @@
         "content": "$1"
       }
     }
+  },
+  "coverUnmatchedOne": {
+    "message": "1 cikk rang nélküli venue-ban"
   },
   "copyUnmatched": {
     "message": "Lista másolása"
@@ -332,6 +344,9 @@
       }
     }
   },
+  "popupPapersOne": {
+    "message": "1 cikk"
+  },
   "popupOpenScholar": {
     "message": "Google Scholar megnyitása"
   },
@@ -450,6 +465,9 @@
         "content": "$1"
       }
     }
+  },
+  "optCacheCountOne": {
+    "message": "1 cikk szerzői listája van mentve ezen az eszközön (90 napig megőrizve)."
   },
   "optCacheNone": {
     "message": "A cikkekről nincsenek mentett részletek."
@@ -675,6 +693,9 @@
         "content": "$1"
       }
     }
+  },
+  "yearsOlderOne": {
+    "message": "1 régebbi cikk nincs ábrázolva"
   },
   "optPanelYears": {
     "message": "Cikkek évenként"
@@ -1166,27 +1187,6 @@
   "optPillRecent": {
     "message": "Elmúlt 5 év"
   },
-  "coverLoadedOne": {
-    "message": "1 cikk betöltve"
-  },
-  "coverHiddenOne": {
-    "message": "1 szerep rejtve a megcsonkított szerzői lista miatt"
-  },
-  "coverAbsentOne": {
-    "message": "1 cikk, amelynek szerzői listájában nincs ott a profil tulajdonosának neve"
-  },
-  "coverUnmatchedOne": {
-    "message": "1 cikk rang nélküli venue-ban"
-  },
-  "popupPapersOne": {
-    "message": "1 cikk"
-  },
-  "optCacheCountOne": {
-    "message": "1 cikk szerzői listája van mentve ezen az eszközön (90 napig megőrizve)."
-  },
-  "yearsOlderOne": {
-    "message": "1 régebbi cikk nincs ábrázolva"
-  },
   "filterAbsent": {
     "message": "A profil neve nincs a szerzői listájában"
   },
@@ -1219,5 +1219,48 @@
   },
   "optPreferBoth": {
     "message": "Mindkettő"
+  },
+  "ruleMine": {
+    "message": "Saját hozzárendelés (Beállítások → Venue ellenőrzése), nem a listák szabálya"
+  },
+  "optMineAssign": {
+    "message": "Hozzárendelés listán szereplő venue-hez…"
+  },
+  "optMinePick": {
+    "message": "Keresés a CCF- és CORE-listákban: név vagy rövidítés"
+  },
+  "optMineNoMatch": {
+    "message": "Egyik listán szereplő venue sem tartalmazza ezeket a szavakat."
+  },
+  "optMineTitle": {
+    "message": "Saját venue-hozzárendeléseid"
+  },
+  "optMineHint": {
+    "message": "Olyan venue-sorok, amelyeket egy szabály sem rangsorol, és amelyeket listán szereplő venue-hez rendeltél. Címkéik szaggatottak, és minden másolat rangjukat „(your mapping)” jelöli. Csak a hiányokat pótolják: ha a listák rangsorolnak egy sort, az megtartja a listák rangját."
+  },
+  "optMineRemove": {
+    "message": "Eltávolítás"
+  },
+  "popupMapped": {
+    "message": "$N1$ rangsorolva a saját venue-hozzárendeléseid alapján",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMapped": {
+    "message": "$N1$ cikk rangsorolva a saját venue-hozzárendeléseid alapján",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMappedOne": {
+    "message": "1 cikk rangsorolva a saját venue-hozzárendeléseid alapján"
+  },
+  "coverMappedAction": {
+    "message": "Szerkesztés…"
   }
 }

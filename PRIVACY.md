@@ -10,8 +10,8 @@ The file names in parentheses point at the code that does each thing, in the ext
 | Account, analytics, tracking, advertising? | None. |
 | Where does the work happen? | In your browser. The rank lists and the award list are inside the extension. |
 | What goes over the network? | Requests to the Google Scholar site that you have open: Scholar's own *Show more* button, and the paper pages that *Read full lists* asks for after your click. A paper's title to Semantic Scholar, only if you turn that on (it is off by default). |
-| What is stored? | Your settings and your name spellings (Chrome's synced storage). The full author lists that *Read full lists* found, for 90 days (this device only). |
-| What is never sent? | Your settings, your name spellings, the saved paper details, and anything from your clipboard. |
+| What is stored? | Your settings, your name spellings and your venue mappings (Chrome's synced storage). The full author lists that *Read full lists* found, for 90 days (this device only). |
+| What is never sent? | Your settings, your name spellings, your venue mappings, the saved paper details, and anything from your clipboard. |
 | Which permissions? | One: `storage`. |
 
 ## Where it runs
@@ -39,6 +39,9 @@ In `chrome.storage.sync`. When Chrome sync is on, Chrome copies this storage to 
 - `prefs`: your settings (the table `SETTINGS` in `lib/prefs.js`). Only the settings page writes them.
 - `variants`: the extra spellings of the profile owner's name that you add in the panel. They are kept per profile, by the
   `user=` id in the profile's address: at most 8 spellings per profile, and at most 40 profiles.
+- `mine`: your venue mappings, which you add on the settings page (*Check a venue* → *Assign it to a listed venue…*). Each is
+  a venue line as Scholar printed it (at most 200 characters), the list (CCF or CORE) and the name of the row you chose. At most
+  100, the oldest dropped first.
 
 In `chrome.storage.local`, on this device only (`content/store.js`):
 
@@ -61,7 +64,7 @@ In the Scholar site's own browser storage:
 
 To see or delete what is stored, use the *Saved data* card on the settings page: *View saved details*, *Clear saved paper
 details*, and *Reset to defaults* (every setting back to its default). To remove a name spelling, click the × beside it in the
-panel.
+panel. To remove a venue mapping, use *Remove* in the list under *Check a venue*.
 
 The extension stores nothing else. It creates no account and no identifier of you.
 
@@ -117,8 +120,9 @@ Links, which open only when you click them:
 
 ## What is never sent
 
-- The extension sends your settings, the name spellings and the saved paper details nowhere. (If you use Chrome sync, Chrome
-  itself copies `chrome.storage.sync`, which holds the settings and the name spellings, between your own browsers.) The Semantic
+- The extension sends your settings, the name spellings, the venue mappings and the saved paper details nowhere. (If you use
+  Chrome sync, Chrome itself copies `chrome.storage.sync`, which holds the settings, the name spellings and the venue mappings,
+  between your own browsers.) The Semantic
   Scholar key goes only to `api.semanticscholar.org`.
 - Semantic Scholar never gets the profile's name or `user=` id, the author lists, years, venues or citation counts. It gets only
   a paper's title and the list of fields wanted, plus what the browser adds to every request: your IP address, the browser's
@@ -164,7 +168,7 @@ from the attribute that the extension is installed. There is no check of who ask
   those papers), and the text of a copy format. `summary` returns numbers only. `filter` and `clearFilters` change the filters
   of that page only.
 - The calls cannot change any setting or anything in storage. They make no network request. They do not return the settings
-  record, the Semantic Scholar key or the name spellings.
+  record, the Semantic Scholar key, the name spellings or the venue mappings (a rank from a mapping is marked `mine: true`).
 - The panel's own buttons answer only to a person. A click or a key that a script makes (`click()`, `dispatchEvent`) does
   nothing. So a script cannot use them to press *Read full lists*, add a spelling or open the settings page.
 - What the extension draws on the page is part of the page, and a script there can read it, as with any extension that changes a

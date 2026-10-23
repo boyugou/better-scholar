@@ -140,6 +140,9 @@
       }
     }
   },
+  "coverLoadedOne": {
+    "message": "Завантажена стаття: 1"
+  },
   "loadingAll": {
     "message": "Завантаження… $N1$",
     "placeholders": {
@@ -161,6 +164,9 @@
         "content": "$1"
       }
     }
+  },
+  "coverHiddenOne": {
+    "message": "Прихована роль через обрізаний список авторів: 1"
   },
   "resolveBtn": {
     "message": "Прочитати повні списки"
@@ -196,6 +202,9 @@
       }
     }
   },
+  "coverAbsentOne": {
+    "message": "Стаття, де імені власника профілю немає серед авторів: 1"
+  },
   "coverUnmatched": {
     "message": "Статей у виданнях без рангу: $N1$",
     "placeholders": {
@@ -203,6 +212,9 @@
         "content": "$1"
       }
     }
+  },
+  "coverUnmatchedOne": {
+    "message": "Стаття у виданні без рангу: 1"
   },
   "copyUnmatched": {
     "message": "Копіювати список"
@@ -332,6 +344,9 @@
       }
     }
   },
+  "popupPapersOne": {
+    "message": "Стаття: 1"
+  },
   "popupOpenScholar": {
     "message": "Відкрити Google Scholar"
   },
@@ -450,6 +465,9 @@
         "content": "$1"
       }
     }
+  },
+  "optCacheCountOne": {
+    "message": "Список авторів збережено на цьому пристрої: 1 (зберігається 90 днів)."
   },
   "optCacheNone": {
     "message": "Дані про статті не збережено."
@@ -675,6 +693,9 @@
         "content": "$1"
       }
     }
+  },
+  "yearsOlderOne": {
+    "message": "Не показана старіша стаття: 1"
   },
   "optPanelYears": {
     "message": "Статті за роками"
@@ -1166,27 +1187,6 @@
   "optPillRecent": {
     "message": "Останні 5 років"
   },
-  "coverLoadedOne": {
-    "message": "Завантажена стаття: 1"
-  },
-  "coverHiddenOne": {
-    "message": "Прихована роль через обрізаний список авторів: 1"
-  },
-  "coverAbsentOne": {
-    "message": "Стаття, де імені власника профілю немає серед авторів: 1"
-  },
-  "coverUnmatchedOne": {
-    "message": "Стаття у виданні без рангу: 1"
-  },
-  "popupPapersOne": {
-    "message": "Стаття: 1"
-  },
-  "optCacheCountOne": {
-    "message": "Список авторів збережено на цьому пристрої: 1 (зберігається 90 днів)."
-  },
-  "yearsOlderOne": {
-    "message": "Не показана старіша стаття: 1"
-  },
   "filterAbsent": {
     "message": "Імені з профілю немає серед авторів"
   },
@@ -1219,5 +1219,48 @@
   },
   "optPreferBoth": {
     "message": "Обидва"
+  },
+  "ruleMine": {
+    "message": "Ваше власне зіставлення (налаштування → Перевірити видання), а не правило списку"
+  },
+  "optMineAssign": {
+    "message": "Прив’язати до видання зі списку…"
+  },
+  "optMinePick": {
+    "message": "Пошук у списках CCF і CORE: назва або абревіатура"
+  },
+  "optMineNoMatch": {
+    "message": "Жодне видання зі списку не містить цих слів."
+  },
+  "optMineTitle": {
+    "message": "Ваші зіставлення видань"
+  },
+  "optMineHint": {
+    "message": "Рядки видань, які жодне правило не ранжує, але які ви прив’язали до видання зі списку. Їхні мітки мають пунктирну рамку, а в кожній копії їхній ранг позначено як «(your mapping)». Вони лише заповнюють прогалини: рядок, який списки вже ранжують, зберігає ранг зі списків."
+  },
+  "optMineRemove": {
+    "message": "Видалити"
+  },
+  "popupMapped": {
+    "message": "З рангом за вашими зіставленнями: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMapped": {
+    "message": "Статей з рангом за вашими зіставленнями: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMappedOne": {
+    "message": "Стаття з рангом за вашими зіставленнями: 1"
+  },
+  "coverMappedAction": {
+    "message": "Змінити…"
   }
 }

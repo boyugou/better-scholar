@@ -1219,5 +1219,48 @@
   },
   "optPreferBoth": {
     "message": "両方"
+  },
+  "ruleMine": {
+    "message": "自分の割り当て（設定 → 掲載先を確認）。リストのルールではありません"
+  },
+  "optMineAssign": {
+    "message": "リストの掲載先に割り当てる…"
+  },
+  "optMinePick": {
+    "message": "CCF・COREのリストを検索：名前または略称"
+  },
+  "optMineNoMatch": {
+    "message": "これらの語を含むリストの掲載先はありません。"
+  },
+  "optMineTitle": {
+    "message": "自分の掲載先の割り当て"
+  },
+  "optMineHint": {
+    "message": "どのルールでもランクが付かない掲載先の行を、リストの掲載先に割り当てたものです。ラベルは破線で、どのコピーでもランクに「(your mapping)」と表示されます。埋めるのは空欄だけです。リストがランクを付けた行は、リストのランクのままです。"
+  },
+  "optMineRemove": {
+    "message": "削除"
+  },
+  "popupMapped": {
+    "message": "$N1$ 件は自分の掲載先の割り当てでランク付け",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMapped": {
+    "message": "自分の掲載先の割り当てでランク付けされた論文 $N1$ 件",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMappedOne": {
+    "message": "自分の掲載先の割り当てでランク付けされた論文 1 件"
+  },
+  "coverMappedAction": {
+    "message": "編集…"
   }
 }

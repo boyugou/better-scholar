@@ -1162,9 +1162,25 @@
   // "IEEE MultiMedia" is a magazine, "IEEE International Symposium on Multimedia" is ISM. Read as what they are, they are not taken for the conference.
   const PERIODICALS = new Set(["ieee multimedia"]);
 
+  // The key of the person's own venue mappings (`data.mine`): the venue's name as printed, the same in every edition — without its numbers, years, ordinals,
+  // "Proceedings of (the)" and an acronym in brackets ("(COLM)"), in lower case — and nothing looser: "Workshop on Things" is not "Conference on Things", nor a cut "Workshop on …" the whole name
+  function mineKey(text) {
+    const words = fold(prepare(text).name).toLowerCase().replace(/\s*\([a-z][a-z0-9&'-]{1,14}\)/g, " ").replace(/^proceedings\s+of\s+(?:the\s+)?/, "").replace(/\b(?:19|20)\d{2}\b|'\d{2}\b|\b\d{1,3}(?:st|nd|rd|th)\b/g, " ")
+      .replace(/[^\p{L}\p{N}&+…]+/gu, " ").trim().split(" ").filter((w) => w && !ORDINAL_WORDS.has(w) && !TENS.has(w));
+    return words.join(" ");
+  }
+
   function createResolver(data) {
     const idx = buildIndex(data);
     const cache = new Map();
+    // The person's own mappings: { text, list: "ccf" | "core", name } — a venue line no rule ranks, tied by the person to a row of a list (named by its official name;
+    // a row that the list no longer has drops the mapping). They fill gaps only: never a line the lists rank, nor a track or a line refused (see the end of resolveUncached).
+    const mine = new Map();
+    for (const m of Array.isArray(data && data.mine) ? data.mine : []) {
+      const side = m && idx.sources[m.list], key = m && mineKey(m.text);
+      const row = side && [...((side.C && side.C.all) || []), ...((side.J && side.J.all) || [])].find((e) => e.name === m.name);
+      if (row && key && !mine.has(key)) mine.set(key, { list: m.list, row });
+    }
 
     function resolve(raw) {
       // The same venue printed another way is the same venue. Before any rule looks at the text: the invisible characters a copy from a PDF or a page leaves (soft hyphen, zero-width
@@ -1272,6 +1288,15 @@
         else if (out.ccf.rule === "prefix" && out.core.rule === "name") { if (clashed.core) { out.ccf = null; out.core = null; } else out.ccf = null; }
         else if (out.core.rule === "prefix" && out.ccf.rule === "name") { if (clashed.ccf) { out.ccf = null; out.core = null; } else out.core = null; }
       }
+      // the person's own mapping of a line no rule ranks: that row, and the other list's row of the same venue; marked as theirs (rule "mine") wherever a rank goes
+      if (!inner && mine.size && !out.ccf && !out.core && !out.refused && !secs.length) {
+        const m = mine.get(mineKey(raw));
+        if (m) {
+          out[m.list] = badge(m.list, m.row, "mine");
+          const rows = idx.partners.get(m.row) || [], other = m.list === "ccf" ? "core" : "ccf";
+          if (rows.length === 1) out[other] = badge(other, rows[0], "mine");
+        }
+      }
       // a workshop / Findings / demo string is unranked on purpose, not "missing"
       if (secs.length && !out.ccf && !out.core && !out.secondary) out.secondary = secs[0];
       // a track of a listed venue whose name did not come out whole ("CHI'13 Extended Abstracts on Human Factors in Computing Systems"): the string without its track words says which venue it is a track of
@@ -1284,5 +1309,5 @@
     return { resolve, index: idx };
   }
 
-  return { createResolver, prepare, canonTokens, secondaryWord, secondaryWords, squash };
+  return { createResolver, prepare, canonTokens, secondaryWord, secondaryWords, squash, mineKey };
 });

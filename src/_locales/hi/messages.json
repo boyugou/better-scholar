@@ -140,6 +140,9 @@
       }
     }
   },
+  "coverLoadedOne": {
+    "message": "1 पेपर लोड हुआ"
+  },
   "loadingAll": {
     "message": "लोड हो रहा है… $N1$",
     "placeholders": {
@@ -161,6 +164,9 @@
         "content": "$1"
       }
     }
+  },
+  "coverHiddenOne": {
+    "message": "कटी हुई लेखक सूची के कारण 1 भूमिका छिपी है"
   },
   "resolveBtn": {
     "message": "पूरी सूचियाँ पढ़ें"
@@ -196,6 +202,9 @@
       }
     }
   },
+  "coverAbsentOne": {
+    "message": "1 पेपर जिसकी लेखक सूची में प्रोफ़ाइल स्वामी का नाम नहीं है"
+  },
   "coverUnmatched": {
     "message": "बिना रैंक वाले venue के $N1$ पेपर",
     "placeholders": {
@@ -203,6 +212,9 @@
         "content": "$1"
       }
     }
+  },
+  "coverUnmatchedOne": {
+    "message": "बिना रैंक वाले venue के 1 पेपर"
   },
   "copyUnmatched": {
     "message": "सूची कॉपी करें"
@@ -331,6 +343,9 @@
         "content": "$1"
       }
     }
+  },
+  "popupPapersOne": {
+    "message": "1 पेपर"
   },
   "popupOpenScholar": {
     "message": "Google Scholar खोलें"
@@ -1172,21 +1187,6 @@
   "optPillRecent": {
     "message": "पिछले 5 वर्ष"
   },
-  "coverLoadedOne": {
-    "message": "1 पेपर लोड हुआ"
-  },
-  "coverHiddenOne": {
-    "message": "कटी हुई लेखक सूची के कारण 1 भूमिका छिपी है"
-  },
-  "coverAbsentOne": {
-    "message": "1 पेपर जिसकी लेखक सूची में प्रोफ़ाइल स्वामी का नाम नहीं है"
-  },
-  "coverUnmatchedOne": {
-    "message": "बिना रैंक वाले venue के 1 पेपर"
-  },
-  "popupPapersOne": {
-    "message": "1 पेपर"
-  },
   "filterAbsent": {
     "message": "प्रोफ़ाइल का नाम लेखक सूची में नहीं है"
   },
@@ -1219,5 +1219,48 @@
   },
   "optPreferBoth": {
     "message": "दोनों"
+  },
+  "ruleMine": {
+    "message": "अपनी मैपिंग (सेटिंग्स → Venue जाँचें), सूची का नियम नहीं"
+  },
+  "optMineAssign": {
+    "message": "सूचीबद्ध venue से जोड़ें…"
+  },
+  "optMinePick": {
+    "message": "CCF और CORE सूचियों में खोजें: नाम या संक्षिप्त नाम"
+  },
+  "optMineNoMatch": {
+    "message": "किसी सूचीबद्ध venue में ये शब्द नहीं हैं।"
+  },
+  "optMineTitle": {
+    "message": "अपनी venue मैपिंग"
+  },
+  "optMineHint": {
+    "message": "वे venue पंक्तियाँ जिन्हें कोई नियम रैंक नहीं देता, पर जिन्हें आपने किसी सूचीबद्ध venue से जोड़ा है। उनके टैग डैश वाले होते हैं, और हर प्रति अपने रैंक को “(your mapping)” से चिह्नित करती है। ये केवल खाली जगह भरते हैं: जिस पंक्ति को सूचियाँ रैंक देती हैं, वह सूचियों का रैंक रखती है।"
+  },
+  "optMineRemove": {
+    "message": "हटाएँ"
+  },
+  "popupMapped": {
+    "message": "$N1$ को अपनी venue मैपिंग से रैंक मिला",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMapped": {
+    "message": "अपनी venue मैपिंग से रैंक वाले $N1$ पेपर",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMappedOne": {
+    "message": "अपनी venue मैपिंग से रैंक वाला 1 पेपर"
+  },
+  "coverMappedAction": {
+    "message": "संपादित करें…"
   }
 }

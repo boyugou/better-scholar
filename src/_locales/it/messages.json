@@ -1219,5 +1219,48 @@
   },
   "optPreferBoth": {
     "message": "Entrambi"
+  },
+  "ruleMine": {
+    "message": "La tua associazione (Impostazioni → Verifica conferenza/rivista), non la regola degli elenchi"
+  },
+  "optMineAssign": {
+    "message": "Assegna a una conferenza/rivista in elenco…"
+  },
+  "optMinePick": {
+    "message": "Cerca negli elenchi CCF e CORE: nome o acronimo"
+  },
+  "optMineNoMatch": {
+    "message": "Nessuna conferenza/rivista in elenco contiene queste parole."
+  },
+  "optMineTitle": {
+    "message": "Le tue associazioni di conferenze/riviste"
+  },
+  "optMineHint": {
+    "message": "Righe di conferenza/rivista che nessuna regola classifica e che hai associato a una conferenza/rivista in elenco. Le loro etichette sono tratteggiate e ogni copia segna il loro ranking con «(your mapping)». Riempiono solo le lacune: una riga classificata dagli elenchi mantiene il ranking degli elenchi."
+  },
+  "optMineRemove": {
+    "message": "Rimuovi"
+  },
+  "popupMapped": {
+    "message": "$N1$ con ranking dalle tue associazioni",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMapped": {
+    "message": "$N1$ articoli con ranking dalle tue associazioni di conferenze/riviste",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMappedOne": {
+    "message": "1 articolo con ranking dalle tue associazioni di conferenze/riviste"
+  },
+  "coverMappedAction": {
+    "message": "Modifica…"
   }
 }

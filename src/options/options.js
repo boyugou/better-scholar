@@ -858,13 +858,52 @@
   };
   const areaName = (a) => (/^zh/i.test(B.dom.langTag()) ? a : AREA_EN[a] || a);
   let resolver = null;
+  // The person's own venue mappings: a line no rule ranks, tied to a row of a list (lib/venues.js `mine`; synced). The resolver is built again when they change, here or in another tab.
+  let mine = [];
+  const makeResolver = () => B.venues.createResolver({ ccf: B.data.ccf.venues, core: B.data.core.venues, aliases: B.aliases, mine });
+  const mineOut = h("div", { class: "mine-list" });
+  async function setMine(next) {
+    mine = B.store.cleanMine(next);
+    resolver = makeResolver();
+    drawMine(); checkVenue();
+    await B.store.saveMine(mine);
+  }
+  // every row of both lists, for the picker: the list, the rank, the name and the acronym
+  const ROWS = [...B.data.ccf.venues.map((v) => ({ list: "ccf", tier: v.tier, name: v.name, abbr: v.abbr || "" })), ...B.data.core.venues.map((v) => ({ list: "core", tier: v.rank, name: v.name, abbr: v.acronym || "" }))];
+  const rowText = (r) => `${t(r.list === "ccf" ? "srcCcf" : "srcCore")} ${r.tier} · ${r.name}${r.abbr ? " (" + r.abbr + ")" : ""}`;
+  function drawMine() {
+    mineOut.replaceChildren();
+    if (!mine.length) return;
+    mineOut.append(h("h3", { class: "mine-title" }, t("optMineTitle")), h("p", { class: "faint" }, t("optMineHint")),
+      h("ul", { class: "mine-items" }, ...mine.map((m, i) => {
+        const r = ROWS.find((x) => x.list === m.list && x.name === m.name);
+        return h("li", { class: "mine-item", "data-mine": String(i) }, h("span", { class: "mine-text" }, m.text), h("span", { class: "faint" }, " → " + (r ? rowText(r) : m.name)),
+          h("button", { type: "button", class: "btn mine-remove", "data-act": "mine-remove", "aria-label": `${t("optMineRemove")}: ${m.text}`, onClick: () => setMine(mine.filter((_, j) => j !== i)) }, t("optMineRemove")));
+      })));
+  }
+  // "Assign it to a listed venue": a search of both lists by name or acronym; a pick saves the mapping
+  function assignBox(text) {
+    const results = h("div", { class: "mine-results", role: "list" });
+    const search = h("input", { type: "search", class: "venue-input mine-search", "data-act": "mine-search", placeholder: t("optMinePick"), "aria-label": t("optMinePick"), spellcheck: "false", autocomplete: "off", maxlength: "120",
+      onInput: () => {
+        const q = search.value.trim().toLowerCase();
+        results.replaceChildren();
+        if (q.length < 2) return;
+        const hits = ROWS.filter((r) => r.abbr.toLowerCase() === q).concat(ROWS.filter((r) => r.abbr.toLowerCase() !== q && (r.name.toLowerCase().includes(q) || r.abbr.toLowerCase().startsWith(q)))).slice(0, 8);
+        if (!hits.length) results.append(h("p", { class: "faint" }, t("optMineNoMatch")));
+        for (const r of hits) results.append(h("button", { type: "button", class: "mine-pick", role: "listitem", "data-act": "mine-pick", onClick: () => setMine([...mine.filter((m) => B.venues.mineKey(m.text) !== B.venues.mineKey(text)), { text, list: r.list, name: r.name }]) }, rowText(r)));
+      } });
+    const box = h("div", { class: "mine-assign", hidden: true }, search, results);
+    const open = h("button", { type: "button", class: "btn", "data-act": "mine-assign", onClick: () => { open.hidden = true; box.hidden = false; search.focus(); } }, t("optMineAssign"));
+    return h("div", { class: "mine-offer" }, open, box);
+  }
   const venueOut = h("div", { class: "venue-out", "aria-live": "polite" });
   const venueInput = h("input", { type: "text", class: "venue-input", "data-act": "venue-check", placeholder: t("optVenuePlaceholder"), "aria-label": t("optVenueTitle"), spellcheck: "false", autocomplete: "off", maxlength: "300", onInput: () => checkVenue() });
   function checkVenue() {
     const text = venueInput.value.replace(/\s+/g, " ").trim();
     venueOut.replaceChildren();
     if (!text) return;
-    resolver = resolver || B.venues.createResolver({ ccf: B.data.ccf.venues, core: B.data.core.venues, aliases: B.aliases });
+    resolver = resolver || makeResolver();
     const res = resolver.resolve(text), found = [["ccf", res.ccf], ["core", res.core]].filter(([, info]) => info);
     for (const [kind, info] of found) {
       // (the CCF entry also says its area and where the venue is on DBLP: a link, opened only when it is clicked)
@@ -875,6 +914,9 @@
           meta.length ? h("span", { class: "venue-meta" }, ...meta.flatMap((m, i) => (i ? [" · ", m] : [m]))) : null)));
     }
     if (!found.length) venueOut.append(h("p", { class: "venue-none" }, res.secondary ? t("optVenueSecondary", [res.secondary]) : t("optVenueNone")));
+    // (a line no rule ranks, and no track of a ranked venue, can be tied to a listed venue by the person; the list of their mappings below has Remove)
+    if (!found.length && !res.secondary && !res.refused && res.name) venueOut.append(assignBox(text));
+
   }
 
   // a venue the panel asked about (the unranked list's "Check"): its text goes into the box, and the card is shown
@@ -895,7 +937,7 @@
 
   $("controls").append(
     ...cardsOfPrefs,
-    card("venue", t("optVenueTitle"), t("optVenueHint"), h("div", { class: "row venue-row" }, venueInput), venueOut),
+    card("venue", t("optVenueTitle"), t("optVenueHint"), h("div", { class: "row venue-row" }, venueInput), venueOut, mineOut),
     card("agent", t("optAgentTitle"), t("optAgentHint"),
       h("div", { class: "row" }, agentBtn)),
     card("config", t("optConfigTitle"), t("optConfigHint"),
@@ -1167,6 +1209,8 @@
     syncers.forEach((fn) => fn());
   });
 
+  mine = await B.store.loadMine(); resolver = makeResolver(); drawMine();
+  B.store.onMineChanged((next) => { if (JSON.stringify(next) === JSON.stringify(mine)) return; mine = next; resolver = makeResolver(); drawMine(); checkVenue(); });          // (another tab changed them)
   takeAskedVenue();                                      // (this page was opened by a "Check" of the panel's unranked list, or is open and was brought to the front for it)
   B.store.onVenueAsked(() => takeAskedVenue());
 })();

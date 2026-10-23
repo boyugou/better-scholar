@@ -1219,5 +1219,48 @@
   },
   "optPreferBoth": {
     "message": "Båda"
+  },
+  "ruleMine": {
+    "message": "Din egen koppling (inställningar → Kontrollera ett publiceringsställe), inte listans regel"
+  },
+  "optMineAssign": {
+    "message": "Koppla till ett listat publiceringsställe…"
+  },
+  "optMinePick": {
+    "message": "Sök i listorna CCF och CORE: namn eller förkortning"
+  },
+  "optMineNoMatch": {
+    "message": "Inget listat publiceringsställe har dessa ord."
+  },
+  "optMineTitle": {
+    "message": "Dina kopplingar till publiceringsställen"
+  },
+  "optMineHint": {
+    "message": "Rader med publiceringsställen som inga regler rankar men som du kopplat till ett listat publiceringsställe. Deras etiketter har streckad kant, och varje kopia markerar deras rank med ”(your mapping)”. De fyller bara luckor: en rad som listorna redan rankar behåller listornas rank."
+  },
+  "optMineRemove": {
+    "message": "Ta bort"
+  },
+  "popupMapped": {
+    "message": "$N1$ rankade efter dina egna kopplingar",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMapped": {
+    "message": "$N1$ artiklar rankade efter dina egna kopplingar",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMappedOne": {
+    "message": "1 artikel rankad efter dina egna kopplingar"
+  },
+  "coverMappedAction": {
+    "message": "Redigera…"
   }
 }

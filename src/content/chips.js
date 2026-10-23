@@ -7,7 +7,7 @@
 
   // outline ramp: strongest = top tier. CCF and CORE share shades so "A" looks the same in both.
   const SHADE = { ccf: { A: 1, B: 3, C: 4 }, core: { "A*": 1, A: 2, B: 3, C: 4 } };
-  const RULE_TEXT = { name: "ruleName", acronym: "ruleAcronym", prefix: "rulePrefix" };
+  const RULE_TEXT = { name: "ruleName", acronym: "ruleAcronym", prefix: "rulePrefix", mine: "ruleMine" };
 
   const ruleText = (info) => t(RULE_TEXT[info.rule] || "ruleName");
 
@@ -25,7 +25,8 @@
       ruleText(info),
       edition + " — " + t("tipToday")
     ];
-    return h("span", { class: "rr-chip rr-chip-rank rr-chip-t" + (SHADE[kind][tier] || 4), dir: "ltr", title: lines.join("\n"), "data-kind": kind, "data-tier": tier, ...(also ? { "data-also": also.kind } : {}) },
+    // (a rank from the person's own venue mapping is drawn as such: a dashed outline and a dotted tier, in every look — never passed off as the list's)
+    return h("span", { class: "rr-chip rr-chip-rank rr-chip-t" + (SHADE[kind][tier] || 4) + (info.rule === "mine" ? " rr-chip-mine" : ""), dir: "ltr", title: lines.join("\n"), "data-kind": kind, "data-tier": tier, ...(also ? { "data-also": also.kind } : {}) },
       h("span", { class: "rr-k" }, sourceName(kind)), " ", h("b", {}, tier));
   }
 

@@ -140,6 +140,9 @@
       }
     }
   },
+  "coverLoadedOne": {
+    "message": "الورقة المحملة: 1"
+  },
   "loadingAll": {
     "message": "جارٍ التحميل… $N1$",
     "placeholders": {
@@ -161,6 +164,9 @@
         "content": "$1"
       }
     }
+  },
+  "coverHiddenOne": {
+    "message": "الدور المخفي بسبب اختصار قائمة المؤلفين: 1"
   },
   "resolveBtn": {
     "message": "قراءة القوائم الكاملة"
@@ -196,6 +202,9 @@
       }
     }
   },
+  "coverAbsentOne": {
+    "message": "الورقة التي لا يظهر فيها اسم صاحب الملف الشخصي في قائمة المؤلفين: 1"
+  },
   "coverUnmatched": {
     "message": "الأوراق في منصات النشر بلا تصنيف: $N1$",
     "placeholders": {
@@ -203,6 +212,9 @@
         "content": "$1"
       }
     }
+  },
+  "coverUnmatchedOne": {
+    "message": "الورقة في منصة النشر بلا تصنيف: 1"
   },
   "copyUnmatched": {
     "message": "نسخ القائمة"
@@ -332,6 +344,9 @@
       }
     }
   },
+  "popupPapersOne": {
+    "message": "الورقة: 1"
+  },
   "popupOpenScholar": {
     "message": "فتح Google Scholar"
   },
@@ -450,6 +465,9 @@
         "content": "$1"
       }
     }
+  },
+  "optCacheCountOne": {
+    "message": "قائمة مؤلفي الورقة المحفوظة على هذا الجهاز: 1 (تُحفظ 90 يومًا)."
   },
   "optCacheNone": {
     "message": "لا توجد تفاصيل أوراق محفوظة."
@@ -675,6 +693,9 @@
         "content": "$1"
       }
     }
+  },
+  "yearsOlderOne": {
+    "message": "البحث الأقدم غير المرسوم: 1"
   },
   "optPanelYears": {
     "message": "الأوراق حسب السنة"
@@ -1166,27 +1187,6 @@
   "optPillRecent": {
     "message": "آخر 5 سنوات"
   },
-  "coverLoadedOne": {
-    "message": "الورقة المحملة: 1"
-  },
-  "coverHiddenOne": {
-    "message": "الدور المخفي بسبب اختصار قائمة المؤلفين: 1"
-  },
-  "coverAbsentOne": {
-    "message": "الورقة التي لا يظهر فيها اسم صاحب الملف الشخصي في قائمة المؤلفين: 1"
-  },
-  "coverUnmatchedOne": {
-    "message": "الورقة في منصة النشر بلا تصنيف: 1"
-  },
-  "popupPapersOne": {
-    "message": "الورقة: 1"
-  },
-  "optCacheCountOne": {
-    "message": "قائمة مؤلفي الورقة المحفوظة على هذا الجهاز: 1 (تُحفظ 90 يومًا)."
-  },
-  "yearsOlderOne": {
-    "message": "البحث الأقدم غير المرسوم: 1"
-  },
   "filterAbsent": {
     "message": "الاسم غير موجود في قائمة المؤلفين"
   },
@@ -1219,5 +1219,48 @@
   },
   "optPreferBoth": {
     "message": "كلتاهما"
+  },
+  "ruleMine": {
+    "message": "ربطك الخاص (الإعدادات ← تحقّق من منصة النشر)، لا قاعدة القائمة"
+  },
+  "optMineAssign": {
+    "message": "ربطه بمنصة مدرجة…"
+  },
+  "optMinePick": {
+    "message": "ابحث في قائمتي CCF وCORE: بالاسم أو بالاختصار"
+  },
+  "optMineNoMatch": {
+    "message": "لا تحتوي أي منصة مدرجة على هذه الكلمات."
+  },
+  "optMineTitle": {
+    "message": "ربطك الخاص بالمنصات"
+  },
+  "optMineHint": {
+    "message": "أسطر منصات لا تصنّفها أي قاعدة، وربطتها بمنصة مدرجة. شاراتها بإطار متقطّع، وكل نسخة تُعلِّم تصنيفها بـ«(your mapping)». وهي تملأ الفراغات فقط: السطر الذي تصنّفه القائمتان يحتفظ بتصنيفهما."
+  },
+  "optMineRemove": {
+    "message": "إزالة"
+  },
+  "popupMapped": {
+    "message": "$N1$ مصنّفة بربطك الخاص بالمنصات",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMapped": {
+    "message": "$N1$ ورقة مصنّفة بربطك الخاص بالمنصات",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMappedOne": {
+    "message": "ورقة واحدة مصنّفة بربطك الخاص بالمنصات"
+  },
+  "coverMappedAction": {
+    "message": "تعديل…"
   }
 }

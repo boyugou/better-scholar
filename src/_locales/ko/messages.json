@@ -1219,5 +1219,48 @@
   },
   "optPreferBoth": {
     "message": "둘 다"
+  },
+  "ruleMine": {
+    "message": "직접 연결(설정 → 게재처 확인), 목록의 규칙이 아님"
+  },
+  "optMineAssign": {
+    "message": "목록의 게재처에 연결…"
+  },
+  "optMinePick": {
+    "message": "CCF·CORE 목록 검색: 이름 또는 약어"
+  },
+  "optMineNoMatch": {
+    "message": "이 단어가 들어간 목록의 게재처가 없습니다."
+  },
+  "optMineTitle": {
+    "message": "내 게재처 연결"
+  },
+  "optMineHint": {
+    "message": "규칙으로 등급이 붙지 않은 게재처 줄을 목록의 게재처에 직접 연결한 것입니다. 라벨은 점선이고, 모든 복사본에 등급이 “(your mapping)”으로 적힙니다. 빈 곳만 채우며, 목록이 등급을 매긴 줄은 목록의 등급을 그대로 유지합니다."
+  },
+  "optMineRemove": {
+    "message": "삭제"
+  },
+  "popupMapped": {
+    "message": "직접 연결로 등급이 매겨진 $N1$편",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMapped": {
+    "message": "직접 연결로 등급이 매겨진 논문 $N1$편",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMappedOne": {
+    "message": "직접 연결로 등급이 매겨진 논문 1편"
+  },
+  "coverMappedAction": {
+    "message": "편집…"
   }
 }
