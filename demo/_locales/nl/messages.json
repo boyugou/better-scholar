@@ -854,7 +854,7 @@
     "message": "Bestand importeren"
   },
   "optConfigEditor": {
-    "message": "JSON plakken of bewerken"
+    "message": "Een configuratie plakken of bewerken (JSON)"
   },
   "optConfigApply": {
     "message": "Configuratie toepassen"
@@ -921,7 +921,7 @@
     "message": "Opgeslagen paperdetails"
   },
   "optCacheSearch": {
-    "message": "Opgeslagen artikelen doorzoeken…"
+    "message": "Opgeslagen papers doorzoeken…"
   },
   "optCacheCopy": {
     "message": "Opgeslagen details kopiëren (JSON)"

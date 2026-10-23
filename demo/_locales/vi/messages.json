@@ -657,7 +657,7 @@
     "message": "Semantic Scholar"
   },
   "optSemanticHint": {
-    "message": "Nơi thứ hai để tìm những gì Scholar bị rút gọn."
+    "message": "Nơi thứ hai để tìm những gì bị Scholar rút gọn."
   },
   "optSemanticLabel": {
     "message": "Đọc danh sách tác giả từ Semantic Scholar trước"
@@ -833,7 +833,7 @@
     "message": "Nhập tệp"
   },
   "optConfigEditor": {
-    "message": "Dán hoặc sửa JSON"
+    "message": "Dán hoặc sửa cấu hình (JSON)"
   },
   "optConfigApply": {
     "message": "Áp dụng cấu hình"

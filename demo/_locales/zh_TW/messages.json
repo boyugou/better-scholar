@@ -3,7 +3,7 @@
     "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "在 Google Scholar 個人頁面上，顯示本人在每篇論文的位次，以及發表處的 CCF 與 CORE 等級，並彙整成一張表。"
+    "message": "在 Google Scholar 作者頁面上，顯示本人在每篇論文的位次，以及發表處的 CCF 與 CORE 等級，並彙整成一張表。"
   },
   "extShortName": {
     "message": "Better Scholar"
@@ -408,7 +408,7 @@
     "message": "顯示摘要面板"
   },
   "optPanelShowHint": {
-    "message": "作者頁面右側欄中的面板。關閉時：只標示論文列表。"
+    "message": "作者頁面右側邊欄中的面板。關閉時：只標示論文列表。"
   },
   "optPanelSummary": {
     "message": "位次×等級表"
@@ -420,7 +420,7 @@
     "message": "獲獎論文與報告形式的數量，點一下即可列出。"
   },
   "optPanelStatus": {
-    "message": "已載入論文與無等級的發表處"
+    "message": "已載入論文與沒有等級的發表處"
   },
   "optPanelStatusHint": {
     "message": "已載入的論文數、「全部載入」按鈕、無法讀取的內容，以及發表處沒有等級的論文列表。"

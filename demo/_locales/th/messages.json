@@ -651,7 +651,7 @@
     "message": "Spotlight และ Highlight รวมกัน"
   },
   "optTalkAll": {
-    "message": "รวมทั้งสามระดับ"
+    "message": "รวมทั้งสามประเภท"
   },
   "optSemanticTitle": {
     "message": "Semantic Scholar"
@@ -763,7 +763,7 @@
     }
   },
   "tipFilterH": {
-    "message": "กรองเฉพาะบทความ h-core (การอ้างอิง ≥$N1$)",
+    "message": "กรองเฉพาะงานวิจัย h-core (การอ้างอิง ≥$N1$)",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -771,7 +771,7 @@
     }
   },
   "tipFilterI10": {
-    "message": "กรองเฉพาะบทความ i10 (การอ้างอิง ≥10)"
+    "message": "กรองเฉพาะงานวิจัย i10 (การอ้างอิง ≥10)"
   },
   "popupPapersOf": {
     "message": "$N1$ จาก $N2$ เรื่อง",
@@ -833,7 +833,7 @@
     "message": "นำเข้าไฟล์"
   },
   "optConfigEditor": {
-    "message": "วางหรือแก้ไข JSON"
+    "message": "วางหรือแก้ไขการกำหนดค่า (JSON)"
   },
   "optConfigApply": {
     "message": "นำการกำหนดค่าไปใช้"
@@ -897,16 +897,16 @@
     "message": "ไม่มีการตั้งค่าที่ตรงกับคำค้นหานี้"
   },
   "optCacheTitle": {
-    "message": "รายละเอียดบทความที่บันทึกไว้"
+    "message": "รายละเอียดงานวิจัยที่บันทึกไว้"
   },
   "optCacheSearch": {
-    "message": "ค้นหาบทความที่บันทึกไว้…"
+    "message": "ค้นหางานวิจัยที่บันทึกไว้…"
   },
   "optCacheCopy": {
     "message": "คัดลอกรายละเอียดที่บันทึกไว้ (JSON)"
   },
   "optCacheEmpty": {
-    "message": "ยังไม่มีการบันทึกรายละเอียดบทความในอุปกรณ์นี้"
+    "message": "ยังไม่มีการบันทึกรายละเอียดงานวิจัยในอุปกรณ์นี้"
   },
   "optCacheShown": {
     "message": "แสดง $N1$ จาก $N2$",

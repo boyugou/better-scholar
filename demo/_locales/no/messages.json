@@ -580,7 +580,7 @@
     "message": "Boksen for offentlig tilgang i sidefeltet."
   },
   "optMergeTitle": {
-    "message": "Duplikater"
+    "message": "Dupliserte oppføringer"
   },
   "optMergeHint": {
     "message": "Noen profiler viser en artikkel flere ganger."
@@ -736,7 +736,7 @@
     "message": "Semantic Scholar ba om å senke farten, så resten ble hentet fra Scholars egne sider."
   },
   "optRowStyle": {
-    "message": "Raduthevning"
+    "message": "Radutheving"
   },
   "optRowStyleFull": {
     "message": "Bakgrunn og stolpe"
@@ -854,7 +854,7 @@
     "message": "Importer fil"
   },
   "optConfigEditor": {
-    "message": "Lim inn eller endre JSON"
+    "message": "Lim inn eller endre en konfigurasjon (JSON)"
   },
   "optConfigApply": {
     "message": "Bruk konfigurasjon"

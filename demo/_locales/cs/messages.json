@@ -897,16 +897,16 @@
     "message": "Žádné nastavení tomu neodpovídá."
   },
   "optCacheTitle": {
-    "message": "Uložené podrobnosti článků"
+    "message": "Uložené podrobnosti o pracích"
   },
   "optCacheSearch": {
-    "message": "Hledat uložené články…"
+    "message": "Hledat v uložených pracích…"
   },
   "optCacheCopy": {
     "message": "Kopírovat uložené podrobnosti (JSON)"
   },
   "optCacheEmpty": {
-    "message": "Na tomto zařízení zatím nebyly uloženy žádné podrobnosti o článcích."
+    "message": "Na tomto zařízení zatím nebyly uloženy žádné podrobnosti o pracích."
   },
   "optCacheShown": {
     "message": "Zobrazeno: $N1$ z $N2$",
