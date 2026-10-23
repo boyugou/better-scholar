@@ -149,7 +149,8 @@
   // (a number that belongs to a label or to an article-local page range is not a part: "Article No. 1", "Vol. 2", "62: 1-62: 14", "15.6. 1-15.6. 4")
   const LABEL_BEFORE = /(?:\b(?:no|vol|volume|article|heft|band|issue|nr|pages|pp)\.?:?|\bart\.:?|,\s*paper|\d[:.]\s?\d*\s*-\s*\d*[:.]?)$/i;          // ("Art." with its full stop, "paper" as a field of its own: "the state of the art" and "Pulp & Paper" are names)
   // a patent, a thesis or a report: a document that is no journal and no proceedings, given as Scholar printed it
-  const DOCUMENT = /\bpatent\b|\b(?:thesis|dissertation)\b|\b(?:tech(?:nical|\.)?\s*rep(?:ort)?|report)\b/i;
+  const REPORT = /\b(?:tech(?:nical|\.)?\s*rep(?:ort)?|report|special publication)\b|[A-Z\d][-/]TR\b|\bTR-\d/i;          // ("CMU/SEI-96-TR", "IRB-TR-04", "SFB/TR": a report's number or series)
+  const DOCUMENT = new RegExp(`\\bpatent\\b|\\b(?:thesis|dissertation)\\b|${REPORT.source}`, "i");
   // a publisher's name on its own ("MIT Press", "Springer", "O'Reilly Media, Inc."): a book, given as printed too (APA does not italicise a publisher)
   const CHAPTER = /\b(?:chapter|ch)\.?:?$/i;          // ("chapter 13": the number right after it is a chapter's, not a volume — "…SIGCHI Chapter, 66-73" keeps its pages)
   const PUBLISHER = /^(?:the\s)?[^,]*\b(?:press|springer|wiley|elsevier|o'?reilly|publish(?:ing|ers?)|verlag|addison[- ]wesley|routledge|cengage|pearson|mcgraw)\b(?![/-]subscri)(?![^,]*\b(?:quarterly|gazette|bulletin|research|letters|journal|review|news)\b)[^,]*(?:,\s*(?:inc|ltd|llc|gmbh)\.?)?$/i;
@@ -159,7 +160,7 @@
   const isDocument = (p) => entryType(p).type === "misc" && (DOCUMENT.test(clean(p.venue)) || isPublisher(p.venue));
   // an unclassified line with a volume is a periodical's ("Scientific Reports 6, 29545") — unless its name says it is a meeting, a book or a place: "BMVC 1, 2",
   // "Robotics: Science and Systems VIII 8", a handbook, an encyclopedia, a university's report
-  const NOT_PERIODICAL = /https?:|\bwww\.|\b(?:conference|conf|symposi(?:um|a)|workshop|proceedings|proc|summit|meeting|congress|handbook|encyclopa?edia|university|universit[aäéy]|chapter|lecture|tutorial|science and systems|convention|competition|challenge|compendium|abstracts|manuscript|dataset|series|draft|konferenz\w*)\b|\bround$/i;
+  const NOT_PERIODICAL = /https?:|\bwww\.|\b(?:conference|conf|symposi(?:um|a)|workshop|proceedings|proc|summit|meeting|congress|handbook|encyclopa?edia|university|universit[aäéy]|chapter|lecture|tutorial|science and systems|convention|competition|challenge|compendium|abstracts|manuscript|dataset|series|draft|version|konferenz\w*)\b|\bround$/i;
   const ACRONYM = /^[A-Z]{2,6}(?:\s\d{2,4})?$/;          // (case-sensitive: "BMVC" is a meeting's acronym, "Nature" and "eLife" are journals)
   const periodical = (p) => { if (entryType(p).type !== "misc" || isDocument(p)) return false; const { name, volume } = venueParts(p.venue); return !!volume && !NOT_PERIODICAL.test(name) && !ACRONYM.test(name); };
   // the venue line as Scholar printed it, without the year at its end (for such a document, which no rule splits)
@@ -412,7 +413,7 @@
     const type = periodical(p) ? "article" : kind.type;
     const venue = type === "misc" ? asPrinted(p.venue) : type === "inproceedings" ? name.replace(/\.$/, "") : name, line = clean(p.venue);
     // the type code of Appendix B: patent [P], thesis [D], report [R], journal [J], proceedings [C], anything else [Z]
-    const mark = type === "article" ? "J" : type === "inproceedings" ? "C" : /\bpatent\b/i.test(line) ? "P" : /\b(?:thesis|dissertation)\b/i.test(line) ? "D" : /\b(?:tech(?:nical|\.)?\s*rep(?:ort)?|report)\b/i.test(line) ? "R" : isPublisher(line) ? "M" : "Z";
+    const mark = type === "article" ? "J" : type === "inproceedings" ? "C" : /\bpatent\b/i.test(line) ? "P" : /\b(?:thesis|dissertation)\b/i.test(line) ? "D" : REPORT.test(line) ? "R" : isPublisher(line) ? "M" : "Z";
     let where = "";
     if (type === "article") where = [venue, [year, volume && volume + (issue ? `(${issue})` : "")].filter(Boolean).join(", ")].filter(Boolean).join(", ") + (pages ? `: ${pages}` : "");
     // (a proceedings' number is given after its name as printed — "IJCAI 16" is an edition, "ISPA 1" a volume, and the line does not say which)

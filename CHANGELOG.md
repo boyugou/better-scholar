@@ -36,6 +36,9 @@
   places while the table and its title said "role"; they say "role" now, in English and in the 26 languages whose word for it differed
   (Chinese 角色 also in the table header, the store description and the colour hints; Russian and Ukrainian colour hints). Korean writes
   인용 수 everywhere. "Position 3 of 7" on hover is the place in the author list and keeps its word.
+- **Reports by their number**: a report number or series ("IRB-TR-04", "CMU/SEI-96-TR", "CS-TR-2657", "SFB/TR") and NIST's
+  "special publication" make a report ([R] in GB/T, given as printed in the other styles) instead of a journal with a volume; a "version 2"
+  is no volume.
 - **Two wrong badges from the same audit**: a venue line that opens with its year is IEEE's title for a meeting's proceedings, so it
   is no journal's ("2010 Internet of Things (IOT)" had CCF's IEEE Internet of Things Journal, started 2014; the cut "2011 7th
   international wireless communications and mobile computing …" had the journal of those words and now has CORE's IWCMC). The real

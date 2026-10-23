@@ -542,3 +542,13 @@ test("a proceedings named by its acronym alone keeps its number as printed: an e
   assert.deepEqual(f.venueParts("ACM Transactions on Graphics (TOG) 36 (2), 19:1--19:19, 2017"), { name: "ACM Transactions on Graphics (TOG)", volume: "36", issue: "2", pages: "19:1-19:19", year: "2017" });
 });
 
+test("a report's number or series makes a report, in every style; a version is no periodical's volume", () => {
+  const paper = (venue) => ({ title: "T", authors: "K He", venue, year: 2004, type: null, url: "", rank: {}, marks: [] });
+  for (const v of ["Intel Research, IRB-TR-04 12, 2-15, 2004", "Technical Reoprt CMU/SEI-96-TR 25, 1997", "Reports of SFB/TR 14, 2006", "Nist special publication sp 251, 586-590, 2003", "UM Computer Science Department; CS-TR-2657, 1998"]) {
+    assert.match(f.gbt([paper(v)]), /T\[R\]\./, v);
+    assert.match(f.bibtex([paper(v)]), /^@misc/, v);
+  }
+  assert.match(f.gbt([paper("Volume I: User-Level ISA’, version 2, 1-79, 2014")]), /T\[Z\]\. Volume I: User-Level ISA’, version 2, 1-79, 2004\.$/);
+  assert.match(f.gbt([paper("Scientific Reports 6, 29545, 2016")]), /T\[J\]\./, "a journal named Reports is no report");
+});
+
