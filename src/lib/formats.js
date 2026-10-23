@@ -1,7 +1,7 @@
 // Text for the copy buttons, the toolbar popup and agents: the papers (as records) or the summary go in, a string comes out. Pure, no DOM.
 //
 // A paper record, as content/main.js makes it from the rows the page shows:
-//   { id, title, authors, me, venue, year, citations, role, status, highlighted, type, rank: { ccf: { tier, name } | null, core: { rank, name } | null }, marks: [string], url }
+//   { id, title, authors, me, venue, pages?, year, citations, role, status, highlighted, type, rank: { ccf: { tier, name } | null, core: { rank, name } | null }, marks: [string], url }
 //   `me` is the profile owner's name as this paper's author line prints it ("" when it was not found there)
 //   `authors` is the author line as Scholar printed it (or the full list read from the paper's page), "…" or "..." where Scholar cut it; `type` is
 //   "conference" | "journal" | null (what the rank lists say the venue is); `url` is absolute or "". Titles and author names are whatever their authors typed: every
@@ -250,7 +250,7 @@
     if ((venueParts(p.venue).issue || /\s\d{1,4}\s\(\d+\s?…/.test(p.venue)) && !/\b(?:conference|symposium|workshop|tech(?:nical|\.)?\s*rep(?:ort)?)\b|https?:|\bwww\./i.test(venue)) return { type: "article", field: "journal" };           // ("44 (8)", or cut "44 (8 …": a volume with an issue is a periodical's)
     if (/journal(?!is)|transactions|letters|review|annals|magazine|ieee\/acm trans/i.test(venue)) return { type: "article", field: "journal" };
     if (/conference|symposi(?:um|a)|proceedings?\b|workshop|annual|proc\.|\bcongress\b|extended abstracts|^findings of (?:the )?(?:association|acl|emnlp|naacl|eacl|aacl)\b|system demonstrations?|datasets and benchmarks|companion proceedings/i.test(venue)
-      || /\b(?:ACL|EMNLP|NAACL|EACL|AACL|COLING)\b(?:[ -]\d{4})?\s*\(?Findings\)?$/.test(venue)) return { type: "inproceedings", field: "booktitle" };          // ("ACL 2025 Findings", "EMNLP (Findings)": the acronym in capitals; "Clinical Findings" is no meeting)          // ("ACL 2025 Findings", "EMNLP 2024 System Demonstrations": Scholar's word order)
+      || /\b(?:ACL|EMNLP|NAACL|EACL|AACL|COLING)(?:-[A-Z]+)?(?:[ -]?'?\d{2,4})?[ -]*\(?[Ff]indings\)?(?:[ ,]*(?:19|20)\d{2})?$|^\(?[Ff]indings\)?[ -]*\(?(?:ACL|EMNLP|NAACL|EACL|AACL)\b/.test(venue)) return { type: "inproceedings", field: "booktitle" };          // ("ACL 2025 Findings", "EMNLP (Findings)", "EMNLP Findings 2023": the acronym in capitals; "Clinical Findings" is no meeting)
     return { type: "misc", field: "howpublished" };
   }
 

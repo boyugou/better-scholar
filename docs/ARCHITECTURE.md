@@ -477,8 +477,8 @@ in the stand-in: it is never written to `localStorage`, and a reload empties it)
 
 ## Exports
 
-`lib/formats.js` turns the paper records (`paperRecords()` in `main.js`: the rows the page shows, with the author list and
-venue that *Read full lists* saved) or the summary into text. *Copy summary* and *Copy as table* (`summaryText`, `summaryTsv`,
+`lib/formats.js` turns the paper records (`paperRecords()` in `main.js`: the rows the page shows, with the author list that
+*Read full lists* saved, the profile's venue line — the paper page's venue only where Scholar cut that line — and the page's range) or the summary into text. *Copy summary* and *Copy as table* (`summaryText`, `summaryTsv`,
 `summaryHtml`) count the papers the filters leave when it is the panel's button (`filtered: true`; the popup and the page calls
 count every loaded paper) and carry `notes` under the scope line: the profile's link and the day (`panel.copy.source`) and, when
 the list is not all here, `Not fully loaded` (`copyNotes()` in `main.js`); the others take the papers shown. *Copy papers* is tab-separated (`papersTsv`), *Export CSV* is
