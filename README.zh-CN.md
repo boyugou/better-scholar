@@ -360,7 +360,7 @@ const { ok, result, error } = await answer;   // result.text is the BibTeX
 
 ## 开发与测试
 
-单元测试在 Node.js 20 或更高版本上运行，无需任何依赖。端到端检查和审查需要 Playwright 与一个 Chromium 构建版本。
+单元测试在 Node.js 22 或更高版本上运行，无需任何依赖。端到端检查和审查需要 Playwright 与一个 Chromium 构建版本。
 
 ```bash
 npm test                              # the unit tests

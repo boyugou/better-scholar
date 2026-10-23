@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-24.04          # (pinned: a new Ubuntu under "latest" can break playwright install --with-deps; move on deliberately)
     strategy:
       matrix:
-        node: [20, 22]
+        node: [22, 24]          # (the maintained LTS lines: Node 20 reached its end of life in April 2026)
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7

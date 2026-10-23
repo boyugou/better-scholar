@@ -360,7 +360,7 @@ The ranks are today's lists, not the rank that a venue had when a paper was publ
 
 ## Development
 
-The unit tests run on Node.js 20 or later, with no dependencies. The end-to-end checks and the audits need Playwright and a Chromium build.
+The unit tests run on Node.js 22 or later, with no dependencies. The end-to-end checks and the audits need Playwright and a Chromium build.
 
 ```bash
 npm test                              # the unit tests
