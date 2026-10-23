@@ -243,7 +243,7 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
   // ---- panel model --------------------------------------------------------
 
   const paperOf = (r) => ({
-    status: r.a.status, role: r.a.role, venue: r.a.venue, venueText: r.a.venueText,
+    status: r.a.status, role: r.a.role, venue: r.a.venue, venueText: r.a.venueText, pageVenueText: r.a.pageVenueText,
     citations: r.shown, year: r.a.year, highlighted: r.highlighted
   });
   function papers() {

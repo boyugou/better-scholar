@@ -39,6 +39,7 @@
       tokens: cls.tokens,
       venue,
       venueText,
+      pageVenueText: (resolved && resolved.venue) || "",          // (the paper page's own venue line, once "Read full lists" has read it: whole where the profile's line is cut)
       citations: raw.citations || 0,
       year: raw.year || null,
       fromDetail: !!(resolved && resolved.authors),

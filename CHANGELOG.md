@@ -16,6 +16,8 @@
   also goes before a mapping; a line longer than a mapping keeps is not offered; a cut line in the checker says why it cannot be
   assigned and what to paste instead. A line made only of sponsors and publishers ("IEEE, 2020", "Springer") cannot be mapped: it names
   no venue, and its mapping would take every such line.
+- **The unranked-venue list names the paper page's whole line** once *Read full lists* has read it, instead of the profile's cut line:
+  *Check*, *Copy list* and *Report* carry the whole name, and such a venue can then be assigned.
 - **A reviewed snapshot of the reference styles** (`test/formats-snapshot.test.js`, `test/fixtures/formats.expected.json`): how APA, IEEE,
   GB/T 7714 and BibTeX read each of the 22,744 real venue lines (type code, name, volume, issue, pages), so that a change to `formats.js`
   shows its exact effect, as the venue snapshot does for the matcher. CONTRIBUTING.md says how to review it.

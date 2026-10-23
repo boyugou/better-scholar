@@ -218,3 +218,12 @@ test("topVenues: under the winner the venue goes by that list's own name — CCF
   assert.equal(m.venueKey(row.venue, { ccf: false, core: true }, "ccf"), "KDD");
   assert.deepEqual(m.topVenues([row], 3, { ccf: false, core: true }), [{ key: "KDD", count: 1, name: "ACM SIGKDD International Conference on Knowledge Discovery and Data Mining", ccf: null, core: "A*" }], "no CCF name with a list that is off");
 });
+
+test("the unranked venues name the paper page's whole line where Read full lists has read it", () => {
+  const metrics = require("../src/lib/metrics.js");
+  const list = metrics.unmatchedVenues([
+    { venueText: "Workshop on Odd …, 2020", pageVenueText: "Workshop on Odd Things in Practice, 2020", venue: {} },
+    { venueText: "Odd Things Meeting, 2021", pageVenueText: "", venue: {} }
+  ]);
+  assert.deepEqual(list.map((u) => u.venue).sort(), ["Odd Things Meeting, 2021", "Workshop on Odd Things in Practice, 2020"]);
+});
