@@ -1224,7 +1224,7 @@
     "message": "Eigene Zuordnung (Einstellungen → Venue prüfen), nicht die Regel der Liste"
   },
   "optMineAssign": {
-    "message": "Einem gelisteten Venue zuordnen…"
+    "message": "Einer gelisteten Venue zuordnen…"
   },
   "optMinePick": {
     "message": "CCF- und CORE-Listen durchsuchen: Name oder Akronym"
@@ -1236,7 +1236,7 @@
     "message": "Eigene Venue-Zuordnungen"
   },
   "optMineHint": {
-    "message": "Venue-Zeilen, die keine Regel einordnet und die einem gelisteten Venue zugeordnet wurden. Ihre Kennzeichen sind gestrichelt, und jede Kopie markiert ihren Rang mit „(your mapping)“. Sie füllen nur Lücken: Eine Zeile, die die Listen einordnen, behält deren Rang."
+    "message": "Venue-Zeilen, die keine Regel einordnet und die einer gelisteten Venue zugeordnet wurden. Ihre Kennzeichen sind gestrichelt, und jede Kopie markiert ihren Rang mit „(your mapping)“. Sie füllen nur Lücken: Eine Zeile, die die Listen einordnen, behält deren Rang."
   },
   "optMineRemove": {
     "message": "Entfernen"
@@ -1273,5 +1273,24 @@
   },
   "optVenueCut": {
     "message": "Scholar hat diese Zeile abgeschnitten (…), daher kann sie nicht zugeordnet werden: Den vollständigen Venue-Namen von der Seite der Arbeit einfügen."
+  },
+  "copySource": {
+    "message": "Quelle: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "copyNotLoaded": {
+    "message": "Nicht vollständig geladen: bisher $N1$ Paper",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optMineFullOne": {
+    "message": "Chrome behält etwa fünfzig Zuordnungen: Die älteste wurde entfernt, um Platz zu schaffen."
   }
 }

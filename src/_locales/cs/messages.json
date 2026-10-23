@@ -1273,5 +1273,24 @@
   },
   "optVenueCut": {
     "message": "Scholar tento řádek zkrátil (…), takže ho nelze přiřadit: vložte celý název místa ze stránky článku."
+  },
+  "copySource": {
+    "message": "Zdroj: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "copyNotLoaded": {
+    "message": "Nenačteno úplně. Zatím načtené práce: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optMineFullOne": {
+    "message": "Chrome uchovává asi padesát přiřazení. Kvůli místu bylo odstraněno nejstarší přiřazení."
   }
 }

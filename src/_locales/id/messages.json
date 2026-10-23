@@ -1273,5 +1273,24 @@
   },
   "optVenueCut": {
     "message": "Scholar memotong baris ini (…), sehingga tidak dapat ditetapkan: tempel nama venue lengkap dari halaman makalah itu sendiri."
+  },
+  "copySource": {
+    "message": "Sumber: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "copyNotLoaded": {
+    "message": "Belum sepenuhnya dimuat: sejauh ini $N1$ makalah",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optMineFullOne": {
+    "message": "Chrome menyimpan sekitar lima puluh pemetaan: yang paling lama dihapus untuk memberi ruang."
   }
 }

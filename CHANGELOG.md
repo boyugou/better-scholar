@@ -16,6 +16,14 @@
   also goes before a mapping; a line longer than a mapping keeps is not offered; a cut line in the checker says why it cannot be
   assigned and what to paste instead. A line made only of sponsors and publishers ("IEEE, 2020", "Springer") cannot be mapped: it names
   no venue, and its mapping would take every such line.
+- **From a hands-on QA pass in five languages, light and dark** (ten defects): Enter in the venue search now picks the first venue (the
+  page ignores clicks a script makes, so it saved nothing); the co-first star and other marks Scholar's authors put on a name
+  ("Y Gu*") are no part of it in APA, IEEE, GB/T or BibTeX; Scholar's own word order "ACL 2025 Findings", "EMNLP (Findings)", "EMNLP 2024
+  System Demonstrations" is proceedings ([C]); the copied summary is in the interface language throughout (its title, the source and
+  loading lines, the not-ranked line and its kinds, the hidden and absent lines — German no longer gets a lower-case "rang"); in Arabic and
+  Hebrew the empty search box's placeholder is right-aligned, clear of the "/" hint; the mapping list's arrow points the right way in a
+  right-to-left page; focus moves on after a keyboard *Remove*; a screen reader hears that a dashed chip is the person's own mapping;
+  German "einer gelisteten Venue"; Lawrence Erlbaum is a publisher.
 - **The unranked-venue list names the paper page's whole line** once *Read full lists* has read it, instead of the profile's cut line:
   *Check*, *Copy list* and *Report* carry the whole name, and such a venue can then be assigned.
 - **A reviewed snapshot of the reference styles** (`test/formats-snapshot.test.js`, `test/fixtures/formats.expected.json`): how APA, IEEE,

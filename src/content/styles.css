@@ -66,6 +66,7 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
    on: the text on that fill. A rank chip is white with an outline; its tiers fade from the strongest (1) to the weakest (4). */
 /* a rank from the person's own venue mapping (settings → Check a venue), not from a list's rule: dashed where there is an outline, a dotted tier in every look */
 .rr-chip-mine { border-style: dashed; }
+.rr-chip .rr-sr { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 .rr-chip-mine b { text-decoration: underline dotted; text-underline-offset: 2px; }
 .rr-chip-rank {
   background: color-mix(in srgb, color-mix(in srgb, var(--fill) var(--look-fill, 0%), #fff) var(--look-paint, 100%), transparent);
@@ -143,6 +144,8 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
 #rr-panel .rr-search { position: relative; margin-bottom: 8px; }
 #rr-panel .rr-search-input { padding-inline-end: 28px; }
 #rr-panel .rr-search-input:not(:placeholder-shown) { padding-inline-end: 72px; }
+/* (dir="auto" makes an empty box left-to-right: in a right-to-left panel the placeholder sits right-aligned, clear of the "/" hint, until something is typed) */
+#rr-panel[dir="rtl"] .rr-search-input:placeholder-shown { direction: rtl; }
 #rr-panel .rr-search-input::-webkit-search-cancel-button { display: none; }
 #rr-panel .rr-search-count {
   position: absolute; inset-inline-end: 27px; top: 50%; transform: translateY(-50%);

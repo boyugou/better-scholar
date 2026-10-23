@@ -1273,5 +1273,24 @@
   },
   "optVenueCut": {
     "message": "Scholar가 이 줄을 잘랐습니다 (…), 그래서 연결할 수 없습니다: 논문 페이지에서 게재처의 전체 이름을 붙여넣으세요."
+  },
+  "copySource": {
+    "message": "출처: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "copyNotLoaded": {
+    "message": "완전히 불러오지 않음: 지금까지 $N1$편",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optMineFullOne": {
+    "message": "Chrome은 약 50개의 연결을 보관합니다. 공간을 확보하려고 가장 오래된 것을 삭제했습니다."
   }
 }

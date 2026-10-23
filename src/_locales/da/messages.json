@@ -1273,5 +1273,24 @@
   },
   "optVenueCut": {
     "message": "Scholar har skåret denne linje af (…), så den ikke kan tilknyttes: indsæt publikationsstedets hele navn fra artiklens egen side."
+  },
+  "copySource": {
+    "message": "Kilde: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "copyNotLoaded": {
+    "message": "Ikke fuldt indlæst: $N1$ artikler indtil nu",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optMineFullOne": {
+    "message": "Chrome gemmer omkring halvtreds koblinger: den ældste blev fjernet for at skabe plads."
   }
 }

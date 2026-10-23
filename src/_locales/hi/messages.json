@@ -1273,5 +1273,24 @@
   },
   "optVenueCut": {
     "message": "Scholar ने यह पंक्ति काट दी (…), इसलिए इसे venue से जोड़ा नहीं जा सकता: लेख के अपने पेज से venue का पूरा नाम चिपकाएँ।"
+  },
+  "copySource": {
+    "message": "स्रोत: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "copyNotLoaded": {
+    "message": "पूरी तरह लोड नहीं: अब तक $N1$ पेपर",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optMineFullOne": {
+    "message": "Chrome लगभग पचास मैपिंग रखता है: जगह बनाने के लिए सबसे पुरानी मैपिंग हटा दी गई।"
   }
 }

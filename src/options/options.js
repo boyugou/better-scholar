@@ -870,7 +870,7 @@
     resolver = makeResolver();
     drawMine(); checkVenue();
     // (what did not fit, or could not be written, is said: a mapping never goes without a word)
-    mineStatus.textContent = !r.ok ? t("optSaveFailed") : r.dropped ? t("optMineFull", [String(r.dropped)]) : "";
+    mineStatus.textContent = !r.ok ? t("optSaveFailed") : r.dropped ? B.dom.tn("optMineFull", r.dropped, [String(r.dropped)]) : "";
   }
   // every row of both lists, for the picker: the list, the rank, the name and the acronym
   const ROWS = [...B.data.ccf.venues.map((v) => ({ list: "ccf", kind: v.kind, tier: v.tier, name: v.name, abbr: v.abbr || "" })), ...B.data.core.venues.map((v) => ({ list: "core", kind: "C", tier: v.rank, name: v.name, abbr: v.acronym || "" }))];
@@ -881,26 +881,30 @@
     mineOut.append(h("h3", { class: "mine-title" }, t("optMineTitle")), h("p", { class: "faint" }, t("optMineHint")),
       h("ul", { class: "mine-items" }, ...mine.map((m, i) => {
         const r = ROWS.find((x) => x.list === m.list && x.name === m.name && (!m.kind || x.kind === m.kind));
-        return h("li", { class: "mine-item", "data-mine": String(i) }, h("bdi", { class: "mine-text" }, m.text), h("span", { class: "faint" }, " → ", h("bdi", {}, r ? rowText(r) : m.name)),
-          h("button", { type: "button", class: "btn mine-remove", "data-act": "mine-remove", "aria-label": `${t("optMineRemove")}: ${m.text}`, onClick: () => setMine(mine.filter((_, j) => j !== i)) }, t("optMineRemove")));
+        return h("li", { class: "mine-item", "data-mine": String(i) }, h("bdi", { class: "mine-text" }, m.text), h("span", { class: "faint" }, B.dom.dir() === "rtl" ? " ← " : " → ", h("bdi", {}, r ? rowText(r) : m.name)),
+          h("button", { type: "button", class: "btn mine-remove", "data-act": "mine-remove", "aria-label": `${t("optMineRemove")}: ${m.text}`,
+            onClick: () => setMine(mine.filter((_, j) => j !== i)).then(() => { const rest = mineOut.querySelectorAll(".mine-remove"); (rest[Math.min(i, rest.length - 1)] || venueInput).focus(); }) }, t("optMineRemove")));
       })));
   }
   // "Assign it to a listed venue": a search of both lists by name or acronym; a pick saves the mapping
   function assignBox(text) {
+    let hits = [];
+    // (a pick saves the mapping; the box with the focus is drawn again, so the focus goes back to the venue box)
+    const pick = (r) => setMine([...mine.filter((m) => B.venues.mineKey(m.text) !== B.venues.mineKey(text)), { text, list: r.list, name: r.name, kind: r.kind }]).then(() => venueInput.focus());
     const results = h("div", { class: "mine-results", "aria-live": "polite", onKeydown: (e) => { if (e.key === "Escape") { e.preventDefault(); box.hidden = true; open.hidden = false; open.focus(); } } });
     const search = h("input", { type: "search", class: "venue-input mine-search", "data-act": "mine-search", placeholder: t("optMinePick"), "aria-label": t("optMinePick"), spellcheck: "false", autocomplete: "off", maxlength: "120",
       // (Enter takes the first venue found, Escape closes the search)
       onKeydown: (e) => {
-        if (e.key === "Enter" && !e.isComposing) { const first = results.querySelector(".mine-pick"); if (first) { e.preventDefault(); first.click(); } }
+        if (e.key === "Enter" && !e.isComposing && hits.length) { e.preventDefault(); pick(hits[0]); }          // (a click a script makes counts for nothing on this page: the pick itself)
         else if (e.key === "Escape") { e.preventDefault(); box.hidden = true; open.hidden = false; open.focus(); }
       },
       onInput: () => {
         const q = search.value.trim().toLowerCase();
         results.replaceChildren();
         if (q.length < 2) return;
-        const hits = ROWS.filter((r) => r.abbr.toLowerCase() === q).concat(ROWS.filter((r) => r.abbr.toLowerCase() !== q && (r.name.toLowerCase().includes(q) || r.abbr.toLowerCase().startsWith(q)))).slice(0, 8);
+        hits = ROWS.filter((r) => r.abbr.toLowerCase() === q).concat(ROWS.filter((r) => r.abbr.toLowerCase() !== q && (r.name.toLowerCase().includes(q) || r.abbr.toLowerCase().startsWith(q)))).slice(0, 8);
         if (!hits.length) results.append(h("p", { class: "faint" }, t("optMineNoMatch")));
-        for (const r of hits) results.append(h("button", { type: "button", class: "mine-pick", "data-act": "mine-pick", onClick: () => setMine([...mine.filter((m) => B.venues.mineKey(m.text) !== B.venues.mineKey(text)), { text, list: r.list, name: r.name, kind: r.kind }]).then(() => venueInput.focus()) }, h("bdi", {}, rowText(r))));          // (the box with the focus is drawn again: the focus goes back to the venue box)
+        for (const r of hits) results.append(h("button", { type: "button", class: "mine-pick", "data-act": "mine-pick", onClick: () => pick(r) }, h("bdi", {}, rowText(r))));
       } });
     const box = h("div", { class: "mine-assign", hidden: true }, search, results);
     const open = h("button", { type: "button", class: "btn", "data-act": "mine-assign", onClick: () => { open.hidden = true; box.hidden = false; search.focus(); } }, t("optMineAssign"));

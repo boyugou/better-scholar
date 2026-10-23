@@ -417,13 +417,16 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
   function copyNotes(src = null, filtered = false) {
     const notes = [];
     const id = new URLSearchParams(location.search).get("user"), d = new Date();
-    if (prefs.panel.copy.source && id) notes.push(`Source: ${location.origin}/citations?user=${encodeURIComponent(id)} · ${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`);
-    if (!listComplete()) notes.push(`Not fully loaded: ${live().length} papers so far`);
+    if (prefs.panel.copy.source && id) notes.push(td("copySource", [`${location.origin}/citations?user=${encodeURIComponent(id)} · ${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`]));
+    if (!listComplete()) notes.push(td("copyNotLoaded", [String(live().length)]));
     const mapped = src ? mappedCount(tableRows(filtered), [src]) : 0;
-    if (mapped) notes.push(`Ranked by your own venue mappings, not by the lists: ${mapped} paper${mapped === 1 ? "" : "s"}`);
+    if (mapped) notes.push(tdn("coverMapped", mapped));
     return notes;
   }
-  const summaryWords = (filtered, src) => ({ label: copyLabels(), header: t("tsvRole"), total: t("tsvTotal"), notRanked: td("tipUnranked"), scope: filtered ? scopeLine() : "", notes: copyNotes(src, filtered) });
+  // the summary's own words in the interface language (the person's names for the roles; the language's words for the rest)
+  const tdn = (key, n) => B.dom.tDefault(n === 1 && B.dom.tDefault(key + "One") !== key + "One" ? key + "One" : key, [String(n)]);
+  const unseenWords = { hidden: (n) => tdn("coverHidden", n), absent: (n) => tdn("coverAbsent", n) };
+  const summaryWords = (filtered, src) => ({ label: copyLabels(), header: t("tsvRole"), total: t("tsvTotal"), notRanked: td("tipUnranked"), scope: filtered ? scopeLine() : "", notes: copyNotes(src, filtered), unseen: unseenWords });
 
   // The text of one copy button; the button's name is the format (lib/prefs.js COPY_BUTTONS). `source`: the ranking the summary and the table use
   // (default: the panel's own; "none": by role only).
@@ -433,7 +436,8 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
       const { summary, src } = summaryOf(source, filtered);
       return kind === "table"
         ? formats.summaryTsv(summary, summaryWords(filtered, src))
-        : formats.summaryText(summary, { owner: headerName, label: copyLabels(), notRanked: td("tipUnranked").toLowerCase(), extra: [marksLine(markCounts(filtered))].filter(Boolean),
+        : formats.summaryText(summary, { owner: headerName, label: copyLabels(), notRanked: td("tipUnranked"), words: { title: (s, n) => `${td(s ? "summaryTitle" : "summaryTitleRoles")}${s ? " (" + s + ")" : ""}: ${tdn("coverLoaded", n)}`,
+            unranked: { title: td("tipUnranked"), preprint: td("unrankedPreprints"), secondary: td("unrankedSecondary"), other: td("unrankedOther") }, unseen: unseenWords }, extra: [marksLine(markCounts(filtered))].filter(Boolean),
           edition: src ? `${edition[src]} — ${t("tipToday")}` : "", scope: filtered ? scopeLine() : "", notes: copyNotes(src, filtered) });
     }
     const records = paperRecords();

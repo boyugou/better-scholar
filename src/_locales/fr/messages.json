@@ -1273,5 +1273,24 @@
   },
   "optVenueCut": {
     "message": "Scholar a coupé cette ligne (…), elle ne peut donc pas être associée : collez le nom complet de la conférence/revue depuis la page de l'article."
+  },
+  "copySource": {
+    "message": "Source : $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "copyNotLoaded": {
+    "message": "Pas entièrement chargé : $N1$ articles pour l’instant",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optMineFullOne": {
+    "message": "Chrome conserve une cinquantaine d’associations : la plus ancienne a été supprimée pour faire de la place."
   }
 }

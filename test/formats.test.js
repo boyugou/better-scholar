@@ -281,10 +281,10 @@ test("the copied table says what it did not count by role, as the summary does: 
   assert.equal(summary.hidden, 2);
   assert.equal(summary.absent, 1);
   const lines = f.summaryTsv(summary, { label: { first: "First", second: "Second", last: "Last", middle: "Other" } }).split("\n");
-  assert.ok(lines.includes("Role not visible (author list truncated by Scholar): 2"), lines.join(" | "));
+  assert.ok(lines.includes("Role not visible (Scholar cut the author list): 2"), lines.join(" | "));
   assert.ok(lines.includes("Name not found in author list: 1"), lines.join(" | "));
   const html = f.summaryHtml(summary, { label: { first: "First", second: "Second", last: "Last", middle: "Other" } });
-  assert.match(html, /<p>Role not visible \(author list truncated by Scholar\): 2<\/p>/);
+  assert.match(html, /<p>Role not visible \(Scholar cut the author list\): 2<\/p>/);
   assert.match(html, /<p>Name not found in author list: 1<\/p>/);
   // … and a profile with nothing unseen adds nothing
   const whole = metrics.summarize([row("first", "A")], "ccf");
@@ -574,5 +574,17 @@ test("APA and IEEE: an unclassified line keeps its number after the name; a line
   assert.match(f.ieee([paper("Audio Engineering Society Convention 110, 2001")]), /\*Audio Engineering Society Convention 110\*, 2009\.$/);
   assert.match(f.apa([paper("See https://vicuna. lmsys. org (accessed 14 April 2023) 2 (3), 6, 2023")]), /T\. See https:\/\/vicuna\. lmsys\. org \(accessed 14 April 2023\) 2 \(3\), 6\.$/);
   assert.doesNotMatch(f.apa([paper("See https://vicuna. lmsys. org (accessed 14 April 2023) 2 (3), 6, 2023")]), /\*/, "no italics for a line no rule reads");
+});
+
+test("from a QA pass: author marks are no part of a name in a reference; Scholar's word order for Findings and demos; the summary in the page's words", () => {
+  const p = (venue, authors = "Y Gu*, K Zhang*, B Gou†, A Author") => ({ title: "T", authors, venue, year: 2025, type: null, url: "", rank: {}, marks: [] });
+  assert.match(f.apa([p("ICLR 2025, 2025")]), /^Gu, Y\., Zhang, K\., Gou, B\., & Author, A\./);
+  assert.match(f.gbt([p("ICLR 2025, 2025")]), /GU Y, ZHANG K, GOU B, et al\./);
+  assert.match(f.bibtex([p("ICLR 2025, 2025")]), /author = \{Y Gu and K Zhang and B Gou and A Author\}/);
+  for (const v of ["ACL 2025 Findings, 2025", "EMNLP (Findings), 16395-16409, 2025", "EMNLP 2024 System Demonstrations, 2024", "Findings of EMNLP, 2021"]) assert.match(f.gbt([p(v)]), /T\[C\]\/\//, v);
+  assert.match(f.gbt([p("Lawrence Erlbaum Associates, 1981")]), /T\[M\]\./);
+  const s = metrics.summarize([{ status: "hidden", role: null, venue: {}, venueText: "X", citations: 0, year: 2020 }], "ccf");
+  const text = f.summaryText(s, { owner: "A", words: { title: (src, n) => `Tabelle (${src}): ${n}`, unseen: { hidden: (n) => `versteckt: ${n}`, absent: (n) => `fehlt: ${n}` } } });
+  assert.match(text, /^A — Tabelle \(CCF\): 1\nversteckt: 1/);
 });
 

@@ -19,7 +19,8 @@
   const CUT = /^(?:\.\.\.|…)$/;
   // the names of an author line, and whether Scholar cut the list ("A Author, B Writer, …")
   function authorList(line) {
-    const parts = clean(line).split(/,\s*/).filter(Boolean);
+    // (the marks Scholar's authors put on a name — "K Zhang*" for a co-first author, a dagger, a mail sign — are no part of it in a reference)
+    const parts = clean(line).split(/,\s*/).map((a) => a.replace(/^[*†‡§✉]+\s*|\s*[*†‡§✉]+$/gu, "").trim()).filter(Boolean);
     return { names: parts.filter((a) => !CUT.test(a)), cut: parts.some((a) => CUT.test(a)) || /(?:\.\.\.|…)$/.test(clean(line)) };
   }
   // `prefer`: the list that stands alone where both rank the venue (the settings' `rows.prefer`, as the chips draw it), or null for both
@@ -35,10 +36,12 @@
   // Plain-text summary for the clipboard.
   // `scope`: what the counts count when it is less than the whole profile ("Showing 25 of 100 papers · 2021–…"): a line under the title; `notes`: lines of provenance
   // ("Source: <the profile's link> · 2026-10-16", "Not fully loaded: 20 papers so far") under it
-  function summaryText(summary, { owner = "", edition = "", label = ROLE_LABEL, notRanked = "unranked", extra = [], scope = "", notes = [] } = {}) {
+  // `words`: the summary's own words in the interface language (the page gives them; these English ones are the defaults): `title(src)` the first line after the
+  // owner's name, `unranked` the "Not ranked" line and its three kinds, `unseen` the lines of the papers the table does not count by role
+  function summaryText(summary, { owner = "", edition = "", label = ROLE_LABEL, notRanked = "unranked", extra = [], scope = "", notes = [], words = {} } = {}) {
     const src = summary.source === "core" ? "CORE" : summary.source === null ? "" : "CCF";
     const lines = [];
-    lines.push((owner ? owner + " — " : "") + `${summary.papers} papers on Google Scholar, by authorship role${src ? ` and ${src} rank` : ""}`);
+    lines.push((owner ? owner + " — " : "") + (words.title ? words.title(src, summary.papers) : `${summary.papers} papers on Google Scholar, by authorship role${src ? ` and ${src} rank` : ""}`));
     if (scope) lines.push(scope);
     for (const note of notes) lines.push(note);
     for (const r of summary.rows) {
@@ -47,17 +50,18 @@
       lines.push(`${label[r.role]}: ${r.total}${parts.length ? ` (${parts.join(", ")})` : ""}`);
     }
     const u = summary.unranked;
-    if (u && summary.totals[NONE]) lines.push(`Not ranked: ${summary.totals[NONE]} (${[["preprints", u.preprint], ["secondary tracks of ranked venues", u.secondary], ["other venues", u.other]].filter(([, n]) => n).map(([w, n]) => `${w} ${n}`).join(", ")})`);
-    lines.push(...unseenLines(summary));
+    const uw = words.unranked || { title: "Not ranked", preprint: "preprints", secondary: "secondary tracks of ranked venues", other: "other venues" };
+    if (u && summary.totals[NONE]) lines.push(`${uw.title}: ${summary.totals[NONE]} (${[[uw.preprint, u.preprint], [uw.secondary, u.secondary], [uw.other, u.other]].filter(([, n]) => n).map(([w, n]) => `${w} ${n}`).join(", ")})`);
+    lines.push(...unseenLines(summary, words.unseen));
     for (const line of extra) lines.push(line);
     if (edition) lines.push(edition);
     return lines.join("\n");
   }
 
   // The papers the table does not count by role: the author list was cut and the name is not in the part Scholar shows, or the list is whole and has no such name
-  const unseenLines = (summary) => [
-    summary.hidden ? `Role not visible (author list truncated by Scholar): ${summary.hidden}` : "",
-    summary.absent ? `Name not found in author list: ${summary.absent}` : ""
+  const unseenLines = (summary, w) => [
+    summary.hidden ? (w ? w.hidden(summary.hidden) : `Role not visible (Scholar cut the author list): ${summary.hidden}`) : "",
+    summary.absent ? (w ? w.absent(summary.absent) : `Name not found in author list: ${summary.absent}`) : ""
   ].filter(Boolean);
 
   // The summary table: a header and one row per role, then the totals.
@@ -70,7 +74,7 @@
   // The same table, tab-separated, for a spreadsheet. `opts.scope`: what it counts, when that is less than the whole profile: a last line under the table
   function summaryTsv(summary, opts) {
     const t = summaryTable(summary, opts), o = opts || {};
-    return rowsTsv(t.header, [...t.rows, ...[o.scope, ...unseenLines(summary), ...(o.notes || [])].filter(Boolean).map((line) => [line])]);
+    return rowsTsv(t.header, [...t.rows, ...[o.scope, ...unseenLines(summary, o.unseen), ...(o.notes || [])].filter(Boolean).map((line) => [line])]);
   }
 
   // ---- tables: tab-separated and CSV ----------------------------------------------------------------------------------------------------------
@@ -130,7 +134,7 @@
   }
   const summaryHtml = (summary, opts) => {
     const t = summaryTable(summary, opts), o = opts || {};
-    const after = [...unseenLines(summary), ...(o.notes || [])];
+    const after = [...unseenLines(summary, o.unseen), ...(o.notes || [])];
     return rowsHtml(t.header, t.rows, o.scope) + (after.length ? "\n" + after.map((n) => `<p>${esc(clean(n))}</p>`).join("\n") : "");
   };
 
@@ -155,7 +159,7 @@
   const DOCUMENT = new RegExp(`\\bpatent\\b|\\b(?:thesis|dissertation)\\b|${REPORT.source}`, "i");
   // a publisher's name on its own ("MIT Press", "Springer", "O'Reilly Media, Inc."): a book, given as printed too (APA does not italicise a publisher)
   const CHAPTER = /\b(?:chapter|ch)\.?:?$/i;          // ("chapter 13": the number right after it is a chapter's, not a volume — "…SIGCHI Chapter, 66-73" keeps its pages)
-  const PUBLISHER = /^(?:the\s)?[^,]*\b(?:press|springer|wiley|elsevier|o'?reilly|publish(?:ing|ers?)|verlag|addison[- ]wesley|house|routledge|cengage|pearson|mcgraw)\b(?![/-]subscri)(?![^,]*\b(?:quarterly|gazette|bulletin|research|letters|journal|review|news)\b)[^,]*(?:,\s*(?:inc|ltd|llc|gmbh)\.?)?$/i;
+  const PUBLISHER = /^(?:the\s)?[^,]*\b(?:press|springer|wiley|elsevier|o'?reilly|publish(?:ing|ers?)|verlag|addison[- ]wesley|house|erlbaum|routledge|cengage|pearson|mcgraw)\b(?![/-]subscri)(?![^,]*\b(?:quarterly|gazette|bulletin|research|letters|journal|review|news)\b)[^,]*(?:,\s*(?:inc|ltd|llc|gmbh)\.?)?$/i;
   // (journals whose title is a publishing word: no publisher)
   const PUBLISHING_JOURNAL = /^(?:learned publishing|publishing research quarterly|logos|publishers weekly)\b/i;
   const isPublisher = (text) => !PUBLISHING_JOURNAL.test(asPrinted(text)) && (PUBLISHER.test(asPrinted(text)) || PUBLISHER.test(venueParts(text).name));          // ("Morgan & Claypool Publishers 13, 1-187": the name before Scholar's numbers)
@@ -238,7 +242,7 @@
     if (/^(?:19|20)\d{2}\s+\S/.test(venue) && !/journal|transactions|letters|magazine/i.test(venue) && !DOCUMENT.test(venue) && !venueParts(p.venue).issue) return { type: "inproceedings", field: "booktitle" };
     if ((venueParts(p.venue).issue || /\s\d{1,4}\s\(\d+\s?…/.test(p.venue)) && !/\b(?:conference|symposium|workshop|tech(?:nical|\.)?\s*rep(?:ort)?)\b|https?:|\bwww\./i.test(venue)) return { type: "article", field: "journal" };           // ("44 (8)", or cut "44 (8 …": a volume with an issue is a periodical's)
     if (/journal(?!is)|transactions|letters|review|annals|magazine|ieee\/acm trans/i.test(venue)) return { type: "article", field: "journal" };
-    if (/conference|symposi(?:um|a)|proceedings?\b|workshop|annual|proc\.|\bcongress\b|extended abstracts|^findings of the|companion proceedings/i.test(venue)) return { type: "inproceedings", field: "booktitle" };
+    if (/conference|symposi(?:um|a)|proceedings?\b|workshop|annual|proc\.|\bcongress\b|extended abstracts|^findings of the|\bfindings$|\bfindings\b.*\b(?:acl|emnlp|naacl|eacl|aacl)\b|\b(?:acl|emnlp|naacl|eacl|aacl|coling)\b.*\bfindings\b|system demonstrations?|datasets and benchmarks|companion proceedings/i.test(venue)) return { type: "inproceedings", field: "booktitle" };          // ("ACL 2025 Findings", "EMNLP 2024 System Demonstrations": Scholar's word order)
     return { type: "misc", field: "howpublished" };
   }
 
