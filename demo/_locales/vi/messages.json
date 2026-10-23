@@ -140,6 +140,9 @@
       }
     }
   },
+  "coverLoadedOne": {
+    "message": "Đã tải 1 bài"
+  },
   "loadingAll": {
     "message": "Đang tải… $N1$",
     "placeholders": {
@@ -161,6 +164,9 @@
         "content": "$1"
       }
     }
+  },
+  "coverHiddenOne": {
+    "message": "1 vai trò bị ẩn do danh sách tác giả bị rút gọn"
   },
   "resolveBtn": {
     "message": "Đọc danh sách đầy đủ"
@@ -196,6 +202,9 @@
       }
     }
   },
+  "coverAbsentOne": {
+    "message": "1 bài có danh sách tác giả không chứa tên chủ hồ sơ"
+  },
   "coverUnmatched": {
     "message": "$N1$ bài ở venue chưa xếp hạng",
     "placeholders": {
@@ -203,6 +212,9 @@
         "content": "$1"
       }
     }
+  },
+  "coverUnmatchedOne": {
+    "message": "1 bài ở venue chưa xếp hạng"
   },
   "copyUnmatched": {
     "message": "Sao chép danh sách"
@@ -332,6 +344,9 @@
       }
     }
   },
+  "popupPapersOne": {
+    "message": "1 bài"
+  },
   "popupOpenScholar": {
     "message": "Mở Google Scholar"
   },
@@ -450,6 +465,9 @@
         "content": "$1"
       }
     }
+  },
+  "optCacheCountOne": {
+    "message": "Danh sách tác giả của 1 bài được lưu trên thiết bị này (giữ 90 ngày)."
   },
   "optCacheNone": {
     "message": "Chưa lưu chi tiết bài báo nào."
@@ -675,6 +693,9 @@
         "content": "$1"
       }
     }
+  },
+  "yearsOlderOne": {
+    "message": "1 bài cũ hơn không được hiển thị"
   },
   "optPanelYears": {
     "message": "Bài theo năm"
@@ -1166,27 +1187,6 @@
   "optPillRecent": {
     "message": "5 năm gần đây"
   },
-  "coverLoadedOne": {
-    "message": "Đã tải 1 bài"
-  },
-  "coverHiddenOne": {
-    "message": "1 vai trò bị ẩn do danh sách tác giả bị rút gọn"
-  },
-  "coverAbsentOne": {
-    "message": "1 bài có danh sách tác giả không chứa tên chủ hồ sơ"
-  },
-  "coverUnmatchedOne": {
-    "message": "1 bài ở venue chưa xếp hạng"
-  },
-  "popupPapersOne": {
-    "message": "1 bài"
-  },
-  "optCacheCountOne": {
-    "message": "Danh sách tác giả của 1 bài được lưu trên thiết bị này (giữ 90 ngày)."
-  },
-  "yearsOlderOne": {
-    "message": "1 bài cũ hơn không được hiển thị"
-  },
   "filterAbsent": {
     "message": "Không có tên hồ sơ trong danh sách tác giả"
   },
@@ -1219,5 +1219,48 @@
   },
   "optPreferBoth": {
     "message": "Cả hai"
+  },
+  "ruleMine": {
+    "message": "Ánh xạ riêng của bạn (cài đặt → Kiểm tra venue), không phải quy tắc của danh sách"
+  },
+  "optMineAssign": {
+    "message": "Gán cho một venue trong danh sách…"
+  },
+  "optMinePick": {
+    "message": "Tìm trong danh sách CCF và CORE: tên hoặc viết tắt"
+  },
+  "optMineNoMatch": {
+    "message": "Không có venue nào trong danh sách chứa các từ này."
+  },
+  "optMineTitle": {
+    "message": "Ánh xạ venue của bạn"
+  },
+  "optMineHint": {
+    "message": "Dòng venue chưa có quy tắc nào xếp hạng nhưng bạn đã gán cho một venue trong danh sách. Nhãn của các dòng này có viền nét đứt, và mỗi bản sao đều đánh dấu hạng của dòng bằng “(your mapping)”. Ánh xạ này chỉ lấp chỗ trống: dòng mà danh sách đã xếp hạng sẽ giữ hạng của danh sách."
+  },
+  "optMineRemove": {
+    "message": "Xóa"
+  },
+  "popupMapped": {
+    "message": "$N1$ có xếp hạng nhờ ánh xạ riêng của bạn",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMapped": {
+    "message": "$N1$ bài có xếp hạng nhờ ánh xạ riêng của bạn",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMappedOne": {
+    "message": "1 bài có xếp hạng nhờ ánh xạ riêng của bạn"
+  },
+  "coverMappedAction": {
+    "message": "Sửa…"
   }
 }

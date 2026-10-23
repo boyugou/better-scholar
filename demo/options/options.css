@@ -1376,6 +1376,26 @@ button.btn.preset-chip:hover {
   color: var(--muted);
 }
 
+/* the person's own venue mappings: "Assign it to a listed venue…" under a line with no rank, the picker, and the list of mappings */
+.mine-offer { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+.mine-assign { width: 100%; display: flex; flex-direction: column; gap: 6px; }
+.mine-results { display: flex; flex-direction: column; gap: 2px; }
+.mine-results .faint { margin: 0; font-size: 12.5px; }
+.mine-pick {
+  text-align: start; font: inherit; font-size: 13px; line-height: 1.4; padding: 6px 10px; border: 0; border-radius: 8px;
+  background: transparent; color: var(--text); cursor: pointer; overflow-wrap: anywhere;
+}
+.mine-pick:hover, .mine-pick:focus-visible { background: var(--accent-ring); outline: none; }
+.mine-list { padding: 0 20px; }
+.mine-list:not(:empty) { padding-bottom: 16px; }
+.mine-title { margin: 4px 0 2px; font-size: 13px; font-weight: 600; }
+.mine-list > .faint { margin: 0 0 8px; font-size: 12px; line-height: 1.5; color: var(--muted); }
+.mine-items { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.mine-item { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 6px; font-size: 13px; line-height: 1.5; }
+.mine-item .faint { color: var(--muted); overflow-wrap: anywhere; min-width: 0; }
+.mine-text { overflow-wrap: anywhere; min-width: 0; }
+.mine-remove { margin-inline-start: auto; }
+
 .config-text {
   width: 100%;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;

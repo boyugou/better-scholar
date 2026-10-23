@@ -1219,5 +1219,48 @@
   },
   "optPreferBoth": {
     "message": "Beide"
+  },
+  "ruleMine": {
+    "message": "Eigene Zuordnung (Einstellungen → Venue prüfen), nicht die Regel der Liste"
+  },
+  "optMineAssign": {
+    "message": "Einem gelisteten Venue zuordnen…"
+  },
+  "optMinePick": {
+    "message": "CCF- und CORE-Listen durchsuchen: Name oder Akronym"
+  },
+  "optMineNoMatch": {
+    "message": "Kein gelistetes Venue enthält diese Wörter."
+  },
+  "optMineTitle": {
+    "message": "Eigene Venue-Zuordnungen"
+  },
+  "optMineHint": {
+    "message": "Venue-Zeilen, die keine Regel einordnet und die einem gelisteten Venue zugeordnet wurden. Ihre Kennzeichen sind gestrichelt, und jede Kopie markiert ihren Rang mit „(your mapping)“. Sie füllen nur Lücken: Eine Zeile, die die Listen einordnen, behält deren Rang."
+  },
+  "optMineRemove": {
+    "message": "Entfernen"
+  },
+  "popupMapped": {
+    "message": "$N1$ mit Rang durch eigene Venue-Zuordnungen",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMapped": {
+    "message": "$N1$ Paper mit Rang durch eigene Venue-Zuordnungen",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMappedOne": {
+    "message": "1 Paper mit Rang durch eigene Venue-Zuordnungen"
+  },
+  "coverMappedAction": {
+    "message": "Bearbeiten…"
   }
 }

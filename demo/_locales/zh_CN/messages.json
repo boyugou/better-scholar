@@ -140,6 +140,9 @@
       }
     }
   },
+  "coverLoadedOne": {
+    "message": "已加载 1 篇"
+  },
   "loadingAll": {
     "message": "加载中… $N1$",
     "placeholders": {
@@ -161,6 +164,9 @@
         "content": "$1"
       }
     }
+  },
+  "coverHiddenOne": {
+    "message": "1 篇的作者列表被截断，看不到角色"
   },
   "resolveBtn": {
     "message": "补全"
@@ -196,6 +202,9 @@
       }
     }
   },
+  "coverAbsentOne": {
+    "message": "1 篇的作者列表里没找到本人姓名"
+  },
   "coverUnmatched": {
     "message": "$N1$ 篇的发表场所未收录",
     "placeholders": {
@@ -203,6 +212,9 @@
         "content": "$1"
       }
     }
+  },
+  "coverUnmatchedOne": {
+    "message": "1 篇的发表场所未收录"
   },
   "copyUnmatched": {
     "message": "复制列表"
@@ -332,6 +344,9 @@
       }
     }
   },
+  "popupPapersOne": {
+    "message": "1 篇"
+  },
   "popupOpenScholar": {
     "message": "打开 Google Scholar"
   },
@@ -450,6 +465,9 @@
         "content": "$1"
       }
     }
+  },
+  "optCacheCountOne": {
+    "message": "本机已保存 1 篇论文的作者列表（保留 90 天）。"
   },
   "optCacheNone": {
     "message": "没有保存任何论文详情。"
@@ -675,6 +693,9 @@
         "content": "$1"
       }
     }
+  },
+  "yearsOlderOne": {
+    "message": "另有 1 篇更早的论文未画出"
   },
   "optPanelYears": {
     "message": "按年份统计"
@@ -1166,27 +1187,6 @@
   "optPillRecent": {
     "message": "近 5 年"
   },
-  "coverLoadedOne": {
-    "message": "已加载 1 篇"
-  },
-  "coverHiddenOne": {
-    "message": "1 篇的作者列表被截断，看不到角色"
-  },
-  "coverAbsentOne": {
-    "message": "1 篇的作者列表里没找到本人姓名"
-  },
-  "coverUnmatchedOne": {
-    "message": "1 篇的发表场所未收录"
-  },
-  "popupPapersOne": {
-    "message": "1 篇"
-  },
-  "optCacheCountOne": {
-    "message": "本机已保存 1 篇论文的作者列表（保留 90 天）。"
-  },
-  "yearsOlderOne": {
-    "message": "另有 1 篇更早的论文未画出"
-  },
   "filterAbsent": {
     "message": "作者列表里没找到本人姓名"
   },
@@ -1219,5 +1219,48 @@
   },
   "optPreferBoth": {
     "message": "两者都显示"
+  },
+  "ruleMine": {
+    "message": "你自己设定的对应（设置 → 核对发表场所），而非名录的规则"
+  },
+  "optMineAssign": {
+    "message": "关联到名录中的发表场所…"
+  },
+  "optMinePick": {
+    "message": "搜索 CCF 和 CORE 名录：名称或缩写"
+  },
+  "optMineNoMatch": {
+    "message": "名录中没有包含这些词的发表场所。"
+  },
+  "optMineTitle": {
+    "message": "你设定的发表场所对应"
+  },
+  "optMineHint": {
+    "message": "没有规则给出等级、但你已关联到名录中某个发表场所的行。它们的标签为虚线框，每份复制内容都在等级旁标注“(your mapping)”。它们只补空缺：名录已给出等级的行，保留名录的等级。"
+  },
+  "optMineRemove": {
+    "message": "删除"
+  },
+  "popupMapped": {
+    "message": "$N1$ 按你自己设定的对应有等级",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMapped": {
+    "message": "$N1$ 篇按你自己设定的对应有等级",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMappedOne": {
+    "message": "1 篇按你自己设定的对应有等级"
+  },
+  "coverMappedAction": {
+    "message": "编辑…"
   }
 }

@@ -140,6 +140,9 @@
       }
     }
   },
+  "coverLoadedOne": {
+    "message": "1 makalah dimuat"
+  },
   "loadingAll": {
     "message": "Memuat… $N1$",
     "placeholders": {
@@ -161,6 +164,9 @@
         "content": "$1"
       }
     }
+  },
+  "coverHiddenOne": {
+    "message": "1 peran tersembunyi karena daftar penulis dipotong"
   },
   "resolveBtn": {
     "message": "Baca daftar lengkap"
@@ -196,6 +202,9 @@
       }
     }
   },
+  "coverAbsentOne": {
+    "message": "1 makalah yang daftar penulisnya tidak memuat nama pemilik profil"
+  },
   "coverUnmatched": {
     "message": "$N1$ makalah di venue tanpa peringkat",
     "placeholders": {
@@ -203,6 +212,9 @@
         "content": "$1"
       }
     }
+  },
+  "coverUnmatchedOne": {
+    "message": "1 makalah di venue tanpa peringkat"
   },
   "copyUnmatched": {
     "message": "Salin daftar"
@@ -332,6 +344,9 @@
       }
     }
   },
+  "popupPapersOne": {
+    "message": "1 makalah"
+  },
   "popupOpenScholar": {
     "message": "Buka Google Scholar"
   },
@@ -450,6 +465,9 @@
         "content": "$1"
       }
     }
+  },
+  "optCacheCountOne": {
+    "message": "Daftar penulis 1 makalah tersimpan di perangkat ini (disimpan 90 hari)."
   },
   "optCacheNone": {
     "message": "Tidak ada detail makalah yang tersimpan."
@@ -675,6 +693,9 @@
         "content": "$1"
       }
     }
+  },
+  "yearsOlderOne": {
+    "message": "1 makalah yang lebih lama tidak ditampilkan"
   },
   "optPanelYears": {
     "message": "Makalah per tahun"
@@ -1166,27 +1187,6 @@
   "optPillRecent": {
     "message": "5 tahun terakhir"
   },
-  "coverLoadedOne": {
-    "message": "1 makalah dimuat"
-  },
-  "coverHiddenOne": {
-    "message": "1 peran tersembunyi karena daftar penulis dipotong"
-  },
-  "coverAbsentOne": {
-    "message": "1 makalah yang daftar penulisnya tidak memuat nama pemilik profil"
-  },
-  "coverUnmatchedOne": {
-    "message": "1 makalah di venue tanpa peringkat"
-  },
-  "popupPapersOne": {
-    "message": "1 makalah"
-  },
-  "optCacheCountOne": {
-    "message": "Daftar penulis 1 makalah tersimpan di perangkat ini (disimpan 90 hari)."
-  },
-  "yearsOlderOne": {
-    "message": "1 makalah yang lebih lama tidak ditampilkan"
-  },
   "filterAbsent": {
     "message": "Nama profil tidak ada di daftar penulis"
   },
@@ -1219,5 +1219,48 @@
   },
   "optPreferBoth": {
     "message": "Keduanya"
+  },
+  "ruleMine": {
+    "message": "Pemetaan sendiri (Pengaturan → Periksa venue), bukan aturan daftar"
+  },
+  "optMineAssign": {
+    "message": "Tetapkan ke venue dalam daftar…"
+  },
+  "optMinePick": {
+    "message": "Cari di daftar CCF dan CORE: nama atau akronim"
+  },
+  "optMineNoMatch": {
+    "message": "Tidak ada venue dalam daftar yang memuat kata-kata ini."
+  },
+  "optMineTitle": {
+    "message": "Pemetaan venue Anda"
+  },
+  "optMineHint": {
+    "message": "Baris venue yang tidak diberi peringkat oleh aturan apa pun dan yang Anda kaitkan dengan venue dalam daftar. Labelnya bergaris putus-putus, dan setiap salinan menandai peringkatnya dengan “(your mapping)”. Pemetaan ini hanya mengisi celah: baris yang sudah diberi peringkat oleh daftar tetap memakai peringkat daftar."
+  },
+  "optMineRemove": {
+    "message": "Hapus"
+  },
+  "popupMapped": {
+    "message": "$N1$ diberi peringkat oleh pemetaan venue sendiri",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMapped": {
+    "message": "$N1$ makalah diberi peringkat oleh pemetaan venue sendiri",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMappedOne": {
+    "message": "1 makalah diberi peringkat oleh pemetaan venue sendiri"
+  },
+  "coverMappedAction": {
+    "message": "Ubah…"
   }
 }

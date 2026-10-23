@@ -63,6 +63,24 @@
     await set("sync", "variants", all);
   }
 
+  // The person's own venue mappings (lib/venues.js `data.mine`): [{ text, list, name }], synced like the spellings. A line no rule ranks, tied by the person to a list's row.
+  const MINE_MAX = 100;
+  const cleanMine = (list) => (Array.isArray(list) ? list : []).filter((m) => m && typeof m.text === "string" && (m.list === "ccf" || m.list === "core") && typeof m.name === "string")
+    .map((m) => ({ text: m.text.replace(/\s+/g, " ").trim().slice(0, 200), list: m.list, name: m.name.slice(0, 300) })).filter((m) => m.text);
+  const loadMine = async () => cleanMine(await get("sync", "mine"));
+  async function saveMine(list) {
+    const all = cleanMine(list).slice(-MINE_MAX);
+    // (8 KB for an item: the oldest go first)
+    while (all.length > 1 && B.prefs.sizeOf(all) > B.prefs.SYNC_LIMIT - 20) all.shift();
+    return set("sync", "mine", all);
+  }
+  function onMineChanged(fn) {
+    if (!live()) return () => {};
+    const listener = (changes, area) => { if (area === "sync" && changes.mine) fn(cleanMine(changes.mine.newValue)); };
+    try { chrome.storage.onChanged.addListener(listener); } catch (e) { return () => {}; }
+    return () => { try { chrome.storage.onChanged.removeListener(listener); } catch (e) { /* gone */ } };
+  }
+
   const TTL = 90 * 24 * 3600 * 1000;
   async function loadResolved() {
     const all = (await get("local", "resolved")) || {};
@@ -105,5 +123,5 @@
     return () => { try { chrome.storage.onChanged.removeListener(listener); } catch (e) { /* gone */ } };
   }
 
-  B.store = { askVenue, takeVenue, onVenueAsked, loadS2Key, saveS2Key, loadPrefs, savePrefs, loadUi, saveUi, onPrefsChanged, loadVariants, saveVariants, loadResolved, saveResolved, clearResolved };
+  B.store = { loadMine, saveMine, onMineChanged, cleanMine, askVenue, takeVenue, onVenueAsked, loadS2Key, saveS2Key, loadPrefs, savePrefs, loadUi, saveUi, onPrefsChanged, loadVariants, saveVariants, loadResolved, saveResolved, clearResolved };
 })();

@@ -1219,5 +1219,48 @@
   },
   "optPreferBoth": {
     "message": "兩者都顯示"
+  },
+  "ruleMine": {
+    "message": "你自己設定的對應（設定 → 檢查發表處），而非清單的規則"
+  },
+  "optMineAssign": {
+    "message": "關聯到清單中的發表處…"
+  },
+  "optMinePick": {
+    "message": "搜尋 CCF 和 CORE 清單：名稱或縮寫"
+  },
+  "optMineNoMatch": {
+    "message": "清單中沒有包含這些詞的發表處。"
+  },
+  "optMineTitle": {
+    "message": "你設定的發表處對應"
+  },
+  "optMineHint": {
+    "message": "沒有規則給出等級、但你已關聯到清單中某個發表處的行。它們的標籤為虛線框，每份複製內容都在等級旁標示「(your mapping)」。它們只補空缺：清單已給出等級的行，保留清單的等級。"
+  },
+  "optMineRemove": {
+    "message": "刪除"
+  },
+  "popupMapped": {
+    "message": "$N1$ 依你自己設定的對應有等級",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMapped": {
+    "message": "$N1$ 篇論文依你自己設定的對應有等級",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMappedOne": {
+    "message": "1 篇論文依你自己設定的對應有等級"
+  },
+  "coverMappedAction": {
+    "message": "編輯…"
   }
 }

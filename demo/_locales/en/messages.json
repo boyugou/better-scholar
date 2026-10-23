@@ -1219,5 +1219,48 @@
   },
   "optPreferBoth": {
     "message": "Both"
+  },
+  "ruleMine": {
+    "message": "Your own mapping (settings → Check a venue), not the list's rule"
+  },
+  "optMineAssign": {
+    "message": "Assign it to a listed venue…"
+  },
+  "optMinePick": {
+    "message": "Search the CCF and CORE lists: name or acronym"
+  },
+  "optMineNoMatch": {
+    "message": "No listed venue has these words."
+  },
+  "optMineTitle": {
+    "message": "Your venue mappings"
+  },
+  "optMineHint": {
+    "message": "Venue lines no rule ranks that you tied to a listed venue. Their chips are dashed, and copies mark their rank \"(your mapping)\". They fill gaps only: a line the lists rank keeps the lists' rank."
+  },
+  "optMineRemove": {
+    "message": "Remove"
+  },
+  "popupMapped": {
+    "message": "$N1$ ranked by your own venue mappings",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMapped": {
+    "message": "$N1$ papers ranked by your own venue mappings",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMappedOne": {
+    "message": "1 paper ranked by your own venue mappings"
+  },
+  "coverMappedAction": {
+    "message": "Edit…"
   }
 }

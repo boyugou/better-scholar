@@ -1219,5 +1219,48 @@
   },
   "optPreferBoth": {
     "message": "Ambas"
+  },
+  "ruleMine": {
+    "message": "Asignación propia (Ajustes → Comprobar congreso/revista), no la regla de la lista"
+  },
+  "optMineAssign": {
+    "message": "Asignar a un congreso/revista de la lista…"
+  },
+  "optMinePick": {
+    "message": "Buscar en las listas CCF y CORE: nombre o siglas"
+  },
+  "optMineNoMatch": {
+    "message": "Ningún congreso/revista de la lista tiene estas palabras."
+  },
+  "optMineTitle": {
+    "message": "Asignaciones propias de congresos/revistas"
+  },
+  "optMineHint": {
+    "message": "Líneas de congreso/revista que ninguna regla clasifica y que se han asociado a un congreso/revista de la lista. Sus etiquetas tienen borde discontinuo y cada copia marca su rango con «(your mapping)». Solo rellenan huecos: una línea que las listas clasifican conserva el rango de las listas."
+  },
+  "optMineRemove": {
+    "message": "Quitar"
+  },
+  "popupMapped": {
+    "message": "$N1$ con rango según asignaciones propias",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMapped": {
+    "message": "$N1$ artículos con rango según asignaciones propias",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMappedOne": {
+    "message": "1 artículo con rango según asignaciones propias"
+  },
+  "coverMappedAction": {
+    "message": "Editar…"
   }
 }

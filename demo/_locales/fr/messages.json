@@ -1219,5 +1219,48 @@
   },
   "optPreferBoth": {
     "message": "Les deux"
+  },
+  "ruleMine": {
+    "message": "Association personnelle (Réglages → Vérifier une conférence/revue), non la règle de la liste"
+  },
+  "optMineAssign": {
+    "message": "Associer à une conférence ou revue de la liste…"
+  },
+  "optMinePick": {
+    "message": "Chercher dans les listes CCF et CORE : nom ou acronyme"
+  },
+  "optMineNoMatch": {
+    "message": "Aucune conférence ni revue de la liste ne contient ces mots."
+  },
+  "optMineTitle": {
+    "message": "Associations personnelles de conférences/revues"
+  },
+  "optMineHint": {
+    "message": "Lignes de conférence/revue qu’aucune règle ne classe et que vous avez associées à une conférence ou revue de la liste. Leurs pastilles sont en pointillés, et chaque copie affiche leur rang avec « (your mapping) ». Elles ne comblent que les lacunes : une ligne que les listes classent garde le rang des listes."
+  },
+  "optMineRemove": {
+    "message": "Retirer"
+  },
+  "popupMapped": {
+    "message": "$N1$ avec un rang d’après les associations personnelles",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMapped": {
+    "message": "$N1$ articles avec un rang d’après les associations personnelles",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMappedOne": {
+    "message": "1 article avec un rang d’après les associations personnelles"
+  },
+  "coverMappedAction": {
+    "message": "Modifier…"
   }
 }

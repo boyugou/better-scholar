@@ -140,6 +140,9 @@
       }
     }
   },
+  "coverLoadedOne": {
+    "message": "Lucrarea încărcată: 1"
+  },
   "loadingAll": {
     "message": "Se încarcă… $N1$",
     "placeholders": {
@@ -161,6 +164,9 @@
         "content": "$1"
       }
     }
+  },
+  "coverHiddenOne": {
+    "message": "Rolul ascuns din cauza listei de autori trunchiate: 1"
   },
   "resolveBtn": {
     "message": "Citește lista completă"
@@ -196,6 +202,9 @@
       }
     }
   },
+  "coverAbsentOne": {
+    "message": "Lucrarea în care numele titularului profilului nu apare în lista de autori: 1"
+  },
   "coverUnmatched": {
     "message": "Lucrările la venue-uri fără rang: $N1$",
     "placeholders": {
@@ -203,6 +212,9 @@
         "content": "$1"
       }
     }
+  },
+  "coverUnmatchedOne": {
+    "message": "Lucrarea la un venue fără rang: 1"
   },
   "copyUnmatched": {
     "message": "Copiază lista"
@@ -332,6 +344,9 @@
       }
     }
   },
+  "popupPapersOne": {
+    "message": "Lucrare: 1"
+  },
   "popupOpenScholar": {
     "message": "Deschide Google Scholar"
   },
@@ -450,6 +465,9 @@
         "content": "$1"
       }
     }
+  },
+  "optCacheCountOne": {
+    "message": "Lista de autori salvată pe acest dispozitiv: 1 (păstrată 90 de zile)."
   },
   "optCacheNone": {
     "message": "Nu sunt salvate detalii ale lucrărilor."
@@ -675,6 +693,9 @@
         "content": "$1"
       }
     }
+  },
+  "yearsOlderOne": {
+    "message": "Lucrarea mai veche din afara graficului: 1"
   },
   "optPanelYears": {
     "message": "Lucrări pe an"
@@ -1166,27 +1187,6 @@
   "optPillRecent": {
     "message": "Ultimii 5 ani"
   },
-  "coverLoadedOne": {
-    "message": "Lucrarea încărcată: 1"
-  },
-  "coverHiddenOne": {
-    "message": "Rolul ascuns din cauza listei de autori trunchiate: 1"
-  },
-  "coverAbsentOne": {
-    "message": "Lucrarea în care numele titularului profilului nu apare în lista de autori: 1"
-  },
-  "coverUnmatchedOne": {
-    "message": "Lucrarea la un venue fără rang: 1"
-  },
-  "popupPapersOne": {
-    "message": "Lucrare: 1"
-  },
-  "optCacheCountOne": {
-    "message": "Lista de autori salvată pe acest dispozitiv: 1 (păstrată 90 de zile)."
-  },
-  "yearsOlderOne": {
-    "message": "Lucrarea mai veche din afara graficului: 1"
-  },
   "filterAbsent": {
     "message": "Numele din profil lipsește din lista de autori"
   },
@@ -1219,5 +1219,48 @@
   },
   "optPreferBoth": {
     "message": "Ambele"
+  },
+  "ruleMine": {
+    "message": "Maparea ta proprie (setări → Verifică un venue), nu regula listei"
+  },
+  "optMineAssign": {
+    "message": "Atribuie-l unui venue din listă…"
+  },
+  "optMinePick": {
+    "message": "Caută în listele CCF și CORE: nume sau acronim"
+  },
+  "optMineNoMatch": {
+    "message": "Niciun venue din listă nu are aceste cuvinte."
+  },
+  "optMineTitle": {
+    "message": "Mapările tale pentru venue-uri"
+  },
+  "optMineHint": {
+    "message": "Liniile de venue pe care nicio regulă nu le clasifică, dar pe care le-ai legat de un venue din listă. Etichetele lor au contur întrerupt, iar fiecare copie își marchează rangul cu „(your mapping)”. Ele completează doar lacunele: o linie deja clasificată de liste își păstrează rangul din liste."
+  },
+  "optMineRemove": {
+    "message": "Șterge"
+  },
+  "popupMapped": {
+    "message": "Cu rang din mapările tale de venue-uri: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMapped": {
+    "message": "Lucrări cu rang din mapările tale de venue-uri: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMappedOne": {
+    "message": "Lucrarea cu rang din mapările tale de venue-uri: 1"
+  },
+  "coverMappedAction": {
+    "message": "Editează…"
   }
 }

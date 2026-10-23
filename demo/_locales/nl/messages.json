@@ -1219,5 +1219,48 @@
   },
   "optPreferBoth": {
     "message": "Beide"
+  },
+  "ruleMine": {
+    "message": "Je eigen koppeling (Instellingen → Venue controleren), niet de regel van de lijsten"
+  },
+  "optMineAssign": {
+    "message": "Koppelen aan een venue op de lijst…"
+  },
+  "optMinePick": {
+    "message": "Zoeken in de CCF- en CORE-lijsten: naam of afkorting"
+  },
+  "optMineNoMatch": {
+    "message": "Geen venue op de lijst bevat deze woorden."
+  },
+  "optMineTitle": {
+    "message": "Je venue-koppelingen"
+  },
+  "optMineHint": {
+    "message": "Venue-vermeldingen zonder rang van een regel, die je aan een venue op de lijst hebt gekoppeld. Hun labels zijn gestippeld en elke kopie markeert hun rang met „(your mapping)”. Ze vullen alleen gaten: een vermelding die de lijsten wel rangschikken, houdt de rang van de lijsten."
+  },
+  "optMineRemove": {
+    "message": "Verwijderen"
+  },
+  "popupMapped": {
+    "message": "$N1$ met een rang via je eigen venue-koppelingen",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMapped": {
+    "message": "$N1$ papers met een rang via je eigen venue-koppelingen",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMappedOne": {
+    "message": "1 paper met een rang via je eigen venue-koppelingen"
+  },
+  "coverMappedAction": {
+    "message": "Bewerken…"
   }
 }

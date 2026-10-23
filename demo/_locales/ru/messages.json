@@ -140,6 +140,9 @@
       }
     }
   },
+  "coverLoadedOne": {
+    "message": "Загружена статья: 1"
+  },
   "loadingAll": {
     "message": "Загрузка… $N1$",
     "placeholders": {
@@ -161,6 +164,9 @@
         "content": "$1"
       }
     }
+  },
+  "coverHiddenOne": {
+    "message": "Роль скрыта из-за обрезанного списка авторов: 1"
   },
   "resolveBtn": {
     "message": "Читать полные списки"
@@ -196,6 +202,9 @@
       }
     }
   },
+  "coverAbsentOne": {
+    "message": "Статья, где имени владельца профиля нет среди авторов: 1"
+  },
   "coverUnmatched": {
     "message": "Статей в изданиях без ранга: $N1$",
     "placeholders": {
@@ -203,6 +212,9 @@
         "content": "$1"
       }
     }
+  },
+  "coverUnmatchedOne": {
+    "message": "Статья в издании без ранга: 1"
   },
   "copyUnmatched": {
     "message": "Копировать список"
@@ -332,6 +344,9 @@
       }
     }
   },
+  "popupPapersOne": {
+    "message": "Статья: 1"
+  },
   "popupOpenScholar": {
     "message": "Открыть Google Scholar"
   },
@@ -450,6 +465,9 @@
         "content": "$1"
       }
     }
+  },
+  "optCacheCountOne": {
+    "message": "Список авторов сохранен на этом устройстве: 1 (хранится 90 дней)."
   },
   "optCacheNone": {
     "message": "Сведения о статьях не сохранены."
@@ -675,6 +693,9 @@
         "content": "$1"
       }
     }
+  },
+  "yearsOlderOne": {
+    "message": "Не показана более ранняя статья: 1"
   },
   "optPanelYears": {
     "message": "Статьи по годам"
@@ -1166,27 +1187,6 @@
   "optPillRecent": {
     "message": "Последние 5 лет"
   },
-  "coverLoadedOne": {
-    "message": "Загружена статья: 1"
-  },
-  "coverHiddenOne": {
-    "message": "Роль скрыта из-за обрезанного списка авторов: 1"
-  },
-  "coverAbsentOne": {
-    "message": "Статья, где имени владельца профиля нет среди авторов: 1"
-  },
-  "coverUnmatchedOne": {
-    "message": "Статья в издании без ранга: 1"
-  },
-  "popupPapersOne": {
-    "message": "Статья: 1"
-  },
-  "optCacheCountOne": {
-    "message": "Список авторов сохранен на этом устройстве: 1 (хранится 90 дней)."
-  },
-  "yearsOlderOne": {
-    "message": "Не показана более ранняя статья: 1"
-  },
   "filterAbsent": {
     "message": "Имени из профиля нет среди авторов"
   },
@@ -1219,5 +1219,48 @@
   },
   "optPreferBoth": {
     "message": "Оба"
+  },
+  "ruleMine": {
+    "message": "Ваше собственное сопоставление (настройки → Проверить издание), а не правило списка"
+  },
+  "optMineAssign": {
+    "message": "Привязать к изданию из списка…"
+  },
+  "optMinePick": {
+    "message": "Поиск в списках CCF и CORE: название или аббревиатура"
+  },
+  "optMineNoMatch": {
+    "message": "Ни одно издание из списка не содержит эти слова."
+  },
+  "optMineTitle": {
+    "message": "Ваши сопоставления изданий"
+  },
+  "optMineHint": {
+    "message": "Строки изданий, которые никакое правило не ранжирует, но которые вы привязали к изданию из списка. Их метки с пунктирной рамкой, а в каждой копии их ранг помечен как «(your mapping)». Они только заполняют пробелы: строка, которую списки уже ранжируют, сохраняет ранг из списков."
+  },
+  "optMineRemove": {
+    "message": "Удалить"
+  },
+  "popupMapped": {
+    "message": "С рангом по вашим сопоставлениям: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMapped": {
+    "message": "Статей с рангом по вашим сопоставлениям: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMappedOne": {
+    "message": "Статья с рангом по вашим сопоставлениям: 1"
+  },
+  "coverMappedAction": {
+    "message": "Изменить…"
   }
 }

@@ -1219,5 +1219,48 @@
   },
   "optPreferBoth": {
     "message": "Begge"
+  },
+  "ruleMine": {
+    "message": "Egen kobling (Indstillinger → Tjek et publikationssted), ikke listens regel"
+  },
+  "optMineAssign": {
+    "message": "Tilknyt det til et publikationssted fra listen…"
+  },
+  "optMinePick": {
+    "message": "Søg i CCF- og CORE-listerne: navn eller forkortelse"
+  },
+  "optMineNoMatch": {
+    "message": "Intet publikationssted på listen har disse ord."
+  },
+  "optMineTitle": {
+    "message": "Egne koblinger til publikationssteder"
+  },
+  "optMineHint": {
+    "message": "Linjer med publikationssted, som ingen regel rangerer, og som er koblet til et publikationssted på listen. Deres mærker er stiplede, og hver kopi markerer deres rang med »(your mapping)«. De udfylder kun huller: en linje, som listerne rangerer, beholder listernes rang."
+  },
+  "optMineRemove": {
+    "message": "Fjern"
+  },
+  "popupMapped": {
+    "message": "$N1$ rangeret efter egne koblinger",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMapped": {
+    "message": "$N1$ artikler rangeret efter egne koblinger",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMappedOne": {
+    "message": "1 artikel rangeret efter egne koblinger"
+  },
+  "coverMappedAction": {
+    "message": "Redigér…"
   }
 }

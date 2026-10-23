@@ -1219,5 +1219,48 @@
   },
   "optPreferBoth": {
     "message": "Molemmat"
+  },
+  "ruleMine": {
+    "message": "Oma kohdistus (Asetukset → Tarkista julkaisufoorumi), ei luettelon sääntö"
+  },
+  "optMineAssign": {
+    "message": "Kohdista luetteloidulle julkaisufoorumille…"
+  },
+  "optMinePick": {
+    "message": "Hae CCF- ja CORE-luetteloista: nimi tai lyhenne"
+  },
+  "optMineNoMatch": {
+    "message": "Yksikään luetteloitu julkaisufoorumi ei sisällä näitä sanoja."
+  },
+  "optMineTitle": {
+    "message": "Omat julkaisufoorumikohdistukset"
+  },
+  "optMineHint": {
+    "message": "Julkaisufoorumirivit, joita mikään sääntö ei luokittele ja jotka on kohdistettu luetteloidulle julkaisufoorumille. Niiden tunnisteet ovat katkoviivoitetut, ja jokainen kopio merkitsee niiden luokan »(your mapping)». Ne täyttävät vain aukot: rivi, jonka luettelot luokittelevat, säilyttää luettelojen luokan."
+  },
+  "optMineRemove": {
+    "message": "Poista"
+  },
+  "popupMapped": {
+    "message": "$N1$ luokiteltu omien kohdistusten mukaan",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMapped": {
+    "message": "$N1$ artikkelia luokiteltu omien kohdistusten mukaan",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMappedOne": {
+    "message": "1 artikkeli luokiteltu omien kohdistusten mukaan"
+  },
+  "coverMappedAction": {
+    "message": "Muokkaa…"
   }
 }

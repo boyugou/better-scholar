@@ -140,6 +140,9 @@
       }
     }
   },
+  "coverLoadedOne": {
+    "message": "Wczytana praca: 1"
+  },
   "loadingAll": {
     "message": "Wczytywanie… $N1$",
     "placeholders": {
@@ -161,6 +164,9 @@
         "content": "$1"
       }
     }
+  },
+  "coverHiddenOne": {
+    "message": "Rola ukryta przez skróconą listę autorów: 1"
   },
   "resolveBtn": {
     "message": "Odczytaj pełne listy"
@@ -196,6 +202,9 @@
       }
     }
   },
+  "coverAbsentOne": {
+    "message": "Praca, w której nie ma nazwiska właściciela profilu: 1"
+  },
   "coverUnmatched": {
     "message": "Prace w miejscach publikacji bez rankingu: $N1$",
     "placeholders": {
@@ -203,6 +212,9 @@
         "content": "$1"
       }
     }
+  },
+  "coverUnmatchedOne": {
+    "message": "Praca w miejscu publikacji bez rankingu: 1"
   },
   "copyUnmatched": {
     "message": "Kopiuj listę"
@@ -332,6 +344,9 @@
       }
     }
   },
+  "popupPapersOne": {
+    "message": "Praca: 1"
+  },
   "popupOpenScholar": {
     "message": "Otwórz Google Scholar"
   },
@@ -450,6 +465,9 @@
         "content": "$1"
       }
     }
+  },
+  "optCacheCountOne": {
+    "message": "Zapisana na tym urządzeniu lista autorów: 1 (przechowywana 90 dni)."
   },
   "optCacheNone": {
     "message": "Brak zapisanych szczegółów prac."
@@ -675,6 +693,9 @@
         "content": "$1"
       }
     }
+  },
+  "yearsOlderOne": {
+    "message": "Starsza praca poza wykresem: 1"
   },
   "optPanelYears": {
     "message": "Prace według lat"
@@ -1166,27 +1187,6 @@
   "optPillRecent": {
     "message": "Ostatnie 5 lat"
   },
-  "coverLoadedOne": {
-    "message": "Wczytana praca: 1"
-  },
-  "coverHiddenOne": {
-    "message": "Rola ukryta przez skróconą listę autorów: 1"
-  },
-  "coverAbsentOne": {
-    "message": "Praca, w której nie ma nazwiska właściciela profilu: 1"
-  },
-  "coverUnmatchedOne": {
-    "message": "Praca w miejscu publikacji bez rankingu: 1"
-  },
-  "popupPapersOne": {
-    "message": "Praca: 1"
-  },
-  "optCacheCountOne": {
-    "message": "Zapisana na tym urządzeniu lista autorów: 1 (przechowywana 90 dni)."
-  },
-  "yearsOlderOne": {
-    "message": "Starsza praca poza wykresem: 1"
-  },
   "filterAbsent": {
     "message": "Nazwiska z profilu nie ma na liście autorów"
   },
@@ -1219,5 +1219,48 @@
   },
   "optPreferBoth": {
     "message": "Obie"
+  },
+  "ruleMine": {
+    "message": "Własne przypisanie (Ustawienia → Sprawdź miejsce publikacji), a nie reguła listy"
+  },
+  "optMineAssign": {
+    "message": "Przypisz do miejsca z listy…"
+  },
+  "optMinePick": {
+    "message": "Szukaj na listach CCF i CORE: nazwa lub skrót"
+  },
+  "optMineNoMatch": {
+    "message": "Żadne miejsce z listy nie zawiera tych słów."
+  },
+  "optMineTitle": {
+    "message": "Twoje przypisania miejsc publikacji"
+  },
+  "optMineHint": {
+    "message": "Wiersze miejsc publikacji, których żadna reguła nie ocenia, a które przypisano do miejsca z listy. Ich etykiety są przerywane, a każda kopia oznacza ich ranking napisem „(your mapping)”. Przypisania tylko uzupełniają braki: wiersz, który listy oceniają, zachowuje ranking z list."
+  },
+  "optMineRemove": {
+    "message": "Usuń"
+  },
+  "popupMapped": {
+    "message": "$N1$ z rankingiem według Twoich przypisań",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMapped": {
+    "message": "Prace z rankingiem według Twoich przypisań miejsc publikacji: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMappedOne": {
+    "message": "Praca z rankingiem według Twoich przypisań miejsc publikacji: 1"
+  },
+  "coverMappedAction": {
+    "message": "Edytuj…"
   }
 }

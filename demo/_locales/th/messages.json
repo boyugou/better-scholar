@@ -140,6 +140,9 @@
       }
     }
   },
+  "coverLoadedOne": {
+    "message": "โหลดแล้ว 1 เรื่อง"
+  },
   "loadingAll": {
     "message": "กำลังโหลด… $N1$",
     "placeholders": {
@@ -161,6 +164,9 @@
         "content": "$1"
       }
     }
+  },
+  "coverHiddenOne": {
+    "message": "บทบาท 1 รายการซ่อนอยู่เพราะรายชื่อผู้เขียนถูกตัด"
   },
   "resolveBtn": {
     "message": "อ่านรายชื่อฉบับเต็ม"
@@ -196,6 +202,9 @@
       }
     }
   },
+  "coverAbsentOne": {
+    "message": "1 เรื่องที่ไม่มีชื่อเจ้าของโปรไฟล์ในรายชื่อผู้เขียน"
+  },
   "coverUnmatched": {
     "message": "$N1$ เรื่องใน venue ที่ไม่มีอันดับ",
     "placeholders": {
@@ -203,6 +212,9 @@
         "content": "$1"
       }
     }
+  },
+  "coverUnmatchedOne": {
+    "message": "1 เรื่องใน venue ที่ไม่มีอันดับ"
   },
   "copyUnmatched": {
     "message": "คัดลอกรายการ"
@@ -332,6 +344,9 @@
       }
     }
   },
+  "popupPapersOne": {
+    "message": "1 เรื่อง"
+  },
   "popupOpenScholar": {
     "message": "เปิด Google Scholar"
   },
@@ -450,6 +465,9 @@
         "content": "$1"
       }
     }
+  },
+  "optCacheCountOne": {
+    "message": "บันทึกรายชื่อผู้เขียนของ 1 เรื่องไว้ในอุปกรณ์นี้ (เก็บไว้ 90 วัน)"
   },
   "optCacheNone": {
     "message": "ไม่มีรายละเอียดงานวิจัยที่บันทึกไว้"
@@ -675,6 +693,9 @@
         "content": "$1"
       }
     }
+  },
+  "yearsOlderOne": {
+    "message": "1 เรื่องที่เก่ากว่าไม่ได้แสดงในกราฟ"
   },
   "optPanelYears": {
     "message": "งานตามปี"
@@ -1166,27 +1187,6 @@
   "optPillRecent": {
     "message": "5 ปีล่าสุด"
   },
-  "coverLoadedOne": {
-    "message": "โหลดแล้ว 1 เรื่อง"
-  },
-  "coverHiddenOne": {
-    "message": "บทบาท 1 รายการซ่อนอยู่เพราะรายชื่อผู้เขียนถูกตัด"
-  },
-  "coverAbsentOne": {
-    "message": "1 เรื่องที่ไม่มีชื่อเจ้าของโปรไฟล์ในรายชื่อผู้เขียน"
-  },
-  "coverUnmatchedOne": {
-    "message": "1 เรื่องใน venue ที่ไม่มีอันดับ"
-  },
-  "popupPapersOne": {
-    "message": "1 เรื่อง"
-  },
-  "optCacheCountOne": {
-    "message": "บันทึกรายชื่อผู้เขียนของ 1 เรื่องไว้ในอุปกรณ์นี้ (เก็บไว้ 90 วัน)"
-  },
-  "yearsOlderOne": {
-    "message": "1 เรื่องที่เก่ากว่าไม่ได้แสดงในกราฟ"
-  },
   "filterAbsent": {
     "message": "ไม่มีชื่อโปรไฟล์ในรายชื่อผู้เขียน"
   },
@@ -1219,5 +1219,48 @@
   },
   "optPreferBoth": {
     "message": "ทั้งสอง"
+  },
+  "ruleMine": {
+    "message": "การจับคู่ของคุณเอง (การตั้งค่า → ตรวจสอบ venue) ไม่ใช่กฎของรายชื่อ"
+  },
+  "optMineAssign": {
+    "message": "เชื่อมกับ venue ในรายชื่อ…"
+  },
+  "optMinePick": {
+    "message": "ค้นหาในรายชื่อ CCF และ CORE: ชื่อหรือตัวย่อ"
+  },
+  "optMineNoMatch": {
+    "message": "ไม่พบ venue ในรายชื่อที่มีคำเหล่านี้"
+  },
+  "optMineTitle": {
+    "message": "การจับคู่ venue ของคุณ"
+  },
+  "optMineHint": {
+    "message": "บรรทัด venue ที่ไม่มีกฎใดให้อันดับ แต่คุณเชื่อมกับ venue ในรายชื่อ ป้ายกำกับของบรรทัดเหล่านี้เป็นเส้นประ และข้อความที่คัดลอกทุกครั้งจะทำเครื่องหมายอันดับด้วย “(your mapping)” การจับคู่นี้เติมเฉพาะช่องว่างเท่านั้น บรรทัดที่รายชื่อให้อันดับไว้แล้วจะคงอันดับจากรายชื่อ"
+  },
+  "optMineRemove": {
+    "message": "ลบ"
+  },
+  "popupMapped": {
+    "message": "$N1$ มีอันดับจากการจับคู่ของคุณเอง",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMapped": {
+    "message": "$N1$ เรื่องมีอันดับจากการจับคู่ของคุณเอง",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverMappedOne": {
+    "message": "1 เรื่องมีอันดับจากการจับคู่ของคุณเอง"
+  },
+  "coverMappedAction": {
+    "message": "แก้ไข…"
   }
 }
