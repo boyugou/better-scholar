@@ -46,6 +46,8 @@
   (Chinese 发表场所 and 期刊/会议 for "venue", Japanese 引用数 and 被引用数, German Zitationen and Zitierungen, Danish, Norwegian and
   Swedish venue words, Finnish julkaisufoorumi, Arabic and Hebrew words for "cut" …). Spanish, Portuguese, Japanese and Korean keep
   naming the roles by position, as those languages do.
+  The table's total column keeps its short word where "Total" does not fit its 44 px (German "Alle", Finnish "Kaikki", Hungarian
+  "Összes"); CI's overflow check now runs all 30 languages, not six, since the Hungarian break would have passed it.
 - **Two wrong badges from the same audit**: a venue line that opens with its year is IEEE's title for a meeting's proceedings, so it
   is no journal's ("2010 Internet of Things (IOT)" had CCF's IEEE Internet of Things Journal, started 2014; the cut "2011 7th
   international wireless communications and mobile computing …" had the journal of those words and now has CORE's IWCMC). The real
