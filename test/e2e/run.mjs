@@ -960,7 +960,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     await page.locator('[data-act="copy-summary"]', { hasText: "Copied" }).waitFor();
     assert.deepEqual(await copyBoxes(), boxesBefore, "the copy buttons keep their places while one says Copied");
     const clip = await page.evaluate(() => navigator.clipboard.readText());
-    assert.match(clip, /^Ion Stoica — Papers by role and rank \(CCF\): 100 papers loaded/);
+    assert.match(clip, /^Ion Stoica — Papers by role and rank \(CCF\) · 100 papers loaded/);
     assert.match(clip, /Last author: \d+ \(/);
     assert.match(clip, /CCF 2026 \(7th edition\)/);
     assert.match(clip, /\nSource: http:\/\/127\.0\.0\.1:\d+\/citations\?user=[^&\s·]+ · \d{4}-\d{2}-\d{2}\n/, "where it is from: the profile's link and the day");
@@ -1163,7 +1163,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     assert.deepEqual(await readMatrix(page), matrixOf(rows20, null));
     assert.doesNotMatch(await page.textContent("#rr-panel"), /\bnull\b|undefined/, "no stray null / undefined in the panel");
     await page.click('[data-act="copy-summary"]');
-    assert.match(await page.evaluate(() => navigator.clipboard.readText()), /^Ion Stoica — Papers by role: 20 papers loaded\n/);
+    assert.match(await page.evaluate(() => navigator.clipboard.readText()), /^Ion Stoica — Papers by role · 20 papers loaded\n/);
     await setList(opts, "ccf", true);
     await setList(opts, "core", true);
     await eventually(page, () => document.querySelector('.rr-chip[data-kind="core"]') && document.querySelector("#rr-panel button[data-src]"));
@@ -2069,7 +2069,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     const exJson = await call("export", { format: "json" });
     assert.ok(exMd.ok && exMd.result.text.startsWith("1. **") && exApa.ok && exApa.result.text.length > 0, "export: markdown and APA");
     assert.equal(JSON.parse(exJson.result.text).total, papersRes.result.papers.length, "export json: the same papers");
-    assert.match((await call("export", { format: "summary", source: "none" })).result.text, /— Papers by role: \d+ papers? loaded\n/, "export summary: by role only when asked");
+    assert.match((await call("export", { format: "summary", source: "none" })).result.text, /— Papers by role · \d+ papers? loaded\n/, "export summary: by role only when asked");
     assert.equal((await call("export", { format: "docx" })).ok, false);
     assert.match((await call("export", { format: "docx" })).error, /"format" must be one of: summary, table/);
     assert.match((await call("nope")).error, /unknown method "nope"/);
@@ -2434,6 +2434,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
       await checkPage.fill('[data-act="mine-search"]', "Neural Information Processing");
       await checkPage.locator('[data-act="mine-pick"]').first().click();
       await pollPage(checkPage, () => !!document.querySelector('#card-venue .venue-line') && document.querySelectorAll(".mine-item").length === 1);
+      assert.equal((await checkPage.locator('#card-venue [data-act="mine-assign"]').textContent()).trim(), "Change…", "a line already mapped offers Change…");
       await eventually(pg, () => document.querySelectorAll("#gsc_a_b .rr-chip-mine").length >= 1 && !!document.querySelector('[data-rr="mapped"]'));
       assert.match(await pg.locator("#gsc_a_b .rr-chip-mine").first().getAttribute("title"), /Your own mapping/, "the chip's tooltip says the rank is the person's mapping");
       assert.match(await pg.locator('[data-rr="mapped"]').textContent(), /ranked by your own venue mappings/);

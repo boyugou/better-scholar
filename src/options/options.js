@@ -901,6 +901,7 @@
       onInput: () => {
         const q = search.value.trim().toLowerCase();
         results.replaceChildren();
+        hits = [];          // (Enter takes only what is shown)
         if (q.length < 2) return;
         hits = ROWS.filter((r) => r.abbr.toLowerCase() === q).concat(ROWS.filter((r) => r.abbr.toLowerCase() !== q && (r.name.toLowerCase().includes(q) || r.abbr.toLowerCase().startsWith(q)))).slice(0, 8);
         if (!hits.length) results.append(h("p", { class: "faint" }, t("optMineNoMatch")));
@@ -928,8 +929,8 @@
     }
     if (!found.length) venueOut.append(h("p", { class: "venue-none" }, res.secondary ? t("optVenueSecondary", [res.secondary]) : t("optVenueNone")));
     // (a line no rule ranks, and no track of a ranked venue, can be tied to a listed venue by the person; the list of their mappings below has Remove)
-    if (res.assignable) venueOut.append(assignBox(text));
-    else if (found.some(([, info]) => info.rule === "mine")) venueOut.append(assignBox(text, true));          // (a line the person tied already: "Change…" ties it to another venue)
+    // (a line the person tied already offers "Change…": it ties it to another venue)
+    if (res.assignable) venueOut.append(assignBox(text, found.some(([, info]) => info.rule === "mine")));
     else if (!found.length && res.truncated) venueOut.append(h("p", { class: "venue-none" }, t("optVenueCut")));
     else if (!found.length && res.generic) venueOut.append(h("p", { class: "venue-none" }, t("optVenueGeneric")));
 

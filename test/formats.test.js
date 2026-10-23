@@ -598,3 +598,10 @@ test("the paper page's page range settles a lone number after the issue: a first
   assert.match(f.gbt([{ ...p, pages: "e1-e9 x" }]), /98\(1\): 74\.$/, "a field that is no plain range is not used");
 });
 
+
+test("a review of the QA fixes: 'Findings' is proceedings only beside an ACL-family acronym; every co-first mark names.js reads is stripped", () => {
+  const p = (venue, authors = "K He") => ({ title: "T", authors, venue, year: 2019, type: null, url: "", rank: {}, marks: [] });
+  for (const v of ["Research Findings, 2010", "Clinical Findings, 2018", "Findings, 2015", "Findings in ACL reconstruction, 2019", "MRI findings of ACL tears, 2015"]) assert.doesNotMatch(f.gbt([p(v)]), /\[C\]/, v);
+  for (const v of ["ACL 2025 Findings, 2025", "EMNLP (Findings), 1-10, 2025", "Findings of EMNLP, 2021", "Findings of the Association for Computational Linguistics: EMNLP 2020, 1-9, 2020"]) assert.match(f.gbt([p(v)]), /\[C\]/, v);
+  assert.match(f.gbt([p("ICLR 2019, 2019", "A Smith∗, B Jones#, C Lee⁎")]), /SMITH A, JONES B, LEE C\./);
+});

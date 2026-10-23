@@ -359,6 +359,8 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
 
   const MARK_KEY = { award: "markAward", oral: "markOral", spotlight: "markSpotlight", highlight: "markHighlight", "spotlight+highlight": "markSpotlightHighlight", "oral+spotlight+highlight": "markTalks" };
   // the punctuation of the interface language, for the copied summary ("：", "（…）", "，" in Chinese and Japanese)
+  // (English writes these in lower case inside a sentence; other languages keep their own case — a German noun stays capitalised)
+  const lowerEn = (s) => (/^en/i.test(B.dom.langTag()) ? s.toLowerCase() : s);
   const punct = () => { const cjk = /^(?:zh|ja)/i.test(B.dom.langTag()); return { colon: B.dom.colon(), paren: cjk ? ["（", "）"] : [" (", ")"], comma: B.dom.comma() }; };
   const marksLine = (counts) => {
     const parts = marks.rows(prefs.panel.marks.grouping).filter((g) => counts[g]).map((g) => td(MARK_KEY[g]) + " " + counts[g]), p = punct();
@@ -380,7 +382,8 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
         id: r.raw.id, title: r.raw.title,
         authors: (resolved && resolved.authors) || r.raw.authorsText,                // (the whole list once "Read full lists" has read it)
         me: a.status === "found" && a.tokens && a.tokens[a.index] ? a.tokens[a.index].name : "",           // (the owner's name as the author line prints it)
-        venue: (resolved && resolved.venue) || r.raw.venueText,
+        // (the profile's line, with its volume, issue and pages; the paper page's bare venue only where Scholar cut that line)
+        venue: (/…|\.\.\./.test(r.raw.venueText || "") && resolved && resolved.venue) || r.raw.venueText || (resolved && resolved.venue) || "",
         ...(resolved && resolved.pages ? { pages: resolved.pages } : {}),          // (the paper page's own page range, when "Read full lists" read one)
         year: a.year, citations: r.shown, role: a.role, status: a.status, highlighted: r.highlighted,
         type: KIND[(shown.ccf && v.ccf && v.ccf.kind) || (shown.core && v.core && v.core.kind)] || null,          // (a list that is switched off does not tell the kind, as in the search)
@@ -429,7 +432,7 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
   // the summary's own words in the interface language (the person's names for the roles; the language's words for the rest)
   const tdn = (key, n) => B.dom.tDefault(n === 1 && B.dom.tDefault(key + "One") !== key + "One" ? key + "One" : key, [String(n)]);
   const unseenWords = { hidden: (n) => tdn("coverHidden", n), absent: (n) => tdn("coverAbsent", n) };
-  const summaryWords = (filtered, src) => ({ label: copyLabels(), header: t("tsvRole"), total: t("tsvTotal"), notRanked: td("tipUnranked"), scope: filtered ? scopeLine() : "", notes: copyNotes(src, filtered), unseen: unseenWords });
+  const summaryWords = (filtered, src) => ({ label: copyLabels(), header: td("tsvRole"), total: td("tsvTotal"), notRanked: td("tipUnranked"), scope: filtered ? scopeLine() : "", notes: copyNotes(src, filtered), unseen: unseenWords });
 
   // The text of one copy button; the button's name is the format (lib/prefs.js COPY_BUTTONS). `source`: the ranking the summary and the table use
   // (default: the panel's own; "none": by role only).
@@ -439,8 +442,8 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
       const { summary, src } = summaryOf(source, filtered);
       return kind === "table"
         ? formats.summaryTsv(summary, summaryWords(filtered, src))
-        : formats.summaryText(summary, { owner: headerName, label: copyLabels(), notRanked: td("tipUnranked"), words: { ...punct(), title: (s, n) => { const p = punct(); return `${td(s ? "summaryTitle" : "summaryTitleRoles")}${s ? p.paren[0] + s + p.paren[1] : ""}${p.colon}${tdn("coverLoaded", n)}`; },
-            unranked: { title: td("tipUnranked"), preprint: td("unrankedPreprints"), secondary: td("unrankedSecondary"), other: td("unrankedOther") }, unseen: unseenWords }, extra: [marksLine(markCounts(filtered))].filter(Boolean),
+        : formats.summaryText(summary, { owner: headerName, label: copyLabels(), notRanked: lowerEn(td("tipUnranked")), words: { ...punct(), title: (s) => { const p = punct(), n = live().length; return `${td(s ? "summaryTitle" : "summaryTitleRoles")}${s ? p.paren[0] + s + p.paren[1] : ""} · ${tdn("coverLoaded", n)}`; },
+            unranked: { title: td("tipUnranked"), preprint: lowerEn(td("unrankedPreprints")), secondary: lowerEn(td("unrankedSecondary")), other: lowerEn(td("unrankedOther")) }, unseen: unseenWords }, extra: [marksLine(markCounts(filtered))].filter(Boolean),
           edition: src ? `${edition[src]} — ${t("tipToday")}` : "", scope: filtered ? scopeLine() : "", notes: copyNotes(src, filtered) });
     }
     const records = paperRecords();

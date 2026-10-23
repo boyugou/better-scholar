@@ -20,7 +20,7 @@
   // the names of an author line, and whether Scholar cut the list ("A Author, B Writer, …")
   function authorList(line) {
     // (the marks Scholar's authors put on a name — "K Zhang*" for a co-first author, a dagger, a mail sign — are no part of it in a reference)
-    const parts = clean(line).split(/,\s*/).map((a) => a.replace(/^[*†‡§✉]+\s*|\s*[*†‡§✉]+$/gu, "").trim()).filter(Boolean);
+    const parts = clean(line).split(/,\s*/).map((a) => a.replace(/^[*†‡§✉#⁎∗]+\s*|\s*[*†‡§✉#⁎∗]+$/gu, "").trim()).filter(Boolean);
     return { names: parts.filter((a) => !CUT.test(a)), cut: parts.some((a) => CUT.test(a)) || /(?:\.\.\.|…)$/.test(clean(line)) };
   }
   // `prefer`: the list that stands alone where both rank the venue (the settings' `rows.prefer`, as the chips draw it), or null for both
@@ -249,7 +249,8 @@
     if (/^(?:19|20)\d{2}\s+\S/.test(venue) && !/journal|transactions|letters|magazine/i.test(venue) && !DOCUMENT.test(venue) && !venueParts(p.venue).issue) return { type: "inproceedings", field: "booktitle" };
     if ((venueParts(p.venue).issue || /\s\d{1,4}\s\(\d+\s?…/.test(p.venue)) && !/\b(?:conference|symposium|workshop|tech(?:nical|\.)?\s*rep(?:ort)?)\b|https?:|\bwww\./i.test(venue)) return { type: "article", field: "journal" };           // ("44 (8)", or cut "44 (8 …": a volume with an issue is a periodical's)
     if (/journal(?!is)|transactions|letters|review|annals|magazine|ieee\/acm trans/i.test(venue)) return { type: "article", field: "journal" };
-    if (/conference|symposi(?:um|a)|proceedings?\b|workshop|annual|proc\.|\bcongress\b|extended abstracts|^findings of the|\bfindings$|\bfindings\b.*\b(?:acl|emnlp|naacl|eacl|aacl)\b|\b(?:acl|emnlp|naacl|eacl|aacl|coling)\b.*\bfindings\b|system demonstrations?|datasets and benchmarks|companion proceedings/i.test(venue)) return { type: "inproceedings", field: "booktitle" };          // ("ACL 2025 Findings", "EMNLP 2024 System Demonstrations": Scholar's word order)
+    if (/conference|symposi(?:um|a)|proceedings?\b|workshop|annual|proc\.|\bcongress\b|extended abstracts|^findings of (?:the )?(?:association|acl|emnlp|naacl|eacl|aacl)\b|system demonstrations?|datasets and benchmarks|companion proceedings/i.test(venue)
+      || /\b(?:ACL|EMNLP|NAACL|EACL|AACL|COLING)\b(?:[ -]\d{4})?\s*\(?Findings\)?$/.test(venue)) return { type: "inproceedings", field: "booktitle" };          // ("ACL 2025 Findings", "EMNLP (Findings)": the acronym in capitals; "Clinical Findings" is no meeting)          // ("ACL 2025 Findings", "EMNLP 2024 System Demonstrations": Scholar's word order)
     return { type: "misc", field: "howpublished" };
   }
 

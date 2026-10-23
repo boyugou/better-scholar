@@ -31,6 +31,10 @@
 - **A page range from the paper's own page**: *Read full lists* now also keeps the Pages field of the paper's Scholar page when it is a
   range, and the reference styles use it where the profile's line has none or only its first number — "Psychological review 98 (1), 74"
   becomes pp. 74–93, not *Article 74*. (PRIVACY.md lists it among what is saved.)
+  An independent review of this round fixed what it had broken or missed: the references read the profile's own line (volume, issue,
+  pages), the paper page's bare venue only where Scholar cut that line, so the page range lands where it should; *Change…* is shown;
+  Enter picks only what is shown; the summary's title counts the loaded papers and has one colon in every language; "Findings" is
+  proceedings only beside an ACL-family acronym ("Clinical Findings" is not); every co-first mark is stripped (`∗`, `#`, `⁎` too).
 - **The unranked-venue list names the paper page's whole line** once *Read full lists* has read it, instead of the profile's cut line:
   *Check*, *Copy list* and *Report* carry the whole name, and such a venue can then be assigned.
 - **A reviewed snapshot of the reference styles** (`test/formats-snapshot.test.js`, `test/fixtures/formats.expected.json`): how APA, IEEE,
