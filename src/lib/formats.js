@@ -219,6 +219,8 @@
   const BARE_ACRONYM = /^[A-Z][A-Za-z]{1,7}$/;          // (with its year — "ICPR'06 1" — the number is the volume)
   const procParts = (text) => { const v = venueParts(text); return v.volume && BARE_ACRONYM.test(v.name) ? { ...v, name: `${v.name} ${v.volume}${v.issue ? ` (${v.issue})` : ""}`, volume: "", issue: "" } : v; };
   const partsFor = (p, type) => (type === "inproceedings" ? procParts(p.venue) : venueParts(p.venue));
+  // (APA and IEEE label a proceedings' number "Vol." only beside a page range; without one it follows the name as printed, as in GB/T: "Advances in Neural Information Processing Systems 32")
+  const unlabelled = (v) => (v.volume && !v.pages.includes("-") ? { ...v, name: `${v.name} ${v.volume}${v.issue ? ` (${v.issue})` : ""}`, volume: "", issue: "" } : v);
 
   function entryType(p) {
     const venue = venueParts(p.venue).name;
@@ -340,7 +342,7 @@
     if (title && !/[.?!]$/.test(title)) title += ".";
     // the venue in italics, then (APA 7) a journal's volume in italics, its issue and pages, or "In *Proceedings* (Vol. 1, pp. 1–10)"; the year is the one above.
     // A line that is neither (a patent, a thesis, a publisher) is given as Scholar printed it, without its year and without italics.
-    const kind = entryType(p), { name: venue, volume, issue, pages } = partsFor(p, periodical(p) ? "article" : kind.type), journal = kind.type === "article";
+    const kind = entryType(p), apaType = periodical(p) ? "article" : kind.type, parts = partsFor(p, apaType), { name: venue, volume, issue, pages } = apaType === "inproceedings" ? unlabelled(parts) : parts, journal = kind.type === "article";
     const range = pages.replace("-", "–"), venuePieces = [];
     if (isDocument(p)) { const raw = asPrinted(p.venue); if (raw) venuePieces.push({ t: raw + (/[.]$/.test(raw) ? "" : ".") }); }
     else if (venue && (journal || periodical(p)) && (volume || pages)) {          // (an unclassified line with a volume is a periodical's: "Scientific Reports 6, 29545")
@@ -377,7 +379,7 @@
     const list = names.map(ieeeAuthor).filter(Boolean);
     const by = !list.length ? "" : list.length > 6 || cut ? `${list[0]} et al.` : list.length === 1 ? list[0] : list.length === 2 ? `${list[0]} and ${list[1]}` : `${list.slice(0, -1).join(", ")}, and ${list[list.length - 1]}`;
     const title = clean(p.title).replace(/[.]$/, "");
-    const kind = entryType(p), type = kind.type, { name, volume, issue, pages } = partsFor(p, periodical(p) ? "article" : type), year = p.year ? String(p.year) : "";
+    const kind = entryType(p), type = kind.type, ieeeParts = partsFor(p, periodical(p) ? "article" : type), { name, volume, issue, pages } = type === "inproceedings" && !periodical(p) ? unlabelled(ieeeParts) : ieeeParts, year = p.year ? String(p.year) : "";
     const misc = isDocument(p), venue = misc ? asPrinted(p.venue) : name;
     const range = pages.replace("-", "–"), where = [], page = pages && (pages.includes("-") ? `pp. ${range}` : `Art. no. ${pages}`);
     if (type === "article" || periodical(p)) where.push(volume && `vol. ${volume}`, issue && `no. ${issue}`, page, year);

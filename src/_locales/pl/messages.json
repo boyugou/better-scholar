@@ -833,7 +833,7 @@
     "message": "Importuj plik"
   },
   "optConfigEditor": {
-    "message": "Wklej lub edytuj JSON"
+    "message": "Wklej lub edytuj konfigurację (JSON)"
   },
   "optConfigApply": {
     "message": "Zastosuj konfigurację"
@@ -897,16 +897,16 @@
     "message": "Żadne ustawienie nie pasuje do tego wyszukiwania."
   },
   "optCacheTitle": {
-    "message": "Zapisane szczegóły publikacji"
+    "message": "Zapisane szczegóły prac"
   },
   "optCacheSearch": {
-    "message": "Szukaj w zapisanych publikacjach…"
+    "message": "Szukaj w zapisanych pracach…"
   },
   "optCacheCopy": {
     "message": "Kopiuj zapisane szczegóły (JSON)"
   },
   "optCacheEmpty": {
-    "message": "Na tym urządzeniu nie zapisano jeszcze szczegółów żadnej publikacji."
+    "message": "Na tym urządzeniu nie zapisano jeszcze szczegółów żadnej pracy."
   },
   "optCacheShown": {
     "message": "Pokazano: $N1$ z $N2$",

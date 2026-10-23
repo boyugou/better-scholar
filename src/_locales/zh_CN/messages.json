@@ -3,7 +3,7 @@
     "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "在 Google Scholar 学者主页上显示主页作者在每篇论文中的角色，以及期刊/会议的 CCF 与 CORE 等级，并汇总成一张表。"
+    "message": "在 Google Scholar 学者主页上显示主页作者在每篇论文中的角色，以及发表场所的 CCF 与 CORE 等级，并汇总成一张表。"
   },
   "extShortName": {
     "message": "Better Scholar"
@@ -381,7 +381,7 @@
     "message": "复制与导出"
   },
   "optCopyHint": {
-    "message": "哪些按钮会把显示的论文或摘要以文本形式复制或保存。面板和工具栏弹出窗口提供的是同样的按钮；全部关闭时，就没有复制行。"
+    "message": "哪些按钮会把显示的论文或摘要以文本形式复制或保存。面板和工具栏弹窗提供的是同样的按钮；全部关闭时，就没有复制行。"
   },
   "optMarkAwardHint": {
     "message": "最佳论文、杰出论文、卓越论文、荣誉提名、时间检验奖，以及最佳论文入围。"
@@ -1209,7 +1209,7 @@
     "message": "两个名录都有等级时"
   },
   "optPreferHint": {
-    "message": "一个标签代替两个：显示你选的名录的标签。另一名录的标签只在你选的名录对该发表场所没有等级时才出现。标签的悬停提示也会写明另一个等级。"
+    "message": "一个标签代替两个：显示你选的名录的标签。另一名录的标签只在你选的名录未收录该发表场所时才出现。标签的悬停提示也会写明另一个等级。"
   },
   "optPreferCcf": {
     "message": "CCF 优先"

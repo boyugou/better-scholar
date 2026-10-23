@@ -897,16 +897,16 @@
     "message": "Nicio setare nu corespunde acestei căutări."
   },
   "optCacheTitle": {
-    "message": "Detalii articole salvate"
+    "message": "Detaliile salvate ale lucrărilor"
   },
   "optCacheSearch": {
-    "message": "Caută în articolele salvate…"
+    "message": "Caută în lucrările salvate…"
   },
   "optCacheCopy": {
     "message": "Copiază detaliile salvate (JSON)"
   },
   "optCacheEmpty": {
-    "message": "Nu au fost salvate încă detalii despre articole pe acest dispozitiv."
+    "message": "Nu au fost salvate încă detalii despre lucrări pe acest dispozitiv."
   },
   "optCacheShown": {
     "message": "Afișate: $N1$ din $N2$",
@@ -1209,7 +1209,7 @@
     "message": "Când venue-ul are rang în ambele liste"
   },
   "optPreferHint": {
-    "message": "O singură etichetă în loc de două: eticheta listei pe care o alegi. Eticheta celeilalte liste apare doar acolo unde lista aleasă nu are rang pentru venue-ul. Când se trece cu mouse-ul peste etichetă, apare și celălalt rang."
+    "message": "O singură etichetă în loc de două: eticheta listei pe care o alegi. Eticheta celeilalte liste apare doar acolo unde lista aleasă nu are rang pentru acel venue. Când se trece cu mouse-ul peste etichetă, apare și celălalt rang."
   },
   "optPreferCcf": {
     "message": "CCF întâi"

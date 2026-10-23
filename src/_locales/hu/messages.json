@@ -441,7 +441,7 @@
     "message": "Mentett adatok"
   },
   "optClearCache": {
-    "message": "Mentett cikkrészletek törlése"
+    "message": "A cikkek mentett részleteinek törlése"
   },
   "optCacheCount": {
     "message": "$N1$ cikk szerzői listája van mentve ezen az eszközön (90 napig megőrizve).",
@@ -452,7 +452,7 @@
     }
   },
   "optCacheNone": {
-    "message": "Nincsenek mentett cikkrészletek."
+    "message": "A cikkekről nincsenek mentett részletek."
   },
   "optCleared": {
     "message": "Törölve"
@@ -741,7 +741,7 @@
     "message": "Törlés"
   },
   "filterMinCites": {
-    "message": "≥$N1$ idézet",
+    "message": "≥$N1$ hivatkozás",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -763,7 +763,7 @@
     }
   },
   "tipFilterH": {
-    "message": "Szűrés a h-mag cikkekre (≥$N1$ idézet)",
+    "message": "Szűrés a h-mag cikkekre (≥$N1$ hivatkozás)",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -771,7 +771,7 @@
     }
   },
   "tipFilterI10": {
-    "message": "Szűrés az i10 cikkekre (≥10 idézet)"
+    "message": "Szűrés az i10 cikkekre (≥10 hivatkozás)"
   },
   "popupPapersOf": {
     "message": "$N1$ / $N2$ cikk",
@@ -806,16 +806,16 @@
     "message": "Kevesebb"
   },
   "optHideCitedTable": {
-    "message": "Idézettségi mutatós táblázat"
+    "message": "Hivatkozási mutatók táblázata"
   },
   "optHideCitedTableHint": {
-    "message": "Az idézetek, h-index és i10-index táblázat az oldalsávban."
+    "message": "A hivatkozások, a h-index és az i10-index táblázata az oldalsávban."
   },
   "optHideCitedChart": {
-    "message": "Évenkénti idézettségi grafikon"
+    "message": "Évenkénti hivatkozási grafikon"
   },
   "optHideCitedChartHint": {
-    "message": "Az éves idézettségi hisztogram az oldalsávban."
+    "message": "Az éves hivatkozási hisztogram az oldalsávban."
   },
   "optConfigTitle": {
     "message": "Konfiguráció és előbeállítások"
@@ -897,7 +897,7 @@
     "message": "Ehhez nincs egyező beállítás."
   },
   "optCacheTitle": {
-    "message": "Mentett cikkrészletek"
+    "message": "A cikkek mentett részletei"
   },
   "optCacheSearch": {
     "message": "Mentett cikkek keresése…"
@@ -906,7 +906,7 @@
     "message": "Mentett részletek másolása (JSON)"
   },
   "optCacheEmpty": {
-    "message": "Még nincsenek mentett cikkrészletek ezen az eszközön."
+    "message": "Ezen az eszközön még nincsenek mentett részletek a cikkekről."
   },
   "optCacheShown": {
     "message": "Megjelenítve: $N1$ / $N2$",
@@ -998,7 +998,7 @@
     "message": "CORE A*"
   },
   "optPillCites": {
-    "message": "100-nál több idézet"
+    "message": "100-nál több hivatkozás"
   },
   "optFiltersYears": {
     "message": "Évtartomány"

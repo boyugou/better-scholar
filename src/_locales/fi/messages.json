@@ -206,7 +206,7 @@
     "message": "1 artikkeli, jossa profiilin omistajan nimeä ei ole kirjoittajaluettelossa"
   },
   "coverUnmatched": {
-    "message": "$N1$ artikkelia foorumeilla ilman luokkaa",
+    "message": "$N1$ artikkelia julkaisufoorumeilla ilman luokkaa",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -423,7 +423,7 @@
     "message": "Ladatut artikkelit ja luokittelemattomat julkaisufoorumit"
   },
   "optPanelStatusHint": {
-    "message": "Montako artikkelia on ladattu, “Lataa kaikki” -painike, mitä ei voitu lukea ja luettelo artikkeleista luokittelemattomilla foorumeilla."
+    "message": "Montako artikkelia on ladattu, “Lataa kaikki” -painike, mitä ei voitu lukea ja luettelo artikkeleista luokittelemattomilla julkaisufoorumeilla."
   },
   "optPanelNames": {
     "message": "Nimen kirjoitusasun apu"
@@ -1049,7 +1049,7 @@
     "message": "Artikkelit ilman nimeäsi"
   },
   "optStatusUnranked": {
-    "message": "Artikkelit luokittelemattomilla foorumeilla"
+    "message": "Artikkelit luokittelemattomilla julkaisufoorumeilla"
   },
   "optNamesHints": {
     "message": "Nimen kirjoitusasut, jotka löytyvät artikkeleistasi"

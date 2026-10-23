@@ -48,6 +48,12 @@
   naming the roles by position, as those languages do.
   The table's total column keeps its short word where "Total" does not fit its 44 px (German "Alle", Finnish "Kaikki", Hungarian
   "Összes"); CI's overflow check now runs all 30 languages, not six, since the Hungarian break would have passed it.
+- **APA and IEEE keep a proceedings' number without pages** after the name as printed, as GB/T does ("In *Advances in Neural
+  Information Processing Systems 12*"); beside a page range it is still "Vol. 34, pp. …".
+- **Translations, checked by an independent review of the terminology pass** (51 fixes): grammar a word swap had broken (Vietnamese
+  word order, a Hebrew "stage name", a Romanian article, Norwegian *utheving*), Greek's panel and table are no longer one word (πάνελ
+  and πίνακας), the last other words for "paper", "duplicate" and "configuration" in a dozen languages, Finnish *julkaisufoorumi*
+  and Hungarian *hivatkozás* everywhere, and the last Chinese strays (期刊/会议, 無等級, 側欄).
 - **Two wrong badges from the same audit**: a venue line that opens with its year is IEEE's title for a meeting's proceedings, so it
   is no journal's ("2010 Internet of Things (IOT)" had CCF's IEEE Internet of Things Journal, started 2014; the cut "2011 7th
   international wireless communications and mobile computing …" had the journal of those words and now has CORE's IWCMC). The real

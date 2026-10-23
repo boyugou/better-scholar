@@ -408,7 +408,7 @@ test("the venue line, second review: a long name's number is a volume, the bare 
   assert.equal(vp("Proceedings of the workshop, January 5–7, 1983, 12–14, 1983").name, "Proceedings of the workshop, January 5–7, 1983");
   const paper = (venue, type) => ({ title: "T", authors: "A Author", venue, year: 2015, type, url: "", rank: {}, marks: [] });
   assert.match(f.apa([paper("ISMIR, 260-265, 2015", null)]), /\*ISMIR\* \(pp\. 260–265\)\.$/);
-  assert.match(f.ieee([paper("USENIX security symposium 49, 50, 2015", "conference")]), /in \*USENIX security symposium\*, 2015\.$/);
+  assert.match(f.ieee([paper("USENIX security symposium 49, 50, 2015", "conference")]), /in \*USENIX security symposium 49\*, 2015\.$/, "a number without a page range stays as printed, unlabelled; the lone 50 is not printed");
 });
 
 test("the venue line, third review: a meeting's two-digit edition year, a periodical's volume on an unclassified line, GB/T keeps every field", () => {
@@ -550,5 +550,13 @@ test("a report's number or series makes a report, in every style; a version is n
   }
   assert.match(f.gbt([paper("Volume I: User-Level ISA’, version 2, 1-79, 2014")]), /T\[Z\]\. Volume I: User-Level ISA’, version 2, 1-79, 2004\.$/);
   assert.match(f.gbt([paper("Scientific Reports 6, 29545, 2016")]), /T\[J\]\./, "a journal named Reports is no report");
+});
+
+test("APA and IEEE keep a proceedings' number without pages after the name, as printed, as GB/T does", () => {
+  const paper = (venue) => ({ title: "T", authors: "K He", venue, year: 1999, type: "conference", url: "", rank: {}, marks: [] });
+  assert.match(f.apa([paper("Advances in Neural Information Processing Systems 12, 1999")]), /In \*Advances in Neural Information Processing Systems 12\*\.$/);
+  assert.match(f.ieee([paper("Advances in Neural Information Processing Systems 12, 1999")]), /in \*Advances in Neural Information Processing Systems 12\*, 1999\.$/);
+  assert.match(f.gbt([paper("Advances in Neural Information Processing Systems 12, 1999")]), /T\[C\]\/\/Advances in Neural Information Processing Systems 12\. 1999\.$/);
+  assert.match(f.apa([paper("Advances in Neural Information Processing Systems 34, 26804-26817, 2021")]), /\(Vol\. 34, pp\. 26804–26817\)\.$/, "beside a page range it is the volume");
 });
 
