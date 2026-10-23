@@ -1292,5 +1292,11 @@
   },
   "optMineFullOne": {
     "message": "Chrome conserve une cinquantaine d’associations : la plus ancienne a été supprimée pour faire de la place."
+  },
+  "optVenueGeneric": {
+    "message": "Cette ligne ne cite qu'un sponsor ou un éditeur, pas une conférence/revue, elle ne peut donc pas être associée : un tel lien s'appliquerait à toutes les lignes de ce genre."
+  },
+  "optMineChange": {
+    "message": "Changer…"
   }
 }

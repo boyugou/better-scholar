@@ -1292,5 +1292,11 @@
   },
   "optMineFullOne": {
     "message": "Chrome 只保留约五十条对应：为腾出空间，已删除最早的一条。"
+  },
+  "optVenueGeneric": {
+    "message": "这一行只写了赞助方或出版方，而不是发表场所，因此无法关联：若关联它，会套用到所有这类行。"
+  },
+  "optMineChange": {
+    "message": "更改…"
   }
 }

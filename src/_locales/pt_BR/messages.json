@@ -1292,5 +1292,11 @@
   },
   "optMineFullOne": {
     "message": "O Chrome guarda cerca de cinquenta mapeamentos: o mais antigo foi removido para abrir espaço."
+  },
+  "optVenueGeneric": {
+    "message": "Esta linha cita apenas um patrocinador ou uma editora, não um veículo, então não pode ser atribuída: uma atribuição valeria para todas as linhas desse tipo."
+  },
+  "optMineChange": {
+    "message": "Alterar…"
   }
 }

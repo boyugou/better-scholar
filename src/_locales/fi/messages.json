@@ -1292,5 +1292,11 @@
   },
   "optMineFullOne": {
     "message": "Chrome säilyttää noin viisikymmentä kohdistusta: vanhin poistettiin tilan vapauttamiseksi."
+  },
+  "optVenueGeneric": {
+    "message": "Tämä rivi nimeää vain sponsorin tai kustantajan, ei julkaisufoorumia, joten sitä ei voi kohdistaa: kohdistus koskisi kaikkia tällaisia rivejä."
+  },
+  "optMineChange": {
+    "message": "Vaihda…"
   }
 }

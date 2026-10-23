@@ -1292,5 +1292,11 @@
   },
   "optMineFullOne": {
     "message": "Chrome uchovává asi padesát přiřazení. Kvůli místu bylo odstraněno nejstarší přiřazení."
+  },
+  "optVenueGeneric": {
+    "message": "Tento řádek uvádí jen sponzora nebo vydavatele, ne místo, takže ho nelze přiřadit: přiřazení by platilo pro každý takový řádek."
+  },
+  "optMineChange": {
+    "message": "Změnit…"
   }
 }

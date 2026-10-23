@@ -24,6 +24,8 @@
   Hebrew the empty search box's placeholder is right-aligned, clear of the "/" hint; the mapping list's arrow points the right way in a
   right-to-left page; focus moves on after a keyboard *Remove*; a screen reader hears that a dashed chip is the person's own mapping;
   German "einer gelisteten Venue"; Lawrence Erlbaum is a publisher.
+  Then the checker says why a line of sponsors or publishers alone ("IEEE, 2020") cannot be assigned, offers *Change…* for a line
+  already mapped, and gives a dashed chip room on its swatch.
 - **The unranked-venue list names the paper page's whole line** once *Read full lists* has read it, instead of the profile's cut line:
   *Check*, *Copy list* and *Report* carry the whole name, and such a venue can then be assigned.
 - **A reviewed snapshot of the reference styles** (`test/formats-snapshot.test.js`, `test/fixtures/formats.expected.json`): how APA, IEEE,

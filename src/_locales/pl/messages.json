@@ -1292,5 +1292,11 @@
   },
   "optMineFullOne": {
     "message": "Chrome przechowuje około pięćdziesięciu przypisań. Aby zrobić miejsce, usunięto najstarsze przypisanie."
+  },
+  "optVenueGeneric": {
+    "message": "Ta linia podaje tylko sponsora lub wydawcę, a nie miejsce publikacji, więc nie można jej przypisać: przypisanie objęłoby każdą taką linię."
+  },
+  "optMineChange": {
+    "message": "Zmień…"
   }
 }

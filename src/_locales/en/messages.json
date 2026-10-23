@@ -1292,5 +1292,11 @@
   },
   "optMineFullOne": {
     "message": "Chrome keeps about fifty mappings: the oldest was removed to make room."
+  },
+  "optVenueGeneric": {
+    "message": "This line names only a sponsor or a publisher, not a venue, so it cannot be assigned: a mapping of it would take every such line."
+  },
+  "optMineChange": {
+    "message": "Change…"
   }
 }

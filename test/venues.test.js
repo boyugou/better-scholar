@@ -2034,4 +2034,7 @@ test("a line made only of sponsors and publishers cannot be mapped: it names no 
   for (const v of ["IEEE, 2020", "ACM, 2011", "Springer-Verlag, 2006", "IEEE Press, 2013", "Elsevier 2, 383-466, 2006"]) { assert.equal(venues.mineKey(v), "", v); assert.equal(!!r.resolve(v).assignable, false, v); }
   assert.equal(r.resolve("IEEE 11, 357-371, 2013").ccf, null);
   for (const v of ["TMLR, 2024", "USENIX Annual Technical Conference (ATC'26), 2026", "EPFL Workshop Notes Volume, 2020"]) assert.notEqual(venues.mineKey(v), "", v);
+  // the checker can say why: such a line is flagged `generic`; a line with a name is not
+  assert.equal(!!r.resolve("Springer-Verlag, 2006").generic, true);
+  assert.equal(!!r.resolve("TMLR, 2024").generic, false);
 });

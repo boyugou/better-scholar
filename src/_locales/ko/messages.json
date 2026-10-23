@@ -1292,5 +1292,11 @@
   },
   "optMineFullOne": {
     "message": "Chrome은 약 50개의 연결을 보관합니다. 공간을 확보하려고 가장 오래된 것을 삭제했습니다."
+  },
+  "optVenueGeneric": {
+    "message": "이 줄에는 게재처가 아니라 후원사나 출판사만 적혀 있어 연결할 수 없습니다: 연결하면 같은 종류의 줄 전부에 적용됩니다."
+  },
+  "optMineChange": {
+    "message": "변경…"
   }
 }

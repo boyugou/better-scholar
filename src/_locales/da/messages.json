@@ -1292,5 +1292,11 @@
   },
   "optMineFullOne": {
     "message": "Chrome gemmer omkring halvtreds koblinger: den ældste blev fjernet for at skabe plads."
+  },
+  "optVenueGeneric": {
+    "message": "Denne linje angiver kun en sponsor eller et forlag, ikke et publikationssted, så den kan ikke tilknyttes: en tilknytning ville gælde for alle sådanne linjer."
+  },
+  "optMineChange": {
+    "message": "Skift…"
   }
 }

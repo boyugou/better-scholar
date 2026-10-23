@@ -1292,5 +1292,11 @@
   },
   "optMineFullOne": {
     "message": "Chrome păstrează aproximativ cincizeci de mapări. Ca să facă loc, a fost ștearsă cea mai veche mapare."
+  },
+  "optVenueGeneric": {
+    "message": "Această linie indică doar un sponsor sau un editor, nu un venue, așa că nu poate fi atribuită: o atribuire s-ar aplica tuturor liniilor de acest fel."
+  },
+  "optMineChange": {
+    "message": "Schimbă…"
   }
 }

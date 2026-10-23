@@ -1292,5 +1292,11 @@
   },
   "optMineFullOne": {
     "message": "Chrome 大約保留五十筆對應：為了騰出空間，已刪除最舊的一筆。"
+  },
+  "optVenueGeneric": {
+    "message": "這一行只寫了贊助方或出版方，而不是發表處，因此無法關聯：若關聯它，會套用到所有這類行。"
+  },
+  "optMineChange": {
+    "message": "更改…"
   }
 }
