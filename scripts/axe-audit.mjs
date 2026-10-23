@@ -48,7 +48,7 @@ await opts.goto(`chrome-extension://${id}/options/options.html`); await opts.wai
 await run(opts, "settings (light)");
 await opts.emulateMedia({ colorScheme: "dark" }); await opts.waitForTimeout(400);
 await run(opts, "settings (dark)");
-// the settings page in the states a person puts it in: a part hovered (its tag and rail), a name being renamed on the preview, the tray of hidden things open, a venue checked
+// the settings page in the states a person puts it in: a part hovered (its tag and rail), a name being renamed on the preview, the tray of hidden things open, a venue checked, a venue being mapped and the list of mappings
 for (const scheme of ["light", "dark"]) {
   await opts.emulateMedia({ colorScheme: scheme }); await opts.waitForTimeout(300);
   await opts.setViewportSize({ width: 1360, height: 1500 });
@@ -62,6 +62,12 @@ for (const scheme of ["light", "dark"]) {
   await opts.locator(".pv-tray summary").click();
   await opts.fill('[data-act="venue-check"]', "Proceedings of the IEEE conference on computer vision and pattern recognition"); await opts.waitForTimeout(200);
   await run(opts, `settings (${scheme}): a venue checked`, "#card-venue");
+  // the person's own venue mappings: the search of the lists open with results, then a mapping in the list (removed again, so each scheme starts alike)
+  await opts.fill('[data-act="venue-check"]', "TMLR, 2024"); await opts.click('[data-act="mine-assign"]'); await opts.fill('[data-act="mine-search"]', "machine learning"); await opts.waitForTimeout(200);
+  await run(opts, `settings (${scheme}): assigning a venue line, the lists searched`, "#card-venue");
+  await opts.press('[data-act="mine-search"]', "Enter"); await opts.waitForSelector(".mine-item");
+  await run(opts, `settings (${scheme}): a mapped line and the list of mappings`, "#card-venue");
+  await opts.click('[data-act="mine-remove"]'); await opts.waitForTimeout(300);
   await opts.fill('[data-act="venue-check"]', "");
 }
 await opts.setViewportSize({ width: 1360, height: 900 });
