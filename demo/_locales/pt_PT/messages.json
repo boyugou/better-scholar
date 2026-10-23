@@ -1273,5 +1273,24 @@
   },
   "optVenueCut": {
     "message": "O Scholar cortou esta linha (…), por isso não pode ser atribuída: cole o nome completo do veículo a partir da página do próprio artigo."
+  },
+  "copySource": {
+    "message": "Fonte: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "copyNotLoaded": {
+    "message": "Não totalmente carregado: $N1$ artigos até agora",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optMineFullOne": {
+    "message": "O Chrome guarda cerca de cinquenta mapeamentos: o mais antigo foi removido para libertar espaço."
   }
 }

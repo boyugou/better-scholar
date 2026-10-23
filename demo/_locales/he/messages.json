@@ -1273,5 +1273,24 @@
   },
   "optVenueCut": {
     "message": "Scholar קטע את השורה הזו (…), לכן לא ניתן לשייך אותה: הדבק את השם המלא של הבמה מעמוד המאמר עצמו."
+  },
+  "copySource": {
+    "message": "מקור: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "copyNotLoaded": {
+    "message": "לא נטען במלואו: עד כה $N1$ מאמרים",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optMineFullOne": {
+    "message": "Chrome שומר כחמישים שיוכים: השיוך הישן ביותר הוסר כדי לפנות מקום."
   }
 }

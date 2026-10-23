@@ -1273,5 +1273,24 @@
   },
   "optVenueCut": {
     "message": "Scholar ha tagliato questa riga (…), quindi non può essere assegnata: incolla il nome completo della conferenza/rivista dalla pagina dell'articolo."
+  },
+  "copySource": {
+    "message": "Fonte: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "copyNotLoaded": {
+    "message": "Non caricato del tutto: finora $N1$ articoli",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optMineFullOne": {
+    "message": "Chrome conserva circa cinquanta associazioni: la più vecchia è stata rimossa per fare spazio."
   }
 }

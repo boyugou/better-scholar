@@ -1273,5 +1273,24 @@
   },
   "optVenueCut": {
     "message": "Scholar kapade av den här raden (…), så den kan inte kopplas till: klistra in publiceringsställets hela namn från artikelns egen sida."
+  },
+  "copySource": {
+    "message": "Källa: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "copyNotLoaded": {
+    "message": "Inte helt inläst: $N1$ artiklar hittills",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optMineFullOne": {
+    "message": "Chrome sparar omkring femtio kopplingar: den äldsta togs bort för att skapa plats."
   }
 }

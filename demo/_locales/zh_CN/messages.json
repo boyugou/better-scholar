@@ -1273,5 +1273,24 @@
   },
   "optVenueCut": {
     "message": "Scholar 截断了这一行（…），因此无法关联：请从论文页面粘贴发表场所的完整名称。"
+  },
+  "copySource": {
+    "message": "来源：$N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "copyNotLoaded": {
+    "message": "尚未全部加载：目前 $N1$ 篇",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optMineFullOne": {
+    "message": "Chrome 只保留约五十条对应：为腾出空间，已删除最早的一条。"
   }
 }

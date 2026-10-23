@@ -1236,7 +1236,7 @@
     "message": "Your venue mappings"
   },
   "optMineHint": {
-    "message": "Venue lines no rule ranks that you tied to a listed venue. Their chips are dashed, and copies mark their rank \"(your mapping)\". They fill gaps only: a line the lists rank keeps the lists' rank."
+    "message": "Venue lines no rule ranks that you tied to a listed venue. Their chips are dashed, and copies mark their rank “(your mapping)”. They fill gaps only: a line the lists rank keeps the lists' rank."
   },
   "optMineRemove": {
     "message": "Remove"
@@ -1273,5 +1273,24 @@
   },
   "optVenueCut": {
     "message": "Scholar cut this line off (…), so it cannot be assigned: paste the venue's whole name from the paper's own page."
+  },
+  "copySource": {
+    "message": "Source: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "copyNotLoaded": {
+    "message": "Not fully loaded: $N1$ papers so far",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optMineFullOne": {
+    "message": "Chrome keeps about fifty mappings: the oldest was removed to make room."
   }
 }

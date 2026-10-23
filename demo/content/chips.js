@@ -27,7 +27,8 @@
     ];
     // (a rank from the person's own venue mapping is drawn as such: a dashed outline and a dotted tier, in every look — never passed off as the list's)
     return h("span", { class: "rr-chip rr-chip-rank rr-chip-t" + (SHADE[kind][tier] || 4) + (info.rule === "mine" ? " rr-chip-mine" : ""), dir: "ltr", title: lines.join("\n"), "data-kind": kind, "data-tier": tier, ...(also ? { "data-also": also.kind } : {}) },
-      h("span", { class: "rr-k" }, sourceName(kind)), " ", h("b", {}, tier));
+      h("span", { class: "rr-k" }, sourceName(kind)), " ", h("b", {}, tier),
+      info.rule === "mine" ? h("span", { class: "rr-sr" }, " — " + ruleText(info)) : null);          // (a screen reader hears whose rank it is, as a copy says it)
   }
 
   // Chip text: the kind in the interface language. A named category keeps the name it was given.

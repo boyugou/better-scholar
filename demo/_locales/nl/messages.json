@@ -1273,5 +1273,24 @@
   },
   "optVenueCut": {
     "message": "Scholar heeft deze regel afgekapt (…), dus hij kan niet worden gekoppeld: plak de volledige naam van de venue uit de eigen pagina van het artikel."
+  },
+  "copySource": {
+    "message": "Bron: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "copyNotLoaded": {
+    "message": "Nog niet volledig geladen: tot nu toe $N1$ papers",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optMineFullOne": {
+    "message": "Chrome bewaart ongeveer vijftig koppelingen: de oudste is verwijderd om ruimte te maken."
   }
 }

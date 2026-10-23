@@ -1273,5 +1273,24 @@
   },
   "optVenueCut": {
     "message": "Scholar 截斷了這一行（…），因此無法關聯：請從論文頁面貼上發表處的完整名稱。"
+  },
+  "copySource": {
+    "message": "來源：$N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "copyNotLoaded": {
+    "message": "尚未完全載入：目前 $N1$ 篇論文",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optMineFullOne": {
+    "message": "Chrome 大約保留五十筆對應：為了騰出空間，已刪除最舊的一筆。"
   }
 }

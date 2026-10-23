@@ -1273,5 +1273,24 @@
   },
   "optVenueCut": {
     "message": "A Scholar levágta ezt a sort (…), ezért nem rendelhető hozzá: illessze be a venue teljes nevét a cikk saját oldaláról."
+  },
+  "copySource": {
+    "message": "Forrás: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "copyNotLoaded": {
+    "message": "Nincs teljesen betöltve: eddig $N1$ cikk",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optMineFullOne": {
+    "message": "A Chrome nagyjából ötven hozzárendelést tárol: a legrégebbi törlődött, hogy legyen hely."
   }
 }

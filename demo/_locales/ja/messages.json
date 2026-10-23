@@ -1273,5 +1273,24 @@
   },
   "optVenueCut": {
     "message": "Scholar がこの行を省略しているため（…）、割り当てられません：論文ページから掲載先の名前を全部貼り付けてください。"
+  },
+  "copySource": {
+    "message": "出典：$N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "copyNotLoaded": {
+    "message": "完全には読み込んでいません：現在 $N1$ 件",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optMineFullOne": {
+    "message": "Chrome は約 50 件の割り当てを保持します。容量を空けるため、最も古いものを削除しました。"
   }
 }

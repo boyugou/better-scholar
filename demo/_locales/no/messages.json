@@ -1273,5 +1273,24 @@
   },
   "optVenueCut": {
     "message": "Scholar kuttet av denne linjen (…), så den kan ikke knyttes til: lim inn hele navnet på publiseringsstedet fra artikkelens egen side."
+  },
+  "copySource": {
+    "message": "Kilde: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "copyNotLoaded": {
+    "message": "Ikke helt lastet: $N1$ artikler så langt",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optMineFullOne": {
+    "message": "Chrome lagrer omtrent femti koblinger: den eldste ble fjernet for å gi plass."
   }
 }

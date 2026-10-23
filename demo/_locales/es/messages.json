@@ -1273,5 +1273,24 @@
   },
   "optVenueCut": {
     "message": "Scholar cortó esta línea (…), así que no se puede asignar: pega el nombre completo del congreso/revista desde la página del artículo."
+  },
+  "copySource": {
+    "message": "Fuente: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "copyNotLoaded": {
+    "message": "No cargado del todo: $N1$ artículos hasta ahora",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optMineFullOne": {
+    "message": "Chrome guarda unas cincuenta asignaciones: se borró la más antigua para hacer sitio."
   }
 }
