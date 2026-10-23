@@ -9,10 +9,10 @@
     "message": "Better Scholar"
   },
   "summaryTitle": {
-    "message": "الأبحاث حسب الدور والتصنيف"
+    "message": "الأوراق حسب الدور والتصنيف"
   },
   "summaryTitleRoles": {
-    "message": "الأبحاث حسب الدور"
+    "message": "الأوراق حسب الدور"
   },
   "marksTitle": {
     "message": "الجوائز والعروض"
@@ -241,10 +241,10 @@
     "message": "طي"
   },
   "metricsTitle": {
-    "message": "الأبحاث المميّزة"
+    "message": "الأوراق المميّزة"
   },
   "mPapers": {
-    "message": "الأبحاث"
+    "message": "الأوراق"
   },
   "mCitations": {
     "message": "الاستشهادات"
@@ -351,7 +351,7 @@
     "message": "تم الحفظ"
   },
   "optRolesTitle": {
-    "message": "تمييز أبحاثي"
+    "message": "تمييز أوراقي"
   },
   "optRolesHint": {
     "message": "لكل دور لون صف خاص به. تبقى الأوراق التي تكون فيها في المنتصف بلا تمييز."
@@ -666,10 +666,10 @@
     "message": "عند الضغط على «قراءة القوائم الكاملة»، يُسأل Semantic Scholar أولًا عن قائمة المؤلفين الكاملة لكل ورقة. ولا يُرسل إليه سوى عنوان الورقة. ولا تُفتح صفحة Scholar نفسها إلا للأوراق التي لا يعرفها Semantic Scholar. طلبات أقل إلى Scholar، وبالتالي CAPTCHA أقل."
   },
   "yearsTitle": {
-    "message": "الأبحاث المميّزة حسب السنة"
+    "message": "الأوراق المميّزة حسب السنة"
   },
   "yearsOlder": {
-    "message": "الأبحاث الأقدم غير المرسومة: $N1$",
+    "message": "الأوراق الأقدم غير المرسومة: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -677,7 +677,7 @@
     }
   },
   "optPanelYears": {
-    "message": "الأبحاث حسب السنة"
+    "message": "الأوراق حسب السنة"
   },
   "optPanelYearsHint": {
     "message": "عمود لكل سنة، بألوان الأدوار."
@@ -694,7 +694,7 @@
     "message": "دمج…"
   },
   "venuesTitle": {
-    "message": "أين تظهر الأبحاث المميّزة"
+    "message": "أين تظهر الأوراق المميّزة"
   },
   "optPanelVenues": {
     "message": "أهم منصات النشر"
@@ -763,7 +763,7 @@
     }
   },
   "tipFilterH": {
-    "message": "تصفية لأبحاث النواة h (⁦≥$N1$⁩ استشهاد)",
+    "message": "تصفية لأوراق النواة h (⁦≥$N1$⁩ استشهاد)",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -771,7 +771,7 @@
     }
   },
   "tipFilterI10": {
-    "message": "تصفية لأبحاث i10 (⁦≥10⁩ استشهادات)"
+    "message": "تصفية لأوراق i10 (⁦≥10⁩ استشهادات)"
   },
   "popupPapersOf": {
     "message": "الأوراق: $N1$ من $N2$",
