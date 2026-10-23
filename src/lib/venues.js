@@ -1177,8 +1177,12 @@
     const words = fold(prepare(cleanText(text)).name).toLowerCase().replace(/\b(?:19|20)\d{2}\b|'\d{2}\b|\b\d{1,3}(?:st|nd|rd|th)\b/g, " ")
       .replace(/\(\s*[a-z][a-z0-9&'-]{1,14}\s*\)/g, " ").replace(/^\s*proceedings\s+of\s+(?:the\s+)?/, "")
       .replace(/[^\p{L}\p{N}&+…]+/gu, " ").trim().split(" ").filter((w) => w && !ORDINAL_WORDS.has(w) && !TENS.has(w));
-    return words.join(" ");
+    // (a name made only of sponsors, publishers and generic words — "IEEE", "Springer", "Proceedings", "University" — names no venue: no key, so it cannot be mapped,
+    // and a mapping of it would take every such line)
+    return words.every((w) => ORG.has(w) || GENERIC_NAME.has(w)) ? "" : words.join(" ");
   }
+  const GENERIC_NAME = new Set(["inc", "ltd", "llc", "gmbh", "co", "press", "publishing", "publishers", "publisher", "verlag", "media", "books", "university", "univ", "institute", "department",
+    "dept", "school", "college", "lab", "labs", "laboratory", "the", "of", "on", "and", "in", "for", "&"]);          // (sponsors and publishers, institutions, little words; never an event word: "USENIX Annual Technical Conference" is a venue)
 
   const MINE_TEXT = 300;          // (the longest venue line a mapping keeps: store.js saves at most this much, so a longer line could not be found again)
 

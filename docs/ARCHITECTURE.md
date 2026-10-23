@@ -234,7 +234,7 @@ the string's track words are the partner's own — or the string is the whole of
 
 **The person's own venue mappings** (`data.mine`, from the settings page; synced as `mine`). A venue line that no rule ranks can be tied by the person to a row of a list.
 Such a mapping fills gaps only: it is read last, and only when neither list matched, the string was not refused and has no track word. Its key (`mineKey`) is the whole name as
-printed, less only years, ordinals, numbers, "Proceedings of (the)" and an acronym in brackets — the same venue in another edition, never another event word, a track or a cut name. A row the list
+printed, less only years, ordinals, numbers, "Proceedings of (the)" and an acronym in brackets; a name made only of sponsors, publishers and institutions ("IEEE", "Springer") has no key — the same venue in another edition, never another event word, a track or a cut name. A row the list
 no longer has drops the mapping. The result's rule is `mine`: the chip is dashed with a dotted tier, its tooltip says "Your own mapping", copies write "(your mapping)", the
 panel and the popup count such papers in a line of their own, the copied summary carries a note, and the `papers` call marks the rank `mine: true`.
 

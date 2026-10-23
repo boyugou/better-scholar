@@ -2028,3 +2028,10 @@ test("the venue mappings, second review: a page line that is a track goes first,
   assert.equal(!!r.resolve(long).assignable, false, "a line longer than a mapping keeps is not offered");
   assert.equal(venues.MINE_TEXT, 300);
 });
+
+test("a line made only of sponsors and publishers cannot be mapped: it names no venue, and its mapping would take every such line", () => {
+  const r = venues.createResolver({ ccf: ccf.venues, core: core.venues, aliases, strict: true, mine: [{ text: "IEEE, 2020", list: "ccf", name: "International Joint Conference on Artificial Intelligence" }] });
+  for (const v of ["IEEE, 2020", "ACM, 2011", "Springer-Verlag, 2006", "IEEE Press, 2013", "Elsevier 2, 383-466, 2006"]) { assert.equal(venues.mineKey(v), "", v); assert.equal(!!r.resolve(v).assignable, false, v); }
+  assert.equal(r.resolve("IEEE 11, 357-371, 2013").ccf, null);
+  for (const v of ["TMLR, 2024", "USENIX Annual Technical Conference (ATC'26), 2026", "EPFL Workshop Notes Volume, 2020"]) assert.notEqual(venues.mineKey(v), "", v);
+});
