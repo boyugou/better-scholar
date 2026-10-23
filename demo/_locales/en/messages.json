@@ -3,7 +3,7 @@
     "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "On Google Scholar profiles: the owner's author role and the venue's CCF and CORE rank on each paper, counted in one table."
+    "message": "On Google Scholar profiles: the profile owner's author role and the venue's CCF and CORE rank on each paper, counted in one table."
   },
   "extShortName": {
     "message": "Better Scholar"
@@ -115,7 +115,7 @@
     "message": "Role"
   },
   "colTotal": {
-    "message": "All"
+    "message": "Total"
   },
   "tipUnranked": {
     "message": "Not ranked"
@@ -195,7 +195,7 @@
     "message": "Done."
   },
   "coverAbsent": {
-    "message": "$N1$ papers where the profile name is not in the author list",
+    "message": "$N1$ papers where the profile owner's name is not in the author list",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -203,7 +203,7 @@
     }
   },
   "coverAbsentOne": {
-    "message": "1 paper where the profile name is not in the author list"
+    "message": "1 paper where the profile owner's name is not in the author list"
   },
   "coverUnmatched": {
     "message": "$N1$ papers at venues without a rank",
@@ -417,7 +417,7 @@
     "message": "The table of your papers by role and rank, with the note on where the ranks come from."
   },
   "optPanelMarksHint": {
-    "message": "The count of award-winning papers and talk levels, one click to list them."
+    "message": "The count of award-winning papers and talk kinds, one click to list them."
   },
   "optPanelStatus": {
     "message": "Loaded papers and unranked venues"
@@ -624,7 +624,7 @@
     "message": "Colours"
   },
   "optColorsHint": {
-    "message": "The colour of each authorship role: rows, name marks, the panel and the toolbar popup."
+    "message": "The colour of each author role: rows, name marks, the panel and the toolbar popup."
   },
   "optColorsReset": {
     "message": "Back to the standard colours"
@@ -660,7 +660,7 @@
     "message": "Rows in the panel"
   },
   "optTalkRowsHint": {
-    "message": "How the talk levels are counted. Together, a paper that has more than one of them counts once."
+    "message": "How the talk kinds are counted. Together, a paper that has more than one of them counts once."
   },
   "optTalkSeparate": {
     "message": "Oral, spotlight, highlight apart"
@@ -704,7 +704,7 @@
     "message": "A bar for each year, in the role colours."
   },
   "coverRepeats": {
-    "message": "Entries that repeat another paper: $N1$",
+    "message": "Duplicate entries: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -815,7 +815,7 @@
     "message": "Report a problem"
   },
   "filterPlaceholder": {
-    "message": "Filter title or author…"
+    "message": "Search title or author…"
   },
   "searchShortcut": {
     "message": "Press / to search"
@@ -845,7 +845,7 @@
     "message": "Settings as JSON: copy them, save them to a file, load a file, or paste a change into the editor. A preset changes only what it names, and the page says what it applied and what it ignored."
   },
   "optConfigCopy": {
-    "message": "Copy config (JSON)"
+    "message": "Copy configuration (JSON)"
   },
   "optConfigExport": {
     "message": "Export file"
@@ -921,10 +921,10 @@
     "message": "Saved Paper Details"
   },
   "optCacheSearch": {
-    "message": "Filter cached papers…"
+    "message": "Search saved papers…"
   },
   "optCacheCopy": {
-    "message": "Copy cache (JSON)"
+    "message": "Copy saved details (JSON)"
   },
   "optCacheEmpty": {
     "message": "No paper details have been saved on this device yet."
@@ -1043,7 +1043,7 @@
     "message": "Cut author lists, and Read full lists"
   },
   "optStatusRepeats": {
-    "message": "Repeated entries"
+    "message": "Duplicate entries"
   },
   "optStatusAbsent": {
     "message": "Papers without your name"
@@ -1109,10 +1109,10 @@
     "message": "Rank chip text"
   },
   "optChipLabelFull": {
-    "message": "List and tier (CCF A)"
+    "message": "List and rank (CCF A)"
   },
   "optChipLabelTier": {
-    "message": "Tier only (A)"
+    "message": "Rank only (A)"
   },
   "optChipThemes": {
     "message": "Chip looks"

@@ -3,7 +3,7 @@
     "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "Google Scholar 저자 프로필에서: 본인의 저자 순서와 논문별 게재처의 CCF 및 CORE 등급, 한 표에 집계."
+    "message": "Google Scholar 저자 프로필에서: 프로필 주인의 저자 순서와 논문별 게재처의 CCF 및 CORE 등급, 한 표에 집계."
   },
   "extShortName": {
     "message": "Better Scholar"
@@ -115,13 +115,13 @@
     "message": "순서"
   },
   "colTotal": {
-    "message": "전체"
+    "message": "합계"
   },
   "tipUnranked": {
     "message": "등급 없음"
   },
   "tipHidden": {
-    "message": "Scholar가 저자 목록을 줄여 표시해서 프로필 주인의 순서를 알 수 없습니다"
+    "message": "Scholar가 잘린 저자 목록을 표시해서 프로필 주인의 순서를 알 수 없습니다"
   },
   "copySummary": {
     "message": "요약 복사"
@@ -195,7 +195,7 @@
     "message": "완료되었습니다."
   },
   "coverAbsent": {
-    "message": "저자 목록에 프로필 이름이 없는 논문 $N1$편",
+    "message": "저자 목록에 프로필 주인의 이름이 없는 논문 $N1$편",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -203,7 +203,7 @@
     }
   },
   "coverAbsentOne": {
-    "message": "저자 목록에 프로필 이름이 없는 논문 1편"
+    "message": "저자 목록에 프로필 주인의 이름이 없는 논문 1편"
   },
   "coverUnmatched": {
     "message": "등급이 없는 게재처의 논문 $N1$편",
@@ -456,7 +456,7 @@
     "message": "저장된 데이터"
   },
   "optClearCache": {
-    "message": "저장된 논문 정보 삭제"
+    "message": "저장된 논문 세부 정보 삭제"
   },
   "optCacheCount": {
     "message": "논문 $N1$편의 저자 목록이 이 기기에 저장되어 있습니다(90일간 보관).",
@@ -470,7 +470,7 @@
     "message": "논문 1편의 저자 목록이 이 기기에 저장되어 있습니다(90일간 보관)."
   },
   "optCacheNone": {
-    "message": "저장된 논문 정보가 없습니다."
+    "message": "저장된 논문 세부 정보가 없습니다."
   },
   "optCleared": {
     "message": "삭제됨"
@@ -704,7 +704,7 @@
     "message": "연도마다 막대 하나, 저자 순서별 색으로 표시합니다."
   },
   "coverRepeats": {
-    "message": "다른 논문과 중복된 항목 $N1$건",
+    "message": "중복 항목 $N1$건",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -815,7 +815,7 @@
     "message": "문제 신고"
   },
   "filterPlaceholder": {
-    "message": "제목 또는 저자로 필터링…"
+    "message": "제목 또는 저자로 검색…"
   },
   "searchShortcut": {
     "message": "/ 키를 눌러 검색"
@@ -827,10 +827,10 @@
     "message": "접기"
   },
   "optHideCitedTable": {
-    "message": "인용 지표 테이블"
+    "message": "인용 지표 표"
   },
   "optHideCitedTableHint": {
-    "message": "사이드바의 인용 수, h-index 및 i10-index 테이블입니다."
+    "message": "사이드바의 인용 수, h-index 및 i10-index 표입니다."
   },
   "optHideCitedChart": {
     "message": "연도별 인용 차트"
@@ -921,10 +921,10 @@
     "message": "저장된 논문 세부 정보"
   },
   "optCacheSearch": {
-    "message": "캐시된 논문 검색…"
+    "message": "저장된 논문 검색…"
   },
   "optCacheCopy": {
-    "message": "캐시 복사 (JSON)"
+    "message": "저장된 세부 정보 복사 (JSON)"
   },
   "optCacheEmpty": {
     "message": "이 기기에 아직 저장된 논문 세부 정보가 없습니다."

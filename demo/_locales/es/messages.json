@@ -3,7 +3,7 @@
     "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "En perfiles de Google Scholar: posición de autor del titular y rango CCF y CORE del congreso/revista por artículo, en una tabla."
+    "message": "En perfiles de Google Scholar: posición de autor del titular y rango CCF y CORE del congreso/revista de cada artículo, en una tabla."
   },
   "extShortName": {
     "message": "Better Scholar"
@@ -115,7 +115,7 @@
     "message": "Posición"
   },
   "colTotal": {
-    "message": "Todos"
+    "message": "Total"
   },
   "tipUnranked": {
     "message": "Sin rango"
@@ -195,7 +195,7 @@
     "message": "Listo."
   },
   "coverAbsent": {
-    "message": "$N1$ artículos en los que el nombre del perfil no figura entre los autores",
+    "message": "$N1$ artículos en los que el nombre del titular del perfil no figura entre los autores",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -203,7 +203,7 @@
     }
   },
   "coverAbsentOne": {
-    "message": "1 artículo en el que el nombre del perfil no figura entre los autores"
+    "message": "1 artículo en el que el nombre del titular del perfil no figura entre los autores"
   },
   "coverUnmatched": {
     "message": "$N1$ artículos en congresos o revistas sin rango",
@@ -417,7 +417,7 @@
     "message": "La tabla de tus artículos por posición y rango, con la nota sobre el origen de los rangos."
   },
   "optPanelMarksHint": {
-    "message": "El número de artículos premiados y de ponencias por categoría; un clic para verlos."
+    "message": "El número de artículos premiados y de tipos de ponencia; un clic para verlos."
   },
   "optPanelStatus": {
     "message": "Artículos cargados y congresos o revistas sin rango"
@@ -456,7 +456,7 @@
     "message": "Datos guardados"
   },
   "optClearCache": {
-    "message": "Borrar los datos de artículos guardados"
+    "message": "Borrar los detalles de artículos guardados"
   },
   "optCacheCount": {
     "message": "Las listas de autores de $N1$ artículos están guardadas en este dispositivo (se conservan 90 días).",
@@ -470,7 +470,7 @@
     "message": "La lista de autores de 1 artículo está guardada en este dispositivo (se conserva 90 días)."
   },
   "optCacheNone": {
-    "message": "No hay datos de artículos guardados."
+    "message": "No hay detalles de artículos guardados."
   },
   "optCleared": {
     "message": "Borrado"
@@ -482,7 +482,7 @@
     "message": "¿Restablecer todos estos ajustes a sus valores predeterminados?"
   },
   "optStorage": {
-    "message": "Los ajustes se guardan en tu navegador y se sincronizan con tu perfil de Chrome. La extensión lee las páginas de Scholar que abres. Al pulsar «Leer listas completas», también lee las páginas de artículos con una lista de autores recortada. Los títulos de los artículos solo se envían a Semantic Scholar si lo activas."
+    "message": "Los ajustes se guardan en tu navegador y se sincronizan con tu perfil de Chrome. La extensión lee las páginas de Scholar que abres. Al pulsar «Leer listas completas», también lee las páginas de artículos con una lista de autores acortada. Los títulos de los artículos solo se envían a Semantic Scholar si lo activas."
   },
   "optSample": {
     "message": "Artículo de ejemplo"
@@ -675,7 +675,7 @@
     "message": "Semantic Scholar"
   },
   "optSemanticHint": {
-    "message": "Un segundo lugar donde consultar lo que Scholar recorta."
+    "message": "Un segundo lugar donde consultar lo que Scholar acorta."
   },
   "optSemanticLabel": {
     "message": "Leer primero las listas de autores de Semantic Scholar"
@@ -704,7 +704,7 @@
     "message": "Una barra por año, en los colores de cada posición."
   },
   "coverRepeats": {
-    "message": "Entradas que repiten otro artículo: $N1$",
+    "message": "Entradas duplicadas: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -815,7 +815,7 @@
     "message": "Informar de un problema"
   },
   "filterPlaceholder": {
-    "message": "Filtrar por título o autor…"
+    "message": "Buscar por título o autor…"
   },
   "searchShortcut": {
     "message": "Pulsa / para buscar"
@@ -921,10 +921,10 @@
     "message": "Detalles de artículos guardados"
   },
   "optCacheSearch": {
-    "message": "Filtrar artículos en caché…"
+    "message": "Buscar artículos guardados…"
   },
   "optCacheCopy": {
-    "message": "Copiar caché (JSON)"
+    "message": "Copiar detalles guardados (JSON)"
   },
   "optCacheEmpty": {
     "message": "Aún no se han guardado detalles de artículos en este dispositivo."
@@ -1040,10 +1040,10 @@
     "message": "Artículos cargados y «Cargar todo»"
   },
   "optStatusCutoff": {
-    "message": "Listas de autores recortadas y «Leer listas completas»"
+    "message": "Listas de autores acortadas y «Leer listas completas»"
   },
   "optStatusRepeats": {
-    "message": "Entradas repetidas"
+    "message": "Entradas duplicadas"
   },
   "optStatusAbsent": {
     "message": "Artículos sin tu nombre"
@@ -1109,10 +1109,10 @@
     "message": "Texto de las etiquetas de rango"
   },
   "optChipLabelFull": {
-    "message": "Lista y nivel (CCF A)"
+    "message": "Lista y rango (CCF A)"
   },
   "optChipLabelTier": {
-    "message": "Solo nivel (A)"
+    "message": "Solo rango (A)"
   },
   "optChipThemes": {
     "message": "Plantillas"
@@ -1203,7 +1203,7 @@
     "message": "Categorías secundarias"
   },
   "unrankedOther": {
-    "message": "Otros medios"
+    "message": "Otros congresos y revistas"
   },
   "optPrefer": {
     "message": "Cuando un congreso o revista tiene rango en ambas listas"

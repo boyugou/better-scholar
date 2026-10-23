@@ -3,7 +3,7 @@
     "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "Google Scholar profillerinde: sahibinin yazar rolü, her makalenin yayın yerinin CCF ve CORE sıralaması, tek tabloda sayılır."
+    "message": "Google Scholar profillerinde: profil sahibinin yazar rolü, her makalenin yayın yerinin CCF ve CORE sıralaması, tek tabloda sayılır."
   },
   "extShortName": {
     "message": "Better Scholar"
@@ -115,7 +115,7 @@
     "message": "Rol"
   },
   "colTotal": {
-    "message": "Tümü"
+    "message": "Toplam"
   },
   "tipUnranked": {
     "message": "Sıralanmamış"
@@ -195,7 +195,7 @@
     "message": "Tamamlandı."
   },
   "coverAbsent": {
-    "message": "Profil adının yazar listesinde olmadığı $N1$ makale",
+    "message": "Profil sahibinin adının yazar listesinde olmadığı $N1$ makale",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -203,7 +203,7 @@
     }
   },
   "coverAbsentOne": {
-    "message": "Profil adının yazar listesinde olmadığı 1 makale"
+    "message": "Profil sahibinin adının yazar listesinde olmadığı 1 makale"
   },
   "coverUnmatched": {
     "message": "Sıralaması olmayan yayın yerlerinde $N1$ makale",
@@ -417,7 +417,7 @@
     "message": "Makalelerinizin rol ve sıralamaya göre tablosu; sıralamaların nereden geldiğine dair bir notla birlikte."
   },
   "optPanelMarksHint": {
-    "message": "Ödüllü makale ve sunum düzeyi sayısı; tek tıkla listelenir."
+    "message": "Ödüllü makale ve sunum türü sayısı; tek tıkla listelenir."
   },
   "optPanelStatus": {
     "message": "Yüklenen makaleler ve sıralaması olmayan yayın yerleri"
@@ -660,7 +660,7 @@
     "message": "Panelde satırlar"
   },
   "optTalkRowsHint": {
-    "message": "Sunum düzeylerinin nasıl sayıldığı. Birden fazlasına sahip bir makale bir kez sayılır."
+    "message": "Sunum türlerinin nasıl sayıldığı. Birden fazlasına sahip bir makale bir kez sayılır."
   },
   "optTalkSeparate": {
     "message": "Oral, spotlight ve highlight ayrı"
@@ -675,7 +675,7 @@
     "message": "Semantic Scholar"
   },
   "optSemanticHint": {
-    "message": "Scholar'ın kestiklerini aramak için ikinci bir yer."
+    "message": "Scholar'ın kısalttıklarını aramak için ikinci bir yer."
   },
   "optSemanticLabel": {
     "message": "Yazar listelerini önce Semantic Scholar'dan oku"
@@ -704,7 +704,7 @@
     "message": "Her yıl için rol renklerinde bir çubuk."
   },
   "coverRepeats": {
-    "message": "Başka bir makaleyi tekrarlayan kayıtlar: $N1$",
+    "message": "Yinelenen kayıtlar: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -815,7 +815,7 @@
     "message": "Sorun bildir"
   },
   "filterPlaceholder": {
-    "message": "Başlığa veya yazara göre filtrele…"
+    "message": "Başlığa veya yazara göre ara…"
   },
   "searchShortcut": {
     "message": "Aramak için / tuşuna basın"
@@ -830,7 +830,7 @@
     "message": "Atıf metrikleri tablosu"
   },
   "optHideCitedTableHint": {
-    "message": "Kenar çubuğundaki atıflar, h-endeksi ve i10-endeksi tablosu."
+    "message": "Kenar çubuğundaki atıflar, h-indeksi ve i10-indeksi tablosu."
   },
   "optHideCitedChart": {
     "message": "Yıllık atıf grafiği"
@@ -854,7 +854,7 @@
     "message": "Dosya içe aktar"
   },
   "optConfigEditor": {
-    "message": "JSON'u yapıştır/düzenle"
+    "message": "Yapılandırmayı yapıştır/düzenle (JSON)"
   },
   "optConfigApply": {
     "message": "Yapılandırmayı uygula"
@@ -885,7 +885,7 @@
     "message": "Yapay zekâ ajanları"
   },
   "optAgentHint": {
-    "message": "Her ayarı, değerlerini ve şu anki seçimlerinizi listeleyen bir rehber kopyalayın. Bunu, ne istediğinizle birlikte yapay zekâ asistanınıza verin. Ardından yanıtını aşağıdaki JSON düzenleyicisine yapıştırın ve “Yapılandırmayı uygula” düğmesine basın."
+    "message": "Her ayarı, değerlerini ve şu anki seçimlerinizi listeleyen bir rehber kopyalayın. Bunu, ne istediğinizle birlikte yapay zekâ asistanınıza verin. Ardından yanıtını aşağıdaki yapılandırma düzenleyicisine yapıştırın ve “Yapılandırmayı uygula” düğmesine basın."
   },
   "optAgentCopy": {
     "message": "Ajan rehberini kopyala"
@@ -921,10 +921,10 @@
     "message": "Kayıtlı Makale Ayrıntıları"
   },
   "optCacheSearch": {
-    "message": "Önbelleğe alınan makaleleri filtrele…"
+    "message": "Kayıtlı makaleleri ara…"
   },
   "optCacheCopy": {
-    "message": "Önbelleği kopyala (JSON)"
+    "message": "Kayıtlı ayrıntıları kopyala (JSON)"
   },
   "optCacheEmpty": {
     "message": "Bu cihazda henüz kayıtlı makale ayrıntısı yok."
@@ -1043,7 +1043,7 @@
     "message": "Kısaltılmış yazar listeleri ve Tam listeleri oku"
   },
   "optStatusRepeats": {
-    "message": "Tekrarlanan kayıtlar"
+    "message": "Yinelenen kayıtlar"
   },
   "optStatusAbsent": {
     "message": "Adınızın geçmediği makaleler"
@@ -1109,10 +1109,10 @@
     "message": "Sıralama etiketinin metni"
   },
   "optChipLabelFull": {
-    "message": "Liste ve düzey (CCF A)"
+    "message": "Liste ve sıralama (CCF A)"
   },
   "optChipLabelTier": {
-    "message": "Yalnızca düzey (A)"
+    "message": "Yalnızca sıralama (A)"
   },
   "optChipThemes": {
     "message": "Hazır stiller"

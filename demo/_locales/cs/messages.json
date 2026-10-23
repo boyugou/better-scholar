@@ -115,7 +115,7 @@
     "message": "Role"
   },
   "colTotal": {
-    "message": "Vše"
+    "message": "Celkem"
   },
   "tipUnranked": {
     "message": "Bez ranku"
@@ -189,7 +189,7 @@
     "message": "Hotovo."
   },
   "coverAbsent": {
-    "message": "Práce, kde jméno z profilu není mezi autory: $N1$",
+    "message": "Práce, kde jméno majitele profilu není mezi autory: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -381,7 +381,7 @@
     "message": "Kopírování a export"
   },
   "optCopyHint": {
-    "message": "Tlačítka, která kopírují nebo ukládají zobrazené práce, případně souhrn, jako text. Panel a vyskakovací okno na panelu nástrojů nabízejí stejná tlačítka; když není zapnuto žádné, řádek kopírování se nezobrazí."
+    "message": "Tlačítka, která kopírují nebo ukládají zobrazené práce, případně přehled, jako text. Panel a vyskakovací okno na panelu nástrojů nabízejí stejná tlačítka; když není zapnuto žádné, řádek kopírování se nezobrazí."
   },
   "optMarkAwardHint": {
     "message": "Nejlepší, vynikající a význačná práce, čestné uznání, test of time a finalisté nejlepší práce."
@@ -405,7 +405,7 @@
     "message": "Počet oceněných prací a druhů přednesů; jedním kliknutím je vypíšete."
   },
   "optPanelStatus": {
-    "message": "Načtené práce a publikační místa bez ranku"
+    "message": "Načtené práce a místa publikace bez ranku"
   },
   "optPanelStatusHint": {
     "message": "Kolik prací je načteno, tlačítko „Načíst vše“, co se nepodařilo přečíst, a seznam prací v místech publikace bez ranku."
@@ -606,7 +606,7 @@
     "message": "Barvy"
   },
   "optColorsHint": {
-    "message": "Barva každé autorské pozice: řádky, označení jména, panel a vyskakovací okno na panelu nástrojů."
+    "message": "Barva každé autorské role: řádky, označení jména, panel a vyskakovací okno na panelu nástrojů."
   },
   "optColorsReset": {
     "message": "Zpět na standardní barvy"
@@ -683,7 +683,7 @@
     "message": "Sloupec pro každý rok, v barvách rolí."
   },
   "coverRepeats": {
-    "message": "Záznamy duplikující jinou práci: $N1$",
+    "message": "Duplicitní záznamy: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -697,10 +697,10 @@
     "message": "Kde se zvýrazněné práce objevují"
   },
   "optPanelVenues": {
-    "message": "Hlavní publikační místa"
+    "message": "Hlavní místa publikace"
   },
   "optPanelVenuesHint": {
-    "message": "Hodnocená publikační místa zvýrazněných prací, od nejčastějších; kliknutím na jedno zobrazíte jeho práce."
+    "message": "Místa publikace s rankem u zvýrazněných prací, od nejčastějších; kliknutím na jedno zobrazíte jeho práce."
   },
   "optCopyDiagnostics": {
     "message": "Zkopírovat podrobnosti pro hlášení chyby"
@@ -794,7 +794,7 @@
     "message": "Nahlásit problém"
   },
   "filterPlaceholder": {
-    "message": "Filtrovat podle názvu nebo autora…"
+    "message": "Hledat podle názvu nebo autora…"
   },
   "searchShortcut": {
     "message": "Stiskněte / pro hledání"
@@ -900,10 +900,10 @@
     "message": "Uložené podrobnosti článků"
   },
   "optCacheSearch": {
-    "message": "Filtrovat články v mezipaměti…"
+    "message": "Hledat uložené články…"
   },
   "optCacheCopy": {
-    "message": "Kopírovat mezipaměť (JSON)"
+    "message": "Kopírovat uložené podrobnosti (JSON)"
   },
   "optCacheEmpty": {
     "message": "Na tomto zařízení zatím nebyly uloženy žádné podrobnosti o článcích."
@@ -1022,7 +1022,7 @@
     "message": "Zkrácené seznamy autorů a tlačítko „Přečíst celé seznamy“"
   },
   "optStatusRepeats": {
-    "message": "Opakované záznamy"
+    "message": "Duplicitní záznamy"
   },
   "optStatusAbsent": {
     "message": "Práce bez vašeho jména"
@@ -1088,10 +1088,10 @@
     "message": "Text štítku ranku"
   },
   "optChipLabelFull": {
-    "message": "Seznam a třída (CCF A)"
+    "message": "Seznam a rank (CCF A)"
   },
   "optChipLabelTier": {
-    "message": "Jen třída (A)"
+    "message": "Jen rank (A)"
   },
   "optChipThemes": {
     "message": "Hotové vzhledy"
@@ -1161,7 +1161,7 @@
     "message": "Počty se řídí filtry"
   },
   "optFiltersFollowHint": {
-    "message": "Tabulka, počty u ocenění a přednesů a přehled ke kopírování počítají jen práce, které filtry ponechají: rozsah let, vyhledávání, rychlý filtr nebo publikační místo. Vybraná buňka nebo řádek počty nemění. Vyp.: počítají vždy celý profil."
+    "message": "Tabulka, počty u ocenění a přednesů a přehled ke kopírování počítají jen práce, které filtry ponechají: rozsah let, vyhledávání, rychlý filtr nebo místo publikace. Vybraná buňka nebo řádek počty nemění. Vyp.: počítají vždy celý profil."
   },
   "optPillRecent": {
     "message": "Posledních 5 let"
@@ -1173,7 +1173,7 @@
     "message": "Role skrytá zkráceným seznamem autorů: 1"
   },
   "coverAbsentOne": {
-    "message": "Práce, kde jméno z profilu není mezi autory: 1"
+    "message": "Práce, kde jméno majitele profilu není mezi autory: 1"
   },
   "coverUnmatchedOne": {
     "message": "Práce v místě publikace bez ranku: 1"
@@ -1203,10 +1203,10 @@
     "message": "Vedlejší kategorie"
   },
   "unrankedOther": {
-    "message": "Ostatní místa"
+    "message": "Ostatní místa publikace"
   },
   "optPrefer": {
-    "message": "Když oba seznamy hodnotí místo publikace"
+    "message": "Když oba seznamy dávají místu publikace rank"
   },
   "optPreferHint": {
     "message": "Jeden štítek místo dvou: štítek seznamu, který vyberete, a štítek druhého seznamu jen tam, kde vybraný seznam pro dané místo publikace nemá rank. Při najetí myší na štítek se dál zobrazí i druhý rank."

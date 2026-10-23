@@ -115,7 +115,7 @@
     "message": "Szerep"
   },
   "colTotal": {
-    "message": "Összes"
+    "message": "Összesen"
   },
   "tipUnranked": {
     "message": "Nincs rangsorolva"
@@ -189,7 +189,7 @@
     "message": "Kész."
   },
   "coverAbsent": {
-    "message": "$N1$ cikk, amelynek szerzői listájában nincs ott a profil neve",
+    "message": "$N1$ cikk, amelynek szerzői listájában nincs ott a profil tulajdonosának neve",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -402,7 +402,7 @@
     "message": "A cikkeid táblázata szerep és rang szerint, a rangok eredetére vonatkozó megjegyzéssel."
   },
   "optPanelMarksHint": {
-    "message": "A díjnyertes cikkek és az előadásszintek száma, egy kattintással listázható."
+    "message": "A díjnyertes cikkek és az előadástípusok száma, egy kattintással listázható."
   },
   "optPanelStatus": {
     "message": "Betöltött cikkek és rang nélküli venue-k"
@@ -441,7 +441,7 @@
     "message": "Mentett adatok"
   },
   "optClearCache": {
-    "message": "Mentett cikkadatok törlése"
+    "message": "Mentett cikkrészletek törlése"
   },
   "optCacheCount": {
     "message": "$N1$ cikk szerzői listája van mentve ezen az eszközön (90 napig megőrizve).",
@@ -452,7 +452,7 @@
     }
   },
   "optCacheNone": {
-    "message": "Nincsenek mentett cikkadatok."
+    "message": "Nincsenek mentett cikkrészletek."
   },
   "optCleared": {
     "message": "Törölve"
@@ -642,7 +642,7 @@
     "message": "Sorok a panelen"
   },
   "optTalkRowsHint": {
-    "message": "Az előadásszintek számítása. A több szintet is kapott cikk egyszer számít."
+    "message": "Az előadástípusok számítása. A több típust is kapott cikk egyszer számít."
   },
   "optTalkSeparate": {
     "message": "Oral, spotlight és highlight külön"
@@ -657,7 +657,7 @@
     "message": "Semantic Scholar"
   },
   "optSemanticHint": {
-    "message": "Második hely annak keresésére, amit a Scholar levág."
+    "message": "Második hely annak keresésére, amit a Scholar csonkol."
   },
   "optSemanticLabel": {
     "message": "Szerzői listák olvasása először a Semantic Scholarból"
@@ -683,7 +683,7 @@
     "message": "Egy oszlop minden évhez, a szerepek színeiben."
   },
   "coverRepeats": {
-    "message": "Más cikket ismétlő bejegyzések: $N1$",
+    "message": "Dupla bejegyzések: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -794,7 +794,7 @@
     "message": "Probléma jelentése"
   },
   "filterPlaceholder": {
-    "message": "Szűrés cím vagy szerző szerint…"
+    "message": "Keresés cím vagy szerző szerint…"
   },
   "searchShortcut": {
     "message": "Nyomd meg a / billentyűt a kereséshez"
@@ -900,10 +900,10 @@
     "message": "Mentett cikkrészletek"
   },
   "optCacheSearch": {
-    "message": "Mentett cikkek szűrése…"
+    "message": "Mentett cikkek keresése…"
   },
   "optCacheCopy": {
-    "message": "Gyorsítótár másolása (JSON)"
+    "message": "Mentett részletek másolása (JSON)"
   },
   "optCacheEmpty": {
     "message": "Még nincsenek mentett cikkrészletek ezen az eszközön."
@@ -1022,7 +1022,7 @@
     "message": "Csonkolt szerzőlisták és a „Teljes listák olvasása”"
   },
   "optStatusRepeats": {
-    "message": "Ismétlődő bejegyzések"
+    "message": "Dupla bejegyzések"
   },
   "optStatusAbsent": {
     "message": "A neved nélküli cikkek"
@@ -1088,10 +1088,10 @@
     "message": "Rangcímke szövege"
   },
   "optChipLabelFull": {
-    "message": "Lista és kategória (CCF A)"
+    "message": "Lista és rang (CCF A)"
   },
   "optChipLabelTier": {
-    "message": "Csak kategória (A)"
+    "message": "Csak rang (A)"
   },
   "optChipThemes": {
     "message": "Kész megjelenések"
@@ -1173,7 +1173,7 @@
     "message": "1 szerep rejtve a megcsonkított szerzői lista miatt"
   },
   "coverAbsentOne": {
-    "message": "1 cikk, amelynek szerzői listájában nincs ott a profil neve"
+    "message": "1 cikk, amelynek szerzői listájában nincs ott a profil tulajdonosának neve"
   },
   "coverUnmatchedOne": {
     "message": "1 cikk rang nélküli venue-ban"

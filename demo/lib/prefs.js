@@ -59,7 +59,7 @@
     summaryTitle: ["the title of the role × rank table", "Papers by role and rank"],
     summaryTitleRoles: ["the table's title when no venue of the profile is ranked", "Papers by role"],
     tipUnranked: ["the name of the unranked column (its tooltip, the popup's legend)", "Not ranked"],
-    colTotal: ["the totals column and row of the table", "All"],
+    colTotal: ["the totals column and row of the table", "Total"],
     roleFirst: ["the first-author role wherever the panel names it (table, quick filter, filter bar, chart)", "First"],
     roleCofirst: ["the co-first role wherever the panel names it", "Co-first"],
     roleSecond: ["the second-author role wherever the panel names it", "Second"],
@@ -83,7 +83,7 @@
     markHighlight: ["the Highlight count row and chip", "Highlight"],
     markSpotlightHighlight: ["the count row that joins spotlight and highlight", "Spotlight & highlight"],
     markTalks: ["the count row that joins all talks, and the Talks quick filter", "Talks"],
-    filterPlaceholder: ["the hint in the search box", "Filter title or author…"],
+    filterPlaceholder: ["the hint in the search box", "Search title or author…"],
     onlyHighlighted: ["the Only highlighted switch", "Only highlighted"],
     yearLabel: ["the label of the year range", "Year"],
     yearStart: ["the From of the year range", "From"],
@@ -262,7 +262,7 @@
     card("status", "optPanelStatus", "optPanelStatusHint", part("status", "The status lines: how many papers are loaded, what could not be read, the button that reads full author lists.", [
       ["loaded", true, "optStatusLoaded", "How many papers are loaded, and the Load all button.", { name: "loadAll" }],
       ["cutoff", true, "optStatusCutoff", "The papers whose author list Scholar cut off, and the button that reads the full lists.", { name: "resolveBtn" }],
-      ["repeats", true, "optStatusRepeats", "The line about entries that repeat another paper."],
+      ["repeats", true, "optStatusRepeats", "The line about duplicate entries."],
       ["absent", true, "optStatusAbsent", "The line about papers whose author list does not name you."],
       ["unranked", true, "optStatusUnranked", "The list of papers at venues without a rank, with its Copy and Report buttons."]
     ])),

@@ -3,7 +3,7 @@
     "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "In Profilen auf Google Scholar: Autorenrolle des Inhabers, CCF- und CORE-Rang der Venue je Paper, in einer Tabelle gezählt."
+    "message": "In Profilen auf Google Scholar: Autorenrolle des Profilinhabers, CCF- und CORE-Rang der Venue je Paper, in einer Tabelle gezählt."
   },
   "extShortName": {
     "message": "Better Scholar"
@@ -18,7 +18,7 @@
     "message": "Auszeichnungen & Vorträge"
   },
   "markAward": {
-    "message": "Preise"
+    "message": "Auszeichnungen"
   },
   "markOral": {
     "message": "Oral"
@@ -54,7 +54,7 @@
     "message": "Aus zwei Quellen: den Angaben der Autoren im Titel oder in der Venue-Zeile eines Papers auf Scholar (ungeprüft) und einer mitgelieferten Liste preisgekrönter Paper bedeutender Konferenzen."
   },
   "marksAsWritten": {
-    "message": "nach Angabe der Autoren oder der Preisliste"
+    "message": "nach Angabe der Autoren oder der Auszeichnungsliste"
   },
   "tipMarkAuthor": {
     "message": "Vom Autor angegeben (ungeprüft): „$N1$“",
@@ -65,7 +65,7 @@
     }
   },
   "tipMarkList": {
-    "message": "In der Preisliste: $N1$ — $N2$",
+    "message": "In der Auszeichnungsliste: $N1$ — $N2$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -115,7 +115,7 @@
     "message": "Rolle"
   },
   "colTotal": {
-    "message": "Alle"
+    "message": "Gesamt"
   },
   "tipUnranked": {
     "message": "Ohne Rang"
@@ -195,7 +195,7 @@
     "message": "Fertig."
   },
   "coverAbsent": {
-    "message": "$N1$ Paper, bei denen der Profilname nicht in der Autorenliste steht",
+    "message": "$N1$ Paper, bei denen der Name des Profilinhabers nicht in der Autorenliste steht",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -203,7 +203,7 @@
     }
   },
   "coverAbsentOne": {
-    "message": "1 Paper, bei dem der Profilname nicht in der Autorenliste steht"
+    "message": "1 Paper, bei dem der Name des Profilinhabers nicht in der Autorenliste steht"
   },
   "coverUnmatched": {
     "message": "$N1$ Paper in Venues ohne Rang",
@@ -396,7 +396,7 @@
     "message": "Kopieren & Export"
   },
   "optCopyHint": {
-    "message": "Schaltflächen, die die angezeigten Paper oder die Übersicht als Text kopieren oder speichern. Das Panel und das Popup der Symbolleiste bieten dieselben an; ist davon keine eingeschaltet, gibt es keine Kopierzeile."
+    "message": "Schaltflächen, die die angezeigten Paper oder die Übersicht als Text kopieren oder speichern. Das Übersichtsfeld und das Popup der Symbolleiste bieten dieselben an; ist davon keine eingeschaltet, gibt es keine Kopierzeile."
   },
   "optMarkAwardHint": {
     "message": "Best, Outstanding und Distinguished Paper, lobende Erwähnung, Test of Time und Best-Paper-Finalisten."
@@ -408,7 +408,7 @@
     "message": "Übersichtsfeld anzeigen"
   },
   "optPanelShowHint": {
-    "message": "Das Feld in der rechten Spalte einer Profilseite. Aus: Nur die Paperliste wird markiert."
+    "message": "Das Übersichtsfeld in der rechten Spalte einer Profilseite. Aus: Nur die Paperliste wird markiert."
   },
   "optPanelSummary": {
     "message": "Tabelle Rolle × Rang"
@@ -494,7 +494,7 @@
     "message": "Alle Paper automatisch laden"
   },
   "optAutoLoadHint": {
-    "message": "Scholar zeigt nur die ersten Paper eines Profils. Diese Option drückt für dich Scholars eigene Schaltfläche „Mehr anzeigen“, etwa einmal pro Sekunde, bis die ganze Liste geladen ist. Sie hört auf, wenn Scholar nicht mehr antwortet. Aus: Das Feld zeigt stattdessen „Alle laden“ an."
+    "message": "Scholar zeigt nur die ersten Paper eines Profils. Diese Option drückt für dich Scholars eigene Schaltfläche „Mehr anzeigen“, etwa einmal pro Sekunde, bis die ganze Liste geladen ist. Sie hört auf, wenn Scholar nicht mehr antwortet. Aus: Das Übersichtsfeld zeigt stattdessen „Alle laden“ an."
   },
   "loadStalled": {
     "message": "Scholar hat keine weiteren Paper geliefert ($N1$ geladen). Versuche „Alle laden“ in einem Moment erneut.",
@@ -704,7 +704,7 @@
     "message": "Ein Balken pro Jahr, in den Rollenfarben."
   },
   "coverRepeats": {
-    "message": "Einträge, die ein anderes Paper wiederholen: $N1$",
+    "message": "Doppelte Einträge: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -762,7 +762,7 @@
     "message": "Löschen"
   },
   "filterMinCites": {
-    "message": "≥$N1$ Zitationen",
+    "message": "≥$N1$ Zitierungen",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -784,7 +784,7 @@
     }
   },
   "tipFilterH": {
-    "message": "Auf h-Kern filtern (≥$N1$ Zitationen)",
+    "message": "Auf h-Kern filtern (≥$N1$ Zitierungen)",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -792,7 +792,7 @@
     }
   },
   "tipFilterI10": {
-    "message": "Auf i10-Arbeiten filtern (≥10 Zitationen)"
+    "message": "Auf i10-Paper filtern (≥10 Zitierungen)"
   },
   "popupPapersOf": {
     "message": "$N1$ von $N2$ Paper",
@@ -815,7 +815,7 @@
     "message": "Problem melden"
   },
   "filterPlaceholder": {
-    "message": "Nach Titel oder Autor filtern…"
+    "message": "Nach Titel oder Autor suchen…"
   },
   "searchShortcut": {
     "message": "Drücke / zum Suchen"
@@ -827,16 +827,16 @@
     "message": "Weniger anzeigen"
   },
   "optHideCitedTable": {
-    "message": "Zitationsmetriken-Tabelle"
+    "message": "Zitierungsmetriken-Tabelle"
   },
   "optHideCitedTableHint": {
-    "message": "Die Tabelle mit Zitationen, h-Index und i10-Index in der Seitenleiste."
+    "message": "Die Tabelle mit Zitierungen, h-Index und i10-Index in der Seitenleiste."
   },
   "optHideCitedChart": {
-    "message": "Zitationen pro Jahr Diagramm"
+    "message": "Zitierungen pro Jahr Diagramm"
   },
   "optHideCitedChartHint": {
-    "message": "Das jährliche Zitationshistogramm in der Seitenleiste."
+    "message": "Das jährliche Zitierungshistogramm in der Seitenleiste."
   },
   "optConfigTitle": {
     "message": "Konfiguration & Voreinstellungen"
@@ -918,16 +918,16 @@
     "message": "Keine Einstellung entspricht dieser Suche."
   },
   "optCacheTitle": {
-    "message": "Gespeicherte Artikeldetails"
+    "message": "Gespeicherte Paper-Details"
   },
   "optCacheSearch": {
-    "message": "Zwischengespeicherte Artikel filtern…"
+    "message": "Gespeicherte Paper durchsuchen…"
   },
   "optCacheCopy": {
-    "message": "Cache kopieren (JSON)"
+    "message": "Gespeicherte Details kopieren (JSON)"
   },
   "optCacheEmpty": {
-    "message": "Auf diesem Gerät wurden noch keine Artikeldetails gespeichert."
+    "message": "Auf diesem Gerät wurden noch keine Paper-Details gespeichert."
   },
   "optCacheShown": {
     "message": "Angezeigt: $N1$ von $N2$",
@@ -950,7 +950,7 @@
     "message": "Kennzeichen an jedem Paper"
   },
   "optChipsHint": {
-    "message": "Die kleinen Kennzeichen hinter dem Venue eines Papers: seine Ränge sowie Auszeichnungen oder Vorträge."
+    "message": "Die kleinen Kennzeichen hinter der Venue eines Papers: seine Ränge sowie Auszeichnungen oder Vorträge."
   },
   "optPanelOrder": {
     "message": "Reihenfolge der Teile"
@@ -1019,7 +1019,7 @@
     "message": "CORE A*"
   },
   "optPillCites": {
-    "message": "Mehr als 100 Zitationen"
+    "message": "Mehr als 100 Zitierungen"
   },
   "optFiltersYears": {
     "message": "Jahreszeitraum"
@@ -1109,10 +1109,10 @@
     "message": "Text der Rang-Kennzeichen"
   },
   "optChipLabelFull": {
-    "message": "Liste und Klasse (CCF A)"
+    "message": "Liste und Rang (CCF A)"
   },
   "optChipLabelTier": {
-    "message": "Nur Klasse (A)"
+    "message": "Nur Rang (A)"
   },
   "optChipThemes": {
     "message": "Vorlagen"
@@ -1182,7 +1182,7 @@
     "message": "Die Zahlen richten sich nach den Filtern"
   },
   "optFiltersFollowHint": {
-    "message": "Die Tabelle, die Zählungen für Auszeichnungen und Vorträge und die Übersicht zum Kopieren zählen nur die Paper, die nach den Filtern übrig bleiben: ein Jahreszeitraum, eine Suche, ein Schnellfilter oder ein Venue. Die gewählte Zelle oder Zeile ändert keine der Zählungen. Aus: Gezählt wird immer das ganze Profil."
+    "message": "Die Tabelle, die Zählungen für Auszeichnungen und Vorträge und die Übersicht zum Kopieren zählen nur die Paper, die nach den Filtern übrig bleiben: ein Jahreszeitraum, eine Suche, ein Schnellfilter oder eine Venue. Die gewählte Zelle oder Zeile ändert keine der Zählungen. Aus: Gezählt wird immer das ganze Profil."
   },
   "optPillRecent": {
     "message": "Letzte 5 Jahre"
@@ -1206,7 +1206,7 @@
     "message": "Weitere Venues"
   },
   "optPrefer": {
-    "message": "Wenn beide Listen ein Venue einstufen"
+    "message": "Wenn beide Listen eine Venue einstufen"
   },
   "optPreferHint": {
     "message": "Ein Kennzeichen statt zwei: das Kennzeichen der Liste, die du wählst, und das der anderen Liste nur dort, wo die gewählte Liste für die Venue keinen Rang hat. Der Tooltip des Kennzeichens nennt weiterhin den anderen Rang."

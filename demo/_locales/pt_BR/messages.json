@@ -3,7 +3,7 @@
     "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "Nos perfis do Google Scholar: a posição de autoria do dono e o ranking CCF e CORE do veículo por artigo, em uma só tabela."
+    "message": "Nos perfis do Google Scholar: a posição de autoria do dono do perfil e o ranking CCF e CORE do veículo por artigo, em uma só tabela."
   },
   "extShortName": {
     "message": "Better Scholar"
@@ -115,7 +115,7 @@
     "message": "Posição"
   },
   "colTotal": {
-    "message": "Todos"
+    "message": "Total"
   },
   "tipUnranked": {
     "message": "Sem ranking"
@@ -195,7 +195,7 @@
     "message": "Pronto."
   },
   "coverAbsent": {
-    "message": "$N1$ artigos em que o nome do perfil não consta na lista de autores",
+    "message": "$N1$ artigos em que o nome do dono do perfil não consta na lista de autores",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -203,7 +203,7 @@
     }
   },
   "coverAbsentOne": {
-    "message": "1 artigo em que o nome do perfil não consta na lista de autores"
+    "message": "1 artigo em que o nome do dono do perfil não consta na lista de autores"
   },
   "coverUnmatched": {
     "message": "$N1$ artigos em veículos sem ranking",
@@ -704,7 +704,7 @@
     "message": "Uma barra por ano, nas cores de cada posição."
   },
   "coverRepeats": {
-    "message": "Entradas que repetem outro artigo: $N1$",
+    "message": "Entradas duplicadas: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -815,10 +815,10 @@
     "message": "Relatar um problema"
   },
   "filterPlaceholder": {
-    "message": "Filtrar por título ou autor…"
+    "message": "Pesquisar por título ou autor…"
   },
   "searchShortcut": {
-    "message": "Pressione / para buscar"
+    "message": "Pressione / para pesquisar"
   },
   "venuesShowMore": {
     "message": "Mostrar mais"
@@ -909,10 +909,10 @@
     "message": "Ver detalhes salvos"
   },
   "optSearchPlaceholder": {
-    "message": "Buscar nas configurações…"
+    "message": "Pesquisar nas configurações…"
   },
   "optSearchClear": {
-    "message": "Limpar a busca"
+    "message": "Limpar a pesquisa"
   },
   "optSearchNone": {
     "message": "Nenhuma configuração corresponde a essa pesquisa."
@@ -921,10 +921,10 @@
     "message": "Detalhes de artigos salvos"
   },
   "optCacheSearch": {
-    "message": "Filtrar artigos em cache…"
+    "message": "Pesquisar artigos salvos…"
   },
   "optCacheCopy": {
-    "message": "Copiar cache (JSON)"
+    "message": "Copiar detalhes salvos (JSON)"
   },
   "optCacheEmpty": {
     "message": "Nenhum detalhe de artigo foi salvo neste dispositivo ainda."
@@ -1043,7 +1043,7 @@
     "message": "Listas de autores truncadas e Ler listas completas"
   },
   "optStatusRepeats": {
-    "message": "Entradas repetidas"
+    "message": "Entradas duplicadas"
   },
   "optStatusAbsent": {
     "message": "Artigos sem o seu nome"
@@ -1109,10 +1109,10 @@
     "message": "Texto da etiqueta de ranking"
   },
   "optChipLabelFull": {
-    "message": "Lista e nível (CCF A)"
+    "message": "Lista e ranking (CCF A)"
   },
   "optChipLabelTier": {
-    "message": "Só o nível (A)"
+    "message": "Só o ranking (A)"
   },
   "optChipThemes": {
     "message": "Estilos prontos"

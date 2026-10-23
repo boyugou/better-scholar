@@ -115,7 +115,7 @@
     "message": "Rol"
   },
   "colTotal": {
-    "message": "Toate"
+    "message": "Total"
   },
   "tipUnranked": {
     "message": "Fără rang"
@@ -189,7 +189,7 @@
     "message": "Gata."
   },
   "coverAbsent": {
-    "message": "Lucrările în care numele din profil nu apare în lista de autori: $N1$",
+    "message": "Lucrările în care numele titularului profilului nu apare în lista de autori: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -402,13 +402,13 @@
     "message": "Tabelul lucrărilor tale după rol și rang, cu nota despre originea rangurilor."
   },
   "optPanelMarksHint": {
-    "message": "Numărul de lucrări premiate și de niveluri de prezentare, cu listă la un clic."
+    "message": "Numărul de lucrări premiate și de tipuri de prezentare, cu listă la un clic."
   },
   "optPanelStatus": {
     "message": "Lucrări încărcate și venue-uri fără rang"
   },
   "optPanelStatusHint": {
-    "message": "Câte lucrări sunt încărcate, butonul „Încarcă tot”, ce nu a putut fi citit și lista lucrărilor din locuri de publicare fără rang."
+    "message": "Câte lucrări sunt încărcate, butonul „Încarcă tot”, ce nu a putut fi citit și lista lucrărilor din venue-uri fără rang."
   },
   "optPanelNames": {
     "message": "Ajutor pentru grafia numelui"
@@ -642,7 +642,7 @@
     "message": "Rânduri în panou"
   },
   "optTalkRowsHint": {
-    "message": "Cum se numără nivelurile de prezentare. O lucrare care are mai multe dintre ele se numără o singură dată."
+    "message": "Cum se numără tipurile de prezentare. O lucrare care are mai multe dintre ele se numără o singură dată."
   },
   "optTalkSeparate": {
     "message": "Oral, Spotlight, Highlight separate"
@@ -657,7 +657,7 @@
     "message": "Semantic Scholar"
   },
   "optSemanticHint": {
-    "message": "Un al doilea loc unde cauți ce taie Scholar."
+    "message": "Un al doilea loc unde cauți ce trunchiază Scholar."
   },
   "optSemanticLabel": {
     "message": "Citește mai întâi listele de autori din Semantic Scholar"
@@ -683,7 +683,7 @@
     "message": "O bară pentru fiecare an, în culorile rolurilor."
   },
   "coverRepeats": {
-    "message": "Intrări care repetă o altă lucrare: $N1$",
+    "message": "Intrări duplicate: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -794,7 +794,7 @@
     "message": "Raportează o problemă"
   },
   "filterPlaceholder": {
-    "message": "Filtrează după titlu sau autor…"
+    "message": "Caută după titlu sau autor…"
   },
   "searchShortcut": {
     "message": "Apasă / pentru a căuta"
@@ -818,7 +818,7 @@
     "message": "Histograma anuală a citărilor din bara laterală."
   },
   "optConfigTitle": {
-    "message": "Configurare și presetări"
+    "message": "Configurație și presetări"
   },
   "optConfigHint": {
     "message": "Setări în format JSON: copiază-le, salvează-le într-un fișier, încarcă un fișier sau lipește o modificare în editor. O presetare schimbă doar ce numește, iar pagina arată ce s-a aplicat și ce nu."
@@ -864,7 +864,7 @@
     "message": "Agenți AI"
   },
   "optAgentHint": {
-    "message": "Copiază un ghid care enumeră fiecare setare, valorile ei și alegerile tale actuale. Dă-l asistentului tău AI, împreună cu ce vrei. Apoi lipește răspunsul în editorul de configurare de mai jos și apasă Aplică configurația."
+    "message": "Copiază un ghid care enumeră fiecare setare, valorile ei și alegerile tale actuale. Dă-l asistentului tău AI, împreună cu ce vrei. Apoi lipește răspunsul în editorul de configurație de mai jos și apasă Aplică configurația."
   },
   "optAgentCopy": {
     "message": "Copiază ghidul pentru AI"
@@ -900,10 +900,10 @@
     "message": "Detalii articole salvate"
   },
   "optCacheSearch": {
-    "message": "Filtrează articolele salvate…"
+    "message": "Caută în articolele salvate…"
   },
   "optCacheCopy": {
-    "message": "Copiază memoria cache (JSON)"
+    "message": "Copiază detaliile salvate (JSON)"
   },
   "optCacheEmpty": {
     "message": "Nu au fost salvate încă detalii despre articole pe acest dispozitiv."
@@ -929,7 +929,7 @@
     "message": "Etichete la fiecare lucrare"
   },
   "optChipsHint": {
-    "message": "Etichetele mici de după locul de publicare al unei lucrări: rangul, și premiile sau prezentările."
+    "message": "Etichetele mici de după venue-ul unei lucrări: rangul, și premiile sau prezentările."
   },
   "optPanelOrder": {
     "message": "Ordinea părților"
@@ -1022,13 +1022,13 @@
     "message": "Listele de autori trunchiate și Citește lista completă"
   },
   "optStatusRepeats": {
-    "message": "Intrări repetate"
+    "message": "Intrări duplicate"
   },
   "optStatusAbsent": {
     "message": "Lucrări fără numele tău"
   },
   "optStatusUnranked": {
-    "message": "Lucrări în locuri de publicare fără rang"
+    "message": "Lucrări în venue-uri fără rang"
   },
   "optNamesHints": {
     "message": "Grafii găsite în lucrările tale"
@@ -1088,10 +1088,10 @@
     "message": "Textul etichetei de rang"
   },
   "optChipLabelFull": {
-    "message": "Lista și nivelul (CCF A)"
+    "message": "Lista și rangul (CCF A)"
   },
   "optChipLabelTier": {
-    "message": "Doar nivelul (A)"
+    "message": "Doar rangul (A)"
   },
   "optChipThemes": {
     "message": "Stiluri predefinite"
@@ -1173,7 +1173,7 @@
     "message": "Rolul ascuns din cauza listei de autori trunchiate: 1"
   },
   "coverAbsentOne": {
-    "message": "Lucrarea în care numele din profil nu apare în lista de autori: 1"
+    "message": "Lucrarea în care numele titularului profilului nu apare în lista de autori: 1"
   },
   "coverUnmatchedOne": {
     "message": "Lucrarea la un venue fără rang: 1"
@@ -1206,10 +1206,10 @@
     "message": "Alte venue-uri"
   },
   "optPrefer": {
-    "message": "Când locul de publicare are rang în ambele liste"
+    "message": "Când venue-ul are rang în ambele liste"
   },
   "optPreferHint": {
-    "message": "O singură etichetă în loc de două: eticheta listei pe care o alegi. Eticheta celeilalte liste apare doar acolo unde lista aleasă nu are rang pentru locul de publicare. Când se trece cu mouse-ul peste etichetă, apare și celălalt rang."
+    "message": "O singură etichetă în loc de două: eticheta listei pe care o alegi. Eticheta celeilalte liste apare doar acolo unde lista aleasă nu are rang pentru venue-ul. Când se trece cu mouse-ul peste etichetă, apare și celălalt rang."
   },
   "optPreferCcf": {
     "message": "CCF întâi"

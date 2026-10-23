@@ -3,7 +3,7 @@
     "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "Op profielen van Google Scholar: auteursrol van de eigenaar en CCF- en CORE-rang van de venue per paper, geteld in één tabel."
+    "message": "Op profielen van Google Scholar: auteursrol van de profieleigenaar en CCF- en CORE-rang van de venue per paper, geteld in één tabel."
   },
   "extShortName": {
     "message": "Better Scholar"
@@ -115,7 +115,7 @@
     "message": "Rol"
   },
   "colTotal": {
-    "message": "Alle"
+    "message": "Totaal"
   },
   "tipUnranked": {
     "message": "Geen rang"
@@ -195,7 +195,7 @@
     "message": "Klaar."
   },
   "coverAbsent": {
-    "message": "$N1$ papers waarin de profielnaam niet in de auteurslijst staat",
+    "message": "$N1$ papers waarin de naam van de profieleigenaar niet in de auteurslijst staat",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -203,7 +203,7 @@
     }
   },
   "coverAbsentOne": {
-    "message": "1 paper waarin de profielnaam niet in de auteurslijst staat"
+    "message": "1 paper waarin de naam van de profieleigenaar niet in de auteurslijst staat"
   },
   "coverUnmatched": {
     "message": "$N1$ papers bij venues zonder rang",
@@ -417,7 +417,7 @@
     "message": "De tabel van je papers op rol en rang, met de toelichting over waar de rangen vandaan komen."
   },
   "optPanelMarksHint": {
-    "message": "Het aantal bekroonde papers en talkniveaus; met één klik zie je de lijst."
+    "message": "Het aantal bekroonde papers en talktypen; met één klik zie je de lijst."
   },
   "optPanelStatus": {
     "message": "Geladen papers en venues zonder rang"
@@ -624,7 +624,7 @@
     "message": "Kleuren"
   },
   "optColorsHint": {
-    "message": "De kleur van elke auteurspositie: rijen, naammarkeringen, het paneel en de popup van de werkbalk."
+    "message": "De kleur van elke auteursrol: rijen, naammarkeringen, het paneel en de popup van de werkbalk."
   },
   "optColorsReset": {
     "message": "Terug naar de standaardkleuren"
@@ -654,13 +654,13 @@
     "message": "Spotlight en highlight"
   },
   "markTalks": {
-    "message": "Presentaties"
+    "message": "Talks"
   },
   "optTalkRows": {
     "message": "Rijen in het paneel"
   },
   "optTalkRowsHint": {
-    "message": "Hoe de presentatietypen worden geteld. Samen geteld telt een paper met meer dan één ervan maar één keer."
+    "message": "Hoe de talktypen worden geteld. Samen geteld telt een paper met meer dan één ervan maar één keer."
   },
   "optTalkSeparate": {
     "message": "Oral, spotlight en highlight apart"
@@ -704,7 +704,7 @@
     "message": "Een balk per jaar, in de rolkleuren."
   },
   "coverRepeats": {
-    "message": "Vermeldingen die een ander paper dupliceren: $N1$",
+    "message": "Dubbele vermeldingen: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -815,7 +815,7 @@
     "message": "Een probleem melden"
   },
   "filterPlaceholder": {
-    "message": "Filteren op titel of auteur…"
+    "message": "Zoeken op titel of auteur…"
   },
   "searchShortcut": {
     "message": "Druk op / om te zoeken"
@@ -918,16 +918,16 @@
     "message": "Geen instelling komt overeen met die zoekopdracht."
   },
   "optCacheTitle": {
-    "message": "Opgeslagen artikeldetails"
+    "message": "Opgeslagen paperdetails"
   },
   "optCacheSearch": {
-    "message": "Gecachte artikelen filteren…"
+    "message": "Opgeslagen artikelen doorzoeken…"
   },
   "optCacheCopy": {
-    "message": "Cache kopiëren (JSON)"
+    "message": "Opgeslagen details kopiëren (JSON)"
   },
   "optCacheEmpty": {
-    "message": "Er zijn nog geen artikeldetails opgeslagen op dit apparaat."
+    "message": "Er zijn nog geen paperdetails opgeslagen op dit apparaat."
   },
   "optCacheShown": {
     "message": "Getoond: $N1$ van $N2$",
@@ -950,7 +950,7 @@
     "message": "Labels bij elk paper"
   },
   "optChipsHint": {
-    "message": "De kleine labels na de venue van een paper: de rangen, en prijzen of presentaties."
+    "message": "De kleine labels na de venue van een paper: de rangen, en prijzen of talks."
   },
   "optPanelOrder": {
     "message": "Volgorde van de onderdelen"
@@ -1109,10 +1109,10 @@
     "message": "Tekst van de rang-labels"
   },
   "optChipLabelFull": {
-    "message": "Lijst en niveau (CCF A)"
+    "message": "Lijst en rang (CCF A)"
   },
   "optChipLabelTier": {
-    "message": "Alleen niveau (A)"
+    "message": "Alleen rang (A)"
   },
   "optChipThemes": {
     "message": "Kant-en-klare stijlen"

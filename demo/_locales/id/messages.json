@@ -115,7 +115,7 @@
     "message": "Peran"
   },
   "colTotal": {
-    "message": "Semua"
+    "message": "Total"
   },
   "tipUnranked": {
     "message": "Tanpa peringkat"
@@ -189,7 +189,7 @@
     "message": "Selesai."
   },
   "coverAbsent": {
-    "message": "$N1$ makalah yang daftar penulisnya tidak memuat nama profil",
+    "message": "$N1$ makalah yang daftar penulisnya tidak memuat nama pemilik profil",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -402,7 +402,7 @@
     "message": "Tabel makalah Anda menurut peran dan peringkat, dengan catatan tentang sumber peringkat."
   },
   "optPanelMarksHint": {
-    "message": "Jumlah makalah pemenang penghargaan dan tingkat presentasi, satu klik untuk melihat daftarnya."
+    "message": "Jumlah makalah pemenang penghargaan dan jenis presentasi, satu klik untuk melihat daftarnya."
   },
   "optPanelStatus": {
     "message": "Makalah termuat dan venue tanpa peringkat"
@@ -571,7 +571,7 @@
     "message": "Gabungkan entri ganda"
   },
   "optMergeLabelHint": {
-    "message": "Entri dengan judul yang sama dan penulis pertama yang sama digabung menjadi satu entri (huruf besar, aksen, dan tanda baca tidak diperhitungkan). Entri yang paling banyak dikutip tetap ada dan menampilkan sitasi semuanya. Panel menghitungnya satu kali."
+    "message": "Entri dengan judul yang sama dan penulis pertama yang sama digabung menjadi satu entri (huruf besar, aksen, dan tanda baca tidak diperhitungkan). Entri yang paling banyak disitasi tetap ada dan menampilkan sitasi semuanya. Panel menghitungnya satu kali."
   },
   "mergedTip": {
     "message": "Digabung dari $N1$ entri: sitasi semuanya",
@@ -642,7 +642,7 @@
     "message": "Baris di panel"
   },
   "optTalkRowsHint": {
-    "message": "Cara menghitung tingkat presentasi. Makalah yang memiliki lebih dari satu tingkat dihitung sekali."
+    "message": "Cara menghitung jenis presentasi. Makalah yang memiliki lebih dari satu jenis dihitung sekali."
   },
   "optTalkSeparate": {
     "message": "Oral, spotlight, highlight terpisah"
@@ -683,7 +683,7 @@
     "message": "Satu batang untuk setiap tahun, dalam warna peran."
   },
   "coverRepeats": {
-    "message": "Entri yang menduplikasi makalah lain: $N1$",
+    "message": "Entri duplikat: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -741,7 +741,7 @@
     "message": "Hapus"
   },
   "filterMinCites": {
-    "message": "≥$N1$ kutipan",
+    "message": "≥$N1$ sitasi",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -763,7 +763,7 @@
     }
   },
   "tipFilterH": {
-    "message": "Filter ke makalah h-core (≥$N1$ kutipan)",
+    "message": "Filter ke makalah h-core (≥$N1$ sitasi)",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -771,7 +771,7 @@
     }
   },
   "tipFilterI10": {
-    "message": "Filter ke makalah i10 (≥10 kutipan)"
+    "message": "Filter ke makalah i10 (≥10 sitasi)"
   },
   "popupPapersOf": {
     "message": "$N1$ dari $N2$ makalah",
@@ -794,7 +794,7 @@
     "message": "Laporkan masalah"
   },
   "filterPlaceholder": {
-    "message": "Filter berdasarkan judul atau penulis…"
+    "message": "Cari berdasarkan judul atau penulis…"
   },
   "searchShortcut": {
     "message": "Tekan / untuk mencari"
@@ -809,7 +809,7 @@
     "message": "Tabel metrik sitasi"
   },
   "optHideCitedTableHint": {
-    "message": "Tabel sitasi, indeks h, dan indeks i10 di bilah samping."
+    "message": "Tabel sitasi, h-index, dan i10-index di bilah samping."
   },
   "optHideCitedChart": {
     "message": "Grafik sitasi per tahun"
@@ -894,16 +894,16 @@
     "message": "Hapus pencarian"
   },
   "optSearchNone": {
-    "message": "Tidak ada setelan yang cocok dengan pencarian ini."
+    "message": "Tidak ada pengaturan yang cocok dengan pencarian ini."
   },
   "optCacheTitle": {
     "message": "Detail Makalah Tersimpan"
   },
   "optCacheSearch": {
-    "message": "Saring makalah yang di-cache…"
+    "message": "Cari makalah yang tersimpan…"
   },
   "optCacheCopy": {
-    "message": "Salin cache (JSON)"
+    "message": "Salin detail tersimpan (JSON)"
   },
   "optCacheEmpty": {
     "message": "Belum ada detail makalah yang disimpan di perangkat ini."
@@ -998,7 +998,7 @@
     "message": "CORE A*"
   },
   "optPillCites": {
-    "message": "Lebih dari 100 kutipan"
+    "message": "Lebih dari 100 sitasi"
   },
   "optFiltersYears": {
     "message": "Rentang tahun"
@@ -1022,7 +1022,7 @@
     "message": "Daftar penulis yang terpotong, dan “Baca daftar lengkap”"
   },
   "optStatusRepeats": {
-    "message": "Entri berulang"
+    "message": "Entri duplikat"
   },
   "optStatusAbsent": {
     "message": "Makalah tanpa nama Anda"
@@ -1088,10 +1088,10 @@
     "message": "Teks label peringkat"
   },
   "optChipLabelFull": {
-    "message": "Daftar dan tingkat (CCF A)"
+    "message": "Daftar dan peringkat (CCF A)"
   },
   "optChipLabelTier": {
-    "message": "Hanya tingkat (A)"
+    "message": "Hanya peringkat (A)"
   },
   "optChipThemes": {
     "message": "Tampilan siap pakai"
@@ -1173,7 +1173,7 @@
     "message": "1 peran tersembunyi karena daftar penulis dipotong"
   },
   "coverAbsentOne": {
-    "message": "1 makalah yang daftar penulisnya tidak memuat nama profil"
+    "message": "1 makalah yang daftar penulisnya tidak memuat nama pemilik profil"
   },
   "coverUnmatchedOne": {
     "message": "1 makalah di venue tanpa peringkat"

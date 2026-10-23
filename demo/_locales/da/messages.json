@@ -3,7 +3,7 @@
     "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "På Google Scholar-profiler: ejerens forfatterrolle og CCF- og CORE-rang for hver artikels publikationssted, opgjort i én tabel."
+    "message": "På Google Scholar-profiler: profilejerens forfatterrolle og CCF- og CORE-rang for hver artikels publikationssted, samlet i én tabel."
   },
   "extShortName": {
     "message": "Better Scholar"
@@ -115,7 +115,7 @@
     "message": "Rolle"
   },
   "colTotal": {
-    "message": "Alle"
+    "message": "I alt"
   },
   "tipUnranked": {
     "message": "Ingen rang"
@@ -195,7 +195,7 @@
     "message": "Færdig."
   },
   "coverAbsent": {
-    "message": "$N1$ artikler hvor profilnavnet ikke står på forfatterlisten",
+    "message": "$N1$ artikler hvor profilejerens navn ikke står på forfatterlisten",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -203,10 +203,10 @@
     }
   },
   "coverAbsentOne": {
-    "message": "1 artikel hvor profilnavnet ikke står på forfatterlisten"
+    "message": "1 artikel hvor profilejerens navn ikke står på forfatterlisten"
   },
   "coverUnmatched": {
-    "message": "$N1$ artikler på steder uden rang",
+    "message": "$N1$ artikler på publikationssteder uden rang",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -214,7 +214,7 @@
     }
   },
   "coverUnmatchedOne": {
-    "message": "1 artikel på et sted uden rang"
+    "message": "1 artikel på et publikationssted uden rang"
   },
   "copyUnmatched": {
     "message": "Kopiér liste"
@@ -417,13 +417,13 @@
     "message": "Tabel over dine artikler efter rolle og rang, med noten om, hvor rangerne kommer fra."
   },
   "optPanelMarksHint": {
-    "message": "Antallet af prisvindende artikler og oplægsniveauer, ét klik viser dem."
+    "message": "Antallet af prisvindende artikler og oplægstyper, ét klik viser dem."
   },
   "optPanelStatus": {
-    "message": "Indlæste artikler og steder uden rang"
+    "message": "Indlæste artikler og publikationssteder uden rang"
   },
   "optPanelStatusHint": {
-    "message": "Hvor mange artikler der er indlæst, knappen “Indlæs alle”, hvad der ikke kunne læses, og listen over artikler på steder uden rang."
+    "message": "Hvor mange artikler der er indlæst, knappen “Indlæs alle”, hvad der ikke kunne læses, og listen over artikler på publikationssteder uden rang."
   },
   "optPanelNames": {
     "message": "Hjælp til navnestavning"
@@ -660,7 +660,7 @@
     "message": "Rækker i panelet"
   },
   "optTalkRowsHint": {
-    "message": "Sådan tælles oplægsniveauerne. En artikel, der har mere end ét af dem, tælles én gang."
+    "message": "Sådan tælles oplægstyperne. En artikel, der har mere end én af dem, tælles én gang."
   },
   "optTalkSeparate": {
     "message": "Oral, spotlight og highlight hver for sig"
@@ -675,7 +675,7 @@
     "message": "Semantic Scholar"
   },
   "optSemanticHint": {
-    "message": "Et andet sted at lede efter det, Scholar skærer af."
+    "message": "Et andet sted at lede efter det, Scholar afkorter."
   },
   "optSemanticLabel": {
     "message": "Læs først forfatterlister fra Semantic Scholar"
@@ -704,7 +704,7 @@
     "message": "En søjle for hvert år, i rollefarverne."
   },
   "coverRepeats": {
-    "message": "Poster, der gentager en anden artikel: $N1$",
+    "message": "Dubletposter: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -721,7 +721,7 @@
     "message": "Hyppigste publikationssteder"
   },
   "optPanelVenuesHint": {
-    "message": "De rangerede steder for dine fremhævede artikler, flest først; klik på et for at se dets artikler."
+    "message": "De rangerede publikationssteder for dine fremhævede artikler, flest først; klik på et for at se dets artikler."
   },
   "optCopyDiagnostics": {
     "message": "Kopiér detaljer til fejlrapport"
@@ -736,7 +736,7 @@
     "message": "Semantic Scholar bad om at sætte farten ned, så resten blev hentet fra Scholars egne sider."
   },
   "optRowStyle": {
-    "message": "Rækkemarkering"
+    "message": "Rækkefremhævning"
   },
   "optRowStyleFull": {
     "message": "Baggrund og bjælke"
@@ -762,7 +762,7 @@
     "message": "Ryd"
   },
   "filterMinCites": {
-    "message": "≥$N1$ citeringer",
+    "message": "≥$N1$ citationer",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -784,7 +784,7 @@
     }
   },
   "tipFilterH": {
-    "message": "Filtrer til h-kerne artikler (≥$N1$ citeringer)",
+    "message": "Filtrer til h-kerne artikler (≥$N1$ citationer)",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -792,7 +792,7 @@
     }
   },
   "tipFilterI10": {
-    "message": "Filtrer til i10 artikler (≥10 citeringer)"
+    "message": "Filtrer til i10 artikler (≥10 citationer)"
   },
   "popupPapersOf": {
     "message": "$N1$ af $N2$ artikler",
@@ -815,7 +815,7 @@
     "message": "Rapportér et problem"
   },
   "filterPlaceholder": {
-    "message": "Filtrer efter titel eller forfatter…"
+    "message": "Søg efter titel eller forfatter…"
   },
   "searchShortcut": {
     "message": "Tryk / for at søge"
@@ -827,16 +827,16 @@
     "message": "Vis færre"
   },
   "optHideCitedTable": {
-    "message": "Citeringsmetriktabel"
+    "message": "Citationsmetriktabel"
   },
   "optHideCitedTableHint": {
-    "message": "Tabellen med citeringer, h-indeks og i10-indeks i sidepanelet."
+    "message": "Tabellen med citationer, h-indeks og i10-indeks i sidepanelet."
   },
   "optHideCitedChart": {
-    "message": "Graf over citeringer pr. år"
+    "message": "Graf over citationer pr. år"
   },
   "optHideCitedChartHint": {
-    "message": "Det årlige citeringshistogram i sidepanelet."
+    "message": "Det årlige citationshistogram i sidepanelet."
   },
   "optConfigTitle": {
     "message": "Konfiguration og forudindstillinger"
@@ -921,10 +921,10 @@
     "message": "Gemte artikeldetaljer"
   },
   "optCacheSearch": {
-    "message": "Filtrér gemte artikler…"
+    "message": "Søg i gemte artikler…"
   },
   "optCacheCopy": {
-    "message": "Kopiér cache (JSON)"
+    "message": "Kopiér gemte artikeldetaljer (JSON)"
   },
   "optCacheEmpty": {
     "message": "Der er endnu ikke gemt nogen artikeldetaljer på denne enhed."
@@ -1019,7 +1019,7 @@
     "message": "CORE A*"
   },
   "optPillCites": {
-    "message": "Over 100 citeringer"
+    "message": "Over 100 citationer"
   },
   "optFiltersYears": {
     "message": "Årsinterval"
@@ -1043,13 +1043,13 @@
     "message": "Afkortede forfatterlister og “Læs fulde lister”"
   },
   "optStatusRepeats": {
-    "message": "Gentagne poster"
+    "message": "Dubletposter"
   },
   "optStatusAbsent": {
     "message": "Artikler uden dit navn"
   },
   "optStatusUnranked": {
-    "message": "Artikler på steder uden rang"
+    "message": "Artikler på publikationssteder uden rang"
   },
   "optNamesHints": {
     "message": "Stavemåder fundet i dine artikler"
@@ -1109,10 +1109,10 @@
     "message": "Tekst på rangmærkerne"
   },
   "optChipLabelFull": {
-    "message": "Liste og niveau (CCF A)"
+    "message": "Liste og rang (CCF A)"
   },
   "optChipLabelTier": {
-    "message": "Kun niveau (A)"
+    "message": "Kun rang (A)"
   },
   "optChipThemes": {
     "message": "Færdige udseender"
@@ -1203,7 +1203,7 @@
     "message": "Sekundære kategorier"
   },
   "unrankedOther": {
-    "message": "Andre steder"
+    "message": "Andre publikationssteder"
   },
   "optPrefer": {
     "message": "Når begge lister rangerer et publikationssted"

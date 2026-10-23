@@ -3,7 +3,7 @@
     "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "Nos perfis do Google Scholar: a posição de autor do titular e o ranking CCF e CORE do veículo por artigo, contados numa só tabela."
+    "message": "No Google Scholar: a posição de autor do titular do perfil e o ranking CCF e CORE do veículo por artigo, contados numa só tabela."
   },
   "extShortName": {
     "message": "Better Scholar"
@@ -115,7 +115,7 @@
     "message": "Posição"
   },
   "colTotal": {
-    "message": "Todos"
+    "message": "Total"
   },
   "tipUnranked": {
     "message": "Sem ranking"
@@ -195,7 +195,7 @@
     "message": "Pronto."
   },
   "coverAbsent": {
-    "message": "$N1$ artigos em que o nome do perfil não consta da lista de autores",
+    "message": "$N1$ artigos em que o nome do titular do perfil não consta da lista de autores",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -203,7 +203,7 @@
     }
   },
   "coverAbsentOne": {
-    "message": "1 artigo em que o nome do perfil não consta da lista de autores"
+    "message": "1 artigo em que o nome do titular do perfil não consta da lista de autores"
   },
   "coverUnmatched": {
     "message": "$N1$ artigos em veículos sem ranking",
@@ -624,7 +624,7 @@
     "message": "Cores"
   },
   "optColorsHint": {
-    "message": "A cor de cada posição de autoria: linhas, marcas do nome, o painel e a janela da barra de ferramentas."
+    "message": "A cor de cada posição de autor: linhas, marcas do nome, o painel e a janela da barra de ferramentas."
   },
   "optColorsReset": {
     "message": "Repor as cores predefinidas"
@@ -675,7 +675,7 @@
     "message": "Semantic Scholar"
   },
   "optSemanticHint": {
-    "message": "Um segundo lugar onde consultar o que o Scholar corta."
+    "message": "Um segundo lugar onde consultar o que o Scholar trunca."
   },
   "optSemanticLabel": {
     "message": "Ler primeiro as listas de autores do Semantic Scholar"
@@ -704,7 +704,7 @@
     "message": "Uma barra por ano, nas cores de cada posição."
   },
   "coverRepeats": {
-    "message": "Entradas que repetem outro artigo: $N1$",
+    "message": "Entradas duplicadas: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -815,7 +815,7 @@
     "message": "Comunicar um problema"
   },
   "filterPlaceholder": {
-    "message": "Filtrar por título ou autor…"
+    "message": "Pesquisar por título ou autor…"
   },
   "searchShortcut": {
     "message": "Prima / para pesquisar"
@@ -854,7 +854,7 @@
     "message": "Importar ficheiro"
   },
   "optConfigEditor": {
-    "message": "Colar ou editar JSON"
+    "message": "Colar ou editar configuração (JSON)"
   },
   "optConfigApply": {
     "message": "Aplicar configuração"
@@ -921,10 +921,10 @@
     "message": "Detalhes de artigos guardados"
   },
   "optCacheSearch": {
-    "message": "Filtrar artigos em cache…"
+    "message": "Pesquisar artigos guardados…"
   },
   "optCacheCopy": {
-    "message": "Copiar cache (JSON)"
+    "message": "Copiar detalhes guardados (JSON)"
   },
   "optCacheEmpty": {
     "message": "Nenhum detalhe de artigo foi guardado neste dispositivo ainda."
@@ -1043,7 +1043,7 @@
     "message": "Listas de autores truncadas e Ler listas completas"
   },
   "optStatusRepeats": {
-    "message": "Entradas repetidas"
+    "message": "Entradas duplicadas"
   },
   "optStatusAbsent": {
     "message": "Artigos sem o seu nome"
@@ -1109,10 +1109,10 @@
     "message": "Texto da etiqueta de ranking"
   },
   "optChipLabelFull": {
-    "message": "Lista e nível (CCF A)"
+    "message": "Lista e ranking (CCF A)"
   },
   "optChipLabelTier": {
-    "message": "Só o nível (A)"
+    "message": "Só o ranking (A)"
   },
   "optChipThemes": {
     "message": "Estilos prontos"
