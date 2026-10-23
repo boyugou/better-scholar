@@ -1292,5 +1292,11 @@
   },
   "optMineFullOne": {
     "message": "A Chrome nagyjából ötven hozzárendelést tárol: a legrégebbi törlődött, hogy legyen hely."
+  },
+  "optVenueGeneric": {
+    "message": "Ez a sor csak egy szponzort vagy kiadót nevez meg, nem venue-t, ezért nem rendelhető hozzá: az ilyen hozzárendelés minden hasonló sorra vonatkozna."
+  },
+  "optMineChange": {
+    "message": "Módosítás…"
   }
 }

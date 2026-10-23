@@ -887,7 +887,7 @@
       })));
   }
   // "Assign it to a listed venue": a search of both lists by name or acronym; a pick saves the mapping
-  function assignBox(text) {
+  function assignBox(text, change = false) {
     let hits = [];
     // (a pick saves the mapping; the box with the focus is drawn again, so the focus goes back to the venue box)
     const pick = (r) => setMine([...mine.filter((m) => B.venues.mineKey(m.text) !== B.venues.mineKey(text)), { text, list: r.list, name: r.name, kind: r.kind }]).then(() => venueInput.focus());
@@ -907,7 +907,7 @@
         for (const r of hits) results.append(h("button", { type: "button", class: "mine-pick", "data-act": "mine-pick", onClick: () => pick(r) }, h("bdi", {}, rowText(r))));
       } });
     const box = h("div", { class: "mine-assign", hidden: true }, search, results);
-    const open = h("button", { type: "button", class: "btn", "data-act": "mine-assign", onClick: () => { open.hidden = true; box.hidden = false; search.focus(); } }, t("optMineAssign"));
+    const open = h("button", { type: "button", class: "btn", "data-act": "mine-assign", onClick: () => { open.hidden = true; box.hidden = false; search.focus(); } }, t(change ? "optMineChange" : "optMineAssign"));
     return h("div", { class: "mine-offer" }, open, box);
   }
   const venueOut = h("div", { class: "venue-out", "aria-live": "polite" });
@@ -929,7 +929,9 @@
     if (!found.length) venueOut.append(h("p", { class: "venue-none" }, res.secondary ? t("optVenueSecondary", [res.secondary]) : t("optVenueNone")));
     // (a line no rule ranks, and no track of a ranked venue, can be tied to a listed venue by the person; the list of their mappings below has Remove)
     if (res.assignable) venueOut.append(assignBox(text));
+    else if (found.some(([, info]) => info.rule === "mine")) venueOut.append(assignBox(text, true));          // (a line the person tied already: "Change…" ties it to another venue)
     else if (!found.length && res.truncated) venueOut.append(h("p", { class: "venue-none" }, t("optVenueCut")));
+    else if (!found.length && res.generic) venueOut.append(h("p", { class: "venue-none" }, t("optVenueGeneric")));
 
   }
 

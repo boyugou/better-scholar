@@ -1292,5 +1292,11 @@
   },
   "optMineFullOne": {
     "message": "Chrome giữ khoảng năm mươi ánh xạ: ánh xạ cũ nhất đã bị xóa để nhường chỗ."
+  },
+  "optVenueGeneric": {
+    "message": "Dòng này chỉ ghi nhà tài trợ hoặc nhà xuất bản, không phải venue, nên không thể gán: gán cho dòng này sẽ áp dụng cho mọi dòng cùng loại."
+  },
+  "optMineChange": {
+    "message": "Đổi…"
   }
 }

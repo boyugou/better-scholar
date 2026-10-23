@@ -1292,5 +1292,11 @@
   },
   "optMineFullOne": {
     "message": "Chrome sparar omkring femtio kopplingar: den äldsta togs bort för att skapa plats."
+  },
+  "optVenueGeneric": {
+    "message": "Den här raden anger bara en sponsor eller ett förlag, inte ett publiceringsställe, så den kan inte kopplas till: en koppling skulle gälla alla sådana rader."
+  },
+  "optMineChange": {
+    "message": "Byt…"
   }
 }

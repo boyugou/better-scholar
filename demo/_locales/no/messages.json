@@ -1292,5 +1292,11 @@
   },
   "optMineFullOne": {
     "message": "Chrome lagrer omtrent femti koblinger: den eldste ble fjernet for å gi plass."
+  },
+  "optVenueGeneric": {
+    "message": "Denne linjen nevner bare en sponsor eller en utgiver, ikke et publiseringssted, så den kan ikke knyttes til: en kobling ville gjelde for alle slike linjer."
+  },
+  "optMineChange": {
+    "message": "Endre…"
   }
 }

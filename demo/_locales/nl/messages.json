@@ -1292,5 +1292,11 @@
   },
   "optMineFullOne": {
     "message": "Chrome bewaart ongeveer vijftig koppelingen: de oudste is verwijderd om ruimte te maken."
+  },
+  "optVenueGeneric": {
+    "message": "Deze regel noemt alleen een sponsor of uitgever, geen venue, dus hij kan niet worden gekoppeld: een koppeling zou elke zulke regel treffen."
+  },
+  "optMineChange": {
+    "message": "Wijzigen…"
   }
 }

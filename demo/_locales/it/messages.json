@@ -1292,5 +1292,11 @@
   },
   "optMineFullOne": {
     "message": "Chrome conserva circa cinquanta associazioni: la più vecchia è stata rimossa per fare spazio."
+  },
+  "optVenueGeneric": {
+    "message": "Questa riga indica solo uno sponsor o un editore, non una conferenza/rivista, quindi non può essere assegnata: un'assegnazione varrebbe per ogni riga simile."
+  },
+  "optMineChange": {
+    "message": "Cambia…"
   }
 }

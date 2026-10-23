@@ -1292,5 +1292,11 @@
   },
   "optMineFullOne": {
     "message": "Chrome menyimpan sekitar lima puluh pemetaan: yang paling lama dihapus untuk memberi ruang."
+  },
+  "optVenueGeneric": {
+    "message": "Baris ini hanya menyebut sponsor atau penerbit, bukan venue, sehingga tidak dapat ditetapkan: pemetaan untuknya akan mencakup setiap baris seperti itu."
+  },
+  "optMineChange": {
+    "message": "Ganti…"
   }
 }

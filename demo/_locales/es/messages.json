@@ -1292,5 +1292,11 @@
   },
   "optMineFullOne": {
     "message": "Chrome guarda unas cincuenta asignaciones: se borró la más antigua para hacer sitio."
+  },
+  "optVenueGeneric": {
+    "message": "Esta línea solo indica un patrocinador o una editorial, no un congreso/revista, así que no se puede asignar: una asignación afectaría a todas las líneas de ese tipo."
+  },
+  "optMineChange": {
+    "message": "Cambiar…"
   }
 }

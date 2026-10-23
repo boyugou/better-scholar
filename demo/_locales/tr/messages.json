@@ -1292,5 +1292,11 @@
   },
   "optMineFullOne": {
     "message": "Chrome yaklaşık elli eşleme tutar: yer açmak için en eski eşleme silindi."
+  },
+  "optVenueGeneric": {
+    "message": "Bu satır yalnızca bir sponsoru veya yayıncıyı belirtiyor, yayın yerini değil, bu yüzden atanamaz: bunun eşlemesi bu türdeki her satırı kapsar."
+  },
+  "optMineChange": {
+    "message": "Değiştir…"
   }
 }

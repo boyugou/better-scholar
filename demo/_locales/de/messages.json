@@ -1292,5 +1292,11 @@
   },
   "optMineFullOne": {
     "message": "Chrome behält etwa fünfzig Zuordnungen: Die älteste wurde entfernt, um Platz zu schaffen."
+  },
+  "optVenueGeneric": {
+    "message": "Diese Zeile nennt nur einen Sponsor oder Verlag, keine Venue, daher kann sie nicht zugeordnet werden: Eine Zuordnung würde für jede solche Zeile gelten."
+  },
+  "optMineChange": {
+    "message": "Ändern…"
   }
 }
