@@ -56,6 +56,10 @@
   and Hungarian *hivatkozás* everywhere, and the last Chinese strays (期刊/会议, 無等級, 側欄).
   The website's texts in all 30 languages now use the extension's words too (231 strings: venue, profile owner, cut author list,
   role, award names, page titles).
+- **From reading whole real profiles' reference lists**: a venue line that repeats its year ("Computer Vision and Pattern Recognition
+  (CVPR), 2016, 2016", 50 real lines) no longer prints the year twice; Random House and Artech House are publishers ([M]).
+  In APA and IEEE an unclassified line keeps the number Scholar printed after its name ("*Handbook of satisfiability 185*"), and a
+  line with a web address is given as printed, without italics (96 lines).
 - **Two wrong badges from the same audit**: a venue line that opens with its year is IEEE's title for a meeting's proceedings, so it
   is no journal's ("2010 Internet of Things (IOT)" had CCF's IEEE Internet of Things Journal, started 2014; the cut "2011 7th
   international wireless communications and mobile computing …" had the journal of those words and now has CORE's IWCMC). The real

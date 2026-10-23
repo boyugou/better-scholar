@@ -153,7 +153,7 @@
   const DOCUMENT = new RegExp(`\\bpatent\\b|\\b(?:thesis|dissertation)\\b|${REPORT.source}`, "i");
   // a publisher's name on its own ("MIT Press", "Springer", "O'Reilly Media, Inc."): a book, given as printed too (APA does not italicise a publisher)
   const CHAPTER = /\b(?:chapter|ch)\.?:?$/i;          // ("chapter 13": the number right after it is a chapter's, not a volume — "…SIGCHI Chapter, 66-73" keeps its pages)
-  const PUBLISHER = /^(?:the\s)?[^,]*\b(?:press|springer|wiley|elsevier|o'?reilly|publish(?:ing|ers?)|verlag|addison[- ]wesley|routledge|cengage|pearson|mcgraw)\b(?![/-]subscri)(?![^,]*\b(?:quarterly|gazette|bulletin|research|letters|journal|review|news)\b)[^,]*(?:,\s*(?:inc|ltd|llc|gmbh)\.?)?$/i;
+  const PUBLISHER = /^(?:the\s)?[^,]*\b(?:press|springer|wiley|elsevier|o'?reilly|publish(?:ing|ers?)|verlag|addison[- ]wesley|house|routledge|cengage|pearson|mcgraw)\b(?![/-]subscri)(?![^,]*\b(?:quarterly|gazette|bulletin|research|letters|journal|review|news)\b)[^,]*(?:,\s*(?:inc|ltd|llc|gmbh)\.?)?$/i;
   // (journals whose title is a publishing word: no publisher)
   const PUBLISHING_JOURNAL = /^(?:learned publishing|publishing research quarterly|logos|publishers weekly)\b/i;
   const isPublisher = (text) => !PUBLISHING_JOURNAL.test(asPrinted(text)) && (PUBLISHER.test(asPrinted(text)) || PUBLISHER.test(venueParts(text).name));          // ("Morgan & Claypool Publishers 13, 1-187": the name before Scholar's numbers)
@@ -180,6 +180,7 @@
     const whole = clean(text).replace(/\s+/g, " ").replace(/((?:\s\d+\s*\([^()]*\))?(?:,\s+[^,]*){0,2})$/, (tail) => tail.replace(/(\d)\s*[–—]\s*(\d)/g, "$1-$2"));
     let s = whole, year = "", pages = "", volume = "", issue = "", m;
     if ((m = /,\s*((?:19|20)\d{2})$/.exec(s))) { year = m[1]; s = s.slice(0, m.index).trim(); }
+    if (year && s.endsWith(", " + year)) s = s.slice(0, -(year.length + 2)).trim();          // ("Computer Vision and Pattern Recognition (CVPR), 2016, 2016": the year said twice is said once)
     const keep = () => ({ name: s.replace(/[,;:]\s*$/, ""), volume: "", issue: "", pages: "", year });
     if (/…|\.\.\./.test(s)) {
       // (Scholar cut the line inside the issue, "TODAES 11 (1 …": the volume before it is whole, the cut issue is left out)
@@ -218,9 +219,11 @@
   // volume (OOPSLA's is SIGPLAN Notices'), so it stays after the name as printed; a long name's number is its proceedings' volume ("NeurIPS 34", "ICPR'06 2")
   const BARE_ACRONYM = /^[A-Z][A-Za-z]{1,7}$/;          // (with its year — "ICPR'06 1" — the number is the volume)
   const procParts = (text) => { const v = venueParts(text); return v.volume && BARE_ACRONYM.test(v.name) ? { ...v, name: `${v.name} ${v.volume}${v.issue ? ` (${v.issue})` : ""}`, volume: "", issue: "" } : v; };
-  const partsFor = (p, type) => (type === "inproceedings" ? procParts(p.venue) : venueParts(p.venue));
+  // (a line no rule reads, a meeting's or a periodical's, keeps its number after the name as printed, unlabelled; one with a web address is given whole)
+  const WEB = /https?:|\bwww\./i;
+  const partsFor = (p, type) => (type === "inproceedings" ? procParts(p.venue) : type === "misc" ? unlabelled({ ...venueParts(p.venue), pages: "" }, venueParts(p.venue).pages) : venueParts(p.venue));
   // (APA and IEEE label a proceedings' number "Vol." only beside a page range; without one it follows the name as printed, as in GB/T: "Advances in Neural Information Processing Systems 32")
-  const unlabelled = (v) => (v.volume && !v.pages.includes("-") ? { ...v, name: `${v.name} ${v.volume}${v.issue ? ` (${v.issue})` : ""}`, volume: "", issue: "" } : v);
+  const unlabelled = (v, pages = v.pages) => (v.volume && !(v.pages || "").includes("-") ? { ...v, name: `${v.name} ${v.volume}${v.issue ? ` (${v.issue})` : ""}`, volume: "", issue: "", pages } : { ...v, pages });
 
   function entryType(p) {
     const venue = venueParts(p.venue).name;
@@ -344,7 +347,7 @@
     // A line that is neither (a patent, a thesis, a publisher) is given as Scholar printed it, without its year and without italics.
     const kind = entryType(p), apaType = periodical(p) ? "article" : kind.type, parts = partsFor(p, apaType), { name: venue, volume, issue, pages } = apaType === "inproceedings" ? unlabelled(parts) : parts, journal = kind.type === "article";
     const range = pages.replace("-", "–"), venuePieces = [];
-    if (isDocument(p)) { const raw = asPrinted(p.venue); if (raw) venuePieces.push({ t: raw + (/[.]$/.test(raw) ? "" : ".") }); }
+    if (isDocument(p) || WEB.test(p.venue)) { const raw = asPrinted(p.venue); if (raw) venuePieces.push({ t: raw + (/[.]$/.test(raw) ? "" : ".") }); }
     else if (venue && (journal || periodical(p)) && (volume || pages)) {          // (an unclassified line with a volume is a periodical's: "Scientific Reports 6, 29545")
       venuePieces.push({ t: venue, em: true, comma: true });
       if (volume) venuePieces.push({ t: volume, em: true, tail: (issue ? `(${issue})` : "") + (pages ? "," : ".") });
@@ -380,7 +383,7 @@
     const by = !list.length ? "" : list.length > 6 || cut ? `${list[0]} et al.` : list.length === 1 ? list[0] : list.length === 2 ? `${list[0]} and ${list[1]}` : `${list.slice(0, -1).join(", ")}, and ${list[list.length - 1]}`;
     const title = clean(p.title).replace(/[.]$/, "");
     const kind = entryType(p), type = kind.type, ieeeParts = partsFor(p, periodical(p) ? "article" : type), { name, volume, issue, pages } = type === "inproceedings" && !periodical(p) ? unlabelled(ieeeParts) : ieeeParts, year = p.year ? String(p.year) : "";
-    const misc = isDocument(p), venue = misc ? asPrinted(p.venue) : name;
+    const misc = isDocument(p) || WEB.test(p.venue), venue = misc ? asPrinted(p.venue) : name;
     const range = pages.replace("-", "–"), where = [], page = pages && (pages.includes("-") ? `pp. ${range}` : `Art. no. ${pages}`);
     if (type === "article" || periodical(p)) where.push(volume && `vol. ${volume}`, issue && `no. ${issue}`, page, year);
     else if (type === "inproceedings") where.push(year, pages.includes("-") && volume && `vol. ${volume}`, pages.includes("-") && page);          // (a lone number after a proceedings' name is not printed)

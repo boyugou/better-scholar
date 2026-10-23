@@ -560,3 +560,19 @@ test("APA and IEEE keep a proceedings' number without pages after the name, as p
   assert.match(f.apa([paper("Advances in Neural Information Processing Systems 34, 26804-26817, 2021")]), /\(Vol\. 34, pp\. 26804–26817\)\.$/, "beside a page range it is the volume");
 });
 
+test("from whole real profiles: a year said twice is said once; a publishing House is a publisher", () => {
+  const paper = (venue, type) => ({ title: "T", authors: "K He", venue, year: 2016, type, url: "", rank: {}, marks: [] });
+  assert.equal(f.venueParts("Computer Vision and Pattern Recognition (CVPR), 2016, 2016").name, "Computer Vision and Pattern Recognition (CVPR)");
+  assert.match(f.gbt([paper("Computer Vision and Pattern Recognition (CVPR), 2016, 2016", "conference")]), /T\[C\]\/\/Computer Vision and Pattern Recognition \(CVPR\)\. 2016\.$/);
+  assert.equal(f.venueParts("Conference on Things, 2015, 2016").name, "Conference on Things, 2015", "a different year is the name's own");
+  for (const v of ["Random House, 2017", "Artech House, 2005"]) assert.match(f.gbt([paper(v)]), /T\[M\]\./, v);
+});
+
+test("APA and IEEE: an unclassified line keeps its number after the name; a line with a web address is given as printed, plain", () => {
+  const paper = (venue) => ({ title: "T", authors: "K He", venue, year: 2009, type: null, url: "", rank: {}, marks: [] });
+  assert.match(f.apa([paper("Handbook of satisfiability 185, 457-481, 2009")]), /\*Handbook of satisfiability 185\* \(pp\. 457–481\)\.$/);
+  assert.match(f.ieee([paper("Audio Engineering Society Convention 110, 2001")]), /\*Audio Engineering Society Convention 110\*, 2009\.$/);
+  assert.match(f.apa([paper("See https://vicuna. lmsys. org (accessed 14 April 2023) 2 (3), 6, 2023")]), /T\. See https:\/\/vicuna\. lmsys\. org \(accessed 14 April 2023\) 2 \(3\), 6\.$/);
+  assert.doesNotMatch(f.apa([paper("See https://vicuna. lmsys. org (accessed 14 April 2023) 2 (3), 6, 2023")]), /\*/, "no italics for a line no rule reads");
+});
+
