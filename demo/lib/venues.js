@@ -1304,10 +1304,11 @@
       // the person's own mapping of a line no rule ranks: that row, and the other list's row of the same venue; marked as theirs (rule "mine") wherever a rank goes
       // (`assignable`: a line the person may tie to a listed venue — no list ranks it, it is no track, not refused and not cut off, and it has a name; a cut line's visible start would take every line that starts the same)
       // (`generic`: a line no list ranks that names only sponsors and publishers — "IEEE, 2020" — and so cannot be assigned; the checker says why)
-      if (!inner && !out.ccf && !out.core && !out.refused && !secs.length && !p.truncated && /\p{L}/u.test(p.name || "") && !mineKey(raw)) out.generic = true;
-      if (!inner && !out.ccf && !out.core && !out.refused && !secs.length && !p.truncated && raw.length <= MINE_TEXT && mineKey(raw)) {
+      const open = !inner && !out.ccf && !out.core && !out.refused && !secs.length && !p.truncated, mk = open ? mineKey(raw) : "";          // (the key once: it reads the line again)
+      if (open && /\p{L}/u.test(p.name || "") && !mk) out.generic = true;
+      if (open && raw.length <= MINE_TEXT && mk) {
         out.assignable = true;
-        const m = mine.size && mine.get(mineKey(raw));
+        const m = mine.size && mine.get(mk);
         if (m) {
           out[m.list] = badge(m.list, m.row, "mine");
           const rows = idx.partners.get(m.row) || [], other = m.list === "ccf" ? "core" : "ccf";
