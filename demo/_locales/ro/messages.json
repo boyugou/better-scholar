@@ -1241,14 +1241,6 @@
   "optMineRemove": {
     "message": "Șterge"
   },
-  "popupMapped": {
-    "message": "Cu rang din mapările tale de venue-uri: $N1$",
-    "placeholders": {
-      "n1": {
-        "content": "$1"
-      }
-    }
-  },
   "coverMapped": {
     "message": "Lucrări cu rang din mapările tale de venue-uri: $N1$",
     "placeholders": {

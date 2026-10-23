@@ -1241,14 +1241,6 @@
   "optMineRemove": {
     "message": "Remove"
   },
-  "popupMapped": {
-    "message": "$N1$ ranked by your own venue mappings",
-    "placeholders": {
-      "n1": {
-        "content": "$1"
-      }
-    }
-  },
   "coverMapped": {
     "message": "$N1$ papers ranked by your own venue mappings",
     "placeholders": {

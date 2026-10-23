@@ -1241,14 +1241,6 @@
   "optMineRemove": {
     "message": "Quitar"
   },
-  "popupMapped": {
-    "message": "$N1$ con rango según asignaciones propias",
-    "placeholders": {
-      "n1": {
-        "content": "$1"
-      }
-    }
-  },
   "coverMapped": {
     "message": "$N1$ artículos con rango según asignaciones propias",
     "placeholders": {

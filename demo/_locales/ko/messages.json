@@ -1241,14 +1241,6 @@
   "optMineRemove": {
     "message": "삭제"
   },
-  "popupMapped": {
-    "message": "직접 연결로 등급이 매겨진 $N1$편",
-    "placeholders": {
-      "n1": {
-        "content": "$1"
-      }
-    }
-  },
   "coverMapped": {
     "message": "직접 연결로 등급이 매겨진 논문 $N1$편",
     "placeholders": {

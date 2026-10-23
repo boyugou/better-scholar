@@ -1241,14 +1241,6 @@
   "optMineRemove": {
     "message": "Hapus"
   },
-  "popupMapped": {
-    "message": "$N1$ diberi peringkat oleh pemetaan venue sendiri",
-    "placeholders": {
-      "n1": {
-        "content": "$1"
-      }
-    }
-  },
   "coverMapped": {
     "message": "$N1$ makalah diberi peringkat oleh pemetaan venue sendiri",
     "placeholders": {

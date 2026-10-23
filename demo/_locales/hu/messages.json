@@ -1241,14 +1241,6 @@
   "optMineRemove": {
     "message": "Eltávolítás"
   },
-  "popupMapped": {
-    "message": "$N1$ rangsorolva a saját venue-hozzárendeléseid alapján",
-    "placeholders": {
-      "n1": {
-        "content": "$1"
-      }
-    }
-  },
   "coverMapped": {
     "message": "$N1$ cikk rangsorolva a saját venue-hozzárendeléseid alapján",
     "placeholders": {

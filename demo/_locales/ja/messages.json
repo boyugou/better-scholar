@@ -1241,14 +1241,6 @@
   "optMineRemove": {
     "message": "削除"
   },
-  "popupMapped": {
-    "message": "$N1$ 件は自分の掲載先の割り当てでランク付け",
-    "placeholders": {
-      "n1": {
-        "content": "$1"
-      }
-    }
-  },
   "coverMapped": {
     "message": "自分の掲載先の割り当てでランク付けされた論文 $N1$ 件",
     "placeholders": {

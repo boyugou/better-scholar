@@ -1241,14 +1241,6 @@
   "optMineRemove": {
     "message": "Retirer"
   },
-  "popupMapped": {
-    "message": "$N1$ avec un rang d’après les associations personnelles",
-    "placeholders": {
-      "n1": {
-        "content": "$1"
-      }
-    }
-  },
   "coverMapped": {
     "message": "$N1$ articles avec un rang d’après les associations personnelles",
     "placeholders": {

@@ -1241,14 +1241,6 @@
   "optMineRemove": {
     "message": "Verwijderen"
   },
-  "popupMapped": {
-    "message": "$N1$ met een rang via je eigen venue-koppelingen",
-    "placeholders": {
-      "n1": {
-        "content": "$1"
-      }
-    }
-  },
   "coverMapped": {
     "message": "$N1$ papers met een rang via je eigen venue-koppelingen",
     "placeholders": {

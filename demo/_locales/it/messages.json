@@ -1241,14 +1241,6 @@
   "optMineRemove": {
     "message": "Rimuovi"
   },
-  "popupMapped": {
-    "message": "$N1$ con ranking dalle tue associazioni",
-    "placeholders": {
-      "n1": {
-        "content": "$1"
-      }
-    }
-  },
   "coverMapped": {
     "message": "$N1$ articoli con ranking dalle tue associazioni di conferenze/riviste",
     "placeholders": {
