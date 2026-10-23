@@ -1344,6 +1344,9 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
       await eventually(page, () => !document.querySelector(".rr-year").hidden);
       const noHtml = await pageCall("export", { format: "bibtex", html: true });
       assert.ok(noHtml.ok && !("html" in noHtml.result), "a format with no HTML has no html key");
+      const gbHtml = await pageCall("export", { format: "gbt", html: true });
+      assert.match(gbHtml.result.html, /<b>STOICA I<\/b>/, "GB/T for a word processor: the owner's name in bold");
+      assert.doesNotMatch(gbHtml.result.text, /<b>/, "and the text has no mark");
       await pageCall("clearFilters");
       await eventually(page, () => !document.querySelector(".rr-search").hidden && !document.querySelector('[data-rr="metrics"]').hidden);
       // the exports follow what is drawn: a list that no chip and no tab shows is not used, whatever the call asks for

@@ -463,8 +463,10 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
   function exportHtml(kind, { source, filtered = false } = {}) {
     if (kind === "table") { const s = summaryOf(source, filtered); return formats.summaryHtml(s.summary, summaryWords(filtered, s.src)); }
     if (kind === "papers") return formats.papersHtml(paperRecords(), { labels: tableLabels(), ccfOn: B.prefs.lists(prefs).ccf, coreOn: B.prefs.lists(prefs).core, markMe: !!prefs.rows.name });
-    if (kind === "apa") return formats.apaHtml(paperRecords());
-    if (kind === "ieee") return formats.ieeeHtml(paperRecords());
+    // (the owner's name in bold, as the papers table and the page's author line mark it: the "your name" setting)
+    if (kind === "apa") return formats.apaHtml(paperRecords(), { markMe: !!prefs.rows.name });
+    if (kind === "ieee") return formats.ieeeHtml(paperRecords(), { markMe: !!prefs.rows.name });
+    if (kind === "gbt") return formats.gbtHtml(paperRecords(), { markMe: !!prefs.rows.name });
     return "";
   }
 

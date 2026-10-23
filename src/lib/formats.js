@@ -18,6 +18,13 @@
   const clean = (s) => String(s == null ? "" : s).replace(/[\r\n\t]+/g, " ").trim();
   const CUT = /^(?:\.\.\.|…)$/;
   // the names of an author line, and whether Scholar cut the list ("A Author, B Writer, …")
+  // The owner's place in a reference's author list (`p.me`, the name as the author line prints it), or -1; and the sentinels that mark it for the HTML flavours,
+  // which turn them into bold (as the papers table does with `markMe`): the plain text never carries them
+  const OWN_A = "\u0002", OWN_B = "\u0003";
+  const ownerAt = (names, me) => { const m = clean(me || "").replace(/^[*†‡§✉#⁎∗]+\s*|\s*[*†‡§✉#⁎∗]+$/gu, "").trim(); return m ? names.findIndex((n) => n === m) : -1; };
+  const markList = (names, fmt, me) => { const own = me === undefined ? -1 : ownerAt(names, me); return names.map((n, i) => { const s = fmt(n); return s && i === own ? OWN_A + s + OWN_B : s; }).filter(Boolean); };
+  const ownToHtml = (html) => html.replace(/\u0002/g, "<b>").replace(/\u0003/g, "</b>");
+
   function authorList(line) {
     // (the marks Scholar's authors put on a name — "K Zhang*" for a co-first author, a dagger, a mail sign — are no part of it in a reference)
     const parts = clean(line).split(/,\s*/).map((a) => a.replace(/^[*†‡§✉#⁎∗]+\s*|\s*[*†‡§✉#⁎∗]+$/gu, "").trim()).filter(Boolean);
@@ -346,9 +353,9 @@
   }
 
   // One reference as pieces: { t } text, { t, em: true } italics (its full stop follows outside them unless the venue's own text ends with one), { t, url: true } the address.
-  function apaPieces(p) {
+  function apaPieces(p, me) {
     const { names, cut } = authorList(p.authors);
-    const list = names.map(apaAuthor).filter(Boolean);
+    const list = markList(names, apaAuthor, me);
     let by = "";
     if (list.length === 1) by = list[0] + (cut ? ", …" : "");
     else if (list.length === 2 && !cut) by = `${list[0]}, & ${list[1]}`;
@@ -379,8 +386,8 @@
   const apa = (papers) => papers.map((p) => apaPieces(p).map((x) => apaPiece(x, (t) => `*${t}*`)).join(" ")).join("\n\n");
 
   // The same list for a word processor: a paragraph each, the venue in real italics, the address a link (web addresses only), a hanging indent of half an inch (APA 7)
-  const apaHtml = (papers) => papers.map((p) => {
-    const html = apaPieces(p).map((x) => (x.em ? apaPiece({ ...x, tail: esc(x.tail || "") }, (t) => `<i>${esc(t)}</i>`) : x.url && /^https?:\/\//i.test(x.t) ? `<a href="${esc(x.t)}">${esc(x.t)}</a>` : esc(x.t))).join(" ");
+  const apaHtml = (papers, { markMe = false } = {}) => papers.map((p) => {
+    const html = ownToHtml(apaPieces(p, markMe ? p.me : undefined).map((x) => (x.em ? apaPiece({ ...x, tail: esc(x.tail || "") }, (t) => `<i>${esc(t)}</i>`) : x.url && /^https?:\/\//i.test(x.t) ? `<a href="${esc(x.t)}">${esc(x.t)}</a>` : esc(x.t))).join(" "));
     return `<p style="margin:0 0 0.6em 0.5in;text-indent:-0.5in">${html}</p>`;
   }).join("\n");
 
@@ -391,9 +398,9 @@
     const [last, initials, suffix] = apaAuthor(name).split(", ");
     return initials ? `${initials} ${last}${suffix ? " " + suffix : ""}` : last || "";
   };
-  function ieeePieces(p, n) {
+  function ieeePieces(p, n, me) {
     const { names, cut } = authorList(p.authors);
-    const list = names.map(ieeeAuthor).filter(Boolean);
+    const list = markList(names, ieeeAuthor, me);
     const by = !list.length ? "" : list.length > 6 || cut ? `${list[0]} et al.` : list.length === 1 ? list[0] : list.length === 2 ? `${list[0]} and ${list[1]}` : `${list.slice(0, -1).join(", ")}, and ${list[list.length - 1]}`;
     const title = clean(p.title).replace(/[.]$/, "");
     const kind = entryType(p), type = kind.type, ieeeParts = partsFor(p, periodical(p) ? "article" : type), { name, volume, issue, pages } = type === "inproceedings" && !periodical(p) ? unlabelled(ieeeParts) : ieeeParts, year = p.year ? String(p.year) : "";
@@ -407,9 +414,10 @@
     return [{ t: `[${n}]` }, by && { t: by + "," }, title && { t: /[?!]$/.test(title) ? `"${title}"` : `"${title},"` }, venue && type === "inproceedings" && { t: "in" }, venue && (misc ? { t: venue + (tail ? "," : "") } : { t: venue, em: true, comma: !!tail }), { t: (tail || (venue ? "" : "n.d")) + "." }].filter(Boolean);
   }
   // (a piece that is only the closing full stop joins the one before it)
-  const ieeeLine = (p, i, em) => ieeePieces(p, i + 1).map((x) => (x.em ? em(x.t) + (x.comma ? "," : "") : x.t)).join(" ").replace(/ \.$/, ".");
+  const ieeeLine = (p, i, em, me) => ieeePieces(p, i + 1, me).map((x) => (x.em ? em(x.t) + (x.comma ? "," : "") : x.t)).join(" ").replace(/ \.$/, ".");
   const ieee = (papers) => papers.map((p, i) => ieeeLine(p, i, (t) => `*${t}*`)).join("\n\n");
-  const ieeeHtml = (papers) => papers.map((p, i) => `<p style="margin:0 0 0.6em 2.2em;text-indent:-2.2em">${ieeeLine(p, i, (t) => `\u0000${t}\u0001`).split(/(\u0000[^\u0001]*\u0001)/).map((s) => (s.startsWith("\u0000") ? `<i>${esc(s.slice(1, -1))}</i>` : esc(s))).join("")}</p>`).join("\n");
+  // (`markMe`: the owner's name in bold, as in the papers table)
+  const ieeeHtml = (papers, { markMe = false } = {}) => papers.map((p, i) => `<p style="margin:0 0 0.6em 2.2em;text-indent:-2.2em">${ownToHtml(ieeeLine(p, i, (t) => `\u0000${t}\u0001`, markMe ? p.me : undefined).split(/(\u0000[^\u0001]*\u0001)/).map((s) => (s.startsWith("\u0000") ? `<i>${esc(s.slice(1, -1))}</i>` : esc(s))).join(""))}</p>`).join("\n");
 
   // ---- GB/T 7714-2015 ---------------------------------------------------------------------------------------------------------------------------------
   // The Chinese national standard for references (NSFC and most Chinese forms ask for it):
@@ -421,9 +429,9 @@
     const [last, initials, suffix] = apaAuthor(name).split(", ");
     return last ? [last.toUpperCase(), (initials || "").replace(/\./g, "").replace(/\s+/g, " ").trim(), suffix ? suffix.replace(/\./g, "") : ""].filter(Boolean).join(" ") : "";
   };
-  function gbLine(p, n) {
+  function gbLine(p, n, me) {
     const { names, cut } = authorList(p.authors);
-    const list = names.map(gbAuthor).filter(Boolean);
+    const list = markList(names, gbAuthor, me);
     // (et al. is "等" when the names are Chinese: the word of the reference's own language, §8.1.2)
     const by = list.length > 3 || (cut && list.length) ? `${list.slice(0, 3).join(", ")}, ${list.some((x) => /[\u3400-\u9fff]/.test(x)) ? "等" : "et al"}` : list.join(", ");
     const title = clean(p.title).replace(/[.]$/, "");
@@ -442,9 +450,11 @@
     return (type === "inproceedings" ? head + where : head + (where ? ". " + where : "")).replace(/[.\s]*$/, "") + ".";
   }
   const gbt = (papers) => papers.map((p, i) => gbLine(p, i + 1)).join("\n");
+  // the same list for a word processor: a paragraph each, the owner's name in bold when `markMe` (NSFC's forms and most CVs ask for it)
+  const gbtHtml = (papers, { markMe = false } = {}) => papers.map((p, i) => `<p style="margin:0 0 0.4em 0">${ownToHtml(esc(gbLine(p, i + 1, markMe ? p.me : undefined)))}</p>`).join("\n");
 
   // ---- JSON ---------------------------------------------------------------------------------------------------------------------------------------
   const json = ({ owner, source, papers }) => JSON.stringify({ owner, source, total: papers.length, papers }, null, 2);
 
-  return { ROLE_LABEL, summaryText, summaryTable, summaryTsv, summaryHtml, rowsTsv, rowsCsv, rowsHtml, table, papersTsv, papersCsv, papersHtml, bibtex, markdown, apa, apaHtml, apaAuthor, ieee, ieeeHtml, gbt, venueParts, json };
+  return { ROLE_LABEL, summaryText, summaryTable, summaryTsv, summaryHtml, rowsTsv, rowsCsv, rowsHtml, table, papersTsv, papersCsv, papersHtml, bibtex, markdown, apa, apaHtml, apaAuthor, ieee, ieeeHtml, gbt, gbtHtml, venueParts, json };
 });

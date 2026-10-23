@@ -606,3 +606,15 @@ test("a review of the QA fixes: 'Findings' is proceedings only beside an ACL-fam
   for (const v of ["EMNLP Findings 2023, 2023", "ACL Findings 2024, 1-10, 2024", "EMNLP'23 Findings, 2023", "ACL-IJCNLP 2021 Findings, 2021", "Findings (EMNLP), 2022", "EMNLP (findings), 2024"]) assert.match(f.gbt([p(v)]), /\[C\]/, v);
   assert.match(f.gbt([p("ICLR 2019, 2019", "A Smith∗, B Jones#, C Lee⁎")]), /SMITH A, JONES B, LEE C\./);
 });
+
+test("the references' HTML flavours put the owner's name in bold when asked; the plain text never carries a mark", () => {
+  const p = { title: "T", authors: "Y Gu*, K Zhang*, B Gou, A Author", me: "B Gou", venue: "ICLR 2025, 2025", year: 2025, type: "conference", url: "", rank: {}, marks: [] };
+  assert.match(f.apaHtml([p], { markMe: true }), /Zhang, K\., <b>Gou, B\.<\/b>, &amp; Author/);
+  assert.match(f.ieeeHtml([p], { markMe: true }), /K\. Zhang, <b>B\. Gou<\/b>, and A\. Author/);
+  assert.match(f.gbtHtml([p], { markMe: true }), /ZHANG K, <b>GOU B<\/b>, et al\./);
+  assert.doesNotMatch(f.gbtHtml([p]), /<b>/, "off: no bold");
+  assert.match(f.apaHtml([{ ...p, me: "K Zhang*" }], { markMe: true }), /<b>Zhang, K\.<\/b>/, "the owner's printed name with its mark");
+  for (const s of [f.apa([p]), f.ieee([p]), f.gbt([p])]) assert.doesNotMatch(s, /[\u0002\u0003]|<b>/);
+  assert.match(f.gbtHtml([{ ...p, title: "<script>" }], { markMe: true }), /&lt;script&gt;/, "escaped");
+});
+

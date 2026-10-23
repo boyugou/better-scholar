@@ -35,6 +35,9 @@
   pages), the paper page's bare venue only where Scholar cut that line, so the page range lands where it should; *Change…* is shown;
   Enter picks only what is shown; the summary's title counts the loaded papers and has one colon in every language; "Findings" is
   proceedings only beside an ACL-family acronym ("Clinical Findings" is not); every co-first mark is stripped (`∗`, `#`, `⁎` too).
+- **Your name in bold in the references you paste**: *Copy APA*, *Copy IEEE* and now *Copy GB/T 7714* put HTML beside the text, with the
+  profile owner's name in bold while the panel marks it in the author lines (the same setting as the papers table) — what NSFC's forms
+  and most CVs ask for. The plain text stays plain.
 - **The unranked-venue list names the paper page's whole line** once *Read full lists* has read it, instead of the profile's cut line:
   *Check*, *Copy list* and *Report* carry the whole name, and such a venue can then be assigned.
 - **A reviewed snapshot of the reference styles** (`test/formats-snapshot.test.js`, `test/fixtures/formats.expected.json`): how APA, IEEE,
