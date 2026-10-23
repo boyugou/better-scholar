@@ -29,7 +29,9 @@
     const venueKey = ["Journal", "Conference", "Book", "Source", "Publisher"].find((k) => fields[k]);
     // The page is requested with hl=en, so the label is "Authors"; if Scholar ever ignores that,
     // the author list is still the first field of the table.
-    return { authors: fields.Authors || firstValue, venue: venueKey ? fields[venueKey] : "", fields };
+    // (the page's own Pages field, when it is a range: "74-93" says what the profile's "98 (1), 74" cannot — a first page, not an article number)
+    const pages = /^\s*[A-Za-z]{0,4}\d{1,7}\s*[-–]\s*[A-Za-z]{0,4}\d{1,7}\s*$/.test(fields.Pages || "") ? fields.Pages.replace(/\s*[-–]\s*/, "-").trim() : "";
+    return { authors: fields.Authors || firstValue, venue: venueKey ? fields[venueKey] : "", pages, fields };
   }
 
   async function fetchDetail(href, signal) {
@@ -66,7 +68,7 @@
         try {
           const d = await fetchDetail(item.href, signal);
           failed = 0;
-          if (d.authors) cache[item.id] = { authors: d.authors, venue: d.venue, ts: Date.now() };
+          if (d.authors) cache[item.id] = { authors: d.authors, venue: d.venue, ...(d.pages ? { pages: d.pages } : {}), ts: Date.now() };
         } catch (e) {
           if (e.name === "AbortError") return { done, stopped: "cancelled" };
           if (e instanceof ResolveError && e.code === "captcha") return { done, stopped: "captcha" };

@@ -588,3 +588,13 @@ test("from a QA pass: author marks are no part of a name in a reference; Scholar
   assert.match(text, /^A — Tabelle \(CCF\): 1\nversteckt: 1/);
 });
 
+test("the paper page's page range settles a lone number after the issue: a first page, not an article number", () => {
+  const p = { title: "T", authors: "G Hinton", venue: "Psychological review 98 (1), 74, 1991", year: 1991, type: "journal", url: "", rank: {}, marks: [] };
+  assert.match(f.apa([p]), /\*98\*\(1\), Article 74\.$/);
+  assert.match(f.apa([{ ...p, pages: "74-93" }]), /\*98\*\(1\), 74–93\.$/);
+  assert.match(f.ieee([{ ...p, pages: "74-93" }]), /pp\. 74–93, 1991\.$/);
+  assert.match(f.gbt([{ ...p, pages: "74-93" }]), /98\(1\): 74-93\.$/);
+  assert.match(f.gbt([{ ...p, venue: "Psychological review 98 (1), 101-120, 1991", pages: "74-93" }]), /98\(1\): 101-120\.$/, "a range the line has stands");
+  assert.match(f.gbt([{ ...p, pages: "e1-e9 x" }]), /98\(1\): 74\.$/, "a field that is no plain range is not used");
+});
+

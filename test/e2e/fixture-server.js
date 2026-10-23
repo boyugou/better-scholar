@@ -89,6 +89,7 @@ function detailPage(profile, id, hl) {
   return `<!doctype html><html><body><div id="gsc_oci_title">${esc(r.title)}</div><div id="gsc_oci_table">
 <div class="gs_scl"><div class="gsc_oci_field">${L.authors}</div><div class="gsc_oci_value">${esc(full)}</div></div>
 <div class="gs_scl"><div class="gsc_oci_field">${L.conf}</div><div class="gsc_oci_value">${esc(r.venue.replace(/,.*$/, ""))}</div></div>
+${(r.venue.match(/,\s*(\d+-\d+),/) || [])[1] ? `<div class="gs_scl"><div class="gsc_oci_field">Pages</div><div class="gsc_oci_value">${r.venue.match(/,\s*(\d+-\d+),/)[1]}</div></div>` : ""}
 </div></body></html>`;
 }
 

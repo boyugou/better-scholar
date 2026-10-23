@@ -28,7 +28,7 @@
     papers: {
       doc: "The papers, one record each: who you are in the author list, the venue's ranks, award and talk marks.",
       params: { filtered: { type: "boolean", doc: "true (the default): only the papers the page shows now, after the filters; false: every loaded paper." } },
-      result: "{ owner, total, papers: [{ id, title, authors, venue, year, citations, role, status, highlighted, type, me, rank: { ccf: { tier, name, mine? } | null, core: { rank, name, mine? } | null }, marks: [string], url }] } — `role` is first | cofirst | second | last | middle | null; `type` is conference | journal | null (the kind the rank lists give the venue); `me` is the profile owner's name as this paper's author line prints it (an empty text when it was not found); `mine: true` marks a rank from the person's own venue mappings, not from the list."
+      result: "{ owner, total, papers: [{ id, title, authors, venue, pages?, year, citations, role, status, highlighted, type, me, rank: { ccf: { tier, name, mine? } | null, core: { rank, name, mine? } | null }, marks: [string], url }] } — `role` is first | cofirst | second | last | middle | null; `type` is conference | journal | null (the kind the rank lists give the venue); `me` is the profile owner's name as this paper's author line prints it (an empty text when it was not found); `mine: true` marks a rank from the person's own venue mappings, not from the list."
     },
     export: {
       doc: "The papers or the summary as text, in the format of a copy button.",

@@ -381,6 +381,7 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
         authors: (resolved && resolved.authors) || r.raw.authorsText,                // (the whole list once "Read full lists" has read it)
         me: a.status === "found" && a.tokens && a.tokens[a.index] ? a.tokens[a.index].name : "",           // (the owner's name as the author line prints it)
         venue: (resolved && resolved.venue) || r.raw.venueText,
+        ...(resolved && resolved.pages ? { pages: resolved.pages } : {}),          // (the paper page's own page range, when "Read full lists" read one)
         year: a.year, citations: r.shown, role: a.role, status: a.status, highlighted: r.highlighted,
         type: KIND[(shown.ccf && v.ccf && v.ccf.kind) || (shown.core && v.core && v.core.kind)] || null,          // (a list that is switched off does not tell the kind, as in the search)
         rank: { ccf: shown.ccf && v.ccf ? { tier: v.ccf.tier, name: v.ccf.name, ...(v.ccf.rule === "mine" ? { mine: true } : {}) } : null,

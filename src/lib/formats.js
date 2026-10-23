@@ -229,7 +229,12 @@
   const procParts = (text) => { const v = venueParts(text); return v.volume && BARE_ACRONYM.test(v.name) ? { ...v, name: `${v.name} ${v.volume}${v.issue ? ` (${v.issue})` : ""}`, volume: "", issue: "" } : v; };
   // (a line no rule reads, a meeting's or a periodical's, keeps its number after the name as printed, unlabelled; one with a web address is given whole)
   const WEB = /https?:|\bwww\./i;
-  const partsFor = (p, type) => (type === "inproceedings" ? procParts(p.venue) : type === "misc" ? unlabelled({ ...venueParts(p.venue), pages: "" }, venueParts(p.venue).pages) : venueParts(p.venue));
+  const partsFor = (p, type) => withPages(type === "inproceedings" ? procParts(p.venue) : type === "misc" ? unlabelled({ ...venueParts(p.venue), pages: "" }, venueParts(p.venue).pages) : venueParts(p.venue), p.pages);
+  // (the paper page's page range, "74-93", where the venue line had none or only its first number: "98 (1), 74" is then a first page, not an article number)
+  function withPages(v, pages) {
+    if (!pages || !/^[A-Za-z]{0,4}\d+-[A-Za-z]{0,4}\d+$/.test(pages)) return v;
+    return !v.pages || v.pages === pages.split("-")[0] ? { ...v, pages } : v;
+  }
   // (APA and IEEE label a proceedings' number "Vol." only beside a page range; without one it follows the name as printed, as in GB/T: "Advances in Neural Information Processing Systems 32")
   const unlabelled = (v, pages = v.pages) => (v.volume && !(v.pages || "").includes("-") ? { ...v, name: `${v.name} ${v.volume}${v.issue ? ` (${v.issue})` : ""}`, volume: "", issue: "", pages } : { ...v, pages });
 

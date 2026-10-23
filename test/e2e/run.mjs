@@ -898,6 +898,14 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     assert.match(await page.locator('[data-rr="announce"]').textContent(), /Done/, "a screen reader is told when reading the lists has finished");
     console.log("      matrix after resolve:", JSON.stringify(resolvedExpect));
     assert.ok((await page.locator('.gs_gray[title*="paper\'s page"]').count()) > 0, "roles read from a paper's own page say so in a tooltip");
+    // the paper page's Pages field is kept: the records of the papers read carry their page range (the reference styles use it where the profile's line has a lone number)
+    const readRecords = await page.evaluate(() => new Promise((resolve) => {
+      const id = "c" + Math.random();
+      const on = (e) => { if (e.detail.id === id) { document.removeEventListener("better-scholar:response", on); resolve(e.detail); } };
+      document.addEventListener("better-scholar:response", on);
+      document.dispatchEvent(new CustomEvent("better-scholar:request", { detail: { id, method: "papers", params: { filtered: false } } }));
+    }));
+    assert.ok(readRecords.result.papers.some((x) => /^\d+-\d+$/.test(x.pages || "")), "a paper read from its page has its page range");
 
     // -- 11b. Semantic Scholar: with the setting on, cut-off author lists come from its API (title only), and Scholar's own pages are not read
     {

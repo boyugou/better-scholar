@@ -243,7 +243,7 @@ Result: { owner, loaded, counted, shown, loadingAll, layoutBroken, edition, noRa
 The papers, one record each: who you are in the author list, the venue's ranks, award and talk marks.
 Parameters:
   - `filtered`: true (the default): only the papers the page shows now, after the filters; false: every loaded paper.
-Result: { owner, total, papers: [{ id, title, authors, venue, year, citations, role, status, highlighted, type, me, rank: { ccf: { tier, name, mine? } | null, core: { rank, name, mine? } | null }, marks: [string], url }] } — `role` is first | cofirst | second | last | middle | null; `type` is conference | journal | null (the kind the rank lists give the venue); `me` is the profile owner's name as this paper's author line prints it (an empty text when it was not found); `mine: true` marks a rank from the person's own venue mappings, not from the list.
+Result: { owner, total, papers: [{ id, title, authors, venue, pages?, year, citations, role, status, highlighted, type, me, rank: { ccf: { tier, name, mine? } | null, core: { rank, name, mine? } | null }, marks: [string], url }] } — `role` is first | cofirst | second | last | middle | null; `type` is conference | journal | null (the kind the rank lists give the venue); `me` is the profile owner's name as this paper's author line prints it (an empty text when it was not found); `mine: true` marks a rank from the person's own venue mappings, not from the list.
 
 ### `export`
 The papers or the summary as text, in the format of a copy button.
