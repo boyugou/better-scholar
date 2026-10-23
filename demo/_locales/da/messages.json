@@ -1290,5 +1290,8 @@
   },
   "optMineChange": {
     "message": "Skift…"
+  },
+  "popupMyProfile": {
+    "message": "Åbn min profil"
   }
 }

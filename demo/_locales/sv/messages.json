@@ -1290,5 +1290,8 @@
   },
   "optMineChange": {
     "message": "Byt…"
+  },
+  "popupMyProfile": {
+    "message": "Öppna min profil"
   }
 }

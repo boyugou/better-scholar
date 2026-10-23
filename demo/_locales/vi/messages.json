@@ -1290,5 +1290,8 @@
   },
   "optMineChange": {
     "message": "Đổi…"
+  },
+  "popupMyProfile": {
+    "message": "Mở hồ sơ của tôi"
   }
 }
