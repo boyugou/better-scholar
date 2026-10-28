@@ -18,7 +18,7 @@
     try {
       chrome.runtime.onMessage.addListener((msg, _sender, send) => {
         if (!msg || msg.type !== "rr:call") return false;
-        answer(null, msg.method, msg.params).then(send);
+        answer(null, msg.method, msg.params).then(send, (e) => send({ id: null, ok: false, error: String(e).slice(0, 200) }));
         return true;          // (the answer comes once it is ready)
       });
     } catch (e) { /* extension context gone */ }

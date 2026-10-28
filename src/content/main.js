@@ -473,10 +473,10 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
       columns: summary.columns.map((c) => (c === metrics.NONE ? "–" : c)),
       totalHead: t("colTotal"),
       rows: summary.rows.map((r) => ({ label: t(ROLE[r.role] || r.role), color: roleColor(r.role), cells: cells(r), total: r.total })),
-      totals: { label: t("tsvTotal"), cells: cells(summary.totals), total: summary.totals.total },
+      totals: { label: t("colTotal"), cells: cells(summary.totals), total: summary.totals.total },          // (the panel's one word for the total, row and column)
       notes: [filtered ? scopeLine() : "", summary.hidden ? unseenWords.hidden(summary.hidden) : "", summary.absent ? unseenWords.absent(summary.absent) : "",
         ...copyNotes(src, filtered), src ? `${edition[src]} — ${td("tipToday")}` : ""],
-      dir: B.dom.dir()
+      dir: B.dom.dir(), lang: B.dom.langTag()
     });
   }
 
@@ -493,7 +493,7 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
 
   // A copy button pressed: the text goes to the clipboard, or (CSV) to a file; what there is to say is said on the button
   async function deliver(kind) {
-    if (kind !== "summary" && kind !== "table" && !shownRows().length) { panel.flash(kind, "empty"); return; }          // (the filters leave no paper: nothing to put on the clipboard)
+    if (kind !== "summary" && kind !== "table" && kind !== "image" && !shownRows().length) { panel.flash(kind, "empty"); return; }          // (the filters leave no paper: nothing to put on the clipboard)
     const text = exportText(kind, { filtered: true });                                // (the panel's buttons copy what the panel counts)
     if (kind === "image") {
       let blob = null;
@@ -786,9 +786,9 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
     },
     papers: ({ filtered = true } = {}) => ({ owner: headerName, total: live().length, papers: paperRecords(filtered) }),
     export: async ({ format, source, html, filtered }) => {
-      const rich = html ? exportHtml(format, { source, filtered }) : "";
+      const rich = html ? exportHtml(format, { source, filtered }) : "", text = exportText(format, { source, filtered });          // (the text first: the picture is of the same rows)
       const png = format === "image" ? await B.image.dataUrl(await tableImage({ source, filtered })) : "";
-      return { format, text: exportText(format, { source, filtered }), ...(rich ? { html: rich } : {}), ...(png ? { png } : {}) };          // (a format with no HTML has no html key; the picture as a data: address)
+      return { format, text, ...(rich ? { html: rich } : {}), ...(png ? { png } : {}) };          // (a format with no HTML has no html key; the picture as a data: address)
     },
     filter: (p) => {
       // (a filter with no control left to undo it would hide rows for good)

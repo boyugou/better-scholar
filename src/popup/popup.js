@@ -93,10 +93,11 @@
         const paperFormat = kind !== "summary" && kind !== "table" && kind !== "image";
         if (paperFormat && !data.shown) { say(button, t("copyEmpty"), false); return; }
         const res = await call("export", { format: kind, html: true, ...(paperFormat ? {} : { source }) });
-        if (!res || !res.ok) return;
+        if (!res || !res.ok) { if (kind === "image") say(button, t("copyFailed"), false); return; }
         if (kind === "csv") { B.dom.downloadFile(((data.owner || "scholar").trim().replace(/[/\\?%*:|"<>]/g, "").replace(/\s+/g, "_") || "scholar") + "-papers.csv", res.result.text); say(button, t("exported")); }
         else if (kind === "image") {          // (the page draws the picture and sends it as a data: address)
-          const blob = res.result.png ? await (await fetch(res.result.png)).blob() : null;
+          let blob = null;
+          try { blob = res.result.png ? await (await fetch(res.result.png)).blob() : null; } catch (err) { /* said below */ }
           if (blob && await B.dom.copyImage(blob, res.result.text)) say(button, t("copied")); else say(button, t("copyFailed"), false);
         }
         else if (await copyText(res.result.text, res.result.html)) say(button, t("copied"));

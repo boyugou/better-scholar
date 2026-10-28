@@ -39,6 +39,9 @@
   images — the panel's numbers, the role colours, the list's edition and what was counted, drawn at twice the size, mirrored for a
   right-to-left language, with the summary text beside it on the clipboard. The toolbar popup has it too, and the `export` call returns it
   as `png` (a data: address). The page calls may now answer once their result is ready.
+  An independent review fixed: a long note (the source address) widens the picture instead of running off it; the total column has the
+  panel's one word, row and column, and as much room as a custom name needs; a failed copy is no longer drawn green; the picture of an
+  empty selection is copied like the table; the popup says when the picture fails; Japanese pages draw with Japanese fonts first.
 - **The popup off a profile offers *Open my profile*** (Scholar's own "My profile" address, the person's profile when signed in) beside
   *Open Google Scholar*: most people look at their own profile first. CI pins its runner to Ubuntu 24.04 and runs the unit tests on Node 22
   and 24 (Node 20 reached its end of life).

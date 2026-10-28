@@ -3,19 +3,23 @@
 (function () {
   "use strict";
   const B = (globalThis.RolesRanks = globalThis.RolesRanks || {});
-  const FONT = "system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans CJK SC', 'PingFang SC', sans-serif";
+  // (Japanese first for a Japanese page: where system-ui has no Japanese face, a Chinese one would give Japanese text Chinese glyph shapes)
+  const fontFor = (lang) => "system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', " + (/^ja/i.test(lang || "") ? "'Hiragino Sans', 'Noto Sans JP', 'Noto Sans CJK JP', " : "") + "'Noto Sans CJK SC', 'PingFang SC', sans-serif";
   const INK = "#202124", MUTED = "#5f6368", LINE = "#dadce0";
 
-  // model: { title, owner, columns: [label], totalHead, rows: [{ label, color, cells: [n], total }], totals: { label, cells: [n], total }, notes: [line], dir }
+  // model: { title, owner, lang, columns: [label], totalHead, rows: [{ label, color, cells: [n], total }], totals: { label, cells: [n], total }, notes: [line], dir }
   async function tablePng(model, scale = 2) {
     const probe = new OffscreenCanvas(1, 1).getContext("2d");
-    const font = (w, px) => `${w} ${px}px ${FONT}`;
+    const FONT = fontFor(model.lang), font = (w, px) => `${w} ${px}px ${FONT}`;
     const width = (text, f) => { probe.font = f; return probe.measureText(String(text)).width; };
     const PAD = 20, ROW = 24, NUM = 46, DOT = 10;
     const fTitle = font(600, 15), fOwner = font(400, 12), fHead = font(700, 11), fCell = font(400, 13), fBold = font(700, 13), fNote = font(400, 11);
     const labelW = Math.max(...[...model.rows, model.totals].map((r) => width(r.label, fBold) + DOT + 8), 90);
-    const tableW = labelW + 12 + NUM * (model.columns.length + 1);
-    const W = Math.ceil(Math.max(tableW, width(model.title, fTitle), width(model.owner || "", fOwner), 280) + PAD * 2);
+    const TOT = Math.max(NUM, width(model.totalHead || "", fHead) + 10);          // (the total column as wide as its own name: a custom name is up to 30 characters)
+    const tableW = labelW + 12 + NUM * model.columns.length + TOT;
+    // (as wide as the table, the title, the owner line and the longest word of a note — a web address cannot be wrapped)
+    const noteWord = Math.max(0, ...(model.notes || []).filter(Boolean).flatMap((n) => String(n).split(/\s+/)).map((w) => width(w, fNote)));
+    const W = Math.ceil(Math.max(tableW, width(model.title, fTitle), width(model.owner || "", fOwner), noteWord, 280) + PAD * 2);
     // the notes wrap at the picture's width
     const wrap = (text) => {
       const words = String(text).split(/(\s+)/), lines = [];
@@ -41,7 +45,7 @@
     if (model.owner) { text(model.owner, PAD, y, fOwner, MUTED); y += 18; }
     y += 10;
     // the header: the tiers, then the total
-    const colX = (i) => PAD + labelW + 12 + NUM * i + NUM / 2;
+    const colX = (i) => (i < model.columns.length ? PAD + labelW + 12 + NUM * i + NUM / 2 : PAD + labelW + 12 + NUM * model.columns.length + TOT / 2);
     model.columns.forEach((c, i) => text(c, colX(i), y, fHead, MUTED, "center"));
     text(model.totalHead || "", colX(model.columns.length), y, fHead, MUTED, "center");
     y += ROW;

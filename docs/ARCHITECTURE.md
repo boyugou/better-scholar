@@ -389,7 +389,7 @@ arrangement is redone when the window crosses the breakpoint. When Scholar's lay
 The popup sends `{ type: "rr:call", method: "summary" }` to the active tab (`chrome.tabs.sendMessage`; no `tabs`
 permission is needed for that). The answer carries the numbers only: the three summaries (CCF, CORE, by role only), the awards and
 talks counts, the citation totals. What to draw is read from the settings by the popup itself (`B.store.loadPrefs()`), so it obeys the
-same switches, order and names as the panel. A copy button asks for `export` and copies the text; CSV is saved as a file. A tab that
+same switches, order and names as the panel. A copy button asks for `export` and copies the text (with its HTML, or for *Copy as image* the `png` the page drew); CSV is saved as a file. A tab that
 is not a profile gets no answer, and the popup offers to open Google Scholar.
 
 ## The settings page
@@ -498,7 +498,7 @@ acronym ("IJCAI 16" is an edition); otherwise it follows the name as printed. `t
 GB/T reading of all 22,744 real lines (`test/fixtures/formats.expected.json`): a change shows its exact effect, as the venue
 snapshot does for the matcher (CONTRIBUTING.md, *Changing the reference styles*).
 
-Five buttons put a second flavour on the clipboard: *Copy as table* (`summaryHtml`), *Copy papers* (`papersHtml`), *Copy APA* (`apaHtml`), *Copy IEEE* (`ieeeHtml`) and *Copy GB/T 7714* (`gbtHtml`) also give HTML (the references with the owner's name in bold while `rows.name` marks it), so a word processor pastes a real table or real italics, a link and a hanging indent where a spreadsheet or a text box takes the text (`dom.copyText(text, html)` writes both with `ClipboardItem`, and the text alone if that is refused). The HTML is built from the same rows and the same escaping (every text is escaped; a formula-like cell is made text; only `http(s)` addresses become links). `main.js` `exportHtml(kind)` makes it for the panel's button; the popup and agents ask the `export` call for it with `html: true`. The other formats are text only.
+Five buttons put a second flavour on the clipboard: *Copy as table* (`summaryHtml`), *Copy papers* (`papersHtml`), *Copy APA* (`apaHtml`), *Copy IEEE* (`ieeeHtml`) and *Copy GB/T 7714* (`gbtHtml`) also give HTML (the references with the owner's name in bold while `rows.name` marks it), so a word processor pastes a real table or real italics, a link and a hanging indent where a spreadsheet or a text box takes the text (`dom.copyText(text, html)` writes both with `ClipboardItem`, and the text alone if that is refused). The HTML is built from the same rows and the same escaping (every text is escaped; a formula-like cell is made text; only `http(s)` addresses become links). `main.js` `exportHtml(kind)` makes it for the panel's button; the popup and agents ask the `export` call for it with `html: true`. The other formats are text only, except *Copy as image* (`content/image.js`): a PNG of the role × rank table drawn on an `OffscreenCanvas` — the numbers the table counts, the role colours, the notes a copied summary carries, mirrored for a right-to-left language — put on the clipboard with the summary text; the `export` call returns it as `png`, a data: address.
 
 ## Storage and privacy
 

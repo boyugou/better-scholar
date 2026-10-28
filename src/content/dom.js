@@ -98,8 +98,7 @@
     return t(key, subs);
   }
 
-  // The text goes to the clipboard. With `html` the clipboard holds both: a word processor takes the HTML (a real table, real italics) where a text box or a spreadsheet takes the text.
-  // a picture on the clipboard, with its text beside it (a text field takes the text); false when the browser refuses it
+  // A picture on the clipboard, with its text beside it (a text field takes the text); false when the browser refuses it
   async function copyImage(blob, text) {
     try {
       await navigator.clipboard.write([new ClipboardItem({ "image/png": blob, "text/plain": new Blob([text || ""], { type: "text/plain" }) })]);
@@ -107,6 +106,7 @@
     } catch (e) { return false; }
   }
 
+  // The text goes to the clipboard. With `html` the clipboard holds both: a word processor takes the HTML (a real table, real italics) where a text box or a spreadsheet takes the text.
   async function copyText(text, html) {
     if (html && typeof ClipboardItem === "function") {
       try {
