@@ -84,7 +84,7 @@
   "honest.title": "Ograniczenia",
   "honest.l1": "Rankingi pochodzą z aktualnych list. W roku publikacji miejsce publikacji mogło mieć inny ranking.",
   "honest.l2": "CCF zastrzega, że jego lista nie jest podstawą oceny naukowej.",
-  "honest.l3": "Nigdy nie zgaduje. Miejsce publikacji, którego nie potrafi umieścić, nie dostaje etykiety, a panel zestawienia je wymienia.",
+  "honest.l3": "Nigdy nie zgaduje. Miejsce publikacji, którego nie potrafi umieścić, nie dostaje etykiety, a panel zestawienia je wymienia. Takie miejsce możesz sam przypisać do miejsca z listy: jego etykieta będzie przerywana, a każda kopia to pokaże.",
   "footer.license": "Open source, licencja Apache License 2.0",
   "footer.privacy": "Prywatność",
   "footer.roadmap": "Plan rozwoju",

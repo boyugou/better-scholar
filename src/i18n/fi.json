@@ -84,7 +84,7 @@
   "honest.title": "Rajoitukset",
   "honest.l1": "Luokat perustuvat nykyisiin luetteloihin. Julkaisuvuonna foorumilla on voinut olla toinen luokka.",
   "honest.l2": "CCF toteaa, ettei sen luetteloa ole tarkoitettu akateemisen arvioinnin perustaksi.",
-  "honest.l3": "Se ei koskaan arvaa. Foorumi, jota se ei pysty sijoittamaan, ei saa tunnistetta, ja yhteenvetopaneeli luettelee sen.",
+  "honest.l3": "Se ei koskaan arvaa. Foorumi, jota se ei pysty sijoittamaan, ei saa tunnistetta, ja yhteenvetopaneeli luettelee sen. Sellaisen foorumin voit itse kohdistaa luetteloidulle foorumille: sen tunniste on silloin katkoviivoitettu ja jokainen kopio kertoo sen.",
   "footer.license": "Avoin lähdekoodi, Apache License 2.0",
   "footer.privacy": "Tietosuoja",
   "footer.roadmap": "Tiekartta",

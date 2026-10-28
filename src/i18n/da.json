@@ -84,7 +84,7 @@
   "honest.title": "Begrænsninger",
   "honest.l1": "Rangerne kommer fra dagens lister. I det år en artikel blev udgivet, kan dens publikationssted have haft en anden rang.",
   "honest.l2": "CCF siger, at listen ikke er et grundlag for akademisk evaluering.",
-  "honest.l3": "Den gætter aldrig. Et publikationssted, den ikke kan placere, får intet mærke, og oversigtspanelet viser det.",
+  "honest.l3": "Den gætter aldrig. Et publikationssted, den ikke kan placere, får intet mærke, og oversigtspanelet viser det. Et sådant publikationssted kan du selv tilknytte til et publikationssted fra listen: dets mærke bliver stiplet, og hver kopi siger det.",
   "footer.license": "Open source, Apache License 2.0",
   "footer.privacy": "Privatliv",
   "footer.roadmap": "Roadmap",

@@ -84,7 +84,7 @@
   "honest.title": "Begränsningar",
   "honest.l1": "Rankerna kommer från dagens listor. Under det år en artikel publicerades kan dess publiceringsställe ha haft en annan rank.",
   "honest.l2": "CCF säger att listan inte är en grund för akademisk utvärdering.",
-  "honest.l3": "Det gissar aldrig. Ett publiceringsställe som det inte kan placera får ingen etikett, och sammanfattningspanelen listar det.",
+  "honest.l3": "Det gissar aldrig. Ett publiceringsställe som det inte kan placera får ingen etikett, och sammanfattningspanelen listar det. Ett sådant publiceringsställe kan du själv koppla till ett listat publiceringsställe: dess etikett blir då streckad, och varje kopia säger det.",
   "footer.license": "Öppen källkod, Apache License 2.0",
   "footer.privacy": "Integritet",
   "footer.roadmap": "Roadmap",

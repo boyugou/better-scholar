@@ -84,7 +84,7 @@
   "honest.title": "Limites",
   "honest.l1": "Les rangs proviennent des listes actuelles. L'année de publication d'un article, sa revue ou sa conférence pouvait avoir un autre rang.",
   "honest.l2": "La CCF précise que sa liste ne doit pas servir de base à l'évaluation académique.",
-  "honest.l3": "Elle ne devine jamais. Une revue ou conférence qu'elle ne peut pas placer n'obtient pas de pastille, et le panneau la signale.",
+  "honest.l3": "Elle ne devine jamais. Une revue ou conférence qu'elle ne peut pas placer n'obtient pas de pastille, et le panneau la signale. Une revue ou conférence de ce type, vous pouvez l'associer vous-même à une conférence ou revue de la liste : sa pastille devient alors en pointillés, et chaque copie le précise.",
   "footer.license": "Open source, Apache License 2.0",
   "footer.privacy": "Confidentialité",
   "footer.roadmap": "Feuille de route",

@@ -84,7 +84,7 @@
   "honest.title": "Korlátok",
   "honest.l1": "A rangok a mai listákból származnak. A cikk megjelenési évében a venue-nek más rangja lehetett.",
   "honest.l2": "A CCF kijelenti, hogy listája nem alapja a tudományos értékelésnek.",
-  "honest.l3": "Soha nem találgat. Az a venue, amelyet nem tud besorolni, nem kap címkét, az összesítő panel pedig felsorolja.",
+  "honest.l3": "Soha nem találgat. Az a venue, amelyet nem tud besorolni, nem kap címkét, az összesítő panel pedig felsorolja. Ilyen venue-t te magad rendelhetsz listán szereplő venue-hez: címkéje ekkor szaggatott lesz, és minden másolat ezt jelzi.",
   "footer.license": "Nyílt forráskódú, Apache License 2.0",
   "footer.privacy": "Adatvédelem",
   "footer.roadmap": "Ütemterv",

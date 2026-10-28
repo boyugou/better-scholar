@@ -84,7 +84,7 @@
   "honest.title": "Limite",
   "honest.l1": "Rangurile provin din listele de azi. În anul publicării lucrării, venue-ul ei ar fi putut avea alt rang.",
   "honest.l2": "CCF precizează că lista sa nu este o bază pentru evaluarea academică.",
-  "honest.l3": "Nu ghicește niciodată. Un venue pe care nu îl poate încadra nu primește nicio etichetă, iar panoul de rezumat îl listează.",
+  "honest.l3": "Nu ghicește niciodată. Un venue pe care nu îl poate încadra nu primește nicio etichetă, iar panoul de rezumat îl listează. Un astfel de venue îl poți atribui tu unui venue din listă: eticheta lui are atunci contur întrerupt, iar fiecare copie o arată.",
   "footer.license": "Open source, Apache License 2.0",
   "footer.privacy": "Confidențialitate",
   "footer.roadmap": "Plan de dezvoltare",

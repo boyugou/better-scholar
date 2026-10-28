@@ -84,7 +84,7 @@
   "honest.title": "Sınırlar",
   "honest.l1": "Sıralamalar bugünkü listelerden gelir. Bir makalenin yayımlandığı yılda yayın yerinin sıralaması farklı olmuş olabilir.",
   "honest.l2": "CCF, listesinin akademik değerlendirmeye esas olmadığını belirtir.",
-  "honest.l3": "Eklenti asla tahmin yürütmez. Yerleştiremediği bir yayın yerine etiket verilmez ve panel onu listeler.",
+  "honest.l3": "Eklenti asla tahmin yürütmez. Yerleştiremediği bir yayın yerine etiket verilmez ve panel onu listeler. Böyle bir yayın yerini siz, listedeki bir yayın yerine atayabilirsiniz: etiketi o zaman kesik çizgili olur ve her kopya bunu belirtir.",
   "footer.license": "Açık kaynak, Apache License 2.0",
   "footer.privacy": "Gizlilik",
   "footer.roadmap": "Yol haritası",

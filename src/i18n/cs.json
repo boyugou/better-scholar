@@ -84,7 +84,7 @@
   "honest.title": "Omezení",
   "honest.l1": "Ranky pocházejí z aktuálních seznamů. V roce vydání práce mohlo mít její místo publikace jiný rank.",
   "honest.l2": "CCF uvádí, že její seznam není podkladem pro akademické hodnocení.",
-  "honest.l3": "Nikdy nehádá. Místo publikace, které nedokáže zařadit, nedostane štítek a panel s přehledem ho uvede.",
+  "honest.l3": "Nikdy nehádá. Místo publikace, které nedokáže zařadit, nedostane štítek a panel s přehledem ho uvede. Takové místo publikace můžete sami přiřadit k místu ze seznamu: jeho štítek je pak čárkovaný a každá kopie to uvádí.",
   "footer.license": "Open source, licence Apache License 2.0",
   "footer.privacy": "Ochrana soukromí",
   "footer.roadmap": "Plán vývoje",

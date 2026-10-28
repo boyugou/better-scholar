@@ -84,7 +84,7 @@
   "honest.title": "Limits",
   "honest.l1": "The ranks come from today's lists. In the year of a paper, its venue may have had a different rank.",
   "honest.l2": "CCF says that its list is not a basis for academic evaluation.",
-  "honest.l3": "It never guesses. A venue that it cannot place gets no chip, and the panel lists it.",
+  "honest.l3": "It never guesses. A venue that it cannot place gets no chip, and the panel lists it. You may tie such a venue to a listed one yourself: its chip is then dashed and marked as yours.",
   "footer.license": "Open source, Apache License 2.0",
   "footer.privacy": "Privacy",
   "footer.roadmap": "Roadmap",

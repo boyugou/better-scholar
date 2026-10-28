@@ -84,7 +84,7 @@
   "honest.title": "Limites",
   "honest.l1": "Os rankings vêm das listas atuais. No ano de um artigo, o veículo pode ter tido outro ranking.",
   "honest.l2": "A CCF afirma que a sua lista não deve servir de base para avaliação académica.",
-  "honest.l3": "Nunca adivinha. Um veículo que não consegue posicionar não recebe etiqueta, e o painel inclui-o na lista.",
+  "honest.l3": "Nunca adivinha. Um veículo que não consegue posicionar não recebe etiqueta, e o painel inclui-o na lista. Um veículo assim pode ser atribuído a um veículo da lista por si: a etiqueta fica tracejada e cada cópia o indica.",
   "footer.license": "Código aberto, Apache License 2.0",
   "footer.privacy": "Privacidade",
   "footer.roadmap": "Roteiro",

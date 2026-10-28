@@ -84,7 +84,7 @@
   "honest.title": "Batasan",
   "honest.l1": "Peringkat berasal dari daftar saat ini, bukan peringkat saat publikasi. Pada tahun makalah itu terbit, venue-nya mungkin memiliki peringkat yang berbeda.",
   "honest.l2": "CCF menyatakan daftarnya bukan dasar penilaian akademik.",
-  "honest.l3": "Ekstensi tidak pernah menebak. Venue yang tidak dapat ditempatkan tidak mendapat label, dan panel tetap mencantumkannya.",
+  "honest.l3": "Ekstensi tidak pernah menebak. Venue yang tidak dapat ditempatkan tidak mendapat label, dan panel tetap mencantumkannya. Venue seperti itu dapat Anda tetapkan sendiri ke venue dalam daftar: labelnya lalu bergaris putus-putus, dan setiap salinan menyatakannya.",
   "footer.license": "Open source, Apache License 2.0",
   "footer.privacy": "Privasi",
   "footer.roadmap": "Peta jalan",

@@ -84,7 +84,7 @@
   "honest.title": "Giới hạn",
   "honest.l1": "Hạng lấy từ danh sách hiện hành, không phải hạng tại thời điểm xuất bản. Trong năm công bố của một bài báo, venue của bài đó có thể đã có hạng khác.",
   "honest.l2": "CCF nêu rõ danh sách của họ không phải căn cứ đánh giá học thuật.",
-  "honest.l3": "Tiện ích không bao giờ suy đoán. Venue mà tiện ích không xác định được vị trí sẽ không có nhãn, và bảng tóm tắt liệt kê venue đó.",
+  "honest.l3": "Tiện ích không bao giờ suy đoán. Venue mà tiện ích không xác định được vị trí sẽ không có nhãn, và bảng tóm tắt liệt kê venue đó. Venue như vậy, bạn có thể tự gán cho một venue trong danh sách: nhãn của nó khi đó có viền nét đứt, và mọi bản sao đều ghi điều đó.",
   "footer.license": "Mã nguồn mở, Apache License 2.0",
   "footer.privacy": "Quyền riêng tư",
   "footer.roadmap": "Lộ trình",

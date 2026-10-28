@@ -84,7 +84,7 @@
   "honest.title": "Begrensninger",
   "honest.l1": "Rangene kommer fra dagens lister. I året en artikkel ble publisert, kan publiseringsstedet ha hatt en annen rang.",
   "honest.l2": "CCF sier at listen ikke er et grunnlag for akademisk evaluering.",
-  "honest.l3": "Den gjetter aldri. Et publiseringssted den ikke kan plassere, får ingen merkelapp, og oversiktspanelet viser det.",
+  "honest.l3": "Den gjetter aldri. Et publiseringssted den ikke kan plassere, får ingen merkelapp, og oversiktspanelet viser det. Et slikt publiseringssted kan du selv knytte til et publiseringssted på listen: merkelappen blir da stiplet, og hver kopi sier det.",
   "footer.license": "Åpen kildekode, Apache License 2.0",
   "footer.privacy": "Personvern",
   "footer.roadmap": "Veikart",

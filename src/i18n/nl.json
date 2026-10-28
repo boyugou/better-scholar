@@ -84,7 +84,7 @@
   "honest.title": "Beperkingen",
   "honest.l1": "De rangen komen uit de huidige lijsten. In het jaar van een paper had de venue misschien een andere rang.",
   "honest.l2": "CCF zegt dat zijn lijst geen basis is voor academische beoordeling.",
-  "honest.l3": "De extensie raadt nooit. Een venue die ze niet kan plaatsen, krijgt geen label, en het overzichtspaneel toont hem.",
+  "honest.l3": "De extensie raadt nooit. Een venue die ze niet kan plaatsen, krijgt geen label, en het overzichtspaneel toont hem. Zo'n venue kun je zelf koppelen aan een venue op de lijst: het label wordt dan gestippeld en elke kopie zegt dat.",
   "footer.license": "Open source, Apache License 2.0",
   "footer.privacy": "Privacy",
   "footer.roadmap": "Roadmap",

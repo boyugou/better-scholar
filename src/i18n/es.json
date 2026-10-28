@@ -84,7 +84,7 @@
   "honest.title": "Límites",
   "honest.l1": "Los rangos proceden de las listas actuales. En el año de un artículo, su congreso o revista pudo tener otro rango.",
   "honest.l2": "CCF indica que su lista no debe usarse como base para la evaluación académica.",
-  "honest.l3": "Nunca adivina. Un congreso o revista que no puede ubicar no recibe etiqueta, y el panel lo muestra en su lista.",
+  "honest.l3": "Nunca adivina. Un congreso o revista que no puede ubicar no recibe etiqueta, y el panel lo muestra en su lista. Un congreso o revista así puedes asignarlo tú mismo a uno de la lista: su etiqueta aparece con borde discontinuo y cada copia lo indica.",
   "footer.license": "Código abierto, Apache License 2.0",
   "footer.privacy": "Privacidad",
   "footer.roadmap": "Hoja de ruta",

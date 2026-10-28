@@ -84,7 +84,7 @@
   "honest.title": "Limiti",
   "honest.l1": "I ranking provengono dagli elenchi attuali. Nell'anno di un articolo, la sua conferenza o rivista potrebbe aver avuto un ranking diverso.",
   "honest.l2": "La CCF precisa che il suo elenco non è una base per la valutazione accademica.",
-  "honest.l3": "Non tira mai a indovinare. Una conferenza o rivista che non riesce a collocare non riceve alcuna etichetta, e il pannello la elenca.",
+  "honest.l3": "Non tira mai a indovinare. Una conferenza o rivista che non riesce a collocare non riceve alcuna etichetta, e il pannello la elenca. Una conferenza o rivista così puoi assegnarla tu a una conferenza o rivista in elenco: la sua etichetta diventa tratteggiata e ogni copia lo indica.",
   "footer.license": "Open source, Apache License 2.0",
   "footer.privacy": "Privacy",
   "footer.roadmap": "Roadmap",
