@@ -53,7 +53,7 @@
   "ops.cite.title": "Citace",
   "ops.cite.text": "Práce s více nebo méně citacemi, než je zadané číslo.",
   "ops.tier.title": "Rank",
-  "ops.tier.text": "Práce z míst publikace s daným rankem CCF nebo CORE.",
+  "ops.tier.text": "Práce z míst publikace s daným rankem CCF nebo CORE, nebo jen z časopisů nebo jen z konferencí.",
   "ops.role.title": "Role",
   "ops.role.text": "Práce, kde jste prvním, spoluprvním, druhým nebo posledním autorem.",
   "ops.year.title": "Rok",

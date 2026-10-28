@@ -53,7 +53,7 @@
   "ops.cite.title": "Citas",
   "ops.cite.text": "Artículos con más o con menos citas que un número.",
   "ops.tier.title": "Rango",
-  "ops.tier.text": "Artículos en congresos o revistas con un rango CCF o CORE determinado.",
+  "ops.tier.text": "Artículos en congresos o revistas con un rango CCF o CORE determinado, o solo en revistas o solo en congresos.",
   "ops.role.title": "Posición",
   "ops.role.text": "Artículos en los que eres primer, coprimer, segundo o último autor.",
   "ops.year.title": "Año",

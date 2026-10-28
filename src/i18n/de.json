@@ -53,7 +53,7 @@
   "ops.cite.title": "Zitierungen",
   "ops.cite.text": "Paper mit mehr oder weniger Zitierungen als eine bestimmte Zahl.",
   "ops.tier.title": "Rang",
-  "ops.tier.text": "Paper an Venues mit einem bestimmten CCF- oder CORE-Rang.",
+  "ops.tier.text": "Paper an Venues mit einem bestimmten CCF- oder CORE-Rang, oder nur Zeitschriften oder nur Konferenzen.",
   "ops.role.title": "Rolle",
   "ops.role.text": "Paper, bei denen Sie Erstautor, Ko-Erstautor, Zweitautor oder Letztautor sind.",
   "ops.year.title": "Jahr",

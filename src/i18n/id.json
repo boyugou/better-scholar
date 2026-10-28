@@ -53,7 +53,7 @@
   "ops.cite.title": "Sitasi",
   "ops.cite.text": "Makalah dengan sitasi lebih banyak atau lebih sedikit dari suatu angka.",
   "ops.tier.title": "Peringkat",
-  "ops.tier.text": "Makalah di venue dengan peringkat CCF atau CORE tertentu.",
+  "ops.tier.text": "Makalah di venue dengan peringkat CCF atau CORE tertentu, atau hanya jurnal atau hanya konferensi.",
   "ops.role.title": "Peran",
   "ops.role.text": "Makalah tempat Anda menjadi penulis pertama, penulis ko-pertama, penulis kedua, atau penulis terakhir.",
   "ops.year.title": "Tahun",

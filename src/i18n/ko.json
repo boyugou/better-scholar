@@ -53,7 +53,7 @@
   "ops.cite.title": "인용 수",
   "ops.cite.text": "어떤 숫자보다 인용 수가 많거나 적은 논문.",
   "ops.tier.title": "등급",
-  "ops.tier.text": "지정한 CCF 또는 CORE 등급 게재처의 논문.",
+  "ops.tier.text": "지정한 CCF 또는 CORE 등급 게재처의 논문, 또는 학술지만 또는 학술대회만 게재처의 논문.",
   "ops.role.title": "순서",
   "ops.role.text": "내가 제1저자, 공동 제1저자, 제2저자 또는 마지막(시니어) 저자인 논문.",
   "ops.year.title": "연도",

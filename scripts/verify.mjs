@@ -56,6 +56,18 @@ if (existsSync(join(demo, "index.html"))) {
 
 // No real person's name, anywhere the site serves (the old demo used real researchers; nothing here is to name one). Pictures cannot be read: they
 // are looked at by eye when they change (the hero picture is the extension's own, made from an invented profile).
+// every operator of the extension's search language has an example in the operators section (a hand-written list goes stale: type: was missing)
+{
+  const EXT_DIR = process.env.EXT_DIR || join(root, "..", "google-scholar-highlighter");
+  const query = join(EXT_DIR, "src", "lib", "query.js");
+  if (existsSync(query)) {
+    const { createRequire } = await import("node:module");
+    const names = createRequire(import.meta.url)(query).OPERATORS.map((o) => o.name);
+    const html = readFileSync(join(site, "en", "index.html"), "utf8"), ops = (html.match(/<section class="operators-section">[\s\S]*?<\/section>/) || [""])[0];
+    for (const n of names) if (!ops.includes(`<code>${n}:`)) fail(`operators section: no example of ${n}:`);
+  } else fail("the extension's src/lib/query.js not found (EXT_DIR)");
+}
+
 const NO_REAL_NAMES = ["Stoica", "Zaharia", "Karger", "Kaashoek", "Balakrishnan", "Chowdhury", "Moritz", "Nishihara"];
 function* walk(dir) {
   for (const e of readdirSync(dir, { withFileTypes: true })) {

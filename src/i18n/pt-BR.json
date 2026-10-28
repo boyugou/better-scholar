@@ -53,7 +53,7 @@
   "ops.cite.title": "Citações",
   "ops.cite.text": "Artigos com mais ou menos citações do que um número.",
   "ops.tier.title": "Ranking",
-  "ops.tier.text": "Artigos em veículos com um determinado ranking CCF ou CORE.",
+  "ops.tier.text": "Artigos em veículos com um determinado ranking CCF ou CORE, ou apenas de periódicos ou apenas de conferências.",
   "ops.role.title": "Posição",
   "ops.role.text": "Artigos em que você é primeiro, coprimeiro, segundo ou último autor.",
   "ops.year.title": "Ano",

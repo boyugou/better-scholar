@@ -53,7 +53,7 @@
   "ops.cite.title": "Citations",
   "ops.cite.text": "Papers with more or fewer citations than a number.",
   "ops.tier.title": "Rank",
-  "ops.tier.text": "Papers at venues with a given CCF or CORE rank.",
+  "ops.tier.text": "Papers at venues with a given CCF or CORE rank, or only journals or only conferences.",
   "ops.role.title": "Role",
   "ops.role.text": "Papers where you are the first, co-first, second or last author.",
   "ops.year.title": "Year",

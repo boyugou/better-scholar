@@ -53,7 +53,7 @@
   "ops.cite.title": "उद्धरण",
   "ops.cite.text": "किसी संख्या से अधिक या कम उद्धरण वाले पेपर।",
   "ops.tier.title": "रैंक",
-  "ops.tier.text": "किसी दिए गए CCF या CORE रैंक वाले venues के पेपर।",
+  "ops.tier.text": "किसी दिए गए CCF या CORE रैंक वाले venues के पेपर, या केवल जर्नल या केवल कॉन्फ़्रेंस के पेपर।",
   "ops.role.title": "भूमिका",
   "ops.role.text": "वे पेपर जिनमें आप प्रथम, सह-प्रथम, द्वितीय या अंतिम लेखक हैं।",
   "ops.year.title": "वर्ष",

@@ -53,7 +53,7 @@
   "ops.cite.title": "Viittaukset",
   "ops.cite.text": "Artikkelit, joilla on enemmän tai vähemmän viittauksia kuin antamasi luku.",
   "ops.tier.title": "Luokka",
-  "ops.tier.text": "Artikkelit foorumeilta, joilla on tietty CCF- tai CORE-luokka.",
+  "ops.tier.text": "Artikkelit foorumeilta, joilla on tietty CCF- tai CORE-luokka, tai vain aikakauslehdet tai vain konferenssit.",
   "ops.role.title": "Rooli",
   "ops.role.text": "Artikkelit, joissa olet ensimmäinen, yhteisensimmäinen, toinen tai viimeinen kirjoittaja.",
   "ops.year.title": "Vuosi",

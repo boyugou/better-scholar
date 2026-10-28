@@ -53,7 +53,7 @@
   "ops.cite.title": "Cytowania",
   "ops.cite.text": "Prace z większą lub mniejszą liczbą cytowań niż wpisana liczba.",
   "ops.tier.title": "Ranking",
-  "ops.tier.text": "Prace w miejscach publikacji o danym rankingu CCF lub CORE.",
+  "ops.tier.text": "Prace w miejscach publikacji o danym rankingu CCF lub CORE, albo tylko w czasopismach, albo tylko na konferencjach.",
   "ops.role.title": "Rola",
   "ops.role.text": "Prace, w których jesteś pierwszym, współpierwszym, drugim lub ostatnim autorem.",
   "ops.year.title": "Rok",

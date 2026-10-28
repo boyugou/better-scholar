@@ -53,7 +53,7 @@
   "ops.cite.title": "Atıflar",
   "ops.cite.text": "Belirli bir sayıdan daha fazla veya daha az atıf alan makaleler.",
   "ops.tier.title": "Sıralama",
-  "ops.tier.text": "Belirli bir CCF veya CORE sıralamasına sahip yayın yerlerindeki makaleler.",
+  "ops.tier.text": "Belirli bir CCF veya CORE sıralamasına sahip yayın yerlerindeki makaleler veya yalnızca dergilerdeki veya yalnızca konferanslardaki makaleler.",
   "ops.role.title": "Rol",
   "ops.role.text": "Birinci, eş birinci, ikinci veya son yazar olduğunuz makaleler.",
   "ops.year.title": "Yıl",

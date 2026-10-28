@@ -53,7 +53,7 @@
   "ops.cite.title": "Citations",
   "ops.cite.text": "Articles avec plus ou moins de citations qu'un nombre donné.",
   "ops.tier.title": "Rang",
-  "ops.tier.text": "Articles parus dans des conférences ou revues ayant un rang CCF ou CORE donné.",
+  "ops.tier.text": "Articles parus dans des conférences ou revues ayant un rang CCF ou CORE donné, ou uniquement dans des revues ou uniquement dans des conférences.",
   "ops.role.title": "Rôle",
   "ops.role.text": "Articles où vous êtes premier, co-premier, deuxième ou dernier auteur.",
   "ops.year.title": "Année",

@@ -53,7 +53,7 @@
   "ops.cite.title": "Citationer",
   "ops.cite.text": "Artikler med flere eller færre citationer end et tal.",
   "ops.tier.title": "Rang",
-  "ops.tier.text": "Artikler på publikationssteder med en bestemt CCF- eller CORE-rang.",
+  "ops.tier.text": "Artikler på publikationssteder med en bestemt CCF- eller CORE-rang, eller kun tidsskrifter eller kun konferencer.",
   "ops.role.title": "Rolle",
   "ops.role.text": "Artikler, hvor du er første, delt første, anden eller sidste forfatter.",
   "ops.year.title": "År",

@@ -53,7 +53,7 @@
   "ops.cite.title": "引用次數",
   "ops.cite.text": "引用次數高於或低於某個數字的論文。",
   "ops.tier.title": "等級",
-  "ops.tier.text": "發表於指定 CCF 或 CORE 等級發表處的論文。",
+  "ops.tier.text": "發表於指定 CCF 或 CORE 等級發表處的論文，或僅限期刊或僅限會議的論文。",
   "ops.role.title": "位次",
   "ops.role.text": "你是第一作者、共同第一作者、第二作者或最後作者的論文。",
   "ops.year.title": "年份",

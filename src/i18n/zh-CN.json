@@ -53,7 +53,7 @@
   "ops.cite.title": "引用数",
   "ops.cite.text": "引用数高于或低于某个数字的论文。",
   "ops.tier.title": "等级",
-  "ops.tier.text": "发表在指定 CCF 或 CORE 等级发表场所的论文。",
+  "ops.tier.text": "发表在指定 CCF 或 CORE 等级发表场所的论文，或仅限期刊或仅限会议的论文。",
   "ops.role.title": "角色",
   "ops.role.text": "你是第一作者、共同第一作者、第二作者或末位作者的论文。",
   "ops.year.title": "年份",

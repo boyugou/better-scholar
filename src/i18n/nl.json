@@ -53,7 +53,7 @@
   "ops.cite.title": "Citaties",
   "ops.cite.text": "Papers met meer of minder citaties dan een bepaald getal.",
   "ops.tier.title": "Rang",
-  "ops.tier.text": "Papers van venues met een bepaalde CCF- of CORE-rang.",
+  "ops.tier.text": "Papers van venues met een bepaalde CCF- of CORE-rang, of alleen tijdschriften of alleen conferenties.",
   "ops.role.title": "Rol",
   "ops.role.text": "Papers waarin je eerste, gedeeld eerste, tweede of laatste auteur bent.",
   "ops.year.title": "Jaar",

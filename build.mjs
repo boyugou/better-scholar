@@ -115,7 +115,7 @@ const stat = (text, code) => {
 // the operator cards of the search section: [key, the sample tokens shown on the card]
 const OPERATORS = [
   ["cite", '<code>cites:&gt;100</code> <code>cites:&gt;=50</code> <code>cites:&lt;10</code>'],
-  ["tier", "<code>ccf:a</code> <code>ccf:b</code> <code>core:a*</code>"],
+  ["tier", "<code>ccf:a</code> <code>core:a*</code> <code>type:journal</code>"],
   ["role", "<code>role:first</code> <code>role:last</code> <code>role:cofirst</code>"],
   ["year", "<code>year:&gt;=2020</code> <code>year:2023</code> <code>age:&lt;5</code>"],
   ["honors", "<code>has:award</code> <code>has:talk</code>"],

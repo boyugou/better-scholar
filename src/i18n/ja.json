@@ -53,7 +53,7 @@
   "ops.cite.title": "被引用数",
   "ops.cite.text": "ある数より被引用数が多い、または少ない論文。",
   "ops.tier.title": "ランク",
-  "ops.tier.text": "指定した CCF または CORE のランクが付いた掲載先の論文。",
+  "ops.tier.text": "指定した CCF または CORE のランクが付いた掲載先の論文、または学術誌のみ・会議のみの掲載先の論文。",
   "ops.role.title": "著者順",
   "ops.role.text": "あなたが筆頭著者、共同筆頭著者、2番目の著者、または最終著者である論文。",
   "ops.year.title": "年",

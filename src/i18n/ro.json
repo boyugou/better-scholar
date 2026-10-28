@@ -53,7 +53,7 @@
   "ops.cite.title": "Citări",
   "ops.cite.text": "Lucrările cu mai multe sau mai puține citări decât numărul introdus.",
   "ops.tier.title": "Rang",
-  "ops.tier.text": "Lucrările din venue-uri cu un anumit rang CCF sau CORE.",
+  "ops.tier.text": "Lucrările din venue-uri cu un anumit rang CCF sau CORE, sau doar din reviste sau doar din conferințe.",
   "ops.role.title": "Roluri",
   "ops.role.text": "Lucrările în care ești primul, coprimul, al doilea sau ultimul autor.",
   "ops.year.title": "An",

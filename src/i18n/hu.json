@@ -53,7 +53,7 @@
   "ops.cite.title": "Hivatkozások",
   "ops.cite.text": "Azok a cikkek, amelyeknek az általad megadott számnál több vagy kevesebb hivatkozásuk van.",
   "ops.tier.title": "Rang",
-  "ops.tier.text": "Cikkek olyan venue-kről, amelyek adott CCF- vagy CORE-rangúak.",
+  "ops.tier.text": "Cikkek olyan venue-kről, amelyek adott CCF- vagy CORE-rangúak, vagy csak folyóirat-venue-kről, vagy csak konferencia-venue-kről.",
   "ops.role.title": "Szerepek",
   "ops.role.text": "Olyan cikkek, amelyekben első, társelső, második vagy utolsó szerző vagy.",
   "ops.year.title": "Év",

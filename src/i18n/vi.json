@@ -53,7 +53,7 @@
   "ops.cite.title": "Trích dẫn",
   "ops.cite.text": "Các bài có số trích dẫn nhiều hơn hoặc ít hơn một con số.",
   "ops.tier.title": "Hạng",
-  "ops.tier.text": "Các bài ở venue có hạng CCF hoặc CORE nhất định.",
+  "ops.tier.text": "Các bài ở venue có hạng CCF hoặc CORE nhất định, hoặc chỉ ở tạp chí hoặc chỉ ở hội nghị.",
   "ops.role.title": "Vai trò",
   "ops.role.text": "Các bài mà bạn là tác giả đầu, đồng tác giả đầu, tác giả thứ hai hoặc tác giả cuối.",
   "ops.year.title": "Năm",
