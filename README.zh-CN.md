@@ -273,7 +273,11 @@ flowchart LR
 <details>
 <summary>各格式的规则</summary>
 
-- **BibTeX。** 引用键由第一作者的姓、年份，以及标题中第一个至少三个字母、且不是常见词（如 `the`、`for`、`with`、`towards` …）的单词组成，全部为小写 ASCII：`vaswani2017attention`、`he2016deep`。没有年份时，引用键为 `nodate`。重复的引用键依次加上 `b`、`c` 等（`he2016deepb`）。条目类型按名录或场所名称中的用词，定为 `@inproceedings`（booktitle）或 `@article`（journal）；一行带卷号、又不是会议、书或文档的，也定为 `@article`（`Scientific Reports 6, 29545`）；否则为 `@misc`。字段包括：title、author（用 `and` 连接；在 Scholar 截断列表处以 `and others` 结尾）、booktitle 或 journal、volume、number 和 pages、year、url（论文在 Scholar 上的页面），以及一条 note，写明 CCF 与 CORE 等级和获奖情况。TeX 会解读的每个字符（`\ { } $ & # ^ _ ~ %`）都会被转义，因此标题不能夹带命令。
+- **BibTeX。**
+  - 引用键由第一作者的姓、年份，以及标题中第一个至少三个字母、且不是常见词（如 `the`、`for`、`with`、`towards` …）的单词组成，全部为小写 ASCII：`vaswani2017attention`、`he2016deep`。没有年份时，引用键为 `nodate`。重复的引用键依次加上 `b`、`c` 等（`he2016deepb`）。
+  - 条目类型按名录或场所名称中的用词，定为 `@inproceedings`（booktitle）或 `@article`（journal）；一行带卷号、又不是会议、书或文档的，也定为 `@article`（`Scientific Reports 6, 29545`）；否则为 `@misc`。
+  - 字段包括：title、author（用 `and` 连接；在 Scholar 截断列表处以 `and others` 结尾）、booktitle 或 journal、volume、number 和 pages、year、url（论文在 Scholar 上的页面），以及一条 note，写明 CCF 与 CORE 等级和获奖情况。
+  - TeX 会解读的每个字符（`\ { } $ & # ^ _ ~ %`）都会被转义，因此标题不能夹带命令。
 - **发表场所行。** Scholar 把发表场所印成一行：`Journal 44 (8), 4012-4025, 2022` 或 `Conference name, 770-778, 2016`。四种参考文献格式都把它拆成名称、卷、期、页码和年份。
   - 它们能读懂 Scholar 印出的各种写法：页码如 `D231-D238`、`e2218605120`、`62: 1-62: 14`；文章号（`Article No. 137`）；期号如 `(D1)`、`(OOPSLA)`、`(11_Supplement)`；在期号处被截断的行（`11 (1 …` 读作第 11 卷）。
   - 无法整行读懂的，照 Scholar 原样输出，绝不只读一半。
@@ -282,10 +286,17 @@ flowchart LR
   - 有测试对全部 22,744 行真实数据运行拆分，确认没有丢字或多字；另一个测试记录每一行经过人工核对的 GB/T 读法（`test/fixtures/formats.expected.json`）。
 - **APA 第 7 版。** `I Stoica` → `Stoica, I.`；`MF Kaashoek` → `Kaashoek, M. F.`；`L van der Maaten` → `van der Maaten, L.`。两位作者之间用 `&` 连接。超过 20 位作者时，列出前 19 位、`…` 和最后一位。被截断的列表以 `…` 结尾。没有年份时写 `(n.d.)`。星号标出斜体部分。
 - **IEEE。** 名字的首字母在前（`MF Kaashoek` → `M. F. Kaashoek`）。两位作者用 `and` 连接，三到六位用逗号和 `and`。超过六位作者，或 Scholar 截断了列表时，写第一作者加 `et al.`。标题加引号；会议论文写 `in`；期刊从发表场所行中取 `vol.`、`no.` 和 `pp.`（文章编号写 `Art. no.`）。
-- **GB/T 7714-2015。** 姓全大写，名的首字母不加点（`MF Kaashoek` → `KAASHOEK M F`）；中文姓名保持原样。超过三位作者，或 Scholar 截断了列表时，写前三位加 `et al`。期刊标 `[J]`，会议论文集标 `[C]//`（Scholar 印在名称后的数字照原样保留：`Advances in Neural Information Processing Systems 35`），专利标 `[P]`，学位论文标 `[D]`，报告标 `[R]`，出版社出版的书标 `[M]`，其他标 `[Z]`。名为 *Proceedings* 的期刊（PVLDB、*Proceedings of the ACM on …*、PNAS）标 `[J]`。以年份开头的发表场所行（`2016 IEEE …`，即 IEEE 会议论文集的标题）标 `[C]`。
+- **GB/T 7714-2015。**
+  - 姓全大写，名的首字母不加点（`MF Kaashoek` → `KAASHOEK M F`）；中文姓名保持原样。超过三位作者，或 Scholar 截断了列表时，写前三位加 `et al`。
+  - 期刊标 `[J]`，会议论文集标 `[C]//`（Scholar 印在名称后的数字照原样保留：`Advances in Neural Information Processing Systems 35`），专利标 `[P]`，学位论文标 `[D]`，报告标 `[R]`，出版社出版的书标 `[M]`，其他标 `[Z]`。
+  - 名为 *Proceedings* 的期刊（PVLDB、*Proceedings of the ACM on …*、PNAS）标 `[J]`。以年份开头的发表场所行（`2016 IEEE …`，即 IEEE 会议论文集的标题）标 `[C]`。
 - **Markdown。** Markdown 会解读的每个字符都会被转义，因此标题不会变成链接或标记。
 - **CSV。** 遵循 RFC 4180，带 UTF-8 字节序标记（让 Excel 能正确读取非拉丁文字），行尾为 CRLF。含有逗号、引号、分号或换行的字段会加上引号。
-- **Word、Google Docs、Pages。** 表格、论文列表、APA、IEEE 和 GB/T 7714 五个按钮在文本之外，还会把 HTML 放入剪贴板。文字处理软件粘贴时，会得到真正的表格（带边框），或带真正斜体、链接和悬挂缩进的参考文献列表；若面板在作者行中标出了你的名字，参考文献里你的名字也会加粗（国自然表格和大多数简历都这样要求）。电子表格和文本框则取文本。HTML 中的所有文字都经过转义。看起来像公式的单元格会被当作文本，与制表符格式的处理方式相同。其他格式只有文本。工具栏弹窗和 `export` 调用（`html: true`）给出相同的结果。
+- **Word、Google Docs、Pages。**
+  - 表格、论文列表、APA、IEEE 和 GB/T 7714 五个按钮在文本之外，还会把 HTML 放入剪贴板。文字处理软件粘贴时，会得到真正的表格（带边框），或带真正斜体、链接和悬挂缩进的参考文献列表。若面板在作者行中标出了你的名字，参考文献里你的名字也会加粗（国自然表格和大多数简历都这样要求）。
+  - *复制为图片* 放入的则是表格的图片，并在旁附上摘要文字。其他格式只有文本。
+  - 电子表格和文本框取文本。HTML 中的所有文字都经过转义。看起来像公式的单元格会被当作文本，与制表符格式的处理方式相同。
+  - 工具栏弹窗和 `export` 调用（`html: true`）给出相同的结果。
 - **电子表格公式。** 在 CSV 和制表符分隔的格式中，以 `=`、`+`、`-` 或 `@` 开头（且不是纯数字）的单元格前会加一个撇号。电子表格随后将它显示为文本。
 - 筛选后没有论文时，不复制任何内容，按钮会显示 *没有可复制的内容*。
 
