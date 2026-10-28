@@ -28,7 +28,7 @@ Better Scholar
 
 ### Summary (from the package, read-only)
 
-What the dashboard will show: the `extDescription` of `src/_locales/en/messages.json` (122 characters; the limit is 132).
+What the dashboard will show: the `extDescription` of `src/_locales/en/messages.json` (130 characters; the limit is 132).
 Each of the 30 locales supplies its own translation, and the store shows the one that matches the visitor. (Changed on
 2026-10-17 from "Enhance Google Scholar: authorship roles, CCF & CORE ranks, …", which listed features in a promotional tone, to one
 plain sentence of what it does. A package built before that change still has the old one.)
@@ -182,7 +182,7 @@ No, I am not using remote code.
 If a justification box appears anyway:
 
 ```text
-All code is in the package. The content scripts, toolbar popup, settings page and service worker load only files from the zip; there is no eval, new Function, dynamic import or remotely hosted script. The extension fetches data, never code: Scholar's own paper pages (parsed with DOMParser; only text is read), JSON from api.semanticscholar.org when the user switches that on, and its own _locales files. The rank and award lists are bundled; the settings page also loads the CCF and CORE lists from the zip, for its "Check a venue" box, and makes no request. The page-event listener for scripts on the page answers six fixed calls (ping, summary, papers, export, filter, clearFilters), checks their parameters, and runs nothing it receives.
+All code is in the package. The content scripts, toolbar popup, settings page and service worker load only files from the zip; there is no eval, new Function, dynamic import or remotely hosted script. The extension fetches data, never code: Scholar's own paper pages (parsed with DOMParser; only text is read), JSON from api.semanticscholar.org when the user switches that on, its own _locales files, and (for the popup's Copy as image) the picture the page drew, from a data: address. The rank and award lists are bundled; the settings page also loads the CCF and CORE lists from the zip, for its "Check a venue" box, and makes no request. The page-event listener for scripts on the page answers six fixed calls (ping, summary, papers, export, filter, clearFilters), checks their parameters, and runs nothing it receives.
 ```
 
 ### Data usage

@@ -18,7 +18,7 @@ problems of section 4 that were fixed since are marked so.
 | # | Claim (as worded in listing.md) | File | Quote |
 |---|---|---|---|
 | L1 | Name "Better Scholar" | `src/manifest.json` · `src/_locales/en/messages.json` | `"name": "__MSG_extName__"` · `"message": "Better Scholar"` |
-| L2 | Summary (from the package): 122 characters, the limit is 132 | `src/manifest.json` · `src/_locales/en/messages.json` · `test/i18n.test.js` | `"description": "__MSG_extDescription__"` · `On Google Scholar profiles: the profile owner's author role and the venue's CCF and CORE rank on each paper, counted in one table.` · `m.extName.message.length <= 75 && m.extDescription.message.length <= 132` |
+| L2 | Summary (from the package): 130 characters, the limit is 132 | `src/manifest.json` · `src/_locales/en/messages.json` · `test/i18n.test.js` | `"description": "__MSG_extDescription__"` · `On Google Scholar profiles: the profile owner's author role and the venue's CCF and CORE rank on each paper, counted in one table.` · `m.extName.message.length <= 75 && m.extDescription.message.length <= 132` |
 | L3 | Works on Google Scholar profile pages | `src/content/main.js` · `src/content/scholar.js` | `Runs on Google Scholar profile pages only (the manifest matches /citations*, and` · `!B.scholar.isProfile()) return;` · `const isProfile = () => !!$("#gsc_prf_in") && !!$("#gsc_a_b");` |
 | L4 | Rows where the owner is first, co-first, second or last author are tinted; other positions stay plain | `src/lib/names.js` · `src/lib/analysis.js` · `src/_locales/en/messages.json` | `'cofirst' \| 'first' \| 'last' \| 'second' \| 'middle'` · `const ROLE_KEYS = ["first", "cofirst", "second", "last"];` · `ROLE_KEYS.includes(a.role) && !!roles[a.role]` · `Papers where you are in the middle stay plain.` |
 | L5 | The owner's name is marked | `src/lib/prefs.js` · `src/content/main.js` | `bool("rows.name", true, "Mark your own name in the author line of a highlighted row (bold, tinted).` · `if (!prefs.rows.name \|\| row.a.fromDetail) return tipOnLine();` |
@@ -44,7 +44,7 @@ problems of section 4 that were fixed since are marked so.
 | L25 | It stops at the first CAPTCHA | `src/content/detail.js` | `#captcha-form, #gs_captcha_ccl, form[action*='sorry'], #recaptcha` · `res.status === 429 \|\| res.status === 503` · `return { done, stopped: "captcha" };` |
 | L26 | Semantic Scholar: off by default; asked first for those lists | `src/lib/prefs.js` · `src/content/detail.js` | `bool("semanticScholar", false,` · `Semantic Scholar first when the settings allow it` |
 | L27 | Each Semantic Scholar request's only content is the paper's title (and your API key, if you add one); no cookies are sent | `src/content/semantic.js` | `API + "?fields=title,authors,year&query=" + encodeURIComponent(title)` · `credentials: "omit", referrerPolicy: "no-referrer", redirect: "error", headers: apiKey ? { "x-api-key": apiKey } : {}` |
-| L28 | No account, no analytics, no ads: the only `fetch(` calls in `src/` are the three quoted here, and none of `XMLHttpRequest`, `WebSocket`, `sendBeacon`, `EventSource`, `new Image(` occurs (the greps of section 3) | `src/content/detail.js` · `src/content/semantic.js` · `src/background.js` | `fetch(url.href, { credentials: "include", signal })` · `const res = await fetch(url, { signal, credentials: "omit"` · `fetch(chrome.runtime.getURL("_locales/" + msg.lang + "/messages.json"))` |
+| L28 | No account, no analytics, no ads: the only `fetch(` calls in `src/` are the four quoted here (three requests, and the popup reading back the `data:` address of the picture the page drew), and none of `XMLHttpRequest`, `WebSocket`, `sendBeacon`, `EventSource`, `new Image(` occurs (the greps of section 3) | `src/content/detail.js` · `src/content/semantic.js` · `src/background.js` · `src/popup/popup.js` | `fetch(url.href, { credentials: "include", signal })` · `const res = await fetch(url, { signal, credentials: "omit"` · `fetch(chrome.runtime.getURL("_locales/" + msg.lang + "/messages.json"))` · `blob = res.result.png ? await (await fetch(res.result.png)).blob() : null;` |
 | L29 | Settings, name spellings and venue mappings in Chrome's storage | `src/content/store.js` | `get("sync", "prefs")` · `get("sync", "variants")` · `all[profileId] = list.slice(-8)` · `const loadMine = async () => cleanMine(await get("sync", "mine"));` |
 | L30 | Author lists it has read stay on this device for 90 days | `src/content/store.js` · `src/_locales/en/messages.json` | `get("local", "resolved")` · `const TTL = 90 * 24 * 3600 * 1000;` · `(kept for 90 days)` |
 | L31 | One permission, storage | `src/manifest.json` · `test/extension.test.js` | `"storage"` · `assert.deepEqual(manifest.permissions, ["storage"]);` · `assert.equal(manifest.host_permissions, undefined, "content-script matches are enough");` |
@@ -133,11 +133,12 @@ Other statements in the test instructions:
 
 ## 3. What the code does on the network, in storage and on the page (grep over `src/`)
 
-Searched in `src/` with `src/data/` and `src/_locales/` left out (bundled data and strings only), 2026-10-15, at `f1cd4f1`:
+Searched in `src/` with `src/data/` and `src/_locales/` left out (bundled data and strings only), 2026-10-15, at `f1cd4f1`, and
+again on 2026-10-28 at `8a21ae41` (what changed: a fourth `fetch(`, of a `data:` address; the clipboard's picture; 8 copy calls):
 
 | Pattern | Hits | What they are |
 |---|---|---|
-| `fetch(` | 3 | `content/detail.js`: the paper's own Scholar page, same origin only, cookies included; `content/semantic.js`: `api.semanticscholar.org`, `credentials: "omit"`, `referrerPolicy: "no-referrer"`; `background.js`: the extension's own `_locales/<lang>/messages.json` through `chrome.runtime.getURL`. None in `options/` or `popup/`. |
+| `fetch(` | 4 | `popup/popup.js`: the `data:` address of the picture *Copy as image* drew in the page, turned back into a PNG for the clipboard (no request leaves the browser); `content/detail.js`: the paper's own Scholar page, same origin only, cookies included; `content/semantic.js`: `api.semanticscholar.org`, `credentials: "omit"`, `referrerPolicy: "no-referrer"`; `background.js`: the extension's own `_locales/<lang>/messages.json` through `chrome.runtime.getURL`. None in `options/` or `popup/`. |
 | `XMLHttpRequest`, `WebSocket`, `sendBeacon`, `EventSource`, `importScripts`, `new Worker`, `new Image(` | 0 | |
 | `eval(`, `new Function`, `import(`, `innerHTML`, `insertAdjacentHTML`, `document.write`, `WebAssembly` | 0 | (one comment in `content/dom.js` says "no innerHTML") |
 | `document.cookie` | 0 | |
@@ -145,9 +146,9 @@ Searched in `src/` with `src/data/` and `src/_locales/` left out (bundled data a
 | `sessionStorage` | 1 file | `content/lang-redirect.js`: key `rr-hl`, value `<language>\|<time>`, in the Scholar tab's session storage, so that a redirect happens at most once per tab and language |
 | `indexedDB`, `caches.` | 0 | |
 | `postMessage`, `onMessageExternal`, `externally`, `chrome.runtime.connect`, `onConnect`, a `message` listener on `window` | 0 | no way in from another page or extension but the page events below; the manifest has no `externally_connectable` and no `web_accessible_resources` (`test/extension.test.js` checks the second) |
-| `clipboard`, `ClipboardItem`, `execCommand` | `content/dom.js` | `navigator.clipboard.write` of a `ClipboardItem` with `text/plain` and `text/html` (the table, papers and APA buttons give both; the others give text only), then `navigator.clipboard.writeText`, then a hidden textarea and `document.execCommand("copy")`; called only from button handlers. `clipboard.read` and `readText`: 0 |
+| `clipboard`, `ClipboardItem`, `execCommand` | `content/dom.js` | `navigator.clipboard.write` of a `ClipboardItem` with `text/plain` and `text/html` (the table, papers, APA, IEEE and GB/T 7714 buttons give both; the others give text only), then `navigator.clipboard.writeText`, then a hidden textarea and `document.execCommand("copy")`; for *Copy as image* (`copyImage`) a `ClipboardItem` with `image/png` and `text/plain`; called only from button handlers. `clipboard.read` and `clipboard.readText`: 0 (the one `readText` in `src/` is a function of `lib/analysis.js`) |
 | `download` | `content/dom.js` | a Blob and a temporary `<a download>`; callers: CSV (`main.js`, `popup.js`) and the settings file (`options.js`) |
-| `copyText(` and `downloadFile(` | 7 and 3 calls | in `main.js` (`deliver`, `onCopyUnmatched`), `popup.js` (`deliver`) and `options.js` (bug-report details, cache JSON, config JSON, agent guide; the config file): each inside a button's handler |
+| `copyText(`, `copyImage(` and `downloadFile(` | 7, 2 and 3 calls | in `main.js` (`deliver`, `onCopyUnmatched`), `popup.js` (`deliver`) and `options.js` (bug-report details, cache JSON, config JSON, agent guide; the config file): each inside a button's handler |
 | `chrome.storage` keys | 6 | sync: `prefs`, `variants`; local: `ui`, `resolved`, `s2key`, `askVenue` (`content/store.js`); `content/dom.js` and `content/lang-redirect.js` also read `prefs` |
 | `chrome.tabs` | popup only | `popup.js` `chrome.tabs.query({ active: true, currentWindow: true })` (only `tab.id` is used) and `chrome.tabs.sendMessage` (no `tabs` permission is needed for either) |
 | other `chrome.*` APIs (`history`, `cookies`, `webRequest`, `scripting`, `downloads`, `identity`, `permissions`, `alarms`, `notifications`), geolocation | 0 | |
@@ -241,7 +242,7 @@ edit a configuration (JSON)* and *Apply configuration*; the `papers` result list
 | Sev. | Finding | Detail |
 |---|---|---|
 | Minor | `short_name` is 14 characters | "Better Scholar"; the manifest reference recommends at most 12 ("maximum of 12 characters recommended"). Only a recommendation; it does not block upload. |
-| Minor (fixed 2026-10-17) | Spanish description was exactly 132 characters | The new summary is 122 characters in English and at most 132 in the other locales (Italian is exactly 132) (`test/i18n.test.js` checks every locale against 132). |
+| Minor (fixed 2026-10-17) | Spanish description was exactly 132 characters | The new summary is 130 characters in English and at most 132 in the other locales (Danish, Greek, Spanish, Dutch and Brazilian Portuguese are exactly 132) (`test/i18n.test.js` checks every locale against 132). |
 | None | Permissions, host permissions, web-accessible resources | `storage` only; no `host_permissions`, `optional_permissions`, `web_accessible_resources` or `externally_connectable`. Nothing to remove. |
 | Note | Bundled third-party data | `NOTICE`: "CORE's terms of use have not been confirmed". Not a review item, but it is the one intellectual-property question in the package. |
 

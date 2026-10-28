@@ -1,7 +1,8 @@
 # Publishing Better Scholar on the Chrome Web Store
 
 An ordered checklist, from building the zip to after publishing. Brought up to date on 2026-10-15 for version 2.41.0
-(commit `f1cd4f1`; the commit that updates this kit changes only `store/`). Nothing has been submitted.
+(commit `f1cd4f1`), and again on 2026-10-28 for `src/` as of commit `8a21ae41` (still 2.41.0; the commits that update this kit
+change no file under `src/`). Nothing has been submitted.
 
 **[Owner]** marks what only the owner can do: the Google account, the fee, the identity checks, the declarations, the
 upload and the Submit button. **[Ready]** marks what is prepared in this repository. **[Fix]** marks what must change in the
@@ -69,8 +70,8 @@ guide and the images are fixed; what is open is in `chrome/claims.md`, section 4
 1. `git status` is clean and `npm test` passes.
 2. `bash scripts/package-chrome.sh`. It checks the bundled data against `data/*.json` and writes
    `dist/better-scholar-chrome-<version>.zip` (`dist/` is git-ignored). No network needed.
-3. Check the zip with the procedure in `chrome/package-check.md` (part A): `manifest.json` at the top level, 71 files, no
-   development files, the zip is exactly `src/`. The record for 2.41.0 (721,532 bytes, SHA-256, the digest of the contents)
+3. Check the zip with the procedure in `chrome/package-check.md` (part A): `manifest.json` at the top level, 72 files, no
+   development files, the zip is exactly `src/`. The record for 2.41.0 (833,755 bytes, SHA-256, the digest of the contents)
    is in part B.
 4. Smoke test: unzip it to a folder, load it with chrome://extensions → Developer mode → Load unpacked, and open the test
    profile from `listing.md` §5.
@@ -123,7 +124,7 @@ and "The more code an extension contains, the more work it takes to verify that 
 
 - a new developer and a new extension;
 - 374 match patterns over 187 domains, two content scripts, one of them on every Scholar path at `document_start`;
-- about 2.7 MB of code and data (705 KB zipped), 969 KB of it the award list;
+- about 3.1 MB of code and data (814 KB zipped), 973 KB of it the award list;
 - automation on a Google site: pressing Scholar's *Show more* by default, and fetching paper pages on a click;
 - one third-party request (Semantic Scholar), off by default.
 
@@ -238,13 +239,13 @@ Re-read for the 2.41.0 update (also on 2026-10-15): the manifest reference for `
 your extension", "Publish in the Chrome Web Store" (the 2GB limit), "Supplying images" (the sizes) and "Provide test
 instructions" (no length limit is stated). The rest of the list above was read for the first version and not read again.
 
-Project pages checked on 2026-10-15, for the 2.41.0 update:
+Project pages checked on 2026-10-28 (the test profile on 2026-10-15; the kit does not load Scholar again without need):
 
-- https://boyugou.github.io/better-scholar/privacy/ (downloaded with `curl`): the text of `src/privacy.md` on the `site`
-  branch, which equals PRIVACY.md at `f1cd4f1` except for the paragraph on the HTML clipboard; it has the Limited Use
-  statement and shows stray asterisks (`chrome/claims.md` 4.2)
+- https://boyugou.github.io/better-scholar/privacy/ (downloaded with `curl`): built from the repository's PRIVACY.md (the
+  site keeps no copy); it has the Limited Use statement, the clipboard section with *Copy as image*, the venue mappings,
+  and no stray asterisk (`chrome/claims.md` 4.2)
 - https://boyugou.github.io/better-scholar/en/ (downloaded with `curl`): the badge says "Runs in your browser"; the search
-  cards show old operators (`chrome/claims.md` 4.3); "A Chrome Web Store listing may follow."
-- https://www.google.com/supported_domains (downloaded with `curl`): 187 domains, the same as the manifest's
+  cards show only operators the search reads (`chrome/claims.md` 4.3); "A Chrome Web Store version may come later."
+- https://www.google.com/supported_domains (downloaded with `curl`): 187 domains, the same as the manifest's (again on 2026-10-28)
 - https://scholar.google.com/citations?user=JicYPdAAAAAJ&hl=en (the reviewer's test profile; reachable, 20 papers on the
   first page for a signed-out visit; the five example rows of `listing.md` are numbers 1 to 5)

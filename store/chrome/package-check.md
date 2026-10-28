@@ -1,7 +1,8 @@
 # Package check
 
 Part A is the procedure: anyone can repeat it, and it should be repeated for every upload. Part B is the record of the check made
-on 2026-10-15 at commit `f1cd4f1` (version 2.41.0), for `better-scholar-chrome-2.41.0.zip`. When `src/` changes, build again,
+on 2026-10-28 for `better-scholar-chrome-2.41.0.zip` built from `src/` as of commit `8a21ae41` (version 2.41.0; the first record,
+of 2026-10-15 at `f1cd4f1`, is in the history of this file). When `src/` changes, build again,
 repeat A and replace B; the numbers in B belong to one build and nothing else.
 
 ## A. Procedure
@@ -39,17 +40,17 @@ gives another file hash from the same commit; the digest of the contents is what
 
 ## B. Record: better-scholar-chrome-2.41.0.zip
 
-Built in a worktree at commit `f1cd4f1`, version 2.41.0, on 2026-10-15. The store-kit commit that follows changes only `store/`,
-so the package is the same.
+Built on 2026-10-28 from `src/` as of commit `8a21ae41`, version 2.41.0. The commits after it that bring the docs and this
+record up to date change no file under `src/`, so the package is the same.
 
 | | |
 |---|---|
 | File | `dist/better-scholar-chrome-2.41.0.zip` |
-| Size | 721,532 bytes (704,072 bytes of compressed data) |
-| SHA-256 of the file | `24d887b524a86976de5b70184e8906ac94cd81308ca7b057f951da648e090658` (the same on a second build in the same worktree) |
-| Digest of the contents | `ce14c8d444c78f23f5926ea57ff9d84147d229c128e415991cc8da48b3dabf8d` |
-| Entries | 108: 71 files and 37 folders |
-| Uncompressed | 2,682,487 bytes (the compressed data is 26.2% of it: 73.8% saved) |
+| Size | 833,755 bytes (816,135 bytes of compressed data) |
+| SHA-256 of the file | `c4f2c4d526fbcafba9934786c868b5ff8482784d4845fc0e3355063094aa4567` |
+| Digest of the contents | `5fdb590ad15e97082f06da62c69a84274bd95c70c9ef411e77738fc160764730` |
+| Entries | 109: 72 files and 37 folders |
+| Uncompressed | 3,094,686 bytes (the compressed data is 26.4% of it: 73.6% saved) |
 | `unzip -t` | no errors |
 | `diff -rq` against `src/` | no output: the zip is exactly `src/` |
 
@@ -57,61 +58,61 @@ By folder:
 
 | Folder | Files | Uncompressed bytes |
 |---|---|---|
-| `data/` | 4 | 1,210,779 (`awards.js` 968,755, 36% of the package; `ccf.js` 128,493; `core.js` 82,726; `aliases.js` 30,805) |
-| `_locales/` | 30 | 937,577 |
-| `lib/` | 13 | 195,060 |
-| `content/` | 11 | 172,069 |
-| `options/` | 4 | 118,871 |
-| `popup/` | 3 | 19,478 |
-| `manifest.json` and `background.js` | 2 | 19,561 |
+| `data/` | 4 | 1,240,962 (`awards.js` 972,888, 31% of the package; `ccf.js` 128,493; `core.js` 82,726; `aliases.js` 56,855) |
+| `_locales/` | 30 | 1,115,615 |
+| `lib/` | 13 | 318,310 |
+| `content/` | 12 | 222,395 |
+| `options/` | 4 | 144,797 |
+| `popup/` | 3 | 23,926 |
+| `manifest.json` and `background.js` | 2 | 19,589 |
 | `icons/` | 4 | 9,092 |
-| Total | 71 | 2,682,487 |
+| Total | 72 | 3,094,686 |
 
-The files, with their sizes in bytes (the 30 files `_locales/<code>/messages.json` are 26,986 (`zh_CN`) to 43,463 (`hi`) bytes each;
-`en` is 27,484):
+The files, with their sizes in bytes (the 30 files `_locales/<code>/messages.json` are 31,979 (`en`) to 52,401 (`hi`) bytes each):
 
 ```text
     943  background.js
-  18618  manifest.json
-   1940  content/bridge.js
-   3006  content/chips.js
-   4739  content/detail.js
-   8119  content/dom.js
+   2197  content/bridge.js
+   3852  content/chips.js
+   5487  content/detail.js
+  10103  content/dom.js
+   5117  content/image.js
    2322  content/lang-redirect.js
-  40151  content/main.js
-  55179  content/panel.js
-   7722  content/scholar.js
-   2959  content/semantic.js
-   4264  content/store.js
-  41668  content/styles.css
-  30805  data/aliases.js
- 968755  data/awards.js
+  58718  content/main.js
+  68370  content/panel.js
+   7987  content/scholar.js
+   3047  content/semantic.js
+   8050  content/store.js
+  47145  content/styles.css
+  56855  data/aliases.js
+ 972888  data/awards.js
  128493  data/ccf.js
   82726  data/core.js
    5696  icons/icon-128.png
     496  icons/icon-16.png
     755  icons/icon-32.png
    2145  icons/icon-48.png
-  15377  lib/agent.js
-   4769  lib/analysis.js
-   3476  lib/awards.js
-   2612  lib/duplicates.js
-  17273  lib/formats.js
+  18787  lib/agent.js
+   6813  lib/analysis.js
+   4417  lib/awards.js
+   2710  lib/duplicates.js
+  45422  lib/formats.js
    4035  lib/i18n.js
-  12299  lib/marks.js
-   8456  lib/metrics.js
-  18485  lib/names.js
-   3877  lib/palette.js
-  36834  lib/prefs.js
-   5516  lib/query.js
-  62051  lib/venues.js
-  12349  options/editor.js
-  38743  options/options.css
-   2219  options/options.html
-  65560  options/options.js
-   9994  popup/popup.css
-    741  popup/popup.html
-   8743  popup/popup.js
+  17321  lib/marks.js
+  10610  lib/metrics.js
+  23830  lib/names.js
+   4946  lib/palette.js
+  44407  lib/prefs.js
+   9668  lib/query.js
+ 125344  lib/venues.js
+  18646  manifest.json
+  13840  options/editor.js
+  45868  options/options.css
+   2279  options/options.html
+  82810  options/options.js
+  11656  popup/popup.css
+    771  popup/popup.html
+  11499  popup/popup.js
   (and the 30 _locales/<code>/messages.json)
 ```
 
@@ -121,11 +122,11 @@ Nothing found.
 
 - No tests, scripts, docs, fixtures, Markdown, shell or `.mjs` files, no dotfiles (`.DS_Store` included), no source maps. `src/`
   holds none either.
-- No unused file: every file is loaded by something. The 26 scripts and the stylesheet of the main content script and the 2
+- No unused file: every file is loaded by something. The 27 scripts and the stylesheet of the main content script and the 2
   scripts of the second one are listed in `manifest.json`; `popup/popup.html` and `options/options.html` load the rest of
   `lib/`, `content/` and `data/` that they use (and `options/editor.js`); the four icons are named in the manifest;
   `background.js` is the service worker; `test/extension.test.js` checks that every script on disk is loaded somewhere.
-- The large file is `data/awards.js` (968,755 bytes, 36% of the package): the bundled award list behind the award chips. It is
+- The large file is `data/awards.js` (972,888 bytes, 31% of the package): the bundled award list behind the award chips. It is
   used. `data/ccf.js` contains 679 dblp and publisher URLs from the CCF list; they are data, never requested.
 - Code is not minified or obfuscated (the policy allows minification but not obfuscation; readable code helps the review).
 
@@ -134,18 +135,18 @@ Not a store issue, for the record: the whole main content script, data included,
 
 ### Manifest against the store's requirements
 
-The limits were read again on 2026-10-15 in developer.chrome.com's manifest reference ("name", "short_name", "description") and
+The limits were read on 2026-10-15 in developer.chrome.com's manifest reference ("name", "short_name", "description") and
 in "Prepare your extension" and "Publish in the Chrome Web Store".
 
 | Item | Value in the package | Requirement | Result |
 |---|---|---|---|
 | Zip layout | `manifest.json` at the root | "Make sure you place the manifest file in the root directory, not in a folder." | OK |
-| Size | 721,532 bytes | "The maximum supported file size for an extension package is 2GB." | OK |
+| Size | 833,755 bytes | "The maximum supported file size for an extension package is 2GB." | OK |
 | `manifest_version` | 3 | MV3 | OK |
 | `name` | `__MSG_extName__` → en "Better Scholar" (14 characters; the same in all 30 locales) | "maximum of 75 characters" | OK |
 | `short_name` | `__MSG_extShortName__` → "Better Scholar" (14) | "maximum of 12 characters recommended" | Over the recommendation; not enforced |
-| `description` | `__MSG_extDescription__` → en 124 characters | "no more than 132 characters" | OK |
-| Longest description of the 30 locales | `es`: 132 characters | 132 | OK, exactly at the limit |
+| `description` | `__MSG_extDescription__` → en 130 characters | "no more than 132 characters" | OK |
+| Longest description of the 30 locales | `da`, `el`, `es`, `nl`, `pt_BR`: 132 characters | 132 | OK, exactly at the limit |
 | `version` | 2.41.0 | higher than any version uploaded before | OK for a first upload |
 | `default_locale` | `en`, and `_locales/en/messages.json` exists | needed when `_locales` exists | OK |
 | `minimum_chrome_version` | 111 | none (111 is for CSS `color-mix`: `CHANGELOG.md` 2.11.0, "Chrome 111 or newer, for `color-mix`") | OK |
@@ -155,13 +156,13 @@ in "Prepare your extension" and "Publish in the Chrome Web Store".
 | `permissions` | `["storage"]` | only what is used | OK (used by `content/store.js`, `content/dom.js`, `content/lang-redirect.js`, the settings page) |
 | `host_permissions`, `optional_permissions`, `web_accessible_resources`, `externally_connectable`, `content_security_policy` | absent | | OK (default MV3 CSP) |
 | `background` | `{ "service_worker": "background.js" }` | | OK |
-| Content script 1 | 187 patterns `https://scholar.google.<domain>/citations*`; 26 JS files and `content/styles.css`; `document_idle` | | OK |
+| Content script 1 | 187 patterns `https://scholar.google.<domain>/citations*`; 27 JS files and `content/styles.css`; `document_idle` | | OK |
 | Content script 2 | 187 patterns `https://scholar.google.<domain>/*`; `lib/i18n.js` and `content/lang-redirect.js`; `document_start` | | OK; needs the justification in `listing.md` |
 | Match patterns overall | 374, all `https://scholar.google.…`; no `http:`, no `<all_urls>`, no wildcard host (counted in `src/manifest.json`) | | OK |
 
 The 187 domains are the 187 entries of https://www.google.com/supported_domains (fetched 2026-10-15; the same set).
 
-Description lengths of all 30 locales (characters, longest first): es 132, ro 130, el 128, it 127, pt_PT 127, fr 126, tr 126,
-id 125, pt_BR 125, uk 125, cs 124, en 124, pl 124, vi 122, hu 120, ru 120, da 119, no 119, hi 118, de 117, sv 114, fi 113,
-nl 112, th 109, ar 102, he 96, ko 78, ja 70, zh_CN 45, zh_TW 45. All within 132; `test/i18n.test.js` checks this (and the
+Description lengths of all 30 locales (characters, longest first, counted 2026-10-28): da 132, el 132, es 132, nl 132,
+pt_BR 132, tr 131, en 130, fi 130, fr 130, it 130, no 130, sv 130, de 129, pt_PT 129, ro 129, id 128, uk 128, hi 126, pl 126,
+cs 125, ru 125, hu 123, vi 123, th 121, he 100, ar 99, ja 76, ko 72, zh_CN 68, zh_TW 65. All within 132; `test/i18n.test.js` checks this (and the
 75 of the name) on every run.

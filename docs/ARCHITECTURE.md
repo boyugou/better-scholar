@@ -77,7 +77,7 @@ lib/i18n.js → lib/names.js → lib/venues.js → lib/metrics.js → lib/marks.
 lib/prefs.js → lib/palette.js → lib/query.js → lib/formats.js → lib/analysis.js → lib/agent.js →
 data/aliases.js → data/ccf.js → data/core.js → data/awards.js →
 content/dom.js → content/chips.js → content/store.js → content/scholar.js → content/semantic.js → content/detail.js →
-content/panel.js → content/bridge.js → content/main.js
+content/panel.js → content/image.js → content/bridge.js → content/main.js
 ```
 
 `prefs` needs `i18n`; `awards` needs `names`; `duplicates` needs `names` and `awards`; `analysis` needs `names`,

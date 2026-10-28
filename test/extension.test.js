@@ -188,3 +188,10 @@ test("every script in src/ parses (a syntax slip such as a duplicate declaration
     assert.doesNotThrow(() => new vm.Script(fs.readFileSync(f, "utf8"), { filename: f }), path.relative(src, f));
   }
 });
+
+test("docs/ARCHITECTURE.md gives the main content script's files in the manifest's order", () => {
+  const doc = fs.readFileSync(path.join(root, "docs", "ARCHITECTURE.md"), "utf8");
+  const block = doc.split("```").find((b) => b.trim().startsWith("lib/i18n.js → "));
+  assert.ok(block, "the load-order block of docs/ARCHITECTURE.md");
+  assert.deepEqual(block.split(/→|\n/).map((s) => s.trim()).filter(Boolean), manifest.content_scripts[0].js);
+});
