@@ -423,6 +423,7 @@ html { scroll-padding-top: 72px; }
 
 /* An order: the parts (or buttons) of a list, top to bottom, with the buttons that move them; a part that is switched off is dimmed and keeps its place */
 .opt.opt-order { flex-direction: column; align-items: stretch; gap: 8px; cursor: default; }
+.opt.opt-order .txt, .opt.opt-segmented .txt { flex: none; }          /* (in a column the label's 10rem basis would be its height: a gap of 140 px above the list or the choices) */
 .order-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
 .order-item { display: flex; align-items: center; gap: 2px; padding: 3px 4px 3px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--card); }
 .order-item.off { opacity: 0.65; }                     /* (dimmed, and still 4.5:1) */

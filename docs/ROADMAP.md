@@ -7,13 +7,15 @@ reasons — so that neither is rediscovered from scratch. Roughly in order of va
 
 ## Exports
 
-**Built** (2.28–2.39). Eight formats, each a button in the panel's copy row and in the toolbar popup with its own
-switch under *Settings → Copy & export*: the summary as text, the summary table (tab-separated), the papers
-(tab-separated), APA 7th edition, BibTeX, Markdown, JSON, and CSV (saved as a file). The text is made by
+**Built** (2.28–2.41). Eleven formats, each a button in the panel's copy row and in the toolbar popup with its own
+switch under *Settings → Copy & export*: the summary as text, the summary table (tab-separated), the table as a picture
+(*Copy as image*, a PNG), the papers (tab-separated), APA 7th edition, IEEE, GB/T 7714-2015, BibTeX, Markdown, JSON, and CSV
+(saved as a file). IEEE, GB/T 7714 and the picture are off until switched on, so the default row is eight buttons. The table,
+the papers and the three reference styles also put HTML on the clipboard, the references with the owner's name in bold. The text is made by
 `src/lib/formats.js`; the same formats answer the `export` page call. The README's *Copy and export* has the details
 (BibTeX keys such as `vaswani2017attention`, escaping, formula protection in the CSV and tab-separated text).
 
-**Next — more citation styles.** IEEE and the ACM reference format are not there. A new style is one more copy
+**Next — more citation styles.** The ACM reference format is not there. A new style is one more copy
 format: a row `copy.<format>` in `SETTINGS`, its text in `lib/formats.js`, its case in `exportText()`
 (`content/main.js`), its label in every language and an end-to-end check (`CONTRIBUTING.md`, *Adding a setting*).
 

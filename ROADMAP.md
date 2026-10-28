@@ -20,7 +20,7 @@ What has been built is in [`CHANGELOG.md`](CHANGELOG.md).
   why they were not read are listed in [*Known gaps*](docs/ROADMAP.md#awards-and-talk-levels).
 - **Venue matching coverage**: real unrecognised strings into `test/fixtures` and `src/data/aliases.js`; a DBLP-derived
   alias table could extend coverage offline ([details](docs/ROADMAP.md#venue-matching-coverage)).
-- **More citation styles** (IEEE, the ACM reference format), each one more copy format
+- **More citation styles** (the ACM reference format), each one more copy format
   ([details](docs/ROADMAP.md#exports)).
 - **Custom quick filters**: a name and a query of your own as a pill, for "recent CCF-A first-author papers" in one click
   ([details](docs/ROADMAP.md#filters-and-counts)).
@@ -49,8 +49,9 @@ Each with its reason in [*Considered and set aside*](docs/ROADMAP.md#considered-
 ## Built, and taken off this list
 
 - The weekly check of the rank data against its official sources: `.github/workflows/data-fresh.yml`.
-- Search operators with suggestions; eight copy and export formats, each with its own switch, also in the toolbar
-  popup; the viewer of saved paper details; the guide for AI agents and the page events; 30 interface languages.
+- Search operators with suggestions; eleven copy and export formats (eight on by default; IEEE, GB/T 7714 and *Copy as
+  image* off until switched on), each with its own switch, also in the toolbar popup, the references with the owner's name in
+  bold; your own venue mappings, marked as yours; the viewer of saved paper details; the guide for AI agents and the page events; 30 interface languages.
   See [`CHANGELOG.md`](CHANGELOG.md).
 - The settings page as an editor (2.40–2.41): a switch for every thing the panel draws, orders, your own names, chip looks,
   a preview that edits and jumps to the setting, *Check a venue*, the web demo on the site, HTML on the clipboard for Word and

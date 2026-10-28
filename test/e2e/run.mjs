@@ -1941,6 +1941,15 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     assert.deepEqual((await stored(opts, "sync", "prefs")).panel.order.slice(0, 3), ["table", "marks", "copy"], "a part moved by its grip: the order of the settings follows");
     assert.deepEqual(await opts.locator("#pv-panel .rr-body > [data-section]").evaluateAll((els) => els.filter((e) => !e.hidden).map((e) => e.dataset.section).slice(0, 3)), ["table", "marks", "copy"], "…and the preview");
     assert.deepEqual(await opts.locator('.order-list[data-pref="panel.order"] li').evaluateAll((els) => els.map((e) => e.dataset.id).slice(0, 3)), ["table", "marks", "copy"], "…and the list on the left");
+    // (no box on the settings page much taller than what it holds: in a row that stacks its name over its control — an order list, a row of choices — the name's
+    // 10rem flex basis had become its height, a blank of 140 px under nine names)
+    const stretched = await opts.evaluate(() => [...document.querySelectorAll("#controls *")].filter((el) => {
+      const r = el.getBoundingClientRect(), kids = [...el.children].filter((c) => c.offsetParent !== null);
+      if (r.height < 60 || !kids.length || el.offsetParent === null) return false;
+      const cs = getComputedStyle(el), pad = parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom) + parseFloat(cs.borderTopWidth) + parseFloat(cs.borderBottomWidth);
+      return r.height - (Math.max(...kids.map((c) => c.getBoundingClientRect().bottom)) - Math.min(...kids.map((c) => c.getBoundingClientRect().top))) - pad > 40;
+    }).map((el) => el.tagName.toLowerCase() + "." + String(el.className).replace(/ /g, ".") + " " + el.textContent.trim().slice(0, 30)));
+    assert.deepEqual(stretched, [], "no box of the settings page is much taller than its content");
     // a button: moved by the grip in its tag (CSV before the first)
     await opts.hover('#pv-panel [data-act="copy-csv"]');
     await drag(opts.locator(".pv-tag .pv-grip"), opts.locator('#pv-panel [data-act="copy-summary"]'), "before");

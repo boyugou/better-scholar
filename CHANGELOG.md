@@ -42,6 +42,11 @@
   An independent review fixed: a long note (the source address) widens the picture instead of running off it; the total column has the
   panel's one word, row and column, and as much room as a custom name needs; a failed copy is no longer drawn green; the picture of an
   empty selection is copied like the table; the popup says when the picture fails; Japanese pages draw with Japanese fonts first.
+- **Settings page: no more blank under a stacked name.** In the nine rows that put their control under their name — the three order
+  lists and the rows of choices (*Row highlight*, *Chip style*, *Chip shape*, *Rank chip text*, *When both lists rank a venue*,
+  *Rows in the panel*) — the name's flex basis of 10rem, meant for its width beside a switch, had become its height: 140 px of
+  white between the name and its control since the phone-layout change. An end-to-end check now fails on any box of the settings
+  page much taller than what it holds.
 - **The popup's copy buttons stand two to a row** in every language (three short English labels made rows of 2, 3, 2 and 1);
   a label wider than the row's half still takes its own row. An end-to-end check holds it.
 - **The store kit, checked again** (`store/`): the description names the venue mappings, IEEE, GB/T 7714, *Copy as image* and
