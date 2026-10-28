@@ -1187,6 +1187,24 @@
   "optPillRecent": {
     "message": "Ultimii 5 ani"
   },
+  "pillSearch1": {
+    "message": "Filtrul tău 1"
+  },
+  "pillSearch2": {
+    "message": "Filtrul tău 2"
+  },
+  "pillSearch3": {
+    "message": "Filtrul tău 3"
+  },
+  "optPillSearchWords": {
+    "message": "Cuvinte de căutare"
+  },
+  "optPillSearchHint": {
+    "message": "Cuvinte scrise în câmpul de căutare, de exemplu ccf:a role:first age:<5. Butonul afișează numele pe care îl dai, altfel aceste cuvinte."
+  },
+  "optPillSearchBad": {
+    "message": "Nu a fost înțeles, deci nu există buton:"
+  },
   "filterAbsent": {
     "message": "Numele din profil lipsește din lista de autori"
   },

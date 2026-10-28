@@ -151,7 +151,7 @@
     // ---- renaming: an input over the text; Enter or leaving the box keeps it, Escape does not, an empty box is the standard name ----------------------------------------------
     function openRename(el) {
       closeRename(false);
-      const key = el.dataset.rrLabel, def = B.dom.tDefault(key), r = rel(el);
+      const key = el.dataset.rrLabel, def = el.dataset.rrDefault || B.dom.tDefault(key), r = rel(el);          // (rrDefault: the words of your own quick filter, its text while it has no name)
       const input = h("input", { type: "text", class: "pv-rename-input", maxlength: String(B.prefs.NAME_MAX), spellcheck: "false", "aria-label": `${def} — ${t("optNameOf")}`, value: at("labels." + key) || def });
       const box = h("div", { class: "pv-rename" }, input, h("span", { class: "pv-rename-hint" }, t("optRenameHint")));
       renaming = { key, def, input, box, done: false };

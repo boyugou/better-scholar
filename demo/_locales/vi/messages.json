@@ -1187,6 +1187,24 @@
   "optPillRecent": {
     "message": "5 năm gần đây"
   },
+  "pillSearch1": {
+    "message": "Bộ lọc của bạn 1"
+  },
+  "pillSearch2": {
+    "message": "Bộ lọc của bạn 2"
+  },
+  "pillSearch3": {
+    "message": "Bộ lọc của bạn 3"
+  },
+  "optPillSearchWords": {
+    "message": "Từ khóa tìm kiếm"
+  },
+  "optPillSearchHint": {
+    "message": "Từ khóa gõ vào ô tìm kiếm, chẳng hạn ccf:a role:first age:<5. Nút hiện tên bạn đặt, nếu không thì hiện chính các từ này."
+  },
+  "optPillSearchBad": {
+    "message": "Không hiểu nên không có nút:"
+  },
   "filterAbsent": {
     "message": "Không có tên hồ sơ trong danh sách tác giả"
   },

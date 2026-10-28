@@ -1187,6 +1187,24 @@
   "optPillRecent": {
     "message": "近 5 年"
   },
+  "pillSearch1": {
+    "message": "我的筛选 1"
+  },
+  "pillSearch2": {
+    "message": "我的筛选 2"
+  },
+  "pillSearch3": {
+    "message": "我的筛选 3"
+  },
+  "optPillSearchWords": {
+    "message": "搜索词"
+  },
+  "optPillSearchHint": {
+    "message": "和在搜索框里输入的一样，例如 ccf:a role:first age:<5。按钮显示你为它取的名称，没有名称时显示这些词。"
+  },
+  "optPillSearchBad": {
+    "message": "未能识别，因此没有按钮："
+  },
   "filterAbsent": {
     "message": "作者列表里没找到本人姓名"
   },

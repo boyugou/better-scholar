@@ -31,6 +31,8 @@
   // The names the person gave things in the settings (lib/prefs.js NAMES; the settings' `labels`, normalized): a name replaces the translation, in every language
   let labels = {};
   const setLabels = (map) => { labels = map && typeof map === "object" ? map : {}; };
+  // the name the person gave a thing, or "" (a thing whose built-in text is not a fixed one: your own quick filter shows its words)
+  const ownName = (key) => labels[key] || "";
   function lookup(key, subs) {
     if (labels[key]) return labels[key];
     if (custom && custom[key]) return B.i18n.format(custom[key], subs);
@@ -163,5 +165,5 @@
   // the words on the copy buttons (panel, toolbar popup, settings page): one per format of lib/prefs.js COPY_BUTTONS
   const COPY_LABEL = { summary: "copySummary", table: "copyTable", image: "copyImage", papers: "copyPapers", apa: "copyApa", ieee: "copyIeee", gbt: "copyGbt", bibtex: "copyBibtex", markdown: "copyMarkdown", json: "copyJson", csv: "exportCsv" };
 
-  B.dom = { h, t, tn, tDefault, setLabels, COPY_LABEL, applyColors, applyRowStyle, applyChips, useLanguage, dir, langTag, colon, comma, quote, copyText, copyImage, downloadFile, sleep, frame, issueUrl, REPO };
+  B.dom = { h, t, tn, tDefault, ownName, setLabels, COPY_LABEL, applyColors, applyRowStyle, applyChips, useLanguage, dir, langTag, colon, comma, quote, copyText, copyImage, downloadFile, sleep, frame, issueUrl, REPO };
 })();

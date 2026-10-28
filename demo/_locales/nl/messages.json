@@ -1187,6 +1187,24 @@
   "optPillRecent": {
     "message": "Laatste 5 jaar"
   },
+  "pillSearch1": {
+    "message": "Jouw filter 1"
+  },
+  "pillSearch2": {
+    "message": "Jouw filter 2"
+  },
+  "pillSearch3": {
+    "message": "Jouw filter 3"
+  },
+  "optPillSearchWords": {
+    "message": "Zoekwoorden"
+  },
+  "optPillSearchHint": {
+    "message": "Woorden zoals je ze in het zoekvak typt, bijvoorbeeld ccf:a role:first age:<5. De knop toont de naam die je eraan geeft, anders deze woorden."
+  },
+  "optPillSearchBad": {
+    "message": "Niet begrepen, dus er is geen knop:"
+  },
   "filterAbsent": {
     "message": "Profielnaam niet in de auteurslijst"
   },

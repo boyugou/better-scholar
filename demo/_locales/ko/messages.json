@@ -1187,6 +1187,24 @@
   "optPillRecent": {
     "message": "최근 5년"
   },
+  "pillSearch1": {
+    "message": "내 필터 1"
+  },
+  "pillSearch2": {
+    "message": "내 필터 2"
+  },
+  "pillSearch3": {
+    "message": "내 필터 3"
+  },
+  "optPillSearchWords": {
+    "message": "검색어"
+  },
+  "optPillSearchHint": {
+    "message": "검색창에 입력하는 검색어입니다(예: ccf:a role:first age:<5). 버튼에는 붙인 이름이 보이고, 이름이 없으면 이 검색어가 보입니다."
+  },
+  "optPillSearchBad": {
+    "message": "이해하지 못해서 버튼을 만들 수 없습니다:"
+  },
   "filterAbsent": {
     "message": "저자 목록에 프로필 이름 없음"
   },

@@ -1187,6 +1187,24 @@
   "optPillRecent": {
     "message": "Τα τελευταία 5 έτη"
   },
+  "pillSearch1": {
+    "message": "Το φίλτρο σας 1"
+  },
+  "pillSearch2": {
+    "message": "Το φίλτρο σας 2"
+  },
+  "pillSearch3": {
+    "message": "Το φίλτρο σας 3"
+  },
+  "optPillSearchWords": {
+    "message": "Λέξεις αναζήτησης"
+  },
+  "optPillSearchHint": {
+    "message": "Λέξεις όπως τις πληκτρολογείτε στο πεδίο αναζήτησης, για παράδειγμα ccf:a role:first age:<5. Το κουμπί εμφανίζει το όνομα που του δίνετε, αλλιώς αυτές τις λέξεις."
+  },
+  "optPillSearchBad": {
+    "message": "Δεν κατανοήθηκε, γι’ αυτό δεν υπάρχει κουμπί:"
+  },
   "filterAbsent": {
     "message": "Όνομα προφίλ εκτός λίστας συγγραφέων"
   },

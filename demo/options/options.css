@@ -452,6 +452,11 @@ html { scroll-padding-top: 72px; }
 .name-reset:hover { background: var(--hover); color: var(--text); }
 .name-reset:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
 @media (max-width: 560px) { .opt.opt-named { flex-wrap: wrap; } .opt.opt-named .name-edit { order: 3; width: 100%; } .name-input { width: 100%; max-width: none; flex: 1; } }
+/* the words of your own quick filter: a wider field, in the search's own type; what cannot be read under it */
+.opt.opt-words { cursor: default; }
+.search-words { width: 240px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12px; }
+.search-bad { flex: 1 0 100%; color: var(--danger); font-size: 12px; line-height: 1.45; }
+@media (max-width: 560px) { .search-words { width: 100%; } }
 
 /* The looks of the chips: a button for each, drawn in its own look; a colour of a family of chips */
 .chip-themes { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 8px; padding: 12px 20px 8px; border-top: 1px solid var(--line); }

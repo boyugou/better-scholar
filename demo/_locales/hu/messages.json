@@ -1187,6 +1187,24 @@
   "optPillRecent": {
     "message": "Elmúlt 5 év"
   },
+  "pillSearch1": {
+    "message": "Saját szűrő 1"
+  },
+  "pillSearch2": {
+    "message": "Saját szűrő 2"
+  },
+  "pillSearch3": {
+    "message": "Saját szűrő 3"
+  },
+  "optPillSearchWords": {
+    "message": "Keresőszavak"
+  },
+  "optPillSearchHint": {
+    "message": "Szavak a keresőmezőbe írva, például ccf:a role:first age:<5. A gomb a megadott nevet mutatja, különben ezeket a szavakat."
+  },
+  "optPillSearchBad": {
+    "message": "Nem értelmezhető, ezért nincs gomb:"
+  },
   "filterAbsent": {
     "message": "A profil neve nincs a szerzői listájában"
   },

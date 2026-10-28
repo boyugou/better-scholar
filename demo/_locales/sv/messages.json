@@ -1187,6 +1187,24 @@
   "optPillRecent": {
     "message": "Senaste 5 åren"
   },
+  "pillSearch1": {
+    "message": "Ditt filter 1"
+  },
+  "pillSearch2": {
+    "message": "Ditt filter 2"
+  },
+  "pillSearch3": {
+    "message": "Ditt filter 3"
+  },
+  "optPillSearchWords": {
+    "message": "Sökord"
+  },
+  "optPillSearchHint": {
+    "message": "Ord som du skriver i sökrutan, till exempel ccf:a role:first age:<5. Knappen visar namnet som du ger den, annars dessa ord."
+  },
+  "optPillSearchBad": {
+    "message": "Inte förstått, så det finns ingen knapp:"
+  },
   "filterAbsent": {
     "message": "Profilnamnet inte i författarlistan"
   },

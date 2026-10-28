@@ -1187,6 +1187,24 @@
   "optPillRecent": {
     "message": "Son 5 yıl"
   },
+  "pillSearch1": {
+    "message": "Filtreniz 1"
+  },
+  "pillSearch2": {
+    "message": "Filtreniz 2"
+  },
+  "pillSearch3": {
+    "message": "Filtreniz 3"
+  },
+  "optPillSearchWords": {
+    "message": "Arama kelimeleri"
+  },
+  "optPillSearchHint": {
+    "message": "Arama kutusuna yazdığınız gibi kelimeler, örneğin ccf:a role:first age:<5. Düğme, verdiğiniz adı gösterir; yoksa bu kelimeleri."
+  },
+  "optPillSearchBad": {
+    "message": "Anlaşılmadı, bu yüzden düğme yok:"
+  },
   "filterAbsent": {
     "message": "Profil adı yazar listesinde yok"
   },

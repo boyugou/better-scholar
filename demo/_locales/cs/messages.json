@@ -1187,6 +1187,24 @@
   "optPillRecent": {
     "message": "Posledních 5 let"
   },
+  "pillSearch1": {
+    "message": "Váš filtr 1"
+  },
+  "pillSearch2": {
+    "message": "Váš filtr 2"
+  },
+  "pillSearch3": {
+    "message": "Váš filtr 3"
+  },
+  "optPillSearchWords": {
+    "message": "Slova k hledání"
+  },
+  "optPillSearchHint": {
+    "message": "Slova, jak je napíšete do vyhledávacího pole, například ccf:a role:first age:<5. Tlačítko zobrazí váš název, jinak tato slova."
+  },
+  "optPillSearchBad": {
+    "message": "Nerozpoznáno, proto není žádné tlačítko:"
+  },
   "filterAbsent": {
     "message": "Jméno z profilu není mezi autory"
   },
