@@ -429,7 +429,7 @@ the gear), and the settings page takes the text (`takeAskedVenue`, also when it 
 
 *Configuration & presets*: a preset (`PRESETS`: *All features*, *Last author focus*, *First author focus*, *Minimalist*), the
 JSON editor and *Import file* all go through `prefs.apply()`, and the page reports what was applied and what was ignored, with
-the reason. *Copy config (JSON)* and *Export file* (`better-scholar-config.json`) give the whole record. There is no other
+the reason. *Copy configuration (JSON)* and *Export file* (`better-scholar-config.json`) give the whole record. There is no other
 format and no import from the clipboard.
 
 The preview is the real `content/panel.js`, handed a model built from invented papers (`panelModel()` in `options.js`
