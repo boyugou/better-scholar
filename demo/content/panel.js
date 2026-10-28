@@ -526,7 +526,7 @@
       const focused = focusKeyOf(document.activeElement);                 // (the buttons are drawn again: the keyboard stays on the one that had the focus)
       actions.replaceChildren(...on.map((kind) => {
         const flashed = ui.flash && ui.flash.kind === kind;
-        const cls = "rr-btn" + (flashed && ui.flash.mode !== "empty" ? " rr-btn-flashed" : "");
+        const cls = "rr-btn" + (flashed && !ui.flash.mode ? " rr-btn-flashed" : "");          // (only a copy that happened is green: not "Nothing to copy", not "Not copied")
         // (a flashed button keeps the width of its own label, so that the shorter word does not let the buttons after it move up: the next click would land on another one)
         return h("button", { class: cls, type: "button", "data-act": "copy-" + kind, style: flashed && ui.flash.width ? "min-width:" + ui.flash.width + "px" : null, ...P("panel.copy." + kind), "data-rr-item": kind, ...L(B.dom.COPY_LABEL[kind]), onClick: () => cb.onCopy(kind) },
           flashed ? flashText() : t(B.dom.COPY_LABEL[kind]));
