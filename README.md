@@ -33,7 +33,7 @@ Better Scholar is a free Chrome extension for [Google Scholar](https://scholar.g
 
 A panel beside the list counts your papers by role and by rank. It also shows citation totals and papers by year, and it has a search box and copy buttons.
 
-- **No guesses.** A venue that the lists do not hold for certain gets no chip, and the panel lists it. The tooltip of each chip names the venue, the rule that found it and the list's edition.
+- **No guesses.** A venue that the lists do not hold for certain gets no chip, and the panel lists it. The tooltip of each chip names the venue, the rule that found it and the list's edition. You may tie such a venue to a listed one yourself; its chip is then dashed and every copy says "(your mapping)".
 - **Private.** No account, no analytics, no tracking. All the work happens in your browser. The only request to a site other than Scholar is the Semantic Scholar lookup, which is off by default.
 - **Open and simple.** Open source (Apache 2.0), with no dependencies and no build step.
 
