@@ -1293,5 +1293,11 @@
   },
   "popupMyProfile": {
     "message": "Mở hồ sơ của tôi"
+  },
+  "copyImage": {
+    "message": "Sao chép dạng ảnh"
+  },
+  "copyFailed": {
+    "message": "Không sao chép được"
   }
 }

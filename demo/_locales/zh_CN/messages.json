@@ -1293,5 +1293,11 @@
   },
   "popupMyProfile": {
     "message": "打开我的主页"
+  },
+  "copyImage": {
+    "message": "复制为图片"
+  },
+  "copyFailed": {
+    "message": "未复制"
   }
 }

@@ -1293,5 +1293,11 @@
   },
   "popupMyProfile": {
     "message": "マイプロフィールを開く"
+  },
+  "copyImage": {
+    "message": "画像としてコピー"
+  },
+  "copyFailed": {
+    "message": "コピーできませんでした"
   }
 }

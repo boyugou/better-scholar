@@ -1293,5 +1293,11 @@
   },
   "popupMyProfile": {
     "message": "Otevřít můj profil"
+  },
+  "copyImage": {
+    "message": "Kopírovat jako obrázek"
+  },
+  "copyFailed": {
+    "message": "Nezkopírováno"
   }
 }

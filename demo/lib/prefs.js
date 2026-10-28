@@ -28,7 +28,7 @@
   const ROLES = ["first", "cofirst", "second", "last"];
   const RANKS = ["ccf", "core"];
   const MARK_GROUPS = ["award", "oral", "spotlight", "highlight"];
-  const COPY_BUTTONS = ["summary", "table", "papers", "apa", "ieee", "gbt", "bibtex", "markdown", "json", "csv"];
+  const COPY_BUTTONS = ["summary", "table", "image", "papers", "apa", "ieee", "gbt", "bibtex", "markdown", "json", "csv"];
   const HIDE_PARTS = ["cited", "citedTable", "citedChart", "coauthors", "access"];
   // The parts of the panel, in their default order (the panel's `order` setting is a permutation of these; each is also a card below)
   const SECTIONS = ["table", "copy", "marks", "filters", "metrics", "years", "venues", "status", "names"];
@@ -68,6 +68,7 @@
     roleHidden: ["the row of the table for papers whose position is not visible", "Hidden"],
     copySummary: ["the Copy summary button", "Copy summary"],
     copyTable: ["the Copy as table button", "Copy as table"],
+    copyImage: ["the Copy as image button", "Copy as image"],
     copyPapers: ["the Copy papers button", "Copy papers"],
     copyApa: ["the Copy APA button", "Copy APA"],
     copyIeee: ["the Copy IEEE button", "Copy IEEE"],
@@ -129,12 +130,13 @@
     second: "Highlight the rows where you are the second author.",
     last: "Highlight the rows where you are the last author."
   };
-  const COPY_LABEL = { summary: "copySummary", table: "copyTable", papers: "copyPapers", apa: "copyApa", ieee: "copyIeee", gbt: "copyGbt", bibtex: "copyBibtex", markdown: "copyMarkdown", json: "copyJson", csv: "exportCsv" };
-  // (off until asked for: the reference styles beyond APA and BibTeX, so that the copy row keeps its eight buttons until someone needs one)
-  const COPY_OFF = ["ieee", "gbt"];
+  const COPY_LABEL = { summary: "copySummary", table: "copyTable", image: "copyImage", papers: "copyPapers", apa: "copyApa", ieee: "copyIeee", gbt: "copyGbt", bibtex: "copyBibtex", markdown: "copyMarkdown", json: "copyJson", csv: "exportCsv" };
+  // (off until asked for: the reference styles beyond APA and BibTeX, and the table as a picture, so that the copy row keeps its eight buttons until someone needs one)
+  const COPY_OFF = ["image", "ieee", "gbt"];
   const COPY_DOC = {
     summary: "Copy button: the summary table as plain text (panel and toolbar popup).",
     table: "Copy button: the summary table as tab-separated cells, for a spreadsheet.",
+    image: "Copy button: the summary table as a picture (PNG), for a slide, a CV or a form, with its text beside it.",
     papers: "Copy button: the list of papers shown, as plain text.",
     apa: "Copy button: the papers shown as APA 7th edition references.",
     ieee: "Copy button: the papers shown as a numbered IEEE reference list.",
