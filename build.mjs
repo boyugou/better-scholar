@@ -62,7 +62,7 @@ for (const l of languages) if (!menu.includes(l)) menu.push(l);
 
 // (the four role colours, in turn: the colour code of the product, not a rainbow)
 const COLOURS = ["#4d8ff5", "#b36cf6", "#fbbc04", "#34a853"];
-const FEATURES = ["awards", "complete", "merge", "yours", "private", "lang"];
+const FEATURES = ["awards", "complete", "merge", "check", "image", "agents", "yours", "private", "lang"];
 
 // The export section shows what the extension's own export code writes (src/lib/formats.js of EXT_DIR) for the invented papers of the settings
 // page's preview, where "A Author" is you: the text a copy button puts on the clipboard, never sample output made by hand, and no real person's papers.
