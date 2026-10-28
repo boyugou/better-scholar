@@ -134,7 +134,11 @@
   function toggleAll(q, words_) {
     const ps = searchParts(words_), ws = words(q);
     if (hasAll(q, words_)) return ws.filter((w) => !ps.includes(w.toLowerCase())).join(" ");
-    return [...ws, ...ps.filter((p) => !ws.some((w) => w.toLowerCase() === p))].join(" ");
+    // (the other words of a listed operator it has go first: beside its word they would still press their built-in buttons while its word decides —
+    // "role:first,last role:first" is first authors only, under a pressed Last — and the same clicks in another order would give another search)
+    const ops = new Set(ps.map(split).filter((s) => s && LISTED.has(s.name)).map((s) => s.name));
+    const kept = ws.filter((w) => { const s = split(w); return !(s && ops.has(s.name)) || ps.includes(w.toLowerCase()); });
+    return [...kept, ...ps.filter((p) => !kept.some((w) => w.toLowerCase() === p))].join(" ");
   }
 
   return { OPERATORS, POPULAR, LISTED, parse, matches, hasValue, toggleValue, keepOnly, searchParts, hasAll, toggleAll };

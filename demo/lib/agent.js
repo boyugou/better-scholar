@@ -174,7 +174,7 @@
       "",
       ...query.OPERATORS.map((o) => `- ${code(o.example)} — ${o.doc}`),
       "",
-      `The values of ${[...query.LISTED].map(code).join(", ")} can be listed with commas: ${code("role:first,last")} is a paper where you are the first or the last author, ${code("ccf:a,b")} one at a CCF A or B venue. Separate words must all hold; the values of one word, any of them. The quick filters under the search box join the word of their operator in the same way.`
+      `The values of ${[...query.LISTED].map(code).join(", ")} can be listed with commas: ${code("role:first,last")} is a paper where you are the first or the last author, ${code("ccf:a,b")} one at a CCF A or B venue. Separate words must all hold; the values of one word, any of them. The quick filters under the search box join the word of their operator in the same way; a quick filter of your own (${code("panel.filters.searches.*")}) puts its words in whole, in place of the other words of a listed operator it has.`
     ].join("\n");
   }
 
