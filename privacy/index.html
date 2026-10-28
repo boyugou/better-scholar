@@ -44,7 +44,7 @@
 <p>In <code>chrome.storage.local</code>, on this device only (<code>content/store.js</code>):</p>
 <ul>
 <li><code>ui</code>: whether the panel is folded, and which list (CCF or CORE) its table shows.</li>
-<li><code>resolved</code>: what <em>Read full lists</em> found. For each paper: Scholar's id for the paper on that profile, the full author list, the venue, the page range when the page gives one, the time it was read, and whether it came from Semantic Scholar. An entry older than 90 days is not used, and is dropped when the cache is next saved. At most 3,000 papers and three million characters are kept (the newest first).</li>
+<li><code>resolved</code>: what <em>Read full lists</em> found. For each paper: Scholar's id for the paper on that profile, the full author list, the venue, the page range when the page gives one, the time it was read, and whether it came from Semantic Scholar. An entry older than 90 days is not used, and is deleted the next time a profile or the settings page reads the cache. At most 3,000 papers and three million characters are kept (the newest first).</li>
 <li><code>s2key</code>: the Semantic Scholar API key, only if you enter one in the settings. It is never synced.</li>
 <li><code>askVenue</code>: a venue text that you asked the settings page to check, with <em>Check</em> beside a venue of the unranked list (at most 300 characters, as Scholar printed it). The settings page takes it within a moment and removes it. A text that nobody takes is ignored after 30 seconds.</li>
 </ul>

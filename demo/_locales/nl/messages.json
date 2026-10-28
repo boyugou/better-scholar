@@ -172,7 +172,7 @@
     "message": "Hele lijsten lezen"
   },
   "resolveHint": {
-    "message": "Opent de pagina van elke paper op Scholar (ongeveer één per seconde) om de volledige auteurslijst te lezen."
+    "message": "Leest de pagina van elke paper op Scholar op de achtergrond (ongeveer één per seconde) om de volledige auteurslijst op te halen."
   },
   "resolveHintSemantic": {
     "message": "Vraagt eerst Semantic Scholar om de auteurslijst van elke paper (Semantic Scholar krijgt alleen de titel). Daarna opent de extensie de pagina’s van de overige papers op Scholar, ongeveer één per seconde."

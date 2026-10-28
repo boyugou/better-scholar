@@ -172,7 +172,7 @@
     "message": "Baca daftar lengkap"
   },
   "resolveHint": {
-    "message": "Membuka halaman tiap makalah di Scholar (sekitar satu per detik) untuk membaca daftar penulis lengkap."
+    "message": "Membaca halaman tiap makalah di Scholar di latar belakang (sekitar satu per detik) untuk mendapatkan daftar penulis lengkap."
   },
   "resolveHintSemantic": {
     "message": "Meminta daftar penulis tiap makalah ke Semantic Scholar lebih dulu (hanya judul makalah yang dikirim). Lalu membuka halaman Scholar untuk makalah lainnya, sekitar satu per detik."

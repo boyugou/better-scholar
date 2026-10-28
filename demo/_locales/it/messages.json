@@ -172,7 +172,7 @@
     "message": "Leggi elenchi completi"
   },
   "resolveHint": {
-    "message": "Apre la pagina di ogni articolo su Scholar (circa uno al secondo) per leggere l’elenco completo degli autori."
+    "message": "Legge la pagina di ogni articolo su Scholar in background (circa uno al secondo) per ottenere l’elenco completo degli autori."
   },
   "resolveHintSemantic": {
     "message": "Chiede prima a Semantic Scholar l’elenco degli autori di ogni articolo (invia solo il titolo). Poi apre su Scholar la pagina degli altri articoli, circa uno al secondo."

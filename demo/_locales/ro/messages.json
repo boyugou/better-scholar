@@ -172,7 +172,7 @@
     "message": "Citește lista completă"
   },
   "resolveHint": {
-    "message": "Deschide pagina fiecărei lucrări pe Scholar (aproximativ una pe secundă) pentru a citi lista completă de autori."
+    "message": "Citește pagina fiecărei lucrări pe Scholar în fundal (aproximativ una pe secundă) pentru a obține lista completă de autori."
   },
   "resolveHintSemantic": {
     "message": "Extensia cere mai întâi de la Semantic Scholar lista de autori a fiecărei lucrări (Semantic Scholar primește doar titlul). Apoi deschide pe Scholar paginile celorlalte lucrări, aproximativ una pe secundă."

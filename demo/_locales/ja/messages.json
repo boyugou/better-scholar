@@ -172,7 +172,7 @@
     "message": "著者リストを補完"
   },
   "resolveHint": {
-    "message": "各論文の Scholar のページを（約 1 秒に 1 件）開き、完全な著者リストを読み取ります。"
+    "message": "各論文の Scholar のページを（約 1 秒に 1 件）バックグラウンドで読み取り、完全な著者リストを取得します。"
   },
   "resolveHintSemantic": {
     "message": "まず Semantic Scholar に各論文の著者リストを問い合わせます（送るのは論文のタイトルだけです）。その後、残りの論文の Scholar のページを（約 1 秒に 1 件）開きます。"

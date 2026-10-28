@@ -172,7 +172,7 @@
     "message": "Teljes listák olvasása"
   },
   "resolveHint": {
-    "message": "Megnyitja az egyes cikkek oldalát a Scholaron (kb. másodpercenként egyet), hogy elolvassa a teljes szerzői listát."
+    "message": "Elolvassa az egyes cikkek oldalát a Scholaron a háttérben (kb. másodpercenként egyet), hogy megkapja a teljes szerzői listát."
   },
   "resolveHintSemantic": {
     "message": "Először a Semantic Scholartól kéri le minden cikk szerzői listáját (csak a cikk címe kerül elküldésre). Ezután a többi cikk oldalát nyitja meg a Scholaron, kb. másodpercenként egyet."
