@@ -1187,6 +1187,24 @@
   "optPillRecent": {
     "message": "पिछले 5 वर्ष"
   },
+  "pillSearch1": {
+    "message": "आपका फ़िल्टर 1"
+  },
+  "pillSearch2": {
+    "message": "आपका फ़िल्टर 2"
+  },
+  "pillSearch3": {
+    "message": "आपका फ़िल्टर 3"
+  },
+  "optPillSearchWords": {
+    "message": "खोज शब्द"
+  },
+  "optPillSearchHint": {
+    "message": "खोज बॉक्स में जैसे लिखते हैं वैसे शब्द, उदाहरण के लिए ccf:a role:first age:<5। बटन पर आपका दिया नाम दिखेगा, नहीं तो ये शब्द।"
+  },
+  "optPillSearchBad": {
+    "message": "समझ नहीं आया, इसलिए कोई बटन नहीं है:"
+  },
   "filterAbsent": {
     "message": "प्रोफ़ाइल का नाम लेखक सूची में नहीं है"
   },

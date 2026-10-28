@@ -1187,6 +1187,24 @@
   "optPillRecent": {
     "message": "Últimos 5 años"
   },
+  "pillSearch1": {
+    "message": "Tu filtro 1"
+  },
+  "pillSearch2": {
+    "message": "Tu filtro 2"
+  },
+  "pillSearch3": {
+    "message": "Tu filtro 3"
+  },
+  "optPillSearchWords": {
+    "message": "Palabras de búsqueda"
+  },
+  "optPillSearchHint": {
+    "message": "Palabras como las escribirías en el cuadro de búsqueda, por ejemplo ccf:a role:first age:<5. El botón muestra el nombre que le pongas o, si no, estas palabras."
+  },
+  "optPillSearchBad": {
+    "message": "No se entiende, así que no hay botón:"
+  },
   "filterAbsent": {
     "message": "Nombre no figura en la lista de autores"
   },

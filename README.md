@@ -234,6 +234,7 @@ Press `/` on a profile to jump to the search box. (The panel and its filters mus
 - **Suggestions.** Type an operator's colon (`role:`) to see its values. `↓`, or a click on the `/` hint, shows common searches. `↑` and `↓` choose; `Enter` or `Tab` takes the choice. Without a list, `Enter` jumps to the next matching row and `Shift`+`Enter` to the previous one.
 - `Escape` closes the list, and then clears the box. On the page, `Escape` clears every filter.
 - The quick buttons under the box are `ccf:a`, `cites:>100`, `role:first` and `has:award`. The settings offer more: `core:a*`, `age:<5` (*Last 5 years*), `role:cofirst`, `role:second`, `role:last` and `has:talk`. A button for a kind of paper that nothing on the page shows is left out.
+- **Your own quick buttons.** Under *Settings → Filters* you can type the words of up to three buttons of your own, as you would in the box (`ccf:a role:first age:<5`, at most 60 characters), and give each a name. The button shows the name, or else the words. It puts all its words in the box and takes them out again. Words that the search cannot read make no button, and the settings page says why.
 - The box takes up to 500 characters.
 
 ### Recipes
@@ -348,10 +349,10 @@ What the extension is made of, counted from its code and its data. Nothing here 
 <!-- numbers:begin -->
 | Number | What | Counted from |
 |---:|---|---|
-| **160** | settings you can change, in 18 cards: 90 switches, 51 names you can set, and 19 colours, choices, orders and languages | the settings tree (`src/lib/prefs.js`) |
-| **178** | nodes in that tree, 5 levels deep: card, panel switch, part switch, item, sub-item | cards and rows; each row hangs on its part's switch |
-| **9 · 11 · 10 · 6 · 4** | panel parts, copy formats and quick filters (each with a switch, most in an order you set), then chip looks and presets | `SECTIONS`, `COPY_BUTTONS`, `PILLS`, `CHIP_THEMES`, `PRESETS` |
-| **30** | interface languages: 375 strings each, 29 translated from English | `src/_locales/*/messages.json` |
+| **169** | settings you can change, in 18 cards: 93 switches, 54 names you can set, and 22 colours, choices, orders and languages | the settings tree (`src/lib/prefs.js`) |
+| **187** | nodes in that tree, 5 levels deep: card, panel switch, part switch, item, sub-item | cards and rows; each row hangs on its part's switch |
+| **9 · 11 · 13 · 6 · 4** | panel parts, copy formats and quick filters (each with a switch, most in an order you set), then chip looks and presets | `SECTIONS`, `COPY_BUTTONS`, `PILLS`, `CHIP_THEMES`, `PRESETS` |
+| **30** | interface languages: 381 strings each, 29 translated from English | `src/_locales/*/messages.json` |
 | **1,178** | ranked venues in 1,481 rows of the two lists (386 CCF conferences, 295 CCF journals, 800 CORE conferences); 299 venues have a row in both | the rows of `src/data/ccf.js` and `src/data/core.js`, linked by `idx.partners` |
 | **400+** | venue names that Scholar prints but the lists do not have, in 250+ curated entries: old and renamed venues, other spellings, the lists' own typos, and look-alike events that get no chip | `src/data/aliases.js` |
 | **2,500+** · **1,100+** | name forms and acronyms that the matcher looks up | the keys of its indexes |

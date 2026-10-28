@@ -263,20 +263,25 @@
     } }, "×");
 
     // The quick filters: one button for each of the settings' panel.filters.pills.* (built once, put in the panel's order, and only the ones that can find something)
-    const PILL_NAME = { first: "roleFirst", cofirst: "roleCofirst", second: "roleSecond", last: "roleLast", award: "markAward", talk: "markTalks" };
-    const pillLabel = (id) => ({ ccfA: t("srcCcf") + " A", coreA: t("srcCore") + " A*", cites100: ">100", recent: t("optPillRecent"), award: t("markAward"), talk: t("markTalks") }[id] || t(ROLE_KEY[id]));
+    const PILL_NAME = { first: "roleFirst", cofirst: "roleCofirst", second: "roleSecond", last: "roleLast", award: "markAward", talk: "markTalks", search1: "pillSearch1", search2: "pillSearch2", search3: "pillSearch3" };
+    // (your own quick filters: their words come with the settings; the button shows your name for it, or else the words)
+    const ownPill = (id) => B.prefs.SEARCHES.includes(id);
+    const pillWords = (id) => (ownPill(id) ? (lastModel && B.prefs.pillWords(lastModel.prefs, id)) || "" : B.prefs.PILL_OPERATORS[id]);
+    const pillOn = (id) => (ownPill(id) ? B.query.hasAll(queryInput.value, pillWords(id)) : B.query.hasValue(queryInput.value, B.prefs.PILL_OPERATORS[id]));
+    const pillLabel = (id) => (ownPill(id) ? B.dom.ownName(PILL_NAME[id]) || pillWords(id)
+      : { ccfA: t("srcCcf") + " A", coreA: t("srcCore") + " A*", cites100: ">100", recent: t("optPillRecent"), award: t("markAward"), talk: t("markTalks") }[id] || t(ROLE_KEY[id]));
     const pillEls = new Map(B.prefs.PILLS.map((id) => {
       const btn = h("button", {
         type: "button",
-        class: "rr-spill",
-        "data-op": B.prefs.PILL_OPERATORS[id],
+        class: "rr-spill" + (ownPill(id) ? " rr-spill-own" : ""),
+        "data-op": B.prefs.PILL_OPERATORS[id] || "",
         "data-pill": id,
         "aria-pressed": "false",
-        ...(id === "cites100" ? { dir: "ltr" } : {}),          // (">100" is a comparison: in a right-to-left panel its sign would be mirrored to "<100")
+        ...(id === "cites100" ? { dir: "ltr" } : ownPill(id) ? { dir: "auto" } : {}),          // (">100" is a comparison: in a right-to-left panel its sign would be mirrored to "<100"; your own words go their own way)
         ...P("panel.filters.pills." + id), "data-rr-item": id, ...(PILL_NAME[id] ? L(PILL_NAME[id]) : {}),
         onClick: (e) => {
           closeSuggest();
-          queryInput.value = B.query.toggleValue(queryInput.value, B.prefs.PILL_OPERATORS[id]);
+          queryInput.value = ownPill(id) ? B.query.toggleAll(queryInput.value, pillWords(id)) : B.query.toggleValue(queryInput.value, B.prefs.PILL_OPERATORS[id]);
           syncSearchUI();
           cb.onQuery(queryInput.value);
           if (e.detail > 0) queryInput.focus();          // (a click goes on in the search box; a key press stays on the pill, so that the next one is a Tab away)
@@ -292,8 +297,8 @@
       const hasText = !!queryInput.value;
       clearSearchBtn.hidden = !hasText;
       kbdHint.hidden = hasText || !slashOn;
-      for (const btn of pillEls.values()) {
-        const active = B.query.hasValue(queryInput.value, btn.getAttribute("data-op"));
+      for (const [id, btn] of pillEls) {
+        const active = pillOn(id);
         btn.classList.toggle("rr-spill-active", active);
         btn.setAttribute("aria-pressed", String(active));
       }
@@ -430,7 +435,11 @@
       kbdHint.title = t("searchShortcut") + " · " + B.query.OPERATORS.map((o) => o.example).join(" · ");
       clearSearchBtn.title = t("filterClear"); clearSearchBtn.setAttribute("aria-label", t("filterClear"));
       searchPills.setAttribute("aria-label", t("optPanelFilters"));
-      for (const [id, btn] of pillEls) btn.textContent = pillLabel(id);
+      for (const [id, btn] of pillEls) {
+        btn.textContent = pillLabel(id);
+        // (your own: its words on hover when it has a name; the words are what renaming it in the settings' preview starts from)
+        if (ownPill(id)) { const w = pillWords(id); btn.setAttribute("data-op", w); btn.dataset.rrDefault = w; btn.title = btn.textContent === w ? "" : w; }
+      }
       onlyText.nodeValue = t("onlyHighlighted");
       yearLabel.textContent = t("yearLabel");
       marksTitle.textContent = t("marksTitle"); marksTitle.title = t("marksHint");
@@ -643,7 +652,7 @@
       yearStart.setOptions(opts(t("yearStart"), (y) => ye == null || y <= ye), ys != null ? String(ys) : "");
       yearEnd.setOptions(opts(t("yearEnd"), (y) => ys == null || y >= ys), ye != null ? String(ye) : "");
       // (the quick filters, in the panel's order: those that find something on this profile — a pressed one stays, so that it can be released)
-      const ids = B.prefs.pills(m.prefs).filter((id) => !m.pillFinds || m.pillFinds[id] !== false || B.query.hasValue(queryInput.value, B.prefs.PILL_OPERATORS[id]));
+      const ids = B.prefs.pills(m.prefs).filter((id) => !m.pillFinds || m.pillFinds[id] !== false || pillOn(id));
       searchPills.replaceChildren(...ids.map((id) => pillEls.get(id)));
       searchPills.hidden = !ids.length;
       searchRow.hidden = !fp.search;

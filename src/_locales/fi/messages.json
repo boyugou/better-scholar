@@ -1187,6 +1187,24 @@
   "optPillRecent": {
     "message": "Viimeiset 5 vuotta"
   },
+  "pillSearch1": {
+    "message": "Oma suodatin 1"
+  },
+  "pillSearch2": {
+    "message": "Oma suodatin 2"
+  },
+  "pillSearch3": {
+    "message": "Oma suodatin 3"
+  },
+  "optPillSearchWords": {
+    "message": "Hakusanat"
+  },
+  "optPillSearchHint": {
+    "message": "Sanat sellaisina kuin kirjoittaisit ne hakukenttään, esimerkiksi ccf:a role:first age:<5. Painike näyttää antamasi nimen, muuten nämä sanat."
+  },
+  "optPillSearchBad": {
+    "message": "Ei ymmärretty, joten painiketta ei ole:"
+  },
   "filterAbsent": {
     "message": "Profiilin nimi ei ole kirjoittajaluettelossa"
   },

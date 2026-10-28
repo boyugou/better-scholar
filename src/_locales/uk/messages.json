@@ -1187,6 +1187,24 @@
   "optPillRecent": {
     "message": "Останні 5 років"
   },
+  "pillSearch1": {
+    "message": "Ваш фільтр 1"
+  },
+  "pillSearch2": {
+    "message": "Ваш фільтр 2"
+  },
+  "pillSearch3": {
+    "message": "Ваш фільтр 3"
+  },
+  "optPillSearchWords": {
+    "message": "Слова для пошуку"
+  },
+  "optPillSearchHint": {
+    "message": "Слова так, як ви вводите їх у поле пошуку, наприклад ccf:a role:first age:<5. Кнопка показує назву, яку ви їй задали, а якщо назви немає — ці слова."
+  },
+  "optPillSearchBad": {
+    "message": "Не зрозуміло, тож кнопки немає:"
+  },
   "filterAbsent": {
     "message": "Імені з профілю немає серед авторів"
   },

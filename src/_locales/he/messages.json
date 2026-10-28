@@ -1187,6 +1187,24 @@
   "optPillRecent": {
     "message": "5 השנים האחרונות"
   },
+  "pillSearch1": {
+    "message": "המסנן שלכם 1"
+  },
+  "pillSearch2": {
+    "message": "המסנן שלכם 2"
+  },
+  "pillSearch3": {
+    "message": "המסנן שלכם 3"
+  },
+  "optPillSearchWords": {
+    "message": "מילות חיפוש"
+  },
+  "optPillSearchHint": {
+    "message": "הכפתור מציג את השם שנותנים לו, ואחרת את המילים עצמן. מילים כפי שמקלידים אותן בתיבת החיפוש, למשל: ⁦ccf:a role:first age:<5⁩"
+  },
+  "optPillSearchBad": {
+    "message": "לא הובן, ולכן אין כפתור:"
+  },
   "filterAbsent": {
     "message": "שם הפרופיל אינו ברשימת המחברים"
   },

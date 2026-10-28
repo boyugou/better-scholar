@@ -124,5 +124,31 @@
     return out.join(" ");
   }
 
-  return { OPERATORS, POPULAR, LISTED, parse, matches, hasValue, toggleValue, keepOnly };
+  // ---- a quick filter of your own: several words ----------------------------------------------------------------------------------------------------
+  // Its parts: each value of a listed operator on its own ("role:first,last" is "role:first" and "role:last", so that it joins the word of its operator as one quick filter does),
+  // any other word as it is, in lower case
+  function searchParts(words_) {
+    const out = [];
+    for (const w of words(words_)) {
+      const lw = w.toLowerCase(), s = split(lw);
+      if (s && LISTED.has(s.name) && s.values.length) for (const v of s.values) out.push(s.name + ":" + v);
+      else out.push(lw);
+    }
+    return [...new Set(out)];
+  }
+  const hasPart = (q, p) => (p.includes(":") && LISTED.has(p.slice(0, p.indexOf(":"))) ? hasValue(q, p) : words(q).some((w) => w.toLowerCase() === p));
+  // Are all its words in the query?
+  const hasAll = (q, words_) => { const ps = searchParts(words_); return ps.length > 0 && ps.every((p) => hasPart(q, p)); };
+  // The query with its words put in (those not there yet) or, when all are there, taken out
+  function toggleAll(q, words_) {
+    const ps = searchParts(words_), on = hasAll(q, words_);
+    let out = String(q == null ? "" : q).trim();
+    for (const p of ps) {
+      if (on === !hasPart(out, p)) continue;
+      out = p.includes(":") && LISTED.has(p.slice(0, p.indexOf(":"))) ? toggleValue(out, p) : (on ? words(out).filter((w) => w.toLowerCase() !== p) : [...words(out), p]).join(" ");
+    }
+    return out;
+  }
+
+  return { OPERATORS, POPULAR, LISTED, parse, matches, hasValue, toggleValue, keepOnly, searchParts, hasAll, toggleAll };
 });

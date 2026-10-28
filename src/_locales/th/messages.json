@@ -1187,6 +1187,24 @@
   "optPillRecent": {
     "message": "5 ปีล่าสุด"
   },
+  "pillSearch1": {
+    "message": "ตัวกรองของคุณ 1"
+  },
+  "pillSearch2": {
+    "message": "ตัวกรองของคุณ 2"
+  },
+  "pillSearch3": {
+    "message": "ตัวกรองของคุณ 3"
+  },
+  "optPillSearchWords": {
+    "message": "คำค้นหา"
+  },
+  "optPillSearchHint": {
+    "message": "คำที่พิมพ์ลงในช่องค้นหา เช่น ccf:a role:first age:<5 ปุ่มจะแสดงชื่อที่คุณตั้งไว้ หากไม่มีชื่อ ปุ่มจะแสดงคำเหล่านี้"
+  },
+  "optPillSearchBad": {
+    "message": "ไม่เข้าใจ จึงไม่มีปุ่ม:"
+  },
   "filterAbsent": {
     "message": "ไม่มีชื่อโปรไฟล์ในรายชื่อผู้เขียน"
   },

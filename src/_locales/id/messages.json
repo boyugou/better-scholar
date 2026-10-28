@@ -1187,6 +1187,24 @@
   "optPillRecent": {
     "message": "5 tahun terakhir"
   },
+  "pillSearch1": {
+    "message": "Filter Anda 1"
+  },
+  "pillSearch2": {
+    "message": "Filter Anda 2"
+  },
+  "pillSearch3": {
+    "message": "Filter Anda 3"
+  },
+  "optPillSearchWords": {
+    "message": "Kata pencarian"
+  },
+  "optPillSearchHint": {
+    "message": "Kata seperti yang Anda ketik di kotak pencarian, misalnya ccf:a role:first age:<5. Tombol menampilkan nama yang Anda beri, jika tidak, kata-kata ini."
+  },
+  "optPillSearchBad": {
+    "message": "Tidak dipahami, jadi tidak ada tombol:"
+  },
   "filterAbsent": {
     "message": "Nama profil tidak ada di daftar penulis"
   },

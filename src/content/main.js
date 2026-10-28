@@ -302,7 +302,7 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
     if (finds.prefs !== prefs || finds.as.length !== rows.length || rows.some((r, i) => r.a !== finds.as[i] || r.shown !== finds.shown[i])) {
       const lists = B.prefs.lists(prefs), value = {};
       for (const id of B.prefs.pills(prefs)) {
-        const m = analysis.queryMatcher(B.prefs.PILL_OPERATORS[id], (row) => B.prefs.visibleMarks(prefs, row.a.marks), lists);
+        const m = analysis.queryMatcher(B.prefs.pillWords(prefs, id), (row) => B.prefs.visibleMarks(prefs, row.a.marks), lists);
         value[id] = rows.some((r) => m.test(r));
       }
       finds = { prefs, as: rows.map((r) => r.a), shown: rows.map((r) => r.shown), value };
@@ -676,7 +676,7 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
     if (state.markGroup && !(p.marks.show && marks.rows(p.marks.grouping).includes(state.markGroup) && marks.members(state.markGroup).some((g) => p.marks[g]))) state.markGroup = null;
     if (!p.venues.show) state.venueKey = null;
     if (!(p.filters.show && p.filters.search)) {                                                                                  // (no search box: only the words of the quick filters stay, a button can take them off)
-      const keep = p.filters.show ? B.prefs.pills(prefs).map((id) => B.prefs.PILL_OPERATORS[id]) : [];
+      const keep = p.filters.show ? B.prefs.pills(prefs).flatMap((id) => B.query.searchParts(B.prefs.pillWords(prefs, id))) : [];
       f.query = B.query.keepOnly(f.query, new Set(keep));          // (in lower case: the buttons read the words as the operators are written; the values of one operator that are quick filters stay)
     }
     if (!p.filters.bar) f.minCitations = null;                                                                                    // (only the filter bar says it is on, and clears it)

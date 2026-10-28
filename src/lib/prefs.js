@@ -18,10 +18,11 @@
 // A switch decides what is DRAWN, one thing at a time. What the search and the exports include follows what is drawn anywhere ("what you see is what you
 // search and copy"): see listShown() and markShown().
 (function (root, factory) {
-  const api = factory(typeof require === "function" && typeof module === "object" ? require("./i18n.js") : root.RolesRanks.i18n);
+  const node = typeof require === "function" && typeof module === "object";
+  const api = factory(node ? require("./i18n.js") : root.RolesRanks.i18n, node ? require("./query.js") : root.RolesRanks.query);
   if (typeof module === "object" && module.exports) module.exports = api;
   else (root.RolesRanks = root.RolesRanks || {}).prefs = api;
-})(typeof globalThis !== "undefined" ? globalThis : this, function (i18n) {
+})(typeof globalThis !== "undefined" ? globalThis : this, function (i18n, query) {
   "use strict";
 
   // ---- vocabulary -----------------------------------------------------------------------------------------------------------------------
@@ -34,8 +35,14 @@
   const SECTIONS = ["table", "copy", "marks", "filters", "metrics", "years", "venues", "status", "names"];
   // The quick filters under the search box: each adds one operator of lib/query.js to the search (a test keeps them valid)
   const PILL_OPERATORS = { ccfA: "ccf:a", coreA: "core:a*", cites100: "cites:>100", recent: "age:<5", first: "role:first", cofirst: "role:cofirst", second: "role:second", last: "role:last", award: "has:award", talk: "has:talk" };
-  const PILLS = Object.keys(PILL_OPERATORS);
   const PILLS_ON = ["ccfA", "cites100", "first", "award"];
+  // Quick filters of your own: a search of your own words as a button, after the built-in ones. Its words are panel.filters.searches.<id>; its name is a name like any
+  // other (labels.pillSearch1 …), and with none the button shows its words.
+  const SEARCHES = ["search1", "search2", "search3"];
+  const SEARCH_MAX = 60;          // ("ccf:a role:first age:<5" is 23: room for more, and the record with every name at its longest still fits chrome.storage.sync's item)
+  const PILLS = [...Object.keys(PILL_OPERATORS), ...SEARCHES];
+  // the words a quick filter puts in the search
+  const pillWords = (prefs, id) => (SEARCHES.includes(id) ? prefs.panel.filters.searches[id] : PILL_OPERATORS[id]);
 
   // ---- the rows -------------------------------------------------------------------------------------------------------------------------
   // kind: "bool" | "choice" (one of `values`) | "color" (#rrggbb, or "" for the built-in colour) | "language" (`none`, or a language folder of _locales)
@@ -86,6 +93,9 @@
     markTalks: ["the count row that joins all talks, and the Talks quick filter", "Talks"],
     filterPlaceholder: ["the hint in the search box", "Search title or author…"],
     onlyHighlighted: ["the Only highlighted switch", "Only highlighted"],
+    pillSearch1: ["your own quick filter 1 (with no name, its button shows its words)", "Your filter 1"],
+    pillSearch2: ["your own quick filter 2", "Your filter 2"],
+    pillSearch3: ["your own quick filter 3", "Your filter 3"],
     yearLabel: ["the label of the year range", "Year"],
     yearStart: ["the From of the year range", "From"],
     yearEnd: ["the To of the year range", "To"],
@@ -146,7 +156,8 @@
     json: "Copy button: the papers shown as JSON, with roles, ranks and marks.",
     csv: "Copy button: the papers shown as CSV (RFC 4180)."
   };
-  const PILL_LABEL = { ccfA: "optPillCcfA", coreA: "optPillCoreA", cites100: "optPillCites", recent: "optPillRecent", first: "copyFirst", cofirst: "copyCofirst", second: "copySecond", last: "copyLast", award: "markAward", talk: "markTalks" };
+  const PILL_LABEL = { ccfA: "optPillCcfA", coreA: "optPillCoreA", cites100: "optPillCites", recent: "optPillRecent", first: "copyFirst", cofirst: "copyCofirst", second: "copySecond", last: "copyLast", award: "markAward", talk: "markTalks",
+    search1: "pillSearch1", search2: "pillSearch2", search3: "pillSearch3" };
 
   const CARDS = [
     card("language", "optLanguageTitle", "optLanguageHint", [
@@ -235,8 +246,15 @@
         ["key", true, "optFiltersKey", "The \"/\" key jumps to the search box — on a profile, and on this settings page for its own search. Off: the key does nothing (a character key that does something is one a person can switch off).", { hint: "optFiltersKeyHint", parent: "panel.filters.search" }]]),
       order("panel.filters.pills.order", PILLS, "The quick-filter buttons under the search box, left to right: a list of ids (" + PILLS.join(", ") + "). Ids left out follow in the default order; a button's own switch hides it without changing its place.",
         { label: "optOrderPills", parent: "panel.filters.show", group: "optFiltersQuick" }),
-      ...PILLS.map((id) => bool(`panel.filters.pills.${id}`, PILLS_ON.includes(id), `Quick filter: a button that adds ${PILL_OPERATORS[id]} to the search (left out while nothing of that kind is drawn, and on a profile with no paper that it would find).`,
+      ...Object.keys(PILL_OPERATORS).map((id) => bool(`panel.filters.pills.${id}`, PILLS_ON.includes(id), `Quick filter: a button that adds ${PILL_OPERATORS[id]} to the search (left out while nothing of that kind is drawn, and on a profile with no paper that it would find).`,
         { label: PILL_LABEL[id], parent: "panel.filters.show", group: "optFiltersQuick" })),
+      ...SEARCHES.flatMap((id, i) => [
+        bool(`panel.filters.pills.${id}`, true, `Your own quick filter ${i + 1}: a button that puts the words of panel.filters.searches.${id} in the search, or takes them out (none while those words are empty or not read, and on a profile with no paper they would find). Its name is labels.${PILL_LABEL[id]}; with none, the button shows its words.`,
+          { label: PILL_LABEL[id], parent: "panel.filters.show", group: "optFiltersQuick" }),
+        { parent: "panel.filters.show", group: "optFiltersQuick", ...named(PILL_LABEL[id]) },
+        text(`panel.filters.searches.${id}`, `The words of your own quick filter ${i + 1}, as they are typed in the search box: words and operators (ccf:a role:first age:<5, see the search below); "" for none.`,
+          { max: SEARCH_MAX, search: true, label: "optPillSearchWords", ...(i ? {} : { hint: "optPillSearchHint" }), parent: `panel.filters.pills.${id}`, group: "optFiltersQuick" })          // (the hint once, on the first)
+      ]),
       bool("panel.filters.only", true, "The \"Only highlighted\" switch (absent while no position is highlighted).", { label: "onlyHighlighted", parent: "panel.filters.show" }),
       { parent: "panel.filters.show", ...named("onlyHighlighted") },
       bool("panel.filters.years", true, "The year range: From and To.", { label: "optFiltersYears", parent: "panel.filters.show" }),
@@ -462,7 +480,8 @@
   // The quick filters that are drawn, in their order: those switched on that can find something (a rank list or a kind of mark that nothing draws finds nothing)
   function pills(prefs) {
     const l = lists(prefs), finds = { ccfA: l.ccf, coreA: l.core, award: markShown(prefs, "award"), talk: ["oral", "spotlight", "highlight"].some((g) => markShown(prefs, g)) };
-    return prefs.panel.filters.pills.order.filter((id) => prefs.panel.filters.pills[id] && finds[id] !== false);
+    const readable = (id) => !SEARCHES.includes(id) || (!!prefs.panel.filters.searches[id] && !query.parse(prefs.panel.filters.searches[id]).errors.length);
+    return prefs.panel.filters.pills.order.filter((id) => prefs.panel.filters.pills[id] && finds[id] !== false && readable(id));
   }
 
   // CCF and CORE rank much the same venues: where both rank one and a list is preferred (`rows.prefer`), that list is the winner and the other is drawn only where the winner has no
@@ -493,6 +512,6 @@
   // The copy buttons that are switched on, in the order the panel and the popup draw them.
   const copyButtons = (prefs) => prefs.panel.copy.order.filter((k) => prefs.panel.copy[k]);
 
-  return { ROLES, RANKS, MARK_GROUPS, COPY_BUTTONS, HIDE_PARTS, SECTIONS, PILLS, PILL_OPERATORS, NAMES, NAME_MAX, CARDS, SETTINGS, PRESETS, CHIP_THEMES, defaults, normalize, normalizeUi, flatten, apply, SYNC_LIMIT, sizeOf, cleanName: (v) => clean({ kind: "text" }, v),
+  return { ROLES, RANKS, MARK_GROUPS, COPY_BUTTONS, HIDE_PARTS, SECTIONS, PILLS, PILL_OPERATORS, SEARCHES, SEARCH_MAX, pillWords, NAMES, NAME_MAX, CARDS, SETTINGS, PRESETS, CHIP_THEMES, defaults, normalize, normalizeUi, flatten, apply, SYNC_LIMIT, sizeOf, cleanName: (v) => clean({ kind: "text" }, v),
     lists, winner, chipLists, markShown, visibleMarks, chipMarks, panelMarks, pills, sources, source, copyButtons };
 });

@@ -32,9 +32,10 @@ picked from and the copied text equals what the panel shows; the table keeps the
 whole: a range is chosen against them), and a scope note on the table itself (the filter bar and the metrics line already say
 which papers are counted).
 
-**Next — more ways to say "recent".** `age:<5` is the only relative operator; others (`age:<=10`) work but have no button.
-Custom quick filters (a name and a query of your own, as a pill) would cover "recent CCF-A first-author papers" in one click;
-each would need a list kind in `SETTINGS` (today a setting is a switch, a choice, a colour, a text or an order).
+**Built — your own quick filters** (2.41). Three buttons of your own words (`panel.filters.searches.search1` …, at most 60
+characters, as typed in the search box), each with a switch, a place in the quick filters' order and a name (`labels.pillSearch1` …);
+fixed slots rather than a list kind in `SETTINGS`, so that the order, the preview's hide, move and rename and the presets work on them
+as on any other quick filter. `age:<=10` and the like need no button of their own now.
 
 ## Data freshness
 

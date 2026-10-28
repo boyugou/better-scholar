@@ -20,10 +20,12 @@ test("defaults: complete, in the table's order, and a fresh object each time", (
   assert.deepEqual(d.rows, { name: true, style: "full", ccf: true, core: true, prefer: "ccf", award: true, oral: true, spotlight: true, highlight: true });
   assert.deepEqual(d.panel.order, ["table", "copy", "marks", "filters", "metrics", "years", "venues", "status", "names"]);
   assert.deepEqual(d.panel.copy.order, ["summary", "table", "image", "papers", "apa", "ieee", "gbt", "bibtex", "markdown", "json", "csv"]);
-  assert.deepEqual(d.panel.filters.pills.order, ["ccfA", "coreA", "cites100", "recent", "first", "cofirst", "second", "last", "award", "talk"]);
+  assert.deepEqual(d.panel.filters.pills.order, ["ccfA", "coreA", "cites100", "recent", "first", "cofirst", "second", "last", "award", "talk", "search1", "search2", "search3"]);
+  assert.deepEqual(d.panel.filters.searches, { search1: "", search2: "", search3: "" }, "your own quick filters have no words until you give them some");
   assert.equal(d.panel.venues.show, false, "the venue list is off until asked");
   assert.equal(d.panel.marks.grouping, "separate");
-  assert.deepEqual(prefs.PILLS.filter((id) => d.panel.filters.pills[id]), ["ccfA", "cites100", "first", "award"], "the quick filters that were always there");
+  assert.deepEqual(prefs.PILLS.filter((id) => d.panel.filters.pills[id]), ["ccfA", "cites100", "first", "award", "search1", "search2", "search3"], "the quick filters that were always there, and your own (on: drawn once they have words)");
+  assert.deepEqual(prefs.pills(d), ["ccfA", "cites100", "first", "award"], "drawn: your own have no words yet");
   assert.deepEqual([d.mergeDuplicates, d.autoLoad, d.semanticScholar, d.language, d.scholarLanguage], [false, true, false, "auto", "keep"]);
   assert.equal(Object.values(d.hide).some(Boolean), false, "nothing of Scholar's own is hidden until asked");
   // every part and every thing in it is on, except what is off for a reason
@@ -46,7 +48,8 @@ test("the table of settings: every row is whole, the cards hold them in the orde
     if (s.kind === "choice") assert.ok(s.values.includes(s.def), s.path + ": the default is one of the values");
     if (s.kind === "language") assert.ok(s.none === s.def && !i18n.codes.includes(s.none), s.path + ": the default is the 'none' word");
     if (s.kind === "order") assert.deepEqual([...s.def].sort(), [...s.values].sort(), s.path + ": the default order has every id once");
-    if (s.kind === "text") assert.ok(s.def === "" && s.max === prefs.NAME_MAX && s.path === "labels." + s.label, s.path + ": a name, empty by default, called by its message key");
+    if (s.kind === "text" && !s.search) assert.ok(s.def === "" && s.max === prefs.NAME_MAX && s.path === "labels." + s.label, s.path + ": a name, empty by default, called by its message key");
+    if (s.kind === "text" && s.search) assert.ok(s.def === "" && s.max === prefs.SEARCH_MAX && /^panel\.filters\.searches\.search\d$/.test(s.path), s.path + ": the words of your own quick filter, empty by default");
     if (s.kind !== "color") assert.ok(en[s.label], s.path + ": the label " + s.label + " is a message");
     if (s.hint) assert.ok(en[s.hint], s.path + ": the hint is a message");
     if (s.group) assert.ok(en[s.group], s.path + ": the group's name is a message");
@@ -72,7 +75,7 @@ test("the quick filters: each is one valid term of the search language, of the k
     const r = query.parse(op);
     assert.deepEqual([r.errors, r.terms.length], [[], 1], id);
   }
-  assert.deepEqual(prefs.PILLS, Object.keys(prefs.PILL_OPERATORS));
+  assert.deepEqual(prefs.PILLS, [...Object.keys(prefs.PILL_OPERATORS), ...prefs.SEARCHES]);
   assert.deepEqual(bools("panel.filters.pills"), prefs.PILLS.map((id) => "panel.filters.pills." + id));
 });
 
@@ -115,7 +118,7 @@ test("an order is always a whole permutation: ids left out follow in the default
   assert.deepEqual(r.ignored.map((x) => x.path), ["panel.order", "panel.copy.order"]);
   assert.match(r.ignored[0].reason, /listed twice/);
   assert.match(r.ignored[1].reason, /unknown id: "nope" \(ids: summary, table/);
-  assert.deepEqual(r.applied, [{ path: "panel.filters.pills.order", from: prefs.defaults().panel.filters.pills.order, to: ["last", "first", "ccfA", "coreA", "cites100", "recent", "cofirst", "second", "award", "talk"] }]);
+  assert.deepEqual(r.applied, [{ path: "panel.filters.pills.order", from: prefs.defaults().panel.filters.pills.order, to: ["last", "first", "ccfA", "coreA", "cites100", "recent", "cofirst", "second", "award", "talk", "search1", "search2", "search3"] }]);
   assert.equal(prefs.apply(prefs.defaults(), { panel: { order: prefs.defaults().panel.order } }).unchanged[0], "panel.order", "the same order: not a change");
   assert.equal(prefs.apply(prefs.defaults(), { panel: { order: ["table"] } }).unchanged[0], "panel.order", "a list that says what already is: not a change");
   assert.match(prefs.apply(prefs.defaults(), { panel: { order: "x" } }).ignored[0].reason, /list of ids/);
@@ -295,7 +298,7 @@ test("the quick filters that are drawn: in their order, those that are on and ca
 test("names: a text of the screen in the person's own words; every one is a single piece of the catalogue, and its row says what it is", () => {
   const keys = Object.keys(prefs.NAMES);
   assert.equal(new Set(keys).size, keys.length);
-  assert.deepEqual(prefs.SETTINGS.filter((s) => s.kind === "text").map((s) => s.label).sort(), [...keys].sort(), "a name for each, once");
+  assert.deepEqual(prefs.SETTINGS.filter((s) => s.kind === "text" && !s.search).map((s) => s.label).sort(), [...keys].sort(), "a name for each, once");
   for (const [key, [where, words]] of Object.entries(prefs.NAMES)) {
     assert.equal(en[key] && en[key].message, words, key + ": the English words here are the catalogue's");
     assert.ok(!/\$/.test(words) && !en[key + "One"] && !en[key].placeholders, key + ": nothing is put into it, and it has no plural");
@@ -305,7 +308,7 @@ test("names: a text of the screen in the person's own words; every one is a sing
     assert.ok(words.length <= 36, key);
   }
   // a name is on the row of its switch (inline) or on its own, and never before the part it belongs to
-  for (const s of prefs.SETTINGS.filter((x) => x.kind === "text")) { if (s.parent) assert.ok(prefs.SETTINGS.some((x) => x.path === s.parent), s.path); }
+  for (const s of prefs.SETTINGS.filter((x) => x.kind === "text" && !x.search)) { if (s.parent) assert.ok(prefs.SETTINGS.some((x) => x.path === s.parent), s.path); }
 });
 
 test("names: one line of at most 30 characters; anything else is left out with the reason", () => {
@@ -326,11 +329,16 @@ test("names: one line of at most 30 characters; anything else is left out with t
 
 test("the record, with every name at its longest in a language that takes three bytes a character, fits chrome.storage.sync's 8 KB for an item", () => {
   const labels = Object.fromEntries(Object.keys(prefs.NAMES).map((k) => [k, "字".repeat(prefs.NAME_MAX)]));
+  // (and your own quick filters at their longest, in the search's own words: operators are ASCII)
+  const searches = Object.fromEntries(prefs.SEARCHES.map((id) => [id, "ccf:a ".repeat(prefs.SEARCH_MAX / 6).trim()]));
   const worst = prefs.apply(prefs.defaults(), { labels, colors: { first: "#abcdef", cofirst: "#abcdef", second: "#abcdef", last: "#abcdef" },
-    panel: { order: [...prefs.SECTIONS].reverse(), copy: { order: [...prefs.COPY_BUTTONS].reverse() }, filters: { pills: { order: [...prefs.PILLS].reverse() } } } });
+    panel: { order: [...prefs.SECTIONS].reverse(), copy: { order: [...prefs.COPY_BUTTONS].reverse() }, filters: { searches, pills: { order: [...prefs.PILLS].reverse() } } } });
   assert.deepEqual(worst.ignored, []);
   const bytes = Buffer.byteLength(JSON.stringify(worst.prefs)) + "prefs".length;
-  assert.ok(bytes < 7400, "the record is " + bytes + " bytes");
+  assert.ok(bytes < prefs.SYNC_LIMIT, "the record is " + bytes + " bytes");
+  // (more than that — three searches of sixty Chinese characters on top — is refused whole, with the reason, and the settings stay as they were)
+  const over = prefs.apply(worst.prefs, { panel: { filters: { searches: Object.fromEntries(prefs.SEARCHES.map((id) => [id, "字".repeat(prefs.SEARCH_MAX)])) } } });
+  assert.ok(over.ignored.some((x) => /bytes/.test(x.reason)) && over.prefs.panel.filters.searches.search1 === worst.prefs.panel.filters.searches.search1, JSON.stringify(over.ignored));
 });
 
 test("names: nothing in a name shows nothing or turns the text around, and what some scripts need stays", () => {
@@ -442,3 +450,13 @@ test("the counts of marks in the panel, the popup and a copied summary follow th
   assert.deepEqual(prefs.panelMarks(noOral, marks).map((m) => m.group), ["award", "finalist"]);
 });
 
+
+test("your own quick filters: drawn once their words are read, in the order of the quick filters, and only while switched on", () => {
+  const with_ = (searches, patch = {}) => prefs.apply(prefs.defaults(), { panel: { filters: { searches, ...patch } } }).prefs;
+  assert.deepEqual(prefs.pills(with_({ search1: "ccf:a role:first", search2: "ccf:z", search3: "   " })), ["ccfA", "cites100", "first", "award", "search1"], "words not read, or none: no button");
+  assert.deepEqual(prefs.pills(with_({ search2: "has:award" }, { pills: { search2: false } })), ["ccfA", "cites100", "first", "award"], "switched off");
+  assert.deepEqual(prefs.pills(with_({ search3: "year:>2020" }, { pills: { order: ["search3", "ccfA"] } })).slice(0, 2), ["search3", "ccfA"], "moved like any other");
+  assert.equal(prefs.pillWords(with_({ search1: " ccf:a \n role:first " }), "search1"), "ccf:a role:first", "kept on one line");
+  assert.equal(prefs.pillWords(prefs.defaults(), "ccfA"), "ccf:a");
+  assert.match(prefs.apply(prefs.defaults(), { panel: { filters: { searches: { search1: "x".repeat(prefs.SEARCH_MAX + 1) } } } }).ignored[0].reason, /at most 60/);
+});

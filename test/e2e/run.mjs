@@ -806,6 +806,36 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     assert.equal(await pillCites.getAttribute("aria-pressed"), "true");
     await clearBtn.click();
     assert.equal(await pillCites.getAttribute("aria-pressed"), "false");
+    // Your own quick filters: words typed on the settings page make a button after the built-in ones; it shows the words until it has a name, puts them all in the search and
+    // takes them out again; words the search cannot read make none (and the settings page says why), nor do words that find no paper here
+    const ownWords = async (id, v) => { await opts.bringToFront(); const f = opts.locator(`input[data-pref="panel.filters.searches.${id}"]`); await f.fill(v); await f.blur(); await settle(opts); };
+    await ownWords("search1", "ccf:a role:last");
+    await ownWords("search2", "ccf:z");
+    assert.match(await opts.locator(".opt-words").nth(1).locator(".search-bad").textContent(), /ccf:z/, "the settings page says what it cannot read");
+    assert.equal(await opts.locator(".opt-words").nth(0).locator(".search-bad").isHidden(), true);
+    await ownWords("search3", "year:<1900");
+    await page.bringToFront();
+    const ownPill = page.locator('#rr-panel .rr-spill[data-pill="search1"]');
+    await ownPill.waitFor();
+    assert.deepEqual(await pills.evaluateAll((els) => els.map((e) => e.dataset.pill)), ["ccfA", "cites100", "first", "search1"], "your own after the built-in ones; none for words not read or that find nothing");
+    assert.equal(await ownPill.textContent(), "ccf:a role:last", "with no name, the button shows its words");
+    await ownPill.click();
+    assert.equal(await queryInput.inputValue(), "ccf:a role:last");
+    assert.deepEqual([await ownPill.getAttribute("aria-pressed"), await pillCcf.getAttribute("aria-pressed")], ["true", "true"], "pressed, and so is CCF A, whose word it holds");
+    const ownRows = await visibleRows(page);
+    assert.ok(ownRows > 0 && ownRows < countCcfA, `the papers of both words: ${ownRows} of the ${countCcfA} CCF A papers`);
+    await ownPill.click();
+    assert.equal(await queryInput.inputValue(), "", "pressed again, its words go");
+    await opts.bringToFront();
+    await opts.fill('input[data-pref="labels.pillSearch1"]', "Last-author A"); await opts.locator('input[data-pref="labels.pillSearch1"]').blur(); await settle(opts);
+    await page.bringToFront();
+    await eventually(page, () => document.querySelector('#rr-panel .rr-spill[data-pill="search1"]').textContent === "Last-author A");
+    assert.equal(await ownPill.getAttribute("title"), "ccf:a role:last", "named: its words on hover");
+    for (const id of ["search1", "search2", "search3"]) await ownWords(id, "");
+    await opts.fill('input[data-pref="labels.pillSearch1"]', ""); await opts.locator('input[data-pref="labels.pillSearch1"]').blur(); await settle(opts);
+    await page.bringToFront();
+    await eventually(page, () => !document.querySelector('#rr-panel .rr-spill[data-pill="search1"]'));
+    ok("your own quick filters: words of your own as a button after the built-in ones, named or showing the words, all put in and taken out; none for words not read or finding nothing");
     // Operator suggestion dropdown: an ordinary word offers nothing; "role:" opens the autocomplete menu (a combobox for a screen reader)
     const suggestMenu = page.locator("#rr-panel .rr-search-suggest");
     await queryInput.fill("role");
@@ -1888,9 +1918,9 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     await setPref(opts, "panel.years.show", true);
     // the settings follow the preview: with everything switched on, the panel's parts and the things in them are in the order of the settings, top to bottom
     // (the chips and the name mark are in every row and the "of N" in every number, so only the panel's own parts have one place each)
-    await opts.evaluate(async () => { const B = RolesRanks, r = await chrome.storage.sync.get("prefs"); const all = B.prefs.apply(r.prefs, B.prefs.PRESETS.all).prefs; await chrome.storage.sync.set({ prefs: B.prefs.apply(all, { panel: { filters: { pills: Object.fromEntries(B.prefs.PILLS.map((id) => [id, true])) } } }).prefs }); });
-    await pollPage(opts, () => document.querySelectorAll("#pv-panel .rr-spill").length === 10 && document.querySelector("#pv-panel [data-rr=\"venues\"]") && !document.querySelector("#pv-panel [data-rr=\"venues\"]").hidden);
-    const panelPaths = prefsLib.SETTINGS.map((x) => x.path).filter((x) => x.startsWith("panel.") && x !== "panel.metrics.of");
+    await opts.evaluate(async () => { const B = RolesRanks, r = await chrome.storage.sync.get("prefs"); const all = B.prefs.apply(r.prefs, B.prefs.PRESETS.all).prefs; await chrome.storage.sync.set({ prefs: B.prefs.apply(all, { panel: { filters: { pills: Object.fromEntries(B.prefs.PILLS.map((id) => [id, true])), searches: { search1: "ccf:a", search2: "role:first", search3: "has:award" } } } }).prefs }); });
+    await pollPage(opts, () => document.querySelectorAll("#pv-panel .rr-spill").length === 13 && document.querySelector("#pv-panel [data-rr=\"venues\"]") && !document.querySelector("#pv-panel [data-rr=\"venues\"]").hidden);
+    const panelPaths = prefsLib.SETTINGS.map((x) => x.path).filter((x) => x.startsWith("panel.") && x !== "panel.metrics.of" && !x.startsWith("panel.filters.searches."));          // (the words of your own quick filters are no part: their button is)
     const where = await opts.evaluate((paths) => {
       const aside = document.querySelector(".preview"), base = aside.getBoundingClientRect();
       return paths.map((p) => { const el = aside.querySelector(`#pv-panel [data-rr-part="${p}"]`); if (!el) return null; const r = el.getBoundingClientRect(); if (!r.width && !r.height) return null; return { p, y: Math.round(r.top - base.top + aside.scrollTop), x: Math.round(r.left - base.left) }; }).filter(Boolean);
@@ -1901,7 +1931,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
       const a = where[i - 1], b = where[i];
       assert.ok(b.y > a.y + 6 || (b.y >= a.y - 6 && b.x >= a.x - 2), `the settings follow the preview: ${a.p} (${a.y}, ${a.x}) comes before ${b.p} (${b.y}, ${b.x})`);
     }
-    await opts.evaluate(async () => { const B = RolesRanks, r = await chrome.storage.sync.get("prefs"); await chrome.storage.sync.set({ prefs: B.prefs.apply(r.prefs, { panel: { venues: { show: false }, filters: { pills: B.prefs.defaults().panel.filters.pills } } }).prefs }); });
+    await opts.evaluate(async () => { const B = RolesRanks, r = await chrome.storage.sync.get("prefs"); await chrome.storage.sync.set({ prefs: B.prefs.apply(r.prefs, { panel: { venues: { show: false }, filters: { pills: B.prefs.defaults().panel.filters.pills, searches: B.prefs.defaults().panel.filters.searches } } }).prefs }); });
     await pollPage(opts, () => document.querySelectorAll("#pv-panel .rr-spill").length === 4);
     ok("the settings are in the order of the preview: the parts of the panel and the things in them, top to bottom");
     // -- the preview is edited from itself, as well as from the controls: ✕ hides a thing, a rail hides or moves a part, a double-click renames, a tray shows again

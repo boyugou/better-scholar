@@ -42,6 +42,13 @@
   An independent review fixed: a long note (the source address) widens the picture instead of running off it; the total column has the
   panel's one word, row and column, and as much room as a custom name needs; a failed copy is no longer drawn green; the picture of an
   empty selection is copied like the table; the popup says when the picture fails; Japanese pages draw with Japanese fonts first.
+- **Your own quick filters** (*Settings → Filters*, under the built-in ones): up to three buttons of your own words, typed as in the
+  search box — `ccf:a role:first age:<5` for "recent CCF-A first-author papers" in one click. Each has a switch, a place in the order
+  of the quick filters, and a name like any other (in the settings or by renaming it on the preview); with no name the button shows its
+  words, and with a name its words are its tooltip. A click puts all its words in the search, a second takes them out (a value of a
+  listed operator joins its word, as a built-in button does). Words the search cannot read make no button, and the settings page says
+  why, in red under the field; words that find no paper on the profile make none either, as for the built-in ones. At most 60
+  characters each, so that the settings with every name at its longest still fit Chrome's 8 KB for one item. 30 languages.
 - **From an independent review of the store text** (all fixed): *Copy APA* pasted "Hinton, G. E.." when the profile owner is the last
   author (the full stop inside the bold was not seen, and a second one followed) — a test now checks that the HTML of APA, IEEE and
   GB/T 7714 reads word for word as their text, wherever the owner stands; saved author lists older than 90 days were only left unused

@@ -1187,6 +1187,24 @@
   "optPillRecent": {
     "message": "آخر 5 سنوات"
   },
+  "pillSearch1": {
+    "message": "مرشّحك 1"
+  },
+  "pillSearch2": {
+    "message": "مرشّحك 2"
+  },
+  "pillSearch3": {
+    "message": "مرشّحك 3"
+  },
+  "optPillSearchWords": {
+    "message": "كلمات البحث"
+  },
+  "optPillSearchHint": {
+    "message": "يعرض الزر الاسم الذي تضعه له، وإلا فالكلمات نفسها. كلمات تكتبها في مربع البحث، مثلاً: ⁦ccf:a role:first age:<5⁩"
+  },
+  "optPillSearchBad": {
+    "message": "لم يُفهم، لذا لا يوجد زر:"
+  },
   "filterAbsent": {
     "message": "الاسم غير موجود في قائمة المؤلفين"
   },

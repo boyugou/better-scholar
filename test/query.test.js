@@ -253,3 +253,21 @@ test("quick filters pressed in any order, and released again, give the query tha
   assert.equal(query.toggleValue("role:last foo role:First,LAST", "role:last"), "foo role:first");
   assert.equal(query.toggleValue("AGE:<5 age:<5", "age:<5"), "");
 });
+
+test("a quick filter of your own: several words, all put in and taken out together; a listed word joins its operator as a built-in one does", () => {
+  assert.deepEqual(query.searchParts("ccf:a  Role:First,last age:<5 Transformer ccf:a"), ["ccf:a", "role:first", "role:last", "age:<5", "transformer"], "its parts: a value each, once, in lower case");
+  assert.equal(query.hasAll("", "ccf:a role:first"), false);
+  assert.equal(query.hasAll("x", ""), false, "no words: never pressed");
+  let q = query.toggleAll("", "ccf:a role:first age:<5");
+  assert.equal(q, "ccf:a role:first age:<5");
+  assert.equal(query.hasAll(q, "ccf:a role:first age:<5"), true);
+  q = query.toggleValue(q, "role:last");                                                  // (a built-in pressed beside it joins its word)
+  assert.equal(q, "ccf:a role:first,last age:<5");
+  assert.equal(query.hasAll(q, "ccf:a role:first age:<5"), true, "still all there");
+  assert.equal(query.toggleAll(q, "ccf:a role:first age:<5"), "role:last", "pressed again: its words go, the other value stays");
+  assert.equal(query.toggleAll("deep learning ccf:a", "ccf:a role:first"), "deep learning ccf:a role:first", "half there: the rest is put in, nothing twice");
+  assert.equal(query.toggleAll("Deep CCF:A role:first", "ccf:a role:first deep"), "", "whatever the case it was typed in");
+  assert.equal(query.toggleAll("role:first", "role:first,last"), "role:first,last", "a listed word of two values");
+  assert.equal(query.toggleAll("role:first,last x", "role:first,last"), "x");
+  assert.equal(query.toggleAll("cites:>1000", "cites:>100"), "cites:>1000 cites:>100", "a comparison is its own word");
+});

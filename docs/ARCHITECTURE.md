@@ -74,18 +74,18 @@ The main content script runs at `document_idle` on `https://scholar.google.<doma
 
 ```
 lib/i18n.js → lib/names.js → lib/venues.js → lib/metrics.js → lib/marks.js → lib/awards.js → lib/duplicates.js →
-lib/prefs.js → lib/palette.js → lib/query.js → lib/formats.js → lib/analysis.js → lib/agent.js →
+lib/query.js → lib/prefs.js → lib/palette.js → lib/formats.js → lib/analysis.js → lib/agent.js →
 data/aliases.js → data/ccf.js → data/core.js → data/awards.js →
 content/dom.js → content/chips.js → content/store.js → content/scholar.js → content/semantic.js → content/detail.js →
 content/panel.js → content/image.js → content/bridge.js → content/main.js
 ```
 
-`prefs` needs `i18n`; `awards` needs `names`; `duplicates` needs `names` and `awards`; `analysis` needs `names`,
+`prefs` needs `i18n` and `query`; `awards` needs `names`; `duplicates` needs `names` and `awards`; `analysis` needs `names`,
 `marks` and `query`; `agent` needs `prefs`, `i18n` and `query`; the `content/` files need `dom`; `main.js` comes last
 and calls `bridge.install`. The second content script — `lib/i18n.js`, `content/lang-redirect.js` — runs at
-`document_start` on every page of the same domains. The popup loads `lib/i18n.js`, `lib/prefs.js`, `lib/marks.js`,
-`content/dom.js`, `content/store.js`, `popup/popup.js`; the settings page loads `lib/i18n.js`, `lib/prefs.js`,
-`lib/palette.js`, `lib/query.js`, `lib/agent.js`, `lib/marks.js`, `lib/metrics.js`, `lib/venues.js` with `data/aliases.js`, `data/ccf.js` and
+`document_start` on every page of the same domains. The popup loads `lib/i18n.js`, `lib/query.js`, `lib/prefs.js`, `lib/marks.js`,
+`content/dom.js`, `content/store.js`, `popup/popup.js`; the settings page loads `lib/i18n.js`, `lib/query.js`, `lib/prefs.js`,
+`lib/palette.js`, `lib/agent.js`, `lib/marks.js`, `lib/metrics.js`, `lib/venues.js` with `data/aliases.js`, `data/ccf.js` and
 `data/core.js` (for *Check a venue*, which runs the page's own resolver on a text), `content/dom.js`, `content/chips.js`,
 `content/panel.js`, `content/store.js`, `options/editor.js`, `options/options.js`.
 

@@ -29,7 +29,7 @@ export function numbers() {
   const kind = (k) => rows.filter((s) => s.kind === k).length;
   const settings = {
     total: rows.length, cards: prefs.CARDS.length, nodes: rows.length + prefs.CARDS.length, levels: Math.max(...rows.map(depth)) + 1,          // (+1: the card above the settings)
-    switches: kind("bool"), names: kind("text"), other: rows.length - kind("bool") - kind("text")
+    switches: kind("bool"), names: rows.filter((s) => s.kind === "text" && !s.search).length, other: rows.length - kind("bool") - rows.filter((s) => s.kind === "text" && !s.search).length          // (the words of your own quick filters are no name)
   };
   const arrange = { parts: prefs.SECTIONS.length, copy: prefs.COPY_BUTTONS.length, filters: prefs.PILLS.length, looks: prefs.CHIP_THEMES.length, presets: Object.keys(prefs.PRESETS).length };
   const strings = Object.keys(JSON.parse(read("src/_locales/en/messages.json"))).length;
@@ -132,7 +132,7 @@ const TEXT = {
     rows: (n, f, p) => [
       [`**${n.settings.total}**`, `项可调整的设置，分布在 ${n.settings.cards} 张卡片中：${n.settings.switches} 个开关、${n.settings.names} 处可自定义名称，以及 ${n.settings.other} 项颜色、选项、顺序和语言`, "设置树的各行（`src/lib/prefs.js`）"],
       [`**${n.settings.nodes}**`, `个节点，共 ${n.settings.levels} 层：卡片、面板开关、部分开关、其中一项、项下的子项`, "卡片和各行；每一行挂在所属部分的开关下"],
-      [`**${n.arrange.parts} · ${n.arrange.copy} · ${n.arrange.filters} · ${n.arrange.looks} · ${n.arrange.presets}**`, "个面板部分、复制格式和快捷筛选——每一项都有自己的开关，多数还能排顺序——以及可选的标签样式和预设", "`SECTIONS`、`COPY_BUTTONS`、`PILLS`、`CHIP_THEMES`、`PRESETS`"],
+      [`**${n.arrange.parts} · ${n.arrange.copy} · ${n.arrange.filters} · ${n.arrange.looks} · ${n.arrange.presets}**`, "个面板部分、复制格式和快速筛选——每一项都有自己的开关，多数还能排顺序——以及可选的标签样式和预设", "`SECTIONS`、`COPY_BUTTONS`、`PILLS`、`CHIP_THEMES`、`PRESETS`"],
       [`**${n.languages.total}**`, `种界面语言——每种 ${f(n.languages.strings)} 条文案，${n.languages.total - 1} 种译文`, "`src/_locales/*/messages.json`"],
       [`**${f(n.lists.distinct)}**`, `个有等级的发表场所，来自两份内置名录的 ${f(n.lists.total)} 行（CCF 会议 ${n.lists.ccfConferences}、CCF 期刊 ${n.lists.ccfJournals}、CORE 会议 ${n.lists.coreConferences}）；其中 ${f(n.matching.linked)} 个在两份名录中各有一行`, "`src/data/ccf.js` 和 `src/data/core.js` 的各行，由 `idx.partners` 关联"],
       [`**${p(n.matching.curatedNames, 50)}**`, `个 Scholar 显示但名录中没有的场所名称，收录在 ${p(n.matching.aliasEntries, 10)} 条人工整理的条目中：旧名与改名、其他拼写、名录自身的笔误，以及不给标签的同名活动`, "`src/data/aliases.js`"],

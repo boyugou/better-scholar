@@ -1187,6 +1187,24 @@
   "optPillRecent": {
     "message": "直近 5 年"
   },
+  "pillSearch1": {
+    "message": "マイフィルター 1"
+  },
+  "pillSearch2": {
+    "message": "マイフィルター 2"
+  },
+  "pillSearch3": {
+    "message": "マイフィルター 3"
+  },
+  "optPillSearchWords": {
+    "message": "検索ワード"
+  },
+  "optPillSearchHint": {
+    "message": "検索欄に入力する語句です（例：ccf:a role:first age:<5）。ボタンには付けた名前が表示され、名前がなければこの語句が表示されます。"
+  },
+  "optPillSearchBad": {
+    "message": "理解できなかったため、ボタンはありません："
+  },
   "filterAbsent": {
     "message": "著者リストにプロフィールの名前がない"
   },

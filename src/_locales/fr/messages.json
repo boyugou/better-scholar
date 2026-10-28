@@ -1187,6 +1187,24 @@
   "optPillRecent": {
     "message": "5 dernières années"
   },
+  "pillSearch1": {
+    "message": "Votre filtre 1"
+  },
+  "pillSearch2": {
+    "message": "Votre filtre 2"
+  },
+  "pillSearch3": {
+    "message": "Votre filtre 3"
+  },
+  "optPillSearchWords": {
+    "message": "Mots de recherche"
+  },
+  "optPillSearchHint": {
+    "message": "Mots tels que vous les tapez dans le champ de recherche, par exemple ccf:a role:first age:<5. Le bouton affiche le nom que vous lui donnez, sinon ces mots."
+  },
+  "optPillSearchBad": {
+    "message": "Non compris, donc aucun bouton :"
+  },
   "filterAbsent": {
     "message": "Nom du profil absent de la liste des auteurs"
   },

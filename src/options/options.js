@@ -254,6 +254,21 @@
     return h("span", { class: "name-edit" }, input, reset);
   }
 
+  // The words of your own quick filter, as they are typed in the search box (saved as they are typed); what the search cannot read is said under the field, and
+  // then there is no button (lib/prefs.js pills())
+  function searchWords(row, sub) {
+    const path = row.path, d = described(t(row.label), row.hint ? t(row.hint) : "");
+    const bad = h("span", { class: "search-bad", role: "status" });
+    const check = () => { const errors = B.query.parse(at(path)).errors; bad.textContent = errors.length ? t("optPillSearchBad") + " " + errors.join(" · ") : ""; bad.hidden = !errors.length; };
+    const input = h("input", { type: "text", class: "name-input search-words", "data-pref": path, maxlength: String(row.max), spellcheck: "false", autocomplete: "off", dir: "auto",
+      placeholder: "ccf:a role:first age:<5", ...d.ids,
+      onInput: () => { put(path, input.value); save(); check(); },
+      onChange: () => { put(path, B.prefs.cleanName(input.value)); save(); },
+      onKeydown: (e) => { if (e.key === "Enter") { e.preventDefault(); input.blur(); } } });
+    syncers.push(() => { if (document.activeElement !== input) input.value = at(path); input.disabled = inert(row); check(); });
+    return h("div", { class: "opt opt-words" + (sub ? " sub" : "") }, h("span", { class: "txt" }, d.name, d.hint), input, bad);
+  }
+
   // One switch
   function option({ path, label, hint, swatch, sub, off, name, key }) {
     const d = described(label, hint);
@@ -811,7 +826,7 @@
     const label = t(row.label), hint = row.hint ? t(row.hint) : "";
     switch (row.kind) {
       case "bool": return option({ path: row.path, label, hint, swatch: row.swatch ? ROLE_COLOR[row.swatch] : null, sub: !!row.parent && rows.some((r) => r.path === row.parent), off: () => inert(row), name, key: row.label });
-      case "text": return row.inline ? null : h("div", { class: "opt opt-name" + (row.parent && rows.some((r) => r.path === row.parent) ? " sub" : "") }, h("span", { class: "txt" }, h("span", { class: "name" }, label)), nameEdit(row, () => inert(row)));
+      case "text": return row.inline ? null : row.search ? searchWords(row, row.parent && rows.some((r) => r.path === row.parent)) : h("div", { class: "opt opt-name" + (row.parent && rows.some((r) => r.path === row.parent) ? " sub" : "") }, h("span", { class: "txt" }, h("span", { class: "name" }, label)), nameEdit(row, () => inert(row)));
       case "choice": { const c = CHOICES[row.path]; return segmented({ path: row.path, label, hint, choices: row.values.map((v) => [v, t(c.labels[v])]), icons: c.icons, off: () => inert(row) }); }
       case "order": return orderList({ path: row.path, label, hint, nameOf: (id) => itemName(row.path, id), offOf: (id) => itemOff(row.path, id), off: () => inert(row) });
       case "language": return languageSelect({ path: row.path, label, hint, none: [row.none, t(NONE_WORD[row.path])], reload: row.path === "language" });
