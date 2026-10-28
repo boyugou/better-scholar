@@ -48,7 +48,14 @@
   words, and with a name its words are its tooltip. A click puts all its words in the search, a second takes them out (a value of a
   listed operator joins its word, as a built-in button does). Words the search cannot read make no button, and the settings page says
   why, in red under the field; words that find no paper on the profile make none either, as for the built-in ones. At most 60
-  characters each, so that the settings with every name at its longest still fit Chrome's 8 KB for one item. 30 languages.
+  characters each, so that the settings with every name at its longest and three searches of operators still fit Chrome's 8 KB for
+  one item (longer words in a three-byte script are refused with a message, as any record that does not fit). 30 languages.
+  An independent review of the first version fixed: the words go into the search whole ("has:award has:talk" had become
+  "has:award,talk", either one, while the button said both) and the button is pressed only while every one of them is a word of the
+  search; with the search box off, a word no pressed button stands for is dropped at once; an unnamed button has its words as its
+  tooltip (a long one is cut); renaming it on the preview starts from an empty box with the words in grey (they could be longer
+  than a name may be, and the name was then lost on saving — a built-in text longer than 30 characters is now cut instead); the
+  settings name a filter as its button does (its name, or else its words) in the order list and the name field; spaces are no words.
 - **From an independent review of the store text** (all fixed): *Copy APA* pasted "Hinton, G. E.." when the profile owner is the last
   author (the full stop inside the bold was not seen, and a second one followed) — a test now checks that the HTML of APA, IEEE and
   GB/T 7714 reads word for word as their text, wherever the owner stands; saved author lists older than 90 days were only left unused

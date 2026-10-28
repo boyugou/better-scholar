@@ -248,7 +248,9 @@
       } });
     const reset = h("button", { type: "button", class: "name-reset", "data-act": "name-reset", "aria-label": B.dom.tDefault(key) + " — " + t("optNameReset"), title: t("optNameReset"),
       onClick: (e) => { e.preventDefault(); e.stopPropagation(); put(path, ""); save(); } }, "↺");
-    const sync = () => { input.value = at(path); reset.hidden = !at(path); input.disabled = off ? off() : false; };
+    // (your own quick filter's name: with none, its button shows its words, so the field shows them in grey)
+    const own = /^pillSearch(\d)$/.exec(key);
+    const sync = () => { input.value = at(path); reset.hidden = !at(path); input.disabled = off ? off() : false; if (own) input.placeholder = at("panel.filters.searches.search" + own[1]) || B.dom.tDefault(key); };
     syncers.push(sync);
     sync();
     return h("span", { class: "name-edit" }, input, reset);
@@ -818,8 +820,10 @@
   const NONE_WORD = { language: "optLanguageAuto", scholarLanguage: "optLanguageKeep" };
   const cardOf = (id) => B.prefs.CARDS.find((c) => c.id === id);
   // the name of an item of an order list: a part is named by its card, a button by its own switch; it is dimmed while its switch is off
-  const itemName = (path, id) => t(path === "panel.order" ? cardOf(id).title : SETTING.get(path.replace(/\.order$/, "." + id)).label);
-  const itemOff = (path, id) => !at(path === "panel.order" ? `panel.${id}.show` : path.replace(/\.order$/, "." + id));
+  // (your own quick filter is called as its button is: its name, or else its words)
+  const itemName = (path, id) => (B.prefs.SEARCHES.includes(id) ? B.dom.ownName(SETTING.get("panel.filters.pills." + id).label) || at("panel.filters.searches." + id) || t(SETTING.get("panel.filters.pills." + id).label)
+    : t(path === "panel.order" ? cardOf(id).title : SETTING.get(path.replace(/\.order$/, "." + id)).label));
+  const itemOff = (path, id) => !at(path === "panel.order" ? `panel.${id}.show` : path.replace(/\.order$/, "." + id)) || (B.prefs.SEARCHES.includes(id) && !B.query.searchParts(at("panel.filters.searches." + id)).length);          // (your own quick filter with no words draws nothing)
 
   // the control of one row, by what the row is
   function control(row, rows, name) {

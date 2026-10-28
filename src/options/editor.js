@@ -152,7 +152,9 @@
     function openRename(el) {
       closeRename(false);
       const key = el.dataset.rrLabel, def = el.dataset.rrDefault || B.dom.tDefault(key), r = rel(el);          // (rrDefault: the words of your own quick filter, its text while it has no name)
-      const input = h("input", { type: "text", class: "pv-rename-input", maxlength: String(B.prefs.NAME_MAX), spellcheck: "false", "aria-label": `${def} — ${t("optNameOf")}`, value: at("labels." + key) || def });
+      // (your own quick filter: its words in grey, and the box empty until it has a name — its words can be longer than a name may be)
+      const own = !!el.dataset.rrDefault;
+      const input = h("input", { type: "text", class: "pv-rename-input", maxlength: String(B.prefs.NAME_MAX), spellcheck: "false", "aria-label": `${def} — ${t("optNameOf")}`, value: at("labels." + key) || (own ? "" : def), ...(own ? { placeholder: def } : {}) });
       const box = h("div", { class: "pv-rename" }, input, h("span", { class: "pv-rename-hint" }, t("optRenameHint")));
       renaming = { key, def, input, box, done: false };
       hide();
@@ -174,7 +176,7 @@
       if (!r || r.done) return;
       r.done = true;
       renaming = null;
-      const words = B.prefs.cleanName(r.input.value);
+      const words = B.prefs.cleanName(r.input.value).slice(0, B.prefs.NAME_MAX);          // (a built-in text longer than a name may be — "Name not matching? Add a spelling" — is cut, not lost on the next save)
       r.box.remove();
       if (keep && words !== (at("labels." + r.key) || r.def)) { put("labels." + r.key, words === r.def ? "" : words); save(); }
     }

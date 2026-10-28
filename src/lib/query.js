@@ -118,36 +118,23 @@
     const out = [];
     for (const w of words(q)) {
       const lw = w.toLowerCase(), s = split(lw);
-      if (s && LISTED.has(s.name)) { const keep = s.values.filter((v) => allowed.has(s.name + ":" + v)); if (keep.length) out.push(s.name + ":" + keep.join(",")); }
-      else if (allowed.has(lw)) out.push(lw);
+      if (allowed.has(lw)) out.push(lw);                                                      // (a whole word: one of your own quick filters' words)
+      else if (s && LISTED.has(s.name)) { const keep = s.values.filter((v) => allowed.has(s.name + ":" + v)); if (keep.length) out.push(s.name + ":" + keep.join(",")); }
     }
     return out.join(" ");
   }
 
   // ---- a quick filter of your own: several words ----------------------------------------------------------------------------------------------------
-  // Its parts: each value of a listed operator on its own ("role:first,last" is "role:first" and "role:last", so that it joins the word of its operator as one quick filter does),
-  // any other word as it is, in lower case
-  function searchParts(words_) {
-    const out = [];
-    for (const w of words(words_)) {
-      const lw = w.toLowerCase(), s = split(lw);
-      if (s && LISTED.has(s.name) && s.values.length) for (const v of s.values) out.push(s.name + ":" + v);
-      else out.push(lw);
-    }
-    return [...new Set(out)];
-  }
-  const hasPart = (q, p) => (p.includes(":") && LISTED.has(p.slice(0, p.indexOf(":"))) ? hasValue(q, p) : words(q).some((w) => w.toLowerCase() === p));
-  // Are all its words in the query?
-  const hasAll = (q, words_) => { const ps = searchParts(words_); return ps.length > 0 && ps.every((p) => hasPart(q, p)); };
+  // Its words go into the search whole, each as it is: "has:award has:talk" stays two words that must both hold (split into values they would join into
+  // "has:award,talk", either one). Pressed means: every one of its words is a word of the search, so a built-in button that joins one of them ("role:first" + Last →
+  // "role:first,last") leaves it unpressed, as its words no longer describe the search.
+  const searchParts = (words_) => [...new Set(words(words_).map((w) => w.toLowerCase()))];
+  const hasAll = (q, words_) => { const ps = searchParts(words_), ws = new Set(words(q).map((w) => w.toLowerCase())); return ps.length > 0 && ps.every((p) => ws.has(p)); };
   // The query with its words put in (those not there yet) or, when all are there, taken out
   function toggleAll(q, words_) {
-    const ps = searchParts(words_), on = hasAll(q, words_);
-    let out = String(q == null ? "" : q).trim();
-    for (const p of ps) {
-      if (on === !hasPart(out, p)) continue;
-      out = p.includes(":") && LISTED.has(p.slice(0, p.indexOf(":"))) ? toggleValue(out, p) : (on ? words(out).filter((w) => w.toLowerCase() !== p) : [...words(out), p]).join(" ");
-    }
-    return out;
+    const ps = searchParts(words_), ws = words(q);
+    if (hasAll(q, words_)) return ws.filter((w) => !ps.includes(w.toLowerCase())).join(" ");
+    return [...ws, ...ps.filter((p) => !ws.some((w) => w.toLowerCase() === p))].join(" ");
   }
 
   return { OPERATORS, POPULAR, LISTED, parse, matches, hasValue, toggleValue, keepOnly, searchParts, hasAll, toggleAll };

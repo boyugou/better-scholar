@@ -557,7 +557,8 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
     onOnly(on) { state.filters.onlyHighlighted = on; state.searchCursor = -1; clearFocusedRow(); refresh(); },
     onImpact(kind) { state.filters.impact = state.filters.impact === kind ? null : kind; state.searchCursor = -1; clearFocusedRow(); refresh(); },
     onQuery(q) {
-      state.filters.query = (q || "").trim();
+      // (with no search box, a word no pressed button stands for — what is left of your own filter's words after a built-in button took one — would filter unseen)
+      state.filters.query = prefs.panel.filters.search ? (q || "").trim() : B.prefs.quickOnly(prefs, (q || "").trim());
       state.searchCursor = -1; clearFocusedRow();
       refresh();
     },
@@ -676,8 +677,7 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
     if (state.markGroup && !(p.marks.show && marks.rows(p.marks.grouping).includes(state.markGroup) && marks.members(state.markGroup).some((g) => p.marks[g]))) state.markGroup = null;
     if (!p.venues.show) state.venueKey = null;
     if (!(p.filters.show && p.filters.search)) {                                                                                  // (no search box: only the words of the quick filters stay, a button can take them off)
-      const keep = p.filters.show ? B.prefs.pills(prefs).flatMap((id) => B.query.searchParts(B.prefs.pillWords(prefs, id))) : [];
-      f.query = B.query.keepOnly(f.query, new Set(keep));          // (in lower case: the buttons read the words as the operators are written; the values of one operator that are quick filters stay)
+      f.query = p.filters.show ? B.prefs.quickOnly(prefs, f.query) : "";          // (in lower case: the buttons read the words as the operators are written; the values of one operator that are quick filters stay)
     }
     if (!p.filters.bar) f.minCitations = null;                                                                                    // (only the filter bar says it is on, and clears it)
     if (!(p.filters.show && p.filters.only) || !Object.values(prefs.roles).some(Boolean)) f.onlyHighlighted = false;          // (with nothing highlighted the filter would hide every row)

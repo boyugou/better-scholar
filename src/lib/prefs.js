@@ -480,8 +480,19 @@
   // The quick filters that are drawn, in their order: those switched on that can find something (a rank list or a kind of mark that nothing draws finds nothing)
   function pills(prefs) {
     const l = lists(prefs), finds = { ccfA: l.ccf, coreA: l.core, award: markShown(prefs, "award"), talk: ["oral", "spotlight", "highlight"].some((g) => markShown(prefs, g)) };
-    const readable = (id) => !SEARCHES.includes(id) || (!!prefs.panel.filters.searches[id] && !query.parse(prefs.panel.filters.searches[id]).errors.length);
+    const readable = (id) => !SEARCHES.includes(id) || (query.searchParts(prefs.panel.filters.searches[id]).length > 0 && !query.parse(prefs.panel.filters.searches[id]).errors.length);
     return prefs.panel.filters.pills.order.filter((id) => prefs.panel.filters.pills[id] && finds[id] !== false && readable(id));
+  }
+  // What stays of a search when there is no search box to show it: the words of the quick filters that are drawn — a built-in one's value, and all the words of one of
+  // your own while all of them are there — so that every word left is a pressed button that can take it off again
+  function quickOnly(prefs, q) {
+    const keep = new Set();
+    for (const id of pills(prefs)) {
+      const w = pillWords(prefs, id);
+      if (!SEARCHES.includes(id)) keep.add(w);
+      else if (query.hasAll(q, w)) for (const p of query.searchParts(w)) keep.add(p);
+    }
+    return query.keepOnly(q, keep);
   }
 
   // CCF and CORE rank much the same venues: where both rank one and a list is preferred (`rows.prefer`), that list is the winner and the other is drawn only where the winner has no
@@ -513,5 +524,5 @@
   const copyButtons = (prefs) => prefs.panel.copy.order.filter((k) => prefs.panel.copy[k]);
 
   return { ROLES, RANKS, MARK_GROUPS, COPY_BUTTONS, HIDE_PARTS, SECTIONS, PILLS, PILL_OPERATORS, SEARCHES, SEARCH_MAX, pillWords, NAMES, NAME_MAX, CARDS, SETTINGS, PRESETS, CHIP_THEMES, defaults, normalize, normalizeUi, flatten, apply, SYNC_LIMIT, sizeOf, cleanName: (v) => clean({ kind: "text" }, v),
-    lists, winner, chipLists, markShown, visibleMarks, chipMarks, panelMarks, pills, sources, source, copyButtons };
+    lists, winner, chipLists, markShown, visibleMarks, chipMarks, panelMarks, pills, quickOnly, sources, source, copyButtons };
 });

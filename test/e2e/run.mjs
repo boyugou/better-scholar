@@ -819,6 +819,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     await ownPill.waitFor();
     assert.deepEqual(await pills.evaluateAll((els) => els.map((e) => e.dataset.pill)), ["ccfA", "cites100", "first", "search1"], "your own after the built-in ones; none for words not read or that find nothing");
     assert.equal(await ownPill.textContent(), "ccf:a role:last", "with no name, the button shows its words");
+    assert.equal(await ownPill.getAttribute("title"), "ccf:a role:last", "and they are whole on hover (a long one is cut on the button)");
     await ownPill.click();
     assert.equal(await queryInput.inputValue(), "ccf:a role:last");
     assert.deepEqual([await ownPill.getAttribute("aria-pressed"), await pillCcf.getAttribute("aria-pressed")], ["true", "true"], "pressed, and so is CCF A, whose word it holds");

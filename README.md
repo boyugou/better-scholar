@@ -160,7 +160,7 @@ Real examples. The middle column is what the lists give; by default the panel dr
 - **Role × rank table**, for CCF or for CORE. Click a cell, a role or a rank to list those papers.
 - **Copy row**: one button for each format that is switched on. See [Copy and export](#copy-and-export).
 - **Awards and talks**: the counts. Click a count to list its papers.
-- **Search and filters**: words and [operators](#search-operators); quick buttons such as *CCF A*, *>100* (citations), *First author*, *Award* and *Last 5 years*; *Only highlighted*; a year range. The table, the award counts and the copied summary count only the papers that the filters leave. (A switch on the settings page turns this off.)
+- **Search and filters**: words and [operators](#search-operators); quick buttons such as *CCF A*, *>100* (citations), *First author*, *Award* and *Last 5 years*, and up to three of your own words; *Only highlighted*; a year range. The table, the award counts and the copied summary count only the papers that the filters leave. (A switch on the settings page turns this off.)
 - **Citation totals**: papers, citations, h-index and i10-index of your highlighted papers, beside the totals of all papers. The **h-index** and **i10-index** buttons list the papers behind the number.
 - **Papers by year**: a bar for each year (at most 50 years), in the role colours. Click a bar to filter to that year.
 - **Top venues** (off by default): the ranked venues of your highlighted papers, most papers first. Click a venue to list its papers.

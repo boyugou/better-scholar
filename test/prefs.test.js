@@ -454,6 +454,13 @@ test("the counts of marks in the panel, the popup and a copied summary follow th
 test("your own quick filters: drawn once their words are read, in the order of the quick filters, and only while switched on", () => {
   const with_ = (searches, patch = {}) => prefs.apply(prefs.defaults(), { panel: { filters: { searches, ...patch } } }).prefs;
   assert.deepEqual(prefs.pills(with_({ search1: "ccf:a role:first", search2: "ccf:z", search3: "   " })), ["ccfA", "cites100", "first", "award", "search1"], "words not read, or none: no button");
+  const unsaved = prefs.defaults(); unsaved.panel.filters.searches.search2 = "   ";          // (as the settings page holds a field while it is typed in, before it is cleaned)
+  assert.deepEqual(prefs.pills(unsaved), ["ccfA", "cites100", "first", "award"], "spaces are no words");
+  // with no search box, only what a pressed button stands for stays: all the words of your own filter while all are there, a built-in button's value
+  const box = with_({ search1: "has:talk role:first" }, { search: false });
+  assert.equal(prefs.quickOnly(box, "has:talk role:first ccf:a deep"), "has:talk role:first ccf:a", "the filter's words and CCF A's");
+  assert.equal(prefs.quickOnly(box, "has:talk"), "", "what a built-in button left of the filter's words goes: no button would show it");
+  assert.equal(prefs.quickOnly(box, "role:first,last"), "role:first", "a built-in value that is not drawn goes");
   assert.deepEqual(prefs.pills(with_({ search2: "has:award" }, { pills: { search2: false } })), ["ccfA", "cites100", "first", "award"], "switched off");
   assert.deepEqual(prefs.pills(with_({ search3: "year:>2020" }, { pills: { order: ["search3", "ccfA"] } })).slice(0, 2), ["search3", "ccfA"], "moved like any other");
   assert.equal(prefs.pillWords(with_({ search1: " ccf:a \n role:first " }), "search1"), "ccf:a role:first", "kept on one line");

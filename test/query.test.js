@@ -254,20 +254,27 @@ test("quick filters pressed in any order, and released again, give the query tha
   assert.equal(query.toggleValue("AGE:<5 age:<5", "age:<5"), "");
 });
 
-test("a quick filter of your own: several words, all put in and taken out together; a listed word joins its operator as a built-in one does", () => {
-  assert.deepEqual(query.searchParts("ccf:a  Role:First,last age:<5 Transformer ccf:a"), ["ccf:a", "role:first", "role:last", "age:<5", "transformer"], "its parts: a value each, once, in lower case");
+test("a quick filter of your own: its words go in whole and must all be there to be pressed; a built-in button that joins one leaves it unpressed", () => {
+  assert.deepEqual(query.searchParts("ccf:a  Role:First,last age:<5 Transformer ccf:a"), ["ccf:a", "role:first,last", "age:<5", "transformer"], "its words, once each, in lower case");
   assert.equal(query.hasAll("", "ccf:a role:first"), false);
-  assert.equal(query.hasAll("x", ""), false, "no words: never pressed");
+  assert.equal(query.hasAll("x", "   "), false, "no words: never pressed");
+  // (two words of one listed operator stay two: both must hold — joined they would be "either")
+  assert.equal(query.toggleAll("", "has:award has:talk"), "has:award has:talk");
+  const both = query.parse(query.toggleAll("", "has:award has:talk")), only = { text: [], year: 2020, citations: 0, role: "first", ccf: null, core: null, type: null, award: true, talk: false };
+  assert.equal(query.matches(both, only), false, "a paper with an award and no talk is not one of them");
   let q = query.toggleAll("", "ccf:a role:first age:<5");
   assert.equal(q, "ccf:a role:first age:<5");
   assert.equal(query.hasAll(q, "ccf:a role:first age:<5"), true);
-  q = query.toggleValue(q, "role:last");                                                  // (a built-in pressed beside it joins its word)
+  q = query.toggleValue(q, "role:last");                                                  // (the built-in Last joins its word: the search is no longer the filter's)
   assert.equal(q, "ccf:a role:first,last age:<5");
-  assert.equal(query.hasAll(q, "ccf:a role:first age:<5"), true, "still all there");
-  assert.equal(query.toggleAll(q, "ccf:a role:first age:<5"), "role:last", "pressed again: its words go, the other value stays");
+  assert.equal(query.hasAll(q, "ccf:a role:first age:<5"), false, "unpressed: its words no longer describe the search");
+  assert.equal(query.toggleAll(q, "ccf:a role:first age:<5"), "ccf:a role:first,last age:<5 role:first", "pressed again: what is missing is put in");
+  assert.equal(query.toggleAll("ccf:a role:first age:<5 x", "ccf:a role:first age:<5"), "x", "pressed: its words go, the rest stays");
   assert.equal(query.toggleAll("deep learning ccf:a", "ccf:a role:first"), "deep learning ccf:a role:first", "half there: the rest is put in, nothing twice");
   assert.equal(query.toggleAll("Deep CCF:A role:first", "ccf:a role:first deep"), "", "whatever the case it was typed in");
-  assert.equal(query.toggleAll("role:first", "role:first,last"), "role:first,last", "a listed word of two values");
-  assert.equal(query.toggleAll("role:first,last x", "role:first,last"), "x");
+  assert.equal(query.toggleAll("role:first", "role:first,last"), "role:first role:first,last", "a word of two values is one word");
   assert.equal(query.toggleAll("cites:>1000", "cites:>100"), "cites:>1000 cites:>100", "a comparison is its own word");
+  // what stays with no search box: whole words of a filter, values of the built-in ones
+  assert.equal(query.keepOnly("role:first,last has:talk foo", new Set(["role:first,last"])), "role:first,last");
+  assert.equal(query.keepOnly("role:first,last has:talk", new Set(["role:first"])), "role:first");
 });
