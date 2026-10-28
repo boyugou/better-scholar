@@ -2016,6 +2016,12 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     await opts.locator(".pv-rename-input").press("Escape");
     await settle(opts);
     assert.equal((await stored(opts, "sync", "prefs")).labels.metricsTitle, "", "Escape: the name is not kept");
+    // (a built-in text longer than a name may be, opened and left as it was, stays the built-in text — not a cut copy saved as a name)
+    await opts.dblclick('#pv-panel [data-rr-label="variantsTitle"]');
+    assert.equal(await opts.locator(".pv-rename-input").inputValue(), "Name not matching? Add a spelling");
+    await opts.locator(".pv-rename-input").press("Enter");
+    await settle(opts);
+    assert.equal((await stored(opts, "sync", "prefs")).labels.variantsTitle, "", "left as it was: nothing saved");
     // from the preview to its setting: the ⚙ on a part's rail, and a double-click on anything that is not a name
     await opts.hover('#pv-panel [data-section="years"] .rr-sec-title');
     await opts.locator(".pv-rail .pv-go").click();

@@ -268,11 +268,21 @@ test("a quick filter of your own: its words go in whole and must all be there to
   q = query.toggleValue(q, "role:last");                                                  // (the built-in Last joins its word: the search is no longer the filter's)
   assert.equal(q, "ccf:a role:first,last age:<5");
   assert.equal(query.hasAll(q, "ccf:a role:first age:<5"), false, "unpressed: its words no longer describe the search");
-  assert.equal(query.toggleAll(q, "ccf:a role:first age:<5"), "ccf:a role:first,last age:<5 role:first", "pressed again: what is missing is put in");
+  assert.equal(query.toggleAll(q, "ccf:a role:first age:<5"), "ccf:a age:<5 role:first", "pressed again: its words, in place of the other word of their listed operator");
   assert.equal(query.toggleAll("ccf:a role:first age:<5 x", "ccf:a role:first age:<5"), "x", "pressed: its words go, the rest stays");
   assert.equal(query.toggleAll("deep learning ccf:a", "ccf:a role:first"), "deep learning ccf:a role:first", "half there: the rest is put in, nothing twice");
   assert.equal(query.toggleAll("Deep CCF:A role:first", "ccf:a role:first deep"), "", "whatever the case it was typed in");
-  assert.equal(query.toggleAll("role:first", "role:first,last"), "role:first role:first,last", "a word of two values is one word");
+  assert.equal(query.toggleAll("role:first", "role:first,last"), "role:first,last", "a word of two values is one word, in place of the operator's other word");
+  // (a built-in button of the same operator: the last click decides, whatever the order, and no button stands pressed for a value the search does not take)
+  for (const [first, then, want] of [[(s) => query.toggleValue(s, "role:first"), (s) => query.toggleAll(s, "ccf:a role:last"), "ccf:a role:last"],
+    [(s) => query.toggleAll(s, "ccf:a role:last"), (s) => query.toggleValue(s, "role:first"), "ccf:a role:last,first"]]) {
+    const out = then(first(""));
+    assert.equal(out, want);
+    const p = query.parse(out), paper = (role) => ({ text: [], year: 2020, citations: 0, role, ccf: "a", core: null, type: null, award: false, talk: false });
+    for (const role of ["first", "last"]) if (query.hasValue(out, "role:" + role)) assert.equal(query.matches(p, paper(role)), true, `${out}: role:${role} is pressed, so its papers are found`);
+  }
+  assert.equal(query.toggleAll("role:first,last", "role:first"), "role:first", "Last is not left pressed beside a word that decides first");
+  assert.equal(query.toggleAll("role:middle cites:>10", "role:first cites:>100"), "cites:>10 role:first cites:>100", "only a listed operator's words give way: a comparison is a word of its own");
   assert.equal(query.toggleAll("cites:>1000", "cites:>100"), "cites:>1000 cites:>100", "a comparison is its own word");
   // what stays with no search box: whole words of a filter, values of the built-in ones
   assert.equal(query.keepOnly("role:first,last has:talk foo", new Set(["role:first,last"])), "role:first,last");

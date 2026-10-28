@@ -294,7 +294,7 @@ The search box and `filter { query }` take words and operators separated by spac
 - `type:journal` — the kind of venue the rank lists say it is: conference or journal (a venue without a rank has no kind).
 - `has:award` — has:award — a best-paper award or finalist mark; has:talk — an Oral, Spotlight or Highlight mark.
 
-The values of `ccf`, `core`, `role`, `type`, `has` can be listed with commas: `role:first,last` is a paper where you are the first or the last author, `ccf:a,b` one at a CCF A or B venue. Separate words must all hold; the values of one word, any of them. The quick filters under the search box join the word of their operator in the same way.
+The values of `ccf`, `core`, `role`, `type`, `has` can be listed with commas: `role:first,last` is a paper where you are the first or the last author, `ccf:a,b` one at a CCF A or B venue. Separate words must all hold; the values of one word, any of them. The quick filters under the search box join the word of their operator in the same way; a quick filter of your own (`panel.filters.searches.*`) puts its words in whole, in place of the other words of a listed operator it has.
 
 ## Rules for working on this repository
 

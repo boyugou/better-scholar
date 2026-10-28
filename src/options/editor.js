@@ -176,9 +176,10 @@
       if (!r || r.done) return;
       r.done = true;
       renaming = null;
-      const words = B.prefs.cleanName(r.input.value).slice(0, B.prefs.NAME_MAX);          // (a built-in text longer than a name may be — "Name not matching? Add a spelling" — is cut, not lost on the next save)
+      const typed = B.prefs.cleanName(r.input.value);
       r.box.remove();
-      if (keep && words !== (at("labels." + r.key) || r.def)) { put("labels." + r.key, words === r.def ? "" : words); save(); }
+      // (a text that was changed is cut to what a name may be — a built-in text can be longer, "Name not matching? Add a spelling" — and one left as it was is not saved at all)
+      if (keep && typed !== (at("labels." + r.key) || r.def)) { const words = typed.slice(0, B.prefs.NAME_MAX); put("labels." + r.key, words === r.def ? "" : words); save(); }
     }
 
     // ---- what was hidden: the tray ------------------------------------------------------------------------------------------------------------------------------------------

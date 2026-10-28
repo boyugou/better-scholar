@@ -56,6 +56,11 @@
   tooltip (a long one is cut); renaming it on the preview starts from an empty box with the words in grey (they could be longer
   than a name may be, and the name was then lost on saving — a built-in text longer than 30 characters is now cut instead); the
   settings name a filter as its button does (its name, or else its words) in the order list and the name field; spaces are no words.
+  A second review: a filter's word of a listed operator now takes the place of that operator's other words (beside them, the
+  built-in Last stood pressed under "role:first,last role:first", first authors only, and the same clicks in another order gave
+  another search — now the last click decides); opening a rename on a built-in text longer than 30 characters and leaving it no longer
+  saves a cut copy as a name (68 such texts across the languages); the order list and the tray dim and name a filter as the panel does
+  (words not read too); the agent guide says how your own filters put their words in. The store description names the feature.
 - **From an independent review of the store text** (all fixed): *Copy APA* pasted "Hinton, G. E.." when the profile owner is the last
   author (the full stop inside the bold was not seen, and a second one followed) — a test now checks that the HTML of APA, IEEE and
   GB/T 7714 reads word for word as their text, wherever the owner stands; saved author lists older than 90 days were only left unused

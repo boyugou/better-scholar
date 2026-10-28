@@ -823,7 +823,7 @@
   // (your own quick filter is called as its button is: its name, or else its words)
   const itemName = (path, id) => (B.prefs.SEARCHES.includes(id) ? B.dom.ownName(SETTING.get("panel.filters.pills." + id).label) || at("panel.filters.searches." + id) || t(SETTING.get("panel.filters.pills." + id).label)
     : t(path === "panel.order" ? cardOf(id).title : SETTING.get(path.replace(/\.order$/, "." + id)).label));
-  const itemOff = (path, id) => !at(path === "panel.order" ? `panel.${id}.show` : path.replace(/\.order$/, "." + id)) || (B.prefs.SEARCHES.includes(id) && !B.query.searchParts(at("panel.filters.searches." + id)).length);          // (your own quick filter with no words draws nothing)
+  const itemOff = (path, id) => !at(path === "panel.order" ? `panel.${id}.show` : path.replace(/\.order$/, "." + id)) || (B.prefs.SEARCHES.includes(id) && !B.prefs.pills(prefs).includes(id));          // (your own quick filter with no words, or words the search cannot read, draws nothing)
 
   // the control of one row, by what the row is
   function control(row, rows, name) {
@@ -1186,6 +1186,8 @@
   const partName = (path) => {
     const row = SETTING.get(path);
     if (!row) return path;
+    const own = /^panel\.filters\.pills\.(search\d)$/.exec(path);
+    if (own) return `${t(cardOf(row.card).title)} · ${itemName("panel.filters.pills.order", own[1])}`;          // (your own quick filter, as its button calls it)
     if (path === "panel.show") return t("optPanelTitle");
     if (path.endsWith(".show")) return t(cardOf(row.card).title);                                // (a part of the panel: its card's title)
     if (row.card === "panel") return t(row.label);                                              // (the title bar's parts, the filter bar)
