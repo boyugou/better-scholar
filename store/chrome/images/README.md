@@ -7,7 +7,7 @@ no Google or Scholar logo. Screenshots and promo tiles are JPEG (quality 95, no 
 
 ## screenshot-1.jpg (1280×800)
 
-**See your role in every paper.** Rows coloured by authorship role; every venue the CCF and CORE lists place carries today's rank.
+**See your role in every paper.** Rows coloured by authorship role; venues found on the CCF and CORE lists carry today's rank.
 
 A Scholar profile with the extension on: each paper's row is tinted by the owner's authorship role (first, second, last author), the owner's name is marked in the author line, the venue carries its CCF and CORE chips, awards and talks have their own chips (Best paper, Oral, Spotlight), and the panel at the top of the sidebar adds it up in the role × rank table.
 
@@ -42,7 +42,7 @@ table) on the icon's navy.
 
 ## promo-marquee.jpg (1400×560)
 
-The marquee promo tile: the icon, "Better Scholar", the line "Your authorship role, and the CCF and CORE rank of each venue the lists place, on every Scholar profile.", and the real panel's table, copy and export
+The marquee promo tile: the icon, "Better Scholar", the line "Your authorship role, and the CCF and CORE rank of the venues it finds on the lists, on every Scholar profile.", and the real panel's table, copy and export
 buttons, data note and Awards & talks counts, running off the bottom edge.
 
 ## icon-128.png (128×128)

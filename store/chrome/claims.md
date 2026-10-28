@@ -9,7 +9,9 @@ To check them all: `node store/chrome/check-claims.mjs` from the repository root
 backticked quote in the file(s) of its row and exits 1 if one is missing. Rows with no quote (a count, a grep, something observed)
 are read by a person; they say "none" in the Quote column. In a Quote cell, `\|` is a pipe.
 
-Checked on 2026-10-15 against commit `f1cd4f1` (version 2.41.0). The commit that adds this file changes only `store/`.
+Checked on 2026-10-15 against commit `f1cd4f1` (version 2.41.0). The commit that adds this file changes only `store/`. Checked
+again on 2026-10-28 (`main`, still 2.41.0): rows L41 and L42 added for what the description now says, L29 extended, and the
+problems of section 4 that were fixed since are marked so.
 
 ## 1. Store listing claims
 
@@ -43,7 +45,7 @@ Checked on 2026-10-15 against commit `f1cd4f1` (version 2.41.0). The commit that
 | L26 | Semantic Scholar: off by default; asked first for those lists | `src/lib/prefs.js` · `src/content/detail.js` | `bool("semanticScholar", false,` · `Semantic Scholar first when the settings allow it` |
 | L27 | Each Semantic Scholar request's only content is the paper's title (and your API key, if you add one); no cookies are sent | `src/content/semantic.js` | `API + "?fields=title,authors,year&query=" + encodeURIComponent(title)` · `credentials: "omit", referrerPolicy: "no-referrer", redirect: "error", headers: apiKey ? { "x-api-key": apiKey } : {}` |
 | L28 | No account, no analytics, no ads: the only `fetch(` calls in `src/` are the three quoted here, and none of `XMLHttpRequest`, `WebSocket`, `sendBeacon`, `EventSource`, `new Image(` occurs (the greps of section 3) | `src/content/detail.js` · `src/content/semantic.js` · `src/background.js` | `fetch(url.href, { credentials: "include", signal })` · `const res = await fetch(url, { signal, credentials: "omit"` · `fetch(chrome.runtime.getURL("_locales/" + msg.lang + "/messages.json"))` |
-| L29 | Settings and name spellings in Chrome's storage | `src/content/store.js` | `get("sync", "prefs")` · `get("sync", "variants")` · `all[profileId] = list.slice(-8)` |
+| L29 | Settings, name spellings and venue mappings in Chrome's storage | `src/content/store.js` | `get("sync", "prefs")` · `get("sync", "variants")` · `all[profileId] = list.slice(-8)` · `const loadMine = async () => cleanMine(await get("sync", "mine"));` |
 | L30 | Author lists it has read stay on this device for 90 days | `src/content/store.js` · `src/_locales/en/messages.json` | `get("local", "resolved")` · `const TTL = 90 * 24 * 3600 * 1000;` · `(kept for 90 days)` |
 | L31 | One permission, storage | `src/manifest.json` · `test/extension.test.js` | `"storage"` · `assert.deepEqual(manifest.permissions, ["storage"]);` · `assert.equal(manifest.host_permissions, undefined, "content-script matches are enough");` |
 | L32 | Runs only on Scholar's pages | `test/extension.test.js` | `for (const p of m) assert.match(p, /^https:\/\/scholar\.google\.[a-z.]+\/citations\*$/, p);` · `assert.deepEqual(r.matches, m.map((p) => p.replace(/\/citations\*$/, "/*")));` |
@@ -54,10 +56,12 @@ Checked on 2026-10-15 against commit `f1cd4f1` (version 2.41.0). The commit that
 | L38 | The look and colours of the chips | `src/lib/prefs.js` | `{ id: "lists", name: "optChipThemeLists"` · `color("colors.ccf", "Colour of the CCF chips` |
 | L39 | A live preview that you edit by hovering it (hide, move, rename); a box that checks a venue against the lists | `src/options/options.js` · `src/options/editor.js` | `editor = B.editor.attach({ aside: document.querySelector(".preview")` · `btn("pv-x", "✕"` · `btn("pv-grip", "⠿"` · `btn("pv-edit", "✎"` · `"data-act": "venue-check"` · `resolver = resolver \|\| makeResolver();` |
 | L40 | With a filter on, the table, the awards counts and the copy summary count the papers the filters leave (a year range or `age:<5` gives the table of those years); the search language has `age:` | `src/content/main.js` · `src/lib/query.js` · `src/lib/prefs.js` | `function counted() {` · `if (!prefs.panel.filters.follow \|\| !scopeFiltering()) return live();` · `{ name: "age"` · `bool("panel.filters.follow", true,` |
+| L41 | A venue it cannot match can be tied by you to a listed one; its chip then says it is your own mapping | `src/lib/venues.js` · `src/content/chips.js` · `src/_locales/en/messages.json` | `out[m.list] = badge(m.list, m.row, "mine");` · `(info.rule === "mine" ? " rr-chip-mine" : "")` · `Your own mapping (settings → Check a venue), not the list's rule` |
+| L42 | The papers and the reference styles paste into a word processor with the profile owner's name in bold | `src/lib/formats.js` · `src/content/main.js` | `const ownToHtml = (html) => html.replace(/\u0002/g, "<b>").replace(/\u0003/g, "</b>");` · `if (kind === "gbt") return formats.gbtHtml(paperRecords(), { markMe: !!prefs.rows.name });` |
 
 Counts used in the listing and measured on 2026-10-15 (not quotable): 187 domains and 374 match patterns (`manifest.json`; the
 187 equal the 187 entries of https://www.google.com/supported_domains fetched that day), 7,830 awards, 30 locale folders, the
-description of 2,490 characters (`listing.md`).
+description of 3,048 characters (`listing.md`, re-counted 2026-10-28).
 
 ### Reviewer test instructions (listing.md, last section)
 
@@ -178,31 +182,42 @@ Kept so that the listing never goes back to the first wording. All three are han
 
 ### 4.2 PRIVACY.md and its copy on the site (https://boyugou.github.io/better-scholar/privacy/, the privacy policy URL)
 
-The live page was fetched with `curl` on 2026-10-15. It carries the text of `src/privacy.md` on the `site` branch, which equals
-PRIVACY.md except for one paragraph (first row).
+The live page was fetched with `curl` on 2026-10-15. It carried the text of `src/privacy.md` on the `site` branch, which equalled
+PRIVACY.md except for one paragraph (first row). **All three fixed** (checked 2026-10-28): the site no longer keeps a copy, its
+`build.mjs` builds the page from the repository's PRIVACY.md; the live page has the clipboard section (with *Copy as image*) and
+no stray asterisk; PRIVACY.md says what `summary` returns (the profile's name, the lists' editions and counts, no paper's title,
+authors or venue: `summary` in `content/main.js`).
 
 | Sev. | Quote | What is true |
 |---|---|---|
-| Blocker | (missing on the site) PRIVACY.md, Clipboard: "*Copy as table*, *Copy papers* and *Copy APA* put the same content on the clipboard twice, as text and as HTML (which a word processor reads as a real table or as italics); the HTML is made from the same data and contains nothing else" | The live policy page, the policy URL you submit, does not have it (`diff` of `site:src/privacy.md` and PRIVACY.md; the live HTML has no "twice"). The Privacy tab and the policy URL must agree, and the reviewer compares them. Run `npm run sync-privacy` on the `site` branch, deploy, and check the live page for "as text and as HTML" (step A1 of the kit's `README.md`) before the policy URL is entered. |
-| Should fix | PRIVACY.md, Page events: "`summary` also reports a few display settings: which rank lists and copy buttons are on, whether the table and the awards counts are shown, and how talks are counted." | `summary` in `content/main.js` returns `{ owner, loaded, shown, loadingAll, layoutBroken, edition, noRanks, summaries, marks, metrics }`: numbers only. CHANGELOG 2.40.0: "The `summary` call returns the numbers only (not the display settings)". The sentence describes 2.39.0 and overstates what a page can learn; delete it (then sync the site). |
-| Should fix | PRIVACY.md breaks four emphasised phrases over two lines (it hard-wraps its lines at about 120 characters): *Read full lists* (twice, in different places), *Copy APA* and *Copy cache (JSON)* | The site's renderer reads emphasis line by line, so the live page shows stray asterisks and shifted italics: "click *Read full lists*, the extension first asks", "*Copy APA, Copy BibTeX, … Copy list* under the unranked venues", "*Copy cache (JSON) … bug report*", "the author lists that *Read full lists* saved". Keep each emphasised phrase on one line (or make the renderer join lines). The policy URL is the page a reviewer reads. |
+| Fixed (was Blocker) | (missing on the site) PRIVACY.md, Clipboard: "*Copy as table*, *Copy papers* and *Copy APA* put the same content on the clipboard twice, as text and as HTML (which a word processor reads as a real table or as italics); the HTML is made from the same data and contains nothing else" | The live policy page, the policy URL you submit, does not have it (`diff` of `site:src/privacy.md` and PRIVACY.md; the live HTML has no "twice"). The Privacy tab and the policy URL must agree, and the reviewer compares them. Run `npm run sync-privacy` on the `site` branch, deploy, and check the live page for "as text and as HTML" (step A1 of the kit's `README.md`) before the policy URL is entered. |
+| Fixed (was Should fix) | PRIVACY.md, Page events: "`summary` also reports a few display settings: which rank lists and copy buttons are on, whether the table and the awards counts are shown, and how talks are counted." | `summary` in `content/main.js` returns `{ owner, loaded, shown, loadingAll, layoutBroken, edition, noRanks, summaries, marks, metrics }`: numbers only. CHANGELOG 2.40.0: "The `summary` call returns the numbers only (not the display settings)". The sentence describes 2.39.0 and overstates what a page can learn; delete it (then sync the site). |
+| Fixed (was Should fix) | PRIVACY.md breaks four emphasised phrases over two lines (it hard-wraps its lines at about 120 characters): *Read full lists* (twice, in different places), *Copy APA* and *Copy cache (JSON)* | The site's renderer reads emphasis line by line, so the live page shows stray asterisks and shifted italics: "click *Read full lists*, the extension first asks", "*Copy APA, Copy BibTeX, … Copy list* under the unranked venues", "*Copy cache (JSON) … bug report*", "the author lists that *Read full lists* saved". Keep each emphasised phrase on one line (or make the renderer join lines). The policy URL is the page a reviewer reads. |
 
 ### 4.3 The project homepage (https://boyugou.github.io/better-scholar/, the Homepage URL)
 
 | Sev. | Quote | What is true |
 |---|---|---|
-| Should fix | The search section's operator cards on every language page: `>100 >=50 <10`, `role:first role:last r:cofirst`, `>2020 year:>=2021` (live `/en/` fetched with `curl`; the source is `OPERATORS` in `build.mjs` on the `site` branch) | The search reads only the explicit operators `cites:`, `year:`, `ccf:`, `core:`, `role:`, `type:` and `has:` (`src/lib/query.js`; the bare comparisons and the short names went in 2.39.0, `type:` came in 2.41.0). A bare `>100` or `>2020` is searched as text, and `r:` is not an operator. Use `cites:>100 cites:>=50 cites:<10`, `role:cofirst`, `year:>2020`. |
+| Fixed (was Should fix) | The search section's operator cards on every language page: `>100 >=50 <10`, `role:first role:last r:cofirst`, `>2020 year:>=2021` (live `/en/` fetched with `curl`; the source is `OPERATORS` in `build.mjs` on the `site` branch) | The search reads only the explicit operators `cites:`, `year:`, `ccf:`, `core:`, `role:`, `type:` and `has:` (`src/lib/query.js`; the bare comparisons and the short names went in 2.39.0, `type:` came in 2.41.0). A bare `>100` or `>2020` is searched as text, and `r:` is not an operator. Use `cites:>100 cites:>=50 cites:<10`, `role:cofirst`, `year:>2020`. |
 | Minor | "A Chrome Web Store listing may follow." | Replace it with the store link after publishing (step G2 of the kit's README). |
 
-The badge now says "Runs in your browser" (live `/en/`, 2026-10-15); "100% Offline & Private" is gone.
+The badge now says "Runs in your browser" (live `/en/`, 2026-10-15); "100% Offline & Private" is gone. Checked 2026-10-28: the
+operator cards show only operators the search reads (`role:first`, `type:journal`, `cites:>100` …; `verify.mjs` on the `site`
+branch now fails when an operator of `lib/query.js` has no card); the store sentence reads "A Chrome Web Store version may come
+later" and stays until the store link exists.
 
 ### 4.4 README.md and README.zh-CN.md
 
 | Sev. | Quote | What is true |
 |---|---|---|
-| Minor | README.md and README.zh-CN.md: "npm run test:e2e   # 78 end-to-end checks" / "78 项端到端检查" | A test count: commit `9970baa` says "the docs no longer carry test counts (a CI badge instead)", and this one cannot be checked without running `npm run test:e2e`. Drop the number. |
-| Minor | README.md and README.zh-CN.md, repository layout: "docs/   Architecture, roadmap, store listing kit, pictures" | `docs/` holds `ARCHITECTURE.md` and `ROADMAP.md`; the store kit is `store/`, which the layout does not show. |
-| Minor | README.md and README.zh-CN.md, page calls table: `export` result "`{ format, text }`", and no `html` parameter | The call takes `html: true` and then returns `html` as well (`METHODS.export` in `src/lib/agent.js`; the paragraph under *Copy and export* says so). |
+| Fixed (was Minor) | README.md and README.zh-CN.md: "npm run test:e2e   # 78 end-to-end checks" / "78 项端到端检查" | A test count: commit `9970baa` says "the docs no longer carry test counts (a CI badge instead)", and this one cannot be checked without running `npm run test:e2e`. Drop the number. |
+| Fixed (was Minor) | README.md and README.zh-CN.md, repository layout: "docs/   Architecture, roadmap, store listing kit, pictures" | `docs/` holds `ARCHITECTURE.md` and `ROADMAP.md`; the store kit is `store/`, which the layout does not show. |
+| Fixed (was Minor) | README.md and README.zh-CN.md, page calls table: `export` result "`{ format, text }`", and no `html` parameter | The call takes `html: true` and then returns `html` as well (`METHODS.export` in `src/lib/agent.js`; the paragraph under *Copy and export* says so). |
+
+All three fixed (checked 2026-10-28): the counts in the README are counted by `scripts/numbers.mjs` and checked by
+`test/numbers.test.js` (rounded down where they grow: "500+ · 90+ · 15"); the layout shows `store/`; the page calls' table names
+`html` for `table`, `papers`, `apa`, `ieee` and `gbt`, the `image` format and its `png`, and `test/readme-examples.test.js` now
+fails when a call, a parameter, a format or a record field of `lib/agent.js` is missing from it.
 
 ### 4.5 SECURITY.md, CONTRIBUTING.md, AGENTS.md, docs
 
@@ -214,9 +229,12 @@ AGENTS.md is generated from `src/lib/agent.js` (`npm run agents:doc`); docs/ARCH
 
 | Sev. | File, quote | What is true |
 |---|---|---|
-| Minor | `src/_locales/en/messages.json` `optStorage`: "Scholar pages are read only when you open them, and paper titles go to Semantic Scholar only if you switch that on." | Correct for the pages you open. *Read full lists* (on a click) also requests each paper's own Scholar page, which you did not open, with your Scholar cookies (`detail.js`), as PRIVACY.md says. "…only when you open them or press Read full lists" would be exact. |
-| Minor | `src/lib/agent.js` (the guide users copy; AGENTS.md is made from it), step 3: "pastes it into *Settings → Configuration → Config editor* and presses **Apply**" | The labels on the page are "Configuration & presets" (`optConfigTitle`), "Paste or edit a configuration (JSON)" (`optConfigEditor`) and "Apply configuration" (`optConfigApply`). |
-| Minor | `src/lib/agent.js` `METHODS.papers.result`: `{ owner, total, papers: [{ id, title, authors, venue, year, citations, role, status, highlighted, rank, marks, url }] }` | The records also carry `type` (`"conference"`, `"journal"` or `null`: `paperRecords` in `content/main.js`, `lib/formats.js`, README.md). |
+| Fixed (was Minor) | `src/_locales/en/messages.json` `optStorage`: "Scholar pages are read only when you open them, and paper titles go to Semantic Scholar only if you switch that on." | Correct for the pages you open. *Read full lists* (on a click) also requests each paper's own Scholar page, which you did not open, with your Scholar cookies (`detail.js`), as PRIVACY.md says. "…only when you open them or press Read full lists" would be exact. |
+| Fixed (was Minor) | `src/lib/agent.js` (the guide users copy; AGENTS.md is made from it), step 3: "pastes it into *Settings → Configuration → Config editor* and presses **Apply**" | The labels on the page are "Configuration & presets" (`optConfigTitle`), "Paste or edit a configuration (JSON)" (`optConfigEditor`) and "Apply configuration" (`optConfigApply`). |
+| Fixed (was Minor) | `src/lib/agent.js` `METHODS.papers.result`: `{ owner, total, papers: [{ id, title, authors, venue, year, citations, role, status, highlighted, rank, marks, url }] }` | The records also carry `type` (`"conference"`, `"journal"` or `null`: `paperRecords` in `content/main.js`, `lib/formats.js`, README.md). |
+
+All three fixed (checked 2026-10-28): `optStorage` names *Read full lists*; the guide names *Configuration & presets*, *Paste or
+edit a configuration (JSON)* and *Apply configuration*; the `papers` result lists `type` (and `pages`, `me`).
 
 ### 4.7 Manifest and package
 
@@ -229,8 +247,8 @@ AGENTS.md is generated from `src/lib/agent.js` (`npm run agents:doc`); docs/ARCH
 
 ### 4.8 Store images (made by `npm run store:images`)
 
-The images were regenerated at commit `8c5fe05` (version 2.41.0); `src/` changed afterwards only in the German strings and in the
-preview editor's drag handling (`touch-action`, a cancelled drag), which no picture shows. See `screenshots-plan.md`.
+The images were made again on 2026-10-28 from that day's `main` (the popup's copy buttons two to a row, the preview's current
+hint); screenshot 1's caption and the marquee no longer promise a chip for every listed venue. See `screenshots-plan.md`.
 
 | Sev. | Finding | Detail |
 |---|---|---|

@@ -169,8 +169,8 @@ from the attribute that the extension is installed. There is no check of who ask
 
 - The calls are `ping`, `summary`, `papers`, `export`, `filter` and `clearFilters`. They return what the panel and its copy
   buttons produce for that profile: the counts, the papers' records (with the author lists that *Read full lists* saved for
-  those papers), and the text of a copy format. `summary` returns numbers only. `filter` and `clearFilters` change the filters
-  of that page only.
+  those papers), and the text of a copy format. `summary` returns the profile's name as the page shows it, the lists'
+  editions and counts, and no paper's title, authors or venue. `filter` and `clearFilters` change the filters of that page only.
 - The calls cannot change any setting or anything in storage. They make no network request. They do not return the settings
   record, the Semantic Scholar key, the name spellings or the venue mappings (a rank from a mapping is marked `mine: true`).
 - The panel's own buttons answer only to a person. A click or a key that a script makes (`click()`, `dispatchEvent`) does

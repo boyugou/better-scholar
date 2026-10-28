@@ -35,7 +35,7 @@ const QUERY = "role:first ccf:a cites:>100";
 const SHOTS = {
   profile: {
     file: "screenshot-1.jpg", title: "See your role in every paper",
-    caption: "Rows coloured by authorship role; every venue the CCF and CORE lists place carries today's rank.",
+    caption: "Rows coloured by authorship role; venues found on the CCF and CORE lists carry today's rank.",
     about: "A Scholar profile with the extension on: each paper's row is tinted by the owner's authorship role (first, second, last author), the owner's name is marked in the author line, the venue carries its CCF and CORE chips, awards and talks have their own chips (Best paper, Oral, Spotlight), and the panel at the top of the sidebar adds it up in the role × rank table."
   },
   panel: {
@@ -62,7 +62,7 @@ const SHOTS = {
 const PROMO = {
   name: "Better Scholar",
   small: "Roles and ranks on every paper",
-  marquee: "Your authorship role, and the CCF and CORE rank of each venue the lists place, on every Scholar profile."
+  marquee: "Your authorship role, and the CCF and CORE rank of the venues it finds on the lists, on every Scholar profile."
 };
 
 // ---- a copy of the extension that also runs on the stand-in page (as in test/e2e/run.mjs) -------------------------------

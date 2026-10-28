@@ -51,8 +51,9 @@ tfoot th { text-align: start; padding-inline-start: 15px; }
 .dot { display: inline-block; width: 9px; height: 9px; border-radius: 2.5px; margin-inline-end: 6px; vertical-align: -1px; }
 .actions { display: flex; gap: 6px; margin-top: 12px; flex-wrap: wrap; }
 button.btn, a.btn { font: inherit; font-weight: 600; padding: 5px 12px; border: 1px solid var(--btn-line); border-radius: 7px; background: var(--bg); color: var(--text); cursor: pointer; text-decoration: none; transition: background .15s, border-color .15s, box-shadow .15s; }
+/* at most two to a row, as most languages fall anyway (three short English labels made rows of 2, 3, 2 and 1); two of equal width while each label fits in 40% */
 .actions button.btn {
-  flex: 1 1 0; min-width: max-content; padding: 4px 6px; font-size: 11.5px; text-align: center; white-space: nowrap;
+  flex: 1 1 40%; min-width: max-content; padding: 4px 6px; font-size: 11.5px; text-align: center; white-space: nowrap;
   display: inline-flex; align-items: center; justify-content: center; gap: 4px;
 }
 .actions button.btn::before {

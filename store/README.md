@@ -46,28 +46,21 @@ The images are made by `npm run store:images` (`scripts/store-images.mjs`) from 
 ## A. Before you submit
 
 The privacy policy URL and the homepage URL are part of the submission, and the reviewer compares them with the code. All the
-problems the first version of this kit found in PRIVACY.md, the READMEs, SECURITY.md, CONTRIBUTING.md, the agent guide and the
-images are fixed; what is open now is in `chrome/claims.md`, section 4.
+problems the first two checks of this kit found in PRIVACY.md, the site, the READMEs, SECURITY.md, CONTRIBUTING.md, the agent
+guide and the images are fixed; what is open is in `chrome/claims.md`, section 4 (rows not marked "Fixed").
 
-1. **The privacy policy.**
-   - **PRIVACY.md** in the repository: **[Ready]**. It has the second script's scope, the storage list, the Limited Use
-     statement, the cookies of *Read full lists*, the exact Semantic Scholar request, the page events and the clipboard
-     including its HTML. One sentence is wrong (it says `summary` reports display settings; it returns numbers only) and four
-     emphasised phrases wrap over two lines (`claims.md` 4.2): correct both in PRIVACY.md.
-   - **The copy on the site**, the policy URL: **[Fix]**, a blocker. The live page is one paragraph behind PRIVACY.md (the
-     HTML clipboard) and shows stray asterisks where a phrase wraps. Correct PRIVACY.md first (the two should-fix items
-     above), then run `npm run sync-privacy` on the `site` branch, deploy, and check
-     https://boyugou.github.io/better-scholar/privacy/ for "as text and as HTML", for no stray asterisks and for no sentence
-     on display settings. Do not enter the policy URL before the new page is live.
-2. **The homepage.** The badge is **[Ready]**: it says "Runs in your browser" (the "100% Offline & Private" of the first
-   version is gone). **[Fix]** (should fix): its search-operator cards show `>100 >=50 <10`, `r:cofirst` and `>2020`, which
-   the search has not read since 2.39.0 (`claims.md` 4.3; the source is `build.mjs` on the `site` branch).
-3. **The images**: **[Ready]**, regenerated at 2.41.0 (`chrome/screenshots-plan.md`). Two captions say a little more than the
-   code does (screenshots 1 and 4; `claims.md` 4.8): change the words in `scripts/store-images.mjs` and run
-   `npm run store:images` again, or accept them. Run it again in any case if the interface changes before you submit.
-4. **Should fix, not blocking**: a stale test count and an unlisted `html` parameter in README.md and README.zh-CN.md, two
-   labels and a missing `type` field in the agent guide (`src/lib/agent.js`), and the settings footer's "Scholar pages are
-   read only when you open them" (`claims.md` 4.4 and 4.6). A reviewer who opens the repository will read them.
+1. **The privacy policy.** **[Ready]** (checked 2026-10-28). PRIVACY.md has the second script's scope, the storage list
+   (with the venue mappings), the Limited Use statement, the cookies of *Read full lists*, the exact Semantic Scholar request,
+   the page events (and what `summary` returns) and the clipboard, every copy button and *Copy as image* included. The site
+   builds https://boyugou.github.io/better-scholar/privacy/ from PRIVACY.md itself, so after a change to PRIVACY.md deploy
+   the site (`scripts/deploy.sh` in its repository) and the two say the same.
+2. **The homepage.** **[Ready]**: the badge says "Runs in your browser", and the search-operator cards show only operators
+   the search reads (the site's `scripts/verify.mjs` checks it). Its sentence "A Chrome Web Store version may come later"
+   becomes the store link after publishing (step G2).
+3. **The images**: **[Ready]**, made again on 2026-10-28 from that day's `main` (`chrome/screenshots-plan.md`). Run
+   `npm run store:images` again if the interface changes before you submit.
+4. **The READMEs, the agent guide and the settings footer**: **[Ready]**; the findings of the first check are fixed
+   (`claims.md` 4.4 and 4.6). A reviewer who opens the repository reads what the code does.
 5. If you change anything under `src/` (the agent guide, a locale's summary), raise the version (step H1) before you build,
    run `node store/chrome/check-claims.mjs` and look again at the rows it flags.
 
@@ -107,7 +100,7 @@ images are fixed; what is open now is in `chrome/claims.md`, section 4.
 2. **Store listing** tab: description, category, language, icon, screenshots, promo tiles, homepage and support URLs.
    The title and summary come from the package and cannot be edited here.
 3. **Privacy** tab: single purpose, the `storage` justification, the host justification (if asked), remote code "No", the
-   data-usage boxes (decision 2), the three certifications, the privacy policy URL (only after A1 is live).
+   data-usage boxes (decision 2), the three certifications, the privacy policy URL (A1).
 4. **Distribution** tab: free, all regions, visibility (decision 6).
 5. **Test instructions** tab: paste the block from `listing.md` §5.
 6. Save the draft and open each tab once more: no field should be flagged.
@@ -161,7 +154,7 @@ and a privacy policy that matches the code.
 
 1. **[Owner]** Note the item ID and store URL. Install from the store in a fresh Chrome profile, open the test profile,
    check the panel, the popup and the settings page.
-2. **[Fix]** Put the store link on the homepage ("A Chrome Web Store listing may follow." becomes the link), in README.md
+2. **[Fix]** Put the store link on the homepage ("A Chrome Web Store version may come later" becomes the link), in README.md
    and README.zh-CN.md (Install), and in the site's language versions.
 3. **[Owner]** Watch the support URL (GitHub issues) and the store's reviews.
 4. Whenever the data handling changes, change PRIVACY.md, the site copy and the Privacy tab together.

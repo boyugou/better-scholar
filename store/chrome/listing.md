@@ -5,7 +5,10 @@ Distribution, Test instructions). Copy the text inside each `text` block as it i
 evidence in `claims.md` (`node store/chrome/check-claims.mjs` searches every quote there); if the code changes, check there
 first.
 
-Prepared 2026-10-15 for the package built from commit `f1cd4f1` (see `package-check.md`).
+Prepared 2026-10-15 for the package built from commit `f1cd4f1` (see `package-check.md`). Brought up to date on 2026-10-28 for a
+package built from that day's `main`, which is still version 2.41.0: the description now names what CHANGELOG.md lists under 2.41.0
+after `f1cd4f1` (your own venue mappings, Copy IEEE, Copy GB/T 7714, Copy as image, the owner's name in bold in pasted
+references), and the pictures were made again.
 
 ## 1. Package
 
@@ -36,17 +39,17 @@ On Google Scholar profiles: the profile owner's author role and the venue's CCF 
 
 ### Description
 
-Plain text, 2,490 characters, 10 lines starting with "• ". No Markdown. Paste it as it is.
+Plain text, 3,048 characters, 10 lines starting with "• ". No Markdown. Paste it as it is.
 
 ```text
 Better Scholar adds two things to Google Scholar profile pages: the profile owner's authorship role in each paper, and the rank of the venue it appeared in. A panel counts them in one table.
 
 • Roles: rows where the owner is first, co-first, second or last author are tinted in that role's colour, and the owner's name is marked.
-• Ranks: venues on the China Computer Federation list (7th edition, 2026) or the ICORE 2026 conference ranking get a rank chip whose tooltip says how it was matched. Venues it cannot match get no chip and are listed in the panel.
+• Ranks: venues on the China Computer Federation list (7th edition, 2026) or the ICORE 2026 conference ranking get a rank chip whose tooltip says how it was matched. Venues it cannot match get no chip and are listed in the panel; you can tie such a venue to a listed one yourself, and its chip then says it is your own mapping.
 • Summary: a role × rank table (click a cell to list those papers), citation totals and h-index of the highlighted papers, and a chart by year.
 • Awards and talks: chips for awards on a bundled list (7,830 paper awards at major conferences) and for the Oral, Spotlight and Highlight labels authors write in the title or venue.
 • Search: press / and type, for example role:first ccf:a cites:>100.
-• Copy and export: the summary or the papers shown, as plain text, a table, APA, BibTeX, Markdown, JSON or CSV; the table, the papers and APA also paste into Word or Docs as a real table or with real italics. The toolbar button and page events for scripts or AI agents give the same data.
+• Copy and export: the summary or the papers shown, as plain text, a table, APA, BibTeX, Markdown, JSON or CSV, and, when switched on, IEEE, GB/T 7714 or the table as a picture; the table, the papers and the reference styles also paste into Word or Docs as a real table or with real italics, the profile owner's name in bold. The toolbar button and page events for scripts or AI agents give the same data.
 • Settings: a switch for each role and for every part of the panel and every thing in it, in any order, with your own names for titles and buttons; the look and colours of the chips; a live preview that you edit by hovering it (hide, move, rename); a box that checks a venue against the lists; merging duplicate entries, hiding parts of the profile page, 30 languages, and reopening search and profile pages in a chosen language.
 
 The ranks come from today's CCF and CORE lists, not the rank a venue had when the paper was published. CCF states that its list is not a basis for academic evaluation.
@@ -55,17 +58,17 @@ The ranks come from today's CCF and CORE lists, not the rank a venue had when th
 • When a long author list is cut off, "Read full lists" opens each paper's own page on the same site, only when you click it, about once a second, and stops at the first CAPTCHA.
 • An option, off by default, asks Semantic Scholar's public API for those lists first. Each request's only content is the paper's title (and your API key, if you add one); no cookies are sent.
 
-Everything else runs in your browser: no account, no analytics, no ads. Settings and the name spellings you add are kept in Chrome's storage; author lists it has read stay on this device for 90 days. Its one permission is storage, and it runs only on Scholar's pages.
+Everything else runs in your browser: no account, no analytics, no ads. Settings, and the name spellings and venue mappings you add, are kept in Chrome's storage; author lists it has read stay on this device for 90 days. Its one permission is storage, and it runs only on Scholar's pages.
 
 Free and open source (Apache 2.0). Better Scholar is an independent project and is not affiliated with or endorsed by Google.
 ```
 
-Checks done on this text (re-counted 2026-10-16, after two bullets were extended for 2.40.0 and 2.41.0; still true of 2.41.0): 2,812
-characters; "Scholar" appears 5 times (counting "Better Scholar", "Google Scholar" and "Semantic Scholar"), "CCF" 3 (once as
-`ccf:a`), "CORE" 2, "rank" 4 (7 with "ranks" and "ranking"), all in sentences (policy: no "unnatural repetition of the same
+Checks done on this text (re-counted 2026-10-28, after the ranks, copy and storage sentences took in the mappings, the three
+formats that are off by default and the bold name): 3,048 characters; "Scholar" appears 5 times (counting "Better Scholar", "Google Scholar" and "Semantic Scholar"), "CCF" 3 (once as
+`ccf:a`), "CORE" 2 (once in "ICORE"), "rank" 4 (7 with "ranks" and "ranking"), all in sentences (policy: no "unnatural repetition of the same
 keyword more than 5 times"); no competitor is named; no superlatives. The text says what 2.40.0 and 2.41.0 added in two bullets (the
-HTML on the clipboard; the own names, chip looks, editable preview and venue box), each with its row in `claims.md` (L36 to L39);
-`type:conference` and `type:journal` are not mentioned.
+HTML on the clipboard; the own names, chip looks, editable preview and venue box), each with its row in `claims.md` (L36 to L39),
+and what came after `f1cd4f1` in three sentences (L8, L14, L29, L41, L42); `type:conference` and `type:journal` are not mentioned.
 
 ### Category
 
@@ -90,10 +93,10 @@ description per locale is optional (Store listing → localize).
 ### Graphic assets
 
 Files are in `store/chrome/images/` (described in its `README.md`; both are written by `npm run store:images`, see
-`screenshots-plan.md`). They were regenerated at commit `8c5fe05` (version 2.41.0) from the real extension on a stand-in
-Scholar page with the fictional profile "Alex Example"; `src/` has changed since only in the German strings and the preview
-editor's drag handling, which no picture shows. Requirements from "Supplying images" and "Complete your listing
-information" (developer.chrome.com, read 2026-10-15). Sizes and formats below were measured with `sips` on 2026-10-15.
+`screenshots-plan.md`). They were made again on 2026-10-28 from the real extension of that day's `main` on a stand-in
+Scholar page with the fictional profile "Alex Example" (the popup's copy buttons now stand two to a row). Requirements from
+"Supplying images" and "Complete your listing information" (developer.chrome.com, read 2026-10-15). Sizes and formats below
+were measured with `sips` on 2026-10-28.
 
 | Dashboard field | File | Required | File as made | Status |
 |---|---|---|---|---|
@@ -101,11 +104,11 @@ information" (developer.chrome.com, read 2026-10-15). Sizes and formats below we
 | Global promo video | none | optional | none | Leave empty. |
 | Screenshot 1 | `screenshot-1.jpg` | 1280×800 or 640×400; at least 1, at most 5; square corners, no padding | 1280×800 JPEG, no alpha (208 KB) | OK. Caption wording: see below. |
 | Screenshot 2 | `screenshot-2.jpg` | same | 1280×800 JPEG (137 KB) | OK. |
-| Screenshot 3 | `screenshot-3.jpg` | same | 1280×800 JPEG (173 KB) | OK. |
-| Screenshot 4 | `screenshot-4.jpg` | same | 1280×800 JPEG (161 KB) | OK. Caption wording: see below. |
-| Screenshot 5 | `screenshot-5.jpg` | same | 1280×800 JPEG (222 KB) | OK. Shows the popup with the eight copy buttons of 2.41.0. |
-| Small promo tile | `promo-small.jpg` | 440×280, PNG or JPEG; required ("You must provide one small, 440x280-pixel promotional image"); guidance "Avoid text" | 440×280 JPEG (25 KB) | OK. Has the name and a line of text (guidance only). |
-| Marquee promo tile | `promo-marquee.jpg` | 1400×560, PNG or JPEG; optional | 1400×560 JPEG (102 KB) | OK. |
+| Screenshot 3 | `screenshot-3.jpg` | same | 1280×800 JPEG (169 KB) | OK. |
+| Screenshot 4 | `screenshot-4.jpg` | same | 1280×800 JPEG (163 KB) | OK. Caption wording: see below. |
+| Screenshot 5 | `screenshot-5.jpg` | same | 1280×800 JPEG (221 KB) | OK. Shows the popup with the eight copy buttons that are on by default, two to a row. |
+| Small promo tile | `promo-small.jpg` | 440×280, PNG or JPEG; required ("You must provide one small, 440x280-pixel promotional image"); guidance "Avoid text" | 440×280 JPEG (26 KB) | OK. Has the name and a line of text (guidance only). |
+| Marquee promo tile | `promo-marquee.jpg` | 1400×560, PNG or JPEG; optional | 1400×560 JPEG (104 KB) | OK. |
 
 What each screenshot shows (the headline and caption are drawn into the images; the store has no caption field). Upload them
 in this order:
@@ -122,12 +125,14 @@ in this order:
    First lit (the citation totals below follow too; they are under the fold in this picture).
 4. "Choose what you see." The settings page: the row of section links, the card "Highlight my papers" (a switch for each
    role and for marking your name) and the start of "Colours", and at the right the live preview (four sample rows, its note,
-   the hint "Hover a part to hide it (✕) or move it (⠿). Double-click a name to rename it." and the tray "Hidden: 6").
+   the hint "Hover a part to hide it (✕), move it (⠿) or find its setting (⚙). Double-click a name to rename it, anything
+   else to jump to its setting." and the tray "Hidden: 10", the parts that are off by default).
 5. "Your summary in the toolbar." The toolbar popup over the profile: owner and paper count, the table (here by CORE rank),
    the Awards & talks line, the eight copy and export buttons and the note on the ranks.
 
-The captions were made exact (screenshot 1 and the marquee say "every venue the CCF and CORE lists place"; screenshot 4 says every
-colour has its own picker); the words live in `scripts/store-images.mjs`, see `screenshots-plan.md`.
+The captions were made exact (screenshot 1 says "venues found on the CCF and CORE lists", the marquee "the venues it finds on
+the lists"; screenshot 4 says every colour has its own picker); the words live in `scripts/store-images.mjs`, see
+`screenshots-plan.md`.
 
 ### Additional fields
 
@@ -141,9 +146,9 @@ colour has its own picker); the words live in `scripts/store-images.mjs`, see `s
 ## 3. Privacy
 
 The dashboard docs say: "Your disclosures are displayed to Chrome users, and should be consistent with the existing
-privacy policy URL that you provided." The policy on the site must be brought level with PRIVACY.md first (`claims.md` 4.2:
-the live page lacks the paragraph on the HTML clipboard); the answers here describe the code as it is, and PRIVACY.md says the
-same.
+privacy policy URL that you provided." The site builds its privacy page from PRIVACY.md itself, so
+the two cannot differ once the site is deployed (live page checked 2026-10-28: it has the clipboard section with Copy as
+image and the venue mappings); the answers here describe the code as it is, and PRIVACY.md says the same.
 
 ### Single purpose description
 
@@ -229,9 +234,9 @@ the in-interface disclosure and affirmative action the User Data FAQ (FAQ 10) as
 https://boyugou.github.io/better-scholar/privacy/
 ```
 
-Enter it only after the site's copy of PRIVACY.md is level with the repository's (`npm run sync-privacy` on the `site`
-branch, then deploy; `claims.md` 4.2 lists what the live page still lacks or gets wrong). PRIVACY.md already carries the
-Limited Use statement ("Chrome Web Store user data policy"), and the live page has it too.
+The page is built from the repository's PRIVACY.md (the site's `build.mjs` reads it), so it says what PRIVACY.md says
+once the site is deployed after a change to it. PRIVACY.md carries the Limited Use statement ("Chrome Web Store user data
+policy"), and the live page has it too.
 
 ## 4. Distribution
 

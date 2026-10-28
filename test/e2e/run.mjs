@@ -2079,6 +2079,9 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
       const pc = await openPopup();
       try {
         await pc.bringToFront();
+        // (at most two to a row: three short English labels used to make rows of 2, 3, 2 and 1)
+        const perRow = await pc.locator(".actions button").evaluateAll((els) => Object.values(els.reduce((n, e) => ({ ...n, [Math.round(e.getBoundingClientRect().top)]: (n[Math.round(e.getBoundingClientRect().top)] || 0) + 1 }), {})));
+        assert.ok(perRow.every((n) => n <= 2) && perRow.filter((n) => n === 2).length >= 4, "the popup's copy buttons, two to a row: " + perRow.join(", "));
         await pc.click('[data-act="copy-image"]');
         await pc.locator('[data-act="copy-image"]', { hasText: "Copied" }).waitFor();
         const types = await pc.evaluate(async () => (await navigator.clipboard.read())[0].types);

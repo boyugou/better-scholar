@@ -332,8 +332,8 @@ The request's `detail` is `{ id, method, params }`. An `id` that is a string or 
 |---|---|---|
 | `ping` | none | `{ version, owner, loaded, complete }` |
 | `summary` | `filtered` (`true`: the tables and the award counts of the papers that the filters leave, as the panel counts them; default `false`: every loaded paper) | The role × rank tables (CCF, CORE, by role only), the awards and talks counts, the citation totals, and `counted` (how many papers the tables count) |
-| `papers` | `filtered` (default `true`: the papers that the page shows; `false`: every loaded paper) | `{ owner, total, papers: [{ id, title, authors, me, venue, year, citations, role, status, highlighted, type, rank, marks, url }] }` |
-| `export` | `format` (required: `summary`, `table`, `papers`, `apa`, `ieee`, `gbt`, `bibtex`, `markdown`, `json`, `csv`); `source` (`ccf`, `core`, `none`; for the summary and the table); `html` (`true`: also return `html` for `table`, `papers`, `apa` and `ieee`); `filtered` (`true`: the summary and the table count the papers that the filters leave) | `{ format, text, html? }` |
+| `papers` | `filtered` (default `true`: the papers that the page shows; `false`: every loaded paper) | `{ owner, total, papers: [{ id, title, authors, me, venue, pages?, year, citations, role, status, highlighted, type, rank, marks, url }] }` |
+| `export` | `format` (required: `summary`, `table`, `papers`, `apa`, `ieee`, `gbt`, `bibtex`, `markdown`, `json`, `csv`, `image`); `source` (`ccf`, `core`, `none`; for the summary and the table); `html` (`true`: also return `html` for `table`, `papers`, `apa`, `ieee` and `gbt`); `filtered` (`true`: the summary and the table count the papers that the filters leave) | `{ format, text, html?, png? }` (`png`: for `image`, the picture as a data: address) |
 | `filter` | `query`, `onlyHighlighted`, `yearStart`, `yearEnd`, `minCitations`, `impact` (`h` or `i10`); `null` clears a number | `{ shown, total, filters, errors, ignored }` (`ignored`: the filters that the settings left without a control) |
 | `clearFilters` | none | `{ shown, total, filters, errors }` |
 

@@ -332,8 +332,8 @@ const { ok, result, error } = await answer;   // result.text is the BibTeX
 |---|---|---|
 | `ping` | 无 | `{ version, owner, loaded, complete }` |
 | `summary` | `filtered`（`true`：表格和获奖与报告形式的计数只统计筛选后剩下的论文，与面板的统计方式相同；默认 `false`：所有已加载的论文） | 角色 × 等级表（CCF、CORE，以及仅按角色）、获奖与报告形式的计数、引用统计，以及 `counted`（表格统计了多少篇论文） |
-| `papers` | `filtered`（默认 `true`：页面当前显示的论文；`false`：所有已加载的论文） | `{ owner, total, papers: [{ id, title, authors, me, venue, year, citations, role, status, highlighted, type, rank, marks, url }] }` |
-| `export` | `format`（必填：`summary`、`table`、`papers`、`apa`、`ieee`、`gbt`、`bibtex`、`markdown`、`json`、`csv`）；`source`（`ccf`、`core`、`none`；用于摘要和表格）；`html`（`true`：对 `table`、`papers`、`apa` 和 `ieee` 另外返回 `html`）；`filtered`（`true`：摘要和表格只统计筛选后剩下的论文） | `{ format, text, html? }` |
+| `papers` | `filtered`（默认 `true`：页面当前显示的论文；`false`：所有已加载的论文） | `{ owner, total, papers: [{ id, title, authors, me, venue, pages?, year, citations, role, status, highlighted, type, rank, marks, url }] }` |
+| `export` | `format`（必填：`summary`、`table`、`papers`、`apa`、`ieee`、`gbt`、`bibtex`、`markdown`、`json`、`csv`、`image`）；`source`（`ccf`、`core`、`none`；用于摘要和表格）；`html`（`true`：对 `table`、`papers`、`apa`、`ieee` 和 `gbt` 另外返回 `html`）；`filtered`（`true`：摘要和表格只统计筛选后剩下的论文） | `{ format, text, html?, png? }`（`png`：`image` 的图片，data: 地址） |
 | `filter` | `query`、`onlyHighlighted`、`yearStart`、`yearEnd`、`minCitations`、`impact`（`h` 或 `i10`）；`null` 清除一个数值 | `{ shown, total, filters, errors, ignored }`（`ignored`：因设置中没有对应控件而被忽略的筛选） |
 | `clearFilters` | 无 | `{ shown, total, filters, errors }` |
 

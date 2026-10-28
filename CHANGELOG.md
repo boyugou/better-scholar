@@ -42,6 +42,13 @@
   An independent review fixed: a long note (the source address) widens the picture instead of running off it; the total column has the
   panel's one word, row and column, and as much room as a custom name needs; a failed copy is no longer drawn green; the picture of an
   empty selection is copied like the table; the popup says when the picture fails; Japanese pages draw with Japanese fonts first.
+- **The popup's copy buttons stand two to a row** in every language (three short English labels made rows of 2, 3, 2 and 1);
+  a label wider than the row's half still takes its own row. An end-to-end check holds it.
+- **The store kit, checked again** (`store/`): the description names the venue mappings, IEEE, GB/T 7714, *Copy as image* and
+  the bold name; screenshot 1 and the marquee no longer promise a chip for every listed venue; the pictures were made again;
+  the audit rows fixed since 2026-10-15 are marked so. PRIVACY.md said `summary` returns "numbers only" — it also returns the
+  profile's name and the lists' editions, and says so now. The READMEs' page-calls table lacked the `image` format, `png`, the
+  `gbt` HTML and `pages`; a test now compares that table with `lib/agent.js`.
 - **The popup off a profile offers *Open my profile*** (Scholar's own "My profile" address, the person's profile when signed in) beside
   *Open Google Scholar*: most people look at their own profile first. CI pins its runner to Ubuntu 24.04 and runs the unit tests on Node 22
   and 24 (Node 20 reached its end of life).

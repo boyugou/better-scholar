@@ -42,3 +42,30 @@ for (const file of ["README.md", "README.zh-CN.md"]) {
     }
   });
 }
+
+// the page calls' table: one row per call of lib/agent.js, each parameter named, every format of `export`, every field of a `papers` record
+const agent = require("../src/lib/agent.js");
+const recordFields = (s) => {          // the top-level names of the first "papers: [{ … }]" in s
+  const start = s.indexOf("papers: [{") + "papers: [{".length;
+  let depth = 0, flat = "";
+  for (const ch of s.slice(start)) {
+    if (ch === "}" && depth === 0) break;
+    if (ch === "{" || ch === "[") depth++;
+    else if (ch === "}" || ch === "]") depth--;
+    else if (depth === 0) flat += ch;
+  }
+  return flat.split(",").map((f) => f.trim().replace(/[?:].*$/, "")).filter(Boolean).sort();
+};
+for (const file of ["README.md", "README.zh-CN.md"]) {
+  test(`${file}: the page calls' table names every call, parameter, export format and record field`, () => {
+    const text = fs.readFileSync(path.join(__dirname, "..", file), "utf8");
+    const row = (name) => text.split("\n").find((line) => line.startsWith("| `" + name + "` |"));
+    for (const [name, m] of Object.entries(agent.METHODS)) {
+      const r = row(name);
+      assert.ok(r, `${file}: no row for the call ${name}`);
+      for (const p of Object.keys(m.params || {})) assert.ok(r.includes("`" + p + "`"), `${file}: the ${name} row does not name its parameter ${p}`);
+    }
+    for (const f of agent.FORMATS) assert.ok(row("export").includes("`" + f + "`"), `${file}: the export row does not list the format ${f}`);
+    assert.deepEqual(recordFields(row("papers")), recordFields(agent.METHODS.papers.result), `${file}: the fields of a papers record`);
+  });
+}
