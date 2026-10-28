@@ -438,7 +438,7 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
   // (default: the panel's own; "none": by role only).
   function exportText(kind, { source, filtered = false } = {}) {
     const ctx = { ccfOn: B.prefs.lists(prefs).ccf, coreOn: B.prefs.lists(prefs).core, prefer: B.prefs.winner(prefs) };
-    if (kind === "summary" || kind === "table") {
+    if (kind === "summary" || kind === "table" || kind === "image") {          // (the picture carries the summary's text beside it)
       const { summary, src } = summaryOf(source, filtered);
       return kind === "table"
         ? formats.summaryTsv(summary, summaryWords(filtered, src))
@@ -459,6 +459,27 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
     }
   }
 
+  // The panel's table as a picture ("Copy as image"): the numbers the table counts, the role names and colours the page shows, and the notes a copied summary
+  // carries (what it counted, the roles not seen, the list's edition, ranks from the person's own mappings)
+  const ROLE_DEFAULT = { first: "#1a73e8", cofirst: "#a142f4", second: "#f9ab00", last: "#1e8e3e", middle: "#9aa0a6" };
+  const roleColor = (role) => getComputedStyle(document.documentElement).getPropertyValue("--rr-c-" + role).trim() || ROLE_DEFAULT[role] || "#9aa0a6";
+  function tableImage({ source, filtered = false } = {}) {
+    const { summary, src } = summaryOf(source, filtered), p = punct();
+    const ROLE = { first: "roleFirst", cofirst: "roleCofirst", second: "roleSecond", last: "roleLast", middle: "roleMiddle" };
+    const cells = (r) => summary.columns.map((c) => r[c] || 0);
+    return B.image.tablePng({
+      title: t(src ? "summaryTitle" : "summaryTitleRoles") + (src ? p.paren[0] + src.toUpperCase() + p.paren[1] : ""),
+      owner: [headerName, tdn("coverLoaded", live().length)].filter(Boolean).join(" · "),
+      columns: summary.columns.map((c) => (c === metrics.NONE ? "–" : c)),
+      totalHead: t("colTotal"),
+      rows: summary.rows.map((r) => ({ label: t(ROLE[r.role] || r.role), color: roleColor(r.role), cells: cells(r), total: r.total })),
+      totals: { label: t("tsvTotal"), cells: cells(summary.totals), total: summary.totals.total },
+      notes: [filtered ? scopeLine() : "", summary.hidden ? unseenWords.hidden(summary.hidden) : "", summary.absent ? unseenWords.absent(summary.absent) : "",
+        ...copyNotes(src, filtered), src ? `${edition[src]} — ${td("tipToday")}` : ""],
+      dir: B.dom.dir()
+    });
+  }
+
   // The second flavour of a copy button, for a word processor: a real table for the table and the papers, real italics for APA; "" for the others (their text is the whole of it)
   function exportHtml(kind, { source, filtered = false } = {}) {
     if (kind === "table") { const s = summaryOf(source, filtered); return formats.summaryHtml(s.summary, summaryWords(filtered, s.src)); }
@@ -474,6 +495,12 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
   async function deliver(kind) {
     if (kind !== "summary" && kind !== "table" && !shownRows().length) { panel.flash(kind, "empty"); return; }          // (the filters leave no paper: nothing to put on the clipboard)
     const text = exportText(kind, { filtered: true });                                // (the panel's buttons copy what the panel counts)
+    if (kind === "image") {
+      let blob = null;
+      try { blob = await tableImage({ filtered: true }); } catch (e) { /* no canvas: said on the button */ }
+      if (blob && await B.dom.copyImage(blob, text)) panel.flash(kind); else panel.flash(kind, "failed");
+      return;
+    }
     if (kind === "csv") {
       const safe = (headerName || "scholar").trim().replace(/[/\\?%*:|"<>]/g, "").replace(/\s+/g, "_");
       B.dom.downloadFile((safe || "scholar") + "-papers.csv", text);
@@ -758,9 +785,10 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
       };
     },
     papers: ({ filtered = true } = {}) => ({ owner: headerName, total: live().length, papers: paperRecords(filtered) }),
-    export: ({ format, source, html, filtered }) => {
+    export: async ({ format, source, html, filtered }) => {
       const rich = html ? exportHtml(format, { source, filtered }) : "";
-      return { format, text: exportText(format, { source, filtered }), ...(rich ? { html: rich } : {}) };          // (a format with no HTML has no html key)
+      const png = format === "image" ? await B.image.dataUrl(await tableImage({ source, filtered })) : "";
+      return { format, text: exportText(format, { source, filtered }), ...(rich ? { html: rich } : {}), ...(png ? { png } : {}) };          // (a format with no HTML has no html key; the picture as a data: address)
     },
     filter: (p) => {
       // (a filter with no control left to undo it would hide rows for good)

@@ -1293,5 +1293,11 @@
   },
   "popupMyProfile": {
     "message": "मेरी प्रोफ़ाइल खोलें"
+  },
+  "copyImage": {
+    "message": "छवि के रूप में कॉपी करें"
+  },
+  "copyFailed": {
+    "message": "कॉपी नहीं हुआ"
   }
 }

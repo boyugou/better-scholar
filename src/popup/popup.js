@@ -90,11 +90,15 @@
       };
       const deliver = (kind) => async (e) => {
         const button = e.target.closest("button") || e.target;
-        const paperFormat = kind !== "summary" && kind !== "table";
+        const paperFormat = kind !== "summary" && kind !== "table" && kind !== "image";
         if (paperFormat && !data.shown) { say(button, t("copyEmpty"), false); return; }
         const res = await call("export", { format: kind, html: true, ...(paperFormat ? {} : { source }) });
         if (!res || !res.ok) return;
         if (kind === "csv") { B.dom.downloadFile(((data.owner || "scholar").trim().replace(/[/\\?%*:|"<>]/g, "").replace(/\s+/g, "_") || "scholar") + "-papers.csv", res.result.text); say(button, t("exported")); }
+        else if (kind === "image") {          // (the page draws the picture and sends it as a data: address)
+          const blob = res.result.png ? await (await fetch(res.result.png)).blob() : null;
+          if (blob && await B.dom.copyImage(blob, res.result.text)) say(button, t("copied")); else say(button, t("copyFailed"), false);
+        }
         else if (await copyText(res.result.text, res.result.html)) say(button, t("copied"));
       };
       const copyKinds = prefs.panel.copy.show ? B.prefs.copyButtons(prefs) : [];

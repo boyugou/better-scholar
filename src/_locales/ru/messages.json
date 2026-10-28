@@ -1293,5 +1293,11 @@
   },
   "popupMyProfile": {
     "message": "Открыть мой профиль"
+  },
+  "copyImage": {
+    "message": "Копировать изображением"
+  },
+  "copyFailed": {
+    "message": "Не скопировано"
   }
 }

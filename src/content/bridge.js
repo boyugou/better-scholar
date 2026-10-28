@@ -7,18 +7,19 @@
   const B = (globalThis.RolesRanks = globalThis.RolesRanks || {});
 
   function install(methods) {
-    const answer = (id, method, params) => {
+    // (a call may answer later — the picture of the table is drawn first —: the answer waits for it)
+    const answer = async (id, method, params) => {
       const checked = B.agent.validate(method, params);
       if (!checked.ok) return { id, ok: false, error: checked.error };
-      try { return { id, ok: true, result: methods[method](checked.params) }; } catch (e) { return { id, ok: false, error: String((e && e.message) || e).slice(0, 200) }; }
+      try { return { id, ok: true, result: await methods[method](checked.params) }; } catch (e) { return { id, ok: false, error: String((e && e.message) || e).slice(0, 200) }; }
     };
 
     // the toolbar popup (and the settings page): chrome.tabs.sendMessage reaches this extension's own pages only
     try {
       chrome.runtime.onMessage.addListener((msg, _sender, send) => {
         if (!msg || msg.type !== "rr:call") return false;
-        send(answer(null, msg.method, msg.params));
-        return false;
+        answer(null, msg.method, msg.params).then(send);
+        return true;          // (the answer comes once it is ready)
       });
     } catch (e) { /* extension context gone */ }
 
@@ -28,7 +29,7 @@
       const d = e.detail;
       if (!d || typeof d !== "object") return;
       const id = typeof d.id === "string" || typeof d.id === "number" ? d.id : null;
-      document.dispatchEvent(new CustomEvent(response, { detail: answer(id, d.method, d.params) }));
+      answer(id, d.method, d.params).then((detail) => document.dispatchEvent(new CustomEvent(response, { detail })));
     });
     document.documentElement.setAttribute(marker, "true");
   }

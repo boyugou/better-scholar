@@ -249,6 +249,7 @@
         "content/semantic.js",
         "content/detail.js",
         "content/panel.js",
+        "content/image.js",
         "content/bridge.js",
         "content/main.js"
       ],

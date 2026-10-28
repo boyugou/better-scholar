@@ -1293,5 +1293,11 @@
   },
   "popupMyProfile": {
     "message": "Buka profil saya"
+  },
+  "copyImage": {
+    "message": "Salin sebagai gambar"
+  },
+  "copyFailed": {
+    "message": "Tidak tersalin"
   }
 }

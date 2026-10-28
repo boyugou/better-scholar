@@ -1049,7 +1049,18 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     assert.match(await page.evaluate(() => navigator.clipboard.readText()), /^\[1\] [A-Z][A-Z' -]+ [A-Z]/, "a GB/T 7714 reference: the surname in capitals");
     await setPref(opts, "panel.copy.gbt", false);
     await page.bringToFront();
-    ok("Copy IEEE and Copy GB/T 7714 (off by default) write their reference lists once switched on");
+    // "Copy as image" (off by default): the table as a PNG on the clipboard, with the summary's text beside it
+    await setPref(opts, "panel.copy.image", true);
+    await page.bringToFront();
+    await page.locator('[data-act="copy-image"]').waitFor();
+    await page.click('[data-act="copy-image"]');
+    await copied("copy-image");
+    const pic = await page.evaluate(async () => { const [item] = await navigator.clipboard.read(); const b = await item.getType("image/png"); const bmp = await createImageBitmap(b); return { types: item.types, w: bmp.width, h: bmp.height, text: await (await item.getType("text/plain")).text() }; });
+    assert.ok(pic.types.includes("image/png") && pic.w > 400 && pic.h > 300, "a picture of the table: " + JSON.stringify([pic.types, pic.w, pic.h]));
+    assert.match(pic.text, /Papers by role/, "and the summary's text beside it");
+    await setPref(opts, "panel.copy.image", false);
+    await page.bringToFront();
+    ok("Copy IEEE, Copy GB/T 7714 and Copy as image (off by default) write their lists or the picture once switched on");
 
     // "Copy JSON": structured JSON for papers shown
     await page.click('[data-act="copy-json"]');
@@ -1344,6 +1355,9 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
       await eventually(page, () => !document.querySelector(".rr-year").hidden);
       const noHtml = await pageCall("export", { format: "bibtex", html: true });
       assert.ok(noHtml.ok && !("html" in noHtml.result), "a format with no HTML has no html key");
+      const img = await pageCall("export", { format: "image" });
+      assert.match(img.result.png, /^data:image\/png;base64,.{200}/, "Copy as image: the table as a PNG");
+      assert.match(img.result.text, /Papers by role/, "with the summary text beside it");
       const gbHtml = await pageCall("export", { format: "gbt", html: true });
       assert.match(gbHtml.result.html, /<b>STOICA I<\/b>/, "GB/T for a word processor: the owner's name in bold");
       assert.doesNotMatch(gbHtml.result.text, /<b>/, "and the text has no mark");
@@ -2039,7 +2053,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
       } finally { await pc.close(); }
     };
     const panelButtons = () => page.locator('[data-rr="export-row"] button').evaluateAll((els) => els.map((e) => e.dataset.act));
-    const ALL_COPY = prefsLib.COPY_BUTTONS.map((k) => "copy-" + k), ON_COPY = ALL_COPY.filter((a) => a !== "copy-ieee" && a !== "copy-gbt");          // (IEEE and GB/T 7714 are off until asked for)
+    const ALL_COPY = prefsLib.COPY_BUTTONS.map((k) => "copy-" + k), ON_COPY = ALL_COPY.filter((a) => prefsLib.defaults().panel.copy[a.slice(5)]);          // (Copy as image, IEEE and GB/T 7714 are off until asked for)
     assert.deepEqual(await panelButtons(), ON_COPY, "the panel's copy row: every format that is on by default, in the order of the settings");
     assert.deepEqual(await popupButtons(), ON_COPY, "and the popup's");
     await setPref(opts, "panel.copy.bibtex", false);

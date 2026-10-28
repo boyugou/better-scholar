@@ -35,6 +35,10 @@
   pages), the paper page's bare venue only where Scholar cut that line, so the page range lands where it should; *Change…* is shown;
   Enter picks only what is shown; the summary's title counts the loaded papers and has one colon in every language; "Findings" is
   proceedings only beside an ACL-family acronym ("Clinical Findings" is not); every co-first mark is stripped (`∗`, `#`, `⁎` too).
+- **Copy as image** (off by default; *Settings → Copy & export*): the role × rank table as a picture for a slide, a CV or a form that takes
+  images — the panel's numbers, the role colours, the list's edition and what was counted, drawn at twice the size, mirrored for a
+  right-to-left language, with the summary text beside it on the clipboard. The toolbar popup has it too, and the `export` call returns it
+  as `png` (a data: address). The page calls may now answer once their result is ready.
 - **The popup off a profile offers *Open my profile*** (Scholar's own "My profile" address, the person's profile when signed in) beside
   *Open Google Scholar*: most people look at their own profile first. CI pins its runner to Ubuntu 24.04 and runs the unit tests on Node 22
   and 24 (Node 20 reached its end of life).

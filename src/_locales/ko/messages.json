@@ -1293,5 +1293,11 @@
   },
   "popupMyProfile": {
     "message": "내 프로필 열기"
+  },
+  "copyImage": {
+    "message": "이미지로 복사"
+  },
+  "copyFailed": {
+    "message": "복사되지 않음"
   }
 }

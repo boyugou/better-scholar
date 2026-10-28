@@ -534,7 +534,7 @@
       restoreFocus(focused);
     }
     // what a copy button says for a moment after it was pressed: done, or why nothing was copied
-    const flashText = () => (ui.flash.mode === "empty" ? t("copyEmpty") : ui.flash.kind === "csv" ? t("exported") : t("copied"));
+    const flashText = () => (ui.flash.mode === "empty" ? t("copyEmpty") : ui.flash.mode === "failed" ? t("copyFailed") : ui.flash.kind === "csv" ? t("exported") : t("copied"));
 
     // A row for each award / talk group that occurs on the loaded papers; click one to list just those.
     function renderMarks(m) {

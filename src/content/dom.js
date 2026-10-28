@@ -99,6 +99,14 @@
   }
 
   // The text goes to the clipboard. With `html` the clipboard holds both: a word processor takes the HTML (a real table, real italics) where a text box or a spreadsheet takes the text.
+  // a picture on the clipboard, with its text beside it (a text field takes the text); false when the browser refuses it
+  async function copyImage(blob, text) {
+    try {
+      await navigator.clipboard.write([new ClipboardItem({ "image/png": blob, "text/plain": new Blob([text || ""], { type: "text/plain" }) })]);
+      return true;
+    } catch (e) { return false; }
+  }
+
   async function copyText(text, html) {
     if (html && typeof ClipboardItem === "function") {
       try {
@@ -153,7 +161,7 @@
   }
 
   // the words on the copy buttons (panel, toolbar popup, settings page): one per format of lib/prefs.js COPY_BUTTONS
-  const COPY_LABEL = { summary: "copySummary", table: "copyTable", papers: "copyPapers", apa: "copyApa", ieee: "copyIeee", gbt: "copyGbt", bibtex: "copyBibtex", markdown: "copyMarkdown", json: "copyJson", csv: "exportCsv" };
+  const COPY_LABEL = { summary: "copySummary", table: "copyTable", image: "copyImage", papers: "copyPapers", apa: "copyApa", ieee: "copyIeee", gbt: "copyGbt", bibtex: "copyBibtex", markdown: "copyMarkdown", json: "copyJson", csv: "exportCsv" };
 
-  B.dom = { h, t, tn, tDefault, setLabels, COPY_LABEL, applyColors, applyRowStyle, applyChips, useLanguage, dir, langTag, colon, comma, quote, copyText, downloadFile, sleep, frame, issueUrl, REPO };
+  B.dom = { h, t, tn, tDefault, setLabels, COPY_LABEL, applyColors, applyRowStyle, applyChips, useLanguage, dir, langTag, colon, comma, quote, copyText, copyImage, downloadFile, sleep, frame, issueUrl, REPO };
 })();

@@ -1293,5 +1293,11 @@
   },
   "popupMyProfile": {
     "message": "Otwórz mój profil"
+  },
+  "copyImage": {
+    "message": "Kopiuj jako obraz"
+  },
+  "copyFailed": {
+    "message": "Nie skopiowano"
   }
 }

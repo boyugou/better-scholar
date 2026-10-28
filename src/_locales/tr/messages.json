@@ -1293,5 +1293,11 @@
   },
   "popupMyProfile": {
     "message": "Profilimi aç"
+  },
+  "copyImage": {
+    "message": "Resim olarak kopyala"
+  },
+  "copyFailed": {
+    "message": "Kopyalanamadı"
   }
 }

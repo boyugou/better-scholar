@@ -250,7 +250,7 @@ Press `/` on a profile to jump to the search box. (The panel and its filters mus
 
 ## Copy and export
 
-Each format is a button in the panel's copy row and in the toolbar popup. Each has its own switch under *Settings → Copy & export* (all are on by default, except IEEE and GB/T 7714).
+Each format is a button in the panel's copy row and in the toolbar popup. Each has its own switch under *Settings → Copy & export* (all are on by default, except *Copy as image*, IEEE and GB/T 7714).
 
 - The paper formats take the papers that the page shows now, after the filters. They use the full author lists that *Read full lists* saved.
 - The summary and the table count the papers that the filters leave (in the panel; the popup counts every loaded paper). They say what they counted: "Showing 25 of 100 papers · 2021–…".
@@ -260,6 +260,7 @@ Each format is a button in the panel's copy row and in the toolbar popup. Each h
 |---|---|
 | *Copy summary* | The role × rank table as plain text, with what the "not ranked" column holds, the awards and talks line, and the lists' edition |
 | *Copy as table* | The role × rank table, tab-separated for a spreadsheet, and as a real table for a word processor |
+| *Copy as image* | The role × rank table as a picture (PNG), for a slide, a CV or a form that takes images: the role colours, the list's edition and what was counted, with the summary text beside it. Off by default: turn it on under *Settings → Copy & export*. |
 | *Copy papers* | The papers, tab-separated: year, title, authors, role, venue, CCF, CORE, awards, citations (headers in the interface language). Also a real table for a word processor, with your name in bold. |
 | *Copy APA* | APA 7th edition references: `Authors (Year). Title. *Venue*, *Volume*(Issue), Pages. URL` for a journal, `In *Venue* (Vol. 1, pp. Pages).` for proceedings; a patent or a thesis as Scholar printed it. Also with real italics for a word processor. |
 | *Copy IEEE* | A numbered IEEE reference list: `[1] A. Author and B. Writer, "Title," in *Venue*, Year, pp. 1–10.`; for a journal `*Journal*, vol. 44, no. 8, pp. 4012–4025, Year.` Also with real italics for a word processor. Off by default: turn it on under *Settings → Copy & export*. |
@@ -331,10 +332,10 @@ What the extension is made of, counted from its code and its data. Nothing here 
 <!-- numbers:begin -->
 | Number | What | Counted from |
 |---:|---|---|
-| **158** | settings you can change, in 18 cards: 89 switches, 50 names you can set, and 19 colours, choices, orders and languages | the settings tree (`src/lib/prefs.js`) |
-| **176** | nodes in that tree, 5 levels deep: card, panel switch, part switch, item, sub-item | cards and rows; each row hangs on its part's switch |
-| **9 · 10 · 10 · 6 · 4** | panel parts, copy formats and quick filters (each with a switch, most in an order you set), then chip looks and presets | `SECTIONS`, `COPY_BUTTONS`, `PILLS`, `CHIP_THEMES`, `PRESETS` |
-| **30** | interface languages: 373 strings each, 29 translated from English | `src/_locales/*/messages.json` |
+| **160** | settings you can change, in 18 cards: 90 switches, 51 names you can set, and 19 colours, choices, orders and languages | the settings tree (`src/lib/prefs.js`) |
+| **178** | nodes in that tree, 5 levels deep: card, panel switch, part switch, item, sub-item | cards and rows; each row hangs on its part's switch |
+| **9 · 11 · 10 · 6 · 4** | panel parts, copy formats and quick filters (each with a switch, most in an order you set), then chip looks and presets | `SECTIONS`, `COPY_BUTTONS`, `PILLS`, `CHIP_THEMES`, `PRESETS` |
+| **30** | interface languages: 375 strings each, 29 translated from English | `src/_locales/*/messages.json` |
 | **1,178** | ranked venues in 1,481 rows of the two lists (386 CCF conferences, 295 CCF journals, 800 CORE conferences); 299 venues have a row in both | the rows of `src/data/ccf.js` and `src/data/core.js`, linked by `idx.partners` |
 | **400+** | venue names that Scholar prints but the lists do not have, in 250+ curated entries: old and renamed venues, other spellings, the lists' own typos, and look-alike events that get no chip | `src/data/aliases.js` |
 | **2,500+** · **1,100+** | name forms and acronyms that the matcher looks up | the keys of its indexes |
