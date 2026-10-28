@@ -2039,18 +2039,21 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     ok("'Enable all' / 'Disable all' under each group of switches set the whole group at once and save it");
 
     // the copy row: one button for each format that is on, in the panel and in the toolbar popup, whether or not the table is shown; with none on there is no row
-    const popupButtons = async () => {
+    // the toolbar popup, aimed at the profile tab
+    const openPopup = async () => {
       const pc = await context.newPage();
-      try {
-        await pc.goto(`chrome-extension://${extId}/popup/popup.html`);
-        const tab = await pc.evaluate(async () => {
-          for (const t of await chrome.tabs.query({})) { try { const r = await chrome.tabs.sendMessage(t.id, { type: "rr:call", method: "summary" }); if (r && r.ok) return t.id; } catch (e) { /* not a profile */ } }
-          return null;
-        });
-        await pc.goto(`chrome-extension://${extId}/popup/popup.html?tab=${tab}`);
-        await pc.waitForSelector(".who");
-        return await pc.locator(".actions button").evaluateAll((els) => els.map((e) => e.dataset.act));
-      } finally { await pc.close(); }
+      await pc.goto(`chrome-extension://${extId}/popup/popup.html`);
+      const tab = await pc.evaluate(async () => {
+        for (const t of await chrome.tabs.query({})) { try { const r = await chrome.tabs.sendMessage(t.id, { type: "rr:call", method: "summary" }); if (r && r.ok) return t.id; } catch (e) { /* not a profile */ } }
+        return null;
+      });
+      await pc.goto(`chrome-extension://${extId}/popup/popup.html?tab=${tab}`);
+      await pc.waitForSelector(".who");
+      return pc;
+    };
+    const popupButtons = async () => {
+      const pc = await openPopup();
+      try { return await pc.locator(".actions button").evaluateAll((els) => els.map((e) => e.dataset.act)); } finally { await pc.close(); }
     };
     const panelButtons = () => page.locator('[data-rr="export-row"] button').evaluateAll((els) => els.map((e) => e.dataset.act));
     const ALL_COPY = prefsLib.COPY_BUTTONS.map((k) => "copy-" + k), ON_COPY = ALL_COPY.filter((a) => prefsLib.defaults().panel.copy[a.slice(5)]);          // (Copy as image, IEEE and GB/T 7714 are off until asked for)
@@ -2071,6 +2074,18 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     await opts.click('[data-act="all-on"][data-group="copy"]');
     await eventually(page, () => document.querySelector('[data-rr="export-row"]').hidden === false);
     assert.deepEqual(await popupButtons(), ALL_COPY);
+    // the popup's own "Copy as image": the page draws the picture, the popup turns its data: address back into a picture on the clipboard
+    {
+      const pc = await openPopup();
+      try {
+        await pc.bringToFront();
+        await pc.click('[data-act="copy-image"]');
+        await pc.locator('[data-act="copy-image"]', { hasText: "Copied" }).waitFor();
+        const types = await pc.evaluate(async () => (await navigator.clipboard.read())[0].types);
+        assert.ok(types.includes("image/png") && types.includes("text/plain"), "the popup's picture is on the clipboard, with its text: " + types.join(", "));
+      } finally { await pc.close(); }
+      await page.bringToFront();
+    }
     ok("the copy row has a switch for each format, in the panel and in the popup; it stands without the table, and with none on there is no row");
 
     // The calls (lib/agent.js), on the extension's own messages: the toolbar popup's transport
