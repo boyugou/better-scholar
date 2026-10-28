@@ -437,8 +437,8 @@
       searchPills.setAttribute("aria-label", t("optPanelFilters"));
       for (const [id, btn] of pillEls) {
         btn.textContent = pillLabel(id);
-        // (your own: its words on hover when it has a name; the words are what renaming it in the settings' preview starts from)
-        if (ownPill(id)) { const w = pillWords(id); btn.setAttribute("data-op", w); btn.dataset.rrDefault = w; btn.title = btn.textContent === w ? "" : w; }
+        // (your own: its words on hover; renaming it in the settings' preview shows them in grey)
+        if (ownPill(id)) { const w = pillWords(id); btn.setAttribute("data-op", w); btn.dataset.rrDefault = w; btn.title = w; }          // (its words whole: a long one is cut on the button)
       }
       onlyText.nodeValue = t("onlyHighlighted");
       yearLabel.textContent = t("yearLabel");
