@@ -28,6 +28,8 @@ const needed = (file, what) => {
   process.exit(1);
 };
 needed(HERO, "the hero picture");
+// (the privacy page is the extension's own PRIVACY.md, read at build time: a copy kept here went stale — it lacked the venue mappings)
+const PRIVACY = needed(join(EXT_DIR, "PRIVACY.md"), "PRIVACY.md");
 const DEMO_BUILDER = needed(join(EXT_DIR, "scripts", "build-demo.mjs"), "the demo builder (scripts/build-demo.mjs)");
 const FORMATS = needed(join(EXT_DIR, "src", "lib", "formats.js"), "the export code (src/lib/formats.js)");
 const EXT_WORDS = needed(join(EXT_DIR, "src", "_locales", "en", "messages.json"), "the extension's English strings");
@@ -429,7 +431,7 @@ function inline(text) {
     .replace(/(https:\/\/[^\s<)]+?)([.,]?)(?=\s|$|<)/g, '<a href="$1">$1</a>$2'))).join("");
 }
 function privacyPage() {
-  const lines = readFileSync(join(root, "src", "privacy.md"), "utf8").split("\n");
+  const lines = readFileSync(PRIVACY, "utf8").split("\n");
   // (a paragraph or a list item is read whole before its emphasis is: *two words* may be broken over two lines of the source)
   let html = "", list = false, para = [], item = null, table = null;
   const endItem = () => { if (item !== null) { html += `<li>${inline(item)}</li>\n`; item = null; } };
