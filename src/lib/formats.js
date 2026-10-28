@@ -361,7 +361,7 @@
     else if (list.length === 2 && !cut) by = `${list[0]}, & ${list[1]}`;
     else if (list.length > 20) by = cut ? `${list.slice(0, 19).join(", ")}, …` : `${list.slice(0, 19).join(", ")}, … ${list[list.length - 1]}`;   // (a cut list does not know its last author)
     else if (list.length > 1) by = cut ? `${list.join(", ")}, …` : `${list.slice(0, -1).join(", ")}, & ${list[list.length - 1]}`;
-    if (by && !/[.!?…]$/.test(by)) by += ".";
+    if (by && !/[.!?…]\u0003?$/.test(by)) by += ".";          // (the owner last: the full stop of "G. E." stands inside the bold mark, and is not doubled after it)
     let title = clean(p.title);
     if (title && !/[.?!]$/.test(title)) title += ".";
     // the venue in italics, then (APA 7) a journal's volume in italics, its issue and pages, or "In *Proceedings* (Vol. 1, pp. 1–10)"; the year is the one above.

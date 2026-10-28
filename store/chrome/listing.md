@@ -39,23 +39,23 @@ On Google Scholar profiles: the profile owner's author role and the venue's CCF 
 
 ### Description
 
-Plain text, 3,048 characters, 10 lines starting with "• ". No Markdown. Paste it as it is.
+Plain text, 3,131 characters, 10 lines starting with "• ". No Markdown. Paste it as it is.
 
 ```text
 Better Scholar adds two things to Google Scholar profile pages: the profile owner's authorship role in each paper, and the rank of the venue it appeared in. A panel counts them in one table.
 
 • Roles: rows where the owner is first, co-first, second or last author are tinted in that role's colour, and the owner's name is marked.
-• Ranks: venues on the China Computer Federation list (7th edition, 2026) or the ICORE 2026 conference ranking get a rank chip whose tooltip says how it was matched. Venues it cannot match get no chip and are listed in the panel; you can tie such a venue to a listed one yourself, and its chip then says it is your own mapping.
+• Ranks: venues on the China Computer Federation list (7th edition, 2026) or the ICORE 2026 conference ranking get a rank chip whose tooltip says how it was matched. Venues it cannot match get no chip, and the panel lists them (preprints and secondary tracks aside); you can tie such a venue to a listed one yourself, and its chip then says it is your own mapping.
 • Summary: a role × rank table (click a cell to list those papers), citation totals and h-index of the highlighted papers, and a chart by year.
-• Awards and talks: chips for awards on a bundled list (7,830 paper awards at major conferences) and for the Oral, Spotlight and Highlight labels authors write in the title or venue.
+• Awards and talks: chips for awards on a bundled list (7,830 paper awards, nearly all at major conferences) and for the Oral, Spotlight and Highlight labels authors write in the title or venue.
 • Search: press / and type, for example role:first ccf:a cites:>100.
-• Copy and export: the summary or the papers shown, as plain text, a table, APA, BibTeX, Markdown, JSON or CSV, and, when switched on, IEEE, GB/T 7714 or the table as a picture; the table, the papers and the reference styles also paste into Word or Docs as a real table or with real italics, the profile owner's name in bold. The toolbar button and page events for scripts or AI agents give the same data.
+• Copy and export: the summary or the papers shown, as plain text, a table, APA, BibTeX, Markdown, JSON or CSV, and, when switched on, IEEE, GB/T 7714 or the table as a picture; the table and the papers also paste into Word or Docs as a real table, APA and IEEE with real italics, and the papers, APA, IEEE and GB/T 7714 with the profile owner's name in bold. The toolbar button and page events for scripts or AI agents give the same data.
 • Settings: a switch for each role and for every part of the panel and every thing in it, in any order, with your own names for titles and buttons; the look and colours of the chips; a live preview that you edit by hovering it (hide, move, rename); a box that checks a venue against the lists; merging duplicate entries, hiding parts of the profile page, 30 languages, and reopening search and profile pages in a chosen language.
 
 The ranks come from today's CCF and CORE lists, not the rank a venue had when the paper was published. CCF states that its list is not a basis for academic evaluation.
 
 • By default it presses the page's own "Show more" button about once a second, only while the tab is in front, until the whole list is loaded. It stops if no more rows arrive; a setting turns it off.
-• When a long author list is cut off, "Read full lists" opens each paper's own page on the same site, only when you click it, about once a second, and stops at the first CAPTCHA.
+• When a long author list is cut off, "Read full lists" reads each paper's own page on the same site, only when you click it, about once a second, and stops at the first CAPTCHA.
 • An option, off by default, asks Semantic Scholar's public API for those lists first. Each request's only content is the paper's title (and your API key, if you add one); no cookies are sent.
 
 Everything else runs in your browser: no account, no analytics, no ads. Settings, and the name spellings and venue mappings you add, are kept in Chrome's storage; author lists it has read stay on this device for 90 days. Its one permission is storage, and it runs only on Scholar's pages.
@@ -64,7 +64,7 @@ Free and open source (Apache 2.0). Better Scholar is an independent project and 
 ```
 
 Checks done on this text (re-counted 2026-10-28, after the ranks, copy and storage sentences took in the mappings, the three
-formats that are off by default and the bold name): 3,048 characters; "Scholar" appears 5 times (counting "Better Scholar", "Google Scholar" and "Semantic Scholar"), "CCF" 3 (once as
+formats that are off by default and the bold name, then corrected after an independent review): 3,131 characters; "Scholar" appears 5 times (counting "Better Scholar", "Google Scholar" and "Semantic Scholar"), "CCF" 3 (once as
 `ccf:a`), "CORE" 2 (once in "ICORE"), "rank" 4 (7 with "ranks" and "ranking"), all in sentences (policy: no "unnatural repetition of the same
 keyword more than 5 times"); no competitor is named; no superlatives. The text says what 2.40.0 and 2.41.0 added in two bullets (the
 HTML on the clipboard; the own names, chip looks, editable preview and venue box), each with its row in `claims.md` (L36 to L39),
@@ -159,7 +159,7 @@ Better Scholar shows, on Google Scholar profile pages, the profile owner's autho
 ### Permission justification: storage
 
 ```text
-storage keeps the user's settings and the extension's own working data. chrome.storage.sync: the settings (what to show and in which order, colours, chip looks, the user's own names for titles and buttons, languages) the extra spellings of a profile owner's name that the user adds on that profile, and the user's own venue mappings (a venue line tied by the user to a row of the CCF or CORE list), so that they follow the user's Chrome profile. chrome.storage.local, on this device only: whether the panel is folded and which ranking its table shows; the author lists, venue text and page ranges read with "Read full lists" (at most 3,000 papers, kept for 90 days, viewable and clearable on the settings page); an optional Semantic Scholar API key the user may enter; and, for a moment, a venue text (at most 300 characters) that the user asked the settings page to check by pressing Check beside a venue of the panel's unranked list. Nothing in storage is sent to the developer.
+storage keeps the user's settings and the extension's own working data. chrome.storage.sync: the settings (what to show and in which order, colours, chip looks, the user's own names for titles and buttons, languages); the extra spellings of a profile owner's name that the user adds on that profile, and the user's own venue mappings (a venue line tied by the user to a row of the CCF or CORE list), so that they follow the user's Chrome profile. chrome.storage.local, on this device only: whether the panel is folded and which ranking its table shows; the author lists, venue text and page ranges read with "Read full lists" (at most 3,000 papers, kept for 90 days, viewable and clearable on the settings page); an optional Semantic Scholar API key the user may enter; and, for a moment, a venue text (at most 300 characters) that the user asked the settings page to check by pressing Check beside a venue of the panel's unranked list. Nothing in storage is sent to the developer.
 ```
 
 ### Host permission justification
@@ -168,7 +168,7 @@ The manifest has no `host_permissions`; its site access comes from the content s
 box for them, paste:
 
 ```text
-Site access comes only from two content scripts, both limited to Google Scholar. (1) The main script matches https://scholar.google.<domain>/citations*, the path of Scholar's author pages, and draws only on a profile page (it checks for the profile's name and paper table and leaves other pages alone). (2) A small script, content/lang-redirect.js, matches https://scholar.google.<domain>/* at document start. It acts only on /scholar and /citations, and only if the user chose a language under "Open Scholar in" (off by default): it reopens the page with that hl= value. It reads no page content. Both list the same 187 domains because Scholar is served under Google's country domains (scholar.google.co.uk, scholar.google.com.sg and so on) and a match pattern cannot wildcard a top-level domain. The list is generated from Google's own list (https://www.google.com/supported_domains). No other site is matched.
+Site access comes only from two content scripts, both limited to Google Scholar. (1) The main script matches https://scholar.google.<domain>/citations*, the path of Scholar's author pages, and draws only on a profile page (it checks for the profile's name and paper table and leaves other pages alone). (2) A small script, content/lang-redirect.js (with lib/i18n.js, the list of languages it checks), matches https://scholar.google.<domain>/* at document start. It acts only on /scholar and /citations, and only if the user chose a language under "Open Scholar in" (off by default): it reopens the page with that hl= value. It reads no page content. Both list the same 187 domains because Scholar is served under Google's country domains (scholar.google.co.uk, scholar.google.com.sg and so on) and a match pattern cannot wildcard a top-level domain. The list is generated from Google's own list (https://www.google.com/supported_domains). No other site is matched.
 ```
 
 ### Are you using remote code?
@@ -256,16 +256,16 @@ No account, login or payment is needed. Everything works on a public Google Scho
 
 1. Open https://scholar.google.com/citations?user=JicYPdAAAAAJ&hl=en
 2. A "Better Scholar" panel appears at the top of the right-hand column (above the paper list in a narrow window). Rows where the profile owner is first, second or last author are tinted blue, amber or green; venues on the CCF or CORE list get chips. Scholar's order may change, but for example:
-   - "Imagenet classification with deep convolutional neural networks": last author (green), chips CCF A and CORE A* (NeurIPS) and a "Test of time" award chip.
+   - "Imagenet classification with deep convolutional neural networks": last author (green), a CCF A chip (NeurIPS; its tooltip also gives CORE A*) and a "Test of time" award chip.
    - "Dropout: a simple way to prevent neural networks from overfitting": second author (amber), CCF A (JMLR).
    - "Visualizing data using t-SNE": last author, CCF A (JMLR).
    - "Deep learning" (Nature): last author and no rank chip. Nature is on neither list; that is by design.
 3. While the panel shows "Loading… N", the extension is pressing Scholar's own "Show more" button about once a second, only while the tab is in front. "Cancel" stops it; Settings > Paper list > "Load all papers automatically" turns it off.
 4. Click a cell of the "Papers by role and rank" table to list those papers. Press / and type role:first ccf:a cites:>100 to filter (type:journal, type:conference and age:<5, the last five years, also work); the table and the awards counts then count the papers the filters leave. "Copy summary" copies the table as text (and says what it counted). "Copy as table", "Copy papers" and "Copy APA" put the text and an HTML version of the same data on the clipboard (a word processor pastes a real table); "Export CSV" saves a file. The extension writes to the clipboard only when you click, and never reads it.
 5. Click the toolbar button: the popup shows the same table and copy buttons for the open profile.
-6. Click the settings button of the panel or of the popup (or Details > Extension options on chrome://extensions). The settings page opens in a tab and makes no network request. Its preview on the right is the real panel over sample rows: hover a part of it to hide it (✕), move it (⠿) or rename it (✎); the tray "Hidden: N" shows what was hidden and puts it back. Every switch on the left changes the preview at once.
+6. Click the settings button of the panel or of the popup (or Details > Extension options on chrome://extensions). The settings page opens in a tab and makes no network request. Its preview on the right is the real panel over sample rows: hover a part of it to hide it (✕), move it (⠿) or rename it (✎); the tray "Hidden: N" shows what was hidden and puts it back. Every switch for what the panel and the rows show changes the preview at once.
 7. On the settings page, the card "Check a venue" (after "Semantic Scholar"): paste a venue as Scholar prints it. "Proceedings of the IEEE conference on computer vision and pattern recognition" gives CCF A and CORE A* ("Matched by name"). "Findings of the Association for Computational Linguistics: ACL 2023" gets no rank: it is a secondary track, and the extension never guesses.
-8. Network features, both started only by the user: "Read full lists" (offered when Scholar cut off author lists) opens each paper's Scholar page about once a second. The Semantic Scholar lookup is off by default (Settings > Semantic Scholar).
+8. Network features, both started only by the user: "Read full lists" (offered when Scholar cut off author lists) reads each paper's Scholar page in the background (no tab opens), about once a second. The Semantic Scholar lookup is off by default (Settings > Semantic Scholar).
 
 Note: Google Scholar sometimes answers automated or data-center traffic with a CAPTCHA, or with "The system can't perform the operation now. Try again later." Both come from Scholar. The extension adds no CAPTCHA and does not try to get around one: it stops loading the list as soon as Scholar sends no more rows, and stops reading paper pages at the first CAPTCHA. When loading stops early, the panel says "Scholar sent no more papers (N loaded). Try “Load all” again in a moment." The table and the chips still cover the papers that did load; the example rows above are among the first 20 (Scholar lists the most cited first), so they show even then. Solving the CAPTCHA in the tab, or waiting and reloading, lets the rest load.
 ```

@@ -42,6 +42,14 @@
   An independent review fixed: a long note (the source address) widens the picture instead of running off it; the total column has the
   panel's one word, row and column, and as much room as a custom name needs; a failed copy is no longer drawn green; the picture of an
   empty selection is copied like the table; the popup says when the picture fails; Japanese pages draw with Japanese fonts first.
+- **From an independent review of the store text** (all fixed): *Copy APA* pasted "Hinton, G. E.." when the profile owner is the last
+  author (the full stop inside the bold was not seen, and a second one followed) — a test now checks that the HTML of APA, IEEE and
+  GB/T 7714 reads word for word as their text, wherever the owner stands; saved author lists older than 90 days were only left unused
+  until the next save, and are now deleted when the cache is next read ("kept for 90 days"); the panel's hint said *Read full lists*
+  "opens" each paper's page — it reads it in the background, no tab opens (30 languages). The store text: the reviewer's example row
+  shows one chip (CCF A, CORE A* in its tooltip, as `rows.prefer` draws it), not two; only the switches for what the panel and the rows
+  show change the preview; the copy sentence says which formats have italics and which the bold name; the unranked list leaves out
+  preprints and secondary tracks; the second content script includes `lib/i18n.js`.
 - **Settings page: no more blank under a stacked name.** In the nine rows that put their control under their name — the three order
   lists and the rows of choices (*Row highlight*, *Chip style*, *Chip shape*, *Rank chip text*, *When both lists rank a venue*,
   *Rows in the panel*) — the name's flex basis of 10rem, meant for its width beside a switch, had become its height: 140 px of

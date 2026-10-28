@@ -172,7 +172,7 @@
     "message": "Lue täydet luettelot"
   },
   "resolveHint": {
-    "message": "Avaa jokaisen artikkelin sivun Scholarissa (noin yksi sekunnissa) koko kirjoittajaluettelon lukemiseksi."
+    "message": "Lukee jokaisen artikkelin sivun Scholarissa taustalla (noin yksi sekunnissa) koko kirjoittajaluettelon saamiseksi."
   },
   "resolveHintSemantic": {
     "message": "Kysyy ensin Semantic Scholarilta kunkin artikkelin kirjoittajaluetteloa (lähetetään vain artikkelin otsikko). Avaa sitten Scholarissa muiden artikkelien sivut, noin yksi sekunnissa."

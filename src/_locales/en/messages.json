@@ -172,7 +172,7 @@
     "message": "Read full lists"
   },
   "resolveHint": {
-    "message": "Opens each paper's page on Scholar (about one per second) to read the full author list."
+    "message": "Reads each paper's page on Scholar in the background (about one per second) for the full author list."
   },
   "resolveHintSemantic": {
     "message": "First asks Semantic Scholar for each paper's author list (it gets only the title). Then opens Scholar's page for the other papers, about one a second."

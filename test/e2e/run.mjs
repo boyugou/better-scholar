@@ -886,7 +886,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     const gaps = await page.evaluate(() => { const l = [...document.querySelectorAll('[data-rr="coverage"] .rr-cover-line')].map((e) => e.getBoundingClientRect()); return l.slice(1).map((r, i) => Math.round(r.top - l[i].bottom)); });
     assert.ok(gaps.length >= 1 && gaps.every((g) => g >= 3), "status lines are spaced: " + gaps);
     assert.ok(await page.locator('[data-act="resolve"]').evaluate((b) => b.getBoundingClientRect().height < 24), "the action beside a status note keeps its words on one line (the note wraps instead)");
-    assert.match(await page.locator('[data-rr="resolve-hint"]').textContent(), /^Opens each paper's page on Scholar/, "before it is pressed the panel says what Read full lists does: it opens Scholar's pages");
+    assert.match(await page.locator('[data-rr="resolve-hint"]').textContent(), /^Reads each paper's page on Scholar in the background/, "before it is pressed the panel says what Read full lists does: it reads Scholar's pages (no tab opens)");
     assert.doesNotMatch(await page.locator('[data-rr="resolve-hint"]').textContent(), /Semantic/, "and does not name Semantic Scholar while that setting is off");
     await page.bringToFront();                                       // (a background tab's timers are slowed to one a second)
     await page.click('[data-act="resolve"]');
@@ -2174,9 +2174,12 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     ok("the calls of lib/agent.js from the page (better-scholar:request / response): ping, papers, summary, export, filter with a report of what could not be read, clearFilters; the settings are out of reach");
 
     assert.ok((await stored(opts, "local", "resolved")) !== undefined, "'Read full lists' left a cache of paper details");
+    // (an entry older than 90 days is deleted when the cache is next read — "kept for 90 days" — not only left unused until a save)
+    await opts.evaluate((all) => chrome.storage.local.set({ resolved: { ...all, "rr-old": { authors: "A Old, B Older", ts: Date.now() - 91 * 24 * 3600 * 1000 } } }), await stored(opts, "local", "resolved"));
     await opts.reload();
     await opts.waitForSelector('[data-act="clear-cache"]');
     assert.match(await opts.textContent(".row .note"), /^\d+ papers' author lists are saved/);
+    assert.ok(!("rr-old" in (await stored(opts, "local", "resolved"))), "an entry older than 90 days is deleted when the settings page reads the cache");
 
     // view saved details modal
     await opts.click('[data-act="view-cache"]');

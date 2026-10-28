@@ -172,7 +172,7 @@
     "message": "Přečíst celé seznamy"
   },
   "resolveHint": {
-    "message": "Otevře stránku každé práce ve Scholar (zhruba jednu za sekundu), aby přečetlo celý seznam autorů."
+    "message": "Přečte stránku každé práce ve Scholar na pozadí (zhruba jednu za sekundu), aby získalo celý seznam autorů."
   },
   "resolveHintSemantic": {
     "message": "Nejprve rozšíření požádá Semantic Scholar o seznam autorů každé práce (posílá se jen název práce). Potom otevře stránku práce ve Scholar pro ostatní práce, zhruba jednu za sekundu."

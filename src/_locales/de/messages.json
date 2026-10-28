@@ -172,7 +172,7 @@
     "message": "Ganze Listen lesen"
   },
   "resolveHint": {
-    "message": "Öffnet die Seite jedes Papers auf Scholar (etwa eine pro Sekunde), um die vollständige Autorenliste zu lesen."
+    "message": "Liest die Seite jedes Papers auf Scholar im Hintergrund (etwa eine pro Sekunde), um die vollständige Autorenliste zu erhalten."
   },
   "resolveHintSemantic": {
     "message": "Zuerst wird bei Semantic Scholar die Autorenliste jedes Papers abgefragt (es wird nur der Titel gesendet). Danach wird die Seite der übrigen Paper auf Scholar geöffnet, etwa eine pro Sekunde."

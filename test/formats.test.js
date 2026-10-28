@@ -618,3 +618,18 @@ test("the references' HTML flavours put the owner's name in bold when asked; the
   assert.match(f.gbtHtml([{ ...p, title: "<script>" }], { markMe: true }), /&lt;script&gt;/, "escaped");
 });
 
+test("the references' HTML reads, word for word, as their plain text, wherever the owner stands in the author list", () => {
+  // (the owner last used to give APA "<b>Hinton, G. E.</b>." — "G. E.." on the page)
+  const text = (html) => html.split("\n").map((l) => l.replace(/<[^>]+>/g, "").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&amp;/g, "&")).join("\n");
+  const lists = ["A Krizhevsky, I Sutskever, GE Hinton", "GE Hinton", "GE Hinton, A Krizhevsky", "A Krizhevsky, GE Hinton, I Sutskever", "A Krizhevsky, I Sutskever, GE Hinton, B C, D E, F G, H I, J K", "A Krizhevsky, GE Hinton, ..."];
+  for (const authors of lists) for (const venue of ["Advances in neural information processing systems 25, 2012", "Nature 521 (7553), 436-444, 2015"]) {
+    const p = { title: "Imagenet classification", authors, me: "GE Hinton", venue, year: 2012, type: null, url: "", rank: {}, marks: [] };
+    for (const [plain, html] of [[f.apa, f.apaHtml], [f.ieee, f.ieeeHtml], [f.gbt, f.gbtHtml]]) {
+      const marked = html([p], { markMe: true });
+      if (plain === f.apa) assert.match(marked, /<b>/, authors);          // (APA names up to twenty; IEEE and GB/T may give only the first under "et al.")
+      assert.equal(text(marked).replace(/\s+/g, " ").trim(), plain([p]).replace(/\*/g, "").replace(/\s+/g, " ").trim(), `${plain.name}: ${authors} · ${venue}`);          // (the text marks italics with *…*)
+      assert.doesNotMatch(text(marked), /\.\./, `${plain.name}: no doubled full stop (${authors})`);
+    }
+  }
+});
+
