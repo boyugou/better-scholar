@@ -73,7 +73,8 @@ give the details and every review):
   ISMB 2005" is the journal); the lower-case form is read too; only a short year glued to the acronym ("ECML-95", not "JMLR 2019" or
   "OXFORD- 18") and no acronym of the title itself ("World Wide Web: WWW'19") or title that is an event's own name ("… (BSN'06)");
   such a line is read as "Machine Learning (ECML-95)", so it gets ECML's rank where the title fits the acronym's venue and none
-  where it does not ("Electron Cyclotron …: EC-15" is no EC); "abstracts" is a track only at the end of a line ("SIGMETRICS '17
+  where it does not ("Electron Cyclotron …: EC-15" is no EC), and only for a title of two words at least (one word,
+  "Bioinformatics: AAAI-05", is too little to test); "abstracts" is a track only at the end of a line ("SIGMETRICS '17
   Abstracts: Proceedings of …" holds the main track).
 - **Your own quick filters** (*Settings → Filters*, under the built-in ones): up to three buttons of your own words, typed as in the
   search box — `ccf:a role:first age:<5` for "recent CCF-A first-author papers" in one click. Each has a switch, a place in the order
