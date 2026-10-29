@@ -71,7 +71,7 @@ const FEATURES = ["awards", "complete", "merge", "check", "image", "agents", "yo
 const formats = createRequire(import.meta.url)(FORMATS);
 const words = JSON.parse(readFileSync(EXT_WORDS, "utf8"));
 const w = (key) => { if (!words[key]) throw new Error(`the extension's English strings have no "${key}"`); return words[key].message; };
-const EXPORTS = [["bibtex", "BibTeX"], ["apa", "APA"], ["ieee", "IEEE"], ["gbt", "GB/T 7714"], ["json", "JSON"], ["markdown", "Markdown"], ["csv", "CSV"]];      // (the formats' own names, the same in every language)
+const EXPORTS = [["bibtex", "BibTeX"], ["apa", "APA"], ["ieee", "IEEE"], ["acm", "ACM"], ["gbt", "GB/T 7714"], ["json", "JSON"], ["markdown", "Markdown"], ["csv", "CSV"]];      // (the formats' own names, the same in every language)
 
 function exportSamples() {
   const ranked = (name, ccf, core) => ({ ccf: { tier: ccf, name }, core: { rank: core, name } });
@@ -95,6 +95,7 @@ function exportSamples() {
     bibtex: formats.bibtex(papers, ctx),
     apa: formats.apa(papers),
     ieee: formats.ieee(papers),
+    acm: formats.acm(papers),
     gbt: formats.gbt(papers),
     json: formats.json({ owner: "A Author", source: "ccf", papers }),
     markdown: formats.markdown(papers, ctx),
