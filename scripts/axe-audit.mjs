@@ -127,14 +127,16 @@ for (const [kind, text] of [["words", "Wmw Wmw Wmw Wmw Wmw Wmw Wmw Wm"], ["full-
   });
   const bad = out.scrollWidth > out.w + 1 || out.over.length || !flashed;          // (a copy button's label wraps once it is wider than the row: 30 wide letters ran 5 px past the popup on Linux's fonts)
   if (bad) total++;
-  console.log(`${bad ? "✗" : "✓"} popup with every name at its longest (${kind}): width ${out.w}, scrollWidth ${out.scrollWidth}${out.over.length ? ", sticks out: " + out.over.join("; ") : ""}${flashed ? "" : ", the pressed button never said it had copied"}`);
+  const said = kind.includes("clicked") ? `, pressed: "${(await popup.textContent('.actions button.btn[data-act="copy-summary"]')).trim().slice(0, 20)}"` : "";          // (what the pressed button says: "Copied", or "Not copied" where the clipboard refuses)
+  console.log(`${bad ? "✗" : "✓"} popup with every name at its longest (${kind}): width ${out.w}, scrollWidth ${out.scrollWidth}${out.over.length ? ", sticks out: " + out.over.join("; ") : ""}${flashed ? "" : ", the pressed button never said it had copied"}${said}`);
   if (kind.includes("clicked")) {          // (and the panel's: a pressed copy button stays in its row)
     await page.bringToFront();
     await page.click('#rr-panel .rr-copybar [data-act="copy-summary"]');
     const panelFlashed = await page.waitForFunction(() => /min-width/.test(document.querySelector('#rr-panel .rr-copybar [data-act="copy-summary"]').getAttribute("style") || ""), null, { timeout: 3000 }).then(() => true, () => false);
     const outside = await page.evaluate(() => { const bar = document.querySelector("#rr-panel .rr-copybar").getBoundingClientRect(); return [...document.querySelectorAll("#rr-panel .rr-copybar .rr-btn")].map((b) => b.getBoundingClientRect()).filter((r) => r.right > bar.right + 1 || r.left < bar.left - 1).map((r) => Math.round(r.width)); });
     if (outside.length || !panelFlashed) total++;
-    console.log(`${outside.length || !panelFlashed ? "✗" : "✓"} panel with every name at its longest (${kind}): ${!panelFlashed ? "the pressed button never said it had copied" : outside.length ? "buttons out of the copy row, " + outside.join(", ") + " px wide" : "every copy button in its row"}`);
+    const panelSaid = (await page.textContent('#rr-panel .rr-copybar [data-act="copy-summary"]')).trim().slice(0, 20);
+    console.log(`${outside.length || !panelFlashed ? "✗" : "✓"} panel with every name at its longest (${kind}): ${!panelFlashed ? "the pressed button never said it had copied" : outside.length ? "buttons out of the copy row, " + outside.join(", ") + " px wide" : "every copy button in its row"}, pressed: "${panelSaid}"`);
   }
 }
 await setPrefs({ labels: Object.fromEntries(NAMES.map((k) => [k, ""])) });
