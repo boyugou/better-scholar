@@ -225,6 +225,12 @@
   "layoutWarning": {
     "message": "Tata letak halaman Scholar tampaknya berubah: ekstensi ini tidak dapat membaca baris penulis. Mohon laporkan."
   },
+  "extUpdated": {
+    "message": "Ekstensi diperbarui saat halaman ini terbuka: halaman masih menjalankan versi lama, dan perubahan pengaturan tidak sampai ke halaman itu."
+  },
+  "reloadPage": {
+    "message": "Muat ulang halaman ini"
+  },
   "variantsTitle": {
     "message": "Nama tidak cocok? Tambahkan ejaan"
   },

@@ -225,6 +225,12 @@
   "layoutWarning": {
     "message": "Das Seitenlayout von Scholar scheint sich geändert zu haben: Diese Erweiterung kann die Autorenzeilen nicht lesen. Bitte melde das."
   },
+  "extUpdated": {
+    "message": "Die Erweiterung wurde aktualisiert, während diese Seite geöffnet war: Die Seite läuft noch mit der alten Version, und Änderungen an den Einstellungen kommen dort nicht an."
+  },
+  "reloadPage": {
+    "message": "Diese Seite neu laden"
+  },
   "variantsTitle": {
     "message": "Name passt nicht? Schreibweise hinzufügen"
   },

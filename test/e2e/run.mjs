@@ -3429,6 +3429,39 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     } finally { await ctx15.close(); await fx15.close(); }
   }
 
+
+  // -- 36. the extension is updated (or switched off) under an open page — Chrome updates while it runs: the panel, cut off, says so at the top, and "Reload this page"
+  // reloads it (in this test browser chrome.runtime.reload() leaves the extension off, as switching it off would: the page comes back without a panel; after a real
+  // update it comes back with the new one)
+  const fxU = await start({ slug: "ion-stoica", pageSize: 20 });
+  const ctxU = await launch();
+  try {
+    const page = await ctxU.newPage();
+    await page.goto(fxU.url);
+    await page.waitForSelector("#rr-panel");
+    assert.equal(await page.locator('#rr-panel [data-rr="updated"]').count(), 0);
+    const optsU = await ctxU.newPage();
+    await optsU.goto(optionsUrl);
+    await optsU.evaluate(() => { setTimeout(() => chrome.runtime.reload(), 50); });          // (as an update does: the open page keeps the old script, cut off)
+    await page.waitForTimeout(1500);
+    await page.bringToFront();
+    await page.click('#rr-panel [data-act="settings"]');
+    const bar = page.locator('#rr-panel [data-rr="updated"]');
+    await bar.waitFor({ timeout: 5000 });
+    assert.match(await bar.textContent(), /updated while this page was open.*Reload this page/);
+    await page.locator("#rr-panel").screenshot({ path: path.join(outDir, "panel-updated.png") });
+    // and the panel, drawn again cut off, still has its words (Chrome's lookup answers nothing there: a spare copy of the strings, kept at the start, does)
+    assert.doesNotMatch(await page.locator("#rr-panel").innerText(), /\b(?:extShortName|summaryTitle|roleFirst|copySummary|filterPlaceholder)\b/, "a key instead of its words");
+    assert.match(await page.locator("#rr-panel").innerText(), /Papers by role and rank/);
+    await Promise.all([page.waitForNavigation(), page.click('#rr-panel [data-act="reload"]')]);
+    await page.waitForSelector("#gsc_a_b tr.gsc_a_tr");
+    await page.waitForTimeout(800);
+    assert.equal(await page.locator('#rr-panel [data-rr="updated"]').count(), 0, "the page was reloaded: the old script and its bar are gone");
+    ok("the extension updated or switched off under an open page: the panel says so at the top, and 'Reload this page' reloads it");
+  } finally {
+    await ctxU.close();
+    await fxU.close();
+  }
   }
 
   console.log(`\nAll ${step} checks passed${PART ? ` (part ${PART} of 4)` : ""}. Screenshots: ${outDir}`);

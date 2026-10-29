@@ -225,6 +225,12 @@
   "layoutWarning": {
     "message": "Aspectul paginii Scholar pare să se fi schimbat: extensia nu poate citi rândurile cu autori. Te rugăm să raportezi."
   },
+  "extUpdated": {
+    "message": "Extensia a fost actualizată cât timp era deschisă această pagină: pagina rulează în continuare versiunea veche, iar modificările setărilor nu ajung la ea."
+  },
+  "reloadPage": {
+    "message": "Reîncarcă această pagină"
+  },
   "variantsTitle": {
     "message": "Numele nu se potrivește? Adaugă o grafie"
   },

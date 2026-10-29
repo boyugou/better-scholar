@@ -225,6 +225,12 @@
   "layoutWarning": {
     "message": "Scholar'ın sayfa düzeni değişmiş görünüyor: bu eklenti yazar satırlarını okuyamıyor. Lütfen bildirin."
   },
+  "extUpdated": {
+    "message": "Bu sayfa açıkken eklenti güncellendi: sayfa hâlâ eski sürümle çalışıyor ve ayar değişiklikleri ona ulaşmıyor."
+  },
+  "reloadPage": {
+    "message": "Bu sayfayı yeniden yükle"
+  },
   "variantsTitle": {
     "message": "Ad eşleşmiyor mu? Bir yazım ekleyin"
   },

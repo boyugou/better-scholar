@@ -41,7 +41,8 @@
     complete: false,                            // the whole list is here (see listComplete)
     loadMessage: "",                           // why loading the rest of the list stopped, when it was not asked to
     resolving: null,                            // { done, total }
-    resolveMessage: ""
+    resolveMessage: "",
+    updated: false                              // the extension was updated (or reloaded, or switched off) under this page: this script is cut off from it
   };
   let loadAbort = null, loadOrigin = "", restartAuto = false, resolveAbort = null;       // loadOrigin: "auto" (the setting started it) or "manual" (Load all)
 
@@ -344,7 +345,7 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
       coverage: {
         loaded: list.length, canLoadMore: B.scholar.canLoadMore(), complete: listComplete(), loadingAll: state.loadingAll, loadMessage: state.loadMessage,
         repeats: prefs.mergeDuplicates ? 0 : B.duplicates.plan(state.rows.map(dupEntry)).keep.filter((k) => !k).length,
-        hidden: whole.hidden, absent: whole.absent, resolving: state.resolving, resolveMessage: state.resolveMessage, layoutBroken: layoutBroken(),
+        hidden: whole.hidden, absent: whole.absent, resolving: state.resolving, resolveMessage: state.resolveMessage, layoutBroken: layoutBroken(), updated: state.updated,
         unmatched: metrics.unmatchedVenues(list), mapped: source ? mappedCount(tableRows(true), [source]) : 0
       },
       variants, nameHints: hints
@@ -539,11 +540,17 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
     refresh();
   }
 
+  // Chrome updates an extension while its pages are open: the script of a page opened before keeps running, cut off from the extension (its settings do not
+  // reach it, its Settings button opens nothing). Found out when the person comes back to the tab or presses Settings, and said at the top of the panel.
+  const orphaned = () => { try { return !(chrome.runtime && chrome.runtime.id); } catch (e) { return true; } };
+  const checkOrphan = () => { if (!state.updated && orphaned()) { state.updated = true; refresh(); } };
+  document.addEventListener("visibilitychange", () => { if (!document.hidden) checkOrphan(); });
+
   const panel = B.panel.create({
     onCollapse() { ui.collapsed = !ui.collapsed; B.store.saveUi(ui); refresh(); },
     onSource(src) { ui.source = src; state.selection = null; B.store.saveUi(ui); refresh(); },
     // a content script cannot open the options page itself; the service worker does it on request
-    onSettings() { try { chrome.runtime.sendMessage({ type: "rr:options" }); } catch (e) { /* extension context gone */ } },
+    onSettings() { if (orphaned()) { checkOrphan(); return; } try { chrome.runtime.sendMessage({ type: "rr:options" }); } catch (e) { checkOrphan(); } },
     // a venue of the unranked list, explained on the settings page (its "Check a venue", with the text in it)
     async onCheckVenue(text) { await B.store.askVenue(text); this.onSettings(); },
     onSelect(sel) {

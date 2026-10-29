@@ -225,6 +225,12 @@
   "layoutWarning": {
     "message": "Scholar 的页面结构似乎变了，扩展读不到作者行。请反馈给开发者。"
   },
+  "extUpdated": {
+    "message": "此页面打开期间扩展已更新：页面仍在运行旧版本，设置的更改不会同步到此页面。"
+  },
+  "reloadPage": {
+    "message": "重新加载此页面"
+  },
   "variantsTitle": {
     "message": "名字没匹配上？添加一种写法"
   },

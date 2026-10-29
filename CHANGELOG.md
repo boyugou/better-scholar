@@ -78,6 +78,12 @@ give the details and every review):
   old rule), with the one known limit reported and not counted: a chip keeps its name on one line, so a 30-character chip name is cut
   in a preview of 330 px or less. The overflow audit no longer counts a break at a soft hyphen (Finnish "Yhteis-|ensimmäinen") as a
   word cut in two.
+- **An update under an open page is said, and the panel keeps its words.** Chrome updates an extension while it runs; a Scholar page
+  opened before keeps the old script, cut off: its settings no longer reached it and its Settings button did nothing, without a word.
+  The panel now says so at its top, with *Reload this page* (30 languages), as soon as the tab comes back into view or Settings is
+  pressed. And a cut-off panel drawn again (by a click on a filter) showed every word as its key — "summaryTitle", "roleFirst" —
+  because Chrome no longer looks the words up there: the panel keeps a spare copy of its language's strings now. An end-to-end check
+  cuts the extension off under an open profile and checks both.
 - **Measured: nothing piles up with use.** On 1,000 papers, 400 rounds of searches, picks and copies: the heap stays flat once
   warmed up, the page's elements and listeners stay the same, and the browser's count of nodes too — but for two things of the
   browser's own (the text box's undo history of typed keys, and its record of layout shifts, which stops at 150). The end-to-end check

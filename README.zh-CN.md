@@ -354,7 +354,7 @@ const { ok, result, error } = await answer;   // result.text is the BibTeX
 | **171** | 项可调整的设置，分布在 18 张卡片中：94 个开关、55 处可自定义名称，以及 22 项颜色、选项、顺序和语言 | 设置树的各行（`src/lib/prefs.js`） |
 | **189** | 个节点，共 5 层：卡片、面板开关、部分开关、其中一项、项下的子项 | 卡片和各行；每一行挂在所属部分的开关下 |
 | **9 · 12 · 13 · 6 · 4** | 个面板部分、复制格式和快速筛选——每一项都有自己的开关，多数还能排顺序——以及可选的标签样式和预设 | `SECTIONS`、`COPY_BUTTONS`、`PILLS`、`CHIP_THEMES`、`PRESETS` |
-| **30** | 种界面语言——每种 388 条文案，29 种译文 | `src/_locales/*/messages.json` |
+| **30** | 种界面语言——每种 390 条文案，29 种译文 | `src/_locales/*/messages.json` |
 | **1,178** | 个有等级的发表场所，来自两份内置名录的 1,481 行（CCF 会议 386、CCF 期刊 295、CORE 会议 800）；其中 299 个在两份名录中各有一行 | `src/data/ccf.js` 和 `src/data/core.js` 的各行，由 `idx.partners` 关联 |
 | **400+** | 个 Scholar 显示但名录中没有的场所名称，收录在 250+ 条人工整理的条目中：旧名与改名、其他拼写、名录自身的笔误，以及不给标签的同名活动 | `src/data/aliases.js` |
 | **2,500+** · **1,100+** | 个名称写法和缩写，匹配器逐一查找 | 各索引的键 |
@@ -362,7 +362,7 @@ const { ok, result, error } = await answer;   // result.text is the BibTeX
 | **5 · 18** | 道识别步骤（全名、期刊词袋、缩写、被截断名称的可见开头、全名加副标题）和防止较弱判断压过较强判断的防护 | `src/lib/venues.js` 中标注的步骤与 `docs/ARCHITECTURE.md` 的检查表 |
 | **5,581** | 篇获奖论文，另有 2,143 篇获荣誉提名或亚军（共 7,830 项奖项），来自 194 个会议和系列，1990–2026 年 | `src/data/awards.js` |
 | **22,744** | 行真实的 Scholar 发表场所文本，每一行的结果都逐一核对并记录 | `test/fixtures/venues.expected.json` |
-| **500+ · 90+ · 15** | 个单元测试、在加载了扩展的真实 Chromium 里运行的端到端检查、网页演示的检查 | `test/*.test.js`、`test/e2e/` |
+| **500+ · 100+ · 15** | 个单元测试、在加载了扩展的真实 Chromium 里运行的端到端检查、网页演示的检查 | `test/*.test.js`、`test/e2e/` |
 | **0** | 个依赖，也没有构建步骤 | `package.json` |
 
 这些数字由 `npm run numbers` 从代码和数据里统计，并有测试保证与实际一致；随每次修复增长的数目只写成向下取整的“N+”。

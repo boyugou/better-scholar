@@ -225,6 +225,12 @@
   "layoutWarning": {
     "message": "Scholar's page layout seems to have changed: this extension cannot read the author lines. Please report it."
   },
+  "extUpdated": {
+    "message": "The extension was updated while this page was open: the page still runs the old version, and changes to the settings do not reach it."
+  },
+  "reloadPage": {
+    "message": "Reload this page"
+  },
   "variantsTitle": {
     "message": "Name not matching? Add a spelling"
   },

@@ -225,6 +225,12 @@
   "layoutWarning": {
     "message": "La mise en page de Scholar semble avoir changé : cette extension ne peut plus lire les lignes d’auteurs. Merci de le signaler."
   },
+  "extUpdated": {
+    "message": "L’extension a été mise à jour pendant que cette page était ouverte : la page exécute toujours l’ancienne version, et les modifications des réglages ne lui parviennent pas."
+  },
+  "reloadPage": {
+    "message": "Recharger cette page"
+  },
   "variantsTitle": {
     "message": "Nom non reconnu ? Ajoutez une graphie"
   },

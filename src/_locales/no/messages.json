@@ -225,6 +225,12 @@
   "layoutWarning": {
     "message": "Scholars sidelayout ser ut til å ha endret seg: utvidelsen kan ikke lese forfatterlinjene. Rapporter det gjerne."
   },
+  "extUpdated": {
+    "message": "Utvidelsen ble oppdatert mens denne siden var åpen: siden kjører fortsatt den gamle versjonen, og endringer i innstillingene når ikke frem til den."
+  },
+  "reloadPage": {
+    "message": "Last inn denne siden på nytt"
+  },
   "variantsTitle": {
     "message": "Passer ikke navnet? Legg til en skrivemåte"
   },

@@ -225,6 +225,12 @@
   "layoutWarning": {
     "message": "Scholars sidlayout verkar ha ändrats: tillägget kan inte läsa författarraderna. Rapportera det gärna."
   },
+  "extUpdated": {
+    "message": "Tillägget uppdaterades medan sidan var öppen: sidan kör fortfarande den gamla versionen, och ändringar i inställningarna når den inte."
+  },
+  "reloadPage": {
+    "message": "Läs in den här sidan igen"
+  },
   "variantsTitle": {
     "message": "Matchar inte namnet? Lägg till en stavning"
   },

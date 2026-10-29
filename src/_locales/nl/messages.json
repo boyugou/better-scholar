@@ -225,6 +225,12 @@
   "layoutWarning": {
     "message": "De opmaak van Scholar lijkt gewijzigd: deze extensie kan de auteursregels niet lezen. Meld dit alsjeblieft."
   },
+  "extUpdated": {
+    "message": "De extensie is bijgewerkt terwijl deze pagina open was: de pagina draait nog de oude versie, en wijzigingen in de instellingen komen er niet bij."
+  },
+  "reloadPage": {
+    "message": "Deze pagina opnieuw laden"
+  },
   "variantsTitle": {
     "message": "Naam niet gevonden? Voeg een spelling toe"
   },

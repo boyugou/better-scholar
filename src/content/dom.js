@@ -28,6 +28,9 @@
   // The interface language. Followed from the browser (chrome.i18n) unless the settings name another one: then the strings of that
   // language, asked of the background page, are used (`custom`, in Chrome's messages.json shape).
   let custom = null, language = "";
+  // the same strings, kept for when Chrome's own lookup fails: an extension updated (or switched off) under an open page cuts its script off, and chrome.i18n
+  // answers nothing there — every word of a redrawn panel would be its key ("summaryTitle")
+  let spare = null;
   // The names the person gave things in the settings (lib/prefs.js NAMES; the settings' `labels`, normalized): a name replaces the translation, in every language
   let labels = {};
   const setLabels = (map) => { labels = map && typeof map === "object" ? map : {}; };
@@ -36,7 +39,9 @@
   function lookup(key, subs) {
     if (labels[key]) return labels[key];
     if (custom && custom[key]) return B.i18n.format(custom[key], subs);
-    try { return chrome.i18n.getMessage(key, subs); } catch (e) { return ""; /* extension context gone */ }
+    let said = "";
+    try { said = chrome.i18n.getMessage(key, subs); } catch (e) { /* extension context gone */ }
+    return said || (spare && spare[key] ? B.i18n.format(spare[key], subs) : "");
   }
   // Reads the language setting and loads its strings. Call once, before anything is drawn.
   async function useLanguage() {
@@ -48,6 +53,7 @@
     if (code !== "auto") {
       try { const r = await chrome.runtime.sendMessage({ type: "rr:messages", lang: code }); if (r && r.ok) custom = r.messages; else language = B.i18n.resolve(chrome.i18n.getUILanguage()); } catch (e) { language = B.i18n.resolve(chrome.i18n.getUILanguage()); }
     }
+    if (!custom) { try { chrome.runtime.sendMessage({ type: "rr:messages", lang: language }).then((r) => { if (r && r.ok) spare = r.messages; }, () => {}); } catch (e) { /* gone already */ } }          // (not waited for: nothing is drawn later for it)
     return language;
   }
   // The role colours the settings chose, as custom properties on the page root (a role without one keeps the stylesheet's own colour)

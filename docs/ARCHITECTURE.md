@@ -327,6 +327,13 @@ The controls are components of the panel's own, not the system's: the year range
 arrow keys, Escape, click outside), the one checkbox is styled as a switch (`role="switch"`), the search box is a combobox whose
 suggestion list is placed with fixed coordinates.
 
+*An update under an open page.* Chrome updates an extension while it runs, and the script of a Scholar page opened before is then cut off
+(as when the extension is reloaded or switched off): its settings no longer reach it, its Settings button opens nothing, and `chrome.i18n`
+answers nothing. `main.js` notices it when the tab comes back into view or Settings is pressed (`chrome.runtime.id` is gone) and the panel
+says so in its top bar, with *Reload this page* (`extUpdated`, `reloadPage`, read when the panel is made). The panel keeps its words when it
+is drawn again: `dom.js` keeps a spare copy of the language's strings, asked of the service worker once at the start (`rr:messages`, not
+waited for), and formats from it where Chrome's lookup answers nothing. Storage falls back to memory (`store.js`), and loading stops.
+
 ### Search
 
 The search box (`/` focuses it when the panel and its filters are shown) feeds `state.filters.query`; `main.js` compiles it
