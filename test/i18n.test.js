@@ -62,3 +62,25 @@ test("a comparison sign in a right-to-left language stands in a left-to-right is
   }
 });
 
+
+test("no English left in a language of another script: two English words in a row are a sentence nobody translated (Thai's award names were)", () => {
+  // kept in English on purpose: names (of the extension, of services, of a list's publisher, an author's and a venue line as Scholar prints them), what the copies
+  // print ("(your mapping)"), the award's own name
+  const KEPT = /Better Scholar|Semantic Scholar|Google Scholar|China Computer Federation|Zhang Wei|Proceedings of the IEEE conference on computer vision and pattern recognition|\(your mapping\)|[Tt]est of [Tt]ime/g;
+  // (a language of another script: most of the letters of its messages are not Latin ones)
+  const latinScript = (m) => { const all = Object.values(m).map((v) => v.message).join(" "); return (all.match(/\p{Script=Latin}/gu) || []).length > (all.match(/\p{L}/gu) || []).length / 2; };
+  let looked = 0;
+  const left = [];
+  for (const code of i18n.codes.filter((c) => c !== "en")) {
+    const messages = JSON.parse(fs.readFileSync(path.join(loc, code, "messages.json"), "utf8"));
+    if (latinScript(messages)) continue;
+    looked++;
+    for (const [key, { message }] of Object.entries(messages)) {
+      const rest = message.replace(KEPT, " ").replace(/\$[A-Z0-9_]+\$/g, " ").replace(/\b[a-z]+:[^\s,]*/g, " ");          // (and the search's operators, role:first …)
+      const run = rest.match(/(?<!\p{L})[A-Za-z][a-z]+(?:[ -][A-Za-z][a-z]+)+(?!\p{L})/u);
+      if (run) left.push(`${code}/${key}: "${run[0]}" in ${message}`);
+    }
+  }
+  assert.deepEqual(left, [], "English left in a translation");
+  assert.ok(looked >= 10, `${looked} languages of another script looked at`);
+});

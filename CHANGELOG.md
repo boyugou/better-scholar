@@ -78,7 +78,9 @@ give the details and every review):
   off, measured at S7's start). `npm run check:all` (`scripts/check-all.sh`) runs everything CI runs in four lanes at once; CI runs the
   three parts side by side. The 30-language loop now fails on English in the panel or the settings page of another language (data,
   code and names kept in English on purpose left out): it found Thai's award names — "Best paper", "Best student paper",
-  "Distinguished paper", "Honorable mention" — still in English, while every other script translated them; they are Thai now.
+  "Distinguished paper", "Honorable mention" — still in English, while every other script translated them; they are Thai now. A unit
+  test does the same for every message of the eleven languages of another script, shown or not (the popup, errors, tooltips): two
+  English words in a row fail it, names kept in English on purpose aside.
 - **From a hands-on QA pass of the new interface** (en, ja, de, ar; light and dark): the *Search words* fields stood empty when the
   settings page opened (they were drawn only on a change; the order list and the preview showed the words all along); in Arabic the own
   filter's name field and rename box showed the end of its left-to-right words, not the start (they take the text's own direction now);
