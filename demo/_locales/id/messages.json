@@ -519,6 +519,9 @@
   "copyIeee": {
     "message": "Salin IEEE"
   },
+  "copyAcm": {
+    "message": "Salin ACM"
+  },
   "copyGbt": {
     "message": "Salin GB/T 7714"
   },

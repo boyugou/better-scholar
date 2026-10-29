@@ -519,6 +519,9 @@
   "copyIeee": {
     "message": "IEEE をコピー"
   },
+  "copyAcm": {
+    "message": "ACM をコピー"
+  },
   "copyGbt": {
     "message": "GB/T 7714 をコピー"
   },
