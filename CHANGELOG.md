@@ -72,15 +72,16 @@ give the details and every review):
   click (a table cell or quick filter undone, all rows shown again) about 100 ms, most of it the browser's layout — under the 200 ms
   where a page stops feeling instant, so nothing changed; the end-to-end check of 1,000 papers now types a search and picks and undoes a
   quick filter, a cell and a role, and fails above 250 ms.
-- **The end-to-end checks in three parts, and a check for English left in the other 29 languages.** Timed check by check
+- **The end-to-end checks in four parts, and a check for English left in the other 29 languages.** Timed check by check
   (`E2E_TIMES=1`), the long profile's settings-page sections S7–S8 took a minute of its three and a half; they now run as `E2E_PART=3`
   from a setup of their own (the whole list loaded, the cut author lists read, and the three switches the sections before them leave
-  off, measured at S7's start). `npm run check:all` (`scripts/check-all.sh`) runs everything CI runs in four lanes at once; CI runs the
-  three parts side by side. The 30-language loop now fails on English in the panel or the settings page of another language (data,
-  code and names kept in English on purpose left out): it found Thai's award names — "Best paper", "Best student paper",
-  "Distinguished paper", "Honorable mention" — still in English, while every other script translated them; they are Thai now. A unit
-  test does the same for every message of the eleven languages of another script, shown or not (the popup, errors, tooltips): two
-  English words in a row fail it, names kept in English on purpose aside.
+  off, measured at S7's start); the sections with profiles of their own are two parts, 17–25 (`E2E_PART=2`) and 26 on (`4`), a minute
+  each. `npm run check:all` (`scripts/check-all.sh`) runs everything CI runs in four lanes at once; CI runs the four parts side by
+  side. The 30-language loop now fails on English in the panel or the settings page of another language (data, code and names kept in
+  English on purpose left out): it found Thai's award names — "Best paper", "Best student paper", "Distinguished paper", "Honorable
+  mention" — still in English, while every other script translated them; they are Thai now. A unit test does the same for every
+  message of the eleven languages of another script, shown or not (the popup, errors, tooltips): two English words in a row fail it,
+  names kept in English on purpose aside.
 - **From a hands-on QA pass of the new interface** (en, ja, de, ar; light and dark): the *Search words* fields stood empty when the
   settings page opened (they were drawn only on a change; the order list and the preview showed the words all along); in Arabic the own
   filter's name field and rename box showed the end of its left-to-right words, not the start (they take the text's own direction now);

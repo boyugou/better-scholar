@@ -207,10 +207,11 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
 
 (async () => {
   // E2E_PART=1 runs the long profile's sections 1–16 and S1–S6, E2E_PART=3 its settings-page sections S7–S8 (from a setup of their own: the state S1–S6 leave),
-  // E2E_PART=2 the sections with profiles of their own (17 on); unset, all in one run. The parts share nothing, so they can run at the same time (scripts/check-all.sh
+  // E2E_PART=2 the sections with profiles of their own from 17 to 25, E2E_PART=4 those from 26 on (the very large profile and after); unset, all in one run. The parts share nothing, so they can run at the same time (scripts/check-all.sh
   // and CI do). (The blocks below keep their old indentation: the gates are all that changed.)
   const PART = process.env.E2E_PART || "";
-  if (PART !== "2") {
+  if (!["", "1", "2", "3", "4"].includes(PART)) throw new Error(`E2E_PART=${PART}: the parts are 1 to 4 (unset: all)`);
+  if (PART === "" || PART === "1" || PART === "3") {
   const fx = await start({ slug: "ion-stoica", pageSize: 20 });
   const profile = fx.profile;
   const context = await launch();
@@ -2899,6 +2900,9 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     await fx4.close();
   }
 
+  }
+
+  if (PART === "" || PART === "4") {
   // -- 26. a very large profile (1,000 papers), settings untouched: the whole list loads by itself, neither janking the page nor dropping rows
   const fx5 = await start({ slug: "ion-stoica", pageSize: 100, repeat: 10 });
   const ctx5 = await launch();
@@ -3382,5 +3386,5 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
 
   }
 
-  console.log(`\nAll ${step} checks passed${PART ? ` (part ${PART} of 3)` : ""}. Screenshots: ${outDir}`);
+  console.log(`\nAll ${step} checks passed${PART ? ` (part ${PART} of 4)` : ""}. Screenshots: ${outDir}`);
 })().catch((e) => { console.error("\nE2E FAILED:", e && e.stack || e); process.exit(1); });
