@@ -68,6 +68,9 @@ give the details and every review):
   without a comma. APA and ACM keep the gap where Scholar cut an author list — "C. Writer, E. Writer, B. Writer, … A. Example" — where
   they had printed the owner as the fourth author; GB/T 7714 takes its three names from before the gap. The agent guide said `html`
   came for five formats (six).
+- **A second review of those fixes** (one defect, three older slips): APA's rule for more than twenty authors (nineteen, "…", the last)
+  now also holds for a list Scholar cut in the middle; a title's own "..." stays whole in IEEE and GB/T 7714 (one dot was taken for
+  the style's); "Journal Tracks" in the plural is a track word too; the README says how BibTeX writes a cut list.
 - **The end-to-end checks run in two halves at once**: `E2E_PART=1` (the long profile) and `E2E_PART=2` (the sections with
   profiles of their own) share nothing; CI runs them side by side, and the demo and overflow checks in a job of their own, so a
   push is checked in about half the time. The roadmap notes a third ranking list (TH-CPL and the like) as an owner's decision.

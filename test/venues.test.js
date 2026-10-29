@@ -1569,6 +1569,7 @@ test("real prints that missed a badge: a cut IEEE citation form, joint proceedin
   none("WWW 2021 Journal Track, 2021");
   none("IEEE/CVF International Conference on Computer Vision Journal Track, 2021");
   none("AAAI Conference on Artificial Intelligence (Journal Track), 2021");
+  none("SIGGRAPH 2023 (Journal Tracks), 2023");
   for (const c of core.venues) {
     const bare = resolver.resolve(`${c.name}, 2021`);
     if (bare.ccf && bare.ccf.kind === "J") continue;          // (a name both lists use — CORE's Intelligent Data Analysis symposium, CCF's journal of that name — is the journal with or without the phrase)

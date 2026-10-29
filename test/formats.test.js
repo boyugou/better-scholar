@@ -663,5 +663,10 @@ test("ACM over every real venue line: no doubled full stop, nothing undefined; t
   assert.match(f.acm([{ ...p, authors: "A Vaswani, ..." }]), /^\[1\] A\. Vaswani et al\. \[n\. d\.\]\./, "one name and a cut: no comma before et al.");
   assert.match(f.acm([{ ...p, title: "A title cut short …" }]), /A title cut short … In /, "a title cut with … takes no full stop");
   assert.match(f.apa([{ ...p, title: "A title cut short …" }]), /A title cut short … In /, "in APA too");
+  // (above twenty authors APA names nineteen, "…", the last — also when Scholar cut the list in the middle; the typed "..." of a title stays whole in IEEE and GB/T)
+  const many = Array.from({ length: 21 }, (_, i) => `A${i + 1} Name${i + 1}`).join(", ") + ", ..., Z Last";
+  assert.match(f.apa([{ ...p, authors: many }]), /^Name1, A\., (?:Name\d+, A\., ){18}… Last, Z\. \(n\.d\.\)\./, "nineteen names, the gap, the last");
+  assert.match(f.ieee([{ ...p, title: "To be continued..." }]), /"To be continued\.\.\.,"/, "IEEE keeps a title's own three dots");
+  assert.match(f.gbt([{ ...p, title: "To be continued..." }]), /To be continued\.\.\.\[C\]/, "GB/T too");
 });
 

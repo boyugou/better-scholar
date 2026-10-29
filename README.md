@@ -267,7 +267,7 @@ Each format is a button in the panel's copy row and in the toolbar popup. Each h
 | *Copy IEEE* | A numbered IEEE reference list: `[1] A. Author and B. Writer, "Title," in *Venue*, Year, pp. 1–10.`; for a journal `*Journal*, vol. 44, no. 8, pp. 4012–4025, Year.` Also with real italics for a word processor. Off by default: turn it on under *Settings → Copy & export*. |
 | *Copy ACM* | The ACM Reference Format, the style of ACM's own papers: `[1] A. Author and B. Writer. Year. Title. In *Venue*. 1–10.`; for a journal `*Journal* 44, 8 (Year), 4012–4025.` Also with real italics for a word processor. Off by default. |
 | *Copy GB/T 7714* | A GB/T 7714-2015 reference list, the Chinese national standard (NSFC and most Chinese forms): `[1] HE K, ZHANG X, REN S, et al. Title[C]//Venue. 2016: 770-778.`; `Title[J]. Journal, 2022, 44(8): 4012-4025.` Off by default. |
-| *Copy BibTeX* | BibTeX entries |
+| *Copy BibTeX* | BibTeX entries. A list Scholar cut ends in `and others` (BibTeX has no way to mark a gap in the middle, so a known last author stands before it). |
 | *Copy Markdown* | A numbered Markdown list: the linked title, authors, venue and year, ranks, awards, citations |
 | *Copy JSON* | `{ owner, source, total, papers }`: one record per paper, with its role, ranks and marks |
 | *Export CSV* | The papers' table as a file: `<profile name>-papers.csv` |

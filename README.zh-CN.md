@@ -267,7 +267,7 @@ flowchart LR
 | *复制 IEEE* | 带编号的 IEEE 参考文献列表：`[1] A. Author and B. Writer, "Title," in *Venue*, Year, pp. 1–10.`；期刊为 `*Journal*, vol. 44, no. 8, pp. 4012–4025, Year.`。同时附带真正的斜体，供文字处理软件粘贴。默认关闭，可在 *设置 → 复制与导出* 中打开。 |
 | *复制 ACM* | ACM Reference Format，即 ACM 自家论文的参考文献格式：`[1] A. Author and B. Writer. Year. Title. In *Venue*. 1–10.`；期刊为 `*Journal* 44, 8 (Year), 4012–4025.`。也提供带真正斜体的版本，供文字处理软件使用。默认关闭。 |
 | *复制 GB/T 7714* | GB/T 7714-2015 参考文献列表（国家标准，国自然等大多数中文表格要求的格式）：`[1] HE K, ZHANG X, REN S, et al. Title[C]//Venue. 2016: 770-778.`；`Title[J]. Journal, 2022, 44(8): 4012-4025.`。默认关闭。 |
-| *复制 BibTeX* | BibTeX 条目 |
+| *复制 BibTeX* | BibTeX 条目。被 Scholar 截断的作者列表以 `and others` 结尾（BibTeX 无法在中间标出空缺，所以已知的末位作者会排在它前面）。 |
 | *复制 Markdown* | 带编号的 Markdown 列表：带链接的标题、作者、场所与年份、等级、获奖、引用数 |
 | *复制 JSON* | `{ owner, source, total, papers }`：每篇论文一条记录，含其角色、等级和获奖与报告形式 |
 | *导出 CSV* | 论文表格导出为文件：`<profile name>-papers.csv` |

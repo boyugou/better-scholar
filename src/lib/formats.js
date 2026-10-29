@@ -360,7 +360,9 @@
     const { names, cut, cutAt } = authorList(p.authors);
     const list = markList(names, apaAuthor, me);
     let by = "";
-    if (cutAt > 0 && cutAt < list.length) by = `${list.slice(0, cutAt).join(", ")}, … ${list.slice(cutAt).join(", ")}`;          // (the gap where Scholar cut: "…, B. Writer, … A. Example" — the last author is the last)
+    // (APA 7 §9.8: above twenty authors the first nineteen, "…", the last. A list Scholar cut in the middle — "…, B. Writer, … A. Example" — keeps its gap where it is, the
+    // last author last; above twenty, the names before the gap are capped at nineteen so that the printed positions stay true)
+    if (cutAt > 0 && cutAt < list.length) by = list.length > 20 ? `${list.slice(0, Math.min(19, cutAt)).join(", ")}, … ${list[list.length - 1]}` : `${list.slice(0, cutAt).join(", ")}, … ${list.slice(cutAt).join(", ")}`;
     else if (list.length === 1) by = list[0] + (cut ? ", …" : "");
     else if (list.length === 2 && !cut) by = `${list[0]}, & ${list[1]}`;
     else if (list.length > 20) by = cut ? `${list.slice(0, 19).join(", ")}, …` : `${list.slice(0, 19).join(", ")}, … ${list[list.length - 1]}`;   // (a cut list does not know its last author)
@@ -406,7 +408,7 @@
     const { names, cut } = authorList(p.authors);
     const list = markList(names, ieeeAuthor, me);
     const by = !list.length ? "" : list.length > 6 || cut ? `${list[0]} et al.` : list.length === 1 ? list[0] : list.length === 2 ? `${list[0]} and ${list[1]}` : `${list.slice(0, -1).join(", ")}, and ${list[list.length - 1]}`;
-    const title = clean(p.title).replace(/[.]$/, "");
+    const title = clean(p.title).replace(/(?<!\.)\.$/, "");          // (a title's own "..." stays whole)
     const kind = entryType(p), type = kind.type, ieeeParts = partsFor(p, periodical(p) ? "article" : type), { name, volume, issue, pages } = type === "inproceedings" && !periodical(p) ? unlabelled(ieeeParts) : ieeeParts, year = p.year ? String(p.year) : "";
     const misc = isDocument(p) || WEB.test(p.venue), venue = misc ? asPrinted(p.venue) : name;
     const range = pages.replace("-", "–"), where = [], page = pages && (pages.includes("-") ? `pp. ${range}` : `Art. no. ${pages}`);
@@ -473,7 +475,7 @@
     const list = markList(names, gbAuthor, me);
     // (et al. is "等" when the names are Chinese: the word of the reference's own language, §8.1.2; the first three stand before the gap Scholar cut)
     const by = list.length > 3 || (cut && list.length) ? `${list.slice(0, cutAt > 0 ? Math.min(3, cutAt) : 3).join(", ")}, ${list.some((x) => /[\u3400-\u9fff]/.test(x)) ? "等" : "et al"}` : list.join(", ");
-    const title = clean(p.title).replace(/[.]$/, "");
+    const title = clean(p.title).replace(/(?<!\.)\.$/, "");          // (a title's own "..." stays whole)
     const kind = entryType(p), { name, volume, issue, pages } = partsFor(p, periodical(p) ? "article" : kind.type), year = p.year ? String(p.year) : "";
     // (an unclassified line with a volume is a periodical's, as in the other styles; any other unclassified line keeps all its fields as printed)
     const type = periodical(p) ? "article" : kind.type;
