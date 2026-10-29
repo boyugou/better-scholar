@@ -80,8 +80,9 @@
       const say = (button, text, ok = true) => {
         const old = button.dataset.label || (button.dataset.label = button.textContent);
         clearTimeout(button.rrTimer);
-        // (the button keeps the width of its own label, so that the shorter word does not let the buttons after it move up: the next click would land on another one)
-        if (!button.style.minWidth) { const was = button.style.cssText; button.style.cssText = "flex:none;min-width:0;width:max-content"; const w = Math.ceil(button.getBoundingClientRect().width); button.style.cssText = was; button.style.minWidth = w + "px"; }
+        // (the button keeps the width of its own label, so that the shorter word does not let the buttons after it move up: the next click would land on another one;
+        // at most the row's width — a long label wraps there)
+        if (!button.style.minWidth) { const was = button.style.cssText; button.style.cssText = "flex:none;min-width:0;width:max-content"; const w = Math.ceil(button.getBoundingClientRect().width); button.style.cssText = was; button.style.minWidth = `min(${w}px, 100%)`; }
         button.textContent = text;
         const live = document.getElementById("live");          // (a button that changes its words is not read out: the status is)
         if (live) { live.textContent = text; clearTimeout(live.rrTimer); live.rrTimer = setTimeout(() => { live.textContent = ""; }, 1500); }

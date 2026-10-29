@@ -63,7 +63,7 @@ test("a comparison sign in a right-to-left language stands in a left-to-right is
 });
 
 
-test("no English left in a language of another script: two English words in a row are a sentence nobody translated (Thai's award names were)", () => {
+test("no run of English words left in a language of another script: two English words in a row are words nobody translated (Thai's award names were)", () => {
   // kept in English on purpose: names (of the extension, of services, of a list's publisher, an author's and a venue line as Scholar prints them), what the copies
   // print ("(your mapping)"), the award's own name
   const KEPT = /Better Scholar|Semantic Scholar|Google Scholar|China Computer Federation|Zhang Wei|Proceedings of the IEEE conference on computer vision and pattern recognition|\(your mapping\)|[Tt]est of [Tt]ime/g;
@@ -77,7 +77,7 @@ test("no English left in a language of another script: two English words in a ro
     looked++;
     for (const [key, { message }] of Object.entries(messages)) {
       const rest = message.replace(KEPT, " ").replace(/\$[A-Z0-9_]+\$/g, " ").replace(/\b[a-z]+:[^\s,]*/g, " ");          // (and the search's operators, role:first …)
-      const run = rest.match(/(?<!\p{L})[A-Za-z][a-z]+(?:[ -][A-Za-z][a-z]+)+(?!\p{L})/u);
+      const run = rest.match(/(?<![A-Za-z])[A-Za-z][a-z]+(?:[ -][A-Za-z][a-z]+)+(?![A-Za-z])/);          // (Latin edges only: English glued to Chinese, Japanese or Thai letters — "显示Best paper奖" — counts too)
       if (run) left.push(`${code}/${key}: "${run[0]}" in ${message}`);
     }
   }

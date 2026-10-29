@@ -78,6 +78,13 @@ give the details and every review):
   old rule), with the one known limit reported and not counted: a chip keeps its name on one line, so a 30-character chip name is cut
   in a preview of 330 px or less. The overflow audit no longer counts a break at a soft hyphen (Finnish "Yhteis-|ensimmäinen") as a
   word cut in two.
+- **A review of these changes** (an independent agent, given the diff): a copy button just pressed kept its label's one-line width
+  for a second and a half (so that the buttons after it do not move up), wider than the row for a long name — it is now at most the
+  row's width, in the popup and the panel, and the accessibility audit presses one with a 30-character name in each; in the popup a
+  name with no space still ran out, as did the table's total-row name and the "not ranked" line (they break where they must now, as in
+  the panel); the i18n test missed English glued to Chinese, Japanese or Thai letters ("显示Best paper奖"); and the overflow audit's
+  soft-hyphen rule skipped such words entirely — it now measures each part, leaving out only the hyphen drawn at the break, which
+  Chrome reports with the next letter.
 - **The accessibility audit runs in CI.** `scripts/axe-audit.mjs` (axe-core over the panel, the settings page and the popup, in four
   languages, light and dark, exit 1 on any violation) was run by hand; it takes half a minute, so CI's demo job and `npm run check:all`
   now run it too.
@@ -88,13 +95,14 @@ give the details and every review):
 - **The end-to-end checks in four parts, and a check for English left in the other 29 languages.** Timed check by check
   (`E2E_TIMES=1`), the long profile's settings-page sections S7–S8 took a minute of its three and a half; they now run as `E2E_PART=3`
   from a setup of their own (the whole list loaded, the cut author lists read, and the three switches the sections before them leave
-  off, measured at S7's start); the sections with profiles of their own are two parts, 17–25 (`E2E_PART=2`) and 26 on (`4`), a minute
-  each. `npm run check:all` (`scripts/check-all.sh`) runs everything CI runs in four lanes at once; CI runs the four parts side by
-  side (its longest job went from 3 min 40 s to about 3). The 30-language loop now fails on English in the panel or the settings page of another language (data, code and names kept in
-  English on purpose left out): it found Thai's award names — "Best paper", "Best student paper", "Distinguished paper", "Honorable
-  mention" — still in English, while every other script translated them; they are Thai now. A unit test does the same for every
-  message of the eleven languages of another script, shown or not (the popup, errors, tooltips): two English words in a row fail it,
-  names kept in English on purpose aside.
+  off, measured at S7's start); the sections with profiles of their own are two parts, 17–25 (`E2E_PART=2`) and 26 on (`4`), about a
+  minute each on a laptop (one and a half to two in CI). `npm run check:all` (`scripts/check-all.sh`) runs everything CI runs in four
+  lanes at once; CI runs the four parts side by side (its longest job went from 3 min 40 s to about 3). The 30-language loop now fails
+  on English in the panel or the settings page of another language (data, code and names kept in English on purpose left out): it
+  found Thai's award names — "Best paper", "Best student paper", "Distinguished paper", "Honorable mention" — still in English, while
+  every other script translated them; they are Thai now. A unit test does the same for every message of the eleven languages of
+  another script, shown or not (the popup, errors, tooltips): two English words in a row fail it, names kept in English on purpose
+  aside.
 - **From a hands-on QA pass of the new interface** (en, ja, de, ar; light and dark): the *Search words* fields stood empty when the
   settings page opened (they were drawn only on a change; the order list and the preview showed the words all along); in Arabic the own
   filter's name field and rename box showed the end of its left-to-right words, not the start (they take the text's own direction now);

@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 # Every check that CI runs, in four lanes at once on this machine:
-#   unit       npm test, the bundled data against data/*.json, the store kit's quotes; then the end-to-end checks' part 4 (E2E_PART=4: sections 26
+#   unit       npm test, the bundled data against data/*.json, the store kit's quotes, the store package; then the end-to-end checks' part 4 (E2E_PART=4: sections 26
 #              on — the unit tests need no browser, so four browsers run at most)
 #   e2e 1      the end-to-end checks, part 1 (E2E_PART=1: the long profile, sections 1–16 and S1–S6)
 #   e2e 2      part 2 (E2E_PART=2: the sections with profiles of their own, 17–25), then the accessibility audit (scripts/axe-audit.mjs)
-#   demo       part 3 (E2E_PART=3: the settings page's sections S7–S8), then the web demo's checks and the overflow audit (the demo and
-#              the audit both build dist/demo, so one after the other; part 3 is short, so it shares this lane and four browsers run at most)
+#   demo       part 3 (E2E_PART=3: the settings page's sections S7–S8), then the web demo's checks and the overflow audit, with the standard
+#              names and with every name at 30 characters (the demo and the audit build dist/demo, so one after the other; part 3 is short, so it
+#              shares this lane and four browsers run at most)
 # Exit 0 only when every lane passed; a failed lane's last lines are printed. Logs go to $CHECK_LOGS (default: a new temporary folder).
 #
 #   scripts/check-all.sh
@@ -35,7 +36,7 @@ lane() {          # lane <name> <command…>: runs the command, its output in <n
 }
 start=$(date +%s)
 echo "checking $(git rev-parse --short HEAD 2>/dev/null || echo .) in four lanes; logs in $logs"
-lane unit bash -c 'npm test && node scripts/build-data.mjs --check && npm run check:claims && E2E_PART=4 node test/e2e/run.mjs' &
+lane unit bash -c 'npm test && node scripts/build-data.mjs --check && npm run check:claims && scripts/package-chrome.sh && E2E_PART=4 node test/e2e/run.mjs' &
 lane e2e1 env E2E_PART=1 node test/e2e/run.mjs &
 lane e2e2 bash -c 'E2E_PART=2 node test/e2e/run.mjs && node scripts/axe-audit.mjs' &
 lane demo bash -c 'E2E_PART=3 node test/e2e/run.mjs && npm run test:demo && node scripts/overflow-audit.mjs --width 1360,700,330 --scheme light && node scripts/overflow-audit.mjs --long-names spaced --lang en,de,ja,ar,ru,fi --width 700,330 --scheme light' &
