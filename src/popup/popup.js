@@ -94,7 +94,7 @@
         const paperFormat = kind !== "summary" && kind !== "table" && kind !== "image";
         if (paperFormat && !data.shown) { say(button, t("copyEmpty"), false); return; }
         const res = await call("export", { format: kind, html: true, ...(paperFormat ? {} : { source }) });
-        if (!res || !res.ok) { if (kind === "image") say(button, t("copyFailed"), false); return; }
+        if (!res || !res.ok) { say(button, t("copyFailed"), false); return; }          // (the page did not answer)
         if (kind === "csv") { B.dom.downloadFile(((data.owner || "scholar").trim().replace(/[/\\?%*:|"<>]/g, "").replace(/\s+/g, "_") || "scholar") + "-papers.csv", res.result.text); say(button, t("exported")); }
         else if (kind === "image") {          // (the page draws the picture and sends it as a data: address)
           let blob = null;
@@ -102,6 +102,7 @@
           if (blob && await B.dom.copyImage(blob, res.result.text)) say(button, t("copied")); else say(button, t("copyFailed"), false);
         }
         else if (await copyText(res.result.text, res.result.html)) say(button, t("copied"));
+        else say(button, t("copyFailed"), false);          // (the clipboard refused: said, as the panel says it)
       };
       const copyKinds = prefs.panel.copy.show ? B.prefs.copyButtons(prefs) : [];
       const copyBar = copyKinds.length ? h("div", { class: "actions" },

@@ -508,6 +508,7 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
       B.dom.downloadFile((safe || "scholar") + "-papers.csv", text);
       panel.flash(kind);
     } else if (await copyText(text, exportHtml(kind, { filtered: true }))) panel.flash(kind);
+    else panel.flash(kind, "failed");          // (the clipboard refused: the button says so, as for the picture)
   }
 
   function clearFocusedRow() {

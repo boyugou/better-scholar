@@ -1211,8 +1211,17 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     assert.deepEqual(popupLow, [], "a popup button is unreadable in dark mode");
     await popup.screenshot({ path: path.join(outDir, "popup-dark.png") });
     await popup.emulateMedia({ colorScheme: "light" });
+    // a clipboard that refuses (every way the copy tries) is said on the button, not passed over in silence
+    await popup.evaluate(() => {
+      const no = () => Promise.reject(new DOMException("refused", "NotAllowedError"));
+      Object.defineProperty(navigator, "clipboard", { configurable: true, value: { write: no, writeText: no } });
+      document.execCommand = () => false;
+    });
+    await popup.click('.actions button.btn[data-act="copy-summary"]');
+    await popup.locator('.actions button.btn[data-act="copy-summary"]', { hasText: "Not copied" }).waitFor({ timeout: 5000 });
+    assert.equal(await popup.locator('.actions button.btn[data-act="copy-summary"].btn-flashed').count(), 0, "a copy that failed is not shown as done");
     await popup.close();
-    ok("toolbar popup renders the active profile's summary (and a hint on other pages)");
+    ok("toolbar popup renders the active profile's summary (and a hint on other pages); a refused clipboard is said ('Not copied')");
 
     // -- 16. i18n substitutions resolved (no raw $N1$ placeholders anywhere)
     const body = await page.evaluate(() => document.getElementById("rr-panel").textContent);

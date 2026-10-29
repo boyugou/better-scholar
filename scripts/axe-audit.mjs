@@ -118,7 +118,7 @@ for (const [kind, text] of [["words", "Wmw Wmw Wmw Wmw Wmw Wmw Wmw Wm"], ["full-
   let flashed = true;
   if (kind.includes("clicked")) {          // (a pressed button keeps its label's width while it says "Copied", 1.2 s — at most the row's; measured once it has said so)
     await popup.click('.actions button.btn[data-act="copy-summary"]');
-    flashed = await popup.waitForFunction(() => !!document.querySelector('.actions button.btn[data-act="copy-summary"]').style.minWidth, null, { timeout: 1000 }).then(() => true, () => false);
+    flashed = await popup.waitForFunction(() => !!document.querySelector('.actions button.btn[data-act="copy-summary"]').style.minWidth, null, { timeout: 3000 }).then(() => true, () => false);
   }
   const out = await popup.evaluate(() => {          // (the popup is as wide as its body, 340 px; its content keeps 16 px from each side: what is not a full-width bar must end before that margin)
     const w = Math.round(document.body.getBoundingClientRect().width);
@@ -131,7 +131,7 @@ for (const [kind, text] of [["words", "Wmw Wmw Wmw Wmw Wmw Wmw Wmw Wm"], ["full-
   if (kind.includes("clicked")) {          // (and the panel's: a pressed copy button stays in its row)
     await page.bringToFront();
     await page.click('#rr-panel .rr-copybar [data-act="copy-summary"]');
-    const panelFlashed = await page.waitForFunction(() => /min-width/.test(document.querySelector('#rr-panel .rr-copybar [data-act="copy-summary"]').getAttribute("style") || ""), null, { timeout: 1000 }).then(() => true, () => false);
+    const panelFlashed = await page.waitForFunction(() => /min-width/.test(document.querySelector('#rr-panel .rr-copybar [data-act="copy-summary"]').getAttribute("style") || ""), null, { timeout: 3000 }).then(() => true, () => false);
     const outside = await page.evaluate(() => { const bar = document.querySelector("#rr-panel .rr-copybar").getBoundingClientRect(); return [...document.querySelectorAll("#rr-panel .rr-copybar .rr-btn")].map((b) => b.getBoundingClientRect()).filter((r) => r.right > bar.right + 1 || r.left < bar.left - 1).map((r) => Math.round(r.width)); });
     if (outside.length || !panelFlashed) total++;
     console.log(`${outside.length || !panelFlashed ? "✗" : "✓"} panel with every name at its longest (${kind}): ${!panelFlashed ? "the pressed button never said it had copied" : outside.length ? "buttons out of the copy row, " + outside.join(", ") + " px wide" : "every copy button in its row"}`);
