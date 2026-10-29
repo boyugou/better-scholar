@@ -40,8 +40,9 @@ gives another file hash from the same commit; the digest of the contents is what
 
 ## B. Record: better-scholar-chrome-2.41.0.zip
 
-Built on 2026-10-28 from `src/` as of commit `8a21ae41`, version 2.41.0. The commits after it that bring the docs and this
-record up to date change no file under `src/`, so the package is the same.
+Built on 2026-10-28 from `src/` as of commit `8a21ae41`, version 2.41.0. `src/` has changed since (your own quick filters, *Copy
+ACM*, the search box's keys and messages, matcher rules — see CHANGELOG.md): before an upload, build again and replace this record
+(part A), as the procedure says.
 
 | | |
 |---|---|
