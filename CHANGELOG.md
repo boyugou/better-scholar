@@ -60,6 +60,14 @@ give the details and every review):
   An independent review fixed: a long note (the source address) widens the picture instead of running off it; the total column has the
   panel's one word, row and column, and as much room as a custom name needs; a failed copy is no longer drawn green; the picture of an
   empty selection is copied like the table; the popup says when the picture fails; Japanese pages draw with Japanese fonts first.
+- **From an independent review of the last four changes** (all fixed): the journal-track rule had made "… (ASE) Journal-First" the ASE
+  *journal* and "… Computer Vision Journal Track" IJCV — the word "Journal" of the phrase read as the venue's; now a journal keeps its chip
+  only where the line without the phrase is that journal still (TRETS, Machine Learning), and every CORE conference's name with "(Journal
+  Track)" gets no journal (a generated test). *Copy ACM* doubled the full stop after a venue that ends in one ("Symposium on Security
+  and Privacy, 2003."; 48 real lines; a test runs ACM over every real line now), drops no date ("[n. d.]"), and writes "A. Vaswani et al."
+  without a comma. APA and ACM keep the gap where Scholar cut an author list — "C. Writer, E. Writer, B. Writer, … A. Example" — where
+  they had printed the owner as the fourth author; GB/T 7714 takes its three names from before the gap. The agent guide said `html`
+  came for five formats (six).
 - **The end-to-end checks run in two halves at once**: `E2E_PART=1` (the long profile) and `E2E_PART=2` (the sections with
   profiles of their own) share nothing; CI runs them side by side, and the demo and overflow checks in a job of their own, so a
   push is checked in about half the time. The roadmap notes a third ranking list (TH-CPL and the like) as an owner's decision.

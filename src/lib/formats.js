@@ -28,7 +28,10 @@
   function authorList(line) {
     // (the marks Scholar's authors put on a name — "K Zhang*" for a co-first author, a dagger, a mail sign — are no part of it in a reference)
     const parts = clean(line).split(/,\s*/).map((a) => a.replace(/^[*†‡§✉#⁎∗]+\s*|\s*[*†‡§✉#⁎∗]+$/gu, "").trim()).filter(Boolean);
-    return { names: parts.filter((a) => !CUT.test(a)), cut: parts.some((a) => CUT.test(a)) || /(?:\.\.\.|…)$/.test(clean(line)) };
+    // cutAt: how many names stand before the gap Scholar cut, when names follow it ("C Writer, E Writer, B Writer, ..., A Example": the owner is the last author, not
+    // the fourth); -1 for a whole list, or one cut at its end
+    const at = parts.findIndex((a) => CUT.test(a));
+    return { names: parts.filter((a) => !CUT.test(a)), cut: at >= 0 || /(?:\.\.\.|…)$/.test(clean(line)), cutAt: at > 0 && at < parts.length - 1 ? at : -1 };
   }
   // `prefer`: the list that stands alone where both rank the venue (the settings' `rows.prefer`, as the chips draw it), or null for both
   // (a rank the person mapped by hand — the venue mappings of the settings page — is never passed off as the list's)
@@ -354,10 +357,11 @@
 
   // One reference as pieces: { t } text, { t, em: true } italics (its full stop follows outside them unless the venue's own text ends with one), { t, url: true } the address.
   function apaPieces(p, me) {
-    const { names, cut } = authorList(p.authors);
+    const { names, cut, cutAt } = authorList(p.authors);
     const list = markList(names, apaAuthor, me);
     let by = "";
-    if (list.length === 1) by = list[0] + (cut ? ", …" : "");
+    if (cutAt > 0 && cutAt < list.length) by = `${list.slice(0, cutAt).join(", ")}, … ${list.slice(cutAt).join(", ")}`;          // (the gap where Scholar cut: "…, B. Writer, … A. Example" — the last author is the last)
+    else if (list.length === 1) by = list[0] + (cut ? ", …" : "");
     else if (list.length === 2 && !cut) by = `${list[0]}, & ${list[1]}`;
     else if (list.length > 20) by = cut ? `${list.slice(0, 19).join(", ")}, …` : `${list.slice(0, 19).join(", ")}, … ${list[list.length - 1]}`;   // (a cut list does not know its last author)
     else if (list.length > 1) by = cut ? `${list.join(", ")}, …` : `${list.slice(0, -1).join(", ")}, & ${list[list.length - 1]}`;
@@ -421,28 +425,32 @@
 
   // ---- ACM Reference Format ---------------------------------------------------------------------------------------------------------------------------
   // The style of ACM's own papers (acmart): [1] K. He, X. Zhang, S. Ren, and J. Sun. 2016. Deep residual learning for image recognition. In *Proceedings of …*. 770–778.
-  // A journal: *Name* 44, 8 (2022), 4012–4025. Every author is named (a cut list ends in "et al."); an article number is "Article 28".
+  // A journal: *Name* 44, 8 (2022), 4012–4025. Every author is named (a cut list ends in "et al.", or keeps its gap: "…, B. Writer, … A. Example"); a journal's article
+  // number is "Article 28"; no year is "[n. d.]".
   function acmPieces(p, n, me) {
-    const { names, cut } = authorList(p.authors);
+    const { names, cut, cutAt } = authorList(p.authors);
     const list = markList(names, ieeeAuthor, me);
-    let by = !list.length ? "" : cut ? `${list.join(", ")}, et al.` : list.length === 1 ? list[0] : list.length === 2 ? `${list[0]} and ${list[1]}` : `${list.slice(0, -1).join(", ")}, and ${list[list.length - 1]}`;
+    let by = !list.length ? "" : cutAt > 0 && cutAt < list.length ? `${list.slice(0, cutAt).join(", ")}, … ${list.slice(cutAt).join(", ")}`
+      : cut ? (list.length === 1 ? `${list[0]} et al.` : `${list.join(", ")}, et al.`) : list.length === 1 ? list[0] : list.length === 2 ? `${list[0]} and ${list[1]}` : `${list.slice(0, -1).join(", ")}, and ${list[list.length - 1]}`;
     if (by && !/[.!?…]\u0003?$/.test(by)) by += ".";          // (the owner last: the full stop of "G. E." stands inside the bold mark)
     let title = clean(p.title);
     if (title && !/[.?!]$/.test(title)) title += ".";
     const kind = entryType(p), type = kind.type, acmParts = partsFor(p, periodical(p) ? "article" : type), { name, volume, issue, pages } = type === "inproceedings" && !periodical(p) ? unlabelled(acmParts) : acmParts, year = p.year ? String(p.year) : "";
     const misc = isDocument(p) || WEB.test(p.venue), venue = misc ? asPrinted(p.venue) : name;
     const range = pages.replace("-", "–"), page = pages && (pages.includes("-") ? range : `Article ${pages}`);
-    const out = [{ t: `[${n}]` }, by && { t: by }, year && { t: year + "." }, title && { t: title }];
+    const out = [{ t: `[${n}]` }, by && { t: by }, { t: (year || "[n. d.]") + "." }, title && { t: title }];
+    const end = (s) => (/[.?!]$/.test(s) ? "" : ".");          // (a name that ends in a full stop — "Symposium on Security and Privacy, 2003." — takes no second one)
     if (!venue) return out.filter(Boolean);
-    if (misc) out.push({ t: venue + (/[.]$/.test(venue) ? "" : ".") });
+    if (misc) out.push({ t: venue + end(venue) });
     else if (type === "article" || periodical(p)) {
       // *Journal* 44, 8 (2022), 4012–4025.
-      const numbers = [volume, issue].filter(Boolean).join(", ");
-      out.push({ t: venue, em: true, tail: [numbers && " " + numbers, year && ` (${year})`, page && ", " + page].filter(Boolean).join("") + "." });
+      const numbers = [volume, issue].filter(Boolean).join(", "), tail = [numbers && " " + numbers, year && ` (${year})`, page && ", " + page].filter(Boolean).join("");
+      out.push({ t: venue, em: true, tail: tail + end(tail || venue) });
     } else if (type === "inproceedings") {
       // In *Proceedings*, Vol. 34. 770–778.   (a lone number after a proceedings' name is not printed, as in IEEE)
-      out.push({ t: "In" }, { t: venue, em: true, tail: (pages.includes("-") && volume ? `, Vol. ${volume}` : "") + "." }, pages.includes("-") && { t: range + "." });
-    } else out.push({ t: venue, em: true, tail: "." }, pages.includes("-") && { t: range + "." });
+      const tail = pages.includes("-") && volume ? `, Vol. ${volume}` : "";
+      out.push({ t: "In" }, { t: venue, em: true, tail: tail + end(tail || venue) }, pages.includes("-") && { t: range + "." });
+    } else out.push({ t: venue, em: true, tail: end(venue) }, pages.includes("-") && { t: range + "." });
     return out.filter(Boolean);
   }
   const acmLine = (p, i, em, me) => acmPieces(p, i + 1, me).map((x) => (x.em ? em(x.t) + (x.tail || "") : x.t)).join(" ");
@@ -461,10 +469,10 @@
     return last ? [last.toUpperCase(), (initials || "").replace(/\./g, "").replace(/\s+/g, " ").trim(), suffix ? suffix.replace(/\./g, "") : ""].filter(Boolean).join(" ") : "";
   };
   function gbLine(p, n, me) {
-    const { names, cut } = authorList(p.authors);
+    const { names, cut, cutAt } = authorList(p.authors);
     const list = markList(names, gbAuthor, me);
-    // (et al. is "等" when the names are Chinese: the word of the reference's own language, §8.1.2)
-    const by = list.length > 3 || (cut && list.length) ? `${list.slice(0, 3).join(", ")}, ${list.some((x) => /[\u3400-\u9fff]/.test(x)) ? "等" : "et al"}` : list.join(", ");
+    // (et al. is "等" when the names are Chinese: the word of the reference's own language, §8.1.2; the first three stand before the gap Scholar cut)
+    const by = list.length > 3 || (cut && list.length) ? `${list.slice(0, cutAt > 0 ? Math.min(3, cutAt) : 3).join(", ")}, ${list.some((x) => /[\u3400-\u9fff]/.test(x)) ? "等" : "et al"}` : list.join(", ");
     const title = clean(p.title).replace(/[.]$/, "");
     const kind = entryType(p), { name, volume, issue, pages } = partsFor(p, periodical(p) ? "article" : kind.type), year = p.year ? String(p.year) : "";
     // (an unclassified line with a volume is a periodical's, as in the other styles; any other unclassified line keeps all its fields as printed)

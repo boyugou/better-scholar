@@ -646,3 +646,20 @@ test("the ACM Reference Format: every author, the year after them, In *Proceedin
   assert.match(f.acm([{ ...p("ICLR 2025, 2025", { type: "conference" }), title: "Why does it work?" }]), /\. 2016\. Why does it work\? In \*ICLR 2025\*\.$/, "a title's own question mark ends it");
   assert.match(f.acmHtml([p("Communications of the ACM 60 (6), 84-90", { me: "J Sun" })], { markMe: true }), /and <b>J\. Sun<\/b>\. 2016\./, "your name in bold, one full stop after it");
 });
+
+test("ACM over every real venue line: no doubled full stop, nothing undefined; the gap Scholar cut stays where it was, in APA and ACM; no year is [n. d.]", () => {
+  const lines = Object.keys(require("./fixtures/venues.expected.json")).filter(Boolean);
+  const bad = [];
+  for (const v of lines) {
+    const out = f.acm([{ title: "A title", authors: "A Author, B Writer", venue: v, year: 2020, type: null, url: "", rank: {}, marks: [] }]);
+    if (/(?<!\.)\.\.(?!\.)|undefined|null|NaN|\*\s*\*/.test(out)) bad.push(v + "  =>  " + out);          // (two full stops; Scholar's own "..." in a line is three)
+  }
+  assert.deepEqual(bad.slice(0, 5), [], bad.length + " lines");
+  const p = { title: "A title", authors: "C Writer, E Writer, B Writer, ..., A Example", me: "A Example", venue: "2003 Symposium on Security and Privacy, 2003., 197-213", year: null, type: "conference", url: "", rank: {}, marks: [] };
+  assert.equal(f.acm([p]), "[1] C. Writer, E. Writer, B. Writer, … A. Example. [n. d.]. A title. In *2003 Symposium on Security and Privacy, 2003.* 197–213.", "the venue's own full stop, the gap, no year");
+  assert.match(f.apa([p]), /^Writer, C\., Writer, E\., Writer, B\., … Example, A\. \(n\.d\.\)\./, "APA keeps the gap too");
+  assert.match(f.gbt([p]), /^\[1\] WRITER C, WRITER E, WRITER B, et al\./, "GB/T: the three before the gap");
+  assert.match(f.acmHtml([p], { markMe: true }), /… <b>A\. Example<\/b>\. \[n\. d\.\]\./, "the owner is the last author, in bold, one full stop");
+  assert.match(f.acm([{ ...p, authors: "A Vaswani, ..." }]), /^\[1\] A\. Vaswani et al\. \[n\. d\.\]\./, "one name and a cut: no comma before et al.");
+});
+

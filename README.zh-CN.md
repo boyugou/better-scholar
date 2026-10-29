@@ -288,7 +288,7 @@ flowchart LR
   - 有测试对全部 22,744 行真实数据运行拆分，确认没有丢字或多字；另一个测试记录每一行经过人工核对的 GB/T 读法（`test/fixtures/formats.expected.json`）。
 - **APA 第 7 版。** `I Stoica` → `Stoica, I.`；`MF Kaashoek` → `Kaashoek, M. F.`；`L van der Maaten` → `van der Maaten, L.`。两位作者之间用 `&` 连接。超过 20 位作者时，列出前 19 位、`…` 和最后一位。被截断的列表以 `…` 结尾。没有年份时写 `(n.d.)`。星号标出斜体部分。
 - **IEEE。** 名字的首字母在前（`MF Kaashoek` → `M. F. Kaashoek`）。两位作者用 `and` 连接，三到六位用逗号和 `and`。超过六位作者，或 Scholar 截断了列表时，写第一作者加 `et al.`。标题加引号；会议论文写 `in`；期刊从发表场所行中取 `vol.`、`no.` 和 `pp.`（文章编号写 `Art. no.`）。
-- **ACM Reference Format。** 与 IEEE 一样名字首字母在前，但列出所有作者（被截断的列表以 `et al.` 结尾）。之后是年份、标题，以及带页码的 `In *Proceedings*.`，或 `*Journal* 卷, 期 (年), 页码`；文章编号写作 `Article 28`。
+- **ACM Reference Format。** 与 IEEE 一样名字首字母在前，但列出所有作者（被截断的列表以 `et al.` 结尾；若 Scholar 把省略号放在中间，则原位保留：`…, B. Writer, … A. Example`，APA 也一样）。之后是年份（没有年份时为 `[n. d.]`）、标题，以及带页码的 `In *Proceedings*.`，或 `*Journal* 卷, 期 (年), 页码`；期刊的文章编号写作 `Article 28`。
 - **GB/T 7714-2015。**
   - 姓全大写，名的首字母不加点（`MF Kaashoek` → `KAASHOEK M F`）；中文姓名保持原样。超过三位作者，或 Scholar 截断了列表时，写前三位加 `et al`。
   - 期刊标 `[J]`，会议论文集标 `[C]//`（Scholar 印在名称后的数字照原样保留：`Advances in Neural Information Processing Systems 35`），专利标 `[P]`，学位论文标 `[D]`，报告标 `[R]`，出版社出版的书标 `[M]`，其他标 `[Z]`。

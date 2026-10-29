@@ -1564,6 +1564,17 @@ test("real prints that missed a badge: a cut IEEE citation form, joint proceedin
   eq("Machine Learning (ECML PKDD Journal Track), 2020", "CCF B Machine Learning");
   none("FCCM Journal Track, 2024");
   none("International Conference on Software Engineering (ICSE) Journal-First, 2020");
+  // ... and never a journal that only the word "Journal" of the track phrase made: ASE the conference is no ASE the journal, ICCV no IJCV (an independent review's cases)
+  none("International Conference on Automated Software Engineering (ASE) Journal-First, 2020");
+  none("WWW 2021 Journal Track, 2021");
+  none("IEEE/CVF International Conference on Computer Vision Journal Track, 2021");
+  none("AAAI Conference on Artificial Intelligence (Journal Track), 2021");
+  for (const c of core.venues) {
+    const bare = resolver.resolve(`${c.name}, 2021`);
+    if (bare.ccf && bare.ccf.kind === "J") continue;          // (a name both lists use — CORE's Intelligent Data Analysis symposium, CCF's journal of that name — is the journal with or without the phrase)
+    const v = resolver.resolve(`${c.name} (Journal Track), 2021`);
+    assert.ok(!v || !v.ccf || v.ccf.kind !== "J", c.name + " (Journal Track): no journal of the conference's words");
+  }
   for (const l of ["Bioinformatics: AAAI-05, 2005", "Algorithmica (AAAI-05), 2005"]) assert.notEqual((resolver.resolve(l).ccf || {}).abbr, "AAAI", l + ": a one-word title is too little to say AAAI fits it");
   eq("Journal of Machine Learning Research: JMLR 2019", "CCF A JMLR");
   eq("World Wide Web: WWW'19", "CCF B WWW");
