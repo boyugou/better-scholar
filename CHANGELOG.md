@@ -68,6 +68,10 @@ give the details and every review):
   without a comma. APA and ACM keep the gap where Scholar cut an author list — "C. Writer, E. Writer, B. Writer, … A. Example" — where
   they had printed the owner as the fourth author; GB/T 7714 takes its three names from before the gap. The agent guide said `html`
   came for five formats (six).
+- **Measured: a key and a click on a very large profile.** On 2,000 papers a key in the search box costs 5–15 ms and the costliest
+  click (a table cell or quick filter undone, all rows shown again) about 100 ms, most of it the browser's layout — under the 200 ms
+  where a page stops feeling instant, so nothing changed; the end-to-end check of 1,000 papers now types a search and picks and undoes a
+  quick filter, a cell and a role, and fails above 250 ms.
 - **The end-to-end checks in three parts, and a check for English left in the other 29 languages.** Timed check by check
   (`E2E_TIMES=1`), the long profile's settings-page sections S7–S8 took a minute of its three and a half; they now run as `E2E_PART=3`
   from a setup of their own (the whole list loaded, the cut author lists read, and the three switches the sections before them leave

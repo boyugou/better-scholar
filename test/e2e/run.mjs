@@ -2925,6 +2925,23 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     assert.ok(firstPaint < 5000, `panel appeared after ${firstPaint} ms`);
     assert.ok(worst < 1000, `a ${worst} ms long task`);
     ok(`1,000 papers, no click: the list loads by itself (the default); panel in ${firstPaint} ms, everything loaded in ${(total / 1000).toFixed(1)} s, longest main-thread task ${worst} ms`);
+
+    // what a key and a click cost once all 1,000 are here: each filters every row, and a pick undone shows them all again (the browser lays the table out anew).
+    // Measured 2026-10-29 on a laptop: a key 5–15 ms of script, the worst task 61 ms (a pick undone); at 2,000 papers 108 ms. 200 ms is where a page stops feeling instant.
+    await page.evaluate(() => { window.__long = []; });
+    await page.locator('[data-act="filter-query"]').click();
+    await page.keyboard.type("role:first ccf:a year:>=2015", { delay: 20 });
+    await page.locator('[data-act="filter-query"]').fill("");
+    for (const sel of ["#rr-panel .rr-spill >> nth=0", "#rr-panel button.rr-cell:not(.rr-zero) >> nth=0", "#rr-panel th button.rr-rolebtn >> nth=0"]) {
+      await page.locator(sel).click();
+      await page.waitForTimeout(150);
+      await page.locator(sel).click();
+      await page.waitForTimeout(150);
+    }
+    assert.equal(await page.locator("#gsc_a_b tr.gsc_a_tr.rr-hide").count(), 0, "every pick undone");
+    const worstUse = Math.max(0, ...(await page.evaluate(() => window.__long)));
+    assert.ok(worstUse < 250, `a key or a click took a ${worstUse} ms task on 1,000 papers`);
+    ok(`1,000 papers: typing a search, a quick filter, a table cell and a role picked and undone; longest main-thread task ${worstUse} ms`);
   } finally {
     await ctx5.close();
   }
