@@ -823,6 +823,34 @@
   "searchShortcut": {
     "message": "/ 키를 눌러 검색"
   },
+  "searchBadList": {
+    "message": "$N1$ — $N2$ 값은 다음 중 하나여야 합니다: $N3$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      },
+      "n3": {
+        "content": "$3"
+      }
+    }
+  },
+  "searchBadNumber": {
+    "message": "$N1$ — $N2$ 값은 숫자여야 합니다(예: $N3$)",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      },
+      "n3": {
+        "content": "$3"
+      }
+    }
+  },
   "searchKeys": {
     "message": "Enter: 다음 일치 항목 · Shift+Enter: 이전 일치 항목 · ↓: 추천 · Esc: 지우기"
   },

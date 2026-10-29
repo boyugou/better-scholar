@@ -261,7 +261,7 @@
   function searchWords(row, sub) {
     const path = row.path, d = described(t(row.label), row.hint ? t(row.hint) : "");
     const bad = h("span", { class: "search-bad", role: "status" });
-    const check = () => { const errors = B.query.parse(at(path)).errors; bad.textContent = errors.length ? t("optPillSearchBad") + " " + errors.join(" · ") : ""; bad.hidden = !errors.length; };
+    const check = () => { const problems = B.query.parse(at(path)).problems; bad.textContent = problems.length ? t("optPillSearchBad") + " " + problems.map(B.dom.searchProblem).join(" · ") : ""; bad.hidden = !problems.length; };
     const input = h("input", { type: "text", class: "name-input search-words", "data-pref": path, maxlength: String(row.max), spellcheck: "false", autocomplete: "off", dir: "auto",
       placeholder: "ccf:a role:first age:<5", ...d.ids,
       onInput: () => { put(path, input.value); save(); check(); },

@@ -823,6 +823,34 @@
   "searchShortcut": {
     "message": "Tryck / för att söka"
   },
+  "searchBadList": {
+    "message": "$N1$ — $N2$ accepterar ett av dessa värden: $N3$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      },
+      "n3": {
+        "content": "$3"
+      }
+    }
+  },
+  "searchBadNumber": {
+    "message": "$N1$ — $N2$ accepterar ett tal, till exempel $N3$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      },
+      "n3": {
+        "content": "$3"
+      }
+    }
+  },
   "searchKeys": {
     "message": "Enter: nästa träff · Shift+Enter: föregående träff · ↓: förslag · Esc: rensa"
   },

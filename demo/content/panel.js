@@ -309,8 +309,9 @@
       if (m) {
         const wrong = !!(sm && sm.errors.length);
         queryInput.setAttribute("aria-invalid", wrong ? "true" : "false");
-        queryInput.title = wrong ? sm.errors.join("\n") : "";
-        searchError.textContent = wrong ? sm.errors.join(" · ") : "";
+        const said = wrong ? (sm.problems || []).map(B.dom.searchProblem) : [];          // (in the interface's language)
+        queryInput.title = said.join("\n");
+        searchError.textContent = said.join(" · ");
         searchError.hidden = !wrong;
         queryInput.setAttribute("aria-describedby", wrong ? "rr-search-error rr-search-keys" : "rr-search-keys");
       }

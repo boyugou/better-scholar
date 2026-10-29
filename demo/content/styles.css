@@ -144,8 +144,9 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
 #rr-panel .rr-search { position: relative; margin-bottom: 8px; }
 #rr-panel .rr-search-input { padding-inline-end: 28px; }
 #rr-panel .rr-search-input:not(:placeholder-shown) { padding-inline-end: 72px; }
-/* (dir="auto" makes an empty box left-to-right: in a right-to-left panel the placeholder sits right-aligned, clear of the "/" hint, until something is typed) */
-#rr-panel[dir="rtl"] .rr-search-input:placeholder-shown { direction: rtl; }
+/* (in a right-to-left panel the box stays right-to-left, so that the room it keeps is on the side of the count and the clear button, and what is typed takes its own
+   direction: "ccf:d cites:abc" runs left to right from the left edge, clear of them — with the box left-to-right, the count sat over its first letters) */
+#rr-panel[dir="rtl"] .rr-search-input { direction: rtl; unicode-bidi: plaintext; }
 #rr-panel .rr-search-input::-webkit-search-cancel-button { display: none; }
 #rr-panel .rr-search-count {
   position: absolute; inset-inline-end: 27px; top: 50%; transform: translateY(-50%);
