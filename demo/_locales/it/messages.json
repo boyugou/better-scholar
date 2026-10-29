@@ -225,6 +225,12 @@
   "layoutWarning": {
     "message": "Il layout della pagina di Scholar sembra cambiato: questa estensione non riesce a leggere le righe degli autori. Per favore, segnalalo."
   },
+  "extUpdated": {
+    "message": "L’estensione è stata aggiornata mentre questa pagina era aperta: la pagina esegue ancora la vecchia versione e le modifiche alle impostazioni non la raggiungono."
+  },
+  "reloadPage": {
+    "message": "Ricarica questa pagina"
+  },
   "variantsTitle": {
     "message": "Il nome non corrisponde? Aggiungi una grafia"
   },

@@ -422,6 +422,7 @@
     const filterBar = h("div", { class: "rr-filterbar", "data-rr": "filterbar", hidden: true, ...P("panel.filters.bar") }, fbText, fbClear);
     // Scholar's page changed under us: the warning is the first thing in the panel
     const warnBar = h("div", { class: "rr-warn", "data-rr": "layout-warning", hidden: true });
+    const updatedText = [t("extUpdated"), t("reloadPage")];          // (read now: once the extension is updated under the page, its words may not be readable)
     // What a screen reader is told when the panel's status changes (loading stopped, reading the full lists finished): a live region that stays in the page
     const announce = h("div", { class: "rr-sr", role: "status", "aria-live": "polite", "data-rr": "announce" });
     const el = h("section", { id: "rr-panel", "data-rr": "panel", role: "region", dir: B.dom.dir(), lang: B.dom.langTag() }, head, warnBar, filterBar, body, announce);
@@ -623,8 +624,10 @@
         }
       } else if (unmatchedSig) { unmatchedSig = ""; coverList.replaceChildren(); }
       // Scholar changes its markup now and then: say so, at the top, instead of silently showing nothing
-      warnBar.hidden = !c.layoutBroken;
-      if (c.layoutBroken) {
+      warnBar.hidden = !c.layoutBroken && !c.updated;
+      warnBar.setAttribute("data-rr", c.updated ? "updated" : "layout-warning");
+      if (c.updated) warnBar.replaceChildren(updatedText[0] + " ", h("button", { class: "rr-link", type: "button", "data-act": "reload", onClick: () => location.reload() }, updatedText[1]));
+      else if (c.layoutBroken) {
         warnBar.replaceChildren(t("layoutWarning") + " ",
           h("a", { class: "rr-link", href: issueUrl("Scholar page layout changed", location.pathname + location.search.replace(/([?&])user=[^&#]*/g, "$1user=…")), target: "_blank", rel: "noopener noreferrer" }, t("reportLink")));
       }

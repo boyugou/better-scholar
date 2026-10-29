@@ -225,6 +225,12 @@
   "layoutWarning": {
     "message": "O esquema do Scholar parece ter mudado: esta extensão não consegue ler as linhas de autores. Por favor, comunique o problema."
   },
+  "extUpdated": {
+    "message": "A extensão foi atualizada enquanto esta página estava aberta: a página continua a correr a versão antiga, e as alterações às definições não chegam a ela."
+  },
+  "reloadPage": {
+    "message": "Recarregar esta página"
+  },
   "variantsTitle": {
     "message": "O nome não corresponde? Adicione uma grafia"
   },

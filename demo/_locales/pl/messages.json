@@ -225,6 +225,12 @@
   "layoutWarning": {
     "message": "Wygląda na to, że układ strony Scholar się zmienił: rozszerzenie nie może odczytać wierszy z autorami. Prosimy o zgłoszenie."
   },
+  "extUpdated": {
+    "message": "Rozszerzenie zostało zaktualizowane, gdy ta strona była otwarta: strona nadal działa na starej wersji, a zmiany ustawień do niej nie docierają."
+  },
+  "reloadPage": {
+    "message": "Wczytaj tę stronę ponownie"
+  },
   "variantsTitle": {
     "message": "Nie znaleziono nazwiska? Dodaj pisownię"
   },

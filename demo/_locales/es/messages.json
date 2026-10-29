@@ -225,6 +225,12 @@
   "layoutWarning": {
     "message": "Parece que el diseño de la página de Scholar ha cambiado: esta extensión no puede leer las líneas de autores. Por favor, infórmalo."
   },
+  "extUpdated": {
+    "message": "La extensión se actualizó mientras esta página estaba abierta: la página sigue ejecutando la versión anterior y los cambios en los ajustes no llegan a ella."
+  },
+  "reloadPage": {
+    "message": "Volver a cargar esta página"
+  },
   "variantsTitle": {
     "message": "¿No coincide tu nombre? Añade una grafía"
   },

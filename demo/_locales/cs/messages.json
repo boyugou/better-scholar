@@ -225,6 +225,12 @@
   "layoutWarning": {
     "message": "Zdá se, že se změnilo rozvržení stránky Scholar: rozšíření nemůže přečíst řádky s autory. Nahlaste to prosím."
   },
+  "extUpdated": {
+    "message": "Rozšíření bylo aktualizováno, zatímco byla tato stránka otevřená: stránka stále běží ve staré verzi a změny nastavení se k ní nedostanou."
+  },
+  "reloadPage": {
+    "message": "Znovu načíst tuto stránku"
+  },
   "variantsTitle": {
     "message": "Jméno se nenašlo? Přidejte variantu zápisu"
   },

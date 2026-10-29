@@ -225,6 +225,12 @@
   "layoutWarning": {
     "message": "Scholarin sivun ulkoasu näyttää muuttuneen: laajennus ei pysty lukemaan kirjoittajarivejä. Ilmoita siitä."
   },
+  "extUpdated": {
+    "message": "Laajennus päivitettiin, kun tämä sivu oli auki: sivu toimii yhä vanhalla versiolla, eivätkä asetusten muutokset tavoita sitä."
+  },
+  "reloadPage": {
+    "message": "Lataa tämä sivu uudelleen"
+  },
   "variantsTitle": {
     "message": "Nimi ei täsmää? Lisää kirjoitusasu"
   },

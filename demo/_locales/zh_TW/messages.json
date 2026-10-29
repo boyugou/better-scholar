@@ -225,6 +225,12 @@
   "layoutWarning": {
     "message": "Scholar 的頁面版面似乎已更動，本擴充功能無法讀取作者行。請回報此問題。"
   },
+  "extUpdated": {
+    "message": "此頁面開啟期間擴充功能已更新：頁面仍在執行舊版本，設定的變更不會套用到此頁面。"
+  },
+  "reloadPage": {
+    "message": "重新載入此頁面"
+  },
   "variantsTitle": {
     "message": "姓名對不上？新增一種拼法"
   },

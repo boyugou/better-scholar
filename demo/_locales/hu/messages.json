@@ -225,6 +225,12 @@
   "layoutWarning": {
     "message": "Úgy tűnik, a Scholar oldalának felépítése megváltozott: a bővítmény nem tudja olvasni a szerzői sorokat. Jelentsd, kérlek."
   },
+  "extUpdated": {
+    "message": "A bővítmény frissült, miközben ez az oldal nyitva volt: az oldal még a régi verziót futtatja, és a beállítások módosításai nem jutnak el hozzá."
+  },
+  "reloadPage": {
+    "message": "Oldal újratöltése"
+  },
   "variantsTitle": {
     "message": "Nem egyezik a név? Adj meg egy írásmódot"
   },

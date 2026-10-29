@@ -225,6 +225,12 @@
   "layoutWarning": {
     "message": "Bố cục trang Scholar dường như đã thay đổi: tiện ích này không đọc được dòng tác giả. Vui lòng báo lỗi."
   },
+  "extUpdated": {
+    "message": "Tiện ích đã được cập nhật khi trang này đang mở: trang vẫn chạy phiên bản cũ, và các thay đổi trong cài đặt không đến được trang."
+  },
+  "reloadPage": {
+    "message": "Tải lại trang này"
+  },
   "variantsTitle": {
     "message": "Tên không khớp? Thêm cách viết"
   },
