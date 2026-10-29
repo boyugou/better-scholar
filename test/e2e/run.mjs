@@ -195,7 +195,8 @@ const stored = async (p, area, key) => { if (area === "sync" && key === "prefs" 
 const pollPage = async (p, fn, arg, timeout = 10000) => {
   const t0 = Date.now();
   for (;;) {
-    if (await p.evaluate(fn, arg)) return;
+    // (a page that reloads itself while it is asked — the settings page after a language is picked — is asked again once it is back)
+    try { if (await p.evaluate(fn, arg)) return; } catch (e) { if (!/Execution context was destroyed|navigation/i.test(String(e && e.message))) throw e; }
     if (Date.now() - t0 > timeout) throw new Error("timed out waiting for: " + fn.toString().slice(0, 100));
     await p.waitForTimeout(100);
   }
@@ -2786,6 +2787,11 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
               return [".rr-search-count", ".rr-search-clear"].map((q) => document.querySelector("#rr-panel " + q)).filter((e) => e && !e.hidden).every((e) => { const b = e.getBoundingClientRect(); return b.right <= text.left + 1 || b.left >= text.right - 1; });
             });
             if (!clear) bad.push(`${lang}: the typed search runs under the count or the clear button`);
+            // (and what the search cannot read is said in the language, the operator's words as typed)
+            await page.fill("#rr-panel .rr-search-input", "ccf:d");
+            await page.waitForFunction(() => !document.querySelector("#rr-search-error").hidden);
+            const said = (await page.locator("#rr-search-error").textContent()).replace(/[\u2066-\u2069]/g, "");
+            if (!/ccf:d/.test(said) || /takes one of/.test(said) || !/[\u0590-\u06ff]/.test(said)) bad.push(`${lang}: the error line is not in the language: ${said}`);
             await page.fill("#rr-panel .rr-search-input", "");
           }
           // "11 of 12" in the language's own order: Hindi puts the total first

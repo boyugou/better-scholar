@@ -367,7 +367,7 @@
     else if (list.length > 1) by = cut ? `${list.join(", ")}, …` : `${list.slice(0, -1).join(", ")}, & ${list[list.length - 1]}`;
     if (by && !/[.!?…]\u0003?$/.test(by)) by += ".";          // (the owner last: the full stop of "G. E." stands inside the bold mark, and is not doubled after it)
     let title = clean(p.title);
-    if (title && !/[.?!]$/.test(title)) title += ".";
+    if (title && !/[.?!…]$/.test(title)) title += ".";          // (a title cut short with "…" takes no full stop after it)
     // the venue in italics, then (APA 7) a journal's volume in italics, its issue and pages, or "In *Proceedings* (Vol. 1, pp. 1–10)"; the year is the one above.
     // A line that is neither (a patent, a thesis, a publisher) is given as Scholar printed it, without its year and without italics.
     const kind = entryType(p), apaType = periodical(p) ? "article" : kind.type, parts = partsFor(p, apaType), { name: venue, volume, issue, pages } = apaType === "inproceedings" ? unlabelled(parts) : parts, journal = kind.type === "article";
@@ -434,7 +434,7 @@
       : cut ? (list.length === 1 ? `${list[0]} et al.` : `${list.join(", ")}, et al.`) : list.length === 1 ? list[0] : list.length === 2 ? `${list[0]} and ${list[1]}` : `${list.slice(0, -1).join(", ")}, and ${list[list.length - 1]}`;
     if (by && !/[.!?…]\u0003?$/.test(by)) by += ".";          // (the owner last: the full stop of "G. E." stands inside the bold mark)
     let title = clean(p.title);
-    if (title && !/[.?!]$/.test(title)) title += ".";
+    if (title && !/[.?!…]$/.test(title)) title += ".";          // (a title cut short with "…" takes no full stop after it)
     const kind = entryType(p), type = kind.type, acmParts = partsFor(p, periodical(p) ? "article" : type), { name, volume, issue, pages } = type === "inproceedings" && !periodical(p) ? unlabelled(acmParts) : acmParts, year = p.year ? String(p.year) : "";
     const misc = isDocument(p) || WEB.test(p.venue), venue = misc ? asPrinted(p.venue) : name;
     const range = pages.replace("-", "–"), page = pages && (pages.includes("-") ? range : `Article ${pages}`);

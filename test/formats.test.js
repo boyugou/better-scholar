@@ -661,5 +661,7 @@ test("ACM over every real venue line: no doubled full stop, nothing undefined; t
   assert.match(f.gbt([p]), /^\[1\] WRITER C, WRITER E, WRITER B, et al\./, "GB/T: the three before the gap");
   assert.match(f.acmHtml([p], { markMe: true }), /… <b>A\. Example<\/b>\. \[n\. d\.\]\./, "the owner is the last author, in bold, one full stop");
   assert.match(f.acm([{ ...p, authors: "A Vaswani, ..." }]), /^\[1\] A\. Vaswani et al\. \[n\. d\.\]\./, "one name and a cut: no comma before et al.");
+  assert.match(f.acm([{ ...p, title: "A title cut short …" }]), /A title cut short … In /, "a title cut with … takes no full stop");
+  assert.match(f.apa([{ ...p, title: "A title cut short …" }]), /A title cut short … In /, "in APA too");
 });
 
