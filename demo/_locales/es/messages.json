@@ -1183,6 +1183,15 @@
   "optRenameHint": {
     "message": "Intro guarda · Esc cancela · vacío: el nombre estándar"
   },
+  "optNameTipWords": {
+    "message": "Tu propio nombre para este botón, en todos los idiomas. Vacío: el botón muestra sus palabras de búsqueda."
+  },
+  "optRenameHintWords": {
+    "message": "Intro guarda · Esc cancela · vacío: las palabras de búsqueda"
+  },
+  "optNameResetWords": {
+    "message": "Volver a las palabras de búsqueda"
+  },
   "optVenueTitle": {
     "message": "Comprobar congreso/revista"
   },

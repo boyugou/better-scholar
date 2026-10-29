@@ -259,7 +259,7 @@
 
   // Secondary tracks of a main conference: not the main proceedings, so no badge —
   // unless the venue's OWN official name contains the word (IWQoS, HotNets, …).
-  const SECONDARY = /\b(?:workshops?|companion|demos?|demonstrations?|doctoral|tutorials?|courses?|posters?|adjunct|findings|extended abstracts?|conference abstracts|abstracts and applications|book of abstracts|abstract book|abstracts(?=\s*(?:,|$))|talks|sketches|emerging technologies|late[- ]breaking|short papers?|industr(?:y|ial) track|shared task|student (?:abstracts?|research)|work[- ]in[- ]progress|symposium series|(?:spring|summer|fall|autumn|winter) symposi(?:um|a)|tiny papers?|summits?|blog ?posts?|competition track|creative ai(?: track)?|sister conferences?|journal[- ](?:track|first)|supplement(?:al)? (?:volume|proceedings)|(?:computer )?animation festival|art gallery|electronic theat(?:er|re)|educators? program|real-time live|vr village|appy hour|production sessions?|technical briefs?|arts, media,? (?:and )?humanities|new ideas and emerging results)\b/i;
+  const SECONDARY = /\b(?:workshops?|companion|demos?|demonstrations?|doctoral|tutorials?|courses?|posters?|adjunct|findings|extended abstracts?|conference abstracts|abstracts and applications|book of abstracts|abstract book|abstracts(?=\s*(?:,|$))|talks|sketches|emerging technologies|late[- ]breaking|short papers?|industr(?:y|ial) track|shared task|student (?:abstracts?|research)|work[- ]in[- ]progress|symposium series|(?:spring|summer|fall|autumn|winter) symposi(?:um|a)|tiny papers?|summits?|blog ?posts?|competition track|creative ai(?: track)?|sister conferences?|journal[- ](?:tracks?|first)|supplement(?:al)? (?:volume|proceedings)|(?:computer )?animation festival|art gallery|electronic theat(?:er|re)|educators? program|real-time live|vr village|appy hour|production sessions?|technical briefs?|arts, media,? (?:and )?humanities|new ideas and emerging results)\b/i;
   // Every secondary-track word of the string, in order, each once ("Workshop … Posters" has two): a venue whose own name holds one of them is not held to that one only.
   function secondaryWords(raw) {
     const text = fold(raw), words = [];
@@ -1290,9 +1290,9 @@
         if (!inner && r.entry.kind === "J" && hint !== "J" && /^(?:19|20)\d{2}\s+\S/.test(p.name)) continue;
         // (a journal track is a track of the conference, and the journal's own: "ACM Transactions on Reconfigurable Technology and Systems (FCCM Journal Track)" is a TRETS article —
         // only where the line without those words is that journal still: "… (ASE) Journal-First" without them is the conference, and the word "Journal" had made it the ASE journal)
-        const journalTrack = (w) => /^journal[- ](?:track|first)$/.test(w);
+        const journalTrack = (w) => /^journal[- ](?:tracks?|first)$/.test(w);
         const sameJournal = r.entry.kind === "J" && !inner && secs.some(journalTrack) && (() => {
-          const again = resolveUncached(raw.replace(/\s*\(?\s*journal[- ](?:track|first)\s*\)?/gi, " "), true)[src];
+          const again = resolveUncached(raw.replace(/\s*\(?\s*journal[- ](?:tracks?|first)\s*\)?/gi, " "), true)[src];
           return !!(again && again.kind === "J" && again.name === r.entry.name);
         })();
         const blocking = secs.find((w) => !ownWord(r.entry, w, raw) && !(sameJournal && journalTrack(w)));

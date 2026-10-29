@@ -1183,6 +1183,15 @@
   "optRenameHint": {
     "message": "Enter uloží · Esc zruší · prázdné: standardní název"
   },
+  "optNameTipWords": {
+    "message": "Váš vlastní název pro toto tlačítko, ve všech jazycích. Prázdné: tlačítko zobrazí svá slova k hledání."
+  },
+  "optRenameHintWords": {
+    "message": "Enter uloží · Esc zruší · prázdné: slova k hledání"
+  },
+  "optNameResetWords": {
+    "message": "Zpět na slova k hledání"
+  },
   "optVenueTitle": {
     "message": "Ověřit místo publikace"
   },

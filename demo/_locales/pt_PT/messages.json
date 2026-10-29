@@ -1183,6 +1183,15 @@
   "optRenameHint": {
     "message": "Enter mantém · Esc cancela · vazio: o nome predefinido"
   },
+  "optNameTipWords": {
+    "message": "O seu próprio nome para este botão, em todos os idiomas. Vazio: o botão mostra as palavras de pesquisa."
+  },
+  "optRenameHintWords": {
+    "message": "Enter mantém · Esc cancela · vazio: as palavras de pesquisa"
+  },
+  "optNameResetWords": {
+    "message": "Repor as palavras de pesquisa"
+  },
   "optVenueTitle": {
     "message": "Verificar um veículo"
   },

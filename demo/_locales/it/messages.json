@@ -1183,6 +1183,15 @@
   "optRenameHint": {
     "message": "Invio conferma · Esc annulla · vuoto: il nome standard"
   },
+  "optNameTipWords": {
+    "message": "Il tuo nome per questo pulsante, in tutte le lingue. Vuoto: il pulsante mostra le sue parole di ricerca."
+  },
+  "optRenameHintWords": {
+    "message": "Invio conferma · Esc annulla · vuoto: le parole di ricerca"
+  },
+  "optNameResetWords": {
+    "message": "Torna alle parole di ricerca"
+  },
   "optVenueTitle": {
     "message": "Verifica conferenza/rivista"
   },

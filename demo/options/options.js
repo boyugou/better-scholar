@@ -237,8 +237,10 @@
   function nameEdit(row, off) {
     const path = row.path, key = row.label;
     let before = "";
-    const input = h("input", { type: "text", class: "name-input", "data-pref": path, maxlength: String(row.max), spellcheck: "false", autocomplete: "off",
-      placeholder: B.dom.tDefault(key), title: t("optNameTip"), "aria-label": B.dom.tDefault(key) + " — " + t("optNameOf"),
+    // (own: your own quick filter, whose standard text is its words — a left-to-right placeholder in a right-to-left page shows its start with dir="auto")
+    const own = /^pillSearch(\d)$/.exec(key);
+    const input = h("input", { type: "text", class: "name-input", "data-pref": path, maxlength: String(row.max), spellcheck: "false", autocomplete: "off", dir: "auto",
+      placeholder: B.dom.tDefault(key), title: t(own ? "optNameTipWords" : "optNameTip"), "aria-label": B.dom.tDefault(key) + " — " + t("optNameOf"),
       onFocus: () => { before = at(path); },
       onInput: () => { put(path, input.value); save(); },                         // (saved as it is typed, a few writes at most: a name typed and the page closed is kept)
       onChange: () => { put(path, B.prefs.cleanName(input.value)); save(); },
@@ -246,10 +248,9 @@
         if (e.key === "Enter") { e.preventDefault(); input.blur(); }
         else if (e.key === "Escape" && at(path) !== before) { e.preventDefault(); input.value = before; put(path, before); save(); }
       } });
-    const reset = h("button", { type: "button", class: "name-reset", "data-act": "name-reset", "aria-label": B.dom.tDefault(key) + " — " + t("optNameReset"), title: t("optNameReset"),
+    const reset = h("button", { type: "button", class: "name-reset", "data-act": "name-reset", "aria-label": B.dom.tDefault(key) + " — " + t(own ? "optNameResetWords" : "optNameReset"), title: t(own ? "optNameResetWords" : "optNameReset"),
       onClick: (e) => { e.preventDefault(); e.stopPropagation(); put(path, ""); save(); } }, "↺");
     // (your own quick filter's name: with none, its button shows its words, so the field shows them in grey)
-    const own = /^pillSearch(\d)$/.exec(key);
     const sync = () => { input.value = at(path); reset.hidden = !at(path); input.disabled = off ? off() : false; if (own) input.placeholder = at("panel.filters.searches.search" + own[1]) || B.dom.tDefault(key); };
     syncers.push(sync);
     sync();
@@ -267,7 +268,9 @@
       onInput: () => { put(path, input.value); save(); check(); },
       onChange: () => { put(path, B.prefs.cleanName(input.value)); save(); },
       onKeydown: (e) => { if (e.key === "Enter") { e.preventDefault(); input.blur(); } } });
-    syncers.push(() => { if (document.activeElement !== input) input.value = at(path); input.disabled = inert(row); check(); });
+    const sync = () => { if (document.activeElement !== input) input.value = at(path); input.disabled = inert(row); check(); if (input.disabled) bad.hidden = true; };          // (the line goes with the switch)
+    syncers.push(sync);
+    sync();          // (drawn with its words at once: the syncers otherwise run on a change, and the field stood empty until one)
     return h("div", { class: "opt opt-words" + (sub ? " sub" : "") }, h("span", { class: "txt" }, d.name, d.hint), input, bad);
   }
 

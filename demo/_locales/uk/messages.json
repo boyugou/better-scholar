@@ -1183,6 +1183,15 @@
   "optRenameHint": {
     "message": "Enter зберігає · Esc скасовує · порожньо: стандартна назва"
   },
+  "optNameTipWords": {
+    "message": "Власна назва для цієї кнопки, будь-якою мовою. Порожньо: кнопка показує свої слова для пошуку."
+  },
+  "optRenameHintWords": {
+    "message": "Enter зберігає · Esc скасовує · порожньо: слова для пошуку"
+  },
+  "optNameResetWords": {
+    "message": "Повернути слова для пошуку"
+  },
   "optVenueTitle": {
     "message": "Перевірити видання"
   },

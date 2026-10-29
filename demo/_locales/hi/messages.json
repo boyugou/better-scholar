@@ -1183,6 +1183,15 @@
   "optRenameHint": {
     "message": "Enter सहेजता है · Esc रद्द करता है · खाली: मानक नाम"
   },
+  "optNameTipWords": {
+    "message": "इस बटन के लिए आपका अपना नाम, सभी भाषाओं में। खाली: बटन अपने खोज शब्द दिखाता है।"
+  },
+  "optRenameHintWords": {
+    "message": "Enter सहेजता है · Esc रद्द करता है · खाली: खोज शब्द"
+  },
+  "optNameResetWords": {
+    "message": "खोज शब्दों पर लौटें"
+  },
   "optVenueTitle": {
     "message": "Venue जाँचें"
   },

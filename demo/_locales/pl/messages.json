@@ -1183,6 +1183,15 @@
   "optRenameHint": {
     "message": "Enter zachowuje · Esc anuluje · puste: nazwa standardowa"
   },
+  "optNameTipWords": {
+    "message": "Twoja własna nazwa dla tego przycisku, we wszystkich językach. Puste: przycisk pokazuje swoje słowa wyszukiwania."
+  },
+  "optRenameHintWords": {
+    "message": "Enter zachowuje · Esc anuluje · puste: słowa wyszukiwania"
+  },
+  "optNameResetWords": {
+    "message": "Przywróć słowa wyszukiwania"
+  },
   "optVenueTitle": {
     "message": "Sprawdź miejsce publikacji"
   },

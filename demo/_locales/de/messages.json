@@ -1183,6 +1183,15 @@
   "optRenameHint": {
     "message": "Enter übernimmt · Esc bricht ab · leer: der Standardname"
   },
+  "optNameTipWords": {
+    "message": "Ein eigener Name für diese Schaltfläche, in allen Sprachen. Leer: die Schaltfläche zeigt ihre Suchbegriffe."
+  },
+  "optRenameHintWords": {
+    "message": "Enter übernimmt · Esc bricht ab · leer: die Suchbegriffe"
+  },
+  "optNameResetWords": {
+    "message": "Zurück zu den Suchbegriffen"
+  },
   "optVenueTitle": {
     "message": "Venue prüfen"
   },

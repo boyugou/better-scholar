@@ -1183,6 +1183,15 @@
   "optRenameHint": {
     "message": "Enter で確定 · Esc で取り消し · 空欄：標準の名前"
   },
+  "optNameTipWords": {
+    "message": "このボタンに付ける自分の名前（すべての言語で共通）。空欄なら、ボタンは検索ワードを表示します。"
+  },
+  "optRenameHintWords": {
+    "message": "Enter で確定 · Esc で取り消し · 空欄：検索ワード"
+  },
+  "optNameResetWords": {
+    "message": "検索ワードに戻す"
+  },
   "optVenueTitle": {
     "message": "掲載先を確認"
   },

@@ -1183,6 +1183,15 @@
   "optRenameHint": {
     "message": "Enter giữ lại · Esc hủy · để trống: tên chuẩn"
   },
+  "optNameTipWords": {
+    "message": "Tên riêng của bạn cho nút này, dùng cho mọi ngôn ngữ. Để trống: nút hiện từ khóa tìm kiếm."
+  },
+  "optRenameHintWords": {
+    "message": "Enter giữ lại · Esc hủy · để trống: từ khóa tìm kiếm"
+  },
+  "optNameResetWords": {
+    "message": "Về từ khóa tìm kiếm"
+  },
   "optVenueTitle": {
     "message": "Kiểm tra venue"
   },

@@ -1183,6 +1183,15 @@
   "optRenameHint": {
     "message": "Enter сохраняет · Esc отменяет · пусто: стандартное название"
   },
+  "optNameTipWords": {
+    "message": "Своё название для этой кнопки, на любом языке. Пусто: кнопка показывает свои слова для поиска."
+  },
+  "optRenameHintWords": {
+    "message": "Enter сохраняет · Esc отменяет · пусто: слова для поиска"
+  },
+  "optNameResetWords": {
+    "message": "Вернуть слова для поиска"
+  },
   "optVenueTitle": {
     "message": "Проверить издание"
   },

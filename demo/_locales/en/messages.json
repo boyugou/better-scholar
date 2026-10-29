@@ -1183,6 +1183,15 @@
   "optRenameHint": {
     "message": "Enter keeps it · Esc cancels · empty: the standard name"
   },
+  "optRenameHintWords": {
+    "message": "Enter keeps it · Esc cancels · empty: its words"
+  },
+  "optNameTipWords": {
+    "message": "Your own name for this button, in every language. Empty: the button shows its words."
+  },
+  "optNameResetWords": {
+    "message": "Back to its words"
+  },
   "optVenueTitle": {
     "message": "Check a venue"
   },

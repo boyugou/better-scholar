@@ -1183,6 +1183,15 @@
   "optRenameHint": {
     "message": "Enter kaydeder · Esc iptal eder · boş: standart ad"
   },
+  "optNameTipWords": {
+    "message": "Bu düğme için kendi adınız, her dilde. Boş: düğme kendi arama kelimelerini gösterir."
+  },
+  "optRenameHintWords": {
+    "message": "Enter kaydeder · Esc iptal eder · boş: arama kelimeleri"
+  },
+  "optNameResetWords": {
+    "message": "Arama kelimelerine dön"
+  },
   "optVenueTitle": {
     "message": "Yayın yerini kontrol et"
   },

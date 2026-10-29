@@ -1183,6 +1183,15 @@
   "optRenameHint": {
     "message": "Enter שומר · Esc מבטל · ריק: שם ברירת המחדל"
   },
+  "optNameTipWords": {
+    "message": "שם משלך לכפתור הזה, בכל שפה. ריק: הכפתור מציג את מילות החיפוש שלו."
+  },
+  "optRenameHintWords": {
+    "message": "Enter שומר · Esc מבטל · ריק: מילות החיפוש"
+  },
+  "optNameResetWords": {
+    "message": "חזרה למילות החיפוש"
+  },
   "optVenueTitle": {
     "message": "בדיקת במה"
   },

@@ -1183,6 +1183,15 @@
   "optRenameHint": {
     "message": "Enter menyimpan · Esc membatalkan · kosong: nama standar"
   },
+  "optNameTipWords": {
+    "message": "Nama Anda sendiri untuk tombol ini, dalam semua bahasa. Kosong: tombol menampilkan kata pencariannya."
+  },
+  "optRenameHintWords": {
+    "message": "Enter menyimpan · Esc membatalkan · kosong: kata pencarian"
+  },
+  "optNameResetWords": {
+    "message": "Kembali ke kata pencarian"
+  },
   "optVenueTitle": {
     "message": "Periksa venue"
   },

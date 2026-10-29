@@ -1183,6 +1183,15 @@
   "optRenameHint": {
     "message": "Enter behåller · Esc avbryter · tomt: standardnamnet"
   },
+  "optNameTipWords": {
+    "message": "Ditt eget namn för den här knappen, på alla språk. Tomt: knappen visar sina sökord."
+  },
+  "optRenameHintWords": {
+    "message": "Enter behåller · Esc avbryter · tomt: sökorden"
+  },
+  "optNameResetWords": {
+    "message": "Tillbaka till sökorden"
+  },
   "optVenueTitle": {
     "message": "Kontrollera ett publiceringsställe"
   },
