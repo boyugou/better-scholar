@@ -48,7 +48,8 @@
   gave 293 CCF journals to made-up lines ("Machine Learning 12: Proceedings of …"), as Roman volume numbers already did not — and
   Springer's "Machine Learning: ECML-95" (a subject, then an event's acronym and year) had the journal *Machine Learning*. Neither
   gets a badge now. In the 75,521 real lines exactly that one badge goes. The sweep also checked that every one of the 9,825 lines
-  with both a CCF and a CORE badge has two rows of one venue.
+  with both a CCF and a CORE badge has two rows of one venue. A book of abstracts is a secondary track like extended abstracts ("… (ICONIP) abstracts", a real
+  line, had ICONIP's rank); the singular stays a word of names (*Abstract Interpretation*).
 - **Your own quick filters** (*Settings → Filters*, under the built-in ones): up to three buttons of your own words, typed as in the
   search box — `ccf:a role:first age:<5` for "recent CCF-A first-author papers" in one click. Each has a switch, a place in the order
   of the quick filters, and a name like any other (in the settings or by renaming it on the preview); with no name the button shows its

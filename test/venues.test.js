@@ -93,6 +93,10 @@ test("CHI proceedings carry the acronym inside the name", () => {
     "Proceedings of the SIGCHI conference on Human factors in computing systems …, 2007"
   ]) assert.equal(brief(s), "CCF A CHI · CORE A* CHI", s);
   assert.equal(brief("Extended Abstracts of the 2018 CHI Conference on Human Factors in Computing Systems, 2018"), "", "extended abstracts are not the main track");
+  // a book of abstracts holds no full papers either (a real line); the singular is a word of names ("Abstract Interpretation"), and stays one
+  assert.equal(brief("31th International Conference on Neural Information Processing (ICONIP) abstracts"), "", "an abstracts volume is not the main track");
+  assert.equal(brief("Book of Abstracts of the International Conference on Machine Learning, 2019"), "");
+  assert.ok(brief("International Conference on Verification, Model Checking, and Abstract Interpretation, 2019"), "VMCAI keeps its rank");
 });
 
 test("a truncated name is not claimed on one common word, nor when a complete name also fits", () => {
