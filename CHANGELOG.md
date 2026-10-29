@@ -68,6 +68,13 @@ give the details and every review):
   without a comma. APA and ACM keep the gap where Scholar cut an author list — "C. Writer, E. Writer, B. Writer, … A. Example" — where
   they had printed the owner as the fourth author; GB/T 7714 takes its three names from before the gap. The agent guide said `html`
   came for five formats (six).
+- **A copy button's long name wraps instead of running out of the popup.** Its first run in CI (Linux's fonts are wider) found the
+  toolbar popup's copy buttons, named with 30 characters, 5 px past the popup's edge; on a Mac they already ran into its margin. A
+  button's label now stays on one line while the row can hold it and wraps only beyond that (`min-width: fit-content`), in the popup
+  and in the panel: in the long-name stress test of the settings page, three of the four kinds of problem are gone (the copy buttons
+  sticking out, 960 times; the panel cut), and full-width names fit too. Ordinary labels are drawn as before (the same sizes in
+  English, German and Russian). The overflow audit no longer counts a break at a soft hyphen (Finnish "Yhteis-|ensimmäinen") as a
+  word cut in two.
 - **The accessibility audit runs in CI.** `scripts/axe-audit.mjs` (axe-core over the panel, the settings page and the popup, in four
   languages, light and dark, exit 1 on any violation) was run by hand; it takes half a minute, so CI's demo job and `npm run check:all`
   now run it too.
@@ -80,7 +87,7 @@ give the details and every review):
   from a setup of their own (the whole list loaded, the cut author lists read, and the three switches the sections before them leave
   off, measured at S7's start); the sections with profiles of their own are two parts, 17–25 (`E2E_PART=2`) and 26 on (`4`), a minute
   each. `npm run check:all` (`scripts/check-all.sh`) runs everything CI runs in four lanes at once; CI runs the four parts side by
-  side. The 30-language loop now fails on English in the panel or the settings page of another language (data, code and names kept in
+  side (its longest job went from 3 min 40 s to under 3). The 30-language loop now fails on English in the panel or the settings page of another language (data, code and names kept in
   English on purpose left out): it found Thai's award names — "Best paper", "Best student paper", "Distinguished paper", "Honorable
   mention" — still in English, while every other script translated them; they are Thai now. A unit test does the same for every
   message of the eleven languages of another script, shown or not (the popup, errors, tooltips): two English words in a row fail it,

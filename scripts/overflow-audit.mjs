@@ -86,7 +86,7 @@ function measure(opts) {
   }
   // any word of a script that has spaces, cut in two by the end of a line ("Extensio|n language": a label squeezed beside its control) — the check above sees one-word labels only
   if (!opts.longNames) {
-    const WORD = /[A-Za-zÀ-ÖØ-öø-ÿĀ-žА-яͰ-Ͽ\u0590-\u06ff\u0900-\u097f][A-Za-zÀ-ÖØ-öø-ÿĀ-žА-яͰ-Ͽ\u0590-\u06ff\u0900-\u097f.'’]{4,}/g;
+    const WORD = /[A-Za-zÀ-ÖØ-öø-ÿĀ-žА-яͰ-Ͽ\u0590-\u06ff\u0900-\u097f][A-Za-zÀ-ÖØ-öø-ÿĀ-žА-яͰ-Ͽ\u0590-\u06ff\u0900-\u097f.'’\u00ad]{4,}/g;          // (a soft hyphen is inside the word)
     const range = document.createRange(), seen = new Set();
     for (const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT); walker.nextNode();) {
       const node = walker.currentNode, el = node.parentElement;
@@ -96,6 +96,7 @@ function measure(opts) {
       for (const m of node.data.matchAll(WORD)) {
         range.setStart(node, m.index); range.setEnd(node, m.index + m[0].length);
         const tops = new Set([...range.getClientRects()].filter((q) => q.width > 0.5).map((q) => Math.round(q.top / 4)));
+        if (m[0].includes("\u00ad")) continue;          // (a word with a soft hyphen breaks where its translator put one: Finnish "Yhteis-|ensimmäinen")
         if (m[0].length >= 16 && doc.clientWidth <= 330) continue;          // (a compound of 16 letters or more — Finnish "Viittausmetriikkataulukko", "Yhteisensimmäinen" — is cut on a phone: nothing but a hyphen would help)
         if (tops.size > 1 && !seen.has(desc(el) + m[0])) { seen.add(desc(el) + m[0]); out.push({ kind: "a word broken in two (any word)", what: `${desc(el)}: "${m[0]}" is on ${tops.size} lines` }); }
       }
