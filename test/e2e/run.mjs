@@ -458,6 +458,14 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     await opts.bringToFront(); await opts.screenshot({ path: path.join(outDir, "settings-ar.png"), fullPage: true });
     await page.bringToFront(); await page.waitForTimeout(400);
     await page.locator("#rr-panel").screenshot({ path: path.join(outDir, "panel-ar.png") });
+    // (a built-in text with a character that a name drops — the soft hyphen of Finnish "Yhteis­ensimmäinen" — opened on the preview and left as it was saves no name)
+    await opts.bringToFront();
+    await opts.selectOption('select[data-pref="language"]', "fi");
+    await pollPage(opts, () => document.documentElement.lang === "fi" && !!document.querySelector('#pv-panel [data-rr-label="roleCofirst"]'), null, 15000);
+    await opts.dblclick('#pv-panel [data-rr-label="roleCofirst"]');
+    await opts.locator(".pv-rename-input").press("Enter");
+    await settle(opts);
+    assert.equal((await stored(opts, "sync", "prefs")).labels.roleCofirst, "", "a Finnish text left as it was is not saved as a name");
     await opts.selectOption('select[data-pref="language"]', "auto");
     await page.waitForFunction((x) => document.querySelector("#rr-panel") && document.querySelector("#rr-panel").getAttribute("aria-label") === x, enTitle, { timeout: 15000 });
     await pollPage(opts, (x) => document.title.startsWith(x), enTitle, 15000);                  // (the settings page has been drawn again in English: it reloads once the setting is written)
@@ -814,6 +822,10 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     assert.match(await opts.locator(".opt-words").nth(1).locator(".search-bad").textContent(), /ccf:z/, "the settings page says what it cannot read");
     assert.equal(await opts.locator(".opt-words").nth(0).locator(".search-bad").isHidden(), true);
     await ownWords("search3", "year:<1900");
+    // (the settings page's own search finds a filter by its words, and shows its switch with them)
+    await opts.fill('[data-act="filter-settings"]', "ccf:a role:last");
+    assert.deepEqual(await opts.evaluate(() => { const w = document.querySelector('input[data-pref="panel.filters.searches.search1"]').closest(".opt"); return [w.hidden, w.previousElementSibling.hidden, w.previousElementSibling.querySelector('[data-pref="panel.filters.pills.search1"]') !== null]; }), [false, false, true], "found by its words, with its switch");
+    await opts.fill('[data-act="filter-settings"]', "");
     await page.bringToFront();
     const ownPill = page.locator('#rr-panel .rr-spill[data-pill="search1"]');
     await ownPill.waitFor();
@@ -1365,6 +1377,21 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
       assert.deepEqual(kept.result.ignored, ["query"]);
       const upper = await pageCall("filter", { query: "CCF:A learning" });
       assert.equal(upper.result.filters.query, "ccf:a", "the words that stay are the quick filters' own, in lower case: a button can take them off");
+      // your own filter with no search box: its words stay while all are there; a built-in button that takes one out takes the rest with it (no button would show them)
+      await pageCall("clearFilters");
+      await patchPrefs({ panel: { filters: { searches: { search1: "ccf:a cites:>10" } } } });
+      const ownBtn = page.locator('#rr-panel .rr-spill[data-pill="search1"]');
+      await ownBtn.waitFor();
+      await ownBtn.click();
+      await eventually(page, () => document.querySelector('#rr-panel .rr-spill[data-pill="search1"]').getAttribute("aria-pressed") === "true");
+      const pressed = await pageCall("filter", {});
+      assert.equal(pressed.result.filters.query, "ccf:a cites:>10", "pressed: its words, though no box shows them");
+      assert.ok(pressed.result.shown > 0 && pressed.result.shown < pressed.result.total, JSON.stringify(pressed.result));
+      await page.locator('#rr-panel .rr-spill[data-pill="ccfA"]').click();
+      await eventually(page, () => document.querySelector('#rr-panel .rr-spill[data-pill="search1"]').getAttribute("aria-pressed") === "false");
+      const left = await pageCall("filter", {});
+      assert.deepEqual([left.result.filters.query, left.result.shown], ["", left.result.total], "CCF A taken out: cites:>10, which no button shows, goes too; every row is back");
+      await patchPrefs({ panel: { filters: { searches: { search1: "" } } } });
       await pageCall("clearFilters");
       await patchPrefs({ panel: { filters: { search: true }, metrics: { show: true } } });
       await eventually(page, () => !document.querySelector(".rr-search").hidden);
