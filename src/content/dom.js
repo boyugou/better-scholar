@@ -77,6 +77,12 @@
   const QUOTES = { zh: ["“", "”"], ko: ["“", "”"], ja: ["「", "」"], de: ["„", "“"], cs: ["„", "“"], pl: ["„", "”"], ru: ["«", "»"], uk: ["«", "»"], fr: ["«\u00a0", "\u00a0»"] };
   const quote = (text) => { const q = QUOTES[String(language).slice(0, 2).toLowerCase()] || ['"', '"']; return q[0] + text + q[1]; };
   // the colon after a label: full-width in Chinese and Japanese, with a no-break space before it in French
+  // What the search could not read, in the interface's language ("ccf:d — ccf takes one of: a, b, c"): the operator's words as they are typed, each in a left-to-right
+  // isolate (a ">" in an Arabic or Hebrew line would otherwise be drawn as "<")
+  const searchProblem = ({ word, name }) => {
+    const op = B.query.OPERATORS.find((o) => o.name === name), code = (s) => "\u2066" + s + "\u2069";
+    return op.values ? t("searchBadList", [code(word), code(name), op.values.map(code).join(comma())]) : t("searchBadNumber", [code(word), code(name), code(op.example)]);
+  };
   const colon = () => { const l = String(language).slice(0, 2).toLowerCase(); return l === "zh" || l === "ja" ? "：" : l === "fr" ? "\u00a0: " : ": "; };
 
   // chrome.i18n lookup; falls back to the key so a missing string is visible, not blank.
@@ -165,5 +171,5 @@
   // the words on the copy buttons (panel, toolbar popup, settings page): one per format of lib/prefs.js COPY_BUTTONS
   const COPY_LABEL = { summary: "copySummary", table: "copyTable", image: "copyImage", papers: "copyPapers", apa: "copyApa", ieee: "copyIeee", acm: "copyAcm", gbt: "copyGbt", bibtex: "copyBibtex", markdown: "copyMarkdown", json: "copyJson", csv: "exportCsv" };
 
-  B.dom = { h, t, tn, tDefault, ownName, setLabels, COPY_LABEL, applyColors, applyRowStyle, applyChips, useLanguage, dir, langTag, colon, comma, quote, copyText, copyImage, downloadFile, sleep, frame, issueUrl, REPO };
+  B.dom = { h, t, tn, tDefault, ownName, setLabels, searchProblem, COPY_LABEL, applyColors, applyRowStyle, applyChips, useLanguage, dir, langTag, colon, comma, quote, copyText, copyImage, downloadFile, sleep, frame, issueUrl, REPO };
 })();

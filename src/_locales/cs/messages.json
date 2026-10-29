@@ -823,6 +823,34 @@
   "searchShortcut": {
     "message": "Stiskněte / pro hledání"
   },
+  "searchBadList": {
+    "message": "$N1$ — $N2$ přijímá jednu z těchto hodnot: $N3$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      },
+      "n3": {
+        "content": "$3"
+      }
+    }
+  },
+  "searchBadNumber": {
+    "message": "$N1$ — $N2$ přijímá číslo, například $N3$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      },
+      "n3": {
+        "content": "$3"
+      }
+    }
+  },
   "searchKeys": {
     "message": "Enter: další shoda · Shift+Enter: předchozí shoda · ↓: návrhy · Esc: vymazat"
   },

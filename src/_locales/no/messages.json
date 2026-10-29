@@ -823,6 +823,34 @@
   "searchShortcut": {
     "message": "Trykk / for å søke"
   },
+  "searchBadList": {
+    "message": "$N1$ — $N2$ godtar én av disse verdiene: $N3$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      },
+      "n3": {
+        "content": "$3"
+      }
+    }
+  },
+  "searchBadNumber": {
+    "message": "$N1$ — $N2$ godtar et tall, for eksempel $N3$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      },
+      "n3": {
+        "content": "$3"
+      }
+    }
+  },
   "searchKeys": {
     "message": "Enter: neste treff · Shift+Enter: forrige treff · ↓: forslag · Esc: tøm"
   },

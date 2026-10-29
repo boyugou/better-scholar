@@ -823,6 +823,34 @@
   "searchShortcut": {
     "message": "กด / เพื่อค้นหา"
   },
+  "searchBadList": {
+    "message": "$N1$ — $N2$ ต้องเป็นหนึ่งในนี้: $N3$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      },
+      "n3": {
+        "content": "$3"
+      }
+    }
+  },
+  "searchBadNumber": {
+    "message": "$N1$ — $N2$ ต้องเป็นตัวเลข เช่น $N3$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      },
+      "n3": {
+        "content": "$3"
+      }
+    }
+  },
   "searchKeys": {
     "message": "Enter: ผลลัพธ์ถัดไป · Shift+Enter: ผลลัพธ์ก่อนหน้า · ↓: คำแนะนำ · Esc: ล้าง"
   },

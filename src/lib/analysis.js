@@ -96,7 +96,7 @@
       if (row.raw) memo.set(row.raw, { a: row.a, marks: row.a && row.a.marks, shown: row.shown, ok });
       return ok;
     };
-    return { test, errors: parsed.errors, empty: !parsed.terms.length };
+    return { test, errors: parsed.errors, problems: parsed.problems, empty: !parsed.terms.length };
   }
 
   // The rows that would benefit from a look at the paper's own page: the owner is

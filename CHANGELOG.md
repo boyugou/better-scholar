@@ -60,6 +60,12 @@ give the details and every review):
   An independent review fixed: a long note (the source address) widens the picture instead of running off it; the total column has the
   panel's one word, row and column, and as much room as a custom name needs; a failed copy is no longer drawn green; the picture of an
   empty selection is copied like the table; the popup says when the picture fails; Japanese pages draw with Japanese fonts first.
+- **What the search cannot read is said in your language**: "ccf:d — ccf takes one of: a, b, c", "cites:abc — cites takes a number,
+  such as cites:>100" — the line under the box, its tooltip and the settings line under your own filters' words were English in every
+  language. The operators stay as typed, each in a left-to-right run; the page calls keep their English `errors`. 30 languages.
+- **A search typed in a right-to-left panel runs clear of the count and the clear button**: in Arabic or Hebrew a search of operators
+  ("ccf:d cites:abc", left to right) lay under the match count, which sits on the left there. The box stays right-to-left and each
+  line takes its own direction; an end-to-end check measures it.
 - **A journal track keeps the journal's chip**: "ACM Transactions on Reconfigurable Technology and Systems (FCCM Journal Track)" (a real
   line) had none, as a track of FCCM; it is a TRETS article, so it has TRETS's (CCF B) — never FCCM's. A line that names only the
   conference ("FCCM Journal Track", "ICSE Journal-First") still has none. diff:matcher: 1 gained, nothing lost or moved.

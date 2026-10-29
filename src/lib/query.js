@@ -27,13 +27,13 @@
       doc: "the publication year compared the same way." },
     { name: "age", value: new RegExp("^" + COMPARE + "$"), example: "age:<5", suggest: ["age:<5", "age:<=10"],
       doc: "how old the paper is, in years, compared the same way: this year is 0, so age:<5 is this year and the four before it (the last five years; it stays true as the years go by)." },
-    { name: "ccf", value: /^[abc]$/, example: "ccf:a", suggest: ["ccf:a", "ccf:b", "ccf:c"], doc: "the venue's CCF rank: a, b or c." },
-    { name: "core", value: /^(?:a\*|[abc])$/, example: "core:a*", suggest: ["core:a*", "core:a", "core:b"], doc: "the venue's CORE rank: a*, a, b or c." },
-    { name: "role", value: /^(?:first|cofirst|second|last|middle)$/, example: "role:first", suggest: ["role:first", "role:cofirst", "role:second", "role:last"],
+    { name: "ccf", value: /^[abc]$/, values: ["a", "b", "c"], example: "ccf:a", suggest: ["ccf:a", "ccf:b", "ccf:c"], doc: "the venue's CCF rank: a, b or c." },
+    { name: "core", value: /^(?:a\*|[abc])$/, values: ["a*", "a", "b", "c"], example: "core:a*", suggest: ["core:a*", "core:a", "core:b"], doc: "the venue's CORE rank: a*, a, b or c." },
+    { name: "role", value: /^(?:first|cofirst|second|last|middle)$/, values: ["first", "cofirst", "second", "last", "middle"], example: "role:first", suggest: ["role:first", "role:cofirst", "role:second", "role:last"],
       doc: "your position in the author list: first, cofirst, second, last, or middle (none of those four)." },
-    { name: "type", value: /^(?:conference|journal)$/, example: "type:journal", suggest: ["type:conference", "type:journal"],
+    { name: "type", value: /^(?:conference|journal)$/, values: ["conference", "journal"], example: "type:journal", suggest: ["type:conference", "type:journal"],
       doc: "the kind of venue the rank lists say it is: conference or journal (a venue without a rank has no kind)." },
-    { name: "has", value: /^(?:award|talk)$/, example: "has:award", suggest: ["has:award", "has:talk"],
+    { name: "has", value: /^(?:award|talk)$/, values: ["award", "talk"], example: "has:award", suggest: ["has:award", "has:talk"],
       doc: "has:award — a best-paper award or finalist mark; has:talk — an Oral, Spotlight or Highlight mark." }
   ];
   const BY_NAME = new Map(OPERATORS.map((o) => [o.name, o]));
@@ -43,14 +43,15 @@
   const POPULAR = ["role:first", "role:last", "ccf:a", "core:a*", "cites:>100", "age:<5", "has:award", "has:talk"];
   const TEXT_FIELDS = 8000;       // a longer query than this is cut: nobody types it, and a script could send anything
 
-  // → { terms, errors }. A term is { kind: "text", text } | { kind: "cites" | "year" | "age", op, n } | { kind: "ccf" | "core" | "role" | "type" | "has", values: [any of these] } | { kind: "never" }.
+  // → { terms, errors, problems }. `errors` says in English what could not be read (for a script or an agent); `problems` the same as { word, name } (the operator), for
+  // the panel to say in the interface's language. A term is { kind: "text", text } | { kind: "cites" | "year" | "age", op, n } | { kind: "ccf" | "core" | "role" | "type" | "has", values: [any of these] } | { kind: "never" }.
   function parse(q) {
-    const terms = [], errors = [];
+    const terms = [], errors = [], problems = [];
     for (const word of String(q == null ? "" : q).slice(0, TEXT_FIELDS).toLowerCase().split(/\s+/).filter(Boolean)) {
       const at = word.indexOf(":");
       const op = at > 0 ? BY_NAME.get(word.slice(0, at)) : undefined;
       if (!op) { terms.push({ kind: "text", text: word }); continue; }
-      const raw = word.slice(at + 1), bad = () => { terms.push({ kind: "never" }); errors.push(`${word} — ${op.doc.replace(/\.$/, "")}`); };
+      const raw = word.slice(at + 1), bad = () => { terms.push({ kind: "never" }); errors.push(`${word} — ${op.doc.replace(/\.$/, "")}`); problems.push({ word, name: op.name }); };
       if (LISTED.has(op.name)) {                                              // (a comma lists values: "role:first,last"; one still typing, "role:first,", has the one it has)
         const values = [...new Set(raw.split(",").filter(Boolean))];
         if (!values.length || values.some((v) => !op.value.test(v))) bad(); else terms.push({ kind: op.name, values });
@@ -60,7 +61,7 @@
       if (!m) { bad(); continue; }
       terms.push({ kind: op.name, op: m[1] || "=", n: parseInt(m[2], 10) });
     }
-    return { terms, errors };
+    return { terms, errors, problems };
   }
 
   const COMPARERS = { ">": (a, b) => a > b, ">=": (a, b) => a >= b, "<": (a, b) => a < b, "<=": (a, b) => a <= b, "=": (a, b) => a === b };

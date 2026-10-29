@@ -823,6 +823,34 @@
   "searchShortcut": {
     "message": "Press / to search"
   },
+  "searchBadList": {
+    "message": "$N1$ — $N2$ takes one of: $N3$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      },
+      "n3": {
+        "content": "$3"
+      }
+    }
+  },
+  "searchBadNumber": {
+    "message": "$N1$ — $N2$ takes a number, such as $N3$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      },
+      "n3": {
+        "content": "$3"
+      }
+    }
+  },
   "searchKeys": {
     "message": "Enter: next match · Shift+Enter: previous · ↓: suggestions · Esc: clear"
   },

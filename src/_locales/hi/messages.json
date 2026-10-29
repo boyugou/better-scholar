@@ -823,6 +823,34 @@
   "searchShortcut": {
     "message": "/ दबाकर खोजें"
   },
+  "searchBadList": {
+    "message": "$N1$ — $N2$ इनमें से कोई एक मान स्वीकार करता है: $N3$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      },
+      "n3": {
+        "content": "$3"
+      }
+    }
+  },
+  "searchBadNumber": {
+    "message": "$N1$ — $N2$ एक संख्या स्वीकार करता है, जैसे $N3$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      },
+      "n3": {
+        "content": "$3"
+      }
+    }
+  },
   "searchKeys": {
     "message": "Enter: अगला मिलान · Shift+Enter: पिछला मिलान · ↓: सुझाव · Esc: साफ़ करें"
   },

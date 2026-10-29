@@ -823,6 +823,34 @@
   "searchShortcut": {
     "message": "Tryk / for at søge"
   },
+  "searchBadList": {
+    "message": "$N1$ — $N2$ accepterer en af disse værdier: $N3$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      },
+      "n3": {
+        "content": "$3"
+      }
+    }
+  },
+  "searchBadNumber": {
+    "message": "$N1$ — $N2$ accepterer et tal, fx $N3$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      },
+      "n3": {
+        "content": "$3"
+      }
+    }
+  },
   "searchKeys": {
     "message": "Enter: næste resultat · Shift+Enter: forrige resultat · ↓: forslag · Esc: ryd"
   },

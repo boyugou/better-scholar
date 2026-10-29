@@ -823,6 +823,34 @@
   "searchShortcut": {
     "message": "Нажмите / для поиска"
   },
+  "searchBadList": {
+    "message": "$N1$ — $N2$ принимает одно из значений: $N3$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      },
+      "n3": {
+        "content": "$3"
+      }
+    }
+  },
+  "searchBadNumber": {
+    "message": "$N1$ — $N2$ принимает число, например $N3$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      },
+      "n3": {
+        "content": "$3"
+      }
+    }
+  },
   "searchKeys": {
     "message": "Enter: следующее совпадение · Shift+Enter: предыдущее совпадение · ↓: подсказки · Esc: очистить"
   },

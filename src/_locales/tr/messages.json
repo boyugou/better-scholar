@@ -823,6 +823,34 @@
   "searchShortcut": {
     "message": "Aramak için / tuşuna basın"
   },
+  "searchBadList": {
+    "message": "$N1$ — $N2$ şunlardan birini kabul eder: $N3$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      },
+      "n3": {
+        "content": "$3"
+      }
+    }
+  },
+  "searchBadNumber": {
+    "message": "$N1$ — $N2$ bir sayı kabul eder, örneğin $N3$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      },
+      "n3": {
+        "content": "$3"
+      }
+    }
+  },
   "searchKeys": {
     "message": "Enter: sonraki eşleşme · Shift+Enter: önceki eşleşme · ↓: öneriler · Esc: temizle"
   },

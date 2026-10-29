@@ -823,6 +823,34 @@
   "searchShortcut": {
     "message": "Appuyez sur / pour rechercher"
   },
+  "searchBadList": {
+    "message": "$N1$ — $N2$ accepte l’une de ces valeurs : $N3$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      },
+      "n3": {
+        "content": "$3"
+      }
+    }
+  },
+  "searchBadNumber": {
+    "message": "$N1$ — $N2$ accepte un nombre, par exemple $N3$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      },
+      "n3": {
+        "content": "$3"
+      }
+    }
+  },
   "searchKeys": {
     "message": "Entrée : résultat suivant · Maj+Entrée : résultat précédent · ↓ : suggestions · Échap : effacer"
   },

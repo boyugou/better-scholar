@@ -27,7 +27,7 @@ const talk = { ...paper, a: { ...paper.a, role: "last", marks: [{ kind: "spotlig
 const test_ = (q, row = paper) => analysis.queryMatcher(q).test(row);
 
 test("parse: words, operators, and what an operator with a wrong value does", () => {
-  assert.deepEqual(query.parse("deep Learning"), { terms: [{ kind: "text", text: "deep" }, { kind: "text", text: "learning" }], errors: [] });
+  assert.deepEqual(query.parse("deep Learning"), { terms: [{ kind: "text", text: "deep" }, { kind: "text", text: "learning" }], errors: [], problems: [] });
   assert.deepEqual(query.parse("  cites:>100  year:2020 ").terms, [{ kind: "cites", op: ">", n: 100 }, { kind: "year", op: "=", n: 2020 }]);
   assert.deepEqual(query.parse("cites:>=5 cites:<=9 cites:<1 cites:=3").terms.map((t) => t.op + t.n), [">=5", "<=9", "<1", "=3"]);
   assert.deepEqual(query.parse("CCF:A core:A* role:Cofirst has:AWARD").terms, [{ kind: "ccf", values: ["a"] }, { kind: "core", values: ["a*"] }, { kind: "role", values: ["cofirst"] }, { kind: "has", values: ["award"] }]);
@@ -38,7 +38,7 @@ test("parse: words, operators, and what an operator with a wrong value does", ()
   assert.deepEqual(bad.terms.map((t) => t.kind), ["never", "never", "never", "never", "never"]);
   assert.equal(bad.errors.length, 5);
   assert.match(bad.errors[0], /^ccf:x — the venue's CCF rank: a, b or c$/);
-  for (const empty of ["", "   ", null, undefined]) assert.deepEqual(query.parse(empty), { terms: [], errors: [] });
+  for (const empty of ["", "   ", null, undefined]) assert.deepEqual(query.parse(empty), { terms: [], errors: [], problems: [] });
 });
 
 test("the operators' table: each example and suggestion is a valid term, and says what it does", () => {
@@ -304,3 +304,17 @@ test("a quick filter of your own: its words go in whole and must all be there to
   assert.equal(query.keepOnly("role:first,last has:talk foo", new Set(["role:first,last"])), "role:first,last");
   assert.equal(query.keepOnly("role:first,last has:talk", new Set(["role:first"])), "role:first");
 });
+
+test("what the search cannot read is said twice: in English for a script, and as { word, name } for the panel to say in its language", () => {
+  const r = query.parse("deep ccf:d cites:abc role:first,boss");
+  assert.deepEqual(r.problems, [{ word: "ccf:d", name: "ccf" }, { word: "cites:abc", name: "cites" }, { word: "role:first,boss", name: "role" }]);
+  assert.equal(r.errors.length, 3);
+  assert.match(r.errors[0], /^ccf:d — /, "the English, for the page calls and the agent guide");
+  // (each listed operator says its values, which the panel names when one is wrong; each other one has an example)
+  for (const op of query.OPERATORS) {
+    if (query.LISTED.has(op.name)) assert.ok(op.values && op.values.every((v) => op.value.test(v)) && op.suggest.every((s) => op.values.includes(s.split(":")[1])), op.name);
+    else assert.ok(!op.values && op.value.test(op.example.split(":")[1]), op.name);
+  }
+  assert.deepEqual(query.parse("ccf:a").problems, []);
+});
+

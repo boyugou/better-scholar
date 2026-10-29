@@ -773,7 +773,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     await queryInput.fill("ccf:x");
     assert.equal(await visibleRows(page), 0, "an operator with a value it does not take finds nothing …");
     assert.equal(await queryInput.getAttribute("aria-invalid"), "true", "… and the box says it could not be read");
-    assert.match(await queryInput.getAttribute("title"), /^ccf:x — the venue's CCF rank/);
+    assert.equal((await queryInput.getAttribute("title")).replace(/[\u2066-\u2069]/g, ""), "ccf:x — ccf takes one of: a, b, c", "in the interface's words; the operator's as typed");
     await queryInput.fill("   ");
     assert.equal(await searchCount.isVisible(), false, "a query of spaces is no query: no count");
     assert.equal(await visibleRows(page), all.length);
@@ -2771,6 +2771,17 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
             return out;
           });
           if (over.length) bad.push(`${lang}/${mode}: ${over.join("; ")}`);
+          // (a left-to-right search typed in a right-to-left panel — operators are code — runs clear of the count and the clear button, which sit on the left there)
+          if (["ar", "he"].includes(lang) && mode === "sidebar") {
+            await page.fill("#rr-panel .rr-search-input", "ccf:d cites:abc");
+            await page.waitForFunction(() => !document.querySelector("#rr-panel .rr-search-count").hidden);
+            const clear = await page.evaluate(() => {
+              const i = document.querySelector("#rr-panel .rr-search-input"), cs = getComputedStyle(i), r = i.getBoundingClientRect(), text = { left: r.left + parseFloat(cs.paddingLeft), right: r.right - parseFloat(cs.paddingRight) };
+              return [".rr-search-count", ".rr-search-clear"].map((q) => document.querySelector("#rr-panel " + q)).filter((e) => e && !e.hidden).every((e) => { const b = e.getBoundingClientRect(); return b.right <= text.left + 1 || b.left >= text.right - 1; });
+            });
+            if (!clear) bad.push(`${lang}: the typed search runs under the count or the clear button`);
+            await page.fill("#rr-panel .rr-search-input", "");
+          }
           // "11 of 12" in the language's own order: Hindi puts the total first
           if (lang === "hi" && mode === "sidebar") {
             const order = await page.evaluate(() => [...document.querySelector('[data-metric="mPapers"] > span:last-child').childNodes].map((n) => n.nodeName));
@@ -3221,7 +3232,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
       await page.locator("#rr-panel .rr-search-input").fill("cites:abc");
       await page.waitForTimeout(300);
       assert.equal(await page.locator("#rr-search-error").isVisible(), true, "the error is on the screen");
-      assert.ok((await page.locator("#rr-search-error").textContent()).trim().length > 3);
+      assert.match(await page.locator("#rr-search-error").textContent(), /cites:abc.*cites.*takes a number, such as .*cites:>100/, "in the interface's words, the operator's as typed");
       assert.equal(await page.locator("#rr-panel .rr-search-input").getAttribute("aria-describedby"), "rr-search-error rr-search-keys");
       await page.locator("#rr-panel .rr-search-input").fill("");
       await page.waitForTimeout(300);

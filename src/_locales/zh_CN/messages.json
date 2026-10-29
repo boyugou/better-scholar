@@ -823,6 +823,34 @@
   "searchShortcut": {
     "message": "按 / 键搜索"
   },
+  "searchBadList": {
+    "message": "$N1$ — $N2$ 只接受以下之一：$N3$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      },
+      "n3": {
+        "content": "$3"
+      }
+    }
+  },
+  "searchBadNumber": {
+    "message": "$N1$ — $N2$ 接受数字，例如 $N3$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      },
+      "n3": {
+        "content": "$3"
+      }
+    }
+  },
   "searchKeys": {
     "message": "Enter：下一个匹配项 · Shift+Enter：上一个匹配项 · ↓：建议 · Esc：清除"
   },
