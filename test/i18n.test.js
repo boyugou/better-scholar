@@ -77,7 +77,7 @@ test("no run of English words left in a language of another script: two English 
     looked++;
     for (const [key, { message }] of Object.entries(messages)) {
       const rest = message.replace(KEPT, " ").replace(/\$[A-Z0-9_]+\$/g, " ").replace(/\b[a-z]+:[^\s,]*/g, " ");          // (and the search's operators, role:first …)
-      const run = rest.match(/(?<![A-Za-z])[A-Za-z][a-z]+(?:[ -][A-Za-z][a-z]+)+(?![A-Za-z])/);          // (Latin edges only: English glued to Chinese, Japanese or Thai letters — "显示Best paper奖" — counts too)
+      const run = rest.match(/(?<!\p{Script=Latin})[A-Za-z][a-z]+(?:[ -][A-Za-z][a-z]+)+(?!\p{Script=Latin})/u);          // (edges of Latin letters only: English glued to Chinese, Japanese or Thai letters — "显示Best paper奖" — counts too, a part of "Müller Schmidt" does not)
       if (run) left.push(`${code}/${key}: "${run[0]}" in ${message}`);
     }
   }

@@ -84,7 +84,10 @@ give the details and every review):
   name with no space still ran out, as did the table's total-row name and the "not ranked" line (they break where they must now, as in
   the panel); the i18n test missed English glued to Chinese, Japanese or Thai letters ("显示Best paper奖"); and the overflow audit's
   soft-hyphen rule skipped such words entirely — it now measures each part, leaving out only the hyphen drawn at the break, which
-  Chrome reports with the next letter.
+  Chrome reports with the next letter. A second review found three of the new checks weaker than they looked, each now shown to fail
+  on the defect it guards: the pressed-button checks waited a fixed 150 ms (they wait for the button to say it copied, and fail if it
+  never does); the popup check saw only boxes past the popup's edge (it also sees text running out of its own box, and into the 16 px
+  margin); and the i18n test's edges cut "Müller Schmidt" into English (its edges are Latin letters now, accented ones too).
 - **The accessibility audit runs in CI.** `scripts/axe-audit.mjs` (axe-core over the panel, the settings page and the popup, in four
   languages, light and dark, exit 1 on any violation) was run by hand; it takes half a minute, so CI's demo job and `npm run check:all`
   now run it too.

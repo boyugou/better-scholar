@@ -108,23 +108,33 @@ for (const lang of ["ar", "ja", "th", "de"]) {
 }
 await setPrefs({ language: "auto" });
 await page.waitForTimeout(1200); await page.bringToFront(); await page.waitForSelector("#rr-panel", { state: "attached" });          // (a change of language reloads the profile page: the popup asks it for the summary)
-// the popup with every renamable text at its longest (30 characters, words; and 30 full-width characters in a row): does anything stick out of the popup or make it scroll sideways?
+// the popup with every renamable text at its longest (30 characters: words, full-width characters, letters with no space): does anything run into the popup's side margin
+// (16 px), stick out of it or make it scroll sideways?
 const NAMES = Object.keys((await import(pathToFileURL(path.join(root, "src/lib/prefs.js")).href).then((m) => m.default || m)).NAMES);
 for (const [kind, text] of [["words", "Wmw Wmw Wmw Wmw Wmw Wmw Wmw Wm"], ["full-width", "漢".repeat(30)], ["no space", "W".repeat(30)], ["full-width, a button just clicked", "漢".repeat(30)]]) {
   await setPrefs({ labels: Object.fromEntries(NAMES.map((k) => [k, text])) });
   await popup.waitForTimeout(300);
   await popup.goto(`chrome-extension://${id}/popup/popup.html?tab=${profileTab}`); await popup.waitForSelector(".who"); await popup.waitForTimeout(300);
-  if (kind.includes("clicked")) { await popup.click('.actions button.btn[data-act="copy-summary"]'); await popup.waitForTimeout(150); }          // (a pressed button keeps its label's width while it says "Copied": at most the row's)
-  const out = await popup.evaluate(() => { const w = Math.round(document.body.getBoundingClientRect().width), over = [...document.body.querySelectorAll("*")].filter((e) => !e.closest("[hidden]") && e.getBoundingClientRect().width && e.getBoundingClientRect().right > w + 1).map((e) => e.tagName.toLowerCase() + "." + String(e.className).split(" ")[0] + " " + Math.round(e.getBoundingClientRect().right)); return { scrollWidth: document.body.scrollWidth, w, over: over.slice(0, 4) }; });          // (the popup is as wide as its body: 340px)
-  const bad = out.scrollWidth > out.w + 1 || out.over.length;          // (a copy button's label wraps once it is wider than the row: 30 wide letters ran 5 px past the popup on Linux's fonts)
+  let flashed = true;
+  if (kind.includes("clicked")) {          // (a pressed button keeps its label's width while it says "Copied", 1.2 s — at most the row's; measured once it has said so)
+    await popup.click('.actions button.btn[data-act="copy-summary"]');
+    flashed = await popup.waitForFunction(() => !!document.querySelector('.actions button.btn[data-act="copy-summary"]').style.minWidth, null, { timeout: 1000 }).then(() => true, () => false);
+  }
+  const out = await popup.evaluate(() => {          // (the popup is as wide as its body, 340 px; its content keeps 16 px from each side: what is not a full-width bar must end before that margin)
+    const w = Math.round(document.body.getBoundingClientRect().width);
+    const over = [...document.body.querySelectorAll("*")].filter((e) => { const r = e.getBoundingClientRect(); return !e.closest("[hidden], .sr") && r.width && (r.right > w + 1 || (r.left >= 15 && r.right > w - 15) || (e.clientWidth && e.scrollWidth > e.clientWidth + 1)); });          // (… or whose text runs out of its own box)
+    return { scrollWidth: document.body.scrollWidth, w, over: over.slice(0, 4).map((e) => e.tagName.toLowerCase() + "." + String(e.className).split(" ")[0] + " " + Math.round(e.getBoundingClientRect().right)) };
+  });
+  const bad = out.scrollWidth > out.w + 1 || out.over.length || !flashed;          // (a copy button's label wraps once it is wider than the row: 30 wide letters ran 5 px past the popup on Linux's fonts)
   if (bad) total++;
-  console.log(`${bad ? "✗" : "✓"} popup with every name at its longest (${kind}): width ${out.w}, scrollWidth ${out.scrollWidth}${out.over.length ? ", sticks out: " + out.over.join("; ") : ""}`);
+  console.log(`${bad ? "✗" : "✓"} popup with every name at its longest (${kind}): width ${out.w}, scrollWidth ${out.scrollWidth}${out.over.length ? ", sticks out: " + out.over.join("; ") : ""}${flashed ? "" : ", the pressed button never said it had copied"}`);
   if (kind.includes("clicked")) {          // (and the panel's: a pressed copy button stays in its row)
     await page.bringToFront();
-    await page.click('#rr-panel .rr-copybar [data-act="copy-summary"]'); await page.waitForTimeout(150);
+    await page.click('#rr-panel .rr-copybar [data-act="copy-summary"]');
+    const panelFlashed = await page.waitForFunction(() => /min-width/.test(document.querySelector('#rr-panel .rr-copybar [data-act="copy-summary"]').getAttribute("style") || ""), null, { timeout: 1000 }).then(() => true, () => false);
     const outside = await page.evaluate(() => { const bar = document.querySelector("#rr-panel .rr-copybar").getBoundingClientRect(); return [...document.querySelectorAll("#rr-panel .rr-copybar .rr-btn")].map((b) => b.getBoundingClientRect()).filter((r) => r.right > bar.right + 1 || r.left < bar.left - 1).map((r) => Math.round(r.width)); });
-    if (outside.length) total++;
-    console.log(`${outside.length ? "✗" : "✓"} panel with every name at its longest (${kind}): ${outside.length ? "buttons out of the copy row, " + outside.join(", ") + " px wide" : "every copy button in its row"}`);
+    if (outside.length || !panelFlashed) total++;
+    console.log(`${outside.length || !panelFlashed ? "✗" : "✓"} panel with every name at its longest (${kind}): ${!panelFlashed ? "the pressed button never said it had copied" : outside.length ? "buttons out of the copy row, " + outside.join(", ") + " px wide" : "every copy button in its row"}`);
   }
 }
 await setPrefs({ labels: Object.fromEntries(NAMES.map((k) => [k, ""])) });
