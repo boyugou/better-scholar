@@ -2,6 +2,24 @@
 
 ## 2.41.0 — 2026-10-15
 
+Not released yet: the version was set on 2026-10-15 and the work went on under it. In short, for release notes (the entries below
+give the details and every review):
+
+- **Your own venue mappings**: tie a venue that no list ranks to a listed one; its chip says it is your mapping.
+- **Copy as image**, **Copy IEEE** and **Copy GB/T 7714** (each off until switched on); references and the papers table paste
+  into Word, Docs or Pages with real italics and your name in bold.
+- **Your own quick filters**: up to three buttons of your own search words under the search box.
+- **Check a venue**: on the settings page, or from the panel's list of unranked venues — what the lists make of a line, and by which rule.
+- **The counts follow the filters**: the table, the award counts and the copied summary count the papers the filters leave.
+- **Search**: `role:first,last` (either), `type:journal`, `age:<5`, and the whole author list once it was read.
+- **One chip where both lists rank a venue** (CCF first by default; a setting changes it).
+- **The reference styles read the venue line's parts** (volume, issue, pages), and the page range from the paper's own page.
+- **Matching**: many wrong chips removed and missing ones added, from sweeps over 75,000 real venue lines and seventeen independent reviews.
+- **The toolbar popup** offers *Open my profile* when the tab is no profile.
+- **The settings page** works on a phone.
+- **30 languages**: one word for one thing throughout.
+- **Accessibility**: an independent WCAG 2.2 AA review, its findings fixed.
+
 - **Your own venue mappings** (settings → *Check a venue* → *Assign it to a listed venue…*). A venue line that no rule ranks can now be
   tied by you to a row of the CCF or CORE list; the same venue in other editions (years, ordinals, "Proceedings of the" and a bracketed acronym aside) gets that
   rank too. It is never passed off as the lists' rank: the chip is dashed with a dotted tier and its tooltip says "Your own mapping", a
