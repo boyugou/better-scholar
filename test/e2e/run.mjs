@@ -2974,6 +2974,23 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     const worstUse = Math.max(0, ...(await page.evaluate(() => window.__long)));
     assert.ok(worstUse < 250, `a key or a click took a ${worstUse} ms task on 1,000 papers`);
     ok(`1,000 papers: typing a search, a quick filter, a table cell and a role picked and undone; longest main-thread task ${worstUse} ms`);
+
+    // and nothing piles up with use: after one round to warm up, 30 rounds of a search set and cleared and of picks made and undone leave the page with as many
+    // nodes (counted by the browser, those held outside the page too) and listeners as before (2026-10-29: flat over 400 rounds; the search is set by script — typed
+    // keys would add the text box's own undo history, which is the browser's)
+    const cdp5 = await ctx5.newCDPSession(page);
+    const use = async () => {
+      await page.evaluate(() => { const b = document.querySelector('[data-act="filter-query"]'); for (const v of ["role:first ccf:a", "year:>=2015 cites:>100", ""]) { b.value = v; b.dispatchEvent(new Event("input", { bubbles: true })); } });
+      for (const sel of ["#rr-panel .rr-spill >> nth=0", "#rr-panel button.rr-cell:not(.rr-zero) >> nth=0"]) { await page.locator(sel).click(); await page.locator(sel).click(); }
+    };
+    const counters = async () => { await cdp5.send("HeapProfiler.collectGarbage"); await cdp5.send("HeapProfiler.collectGarbage"); return cdp5.send("Memory.getDOMCounters"); };
+    await use();
+    const before = await counters();
+    for (let i = 0; i < 30; i++) await use();
+    const after = await counters();
+    assert.ok(after.nodes - before.nodes <= 10, `nodes grew with use: ${before.nodes} → ${after.nodes}`);
+    assert.equal(after.jsEventListeners, before.jsEventListeners, "listeners grew with use");
+    ok(`1,000 papers: 30 rounds of searches and picks leave as many nodes (${before.nodes} → ${after.nodes}) and listeners (${after.jsEventListeners}) as before`);
   } finally {
     await ctx5.close();
   }

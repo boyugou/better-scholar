@@ -78,6 +78,10 @@ give the details and every review):
   old rule), with the one known limit reported and not counted: a chip keeps its name on one line, so a 30-character chip name is cut
   in a preview of 330 px or less. The overflow audit no longer counts a break at a soft hyphen (Finnish "Yhteis-|ensimmäinen") as a
   word cut in two.
+- **Measured: nothing piles up with use.** On 1,000 papers, 400 rounds of searches, picks and copies: the heap stays flat once
+  warmed up, the page's elements and listeners stay the same, and the browser's count of nodes too — but for two things of the
+  browser's own (the text box's undo history of typed keys, and its record of layout shifts, which stops at 150). The end-to-end check
+  of 1,000 papers now runs 30 such rounds and fails if nodes or listeners grow (it does on a leak put in on purpose).
 - **The tests run on Windows, and CI measures the page on Windows' fonts.** A new workflow (`windows.yml`) runs the unit tests, the
   overflow audit in 30 languages (also with every name at 30 characters), axe-core, the web demo and the panel in every language
   (e2e part 2) on a Windows runner, beside test.yml's Linux run. Everything was clean on Windows' fonts; what failed was the tests
