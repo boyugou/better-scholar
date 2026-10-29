@@ -144,7 +144,8 @@
     // "role:first,last role:first" is first authors only, under a pressed Last — and the same clicks in another order would give another search)
     const ops = new Set(ps.map(split).filter((s) => s && SINGLE.has(s.name)).map((s) => s.name));
     const kept = ws.filter((w) => { const s = split(w.toLowerCase()); return !(s && ops.has(s.name)) || ps.includes(norm(w)); });
-    return [...kept, ...ps.filter((p) => !kept.some((w) => norm(w) === p))].join(" ");
+    const add = [...new Map(words(words_).map((w) => [norm(w), w.toLowerCase().replace(/,+$/, "")])).entries()].filter(([p]) => !kept.some((w) => norm(w) === p)).map(([, w]) => w);          // (as the person wrote them)
+    return [...kept, ...add].join(" ");
   }
 
   return { OPERATORS, POPULAR, LISTED, parse, matches, hasValue, toggleValue, keepOnly, searchParts, hasAll, toggleAll };
