@@ -8,6 +8,7 @@
     "test:e2e": "node test/e2e/run.mjs",
     "test:demo": "node test/e2e/demo.mjs",
     "check:profile": "node scripts/check-saved-profile.mjs",
+    "check:all": "bash scripts/check-all.sh",
     "check:claims": "node store/chrome/check-claims.mjs",
     "audit:overflow": "node scripts/overflow-audit.mjs",
     "diff:matcher": "node scripts/diff-matcher.mjs",
