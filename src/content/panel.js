@@ -113,8 +113,10 @@
 
     // filters (built once, synced on update)
     const queryInput = h("input", { type: "search", class: "rr-search-input", "data-act": "filter-query", maxlength: "500", spellcheck: "false", autocomplete: "off", autocapitalize: "off", autocorrect: "off", dir: "auto",          // (operators are code, not words: no red squiggles; its direction follows what is typed)
-      role: "combobox", "aria-autocomplete": "list", "aria-expanded": "false", "aria-controls": "rr-suggest" });
+      role: "combobox", "aria-autocomplete": "list", "aria-expanded": "false", "aria-controls": "rr-suggest", "aria-describedby": "rr-search-keys" });
     const searchCount = h("span", { class: "rr-search-count", "data-rr": "search-count", hidden: true, "aria-live": "polite" });
+    // (the keys of the box, for a screen reader: the box's description, with what it could not read when there is something)
+    const searchKeys = h("span", { id: "rr-search-keys", hidden: true });
     const kbdHint = h("kbd", { class: "rr-search-kbd", "aria-hidden": "true", ...P("panel.filters.key"), onClick: () => {
       queryInput.focus();
       openPopularSuggestions();
@@ -310,7 +312,7 @@
         queryInput.title = wrong ? sm.errors.join("\n") : "";
         searchError.textContent = wrong ? sm.errors.join(" · ") : "";
         searchError.hidden = !wrong;
-        if (wrong) queryInput.setAttribute("aria-describedby", "rr-search-error"); else queryInput.removeAttribute("aria-describedby");
+        queryInput.setAttribute("aria-describedby", wrong ? "rr-search-error rr-search-keys" : "rr-search-keys");
       }
       if (sm) {
         searchCount.hidden = false;
@@ -377,7 +379,7 @@
         queryInput.blur();
       }
     });
-    const searchRow = h("div", { class: "rr-search", ...P("panel.filters.search") }, queryInput, searchCount, kbdHint, clearSearchBtn, suggestList);
+    const searchRow = h("div", { class: "rr-search", ...P("panel.filters.search") }, queryInput, searchCount, kbdHint, clearSearchBtn, suggestList, searchKeys);
     const searchError = h("div", { class: "rr-search-error", id: "rr-search-error", hidden: true });          // (what could not be read of the query, in words: the box says it is invalid, and by this)
 
     const onlyCb = h("input", { type: "checkbox", role: "switch", "data-act": "only", onChange: (e) => cb.onOnly(e.target.checked) });
@@ -432,7 +434,8 @@
       queryInput.placeholder = t("filterPlaceholder");
       queryInput.setAttribute("aria-label", t("filterPlaceholder"));
       suggestList.setAttribute("aria-label", t("filterPlaceholder"));
-      kbdHint.title = t("searchShortcut") + " · " + B.query.OPERATORS.map((o) => o.example).join(" · ");
+      kbdHint.title = t("searchShortcut") + "\n" + t("searchKeys") + "\n" + B.query.OPERATORS.map((o) => o.example).join(" · ");          // (the keys of the box on a line of their own)
+      searchKeys.textContent = t("searchKeys");
       clearSearchBtn.title = t("filterClear"); clearSearchBtn.setAttribute("aria-label", t("filterClear"));
       searchPills.setAttribute("aria-label", t("optPanelFilters"));
       for (const [id, btn] of pillEls) {

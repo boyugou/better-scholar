@@ -823,6 +823,9 @@
   "searchShortcut": {
     "message": "Nyomd meg a / billentyűt a kereséshez"
   },
+  "searchKeys": {
+    "message": "Enter: következő találat · Shift+Enter: előző találat · ↓: javaslatok · Esc: törlés"
+  },
   "venuesShowMore": {
     "message": "Több megjelenítése"
   },

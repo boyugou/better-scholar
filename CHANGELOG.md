@@ -60,6 +60,9 @@ give the details and every review):
   An independent review fixed: a long note (the source address) widens the picture instead of running off it; the total column has the
   panel's one word, row and column, and as much room as a custom name needs; a failed copy is no longer drawn green; the picture of an
   empty selection is copied like the table; the popup says when the picture fails; Japanese pages draw with Japanese fonts first.
+- **The search box's keys are written down**: the "/" hint's tooltip has a line "Enter: next match · Shift+Enter: previous · ↓:
+  suggestions · Esc: clear", and the box's description for a screen reader is that line (with what it could not read, when there is
+  something). 30 languages, French, Spanish and Italian with the key names their other hints use (Entrée, Intro, Invio …).
 - **Copy ACM** (off until switched on, like IEEE and GB/T 7714): the ACM Reference Format, the style of ACM's own papers —
   `[1] K. He, X. Zhang, S. Ren, and J. Sun. 2016. Title. In *Proceedings of …*. 770–778.`, `*Journal* 60, 6 (2017), 84–90.`, every
   author named (a cut list ends in "et al."), "Article 28" for an article number; with real italics and your name in bold for a word

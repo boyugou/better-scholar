@@ -823,6 +823,9 @@
   "searchShortcut": {
     "message": "اضغط / للبحث"
   },
+  "searchKeys": {
+    "message": "Enter: التطابق التالي · Shift+Enter: التطابق السابق · ↓: الاقتراحات · Esc: مسح"
+  },
   "venuesShowMore": {
     "message": "عرض المزيد"
   },

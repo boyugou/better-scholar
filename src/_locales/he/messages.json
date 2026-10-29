@@ -823,6 +823,9 @@
   "searchShortcut": {
     "message": "לחצו / כדי לחפש"
   },
+  "searchKeys": {
+    "message": "Enter: התאמה הבאה · Shift+Enter: התאמה הקודמת · ↓: הצעות · Esc: ניקוי"
+  },
   "venuesShowMore": {
     "message": "הצג עוד"
   },

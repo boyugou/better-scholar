@@ -823,6 +823,9 @@
   "searchShortcut": {
     "message": "Stiskněte / pro hledání"
   },
+  "searchKeys": {
+    "message": "Enter: další shoda · Shift+Enter: předchozí shoda · ↓: návrhy · Esc: vymazat"
+  },
   "venuesShowMore": {
     "message": "Zobrazit více"
   },

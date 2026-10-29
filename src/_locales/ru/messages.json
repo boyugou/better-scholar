@@ -823,6 +823,9 @@
   "searchShortcut": {
     "message": "Нажмите / для поиска"
   },
+  "searchKeys": {
+    "message": "Enter: следующее совпадение · Shift+Enter: предыдущее совпадение · ↓: подсказки · Esc: очистить"
+  },
   "venuesShowMore": {
     "message": "Показать ещё"
   },

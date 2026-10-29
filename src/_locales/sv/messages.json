@@ -823,6 +823,9 @@
   "searchShortcut": {
     "message": "Tryck / för att söka"
   },
+  "searchKeys": {
+    "message": "Enter: nästa träff · Shift+Enter: föregående träff · ↓: förslag · Esc: rensa"
+  },
   "venuesShowMore": {
     "message": "Visa mer"
   },

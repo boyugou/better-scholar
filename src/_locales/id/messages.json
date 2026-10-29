@@ -823,6 +823,9 @@
   "searchShortcut": {
     "message": "Tekan / untuk mencari"
   },
+  "searchKeys": {
+    "message": "Enter: kecocokan berikutnya · Shift+Enter: kecocokan sebelumnya · ↓: saran · Esc: hapus"
+  },
   "venuesShowMore": {
     "message": "Tampilkan lebih banyak"
   },

@@ -823,6 +823,9 @@
   "searchShortcut": {
     "message": "Druk op / om te zoeken"
   },
+  "searchKeys": {
+    "message": "Enter: volgende treffer · Shift+Enter: vorige treffer · ↓: suggesties · Esc: wissen"
+  },
   "venuesShowMore": {
     "message": "Meer tonen"
   },

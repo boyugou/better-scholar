@@ -823,6 +823,9 @@
   "searchShortcut": {
     "message": "Πατήστε / για αναζήτηση"
   },
+  "searchKeys": {
+    "message": "Enter: επόμενο αποτέλεσμα · Shift+Enter: προηγούμενο αποτέλεσμα · ↓: προτάσεις · Esc: εκκαθάριση"
+  },
   "venuesShowMore": {
     "message": "Εμφάνιση περισσότερων"
   },

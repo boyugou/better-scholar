@@ -21,7 +21,7 @@ What has been built is in [`CHANGELOG.md`](CHANGELOG.md).
 - **Venue matching coverage**: real unrecognised strings into `test/fixtures` and `src/data/aliases.js`; a DBLP-derived
   alias table could extend coverage offline ([details](docs/ROADMAP.md#venue-matching-coverage)).
 - **Other ideas, not started** ([details](docs/ROADMAP.md#other-ideas-not-started)): name spellings beyond today's
-  rules, from real strings only; a list of the keys in the panel; user-defined weighting of ranks; an MCP server
+  rules, from real strings only; user-defined weighting of ranks; an MCP server
   (it would need the `nativeMessaging` permission and a program installed outside the browser); end-to-end pictures
   at other display scalings, in Chromium.
 - **A store listing**: optional; the kit is ready in `store/` ([details](docs/ROADMAP.md#distribution)).

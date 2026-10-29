@@ -3222,10 +3222,14 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
       await page.waitForTimeout(300);
       assert.equal(await page.locator("#rr-search-error").isVisible(), true, "the error is on the screen");
       assert.ok((await page.locator("#rr-search-error").textContent()).trim().length > 3);
-      assert.equal(await page.locator("#rr-panel .rr-search-input").getAttribute("aria-describedby"), "rr-search-error");
+      assert.equal(await page.locator("#rr-panel .rr-search-input").getAttribute("aria-describedby"), "rr-search-error rr-search-keys");
       await page.locator("#rr-panel .rr-search-input").fill("");
       await page.waitForTimeout(300);
       assert.equal(await page.locator("#rr-search-error").isVisible(), false, "and goes with it");
+      // the box's keys: in the "/" hint's tooltip, and the box's description for a screen reader
+      assert.equal(await page.locator("#rr-panel .rr-search-input").getAttribute("aria-describedby"), "rr-search-keys", "with nothing wrong, the keys alone");
+      assert.match(await page.locator("#rr-search-keys").textContent(), /Enter.*Shift\+Enter.*Esc/, "the keys, described");
+      assert.match(await page.locator("#rr-panel .rr-search-kbd").getAttribute("title"), /\nEnter: next match/, "and in the hint's tooltip, on a line of their own");
       // the settings page
       const opts = await openOptions(ctx14);
       await opts.bringToFront();

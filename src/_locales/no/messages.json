@@ -823,6 +823,9 @@
   "searchShortcut": {
     "message": "Trykk / for å søke"
   },
+  "searchKeys": {
+    "message": "Enter: neste treff · Shift+Enter: forrige treff · ↓: forslag · Esc: tøm"
+  },
   "venuesShowMore": {
     "message": "Vis mer"
   },

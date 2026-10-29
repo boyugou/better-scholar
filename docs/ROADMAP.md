@@ -158,8 +158,8 @@ of HotStorage, and the year written with a hyphen or jammed onto a mixed-case wo
 - **Name spellings beyond today's rules**: composite, hyphenated and other romanised names (Iberian double surnames,
   Nordic and East Asian romanisations). Like every name rule, only from real Scholar strings added to
   `test/fixtures`, never guessed: a wrong owner match is a wrong role.
-- **A list of the keys in the panel** (`/`, `Escape`, the arrows, `Enter`, `Tab`). Today the `/` hint's tooltip
-  names the shortcut and the operators.
+- **A list of the keys in the panel**: built (2.41) — the `/` hint's tooltip has a line of the keys (Enter, Shift+Enter, ↓, Esc),
+  and the search box's description for a screen reader is that line.
 - **User-defined weighting of ranks**, a score per role and rank. The panel shows CCF's own statement that its list
   is not a basis for academic evaluation; a score would have to keep saying so.
 - **An MCP server** for AI assistants outside the browser. An extension reaches a program outside the browser only

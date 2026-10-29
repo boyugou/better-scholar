@@ -823,6 +823,9 @@
   "searchShortcut": {
     "message": "Aramak için / tuşuna basın"
   },
+  "searchKeys": {
+    "message": "Enter: sonraki eşleşme · Shift+Enter: önceki eşleşme · ↓: öneriler · Esc: temizle"
+  },
   "venuesShowMore": {
     "message": "Daha fazla göster"
   },
