@@ -38,7 +38,7 @@
         html: { type: "boolean", doc: "true: for table, papers, apa, ieee, acm and gbt also return `html`, the same content for a word processor (a real table, real italics): what the copy buttons put on the clipboard next to the text." },
         filtered: { type: "boolean", doc: "true: summary and table count only the papers the filters leave, as the panel's own buttons do (when `panel.filters.follow` is on; the text then says what it counted); false (the default): every paper. The other formats always use the papers the page shows." }
       },
-      result: "{ format, text, html?, png? } — `png` for image only; `html` only when asked for, and only for table, papers, apa, ieee and gbt (the references with the owner's name in bold when the page marks it)."
+      result: "{ format, text, html?, png? } — `png` for image only; `html` only when asked for, and only for table, papers, apa, ieee, acm and gbt (the references with the owner's name in bold when the page marks it)."
     },
     filter: {
       doc: "Narrow the list the page shows (the filters of the panel). Only the filters named are changed; null clears a number.",
