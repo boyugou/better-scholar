@@ -17,7 +17,7 @@ What has been built is in [`CHANGELOG.md`](CHANGELOG.md).
 ## Next
 
 - **More award sources**, only where the organisation's own page lists the winners; the pages that were probed and
-  why they were not read are listed in [*Known gaps*](docs/ROADMAP.md#awards-and-talk-levels).
+  why they were not read are listed in [*Known gaps*](docs/ROADMAP.md#awards-and-talk-kinds).
 - **Venue matching coverage**: real unrecognised strings into `test/fixtures` and `src/data/aliases.js`; a DBLP-derived
   alias table could extend coverage offline ([details](docs/ROADMAP.md#venue-matching-coverage)).
 - **Other ideas, not started** ([details](docs/ROADMAP.md#other-ideas-not-started)): name spellings beyond today's
