@@ -204,6 +204,10 @@ const pollPage = async (p, fn, arg, timeout = 10000) => {
 const eventually = async (page, fn, arg) => { await page.bringToFront(); try { return page.url().startsWith("chrome-extension://") ? await pollPage(page, fn, arg) : await page.waitForFunction(fn, arg, { polling: 100, timeout: 10000 }); } catch (e) { e.message += "\n  while waiting for: " + fn.toString().slice(0, 200); throw e; } };
 
 (async () => {
+  // E2E_PART=1 runs the long profile only (sections 1–16, one browser context), E2E_PART=2 the sections with profiles of their own (17 on); unset, all in one run.
+  // The two halves share nothing, so they can run at the same time (the commit chain and CI do). (The blocks below keep their old indentation: the gate is all that changed.)
+  const PART = process.env.E2E_PART || "";
+  if (PART !== "2") {
   const fx = await start({ slug: "ion-stoica", pageSize: 20 });
   const profile = fx.profile;
   const context = await launch();
@@ -2372,7 +2376,9 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     await context.close();
     await fx.close();
   }
+  }
 
+  if (PART !== "1") {
   // -- 17. a profile whose header name cannot be read in any other order: the owner adds a spelling by hand
   const fx2 = await start({ slug: "ion-stoica", pageSize: 100, header: "Stoica-Ion", hl: "zh-CN" });
   const ctx2 = await launch();
@@ -3293,5 +3299,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     } finally { await ctx15.close(); await fx15.close(); }
   }
 
-  console.log(`\nAll ${step} checks passed. Screenshots: ${outDir}`);
+  }
+
+  console.log(`\nAll ${step} checks passed${PART ? ` (part ${PART} of 2)` : ""}. Screenshots: ${outDir}`);
 })().catch((e) => { console.error("\nE2E FAILED:", e && e.stack || e); process.exit(1); });

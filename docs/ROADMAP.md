@@ -160,6 +160,10 @@ of HotStorage, and the year written with a hyphen or jammed onto a mixed-case wo
   `test/fixtures`, never guessed: a wrong owner match is a wrong role.
 - **A list of the keys in the panel**: built (2.41) — the `/` hint's tooltip has a line of the keys (Enter, Shift+Enter, ↓, Esc),
   and the search box's description for a screen reader is that line.
+- **A third ranking list**, for instance the venue list of Tsinghua University's computer science departments (TH-CPL), which
+  many Chinese institutions read beside CCF's. An owner's decision: each list needs its own extraction from its official source and
+  an audit like CCF's and CORE's (`data/README.md`), a column of the table, a chip and a switch, and it overlaps CCF's list for most
+  venues. Licensed lists stay out, as JCR and SCImago are (*Considered and set aside*).
 - **User-defined weighting of ranks**, a score per role and rank. The panel shows CCF's own statement that its list
   is not a basis for academic evaluation; a score would have to keep saying so.
 - **An MCP server** for AI assistants outside the browser. An extension reaches a program outside the browser only

@@ -60,6 +60,9 @@ give the details and every review):
   An independent review fixed: a long note (the source address) widens the picture instead of running off it; the total column has the
   panel's one word, row and column, and as much room as a custom name needs; a failed copy is no longer drawn green; the picture of an
   empty selection is copied like the table; the popup says when the picture fails; Japanese pages draw with Japanese fonts first.
+- **The end-to-end checks run in two halves at once**: `E2E_PART=1` (the long profile) and `E2E_PART=2` (the sections with
+  profiles of their own) share nothing; CI runs them side by side, and the demo and overflow checks in a job of their own, so a
+  push is checked in about half the time. The roadmap notes a third ranking list (TH-CPL and the like) as an owner's decision.
 - **What the search cannot read is said in your language**: "ccf:d — ccf takes one of: a, b, c", "cites:abc — cites takes a number,
   such as cites:>100" — the line under the box, its tooltip and the settings line under your own filters' words were English in every
   language. The operators stay as typed, each in a left-to-right run; the page calls keep their English `errors`. 30 languages.

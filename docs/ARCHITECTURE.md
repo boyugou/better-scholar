@@ -524,7 +524,7 @@ Six buttons put a second flavour on the clipboard: *Copy as table* (`summaryHtml
 
 ## Testing
 
-`npm test` runs the unit tests (`node --test test/*.test.js`); `npm run test:e2e` runs the end-to-end checks; `npm run test:demo` the web demo's.
+`npm test` runs the unit tests (`node --test test/*.test.js`); `npm run test:e2e` runs the end-to-end checks (`E2E_PART=1` / `E2E_PART=2` are its two independent halves, which CI runs side by side); `npm run test:demo` the web demo's.
 
 | Suite | What it proves |
 |-------|----------------|
