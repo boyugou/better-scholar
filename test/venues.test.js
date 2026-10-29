@@ -1559,6 +1559,11 @@ test("real prints that missed a badge: a cut IEEE citation form, joint proceedin
   // read as "Machine Learning (ECML-95)", whose acronym names the venue only where the title fits it
   for (const l of ["Machine Learning: ECML-95, 1995", "Machine Learning: ECML-98, 137-142, 1998", "Machine Learning–ECML-93, 1993", "Machine Learning (ECML-95), 1995", "MACHINE LEARNING: ECML-95"]) eq(l, "CCF B ECML-PKDD · CORE A ECML PKDD");
   none("Electron Cyclotron Emission: EC-15");
+  // a journal track is the conference's track and the journal's own article: the journal's chip, never the conference's (a real line)
+  eq("ACM Transactions on Reconfigurable Technology and Systems (FCCM Journal Track), 2024", "CCF B TRETS");
+  eq("Machine Learning (ECML PKDD Journal Track), 2020", "CCF B Machine Learning");
+  none("FCCM Journal Track, 2024");
+  none("International Conference on Software Engineering (ICSE) Journal-First, 2020");
   for (const l of ["Bioinformatics: AAAI-05, 2005", "Algorithmica (AAAI-05), 2005"]) assert.notEqual((resolver.resolve(l).ccf || {}).abbr, "AAAI", l + ": a one-word title is too little to say AAAI fits it");
   eq("Journal of Machine Learning Research: JMLR 2019", "CCF A JMLR");
   eq("World Wide Web: WWW'19", "CCF B WWW");

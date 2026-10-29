@@ -60,6 +60,9 @@ give the details and every review):
   An independent review fixed: a long note (the source address) widens the picture instead of running off it; the total column has the
   panel's one word, row and column, and as much room as a custom name needs; a failed copy is no longer drawn green; the picture of an
   empty selection is copied like the table; the popup says when the picture fails; Japanese pages draw with Japanese fonts first.
+- **A journal track keeps the journal's chip**: "ACM Transactions on Reconfigurable Technology and Systems (FCCM Journal Track)" (a real
+  line) had none, as a track of FCCM; it is a TRETS article, so it has TRETS's (CCF B) — never FCCM's. A line that names only the
+  conference ("FCCM Journal Track", "ICSE Journal-First") still has none. diff:matcher: 1 gained, nothing lost or moved.
 - **The search box's keys are written down**: the "/" hint's tooltip has a line "Enter: next match · Shift+Enter: previous · ↓:
   suggestions · Esc: clear", and the box's description for a screen reader is that line (with what it could not read, when there is
   something). 30 languages, French, Spanish and Italian with the key names their other hints use (Entrée, Intro, Invio …).
