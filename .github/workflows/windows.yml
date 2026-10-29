@@ -1,0 +1,38 @@
+name: windows
+
+# The checks that measure the page on Windows' own fonts (Segoe UI, Microsoft YaHei, Yu Gothic …) and on Windows' Chromium, beside the
+# Linux run of test.yml: nothing runs out of its box in 30 languages, every name at 30 characters, axe-core, the web demo, and the panel in
+# every language (e2e part 2). A workflow of its own, so that test.yml's result does not wait for the slower Windows machines.
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  audits:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - run: npm install --no-save --no-package-lock playwright@1.49.1
+      - run: npx playwright install chromium
+      - run: npm test
+      - run: node scripts/overflow-audit.mjs --width 1360,700,330 --scheme light
+      - run: node scripts/overflow-audit.mjs --long-names spaced --lang en,de,ja,ar,ru,fi,zh-CN,ko,th --width 700,330 --scheme light
+      - run: node scripts/axe-audit.mjs
+      - run: npm run test:demo
+
+  panel:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - run: npm install --no-save --no-package-lock playwright@1.49.1
+      - run: npx playwright install chromium
+      - run: npm run test:e2e
+        env:
+          E2E_PART: "2"

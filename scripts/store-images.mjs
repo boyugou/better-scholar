@@ -80,8 +80,9 @@ const shipped = require(path.join(repo, "src", "data", "awards.js"));
 const awards = { meta: shipped.meta, items: [...shipped.items, [awardsLib.titleKey("Fast Recovery for Disaggregated Memory"), awardsLib.surnameKey("C Writer"), "OSDI", 2023, "best", "Best Paper Award"]] };
 fs.writeFileSync(path.join(extDir, "data", "awards.js"),
   `(globalThis.RolesRanks = globalThis.RolesRanks || {}).data = Object.assign(globalThis.RolesRanks.data || {}, { awards: ${JSON.stringify(awards)} });\n`);
-// unpacked-extension id = first 32 hex of sha256(realpath), digits mapped to a–p
-const extId = [...crypto.createHash("sha256").update(fs.realpathSync(extDir)).digest("hex").slice(0, 32)]
+// unpacked-extension id = first 32 hex of sha256(realpath), digits mapped to a–p (macOS, Linux); read from the service worker once the browser runs (Windows hashes
+// the path in another form)
+let extId = [...crypto.createHash("sha256").update(fs.realpathSync(extDir)).digest("hex").slice(0, 32)]
   .map((c) => String.fromCharCode("a".charCodeAt(0) + parseInt(c, 16))).join("");
 // a browser profile with spell checking off: no red underline under the search operators
 const profileDir = path.join(tmp, "profile");
@@ -204,6 +205,7 @@ try {
     colorScheme: "light",
     args: [`--disable-extensions-except=${extDir}`, `--load-extension=${extDir}`, "--no-first-run", "--lang=en-US", ...(process.env.CI ? ["--no-sandbox"] : [])]
   });
+  extId = new URL((context.serviceWorkers()[0] || await context.waitForEvent("serviceworker", { timeout: 15000 })).url()).host;
   const errors = [];
   context.on("page", (p) => p.on("pageerror", (e) => errors.push(p.url() + ": " + e.message)));
 

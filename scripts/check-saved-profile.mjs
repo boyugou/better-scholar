@@ -13,11 +13,11 @@ import { createRequire } from "node:module";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 
 const require = createRequire(import.meta.url);
 const repo = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
-const { pw, chromiumPath } = await import(path.join(repo, "test", "e2e", "find-browser.mjs"));
+const { pw, chromiumPath } = await import(pathToFileURL(path.join(repo, "test", "e2e", "find-browser.mjs")).href);
 
 const args = process.argv.slice(2);
 const flag = (name) => { const i = args.indexOf(name); return i >= 0 ? args.splice(i, 2)[1] : null; };

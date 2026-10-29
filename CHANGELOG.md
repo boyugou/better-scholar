@@ -78,6 +78,13 @@ give the details and every review):
   old rule), with the one known limit reported and not counted: a chip keeps its name on one line, so a 30-character chip name is cut
   in a preview of 330 px or less. The overflow audit no longer counts a break at a soft hyphen (Finnish "Yhteis-|ensimmäinen") as a
   word cut in two.
+- **The tests run on Windows, and CI measures the page on Windows' fonts.** A new workflow (`windows.yml`) runs the unit tests, the
+  overflow audit in 30 languages (also with every name at 30 characters), axe-core, the web demo and the panel in every language
+  (e2e part 2) on a Windows runner, beside test.yml's Linux run. Everything was clean on Windows' fonts; what failed was the tests
+  themselves: the extension's id was computed from its path the macOS / Linux way (Windows hashes the path as UTF-16 — the tests read
+  it from the service worker now), a Windows checkout turned LF into CRLF (`.gitattributes` keeps LF), the clipboard there holds CRLF
+  (the tests compare with LF line ends), a module was imported by a bare path (a `file:` address now), and the 1,000-paper check
+  timed a cold browser's first page (it times the panel after the page's DOMContentLoaded now: ~300 ms on Windows, under 2 s).
 - **A copy the clipboard refused is said.** When every way of copying failed (the clipboard API, then the old copy command), the
   panel's and the popup's text buttons said nothing at all — only *Copy as image* said "Not copied". Every copy button says it now,
   and the popup's also when the page does not answer. Found while asking why a button the accessibility audit presses never answered

@@ -527,7 +527,7 @@ Six buttons put a second flavour on the clipboard: *Copy as table* (`summaryHtml
 
 ## Testing
 
-`npm test` runs the unit tests (`node --test test/*.test.js`); `npm run test:e2e` runs the end-to-end checks (`E2E_PART=1` to `4` are its independent parts, which CI and `npm run check:all` run side by side; `E2E_TIMES=1` prints the time of each check); `npm run test:demo` the web demo's.
+`npm test` runs the unit tests (`node --test test/*.test.js`); `npm run test:e2e` runs the end-to-end checks (`E2E_PART=1` to `4` are its independent parts, which CI and `npm run check:all` run side by side; `E2E_TIMES=1` prints the time of each check); `npm run test:demo` the web demo's. CI runs them on Linux (`test.yml`), and the unit tests and the checks that measure the page on Windows as well (`windows.yml`: its fonts are other fonts). The tests read the extension's id from its service worker (Windows hashes an unpacked extension's path in another form) and compare what they read from the clipboard with LF line ends (Windows' clipboard holds CRLF).
 
 | Suite | What it proves |
 |-------|----------------|

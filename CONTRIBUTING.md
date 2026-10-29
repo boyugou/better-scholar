@@ -1,8 +1,10 @@
 # Contributing
 
 Thanks for helping. The extension has no runtime dependencies and no build step; everything below
-runs with Node ≥ 20. The end-to-end test, the saved-page check and the accessibility audit also need
-Playwright and a Chromium build (Playwright's own; branded Chrome 137 and later ignores `--load-extension`).
+runs with Node ≥ 20, on macOS, Linux and Windows (a checkout keeps LF line ends everywhere: `.gitattributes`). The end-to-end
+test, the saved-page check and the accessibility audit also need Playwright and a Chromium build (Playwright's own; branded Chrome
+137 and later ignores `--load-extension`). CI runs everything on Linux (`test.yml`) and the checks that measure the page — the
+overflow audits, axe, the demo, the panel in 30 languages — on Windows too, on its own fonts (`windows.yml`).
 
 ```bash
 npm test                              # the unit tests (names, venues, marks, awards, metrics, formats, query, prefs, agent, i18n, package checks)

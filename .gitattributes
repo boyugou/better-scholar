@@ -1,0 +1,2 @@
+# Every text file is checked out with LF line ends, on Windows too (the tests compare generated files byte for byte)
+* text=auto eol=lf

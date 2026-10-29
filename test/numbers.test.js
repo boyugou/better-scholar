@@ -6,7 +6,7 @@ const fs = require("node:fs");
 const path = require("node:path");
 
 const root = path.join(__dirname, "..");
-const load = () => import(path.join(root, "scripts", "numbers.mjs"));
+const load = () => import(require("node:url").pathToFileURL(path.join(root, "scripts", "numbers.mjs")).href);          // (a file: address: on Windows an absolute path is no URL)
 
 test("the README blocks say what the code and the data say (npm run numbers rewrites them)", async () => {
   const { numbers, withBlock } = await load();

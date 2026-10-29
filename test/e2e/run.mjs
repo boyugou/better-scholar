@@ -74,8 +74,9 @@ const testAwards = { meta: { label: "test list", edition: "test", count: 2 }, it
 ] };
 fs.writeFileSync(path.join(extDir, "data", "awards.js"),
   `(globalThis.RolesRanks = globalThis.RolesRanks || {}).data = Object.assign(globalThis.RolesRanks.data || {}, { awards: ${JSON.stringify(testAwards)} });\n`);
-// unpacked-extension id = first 32 hex of sha256(realpath), digits mapped to a–p
-const extId = [...crypto.createHash("sha256").update(fs.realpathSync(extDir)).digest("hex").slice(0, 32)]
+// unpacked-extension id = first 32 hex of sha256(realpath), digits mapped to a–p — so on macOS and Linux; Windows hashes the path in another form (UTF-16, the
+// drive letter in capitals), so the first browser launched reads the id Chrome gave from the extension's service worker (see launch())
+let extId = [...crypto.createHash("sha256").update(fs.realpathSync(extDir)).digest("hex").slice(0, 32)]
   .map((c) => String.fromCharCode("a".charCodeAt(0) + parseInt(c, 16))).join("");
 
 const outDir = process.env.E2E_OUT || path.join(os.tmpdir(), "rr-e2e-out");
@@ -105,8 +106,23 @@ async function launch() {
     } catch (e) { /* not an extension page */ }
   });
   ctx.on("console", (m) => { if (m.text() === "rr-sync-write") ctx.rrWrites.push(Date.now()); });
+  // what the tests read back from the clipboard has LF line ends: on Windows the system clipboard holds CRLF (Chrome writes "\n" as "\r\n" there)
+  await ctx.addInitScript(() => {
+    try {
+      const c = navigator.clipboard, lf = (s) => s.replace(/\r\n/g, "\n");
+      if (!c) return;
+      const readText = c.readText.bind(c), read = c.read.bind(c);
+      c.readText = () => readText().then(lf);
+      c.read = () => read().then((items) => items.map((it) => ({ types: it.types, getType: async (t) => { const b = await it.getType(t); return t.startsWith("text/") ? new Blob([lf(await b.text())], { type: b.type }) : b; } })));
+    } catch (e) { /* no clipboard here */ }
+  });
+  if (!idRead) {
+    const sw = ctx.serviceWorkers()[0] || await ctx.waitForEvent("serviceworker", { timeout: 15000 });
+    extId = new URL(sw.url()).host; optionsUrl = `chrome-extension://${extId}/options/options.html`; idRead = true;
+  }
   return ctx;
 }
+let idRead = false;
 
 
 // Text in `root` whose colour against its background (the nearest opaque one up the tree) is under 4.5:1 (3:1 for large or bold text)
@@ -166,7 +182,7 @@ const pickYear = async (page, act, value) => { await page.click(`#rr-panel butto
 const visibleRows = (page) => page.locator("#gsc_a_b tr.gsc_a_tr:not(.rr-hide)").count();
 
 // the settings page: switches are saved at once and every open profile tab redraws
-const optionsUrl = `chrome-extension://${extId}/options/options.html`;
+let optionsUrl = `chrome-extension://${extId}/options/options.html`;
 async function openOptions(context) {
   const p = await context.newPage();
   await p.goto(optionsUrl);
@@ -2920,11 +2936,14 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     await page.addInitScript(() => {
       window.__long = [];
       try { new PerformanceObserver((l) => l.getEntries().forEach((e) => window.__long.push(Math.round(e.duration)))).observe({ entryTypes: ["longtask"] }); } catch (e) { /* unsupported */ }
+      // when the panel appears, after the page's own DOMContentLoaded (the extension's share: a browser just launched on a Windows CI machine took 1–10 s to
+      // reach that point — the page's own load, before the extension does anything)
+      new MutationObserver((_, o) => { if (document.getElementById("rr-panel")) { window.__panelAt = Math.round(performance.now()); o.disconnect(); } }).observe(document, { childList: true, subtree: true });
     });
     const t0 = Date.now();
     await page.goto(fx5.url);
     await page.waitForSelector("#rr-panel");
-    const firstPaint = Date.now() - t0;
+    const firstPaint = await page.evaluate(() => window.__panelAt - Math.round(performance.getEntriesByType("navigation")[0].domContentLoadedEventEnd));
     await page.waitForFunction(() => /^Loading… \d/.test((document.querySelector('[data-rr="coverage"]') || {}).textContent || ""), null, { timeout: 10000 });
     assert.equal(await page.locator('[data-act="load-all"]').count(), 0, "no button to press: it is already loading");
     await page.waitForFunction(() => document.querySelectorAll("#gsc_a_b tr.gsc_a_tr").length === 1000 && !/Loading/.test((document.querySelector('[data-rr="coverage"]') || { hidden: true, textContent: "" }).textContent), null, { timeout: 90000 });
@@ -2935,9 +2954,9 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     assert.equal(await page.locator("#gsc_a_b tr.gsc_a_tr .rr-chips").count() > 400, true, "rows are decorated");
     const long = await page.evaluate(() => window.__long);
     const worst = Math.max(0, ...long);
-    assert.ok(firstPaint < 5000, `panel appeared after ${firstPaint} ms`);
+    assert.ok(firstPaint < 2000, `panel appeared ${firstPaint} ms after the page was read`);
     assert.ok(worst < 1000, `a ${worst} ms long task`);
-    ok(`1,000 papers, no click: the list loads by itself (the default); panel in ${firstPaint} ms, everything loaded in ${(total / 1000).toFixed(1)} s, longest main-thread task ${worst} ms`);
+    ok(`1,000 papers, no click: the list loads by itself (the default); panel ${firstPaint} ms after the page was read, everything loaded in ${(total / 1000).toFixed(1)} s, longest main-thread task ${worst} ms`);
 
     // what a key and a click cost once all 1,000 are here: each filters every row, and a pick undone shows them all again (the browser lays the table out anew).
     // Measured 2026-10-29 on a laptop: a key 5–15 ms of script, the worst task 61 ms (a pick undone); at 2,000 papers 108 ms. 200 ms is where a page stops feeling instant.
