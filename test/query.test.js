@@ -283,6 +283,22 @@ test("a quick filter of your own: its words go in whole and must all be there to
   }
   assert.equal(query.toggleAll("role:first,last", "role:first"), "role:first", "Last is not left pressed beside a word that decides first");
   assert.equal(query.toggleAll("role:middle cites:>10", "role:first cites:>100"), "cites:>10 role:first cites:>100", "only a listed operator's words give way: a comparison is a word of its own");
+  // one word in one form: the values of a listed word in any order, once each, any case
+  assert.deepEqual(query.searchParts("Role:Last,first,first, CCF:A"), ["role:first,last", "ccf:a"]);
+  let r = query.toggleAll("", "role:first,last");
+  r = query.toggleValue(query.toggleValue(r, "role:last"), "role:last");          // (Last off and on again: the word is now written "role:first,last" or "role:last,first")
+  assert.equal(query.hasAll(r, "role:first,last"), true, "the same word in another order: still pressed");
+  assert.equal(query.toggleAll("role:last,first deep", "role:first,last"), "deep", "and taken out as it is");
+  // has: a paper can have both, so a filter's has-word joins the others instead of replacing them
+  assert.equal(query.toggleAll("has:talk deep", "has:award"), "has:talk deep has:award");
+  assert.equal(query.toggleAll(query.toggleAll("", "has:award"), "has:talk"), "has:award has:talk", "two filters of has: both hold");
+  // pressed twice: unpressed; pressed again: pressed — for every kind of word
+  for (const w of ["ccf:a role:first", "role:first,last", "has:award has:talk", "type:journal age:<5 deep", "role:first role:last"]) {
+    for (const start of ["", "role:last ccf:b", "has:talk", "Deep TYPE:conference"]) {
+      const on = query.toggleAll(start, w), off = query.toggleAll(on, w);
+      assert.deepEqual([query.hasAll(on, w), query.hasAll(off, w), query.hasAll(query.toggleAll(off, w), w)], [true, false, true], `${w} from "${start}"`);
+    }
+  }
   assert.equal(query.toggleAll("cites:>1000", "cites:>100"), "cites:>1000 cites:>100", "a comparison is its own word");
   // what stays with no search box: whole words of a filter, values of the built-in ones
   assert.equal(query.keepOnly("role:first,last has:talk foo", new Set(["role:first,last"])), "role:first,last");

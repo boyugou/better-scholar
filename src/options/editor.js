@@ -156,7 +156,7 @@
       const own = !!el.dataset.rrDefault;
       const input = h("input", { type: "text", class: "pv-rename-input", maxlength: String(B.prefs.NAME_MAX), spellcheck: "false", "aria-label": `${def} — ${t("optNameOf")}`, value: at("labels." + key) || (own ? "" : def), ...(own ? { placeholder: def } : {}) });
       const box = h("div", { class: "pv-rename" }, input, h("span", { class: "pv-rename-hint" }, t("optRenameHint")));
-      renaming = { key, def, input, box, done: false };
+      renaming = { key, def, input, box, start: B.prefs.cleanName(input.value), done: false };          // (start: what the box opened with, as it would be saved)
       hide();
       host.append(box);
       const hostW = host.getBoundingClientRect().width, w = Math.min(Math.max(176, r.width + 8), hostW - 16);              // (a name at the card's right edge: the box stays inside the card)
@@ -179,7 +179,9 @@
       const typed = B.prefs.cleanName(r.input.value);
       r.box.remove();
       // (a text that was changed is cut to what a name may be — a built-in text can be longer, "Name not matching? Add a spelling" — and one left as it was is not saved at all)
-      if (keep && typed !== (at("labels." + r.key) || r.def)) { const words = typed.slice(0, B.prefs.NAME_MAX); put("labels." + r.key, words === r.def ? "" : words); save(); }
+      // (compared with what the box opened with, cleaned as a name is: a built-in text with a character a name drops — the soft hyphen of Finnish "Yhteis­ensimmäinen" — is
+      // no change when it is left as it was)
+      if (keep && typed !== r.start) { const words = typed.slice(0, B.prefs.NAME_MAX); put("labels." + r.key, words === B.prefs.cleanName(r.def) ? "" : words); save(); }
     }
 
     // ---- what was hidden: the tray ------------------------------------------------------------------------------------------------------------------------------------------
