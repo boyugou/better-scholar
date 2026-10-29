@@ -299,8 +299,8 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
 #rr-panel .rr-actions{ display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap; }
 #rr-panel .rr-copybar{ display: flex; flex-wrap: wrap; gap: 6px; }
 #rr-panel .rr-copy .rr-actions{ margin-top: 0; }
-#rr-panel .rr-copybar .rr-btn{
-  flex: 1 1 0; min-width: max-content; padding: 4px 6px; font-size: 11.5px; text-align: center; white-space: nowrap;
+#rr-panel .rr-copybar .rr-btn{          /* (a label stays on one line while the row can hold it, and wraps only beyond that: min-width: fit-content, as in the popup) */
+  flex: 1 1 0; min-width: fit-content; padding: 4px 6px; font-size: 11.5px; text-align: center;
   display: inline-flex; align-items: center; justify-content: center; gap: 4px;
 }
 #rr-panel .rr-copybar .rr-btn::before {
