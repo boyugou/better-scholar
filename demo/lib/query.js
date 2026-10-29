@@ -118,7 +118,7 @@
     const out = [];
     for (const w of words(q)) {
       const lw = w.toLowerCase(), s = split(lw);
-      if (allowed.has(lw)) out.push(lw);                                                      // (a whole word: one of your own quick filters' words)
+      if (allowed.has(lw) || allowed.has(norm(lw))) out.push(lw);                             // (a whole word: one of your own quick filters' words)
       else if (s && LISTED.has(s.name)) { const keep = s.values.filter((v) => allowed.has(s.name + ":" + v)); if (keep.length) out.push(s.name + ":" + keep.join(",")); }
     }
     return out.join(" ");
@@ -128,17 +128,23 @@
   // Its words go into the search whole, each as it is: "has:award has:talk" stays two words that must both hold (split into values they would join into
   // "has:award,talk", either one). Pressed means: every one of its words is a word of the search, so a built-in button that joins one of them ("role:first" + Last →
   // "role:first,last") leaves it unpressed, as its words no longer describe the search.
-  const searchParts = (words_) => [...new Set(words(words_).map((w) => w.toLowerCase()))];
-  const hasAll = (q, words_) => { const ps = searchParts(words_), ws = new Set(words(q).map((w) => w.toLowerCase())); return ps.length > 0 && ps.every((p) => ws.has(p)); };
+  // (a word in one form: lower case, and a listed operator's values once each, in order — "Role:Last,first," is "role:first,last" — so that the same word typed or clicked
+  // in another order is the same word)
+  const norm = (w) => { const lw = w.toLowerCase(), s = split(lw); return s && LISTED.has(s.name) && s.values.length ? s.name + ":" + [...new Set(s.values)].sort().join(",") : lw; };
+  const searchParts = (words_) => [...new Set(words(words_).map(norm))];
+  const hasAll = (q, words_) => { const ps = searchParts(words_), ws = new Set(words(q).map(norm)); return ps.length > 0 && ps.every((p) => ws.has(p)); };
+  // the listed operators whose values exclude each other (a paper has one role, a venue one rank in a list and one kind): a filter's word of one takes the place of its other words.
+  // `has` is not one of them: a paper can have an award and a talk, and "has:award has:talk" asks for both
+  const SINGLE = new Set(["role", "ccf", "core", "type"]);
   // The query with its words put in (those not there yet) or, when all are there, taken out
   function toggleAll(q, words_) {
     const ps = searchParts(words_), ws = words(q);
-    if (hasAll(q, words_)) return ws.filter((w) => !ps.includes(w.toLowerCase())).join(" ");
-    // (the other words of a listed operator it has go first: beside its word they would still press their built-in buttons while its word decides —
+    if (hasAll(q, words_)) return ws.filter((w) => !ps.includes(norm(w))).join(" ");
+    // (the other words of an operator of one value that it has go first: beside its word they would still press their built-in buttons while its word decides —
     // "role:first,last role:first" is first authors only, under a pressed Last — and the same clicks in another order would give another search)
-    const ops = new Set(ps.map(split).filter((s) => s && LISTED.has(s.name)).map((s) => s.name));
-    const kept = ws.filter((w) => { const s = split(w); return !(s && ops.has(s.name)) || ps.includes(w.toLowerCase()); });
-    return [...kept, ...ps.filter((p) => !kept.some((w) => w.toLowerCase() === p))].join(" ");
+    const ops = new Set(ps.map(split).filter((s) => s && SINGLE.has(s.name)).map((s) => s.name));
+    const kept = ws.filter((w) => { const s = split(w.toLowerCase()); return !(s && ops.has(s.name)) || ps.includes(norm(w)); });
+    return [...kept, ...ps.filter((p) => !kept.some((w) => norm(w) === p))].join(" ");
   }
 
   return { OPERATORS, POPULAR, LISTED, parse, matches, hasValue, toggleValue, keepOnly, searchParts, hasAll, toggleAll };
