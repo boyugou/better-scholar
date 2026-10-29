@@ -1542,6 +1542,20 @@ test("real prints that missed a badge: a cut IEEE citation form, joint proceedin
   eq("IEEE Transactions on Circuits and Systems I: Regular Papers 51 (2), 342-353, 2004", "CCF C TCASI");
   eq("IEEE Transactions on Circuits and Systems I: Fundamental Theory and …, 1992", "CCF C TCASI");
   none("IEEE Transactions on Circuits and Systems II: Express Briefs 53 (5), 339-343, 2006");
+  // ... and in figures: a book of a conference's proceedings named like a journal is never the journal (a real line; "Machine Learning 12:", "Artificial Intelligence 3:" the same)
+  none("Artificial Life 14: Proceedings of the Fourteenth International Conference on the Synthesis and Simulation of Living Systems");
+  none("Machine Learning 12: Proceedings of the Twelfth International Conference");
+  none("Artificial Intelligence 3: Proceedings of the Conference");
+  eq("Artificial life 23 (2), 2017", "CCF C Artificial Life");
+  // Springer's books of an event titled by subject, then the event's acronym and year: no journal of that subject (before, 293 CCF journals took "<name> 7: Proceedings of …")
+  none("Machine Learning: ECML-95, 1995");
+  none("Machine Learning: ECML-98, 137-142, 1998");
+  eq("ACM Transactions on Graphics 38 (4 : SIGGRAPH 2019), Article 28, 2019", "CCF A TOG");
+  for (const j of ccf.venues.filter((v) => v.kind === "J" && v.name.split(" ").length <= 4)) {
+    const v = resolver.resolve(`${j.name} 7: Proceedings of the Seventh International Conference, 2005`);
+    assert.ok(!v || !v.ccf || v.ccf.kind !== "J", j.name + ": no journal (a conference of that name — ASE — may be)");
+  }
+  eq("Advances in Neural Information Processing Systems 14: Proceedings of the 2001 Conference, 2002", "CCF A NeurIPS · CORE A* NeurIPS");
   eq("2013 humaine association conference on affective computing and intelligent …, 2013", "CORE B ACII");
   // a sponsor's acronym beside the name of another event: ACM SIGIR's International Conference on the Theory of Information Retrieval (ICTIR) is no SIGIR — three words of subject, one of them not SIGIR's
   none("Proceedings of the 2019 ACM SIGIR International Conference on Theory of Information Retrieval, 2019");

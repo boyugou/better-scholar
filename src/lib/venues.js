@@ -159,7 +159,13 @@
     // Springer's proceedings volumes numbered in Roman: "Algorithmic Foundations of Robotics X: Proceedings of the Tenth Workshop on …", "… IX: Selected Contributions of the Ninth …" — the volume and
     // its description are no part of the name (only where the colon is followed by what the volume holds: "Circuits and Systems I: Regular Papers" is a journal's own title)
     let viaSeries = false;          // (the name is a volume's title: a book of proceedings, a conference's — never a journal of that title)
-    s = s.replace(/^(.{6,}?)\s+(?:[IVXL]{1,5})\s*:\s*(?:Selected|Proceedings|The\s+(?:\d+(?:st|nd|rd|th)|[A-Z][a-z]+(?:th|st|nd|rd))\b)\b.*$/, (m, name) => { viaSeries = true; truncated = false; return name; });          // (what is cut off is the description of the volume: the title before it is whole)
+    // (numbered in figures too: "Artificial Life 14: Proceedings of the Fourteenth International Conference on …" is ALIFE's book, not the journal Artificial Life)
+    s = s.replace(/^(.{6,}?)\s+(?:[IVXL]{1,5}|\d{1,3})\s*:\s*(?:Selected|Proceedings|The\s+(?:\d+(?:st|nd|rd|th)|[A-Z][a-z]+(?:th|st|nd|rd))\b)\b.*$/, (m, name) => { viaSeries = true; truncated = false; return name; });          // (what is cut off is the description of the volume: the title before it is whole)
+    // Springer's books of an event's proceedings titled by its subject, then the event: "Machine Learning: ECML-95", "Machine Learning: ECML-98, 137-142" — the title before the
+    // colon is no journal (an acronym in capitals with its year after the colon; nothing before it reads as a volume: "ACM Transactions on Graphics 38 (4 : SIGGRAPH 2019)" is TOG)
+    // (a title in lower case: in a line all in capitals any word reads as an acronym — "…CYBERNETICS: SYSTEMS 12 (3)" is the journal; a short year is joined by its hyphen
+    // or apostrophe, and a number before a parenthesis is a volume)
+    if (/^(?=[^:]*[a-z])[A-Za-z][A-Za-z ,&'’-]{3,}:\s*[A-Z][A-Z&]{1,9}(?:\s?[-–'’]\s?\d{2}|\s?[-–'’ ]?(?:19|20)\d{2})\b(?!\s*\()/.test(s)) viaSeries = true;
     // ACM's series form with the word before the dash cut off: "SIGGRAPH Asia 2018 Technical Papers on - SIGGRAPH Asia '18" — the acronym after the dash only repeats the title
     s = s.replace(/\s+on\s*[-–—]\s*[A-Za-z][A-Za-z0-9 ]{1,24}\s*['’]\s?\d{2}\s*$/i, "");
     // "Theory of Cryptography - Lecture Notes in Computer Science, 2005": the series of the publisher is no part of the venue's name

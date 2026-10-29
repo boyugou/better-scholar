@@ -42,6 +42,13 @@
   An independent review fixed: a long note (the source address) widens the picture instead of running off it; the total column has the
   panel's one word, row and column, and as much room as a custom name needs; a failed copy is no longer drawn green; the picture of an
   empty selection is copied like the table; the popup says when the picture fails; Japanese pages draw with Japanese fonts first.
+- **Two kinds of wrong journal badge, from a new sweep of the matcher** (lines where the lists' kind and the line's shape disagree):
+  a book of a conference's proceedings named like a journal — "Artificial Life 14: Proceedings of the Fourteenth International
+  Conference on the Synthesis and Simulation of Living Systems" (a real line) had the journal *Artificial Life* (CCF C); the same shape
+  gave 293 CCF journals to made-up lines ("Machine Learning 12: Proceedings of …"), as Roman volume numbers already did not — and
+  Springer's "Machine Learning: ECML-95" (a subject, then an event's acronym and year) had the journal *Machine Learning*. Neither
+  gets a badge now. In the 75,521 real lines exactly that one badge goes. The sweep also checked that every one of the 9,825 lines
+  with both a CCF and a CORE badge has two rows of one venue.
 - **Your own quick filters** (*Settings → Filters*, under the built-in ones): up to three buttons of your own words, typed as in the
   search box — `ccf:a role:first age:<5` for "recent CCF-A first-author papers" in one click. Each has a switch, a place in the order
   of the quick filters, and a name like any other (in the settings or by renaming it on the preview); with no name the button shows its
