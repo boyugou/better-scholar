@@ -82,7 +82,8 @@ const outDir = process.env.E2E_OUT || path.join(os.tmpdir(), "rr-e2e-out");
 fs.mkdirSync(outDir, { recursive: true });
 
 let step = 0;
-const ok = (msg) => console.log(`  ✓ ${String(++step).padStart(2)}  ${msg}`);
+const t0 = Date.now();
+const ok = (msg) => console.log(`  ✓ ${String(++step).padStart(2)}  ${process.env.E2E_TIMES ? `[${((Date.now() - t0) / 1000).toFixed(0).padStart(3)} s] ` : ""}${msg}`);          // (E2E_TIMES=1: the time of each check)
 
 async function launch() {
   const ctx = await pw.chromium.launchPersistentContext(path.join(tmp, "profile-" + Math.random().toString(36).slice(2)), {
@@ -205,8 +206,9 @@ const pollPage = async (p, fn, arg, timeout = 10000) => {
 const eventually = async (page, fn, arg) => { await page.bringToFront(); try { return page.url().startsWith("chrome-extension://") ? await pollPage(page, fn, arg) : await page.waitForFunction(fn, arg, { polling: 100, timeout: 10000 }); } catch (e) { e.message += "\n  while waiting for: " + fn.toString().slice(0, 200); throw e; } };
 
 (async () => {
-  // E2E_PART=1 runs the long profile only (sections 1–16, one browser context), E2E_PART=2 the sections with profiles of their own (17 on); unset, all in one run.
-  // The two halves share nothing, so they can run at the same time (the commit chain and CI do). (The blocks below keep their old indentation: the gate is all that changed.)
+  // E2E_PART=1 runs the long profile's sections 1–16 and S1–S6, E2E_PART=3 its settings-page sections S7–S8 (from a setup of their own: the state S1–S6 leave),
+  // E2E_PART=2 the sections with profiles of their own (17 on); unset, all in one run. The parts share nothing, so they can run at the same time (scripts/check-all.sh
+  // and CI do). (The blocks below keep their old indentation: the gates are all that changed.)
   const PART = process.env.E2E_PART || "";
   if (PART !== "2") {
   const fx = await start({ slug: "ion-stoica", pageSize: 20 });
@@ -230,6 +232,8 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     await page.goto(fx.url);
     await page.waitForSelector("#rr-panel");
     console.log("Better Scholar e2e — Chromium", context.browser() ? context.browser().version() : "", "| extension", extId);
+    let all, opts;          // (the records of the whole list and the settings page: what sections S7–S8 take from the ones before them)
+    if (PART !== "3") {
 
     // -- 1. panel lands in the right-hand sidebar on a wide window
     const place = await page.evaluate(() => {
@@ -285,14 +289,14 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     await page.click('[data-act="load-all"]');
     await page.waitForFunction(() => document.querySelectorAll("#gsc_a_b tr.gsc_a_tr").length === 100, null, { timeout: 15000 });
     await page.waitForFunction(() => !document.querySelector('[data-act="load-all"]'));
-    const all = expected(profile);
+    all = expected(profile);
     assert.deepEqual(await readMatrix(page), matrixOf(all));
     ok("'Load all' brings 100 rows and the matrix matches the library result");
     const stats = matrixOf(all);
     console.log("      matrix:", JSON.stringify(stats));
 
     // -- 6. a role switch on the settings page recolours the open profile at once (no reload)
-    const opts = await openOptions(context);
+    opts = await openOptions(context);
     const lastRows = all.filter((p) => p.highlighted && p.role === "last").length;
     assert.equal(await page.locator('[data-rr="metrics"] .rr-scope').textContent(), "First, Co-first, Second, and Last", "the highlighted papers say which roles they are");
     await setPref(opts, "roles.last", false);
@@ -1902,6 +1906,21 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     assert.ok(await page.locator('[data-rr="matrix"]').count() > 0, "a panel record that is no record at all: every part is on");
     ok("a stored record with wrong parts is read as far as it is right, the rest is the defaults");
 
+    } else {
+      // (E2E_PART=3: the state the sections before S7 leave — the whole list loaded, the cut author lists read, and of the settings only these three switches off;
+      // measured at S7's start, 2026-10-29. If an earlier section comes to leave another, S7 says so: run E2E_PART=1 and E2E_PART=3, and the whole run)
+      await page.click('[data-act="load-all"]');
+      await page.waitForFunction(() => document.querySelectorAll("#gsc_a_b tr.gsc_a_tr").length === 100, null, { timeout: 15000 });
+      all = expected(profile);
+      await page.bringToFront();
+      await page.click('[data-act="resolve"]');
+      await page.waitForFunction(() => !document.querySelector('tr[data-role="hidden"]'), null, { timeout: 20000 });
+      opts = await openOptions(context);
+      await opts.evaluate(async () => { const B = RolesRanks; await chrome.storage.sync.set({ prefs: B.prefs.apply(B.prefs.defaults(), { roles: { last: false }, rows: { name: false, core: false } }).prefs }); });
+      await settle(opts);
+    }
+
+    if (PART !== "1") {
     // -- S7. the settings page: preview, reset, clearing the saved paper details
     await opts.reload();
     await opts.waitForSelector('input[data-pref="roles.last"]');
@@ -2382,6 +2401,8 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     assert.equal(opened.url(), optionsUrl);
     ok("the settings button in the panel opens the settings page");
 
+    }
+
     assert.deepEqual(errors, [], "no console or page errors:\n" + errors.join("\n"));
     ok("no console errors");
   } finally {
@@ -2390,7 +2411,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
   }
   }
 
-  if (PART !== "1") {
+  if (PART === "" || PART === "2") {
   // -- 17. a profile whose header name cannot be read in any other order: the owner adds a spelling by hand
   const fx2 = await start({ slug: "ion-stoica", pageSize: 100, header: "Stoica-Ion", hl: "zh-CN" });
   const ctx2 = await launch();
@@ -2760,6 +2781,23 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
       const opts = await openOptions(ctx4);
       await opts.evaluate(async () => { const r = await chrome.storage.sync.get("prefs"); await chrome.storage.sync.set({ prefs: { ...(r.prefs || {}), panel: { venues: { show: true } } } }); });
       const langs = fs.readdirSync(path.join(repo, "src/_locales"));
+      // English left in another language's interface: every text, title, aria-label and placeholder of `scope`, outside the regions that hold data (venue names, paper titles, code),
+      // with what is English on purpose taken out first (operators, format names, award names, an example venue line). In a language of another script two lower-case Latin words
+      // in a row are English too. (The search's own messages were English in all 30 languages until 2026-10-29; nothing else had looked.)
+      const englishLeft = (p, scope, skip, lang) => p.evaluate(([scope, skip, lang]) => {
+        const latin = /^(?:cs|da|de|es|fi|fr|hu|id|it|nl|no|pl|pt|ro|sv|tr|vi)/.test(lang);
+        const kept = /\b[\w*-]+:[^\s,)·]+|Proceedings of the [^…"]*|Better Scholar|Semantic Scholar|Google Scholar|[Tt]est of [Tt]ime|BibTeX|Markdown|JSON|CSV|APA|IEEE|ACM|GB\/T 7714|et al\.?|h-index|i10-index|Oral|Spotlight|Highlight|ICLR|NeurIPS|CVPR|ACL|WACV/g;
+        // (word edges in any script: with \b, the "that" inside Hungarian "láthatóvá" was an English word)
+        const english = (s) => { const t = s.replace(kept, " "); return /(?<![\p{L}\p{N}])(?:the|and|with|your|this|that|only|when|from|which|search|press|click)(?![\p{L}\p{N}])/iu.test(t) || (!latin && /(?<![\p{L}])[a-z]{3,}\s+[a-z]{2,}(?![\p{L}])/u.test(t)); };
+        const out = new Set(), root = document.querySelector(scope);
+        if (!root) return [];
+        for (const el of root.querySelectorAll("*")) {
+          if (skip && el.closest(skip)) continue;
+          for (const a of ["title", "aria-label", "placeholder"]) { const v = el.getAttribute(a); if (v && english(v)) out.add(`[${a}] ${v.slice(0, 90)}`); }
+          for (const n of el.childNodes) if (n.nodeType === 3 && n.nodeValue.trim() && english(n.nodeValue)) out.add(n.nodeValue.trim().slice(0, 90));
+        }
+        return [...out];
+      }, [scope, skip, lang]);
       // (the open profile reloads itself when the language setting changes: a reload of ours may meet that one half way, so it is asked again)
       const reloadSafe = async () => { for (let i = 0; i < 4; i++) { try { await page.waitForLoadState("load"); await page.reload(); return; } catch (e) { await page.waitForTimeout(300); } } await page.reload(); };
       const bad = [];
@@ -2789,6 +2827,10 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
             return out;
           });
           if (over.length) bad.push(`${lang}/${mode}: ${over.join("; ")}`);
+          if (lang !== "en" && mode === "sidebar") {
+            const left = await englishLeft(page, "#rr-panel", '[data-rr="unmatched"], [data-rr="venues"], .rr-chip, pre, code', lang);
+            if (left.length) bad.push(`${lang}: English in the panel: ${left.join(" | ")}`);
+          }
           // (a left-to-right search typed in a right-to-left panel — operators are code — runs clear of the count and the clear button, which sit on the left there)
           if (["ar", "he"].includes(lang) && mode === "sidebar") {
             await page.fill("#rr-panel .rr-search-input", "ccf:d cites:abc");
@@ -2829,6 +2871,11 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
           await opts.waitForSelector(".toc a");
           const wide = await opts.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
           if (wide > 1) bad.push(`${lang}/settings ${w}px: ${wide}px too wide`);
+          if (lang !== "en" && w === 1360) {
+            // (the sample rows of the preview are made-up papers; the agent's guide and the configuration are English and JSON on purpose)
+            const left = await englishLeft(opts, "body", "#preview tr, .rr-chip, pre, code, textarea, #card-agent, #card-config, [data-rr=\"unmatched\"], [data-rr=\"venues\"]", lang);
+            if (left.length) bad.push(`${lang}: English on the settings page: ${left.join(" | ")}`);
+          }
           // every button of a row (the Enable all / Disable all pairs, Compact, the colour resets …) is whole and inside its card
           const cut = await opts.evaluate(() => [...document.querySelectorAll(".row .btn")].filter((b) => b.offsetParent && (b.scrollWidth > b.clientWidth + 1 || b.getBoundingClientRect().right > b.closest("section.card").getBoundingClientRect().right + 1)).map((b) => b.textContent.trim()));
           if (cut.length) bad.push(`${lang}/settings ${w}px: cut or outside its card: ${cut.join(", ")}`);
@@ -3318,5 +3365,5 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
 
   }
 
-  console.log(`\nAll ${step} checks passed${PART ? ` (part ${PART} of 2)` : ""}. Screenshots: ${outDir}`);
+  console.log(`\nAll ${step} checks passed${PART ? ` (part ${PART} of 3)` : ""}. Screenshots: ${outDir}`);
 })().catch((e) => { console.error("\nE2E FAILED:", e && e.stack || e); process.exit(1); });

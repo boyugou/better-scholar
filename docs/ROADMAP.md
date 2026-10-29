@@ -170,11 +170,6 @@ of HotStorage, and the year written with a hyphen or jammed onto a mixed-case wo
   through native messaging: a new permission (`nativeMessaging`) and a program the user installs, which the
   permission policy asks a very good reason for. Agents that drive a browser already have the page events and the
   agent guide.
-- **The long end-to-end half in two** (`E2E_PART=1`, sections 1–16, is now the chain's longest lane at about three and a half
-  minutes; the rest take under two). Sections 7–16 reuse the page, the settings page and the records of sections 1–6 (`page`, `opts`,
-  `all`) and nine helpers declared among them (`before`, `links`, `look`, `origin`, `place`, `rowsOf`, `shown`, `shownRows`, `tip`),
-  and start from the settings those sections leave: a split needs those hoisted above the gate and a setup that loads the 100 rows
-  without the checks of sections 2–5. Fixed sleeps are not the cost (ten seconds of two hundred).
 - **End-to-end pictures at other display scalings** (Chromium only — other engines are out of scope by the platform
   policy). The end-to-end run already takes `E2E_SCALE` for the website's pictures; nothing compares them yet.
 

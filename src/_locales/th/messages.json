@@ -30,25 +30,25 @@
     "message": "Highlight"
   },
   "mkBest": {
-    "message": "Best paper"
+    "message": "รางวัลบทความยอดเยี่ยม"
   },
   "mkBestStudent": {
-    "message": "Best student paper"
+    "message": "รางวัลบทความนักศึกษายอดเยี่ยม"
   },
   "mkOutstanding": {
-    "message": "Outstanding paper"
+    "message": "รางวัลบทความดีเด่น"
   },
   "mkDistinguished": {
-    "message": "Distinguished paper"
+    "message": "รางวัลบทความโดดเด่น"
   },
   "mkRunnerUp": {
-    "message": "Honorable mention"
+    "message": "รางวัลชมเชย"
   },
   "mkTot": {
     "message": "Test of time"
   },
   "mkFinalist": {
-    "message": "เข้ารอบ Best paper"
+    "message": "เข้าชิงรางวัลบทความยอดเยี่ยม"
   },
   "marksHint": {
     "message": "มาจากสองแหล่ง: คำที่ผู้เขียนเขียนเองในชื่อเรื่องหรือบรรทัด venue ของแต่ละงานบน Scholar (ไม่ได้ตรวจสอบ) และรายชื่องานที่ได้รับรางวัลในการประชุมสำคัญที่มาพร้อมส่วนขยาย"
@@ -399,7 +399,7 @@
     "message": "ปุ่มใดบ้างที่คัดลอกหรือบันทึกงานวิจัยที่แสดงอยู่ หรือสรุป เป็นข้อความ แผงและป๊อปอัปบนแถบเครื่องมือมีปุ่มชุดเดียวกัน หากไม่เปิดปุ่มใดเลย ก็จะไม่มีแถวคัดลอก"
   },
   "optMarkAwardHint": {
-    "message": "Best, outstanding และ distinguished paper, honorable mention, test of time และผู้เข้ารอบ best paper"
+    "message": "รางวัลบทความยอดเยี่ยม, รางวัลบทความดีเด่น, รางวัลบทความโดดเด่น, รางวัลชมเชย, test of time และเข้าชิงรางวัลบทความยอดเยี่ยม"
   },
   "optPanelTitle": {
     "message": "แผงสรุป"

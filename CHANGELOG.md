@@ -68,6 +68,13 @@ give the details and every review):
   without a comma. APA and ACM keep the gap where Scholar cut an author list — "C. Writer, E. Writer, B. Writer, … A. Example" — where
   they had printed the owner as the fourth author; GB/T 7714 takes its three names from before the gap. The agent guide said `html`
   came for five formats (six).
+- **The end-to-end checks in three parts, and a check for English left in the other 29 languages.** Timed check by check
+  (`E2E_TIMES=1`), the long profile's settings-page sections S7–S8 took a minute of its three and a half; they now run as `E2E_PART=3`
+  from a setup of their own (the whole list loaded, the cut author lists read, and the three switches the sections before them leave
+  off, measured at S7's start). `npm run check:all` (`scripts/check-all.sh`) runs everything CI runs in four lanes at once; CI runs the
+  three parts side by side. The 30-language loop now fails on English in the panel or the settings page of another language (data,
+  code and names kept in English on purpose left out): it found Thai's award names — "Best paper", "Best student paper",
+  "Distinguished paper", "Honorable mention" — still in English, while every other script translated them; they are Thai now.
 - **From a hands-on QA pass of the new interface** (en, ja, de, ar; light and dark): the *Search words* fields stood empty when the
   settings page opened (they were drawn only on a change; the order list and the preview showed the words all along); in Arabic the own
   filter's name field and rename box showed the end of its left-to-right words, not the start (they take the text's own direction now);

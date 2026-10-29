@@ -21,13 +21,14 @@ jobs:
       - run: npm run check:claims
       - run: scripts/package-chrome.sh
 
-  # the end-to-end checks in two independent halves, side by side (E2E_PART=1: the long profile; 2: the sections with profiles of their own)
+  # the end-to-end checks in three independent parts, side by side (E2E_PART=1: the long profile; 2: the sections with profiles of their own;
+  # 3: the settings page's sections S7–S8, from a setup of their own)
   e2e:
     runs-on: ubuntu-24.04          # (pinned: a new Ubuntu under "latest" can break playwright install --with-deps; move on deliberately)
     strategy:
       fail-fast: false
       matrix:
-        part: [1, 2]
+        part: [1, 2, 3]
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7

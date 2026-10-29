@@ -7,8 +7,8 @@ Playwright and a Chromium build (Playwright's own; branded Chrome 137 and later 
 ```bash
 npm test                              # the unit tests (names, venues, marks, awards, metrics, formats, query, prefs, agent, i18n, package checks)
 npm run test:e2e                      # the end-to-end checks: the real extension in Chromium against a local Scholar stand-in
-                                      # (E2E_PART=1 and E2E_PART=2 are its two independent halves: run them at the same time to wait half as long)
-npm run check:all                     # everything CI runs, in four lanes at once (unit · e2e 1 · e2e 2 · demo + overflow); exit 0 when all pass
+                                      # (E2E_PART=1, 2 and 3 are its independent parts: run them at the same time to wait a third as long)
+npm run check:all                     # everything CI runs, in four lanes at once (unit · e2e 1 · e2e 2 · e2e 3 + demo + overflow); exit 0 when all pass
 npm run build:demo                    # dist/demo/: the settings page as a static folder for the website (see docs/ARCHITECTURE.md, The web demo)
 npm run test:demo                     # the web demo's checks: that folder in a plain Chromium page, no extension
 npm run test:update                   # rewrite the venue snapshot, after reviewing its diff (see below)
