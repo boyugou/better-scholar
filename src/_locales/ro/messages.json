@@ -1183,6 +1183,15 @@
   "optRenameHint": {
     "message": "Enter păstrează · Esc anulează · gol: numele standard"
   },
+  "optNameTipWords": {
+    "message": "Propriul tău nume pentru acest buton, în orice limbă. Gol: butonul afișează cuvintele sale de căutare."
+  },
+  "optRenameHintWords": {
+    "message": "Enter păstrează · Esc anulează · gol: cuvintele de căutare"
+  },
+  "optNameResetWords": {
+    "message": "Înapoi la cuvintele de căutare"
+  },
   "optVenueTitle": {
     "message": "Verifică un venue"
   },

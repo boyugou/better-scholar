@@ -1183,6 +1183,15 @@
   "optRenameHint": {
     "message": "Enter 저장 · Esc 취소 · 비우면 기본 이름"
   },
+  "optNameTipWords": {
+    "message": "이 버튼에 쓸 내 이름(모든 언어 공통). 비우면 버튼에 검색어가 보입니다."
+  },
+  "optRenameHintWords": {
+    "message": "Enter 저장 · Esc 취소 · 비우면 검색어"
+  },
+  "optNameResetWords": {
+    "message": "검색어로 되돌리기"
+  },
   "optVenueTitle": {
     "message": "게재처 확인"
   },

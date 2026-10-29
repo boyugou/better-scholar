@@ -1183,6 +1183,15 @@
   "optRenameHint": {
     "message": "Enter bewaart · Esc annuleert · leeg: de standaardnaam"
   },
+  "optNameTipWords": {
+    "message": "Je eigen naam voor deze knop, in elke taal. Leeg: de knop toont zijn zoekwoorden."
+  },
+  "optRenameHintWords": {
+    "message": "Enter bewaart · Esc annuleert · leeg: de zoekwoorden"
+  },
+  "optNameResetWords": {
+    "message": "Terug naar de zoekwoorden"
+  },
   "optVenueTitle": {
     "message": "Venue controleren"
   },

@@ -1183,6 +1183,15 @@
   "optRenameHint": {
     "message": "Enter beholder · Esc avbryter · tomt: standardnavnet"
   },
+  "optNameTipWords": {
+    "message": "Ditt eget navn for denne knappen, på alle språk. Tomt: knappen viser søkeordene sine."
+  },
+  "optRenameHintWords": {
+    "message": "Enter beholder · Esc avbryter · tomt: søkeordene"
+  },
+  "optNameResetWords": {
+    "message": "Tilbake til søkeordene"
+  },
   "optVenueTitle": {
     "message": "Sjekk et publiseringssted"
   },

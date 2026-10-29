@@ -1183,6 +1183,15 @@
   "optRenameHint": {
     "message": "Enter เก็บไว้ · Esc ยกเลิก · ว่าง: ชื่อมาตรฐาน"
   },
+  "optNameTipWords": {
+    "message": "ชื่อของคุณเองสำหรับปุ่มนี้ ใช้ได้ในทุกภาษา ว่าง: ปุ่มจะแสดงคำค้นหา"
+  },
+  "optRenameHintWords": {
+    "message": "Enter เก็บไว้ · Esc ยกเลิก · ว่าง: คำค้นหา"
+  },
+  "optNameResetWords": {
+    "message": "กลับเป็นคำค้นหา"
+  },
   "optVenueTitle": {
     "message": "ตรวจสอบ venue"
   },

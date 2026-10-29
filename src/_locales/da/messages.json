@@ -1183,6 +1183,15 @@
   "optRenameHint": {
     "message": "Enter gemmer · Esc annullerer · tomt: standardnavnet"
   },
+  "optNameTipWords": {
+    "message": "Dit eget navn til denne knap på alle sprog. Tomt: knappen viser sine søgeord."
+  },
+  "optRenameHintWords": {
+    "message": "Enter gemmer · Esc annullerer · tomt: søgeordene"
+  },
+  "optNameResetWords": {
+    "message": "Tilbage til søgeordene"
+  },
   "optVenueTitle": {
     "message": "Tjek et publikationssted"
   },

@@ -831,6 +831,16 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     await opts.fill('[data-act="filter-settings"]', "ccf:a role:last");
     assert.deepEqual(await opts.evaluate(() => { const w = document.querySelector('input[data-pref="panel.filters.searches.search1"]').closest(".opt"); return [w.hidden, w.previousElementSibling.hidden, w.previousElementSibling.querySelector('[data-pref="panel.filters.pills.search1"]') !== null]; }), [false, false, true], "found by its words, with its switch");
     await opts.fill('[data-act="filter-settings"]', "");
+    // (the page opened again shows the words — the field had stood empty until a change ran the syncers — and the reason under words it cannot read; a switch off takes the reason with it;
+    // the name field and the words field take their text's own direction, so a left-to-right placeholder in a right-to-left page shows its start)
+    await opts.reload(); await opts.waitForSelector('input[data-pref="panel.filters.searches.search1"]');
+    assert.equal(await opts.inputValue('input[data-pref="panel.filters.searches.search1"]'), "ccf:a role:last", "the words are there when the page opens");
+    assert.equal(await opts.locator(".opt-words").nth(1).locator(".search-bad").isVisible(), true, "and the reason under words it cannot read");
+    await setPref(opts, "panel.filters.pills.search2", false);
+    assert.equal(await opts.locator(".opt-words").nth(1).locator(".search-bad").isVisible(), false, "switched off: the reason goes with the field");
+    await setPref(opts, "panel.filters.pills.search2", true);
+    assert.deepEqual(await opts.evaluate(() => ["labels.pillSearch1", "panel.filters.searches.search1"].map((p) => document.querySelector(`input[data-pref="${p}"]`).getAttribute("dir"))), ["auto", "auto"]);
+    assert.equal(await opts.getAttribute('input[data-pref="labels.pillSearch1"]', "placeholder"), "ccf:a role:last", "the name field's placeholder is the words");
     await page.bringToFront();
     const ownPill = page.locator('#rr-panel .rr-spill[data-pill="search1"]');
     await ownPill.waitFor();
@@ -2031,6 +2041,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     assert.equal(await opts.locator(".pv-tag .pv-edit").count(), 0, "a row of the sample list offers no rename: its chips are not its name");
     // a name: a double-click, an input over the text, Enter
     await opts.dblclick('#pv-panel [data-rr="metrics"] .rr-sec-title');
+    assert.equal(await opts.getAttribute(".pv-rename-input", "dir"), "auto", "the rename box takes its text's direction");
     await opts.locator(".pv-rename-input").fill("Output");
     await opts.locator(".pv-rename-input").press("Enter");
     await settle(opts);

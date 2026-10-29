@@ -1183,6 +1183,15 @@
   "optRenameHint": {
     "message": "Enter tallentaa · Esc peruu · tyhjä: oletusnimi"
   },
+  "optNameTipWords": {
+    "message": "Oma nimesi tälle painikkeelle kaikilla kielillä. Tyhjä: painike näyttää hakusanansa."
+  },
+  "optRenameHintWords": {
+    "message": "Enter tallentaa · Esc peruu · tyhjä: hakusanat"
+  },
+  "optNameResetWords": {
+    "message": "Palauta hakusanat"
+  },
   "optVenueTitle": {
     "message": "Tarkista julkaisufoorumi"
   },

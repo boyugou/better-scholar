@@ -1183,6 +1183,15 @@
   "optRenameHint": {
     "message": "Entrée valide · Échap annule · vide : le nom standard"
   },
+  "optNameTipWords": {
+    "message": "Votre propre nom pour ce bouton, dans toutes les langues. Vide : le bouton affiche ses mots de recherche."
+  },
+  "optRenameHintWords": {
+    "message": "Entrée valide · Échap annule · vide : les mots de recherche"
+  },
+  "optNameResetWords": {
+    "message": "Revenir aux mots de recherche"
+  },
   "optVenueTitle": {
     "message": "Vérifier une conférence/revue"
   },

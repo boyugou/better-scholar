@@ -1183,6 +1183,15 @@
   "optRenameHint": {
     "message": "Enter megtartja · Esc megszakítja · üres: az alapnév"
   },
+  "optNameTipWords": {
+    "message": "Saját neved ehhez a gombhoz, minden nyelven. Üres: a gomb a keresőszavait mutatja."
+  },
+  "optRenameHintWords": {
+    "message": "Enter megtartja · Esc megszakítja · üres: a keresőszavak"
+  },
+  "optNameResetWords": {
+    "message": "Vissza a keresőszavakra"
+  },
   "optVenueTitle": {
     "message": "Venue ellenőrzése"
   },

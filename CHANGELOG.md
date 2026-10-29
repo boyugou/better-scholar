@@ -68,6 +68,11 @@ give the details and every review):
   without a comma. APA and ACM keep the gap where Scholar cut an author list — "C. Writer, E. Writer, B. Writer, … A. Example" — where
   they had printed the owner as the fourth author; GB/T 7714 takes its three names from before the gap. The agent guide said `html`
   came for five formats (six).
+- **From a hands-on QA pass of the new interface** (en, ja, de, ar; light and dark): the *Search words* fields stood empty when the
+  settings page opened (they were drawn only on a change; the order list and the preview showed the words all along); in Arabic the own
+  filter's name field and rename box showed the end of its left-to-right words, not the start (they take the text's own direction now);
+  the reason under words the search cannot read goes with the filter's switch; and the name field, its reset and the rename box say
+  "its words" rather than "the standard name" for a filter of your own (30 languages).
 - **A second review of those fixes** (one defect, three older slips): APA's rule for more than twenty authors (nineteen, "…", the last)
   now also holds for a list Scholar cut in the middle; a title's own "..." stays whole in IEEE and GB/T 7714 (one dot was taken for
   the style's); "Journal Tracks" in the plural is a track word too; the README says how BibTeX writes a cut list.

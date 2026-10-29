@@ -1183,6 +1183,15 @@
   "optRenameHint": {
     "message": "Enter 保留 · Esc 取消 · 留空：標準名稱"
   },
+  "optNameTipWords": {
+    "message": "您為此按鈕設定的名稱，適用於所有語言。留空：按鈕顯示搜尋詞。"
+  },
+  "optRenameHintWords": {
+    "message": "Enter 保留 · Esc 取消 · 留空：搜尋詞"
+  },
+  "optNameResetWords": {
+    "message": "還原搜尋詞"
+  },
   "optVenueTitle": {
     "message": "檢查發表處"
   },

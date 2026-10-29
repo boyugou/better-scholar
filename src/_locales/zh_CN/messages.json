@@ -1183,6 +1183,15 @@
   "optRenameHint": {
     "message": "Enter 保留 · Esc 取消 · 留空：标准名称"
   },
+  "optNameTipWords": {
+    "message": "你为此按钮设置的名称，适用于所有语言。留空：按钮显示搜索词。"
+  },
+  "optRenameHintWords": {
+    "message": "Enter 保留 · Esc 取消 · 留空：搜索词"
+  },
+  "optNameResetWords": {
+    "message": "恢复搜索词"
+  },
   "optVenueTitle": {
     "message": "核对发表场所"
   },

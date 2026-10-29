@@ -1183,6 +1183,15 @@
   "optRenameHint": {
     "message": "Enter يحفظ · Esc يلغي · فارغ: الاسم الافتراضي"
   },
+  "optNameTipWords": {
+    "message": "اسمك الخاص بهذا الزر، بكل اللغات. إن تُرك فارغًا: يعرض الزر كلمات البحث الخاصة به."
+  },
+  "optRenameHintWords": {
+    "message": "Enter يحفظ · Esc يلغي · فارغ: كلمات البحث"
+  },
+  "optNameResetWords": {
+    "message": "العودة إلى كلمات البحث"
+  },
   "optVenueTitle": {
     "message": "تحقّق من منصة النشر"
   },

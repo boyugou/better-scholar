@@ -154,8 +154,8 @@
       const key = el.dataset.rrLabel, def = el.dataset.rrDefault || B.dom.tDefault(key), r = rel(el);          // (rrDefault: the words of your own quick filter, its text while it has no name)
       // (your own quick filter: its words in grey, and the box empty until it has a name — its words can be longer than a name may be)
       const own = !!el.dataset.rrDefault;
-      const input = h("input", { type: "text", class: "pv-rename-input", maxlength: String(B.prefs.NAME_MAX), spellcheck: "false", "aria-label": `${def} — ${t("optNameOf")}`, value: at("labels." + key) || (own ? "" : def), ...(own ? { placeholder: def } : {}) });
-      const box = h("div", { class: "pv-rename" }, input, h("span", { class: "pv-rename-hint" }, t("optRenameHint")));
+      const input = h("input", { type: "text", class: "pv-rename-input", maxlength: String(B.prefs.NAME_MAX), spellcheck: "false", dir: "auto", "aria-label": `${def} — ${t("optNameOf")}`, value: at("labels." + key) || (own ? "" : def), ...(own ? { placeholder: def } : {}) });
+      const box = h("div", { class: "pv-rename" }, input, h("span", { class: "pv-rename-hint" }, t(own ? "optRenameHintWords" : "optRenameHint")));
       renaming = { key, def, input, box, start: B.prefs.cleanName(input.value), done: false };          // (start: what the box opened with, as it would be saved)
       hide();
       host.append(box);
