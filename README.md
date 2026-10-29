@@ -234,7 +234,7 @@ Press `/` on a profile to jump to the search box. (The panel and its filters mus
 - **Suggestions.** Type an operator's colon (`role:`) to see its values. `↓`, or a click on the `/` hint, shows common searches. `↑` and `↓` choose; `Enter` or `Tab` takes the choice. Without a list, `Enter` jumps to the next matching row and `Shift`+`Enter` to the previous one.
 - `Escape` closes the list, and then clears the box. On the page, `Escape` clears every filter.
 - The quick buttons under the box are `ccf:a`, `cites:>100`, `role:first` and `has:award`. The settings offer more: `core:a*`, `age:<5` (*Last 5 years*), `role:cofirst`, `role:second`, `role:last` and `has:talk`. A button for a kind of paper that nothing on the page shows is left out.
-- **Your own quick buttons.** Under *Settings → Filters* you can type the words of up to three buttons of your own, as you would in the box (`ccf:a role:first age:<5`, at most 60 characters), and give each a name. The button shows the name, or else the words. It puts all its words in the box and takes them out again. Words that the search cannot read make no button, and the settings page says why.
+- **Your own quick buttons.** Under *Settings → Filters* you can type the words of up to three buttons of your own, as you would in the box (`ccf:a role:first age:<5`, at most 60 characters), and give each a name. The button shows the name, or else the words. It puts all its words in the box and takes them out again. Its word for a role, a rank or a kind of venue takes the place of the one in the box (a paper has one role); its `has:` words are added (a paper can have an award and a talk). Words that the search cannot read make no button, and the settings page says why.
 - The box takes up to 500 characters.
 
 ### Recipes

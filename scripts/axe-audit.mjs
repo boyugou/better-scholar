@@ -69,6 +69,13 @@ for (const scheme of ["light", "dark"]) {
   await run(opts, `settings (${scheme}): a mapped line and the list of mappings`, "#card-venue");
   await opts.click('[data-act="mine-remove"]'); await opts.waitForTimeout(300);
   await opts.fill('[data-act="venue-check"]', "");
+  // your own quick filters: one with words, one with words the search cannot read (the reason in red under its field)
+  await opts.fill('input[data-pref="panel.filters.searches.search1"]', "ccf:a role:first age:<5");
+  await opts.fill('input[data-pref="panel.filters.searches.search2"]', "ccf:z");
+  await opts.waitForTimeout(300);
+  await run(opts, `settings (${scheme}): your own quick filters, one not read`, "#card-filters");
+  await run(opts, `settings (${scheme}): the preview with your own quick filter`, "#pv-panel");
+  for (const id of ["search1", "search2"]) await opts.fill(`input[data-pref="panel.filters.searches.${id}"]`, "");
 }
 await opts.setViewportSize({ width: 1360, height: 900 });
 // popup (aimed at the profile tab)

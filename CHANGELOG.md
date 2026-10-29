@@ -64,7 +64,8 @@
   A third review: a word is compared in one form (a listed operator's values in any order: "role:last,first" is "role:first,last",
   which had left the filter unpressed after Last was clicked off and on); `has:` words are not replaced, since a paper can have an
   award and a talk; a Finnish name with a soft hyphen (which a name drops) is no longer saved when its rename box is opened and left,
-  and an empty box left empty writes nothing.
+  and an empty box left empty writes nothing. Its words go into the box as the person wrote them (values in their order), and are
+  compared in the one form.
 - **From an independent review of the store text** (all fixed): *Copy APA* pasted "Hinton, G. E.." when the profile owner is the last
   author (the full stop inside the bold was not seen, and a second one followed) — a test now checks that the HTML of APA, IEEE and
   GB/T 7714 reads word for word as their text, wherever the owner stands; saved author lists older than 90 days were only left unused
