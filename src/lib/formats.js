@@ -419,6 +419,37 @@
   // (`markMe`: the owner's name in bold, as in the papers table)
   const ieeeHtml = (papers, { markMe = false } = {}) => papers.map((p, i) => `<p style="margin:0 0 0.6em 2.2em;text-indent:-2.2em">${ownToHtml(ieeeLine(p, i, (t) => `\u0000${t}\u0001`, markMe ? p.me : undefined).split(/(\u0000[^\u0001]*\u0001)/).map((s) => (s.startsWith("\u0000") ? `<i>${esc(s.slice(1, -1))}</i>` : esc(s))).join(""))}</p>`).join("\n");
 
+  // ---- ACM Reference Format ---------------------------------------------------------------------------------------------------------------------------
+  // The style of ACM's own papers (acmart): [1] K. He, X. Zhang, S. Ren, and J. Sun. 2016. Deep residual learning for image recognition. In *Proceedings of …*. 770–778.
+  // A journal: *Name* 44, 8 (2022), 4012–4025. Every author is named (a cut list ends in "et al."); an article number is "Article 28".
+  function acmPieces(p, n, me) {
+    const { names, cut } = authorList(p.authors);
+    const list = markList(names, ieeeAuthor, me);
+    let by = !list.length ? "" : cut ? `${list.join(", ")}, et al.` : list.length === 1 ? list[0] : list.length === 2 ? `${list[0]} and ${list[1]}` : `${list.slice(0, -1).join(", ")}, and ${list[list.length - 1]}`;
+    if (by && !/[.!?…]\u0003?$/.test(by)) by += ".";          // (the owner last: the full stop of "G. E." stands inside the bold mark)
+    let title = clean(p.title);
+    if (title && !/[.?!]$/.test(title)) title += ".";
+    const kind = entryType(p), type = kind.type, acmParts = partsFor(p, periodical(p) ? "article" : type), { name, volume, issue, pages } = type === "inproceedings" && !periodical(p) ? unlabelled(acmParts) : acmParts, year = p.year ? String(p.year) : "";
+    const misc = isDocument(p) || WEB.test(p.venue), venue = misc ? asPrinted(p.venue) : name;
+    const range = pages.replace("-", "–"), page = pages && (pages.includes("-") ? range : `Article ${pages}`);
+    const out = [{ t: `[${n}]` }, by && { t: by }, year && { t: year + "." }, title && { t: title }];
+    if (!venue) return out.filter(Boolean);
+    if (misc) out.push({ t: venue + (/[.]$/.test(venue) ? "" : ".") });
+    else if (type === "article" || periodical(p)) {
+      // *Journal* 44, 8 (2022), 4012–4025.
+      const numbers = [volume, issue].filter(Boolean).join(", ");
+      out.push({ t: venue, em: true, tail: [numbers && " " + numbers, year && ` (${year})`, page && ", " + page].filter(Boolean).join("") + "." });
+    } else if (type === "inproceedings") {
+      // In *Proceedings*, Vol. 34. 770–778.   (a lone number after a proceedings' name is not printed, as in IEEE)
+      out.push({ t: "In" }, { t: venue, em: true, tail: (pages.includes("-") && volume ? `, Vol. ${volume}` : "") + "." }, pages.includes("-") && { t: range + "." });
+    } else out.push({ t: venue, em: true, tail: "." }, pages.includes("-") && { t: range + "." });
+    return out.filter(Boolean);
+  }
+  const acmLine = (p, i, em, me) => acmPieces(p, i + 1, me).map((x) => (x.em ? em(x.t) + (x.tail || "") : x.t)).join(" ");
+  const acm = (papers) => papers.map((p, i) => acmLine(p, i, (t) => `*${t}*`)).join("\n\n");
+  // (the same for a word processor: the venue in real italics, the owner's name in bold when `markMe`)
+  const acmHtml = (papers, { markMe = false } = {}) => papers.map((p, i) => `<p style="margin:0 0 0.6em 2.2em;text-indent:-2.2em">${ownToHtml(acmLine(p, i, (t) => `\u0000${t}\u0001`, markMe ? p.me : undefined).split(/(\u0000[^\u0001]*\u0001)/).map((x) => (x.startsWith("\u0000") ? `<i>${esc(x.slice(1, -1))}</i>` : esc(x))).join(""))}</p>`).join("\n");
+
   // ---- GB/T 7714-2015 ---------------------------------------------------------------------------------------------------------------------------------
   // The Chinese national standard for references (NSFC and most Chinese forms ask for it):
   // [1] HE K, ZHANG X, REN S, et al. Deep residual learning for image recognition[C]//Proceedings of …. 2016: 770-778.
@@ -456,5 +487,5 @@
   // ---- JSON ---------------------------------------------------------------------------------------------------------------------------------------
   const json = ({ owner, source, papers }) => JSON.stringify({ owner, source, total: papers.length, papers }, null, 2);
 
-  return { ROLE_LABEL, summaryText, summaryTable, summaryTsv, summaryHtml, rowsTsv, rowsCsv, rowsHtml, table, papersTsv, papersCsv, papersHtml, bibtex, markdown, apa, apaHtml, apaAuthor, ieee, ieeeHtml, gbt, gbtHtml, venueParts, json };
+  return { ROLE_LABEL, summaryText, summaryTable, summaryTsv, summaryHtml, rowsTsv, rowsCsv, rowsHtml, table, papersTsv, papersCsv, papersHtml, bibtex, markdown, apa, apaHtml, apaAuthor, ieee, ieeeHtml, acm, acmHtml, gbt, gbtHtml, venueParts, json };
 });

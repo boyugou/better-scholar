@@ -39,7 +39,7 @@ On Google Scholar profiles: the profile owner's author role and the venue's CCF 
 
 ### Description
 
-Plain text, 3,194 characters, 10 lines starting with "• ". No Markdown. Paste it as it is.
+Plain text, 3,209 characters, 10 lines starting with "• ". No Markdown. Paste it as it is.
 
 ```text
 Better Scholar adds two things to Google Scholar profile pages: the profile owner's authorship role in each paper, and the rank of the venue it appeared in. A panel counts them in one table.
@@ -49,7 +49,7 @@ Better Scholar adds two things to Google Scholar profile pages: the profile owne
 • Summary: a role × rank table (click a cell to list those papers), citation totals and h-index of the highlighted papers, and a chart by year.
 • Awards and talks: chips for awards on a bundled list (7,830 paper awards, nearly all at major conferences) and for the Oral, Spotlight and Highlight labels authors write in the title or venue.
 • Search: press / and type, for example role:first ccf:a cites:>100; up to three searches of your own can be buttons under the box.
-• Copy and export: the summary or the papers shown, as plain text, a table, APA, BibTeX, Markdown, JSON or CSV, and, when switched on, IEEE, GB/T 7714 or the table as a picture; the table and the papers also paste into Word or Docs as a real table, APA and IEEE with real italics, and the papers, APA, IEEE and GB/T 7714 with the profile owner's name in bold. The toolbar button and page events for scripts or AI agents give the same data.
+• Copy and export: the summary or the papers shown, as plain text, a table, APA, BibTeX, Markdown, JSON or CSV, and, when switched on, IEEE, ACM, GB/T 7714 or the table as a picture; the table and the papers also paste into Word or Docs as a real table, APA, IEEE and ACM with real italics, and the papers, APA, IEEE, ACM and GB/T 7714 with the profile owner's name in bold. The toolbar button and page events for scripts or AI agents give the same data.
 • Settings: a switch for each role and for every part of the panel and every thing in it, in any order, with your own names for titles and buttons; the look and colours of the chips; a live preview that you edit by hovering it (hide, move, rename); a box that checks a venue against the lists; merging duplicate entries, hiding parts of the profile page, 30 languages, and reopening search and profile pages in a chosen language.
 
 The ranks come from today's CCF and CORE lists, not the rank a venue had when the paper was published. CCF states that its list is not a basis for academic evaluation.
@@ -64,7 +64,7 @@ Free and open source (Apache 2.0). Better Scholar is an independent project and 
 ```
 
 Checks done on this text (re-counted 2026-10-28, after the ranks, copy and storage sentences took in the mappings, the three
-formats that are off by default and the bold name, then corrected after an independent review, and the own quick filters added): 3,194 characters; "Scholar" appears 5 times (counting "Better Scholar", "Google Scholar" and "Semantic Scholar"), "CCF" 3 (once as
+formats that are off by default and the bold name, then corrected after an independent review, and the own quick filters and ACM added): 3,209 characters; "Scholar" appears 5 times (counting "Better Scholar", "Google Scholar" and "Semantic Scholar"), "CCF" 3 (once as
 `ccf:a`), "CORE" 2 (once in "ICORE"), "rank" 4 (7 with "ranks" and "ranking"), all in sentences (policy: no "unnatural repetition of the same
 keyword more than 5 times"); no competitor is named; no superlatives. The text says what 2.40.0 and 2.41.0 added in two bullets (the
 HTML on the clipboard; the own names, chip looks, editable preview and venue box), each with its row in `claims.md` (L36 to L39),
@@ -209,7 +209,7 @@ printed on a public page, and the spellings are spellings of that printed name).
 information" on the listing; the privacy policy then explains that it never leaves the browser.
 
 The clipboard and files are not a data type on the form. For the record: the extension writes to the clipboard only when the
-user clicks a copy button (the table, papers, APA, IEEE and GB/T 7714 buttons write the text and an HTML version of the same data, so that a
+user clicks a copy button (the table, papers, APA, IEEE, ACM and GB/T 7714 buttons write the text and an HTML version of the same data, so that a
 word processor pastes a real table or real italics), saves a CSV or the settings as a file only on a click, and never reads
 the clipboard (`claims.md` L36, P19). PRIVACY.md says so under "Clipboard" and "Files".
 

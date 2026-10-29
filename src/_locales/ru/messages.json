@@ -519,6 +519,9 @@
   "copyIeee": {
     "message": "Копировать IEEE"
   },
+  "copyAcm": {
+    "message": "Копировать ACM"
+  },
   "copyGbt": {
     "message": "Копировать GB/T 7714"
   },

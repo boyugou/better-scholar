@@ -624,12 +624,25 @@ test("the references' HTML reads, word for word, as their plain text, wherever t
   const lists = ["A Krizhevsky, I Sutskever, GE Hinton", "GE Hinton", "GE Hinton, A Krizhevsky", "A Krizhevsky, GE Hinton, I Sutskever", "A Krizhevsky, I Sutskever, GE Hinton, B C, D E, F G, H I, J K", "A Krizhevsky, GE Hinton, ..."];
   for (const authors of lists) for (const venue of ["Advances in neural information processing systems 25, 2012", "Nature 521 (7553), 436-444, 2015"]) {
     const p = { title: "Imagenet classification", authors, me: "GE Hinton", venue, year: 2012, type: null, url: "", rank: {}, marks: [] };
-    for (const [plain, html] of [[f.apa, f.apaHtml], [f.ieee, f.ieeeHtml], [f.gbt, f.gbtHtml]]) {
+    for (const [plain, html] of [[f.apa, f.apaHtml], [f.ieee, f.ieeeHtml], [f.acm, f.acmHtml], [f.gbt, f.gbtHtml]]) {
       const marked = html([p], { markMe: true });
-      if (plain === f.apa) assert.match(marked, /<b>/, authors);          // (APA names up to twenty; IEEE and GB/T may give only the first under "et al.")
+      if (plain === f.apa || plain === f.acm) assert.match(marked, /<b>/, authors);          // (APA and ACM name every author they print; IEEE and GB/T may give only the first under "et al.")          // (APA names up to twenty; IEEE and GB/T may give only the first under "et al.")
       assert.equal(text(marked).replace(/\s+/g, " ").trim(), plain([p]).replace(/\*/g, "").replace(/\s+/g, " ").trim(), `${plain.name}: ${authors} · ${venue}`);          // (the text marks italics with *…*)
       assert.doesNotMatch(text(marked), /\.\./, `${plain.name}: no doubled full stop (${authors})`);
     }
   }
 });
 
+test("the ACM Reference Format: every author, the year after them, In *Proceedings*. pages, *Journal* volume, issue (year), pages", () => {
+  const p = (venue, extra = {}) => ({ title: "Deep residual learning for image recognition", authors: "K He, X Zhang, S Ren, J Sun", venue, year: 2016, type: null, url: "", rank: {}, marks: [], ...extra });
+  assert.equal(f.acm([p("Proceedings of the IEEE conference on computer vision and pattern recognition, 770-778", { type: "conference" })]),
+    "[1] K. He, X. Zhang, S. Ren, and J. Sun. 2016. Deep residual learning for image recognition. In *Proceedings of the IEEE conference on computer vision and pattern recognition*. 770–778.");
+  assert.equal(f.acm([p("Communications of the ACM 60 (6), 84-90", { type: "journal", year: 2017, authors: "A Krizhevsky, I Sutskever, GE Hinton" })]),
+    "[1] A. Krizhevsky, I. Sutskever, and G. E. Hinton. 2017. Deep residual learning for image recognition. *Communications of the ACM* 60, 6 (2017), 84–90.");
+  assert.match(f.acm([p("Scientific Reports 6, 29545")]), /\*Scientific Reports\* 6 \(2016\), Article 29545\.$/, "an article number");
+  assert.match(f.acm([p("CVPR, 1-9", { authors: "A Vaswani, N Shazeer, ..." })]), /^\[1\] A\. Vaswani, N\. Shazeer, et al\. 2016\./, "a cut list: the names Scholar shows, then et al.");
+  assert.match(f.acm([p("Advances in Neural Information Processing Systems 34, 1-12", { type: "conference" })]), /In \*Advances in Neural Information Processing Systems\*, Vol\. 34\. 1–12\.$/, "a proceedings' volume beside its pages");
+  assert.match(f.acm([p("US Patent 10,007,785")]), /\. US Patent 10,007,785\.$/, "a patent as Scholar printed it, without italics");
+  assert.match(f.acm([{ ...p("ICLR 2025, 2025", { type: "conference" }), title: "Why does it work?" }]), /\. 2016\. Why does it work\? In \*ICLR 2025\*\.$/, "a title's own question mark ends it");
+  assert.match(f.acmHtml([p("Communications of the ACM 60 (6), 84-90", { me: "J Sun" })], { markMe: true }), /and <b>J\. Sun<\/b>\. 2016\./, "your name in bold, one full stop after it");
+});

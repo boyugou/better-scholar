@@ -140,8 +140,8 @@ Links, which open only when you click them:
 The extension writes to the clipboard only when you click a button that copies. It never reads the clipboard.
 
 - The copy buttons of the panel and the toolbar popup: *Copy summary*, *Copy as table*, *Copy as image*, *Copy papers*, *Copy APA*,
-  *Copy IEEE*, *Copy GB/T 7714*, *Copy BibTeX*, *Copy Markdown*, *Copy JSON*; and *Copy list* under the unranked venues.
-- *Copy as table*, *Copy papers*, *Copy APA*, *Copy IEEE* and *Copy GB/T 7714* put the same content on the clipboard twice, as text
+  *Copy IEEE*, *Copy ACM*, *Copy GB/T 7714*, *Copy BibTeX*, *Copy Markdown*, *Copy JSON*; and *Copy list* under the unranked venues.
+- *Copy as table*, *Copy papers*, *Copy APA*, *Copy IEEE*, *Copy ACM* and *Copy GB/T 7714* put the same content on the clipboard twice, as text
   and as HTML (which a word processor reads as a real table or as italics). The HTML is made from the same data and contains
   nothing else.
 - *Copy as image* puts a picture (PNG) of the role × rank table on the clipboard, with the summary text beside it. The picture is

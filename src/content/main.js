@@ -454,6 +454,7 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
       case "markdown": return formats.markdown(records, ctx);
       case "apa": return formats.apa(records);
       case "ieee": return formats.ieee(records);
+      case "acm": return formats.acm(records);
       case "gbt": return formats.gbt(records);
       default: return formats.json({ owner: headerName, source: currentSource(), papers: records });          // "json" (a call's format is checked before it gets here)
     }
@@ -487,6 +488,7 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
     // (the owner's name in bold, as the papers table and the page's author line mark it: the "your name" setting)
     if (kind === "apa") return formats.apaHtml(paperRecords(), { markMe: !!prefs.rows.name });
     if (kind === "ieee") return formats.ieeeHtml(paperRecords(), { markMe: !!prefs.rows.name });
+    if (kind === "acm") return formats.acmHtml(paperRecords(), { markMe: !!prefs.rows.name });
     if (kind === "gbt") return formats.gbtHtml(paperRecords(), { markMe: !!prefs.rows.name });
     return "";
   }

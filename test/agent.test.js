@@ -21,7 +21,7 @@ test("validate: a call is checked before the page does anything with it", () => 
   assert.match(ok("nope").error, /unknown method "nope": one of ping, summary, papers, export, filter, clearFilters/);
   assert.match(ok("ping", { x: 1 }).error, /unknown parameter "x" of ping: it takes none/);
   assert.match(ok("export", {}).error, /export needs "format"/);
-  assert.match(ok("export", { format: "docx" }).error, /"format" must be one of: summary, table, image, papers, apa, ieee, gbt, bibtex, markdown, json, csv/);
+  assert.match(ok("export", { format: "docx" }).error, /"format" must be one of: summary, table, image, papers, apa, ieee, acm, gbt, bibtex, markdown, json, csv/);
   assert.match(ok("filter", { query: 5 }).error, /"query" must be a string/);
   assert.match(ok("filter", { query: "x".repeat(501) }).error, /at most 500/);
   assert.match(ok("filter", { onlyHighlighted: "yes" }).error, /true or false/);

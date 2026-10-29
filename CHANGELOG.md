@@ -6,7 +6,7 @@ Not released yet: the version was set on 2026-10-15 and the work went on under i
 give the details and every review):
 
 - **Your own venue mappings**: tie a venue that no list ranks to a listed one; its chip says it is your mapping.
-- **Copy as image**, **Copy IEEE** and **Copy GB/T 7714** (each off until switched on); references and the papers table paste
+- **Copy as image**, **Copy IEEE**, **Copy ACM** and **Copy GB/T 7714** (each off until switched on); references and the papers table paste
   into Word, Docs or Pages with real italics and your name in bold.
 - **Your own quick filters**: up to three buttons of your own search words under the search box.
 - **Check a venue**: on the settings page, or from the panel's list of unranked venues — what the lists make of a line, and by which rule.
@@ -60,6 +60,11 @@ give the details and every review):
   An independent review fixed: a long note (the source address) widens the picture instead of running off it; the total column has the
   panel's one word, row and column, and as much room as a custom name needs; a failed copy is no longer drawn green; the picture of an
   empty selection is copied like the table; the popup says when the picture fails; Japanese pages draw with Japanese fonts first.
+- **Copy ACM** (off until switched on, like IEEE and GB/T 7714): the ACM Reference Format, the style of ACM's own papers —
+  `[1] K. He, X. Zhang, S. Ren, and J. Sun. 2016. Title. In *Proceedings of …*. 770–778.`, `*Journal* 60, 6 (2017), 84–90.`, every
+  author named (a cut list ends in "et al."), "Article 28" for an article number; with real italics and your name in bold for a word
+  processor, in the toolbar popup, as the `export` format `acm`, and among the website's samples. Its label in 30 languages is each
+  language's own "Copy IEEE" with ACM. The last citation style the roadmap named.
 - **Two kinds of wrong journal badge, from a new sweep of the matcher** (lines where the lists' kind and the line's shape disagree):
   a book of a conference's proceedings named like a journal — "Artificial Life 14: Proceedings of the Fourteenth International
   Conference on the Synthesis and Simulation of Living Systems" (a real line) had the journal *Artificial Life* (CCF C); the same shape
@@ -82,8 +87,8 @@ give the details and every review):
   words, and with a name its words are its tooltip. A click puts all its words in the search, a second takes them out (a value of a
   listed operator joins its word, as a built-in button does). Words the search cannot read make no button, and the settings page says
   why, in red under the field; words that find no paper on the profile make none either, as for the built-in ones. At most 60
-  characters each, so that the settings with every name at its longest and three searches of operators still fit Chrome's 8 KB for
-  one item (longer words in a three-byte script are refused with a message, as any record that does not fit). 30 languages.
+  characters each (with every name at its longest in a three-byte script there is room for one such search; a change that would not
+  fit Chrome's 8 KB for one item is refused whole, with a message, as any record that does not fit). 30 languages.
   An independent review of the first version fixed: the words go into the search whole ("has:award has:talk" had become
   "has:award,talk", either one, while the button said both) and the button is pressed only while every one of them is a word of the
   search; with the search box off, a word no pressed button stands for is dropped at once; an unnamed button has its words as its

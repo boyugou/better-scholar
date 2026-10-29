@@ -251,7 +251,7 @@ flowchart LR
 
 ## 复制与导出
 
-每种格式在面板的复制行和工具栏弹窗中各有一个按钮。在 *设置 → 复制与导出* 下，每种格式各有自己的开关（除 *复制为图片*、IEEE 和 GB/T 7714 外默认全部开启）。
+每种格式在面板的复制行和工具栏弹窗中各有一个按钮。在 *设置 → 复制与导出* 下，每种格式各有自己的开关（除 *复制为图片*、IEEE、ACM 和 GB/T 7714 外默认全部开启）。
 
 - 论文类格式取页面当前显示的论文，即筛选之后的结果。它们使用 *补全* 保存的完整作者列表。
 - 摘要和表格统计筛选后剩下的论文（在面板中；弹窗统计所有已加载的论文）。它们会说明统计了什么，例如：“显示 25 / 100 篇论文 · 2021–…”。
@@ -265,6 +265,7 @@ flowchart LR
 | *复制论文列表* | 论文列表，以制表符分隔：年份、标题、作者、角色、场所、CCF、CORE、获奖与报告形式、引用数（表头使用界面语言）。同时附带一份真正的表格，供文字处理软件粘贴，其中你的名字为粗体。 |
 | *复制 APA* | APA 第 7 版参考文献：期刊为 `Authors (Year). Title. *Venue*, *Volume*(Issue), Pages. URL`，会议论文集为 `In *Venue* (Vol. 1, pp. Pages).`；专利或学位论文按 Scholar 原样给出。同时附带真正的斜体，供文字处理软件粘贴。 |
 | *复制 IEEE* | 带编号的 IEEE 参考文献列表：`[1] A. Author and B. Writer, "Title," in *Venue*, Year, pp. 1–10.`；期刊为 `*Journal*, vol. 44, no. 8, pp. 4012–4025, Year.`。同时附带真正的斜体，供文字处理软件粘贴。默认关闭，可在 *设置 → 复制与导出* 中打开。 |
+| *复制 ACM* | ACM Reference Format，即 ACM 自家论文的参考文献格式：`[1] A. Author and B. Writer. Year. Title. In *Venue*. 1–10.`；期刊为 `*Journal* 44, 8 (Year), 4012–4025.`。也提供带真正斜体的版本，供文字处理软件使用。默认关闭。 |
 | *复制 GB/T 7714* | GB/T 7714-2015 参考文献列表（国家标准，国自然等大多数中文表格要求的格式）：`[1] HE K, ZHANG X, REN S, et al. Title[C]//Venue. 2016: 770-778.`；`Title[J]. Journal, 2022, 44(8): 4012-4025.`。默认关闭。 |
 | *复制 BibTeX* | BibTeX 条目 |
 | *复制 Markdown* | 带编号的 Markdown 列表：带链接的标题、作者、场所与年份、等级、获奖、引用数 |
@@ -287,6 +288,7 @@ flowchart LR
   - 有测试对全部 22,744 行真实数据运行拆分，确认没有丢字或多字；另一个测试记录每一行经过人工核对的 GB/T 读法（`test/fixtures/formats.expected.json`）。
 - **APA 第 7 版。** `I Stoica` → `Stoica, I.`；`MF Kaashoek` → `Kaashoek, M. F.`；`L van der Maaten` → `van der Maaten, L.`。两位作者之间用 `&` 连接。超过 20 位作者时，列出前 19 位、`…` 和最后一位。被截断的列表以 `…` 结尾。没有年份时写 `(n.d.)`。星号标出斜体部分。
 - **IEEE。** 名字的首字母在前（`MF Kaashoek` → `M. F. Kaashoek`）。两位作者用 `and` 连接，三到六位用逗号和 `and`。超过六位作者，或 Scholar 截断了列表时，写第一作者加 `et al.`。标题加引号；会议论文写 `in`；期刊从发表场所行中取 `vol.`、`no.` 和 `pp.`（文章编号写 `Art. no.`）。
+- **ACM Reference Format。** 与 IEEE 一样名字首字母在前，但列出所有作者（被截断的列表以 `et al.` 结尾）。之后是年份、标题，以及带页码的 `In *Proceedings*.`，或 `*Journal* 卷, 期 (年), 页码`；文章编号写作 `Article 28`。
 - **GB/T 7714-2015。**
   - 姓全大写，名的首字母不加点（`MF Kaashoek` → `KAASHOEK M F`）；中文姓名保持原样。超过三位作者，或 Scholar 截断了列表时，写前三位加 `et al`。
   - 期刊标 `[J]`，会议论文集标 `[C]//`（Scholar 印在名称后的数字照原样保留：`Advances in Neural Information Processing Systems 35`），专利标 `[P]`，学位论文标 `[D]`，报告标 `[R]`，出版社出版的书标 `[M]`，其他标 `[Z]`。
@@ -294,7 +296,7 @@ flowchart LR
 - **Markdown。** Markdown 会解读的每个字符都会被转义，因此标题不会变成链接或标记。
 - **CSV。** 遵循 RFC 4180，带 UTF-8 字节序标记（让 Excel 能正确读取非拉丁文字），行尾为 CRLF。含有逗号、引号、分号或换行的字段会加上引号。
 - **Word、Google Docs、Pages。**
-  - 表格、论文列表、APA、IEEE 和 GB/T 7714 五个按钮在文本之外，还会把 HTML 放入剪贴板。文字处理软件粘贴时，会得到真正的表格（带边框），或带真正斜体、链接和悬挂缩进的参考文献列表。若面板在作者行中标出了你的名字，参考文献里你的名字也会加粗（国自然表格和大多数简历都这样要求）。
+  - 表格、论文列表、APA、IEEE、ACM 和 GB/T 7714 六个按钮在文本之外，还会把 HTML 放入剪贴板。文字处理软件粘贴时，会得到真正的表格（带边框），或带真正斜体、链接和悬挂缩进的参考文献列表。若面板在作者行中标出了你的名字，参考文献里你的名字也会加粗（国自然表格和大多数简历都这样要求）。
   - *复制为图片* 放入的则是表格的图片，并在旁附上摘要文字。其他格式只有文本。
   - 电子表格和文本框取文本。HTML 中的所有文字都经过转义。看起来像公式的单元格会被当作文本，与制表符格式的处理方式相同。
   - 工具栏弹窗和 `export` 调用（`html: true`）给出相同的结果。
@@ -334,7 +336,7 @@ const { ok, result, error } = await answer;   // result.text is the BibTeX
 | `ping` | 无 | `{ version, owner, loaded, complete }` |
 | `summary` | `filtered`（`true`：表格和获奖与报告形式的计数只统计筛选后剩下的论文，与面板的统计方式相同；默认 `false`：所有已加载的论文） | 角色 × 等级表（CCF、CORE，以及仅按角色）、获奖与报告形式的计数、引用统计，以及 `counted`（表格统计了多少篇论文） |
 | `papers` | `filtered`（默认 `true`：页面当前显示的论文；`false`：所有已加载的论文） | `{ owner, total, papers: [{ id, title, authors, me, venue, pages?, year, citations, role, status, highlighted, type, rank, marks, url }] }` |
-| `export` | `format`（必填：`summary`、`table`、`papers`、`apa`、`ieee`、`gbt`、`bibtex`、`markdown`、`json`、`csv`、`image`）；`source`（`ccf`、`core`、`none`；用于摘要和表格）；`html`（`true`：对 `table`、`papers`、`apa`、`ieee` 和 `gbt` 另外返回 `html`）；`filtered`（`true`：摘要和表格只统计筛选后剩下的论文） | `{ format, text, html?, png? }`（`png`：`image` 的图片，data: 地址） |
+| `export` | `format`（必填：`summary`、`table`、`papers`、`apa`、`ieee`、`acm`、`gbt`、`bibtex`、`markdown`、`json`、`csv`、`image`）；`source`（`ccf`、`core`、`none`；用于摘要和表格）；`html`（`true`：对 `table`、`papers`、`apa`、`ieee`、`acm` 和 `gbt` 另外返回 `html`）；`filtered`（`true`：摘要和表格只统计筛选后剩下的论文） | `{ format, text, html?, png? }`（`png`：`image` 的图片，data: 地址） |
 | `filter` | `query`、`onlyHighlighted`、`yearStart`、`yearEnd`、`minCitations`、`impact`（`h` 或 `i10`）；`null` 清除一个数值 | `{ shown, total, filters, errors, ignored }`（`ignored`：因设置中没有对应控件而被忽略的筛选） |
 | `clearFilters` | 无 | `{ shown, total, filters, errors }` |
 
@@ -349,10 +351,10 @@ const { ok, result, error } = await answer;   // result.text is the BibTeX
 <!-- numbers:begin -->
 | 数字 | 含义 | 统计自 |
 |---:|---|---|
-| **169** | 项可调整的设置，分布在 18 张卡片中：93 个开关、54 处可自定义名称，以及 22 项颜色、选项、顺序和语言 | 设置树的各行（`src/lib/prefs.js`） |
-| **187** | 个节点，共 5 层：卡片、面板开关、部分开关、其中一项、项下的子项 | 卡片和各行；每一行挂在所属部分的开关下 |
-| **9 · 11 · 13 · 6 · 4** | 个面板部分、复制格式和快速筛选——每一项都有自己的开关，多数还能排顺序——以及可选的标签样式和预设 | `SECTIONS`、`COPY_BUTTONS`、`PILLS`、`CHIP_THEMES`、`PRESETS` |
-| **30** | 种界面语言——每种 381 条文案，29 种译文 | `src/_locales/*/messages.json` |
+| **171** | 项可调整的设置，分布在 18 张卡片中：94 个开关、55 处可自定义名称，以及 22 项颜色、选项、顺序和语言 | 设置树的各行（`src/lib/prefs.js`） |
+| **189** | 个节点，共 5 层：卡片、面板开关、部分开关、其中一项、项下的子项 | 卡片和各行；每一行挂在所属部分的开关下 |
+| **9 · 12 · 13 · 6 · 4** | 个面板部分、复制格式和快速筛选——每一项都有自己的开关，多数还能排顺序——以及可选的标签样式和预设 | `SECTIONS`、`COPY_BUTTONS`、`PILLS`、`CHIP_THEMES`、`PRESETS` |
+| **30** | 种界面语言——每种 382 条文案，29 种译文 | `src/_locales/*/messages.json` |
 | **1,178** | 个有等级的发表场所，来自两份内置名录的 1,481 行（CCF 会议 386、CCF 期刊 295、CORE 会议 800）；其中 299 个在两份名录中各有一行 | `src/data/ccf.js` 和 `src/data/core.js` 的各行，由 `idx.partners` 关联 |
 | **400+** | 个 Scholar 显示但名录中没有的场所名称，收录在 250+ 条人工整理的条目中：旧名与改名、其他拼写、名录自身的笔误，以及不给标签的同名活动 | `src/data/aliases.js` |
 | **2,500+** · **1,100+** | 个名称写法和缩写，匹配器逐一查找 | 各索引的键 |
