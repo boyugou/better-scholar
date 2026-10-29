@@ -184,7 +184,8 @@
       const book = /^([A-Za-z][A-Za-z ,&'’]{3,}?)\s*(:|\s?[–—-]\s?|\()\s*([A-Z][A-Z&]{1,9}(?:[-–]|\s?['’])\d{2})\b/.exec(s);
       const initials = book ? book[1].split(/[\s-]+/).filter((w) => /^[A-Z]/.test(w)).map((w) => w[0]).join("").toUpperCase() : "";
       // (a title that is itself an event's name — "International Workshop on … (BSN'06)", "… Conference on Neural Networks (ICNN'96)" — is read as it is)
-      if (book && initials !== book[3].replace(/[^A-Z&].*$/, "") && !/\b(?:journal|transactions|letters|magazine|review|bulletin)\b/i.test(book[1]) && !CONF_SIGNAL.test(book[1])) {
+      // (and a title of two words at least: one word — "Bioinformatics: AAAI-05" — is too little to say whether the acronym's venue fits it)
+      if (book && initials !== book[3].replace(/[^A-Z&].*$/, "") && !/\b(?:journal|transactions|letters|magazine|review|bulletin)\b/i.test(book[1]) && !CONF_SIGNAL.test(book[1]) && contentWords(book[1]).length >= 2) {
         viaSeries = true;
         if (book[2] !== "(") s = `${book[1].trim()} (${book[3]})${s.slice(book.index + book[0].length)}`;
       }
