@@ -38,7 +38,7 @@ echo "checking $(git rev-parse --short HEAD 2>/dev/null || echo .) in four lanes
 lane unit bash -c 'npm test && node scripts/build-data.mjs --check && npm run check:claims && E2E_PART=4 node test/e2e/run.mjs' &
 lane e2e1 env E2E_PART=1 node test/e2e/run.mjs &
 lane e2e2 bash -c 'E2E_PART=2 node test/e2e/run.mjs && node scripts/axe-audit.mjs' &
-lane demo bash -c 'E2E_PART=3 node test/e2e/run.mjs && npm run test:demo && node scripts/overflow-audit.mjs --width 1360,700,330 --scheme light' &
+lane demo bash -c 'E2E_PART=3 node test/e2e/run.mjs && npm run test:demo && node scripts/overflow-audit.mjs --width 1360,700,330 --scheme light && node scripts/overflow-audit.mjs --long-names spaced --lang en,de,ja,ar,ru,fi --width 700,330 --scheme light' &
 wait
 
 failed=0
