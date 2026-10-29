@@ -823,6 +823,9 @@
   "searchShortcut": {
     "message": "/ दबाकर खोजें"
   },
+  "searchKeys": {
+    "message": "Enter: अगला मिलान · Shift+Enter: पिछला मिलान · ↓: सुझाव · Esc: साफ़ करें"
+  },
   "venuesShowMore": {
     "message": "और दिखाएं"
   },

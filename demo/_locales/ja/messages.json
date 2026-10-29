@@ -823,6 +823,9 @@
   "searchShortcut": {
     "message": "/ キーで検索"
   },
+  "searchKeys": {
+    "message": "Enter：次の一致項目 · Shift+Enter：前の一致項目 · ↓：候補 · Esc：クリア"
+  },
   "venuesShowMore": {
     "message": "もっと見る"
   },

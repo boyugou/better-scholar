@@ -823,6 +823,9 @@
   "searchShortcut": {
     "message": "Hae painamalla /"
   },
+  "searchKeys": {
+    "message": "Enter: seuraava osuma · Shift+Enter: edellinen osuma · ↓: ehdotukset · Esc: tyhjennä"
+  },
   "venuesShowMore": {
     "message": "Näytä lisää"
   },

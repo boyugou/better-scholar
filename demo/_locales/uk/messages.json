@@ -823,6 +823,9 @@
   "searchShortcut": {
     "message": "Натисніть / для пошуку"
   },
+  "searchKeys": {
+    "message": "Enter: наступний збіг · Shift+Enter: попередній збіг · ↓: підказки · Esc: очистити"
+  },
   "venuesShowMore": {
     "message": "Показати більше"
   },

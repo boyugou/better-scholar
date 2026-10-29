@@ -823,6 +823,9 @@
   "searchShortcut": {
     "message": "Drücke / zum Suchen"
   },
+  "searchKeys": {
+    "message": "Enter: nächster Treffer · Shift+Enter: vorheriger Treffer · ↓: Vorschläge · Esc: Löschen"
+  },
   "venuesShowMore": {
     "message": "Mehr anzeigen"
   },

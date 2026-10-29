@@ -823,6 +823,9 @@
   "searchShortcut": {
     "message": "Nhấn / để tìm kiếm"
   },
+  "searchKeys": {
+    "message": "Enter: kết quả tiếp theo · Shift+Enter: kết quả trước đó · ↓: gợi ý · Esc: đặt lại"
+  },
   "venuesShowMore": {
     "message": "Xem thêm"
   },

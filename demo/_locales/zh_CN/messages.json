@@ -823,6 +823,9 @@
   "searchShortcut": {
     "message": "按 / 键搜索"
   },
+  "searchKeys": {
+    "message": "Enter：下一个匹配项 · Shift+Enter：上一个匹配项 · ↓：建议 · Esc：清除"
+  },
   "venuesShowMore": {
     "message": "显示更多"
   },

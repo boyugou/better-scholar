@@ -823,6 +823,9 @@
   "searchShortcut": {
     "message": "Apasă / pentru a căuta"
   },
+  "searchKeys": {
+    "message": "Enter: următoarea potrivire · Shift+Enter: potrivirea anterioară · ↓: sugestii · Esc: șterge"
+  },
   "venuesShowMore": {
     "message": "Afișează mai multe"
   },

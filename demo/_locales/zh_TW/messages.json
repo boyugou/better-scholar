@@ -823,6 +823,9 @@
   "searchShortcut": {
     "message": "按 / 鍵搜尋"
   },
+  "searchKeys": {
+    "message": "Enter：下一個相符項目 · Shift+Enter：上一個相符項目 · ↓：建議 · Esc：清除"
+  },
   "venuesShowMore": {
     "message": "顯示更多"
   },
