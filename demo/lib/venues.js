@@ -1288,7 +1288,8 @@
         // ("2010 Internet of Things (IOT)", "2011 7th international wireless communications and mobile computing …": a name that opens with its year is the title of a meeting's proceedings, IEEE's form, not a journal)
         // (not in the second reading without the track words, which asks only whether a listed meeting is left: "2019 IEEE symposium series on computational intelligence (SSCI)" is no track)
         if (!inner && r.entry.kind === "J" && hint !== "J" && /^(?:19|20)\d{2}\s+\S/.test(p.name)) continue;
-        const blocking = secs.find((w) => !ownWord(r.entry, w, raw));
+        // (a journal track is a track of the conference, and the journal's own: "ACM Transactions on Reconfigurable Technology and Systems (FCCM Journal Track)" is a TRETS article)
+        const blocking = secs.find((w) => !ownWord(r.entry, w, raw) && !(r.entry.kind === "J" && /^journal[- ](?:track|first)$/.test(w)));
         if (blocking) blocked.push({ src, r, blocking });
         else take(src, r);
       }
