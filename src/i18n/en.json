@@ -31,7 +31,7 @@
   "f.merge.title": "Duplicates merged",
   "f.merge.text": "Scholar sometimes lists one paper two times. The “Merge duplicates” switch makes them one entry and adds up their citations.",
   "f.yours.title": "Your own layout",
-  "f.yours.text": "Every part of the panel has its own switch. Choose the colours, the order of the parts and your own names for them.",
+  "f.yours.text": "Every part of the panel has its own switch. Choose the colours, the order of the parts and your own names for them, and add up to three quick filters of your own search words.",
   "f.private.title": "Private",
   "f.private.text": "No account, no analytics, no tracking. All the work happens in your browser, and the rank lists are inside the extension.",
   "f.lang.title": "30 languages",
