@@ -8,7 +8,7 @@ Playwright and a Chromium build (Playwright's own; branded Chrome 137 and later 
 npm test                              # the unit tests (names, venues, marks, awards, metrics, formats, query, prefs, agent, i18n, package checks)
 npm run test:e2e                      # the end-to-end checks: the real extension in Chromium against a local Scholar stand-in
                                       # (E2E_PART=1 to 4 are its independent parts: run them at the same time to wait a quarter as long)
-npm run check:all                     # everything CI runs, in four lanes at once (unit + e2e 4 · e2e 1 · e2e 2 · e2e 3 + demo + overflow); exit 0 when all pass
+npm run check:all                     # everything CI runs, in four lanes at once (unit + e2e 4 · e2e 1 · e2e 2 + axe · e2e 3 + demo + overflow); exit 0 when all pass
 npm run build:demo                    # dist/demo/: the settings page as a static folder for the website (see docs/ARCHITECTURE.md, The web demo)
 npm run test:demo                     # the web demo's checks: that folder in a plain Chromium page, no extension
 npm run test:update                   # rewrite the venue snapshot, after reviewing its diff (see below)
@@ -180,8 +180,8 @@ the check for a defect you fix, so that it is found by a run and not by a person
 `.cache/`, never a dependency) over the panel on the local Scholar stand-in — light, with the system in dark mode,
 filtered with the unranked-venue list open, every part on, the narrow-window layout, and in Arabic, Japanese, Thai
 and German — the settings page (light and dark) and the toolbar popup (no profile tab). It exits 1 on any violation.
-It is not part of CI: run it after a change to the markup or the colours of the panel, the settings page or the
-popup. A unit test (`test/extension.test.js`) keeps the faint text colours at a contrast of 4.5:1 or more.
+CI runs it (in the demo job, half a minute), and so does `npm run check:all`; run it by itself after a change to
+the markup or the colours of the panel, the settings page or the popup. A unit test (`test/extension.test.js`) keeps the faint text colours at a contrast of 4.5:1 or more.
 
 ### The website
 

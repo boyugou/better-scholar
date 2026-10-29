@@ -68,6 +68,9 @@ give the details and every review):
   without a comma. APA and ACM keep the gap where Scholar cut an author list — "C. Writer, E. Writer, B. Writer, … A. Example" — where
   they had printed the owner as the fourth author; GB/T 7714 takes its three names from before the gap. The agent guide said `html`
   came for five formats (six).
+- **The accessibility audit runs in CI.** `scripts/axe-audit.mjs` (axe-core over the panel, the settings page and the popup, in four
+  languages, light and dark, exit 1 on any violation) was run by hand; it takes half a minute, so CI's demo job and `npm run check:all`
+  now run it too.
 - **Measured: a key and a click on a very large profile.** On 2,000 papers a key in the search box costs 5–15 ms and the costliest
   click (a table cell or quick filter undone, all rows shown again) about 100 ms, most of it the browser's layout — under the 200 ms
   where a page stops feeling instant, so nothing changed; the end-to-end check of 1,000 papers now types a search and picks and undoes a

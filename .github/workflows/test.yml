@@ -42,7 +42,8 @@ jobs:
           E2E_PART: ${{ matrix.part }}
 
   # the web demo's checks, then the settings page in all 30 languages at a desktop, a half-screen and a phone width (the website's frame):
-  # nothing runs out of its box, no word is cut in two (both build the demo into dist/demo, so they run one after the other)
+  # nothing runs out of its box, no word is cut in two (both build the demo into dist/demo, so they run one after the other); then axe-core over
+  # the panel, the settings page and the popup (half a minute)
   demo:
     runs-on: ubuntu-24.04
     steps:
@@ -54,3 +55,4 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - run: npm run test:demo
       - run: node scripts/overflow-audit.mjs --width 1360,700,330 --scheme light
+      - run: node scripts/axe-audit.mjs

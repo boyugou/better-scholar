@@ -19,7 +19,7 @@ fs.cpSync(path.join(root, "src"), ext, { recursive: true });
 const mf = JSON.parse(fs.readFileSync(path.join(ext, "manifest.json"), "utf8"));
 mf.content_scripts[0].matches = ["http://127.0.0.1/citations*"];
 fs.writeFileSync(path.join(ext, "manifest.json"), JSON.stringify(mf, null, 2));
-const ctx = await pw.chromium.launchPersistentContext("/tmp/pw-axe-" + Date.now(), { executablePath: chromiumPath, headless: true, viewport: { width: 1360, height: 900 }, permissions: ["clipboard-read", "clipboard-write"], args: [`--disable-extensions-except=${ext}`, `--load-extension=${ext}`, "--no-first-run"] });
+const ctx = await pw.chromium.launchPersistentContext(path.join(os.tmpdir(), "pw-axe-" + Date.now()), { executablePath: chromiumPath, headless: true, viewport: { width: 1360, height: 900 }, permissions: ["clipboard-read", "clipboard-write"], args: [`--disable-extensions-except=${ext}`, `--load-extension=${ext}`, "--no-first-run", ...(process.env.CI ? ["--no-sandbox"] : [])] });
 let [sw] = ctx.serviceWorkers(); if (!sw) sw = await ctx.waitForEvent("serviceworker");
 const id = sw.url().split("/")[2];
 const fx = await start({ slug: "ion-stoica", pageSize: 100 });
