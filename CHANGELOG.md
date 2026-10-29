@@ -80,8 +80,9 @@ give the details and every review):
   word cut in two.
 - **A copy the clipboard refused is said.** When every way of copying failed (the clipboard API, then the old copy command), the
   panel's and the popup's text buttons said nothing at all — only *Copy as image* said "Not copied". Every copy button says it now,
-  and the popup's also when the page does not answer. Found when CI's popup, a page without focus, refused the copy the accessibility
-  audit presses; an end-to-end check now refuses the popup's clipboard and expects "Not copied".
+  and the popup's also when the page does not answer. Found while asking why a button the accessibility audit presses never answered
+  in CI (it had answered late: the audit waits up to 3 s now, and says what the button said); an end-to-end check now refuses the
+  popup's clipboard and expects "Not copied".
 - **A review of these changes** (an independent agent, given the diff): a copy button just pressed kept its label's one-line width
   for a second and a half (so that the buttons after it do not move up), wider than the row for a long name — it is now at most the
   row's width, in the popup and the panel, and the accessibility audit presses one with a 30-character name in each; in the popup a
