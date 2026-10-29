@@ -142,6 +142,16 @@
   const DB_PAREN = new RegExp("\\(\\s*" + DB_PHRASE + "\\s*\\)", "gi");
   const DB_TAIL = new RegExp("[\\s,;:–-]*\\b" + DB_PHRASE + "(?=\\s*(?:[,;:.)]|$|\\d))", "gi");
 
+  // The number an ordinal names: "14th", "Fourteenth", "Twenty-first" → 14, 14, 21; null for none (an edition read after a volume's number, in prepare())
+  const ORDINAL_UNITS = { first: 1, second: 2, third: 3, fourth: 4, fifth: 5, sixth: 6, seventh: 7, eighth: 8, ninth: 9, tenth: 10, eleventh: 11, twelfth: 12, thirteenth: 13,
+    fourteenth: 14, fifteenth: 15, sixteenth: 16, seventeenth: 17, eighteenth: 18, nineteenth: 19, twentieth: 20, thirtieth: 30, fortieth: 40, fiftieth: 50 };
+  const ORDINAL_TENS = { twenty: 20, thirty: 30, forty: 40, fifty: 50, sixty: 60 };
+  function ordinalIn(text) {
+    const m = /\b(\d{1,3})(?:st|nd|rd|th)\b|\b(?:(twenty|thirty|forty|fifty|sixty)[\s-]?)?(first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth|thirtieth|fortieth|fiftieth)\b/i.exec(text);
+    if (!m) return null;
+    return m[1] ? +m[1] : (m[2] ? ORDINAL_TENS[m[2].toLowerCase()] : 0) + ORDINAL_UNITS[m[3].toLowerCase()];
+  }
+
   // Reduce a raw Scholar venue field to
   //   { name, plain, withParens, truncated, hasVolume, hasIssue, viaSeries }          (hasIssue: "12 (3)" — a journal's volume and issue; viaSeries: the string was a volume's title in a publisher's series)
   // name       the venue words with volume/pages/year tails removed (parentheses kept)
@@ -159,13 +169,26 @@
     // Springer's proceedings volumes numbered in Roman: "Algorithmic Foundations of Robotics X: Proceedings of the Tenth Workshop on …", "… IX: Selected Contributions of the Ninth …" — the volume and
     // its description are no part of the name (only where the colon is followed by what the volume holds: "Circuits and Systems I: Regular Papers" is a journal's own title)
     let viaSeries = false;          // (the name is a volume's title: a book of proceedings, a conference's — never a journal of that title)
-    // (numbered in figures too: "Artificial Life 14: Proceedings of the Fourteenth International Conference on …" is ALIFE's book, not the journal Artificial Life)
-    s = s.replace(/^(.{6,}?)\s+(?:[IVXL]{1,5}|\d{1,3})\s*:\s*(?:Selected|Proceedings|The\s+(?:\d+(?:st|nd|rd|th)|[A-Z][a-z]+(?:th|st|nd|rd))\b)\b.*$/, (m, name) => { viaSeries = true; truncated = false; return name; });          // (what is cut off is the description of the volume: the title before it is whole)
-    // Springer's books of an event's proceedings titled by its subject, then the event: "Machine Learning: ECML-95", "Machine Learning: ECML-98, 137-142" — the title before the
-    // colon is no journal (an acronym in capitals with its year after the colon; nothing before it reads as a volume: "ACM Transactions on Graphics 38 (4 : SIGGRAPH 2019)" is TOG)
-    // (a title in lower case: in a line all in capitals any word reads as an acronym — "…CYBERNETICS: SYSTEMS 12 (3)" is the journal; a short year is joined by its hyphen
-    // or apostrophe, and a number before a parenthesis is a volume)
-    if (/^(?=[^:]*[a-z])[A-Za-z][A-Za-z ,&'’-]{3,}:\s*[A-Z][A-Z&]{1,9}(?:\s?[-–'’]\s?\d{2}|\s?[-–'’ ]?(?:19|20)\d{2})\b(?!\s*\()/.test(s)) viaSeries = true;
+    s = s.replace(/^(.{6,}?)\s+(?:[IVXL]{1,5})\s*:\s*(?:Selected|Proceedings|The\s+(?:\d+(?:st|nd|rd|th)|[A-Z][a-z]+(?:th|st|nd|rd))\b)\b.*$/, (m, name) => { viaSeries = true; truncated = false; return name; });          // (what is cut off is the description of the volume)
+    // ... and in figures, where the number is the edition the words after it name: "Artificial Life 14: Proceedings of the Fourteenth International Conference on …" is ALIFE's
+    // book, not the journal Artificial Life. A number that names no such edition is a journal's volume: "Bioinformatics 21: Proceedings of ISMB 2005" is the journal
+    s = s.replace(/^(.{6,}?)\s+(\d{1,3})\s*:\s*((?:selected|proceedings|the)\b.*)$/i, (m, name, num, rest) => {
+      if (ordinalIn(rest.split(/\s+/).slice(0, 6).join(" ")) !== +num) return m;
+      viaSeries = true; truncated = false; return name;
+    });
+    // Springer's books of an event's proceedings titled by its subject, then the event: "Machine Learning: ECML-95", "Machine Learning–ECML-93", "Machine Learning (ECML-95)" —
+    // the title is no journal. Only an acronym in capitals with a short year glued to it ("ECML-95", "CSCW'24"; a four-digit year after a journal's name is often the journal's
+    // own: "Journal of Machine Learning Research: JMLR 2019"), and not an acronym of the title itself ("World Wide Web: WWW'19"). The colon and dash forms are read as
+    // "Machine Learning (ECML-95)", the form whose acronym is that venue's only where the title fits it ("Electron Cyclotron … (EC-15)" is no EC)
+    {
+      const book = /^([A-Za-z][A-Za-z ,&'’]{3,}?)\s*(:|\s?[–—-]\s?|\()\s*([A-Z][A-Z&]{1,9}(?:[-–]|\s?['’])\d{2})\b/.exec(s);
+      const initials = book ? book[1].split(/[\s-]+/).filter((w) => /^[A-Z]/.test(w)).map((w) => w[0]).join("").toUpperCase() : "";
+      // (a title that is itself an event's name — "International Workshop on … (BSN'06)", "… Conference on Neural Networks (ICNN'96)" — is read as it is)
+      if (book && initials !== book[3].replace(/[^A-Z&].*$/, "") && !/\b(?:journal|transactions|letters|magazine|review|bulletin)\b/i.test(book[1]) && !CONF_SIGNAL.test(book[1])) {
+        viaSeries = true;
+        if (book[2] !== "(") s = `${book[1].trim()} (${book[3]})${s.slice(book.index + book[0].length)}`;
+      }
+    }
     // ACM's series form with the word before the dash cut off: "SIGGRAPH Asia 2018 Technical Papers on - SIGGRAPH Asia '18" — the acronym after the dash only repeats the title
     s = s.replace(/\s+on\s*[-–—]\s*[A-Za-z][A-Za-z0-9 ]{1,24}\s*['’]\s?\d{2}\s*$/i, "");
     // "Theory of Cryptography - Lecture Notes in Computer Science, 2005": the series of the publisher is no part of the venue's name
@@ -235,7 +258,7 @@
 
   // Secondary tracks of a main conference: not the main proceedings, so no badge —
   // unless the venue's OWN official name contains the word (IWQoS, HotNets, …).
-  const SECONDARY = /\b(?:workshops?|companion|demos?|demonstrations?|doctoral|tutorials?|courses?|posters?|adjunct|findings|extended abstracts?|conference abstracts|abstracts and applications|book of abstracts|abstract book|abstracts|talks|sketches|emerging technologies|late[- ]breaking|short papers?|industr(?:y|ial) track|shared task|student (?:abstracts?|research)|work[- ]in[- ]progress|symposium series|(?:spring|summer|fall|autumn|winter) symposi(?:um|a)|tiny papers?|summits?|blog ?posts?|competition track|creative ai(?: track)?|sister conferences?|journal[- ](?:track|first)|supplement(?:al)? (?:volume|proceedings)|(?:computer )?animation festival|art gallery|electronic theat(?:er|re)|educators? program|real-time live|vr village|appy hour|production sessions?|technical briefs?|arts, media,? (?:and )?humanities|new ideas and emerging results)\b/i;
+  const SECONDARY = /\b(?:workshops?|companion|demos?|demonstrations?|doctoral|tutorials?|courses?|posters?|adjunct|findings|extended abstracts?|conference abstracts|abstracts and applications|book of abstracts|abstract book|abstracts(?=\s*(?:,|$))|talks|sketches|emerging technologies|late[- ]breaking|short papers?|industr(?:y|ial) track|shared task|student (?:abstracts?|research)|work[- ]in[- ]progress|symposium series|(?:spring|summer|fall|autumn|winter) symposi(?:um|a)|tiny papers?|summits?|blog ?posts?|competition track|creative ai(?: track)?|sister conferences?|journal[- ](?:track|first)|supplement(?:al)? (?:volume|proceedings)|(?:computer )?animation festival|art gallery|electronic theat(?:er|re)|educators? program|real-time live|vr village|appy hour|production sessions?|technical briefs?|arts, media,? (?:and )?humanities|new ideas and emerging results)\b/i;
   // Every secondary-track word of the string, in order, each once ("Workshop … Posters" has two): a venue whose own name holds one of them is not held to that one only.
   function secondaryWords(raw) {
     const text = fold(raw), words = [];

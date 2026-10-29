@@ -1549,11 +1549,22 @@ test("real prints that missed a badge: a cut IEEE citation form, joint proceedin
   // ... and in figures: a book of a conference's proceedings named like a journal is never the journal (a real line; "Machine Learning 12:", "Artificial Intelligence 3:" the same)
   none("Artificial Life 14: Proceedings of the Fourteenth International Conference on the Synthesis and Simulation of Living Systems");
   none("Machine Learning 12: Proceedings of the Twelfth International Conference");
-  none("Artificial Intelligence 3: Proceedings of the Conference");
+  none("Artificial life 14: proceedings of the fourteenth international conference on the synthesis and simulation of living systems, 2014");
+  // (only where the number is the edition the words after it name: otherwise it is the journal's volume, and the journal stays)
+  eq("Bioinformatics 21: Proceedings of ISMB 2005", "CCF A Bioinformatics");
+  eq("Computer Graphics Forum 26: The Best Papers of Eurographics 2007", "CCF B CGF");
+  eq("Information and Computation 204: Selected papers from ICALP 2004", "CCF A IANDC");
   eq("Artificial life 23 (2), 2017", "CCF C Artificial Life");
-  // Springer's books of an event titled by subject, then the event's acronym and year: no journal of that subject (before, 293 CCF journals took "<name> 7: Proceedings of …")
-  none("Machine Learning: ECML-95, 1995");
-  none("Machine Learning: ECML-98, 137-142, 1998");
+  // Springer's books of an event titled by subject, then the event's acronym and year: no journal of that subject (before, 293 CCF journals took "<name> 7: Proceedings of …");
+  // read as "Machine Learning (ECML-95)", whose acronym names the venue only where the title fits it
+  for (const l of ["Machine Learning: ECML-95, 1995", "Machine Learning: ECML-98, 137-142, 1998", "Machine Learning–ECML-93, 1993", "Machine Learning (ECML-95), 1995", "MACHINE LEARNING: ECML-95"]) eq(l, "CCF B ECML-PKDD · CORE A ECML PKDD");
+  none("Electron Cyclotron Emission: EC-15");
+  eq("Journal of Machine Learning Research: JMLR 2019", "CCF A JMLR");
+  eq("World Wide Web: WWW'19", "CCF B WWW");
+  eq("BIOINFORMATICS-OXFORD- 18, S354-S363, 2002", "CCF A Bioinformatics");
+  eq("International Workshop on Wearable and Implantable Body Sensor Networks (BSN'06)", "CORE C BSN");
+  // a book of abstracts only at the end of the line: "SIGMETRICS '17 Abstracts: Proceedings of …" holds the main track
+  eq("SIGMETRICS '17 Abstracts: Proceedings of the 2017 ACM SIGMETRICS / International Conference on Measurement and Modeling of Computer Systems", "CCF B SIGMETRICS · CORE A* SIGMETRICS");
   eq("ACM Transactions on Graphics 38 (4 : SIGGRAPH 2019), Article 28, 2019", "CCF A TOG");
   for (const j of ccf.venues.filter((v) => v.kind === "J" && v.name.split(" ").length <= 4)) {
     const v = resolver.resolve(`${j.name} 7: Proceedings of the Seventh International Conference, 2005`);
