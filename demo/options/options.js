@@ -1033,11 +1033,18 @@
       }
       const cardMatch = h2.includes(q) || desc.includes(q);
       let optMatch = false;
+      // (a row is found by its words and by what is typed in its fields: a name you gave, the words of your own quick filter)
+      const words = (opt) => ((opt.textContent || "") + " " + [...opt.querySelectorAll('input[type="text"]')].map((i) => i.value).join(" ")).toLowerCase();
       opts.forEach((opt) => {
-        const matches = cardMatch || (opt.textContent || "").toLowerCase().includes(q);
+        const matches = cardMatch || words(opt).includes(q);
         opt.hidden = !matches;
         if (matches) optMatch = true;
       });
+      // (your own quick filter's switch and its words are found together)
+      for (const row of card.querySelectorAll(".opt-words")) {
+        const sw = row.previousElementSibling;
+        if (sw && (!row.hidden || !sw.hidden)) { row.hidden = false; sw.hidden = false; }
+      }
       const show = cardMatch || optMatch;
       card.hidden = !show;
       if (toc.children[idx]) toc.children[idx].hidden = !show;
