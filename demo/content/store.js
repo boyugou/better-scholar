@@ -9,6 +9,7 @@
 //   sync  variants   { profileId: [name spellings] }
 //   local resolved   { paperId: { ts, authors } } — author lists read with "Read full lists"
 //   local askVenue   a venue text the panel asks the settings page to check (left until the page takes it)
+//   local reloadHint true from an install or update until the toolbar popup first reaches a profile (background.js; the popup reads it)
 (function () {
   "use strict";
   const B = (globalThis.RolesRanks = globalThis.RolesRanks || {});

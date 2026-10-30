@@ -47,6 +47,7 @@
 <li><code>resolved</code>: what <em>Read full lists</em> found. For each paper: Scholar's id for the paper on that profile, the full author list, the venue, the page range when the page gives one, the time it was read, and whether it came from Semantic Scholar. An entry older than 90 days is not used, and is deleted the next time a profile or the settings page reads the cache. At most 3,000 papers and three million characters are kept (the newest first).</li>
 <li><code>s2key</code>: the Semantic Scholar API key, only if you enter one in the settings. It is never synced.</li>
 <li><code>askVenue</code>: a venue text that you asked the settings page to check, with <em>Check</em> beside a venue of the unranked list (at most 300 characters, as Scholar printed it). The settings page takes it within a moment and removes it. A text that nobody takes is ignored after 30 seconds.</li>
+<li><code>reloadHint</code>: <code>true</code> from the moment the extension is installed or updated until the toolbar popup first reaches a profile (it then removes it). While it is there, the popup says that a profile opened before needs a reload (<code>background.js</code>, <code>popup/popup.js</code>).</li>
 </ul>
 <p>In the Scholar site's own browser storage:</p>
 <ul>
@@ -75,7 +76,7 @@
 <li>No analytics, no telemetry, no advertising, no tracking and no account.</li>
 <li>No code is loaded from the network. Every script runs from the extension package.</li>
 <li>The rank lists (CCF 2026, ICORE 2026) and the list of award-winning papers are part of the package. They are never downloaded.</li>
-<li>The background service worker only opens the settings page when the panel asks, and reads the extension's own language files. It makes no network request and does not use storage (<code>background.js</code>).</li>
+<li>The background service worker only opens the settings page when the panel asks, reads the extension's own language files, and notes an install or update (<code>reloadHint</code>, above). It makes no network request and stores nothing else (<code>background.js</code>).</li>
 </ul>
 <p>Links, which open only when you click them:</p>
 <ul>
