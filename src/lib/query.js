@@ -58,20 +58,32 @@
   // the panel to say in the interface's language. A term is { kind: "text", text } | { kind: "cites" | "year" | "age", op, n } | { kind: "ccf" | "core" | "role" | "type" | "has", values: [any of these] } | { kind: "never" }.
   // Accents, capitals and the width of a letter aside: "Dollár" is "dollar", "ＣＣＦ：Ａ" (a Chinese input method) is "ccf:a"
   const LETTERS = { "ł": "l", "ø": "o", "đ": "d", "ð": "d", "þ": "th", "ß": "ss", "æ": "ae", "œ": "oe", "ı": "i", "ħ": "h" };
+  const flat = (text) => fold(String(text).normalize("NFKC")).replace(/\s+/g, "");          // (a word in one form: folded, without spaces — "role:first, last" is "role:first,last")
   const fold = (s) => String(s == null ? "" : s).normalize("NFKD").replace(/[\u0300-\u036f]/g, "").normalize("NFC").toLowerCase().replace(/[łøđðþßæœıħ]/g, (c) => LETTERS[c]);
 
   // The words of a query as typed: a quoted phrase is one word ("genome editing", also in curly quotes), and a listed operator's values go on past a space after a comma
   // or the colon ("ccf:a, b" is "ccf:a,b", "role: first" is "role:first")
   function tokens(q) {
     const out = [];
-    const re = /(-?)["“”„«»]([^"“”„«»]*)["“”„«»]?|(\S+)/g;
+    // (a field's value in quotes — Scholar's own author:"GE Hinton" — is that field's phrase: one word here, read by the operator)
+    const re = /(-?[^\s"“”„«»:]+:)["“”„«»]([^"“”„«»]*)["“”„«»]?|(-?)["“”„«»]([^"“”„«»]*)["“”„«»]?|(\S+)/g;
     let m;
-    while ((m = re.exec(q))) out.push(m[3] !== undefined ? { word: m[3] } : { word: m[1] + m[2].trim().replace(/\s+/g, " "), phrase: true });
+    while ((m = re.exec(q))) {
+      if (m[1] !== undefined) out.push({ word: m[1] + m[2].trim().replace(/\s+/g, " ") });
+      else if (m[5] !== undefined) out.push({ word: m[5] });
+      else out.push({ word: m[3] + m[4].trim().replace(/\s+/g, " "), phrase: true });
+    }
     for (let i = 0; i < out.length - 1; i++) {
-      const w = out[i].word, at = w.indexOf(":"), op = at > 0 && !out[i].phrase ? BY_NAME.get(fold(w.slice(w[0] === "-" ? 1 : 0, at))) : undefined;
-      if (op && LISTED.has(op.name) && /[:,、،]$/.test(w) && !out[i + 1].phrase && !out[i + 1].word.includes(":")) { out[i].word = w + out[i + 1].word; out.splice(i + 1, 1); i--; }
+      if (!out[i].phrase && !out[i + 1].phrase && !out[i + 1].word.includes(":") && continues(out[i].word, out[i + 1].word)) { out[i].word += out[i + 1].word; out.splice(i + 1, 1); i--; }
     }
     return out;
+  }
+  // (does the next word go on with a listed operator's values — "role:first," then "last"? Only when it is values the operator takes: "role:first, transformer" is two words)
+  function continues(prev, next) {
+    const p = flat(prev), at = p.indexOf(":"), op = at > 0 ? BY_NAME.get(p.slice(p[0] === "-" ? 1 : 0, at)) : null;
+    if (!op || !LISTED.has(op.name) || !/[:,、،]$/.test(p)) return false;
+    const values = flat(next).split(/[,、،]/).filter(Boolean);
+    return values.length > 0 && values.every((v) => op.value.test(v));
   }
 
   function parse(q) {
@@ -108,6 +120,8 @@
   // A word is looked for at the start of a word of the text, a word of one or two letters or digits as a whole word; a word in a script that does not put spaces
   // between words (Chinese, Japanese, Thai …: no Latin letter or digit in it) anywhere. (made once for each word of a query)
   const PATTERNS = new WeakMap();
+  // (a letter or digit of a word — not one of a script that writes no spaces: "基于BERT的", "面向5G网络" hold the words "bert" and "5g")
+  const WORD = "(?:(?![\\p{Script=Han}\\p{Script=Hiragana}\\p{Script=Katakana}\\p{Script=Hangul}\\p{Script=Thai}])[\\p{L}\\p{N}])";
   const escape = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   function pattern(term) {
     let p = PATTERNS.get(term);
@@ -115,7 +129,7 @@
       if (!/[a-z0-9]/.test(term.text)) p = { test: (s) => s.includes(term.text) };
       else {
         const last = term.text.split(" ").pop();
-        p = new RegExp("(?<![\\p{L}\\p{N}])" + term.text.split(" ").map(escape).join("[^\\p{L}\\p{N}]+") + (/^[\p{L}\p{N}]{1,2}$/u.test(last) ? "(?![\\p{L}\\p{N}])" : ""), "u");
+        p = new RegExp("(?<!" + WORD + ")" + term.text.split(" ").map(escape).join("[^\\p{L}\\p{N}]+") + (/^[\p{L}\p{N}]{1,2}$/u.test(last) ? "(?!" + WORD + ")" : ""), "u");
       }
       PATTERNS.set(term, p);
     }
@@ -158,26 +172,28 @@
   // no First button, and a button never joins its value to them. (`word`: a plain unit in one form, folded, without spaces; `key`: what is compared — a listed operator's values
   // once each, in order, so that "Role:Last,first," is "role:first,last")
   const QUOTE = /["“”„«»]/;
-  const OPEN = /^-?(?:ccf|core|role|type|has):(?:.*[,、،])?$/;          // (a listed operator still taking values: "role:", "role:first,")
-  const flat = (text) => fold(String(text).normalize("NFKC")).replace(/\s+/g, "");
+  const kw = (t) => String(t).normalize("NFKC");          // (OR and NOT typed in full width are OR and NOT, as the search reads them)
   function units(q) {
-    const raw = String(q == null ? "" : q).match(/-?["“”„«»][^"“”„«»]*["“”„«»]?|\S+/g) || [];
+    const raw = String(q == null ? "" : q).match(/-?[^\s"“”„«»:]+:["“”„«»][^"“”„«»]*["“”„«»]?|-?["“”„«»][^"“”„«»]*["“”„«»]?|\S+/g) || [];
     const toks = [];
     for (const t of raw) {
       const prev = toks[toks.length - 1];
-      if (prev && !QUOTE.test(prev.text) && !QUOTE.test(t) && !flat(t).includes(":") && t !== "OR" && t !== "NOT" && OPEN.test(flat(prev.text))) { prev.text += " " + t; continue; }
+      if (prev && !QUOTE.test(prev.text) && !QUOTE.test(t) && !flat(t).includes(":") && kw(t) !== "OR" && kw(t) !== "NOT" && continues(prev.text, t)) { prev.text += " " + t; continue; }
       toks.push({ text: t });
     }
     const out = [];
     for (let i = 0; i < toks.length; i++) {
       let text = toks[i].text, opaque = QUOTE.test(text) || /^-./.test(text);
-      if (text === "NOT" && i + 1 < toks.length) { text += " " + toks[++i].text; opaque = true; }
-      while (i + 2 < toks.length && toks[i + 1].text === "OR") { text += " OR " + toks[i + 2].text; i += 2; opaque = true; }
+      if (kw(text) === "NOT" && i + 1 < toks.length) { text += " " + toks[++i].text; opaque = true; }
+      else if (kw(text) === "NOT" || kw(text) === "OR") opaque = true;          // (a NOT or an OR still waiting for its word: a button's word goes before it — appendable())
+      while (i + 2 < toks.length && kw(toks[i + 1].text) === "OR") { text += " " + toks[i + 1].text + " " + toks[i + 2].text; i += 2; opaque = true; }
       const word = flat(text);
       out.push({ text, plain: !opaque, word, key: opaque ? fold(text.normalize("NFKC")).replace(/\s+/g, " ") : norm(word) });
     }
     return out;
   }
+  // the words of a query with new ones put in — before a NOT or an OR at its end that still waits for its word ("deep NOT" + First is "deep role:first NOT")
+  const appended = (texts, add) => { const last = texts[texts.length - 1]; return last != null && /^(?:NOT|OR)$/.test(kw(last)) ? [...texts.slice(0, -1), ...add, last] : [...texts, ...add]; };
   const split = (word) => { const at = word.indexOf(":"); return at > 0 ? { name: word.slice(0, at), values: word.slice(at + 1).split(/[,、،]/).filter(Boolean) } : null; };
   const norm = (w) => { const s = split(w); return s && LISTED.has(s.name) && s.values.length ? s.name + ":" + [...new Set(s.values)].sort().join(",") : w; };
   const parts = (op) => { const at = op.indexOf(":"); return { name: op.slice(0, at), value: op.slice(at + 1) }; };
@@ -192,7 +208,7 @@
   function toggleValue(q, op) {
     const us = units(q), { name, value } = parts(op);
     // (taken out of every word that has it: the person may have typed it twice)
-    if (!LISTED.has(name)) { const left = us.filter((u) => !(u.plain && u.word === op)); return (left.length < us.length ? left.map((u) => u.text) : [...us.map((u) => u.text), op]).join(" "); }
+    if (!LISTED.has(name)) { const left = us.filter((u) => !(u.plain && u.word === op)); return (left.length < us.length ? left.map((u) => u.text) : appended(us.map((u) => u.text), [op])).join(" "); }
     if (us.some((u) => of(u, name) && of(u, name).values.includes(value))) {
       return us.flatMap((u) => {
         const s = of(u, name);
@@ -202,8 +218,8 @@
       }).join(" ");
     }
     const texts = us.map((u) => u.text), same = us.findIndex((u) => of(u, name));
-    if (same >= 0) texts[same] = name + ":" + [...of(us[same], name).values, value].join(","); else texts.push(op);
-    return texts.join(" ");
+    if (same >= 0) texts[same] = name + ":" + [...of(us[same], name).values, value].join(",");
+    return (same >= 0 ? texts : appended(texts, [op])).join(" ");
   }
   // The units of the query that are quick filters in `allowed` (a Set of "operator:value" and of your own filters' keys): what stays when the search box is not there to hold the
   // rest. A unit of your own filter stays as typed (its OR and NOT in capitals); of a listed operator's plain word, the values that are buttons; a word left out or one of an OR goes
@@ -235,7 +251,7 @@
     const ops = new Set(own.map((u) => u.plain && split(u.word)).filter((x) => x && SINGLE.has(x.name)).map((x) => x.name));
     const kept = us.filter((u) => { const x = u.plain && split(u.word); return !(x && ops.has(x.name)) || ps.includes(u.key); });
     const add = [...new Map(own.map((u) => [u.key, u.plain ? u.word.replace(/[,、،]+$/, "") : u.text])).entries()].filter(([p]) => !kept.some((u) => u.key === p)).map(([, w]) => w);          // (as the person wrote them)
-    return [...kept.map((u) => u.text), ...add].join(" ");
+    return appended(kept.map((u) => u.text), add).join(" ");
   }
 
   return { OPERATORS, POPULAR, LISTED, fold, parse, matches, hasValue, toggleValue, keepOnly, searchParts, hasAll, toggleAll };

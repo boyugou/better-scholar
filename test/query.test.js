@@ -388,3 +388,16 @@ test("the quick filters read the search as the search reads it: a phrase, NOT, a
   assert.equal(query.keepOnly("role:first OR has:award", new Set(["role:first", "has:award"])), "");
   assert.equal(query.keepOnly("cas9 OR cas12a deep", new Set(query.searchParts("cas9 OR cas12a"))), "cas9 OR cas12a");
 });
+
+test("a second read of the search, 2026-10-30: a word joined to Chinese or Japanese text, a field's quoted value, a comma before a word that is no value, full-width OR, a dangling NOT", () => {
+  const hit = (q, title, authorsText = "") => analysis.queryMatcher(q).test({ raw: { title, authorsText, venueText: "", citations: 1, year: 2020 }, a: { status: "found", role: "middle", year: 2020, venue: {}, marks: [] }, shown: 1 });
+  for (const [q, t] of [["bert", "基于BERT的文本分类"], ["5g", "面向5G网络的调度"], ["yolov5", "基于YOLOv5的检测"], ["gpu", "深層学習のためのGPU実装"], ["ai", "基于AI的诊断"], ["title:bert", "基于BERT的文本分类"]]) assert.equal(hit(q, t), true, q + " in " + t);
+  assert.equal(hit("-bert", "基于BERT的文本分类"), false);
+  assert.equal(hit("he", "the paper"), false, "a short word is still whole among Latin letters");
+  assert.equal(hit('author:"GE Hinton"', "T", "A Krizhevsky, I Sutskever, GE Hinton"), true);
+  assert.equal(hit('-author:"hinton"', "T", "GE Hinton"), false);
+  assert.deepEqual(query.parse('title:"deep convolutional"').terms, [{ kind: "text", text: "deep convolutional", field: "title" }]);
+  assert.deepEqual(query.parse("role:first, transformer").terms, [{ kind: "role", values: ["first"] }, { kind: "text", text: "transformer" }], "a word that is no value is a word");
+  assert.equal(query.hasValue("role:first ＯＲ has:award", "role:first"), false, "full-width OR is OR for the buttons too");
+  assert.equal(query.toggleValue("deep NOT", "role:first"), "deep role:first NOT", "a button's word goes before a NOT still waiting for its word");
+});

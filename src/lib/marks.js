@@ -52,7 +52,7 @@
     { kind: "finalist", label: "Best paper finalist",
       re: new RegExp(`\\b(?:${BEST}${SEP}${FINAL}|(?:award${S})?${FINAL}${FOR}${BEST}|(?:nominated|shortlisted)${S}for${S}(?:the${S})?${BEST}|(?:best${S}paper|(?<!(?:influential${S}paper|test${S}of${S}time(?:${S}paper)?)${S})award)${S}(?:finalist|nominee|candidate)|award${S}candidates?)\\b`, "gi") },          // ("Most Influential Paper Award nominee" is nothing: no best paper, no award won)
     { kind: "runner-up", label: (m) => (/runner/i.test(m) ? "Best paper runner-up" : "Honorable mention"),
-      re: new RegExp(`\\b(?:${BEST}${SEP}${RUNNER}|(?:second|2nd|third|3rd)${S}best${S}paper(?:${S}award)?|${RUNNER}${FOR}${BEST}|test${S}of${S}time(?:${S}paper)?(?:${S}award)?${S}${RUNNER}|honou?rable${S}mentions?(?:${S}award)?)\\b`, "gi") },
+      re: new RegExp(`\\b(?:${BEST}${SEP}${RUNNER}|(?:second|2nd|third|3rd)${S}best${S}paper(?:${S}award)?|${RUNNER}${FOR}${BEST}|test${S}of${S}time(?:${S}paper)?(?:${S}award)?${SEP}${RUNNER}|honou?rable${S}mentions?(?:${S}award)?)\\b`, "gi") },
     { kind: "best-student", label: "Best student paper", re: new RegExp(`\\b(?:best|outstanding)${S}student${S}paper(?:${S}award)?\\b`, "gi") },
     { kind: "best", label: "Best short paper", re: new RegExp(`\\bbest${S}short${S}paper(?:${S}award)?\\b`, "gi") },
     { kind: "best", label: "Best paper",
@@ -61,7 +61,7 @@
       re: new RegExp(`\\boutstanding${S}(?:(?:long|short|main${S}track|research)${S})*paper(?:${S}award)?\\b`, "gi") },
     { kind: "distinguished", label: "Distinguished paper", re: new RegExp(`\\bdistinguished${S}(?:student${S})?paper(?:${S}award)?\\b`, "gi") },
     { kind: "tot", label: "Test of time",
-      re: new RegExp(`\\b(?:test${S}of${S}time(?:${S}(?:paper${S})?award)?|(?<!(?:\\btop[-\\s]?(?:\\d{1,3}|ten|five|twenty|hundred)|#\\s?\\d{1,3}|\\b\\d{1,3}(?:st|nd|rd|th)|\\branked|\\bdigest)\\s{0,3})most${S}influential${S}paper(?!(?:${S}award)?${S}(?:finalist|nominee|candidate|nomination)|[^()\\[\\]]{0,20}paper\\s?digest)(?:${S}award)?|(?:10|ten)${S}years?${S}(?:most${S}influential|test${S}of${S}time)(?:${S}paper)?(?:${S}award)?|classic${S}paper${S}award)\\b`, "gi") },
+      re: new RegExp(`\\b(?:(?<!(?:nominated|shortlisted)${S}(?:for${S})?(?:the${S})?)test${S}of${S}time(?!(?:${S}(?:paper${S})?award)?(?:${S}(?:finalist|nominee|candidate|nomination)|${SEP}${RUNNER}))(?:${S}(?:paper${S})?award)?|(?<!(?:\\btop[-\\s]?(?:\\d{1,3}|ten|five|twenty|hundred)|#\\s?\\d{1,3}|\\b\\d{1,3}(?:st|nd|rd|th)|\\branked|\\bdigest)\\s{0,3})most${S}influential${S}paper(?!(?:${S}award)?${S}(?:finalist|nominee|candidate|nomination)|[^()\\[\\]]{0,20}paper\\s?digest)(?:${S}award)?|(?:10|ten)${S}years?${S}(?:most${S}influential|test${S}of${S}time)(?:${S}paper)?(?:${S}award)?|classic${S}paper${S}award)\\b`, "gi") },
     // ICLR's own wording for orals and spotlights
     { kind: "oral", label: "Oral", talk: true, re: /\bnotable[-\s]top[-\s]?5\s*%/gi },
     { kind: "spotlight", label: "Spotlight", talk: true, re: /\bnotable[-\s]top[-\s]?25\s*%/gi },

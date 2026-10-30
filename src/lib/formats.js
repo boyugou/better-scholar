@@ -356,7 +356,8 @@
   };
   // the given names, the surname and a suffix of a name as Scholar prints it: "L van der Maaten" → "L", "van der Maaten"; "RW Heath Jr" → "RW", "Heath", "Jr."
   function nameSplit(name) {
-    const raw = clean(name), m = /\s+(jr\.?|sr\.?|i{2,3}|iv)$/i.exec(raw), s = m ? m[1].toLowerCase() : "";
+    // (a suffix only after two words or more: "Naoki Ii" is a Japanese surname, "RW Heath Jr" a suffix)
+    const raw = clean(name), found = /\s+(jr\.?|sr\.?|i{2,3}|iv)$/i.exec(raw), m = found && raw.slice(0, found.index).trim().split(/\s+/).length >= 2 ? found : null, s = m ? m[1].toLowerCase() : "";
     const suffix = !m ? "" : s.startsWith("jr") ? "Jr." : s.startsWith("sr") ? "Sr." : s.toUpperCase();
     const parts = (m ? raw.slice(0, m.index) : raw).split(/\s+/).filter(Boolean);
     if (parts.length < 2) return { given: "", last: parts[0] || "", suffix };
@@ -370,7 +371,7 @@
   function apaAuthor(name) {
     const raw = clean(name);
     const m = /\s+(jr\.?|sr\.?|i{2,3}|iv)$/i.exec(raw);
-    if (!m || CUT.test(raw)) return apaName(raw);
+    if (!m || CUT.test(raw) || raw.slice(0, m.index).trim().split(/\s+/).length < 2) return apaName(raw);          // ("Naoki Ii": a surname, not a suffix)
     const s = m[1].toLowerCase(), suffix = s.startsWith("jr") ? "Jr." : s.startsWith("sr") ? "Sr." : s.toUpperCase();
     const base = apaName(raw.slice(0, m.index));
     return base ? `${base}, ${suffix}` : "";

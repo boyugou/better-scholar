@@ -81,15 +81,26 @@
   // "Wei Zhang (张伟)". Reduce it to the name proper.
   // (a name is not longer than a few hundred characters, and runs of white space are made one before the patterns below look at them: a long run would make them quadratic)
   function cleanOwnerHeader(s) {
-    let src = fold(String(s == null ? "" : s).slice(0, 300)).replace(/\s+/g, " ");
-    // (a name in another script with its Latin form in brackets — "张伟 (Wei Zhang)", "Иван Петров (Ivan Petrov)" — is the Latin form: Scholar's author lines are in Latin letters)
-    if (!/[A-Za-z]/.test(src.replace(/\([^)]*\)|\[[^\]]*\]/g, " "))) { const m = /\(([^)]*[A-Za-z][^)]*)\)|\[([^\]]*[A-Za-z][^\]]*)\]/.exec(src); if (m) src = m[1] || m[2]; }
-    let r = src.replace(/\([^)]*\)|\[[^\]]*\]/g, " ");
+    let r = fold(String(s == null ? "" : s).slice(0, 300)).replace(/\s+/g, " ").replace(/\([^)]*\)|\[[^\]]*\]/g, " ");
     r = r.replace(/[,;|]+/g, " ").replace(/\s+/g, " ").replace(/ (?:ph\.?\s?d|m\.?\s?d)\.?\s*$/i, "");
     const toks = r.split(/\s+/).filter(Boolean);
     while (toks.length > 1 && (PREFIXES.has(bare(toks[0])) || (DOTTED_PREFIXES.has(bare(toks[0])) && /\.$/.test(toks[0])))) toks.shift();
     while (toks.length > 2 && SUFFIXES.has(bare(toks[toks.length - 1]))) toks.pop();          // (not the second word of a two-word name: "Chidi Mba", "Naoki Ii")
     return toks.join(" ");
+  }
+
+  // The Latin form of a name written in another script, in brackets after it — "张伟 (Wei Zhang)", "Иван Петров (Ivan Petrov)" — or "" (Scholar's author lines are mostly in
+  // Latin letters: the page counts it as one more spelling of the owner, beside the name as written). Only what looks like a person's name: two to four words that begin
+  // with a capital, none of them a title, a degree or a place of work — "(THU)", "(PhD)", "(Tsinghua University)" are none.
+  const NOT_NAME = /^(?:university|universit[aäéy]|institute|institut|college|school|lab|laboratory|dept|department|center|centre|academy|hospital|inc|ltd|corp|phd|md|msc|professor|prof|dr|ieee|acm|fellow)$/i;
+  function bracketName(header) {
+    const s = String(header == null ? "" : header).slice(0, 300).replace(/\s+/g, " ");
+    if (/[A-Za-z]/.test(fold(s).replace(/\([^)]*\)|\[[^\]]*\]/g, " "))) return "";
+    const m = /\(([^()]*)\)|\[([^[\]]*)\]/.exec(s);
+    const inner = m ? (m[1] || m[2] || "").trim() : "";
+    const words = inner.split(/\s+/).filter(Boolean);
+    if (words.length < 2 || words.length > 4) return "";
+    return words.every((w) => /^\p{Lu}[\p{L}'’.-]*$/u.test(w) && /[A-Za-z]/.test(fold(w)) && !NOT_NAME.test(w.replace(/\.$/, ""))) ? inner : "";
   }
 
   // { givens: [tokens], particles: [..], last: surname token, compound: the surname is joined by a hyphen or an apostrophe ("Carreira-Perpinan", "O'Connell"),
@@ -429,7 +440,7 @@
   }
 
   return {
-    normalize, cleanOwnerHeader, nameParts,
+    normalize, cleanOwnerHeader, bracketName, nameParts,
     matchesAuthor, leadingGroup, parseAuthors, findOwner, roleFor, classifyRow, reorderings, isPermutation, isShoutedInitials, suggestVariants
   };
 });

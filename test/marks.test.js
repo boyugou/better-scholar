@@ -299,3 +299,11 @@ test("an awards review, 2026-10-29: rankings and nominees are no awards, an awar
   assert.deepEqual(once([{ year: 2018, venue: "arXiv preprint" }, { year: 2018, venue: "Workshop" }]), [0, 1]);
   assert.deepEqual(once([{ year: 2018, venue: "arXiv preprint" }, { year: 2020, venue: "NeurIPS", abbrs: ["NeurIPS"] }]), [1, 0]);
 });
+
+test("a second read of the awards, 2026-10-30: a test-of-time nominee or finalist is no award, a test-of-time runner-up is a runner-up", () => {
+  const kinds = (venue) => marks.detect({ venue }).map((m) => m.kind);
+  for (const v of ["Test of Time Award nominee", "SIGIR 2024 Test of Time Award Nominee. Proceedings …", "Test-of-Time Award finalist", "Test of Time Paper Award nominee", "Nominated for the Test of Time Award", "Test of time nominee"]) assert.deepEqual(kinds(v), [], v);
+  assert.deepEqual(kinds("Test of Time Award (runner-up)"), ["runner-up"]);
+  assert.deepEqual(kinds("ICSE 2020 Test of Time Award"), ["tot"]);
+  assert.deepEqual(kinds("HCOMP 2024 Test of Time and Impact Award. Proceedings of the AAAI Conference …, 2013"), ["tot"]);
+});

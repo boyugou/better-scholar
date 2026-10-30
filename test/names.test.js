@@ -454,7 +454,12 @@ test("a review of the roles, 2026-10-29: a particle is one only as written ('van
   assert.ok(names.parseAuthors("张伟, 李明, 等").truncated);
   assert.ok(!names.parseAuthors("张伟, 李明").truncated);
   assert.ok(!names.parseAuthors("等明, 李明").truncated);
-  // a header in another script with its Latin form in brackets is the Latin form
-  assert.equal(role("W Zhang, A Lee", "张伟 (Wei Zhang)"), "first");
+  // a header in another script with its Latin form in brackets: both are the owner's — the name as written, and the Latin form as one more spelling (the page adds it);
+  // what is no person's name in the brackets is no spelling ("(THU)", "(PhD)", "(Tsinghua University)")
+  const zw = { name: "张伟 (Wei Zhang)", alternates: [names.bracketName("张伟 (Wei Zhang)")] };
+  assert.equal(role("W Zhang, A Lee", zw), "first");
+  assert.equal(role("李明, 张伟", zw), "last", "the name as written is still found");
   assert.equal(role("A Lee, W Zhang", "Wei Zhang (张伟)"), "last");
+  for (const h of ["张伟 (THU)", "王伟 (PhD)", "张伟 (Tsinghua University)", "Wei Zhang (张伟)"]) assert.equal(names.bracketName(h), "", h);
+  assert.equal(role("张伟, 李明, 王芳", "张伟 (THU)"), "first", "a bracket that is no name leaves the name as it was");
 });

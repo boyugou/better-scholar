@@ -700,3 +700,9 @@ test("an export review, 2026-10-29: books are no journal articles, BibTeX's surn
   const pat = f.bibtex([paper({ type: null, venue: "US Patent 10,000,000, 2018", year: 2018 })]);
   assert.ok(pat.includes("howpublished = {US Patent 10,000,000}"), pat);
 });
+
+test("a second read of the exports, 2026-10-30: \"Ii\" after a single given name is a Japanese surname, not a suffix", () => {
+  assert.equal(f.apaAuthor("Naoki Ii"), "Ii, N.");
+  assert.match(f.bibtex([paper({ authors: "Naoki Ii, A B" })]), /^@\w+\{ii2016/);
+  assert.equal(f.apaAuthor("RW Heath Jr"), "Heath, R. W., Jr.");
+});

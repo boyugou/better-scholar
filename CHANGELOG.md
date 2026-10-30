@@ -94,6 +94,17 @@ give the details and every review):
   old rule), with the one known limit reported and not counted: a chip keeps its name on one line, so a 30-character chip name is cut
   in a preview of 330 px or less. The overflow audit no longer counts a break at a soft hyphen (Finnish "Yhteis-|ensimmäinen") as a
   word cut in two.
+- **A second read of these two days' code** (an independent agent given the diff; 8 findings, all fixed). (1) The bracketed Latin name
+  of a header in another script had replaced the name: "张伟 (THU)" made "THU" the owner and every line in Chinese absent. The name as
+  written stays the owner's, and a bracketed Latin form that looks like a person's name ("Wei Zhang", not "PhD" or "Tsinghua
+  University") is one more spelling. (2) A test-of-time *nominee* or *finalist* got the award chip ("Test of Time Award nominee"); a
+  test-of-time runner-up is a runner-up. (3) A Latin word joined to Chinese, Japanese or Korean text was missed ("bert" in "基于BERT的",
+  "5g" in "面向5G网络"). (4) Scholar's own `author:"GE Hinton"` is that field's phrase. (5) A pressed year bar names its rule in the
+  filter bar and the copied summary ("2010 · Only highlighted"), and a From/To range of one year no longer shows the bar pressed.
+  (6) Switching automatic loading off while *Read full lists* ran no longer leaves a load to start when the read ends. (7) Semantic
+  Scholar's answer for "RW Heath Jr" is no longer refused for the "Jr". (8) "Naoki Ii" is a Japanese surname, not a suffix, in every
+  reference style. Smaller: `role:first, transformer` is two words again (the comma joins only values the operator takes), full-width
+  OR and NOT are OR and NOT for the quick filters too, and a button's word goes before a NOT still waiting for its word.
 - **A review of the docs against the code** (an independent agent: 30 statements that the code no longer bore out, all fixed). The
   README's BibTeX and JSON rows, the page calls' results (`complete`, `mapped`, `mine`), the popup's new states, the unranked list (a
   track or a preprint is counted under "–", not listed), the accessibility audit (it runs in CI), the storage table (`reloadHint`, the

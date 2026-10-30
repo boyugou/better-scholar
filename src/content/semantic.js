@@ -25,8 +25,10 @@
     const key = B.awards.titleKey(title);
     if (key.length < 16 || B.awards.titleKey(hit.title) !== key) return null;
     const { tokens } = B.names.parseAuthors(authorsText);
-    const theirs = hit.authors.map((a) => B.awards.surnameKey(a && a.name));
-    const head = tokens.filter((t) => !t.afterCut).map((t) => B.awards.surnameKey(t.name)), tail = tokens.filter((t) => t.afterCut).map((t) => B.awards.surnameKey(t.name));
+    // (a suffix is no surname: "RW Heath Jr" is Robert W. Heath's)
+    const sur = (name) => B.awards.surnameKey(String(name || "").replace(/[\s,]+(?:jr|sr|ii|iii|iv)\.?$/i, ""));
+    const theirs = hit.authors.map((a) => sur(a && a.name));
+    const head = tokens.filter((t) => !t.afterCut).map((t) => sur(t.name)), tail = tokens.filter((t) => t.afterCut).map((t) => sur(t.name));
     if (!head.length || head.length + tail.length > theirs.length) return null;
     if (head.some((s, i) => !s || s !== theirs[i]) || tail.some((s, i) => !s || s !== theirs[theirs.length - tail.length + i])) return null;
     if (year != null && hit.year != null && Math.abs(hit.year - year) > 2) return null;

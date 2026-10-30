@@ -55,7 +55,9 @@
   // once when it finds the owner and the name as printed hardly does; other rearrangements ("SY Philip") are only offered.
   let hints = { auto: [], suggestions: [] };
   // (once the page has chosen the profile name's other order — "Li Wei" printed "W Li" — the name as printed finds only its identical self: "L Wei" is somebody else's)
-  const owner = () => ({ name: headerName, alternates: [...variants, ...hints.auto.map((v) => v.name)], exactName: hints.auto.length > 0 });
+  // (a header in another script with its Latin form in brackets — "张伟 (Wei Zhang)" — finds both: the name as written, and the Latin form as one more spelling)
+  const headerLatin = names.bracketName(B.scholar.ownerName());
+  const owner = () => ({ name: headerName, alternates: [...variants, ...(headerLatin ? [headerLatin] : []), ...hints.auto.map((v) => v.name)], exactName: hints.auto.length > 0 });
   // true when the automatic spellings changed (the rows must then be analysed again)
   function updateHints() {
     const next = names.suggestVariants(state.rows.map((r) => (resolvedCache[r.raw.id] && resolvedCache[r.raw.id].authors) || r.raw.authorsText), { name: headerName, alternates: variants });
@@ -362,7 +364,7 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
     const allVenues = metrics.topVenues(venueRows(source), 99, B.prefs.lists(prefs), B.prefs.winner(prefs));
     return {
       ownerName: headerName, edition, prefs, ui, sources: B.prefs.sources(prefs), source, summary, hasHidden: whole.hidden > 0, noRanks: bare, pillFinds: pillFinds(),
-      selection: state.selection, filters: state.filters,
+      selection: state.selection, filters: state.filters, barYear: barYear(),
       searchMatch: matcher().empty ? null : { count: shownRows().length, cursor: state.searchCursor, errors: matcher().errors, problems: matcher().problems },
       filterBar: filtering() ? { shown: shownRows().length, total: live().length, impact: state.filters.impact ? { kind: state.filters.impact, min: impactMin(source) } : null } : null,
       marks: markCounts(), marksWhole: markCounts(false), markKinds: markKinds(), markGroup: state.markGroup,
@@ -440,7 +442,7 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
   function scopeLine() {
     if (!prefs.panel.filters.follow || !scopeFiltering()) return "";
     const source = currentSource();
-    const parts = panel.filterParts({ source, selection: null, markGroup: null, venueKey: state.venueKey, filters: state.filters,
+    const parts = panel.filterParts({ source, selection: null, markGroup: null, venueKey: state.venueKey, filters: state.filters, barYear: barYear(),
       filterBar: { impact: state.filters.impact ? { kind: state.filters.impact, min: impactMin(source) } : null } }, true, td);
     return td("filterShowing", [String(counted().length), String(live().length)]) + (parts.length ? " · " + parts.join(" · ") : "");
   }
@@ -754,7 +756,7 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
     if (currentSource() !== before && state.selection && state.selection.tier) state.selection = null;                        // its tier belonged to the other ranking (a role alone holds in either)
     refresh();                                                                      // (which also clears the filters left without a control)
     if (prefs.autoLoad && !wasAuto && !state.loadingAll) startLoad("auto");                                          // switched on: load the rest of the list now (a run of Load all that is going on does it already)
-    else if (!prefs.autoLoad && loadOrigin === "auto" && loadAbort) loadAbort.abort();          // switched off: stop what it began
+    else if (!prefs.autoLoad) { if (loadOrigin === "auto" && loadAbort) loadAbort.abort(); if (loadAfterRead === "auto") loadAfterRead = ""; }          // switched off: stop what it began, and what waited for a read to end
   });
 
   // ---- boot ---------------------------------------------------------------
