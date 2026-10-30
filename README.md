@@ -356,7 +356,7 @@ What the extension is made of, counted from its code and its data. Nothing here 
 | **9 · 12 · 13 · 6 · 4** | panel parts, copy formats and quick filters (each with a switch, most in an order you set), then chip looks and presets | `SECTIONS`, `COPY_BUTTONS`, `PILLS`, `CHIP_THEMES`, `PRESETS` |
 | **30** | interface languages: 391 strings each, 29 translated from English | `src/_locales/*/messages.json` |
 | **1,178** | ranked venues in 1,481 rows of the two lists (386 CCF conferences, 295 CCF journals, 800 CORE conferences); 299 venues have a row in both | the rows of `src/data/ccf.js` and `src/data/core.js`, linked by `idx.partners` |
-| **400+** | venue names that Scholar prints but the lists do not have, in 250+ curated entries: old and renamed venues, other spellings, the lists' own typos, and look-alike events that get no chip | `src/data/aliases.js` |
+| **400+** | venue names that Scholar prints but the lists do not have, in 260+ curated entries: old and renamed venues, other spellings, the lists' own typos, and look-alike events that get no chip | `src/data/aliases.js` |
 | **2,500+** · **1,100+** | name forms and acronyms that the matcher looks up | the keys of its indexes |
 | **50+** | venues that the two lists name differently; a match in one list brings the other list's rank | `idx.partners` |
 | **5 · 24** | recognition stages (name, journal word set, acronym, start of a cut name, name with subtitle) and guards that stop a weaker reading from beating a stronger one | the labelled stages of `src/lib/venues.js` and the guard table of `docs/ARCHITECTURE.md` |

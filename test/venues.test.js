@@ -238,7 +238,7 @@ test("every alias points at a real dataset row", () => {
       assert.ok(hit.length, `CORE row not found for alias ${JSON.stringify(a.core)}`);
     }
     assert.ok(a.ccf || a.core, "alias needs a target");
-    assert.ok((a.names && a.names.length) || (a.former && a.former.length) || (a.exact && a.exact.length) || (a.fullOnly && a.fullOnly.length) || (a.volume && a.volume.length) || (a.uncut && a.uncut.length) || (a.starts && a.starts.length));
+    assert.ok((a.names && a.names.length) || (a.former && a.former.length) || (a.exact && a.exact.length) || (a.fullOnly && a.fullOnly.length) || (a.volume && a.volume.length) || (a.uncut && a.uncut.length) || (a.starts && a.starts.length) || a.trackVolume === true);
   }
 });
 
@@ -1737,6 +1737,13 @@ test("real prints that missed a badge: a cut IEEE citation form, joint proceedin
   // Proceedings of the ACM on Software Engineering is FSE's and ISSTA's journal, named in the issue; without it, no venue (ICSE least)
   none("Proceedings of the ACM on Software Engineering 1, 2024");
   eq("Proceedings of the ACM on Software Engineering 1 (FSE), 1-24, 2024", "CCF A FSE · CORE A* FSE");
+  // a second volume of posters, panels, workshops or demos has no rank (`trackVolume`): SIGCSE TS, ITiCSE, ICER, SPLC — the first volume has; other venues' "Volume 2" too (ASPLOS)
+  none("Proceedings of the 55th ACM Technical Symposium on Computer Science Education V. 2, 1-2, 2024");
+  none("Proceedings of the 2025 ACM Conference on International Computing Education Research V.2, 2025");
+  none("Proceedings of the 23rd International Systems and Software Product Line Conference - Volume B, 2019");
+  eq("Proceedings of the 55th ACM Technical Symposium on Computer Science Education V. 1, 1-7, 2024", "CORE A SIGCSE");
+  eq("Proceedings of the 23rd International Systems and Software Product Line Conference - Volume A, 2019", "CORE B SPLC");
+  eq("Proceedings of the Twenty-First International Conference on Architectural Support for Programming Languages and Operating Systems, Volume 2, 2016", "CCF A ASPLOS · CORE A* ASPLOS");
   // acronyms of other events that the names of a ranked venue boil down to, and the predecessors of IPDPS
   none("2022 2nd International Conference on Artificial Intelligence (ICAI)");
   none("2020 International Conference on Artificial Intelligence and Education (ICAIE)");

@@ -160,22 +160,14 @@ of HotStorage, and the year written with a hyphen or jammed onto a mixed-case wo
   `test/fixtures`, never guessed: a wrong owner match is a wrong role.
 - **A list of the keys in the panel**: built (2.41) — the `/` hint's tooltip has a line of the keys (Enter, Shift+Enter, ↓, Esc),
   and the search box's description for a screen reader is that line.
-- **A third ranking list**, for instance the venue list of Tsinghua University's computer science departments (TH-CPL), which
-  many Chinese institutions read beside CCF's. An owner's decision: each list needs its own extraction from its official source and
-  an audit like CCF's and CORE's (`data/README.md`), a column of the table, a chip and a switch, and it overlaps CCF's list for most
-  venues. Licensed lists stay out, as JCR and SCImago are (*Considered and set aside*).
 - **User-defined weighting of ranks**, a score per role and rank. The panel shows CCF's own statement that its list
   is not a basis for academic evaluation; a score would have to keep saying so.
 - **An MCP server** for AI assistants outside the browser. An extension reaches a program outside the browser only
   through native messaging: a new permission (`nativeMessaging`) and a program the user installs, which the
   permission policy asks a very good reason for. Agents that drive a browser already have the page events and the
   agent guide.
-- **Poster and panel volumes of ACM proceedings** (seen 2026-10-29): SIGCSE TS and ITiCSE print their second volume as "… V. 2"
-  (posters, panels, demos — since about 2022), ICER its "Volume 2" (2022–23), SPLC "Volume 2" (2011–12) and "Volume B" (since 2019),
-  and those lines get the main badge (CORE only). No word rule separates them: for ASPLOS, KDD, CVPR '06 and ICPP '93 "Volume 2" holds
-  main papers. It would take a per-venue note of which volumes are tracks, checked against each venue's own pages. Also left: an
-  acronym that stands inside a name ("International ISC Conference on Information Security and Cryptology" is the Iranian ISCISC, read
-  as Inscrypt: shadows count an acronym in front or in a parenthesis only).
+- **An acronym inside a name** (seen 2026-10-29): "International ISC Conference on Information Security and Cryptology" is the Iranian ISCISC,
+  read as Inscrypt — shadows count an acronym in front or in a parenthesis only.
 - **Stricter reading of cut-off venue lines.** Scholar cuts a long venue name ("… International Conference on Machine Learning and …"),
   and the start-of-a-cut-name rule gives the badge of the one listed venue whose name begins that way. The lists cannot say which
   *unlisted* venues begin so too. Measured 2026-10-29 by cutting the 52,800 Crossref / OpenAlex titles of `test/fixtures/real-titles.txt`
@@ -186,12 +178,6 @@ of HotStorage, and the year written with a hyphen or jammed onto a mixed-case wo
   decision: claim fewer cut starts (precision over recall says so; it costs hundreds of right badges), or check a visible edition number
   against the venue's own numbering ("5th … 2016" is not ICPR, which held its 23rd that year) — learned from real lines that carry the
   acronym (265 venues have four or more such lines), which would make generated data part of the package.
-- **Exact advice in the popup for a profile opened before an install or update.** Chrome puts no script into tabs that were open
-  before; the popup then gets no answer and cannot tell that tab from any other page, because with `storage` alone it may not read a
-  tab's address (checked 2026-10-29: `chrome.tabs.query` gives no `url`). Since 2026-10-29 it says in a general line that such a
-  profile needs a reload. `activeTab` (no install warning; granted only when the person opens the popup) would let it say so only on a
-  Scholar page, with a *Reload this page* button. An owner's decision: a new permission, and PRIVACY.md and the store listing would
-  name it.
 - **End-to-end pictures at other display scalings** (Chromium only — other engines are out of scope by the platform
   policy). The end-to-end run already takes `E2E_SCALE` for the website's pictures; nothing compares them yet.
 
@@ -215,6 +201,16 @@ violation remained that the extension owns (the three left — one main landmark
 landmarks — belong to the stand-in Scholar page). A Tab walk through the panel reached all 34 controls in reading
 order, each with a visible focus style and an accessible name. axe reported one dark-mode chip contrast failure
 mid-transition; the computed colours (white pill, #3345a8 text, 8.6:1) showed it was not real.
+
+## Decided by the owner (2026-10-29)
+
+- **No `activeTab` for exact advice in the popup.** A profile opened before an install or update has no script of the extension; with `storage`
+  alone the popup cannot read a tab's address, so it cannot tell that tab from any other page. Since 2026-10-29 it says in a general line,
+  only from an install or update until a profile answers, that such a profile needs a reload — which covers the case. `activeTab` (no
+  install warning, granted when the popup is opened) would let it say so only on a Scholar page, with a button; not worth a new permission.
+- **No third ranking list for now** (for instance TH-CPL, the list of Tsinghua University's computer science departments, which many
+  Chinese institutions read beside CCF's). It would need its own extraction from its official source and an audit like CCF's and CORE's,
+  a column, a chip and a switch, and it overlaps CCF's list for most venues. Revisit if users ask for it (an institution that evaluates by it).
 
 ## Considered and set aside (2026-10-13)
 

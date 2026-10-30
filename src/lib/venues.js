@@ -402,7 +402,8 @@
           if (a.fullOnly) { entry.extra.push(...a.fullOnly); register(src, kind, entry, a.fullOnly, [], true, false, true); }
           if (a.volume) { entry.extra.push(...a.volume); register(src, kind, entry, a.volume, [], true, false, false, true); }
           if (a.uncut) { entry.extra.push(...a.uncut); register(src, kind, entry, a.uncut, [], true, false, false, false, true); }
-          if (a.renamed) entry.renamed = true;          // (the list's name is a name it had: its "Workshop" says nothing about the venue of today)
+          if (a.renamed) entry.renamed = true;
+          if (a.trackVolume) entry.trackVolume = true;          // (its second volume holds posters, panels, workshops or demos: see resolveUncached)          // (the list's name is a name it had: its "Workshop" says nothing about the venue of today)
           if (a.former) { entry.former = (entry.former || []).concat(a.former); register(src, kind, entry, a.former, [], true); }          // (found by name; not part of its wording — `extra` — so "Workshop" in them is no type clash)
           if (a.noBareAcronym) {            // the acronym says nothing without the name: ACM's SAC is not Selected Areas in Cryptography
             const side = sources[src][kind], k = squash(entry.abbr), list = side.abbrs.get(k);
@@ -1335,6 +1336,9 @@
       }
       out.kind = hint;
       const secs = secondaryWords(raw);
+      // (a venue whose proceedings come in two volumes, the second of posters, panels, workshops or demos — SIGCSE TS's and ITiCSE's "V. 2", ICER's "Volume 2", SPLC's "Volume 2"
+      // and "Volume B" (aliases.js `trackVolume`) — has its rank for the first only)
+      const secondVolume = (/\b(?:V|Vol|Volume)\.?\s*(?:2|B|II)\b/i.exec(raw) || [])[0];
       const matched = {}, tied = {}, clashed = {}, weak = {};
       const saysAcronymOf = (e) => [...acronymSignals(p), ...embeddedSignals(p)].some((x) => x.key === squash(e.abbr || "") || stripDigits(x.key) === squash(e.abbr || ""));
       const realEntry = (e) => (Object.getPrototypeOf(e) === Object.prototype ? e : Object.getPrototypeOf(e));          // (the prefix rule hands out a view of the row: `through`)
@@ -1364,7 +1368,7 @@
           const again = resolveUncached(raw.replace(/\s*\(?\s*journal[- ](?:tracks?|first)\s*\)?/gi, " "), true)[src];
           return !!(again && again.kind === "J" && again.name === r.entry.name);
         })();
-        const blocking = secs.find((w) => !ownWord(r.entry, w, raw) && !(sameJournal && journalTrack(w)));
+        const blocking = secondVolume && realEntry(r.entry).trackVolume ? secondVolume : secs.find((w) => !ownWord(r.entry, w, raw) && !(sameJournal && journalTrack(w)));
         if (blocking) blocked.push({ src, r, blocking });
         else take(src, r);
       }
@@ -1373,7 +1377,7 @@
       const wholeName = (e, w) => ownWord(e, w, raw, true);
       for (const b of blocked) {
         const other = b.src === "ccf" ? "core" : "ccf";
-        if (matched[other] && (idx.partners.get(realEntry(matched[other])) || []).includes(realEntry(b.r.entry)) && secs.every((w) => ownWord(b.r.entry, w, raw) || wholeName(matched[other], w))) take(b.src, b.r);
+        if (b.blocking !== secondVolume && matched[other] && (idx.partners.get(realEntry(matched[other])) || []).includes(realEntry(b.r.entry)) && secs.every((w) => ownWord(b.r.entry, w, raw) || wholeName(matched[other], w))) take(b.src, b.r);
         else { out.secondary = b.blocking; out.refused = true; }
       }
       // The lists read the string by name as two different venues, one from the whole name as it is spelled, the other only once its organisation or an acronym was left out, or against

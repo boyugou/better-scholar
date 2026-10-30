@@ -24,6 +24,9 @@
 //   uncut         names that are only read whole, with their organisation, in a string that Scholar did not cut off: where the cut ends the same words
 //                 begin another venue's name (HiPC's old "IEEE International Conference on High Performance Computing" — its cut is as much HPCC's "… and Communications")
 //   volume        names of a journal that are also a field ("Computational Geometry"): they count for a line that has a volume, a journal's — "Computational geometry, 307-317, 2000" is a chapter of a book
+//   trackVolume   the venue's proceedings come in two volumes and the second holds posters, panels, workshops or demos ("V. 2", "Vol. 2", "Volume 2", "Volume B"): a line that names
+//                 that volume gets no rank (checked against ACM's own records, 2026-10-29: SIGCSE TS 2022–25, ITiCSE 2023, ICER 2022–26 — one- or two-page items —, SPLC 2011–25 — workshops,
+//                 demos, tutorials)
 //   shadow        (an entry of its own, no ccf / core) acronyms of unranked events whose names boil down to the words of a ranked venue's: a string that names one of them
 //                 by its acronym — "International Conference on Computer and Communications (ICCC)" is not INFOCOM, "International Congress on Image and Signal
 //                 Processing (CISP)" not ICISP, "IEEE Region 10 Symposium (TENSYMP)" not TENCON — gets no badge from either list. An entry may be { acronym, with }:
@@ -365,6 +368,11 @@
     { core: "VLSI-SOC", names: ["IFIP International Conference on Very Large Scale Integration", "IEEE/IFIP International Conference on VLSI and System-on-Chip", "IFIP International Conference on VLSI and System-on-Chip"] },
     { core: "HPC Asia", names: ["International Conference on High Performance Computing in Asia-Pacific Region", "International Conference on High Performance Computing in the Asia-Pacific Region"] },
     { core: "VizSec", names: ["IEEE Symposium on Visualization for Cyber Security"] },
+    // (second volumes of posters, panels, workshops and demos — see `trackVolume` above)
+    { core: "SIGCSE", trackVolume: true },
+    { core: "ITiCSE", trackVolume: true },
+    { core: "ICER", trackVolume: true },
+    { core: "SPLC", trackVolume: true },
     // (ACM titles PPDP's proceedings "… ACM SIGPLAN conference on Principles and practice of declarative programming", a sponsor CORE's name leaves out: without it a cut
     // "… ACM SIGPLAN conference on Principles and practice of …" — PPDP's — saw only CCF's PPoPP, the one venue of either list that names ACM SIGPLAN)
     { core: "PPDP", names: ["ACM SIGPLAN Conference on Principles and Practice of Declarative Programming", "ACM SIGPLAN International Symposium on Principles and Practice of Declarative Programming"] },

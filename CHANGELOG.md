@@ -83,6 +83,12 @@ give the details and every review):
   old rule), with the one known limit reported and not counted: a chip keeps its name on one line, so a 30-character chip name is cut
   in a preview of 330 px or less. The overflow audit no longer counts a break at a soft hyphen (Finnish "Yhteis-|ensimmäinen") as a
   word cut in two.
+- **The second volume of four venues is no paper of theirs.** SIGCSE TS (2022–25) and ITiCSE (2023) print their posters, panels and
+  demos as "… V. 2", ICER (2022–26) its doctoral consortium and posters as "Volume 2", SPLC its workshops, demos and tutorials as
+  "Volume 2" or "Volume B" (2011–25) — checked against ACM's own records (one- or two-page items, six-page workshop papers) — and those
+  lines had the main conference's CORE rank. A curated `trackVolume` says so for each; the first volume keeps the rank, and so does
+  another venue's "Volume 2" (ASPLOS's papers). 12 real lines lose the badge, nothing else changes. The owner's decisions of the
+  day are in the ROADMAP: no `activeTab`, no third ranking list for now.
 - **Faster on every profile page.** A performance pass (the extension measured with and without it on a page of 100 papers, then CPU
   profiles of the page load, of a 1,000-paper auto-load, of the settings page and the popup): the venue matcher's index, built on every
   profile page, took 55 ms — each venue name was tokenized anew for each way it is read; it is now tokenized once, and the answers to
