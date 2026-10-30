@@ -19,6 +19,7 @@ npm run numbers                       # rewrite the "By the numbers" blocks of R
 npm run check:profile -- page.html    # the extension on a real saved Scholar page (see below)
 node scripts/axe-audit.mjs            # axe-core over the panel, the settings page and the popup (see below)
 npm run diff:matcher                  # what a change to the matcher does to 75,000 real titles (LOST / MOVED / GAIN against a commit)
+node scripts/bench-matcher.mjs        # how fast the matcher is: its index (built on every profile page) and a venue line (read once per paper)
 npm run audit:overflow                # does anything on the settings page run out of its box or scroll sideways? 30 languages × 7 widths (the two narrowest are the website's frame on a phone) × light/dark (`--long-names spaced|cjk|wide` stress-tests the names; the one known limit, reported and not counted: a chip keeps its name on one line, so a chip named with 30 characters is cut in a preview of 330 px or less); CI runs all 30 at 1360 / 700 / 330 px in light, and `--long-names spaced` in six languages at 700 / 330 px
 npm run check:claims                  # every quote in store/chrome/claims.md still exists in the code it names
 ```

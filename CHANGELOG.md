@@ -83,6 +83,13 @@ give the details and every review):
   old rule), with the one known limit reported and not counted: a chip keeps its name on one line, so a 30-character chip name is cut
   in a preview of 330 px or less. The overflow audit no longer counts a break at a soft hyphen (Finnish "Yhteis-|ensimmäinen") as a
   word cut in two.
+- **Faster on every profile page.** A performance pass (the extension measured with and without it on a page of 100 papers, then CPU
+  profiles of the page load, of a 1,000-paper auto-load, of the settings page and the popup): the venue matcher's index, built on every
+  profile page, took 55 ms — each venue name was tokenized anew for each way it is read; it is now tokenized once, and the answers to
+  "is this word an ordinal or a number" and to accent folding are kept: the index takes 22 ms, a venue line 70 µs instead of 110
+  (`node scripts/bench-matcher.mjs`), and the panel appears about 35 ms sooner. The matcher's answers are the same on all 75,521 real
+  lines. Nothing else stood out: a 1,000-paper load adds about 400 ms of script in all, no batch reads every row again, the panel's
+  redraws are cheap, the settings page is ready in about 130 ms, the popup in about 35 ms (ARCHITECTURE has the numbers).
 - **A third review of the matcher, and what it found.** (1) Since 2024 PODS's papers are issue 2 of each volume of *Proceedings of the
   ACM on Management of Data*, which an alias made SIGMOD's: a real line of 2024 had SIGMOD's CCF A; that issue is PODS's now (CCF B,
   CORE A*), volume 1 and the other issues stay SIGMOD's; *Proceedings of the ACM on Software Engineering* without its issue's FSE or

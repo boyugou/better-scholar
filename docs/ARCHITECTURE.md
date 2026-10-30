@@ -348,6 +348,15 @@ arrows, otherwise `Enter` / `Shift+Enter` step through the matching rows (`rr-ro
 `aria-invalid` and names them in its tooltip. Four quick buttons toggle by default `ccf:a`, `cites:>100`,
 `role:first` and `has:award`. `type:conference` and `type:journal` read the kind the rank lists give the venue (CCF's own, else CORE's; a list that is switched off does not tell, and a venue without a rank has none).
 
+*What a profile page costs* (measured 2026-10-29, a fast laptop, 100 papers, warm): the extension adds about 140 ms of main-thread work and
+the panel is drawn about 140 ms after the page starts; the heap grows by about 8 MB (the award list 2.3 MB of it, and 15 ms). Of the
+script time, reading the rows is about 40 ms (the venue lines 26, the award and talk markers 8, the names 5), building the matcher's
+index about 28 ms, drawing the panel about 18 ms; the 1.7 MB of scripts are compiled once and cached by Chrome (the award list costs
+about 10 ms to load). Loading 1,000 papers adds about 400 ms of script in all, spread over the batches (no batch reads every row again).
+The settings page draws its preview in about 130 ms, the popup its summary in about 35 ms. `node scripts/bench-matcher.mjs` times the
+matcher: its index about 22 ms, a venue line about 70 µs (they were 55 ms and 110 µs before each text was tokenized once and each word's
+noise test and each fold kept — `baseTokens`, `noiseSeen`, `foldSeen`).
+
 ### Filters and what they scope
 
 `state` in `main.js` holds the filters: `selection` (a matrix cell, role or tier), `markGroup` (an awards / talk row), `venueKey`
