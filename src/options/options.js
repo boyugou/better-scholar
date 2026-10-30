@@ -254,7 +254,7 @@
     const sync = () => { input.value = at(path); reset.hidden = !at(path); input.disabled = off ? off() : false; if (own) input.placeholder = at("panel.filters.searches.search" + own[1]) || B.dom.tDefault(key); };
     syncers.push(sync);
     sync();
-    return h("span", { class: "name-edit" }, input, reset);
+    return h("span", { class: "name-edit" + (off ? "" : " free") }, input, reset);
   }
 
   // The words of your own quick filter, as they are typed in the search box (saved as they are typed); what the search cannot read is said under the field, and
@@ -280,7 +280,7 @@
     if (key) syncers.push(() => { d.words.nodeValue = t(key); });                    // (a switch is named by what it shows: when that is renamed, so is it)
     const input = h("input", { type: "checkbox", role: "switch", class: "sw", id: d.id + "-sw", "data-pref": path, ...d.ids, onChange: () => { put(path, input.checked); save(); } });
     if (swatch) d.name.prepend(h("span", { class: "swatch", style: "background:" + swatch }));
-    const row = h("label", { class: "opt" + (sub ? " sub" : "") + (name ? " opt-named" : ""), for: input.id }, h("span", { class: "txt" }, d.name, d.hint), name ? nameEdit(name, off) : null, input);
+    const row = h("label", { class: "opt" + (sub ? " sub" : "") + (name ? " opt-named" : ""), for: input.id }, h("span", { class: "txt" }, d.name, d.hint), name ? nameEdit(name, name.free ? null : off) : null, input);          // (a free name: drawn elsewhere too, never greyed out — lib/prefs.js part())
     const sync = () => {
       input.checked = !!at(path);
       const disabled = off ? off() : false;
@@ -843,7 +843,7 @@
     const label = t(row.label), hint = row.hint ? t(row.hint) : "";
     switch (row.kind) {
       case "bool": return option({ path: row.path, label, hint, swatch: row.swatch ? ROLE_COLOR[row.swatch] : null, sub: !!row.parent && rows.some((r) => r.path === row.parent), off: () => inert(row), name, key: row.label });
-      case "text": return row.inline ? null : row.search ? searchWords(row, row.parent && rows.some((r) => r.path === row.parent)) : h("div", { class: "opt opt-name" + (row.parent && rows.some((r) => r.path === row.parent) ? " sub" : "") }, h("span", { class: "txt" }, h("span", { class: "name" }, label)), nameEdit(row, () => inert(row)));
+      case "text": return row.inline ? null : row.search ? searchWords(row, row.parent && rows.some((r) => r.path === row.parent)) : h("div", { class: "opt opt-name" + (row.parent && rows.some((r) => r.path === row.parent) ? " sub" : "") }, h("span", { class: "txt" }, h("span", { class: "name" }, label)), nameEdit(row, row.free ? null : () => inert(row)));
       case "choice": { const c = CHOICES[row.path]; return segmented({ path: row.path, label, hint, choices: row.values.map((v) => [v, t(c.labels[v])]), icons: c.icons, off: () => inert(row) }); }
       case "order": return orderList({ path: row.path, label, hint, nameOf: (id) => itemName(row.path, id), offOf: (id) => itemOff(row.path, id), off: () => inert(row) });
       case "language": return languageSelect({ path: row.path, label, hint, none: [row.none, t(NONE_WORD[row.path])], reload: row.path === "language" });

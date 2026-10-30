@@ -125,14 +125,14 @@
 
   // a part of the panel: its own switch, then one for each thing it draws — [key, default, label, doc, ui]; ui.name (a message key of NAMES) puts that name on the thing's row;
   // a row of its own (names(…)) among the things stays among them. `popup`: the toolbar popup draws the part too, so its switches count while the panel is off.
-  // (a name the page also draws outside the part — a role's on the quick filters, the filter bar and the chart; an award's on the chips of the rows — is `free`: it does
-  // not depend on the part's switch, so its field is never greyed out while the name is still shown: `free: true` on a row, `free: true` beside `name` in a thing's ui)
+  // (a name the page also draws outside the part — a role's on the quick filters, the filter bar and the chart; an award's on the chips of the rows — is `free`: it stays
+  // among the part's rows, but its field is never greyed out with the part's switch, as the name is still shown: `free: true` on a row, `free: true` beside `name` in a thing's ui)
   const part = (id, doc, things, { show = true, popup = false } = {}) => [
     bool(`panel.${id}.show`, show, doc, { label: "optShowSection", ...(popup ? {} : { parent: "panel.show" }) }),
     ...things.flatMap((entry) => {
-      if (!Array.isArray(entry)) { const { free, ...row } = entry; return [free ? row : { parent: `panel.${id}.show`, ...row }]; }
+      if (!Array.isArray(entry)) return [{ parent: `panel.${id}.show`, ...entry }];
       const [key, def, label, doc, { name, free, ...ui } = {}] = entry;
-      return [bool(`panel.${id}.${key}`, def, doc, { label, parent: `panel.${id}.show`, ...ui }), ...(name ? [free ? named(name) : { parent: `panel.${id}.show`, ...named(name) }] : [])];
+      return [bool(`panel.${id}.${key}`, def, doc, { label, parent: `panel.${id}.show`, ...ui }), ...(name ? [{ parent: `panel.${id}.show`, ...named(name), ...(free ? { free: true } : {}) }] : [])];
     })
   ];
   const card = (id, title, hint, rows) => ({ id, title, hint, rows });
