@@ -78,6 +78,15 @@ give the details and every review):
   old rule), with the one known limit reported and not counted: a chip keeps its name on one line, so a 30-character chip name is cut
   in a preview of 330 px or less. The overflow audit no longer counts a break at a soft hyphen (Finnish "Yhteis-|ensimmäinen") as a
   word cut in two.
+- **"Joint", the other way round.** A second review found the shape of the International-Journal bug in another word: a line without
+  "Joint" got a venue only whose names say it. *Annual conference on artificial intelligence, 2010* (KI 2010) had IJCAI's badge — no
+  IJCAI met in 2010 —, UbiComp '13's adjunct volume (titled without the word; the main volume has it) had UbiComp's, *International
+  Conference on Biometrics (ICB)* had IJCB's, and a bare *Natural Language Processing* had IJCNLP's. A line without "Joint" now reaches
+  such a venue only through a name without the word (AAMAS's proceedings title and InSITE's own name are aliases now) or by its acronym
+  (*Artificial Intelligence: IJCAI 2005* keeps it), and a cut start that a "Joint" name would fit is claimed by none — so the cut
+  "… 13th International Conference on Natural Language …" is not given to INLG either (ICON, which no list has, begins so too). Of
+  75,521 real lines 19 lose a badge, none moves, none is gained; one of them was right — ACM's cut title of IJCAI-15 without its acronym
+  —, the price of the rule; the IEEE ICNN of 1987–97 is no longer read as IJCNN, which it preceded.
 - **Two wrong ranks, found by a final review of what no check covered.** (1) Frontiers Media's open-access journal *Frontiers **in**
   Computer Science* had the CCF B badge of Higher Education Press's *Frontiers **of** Computer Science* (FCS): "in" and "of" are small
   words to the matcher, and three real profile lines (volumes 3–5, six- or seven-digit article numbers) carried the wrong badge — the

@@ -1686,6 +1686,22 @@ test("real prints that missed a badge: a cut IEEE citation form, joint proceedin
   eq("Proceedings of the 1998 ACM SIGMETRICS joint international conference on Measurement and modeling of computer systems", "CCF B SIGMETRICS · CORE A* SIGMETRICS");
   eq("Proceedings of the joint international conference on Measurement and …, 2004", "CCF B SIGMETRICS · CORE A* SIGMETRICS");
   eq("2019 IEEE/WIC/ACM International Joint Conferences on Web Intelligence and Intelligent Agent Technologies", "CORE B WI");
+  // and the other way round: a string that does not say "Joint" is not a venue only whose names that do boil down to its words (KI 2010 is no IJCAI, which met in
+  // odd years then; ICB was its own conference until 2019; UbiComp '13's adjunct volume is titled without the word, its main volume with it), and a cut start that
+  // such a name shares is claimed by none ("… International Conference on Natural Language …" is IJCNLP's start as much as INLG's or ICON's) — unless the string
+  // names the venue's acronym, or the venue has a name without the word (AAMAS's proceedings, InSITE)
+  none("Annual conference on artificial intelligence, 400-409, 2010");
+  none("2019 International Conference on Biometrics (ICB), 1-8, 2019");
+  none("Proceedings of the 2013 ACM conference on Pervasive and ubiquitous computing …, 2013");
+  none("Proceedings of the 4th International Conference on Artificial Intelligence …, 1998");
+  none("Proceedings of the 13th International Conference on Natural Language …, 2020");
+  none("Natural Language Processing");
+  eq("Artificial Intelligence: IJCAI 2005", "CCF B IJCAI · CORE A* IJCAI");
+  eq("IJCAI'15: Proceedings of the 24th International Conference on Artificial Intelligence, 2015", "CCF B IJCAI · CORE A* IJCAI");
+  eq("Proceedings of the 20th International Conference on Autonomous Agents and MultiAgent Systems, 2021", "CCF B AAMAS · CORE A AAMAS");
+  eq("UbiComp '13: Proceedings of the 2013 ACM international joint conference on Pervasive and ubiquitous computing, 2013", "CCF A UbiComp");
+  eq("Proceedings 7th International Conference on Computer Communications and …, 1998", "CCF C ICCCN · CORE B ICCCN");
+  eq("Proceedings of the Informing Science and IT Education Conference", "CORE C InSITE");
   // acronyms of other events that the names of a ranked venue boil down to, and the predecessors of IPDPS
   none("2022 2nd International Conference on Artificial Intelligence (ICAI)");
   none("2020 International Conference on Artificial Intelligence and Education (ICAIE)");

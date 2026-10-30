@@ -359,7 +359,7 @@ What the extension is made of, counted from its code and its data. Nothing here 
 | **400+** | venue names that Scholar prints but the lists do not have, in 250+ curated entries: old and renamed venues, other spellings, the lists' own typos, and look-alike events that get no chip | `src/data/aliases.js` |
 | **2,500+** · **1,100+** | name forms and acronyms that the matcher looks up | the keys of its indexes |
 | **50+** | venues that the two lists name differently; a match in one list brings the other list's rank | `idx.partners` |
-| **5 · 19** | recognition stages (name, journal word set, acronym, start of a cut name, name with subtitle) and guards that stop a weaker reading from beating a stronger one | the labelled stages of `src/lib/venues.js` and the guard table of `docs/ARCHITECTURE.md` |
+| **5 · 20** | recognition stages (name, journal word set, acronym, start of a cut name, name with subtitle) and guards that stop a weaker reading from beating a stronger one | the labelled stages of `src/lib/venues.js` and the guard table of `docs/ARCHITECTURE.md` |
 | **5,581** | award-winning papers, plus 2,143 with an honorable mention or a runner-up place (7,830 awards in all), from 194 venues and series, 1990–2026 | `src/data/awards.js` |
 | **22,744** | real venue lines from Scholar; each result was looked at and recorded | `test/fixtures/venues.expected.json` |
 | **500+ · 100+ · 15** | unit tests, end-to-end checks in Chromium with the extension loaded, and checks of the web demo | `test/*.test.js`, `test/e2e/` |
