@@ -2664,12 +2664,12 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
       await eventually(pg, () => document.querySelectorAll("#gsc_a_b .rr-chip-mine").length >= 1 && !!document.querySelector('[data-rr="mapped"]'));
       assert.match(await pg.locator("#gsc_a_b .rr-chip-mine").first().getAttribute("title"), /Your own mapping/, "the chip's tooltip says the rank is the person's mapping");
       assert.match(await pg.locator('[data-rr="mapped"]').textContent(), /ranked by your own venue mappings/);
-      assert.match(await pg.locator('[data-rr="unmatched"] summary').textContent(), /^1 paper at a venue without a rank/, "the mapped venue is no longer unranked");
+      assert.match(await pg.locator('[data-rr="unmatched"] summary').textContent(), /^1 paper at a venue neither list holds/, "the mapped venue is no longer unranked");
       await checkPage.click('[data-act="mine-remove"]');
       await eventually(pg, () => document.querySelectorAll("#gsc_a_b .rr-chip-mine").length === 0 && !document.querySelector('[data-rr="mapped"]'));
       assert.equal(await checkPage.locator(".mine-item").count(), 0, "the list of mappings is empty again");
       await checkPage.close();
-      assert.match(await pg.locator('[data-rr="unmatched"] summary').textContent(), /^2 papers at venues without a rank/, "COLM and TMLR are on no list; Findings and demo tracks are not counted as missing");
+      assert.match(await pg.locator('[data-rr="unmatched"] summary').textContent(), /^2 papers at venues neither list holds/, "COLM and TMLR are on no list; Findings and demo tracks are not counted as missing");
       ok("a real profile read on the live page: the table is the one the live panel showed (First 1, Co-first 2, Second 1, Other 7, 2 hidden)");
     } finally { await ctxG.close(); await fxG.close(); }
   }
