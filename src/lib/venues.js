@@ -277,7 +277,7 @@
 
   // Secondary tracks of a main conference: not the main proceedings, so no badge —
   // unless the venue's OWN official name contains the word (IWQoS, HotNets, …).
-  const SECONDARY = /\b(?:workshops?|companion|demos?|demonstrations?|doctoral|tutorials?|courses?|posters?|adjunct|findings|extended abstracts?|conference abstracts|abstracts and applications|book of abstracts|abstract book|abstracts(?=\s*(?:,|$))|talks|sketches|emerging technologies|late[- ]breaking|short papers?|industr(?:y|ial) track|shared task|student (?:abstracts?|research)|work[- ]in[- ]progress|symposium series|(?:spring|summer|fall|autumn|winter) symposi(?:um|a)|tiny papers?|summits?|blog ?posts?|competition track|creative ai(?: track)?|sister conferences?|journal[- ](?:tracks?|first)|supplement(?:al)? (?:volume|proceedings)|(?:computer )?animation festival|art gallery|electronic theat(?:er|re)|educators? program|real-time live|vr village|appy hour|production sessions?|technical briefs?|arts, media,? (?:and )?humanities|new ideas and emerging results)\b/i;
+  const SECONDARY = /\b(?:workshops?|companion|demos?|demonstrations?|doctoral|tutorials?|courses?|posters?|adjunct|findings|extended abstracts?|conference abstracts|abstracts and applications|book of abstracts|abstract book|abstracts(?=\s*(?:,|$))|talks|sketches|emerging technologies|late[- ]breaking|short papers?|industr(?:y|ial) track|shared task|student (?:abstracts?|research)|work[- ]in[- ]progress|symposium series|(?:spring|summer|fall|autumn|winter) symposi(?:um|a)|tiny papers?|summits?|blog ?posts?|competition track|creative ai(?: track)?|sister conferences?|journal[- ](?:tracks?|first)|supplement(?:al)? (?:volume|proceedings)|(?:computer )?animation festival|art gallery|electronic theat(?:er|re)|educators? program|real-time live|vr village|appy hour|production sessions?|technical briefs?|arts, media,? (?:and )?humanities|new ideas and emerging results|classes|panels|studio|labs|immersive pavilion|satellite|srw)\b/i;          // (SIGGRAPH's programs: classes, panels, studio, labs, the Immersive Pavilion; a satellite event; NAACL's SRW)
   // Every secondary-track word of the string, in order, each once ("Workshop … Posters" has two): a venue whose own name holds one of them is not held to that one only.
   function secondaryWords(raw) {
     const text = fold(raw), words = [];
@@ -288,7 +288,8 @@
       if (!words.some((x) => wordsOf(x).join(" ") === wordsOf(w).join(" "))) words.push(w);
     }
     // "OM@ ISWC 2288", "NLP-DBPEDIA@ ISWC": a workshop co-located with the conference named after the @ (CEUR-WS proceedings)
-    if (!words.length && /\b[A-Za-z0-9-]+@\s?[A-Z]{3,}[A-Z0-9]*\b/.test(text)) words.push("workshop");
+    // (a workshop at a venue: "TrustML@ICLR", "TrustML @ ICLR 2022", and the venue first: "NeurIPS 2022 @ SyntheticData4ML" — not Learning @ Scale's "L@S")
+    if (!words.length && (/\b[A-Za-z0-9-]+\s?@\s?[A-Z]{3,}[A-Z0-9]*\b/.test(text) || /\b(?=[A-Za-z]*[A-Z][A-Za-z]*[A-Z])[A-Za-z]{3,}(?:\s*'?\d{2,4})?\s?@\s?[A-Za-z]/.test(text))) words.push("workshop");
     return words;
   }
   const secondaryWord = (raw) => secondaryWords(raw)[0] || null;
@@ -784,7 +785,10 @@
     // journal's "Frontiers" title "in" and "of" are no small words — a string that says "Frontiers in" is not a journal whose names all say "Frontiers of"; a
     // conference's are: ICFHR is "Frontiers in" or "of Handwriting Recognition" alike)
     const frontiersInForOf = (e) => e.kind === "J" && /\bfrontiers\s+in\b/i.test(p.plain) && [e.name, ...e.extra].some((n) => /\bfrontiers\s+of\b/i.test(n)) && ![e.name, ...e.extra].some((n) => /\bfrontiers\s+in\b/i.test(n));
-    const otherJournal = (e) => intlJournalWithoutIntl(e) || plainJournalForIntl(e) || frontiersInForOf(e);
+    // (SIAM's journals are "Journal on …": "Journal of Computing" (2009–12) is not SIAM's Journal on Computing, Hindawi's "Journal of Discrete Mathematics" not SIAM's on it —
+    // unless the line names the journal's own acronym: "INFORMS: Journal of Computing" is INFORMS's Journal on Computing misprinted)
+    const ofForOn = (e) => e.kind === "J" && !saysOwnAcronym(e) && /\bjournal\s+of\b/i.test(p.plain) && !/\bjournal\s+on\b/i.test(p.plain) && [e.name, ...e.extra].some((n) => /\bjournal\s+on\b/i.test(n)) && ![e.name, ...e.extra].some((n) => /\bjournal\s+of\b/i.test(n));
+    const otherJournal = (e) => intlJournalWithoutIntl(e) || plainJournalForIntl(e) || frontiersInForOf(e) || ofForOn(e);
     // ("AAAI-23: Thirty-Seventh AAAI Conference on Artificial Intelligence": the acronym in front says the event, and says it again inside the name — the venue's own name has it once)
     const nameBody = (() => {
       const m = /^([A-Za-z][A-Za-z0-9&/]{1,9})\s*['’-]?\s*(?:\d{4}|\d{2})\s*:\s*(.+)$/.exec(p.plain);
@@ -982,7 +986,9 @@
           // Two or more other words, none of them the venue's own, are the name of something else: "International Symposium on Wearable Computers
           // (ISWC)" is not the Semantic Web conference of that acronym (a single stray word — "ACL-08: HLT", "VLDB Endowment" — proves nothing)
           // (a line that ends in a volume and an issue is a journal's unless what stands beside the acronym is the venue's own: "PLOS Biology 3 (9)" is not the workshop PLOS, "VLDB Endowment 8 (7)" is VLDB)
-          const foreign = d && d !== "ambiguous" && ((spelledEvent && left.length >= 2 && !left.some((w) => vocabOf(d).has(w))) || (d && d !== "ambiguous" && subjectIsNotOwn(d, key)) || namedElsewhere(key, left, d) || parenNameIsAnotherVenueOf(raw, key, d, false) || (p.hasIssue && !CONF_SIGNAL.test(p.plain) && left.length >= 1 && !left.every((w) => vocabOf(d).has(w))));          // (no entry to judge — "ambiguous", or none — is no foreign one)
+          // (and one word will do where the event word is not the venue's either: "ACM SIGGRAPH symposium on Videogames" is Sandbox, SIGGRAPH is no symposium)
+          const sponsorOnly = d && d !== "ambiguous" && typeClash(d) && subject.filter((w) => w !== key).some((w) => !new Set([...vocabOf(d)].map(stemOf)).has(stemOf(w)));
+          const foreign = d && d !== "ambiguous" && (sponsorOnly || (spelledEvent && left.length >= 2 && !left.some((w) => vocabOf(d).has(w))) || (d && d !== "ambiguous" && subjectIsNotOwn(d, key)) || namedElsewhere(key, left, d) || parenNameIsAnotherVenueOf(raw, key, d, false) || (p.hasIssue && !CONF_SIGNAL.test(p.plain) && left.length >= 1 && !left.every((w) => vocabOf(d).has(w))));          // (no entry to judge — "ambiguous", or none — is no foreign one)
           if (d && d !== "ambiguous" && !foreign && rawNamesVenue(raw, key, d) && !parenContradicts(d) && !(p.truncated && !left.every((w) => vocabOf(d).has(w)))) return { entry: d, rule: "acronym" };
         }
       }
@@ -1319,6 +1325,10 @@
       const pacmmod = !inner && /^\s*Proceedings of the ACM on Management of Data\s+(\d+)\s*\(\s*(\d+)/i.exec(raw);
       if (pacmmod && ((+pacmmod[1] >= 2 && +pacmmod[2] === 2) || /\bPODS\b/.test(raw))) return { ...resolveUncached("ACM SIGMOD-SIGACT-SIGAI Symposium on Principles of Database Systems", true), name: prepare(raw).name };
       const out = { ccf: null, core: null, secondary: null, refused: false, truncated: false, name: "", kind: null };
+      // (a line written mostly in another script — Russian, Chinese, Japanese … — names a venue no list has, whatever Latin acronym stands in it: "VI Пущинская школа-конференция"
+      // is a sixth school, not the journal VI; "第38届中国控制会议 (CCC 2019)" the Chinese Control Conference, not the Computational Complexity Conference)
+      { const other = (raw.match(/[\p{Script=Cyrillic}\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Hangul}\p{Script=Arabic}\p{Script=Hebrew}\p{Script=Greek}\p{Script=Thai}\p{Script=Devanagari}]/gu) || []).length;
+        if (other && other >= (raw.match(/[A-Za-z]/g) || []).length) return { ...out, name: prepare(raw).name }; }
       // (JMLR's "Workshop and Conference Proceedings" — "W&CP", in dblp "Proceedings Track" — were conferences' proceedings, ICML's and AISTATS's, before PMLR: not the journal)
       if (/\b(?:JMLR|Journal of Machine Learning Research)\b/i.test(raw) && /\b(?:W\s*(?:&|&amp;)\s*CP|Workshop and Conference Proceedings|Proceedings Track)\b/i.test(raw)) return { ...out, name: prepare(raw).name };
       // (Proceedings of the ACM on Software Engineering is FSE's and ISSTA's journal, which the issue names — "1 (FSE)", "2 (ISSTA)"; without it, it is no venue of the lists, ICSE least)
@@ -1421,6 +1431,15 @@
       if (nth && year) for (const src of ["ccf", "core"]) {
         const ed = out[src] && idx.editions.get(src + "|" + squash(out[src].abbr || out[src].name));
         if (ed && Math.abs(nth - (ed[1] + (year - ed[0]) / (ed[2] || 1))) > 2) out[src] = null;
+      }
+      // (a journal's abbreviation behind another publisher's name is that publisher's journal: "IEEE TOS" is not ACM's Transactions on Storage, "IEEE TAP" not ACM's Transactions on
+      // Applied Perception — where the venue's own names name a publisher at all)
+      const orgsHere = canonTokens(p.withParens || raw, "full").filter((w) => ORG.has(w));
+      if (orgsHere.length) for (const src of ["ccf", "core"]) {
+        const b = out[src], e = b && b.rule === "acronym" && b.kind === "J" && matched[src] && realEntry(matched[src]);
+        if (!e) continue;
+        const orgsThere = new Set([e.name, ...e.extra].flatMap((n) => canonTokens(n, "full").filter((w) => ORG.has(w))));
+        if (orgsThere.size && !orgsHere.some((o) => orgsThere.has(o))) out[src] = null;
       }
       // the person's own mapping of a line no rule ranks: that row, and the other list's row of the same venue; marked as theirs (rule "mine") wherever a rank goes
       // (`assignable`: a line the person may tie to a listed venue — no list ranks it, it is no track, not refused and not cut off, and it has a name; a cut line's visible start would take every line that starts the same)

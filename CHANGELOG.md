@@ -83,6 +83,15 @@ give the details and every review):
   old rule), with the one known limit reported and not counted: a chip keeps its name on one line, so a 30-character chip name is cut
   in a preview of 330 px or less. The overflow audit no longer counts a break at a soft hyphen (Finnish "Yhteis-|ensimmäinen") as a
   word cut in two.
+- **A fourth review of the matcher.** New angles (every line the acronym rule read whose words share little with the venue's; journal
+  titles one word apart; impossible years; lines in other scripts; "@"), seven classes, 12 real Crossref / OpenAlex lines and none of
+  Scholar's: SIGGRAPH as a sponsor (*ACM SIGGRAPH symposium on Videogames* is Sandbox; SIGGRAPH is no symposium) and its programs —
+  classes, panels, studio, labs, the Immersive Pavilion — with NAACL's SRW and satellite events as tracks; a workshop "@" a venue with
+  spaces (*TrustML @ ICLR*); *Journal of Computing* is not SIAM's *Journal on Computing* (INFORMS's misprint, which names INFORMS,
+  stays); a line written in another script names no listed venue (*第38届中国控制会议 (CCC 2019)* is not the Computational Complexity
+  Conference); acronyms other events share (IEEE IAS's Industry Applications, the cartographers' ICC, EURO ASIC, the Cybernetic
+  Intelligent Systems series, the AIS's ICIS, IEEE's ICCE-Berlin) are shadows; *IEEE TOS* is not ACM's Transactions on Storage. Ten real
+  lines lose a wrong badge; none moves, none is gained. The impossible-year angle found nothing.
 - **An edition the venue cannot have held is another venue's.** Many unlisted events share a listed venue's name or its start: Bangladesh's
   ICCIT is the *International Conference on Computer and Information Technology* as much as IEEE's CIT, "… 5th International
   Conference on Pattern Recognition …, 2016" is ICPRAM, not ICPR (its 23rd that year), "… 10th International Conference on Machine

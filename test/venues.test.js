@@ -1747,6 +1747,31 @@ test("real prints that missed a badge: a cut IEEE citation form, joint proceedin
   eq("2018 17th IEEE International Conference on Machine Learning and Applications (ICMLA), 2018", "CORE C ICMLA");
   eq("2017 IEEE/ACM 39th International Conference on Software Engineering …, 2017", "CCF A ICSE · CORE A* ICSE");
   eq("Proceedings of the 28th International Conference on Computational Linguistics, 2020", "CCF B COLING · CORE B COLING");
+  // the fourth review: SIGGRAPH as a sponsor (a symposium SIGGRAPH is not) and SIGGRAPH's programs; a workshop "@" a venue, spaced or not; "Journal of X" for SIAM's
+  // "Journal on X" (but INFORMS's misprint names INFORMS); a line in another script; acronyms other events share (IEEE IAS, the cartographers' ICC, EURO ASIC, the Cybernetic
+  // Intelligent Systems series, the AIS's ICIS, IEEE's ICCE-Berlin); another publisher's abbreviation — each with the venue's own form beside it
+  none("Proceedings of the 2006 ACM SIGGRAPH symposium on Videogames, 2006");
+  none("ACM SIGGRAPH 2018 Panels, 2018");
+  eq("ACM SIGGRAPH 2004 Papers, 2004", "CCF A SIGGRAPH · CORE A* SIGGRAPH");
+  eq("Proceedings of the ACM SIGCOMM 2008 conference on Data communication, 2008", "CCF A SIGCOMM · CORE A* SIGCOMM");
+  none("TrustML @ ICLR 2022, 2022");
+  none("NeurIPS 2022 @ SyntheticData4ML, 2022");
+  eq("Proceedings of the Seventh ACM Conference on Learning @ Scale, 2020", "CORE B L@S");
+  none("Journal of Computing 3 (2), 2011");
+  eq("SIAM Journal on Computing 50 (3), 2021", "CCF A SICOMP");
+  eq("INFORMS: Journal of Computing 10, 1998", "CCF B INFORMS");
+  none("VI Пущинская школа-конференция молодых ученых, 2002");
+  none("第38届中国控制会议 (CCC 2019), 2019");
+  none("IAS '95. Conference Record of the 1995 IEEE Industry Applications Conference, 1995");
+  none("ICC 2019 International Cartographic Conference, 2019");
+  none("Euro ASIC Conference (EURO ASIC), 1991");
+  none("IEEE 10th International Conference on Cybernetic Intelligent Systems (CIS), 2011");
+  eq("2011 IEEE 5th International Conference on Cybernetics and Intelligent Systems (CIS), 2011", "CORE C CIS");
+  none("International Conference on Information Systems, ICIS 2019, 2019");
+  eq("2019 IEEE/ACIS 18th International Conference on Computer and Information Science (ICIS), 2019", "CORE C ICIS");
+  none("IEEE ICCE-Berlin, 2015");
+  none("IEEE TOS 12 (3), 2019");
+  eq("ACM TOS 15 (2), 2019", "CCF A TOS");
   // a second volume of posters, panels, workshops or demos has no rank (`trackVolume`): SIGCSE TS, ITiCSE, ICER, SPLC — the first volume has; other venues' "Volume 2" too (ASPLOS)
   none("Proceedings of the 55th ACM Technical Symposium on Computer Science Education V. 2, 1-2, 2024");
   none("Proceedings of the 2025 ACM Conference on International Computing Education Research V.2, 2025");
