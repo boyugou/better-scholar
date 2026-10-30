@@ -351,7 +351,11 @@ the `filter` call — and `impact`). `applyFilters()` toggles `rr-hide` on rows 
 delay: measured 2026-10-29 on 2,000 papers, a key is 5–15 ms of script; the costliest click is a pick undone, ~100 ms, most of it the browser laying out the
 rows shown again, forced when the redrawn button gets its focus back (without that the same layout comes after the script, and the
 task is as long) — under 200 ms, so nothing is deferred; e2e section 26 keeps 1,000 papers under 250 ms, and checks that 30 rounds of searches and picks leave the
-page with as many nodes and listeners as before: over 400 rounds the heap stayed flat, after a first round has warmed it up); `filtering()` says whether any is on, which shows
+page with as many nodes and listeners as before: over 400 rounds the heap stayed flat, after a first round has warmed it up. On a CPU
+slowed 4× (Chrome's emulation of a low-end laptop) 1,000 papers stay near 200 ms and 2,000 reach 400–450 ms for a pick undone, almost
+all of it the browser styling and laying out the rows shown again — "Only highlighted" off: 31 ms of script, 254 ms in all. Hiding
+rows with `visibility: collapse` instead of `display: none` was measured too: showing got a little cheaper, hiding two to three times
+dearer, so `display: none` stays; only drawing fewer of Scholar's rows at once would go further); `filtering()` says whether any is on, which shows
 the panel's filter bar ("Showing 25 of 100 papers · Last, CCF A · 2020–2024" and *Clear*). The bar stands in the title bar in place of the title (one line,
 the whole text on hover, a `role="status"` so that it is said when it changes; with no title bar it stands in front of the parts), so that a filter does not
 make the panel taller: nothing under the pointer or the caret moves — which is also why the awards rows stay, quiet, while the filters leave none of their papers
