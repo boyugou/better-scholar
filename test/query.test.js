@@ -47,7 +47,7 @@ test("the operators' table: each example and suggestion is a valid term, and say
     assert.ok(o.doc.length > 20 && o.example.startsWith(o.name + ":"), o.name);
     for (const ex of [o.example, ...o.suggest]) {
       const r = query.parse(ex);
-      assert.deepEqual([r.errors, r.terms.map((t) => t.kind)], [[], [o.name]], ex);
+      assert.deepEqual([r.errors, r.terms.map((t) => (o.field ? t.kind + ":" + t.field : t.kind))], [[], [o.field ? "text:" + o.name : o.name]], ex);
     }
   }
 });
@@ -318,3 +318,44 @@ test("what the search cannot read is said twice: in English for a script, and as
   assert.deepEqual(query.parse("ccf:a").problems, []);
 });
 
+
+test("a review of the search, 2026-10-29: words at the start of a word (short ones whole), accents and full width aside, lists past a space, phrases, NOT, OR, a field", () => {
+  const row = (raw, a = {}) => ({ raw: { title: "", authorsText: "", venueText: "", citations: 1, year: 2020, ...raw }, a: { status: "found", role: "middle", year: 2020, venue: {}, marks: [], ...a }, shown: 1 });
+  const hit = (q, r) => analysis.queryMatcher(q).test(r);
+  // a short word is a whole word: "he" is the author He, not "the" or "Chen"; a longer one starts a word
+  const he = row({ title: "The genome of Chen", authorsText: "X Chen, Y Shen" }), kaiming = row({ title: "Deep learning", authorsText: "K He, X Zhang" });
+  assert.equal(hit("he", he), false);
+  assert.equal(hit("he", kaiming), true);
+  assert.equal(hit("ng", row({ title: "Learning to rank" })), false);
+  assert.equal(hit("ng", row({ authorsText: "AY Ng, M Jordan" })), true);
+  assert.equal(hit("learn", kaiming), true, "the start of a word");
+  assert.equal(hit("earning", kaiming), false, "not its middle");
+  assert.equal(hit("机器", row({ title: "深度机器学习" })), true, "a word in Chinese anywhere");
+  // accents and the width of a Chinese input method's letters aside
+  const dollar = row({ authorsText: "R Girshick, P Dollár" });
+  assert.equal(hit("dollar", dollar), true);
+  assert.equal(hit("Dollár", row({ authorsText: "P Dollar" })), true);
+  assert.deepEqual(query.parse("ccf：a").terms, [{ kind: "ccf", values: ["a"] }]);
+  assert.deepEqual(query.parse("ｒｏｌｅ:first，last").terms, [{ kind: "role", values: ["first", "last"] }]);
+  // a listed operator's values go on past a space after the comma or the colon
+  assert.deepEqual(query.parse("ccf:a, b").terms, [{ kind: "ccf", values: ["a", "b"] }]);
+  assert.deepEqual(query.parse("role: first, last deep").terms, [{ kind: "role", values: ["first", "last"] }, { kind: "text", text: "deep" }]);
+  // a phrase, NOT, OR, and a field
+  const crispr = row({ title: "A programmable dual-RNA-guided DNA endonuclease in adaptive bacterial immunity", authorsText: "M Jinek, K Chylinski, JA Doudna", venueText: "Science 337 (6096), 816-821, 2012" });
+  const anti = row({ title: "Anti-CRISPR proteins and genome editing", authorsText: "A B, JA Doudna" });
+  assert.equal(hit('"genome editing"', anti), true);
+  assert.equal(hit('"editing genome"', anti), false);
+  assert.equal(hit("-crispr", anti), false, "a word left out: the paper that has it is not found");
+  assert.equal(hit("-crispr", crispr), true);
+  assert.equal(hit("NOT crispr", anti), false);
+  assert.equal(hit("-role:middle", crispr), false);
+  assert.equal(hit("endonuclease OR crispr", anti), true);
+  assert.equal(hit("endonuclease OR crispr", crispr), true);
+  assert.equal(hit("endonuclease crispr", crispr), false, "without OR both must hold");
+  assert.equal(hit("author:doudna", crispr), true);
+  assert.equal(hit("title:doudna", crispr), false);
+  assert.equal(hit("venue:science", crispr), true);
+  assert.equal(hit("author:", crispr), true, "an empty field asks nothing (it is being typed)");
+  // the paper page's own venue line, once read, is searched too (the profile's line may be cut)
+  assert.equal(hit("language", row({ venueText: "Proceedings of the 2014 conference on empirical methods in natural …" }, { pageVenueText: "Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing (EMNLP)" })), true);
+});

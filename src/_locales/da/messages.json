@@ -209,7 +209,7 @@
     "message": "1 artikel hvor profilejerens navn ikke står på forfatterlisten"
   },
   "coverUnmatched": {
-    "message": "$N1$ artikler på publikationssteder uden rang",
+    "message": "$N1$ artikler på publikationssteder, som ingen af de to lister indeholder",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -217,7 +217,7 @@
     }
   },
   "coverUnmatchedOne": {
-    "message": "1 artikel på et publikationssted uden rang"
+    "message": "1 artikel på et publikationssted, som ingen af de to lister indeholder"
   },
   "copyUnmatched": {
     "message": "Kopiér liste"
@@ -604,7 +604,7 @@
     "message": "Slå dubletter sammen"
   },
   "optMergeLabelHint": {
-    "message": "Poster med samme titel og samme førsteforfatter bliver til én post (store bogstaver, accenter og tegnsætning betyder ikke noget). Den mest citerede post bliver stående og viser alles citationer. Panelet tæller den én gang."
+    "message": "Poster med samme titel og samme førsteforfatter bliver til én post (store bogstaver, accenter og tegnsætning betyder ikke noget); et konferencebidrag og dets tidsskriftversion forbliver to. Den udgivne, rangerede post med dit navn bliver stående og går forud for den mest citerede, og den viser alles citationer. Panelet tæller den én gang."
   },
   "mergedTip": {
     "message": "Slået sammen fra $N1$ poster: citationerne fra dem alle",
@@ -1095,7 +1095,7 @@
     "message": "Artikler uden dit navn"
   },
   "optStatusUnranked": {
-    "message": "Artikler på publikationssteder uden rang"
+    "message": "Artikler på publikationssteder, som ingen af de to lister indeholder"
   },
   "optNamesHints": {
     "message": "Stavemåder fundet i dine artikler"

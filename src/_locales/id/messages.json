@@ -209,7 +209,7 @@
     "message": "1 makalah yang daftar penulisnya tidak memuat nama pemilik profil"
   },
   "coverUnmatched": {
-    "message": "$N1$ makalah di venue tanpa peringkat",
+    "message": "$N1$ makalah di venue yang tidak termuat di daftar CCF maupun CORE",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -217,7 +217,7 @@
     }
   },
   "coverUnmatchedOne": {
-    "message": "1 makalah di venue tanpa peringkat"
+    "message": "1 makalah di venue yang tidak termuat di daftar CCF maupun CORE"
   },
   "copyUnmatched": {
     "message": "Salin daftar"
@@ -604,7 +604,7 @@
     "message": "Gabungkan entri duplikat"
   },
   "optMergeLabelHint": {
-    "message": "Entri dengan judul yang sama dan penulis pertama yang sama digabung menjadi satu entri (huruf besar, aksen, dan tanda baca tidak diperhitungkan). Entri yang paling banyak disitasi tetap ada dan menampilkan sitasi semuanya. Panel menghitungnya satu kali."
+    "message": "Entri dengan judul yang sama dan penulis pertama yang sama digabung menjadi satu entri (huruf besar, aksen, dan tanda baca tidak diperhitungkan); makalah konferensi dan versi jurnalnya tetap dua. Entri yang sudah terbit dan berperingkat serta menampilkan nama Anda tetap ada, didahulukan daripada yang paling banyak disitasi, dan menampilkan sitasi semuanya. Panel menghitungnya satu kali."
   },
   "mergedTip": {
     "message": "Digabung dari $N1$ entri: sitasi semuanya",
@@ -1095,7 +1095,7 @@
     "message": "Makalah tanpa nama Anda"
   },
   "optStatusUnranked": {
-    "message": "Makalah di venue tanpa peringkat"
+    "message": "Makalah di venue yang tidak termuat di daftar CCF maupun CORE"
   },
   "optNamesHints": {
     "message": "Ejaan nama yang ditemukan di makalah Anda"

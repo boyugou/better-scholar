@@ -63,19 +63,23 @@
   const low = (x) => String(x || "").toLowerCase();
   // (the title, the author line and the venue of a row do not change: in lower case once, not for every key typed)
   const READ = new WeakMap();
-  const readText = (raw) => { let t = READ.get(raw); if (!t) { t = [low(raw.title), low(raw.authorsText), low(raw.venueText)]; READ.set(raw, t); } return t; };
+  const readText = (raw) => { let t = READ.get(raw); if (!t) { t = [query.fold(raw.title), query.fold(raw.authorsText), query.fold(raw.venueText)]; READ.set(raw, t); } return t; };
   // (the authors once "Read full lists" has read the whole list: every name of it, besides the line the page printed — the page's initials may be spelled out there; kept for as long as the row's analysis is)
   const FULL = new WeakMap();
-  const fullAuthors = (a) => { let t = FULL.get(a); if (t === undefined) { t = low(a.tokens.map((x) => x.name).join(", ")); FULL.set(a, t); } return t; };
+  const fullAuthors = (a) => { let t = FULL.get(a); if (t === undefined) { t = query.fold(a.tokens.map((x) => x.name).join(", ")); FULL.set(a, t); } return t; };
 
   function queryMatcher(q, marksOf = (row) => row.a.marks || [], ranksOn = {}) {
     const parsed = query.parse(q);
     const fields = (row) => {
       const { raw, a } = row, v0 = a.venue || {}, found = marksOf(row);
       const v = { ccf: ranksOn.ccf === false ? null : v0.ccf, core: ranksOn.core === false ? null : v0.core };      // (a list that is switched off is not searched either)
+      const [title, line, venueLine] = readText(raw);
+      const author = [line, ...(a.fromDetail && a.tokens ? [fullAuthors(a)] : [])];
+      // (the venue: the line the profile prints, the paper page's own line once Read full lists has read it — whole where the profile's is cut —, the venue's names in the lists)
+      const venue = [venueLine, ...[a.pageVenueText, v.ccf && v.ccf.abbr, v.ccf && v.ccf.name, v.core && v.core.abbr, v.core && v.core.name].filter(Boolean).map(query.fold)];
       return {
-        text: [...readText(raw), ...(a.fromDetail && a.tokens ? [fullAuthors(a)] : []), ...[v.ccf && v.ccf.abbr, v.ccf && v.ccf.name, v.core && v.core.abbr, v.core && v.core.name,
-          ...found.map((m) => `${m.kind || ""} ${m.label || ""} ${m.text || ""}`)].map(low)],
+        title: [title], author, venue,
+        text: [title, ...author, ...venue, ...found.map((m) => query.fold(`${m.kind || ""} ${m.label || ""} ${m.text || ""}`))],
         year: a.year != null ? a.year : null,
         citations: row.shown,
         role: low(a.role),

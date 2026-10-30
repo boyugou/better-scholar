@@ -302,7 +302,7 @@
       bool("hide.access", false, "Hide Scholar's \"Public access\" block.", { label: "optHideAccess", hint: "optHideAccessHint" })
     ]),
     card("merge", "optMergeTitle", "optMergeHint", [
-      bool("mergeDuplicates", false, "Count a paper once when Scholar lists it twice (titles that differ only in capitals or punctuation).", { label: "optMergeLabel", hint: "optMergeLabelHint" })
+      bool("mergeDuplicates", false, "Count a paper once when Scholar lists it twice (titles that differ only in capitals or punctuation; a conference paper and its journal version stay two). The published, ranked entry that shows your name stays, before the most cited one.", { label: "optMergeLabel", hint: "optMergeLabelHint" })
     ]),
     card("load", "optLoadTitle", null, [
       bool("autoLoad", true, "Press Scholar's own \"Show more\" button until the whole paper list is loaded, as the profile opens.", { label: "optAutoLoad", hint: "optAutoLoadHint" })

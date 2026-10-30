@@ -209,7 +209,7 @@
     "message": "1 Paper, bei dem der Name des Profilinhabers nicht in der Autorenliste steht"
   },
   "coverUnmatched": {
-    "message": "$N1$ Paper in Venues ohne Rang",
+    "message": "$N1$ Paper in Venues, die keine der beiden Listen enthält",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -217,7 +217,7 @@
     }
   },
   "coverUnmatchedOne": {
-    "message": "1 Paper in einer Venue ohne Rang"
+    "message": "1 Paper in einer Venue, die keine der beiden Listen enthält"
   },
   "copyUnmatched": {
     "message": "Liste kopieren"
@@ -604,7 +604,7 @@
     "message": "Duplikate zusammenführen"
   },
   "optMergeLabelHint": {
-    "message": "Einträge mit demselben Titel und demselben Erstautor werden zu einem Eintrag (Groß- und Kleinschreibung, Akzente und Satzzeichen spielen keine Rolle). Der meistzitierte Eintrag bleibt und zeigt die Zitierungen aller. Das Übersichtsfeld zählt ihn nur einmal."
+    "message": "Einträge mit demselben Titel und demselben Erstautor werden zu einem Eintrag (Groß- und Kleinschreibung, Akzente und Satzzeichen spielen keine Rolle); ein Konferenzbeitrag und seine Zeitschriftenfassung bleiben zwei. Der veröffentlichte Eintrag mit Rang und deinem Namen bleibt und geht dem meistzitierten vor; er zeigt die Zitierungen aller. Das Übersichtsfeld zählt ihn nur einmal."
   },
   "mergedTip": {
     "message": "Aus $N1$ Einträgen zusammengeführt: die Zitierungen aller",
@@ -1095,7 +1095,7 @@
     "message": "Paper ohne deinen Namen"
   },
   "optStatusUnranked": {
-    "message": "Paper in Venues ohne Rang"
+    "message": "Paper in Venues, die keine der beiden Listen enthält"
   },
   "optNamesHints": {
     "message": "Schreibweisen aus deinen Papern"

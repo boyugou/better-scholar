@@ -93,7 +93,13 @@
 
   // ---- duplicates: with the setting on, an entry that repeats another is hidden and the most cited one shows the total -------------
 
-  const dupEntry = (r) => ({ key: r.dupKey !== undefined ? r.dupKey : (r.dupKey = B.duplicates.key(r.raw.title, r.raw.authorsText)), citations: r.raw.citations });
+  // (with what tells two publications of one title apart, and which entry should stay: the year, the venues the lists know, a preprint, the owner shown)
+  const dupEntry = (r) => {
+    const v = r.a.venue || {};
+    return { key: r.dupKey !== undefined ? r.dupKey : (r.dupKey = B.duplicates.key(r.raw.title, r.raw.authorsText)), citations: r.raw.citations, year: r.a.year,
+      venues: [v.ccf && v.ccf.abbr, v.ccf && v.ccf.name, v.core && v.core.abbr, v.core && v.core.name].filter(Boolean).map((x) => x.toLowerCase()),
+      preprint: metrics.isPreprint(r.raw.venueText), found: r.a.status === "found" };
+  };
   const live = () => state.rows.filter((r) => !r.dupHidden);
   function applyMerge() {
     const on = prefs.mergeDuplicates;

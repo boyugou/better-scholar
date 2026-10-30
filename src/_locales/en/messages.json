@@ -209,7 +209,7 @@
     "message": "1 paper where the profile owner's name is not in the author list"
   },
   "coverUnmatched": {
-    "message": "$N1$ papers at venues without a rank",
+    "message": "$N1$ papers at venues neither list holds",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -217,7 +217,7 @@
     }
   },
   "coverUnmatchedOne": {
-    "message": "1 paper at a venue without a rank"
+    "message": "1 paper at a venue neither list holds"
   },
   "copyUnmatched": {
     "message": "Copy list"
@@ -604,7 +604,7 @@
     "message": "Merge duplicates"
   },
   "optMergeLabelHint": {
-    "message": "Entries with the same title and the same first author become one entry (capitals, accents and punctuation do not count). The most cited entry stays and shows the citations of all of them. The panel counts it once."
+    "message": "Entries with the same title and the same first author become one entry (capitals, accents and punctuation do not count); a conference paper and its journal version stay two. The published, ranked entry that shows your name stays, before the most cited one, and shows the citations of all of them. The panel counts it once."
   },
   "mergedTip": {
     "message": "Merged from $N1$ entries: the citations of all of them",
@@ -1095,7 +1095,7 @@
     "message": "Papers without your name"
   },
   "optStatusUnranked": {
-    "message": "Papers at unranked venues"
+    "message": "Papers at venues neither list holds"
   },
   "optNamesHints": {
     "message": "Spellings found in your papers"

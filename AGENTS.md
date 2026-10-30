@@ -202,7 +202,7 @@ Rules:
 | `hide.citedChart` | true / false | `false` | Hide only the year chart of the "Cited by" block. No effect while hide.cited is on. |
 | `hide.coauthors` | true / false | `false` | Hide Scholar's "Co-authors" block. |
 | `hide.access` | true / false | `false` | Hide Scholar's "Public access" block. |
-| `mergeDuplicates` | true / false | `false` | Count a paper once when Scholar lists it twice (titles that differ only in capitals or punctuation). |
+| `mergeDuplicates` | true / false | `false` | Count a paper once when Scholar lists it twice (titles that differ only in capitals or punctuation; a conference paper and its journal version stay two). The published, ranked entry that shows your name stays, before the most cited one. |
 | `autoLoad` | true / false | `true` | Press Scholar's own "Show more" button until the whole paper list is loaded, as the profile opens. |
 | `semanticScholar` | true / false | `false` | Ask Semantic Scholar's public API (paper titles only, no cookies) for a cut-off author list before opening the paper's Scholar page. Sends titles to a third party: leave off unless the user asks for it. |
 
@@ -285,7 +285,9 @@ Result: { shown, total, filters, errors } — as `filter` returns it (without `i
 
 ## Search syntax
 
-The search box and `filter { query }` take words and operators separated by spaces; a paper must match all of them. A word matches the title, authors, venue, the venue's name in the lists, the year, the role and the marks (case does not matter).
+The search box and `filter { query }` take words and operators separated by spaces; a paper must match all of them. A word matches the title, authors, venue, the venue's name in the lists, the year, the role and the marks: at the start of a word (`learn` finds "learning"), a word of one or two letters or digits as a whole word (`he` finds the author He, not "the"), a word without Latin letters or digits (Chinese, Japanese, Korean) anywhere. Capitals, accents and full-width letters do not matter (`dollar` finds "Dollár", `ccf：a` is `ccf:a`).
+
+Words in quotes are one phrase (`"genome editing"`); `-word` or `NOT word` is a paper without it (also `-role:first`); `cas9 OR cas12a` (OR in capitals) is either.
 
 - `cites:>100` — citations compared with a number: > >= < <= = (a bare number means =).
 - `year:>=2020` — the publication year compared the same way.
@@ -295,6 +297,9 @@ The search box and `filter { query }` take words and operators separated by spac
 - `role:first` — your position in the author list: first, cofirst, second, last, or middle (none of those four).
 - `type:journal` — the kind of venue the rank lists say it is: conference or journal (a venue without a rank has no kind).
 - `has:award` — has:award — a best-paper award or finalist mark; has:talk — an Oral, Spotlight or Highlight mark.
+- `author:hinton` — a word of the author list only (the whole list once Read full lists has read it).
+- `title:transformer` — a word of the title only.
+- `venue:neurips` — a word of the venue only (the line Scholar prints, the paper page's line once read, the venue's names in the lists).
 
 The values of `ccf`, `core`, `role`, `type`, `has` can be listed with commas: `role:first,last` is a paper where you are the first or the last author, `ccf:a,b` one at a CCF A or B venue. Separate words must all hold; the values of one word, any of them. The quick filters under the search box join the word of their operator in the same way; a quick filter of your own (`panel.filters.searches.*`) puts its words in whole, in place of the other words of an operator of one value it has (`role`, `ccf`, `core`, `type`: a paper has one role, a venue one rank and one kind).
 

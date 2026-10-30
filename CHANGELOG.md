@@ -83,6 +83,22 @@ give the details and every review):
   old rule), with the one known limit reported and not counted: a chip keeps its name on one line, so a 30-character chip name is cut
   in a preview of 330 px or less. The overflow audit no longer counts a break at a soft hyphen (Finnish "Yhteis-|ensimmäinen") as a
   word cut in two.
+- **A review of the search, the duplicates and the counts** (an independent agent; every finding fixed). The search: (1) a word is
+  looked for at the start of a word, and a word of one or two letters as a whole word — `he` found 54 of a biologist's 100 papers
+  ("the", "Chen") and `ng` 90 of Philip Yu's; now 0, and `li` finds the 17 papers of Ion Stoica's with a co-author Li, not 43 (a word
+  in Chinese, Japanese or Korean is still found anywhere). (2) Accents and full-width letters do not matter: `dollar` found 1 of the 17
+  rows with "P Dollár"; `ccf：a`, typed with a Chinese input method, was a word with no hit and no warning. (3) `ccf:a, b` and
+  `role:first, last` (a space after the comma) dropped the second value and searched for the word "b": now one list. (4) New:
+  `"genome editing"` (a phrase), `-crispr` and `NOT crispr` (without; also `-role:first`), `cas9 OR cas12a`, and `author:`,
+  `title:`, `venue:` (the word in that field only) — each typed as Scholar's own search has it, and each gave 0 hits or the
+  opposite before. (5) The paper page's own venue line, once read, is searched too. Duplicates (*Merge duplicates*, off by default):
+  (6) the entry that stays is the published one (not a preprint), a ranked one, one whose author list shows you, and only then the
+  most cited — the arXiv copy of a CVPR paper had taken its place, rank and year; (7) a conference paper and its journal version
+  (Faster R-CNN at NeurIPS 2015 and in TPAMI 2016) are two papers: two venues the lists know apart, or years more than one apart,
+  are never merged; (8) the first author is read as the roles read it ("J Smith and B Lee", "张伟，李明", "J Smith Jr"). The counts:
+  (9) the line under the table now says what it counts — *papers at venues neither list holds* — where "without a rank" read as the
+  table's "–" column; it leaves out preprints by the table's own test (CoRR and the IACR's ePrint were listed for a report), and
+  "Preprints of the first workshop on …" is a workshop's proceedings, no preprint.
 - **A review of what talks to Scholar and Semantic Scholar** (an independent agent; every finding fixed or written down). (1) *Clear
   saved paper details* is no longer undone by an open profile tab: the page forgets them too, and a save adds what that page read to
   what is stored instead of writing its whole copy back (two profile tabs no longer overwrite each other's papers). What a run reads is

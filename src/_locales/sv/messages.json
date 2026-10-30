@@ -209,7 +209,7 @@
     "message": "1 artikel där profilägarens namn inte finns i författarlistan"
   },
   "coverUnmatched": {
-    "message": "$N1$ artiklar på publiceringsställen utan rank",
+    "message": "$N1$ artiklar på publiceringsställen som ingen av de två listorna innehåller",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -217,7 +217,7 @@
     }
   },
   "coverUnmatchedOne": {
-    "message": "1 artikel på ett publiceringsställe utan rank"
+    "message": "1 artikel på ett publiceringsställe som ingen av de två listorna innehåller"
   },
   "copyUnmatched": {
     "message": "Kopiera lista"
@@ -604,7 +604,7 @@
     "message": "Slå ihop dubbletter"
   },
   "optMergeLabelHint": {
-    "message": "Poster med samma titel och samma förstaförfattare blir en (versaler, accenter och skiljetecken räknas inte). Den mest citerade blir kvar och visar allas citeringar. Panelen räknar den en gång."
+    "message": "Poster med samma titel och samma förstaförfattare blir en (versaler, accenter och skiljetecken räknas inte); ett konferensbidrag och dess tidskriftsversion förblir två. Den publicerade, rankade posten med ditt namn blir kvar och går före den mest citerade, och den visar allas citeringar. Panelen räknar den en gång."
   },
   "mergedTip": {
     "message": "Sammanslagen från $N1$ poster: citeringarna från alla",
@@ -1095,7 +1095,7 @@
     "message": "Artiklar utan ditt namn"
   },
   "optStatusUnranked": {
-    "message": "Artiklar på publiceringsställen utan rank"
+    "message": "Artiklar på publiceringsställen som ingen av de två listorna innehåller"
   },
   "optNamesHints": {
     "message": "Stavningar som hittats i dina artiklar"

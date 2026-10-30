@@ -209,7 +209,7 @@
     "message": "1 articolo in cui il nome del titolare del profilo non compare tra gli autori"
   },
   "coverUnmatched": {
-    "message": "$N1$ articoli in conferenze o riviste senza ranking",
+    "message": "$N1$ articoli in conferenze o riviste che nessuno dei due elenchi contiene",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -217,7 +217,7 @@
     }
   },
   "coverUnmatchedOne": {
-    "message": "1 articolo in una conferenza o rivista senza ranking"
+    "message": "1 articolo in una conferenza o rivista che nessuno dei due elenchi contiene"
   },
   "copyUnmatched": {
     "message": "Copia elenco"
@@ -604,7 +604,7 @@
     "message": "Unisci i duplicati"
   },
   "optMergeLabelHint": {
-    "message": "Le voci con lo stesso titolo e lo stesso primo autore diventano una sola voce (a prescindere da maiuscole, accenti e punteggiatura). Resta la voce più citata, che mostra le citazioni di tutte. Il pannello la conta una volta."
+    "message": "Le voci con lo stesso titolo e lo stesso primo autore diventano una sola voce (a prescindere da maiuscole, accenti e punteggiatura); un articolo di conferenza e la sua versione su rivista restano due. Resta la voce pubblicata e con ranking che mostra il tuo nome, con precedenza su quella più citata, e mostra le citazioni di tutte. Il pannello la conta una volta."
   },
   "mergedTip": {
     "message": "Unita da $N1$ voci: le citazioni di tutte",
@@ -1095,7 +1095,7 @@
     "message": "Articoli senza il tuo nome"
   },
   "optStatusUnranked": {
-    "message": "Articoli in conferenze o riviste senza ranking"
+    "message": "Articoli in conferenze o riviste che nessuno dei due elenchi contiene"
   },
   "optNamesHints": {
     "message": "Grafie trovate nei tuoi articoli"

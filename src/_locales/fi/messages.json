@@ -209,7 +209,7 @@
     "message": "1 artikkeli, jossa profiilin omistajan nimeä ei ole kirjoittajaluettelossa"
   },
   "coverUnmatched": {
-    "message": "$N1$ artikkelia julkaisufoorumeilla ilman luokkaa",
+    "message": "$N1$ artikkelia julkaisufoorumeilla, joita kumpikaan luetteloista ei sisällä",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -217,7 +217,7 @@
     }
   },
   "coverUnmatchedOne": {
-    "message": "1 artikkeli julkaisufoorumilla ilman luokkaa"
+    "message": "1 artikkeli julkaisufoorumilla, jota kumpikaan luetteloista ei sisällä"
   },
   "copyUnmatched": {
     "message": "Kopioi luettelo"
@@ -604,7 +604,7 @@
     "message": "Yhdistä kaksoiskappaleet"
   },
   "optMergeLabelHint": {
-    "message": "Merkinnät, joilla on sama otsikko ja sama ensimmäinen kirjoittaja, yhdistetään yhdeksi merkinnäksi (isot kirjaimet, aksentit ja välimerkit eivät vaikuta). Eniten viitattu merkintä jää ja näyttää kaikkien viittaukset. Paneeli laskee sen kerran."
+    "message": "Merkinnät, joilla on sama otsikko ja sama ensimmäinen kirjoittaja, yhdistetään yhdeksi merkinnäksi (isot kirjaimet, aksentit ja välimerkit eivät vaikuta); konferenssiartikkeli ja sen lehtiversio pysyvät kahtena. Jäljelle jää julkaistu, luokiteltu merkintä, jossa nimesi näkyy; se menee eniten viitatun edelle ja näyttää kaikkien viittaukset. Paneeli laskee sen kerran."
   },
   "mergedTip": {
     "message": "Yhdistetty $N1$ merkinnästä: kaikkien viittaukset",
@@ -1095,7 +1095,7 @@
     "message": "Artikkelit ilman nimeäsi"
   },
   "optStatusUnranked": {
-    "message": "Artikkelit luokittelemattomilla julkaisufoorumeilla"
+    "message": "Artikkelit julkaisufoorumeilla, joita kumpikaan luetteloista ei sisällä"
   },
   "optNamesHints": {
     "message": "Nimen kirjoitusasut, jotka löytyvät artikkeleistasi"

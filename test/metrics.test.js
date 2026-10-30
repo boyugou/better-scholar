@@ -221,9 +221,21 @@ test("topVenues: under the winner the venue goes by that list's own name — CCF
 
 test("the unranked venues name the paper page's whole line where Read full lists has read it", () => {
   const metrics = require("../src/lib/metrics.js");
-  const list = metrics.unmatchedVenues([
+  const list = m.unmatchedVenues([
     { venueText: "Workshop on Odd …, 2020", pageVenueText: "Workshop on Odd Things in Practice, 2020", venue: {} },
     { venueText: "Odd Things Meeting, 2021", pageVenueText: "", venue: {} }
   ]);
   assert.deepEqual(list.map((u) => u.venue).sort(), ["Odd Things Meeting, 2021", "Workshop on Odd Things in Practice, 2020"]);
+});
+
+test("preprints, one test for the table and the list of venues neither list holds: CoRR and the IACR's ePrint are preprints, a workshop's \"Preprints of …\" is not", () => {
+  assert.equal(m.isPreprint("CoRR abs/1512.03385, 2015"), true);
+  assert.equal(m.isPreprint("IACR Cryptol. ePrint Arch. 2020, 1234, 2020"), true);
+  assert.equal(m.isPreprint("Preprints of the first workshop on secure control systems, CPSWEEK 2010"), false);
+  const list = m.unmatchedVenues([
+    { venueText: "CoRR abs/1512.03385, 2015", venue: {} },
+    { venueText: "Cryptology ePrint Archive, 2019", venue: {} },
+    { venueText: "Some unknown symposium, 2019", venue: {} }
+  ]).map((u) => u.venue);
+  assert.deepEqual(list, ["Some unknown symposium, 2019"]);
 });

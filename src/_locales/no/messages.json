@@ -209,7 +209,7 @@
     "message": "1 artikkel der profileierens navn ikke står i forfatterlisten"
   },
   "coverUnmatched": {
-    "message": "$N1$ artikler på publiseringssteder uten rang",
+    "message": "$N1$ artikler på publiseringssteder som ingen av de to listene inneholder",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -217,7 +217,7 @@
     }
   },
   "coverUnmatchedOne": {
-    "message": "1 artikkel på et publiseringssted uten rang"
+    "message": "1 artikkel på et publiseringssted som ingen av de to listene inneholder"
   },
   "copyUnmatched": {
     "message": "Kopier liste"
@@ -604,7 +604,7 @@
     "message": "Slå sammen duplikater"
   },
   "optMergeLabelHint": {
-    "message": "Oppføringer med samme tittel og samme førsteforfatter blir til én oppføring (store bokstaver, aksenter og tegnsetting teller ikke). Den mest siterte oppføringen blir igjen og viser siteringene til alle. Panelet teller den én gang."
+    "message": "Oppføringer med samme tittel og samme førsteforfatter blir til én oppføring (store bokstaver, aksenter og tegnsetting teller ikke); et konferansebidrag og tidsskriftversjonen av det forblir to. Den publiserte, rangerte oppføringen som viser navnet ditt, blir igjen og går foran den mest siterte, og viser siteringene til alle. Panelet teller den én gang."
   },
   "mergedTip": {
     "message": "Slått sammen fra $N1$ oppføringer: siteringene fra alle",
@@ -1095,7 +1095,7 @@
     "message": "Artikler uten navnet ditt"
   },
   "optStatusUnranked": {
-    "message": "Artikler på publiseringssteder uten rang"
+    "message": "Artikler på publiseringssteder som ingen av de to listene inneholder"
   },
   "optNamesHints": {
     "message": "Skrivemåter som finnes i artiklene dine"

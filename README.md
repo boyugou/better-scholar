@@ -164,7 +164,7 @@ Real examples. The middle column is what the lists give; by default the panel dr
 - **Citation totals**: papers, citations, h-index and i10-index of your highlighted papers, beside the totals of all papers. The **h-index** and **i10-index** buttons list the papers behind the number.
 - **Papers by year**: a bar for each year (at most 50 years), in the role colours. Click a bar to filter to that year.
 - **Top venues** (off by default): the ranked venues of your highlighted papers, most papers first. Click a venue to list its papers.
-- **Status lines**: how many papers are loaded; the roles that cut author lists hide (**Read full lists**); duplicate entries; papers at venues without a rank, with **Copy list**, **Report**, and a **Check** link for each venue.
+- **Status lines**: how many papers are loaded; the roles that cut author lists hide (**Read full lists**); duplicate entries; papers at venues neither list holds, with **Copy list**, **Report**, and a **Check** link for each venue.
 - **The whole list.** Scholar shows the first papers of a profile, and more when you press its **Show more** button. By default the extension presses that button for you until the list is complete: one press at a time, about once a second, and only in the tab that you look at. It stops at the first press that brings no new papers. With **Load all papers automatically** off, the panel shows a **Load all** button.
 - A bar at the top of the panel says how many papers the filters show, and clears them. `Escape` on the page clears all filters too.
 - **Toolbar popup**: the table, the award counts and the copy buttons, for the profile in the open tab.
@@ -215,7 +215,7 @@ The extension speaks 30 languages: English, 简体中文, 繁體中文, 日本�
 
 ## Search operators
 
-Press `/` on a profile to jump to the search box. (The panel and its filters must be shown. A switch on the settings page turns the key off.) A paper must match every word and every operator. A word is looked for in the title, the authors, the venue, the venue's name in the lists, the year, the role and the marks. Case does not matter.
+Press `/` on a profile to jump to the search box. (The panel and its filters must be shown. A switch on the settings page turns the key off.) A paper must match every word and every operator. A word is looked for in the title, the authors, the venue, the venue's name in the lists, the year, the role and the marks, at the start of a word: `learn` finds "learning". A word of one or two letters is a whole word: `he` finds the author He, not "the" or "Chen". A word in Chinese, Japanese or Korean is found anywhere. Capitals, accents and full-width letters do not matter: `dollar` finds "Dollár", and `ccf：a` typed with a Chinese input method is `ccf:a`.
 
 | Operator | Examples | Matches |
 |---|---|---|
@@ -227,9 +227,13 @@ Press `/` on a profile to jump to the search box. (The panel and its filters mus
 | `role:` | `role:first`, `role:cofirst`, `role:second`, `role:last`, `role:middle` | Your place in the author list. `middle` is none of the other four. |
 | `type:` | `type:conference`, `type:journal` | The kind of venue, as the rank lists say. A venue without a rank has no kind. |
 | `has:` | `has:award`, `has:talk` | An award mark (best paper, test of time, honorable mention, a category award or a finalist); an Oral, Spotlight or Highlight mark. |
+| `author:` `title:` `venue:` | `author:hinton`, `title:transformer`, `venue:neurips` | The word in that part of the paper only. The authors are the whole list once *Read full lists* has read it; the venue includes the paper page's own line and the venue's names in the lists. |
 | words | `ccf:a role:first cites:>100 detection` | All terms together: every term must match. |
+| `"…"` | `"genome editing"` | The words one after the other. |
+| `-` `NOT` | `-crispr`, `NOT crispr`, `-role:first` | Papers without the word, or that the operator does not match. |
+| `OR` | `cas9 OR cas12a` | Either term. Write `OR` in capitals. |
 
-- **A comma means "or".** `role:first,last` is first or last author. `ccf:a,b` is a CCF A or B venue. Separate words must all match. Two quick buttons of the same operator join into one word: *First author* and *Last author* give `role:first,last`.
+- **A comma means "or".** `role:first,last` is first or last author. `ccf:a,b` is a CCF A or B venue (`ccf:a, b` with a space is the same). Separate words must all match. Two quick buttons of the same operator join into one word: *First author* and *Last author* give `role:first,last`.
 - **Errors.** An operator with a value that it does not take (`ccf:x`) matches nothing. The box is then marked, and its tooltip says why. A word with a colon after no operator (`http://…`) is an ordinary word.
 - **Suggestions.** Type an operator's colon (`role:`) to see its values. `↓`, or a click on the `/` hint, shows common searches. `↑` and `↓` choose; `Enter` or `Tab` takes the choice. Without a list, `Enter` jumps to the next matching row and `Shift`+`Enter` to the previous one.
 - `Escape` closes the list, and then clears the box. On the page, `Escape` clears every filter.
@@ -362,7 +366,7 @@ What the extension is made of, counted from its code and its data. Nothing here 
 | **5 · 27** | recognition stages (name, journal word set, acronym, start of a cut name, name with subtitle) and guards that stop a weaker reading from beating a stronger one | the labelled stages of `src/lib/venues.js` and the guard table of `docs/ARCHITECTURE.md` |
 | **5,581** | award-winning papers, plus 2,143 with an honorable mention or a runner-up place (7,830 awards in all), from 194 venues and series, 1990–2026 | `src/data/awards.js` |
 | **22,744** | real venue lines from Scholar; each result was looked at and recorded | `test/fixtures/venues.expected.json` |
-| **500+ · 100+ · 15** | unit tests, end-to-end checks in Chromium with the extension loaded, and checks of the web demo | `test/*.test.js`, `test/e2e/` |
+| **600+ · 100+ · 15** | unit tests, end-to-end checks in Chromium with the extension loaded, and checks of the web demo | `test/*.test.js`, `test/e2e/` |
 | **0** | dependencies, and no build step | `package.json` |
 
 `npm run numbers` counts these from the code and the data, and a test keeps the table true. Counts that grow with each fix are rounded down.

@@ -1,6 +1,10 @@
 // The search box's language: words, and operators of the form name:value. Pure, no DOM; the panel's autocomplete, the agent guide and the matcher all read OPERATORS.
 //
-//   deep learning        every word must be somewhere in the paper (title, authors — the whole list once Read full lists has read it —, venue, the venue's name in the lists, year, role, marks)
+//   deep learning        every word must be somewhere in the paper (title, authors — the whole list once Read full lists has read it —, venue, the venue's name in the lists, year, role, marks):
+//                        at the start of a word ("learn" finds "learning"), a word of one or two letters as a whole word ("he" is the author He, not "the"), a word in
+//                        Chinese, Japanese or Korean anywhere; accents and capitals aside ("dollar" finds "Dollár")
+//   "genome editing"     the words one after the other;  -crispr  NOT crispr  without the word (or the operator: -role:first);  cas9 OR cas12a  either
+//   author:hinton        the word in that field only: author, title, venue
 //   cites:>100           citations compared with a number: > >= < <= = (a bare number means =)
 //   year:>=2020          the year compared the same way
 //   age:<5               how old, in years, compared the same way: this year is 0, so age:<5 is this year and the four before it
@@ -36,6 +40,13 @@
     { name: "has", value: /^(?:award|talk)$/, values: ["award", "talk"], example: "has:award", suggest: ["has:award", "has:talk"],
       doc: "has:award — a best-paper award or finalist mark; has:talk — an Oral, Spotlight or Highlight mark." }
   ];
+  // the operators that look for a word in one field (an empty value, "author:" while it is typed, asks nothing)
+  const FIELDS = [
+    { name: "author", example: "author:hinton", doc: "a word of the author list only (the whole list once Read full lists has read it)." },
+    { name: "title", example: "title:transformer", doc: "a word of the title only." },
+    { name: "venue", example: "venue:neurips", doc: "a word of the venue only (the line Scholar prints, the paper page's line once read, the venue's names in the lists)." }
+  ];
+  for (const f of FIELDS) OPERATORS.push({ ...f, value: /^.+$/, suggest: [], field: true });
   const BY_NAME = new Map(OPERATORS.map((o) => [o.name, o]));
   // the operators whose values are a few words, so that a comma can list them ("any of these")
   const LISTED = new Set(["ccf", "core", "role", "type", "has"]);
@@ -45,33 +56,86 @@
 
   // → { terms, errors, problems }. `errors` says in English what could not be read (for a script or an agent); `problems` the same as { word, name } (the operator), for
   // the panel to say in the interface's language. A term is { kind: "text", text } | { kind: "cites" | "year" | "age", op, n } | { kind: "ccf" | "core" | "role" | "type" | "has", values: [any of these] } | { kind: "never" }.
+  // Accents, capitals and the width of a letter aside: "Dollár" is "dollar", "ＣＣＦ：Ａ" (a Chinese input method) is "ccf:a"
+  const LETTERS = { "ł": "l", "ø": "o", "đ": "d", "ð": "d", "þ": "th", "ß": "ss", "æ": "ae", "œ": "oe", "ı": "i", "ħ": "h" };
+  const fold = (s) => String(s == null ? "" : s).normalize("NFKD").replace(/[\u0300-\u036f]/g, "").normalize("NFC").toLowerCase().replace(/[łøđðþßæœıħ]/g, (c) => LETTERS[c]);
+
+  // The words of a query as typed: a quoted phrase is one word ("genome editing", also in curly quotes), and a listed operator's values go on past a space after a comma
+  // or the colon ("ccf:a, b" is "ccf:a,b", "role: first" is "role:first")
+  function tokens(q) {
+    const out = [];
+    const re = /(-?)["“”„«»]([^"“”„«»]*)["“”„«»]?|(\S+)/g;
+    let m;
+    while ((m = re.exec(q))) out.push(m[3] !== undefined ? { word: m[3] } : { word: m[1] + m[2].trim().replace(/\s+/g, " "), phrase: true });
+    for (let i = 0; i < out.length - 1; i++) {
+      const w = out[i].word, at = w.indexOf(":"), op = at > 0 && !out[i].phrase ? BY_NAME.get(fold(w.slice(w[0] === "-" ? 1 : 0, at))) : undefined;
+      if (op && LISTED.has(op.name) && /[:,]$/.test(w) && !out[i + 1].phrase && !out[i + 1].word.includes(":")) { out[i].word = w + out[i + 1].word; out.splice(i + 1, 1); i--; }
+    }
+    return out;
+  }
+
   function parse(q) {
     const terms = [], errors = [], problems = [];
-    for (const word of String(q == null ? "" : q).slice(0, TEXT_FIELDS).toLowerCase().split(/\s+/).filter(Boolean)) {
+    let not = false, or = false;
+    const put = (term) => {
+      if (not) { term = { kind: "not", term }; not = false; }
+      if (or && terms.length) { const prev = terms.pop(); terms.push({ kind: "any", terms: [...(prev.kind === "any" ? prev.terms : [prev]), term] }); } else terms.push(term);
+      or = false;
+    };
+    for (const { word: typed, phrase } of tokens(String(q == null ? "" : q).slice(0, TEXT_FIELDS).normalize("NFKC"))) {
+      if (typed === "OR" && !phrase) { or = terms.length > 0; continue; }          // (in capitals, as Scholar writes them; "or" and "not" are words)
+      if (typed === "NOT" && !phrase) { not = true; continue; }
+      let word = fold(typed);
+      if (word.length > 1 && word[0] === "-") { not = true; word = word.slice(1); }
+      if (phrase) { if (word) put({ kind: "text", text: word }); else not = false; continue; }
       const at = word.indexOf(":");
       const op = at > 0 ? BY_NAME.get(word.slice(0, at)) : undefined;
-      if (!op) { terms.push({ kind: "text", text: word }); continue; }
-      const raw = word.slice(at + 1), bad = () => { terms.push({ kind: "never" }); errors.push(`${word} — ${op.doc.replace(/\.$/, "")}`); problems.push({ word, name: op.name }); };
+      if (!op) { put({ kind: "text", text: word }); continue; }
+      const raw = word.slice(at + 1), bad = () => { not = false; put({ kind: "never" }); errors.push(`${word} — ${op.doc.replace(/\.$/, "")}`); problems.push({ word, name: op.name }); };
+      if (op.field) { if (raw) put({ kind: "text", text: raw, field: op.name }); else not = false; continue; }
       if (LISTED.has(op.name)) {                                              // (a comma lists values: "role:first,last"; one still typing, "role:first,", has the one it has)
         const values = [...new Set(raw.split(",").filter(Boolean))];
-        if (!values.length || values.some((v) => !op.value.test(v))) bad(); else terms.push({ kind: op.name, values });
+        if (!values.length || values.some((v) => !op.value.test(v))) bad(); else put({ kind: op.name, values });
         continue;
       }
       const m = op.value.exec(raw);
       if (!m) { bad(); continue; }
-      terms.push({ kind: op.name, op: m[1] || "=", n: parseInt(m[2], 10) });
+      put({ kind: op.name, op: m[1] || "=", n: parseInt(m[2], 10) });
     }
     return { terms, errors, problems };
   }
 
+  // A word is looked for at the start of a word of the text, a word of one or two letters or digits as a whole word; a word in a script that does not put spaces
+  // between words (Chinese, Japanese, Thai …: no Latin letter or digit in it) anywhere. (made once for each word of a query)
+  const PATTERNS = new WeakMap();
+  const escape = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  function pattern(term) {
+    let p = PATTERNS.get(term);
+    if (!p) {
+      if (!/[a-z0-9]/.test(term.text)) p = { test: (s) => s.includes(term.text) };
+      else {
+        const last = term.text.split(" ").pop();
+        p = new RegExp("(?<![\\p{L}\\p{N}])" + term.text.split(" ").map(escape).join("[^\\p{L}\\p{N}]+") + (/^[\p{L}\p{N}]{1,2}$/u.test(last) ? "(?![\\p{L}\\p{N}])" : ""), "u");
+      }
+      PATTERNS.set(term, p);
+    }
+    return p;
+  }
+
   const COMPARERS = { ">": (a, b) => a > b, ">=": (a, b) => a >= b, "<": (a, b) => a < b, "<=": (a, b) => a <= b, "=": (a, b) => a === b };
 
-  // fields: { text: [lower-case strings to look into], year: number | null, citations: number, role: string, ccf: "a" | null, core: "a*" | null, type: "conference" | "journal" | null, award: boolean, talk: boolean }
+  // fields: { text: [strings to look into, folded], title, authors, venue: [the same, by field], year: number | null, citations: number, role: string, ccf: "a" | null, core: "a*" | null, type: "conference" | "journal" | null, award: boolean, talk: boolean }
   // `now`: the current year, for `age` (a paper of this year is 0 years old)
   function matches(parsed, fields, now = new Date().getFullYear()) {
-    return parsed.terms.every((term) => {
+    const holds = (term) => {
       switch (term.kind) {
-        case "text": return fields.text.some((s) => s.includes(term.text)) || (fields.year != null && String(fields.year) === term.text) || fields.role === term.text;
+        case "text": {
+          const p = pattern(term);
+          if (term.field) return (fields[term.field] || []).some((s) => p.test(s));
+          return fields.text.some((s) => p.test(s)) || (fields.year != null && String(fields.year) === term.text) || fields.role === term.text;
+        }
+        case "not": return !holds(term.term);
+        case "any": return term.terms.some(holds);
         case "cites": return COMPARERS[term.op](fields.citations, term.n);
         case "year": return fields.year != null && COMPARERS[term.op](fields.year, term.n);
         case "age": return fields.year != null && COMPARERS[term.op](now - fields.year, term.n);
@@ -82,7 +146,8 @@
         case "has": return term.values.some((v) => (v === "award" ? fields.award : fields.talk));
         default: return false;
       }
-    });
+    };
+    return parsed.terms.every(holds);
   }
 
   // ---- the quick filters in a query ------------------------------------------------------------------------------------------------------------
@@ -149,5 +214,5 @@
     return [...kept, ...add].join(" ");
   }
 
-  return { OPERATORS, POPULAR, LISTED, parse, matches, hasValue, toggleValue, keepOnly, searchParts, hasAll, toggleAll };
+  return { OPERATORS, POPULAR, LISTED, fold, parse, matches, hasValue, toggleValue, keepOnly, searchParts, hasAll, toggleAll };
 });

@@ -209,7 +209,7 @@
     "message": "Profil sahibinin adının yazar listesinde olmadığı 1 makale"
   },
   "coverUnmatched": {
-    "message": "Sıralaması olmayan yayın yerlerinde $N1$ makale",
+    "message": "İki listenin hiçbirinde yer almayan yayın yerlerinde $N1$ makale",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -217,7 +217,7 @@
     }
   },
   "coverUnmatchedOne": {
-    "message": "Sıralaması olmayan bir yayın yerinde 1 makale"
+    "message": "İki listenin hiçbirinde yer almayan bir yayın yerinde 1 makale"
   },
   "copyUnmatched": {
     "message": "Listeyi kopyala"
@@ -604,7 +604,7 @@
     "message": "Yinelenenleri birleştir"
   },
   "optMergeLabelHint": {
-    "message": "Başlığı ve birinci yazarı aynı olan kayıtlar tek kayıt olur (büyük harf, vurgu ve noktalama sayılmaz). En çok atıf alan kayıt kalır ve hepsinin atıflarını gösterir. Panel onu bir kez sayar."
+    "message": "Başlığı ve birinci yazarı aynı olan kayıtlar tek kayıt olur (büyük harf, vurgu ve noktalama sayılmaz); bir konferans bildirisi ile dergi sürümü iki kayıt olarak kalır. Adınızın yer aldığı, yayımlanmış ve sıralaması olan kayıt kalır; bu kayıt en çok atıf alan kayıttan önce gelir ve hepsinin atıflarını gösterir. Panel onu bir kez sayar."
   },
   "mergedTip": {
     "message": "$N1$ kayıttan birleştirildi: hepsinin atıfları",
@@ -1095,7 +1095,7 @@
     "message": "Adınızın geçmediği makaleler"
   },
   "optStatusUnranked": {
-    "message": "Sıralamasız yayın yerlerindeki makaleler"
+    "message": "İki listenin hiçbirinde yer almayan yayın yerlerindeki makaleler"
   },
   "optNamesHints": {
     "message": "Makalelerinizde bulunan yazımlar"

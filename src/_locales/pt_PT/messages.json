@@ -209,7 +209,7 @@
     "message": "1 artigo em que o nome do titular do perfil não consta da lista de autores"
   },
   "coverUnmatched": {
-    "message": "$N1$ artigos em veículos sem ranking",
+    "message": "$N1$ artigos em veículos que nenhuma das duas listas inclui",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -217,7 +217,7 @@
     }
   },
   "coverUnmatchedOne": {
-    "message": "1 artigo num veículo sem ranking"
+    "message": "1 artigo num veículo que nenhuma das duas listas inclui"
   },
   "copyUnmatched": {
     "message": "Copiar lista"
@@ -604,7 +604,7 @@
     "message": "Unir duplicados"
   },
   "optMergeLabelHint": {
-    "message": "As entradas com o mesmo título e o mesmo primeiro autor tornam-se uma só (maiúsculas, acentos e pontuação não contam). A mais citada fica e mostra as citações de todas. O painel conta-a uma vez."
+    "message": "As entradas com o mesmo título e o mesmo primeiro autor tornam-se uma só (maiúsculas, acentos e pontuação não contam); um artigo de conferência e a sua versão em revista continuam a ser dois. Fica a entrada publicada e com ranking que mostra o seu nome, à frente da mais citada, e mostra as citações de todas. O painel conta-a uma vez."
   },
   "mergedTip": {
     "message": "Unido a partir de $N1$ entradas: as citações de todas elas",
@@ -1095,7 +1095,7 @@
     "message": "Artigos sem o seu nome"
   },
   "optStatusUnranked": {
-    "message": "Artigos em veículos sem ranking"
+    "message": "Artigos em veículos que nenhuma das duas listas inclui"
   },
   "optNamesHints": {
     "message": "Grafias encontradas nos seus artigos"

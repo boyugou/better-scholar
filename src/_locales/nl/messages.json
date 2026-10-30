@@ -209,7 +209,7 @@
     "message": "1 paper waarin de naam van de profieleigenaar niet in de auteurslijst staat"
   },
   "coverUnmatched": {
-    "message": "$N1$ papers bij venues zonder rang",
+    "message": "$N1$ papers bij venues die op geen van beide lijsten staan",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -217,7 +217,7 @@
     }
   },
   "coverUnmatchedOne": {
-    "message": "1 paper bij een venue zonder rang"
+    "message": "1 paper bij een venue die op geen van beide lijsten staat"
   },
   "copyUnmatched": {
     "message": "Lijst kopiëren"
@@ -604,7 +604,7 @@
     "message": "Dubbelen samenvoegen"
   },
   "optMergeLabelHint": {
-    "message": "Vermeldingen met dezelfde titel en dezelfde eerste auteur worden één vermelding (hoofdletters, accenten en leestekens tellen niet mee). De meest geciteerde vermelding blijft staan en toont de citaties van alle vermeldingen samen. Het paneel telt die vermelding één keer."
+    "message": "Vermeldingen met dezelfde titel en dezelfde eerste auteur worden één vermelding (hoofdletters, accenten en leestekens tellen niet mee); een conferentiepaper en de tijdschriftversie ervan blijven twee. De gepubliceerde, gerankte vermelding die je naam toont, blijft staan en gaat vóór de meest geciteerde; ze toont de citaties van alle vermeldingen samen. Het paneel telt die vermelding één keer."
   },
   "mergedTip": {
     "message": "Samengevoegd uit $N1$ vermeldingen: de citaties van alle",
@@ -1095,7 +1095,7 @@
     "message": "Papers zonder jouw naam"
   },
   "optStatusUnranked": {
-    "message": "Papers bij venues zonder rang"
+    "message": "Papers bij venues die op geen van beide lijsten staan"
   },
   "optNamesHints": {
     "message": "Spellingen die in je papers staan"

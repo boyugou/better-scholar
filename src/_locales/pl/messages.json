@@ -209,7 +209,7 @@
     "message": "Praca, w której nie ma nazwiska właściciela profilu: 1"
   },
   "coverUnmatched": {
-    "message": "Prace w miejscach publikacji bez rankingu: $N1$",
+    "message": "Prace w miejscach publikacji, których żadna z dwóch list nie zawiera: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -217,7 +217,7 @@
     }
   },
   "coverUnmatchedOne": {
-    "message": "Praca w miejscu publikacji bez rankingu: 1"
+    "message": "Praca w miejscu publikacji, którego żadna z dwóch list nie zawiera: 1"
   },
   "copyUnmatched": {
     "message": "Kopiuj listę"
@@ -604,7 +604,7 @@
     "message": "Scalaj duplikaty"
   },
   "optMergeLabelHint": {
-    "message": "Wpisy o tym samym tytule i tym samym pierwszym autorze stają się jednym wpisem (wielkość liter, akcenty i interpunkcja się nie liczą). Zostaje najczęściej cytowany i pokazuje cytowania wszystkich. Panel liczy go raz."
+    "message": "Wpisy o tym samym tytule i tym samym pierwszym autorze stają się jednym wpisem (wielkość liter, akcenty i interpunkcja się nie liczą); artykuł konferencyjny i jego wersja w czasopiśmie pozostają dwoma wpisami. Pierwszeństwo ma opublikowany wpis z Twoim nazwiskiem i rankingiem, przed najczęściej cytowanym; zostaje i pokazuje cytowania wszystkich. Panel liczy go raz."
   },
   "mergedTip": {
     "message": "Scalono wpisów: $N1$; uwzględniono cytowania wszystkich",
@@ -1095,7 +1095,7 @@
     "message": "Prace bez Twojego nazwiska"
   },
   "optStatusUnranked": {
-    "message": "Prace w miejscach publikacji bez rankingu"
+    "message": "Prace w miejscach publikacji, których żadna z dwóch list nie zawiera"
   },
   "optNamesHints": {
     "message": "Pisownie znalezione w Twoich pracach"
