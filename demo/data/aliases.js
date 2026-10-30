@@ -44,8 +44,8 @@
     // ---- machine learning / AI
     { ccf: "NeurIPS", core: "NeurIPS", names: ["Advances in Neural Information Processing Systems", "Neural Information Processing Systems", "NIPS"] },
     { ccf: "AAAI", core: "AAAI", names: ["National Conference on Artificial Intelligence", "AAAI Conference on Artificial Intelligence"] },
-    // AAMAS began in 2002 as the merger of the Autonomous Agents conference, ICMAS and ATAL
-    { ccf: "AAMAS", core: "AAMAS", names: ["International Conference on Autonomous Agents", "International Conference on Multiagent Systems", "International Conference on Multi-Agent Systems"] },
+    // AAMAS began in 2002 as the merger of the Autonomous Agents conference, ICMAS and ATAL; its proceedings (ACM, IFAAMAS) are titled without "Joint"
+    { ccf: "AAMAS", core: "AAMAS", names: ["International Conference on Autonomous Agents", "International Conference on Multiagent Systems", "International Conference on Multi-Agent Systems", "International Conference on Autonomous Agents and Multiagent Systems"] },
     { ccf: "IJCAI", core: "IJCAI", names: ["International Joint Conference on Artificial Intelligence"] },
     { ccf: "AISTATS", core: "AISTATS", names: ["International Workshop on Artificial Intelligence and Statistics", "Artificial Intelligence and Statistics"] },
     { ccf: "COLT", core: "COLT", names: ["Conference on Learning Theory", "Annual Conference on Learning Theory", "Computational Learning Theory"] },
@@ -188,7 +188,8 @@
     // (the years a conference was held jointly with another say so in the title: "Joint" is part of the name those years)
     { ccf: "RE", core: "RE", names: ["IEEE Joint International Conference on Requirements Engineering", "IEEE Joint International Requirements Engineering Conference"] },
     { ccf: "SIGMETRICS", core: "SIGMETRICS", names: ["Joint International Conference on Measurement and Modeling of Computer Systems", "ACM SIGMETRICS Joint International Conference on Measurement and Modeling of Computer Systems"] },
-    { core: "InSITE", names: ["Informing Science and Information Technology Education Joint Conference", "Informing Science and IT Education Joint Conference"] },
+    // (the conference calls itself both: "InSITE: Informing Science + IT Education Conference", and "… Joint Conference" in some years)
+    { core: "InSITE", names: ["Informing Science and Information Technology Education Joint Conference", "Informing Science and IT Education Joint Conference", "Informing Science and IT Education Conference"] },
     // (Shape Modeling International was the Shape Modeling Applications conference until 2007)
     { ccf: "SMI", names: ["International Conference on Shape Modeling and Applications", "IEEE International Conference on Shape Modeling and Applications"] },
     { core: "ACII", names: ["International Conference on Affective Computing and Intelligent Interaction"] },
@@ -364,6 +365,9 @@
     { core: "VLSI-SOC", names: ["IFIP International Conference on Very Large Scale Integration", "IEEE/IFIP International Conference on VLSI and System-on-Chip", "IFIP International Conference on VLSI and System-on-Chip"] },
     { core: "HPC Asia", names: ["International Conference on High Performance Computing in Asia-Pacific Region", "International Conference on High Performance Computing in the Asia-Pacific Region"] },
     { core: "VizSec", names: ["IEEE Symposium on Visualization for Cyber Security"] },
+    // (ACM titles PPDP's proceedings "… ACM SIGPLAN conference on Principles and practice of declarative programming", a sponsor CORE's name leaves out: without it a cut
+    // "… ACM SIGPLAN conference on Principles and practice of …" — PPDP's — saw only CCF's PPoPP, the one venue of either list that names ACM SIGPLAN)
+    { core: "PPDP", names: ["ACM SIGPLAN Conference on Principles and Practice of Declarative Programming", "ACM SIGPLAN International Symposium on Principles and Practice of Declarative Programming"] },
     { core: "Broadnets", names: ["International Conference on Broadband Networks", "International Conference on Broadband Communications, Networks and Systems"] },
     { ccf: "ANCS", names: ["ACM/IEEE Symposium on Architectures for Networking and Communications Systems"] },
     { core: "ICSoft", names: ["International Conference on Software Technologies", "International Joint Conference on Software Technologies"] },

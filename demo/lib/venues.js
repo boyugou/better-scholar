@@ -290,6 +290,9 @@
     const sources = { ccf: { C: newSide(), J: newSide() }, core: { C: newSide() } };
     const byRef = { ccf: new Map(), core: new Map() }; // "kind|key" -> entry[]
     const known = new Set();                           // every abbreviation key, for noAcr
+    // the name keys each venue has from its names that do not say "Joint" (a string that does not say it reaches a venue whose names do only through these)
+    const jointFreeKeys = new Map();
+    const jointFree = (e) => jointFreeKeys.get(e) || new Set();
 
     function newSide() {
       // `bare`: the names that are nothing but their own content words ("Pacific Graphics", "NIPS"), not what is left of a longer
@@ -314,14 +317,18 @@
           if (a) { push(side.abbrs, a, entry); known.add(a); }
         }
         const plain = n.replace(/\([^()]*\)/g, " ");
+        if (!/\bjoint\b/i.test(plain)) {
+          if (!jointFreeKeys.has(entry)) jointFreeKeys.set(entry, new Set());
+          for (const t of [canonTokens(plain, "full"), canonTokens(plain, "noOrg")]) if (t.length) { jointFreeKeys.get(entry).add(t.join(" ")); jointFreeKeys.get(entry).add(t.map(us).join(" ")); }
+        }
         // token forms are computed once here, not on every lookup
         const form = {
           full: canonTokens(plain, "full"), noOrg: canonTokens(plain, "noOrg"),
           kfull: canonTokensKeepStops(plain, "full"), knoOrg: canonTokensKeepStops(plain, "noOrg"),
           seq: rawSeq(plain), raw: n,
-          // a curated name that says "joint" is what a string that says it too reads as; a string that does not is not it
-          // (the official names — AAMAS's "Joint Conference …" is also printed without the word — are not held to this)
-          needsJoint: !!curated && /\bjoint\b/i.test(plain),
+          // a name that says "joint" is what a string that says it too reads as; a string that does not is not it (the forms a venue is printed in
+          // without the word — AAMAS's proceedings, UbiComp's older names — are aliases of their own)
+          needsJoint: /\bjoint\b/i.test(plain),
           noPrefix: !!noPrefix          // a curated name for whole strings only: the start of a cut-off string is never read as it
         };
         if (volumeOnly) {          // (a title that is also a field: it counts for a line with a volume, a journal's — never as a start, never bare)
@@ -423,7 +430,7 @@
     const pairs = new Set();
     for (const a of aliases) if (a.ccf && a.core) pairs.add(squash(a.ccf) + "|" + squash(a.core));
     const sameVenue = (ccfAbbr, coreAbbr) => pairs.has(squash(ccfAbbr) + "|" + squash(coreAbbr));
-    return { sources, known, df, sameVenue, shadow, shadowNames, partners };
+    return { sources, known, df, sameVenue, shadow, shadowNames, partners, jointFree };
   }
 
   // ---------------------------------------------------------------- matching
@@ -713,10 +720,14 @@
     // ... and a hit whose whole name stands in the string is the venue the string says ("… USENIX Conference on Security Symposium (SEC'17)": the organisation and the name are there)
     const wholeName = (hit) => hit.extra.some((n) => { const w = fold(n.replace(/\([^()]*\)/g, " ")).toLowerCase().split(/[^a-z0-9]+/).filter((x) => x && !STOP.has(x)); return w.length >= 2 && w.every((x) => wordsHere.has(x)); });
     const dashLead = /^([A-Za-z][A-Za-z0-9&/]{1,9})-(?:\d{4}|\d{2})\s*:/.exec(p.plain);          // ("SDM-19: …": AAAI's and others' own form; it vetoes, it does not name the event)
-    const acronymAgrees = (hit) => {
+    // the string carries the venue's own acronym as a word
+    // (a venue whose acronym is an English word — IFIP's "Networking" — has its acronym in the string only where it is written in capitals: "Networking Conference (WCNC)" says WCNC)
+    const saysOwnAcronym = (hit) => {
       const own = squash(hit.abbr || "");
-      // (a venue whose acronym is an English word — IFIP's "Networking" — has its acronym in the string only where it is written in capitals: "Networking Conference (WCNC)" says WCNC)
-      if (own.length >= 2 && (ENGLISH_ACRONYMS.has(own) ? new RegExp("\\b" + own.toUpperCase() + "\\b").test(p.withParens) : wordsHere.has(own) || wordsHere.has(stripDigits(own)))) return true;
+      return own.length >= 2 && (ENGLISH_ACRONYMS.has(own) ? new RegExp("\\b" + own.toUpperCase() + "\\b").test(p.withParens) : wordsHere.has(own) || wordsHere.has(stripDigits(own)));
+    };
+    const acronymAgrees = (hit) => {
+      if (saysOwnAcronym(hit)) return true;
       const named = acronymSignals(p).filter((sig) => (sig.kind === "lead" && sig.event) || sig.kind === "paren");
       if (dashLead) named.push({ key: squash(dashLead[1]) });
       // (an acronym in capitals after the title — "Machine Learning: ECML 2005" — names the event too: the words in front are the series' title, not ICML's)
@@ -780,6 +791,9 @@
       if (d && d !== "ambiguous" && otherJournal(d)) continue;
       // (a string that says "Joint" is not a venue whose names never do: the "Joint Symposium on Parallel Processing" of Japan is neither ICPP nor IPDPS)
       if (d && d !== "ambiguous" && /\bjoint\b/i.test(p.plain) && !hasWord(d, "joint")) continue;
+      // (and the other way round: a string that does not say "Joint" is not a venue only whose names that do boil down to its words — "Annual conference on artificial
+      // intelligence" (KI 2010) is not IJCAI, "International Conference on Biometrics (ICB)" not IJCB; a venue's names without the word still find it)
+      if (d && d !== "ambiguous" && !/\bjoint\b/i.test(p.plain) && hasWord(d, "joint") && !idx.jointFree(d).has(ukey) && !idx.jointFree(d).has(key) && !saysOwnAcronym(d)) continue;          // (its own acronym in the string says it: "Artificial Intelligence: IJCAI 2005")
       // ("Journal" alone is not "Journal of the ACM": a one-word string only meets a journal's name that is that one word whole, not the rest of a name that lost its organisation)
       if (d && d !== "ambiguous" && d.kind === "J" && tokens.length < 2 && !d.extra.some((n) => canonTokens(n.replace(/\([^()]*\)/g, " "), "full").join(" ") === key)) continue;
       // ("International Security" is a political-science journal, not the USENIX Security Symposium: one content word with "international" or "annual"
@@ -976,7 +990,7 @@
       const through = (found) => Array.from(found, ([entry, names]) => Object.create(entry, { extra: { value: names } }));
       const prefixPass = (mode, listSides = sides) => {
         const Rm = canonTokens(p.plain, mode);
-        const found = new Map();
+        const found = new Map(), jointOnly = new Set();
         // One content word says too little ("… the IEEE Computer and …" is INFOCOM, not CCS; "Principles of …"
         // is PODC, PODS or POPL) unless the word is rare among venue names ("Architectural …" is ASPLOS).
         if (!Rm.length || (Rm.length < 2 && (idx.df.get(Rm[0]) || 0) > 5)) return [];
@@ -986,7 +1000,8 @@
             // an entry whose whole name is what is visible is a candidate too: "… International Conference on
             // Software Engineering 1 …" is ICSE as much as it begins SEKE ("… and Knowledge Engineering")
             if (form.noPrefix || !(t.length >= Rm.length && Rm.every((w, i) => t[i] === w))) continue;
-            if (joint ? !hasWord(entry, "joint") : form.needsJoint) continue;
+            const jointLacking = joint ? !hasWord(entry, "joint") : form.needsJoint;
+            if (joint && jointLacking) continue;
             if (rareEvent && !hasWord(entry, rareEvent)) continue;
             if (mode === "noOrg" && sigWords.length && sigContradicts(entry) && !Rm.some((w) => (idx.df.get(w) || 0) <= 5)) continue;
             if (trailingStops.length) {
@@ -994,9 +1009,13 @@
               const at = ts.findIndex((w, i) => !STOP.has(w) && ts.filter((x, j) => j <= i && !STOP.has(x)).length === Rm.length);
               if (at < 0 || trailingStops.some((w, k) => ts[at + 1 + k] !== w)) continue;
             }
+            if (jointLacking) { jointOnly.add(entry); continue; }          // (a name that fits but says "Joint", which the string does not: a rival, never the answer)
             found.set(entry, [...(found.get(entry) || []), form.raw]);
           }
         }
+        // (a start that a "Joint" venue's name begins too, which the string is not — it does not say "Joint" — is a start other venues share: claimed by none.
+        // "… International Conference on Natural Language …" begins IJCNLP's name as much as INLG's, and ICON's, which no list has)
+        if ([...jointOnly].some((e) => !found.has(e))) return [];
         return through(found);
       };
       // strict pass first (organisation words must agree), then a looser one without them
