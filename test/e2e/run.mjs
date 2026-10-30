@@ -703,14 +703,17 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     await page.keyboard.press("Escape");
     assert.equal(await page.getAttribute('#rr-panel button[data-act="year-end"]', "aria-expanded"), "false");
     // clicking a year bar filters to that year and highlights the bar; clicking again clears
-    const sampleYear = years[1];
+    // (a year that has papers the bar does not count — not highlighted — so that "lists what it counts" is a test: every paper of the year would be more)
+    const counts = (y) => all.filter((p) => p.year === y && p.highlighted && ["first", "cofirst", "second", "last"].includes(p.role)).length;
+    const sampleYear = years.find((y) => counts(y) > 0 && counts(y) < all.filter((p) => p.year === y).length);
+    assert.ok(sampleYear, "the profile has a year with papers that are not highlighted");
     const yearBar = page.locator(`#rr-panel button.rr-bar[data-year="${sampleYear}"]`);
     if (await yearBar.count()) {
       await yearBar.click();
       assert.equal(await yearBar.getAttribute("aria-pressed"), "true");
       assert.equal(await page.locator('#rr-panel button[data-act="year-start"] .rr-dd-label').textContent(), String(sampleYear));
       assert.equal(await page.locator('#rr-panel button[data-act="year-end"] .rr-dd-label').textContent(), String(sampleYear));
-      assert.equal(await visibleRows(page), Number((await yearBar.getAttribute("aria-label")).split(": ").pop()), "a bar lists what it counts: the highlighted papers of its year");
+      assert.equal(await visibleRows(page), counts(sampleYear), "a bar lists what it counts: the highlighted papers of its year, not every paper of it");
       assert.match(await page.locator("#rr-panel .rr-fb-what").textContent(), new RegExp(String(sampleYear)));
       await yearBar.click();
       assert.equal(await yearBar.getAttribute("aria-pressed"), "false");
@@ -1639,6 +1642,20 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
       assert.deepEqual(await readMatrix(page), withH, "a pick, with the h-index papers listed, leaves the counts as they were");
       assert.equal(await visibleRows(page), (withH.last && withH.last.A) || 0, "and lists the papers its count says");
       await page.click(cell);
+      // every cell, not only this one: a pick never moves the minimum, so each lists what it says
+      for (const [role, r] of Object.entries(withH)) {
+        if (role === "hidden") continue;
+        for (const [tier, n] of Object.entries(r)) {
+          if (tier === "total" || !n) continue;
+          const c = `button.rr-cell[data-role="${role}"][data-tier="${tier}"]`;
+          await page.click(c);
+          await eventually(page, (sel) => document.querySelector(sel).getAttribute("aria-pressed") === "true", c);
+          assert.equal(await visibleRows(page), n, `${role} × ${tier} under the h-index lists the ${n} papers it says`);
+          await page.click(c);
+        }
+      }
+      await page.click(cell);
+      await page.click(cell);
       await page.click('[data-metric="mH"]');
       await eventually(page, () => !document.querySelector('[data-metric="mH"][aria-pressed="true"]') && !document.querySelector('button.rr-cell[aria-pressed="true"]'));
       // what the copy buttons put on the clipboard says what it counted
@@ -2496,6 +2513,50 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     } finally { await ctxL.close(); await fxL.close(); }
   }
   ok("Read full lists stops at a refusal (403) and at two pages in a row without an author list, and says so; a title with a block page's words is no block page; it is not offered while the list loads");
+
+  // -- 16c. under the h-index button every count lists what it says: a table cell (a pick never moves the minimum) and a venue row (its count is what its click lists) —
+  // two hundred papers and no other filter, where the minimum of a cell's or a venue's own papers would be lower than the profile's
+  {
+    const fxH = await start({ slug: "ion-stoica", pageSize: 100, repeat: 2 });
+    const ctxH = await launch();
+    try {
+      const optsH = await openOptions(ctxH);
+      await setPref(optsH, "panel.venues.show", true);
+      const pg = await ctxH.newPage();
+      await pg.goto(fxH.url);
+      await pg.bringToFront();
+      await pg.waitForFunction(() => document.querySelectorAll("#gsc_a_b tr.gsc_a_tr").length === 200, null, { timeout: 60000 });
+      await pg.click('[data-metric="mH"]');
+      await eventually(pg, () => document.querySelector('[data-metric="mH"][aria-pressed="true"]'));
+      const withH = await readMatrix(pg), wrong = [];
+      for (const [role, r] of Object.entries(withH)) {
+        if (role === "hidden") continue;
+        for (const [tier, n] of Object.entries(r)) {
+          if (tier === "total" || !n) continue;
+          const c = `button.rr-cell[data-role="${role}"][data-tier="${tier}"]`;
+          await pg.click(c);
+          await eventually(pg, (sel) => document.querySelector(sel).getAttribute("aria-pressed") === "true", c);
+          const shown = await visibleRows(pg);
+          if (shown !== n) wrong.push(`${role} × ${tier}: says ${n}, lists ${shown}`);
+          await pg.click(c);
+          await eventually(pg, (sel) => document.querySelector(sel).getAttribute("aria-pressed") === "false", c);
+        }
+      }
+      const venueRows = await pg.$$eval("#rr-panel button.rr-markrow[data-venue]", (bs) => bs.map((b) => [b.dataset.venue, Number(b.querySelector("b").textContent)]));
+      assert.ok(venueRows.length > 1, "the venue list is drawn");
+      for (const [key, n] of venueRows) {
+        const v = `#rr-panel button.rr-markrow[data-venue="${key}"]`;
+        await pg.click(v);
+        await eventually(pg, (sel) => document.querySelector(sel).getAttribute("aria-pressed") === "true", v);
+        const shown = await visibleRows(pg);
+        if (shown !== n) wrong.push(`venue ${key}: says ${n}, lists ${shown}`);
+        await pg.click(v);
+        await eventually(pg, (sel) => document.querySelector(sel).getAttribute("aria-pressed") === "false", v);
+      }
+      assert.deepEqual(wrong, [], "under the h-index a count lists what it says");
+      ok(`under the h-index every table cell and venue row lists what it counts (${venueRows.length} venues, 200 papers)`);
+    } finally { await ctxH.close(); await fxH.close(); }
+  }
 
   // -- 17. a profile whose header name cannot be read in any other order: the owner adds a spelling by hand
   const fx2 = await start({ slug: "ion-stoica", pageSize: 100, header: "Stoica-Ion", hl: "zh-CN" });
