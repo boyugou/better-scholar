@@ -144,6 +144,8 @@
   }
 
   const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+  // (a content script whose extension was updated, disabled or removed keeps running in the page: it is cut off, and stops what it does)
+  const orphaned = () => { if (typeof chrome === "undefined") return false; try { return !(chrome.runtime && chrome.runtime.id); } catch (e) { return true; } };
 
   function frame(fn) {
     let queued = false;
@@ -177,5 +179,5 @@
   // the words on the copy buttons (panel, toolbar popup, settings page): one per format of lib/prefs.js COPY_BUTTONS
   const COPY_LABEL = { summary: "copySummary", table: "copyTable", image: "copyImage", papers: "copyPapers", apa: "copyApa", ieee: "copyIeee", acm: "copyAcm", gbt: "copyGbt", bibtex: "copyBibtex", markdown: "copyMarkdown", json: "copyJson", csv: "exportCsv" };
 
-  B.dom = { h, t, tn, tDefault, ownName, setLabels, searchProblem, COPY_LABEL, applyColors, applyRowStyle, applyChips, useLanguage, dir, langTag, colon, comma, quote, copyText, copyImage, downloadFile, sleep, frame, issueUrl, REPO };
+  B.dom = { h, t, tn, tDefault, ownName, setLabels, searchProblem, COPY_LABEL, applyColors, applyRowStyle, applyChips, useLanguage, dir, langTag, colon, comma, quote, copyText, copyImage, downloadFile, sleep, orphaned, frame, issueUrl, REPO };
 })();

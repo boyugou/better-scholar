@@ -194,6 +194,9 @@
   "resolveDone": {
     "message": "Xong."
   },
+  "resolveUnreadable": {
+    "message": "Đã dừng: không thể đọc các trang bài báo trên Scholar. Hãy thử lại sau."
+  },
   "coverAbsent": {
     "message": "$N1$ bài có danh sách tác giả không chứa tên chủ hồ sơ",
     "placeholders": {
@@ -206,7 +209,7 @@
     "message": "1 bài có danh sách tác giả không chứa tên chủ hồ sơ"
   },
   "coverUnmatched": {
-    "message": "$N1$ bài ở venue chưa xếp hạng",
+    "message": "$N1$ bài ở venue không có trong danh sách nào",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -214,7 +217,7 @@
     }
   },
   "coverUnmatchedOne": {
-    "message": "1 bài ở venue chưa xếp hạng"
+    "message": "1 bài ở venue không có trong danh sách nào"
   },
   "copyUnmatched": {
     "message": "Sao chép danh sách"
@@ -601,7 +604,7 @@
     "message": "Gộp mục trùng lặp"
   },
   "optMergeLabelHint": {
-    "message": "Các mục có cùng tiêu đề và cùng tác giả đầu được gộp thành một (không tính chữ hoa, dấu và dấu câu). Mục được trích dẫn nhiều nhất giữ lại và hiện trích dẫn của tất cả. Bảng tóm tắt chỉ đếm một lần."
+    "message": "Các mục có cùng tiêu đề và cùng tác giả đầu được gộp thành một (không tính chữ hoa, dấu và dấu câu); bài báo hội nghị và bản đăng trên tạp chí của nó vẫn là hai mục. Mục đã xuất bản, có xếp hạng và hiển thị tên bạn được giữ lại, ưu tiên hơn mục được trích dẫn nhiều nhất, và hiện trích dẫn của tất cả. Bảng tóm tắt chỉ đếm một lần."
   },
   "mergedTip": {
     "message": "Gộp từ $N1$ mục: trích dẫn của tất cả",
@@ -1092,7 +1095,7 @@
     "message": "Bài không có tên bạn"
   },
   "optStatusUnranked": {
-    "message": "Bài báo ở venue chưa xếp hạng"
+    "message": "Bài báo ở venue không có trong danh sách nào"
   },
   "optNamesHints": {
     "message": "Các cách viết tìm thấy trong bài của bạn"

@@ -194,6 +194,9 @@
   "resolveDone": {
     "message": "Gata."
   },
+  "resolveUnreadable": {
+    "message": "Oprit: paginile lucrărilor de pe Scholar nu au putut fi citite. Încearcă din nou mai târziu."
+  },
   "coverAbsent": {
     "message": "Lucrările în care numele titularului profilului nu apare în lista de autori: $N1$",
     "placeholders": {
@@ -206,7 +209,7 @@
     "message": "Lucrarea în care numele titularului profilului nu apare în lista de autori: 1"
   },
   "coverUnmatched": {
-    "message": "Lucrările la venue-uri fără rang: $N1$",
+    "message": "Lucrările la venue-uri pe care nicio listă nu le include: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -214,7 +217,7 @@
     }
   },
   "coverUnmatchedOne": {
-    "message": "Lucrarea la un venue fără rang: 1"
+    "message": "Lucrarea la un venue pe care nicio listă nu îl include: 1"
   },
   "copyUnmatched": {
     "message": "Copiază lista"
@@ -601,7 +604,7 @@
     "message": "Îmbină duplicatele"
   },
   "optMergeLabelHint": {
-    "message": "Intrările cu același titlu și același prim autor devin una singură (nu contează majusculele, diacriticele și punctuația). Cea mai citată rămâne și arată citările tuturor. Panoul o numără o singură dată."
+    "message": "Intrările cu același titlu și același prim autor devin una singură (nu contează majusculele, diacriticele și punctuația); o lucrare de conferință și versiunea ei din revistă rămân două. Are prioritate intrarea publicată și cu rang care arată numele tău, înaintea celei mai citate, și arată citările tuturor. Panoul o numără o singură dată."
   },
   "mergedTip": {
     "message": "Îmbinat din $N1$ intrări: citările tuturor",
@@ -1092,7 +1095,7 @@
     "message": "Lucrări fără numele tău"
   },
   "optStatusUnranked": {
-    "message": "Lucrări în venue-uri fără rang"
+    "message": "Lucrări în venue-uri pe care nicio listă nu le include"
   },
   "optNamesHints": {
     "message": "Grafii găsite în lucrările tale"

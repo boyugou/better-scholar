@@ -194,6 +194,9 @@
   "resolveDone": {
     "message": "完成。"
   },
+  "resolveUnreadable": {
+    "message": "已停止：无法读取 Scholar 的论文页面，请稍后再试。"
+  },
   "coverAbsent": {
     "message": "$N1$ 篇的作者列表里没找到本人姓名",
     "placeholders": {
@@ -206,7 +209,7 @@
     "message": "1 篇的作者列表里没找到本人姓名"
   },
   "coverUnmatched": {
-    "message": "$N1$ 篇的发表场所未收录",
+    "message": "$N1$ 篇的发表场所两个名录都未收录",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -214,7 +217,7 @@
     }
   },
   "coverUnmatchedOne": {
-    "message": "1 篇的发表场所未收录"
+    "message": "1 篇的发表场所两个名录都未收录"
   },
   "copyUnmatched": {
     "message": "复制列表"
@@ -601,7 +604,7 @@
     "message": "合并重复论文"
   },
   "optMergeLabelHint": {
-    "message": "标题相同且第一作者相同的条目合为一条（不计大小写、重音和标点）。保留引用最多的条目，并显示全部条目的引用之和。面板里只计一次。"
+    "message": "标题相同且第一作者相同的条目合为一条（不计大小写、重音和标点）；会议论文与其期刊版本仍为两条。保留的是已发表、有等级、作者列表里有你名字的条目，它优先于引用最多的条目，并显示全部条目的引用之和。面板里只计一次。"
   },
   "mergedTip": {
     "message": "由 $N1$ 条合并：显示全部条目的引用之和",
@@ -1092,7 +1095,7 @@
     "message": "未列出本人姓名的论文"
   },
   "optStatusUnranked": {
-    "message": "发表场所未收录的论文"
+    "message": "发表场所两个名录都未收录的论文"
   },
   "optNamesHints": {
     "message": "在你的论文中找到的拼写"

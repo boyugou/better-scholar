@@ -194,6 +194,9 @@
   "resolveDone": {
     "message": "Listo."
   },
+  "resolveUnreadable": {
+    "message": "Detenido: no se pudieron leer las páginas de los artículos de Scholar. Vuelve a intentarlo más tarde."
+  },
   "coverAbsent": {
     "message": "$N1$ artículos en los que el nombre del titular del perfil no figura entre los autores",
     "placeholders": {
@@ -206,7 +209,7 @@
     "message": "1 artículo en el que el nombre del titular del perfil no figura entre los autores"
   },
   "coverUnmatched": {
-    "message": "$N1$ artículos en congresos o revistas sin rango",
+    "message": "$N1$ artículos en congresos o revistas que ninguna de las dos listas recoge",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -214,7 +217,7 @@
     }
   },
   "coverUnmatchedOne": {
-    "message": "1 artículo en un congreso o revista sin rango"
+    "message": "1 artículo en un congreso o revista que ninguna de las dos listas recoge"
   },
   "copyUnmatched": {
     "message": "Copiar lista"
@@ -601,7 +604,7 @@
     "message": "Combinar duplicados"
   },
   "optMergeLabelHint": {
-    "message": "Las entradas con el mismo título y el mismo primer autor pasan a ser una sola entrada (no importan las mayúsculas, los acentos ni la puntuación). La entrada más citada se queda y muestra las citas de todas. El panel la cuenta una sola vez."
+    "message": "Las entradas con el mismo título y el mismo primer autor pasan a ser una sola entrada (no importan las mayúsculas, los acentos ni la puntuación); un artículo de congreso y su versión en revista siguen siendo dos. Se queda la entrada publicada y con rango que muestra tu nombre, por delante de la más citada, y muestra las citas de todas. El panel la cuenta una sola vez."
   },
   "mergedTip": {
     "message": "Combinada a partir de $N1$ entradas: las citas de todas ellas",
@@ -1092,7 +1095,7 @@
     "message": "Artículos sin tu nombre"
   },
   "optStatusUnranked": {
-    "message": "Artículos en congresos o revistas sin rango"
+    "message": "Artículos en congresos o revistas que ninguna de las dos listas recoge"
   },
   "optNamesHints": {
     "message": "Grafías que aparecen en tus artículos"

@@ -194,6 +194,9 @@
   "resolveDone": {
     "message": "Hotovo."
   },
+  "resolveUnreadable": {
+    "message": "Zastaveno: nepodařilo se přečíst stránky prací na Scholaru. Zkuste to později."
+  },
   "coverAbsent": {
     "message": "Práce, kde jméno majitele profilu není mezi autory: $N1$",
     "placeholders": {
@@ -206,7 +209,7 @@
     "message": "Práce, kde jméno majitele profilu není mezi autory: 1"
   },
   "coverUnmatched": {
-    "message": "Práce v místech publikace bez ranku: $N1$",
+    "message": "Práce v místech publikace, která žádný seznam nezahrnuje: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -214,7 +217,7 @@
     }
   },
   "coverUnmatchedOne": {
-    "message": "Práce v místě publikace bez ranku: 1"
+    "message": "Práce v místě publikace, které žádný seznam nezahrnuje: 1"
   },
   "copyUnmatched": {
     "message": "Kopírovat seznam"
@@ -601,7 +604,7 @@
     "message": "Sloučit duplicity"
   },
   "optMergeLabelHint": {
-    "message": "Záznamy se stejným názvem a stejným prvním autorem se sloučí do jednoho záznamu (bez ohledu na velikost písmen, diakritiku a interpunkci). Nejcitovanější záznam zůstane a ukáže citace všech. Panel ho počítá jednou."
+    "message": "Záznamy se stejným názvem a stejným prvním autorem se sloučí do jednoho záznamu (bez ohledu na velikost písmen, diakritiku a interpunkci); konferenční příspěvek a jeho časopisecká verze zůstanou dva. Přednost má publikovaný záznam s vaším jménem a rankem, před nejcitovanějším, a ukáže citace všech. Panel ho počítá jednou."
   },
   "mergedTip": {
     "message": "Sloučeno záznamů: $N1$; započtené citace všech",
@@ -1092,7 +1095,7 @@
     "message": "Práce bez vašeho jména"
   },
   "optStatusUnranked": {
-    "message": "Práce v místech publikace bez ranku"
+    "message": "Práce v místech publikace, která žádný seznam nezahrnuje"
   },
   "optNamesHints": {
     "message": "Způsoby zápisu jména nalezené ve vašich pracích"

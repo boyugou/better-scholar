@@ -426,6 +426,21 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. In 
           <p class="op-desc">Статьи с наградой «Лучшая статья» или Test of time, а также с докладом Oral, Spotlight или Highlight.</p>
         </div>
         <div class="op-card">
+          <div class="op-header" dir="ltr"><code>role:first,last</code> <code>ccf:a,b</code></div>
+          <h3 class="op-title">Любое из значений</h3>
+          <p class="op-desc">Запятая перечисляет значения: первый или последний автор, издание с рангом CCF A или B.</p>
+        </div>
+        <div class="op-card">
+          <div class="op-header" dir="ltr"><code>author:smith</code> <code>title:gan</code> <code>venue:cvpr</code></div>
+          <h3 class="op-title">Одно поле</h3>
+          <p class="op-desc">Слово только в авторах, названии или издании.</p>
+        </div>
+        <div class="op-card">
+          <div class="op-header" dir="ltr"><code>&quot;few shot&quot;</code> <code>-survey</code> <code>gan OR vae</code></div>
+          <h3 class="op-title">Фразы, минус, OR</h3>
+          <p class="op-desc">Слова в кавычках держатся вместе, знак минус исключает слово, а OR принимает любое из двух.</p>
+        </div>
+        <div class="op-card">
           <div class="op-header" dir="ltr"><kbd>Escape</kbd></div>
           <h3 class="op-title">Очистить всё</h3>
           <p class="op-desc">Одна клавиша очищает поиск, выбранную ячейку и все фильтры.</p>
@@ -446,7 +461,7 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. In 
         <div class="num" style="--c:#4d8ff5"><b dir="ltr">27</b><span>проверки, которые не дают показать неверный ранг</span></div>
         <div class="num" style="--c:#b36cf6"><b dir="ltr">5 581</b><span>известные расширению статьи с наградами</span></div>
         <div class="num" style="--c:#fbbc04"><b dir="ltr">22 744</b><span>реальные записи изданий из Scholar, у каждой проверен результат</span></div>
-        <div class="num" style="--c:#34a853"><b dir="ltr">500+</b><span>модульные тесты, а также набор сквозных тестов в настоящем браузере</span></div>
+        <div class="num" style="--c:#34a853"><b dir="ltr">600+</b><span>модульные тесты, а также набор сквозных тестов в настоящем браузере</span></div>
       </div>
     </div>
   </section>

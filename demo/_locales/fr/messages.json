@@ -194,6 +194,9 @@
   "resolveDone": {
     "message": "Terminé."
   },
+  "resolveUnreadable": {
+    "message": "Arrêté : impossible de lire les pages des articles sur Scholar. Réessayez plus tard."
+  },
   "coverAbsent": {
     "message": "$N1$ articles où le nom du titulaire du profil ne figure pas dans la liste des auteurs",
     "placeholders": {
@@ -206,7 +209,7 @@
     "message": "1 article où le nom du titulaire du profil ne figure pas dans la liste des auteurs"
   },
   "coverUnmatched": {
-    "message": "$N1$ articles dans des conférences ou revues sans rang",
+    "message": "$N1$ articles dans des conférences ou revues qu’aucune des deux listes ne recense",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -214,7 +217,7 @@
     }
   },
   "coverUnmatchedOne": {
-    "message": "1 article dans une conférence ou revue sans rang"
+    "message": "1 article dans une conférence ou revue qu’aucune des deux listes ne recense"
   },
   "copyUnmatched": {
     "message": "Copier la liste"
@@ -601,7 +604,7 @@
     "message": "Fusionner les doublons"
   },
   "optMergeLabelHint": {
-    "message": "Les entrées de même titre et de même premier auteur n’en font plus qu’une (les majuscules, les accents et la ponctuation ne comptent pas). L’entrée la plus citée reste et affiche les citations de toutes. Le panneau ne la compte qu’une fois."
+    "message": "Les entrées de même titre et de même premier auteur n’en font plus qu’une (les majuscules, les accents et la ponctuation ne comptent pas) ; un article de conférence et sa version en revue restent deux. L’entrée publiée et classée qui affiche votre nom reste, de préférence à la plus citée, et affiche les citations de toutes. Le panneau ne la compte qu’une fois."
   },
   "mergedTip": {
     "message": "Fusion de $N1$ entrées : les citations de toutes",
@@ -1092,7 +1095,7 @@
     "message": "Articles sans votre nom"
   },
   "optStatusUnranked": {
-    "message": "Articles dans des conférences ou revues sans rang"
+    "message": "Articles dans des conférences ou revues qu’aucune des deux listes ne recense"
   },
   "optNamesHints": {
     "message": "Graphies relevées dans vos articles"

@@ -194,6 +194,9 @@
   "resolveDone": {
     "message": "完成。"
   },
+  "resolveUnreadable": {
+    "message": "已停止：無法讀取 Scholar 的論文頁面，請稍後再試。"
+  },
   "coverAbsent": {
     "message": "$N1$ 篇論文的作者列表中找不到本人姓名",
     "placeholders": {
@@ -206,7 +209,7 @@
     "message": "1 篇論文的作者列表中找不到本人姓名"
   },
   "coverUnmatched": {
-    "message": "$N1$ 篇論文的發表處沒有等級",
+    "message": "$N1$ 篇論文的發表處兩個清單都沒有收錄",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -214,7 +217,7 @@
     }
   },
   "coverUnmatchedOne": {
-    "message": "1 篇論文的發表處沒有等級"
+    "message": "1 篇論文的發表處兩個清單都沒有收錄"
   },
   "copyUnmatched": {
     "message": "複製清單"
@@ -601,7 +604,7 @@
     "message": "合併重複項目"
   },
   "optMergeLabelHint": {
-    "message": "標題相同且第一作者相同的項目會合併為一筆（不計大小寫、重音與標點）。保留引用次數最多的項目，並顯示全部項目的引用總數。面板只計一次。"
+    "message": "標題相同且第一作者相同的項目會合併為一筆（不計大小寫、重音與標點）；會議論文與其期刊版本仍為兩筆。保留的是已發表、有等級、作者列表中有您名字的項目，它優先於引用次數最多的項目，並顯示全部項目的引用總數。面板只計一次。"
   },
   "mergedTip": {
     "message": "由 $N1$ 筆項目合併：顯示全部項目的引用總數",
@@ -1092,7 +1095,7 @@
     "message": "未列出本人姓名的論文"
   },
   "optStatusUnranked": {
-    "message": "發表處沒有等級的論文"
+    "message": "發表處兩個清單都沒有收錄的論文"
   },
   "optNamesHints": {
     "message": "在您的論文中找到的拼法"

@@ -194,6 +194,9 @@
   "resolveDone": {
     "message": "Kész."
   },
+  "resolveUnreadable": {
+    "message": "Leállítva: a Scholar cikkoldalait nem sikerült beolvasni. Próbáld újra később."
+  },
   "coverAbsent": {
     "message": "$N1$ cikk, amelynek szerzői listájában nincs ott a profil tulajdonosának neve",
     "placeholders": {
@@ -206,7 +209,7 @@
     "message": "1 cikk, amelynek szerzői listájában nincs ott a profil tulajdonosának neve"
   },
   "coverUnmatched": {
-    "message": "$N1$ cikk rang nélküli venue-ban",
+    "message": "$N1$ cikk olyan venue-ban, amelyet egyik lista sem tartalmaz",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -214,7 +217,7 @@
     }
   },
   "coverUnmatchedOne": {
-    "message": "1 cikk rang nélküli venue-ban"
+    "message": "1 cikk olyan venue-ban, amelyet egyik lista sem tartalmaz"
   },
   "copyUnmatched": {
     "message": "Lista másolása"
@@ -601,7 +604,7 @@
     "message": "Duplák összevonása"
   },
   "optMergeLabelHint": {
-    "message": "Az azonos című és azonos első szerzőjű bejegyzések egy bejegyzéssé válnak (a nagybetűk, az ékezetek és az írásjelek nem számítanak). A legtöbbet idézett bejegyzés marad, és mindegyik hivatkozásait mutatja. A panel egyszer számolja."
+    "message": "Az azonos című és azonos első szerzőjű bejegyzések egy bejegyzéssé válnak (a nagybetűk, az ékezetek és az írásjelek nem számítanak); a konferenciacikk és annak folyóiratbeli változata kettő marad. A megjelent, rangsorolt bejegyzés marad meg, amelyben a neved szerepel, és amely megelőzi a legtöbbet idézettet; ez mutatja mindegyik hivatkozásait. A panel egyszer számolja."
   },
   "mergedTip": {
     "message": "$N1$ bejegyzésből összevonva: mindegyik hivatkozásai",
@@ -1092,7 +1095,7 @@
     "message": "A neved nélküli cikkek"
   },
   "optStatusUnranked": {
-    "message": "Rang nélküli venue-kon megjelent cikkek"
+    "message": "Olyan venue-kon megjelent cikkek, amelyeket egyik lista sem tartalmaz"
   },
   "optNamesHints": {
     "message": "A cikkekben talált névírásmódok"

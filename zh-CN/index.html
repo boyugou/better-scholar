@@ -426,6 +426,21 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. In 
           <p class="op-desc">获得最佳论文奖或时间检验奖的论文，以及有 Oral、Spotlight 或 Highlight 报告的论文。</p>
         </div>
         <div class="op-card">
+          <div class="op-header" dir="ltr"><code>role:first,last</code> <code>ccf:a,b</code></div>
+          <h3 class="op-title">任选其一</h3>
+          <p class="op-desc">逗号列出多个值：第一作者或末位作者，或 CCF A 或 B 等级的发表场所。</p>
+        </div>
+        <div class="op-card">
+          <div class="op-header" dir="ltr"><code>author:smith</code> <code>title:gan</code> <code>venue:cvpr</code></div>
+          <h3 class="op-title">单个字段</h3>
+          <p class="op-desc">只在作者、标题或发表场所中查找某个词。</p>
+        </div>
+        <div class="op-card">
+          <div class="op-header" dir="ltr"><code>&quot;few shot&quot;</code> <code>-survey</code> <code>gan OR vae</code></div>
+          <h3 class="op-title">短语、减号、OR</h3>
+          <p class="op-desc">引号内的词保持连在一起，减号排除一个词，OR 则表示二者取其一。</p>
+        </div>
+        <div class="op-card">
           <div class="op-header" dir="ltr"><kbd>Escape</kbd></div>
           <h3 class="op-title">全部清除</h3>
           <p class="op-desc">按一个键即可清除搜索、选中的单元格和所有筛选条件。</p>
@@ -446,7 +461,7 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. In 
         <div class="num" style="--c:#4d8ff5"><b dir="ltr">27</b><span>防止错误等级的检查</span></div>
         <div class="num" style="--c:#b36cf6"><b dir="ltr">5,581</b><span>它已识别的获奖论文</span></div>
         <div class="num" style="--c:#fbbc04"><b dir="ltr">22,744</b><span>经人工核对每个结果的真实 Scholar 发表场所条目</span></div>
-        <div class="num" style="--c:#34a853"><b dir="ltr">500+</b><span>单元测试，以及真实浏览器中的端到端测试套件</span></div>
+        <div class="num" style="--c:#34a853"><b dir="ltr">600+</b><span>单元测试，以及真实浏览器中的端到端测试套件</span></div>
       </div>
     </div>
   </section>

@@ -426,6 +426,21 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. In 
           <p class="op-desc">最優秀論文賞または時の試練賞を受けた論文、および Oral・Spotlight・Highlight の発表がある論文。</p>
         </div>
         <div class="op-card">
+          <div class="op-header" dir="ltr"><code>role:first,last</code> <code>ccf:a,b</code></div>
+          <h3 class="op-title">いずれかの値</h3>
+          <p class="op-desc">カンマで値を並べます：筆頭著者または最終著者、CCF A または B のランクの掲載先。</p>
+        </div>
+        <div class="op-card">
+          <div class="op-header" dir="ltr"><code>author:smith</code> <code>title:gan</code> <code>venue:cvpr</code></div>
+          <h3 class="op-title">1 つの項目</h3>
+          <p class="op-desc">単語を著者名・タイトル・掲載先のどれか一つに限って探します。</p>
+        </div>
+        <div class="op-card">
+          <div class="op-header" dir="ltr"><code>&quot;few shot&quot;</code> <code>-survey</code> <code>gan OR vae</code></div>
+          <h3 class="op-title">フレーズ、マイナス、OR</h3>
+          <p class="op-desc">引用符で囲んだ語句はひと続きで扱われ、マイナス記号は単語を除外し、OR は 2 語のどちらかに一致します。</p>
+        </div>
+        <div class="op-card">
           <div class="op-header" dir="ltr"><kbd>Escape</kbd></div>
           <h3 class="op-title">すべてクリア</h3>
           <p class="op-desc">1 つのキーで、検索、選択中のセル、すべてのフィルターをクリアします。</p>
@@ -446,7 +461,7 @@ Writer, B., Writer, C., Writer, D., &amp; Author, A. (2023). Sample paper 4. In 
         <div class="num" style="--c:#4d8ff5"><b dir="ltr">27</b><span>誤ったランクを防ぐチェック</span></div>
         <div class="num" style="--c:#b36cf6"><b dir="ltr">5,581</b><span>拡張機能が把握している受賞論文</span></div>
         <div class="num" style="--c:#fbbc04"><b dir="ltr">22,744</b><span>Scholar の実際の掲載先表記で、一件ずつ結果を人が確認したもの</span></div>
-        <div class="num" style="--c:#34a853"><b dir="ltr">500+</b><span>単体テストと、実ブラウザで動く E2E テスト一式</span></div>
+        <div class="num" style="--c:#34a853"><b dir="ltr">600+</b><span>単体テストと、実ブラウザで動く E2E テスト一式</span></div>
       </div>
     </div>
   </section>
