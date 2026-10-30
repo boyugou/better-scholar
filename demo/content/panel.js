@@ -480,7 +480,7 @@
         if (m.filters.yearStart === m.filters.yearEnd && m.filters.yearStart != null) parts.push(String(m.filters.yearStart));
         else parts.push((m.filters.yearStart != null ? m.filters.yearStart : "…") + "–" + (m.filters.yearEnd != null ? m.filters.yearEnd : "…"));
         // (a pressed year bar lists the highlighted papers of its year, what it counts: said, so that it does not read as the same range chosen with From and To)
-        if (m.barYear && !(withOnly && m.filters.onlyHighlighted)) parts.push(tr("onlyHighlighted"));
+        if (withOnly && m.barYear && !m.filters.onlyHighlighted) parts.push(tr("onlyHighlighted"));          // (the totals' heading says it already: no withOnly there)
       }
       if (m.filters.query) parts.push(tr === t ? B.dom.quote(m.filters.query) : `"${m.filters.query}"`);
       if (m.filters.minCitations != null) parts.push(tr("filterMinCites", [String(m.filters.minCitations)]));
@@ -745,7 +745,7 @@
       // One stop for the keyboard, not one for every year: the bar that has it (the bars are drawn again with every change, so it is remembered), else the picked year, else the latest
       // year that has a paper; the arrow keys, Home and End move among the others.
       const focusedYear = yearsSec.contains(document.activeElement) && document.activeElement.dataset ? document.activeElement.dataset.year || null : null;
-      const selectedYear = m.filters.yearStart != null && m.filters.yearStart === m.filters.yearEnd ? String(m.filters.yearStart) : null;
+      const selectedYear = m.barYear && m.filters.yearStart != null && m.filters.yearStart === m.filters.yearEnd ? String(m.filters.yearStart) : null;          // (a pressed bar; a From/To range of one year presses none)
       const pressable = data.filter((d) => d.total || String(d.year) === selectedYear);
       const stop = [focusedYear, selectedYear].find((y) => y && pressable.some((d) => String(d.year) === y)) || (pressable.length ? String(pressable[pressable.length - 1].year) : null);
       const onBarKey = (e) => {

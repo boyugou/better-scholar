@@ -83,7 +83,7 @@
     const p = flat(prev), at = p.indexOf(":"), op = at > 0 ? BY_NAME.get(p.slice(p[0] === "-" ? 1 : 0, at)) : null;
     if (!op || !LISTED.has(op.name) || !/[:,、،]$/.test(p)) return false;
     const values = flat(next).split(/[,、،]/).filter(Boolean);
-    return values.length > 0 && values.every((v) => op.value.test(v));
+    return values.every((v) => op.value.test(v));          // (a word of commas alone goes on too: "role: , first")
   }
 
   function parse(q) {
