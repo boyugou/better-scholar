@@ -820,6 +820,14 @@
       }
     }
   },
+  "popupCopyFiltered": {
+    "message": "पेपर कॉपी: पेज के फ़िल्टर द्वारा दिखाए गए $N1$ पेपर",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "resolveSemanticKey": {
     "message": "Semantic Scholar ने API कुंजी स्वीकार नहीं की, इसलिए बाकी के लिए Scholar के अपने पेज इस्तेमाल किए गए।"
   },

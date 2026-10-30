@@ -820,6 +820,14 @@
       }
     }
   },
+  "popupCopyFiltered": {
+    "message": "Kopieën van papers: de $N1$ papers die de filters van de pagina tonen",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "resolveSemanticKey": {
     "message": "Semantic Scholar heeft de API-sleutel niet geaccepteerd, dus voor de rest zijn de eigen pagina's van Scholar gebruikt."
   },

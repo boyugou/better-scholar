@@ -820,6 +820,14 @@
       }
     }
   },
+  "popupCopyFiltered": {
+    "message": "複製的論文：頁面篩選條件顯示的 $N1$ 篇",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "resolveSemanticKey": {
     "message": "Semantic Scholar 不接受這個 API 金鑰，其餘改為讀取 Scholar 自己的頁面。"
   },

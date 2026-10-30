@@ -820,6 +820,14 @@
       }
     }
   },
+  "popupCopyFiltered": {
+    "message": "논문 복사: 페이지 필터로 표시된 논문 $N1$편",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "resolveSemanticKey": {
     "message": "Semantic Scholar가 API 키를 받아들이지 않아, 나머지는 Scholar 자체 페이지를 사용했습니다."
   },

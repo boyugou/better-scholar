@@ -820,6 +820,14 @@
       }
     }
   },
+  "popupCopyFiltered": {
+    "message": "Salinan makalah: $N1$ makalah yang ditampilkan filter halaman",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "resolveSemanticKey": {
     "message": "Semantic Scholar tidak menerima kunci API, jadi sisanya menggunakan halaman Scholar sendiri."
   },

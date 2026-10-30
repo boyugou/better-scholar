@@ -820,6 +820,14 @@
       }
     }
   },
+  "popupCopyFiltered": {
+    "message": "نسخ الأوراق التي تعرضها مرشّحات الصفحة: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "resolveSemanticKey": {
     "message": "لم تقبل Semantic Scholar مفتاح API، لذلك استُخدمت صفحات Scholar نفسها للباقي."
   },

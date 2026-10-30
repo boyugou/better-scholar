@@ -820,6 +820,14 @@
       }
     }
   },
+  "popupCopyFiltered": {
+    "message": "Cikkmásolatok: az oldal szűrői által megjelenített $N1$ cikk",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "resolveSemanticKey": {
     "message": "A Semantic Scholar nem fogadta el az API-kulcsot, ezért a továbbiakhoz a Scholar saját oldalait használtuk."
   },

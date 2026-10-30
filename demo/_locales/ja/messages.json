@@ -820,6 +820,14 @@
       }
     }
   },
+  "popupCopyFiltered": {
+    "message": "論文のコピー：ページのフィルターで表示されている $N1$ 件の論文",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "resolveSemanticKey": {
     "message": "Semantic Scholar が API キーを受け付けなかったため、残りは Scholar 自身のページを使用しました。"
   },

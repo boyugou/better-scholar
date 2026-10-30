@@ -820,6 +820,14 @@
       }
     }
   },
+  "popupCopyFiltered": {
+    "message": "Bài báo được sao chép: $N1$ bài đang hiển thị theo bộ lọc của trang",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "resolveSemanticKey": {
     "message": "Semantic Scholar không chấp nhận khóa API, nên phần còn lại đã dùng trang của chính Scholar."
   },
