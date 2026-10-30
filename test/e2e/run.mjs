@@ -2404,6 +2404,20 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     await pollPage(opts, () => /Changes applied: 1/.test(document.querySelector('[data-rr="config-status"]').textContent), null);
     assert.equal((await stored(opts, "sync", "prefs")).rows.style, "full");
     ok("configuration export downloads the record as better-scholar-config.json; a file is read back as a patch");
+    // a patch that changes the interface language reloads the page: what it left out is still said there (an agent asks the person for exactly these lines)
+    {
+      const langBefore = (await stored(opts, "sync", "prefs")).language;
+      await opts.locator('[data-act="config-input"]').fill('{ "language": "de", "rows": { "bogus": 1 } }');
+      await Promise.all([opts.waitForEvent("load"), opts.click('[data-act="config-apply"]')]);
+      await pollPage(opts, () => /rows\.bogus/.test((document.querySelector('[data-rr="config-status"]') || {}).textContent || ""), null);
+      assert.equal(await opts.evaluate(() => document.documentElement.lang.slice(0, 2)), "de", "the page is in the new language");
+      await opts.click(".config-editor summary");
+      await opts.locator('[data-act="config-input"]').fill(JSON.stringify({ language: langBefore }));
+      await Promise.all([opts.waitForEvent("load"), opts.click('[data-act="config-apply"]')]);
+      await opts.waitForSelector('[data-act="config-input"]', { state: "attached" });
+      assert.equal(await opts.evaluate(() => sessionStorage.getItem("rr-config-report")), null, "the kept report is gone once shown");
+      ok("a configuration that changes the interface language says, after the reload, what it left out");
+    }
 
     await opts.click('[data-act="clear-cache"]');
     await eventually(opts, () => /^No paper details are saved/.test(document.querySelector(".row .note").textContent));
@@ -2938,7 +2952,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
         await opts.evaluate(async (l) => { const r = await chrome.storage.sync.get("prefs"); await chrome.storage.sync.set({ prefs: { ...r.prefs, language: l } }); }, lang);
         for (const w of [1360, 940, 420]) {
           await opts.setViewportSize({ width: w, height: 900 });
-          await opts.goto(settingsUrl);
+          await opts.goto(settingsUrl, { waitUntil: "domcontentloaded" });          // (ninety loads in a row on a busy machine: one "load" event took more than 30 s; the page is drawn by then)
           await opts.waitForSelector(".toc a");
           const wide = await opts.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
           if (wide > 1) bad.push(`${lang}/settings ${w}px: ${wide}px too wide`);
@@ -3452,6 +3466,8 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
       await eventually(page, () => document.querySelectorAll('[data-rr="matrix"] table').length === 1);
       await page.bringToFront();
       const focusedIsSearch = () => page.evaluate(() => /rr-search-input/.test(String((document.activeElement || {}).className)));
+      await page.evaluate(() => { if (document.activeElement) document.activeElement.blur(); window.dispatchEvent(new KeyboardEvent("keydown", { key: "/", bubbles: true })); });
+      assert.equal(await focusedIsSearch(), false, "a key that a page script makes does nothing");
       await page.evaluate(() => document.activeElement && document.activeElement.blur());
       await page.keyboard.press("/");
       assert.equal(await focusedIsSearch(), true, "on: the slash goes to the search box");
@@ -3470,6 +3486,12 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
       await opts.evaluate(() => document.activeElement && document.activeElement.blur());
       await opts.keyboard.press("/");
       assert.equal(await opts.evaluate(() => document.activeElement && document.activeElement.className.includes("opt-search")), true, "on again: it jumps to the settings search");
+      // with no search box in the panel the switch is greyed out — it can't be switched off then — and the key does nothing, here too
+      await setPref(opts, "panel.filters.search", false);
+      await opts.evaluate(() => document.activeElement && document.activeElement.blur());
+      await opts.keyboard.press("/");
+      assert.equal(await opts.evaluate(() => document.activeElement && document.activeElement.className.includes("opt-search")), false, "no search box in the panel: the settings page's slash does nothing either");
+      await setPref(opts, "panel.filters.search", true);
       ok("the \"/\" key is a setting: on, it jumps to the search box (the panel's and the settings page's); off, it does nothing and its hint is gone");
     } finally { await ctx15.close(); await fx15.close(); }
   }

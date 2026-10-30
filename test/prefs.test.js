@@ -466,3 +466,10 @@ test("your own quick filters: drawn once their words are read, in the order of t
   assert.equal(prefs.pillWords(prefs.defaults(), "ccfA"), "ccf:a");
   assert.match(prefs.apply(prefs.defaults(), { panel: { filters: { searches: { search1: "x".repeat(prefs.SEARCH_MAX + 1) } } } }).ignored[0].reason, /at most 60/);
 });
+
+test("a name the page draws outside its part does not hang on the part's switch: the roles' (quick filters, filter bar, chart) and the awards' and talks' (chips, quick filters)", () => {
+  const row = (path) => prefs.SETTINGS.find((r) => r.path === path);
+  for (const k of ["roleFirst", "roleCofirst", "roleSecond", "roleLast", "markAward", "markOral", "markSpotlight", "markHighlight", "markTalks"]) assert.equal(row("labels." + k).parent, undefined, k);
+  assert.equal(row("labels.markSpotlightHighlight").parent, "panel.marks.show", "a name drawn only in its part still hangs on it");
+  assert.equal(row("labels.colTotal").parent, "panel.table.show");
+});

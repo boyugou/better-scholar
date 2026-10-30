@@ -571,8 +571,8 @@
       "aria-label": t("optSemanticKey"),
       onChange: async () => {
         input.value = input.value.replace(/[^\x21-\x7e]/g, "");
-        await B.store.saveS2Key(input.value);
-        status(t("optSaved"));
+        const ok = await B.store.saveS2Key(input.value);
+        status(ok ? t("optSaved") : t("optSaveFailed"), !ok);
       }
     });
     B.store.loadS2Key().then((k) => { input.value = k; });
@@ -699,16 +699,26 @@
   // ---- Configuration: the record as JSON, in and out. Whatever comes in is a patch that lib/prefs.js apply() lays over the settings and reports ----
   const configStatus = h("div", { class: "config-status", role: "status", "aria-live": "polite", "data-rr": "config-status" });
   const say = (lines, bad) => { configStatus.replaceChildren(...lines.map((line) => h("p", {}, line))); configStatus.classList.toggle("bad", bad); };
+  // (the report outlives the reload that a new interface language makes — in this page's sessionStorage, read and removed when the page opens again; an agent asks the
+  // person for exactly these lines. "Applied" only once the write was made: a write Chrome refused says so)
+  const REPORT = "rr-config-report";
+  const report = (applied, ignored, ok) => {
+    const lines = [];
+    if (applied) lines.push(ok ? t("optConfigApplied", [String(applied)]) : t("optSaveFailed"));
+    else if (!ignored.length) lines.push(t("optConfigNothing"));
+    if (ignored.length) lines.push(t("optConfigIgnored") + " " + ignored.map((x) => (x.path || "·") + ": " + x.reason).join("; "));
+    say(lines, ignored.length > 0 || !ok);
+  };
   async function applyPatch(patch) {
     const r = B.prefs.apply(prefs, patch);
     prefs = r.prefs;
-    if (r.applied.length) await save();
-    const lines = [];
-    if (r.applied.length) lines.push(t("optConfigApplied", [String(r.applied.length)]));
-    else if (!r.ignored.length) lines.push(t("optConfigNothing"));
-    if (r.ignored.length) lines.push(t("optConfigIgnored") + " " + r.ignored.map((x) => (x.path || "·") + ": " + x.reason).join("; "));
-    say(lines, r.ignored.length > 0);
+    // (a new interface language reloads the page once the write is made: what the report says is kept for the page that opens)
+    if (r.applied.length && prefs.language !== shownLanguage) try { sessionStorage.setItem(REPORT, JSON.stringify({ applied: r.applied.length, ignored: r.ignored })); } catch (e) { /* no storage: shown now only */ }
+    const ok = r.applied.length ? await save() : true;
+    if (!ok) try { sessionStorage.removeItem(REPORT); } catch (e) { /* none */ }
+    report(r.applied.length, r.ignored, ok);
   }
+  try { const kept = JSON.parse(sessionStorage.getItem(REPORT) || "null"); sessionStorage.removeItem(REPORT); if (kept) report(kept.applied, kept.ignored || [], true); } catch (e) { /* none, or not readable */ }
   async function applyConfig(text) {
     let patch;
     try { patch = JSON.parse(text); } catch (e) { say([t("optConfigError", [String(e.message).slice(0, 120)])], true); return; }
@@ -1066,7 +1076,7 @@
     }
   });
   window.addEventListener("keydown", (e) => {
-    if (e.key === "/" && prefs.panel.filters.key && document.activeElement !== searchInput && !["INPUT", "TEXTAREA", "SELECT"].includes(document.activeElement?.tagName)) {
+    if (e.key === "/" && prefs.panel.filters.key && !inert(SETTING.get("panel.filters.key")) && document.activeElement !== searchInput && !["INPUT", "TEXTAREA", "SELECT"].includes(document.activeElement?.tagName)) {
       e.preventDefault();
       searchInput.focus();
       searchInput.select();

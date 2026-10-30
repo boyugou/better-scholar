@@ -360,3 +360,31 @@ test("a review of the search, 2026-10-29: words at the start of a word (short on
   // the paper page's own venue line, once read, is searched too (the profile's line may be cut)
   assert.equal(hit("language", row({ venueText: "Proceedings of the 2014 conference on empirical methods in natural …" }, { pageVenueText: "Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing (EMNLP)" })), true);
 });
+
+test("the quick filters read the search as the search reads it: a phrase, NOT, a minus and OR are units no button joins or presses; your own filter keeps them as typed", () => {
+  // your own filter: what it puts in is the search it says, and it is then pressed
+  for (const w of ["NOT survey", "-survey", "cas9 OR cas12a", "a OR b OR c", '"p q"', '"x y" "x z"', "NOT role:first", "ccf:a OR core:a*", 'role:first "deep learning" -survey']) {
+    const q = query.toggleAll("", w);
+    assert.deepEqual(query.parse(q).terms, query.parse(w).terms, w);
+    assert.equal(query.hasAll(q, w), true, w);
+    assert.equal(query.toggleAll(q, w), "", w + ": pressed again, it is taken out whole");
+  }
+  assert.equal(query.hasAll('"deep reinforcement learning"', '"deep learning"'), false, "a phrase is not the words of another phrase");
+  assert.equal(query.hasAll("NOT survey x", "survey"), false, "a word left out is not the word");
+  // a built-in button: a negated or OR'd operator is not its value, and it never joins one
+  assert.equal(query.hasValue("NOT role:first", "role:first"), false);
+  assert.equal(query.hasValue("-role:first", "role:first"), false);
+  assert.equal(query.hasValue("role:first OR has:award", "role:first"), false);
+  assert.equal(query.toggleValue("NOT role:first ccf:a", "role:first"), "NOT role:first ccf:a role:first", "the negation stays on its word");
+  assert.equal(query.toggleValue("NOT role:last", "role:first"), "NOT role:last role:first");
+  assert.equal(query.toggleValue("cas9 OR role:last", "role:first"), "cas9 OR role:last role:first", "an OR group is not widened");
+  // the commas of the search: the ideographic, the Arabic and the full-width one, and a full-width operator
+  assert.equal(query.hasValue("role:first、last", "role:last"), true);
+  assert.equal(query.toggleValue("role:first、last", "role:last"), "role:first");
+  assert.equal(query.hasValue("ｒｏｌｅ：ｆｉｒｓｔ", "role:first"), true);
+  assert.equal(query.toggleValue("role:first, last", "role:last"), "role:first", "values past a space are one word");
+  // with no search box, what stays: a negated or OR'd word goes (it is no button), your own filter stays as typed
+  assert.equal(query.keepOnly("NOT role:first", new Set(["role:first"])), "");
+  assert.equal(query.keepOnly("role:first OR has:award", new Set(["role:first", "has:award"])), "");
+  assert.equal(query.keepOnly("cas9 OR cas12a deep", new Set(query.searchParts("cas9 OR cas12a"))), "cas9 OR cas12a");
+});

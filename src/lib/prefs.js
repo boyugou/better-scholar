@@ -125,12 +125,14 @@
 
   // a part of the panel: its own switch, then one for each thing it draws — [key, default, label, doc, ui]; ui.name (a message key of NAMES) puts that name on the thing's row;
   // a row of its own (names(…)) among the things stays among them. `popup`: the toolbar popup draws the part too, so its switches count while the panel is off.
+  // (a name the page also draws outside the part — a role's on the quick filters, the filter bar and the chart; an award's on the chips of the rows — is `free`: it does
+  // not depend on the part's switch, so its field is never greyed out while the name is still shown: `free: true` on a row, `free: true` beside `name` in a thing's ui)
   const part = (id, doc, things, { show = true, popup = false } = {}) => [
     bool(`panel.${id}.show`, show, doc, { label: "optShowSection", ...(popup ? {} : { parent: "panel.show" }) }),
     ...things.flatMap((entry) => {
-      if (!Array.isArray(entry)) return [{ parent: `panel.${id}.show`, ...entry }];
-      const [key, def, label, doc, { name, ...ui } = {}] = entry;
-      return [bool(`panel.${id}.${key}`, def, doc, { label, parent: `panel.${id}.show`, ...ui }), ...(name ? [{ parent: `panel.${id}.show`, ...named(name) }] : [])];
+      if (!Array.isArray(entry)) { const { free, ...row } = entry; return [free ? row : { parent: `panel.${id}.show`, ...row }]; }
+      const [key, def, label, doc, { name, free, ...ui } = {}] = entry;
+      return [bool(`panel.${id}.${key}`, def, doc, { label, parent: `panel.${id}.show`, ...ui }), ...(name ? [free ? named(name) : { parent: `panel.${id}.show`, ...named(name) }] : [])];
     })
   ];
   const card = (id, title, hint, rows) => ({ id, title, hint, rows });
@@ -218,7 +220,7 @@
       ["core", true, "optTableCore", "A CORE tab and its columns in the table; also the CORE ranking the copy summary and the copy table use (while the table is not drawn, a list is used where the rows' chips show it)."],
       ["unranked", true, "optTableUnranked", "The column of papers whose venue has no rank (drawn as “–”).", { name: "tipUnranked" }],
       ["total", true, "optTableTotal", "The totals: the All column and the All row.", { name: "colTotal" }],
-      ...names("roleFirst", "roleCofirst", "roleSecond", "roleLast"),
+      ...names("roleFirst", "roleCofirst", "roleSecond", "roleLast").map((r) => ({ ...r, free: true })),
       ["other", true, "optTableOther", "The \"Other\" row: papers where you are neither first, co-first, second nor last author.", { name: "roleMiddle" }],
       ["hidden", true, "optTableHidden", "The \"Hidden\" row: papers whose cut-off author list does not show your position.", { name: "roleHidden" }],
       ["note", true, "optTableNote", "The note under the table that says the ranks are today's lists, not the rank at publication."]
@@ -234,18 +236,18 @@
     card("marks", "optMarksTitle", "optPanelMarksHint", [
       ...part("marks", "The awards and talks counts: one click lists those papers.", [
         ["title", true, "optPartTitle", "The title line of the awards and talks counts.", { name: "marksTitle" }],
-        ["award", true, "markAward", "A count row for award-winning papers.", { name: "markAward" }],
-        ["oral", true, "markOral", "A count row for \"Oral\" papers.", { name: "markOral" }],
-        ["spotlight", true, "markSpotlight", "A count row for \"Spotlight\" papers.", { name: "markSpotlight" }],
-        ["highlight", true, "markHighlight", "A count row for \"Highlight\" papers.", { name: "markHighlight" }],
-        ...names("markSpotlightHighlight", "markTalks")
+        ["award", true, "markAward", "A count row for award-winning papers.", { name: "markAward", free: true }],
+        ["oral", true, "markOral", "A count row for \"Oral\" papers.", { name: "markOral", free: true }],
+        ["spotlight", true, "markSpotlight", "A count row for \"Spotlight\" papers.", { name: "markSpotlight", free: true }],
+        ["highlight", true, "markHighlight", "A count row for \"Highlight\" papers.", { name: "markHighlight", free: true }],
+        ...names("markSpotlightHighlight"), ...names("markTalks").map((r) => ({ ...r, free: true }))
       ], { popup: true }),
       choice("panel.marks.grouping", ["separate", "pair", "talks"], "separate", "How the panel counts talks: \"separate\" one row each for oral, spotlight and highlight; \"pair\" spotlight and highlight together; \"talks\" all three together.",
         { label: "optTalkRows", hint: "optTalkRowsHint", parent: "panel.marks.show" })
     ]),
     card("filters", "optPanelFilters", "optPanelFiltersHint", [
       ...part("filters", "The search box and the filters.", [["search", true, "optFiltersSearch", "The search box, with its suggestions and the number of papers it finds.", { name: "filterPlaceholder" }],
-        ["key", true, "optFiltersKey", "The \"/\" key jumps to the search box — on a profile, and on this settings page for its own search. Off: the key does nothing (a character key that does something is one a person can switch off).", { hint: "optFiltersKeyHint", parent: "panel.filters.search" }]]),
+        ["key", true, "optFiltersKey", "The \"/\" key jumps to the search box — on a profile, and on this settings page for its own search. Off (or with no search box in the panel, which greys this switch out): the key does nothing, here too (a character key that does something is one a person can switch off).", { hint: "optFiltersKeyHint", parent: "panel.filters.search" }]]),
       order("panel.filters.pills.order", PILLS, "The quick-filter buttons under the search box, left to right: a list of ids (" + PILLS.join(", ") + "). Ids left out follow in the default order; a button's own switch hides it without changing its place.",
         { label: "optOrderPills", parent: "panel.filters.show", group: "optFiltersQuick" }),
       ...Object.keys(PILL_OPERATORS).map((id) => bool(`panel.filters.pills.${id}`, PILLS_ON.includes(id), `Quick filter: a button that adds ${PILL_OPERATORS[id]} to the search (left out while nothing of that kind is drawn, and on a profile with no paper that it would find).`,

@@ -773,7 +773,7 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
   // "/" focuses the search box; Escape clears the filters when nothing else has taken it: not a menu or the search box (which handle their own), nor anything of Scholar's
   // own (its menus and dialogs keep the key), so only a key pressed on the page itself or in the panel counts.
   window.addEventListener("keydown", (e) => {
-    if (e.defaultPrevented || e.ctrlKey || e.metaKey || e.altKey) return;
+    if (!e.isTrusted || e.defaultPrevented || e.ctrlKey || e.metaKey || e.altKey) return;          // (a key that a page script makes does nothing, as a click it makes does nothing)
     // (a key typed into a field of a shadow tree — another extension's widget on the page — is retargeted to the tree's host: the field itself is the first of its path)
     const target = (e.composedPath && e.composedPath()[0]) || e.target;
     const el = target instanceof Element ? target : document.body;

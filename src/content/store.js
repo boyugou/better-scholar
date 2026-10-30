@@ -33,8 +33,8 @@
   }
   async function remove(area, key) {
     delete mem[area][key];
-    if (!live()) return;
-    try { await chrome.storage[area].remove(key); } catch (e) { /* context loss */ }
+    if (!live()) return false;
+    try { await chrome.storage[area].remove(key); return true; } catch (e) { return false; }
   }
 
   const loadPrefs = async () => B.prefs.normalize(await get("sync", "prefs"));
@@ -88,7 +88,7 @@
     const now = Date.now();
     const out = {};
     for (const [id, v] of Object.entries(all)) if (v && now - v.ts < TTL) out[id] = v;
-    if (Object.keys(out).length < Object.keys(all).length) await set("local", "resolved", out);          // (what is older than 90 days goes now, not at the next save: "kept for 90 days" means that)
+    if (Object.keys(out).length < Object.keys(all).length) await set("local", "resolved", out);          // (what is older than 90 days goes now, not at the next save: "kept for 90 days" means that — also when the settings page reads them)
     return out;
   }
   // The details read from Scholar's paper pages (and from Semantic Scholar): the newest first, up to three thousand papers and three million characters — an author list of a large

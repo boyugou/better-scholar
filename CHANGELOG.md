@@ -83,6 +83,20 @@ give the details and every review):
   old rule), with the one known limit reported and not counted: a chip keeps its name on one line, so a 30-character chip name is cut
   in a preview of 330 px or less. The overflow audit no longer counts a break at a soft hyphen (Finnish "Yhteis-|ensimmäinen") as a
   word cut in two.
+- **A review of the settings, the configuration and the page events** (an independent agent; 20,000 fuzzed records could not break
+  `normalize`, and no call writes storage or reaches the network). Fixed: (1) the quick filters did not read the new search words — your
+  own filter `NOT survey` put in `not survey` (the opposite), `cas9 OR cas12a` three words, and a phrase was split; the First button
+  showed as pressed for `NOT role:first`, and pressed beside it moved the NOT onto another word. They now read the search in units, as
+  the search does — a phrase, NOT or a minus and what follows, an OR group — and only a plain word is a button's: none is joined, pressed
+  or taken apart by a button, and your own filter puts its units in as typed; with the search box off, a word left out or one of an OR
+  goes instead of staying without its NOT. The ideographic, Arabic and full-width commas work with the buttons too. (2) The settings
+  page's "/" followed the switch alone, which is greyed out while the panel has no search box: it now does nothing then, here too.
+  (3) The names of the roles and of the awards and talks are drawn outside their parts (the quick filters, the filter bar, the chart,
+  the chips), so their fields are no longer greyed out with the table's or the awards' switch. (4) A key that a page script makes
+  does nothing on a profile (a click it makes did nothing already). (5) *Apply configuration*: what it left out is still said after
+  the reload a new interface language makes, and "Changes applied" only once the write was made; the Semantic Scholar key says
+  *Not saved* when Chrome refused it. (The settings page still deletes paper details older than 90 days when it reads them, so that
+  "kept for 90 days" holds without a visit to Scholar — the review's race with a Scholar tab's save is a window of milliseconds.)
 - **A review of the search, the duplicates and the counts** (an independent agent; every finding fixed). The search: (1) a word is
   looked for at the start of a word, and a word of one or two letters as a whole word — `he` found 54 of a biologist's 100 papers
   ("the", "Chen") and `ng` 90 of Philip Yu's; now 0, and `li` finds the 17 papers of Ion Stoica's with a co-author Li, not 43 (a word

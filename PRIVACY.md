@@ -61,6 +61,8 @@ In the Scholar site's own browser storage:
 - `localStorage`, key `rr-load-lock`: a random id and a time. It is written while the extension presses Scholar's *Show more*
   button for you, so that only one tab presses at a time. It is removed when the run ends, and ignored once it is twelve seconds
   old (`content/scholar.js`).
+- `sessionStorage` of the settings page, key `rr-config-report`: what *Apply configuration* applied and left out, kept only across the
+  reload that a new interface language makes, and removed when the page shows it (`options/options.js`).
 - `sessionStorage`, key `rr-hl`: a language code and a time. It is written when *Open Scholar in* reopens a page, so that a page
   is never reopened in a loop. It is removed once the page is in that language (`content/lang-redirect.js`).
 
