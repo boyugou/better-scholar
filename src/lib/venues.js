@@ -738,6 +738,14 @@
       return owned.length ? owned.some((sig) => ownersOf(sig.key).includes(hit)) : !(rivalNamed || postRival);
     };
     const intlJournalWithoutIntl = (e) => e.kind === "J" && /^(?:the\s+)?international\s+journal\b/i.test(e.name) && !/\b(?:international|intl|int)\b/i.test(p.plain);
+    // (and the other way round: "International Journal of Machine Learning Research" is not JMLR, "International Journal of Computer Science and Technology" not
+    // JCST — a string that says "International Journal" or "Int. J." is not a journal none of whose names says "International")
+    const plainJournalForIntl = (e) => e.kind === "J" && /\b(?:international|intl|int)\.?\s+(?:journal|j)\b/i.test(p.plain) && ![e.name, ...e.extra].some((n) => /\b(?:international|intl)\b/i.test(n));
+    // ("Frontiers in Computer Science" is Frontiers Media's open-access journal, not Higher Education Press's Frontiers of Computer Science, CCF's FCS: in a
+    // journal's "Frontiers" title "in" and "of" are no small words — a string that says "Frontiers in" is not a journal whose names all say "Frontiers of"; a
+    // conference's are: ICFHR is "Frontiers in" or "of Handwriting Recognition" alike)
+    const frontiersInForOf = (e) => e.kind === "J" && /\bfrontiers\s+in\b/i.test(p.plain) && [e.name, ...e.extra].some((n) => /\bfrontiers\s+of\b/i.test(n)) && ![e.name, ...e.extra].some((n) => /\bfrontiers\s+in\b/i.test(n));
+    const otherJournal = (e) => intlJournalWithoutIntl(e) || plainJournalForIntl(e) || frontiersInForOf(e);
     // ("AAAI-23: Thirty-Seventh AAAI Conference on Artificial Intelligence": the acronym in front says the event, and says it again inside the name — the venue's own name has it once)
     const nameBody = (() => {
       const m = /^([A-Za-z][A-Za-z0-9&/]{1,9})\s*['’-]?\s*(?:\d{4}|\d{2})\s*:\s*(.+)$/.exec(p.plain);
@@ -769,7 +777,7 @@
       if (d && !acronymAgrees(d)) continue;
       // ("Journal of Knowledge Management" is Emerald's, not IGI's International Journal of Knowledge Management; Scholar prints a journal's whole title, so a
       // journal whose name begins "International Journal" is not met without the word — "Int." and "Intl" count as the word)
-      if (d && d !== "ambiguous" && intlJournalWithoutIntl(d)) continue;
+      if (d && d !== "ambiguous" && otherJournal(d)) continue;
       // (a string that says "Joint" is not a venue whose names never do: the "Joint Symposium on Parallel Processing" of Japan is neither ICPP nor IPDPS)
       if (d && d !== "ambiguous" && /\bjoint\b/i.test(p.plain) && !hasWord(d, "joint")) continue;
       // ("Journal" alone is not "Journal of the ACM": a one-word string only meets a journal's name that is that one word whole, not the rest of a name that lost its organisation)
@@ -802,7 +810,7 @@
       if (bag.length >= 3) {
         const bkey = uniq(bag).sort().join(" ");
         const d = nameHit((side) => side.bags && side.bags.get(bkey));
-        if (d && d !== "ambiguous" && !intlJournalWithoutIntl(d) && acronymAgrees(d)) return { entry: d, rule: "name" };
+        if (d && d !== "ambiguous" && !otherJournal(d) && acronymAgrees(d)) return { entry: d, rule: "name" };
       }
     }
 

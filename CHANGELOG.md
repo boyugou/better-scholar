@@ -78,6 +78,16 @@ give the details and every review):
   old rule), with the one known limit reported and not counted: a chip keeps its name on one line, so a 30-character chip name is cut
   in a preview of 330 px or less. The overflow audit no longer counts a break at a soft hyphen (Finnish "Yhteis-|ensimmäinen") as a
   word cut in two.
+- **Two wrong ranks, found by a final review of what no check covered.** (1) Frontiers Media's open-access journal *Frontiers **in**
+  Computer Science* had the CCF B badge of Higher Education Press's *Frontiers **of** Computer Science* (FCS): "in" and "of" are small
+  words to the matcher, and three real profile lines (volumes 3–5, six- or seven-digit article numbers) carried the wrong badge — the
+  snapshot even asserted it. A journal whose names all say "Frontiers of" is no longer read from a line that says "Frontiers in"
+  (journals only: ICFHR is "Frontiers in" or "of Handwriting Recognition" alike). Of 75,521 real lines four lose the badge: the
+  three, and one "Frontiers in Computer Science 12 (3), 123-145, 2019" that may be FCS misprinted — a missing badge, not a wrong one.
+  (2) An "International Journal of X" had the badge of a listed plain "Journal of X" — *International Journal of Computer Science
+  and Technology* was JCST (CCF B), an *International Journal of Machine Learning Research* would have been JMLR (CCF A): the guard
+  stood only the other way round (a listed International Journal is not met without the word). It stands both ways now; no real line
+  changes.
 - **An update under an open page is said, and the panel keeps its words.** Chrome updates an extension while it runs; a Scholar page
   opened before keeps the old script, cut off: its settings no longer reached it and its Settings button did nothing, without a word.
   The panel now says so at its top, with *Reload this page* (30 languages), as soon as the tab comes back into view or Settings is

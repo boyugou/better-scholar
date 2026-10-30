@@ -539,6 +539,20 @@ test("names that only look like a venue: 'International Security', 'Journal', 'J
   assert.equal(brief("International Journal of Knowledge Management"), "CCF C IJKM");
   assert.equal(brief("Int. J. Comput. Vis."), "CCF A IJCV");
   assert.equal(brief("Intl J Human-Computer Studies"), "CCF A IJHCS");
+  // and the other way round: an "International Journal" of the same words is another journal than the plain Journal on the list (IJCST is not JCST, and no
+  // "International Journal of Machine Learning Research" is JMLR) — the plain ones keep their badge
+  assert.equal(brief("International Journal of Computer Science and Technology 5 (2), 2014"), "");
+  assert.equal(brief("International Journal of Machine Learning Research 2, 2020"), "");
+  assert.equal(brief("Int. J. Artificial Intelligence Research 3 (1), 2019"), "");
+  assert.equal(brief("International Journal of Parallel and Distributed Computing 7, 2018"), "");
+  assert.equal(brief("Journal of Computer Science and Technology 35 (2), 2020"), "CCF B JCST");
+  assert.equal(brief("Journal of Machine Learning Research 21 (1), 1-67, 2020"), "CCF A JMLR");
+  assert.equal(brief("Journal of Parallel and Distributed Computing 150, 2021"), "CCF B JPDC");
+  // Frontiers Media's open-access "Frontiers in Computer Science" (volume 1 in 2019, article numbers) is not Higher Education Press's Frontiers of Computer Science
+  // (CCF FCS); in a conference's name "in" and "of" are one: ICFHR keeps its badge either way
+  assert.equal(brief("Frontiers in Computer Science 4, 812907, 2022"), "");
+  assert.equal(brief("Frontiers of Computer Science 19 (7), 197605, 2025"), "CCF B FCS");
+  assert.equal(brief("International Conference on Frontiers in Handwriting Recognition"), "CORE B ICFHR");
   // the ICTIR is no SIGIR; SIGIR with its own acronym in the parenthesis still is
   assert.equal(brief("ACM SIGIR International Conference on Theory of Information Retrieval (ICTIR)"), "");
   assert.equal(brief("ACM SIGIR International Conference on Research and Development in Information Retrieval (SIGIR)"), "CCF A SIGIR · CORE A* SIGIR");
