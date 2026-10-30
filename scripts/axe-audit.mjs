@@ -130,9 +130,10 @@ for (const [kind, text] of [["words", "Wmw Wmw Wmw Wmw Wmw Wmw Wmw Wm"], ["full-
     await popup.click('.actions button.btn[data-act="copy-summary"]');
     // (a popup that draws its buttons again has none for a moment: the wait must not end there — a function that throws ends it at once; on CI the button has
     // read "Copied" only after more than 20 s: the time it took is said, to find out why)
-    // (a wait that ends at once without a timeout — on CI it did, after 85 ms — says why, and is tried again: a page that was drawn again or replaced ends a wait)
-    for (let i = 0; i < 3 && !flashed; i++) {
-      flashed = await popup.waitForFunction((was) => { const b = document.querySelector('.actions button.btn[data-act="copy-summary"]'); return !!b && (!!b.style.minWidth || b.classList.contains("btn-flashed") || b.textContent.trim() !== was); }, label, { timeout: 60000, polling: 50 }).then(() => true, (e) => { waitError = String(e && e.message || e).split("\n")[0].slice(0, 160); return false; });
+    // (polled by hand: Playwright's interval polling evaluates a string, which the extension page's CSP refuses — on CI the wait ended at once with an EvalError,
+    // as the e2e checks found before: test/e2e/run.mjs pollPage)
+    for (const until = Date.now() + 60000; !flashed && Date.now() < until; await popup.waitForTimeout(50)) {
+      flashed = await popup.evaluate((was) => { const b = document.querySelector('.actions button.btn[data-act="copy-summary"]'); return !!b && (!!b.style.minWidth || b.classList.contains("btn-flashed") || b.textContent.trim() !== was); }, label).catch((e) => { waitError = String(e && e.message || e).split("\n")[0].slice(0, 160); return false; });
     }
     tookMs = Date.now() - t0;
   }
