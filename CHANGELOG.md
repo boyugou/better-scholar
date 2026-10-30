@@ -14,8 +14,13 @@ give the details and every review):
 - **Search**: `role:first,last` (either), `type:journal`, `age:<5`, and the whole author list once it was read.
 - **One chip where both lists rank a venue** (CCF first by default; a setting changes it).
 - **The reference styles read the venue line's parts** (volume, issue, pages), and the page range from the paper's own page.
-- **Matching**: many wrong chips removed and missing ones added, from sweeps over 75,000 real venue lines and seventeen independent reviews.
-- **The toolbar popup** offers *Open my profile* when the tab is no profile.
+- **Matching**: many wrong chips removed and missing ones added, from sweeps over 75,000 real venue lines and twenty independent reviews —
+  the last ones: "Frontiers in" is not "Frontiers of", an "International Journal of X" not a listed "Journal of X", a line without "Joint"
+  not a venue that always says it, PODS's issue of PACMMOD not SIGMOD, a congress not a conference, JMLR's workshop proceedings not JMLR.
+- **The toolbar popup** offers *Open my profile* when the tab is no profile, and right after an install or update says that a profile
+  already open needs a reload.
+- **An update under an open page is said**: the panel's top bar says the extension was updated and offers *Reload this page*.
+- **Copy buttons**: a copy the clipboard refused says *Not copied*; a long name you gave a button wraps instead of running out.
 - **The settings page** works on a phone.
 - **30 languages**: one word for one thing throughout.
 - **Accessibility**: an independent WCAG 2.2 AA review, its findings fixed.
