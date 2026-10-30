@@ -2514,6 +2514,61 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
   }
   ok("Read full lists stops at a refusal (403) and at two pages in a row without an author list, and says so; a title with a block page's words is no block page; it is not offered while the list loads");
 
+  // -- 16e. the toolbar popup opened on a profile that is still loading says "Reading…" and asks again until the page answers (it said "not a profile")
+  {
+    const fxP = await start({ slug: "ion-stoica", pageSize: 20, slowPage: 2500 });
+    const ctxP = await launch();
+    try {
+      const optsP = await openOptions(ctxP);
+      const before = await optsP.evaluate(async () => (await chrome.tabs.query({})).map((t) => t.id));
+      const pg = await ctxP.newPage();
+      const id = (await optsP.evaluate(async () => (await chrome.tabs.query({})).map((t) => t.id))).find((x) => !before.includes(x));
+      assert.ok(id != null, "the profile's tab is found");
+      const loading = pg.goto(fxP.url).catch(() => {});          // (not awaited: the page is still arriving)
+      await pg.waitForTimeout(400);
+      const popup = await ctxP.newPage();
+      await popup.goto(`chrome-extension://${extId}/popup/popup.html?tab=${id}`);
+      await popup.waitForSelector(".who", { timeout: 15000 });
+      assert.match(await popup.locator(".who").innerText(), /Ion Stoica/, "the popup shows the profile once it answers");
+      await loading;
+      ok("the toolbar popup opened on a profile still loading waits for it and shows its table");
+    } finally { await ctxP.close(); await fxP.close(); }
+  }
+
+  // -- 16d. Clear saved paper details is not undone by an open profile tab: the page forgets them too, and a later read stores only what it read
+  {
+    const fxC = await start({ slug: "ion-stoica", pageSize: 20 });
+    const ctxC = await launch();
+    try {
+      const optsC = await openOptions(ctxC);
+      await setPref(optsC, "autoLoad", false);
+      const pg = await ctxC.newPage();
+      await pg.goto(fxC.url);
+      await pg.bringToFront();
+      await pg.waitForSelector('[data-act="resolve"]');
+      await pg.click('[data-act="resolve"]');
+      await pg.waitForSelector('[data-rr="resolve-msg"]', { timeout: 30000 });
+      const first = Object.keys((await stored(optsC, "local", "resolved")) || {});
+      assert.ok(first.length > 0, "the first read stored what it read");
+      await optsC.bringToFront();
+      await optsC.click('[data-act="clear-cache"]');
+      await pollPage(optsC, () => chrome.storage.local.get("resolved").then((r) => !r.resolved), null);
+      // more papers, and a second read in the same tab
+      await pg.bringToFront();
+      await pg.click('[data-act="load-all"]');
+      await pg.waitForFunction(() => document.querySelectorAll("#gsc_a_b tr.gsc_a_tr").length === 100, null, { timeout: 60000 });
+      await pg.waitForSelector('[data-act="resolve"]', { timeout: 30000 });
+      await pg.click('[data-act="resolve"]');
+      // (the first read's "Done." may still be there: the second read is over once it has stored something and its Cancel is gone)
+      await pollPage(optsC, () => chrome.storage.local.get("resolved").then((r) => !!r.resolved && Object.keys(r.resolved).length > 0), null, 60000);
+      await pg.waitForFunction(() => /Done/.test((document.querySelector('[data-rr="resolve-msg"]') || {}).textContent || "") && !document.querySelector('[data-rr="coverage"] [data-focus="resolve"]:not([data-act])'), null, { timeout: 60000 });
+      const after = Object.keys((await stored(optsC, "local", "resolved")) || {});
+      assert.ok(after.length > 0, "the second read stored what it read");
+      assert.deepEqual(first.filter((id) => after.includes(id)), [], "and none of the details that were cleared came back");
+      ok(`Clear saved paper details is not undone by an open tab: the ${first.length} cleared details stay gone; the next read stored its own ${after.length}`);
+    } finally { await ctxC.close(); await fxC.close(); }
+  }
+
   // -- 16c. under the h-index button every count lists what it says: a table cell (a pick never moves the minimum) and a venue row (its count is what its click lists) —
   // two hundred papers and no other filter, where the minimum of a cell's or a venue's own papers would be lower than the profile's
   {
@@ -2526,8 +2581,20 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
       await pg.goto(fxH.url);
       await pg.bringToFront();
       await pg.waitForFunction(() => document.querySelectorAll("#gsc_a_b tr.gsc_a_tr").length === 200, null, { timeout: 60000 });
+      // the other order: a cell picked first (the totals then count the cell, and say so), then the button — its number is the h-index of what the filters leave,
+      // the minimum every count uses, and it lists that cell's papers among them
+      const hNumber = () => pg.evaluate(() => Number((/(\d+)/.exec(document.querySelector('[data-metric="mH"]').textContent) || [])[1]));
+      const firstCell = 'button.rr-cell[data-role="last"]:not(.rr-zero)';
+      const h0 = await hNumber();
+      await pg.click(firstCell);
+      const cellCount = Number(await pg.locator('button.rr-cell[aria-pressed="true"]').textContent());
       await pg.click('[data-metric="mH"]');
       await eventually(pg, () => document.querySelector('[data-metric="mH"][aria-pressed="true"]'));
+      assert.equal(await hNumber(), h0, "pressed after a pick, its number is the h-index of what the filters leave");
+      assert.equal(await visibleRows(pg), (await readMatrix(pg)).last[await pg.locator('button.rr-cell[aria-pressed="true"]').getAttribute("data-tier")], "and the cell lists what its count says under it");
+      assert.ok(cellCount > 0);
+      await pg.click('button.rr-cell[aria-pressed="true"]');
+      await eventually(pg, () => !document.querySelector('button.rr-cell[aria-pressed="true"]'));
       const withH = await readMatrix(pg), wrong = [];
       for (const [role, r] of Object.entries(withH)) {
         if (role === "hidden") continue;

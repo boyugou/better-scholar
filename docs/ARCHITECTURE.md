@@ -401,7 +401,9 @@ tab-separated table, the caption of the real table). Only the year bars stay who
 the coverage lines (loaded, hidden, absent) and the toolbar popup; the `summary` and `export` calls count every paper unless
 they are given `filtered: true` (the panel's way of counting). The minimum of the h-index filter is worked out
 without the picks (`impactMin(source)`: a table cell, an awards row), everywhere — the rows, the counts, the filter bar, the copies —
-so that a pick never moves it and a cell lists what its count says; while the button is pressed its number is that minimum, and each
+so that a pick never moves it and a cell lists what its count says; the citation totals follow a pick while the button is up (their
+scope line says so: "Last, CCF A") and show that minimum while it is pressed — pressed after a pick, its number becomes the h-index of
+what the filters leave, the papers it then lists within the pick — and each
 row of the venue list counts what its own click lists (a venue narrows the minimum, as a year does: `venueRows`). A paper
 with no year is in no year range.
 

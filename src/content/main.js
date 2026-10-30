@@ -222,9 +222,10 @@
   // The impact filter (the h-index and i10 buttons of the panel) shows the highlighted papers behind the number: at least h citations, h being the h-index of the
   // highlighted papers the other filters let through, as the button says — not counting a pick (a table cell, an awards row): a pick lists papers of that set, so that a cell's
   // count is what its click lists, and picking one never moves the minimum and with it the counts; at least 10 for i10. 0: no such filter. (While the button is pressed its
-  // number is this minimum; a venue narrows it as a year does, and each row of the venue list counts what its own click lists: venueRows.)
+  // number is this minimum — the citation totals follow a pick while the button is up (they say what they count: "Last, CCF A"), and show the minimum while it is pressed;
+  // a venue narrows it as a year does, and each row of the venue list counts what its own click lists: venueRows.)
   // (an h-index of 0 means no highlighted paper has a citation: the filter then shows nothing, so the minimum is one citation, which none of them has)
-const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metrics.citationMetrics(scoped(source, { skipImpact: true, skipPicks: true })).highlighted.h) : state.filters.impact === "i10" ? 10 : 0);
+const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metrics.citationMetrics(scoped(source, { skipImpact: true, skipPicks: state.filters.impact === "h" })).highlighted.h) : state.filters.impact === "i10" ? 10 : 0);
 
   // Do the filters let this row through? `skip`: choices to leave out — `venue` (the venue list is not narrowed by its own choice), `selection` (the table's cell, for the table's
   // own counts), `marks` (an awards row, for the awards counts).
@@ -562,7 +563,7 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
   }
 
   function clearAllFilters() {
-    state.selection = null; state.markGroup = null; state.venueKey = null;
+    state.selection = null; state.markGroup = null; state.venueKey = null; state.barYear = null;
     Object.assign(state.filters, { onlyHighlighted: false, yearStart: null, yearEnd: null, query: "", minCitations: null, impact: null });
     state.searchCursor = -1; clearFocusedRow();
     refresh();
@@ -847,6 +848,7 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
       const f = state.filters, asked = {};
       if ("query" in p) asked.query = f.query = p.query.trim().replace(/\s+/g, " ");
       for (const k of ["onlyHighlighted", "yearStart", "yearEnd", "minCitations", "impact"]) if (k in p) asked[k] = f[k] = p[k];
+      if ("yearStart" in p || "yearEnd" in p) state.barYear = null;          // (a range a call sets is a range: every paper of it, as From and To list them)
       if (!Object.values(prefs.roles).some(Boolean)) f.onlyHighlighted = false;           // nothing is highlighted: the filter would hide every row
       state.searchCursor = -1; clearFocusedRow();
       pruneFilters();                                                                      // (what the settings leave without a control is not applied, and said so)

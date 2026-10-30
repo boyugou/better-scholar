@@ -104,8 +104,9 @@ give the details and every review):
   shape the docs give to the one the export writes.
 - **A review of the panel and the popup in use** (an independent agent driving the real extension; no crash, no wrong data). Fixed:
   (1) under the h-index button a table cell or a venue row could say 3 and list 5: the button's minimum is now taken without the picks
-  (a cell, an awards row), so a cell lists what its count says and picking one never moves the minimum; while the button is pressed its
-  number is that minimum, and each venue row counts what its own click lists. (2) A year bar counts your highlighted papers of its
+  (a cell, an awards row), so a cell lists what its count says and picking one never moves the minimum; while the button is pressed its number
+  is that minimum (the citation totals follow a pick only while it is up, and say so), and each venue row counts what its own click
+  lists. (2) A year bar counts your highlighted papers of its
   year and now lists those (it listed every paper of the year; *From* and *To* still list every paper of a range). (3) New years
   arriving while the year list was open took the keyboard's focus to the page, and an Escape then cleared every filter: the focus
   stays on the same year, and the list closes when the focus leaves it. (4) The unranked list's **Check** buttons, the name

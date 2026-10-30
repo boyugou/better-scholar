@@ -95,7 +95,8 @@ ${(r.venue.match(/,\s*(\d+-\d+),/) || [])[1] ? `<div class="gs_scl"><div class="
 
 // detailFail: what a paper page answers instead of itself — a status (403, 500), "layout" (a page of another shape, without the field table) or "traffic"
 // (the page itself, under a title with a block page's words in it)
-function start({ slug = "ion-stoica", pageSize = 20, header, port = 0, hl = "en", repeat = 1, brokenLayout = false, stopAfter, latency = 150, rows, detailFail } = {}) {
+// slowPage: the profile page arrives in two halves, this many milliseconds apart (a tab that is still loading)
+function start({ slug = "ion-stoica", pageSize = 20, header, port = 0, hl = "en", repeat = 1, brokenLayout = false, stopAfter, latency = 150, rows, detailFail, slowPage = 0 } = {}) {
   ROW_HL = hl;
   BROKEN = brokenLayout;
   const profile = loadProfile(slug, repeat, rows);
@@ -114,7 +115,11 @@ function start({ slug = "ion-stoica", pageSize = 20, header, port = 0, hl = "en"
     }
     if (u.pathname === "/citations") {
       res.setHeader("content-type", "text/html; charset=utf-8");
-      return res.end(profilePage(profile, { pageSize, header, stopAfter, latency }));
+      const html = profilePage(profile, { pageSize, header, stopAfter, latency });
+      if (!slowPage) return res.end(html);
+      const half = Math.floor(html.length / 2);
+      res.write(html.slice(0, half));
+      return setTimeout(() => res.end(html.slice(half)), slowPage);
     }
     if (u.pathname === "/scholar" || u.pathname === "/scholar.bib") {                         // (search results, and a download the language redirect must leave alone)
       res.setHeader("content-type", u.pathname.endsWith(".bib") ? "text/plain" : "text/html; charset=utf-8");
