@@ -26,7 +26,7 @@
     if (key.length < 16 || B.awards.titleKey(hit.title) !== key) return null;
     const { tokens } = B.names.parseAuthors(authorsText);
     // (a suffix is no surname: "RW Heath Jr" is Robert W. Heath's)
-    const sur = (name) => B.awards.surnameKey(String(name || "").replace(/[\s,]+(?:jr|sr|ii|iii|iv)\.?$/i, ""));
+    const sur = (name) => B.awards.surnameKey(String(name || "").replace(/^(\S+\s+\S+.*?)[\s,]+(?:jr|sr|ii|iii|iv)\.?$/i, "$1"));          // (after two words or more: "Naoki Ii" is a surname)
     const theirs = hit.authors.map((a) => sur(a && a.name));
     const head = tokens.filter((t) => !t.afterCut).map((t) => sur(t.name)), tail = tokens.filter((t) => t.afterCut).map((t) => sur(t.name));
     if (!head.length || head.length + tail.length > theirs.length) return null;

@@ -401,3 +401,7 @@ test("a second read of the search, 2026-10-30: a word joined to Chinese or Japan
   assert.equal(query.hasValue("role:first ＯＲ has:award", "role:first"), false, "full-width OR is OR for the buttons too");
   assert.equal(query.toggleValue("deep NOT", "role:first"), "deep role:first NOT", "a button's word goes before a NOT still waiting for its word");
 });
+
+test("a third read, 2026-10-30: a word of commas alone goes on with the operator's values", () => {
+  assert.deepEqual(query.parse("role: , first").terms, [{ kind: "role", values: ["first"] }]);
+});

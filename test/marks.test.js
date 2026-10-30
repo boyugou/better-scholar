@@ -307,3 +307,9 @@ test("a second read of the awards, 2026-10-30: a test-of-time nominee or finalis
   assert.deepEqual(kinds("ICSE 2020 Test of Time Award"), ["tot"]);
   assert.deepEqual(kinds("HCOMP 2024 Test of Time and Impact Award. Proceedings of the AAAI Conference …, 2013"), ["tot"]);
 });
+
+test("a third read, 2026-10-30: every form of a test-of-time nominee or finalist is no award", () => {
+  for (const v of ["Test of Time Award (Nominee)", "Test of Time Award - Finalist", "Test of Time Award: Nominee", "Nominee for the Test of Time Award", "Finalist for the Test of Time Award", "Nominated for a Test of Time Award", "10-Year Test of Time Award nominee"])
+    assert.deepEqual(marks.detect({ venue: v }).map((m) => m.kind), [], v);
+  assert.deepEqual(marks.detect({ venue: "10-Year Test of Time Award" }).map((m) => m.kind), ["tot"]);
+});

@@ -92,15 +92,18 @@
   // The Latin form of a name written in another script, in brackets after it — "张伟 (Wei Zhang)", "Иван Петров (Ivan Petrov)" — or "" (Scholar's author lines are mostly in
   // Latin letters: the page counts it as one more spelling of the owner, beside the name as written). Only what looks like a person's name: two to four words that begin
   // with a capital, none of them a title, a degree or a place of work — "(THU)", "(PhD)", "(Tsinghua University)" are none.
-  const NOT_NAME = /^(?:university|universit[aäéy]|institute|institut|college|school|lab|laboratory|dept|department|center|centre|academy|hospital|inc|ltd|corp|phd|md|msc|professor|prof|dr|ieee|acm|fellow)$/i;
+  // (titles, degrees and commas go as from the header itself — "(Dr. Wei Zhang, PhD)", "(Zhang, Wei)"; a particle may be in lower case — "(Ludwig van Beethoven)")
+  const NOT_NAME = /^(?:university|universit[aäéy]|univ|institute|institut|college|school|lab|laboratory|dept|department|center|centre|academy|hospital|research|scientist|engineer|student|postdoc|lecturer|inc|ltd|corp|ieee|acm|fellow)$/i;
+  const PLACE = /^(?:hong kong|new york|new jersey|new zealand|south korea|north carolina|south carolina|san diego|los angeles|san francisco|united states|united kingdom|saudi arabia)$/i;
   function bracketName(header) {
     const s = String(header == null ? "" : header).slice(0, 300).replace(/\s+/g, " ");
     if (/[A-Za-z]/.test(fold(s).replace(/\([^)]*\)|\[[^\]]*\]/g, " "))) return "";
-    const m = /\(([^()]*)\)|\[([^[\]]*)\]/.exec(s);
-    const inner = m ? (m[1] || m[2] || "").trim() : "";
-    const words = inner.split(/\s+/).filter(Boolean);
-    if (words.length < 2 || words.length > 4) return "";
-    return words.every((w) => /^\p{Lu}[\p{L}'’.-]*$/u.test(w) && /[A-Za-z]/.test(fold(w)) && !NOT_NAME.test(w.replace(/\.$/, ""))) ? inner : "";
+    const inner = (s.match(/\(([^()]*)\)|\[([^[\]]*)\]/g) || []).map((b) => b.slice(1, -1)).find((b) => /[A-Za-z]/.test(fold(b)));
+    if (!inner) return "";
+    const name = cleanOwnerHeader(inner), words = name.split(/\s+/).filter(Boolean);
+    if (words.length < 2 || words.length > 4 || PLACE.test(name)) return "";
+    const ok = words.every((w) => (/^\p{Lu}[\p{L}'’.-]*$/u.test(w) || PARTICLES.has(w)) && /[A-Za-z]/.test(fold(w)) && !NOT_NAME.test(w.replace(/\.$/, "")));
+    return ok && words.filter((w) => /^\p{Lu}/u.test(w)).length >= 2 ? name : "";
   }
 
   // { givens: [tokens], particles: [..], last: surname token, compound: the surname is joined by a hyphen or an apostrophe ("Carreira-Perpinan", "O'Connell"),

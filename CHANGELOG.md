@@ -94,6 +94,15 @@ give the details and every review):
   old rule), with the one known limit reported and not counted: a chip keeps its name on one line, so a 30-character chip name is cut
   in a preview of 330 px or less. The overflow audit no longer counts a break at a soft hyphen (Finnish "Yhteis-|ensimmäinen") as a
   word cut in two.
+- **A third read, of the second read's fixes** (an independent agent; one regression of them, fixed with the rest). (1) A header
+  written surname-first in brackets ("唐杰 (Tang Jie)") found the owner on no paper: the page now matches by the bracketed Latin form,
+  which the other order is read for as for any Latin header (the real Tang Jie rows: 76 of 100 found again), and by the name as
+  written as one more spelling. (2) The bracketed form is read as a header is: titles, degrees and commas go ("(Dr. Wei Zhang, PhD)",
+  "(Zhang, Wei)"), a particle may be in lower case, the first bracket with Latin letters is taken; a place or a job is no name
+  ("(Hong Kong)", "(Research Scientist)"). (3) Every form of a test-of-time nominee or finalist claims nothing ("Test of Time Award
+  (Nominee)", "Nominee for the …", "10-Year Test of Time Award nominee"). (4) Semantic Scholar's check keeps "Naoki Ii" a surname.
+  (5) The year bars' keyboard stop and the filter that a hidden From/To would leave follow the bar's own mode. (6) `role: , first`
+  is `role:first` again; "Only highlighted" is not said twice in the totals' heading.
 - **A second read of these two days' code** (an independent agent given the diff; 8 findings, all fixed). (1) The bracketed Latin name
   of a header in another script had replaced the name: "张伟 (THU)" made "THU" the owner and every line in Chinese absent. The name as
   written stays the owner's, and a bracketed Latin form that looks like a person's name ("Wei Zhang", not "PhD" or "Tsinghua

@@ -463,3 +463,15 @@ test("a review of the roles, 2026-10-29: a particle is one only as written ('van
   for (const h of ["张伟 (THU)", "王伟 (PhD)", "张伟 (Tsinghua University)", "Wei Zhang (张伟)"]) assert.equal(names.bracketName(h), "", h);
   assert.equal(role("张伟, 李明, 王芳", "张伟 (THU)"), "first", "a bracket that is no name leaves the name as it was");
 });
+
+test("a third read, 2026-10-30: a header in another script is matched by its bracketed Latin form, which the other order is read for — the real 'Tang Jie' rows under '唐杰 (Tang Jie)'", () => {
+  const rows = require("./fixtures/profiles/tang-jie.json").rows.map((r) => r[0]);
+  const latin = names.bracketName("唐杰 (Tang Jie)");
+  assert.equal(latin, "Tang Jie");
+  const owner = { name: latin, alternates: ["唐杰"] };           // (as the page builds it: the Latin form, and the name as written as one more spelling)
+  const hints = names.suggestVariants(rows, owner);
+  const full = { ...owner, alternates: [...owner.alternates, ...hints.auto.map((v) => v.name)], exactName: hints.auto.length > 0 };
+  assert.ok(rows.filter((t) => names.classifyRow(t, full).status === "found").length > 50, "the other order is found");
+  for (const [h, want] of [["张伟 (Dr. Wei Zhang)", "Wei Zhang"], ["张伟 (Wei Zhang, PhD)", "Wei Zhang"], ["张伟 (Zhang, Wei)", "Zhang Wei"], ["张伟 (张大伟) (Wei Zhang)", "Wei Zhang"], ["贝多芬 (Ludwig van Beethoven)", "Ludwig van Beethoven"],
+    ["张伟 (Hong Kong)", ""], ["张伟 (Microsoft Research)", ""], ["张伟 (Tsinghua Univ.)", ""], ["张伟 (Research Scientist)", ""]]) assert.equal(names.bracketName(h), want, h);
+});

@@ -55,12 +55,14 @@
   // once when it finds the owner and the name as printed hardly does; other rearrangements ("SY Philip") are only offered.
   let hints = { auto: [], suggestions: [] };
   // (once the page has chosen the profile name's other order — "Li Wei" printed "W Li" — the name as printed finds only its identical self: "L Wei" is somebody else's)
-  // (a header in another script with its Latin form in brackets — "张伟 (Wei Zhang)" — finds both: the name as written, and the Latin form as one more spelling)
+  // (a header in another script with its Latin form in brackets — "张伟 (Wei Zhang)", "唐杰 (Tang Jie)" — is matched by its Latin form, which the other order is read for
+  // as for any Latin header, and by the name as written, as one more spelling)
   const headerLatin = names.bracketName(B.scholar.ownerName());
-  const owner = () => ({ name: headerName, alternates: [...variants, ...(headerLatin ? [headerLatin] : []), ...hints.auto.map((v) => v.name)], exactName: hints.auto.length > 0 });
+  const matchName = headerLatin || headerName, scriptName = headerLatin ? [headerName] : [];
+  const owner = () => ({ name: matchName, alternates: [...scriptName, ...variants, ...hints.auto.map((v) => v.name)], exactName: hints.auto.length > 0 });
   // true when the automatic spellings changed (the rows must then be analysed again)
   function updateHints() {
-    const next = names.suggestVariants(state.rows.map((r) => (resolvedCache[r.raw.id] && resolvedCache[r.raw.id].authors) || r.raw.authorsText), { name: headerName, alternates: variants });
+    const next = names.suggestVariants(state.rows.map((r) => (resolvedCache[r.raw.id] && resolvedCache[r.raw.id].authors) || r.raw.authorsText), { name: matchName, alternates: [...scriptName, ...variants] });
     const key = (x) => x.auto.map((v) => v.name).join("|");
     const changed = key(next) !== key(hints);
     hints = next;
@@ -732,7 +734,7 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
     if (!(p.filters.show && p.filters.only) || !Object.values(prefs.roles).some(Boolean)) f.onlyHighlighted = false;          // (with nothing highlighted the filter would hide every row)
     const range = p.filters.show && p.filters.years;
     // (the year bars can only choose one year, and only while the chart is drawn (two bars at least) with a bar for that year)
-    const bar = p.years.show && f.yearStart != null && f.yearStart === f.yearEnd && (() => { const bars = metrics.yearBars(papers()).bars; return bars.length >= 2 && bars.some((b) => b.year === f.yearStart); })();
+    const bar = p.years.show && state.barYear != null && f.yearStart === state.barYear && f.yearStart === f.yearEnd && (() => { const bars = metrics.yearBars(papers()).bars; return bars.length >= 2 && bars.some((b) => b.year === f.yearStart); })();
     if (!range && !bar) { f.yearStart = null; f.yearEnd = null; }
     if (f.impact && !(p.metrics.show && p.metrics[f.impact] && Object.values(prefs.roles).some(Boolean))) f.impact = null;          // (the h-index and i10 buttons are not drawn while no position is highlighted)
   }
@@ -850,7 +852,8 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
       const f = state.filters, asked = {};
       if ("query" in p) asked.query = f.query = p.query.trim().replace(/\s+/g, " ");
       for (const k of ["onlyHighlighted", "yearStart", "yearEnd", "minCitations", "impact"]) if (k in p) asked[k] = f[k] = p[k];
-      if ("yearStart" in p || "yearEnd" in p) state.barYear = null;          // (a range a call sets is a range: every paper of it, as From and To list them)
+      // (a range a call sets is a range — every paper of it, as From and To list them —; with no From and To to show it, one year is the bar's own pick: the bar shows it and undoes it)
+      if ("yearStart" in p || "yearEnd" in p) state.barYear = !(prefs.panel.filters.show && prefs.panel.filters.years) && f.yearStart != null && f.yearStart === f.yearEnd ? f.yearStart : null;
       if (!Object.values(prefs.roles).some(Boolean)) f.onlyHighlighted = false;           // nothing is highlighted: the filter would hide every row
       state.searchCursor = -1; clearFocusedRow();
       pruneFilters();                                                                      // (what the settings leave without a control is not applied, and said so)
