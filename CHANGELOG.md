@@ -83,6 +83,16 @@ give the details and every review):
   old rule), with the one known limit reported and not counted: a chip keeps its name on one line, so a 30-character chip name is cut
   in a preview of 330 px or less. The overflow audit no longer counts a break at a soft hyphen (Finnish "Yhteis-|ensimmäinen") as a
   word cut in two.
+- **A review of the roles: five ways the owner was found at the wrong place.** (1) A capitalised "Van" standing alone is a given name
+  (Vietnamese Văn: "Hung Van Nguyen" is not "HD Nguyen"), and so is the second part of a hyphenated given name ("Su-Bin Kim" is "SB
+  Kim"; the line's "Su-Hyun Kim" is someone else); a particle counts as one only when written as one, in lower case ("van der Maaten",
+  "bin Ismail") or beside another ("Van Der"). (2) More titles leave the profile's name: "Dr.-Ing.", "Univ.-Prof.", "Assoc.", and
+  "Ing.", "Doc.", "Mag.", "Ir.", "hab." with their full stop only (so "Eng Siong Chng" keeps his name); and letters after it:
+  "FIEEE", "FRS", "MPH", "PharmD" and others. (3) Half of a hyphenated given name is another person: "Ming Yang" is not Ming-Hsuan
+  Yang ("MH Yang" and "M Yang" can be). (4) "等", "他" and "외" ("and others") standing alone cut the list, as "et al" does: the last
+  name before them is not the last author. (5) A profile name in another script with its Latin form in brackets ("张伟 (Wei Zhang)")
+  is the Latin form. None of the 654 real lines in the test profiles changes its role (3,776 owners tried: each profile's own and
+  every name in every line).
 - **A fourth review of the matcher.** New angles (every line the acronym rule read whose words share little with the venue's; journal
   titles one word apart; impossible years; lines in other scripts; "@"), seven classes, 12 real Crossref / OpenAlex lines and none of
   Scholar's: SIGGRAPH as a sponsor (*ACM SIGGRAPH symposium on Videogames* is Sandbox; SIGGRAPH is no symposium) and its programs —

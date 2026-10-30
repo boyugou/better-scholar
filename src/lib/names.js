@@ -31,8 +31,11 @@
     "bin", "ibn", "op", "het"
   ]);
 
-  const PREFIXES = new Set(["dr", "prof", "professor", "mr", "mrs", "ms", "miss", "sir", "madam"]);
-  const SUFFIXES = new Set(["phd", "md", "jr", "sr", "ii", "iii", "iv", "esq", "dphil", "msc", "mba"]);
+  const PREFIXES = new Set(["dr", "prof", "professor", "mr", "mrs", "ms", "miss", "sir", "madam", "assoc", "asst", "assistant", "associate", "adj", "adjunct", "emeritus",
+    "dr-ing", "profdr", "prof-dr", "univ-prof", "mudr"]);
+  // (titles that are also names — "Ing" — or words — "doc" — count only with their full stop: "Ing. Jan Novák", "Dr. hab. Jan Kowalski", "Pr. Jean Dupont")
+  const DOTTED_PREFIXES = new Set(["ing", "doc", "mag", "ir", "hab", "dra", "drs", "dott", "pr"]);
+  const SUFFIXES = new Set(["phd", "md", "jr", "sr", "ii", "iii", "iv", "esq", "dphil", "msc", "mba", "mph", "pharmd", "drph", "dsc", "frs", "frse", "freng", "facs", "facp", "frcp", "frcs", "mrcp", "fieee", "facm"]);
 
   // Strip accents and transliterate letters NFD cannot decompose. Case is kept.
   function fold(s) {
@@ -78,10 +81,13 @@
   // "Wei Zhang (张伟)". Reduce it to the name proper.
   // (a name is not longer than a few hundred characters, and runs of white space are made one before the patterns below look at them: a long run would make them quadratic)
   function cleanOwnerHeader(s) {
-    let r = fold(String(s == null ? "" : s).slice(0, 300)).replace(/\s+/g, " ").replace(/\([^)]*\)|\[[^\]]*\]/g, " ");
+    let src = fold(String(s == null ? "" : s).slice(0, 300)).replace(/\s+/g, " ");
+    // (a name in another script with its Latin form in brackets — "张伟 (Wei Zhang)", "Иван Петров (Ivan Petrov)" — is the Latin form: Scholar's author lines are in Latin letters)
+    if (!/[A-Za-z]/.test(src.replace(/\([^)]*\)|\[[^\]]*\]/g, " "))) { const m = /\(([^)]*[A-Za-z][^)]*)\)|\[([^\]]*[A-Za-z][^\]]*)\]/.exec(src); if (m) src = m[1] || m[2]; }
+    let r = src.replace(/\([^)]*\)|\[[^\]]*\]/g, " ");
     r = r.replace(/[,;|]+/g, " ").replace(/\s+/g, " ").replace(/ (?:ph\.?\s?d|m\.?\s?d)\.?\s*$/i, "");
     const toks = r.split(/\s+/).filter(Boolean);
-    while (toks.length > 1 && PREFIXES.has(bare(toks[0]))) toks.shift();
+    while (toks.length > 1 && (PREFIXES.has(bare(toks[0])) || (DOTTED_PREFIXES.has(bare(toks[0])) && /\.$/.test(toks[0])))) toks.shift();
     while (toks.length > 2 && SUFFIXES.has(bare(toks[toks.length - 1]))) toks.pop();          // (not the second word of a two-word name: "Chidi Mba", "Naoki Ii")
     return toks.join(" ");
   }
@@ -91,7 +97,7 @@
   function nameParts(s, { owner = false } = {}) {
     const raw = owner ? cleanOwnerHeader(s) : String(s == null ? "" : s);
     const toks = normalize(raw).split(" ").filter(Boolean);
-    if (!toks.length) return { givens: [], particles: [], last: "", compound: false, head: "" };
+    if (!toks.length) return { givens: [], particles: [], last: "", compound: false, head: "", joined: [] };
     const lastWord = fold(raw).trim().split(/\s+/).pop().replace(/^[-'’.]+|[-'’.]+$/g, "");
     const compound = /[-'’]/.test(lastWord);
     const last = toks[toks.length - 1];
@@ -101,9 +107,14 @@
     const take = headParts.length && headParts.length < toks.length && headParts.every((w, i) => toks[toks.length - 1 - headParts.length + i] === w) ? headParts.length : 0;
     let end = toks.length - 1 - take;
     const particles = [];
-    // A particle only counts when something (a given name) precedes it.
-    while (end > 1 && PARTICLES.has(toks[end - 1])) particles.unshift(toks[--end]);
-    return { givens: toks.slice(0, end), particles, last, compound, head: take ? headParts.join(" ") : "" };
+    // A particle only counts when something (a given name) precedes it — and when it is written as one: in lower case ("Laurens van der Maaten", "Ahmad bin Ismail") or
+    // beside another ("L Van Der Maaten"). A capitalised "Van" alone is a given name (Vietnamese Văn: "Hung Van Nguyen"), and so is the part of a hyphenated one ("Su-Bin Kim")
+    const words = fold(raw).trim().split(/\s+/).map((w) => w.replace(/[.,]+$/, ""));
+    const writtenAsParticle = new Set(words.filter((w, i) => PARTICLES.has(w.toLowerCase()) && (w === w.toLowerCase() || PARTICLES.has((words[i - 1] || "").toLowerCase()) || PARTICLES.has((words[i + 1] || "").toLowerCase()))).map((w) => w.toLowerCase()));
+    while (end > 1 && PARTICLES.has(toks[end - 1]) && writtenAsParticle.has(toks[end - 1])) particles.unshift(toks[--end]);
+    // the given names written as one with a hyphen ("Ming-Hsuan"): a spelled-out name that has only the first part is another person's ("Ming Yang" is not Ming-Hsuan Yang)
+    const joined = words.slice(0, -1).filter((w) => /^\p{L}+(?:-\p{L}+)+$/u.test(w)).map((w) => normalize(w).split(" ").filter(Boolean)).filter((g) => g.length > 1);
+    return { givens: toks.slice(0, end), particles, last, compound, head: take ? headParts.join(" ") : "", joined };
   }
 
   // True when a concatenated-initials token (one side) lines up letter by letter
@@ -139,6 +150,9 @@
     a.last === b.last && !!a.compound === !!b.compound && (a.head || "") === (b.head || "") &&
     (!a.particles.length || !b.particles.length || a.particles.join(" ") === b.particles.join(" "));
 
+  // (x writes a given name with a hyphen, "Ming-Hsuan", and y spells out only its first part, "Ming": another person — "Ming Yang" is not Ming-Hsuan Yang; "MH Yang" and "M Yang" can be)
+  const halfOfJoined = (x, y) => x.joined.some((g) => { const k = y.givens.indexOf(g[0]); return k >= 0 && g[0].length > 1 && y.givens[k + 1] === undefined; });
+
   // How strongly does the displayed author text match one owner name variant?
   //   3  identical after normalisation          2  every given name spelled out and equal
   //   1  initial-compatible only                0  no match
@@ -150,6 +164,7 @@
     if (!sameSurname(a, b)) return 0;
     if (!a.givens.length || !b.givens.length) return 0;
     if (!givensCompatible(a.givens, b.givens)) return 0;
+    if (halfOfJoined(a, b) || halfOfJoined(b, a)) return 0;
     const full = (g) => g.every((t) => t.length > 1);
     return full(a.givens) && full(b.givens) ? 2 : 1;
   }
@@ -234,7 +249,8 @@
   // Scholar truncates long lists with "…" or "..."; the marker is dropped but we
   // remember the list was cut so "last author" is never over-claimed.
   // (the marks of a cut: "…", "⋯", "‥", two or more dots, ". . .", "et al"; and the separators besides the comma: ";", "·", the ideographic and Arabic commas, "|", a spaced slash, " and ", "&")
-  const CUT = /…|⋯|‥|\.{2,}|(?:\.\s){2,}\.|\bet al\b\.?/gi;
+  // (and "等" / "等人", "他", "외" — "and others" in Chinese, Japanese and Korean lines — when they stand as a word of their own: "张伟, 李明, 等")
+  const CUT = /…|⋯|‥|\.{2,}|(?:\.\s){2,}\.|\bet al\b\.?|(?<=^|[\s,;·、､，；])(?:等人?|他|외)(?=\s*(?:$|[.。,，;；]))/gi;
   const SEPARATOR = /[,;·、､，；،|]|\s\/\s|\s(?:and|&amp;|&)\s/i;
   function parseAuthors(text) {
     const src = String(text || "");

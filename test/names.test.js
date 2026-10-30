@@ -427,3 +427,34 @@ test("a header in capitals with an accepted spelling in capitals initials: the s
   assert.equal(role("Paul S Yu, A B", { name: "PHILIP S. YU", alternates: ["PS YU"] }), "absent");
   assert.equal(role("J Tang, A B", { name: "TANG JIE", alternates: ["JIE TANG"] }), "first");
 });
+
+test("a review of the roles, 2026-10-29: a particle is one only as written ('van', 'L Van Der'; not 'Hung Van', 'Su-Bin'), more titles go, half a hyphenated given name is another person, '等' cuts, a Latin name in brackets is the name", () => {
+  const role = (line, owner) => { const r = names.classifyRow(line, typeof owner === "string" ? { name: owner } : owner); return r.status === "found" ? r.role : r.status; };
+  // a capitalised "Van" alone is a given name (Vietnamese Văn), and so is the second part of a hyphenated given name: "SB Kim" is Su-Bin Kim, "HD Nguyen" is not Hung Van Nguyen
+  assert.equal(role("Su-Hyun Kim, SB Kim, Y Lee", "Su-Bin Kim"), "second");
+  assert.equal(role("HD Nguyen, T Tran, L Pham, HV Nguyen", "Hung Van Nguyen"), "last");
+  // particles written as particles still are: in lower case, or beside another
+  assert.equal(role("A B, L van der Maaten", "Laurens van der Maaten"), "last");
+  assert.equal(role("L Van Der Maaten, A B", "Laurens van der Maaten"), "first");
+  assert.equal(role("Ahmad bin Ismail, X Y", "Ahmad bin Ismail"), "first");
+  assert.equal(role("A B, L Van Gool", "Luc Van Gool"), "last");
+  // titles before the name and letters after it; a title that is also a name counts only with its full stop
+  assert.equal(role("H Müller, D Müller, A Lee", "Prof. Dr.-Ing. Hans Müller"), "first");
+  assert.equal(role("J Novák, X Y", "Ing. Jan Novák"), "first");
+  assert.equal(role("X Y, J Doe", "Jane Doe, FIEEE"), "last");
+  assert.equal(role("ES Chng, X Y", "Eng Siong Chng"), "first");
+  assert.equal(names.cleanOwnerHeader("Eng Siong Chng"), "Eng Siong Chng");
+  // "Ming Yang" is not Ming-Hsuan Yang, nor the other way round; "MH Yang" is
+  assert.equal(role("Ming Yang, A Lee, MH Yang", "Ming-Hsuan Yang"), "last");
+  assert.equal(role("Ming-Hsuan Yang, X Y, Ming Yang", "Ming Yang"), "last");
+  assert.equal(role("JP Dupont, X Y", "Jean-Pierre Dupont"), "first");
+  // "等" (and "他", "외") standing alone is "and others": the list is cut
+  assert.equal(role("张伟, 李明, 王芳, 等", "张伟"), "first");
+  assert.equal(role("李明, 张伟, 王芳, 等", "王芳"), "middle");
+  assert.ok(names.parseAuthors("张伟, 李明, 等").truncated);
+  assert.ok(!names.parseAuthors("张伟, 李明").truncated);
+  assert.ok(!names.parseAuthors("等明, 李明").truncated);
+  // a header in another script with its Latin form in brackets is the Latin form
+  assert.equal(role("W Zhang, A Lee", "张伟 (Wei Zhang)"), "first");
+  assert.equal(role("A Lee, W Zhang", "Wei Zhang (张伟)"), "last");
+});
