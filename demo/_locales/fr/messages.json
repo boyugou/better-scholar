@@ -175,7 +175,7 @@
     "message": "Lit la page de chaque article sur Scholar en arrière-plan (environ un par seconde) pour obtenir la liste complète des auteurs."
   },
   "resolveHintSemantic": {
-    "message": "Demande d’abord à Semantic Scholar la liste d’auteurs de chaque article (il ne reçoit que le titre). Ouvre ensuite la page des autres articles sur Scholar, environ un par seconde."
+    "message": "Demande d’abord à Semantic Scholar la liste d’auteurs de chaque article (il ne reçoit que le titre). Lit ensuite les pages des autres articles sur Scholar en arrière-plan (environ un par seconde)."
   },
   "resolving": {
     "message": "Lecture des listes d’auteurs… $N1$/$N2$",

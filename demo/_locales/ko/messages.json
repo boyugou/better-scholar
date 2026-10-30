@@ -175,7 +175,7 @@
     "message": "각 논문의 Scholar 페이지를 (초당 약 1편) 백그라운드에서 읽어 전체 저자 목록을 가져옵니다."
   },
   "resolveHintSemantic": {
-    "message": "먼저 Semantic Scholar에 각 논문의 저자 목록을 묻습니다(논문 제목만 받습니다). 그다음 나머지 논문의 Scholar 페이지를 (초당 약 1편) 열어 저자 목록을 읽어 옵니다."
+    "message": "먼저 Semantic Scholar에 각 논문의 저자 목록을 묻습니다(논문 제목만 받습니다). 그다음 나머지 논문의 Scholar 페이지를 (초당 약 1편) 백그라운드에서 읽습니다."
   },
   "resolving": {
     "message": "저자 목록을 읽는 중… $N1$/$N2$",

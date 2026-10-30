@@ -175,7 +175,7 @@
     "message": "W tle odczytuje stronę każdej pracy w Scholar (mniej więcej jedną na sekundę), aby uzyskać pełną listę autorów."
   },
   "resolveHintSemantic": {
-    "message": "Najpierw pyta Semantic Scholar o listę autorów każdej pracy (on dostaje tylko tytuł). Potem otwiera strony pozostałych prac w Scholar, mniej więcej jedną na sekundę."
+    "message": "Najpierw pyta Semantic Scholar o listę autorów każdej pracy (on dostaje tylko tytuł). Potem w tle odczytuje strony pozostałych prac w Scholar (mniej więcej jedną na sekundę)."
   },
   "resolving": {
     "message": "Odczytywanie list autorów… $N1$/$N2$",

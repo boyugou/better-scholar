@@ -175,7 +175,7 @@
     "message": "Tam yazar listesini almak için her makalenin Scholar'daki sayfasını arka planda okur (saniyede yaklaşık bir)."
   },
   "resolveHintSemantic": {
-    "message": "Önce her makalenin yazar listesini Semantic Scholar'a sorar (yalnızca makalenin başlığı gönderilir). Ardından diğer makalelerin Scholar'daki sayfalarını saniyede yaklaşık bir tane açar."
+    "message": "Önce her makalenin yazar listesini Semantic Scholar'a sorar (yalnızca makalenin başlığı gönderilir). Ardından diğer makalelerin Scholar'daki sayfalarını arka planda okur (saniyede yaklaşık bir)."
   },
   "resolving": {
     "message": "Yazar listeleri okunuyor… $N1$/$N2$",

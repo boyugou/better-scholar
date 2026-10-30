@@ -51,7 +51,7 @@
 </ul>
 <p>In the Scholar site's own browser storage:</p>
 <ul>
-<li><code>localStorage</code>, key <code>rr-load-lock</code>: a random id and a time. It is written while the extension presses Scholar's <em>Show more</em> button for you, so that only one tab presses at a time. It is removed when the run ends, and ignored once it is twelve seconds old (<code>content/scholar.js</code>).</li>
+<li><code>localStorage</code>, key <code>rr-load-lock</code>: a random id and a time. It is written while the automatic run (<em>Load all papers automatically</em>) presses Scholar's <em>Show more</em> button for you, so that only one tab presses at a time. It is removed when the run ends, and ignored once it is twelve seconds old (<code>content/scholar.js</code>).</li>
 <li><code>sessionStorage</code> of the settings page, key <code>rr-config-report</code>: what <em>Apply configuration</em> applied and left out, kept only across the reload that a new interface language makes, and removed when the page shows it (<code>options/options.js</code>).</li>
 <li><code>sessionStorage</code>, key <code>rr-hl</code>: a language code and a time. It is written when <em>Open Scholar in</em> reopens a page, so that a page is never reopened in a loop. It is removed once the page is in that language (<code>content/lang-redirect.js</code>).</li>
 </ul>
@@ -69,7 +69,7 @@
 <li>It happens only if you turn on <em>Semantic Scholar → Read author lists from Semantic Scholar first</em> and then click <em>Read full lists</em>. The extension then first asks <code>https://api.semanticscholar.org/graph/v1/paper/search/match</code> about each of those papers.</li>
 <li>The request carries the paper's title as its search text, and the list of fields wanted (title, authors, year). It is sent without cookies and without a referrer. The extension waits 1.1 seconds after each request.</li>
 <li>If you entered an API key, it goes in the request's <code>x-api-key</code> header, and to no other address.</li>
-<li>An answer is used only when its title and year agree with the paper's, and its authors with the names that the profile's line shows: the names before the cut are the answer's first ones, in the same order, and the names after it its last ones (by surname). The papers that Semantic Scholar does not know go to Scholar's own page, as above. So do all the remaining papers once Semantic Scholar refuses a request or cannot be reached (<code>content/semantic.js</code>, <code>content/detail.js</code>).</li>
+<li>An answer is used only when its title agrees with the paper's (a title of at least 16 letters), its year is within two of the paper's, and its authors with the names that the profile's line shows: the names before the cut are the answer's first ones, in the same order, and the names after it its last ones (by surname). The papers that Semantic Scholar does not know go to Scholar's own page, as above. So do all the remaining papers once Semantic Scholar refuses a request or cannot be reached (<code>content/semantic.js</code>, <code>content/detail.js</code>).</li>
 <li>No preset turns this on.</li>
 </ul>
 <p>Nothing else:</p>
@@ -99,7 +99,7 @@
 <ul>
 <li>The copy buttons of the panel and the toolbar popup: <em>Copy summary</em>, <em>Copy as table</em>, <em>Copy as image</em>, <em>Copy papers</em>, <em>Copy APA</em>, <em>Copy IEEE</em>, <em>Copy ACM</em>, <em>Copy GB/T 7714</em>, <em>Copy BibTeX</em>, <em>Copy Markdown</em>, <em>Copy JSON</em>; and <em>Copy list</em> under the unranked venues.</li>
 <li><em>Copy as table</em>, <em>Copy papers</em>, <em>Copy APA</em>, <em>Copy IEEE</em>, <em>Copy ACM</em> and <em>Copy GB/T 7714</em> put the same content on the clipboard twice, as text and as HTML (which a word processor reads as a real table or as italics). The HTML is made from the same data and contains nothing else.</li>
-<li><em>Copy as image</em> puts a picture (PNG) of the role × rank table on the clipboard, with the summary text beside it. The picture is drawn in the page from the same numbers and contains nothing else.</li>
+<li><em>Copy as image</em> puts a picture (PNG) of the role × rank table on the clipboard, with the summary text beside it. The picture is drawn in the page from the same numbers: the table, the profile's name, how many papers are loaded and the copy's notes (the profile's link and the day, when <em>Copy &amp; export → Add the profile's link and the day to the copied summary</em> is on). It contains nothing else.</li>
 <li><em>Copy summary</em> and <em>Copy as table</em> end with a line that gives the profile's link (<code>…/citations?user=&lt;id&gt;</code>, nothing else of the address) and the date, unless you turn that off in the settings. They also say when the paper list is not fully loaded.</li>
 <li>On the settings page: <em>Copy guide for agents</em> (it contains your current settings), <em>Copy configuration (JSON)</em>, <em>Copy saved details (JSON)</em> (the saved paper details) and <em>Copy details for a bug report</em> (the extension's version, your browser's user-agent string, the interface language and your settings).</li>
 </ul>
@@ -121,7 +121,7 @@
 <h2 id="the-website-s-demo">The website's demo</h2>
 <p>The project's website has a page that runs the extension's settings page in an ordinary browser tab, so that you can try it (<code>/demo/</code>, also shown inside the home page). It is not the extension: it reads no Scholar page, sends nothing and has no account. It keeps your choices in this website's <code>localStorage</code> (keys that begin with <code>rr-demo:</code>), in your own browser, until you clear the site's data. It does not keep the Semantic Scholar key field of that page at all. GitHub Pages serves the website, and sees the requests for its files as any web host does.</p>
 <h2 id="permissions">Permissions</h2>
-<p>The extension asks for one permission: <code>storage</code>. It declares no host permissions (its scripts run only on the Scholar pages listed in <code>manifest.json</code>). It asks for no <code>tabs</code>, <code>activeTab</code>, <code>scripting</code>, <code>cookies</code> or <code>webRequest</code> permission. The toolbar popup asks Chrome for the active tab's id, and sends a message to the extension's own script in that tab.</p>
+<p>The extension asks for one permission: <code>storage</code>. It declares no host permissions (its scripts run only on the Scholar pages listed in <code>manifest.json</code>). It asks for no <code>tabs</code>, <code>activeTab</code>, <code>scripting</code>, <code>cookies</code> or <code>webRequest</code> permission. The toolbar popup asks Chrome for the active tab's id and whether that tab is still loading, and sends a message to the extension's own script in that tab.</p>
 <h2 id="chrome-web-store-user-data-policy">Chrome Web Store user data policy</h2>
 <p>Better Scholar's use of the information it reads complies with the Chrome Web Store User Data Policy, including the Limited Use requirements:</p>
 <ul>

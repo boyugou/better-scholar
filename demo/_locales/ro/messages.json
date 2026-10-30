@@ -175,7 +175,7 @@
     "message": "Citește pagina fiecărei lucrări pe Scholar în fundal (aproximativ una pe secundă) pentru a obține lista completă de autori."
   },
   "resolveHintSemantic": {
-    "message": "Extensia cere mai întâi de la Semantic Scholar lista de autori a fiecărei lucrări (Semantic Scholar primește doar titlul). Apoi deschide pe Scholar paginile celorlalte lucrări, aproximativ una pe secundă."
+    "message": "Extensia cere mai întâi de la Semantic Scholar lista de autori a fiecărei lucrări (Semantic Scholar primește doar titlul). Apoi citește pe Scholar în fundal paginile celorlalte lucrări (aproximativ una pe secundă)."
   },
   "resolving": {
     "message": "Se citesc listele de autori… $N1$/$N2$",

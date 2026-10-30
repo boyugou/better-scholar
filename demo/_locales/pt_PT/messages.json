@@ -175,7 +175,7 @@
     "message": "Lê a página de cada artigo no Scholar em segundo plano (cerca de uma por segundo) para obter a lista completa de autores."
   },
   "resolveHintSemantic": {
-    "message": "Pergunta primeiro ao Semantic Scholar a lista de autores de cada artigo (o Semantic Scholar recebe apenas o título). Depois abre as páginas dos outros artigos no Scholar, cerca de uma por segundo."
+    "message": "Pergunta primeiro ao Semantic Scholar a lista de autores de cada artigo (o Semantic Scholar recebe apenas o título). Depois lê as páginas dos outros artigos no Scholar em segundo plano (cerca de uma por segundo)."
   },
   "resolving": {
     "message": "A ler listas de autores… $N1$/$N2$",

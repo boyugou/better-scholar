@@ -175,7 +175,7 @@
     "message": "Đọc trang của từng bài trên Scholar ở chế độ nền (khoảng một bài mỗi giây) để lấy danh sách tác giả đầy đủ."
   },
   "resolveHintSemantic": {
-    "message": "Trước hết hỏi Semantic Scholar danh sách tác giả của từng bài (chỉ gửi tiêu đề bài báo). Sau đó mở trang của các bài còn lại trên Scholar, khoảng một bài mỗi giây."
+    "message": "Trước hết hỏi Semantic Scholar danh sách tác giả của từng bài (chỉ gửi tiêu đề bài báo). Sau đó đọc trang của các bài còn lại trên Scholar ở chế độ nền (khoảng một bài mỗi giây)."
   },
   "resolving": {
     "message": "Đang đọc danh sách tác giả… $N1$/$N2$",

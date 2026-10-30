@@ -175,7 +175,7 @@
     "message": "Lukee jokaisen artikkelin sivun Scholarissa taustalla (noin yksi sekunnissa) koko kirjoittajaluettelon saamiseksi."
   },
   "resolveHintSemantic": {
-    "message": "Kysyy ensin Semantic Scholarilta kunkin artikkelin kirjoittajaluetteloa (lähetetään vain artikkelin otsikko). Avaa sitten Scholarissa muiden artikkelien sivut, noin yksi sekunnissa."
+    "message": "Kysyy ensin Semantic Scholarilta kunkin artikkelin kirjoittajaluetteloa (lähetetään vain artikkelin otsikko). Lukee sitten muiden artikkelien sivut Scholarissa taustalla (noin yksi sekunnissa)."
   },
   "resolving": {
     "message": "Luetaan kirjoittajaluetteloita… $N1$/$N2$",
