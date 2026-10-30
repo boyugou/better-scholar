@@ -479,6 +479,8 @@
       if (m.filters.yearStart != null || m.filters.yearEnd != null) {
         if (m.filters.yearStart === m.filters.yearEnd && m.filters.yearStart != null) parts.push(String(m.filters.yearStart));
         else parts.push((m.filters.yearStart != null ? m.filters.yearStart : "…") + "–" + (m.filters.yearEnd != null ? m.filters.yearEnd : "…"));
+        // (a pressed year bar lists the highlighted papers of its year, what it counts: said, so that it does not read as the same range chosen with From and To)
+        if (m.barYear && !(withOnly && m.filters.onlyHighlighted)) parts.push(tr("onlyHighlighted"));
       }
       if (m.filters.query) parts.push(tr === t ? B.dom.quote(m.filters.query) : `"${m.filters.query}"`);
       if (m.filters.minCitations != null) parts.push(tr("filterMinCites", [String(m.filters.minCitations)]));
@@ -760,7 +762,7 @@
       h("div", { class: "rr-yearsbox", style: "width:min(100%," + data.length * 28 + "px)" },
         h("div", { class: "rr-bars", style: data.length > 24 ? "gap:1px" : null, role: "group", onKeydown: onBarKey, "aria-label": t("yearsTitle") + ": " + data.map((d) => d.year + " " + d.total).join(", ") + (older ? ". " + olderNote : "") },
           ...data.map((d) => {
-            const isSelected = m.filters.yearStart === d.year && m.filters.yearEnd === d.year;
+            const isSelected = !!m.barYear && m.filters.yearStart === d.year && m.filters.yearEnd === d.year;          // (pressed in its own way only: the same year chosen with From and To is a range of every paper)
             const disabled = !d.total && !isSelected;                          // (a pressed bar can always be released)
             return h("button", {
               class: "rr-bar", type: "button", "data-year": String(d.year), "aria-pressed": String(isSelected),
