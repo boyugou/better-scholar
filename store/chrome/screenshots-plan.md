@@ -1,9 +1,8 @@
 # Screenshots and promo images
 
 The eight files in `store/chrome/images/` (five screenshots, two promo tiles, the icon) are made by one command, from the real
-extension, and are current. They were last made on 2026-10-28 (`listing.md`, "Graphic assets"); `src/` has changed since in ways a picture can show — the
-settings page's tray now holds more hidden things than screenshot 4 shows, and the panel's lines and popup words grew — so they
-are to be made again before a submission (`npm run store:images`, then look at each). All have the sizes and formats the store asks for (`listing.md`, "Graphic assets": screenshots
+extension, and are current. They were made again on 2026-10-30 at the code of that day (only screenshot 4 changed: its tray now says "Hidden: 11") and
+looked at one by one. All have the sizes and formats the store asks for (`listing.md`, "Graphic assets": screenshots
 1280×800 JPEG, small tile 440×280, marquee 1400×560, icon 128×128 PNG).
 
 ## How they are made
@@ -33,7 +32,7 @@ npm run store:images        # = node scripts/store-images.mjs
 | `screenshot-1.jpg` | "See your role in every paper." Rows coloured by authorship role; venues found on the CCF and CORE lists carry today's rank. | The profile with rows tinted by role, the owner's name marked, rank, award and talk chips, and the panel at the right. |
 | `screenshot-2.jpg` | "Papers by role and rank." One table, with awards and talks, citation totals and one-click copy or export. | The panel up close in its two-column layout. |
 | `screenshot-3.jpg` | "Filter by role, rank and citations." Type `role:first ccf:a cites:>100` and the list, the table and the citation totals follow. | The search typed in: "Showing 5 of 12 papers", the quick filters lit. |
-| `screenshot-4.jpg` | "Choose what you see." Every part of the panel has its own switch and every colour its own picker, with a live preview. | The settings page: the card "Highlight my papers" and the preview with its hint and the tray "Hidden: 6". |
+| `screenshot-4.jpg` | "Choose what you see." Every part of the panel has its own switch and every colour its own picker, with a live preview. | The settings page: the card "Highlight my papers" and the preview with its hint and the tray "Hidden: 11". |
 | `screenshot-5.jpg` | "Your summary in the toolbar." The toolbar button shows the open profile's table, with the same copy and export. | The toolbar popup over the profile, by CORE rank, with the eight copy and export buttons. |
 | `promo-small.jpg` | "Better Scholar", "Roles and ranks on every paper" | The icon and the top of the real panel's table on the icon's navy. |
 | `promo-marquee.jpg` | "Better Scholar", "Your authorship role, and the CCF and CORE rank of the venues it finds on the lists, on every Scholar profile." | The icon and the real panel's table, copy buttons and note, running off the bottom edge. |
@@ -45,8 +44,8 @@ the editor of the preview in use (hovering, dragging) and the HTML on the clipbo
 ## When the interface changes
 
 1. Run `npm run store:images`, then open every picture. Check what the words promise against what the picture shows: the eight
-   copy buttons, "Showing 5 of 12 papers", "Hidden: 6" (the six things that are off by default: five quick filters and the
-   venue list), the CORE tab of the popup.
+   copy buttons, "Showing 5 of 12 papers", "Hidden: 11" (the eleven things that are off by default: the four copy buttons
+   that are off until switched on — image, IEEE, ACM, GB/T 7714 —, six quick filters and the venue list), the CORE tab of the popup.
 2. Commit the pictures with the change that made them stale. They are used beyond the store: README.md and README.zh-CN.md show
    all five, and the project site's hero picture is `screenshot-1.jpg` (`CONTRIBUTING.md`, "The website"), so the site needs
    building and deploying again.
