@@ -394,10 +394,8 @@ html { scroll-padding-top: 72px; }
 /* the descriptions: no last line of one or two characters (Chinese, Japanese) */
 .card .desc, .opt .name { text-wrap: pretty; }
 
-.opt.disabled {
-  opacity: 0.55;
-  cursor: default;
-}
+.opt.disabled { cursor: default; }
+.opt.disabled > :not(.name-edit.free) { opacity: 0.55; }          /* (a free name's field in a greyed-out row stays as it is: it can still be edited) */
 
 .opt.sub {
   padding-inline-start: 40px;

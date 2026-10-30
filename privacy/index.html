@@ -52,6 +52,7 @@
 <p>In the Scholar site's own browser storage:</p>
 <ul>
 <li><code>localStorage</code>, key <code>rr-load-lock</code>: a random id and a time. It is written while the extension presses Scholar's <em>Show more</em> button for you, so that only one tab presses at a time. It is removed when the run ends, and ignored once it is twelve seconds old (<code>content/scholar.js</code>).</li>
+<li><code>sessionStorage</code> of the settings page, key <code>rr-config-report</code>: what <em>Apply configuration</em> applied and left out, kept only across the reload that a new interface language makes, and removed when the page shows it (<code>options/options.js</code>).</li>
 <li><code>sessionStorage</code>, key <code>rr-hl</code>: a language code and a time. It is written when <em>Open Scholar in</em> reopens a page, so that a page is never reopened in a loop. It is removed once the page is in that language (<code>content/lang-redirect.js</code>).</li>
 </ul>
 <p>To see or delete what is stored, use the <em>Saved data</em> card on the settings page: <em>View saved details</em>, <em>Clear saved paper details</em> (a profile tab that is open forgets them too, and does not write them back), and <em>Reset to defaults</em> (every setting back to its default). To remove a name spelling, click the × beside it in the panel. To remove a venue mapping, use <em>Remove</em> in the list under <em>Check a venue</em>.</p>

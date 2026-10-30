@@ -254,7 +254,7 @@
     const sync = () => { input.value = at(path); reset.hidden = !at(path); input.disabled = off ? off() : false; if (own) input.placeholder = at("panel.filters.searches.search" + own[1]) || B.dom.tDefault(key); };
     syncers.push(sync);
     sync();
-    return h("span", { class: "name-edit" }, input, reset);
+    return h("span", { class: "name-edit" + (off ? "" : " free") }, input, reset);
   }
 
   // The words of your own quick filter, as they are typed in the search box (saved as they are typed); what the search cannot read is said under the field, and
@@ -280,7 +280,7 @@
     if (key) syncers.push(() => { d.words.nodeValue = t(key); });                    // (a switch is named by what it shows: when that is renamed, so is it)
     const input = h("input", { type: "checkbox", role: "switch", class: "sw", id: d.id + "-sw", "data-pref": path, ...d.ids, onChange: () => { put(path, input.checked); save(); } });
     if (swatch) d.name.prepend(h("span", { class: "swatch", style: "background:" + swatch }));
-    const row = h("label", { class: "opt" + (sub ? " sub" : "") + (name ? " opt-named" : ""), for: input.id }, h("span", { class: "txt" }, d.name, d.hint), name ? nameEdit(name, off) : null, input);
+    const row = h("label", { class: "opt" + (sub ? " sub" : "") + (name ? " opt-named" : ""), for: input.id }, h("span", { class: "txt" }, d.name, d.hint), name ? nameEdit(name, name.free ? null : off) : null, input);          // (a free name: drawn elsewhere too, never greyed out — lib/prefs.js part())
     const sync = () => {
       input.checked = !!at(path);
       const disabled = off ? off() : false;
@@ -571,8 +571,8 @@
       "aria-label": t("optSemanticKey"),
       onChange: async () => {
         input.value = input.value.replace(/[^\x21-\x7e]/g, "");
-        await B.store.saveS2Key(input.value);
-        status(t("optSaved"));
+        const ok = await B.store.saveS2Key(input.value);
+        status(ok ? t("optSaved") : t("optSaveFailed"), !ok);
       }
     });
     B.store.loadS2Key().then((k) => { input.value = k; });
@@ -699,16 +699,26 @@
   // ---- Configuration: the record as JSON, in and out. Whatever comes in is a patch that lib/prefs.js apply() lays over the settings and reports ----
   const configStatus = h("div", { class: "config-status", role: "status", "aria-live": "polite", "data-rr": "config-status" });
   const say = (lines, bad) => { configStatus.replaceChildren(...lines.map((line) => h("p", {}, line))); configStatus.classList.toggle("bad", bad); };
+  // (the report outlives the reload that a new interface language makes — in this page's sessionStorage, read and removed when the page opens again; an agent asks the
+  // person for exactly these lines. "Applied" only once the write was made: a write Chrome refused says so)
+  const REPORT = "rr-config-report";
+  const report = (applied, ignored, ok) => {
+    const lines = [];
+    if (applied) lines.push(ok ? t("optConfigApplied", [String(applied)]) : t("optSaveFailed"));
+    else if (!ignored.length) lines.push(t("optConfigNothing"));
+    if (ignored.length) lines.push(t("optConfigIgnored") + " " + ignored.map((x) => (x.path || "·") + ": " + x.reason).join("; "));
+    say(lines, ignored.length > 0 || !ok);
+  };
   async function applyPatch(patch) {
     const r = B.prefs.apply(prefs, patch);
     prefs = r.prefs;
-    if (r.applied.length) await save();
-    const lines = [];
-    if (r.applied.length) lines.push(t("optConfigApplied", [String(r.applied.length)]));
-    else if (!r.ignored.length) lines.push(t("optConfigNothing"));
-    if (r.ignored.length) lines.push(t("optConfigIgnored") + " " + r.ignored.map((x) => (x.path || "·") + ": " + x.reason).join("; "));
-    say(lines, r.ignored.length > 0);
+    // (a new interface language reloads the page once the write is made: what the report says is kept for the page that opens)
+    if (r.applied.length && prefs.language !== shownLanguage) try { sessionStorage.setItem(REPORT, JSON.stringify({ applied: r.applied.length, ignored: r.ignored })); } catch (e) { /* no storage: shown now only */ }
+    const ok = r.applied.length ? await save() : true;
+    if (!ok) try { sessionStorage.removeItem(REPORT); } catch (e) { /* none */ }
+    report(r.applied.length, r.ignored, ok);
   }
+  try { const kept = JSON.parse(sessionStorage.getItem(REPORT) || "null"); sessionStorage.removeItem(REPORT); if (kept) report(kept.applied, kept.ignored || [], true); } catch (e) { /* none, or not readable */ }
   async function applyConfig(text) {
     let patch;
     try { patch = JSON.parse(text); } catch (e) { say([t("optConfigError", [String(e.message).slice(0, 120)])], true); return; }
@@ -833,7 +843,7 @@
     const label = t(row.label), hint = row.hint ? t(row.hint) : "";
     switch (row.kind) {
       case "bool": return option({ path: row.path, label, hint, swatch: row.swatch ? ROLE_COLOR[row.swatch] : null, sub: !!row.parent && rows.some((r) => r.path === row.parent), off: () => inert(row), name, key: row.label });
-      case "text": return row.inline ? null : row.search ? searchWords(row, row.parent && rows.some((r) => r.path === row.parent)) : h("div", { class: "opt opt-name" + (row.parent && rows.some((r) => r.path === row.parent) ? " sub" : "") }, h("span", { class: "txt" }, h("span", { class: "name" }, label)), nameEdit(row, () => inert(row)));
+      case "text": return row.inline ? null : row.search ? searchWords(row, row.parent && rows.some((r) => r.path === row.parent)) : h("div", { class: "opt opt-name" + (row.parent && rows.some((r) => r.path === row.parent) ? " sub" : "") }, h("span", { class: "txt" }, h("span", { class: "name" }, label)), nameEdit(row, row.free ? null : () => inert(row)));
       case "choice": { const c = CHOICES[row.path]; return segmented({ path: row.path, label, hint, choices: row.values.map((v) => [v, t(c.labels[v])]), icons: c.icons, off: () => inert(row) }); }
       case "order": return orderList({ path: row.path, label, hint, nameOf: (id) => itemName(row.path, id), offOf: (id) => itemOff(row.path, id), off: () => inert(row) });
       case "language": return languageSelect({ path: row.path, label, hint, none: [row.none, t(NONE_WORD[row.path])], reload: row.path === "language" });
@@ -1066,7 +1076,7 @@
     }
   });
   window.addEventListener("keydown", (e) => {
-    if (e.key === "/" && prefs.panel.filters.key && document.activeElement !== searchInput && !["INPUT", "TEXTAREA", "SELECT"].includes(document.activeElement?.tagName)) {
+    if (e.key === "/" && prefs.panel.filters.key && !inert(SETTING.get("panel.filters.key")) && document.activeElement !== searchInput && !["INPUT", "TEXTAREA", "SELECT"].includes(document.activeElement?.tagName)) {
       e.preventDefault();
       searchInput.focus();
       searchInput.select();

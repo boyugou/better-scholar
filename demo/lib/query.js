@@ -69,7 +69,7 @@
     while ((m = re.exec(q))) out.push(m[3] !== undefined ? { word: m[3] } : { word: m[1] + m[2].trim().replace(/\s+/g, " "), phrase: true });
     for (let i = 0; i < out.length - 1; i++) {
       const w = out[i].word, at = w.indexOf(":"), op = at > 0 && !out[i].phrase ? BY_NAME.get(fold(w.slice(w[0] === "-" ? 1 : 0, at))) : undefined;
-      if (op && LISTED.has(op.name) && /[:,]$/.test(w) && !out[i + 1].phrase && !out[i + 1].word.includes(":")) { out[i].word = w + out[i + 1].word; out.splice(i + 1, 1); i--; }
+      if (op && LISTED.has(op.name) && /[:,、،]$/.test(w) && !out[i + 1].phrase && !out[i + 1].word.includes(":")) { out[i].word = w + out[i + 1].word; out.splice(i + 1, 1); i--; }
     }
     return out;
   }
@@ -93,8 +93,8 @@
       if (!op) { put({ kind: "text", text: word }); continue; }
       const raw = word.slice(at + 1), bad = () => { not = false; put({ kind: "never" }); errors.push(`${word} — ${op.doc.replace(/\.$/, "")}`); problems.push({ word, name: op.name }); };
       if (op.field) { if (raw) put({ kind: "text", text: raw, field: op.name }); else not = false; continue; }
-      if (LISTED.has(op.name)) {                                              // (a comma lists values: "role:first,last"; one still typing, "role:first,", has the one it has)
-        const values = [...new Set(raw.split(",").filter(Boolean))];
+      if (LISTED.has(op.name)) {                                              // (a comma lists values: "role:first,last"; one still typing, "role:first,", has the one it has; the ideographic and Arabic commas too)
+        const values = [...new Set(raw.split(/[,、،]/).filter(Boolean))];
         if (!values.length || values.some((v) => !op.value.test(v))) bad(); else put({ kind: op.name, values });
         continue;
       }
@@ -153,65 +153,89 @@
   // ---- the quick filters in a query ------------------------------------------------------------------------------------------------------------
   // A quick filter is one `operator:value` ("role:first"). Pressed beside another of the same operator it joins its word ("role:first,last": either), rather than becoming a second
   // word that must hold as well (nothing is both a first and a last author).
-  const words = (q) => String(q == null ? "" : q).trim().split(/\s+/).filter(Boolean);
-  const split = (word) => { const at = word.indexOf(":"); return at > 0 ? { name: word.slice(0, at).toLowerCase(), values: word.slice(at + 1).toLowerCase().split(",").filter(Boolean) } : null; };
+  // The query is read in units, each with its text as typed: a word; a quoted phrase; NOT and what follows it, or a word with a minus; terms joined by OR; a listed operator's
+  // values past a space ("role:first, last"). Only a plain unit — a word, not left out, not one of an OR — is a button's: "NOT role:first" and "role:first OR has:award" press
+  // no First button, and a button never joins its value to them. (`word`: a plain unit in one form, folded, without spaces; `key`: what is compared — a listed operator's values
+  // once each, in order, so that "Role:Last,first," is "role:first,last")
+  const QUOTE = /["“”„«»]/;
+  const OPEN = /^-?(?:ccf|core|role|type|has):(?:.*[,、،])?$/;          // (a listed operator still taking values: "role:", "role:first,")
+  const flat = (text) => fold(String(text).normalize("NFKC")).replace(/\s+/g, "");
+  function units(q) {
+    const raw = String(q == null ? "" : q).match(/-?["“”„«»][^"“”„«»]*["“”„«»]?|\S+/g) || [];
+    const toks = [];
+    for (const t of raw) {
+      const prev = toks[toks.length - 1];
+      if (prev && !QUOTE.test(prev.text) && !QUOTE.test(t) && !flat(t).includes(":") && t !== "OR" && t !== "NOT" && OPEN.test(flat(prev.text))) { prev.text += " " + t; continue; }
+      toks.push({ text: t });
+    }
+    const out = [];
+    for (let i = 0; i < toks.length; i++) {
+      let text = toks[i].text, opaque = QUOTE.test(text) || /^-./.test(text);
+      if (text === "NOT" && i + 1 < toks.length) { text += " " + toks[++i].text; opaque = true; }
+      while (i + 2 < toks.length && toks[i + 1].text === "OR") { text += " OR " + toks[i + 2].text; i += 2; opaque = true; }
+      const word = flat(text);
+      out.push({ text, plain: !opaque, word, key: opaque ? fold(text.normalize("NFKC")).replace(/\s+/g, " ") : norm(word) });
+    }
+    return out;
+  }
+  const split = (word) => { const at = word.indexOf(":"); return at > 0 ? { name: word.slice(0, at), values: word.slice(at + 1).split(/[,、،]/).filter(Boolean) } : null; };
+  const norm = (w) => { const s = split(w); return s && LISTED.has(s.name) && s.values.length ? s.name + ":" + [...new Set(s.values)].sort().join(",") : w; };
   const parts = (op) => { const at = op.indexOf(":"); return { name: op.slice(0, at), value: op.slice(at + 1) }; };
+  const of = (u, name) => { const s = u.plain && split(u.word); return s && s.name === name ? s : null; };
 
   // Is this quick filter in the query?
   function hasValue(q, op) {
     const { name, value } = parts(op);
-    return words(q).some((w) => (LISTED.has(name) ? (() => { const s = split(w); return !!s && s.name === name && s.values.includes(value); })() : w.toLowerCase() === op));
+    return units(q).some((u) => (LISTED.has(name) ? !!of(u, name) && of(u, name).values.includes(value) : u.plain && u.word === op));
   }
   // The query with the quick filter put in (joining the word of its operator) or taken out
   function toggleValue(q, op) {
-    const ws = words(q), { name, value } = parts(op);
+    const us = units(q), { name, value } = parts(op);
     // (taken out of every word that has it: the person may have typed it twice)
-    if (!LISTED.has(name)) { const left = ws.filter((w) => w.toLowerCase() !== op); return (left.length < ws.length ? left : [...ws, op]).join(" "); }
-    if (ws.some((w) => { const s = split(w); return !!s && s.name === name && s.values.includes(value); })) {
-      return ws.flatMap((w) => {
-        const s = split(w);
-        if (!s || s.name !== name || !s.values.includes(value)) return [w];
+    if (!LISTED.has(name)) { const left = us.filter((u) => !(u.plain && u.word === op)); return (left.length < us.length ? left.map((u) => u.text) : [...us.map((u) => u.text), op]).join(" "); }
+    if (us.some((u) => of(u, name) && of(u, name).values.includes(value))) {
+      return us.flatMap((u) => {
+        const s = of(u, name);
+        if (!s || !s.values.includes(value)) return [u.text];
         const left = s.values.filter((v) => v !== value);
         return left.length ? [name + ":" + left.join(",")] : [];
       }).join(" ");
     }
-    const same = ws.findIndex((w) => { const s = split(w); return !!s && s.name === name; });
-    if (same >= 0) ws[same] = ws[same].replace(/,+$/, "") + "," + value; else ws.push(op);
-    return ws.join(" ");
+    const texts = us.map((u) => u.text), same = us.findIndex((u) => of(u, name));
+    if (same >= 0) texts[same] = name + ":" + [...of(us[same], name).values, value].join(","); else texts.push(op);
+    return texts.join(" ");
   }
-  // The words and values of the query that are quick filters in `allowed` (a Set of "operator:value"), in lower case: what stays when the search box is not there to hold the rest
+  // The units of the query that are quick filters in `allowed` (a Set of "operator:value" and of your own filters' keys): what stays when the search box is not there to hold the
+  // rest. A unit of your own filter stays as typed (its OR and NOT in capitals); of a listed operator's plain word, the values that are buttons; a word left out or one of an OR goes
   function keepOnly(q, allowed) {
     const out = [];
-    for (const w of words(q)) {
-      const lw = w.toLowerCase(), s = split(lw);
-      if (allowed.has(lw) || allowed.has(norm(lw))) out.push(lw);                             // (a whole word: one of your own quick filters' words)
-      else if (s && LISTED.has(s.name)) { const keep = s.values.filter((v) => allowed.has(s.name + ":" + v)); if (keep.length) out.push(s.name + ":" + keep.join(",")); }
+    for (const u of units(q)) {
+      if (allowed.has(u.key)) out.push(u.plain ? u.word : u.text);
+      else if (u.plain) { const s = split(u.word); if (s && LISTED.has(s.name)) { const keep = s.values.filter((v) => allowed.has(s.name + ":" + v)); if (keep.length) out.push(s.name + ":" + keep.join(",")); } }
     }
     return out.join(" ");
   }
 
-  // ---- a quick filter of your own: several words ----------------------------------------------------------------------------------------------------
-  // Its words go into the search whole, each as it is: "has:award has:talk" stays two words that must both hold (split into values they would join into
-  // "has:award,talk", either one). Pressed means: every one of its words is a word of the search, so a built-in button that joins one of them ("role:first" + Last →
-  // "role:first,last") leaves it unpressed, as its words no longer describe the search.
-  // (a word in one form: lower case, and a listed operator's values once each, in order — "Role:Last,first," is "role:first,last" — so that the same word typed or clicked
-  // in another order is the same word)
-  const norm = (w) => { const lw = w.toLowerCase(), s = split(lw); return s && LISTED.has(s.name) && s.values.length ? s.name + ":" + [...new Set(s.values)].sort().join(",") : lw; };
-  const searchParts = (words_) => [...new Set(words(words_).map(norm))];
-  const hasAll = (q, words_) => { const ps = searchParts(words_), ws = new Set(words(q).map(norm)); return ps.length > 0 && ps.every((p) => ws.has(p)); };
+  // ---- a quick filter of your own: several units ----------------------------------------------------------------------------------------------------
+  // Its units go into the search whole, each as it is: "has:award has:talk" stays two words that must both hold (split into values they would join into
+  // "has:award,talk", either one); "cas9 OR cas12a" and "NOT survey" stay what they are. Pressed means: every one of its units is a unit of the search, so a built-in button that
+  // joins one of them ("role:first" + Last → "role:first,last") leaves it unpressed, as its words no longer describe the search.
+  const searchParts = (words_) => [...new Set(units(words_).map((u) => u.key))];
+  const hasAll = (q, words_) => { const ps = searchParts(words_), ks = new Set(units(q).map((u) => u.key)); return ps.length > 0 && ps.every((p) => ks.has(p)); };
   // the listed operators whose values exclude each other (a paper has one role, a venue one rank in a list and one kind): a filter's word of one takes the place of its other words.
   // `has` is not one of them: a paper can have an award and a talk, and "has:award has:talk" asks for both
   const SINGLE = new Set(["role", "ccf", "core", "type"]);
-  // The query with its words put in (those not there yet) or, when all are there, taken out
+  // The query with its units put in (those not there yet) or, when all are there, taken out
   function toggleAll(q, words_) {
-    const ps = searchParts(words_), ws = words(q);
-    if (hasAll(q, words_)) return ws.filter((w) => !ps.includes(norm(w))).join(" ");
-    // (the other words of an operator of one value that it has go first: beside its word they would still press their built-in buttons while its word decides —
+    const ps = searchParts(words_), us = units(q);
+    if (hasAll(q, words_)) return us.filter((u) => !ps.includes(u.key)).map((u) => u.text).join(" ");
+    // (the other plain words of an operator of one value that it has go first: beside its word they would still press their built-in buttons while its word decides —
     // "role:first,last role:first" is first authors only, under a pressed Last — and the same clicks in another order would give another search)
-    const ops = new Set(ps.map(split).filter((s) => s && SINGLE.has(s.name)).map((s) => s.name));
-    const kept = ws.filter((w) => { const s = split(w.toLowerCase()); return !(s && ops.has(s.name)) || ps.includes(norm(w)); });
-    const add = [...new Map(words(words_).map((w) => [norm(w), w.toLowerCase().replace(/,+$/, "")])).entries()].filter(([p]) => !kept.some((w) => norm(w) === p)).map(([, w]) => w);          // (as the person wrote them)
-    return [...kept, ...add].join(" ");
+    const own = units(words_);
+    const ops = new Set(own.map((u) => u.plain && split(u.word)).filter((x) => x && SINGLE.has(x.name)).map((x) => x.name));
+    const kept = us.filter((u) => { const x = u.plain && split(u.word); return !(x && ops.has(x.name)) || ps.includes(u.key); });
+    const add = [...new Map(own.map((u) => [u.key, u.plain ? u.word.replace(/[,、،]+$/, "") : u.text])).entries()].filter(([p]) => !kept.some((u) => u.key === p)).map(([, w]) => w);          // (as the person wrote them)
+    return [...kept.map((u) => u.text), ...add].join(" ");
   }
 
   return { OPERATORS, POPULAR, LISTED, fold, parse, matches, hasValue, toggleValue, keepOnly, searchParts, hasAll, toggleAll };
