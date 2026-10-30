@@ -170,6 +170,12 @@ of HotStorage, and the year written with a hyphen or jammed onto a mixed-case wo
   through native messaging: a new permission (`nativeMessaging`) and a program the user installs, which the
   permission policy asks a very good reason for. Agents that drive a browser already have the page events and the
   agent guide.
+- **Poster and panel volumes of ACM proceedings** (seen 2026-10-29): SIGCSE TS and ITiCSE print their second volume as "… V. 2"
+  (posters, panels, demos — since about 2022), ICER its "Volume 2" (2022–23), SPLC "Volume 2" (2011–12) and "Volume B" (since 2019),
+  and those lines get the main badge (CORE only). No word rule separates them: for ASPLOS, KDD, CVPR '06 and ICPP '93 "Volume 2" holds
+  main papers. It would take a per-venue note of which volumes are tracks, checked against each venue's own pages. Also left: an
+  acronym that stands inside a name ("International ISC Conference on Information Security and Cryptology" is the Iranian ISCISC, read
+  as Inscrypt: shadows count an acronym in front or in a parenthesis only).
 - **Stricter reading of cut-off venue lines.** Scholar cuts a long venue name ("… International Conference on Machine Learning and …"),
   and the start-of-a-cut-name rule gives the badge of the one listed venue whose name begins that way. The lists cannot say which
   *unlisted* venues begin so too. Measured 2026-10-29 by cutting the 52,800 Crossref / OpenAlex titles of `test/fixtures/real-titles.txt`

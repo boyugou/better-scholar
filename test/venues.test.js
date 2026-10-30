@@ -1705,6 +1705,38 @@ test("real prints that missed a badge: a cut IEEE citation form, joint proceedin
   // a cut "ACM SIGPLAN … on Principles and practice of …" is PPDP's as much as PPoPP's (CORE names PPDP without its sponsor; ACM's titles name it): each by its own event word
   eq("Proceedings of the 11th ACM SIGPLAN conference on Principles and practice of …, 2009", "CORE C PPDP");
   eq("Proceedings of the 12th ACM SIGPLAN symposium on Principles and practice of …, 2007", "CCF A PPoPP · CORE B PPoPP");
+  // PODS's papers are issue 2 of each volume of Proceedings of the ACM on Management of Data from 2024 on; the other issues, and volume 1, are SIGMOD's
+  eq("Proceedings of the ACM on Management of Data 2 (2), 1-16, 2024", "CCF B PODS · CORE A* PODS");
+  eq("Proceedings of the ACM on Management of Data 4 (2 (PODS), 1-26, 2026", "CCF B PODS · CORE A* PODS");
+  eq("Proceedings of the ACM on Management of Data 2 (1), 1-27, 2024", "CCF A SIGMOD · CORE A* SIGMOD");
+  eq("Proceedings of the ACM on Management of Data 1 (2), 1-26, 2023", "CCF A SIGMOD · CORE A* SIGMOD");
+  // a congress (a colloquium, a forum, a summit) is an event of its own kind: the BigData Congress is not IEEE BigData, CISP not ICISP; a venue that is a congress stays one
+  none("2015 IEEE International Congress on Big Data, 2015");
+  none("BigData Congress 2016");
+  none("2010 3rd International Congress on Image and Signal Processing, 2010");
+  eq("2018 IEEE Congress on Evolutionary Computation (CEC), 2018", "CCF C IEEE CEC · CORE B CEC");
+  eq("2019 IEEE International Conference on Big Data (Big Data), 2019", "CCF C IEEE BigData · CORE B BigData");
+  // a name that is one word without its sponsor is not met by an event of another shape without it (ICN, London's VIZ, Bucharest's COMM, VolVis); its own shape is
+  // (ACM's title for MM, IEEE's ISM), and so is a line with no event word (IEEE Visualization's old proceedings)
+  none("Seventh International Conference on Networking (icn 2008)");
+  none("2008 International Conference Visualisation");
+  none("2010 8th International Conference on Communications");
+  none("Symposium on Volume Visualization");
+  eq("Proceedings of the 15th international conference on Multimedia, 152-153, 2007", "CCF A ACM MM · CORE A* ACMMM");
+  eq("International Symposium on Multimedia", "CORE C ISM");
+  eq("Proceedings Visualization'93, 119-125, 1993", "CCF A IEEE VIS · CORE A IEEE VIS");
+  eq("Annual Cryptology Conference, 241-260, 2014", "CCF A CRYPTO · CORE A* CRYPTO");
+  eq("2019 IFIP Networking Conference (IFIP Networking), 2019", "CCF C Networking · CORE B Networking");
+  // JMLR's Workshop and Conference Proceedings were conferences' proceedings; an IEEE region's conference is that region's; Perner's ICDM is not the IEEE's
+  none("Journal of Machine Learning Research W&CP 28 (3), 2013");
+  none("Journal of Machine Learning Research - Proceedings Track 15, 315-323, 2011");
+  eq("Journal of Machine Learning Research 15 (1), 1929-1958, 2014", "CCF A JMLR");
+  none("2008 IEEE Region 5 Conference");
+  eq("2019 IEEE Region 10 Conference (TENCON), 2019", "CORE C Tencon");
+  none("Industrial Conference on Data Mining (ICDM), 2010");
+  // Proceedings of the ACM on Software Engineering is FSE's and ISSTA's journal, named in the issue; without it, no venue (ICSE least)
+  none("Proceedings of the ACM on Software Engineering 1, 2024");
+  eq("Proceedings of the ACM on Software Engineering 1 (FSE), 1-24, 2024", "CCF A FSE · CORE A* FSE");
   // acronyms of other events that the names of a ranked venue boil down to, and the predecessors of IPDPS
   none("2022 2nd International Conference on Artificial Intelligence (ICAI)");
   none("2020 International Conference on Artificial Intelligence and Education (ICAIE)");

@@ -78,6 +78,20 @@ give the details and every review):
   old rule), with the one known limit reported and not counted: a chip keeps its name on one line, so a 30-character chip name is cut
   in a preview of 330 px or less. The overflow audit no longer counts a break at a soft hyphen (Finnish "Yhteis-|ensimmäinen") as a
   word cut in two.
+- **A third review of the matcher, and what it found.** (1) Since 2024 PODS's papers are issue 2 of each volume of *Proceedings of the
+  ACM on Management of Data*, which an alias made SIGMOD's: a real line of 2024 had SIGMOD's CCF A; that issue is PODS's now (CCF B,
+  CORE A*), volume 1 and the other issues stay SIGMOD's; *Proceedings of the ACM on Software Engineering* without its issue's FSE or
+  ISSTA is no longer ICSE. (2) A congress, a colloquium, a forum or a summit is an event of its own kind, as the cut-name rule knew: the
+  IEEE BigData Congress had IEEE BigData's badge, CISP ICISP's. (3) A name that is one word once its sponsor is dropped — IFIP
+  Networking, IEEE VIS, IEEE ICC — met any event of that word: *International Conference on Networking* (ICN), London's *International
+  Conference Visualisation* (CCF A VIS), Bucharest's COMM, the old *Symposium on Volume Visualization*; such a name is now met without
+  the sponsor only by its own shape (ACM's *international conference on Multimedia* stays ACM MM, *International Symposium on
+  Multimedia* IEEE's ISM) or a line with no event word (*Proceedings Visualization'93* stays VIS) — and *International Supercomputing
+  Conference* is no longer ICS, which the ROADMAP had set aside because a broader rule cost 38 right badges (this one costs none).
+  (4) JMLR's *Workshop and Conference Proceedings* are no journal; *IEEE Region 5 Conference* is not TENCON (Region 10's); the
+  BigData Congress's and Perner's Industrial ICDM's acronyms are shadows. Of 75,521 real lines 20 lose a badge, one moves (the PODS
+  line), none is gained, none of the lost a right one. Left, with the measure, in the ROADMAP: poster and panel volumes ("V. 2") of
+  SIGCSE, ITiCSE, ICER and SPLC, and an acronym inside a name (the Iranian ISCISC read as Inscrypt).
 - **BibTeX: Scholar's run-together initials apart.** `DS Weld` was written as printed, and BibTeX reads `DS` as one given name (an
   abbreviating style prints "D. Weld"); each initial stands alone now (`D S Weld`, as a single one already did: `K He`). APA, IEEE,
   ACM and GB/T 7714 already split them.
