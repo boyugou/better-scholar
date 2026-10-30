@@ -238,7 +238,7 @@ test("every alias points at a real dataset row", () => {
       assert.ok(hit.length, `CORE row not found for alias ${JSON.stringify(a.core)}`);
     }
     assert.ok(a.ccf || a.core, "alias needs a target");
-    assert.ok((a.names && a.names.length) || (a.former && a.former.length) || (a.exact && a.exact.length) || (a.fullOnly && a.fullOnly.length) || (a.volume && a.volume.length) || (a.uncut && a.uncut.length) || (a.starts && a.starts.length) || a.trackVolume === true);
+    assert.ok((a.names && a.names.length) || (a.former && a.former.length) || (a.exact && a.exact.length) || (a.fullOnly && a.fullOnly.length) || (a.volume && a.volume.length) || (a.uncut && a.uncut.length) || (a.starts && a.starts.length) || a.trackVolume === true || (Array.isArray(a.edition) && a.edition.length >= 2));
   }
 });
 
@@ -1737,6 +1737,16 @@ test("real prints that missed a badge: a cut IEEE citation form, joint proceedin
   // Proceedings of the ACM on Software Engineering is FSE's and ISSTA's journal, named in the issue; without it, no venue (ICSE least)
   none("Proceedings of the ACM on Software Engineering 1, 2024");
   eq("Proceedings of the ACM on Software Engineering 1 (FSE), 1-24, 2024", "CCF A FSE · CORE A* FSE");
+  // an edition the venue cannot have held that year is another venue's (`edition`): Bangladesh's ICCIT is not IEEE's CIT, a 5th "… Conference on Pattern Recognition …" in 2016 not
+  // ICPR (its 23rd), a 10th "… Conference on Machine Learning and …" in 2018 not ICMLA (its 17th); the venues' own editions keep theirs
+  none("2015 18th International Conference on Computer and Information Technology (ICCIT), 2015");
+  none("Proceedings of the 5th International Conference on Pattern Recognition …, 2016");
+  none("Proceedings of the 2018 10th International Conference on Machine Learning and Computing, 2018");
+  none("Proceedings of the 2026 9th International Conference on Software Engineering …");
+  eq("2016 23rd International Conference on Pattern Recognition (ICPR), 2016", "CCF C ICPR · CORE B ICPR");
+  eq("2018 17th IEEE International Conference on Machine Learning and Applications (ICMLA), 2018", "CORE C ICMLA");
+  eq("2017 IEEE/ACM 39th International Conference on Software Engineering …, 2017", "CCF A ICSE · CORE A* ICSE");
+  eq("Proceedings of the 28th International Conference on Computational Linguistics, 2020", "CCF B COLING · CORE B COLING");
   // a second volume of posters, panels, workshops or demos has no rank (`trackVolume`): SIGCSE TS, ITiCSE, ICER, SPLC — the first volume has; other venues' "Volume 2" too (ASPLOS)
   none("Proceedings of the 55th ACM Technical Symposium on Computer Science Education V. 2, 1-2, 2024");
   none("Proceedings of the 2025 ACM Conference on International Computing Education Research V.2, 2025");
@@ -1906,7 +1916,9 @@ test("every ranked venue's own official name gets its own list's badge — excep
   const missed = [], other = [];
   for (const row of rows) {
     const n = row.name.replace(/\s*\([^()]*\)\s*/g, " ").replace(/\s+/g, " ").trim();
-    for (const raw of row.kind === "J" ? [`${n} 12 (3), 100-110, 2019`] : [n, `Proceedings of the 15th ${n}, 100-110, 2019`]) {
+    // (the edition in the made-up line is the one the venue held in 2019 where its numbering is known — aliases.js `edition` — and the 15th elsewhere)
+    const ed = resolver.index.editions.get(`${row.src}|${venues.squash(row.abbr || row.name)}`), nth = ed ? Math.round(ed[1] + (2019 - ed[0]) / (ed[2] || 1)) : 15;
+    for (const raw of row.kind === "J" ? [`${n} 12 (3), 100-110, 2019`] : [n, `Proceedings of the ${nth}th ${n}, 100-110, 2019`]) {
       const b = resolver.resolve(raw)[row.src];
       if (!b) missed.push(`${row.src}:${row.abbr}`);
       else if (sq(b.abbr) !== sq(row.abbr) && b.name !== row.name) other.push(`${raw} → ${b.abbr}`);

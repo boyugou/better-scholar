@@ -83,6 +83,14 @@ give the details and every review):
   old rule), with the one known limit reported and not counted: a chip keeps its name on one line, so a 30-character chip name is cut
   in a preview of 330 px or less. The overflow audit no longer counts a break at a soft hyphen (Finnish "Yhteis-|ensimmäinen") as a
   word cut in two.
+- **An edition the venue cannot have held is another venue's.** Many unlisted events share a listed venue's name or its start: Bangladesh's
+  ICCIT is the *International Conference on Computer and Information Technology* as much as IEEE's CIT, "… 5th International
+  Conference on Pattern Recognition …, 2016" is ICPRAM, not ICPR (its 23rd that year), "… 10th International Conference on Machine
+  Learning and …, 2018" is ICMLC, not ICMLA (its 17th). 18 such venues now have their numbering in aliases.js (`edition`: a year, its
+  edition, every one or two years), each checked against the venue's own lines that carry its acronym; a line whose edition is more
+  than two off for its year gets no badge. On cut titles with a year (from Crossref and OpenAlex, cut where Scholar cuts) the other
+  badges fell from 183 to 132 and no right one went; of the 75,521 real lines three lose a badge — a GRAPHITE paper read as SIGGRAPH,
+  an ICCIT one read as CIT, and one real ICSE line whose year Scholar gives wrong (the 20th ICSE, 1998, dated 2008).
 - **The second volume of four venues is no paper of theirs.** SIGCSE TS (2022–25) and ITiCSE (2023) print their posters, panels and
   demos as "… V. 2", ICER (2022–26) its doctoral consortium and posters as "Volume 2", SPLC its workshops, demos and tutorials as
   "Volume 2" or "Volume B" (2011–25) — checked against ACM's own records (one- or two-page items, six-page workshop papers) — and those

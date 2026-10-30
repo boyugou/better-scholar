@@ -168,16 +168,13 @@ of HotStorage, and the year written with a hyphen or jammed onto a mixed-case wo
   agent guide.
 - **An acronym inside a name** (seen 2026-10-29): "International ISC Conference on Information Security and Cryptology" is the Iranian ISCISC,
   read as Inscrypt — shadows count an acronym in front or in a parenthesis only.
-- **Stricter reading of cut-off venue lines.** Scholar cuts a long venue name ("… International Conference on Machine Learning and …"),
-  and the start-of-a-cut-name rule gives the badge of the one listed venue whose name begins that way. The lists cannot say which
-  *unlisted* venues begin so too. Measured 2026-10-29 by cutting the 52,800 Crossref / OpenAlex titles of `test/fixtures/real-titles.txt`
-  where Scholar would (about 78 characters): of 13,997 titles long enough to be cut, the cut line keeps the whole title's badge in 2,006,
-  gets another in 434 (150 of them a track word the cut hid — "… Workshops", "Companion", "Demonstrations" — the rest unlisted venues
-  sharing a listed start: CIDM, FedCSIS, ICMLA, COLING …), and loses it in 212. No narrow rule separates them: even a cut right after a
-  connective with two content words visible ("… Machine Learning and …") is right 263 times to 104. Two directions, each an owner's
-  decision: claim fewer cut starts (precision over recall says so; it costs hundreds of right badges), or check a visible edition number
-  against the venue's own numbering ("5th … 2016" is not ICPR, which held its 23rd that year) — learned from real lines that carry the
-  acronym (265 venues have four or more such lines), which would make generated data part of the package.
+- **Cut-off venue lines that unlisted venues share.** Scholar cuts a long venue name ("… International Conference on Machine Learning and
+  …"), and the start-of-a-cut-name rule gives the badge of the one listed venue whose name begins that way; the lists cannot say which
+  unlisted venues begin so too. Measured 2026-10-29 by cutting the 52,800 Crossref / OpenAlex titles of `test/fixtures/real-titles.txt`
+  where Scholar would: of the cut titles that carry a year (and no hidden track word), 882 keep the whole title's badge and 183 got
+  another. The owner chose the edition check: 18 venues have their numbering in aliases.js (`edition`), which took the 183 to 132 and
+  cost no right badge there. What is left: venues whose lines print no edition (CIDM, SIGGRAPH's other conferences) and venues not
+  yet anchored — more anchors, each checked against the venue's own lines, as the measurement shows where they pay.
 - **End-to-end pictures at other display scalings** (Chromium only — other engines are out of scope by the platform
   policy). The end-to-end run already takes `E2E_SCALE` for the website's pictures; nothing compares them yet.
 

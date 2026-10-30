@@ -310,6 +310,8 @@
     const known = new Set();                           // every abbreviation key, for noAcr
     // the name keys each venue has from its names that do not say "Joint" (a string that does not say it reaches a venue whose names do only through these)
     const jointFreeKeys = new Map();
+    // each anchored venue's numbering (aliases.js `edition`): list|acronym → [a year, the edition held that year, every how many years]
+    const editions = new Map();
     const jointFree = (e) => jointFreeKeys.get(e) || new Set();
 
     function newSide() {
@@ -403,7 +405,8 @@
           if (a.volume) { entry.extra.push(...a.volume); register(src, kind, entry, a.volume, [], true, false, false, true); }
           if (a.uncut) { entry.extra.push(...a.uncut); register(src, kind, entry, a.uncut, [], true, false, false, false, true); }
           if (a.renamed) entry.renamed = true;
-          if (a.trackVolume) entry.trackVolume = true;          // (its second volume holds posters, panels, workshops or demos: see resolveUncached)          // (the list's name is a name it had: its "Workshop" says nothing about the venue of today)
+          if (a.trackVolume) entry.trackVolume = true;          // (its second volume holds posters, panels, workshops or demos: see resolveUncached)
+          if (a.edition) editions.set(src + "|" + squash(entry.abbr || entry.name), a.edition);          // (the list's name is a name it had: its "Workshop" says nothing about the venue of today)
           if (a.former) { entry.former = (entry.former || []).concat(a.former); register(src, kind, entry, a.former, [], true); }          // (found by name; not part of its wording — `extra` — so "Workshop" in them is no type clash)
           if (a.noBareAcronym) {            // the acronym says nothing without the name: ACM's SAC is not Selected Areas in Cryptography
             const side = sources[src][kind], k = squash(entry.abbr), list = side.abbrs.get(k);
@@ -449,7 +452,7 @@
     const pairs = new Set();
     for (const a of aliases) if (a.ccf && a.core) pairs.add(squash(a.ccf) + "|" + squash(a.core));
     const sameVenue = (ccfAbbr, coreAbbr) => pairs.has(squash(ccfAbbr) + "|" + squash(coreAbbr));
-    return { sources, known, df, sameVenue, shadow, shadowNames, partners, jointFree };
+    return { sources, known, df, sameVenue, shadow, shadowNames, partners, jointFree, editions };
   }
 
   // ---------------------------------------------------------------- matching
@@ -1410,6 +1413,14 @@
         // ("International Conference on Computer Animation …" is no symposium on it): then the two readings disagree and neither is more than a guess
         else if (out.ccf.rule === "prefix" && out.core.rule === "name") { if (clashed.core) { out.ccf = null; out.core = null; } else out.ccf = null; }
         else if (out.core.rule === "prefix" && out.ccf.rule === "name") { if (clashed.ccf) { out.ccf = null; out.core = null; } else out.core = null; }
+      }
+      // An edition the venue cannot have held that year is another venue's (aliases.js `edition`, a venue's numbering checked against its own lines): "2015 18th International
+      // Conference on Computer and Information Technology" is Bangladesh's ICCIT, IEEE's CIT held its 15th; "… 5th International Conference on Pattern Recognition …, 2016" is not
+      // ICPR, which held its 23rd. Two editions either way are allowed: the year may be the publication's, a numbering may skip
+      const nth = ordinalIn(raw), year = +((/\b(?:19[5-9]\d|20[0-3]\d)\b/.exec(raw) || [])[0] || 0);
+      if (nth && year) for (const src of ["ccf", "core"]) {
+        const ed = out[src] && idx.editions.get(src + "|" + squash(out[src].abbr || out[src].name));
+        if (ed && Math.abs(nth - (ed[1] + (year - ed[0]) / (ed[2] || 1))) > 2) out[src] = null;
       }
       // the person's own mapping of a line no rule ranks: that row, and the other list's row of the same venue; marked as theirs (rule "mine") wherever a rank goes
       // (`assignable`: a line the person may tie to a listed venue — no list ranks it, it is no track, not refused and not cut off, and it has a name; a cut line's visible start would take every line that starts the same)
