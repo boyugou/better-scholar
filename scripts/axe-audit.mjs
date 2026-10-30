@@ -23,12 +23,18 @@ const ctx = await pw.chromium.launchPersistentContext(path.join(os.tmpdir(), "pw
 let [sw] = ctx.serviceWorkers(); if (!sw) sw = await ctx.waitForEvent("serviceworker");
 const id = sw.url().split("/")[2];
 const fx = await start({ slug: "ion-stoica", pageSize: 100 });
+// (colours are measured once the page's transitions have ended: a note fading in or out — the settings page's "Saved" — is no colour anyone reads; on a slow
+// machine axe caught it at 1.17 : 1 mid-fade. A contrast failure is measured again after the transitions running then have ended: a real one stays)
+const settled = (page) => page.evaluate(() => Promise.race([Promise.all(document.getAnimations().map((a) => a.finished.catch(() => {}))), new Promise((r) => setTimeout(r, 3000))]));
 const run = async (page, label, include) => {
   await page.bringToFront();
   await page.evaluate(axeSrc);
-  const res = await page.evaluate(async (inc) => { const r = await axe.run(inc ? { include: [[inc]] } : document, { resultTypes: ["violations"] }); return r.violations.map((v) => ({ id: v.id, impact: v.impact, help: v.help, nodes: v.nodes.slice(0, 4).map((n) => n.target.join(" ") + " :: " + (n.failureSummary || "").split("\n").slice(1, 3).join(" ").slice(0, 160)) })); }, include || null);
+  const check = () => page.evaluate(async (inc) => { const r = await axe.run(inc ? { include: [[inc]] } : document, { resultTypes: ["violations"] }); return r.violations.map((v) => ({ id: v.id, impact: v.impact, help: v.help, nodes: v.nodes.slice(0, 4).map((n) => n.target.join(" ") + " :: " + (n.failureSummary || "").split("\n").slice(1, 3).join(" ").slice(0, 160)) })); }, include || null);
+  await settled(page);
+  let res = await check(), again = "";
+  if (res.some((v) => v.id === "color-contrast")) { await settled(page); res = await check(); again = " (contrast measured again once the transitions ended)"; }
   total += res.length;
-  console.log(`${res.length ? "✗" : "✓"} ${label}: ${res.length} violation type(s)`);
+  console.log(`${res.length ? "✗" : "✓"} ${label}: ${res.length} violation type(s)${again}`);
   for (const v of res) console.log(`- [${v.impact}] ${v.id}: ${v.help}\n    ` + v.nodes.join("\n    "));
 };
 // the profile page with the panel
