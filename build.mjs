@@ -120,6 +120,9 @@ const OPERATORS = [
   ["role", "<code>role:first</code> <code>role:last</code> <code>role:cofirst</code>"],
   ["year", "<code>year:&gt;=2020</code> <code>year:2023</code> <code>age:&lt;5</code>"],
   ["honors", "<code>has:award</code> <code>has:talk</code>"],
+  ["either", "<code>role:first,last</code> <code>ccf:a,b</code>"],
+  ["fields", "<code>author:smith</code> <code>title:gan</code> <code>venue:cvpr</code>"],
+  ["words", "<code>&quot;few shot&quot;</code> <code>-survey</code> <code>gan OR vae</code>"],
   ["reset", "<kbd>Escape</kbd>"]
 ];
 
