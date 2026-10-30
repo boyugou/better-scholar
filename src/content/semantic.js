@@ -19,13 +19,16 @@
     if (!res.ok) return null;
     const hit = ((await res.json()).data || [])[0];
     if (!hit || !Array.isArray(hit.authors) || !hit.authors.length) return null;
-    // the same paper: the same title (a long enough one: "Introduction" names many papers), a first author who is the row's first author,
-    // and a year within two of the row's (a preprint and its publication differ)
+    // the same paper: the same title (a long enough one: "Introduction" names many papers), the row's authors where the row shows them — the names before
+    // the cut are the answer's first ones, in order, and the names after it its last ones (by surname: "M Zaharia" is "Matei Zaharia") — and a year within two
+    // of the row's (a preprint and its publication differ)
     const key = B.awards.titleKey(title);
     if (key.length < 16 || B.awards.titleKey(hit.title) !== key) return null;
-    const first = String(authorsText).split(",")[0].replace(/…|\.\.\./g, "").trim();
-    const sur = first ? B.awards.surnameKey(first) : "";
-    if (!sur || !hit.authors.some((a) => a.name && B.awards.surnameKey(a.name) === sur)) return null;
+    const { tokens } = B.names.parseAuthors(authorsText);
+    const theirs = hit.authors.map((a) => B.awards.surnameKey(a && a.name));
+    const head = tokens.filter((t) => !t.afterCut).map((t) => B.awards.surnameKey(t.name)), tail = tokens.filter((t) => t.afterCut).map((t) => B.awards.surnameKey(t.name));
+    if (!head.length || head.length + tail.length > theirs.length) return null;
+    if (head.some((s, i) => !s || s !== theirs[i]) || tail.some((s, i) => !s || s !== theirs[theirs.length - tail.length + i])) return null;
     if (year != null && hit.year != null && Math.abs(hit.year - year) > 2) return null;
     // (only the authors: the venue of a merged preprint / publication record could belong to another version of the paper)
     return { authors: hit.authors.map((a) => a.name).filter(Boolean).join(", "), venue: "" };

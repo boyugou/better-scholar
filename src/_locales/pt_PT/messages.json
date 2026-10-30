@@ -194,6 +194,9 @@
   "resolveDone": {
     "message": "Pronto."
   },
+  "resolveUnreadable": {
+    "message": "Interrompido: não foi possível ler as páginas dos artigos no Scholar. Tente novamente mais tarde."
+  },
   "coverAbsent": {
     "message": "$N1$ artigos em que o nome do titular do perfil não consta da lista de autores",
     "placeholders": {

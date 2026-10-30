@@ -1,6 +1,6 @@
 // Read a paper's own page on Scholar to recover what the list view hides: the full
 // author list (the list truncates long ones with "…", hiding a senior author) and a
-// clean venue field. User-triggered and throttled; stops at the first sign of a CAPTCHA.
+// clean venue field. User-triggered and throttled; stops at the first sign of a CAPTCHA, and when two pages in a row give no author list.
 (function () {
   "use strict";
   const B = (globalThis.RolesRanks = globalThis.RolesRanks || {});
@@ -15,8 +15,9 @@
   // Pull { authors, venue } out of a detail page's field table.
   function parseDetail(html) {
     const doc = new DOMParser().parseFromString(html, "text/html");
+    // (the words of a block page count only on a page without the field table: a paper may be titled "Detecting unusual traffic …")
     if (doc.querySelector("#captcha-form, #gs_captcha_ccl, form[action*='sorry'], #recaptcha") ||
-        /unusual traffic|not a robot/i.test((doc.body && doc.body.textContent || "").slice(0, 1500))) {
+        (!doc.querySelector("#gsc_oci_table") && /unusual traffic|not a robot/i.test((doc.body && doc.body.textContent || "").slice(0, 1500)))) {
       throw new ResolveError("captcha");
     }
     const fields = {};
@@ -40,7 +41,7 @@
     url.searchParams.set("hl", "en");
     if (url.origin !== location.origin) throw new ResolveError("http", "not a Scholar page");      // (cookies go only to the page's own origin)
     const res = await fetch(url.href, { credentials: "include", signal });
-    if (res.status === 429 || res.status === 503 || /\/sorry\//.test(res.url) || (res.redirected && new URL(res.url).origin !== location.origin)) throw new ResolveError("captcha");
+    if (res.status === 429 || res.status === 503 || res.status === 403 || /\/sorry\//.test(res.url) || (res.redirected && new URL(res.url).origin !== location.origin)) throw new ResolveError("captcha");
     if (!res.ok) throw new ResolveError("http", "HTTP " + res.status);
     return parseDetail(await res.text());
   }
@@ -48,9 +49,9 @@
   // items: [{ id, href }]. cache: { [id]: { authors, venue, ts } } is updated in place.
   // Calls onProgress(done, total) and onResult(id, entry); returns { done, stopped }.
   async function resolveAll(items, cache, { onProgress, onResult, signal, semantic = false } = {}) {
-    let done = 0, askSemantic = true, limited = false, badKey = false, failed = 0;
+    let done = 0, askSemantic = true, limited = false, badKey = false, unread = 0;
     for (const item of items) {
-      if (signal && signal.aborted) return { done, stopped: "cancelled" };
+      if ((signal && signal.aborted) || B.dom.orphaned()) return { done, stopped: "cancelled" };          // (and when the extension was switched off or removed under the page)
       // Semantic Scholar first when the settings allow it (items carry the title); a miss or a slow-down sends the paper to Scholar's own page
       if (!cache[item.id] && askSemantic && item.title && (typeof semantic === "function" ? semantic() : semantic)) {
         try {
@@ -67,14 +68,15 @@
       if (!cache[item.id]) {
         try {
           const d = await fetchDetail(item.href, signal);
-          failed = 0;
-          if (d.authors) cache[item.id] = { authors: d.authors, venue: d.venue, ...(d.pages ? { pages: d.pages } : {}), ts: Date.now() };
+          if (d.authors) { cache[item.id] = { authors: d.authors, venue: d.venue, ...(d.pages ? { pages: d.pages } : {}), ts: Date.now() }; unread = 0; }
+          else if (++unread >= 2) return { done, stopped: "unreadable" };
         } catch (e) {
           if (e.name === "AbortError") return { done, stopped: "cancelled" };
           if (e instanceof ResolveError && e.code === "captcha") return { done, stopped: "captcha" };
-          // (a request that could not be made at all — the block page Google redirects to is on another site, and a redirect there fails the request — twice in a row: stop, as for a CAPTCHA)
-          if (e instanceof TypeError && ++failed >= 2) return { done, stopped: "captcha" };
-          // a single failed page is skipped; keep going
+          // (a request that could not be made at all: the block page Google redirects to is on another site, and a redirect there fails the request — stop, as for a CAPTCHA)
+          if (e instanceof TypeError) return { done, stopped: "captcha" };
+          // a page that gives no author list (an error, a page of another layout) is skipped; two in a row: Scholar's pages cannot be read now, and no more are asked for
+          if (++unread >= 2) return { done, stopped: "unreadable" };
         }
         await sleep(PACE());
       }

@@ -194,6 +194,9 @@
   "resolveDone": {
     "message": "Done."
   },
+  "resolveUnreadable": {
+    "message": "Stopped: Scholar's paper pages could not be read. Try again later."
+  },
   "coverAbsent": {
     "message": "$N1$ papers where the profile owner's name is not in the author list",
     "placeholders": {

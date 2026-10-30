@@ -194,6 +194,9 @@
   "resolveDone": {
     "message": "Klaar."
   },
+  "resolveUnreadable": {
+    "message": "Gestopt: de paperpagina's op Scholar konden niet worden gelezen. Probeer het later opnieuw."
+  },
   "coverAbsent": {
     "message": "$N1$ papers waarin de naam van de profieleigenaar niet in de auteurslijst staat",
     "placeholders": {

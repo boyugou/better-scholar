@@ -65,8 +65,9 @@ In the Scholar site's own browser storage:
   is never reopened in a loop. It is removed once the page is in that language (`content/lang-redirect.js`).
 
 To see or delete what is stored, use the *Saved data* card on the settings page: *View saved details*, *Clear saved paper
-details*, and *Reset to defaults* (every setting back to its default). To remove a name spelling, click the × beside it in the
-panel. To remove a venue mapping, use *Remove* in the list under *Check a venue*.
+details* (a profile tab that is open forgets them too, and does not write them back), and *Reset to defaults* (every setting
+back to its default). To remove a name spelling, click the × beside it in the panel. To remove a venue mapping, use *Remove* in
+the list under *Check a venue*.
 
 The extension stores nothing else. It creates no account and no identifier of you.
 
@@ -79,13 +80,16 @@ Requests to Google Scholar, the site of the page that you have open:
   press at a time, about a second after the previous batch arrived, only while the tab is the one that you look at, until the
   list is complete. Scholar's own page script makes the request, as for a click of yours. The extension makes no request of its
   own for it. An automatic run stops at the first press that brings no papers within nine seconds. With the setting off, the
-  panel shows *Load all*. It presses the button in the same way after you click it, and gives up after two presses that bring
-  nothing (`content/scholar.js`, `content/main.js`).
+  panel shows *Load all*. It presses the button one press at a time, about a second apart, after you click it (in that tab,
+  whether or not you look at it), and gives up after two presses that bring nothing. While either runs, the panel does not offer
+  *Read full lists*, so that the two never run at once in a tab (`content/scholar.js`, `content/main.js`).
 - **Read full lists** (only after you click it in the panel). Scholar sometimes cuts an author list before your name. For each
   such paper that is not saved yet, the extension requests the paper's own Scholar page. The request goes to the same Scholar
   site as the profile, with `hl=en`, and carries your Scholar cookies, as any request to that site does. The extension waits one
-  to 1.6 seconds after each request. It stops at the first CAPTCHA page, and at the first HTTP 429 or 503 answer. From each page
-  it reads the author list, the venue and the page range (`content/detail.js`).
+  to 1.6 seconds after each request. It stops at the first CAPTCHA page, at the first HTTP 403, 429 or 503 answer, at the first
+  request that fails (Google's block page is on another site: the browser follows Scholar's redirect there, and the request
+  fails), when two pages in a row give no author list, and when the extension is switched off or removed. From each page it reads
+  the author list, the venue and the page range (`content/detail.js`). What it read is saved as it goes, ten papers at a time.
 - **Open Scholar in** (only when you choose a language). It reopens a Scholar search or author page with the chosen `hl=` value:
   an ordinary page load at Scholar.
 
@@ -96,7 +100,9 @@ A request to Semantic Scholar, off by default:
 - The request carries the paper's title as its search text, and the list of fields wanted (title, authors, year). It is sent
   without cookies and without a referrer. The extension waits 1.1 seconds after each request.
 - If you entered an API key, it goes in the request's `x-api-key` header, and to no other address.
-- An answer is used only when its title, first author and year agree with the paper's. The papers that Semantic Scholar does not
+- An answer is used only when its title and year agree with the paper's, and its authors with the names that the profile's line
+  shows: the names before the cut are the answer's first ones, in the same order, and the names after it its last ones (by
+  surname). The papers that Semantic Scholar does not
   know go to Scholar's own page, as above. So do all the remaining papers once Semantic Scholar refuses a request or cannot be
   reached (`content/semantic.js`, `content/detail.js`).
 - No preset turns this on.
@@ -128,10 +134,12 @@ Links, which open only when you click them:
   between your own browsers.) The Semantic
   Scholar key goes only to `api.semanticscholar.org`.
 - Semantic Scholar never gets the profile's name or `user=` id, the author lists, years, venues or citation counts. It gets only
-  a paper's title and the list of fields wanted, plus what the browser adds to every request: your IP address, the browser's
+  a paper's title and the list of fields wanted (though the titles of one profile's papers, asked one after the other, can
+  themselves tell whose profile it is), plus what the browser adds to every request: your IP address, the browser's
   user-agent, and the Scholar site that the request comes from (the `Origin` header, such as `https://scholar.google.com`). It
   gets no cookies and no referrer, so not the address of the page.
 - *Read full lists* requests go only to the Scholar site of the open profile. `content/detail.js` refuses any other address.
+  When Scholar answers with a redirect to another site (Google's block page), the browser follows it once, and the run stops there.
 - Nothing is read from, or sent about, pages other than Google Scholar's: the extension's scripts run only there.
 - The clipboard is never read.
 - A *Report* link sends nothing until you click it. The GitHub page that it opens carries only the text described under

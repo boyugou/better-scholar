@@ -194,6 +194,9 @@
   "resolveDone": {
     "message": "Listo."
   },
+  "resolveUnreadable": {
+    "message": "Detenido: no se pudieron leer las páginas de los artículos de Scholar. Vuelve a intentarlo más tarde."
+  },
   "coverAbsent": {
     "message": "$N1$ artículos en los que el nombre del titular del perfil no figura entre los autores",
     "placeholders": {

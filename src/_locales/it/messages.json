@@ -194,6 +194,9 @@
   "resolveDone": {
     "message": "Fatto."
   },
+  "resolveUnreadable": {
+    "message": "Interrotto: impossibile leggere le pagine degli articoli su Scholar. Riprova più tardi."
+  },
   "coverAbsent": {
     "message": "$N1$ articoli in cui il nome del titolare del profilo non compare tra gli autori",
     "placeholders": {

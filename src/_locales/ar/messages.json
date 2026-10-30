@@ -194,6 +194,9 @@
   "resolveDone": {
     "message": "تم."
   },
+  "resolveUnreadable": {
+    "message": "توقّف: تعذّرت قراءة صفحات الأوراق في Scholar. أعد المحاولة لاحقًا."
+  },
   "coverAbsent": {
     "message": "الأوراق التي لا يظهر فيها اسم صاحب الملف الشخصي في قائمة المؤلفين: $N1$",
     "placeholders": {

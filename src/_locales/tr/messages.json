@@ -194,6 +194,9 @@
   "resolveDone": {
     "message": "Tamamlandı."
   },
+  "resolveUnreadable": {
+    "message": "Durduruldu: Scholar'daki makale sayfaları okunamadı. Daha sonra tekrar deneyin."
+  },
   "coverAbsent": {
     "message": "Profil sahibinin adının yazar listesinde olmadığı $N1$ makale",
     "placeholders": {

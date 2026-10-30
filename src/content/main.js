@@ -44,7 +44,7 @@
     resolveMessage: "",
     updated: false                              // the extension was updated (or reloaded, or switched off) under this page: this script is cut off from it
   };
-  let loadAbort = null, loadOrigin = "", restartAuto = false, resolveAbort = null;       // loadOrigin: "auto" (the setting started it) or "manual" (Load all)
+  let loadAbort = null, loadOrigin = "", resolveAbort = null;       // loadOrigin: "auto" (the setting started it) or "manual" (Load all)
 
   // What the rows say about the owner's spelling (see names.suggestVariants): the profile name in the other order is used at
   // once when it finds the owner and the name as printed hardly does; other rearrangements ("SY Philip") are only offered.
@@ -542,15 +542,14 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
 
   // Chrome updates an extension while its pages are open: the script of a page opened before keeps running, cut off from the extension (its settings do not
   // reach it, its Settings button opens nothing). Found out when the person comes back to the tab or presses Settings, and said at the top of the panel.
-  const orphaned = () => { try { return !(chrome.runtime && chrome.runtime.id); } catch (e) { return true; } };
-  const checkOrphan = () => { if (!state.updated && orphaned()) { state.updated = true; refresh(); } };
+  const checkOrphan = () => { if (!state.updated && B.dom.orphaned()) { state.updated = true; refresh(); } };
   document.addEventListener("visibilitychange", () => { if (!document.hidden) checkOrphan(); });
 
   const panel = B.panel.create({
     onCollapse() { ui.collapsed = !ui.collapsed; B.store.saveUi(ui); refresh(); },
     onSource(src) { ui.source = src; state.selection = null; B.store.saveUi(ui); refresh(); },
     // a content script cannot open the options page itself; the service worker does it on request
-    onSettings() { if (orphaned()) { checkOrphan(); return; } try { chrome.runtime.sendMessage({ type: "rr:options" }); } catch (e) { checkOrphan(); } },
+    onSettings() { if (B.dom.orphaned()) { checkOrphan(); return; } try { chrome.runtime.sendMessage({ type: "rr:options" }); } catch (e) { checkOrphan(); } },
     // a venue of the unranked list, explained on the settings page (its "Check a venue", with the text in it)
     async onCheckVenue(text) { await B.store.askVenue(text); this.onSettings(); },
     onSelect(sel) {
@@ -591,22 +590,29 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
         .map((r) => ({ id: r.raw.id, href: r.raw.href, title: r.raw.title, authorsText: r.raw.authorsText, year: r.raw.year }));
       if (!items.length) return;
       resolveAbort = new AbortController();
+      // (what this run read is stored as it goes, ten papers at a time: a page closed in the middle keeps what it read)
+      let fresh = {};
+      const store = () => { const f = fresh; fresh = {}; if (Object.keys(f).length) B.store.saveResolved(f); };
+      freshResolved = () => { fresh = {}; };
       state.resolving = { done: 0, total: items.length };
       state.resolveMessage = "";
       refresh();
       const res = await B.detail.resolveAll(items, resolvedCache, {
         signal: resolveAbort.signal, semantic: () => prefs.semanticScholar,
         onProgress: (done, total) => { state.resolving = { done, total }; },
-        onResult: (id) => {
+        onResult: (id, entry) => {
+          fresh[id] = entry;
+          if (Object.keys(fresh).length >= 10) store();
           const row = state.rows.find((r) => r.raw.id === id);
           if (row) { row.a = analyzeRaw(row.raw); awardsOnce(); }
           scheduleRefresh();
         }
       });
-      B.store.saveResolved(resolvedCache);
+      store();
+      freshResolved = () => {};
       state.resolving = null;
       resolveAbort = null;
-      state.resolveMessage = res.stopped === "captcha" ? t("resolveCaptcha") : res.stopped === "cancelled" ? "" : res.semanticKey ? t("resolveDone") + " " + t("resolveSemanticKey") : res.semanticLimited ? t("resolveDone") + " " + t("resolveSemanticBusy") : t("resolveDone");
+      state.resolveMessage = res.stopped === "captcha" ? t("resolveCaptcha") : res.stopped === "unreadable" ? t("resolveUnreadable") : res.stopped === "cancelled" ? "" : res.semanticKey ? t("resolveDone") + " " + t("resolveSemanticKey") : res.semanticLimited ? t("resolveDone") + " " + t("resolveSemanticBusy") : t("resolveDone");
       rehint();
       refresh();
     },
@@ -649,7 +655,6 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
       loadAbort = null;
       loadOrigin = "";
       ingest();
-      if (restartAuto) { restartAuto = false; if (prefs.autoLoad) setTimeout(() => startLoad("auto"), 0); }
       state.loadMessage = stopped === "stalled" ? t("loadStalled", [String(state.rows.length)]) : "";
       if (stopped === "done") state.complete = true;
       refresh();
@@ -699,6 +704,10 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
   }
 
   // The person's venue mappings changed (the settings page, in any tab): every row is read again
+  // The stored paper details were cleared (the settings page): this page forgets them too, and does not write them back
+  let freshResolved = () => {};
+  B.store.onResolvedCleared(() => { for (const k of Object.keys(resolvedCache)) delete resolvedCache[k]; freshResolved(); });
+
   B.store.onMineChanged((mine) => { resolver = makeResolver(mine); reanalyze(); refresh(); });
 
   // The settings page saved something (in this or any other tab): show it at once.
@@ -712,7 +721,7 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
     prefs = next;
     if (currentSource() !== before) state.selection = null;                        // its tier belonged to the other ranking
     refresh();                                                                      // (which also clears the filters left without a control)
-    if (prefs.autoLoad && !wasAuto) { if (state.loadingAll) restartAuto = true; else startLoad("auto"); }                                          // switched on: load the rest of the list now
+    if (prefs.autoLoad && !wasAuto && !state.loadingAll) startLoad("auto");                                          // switched on: load the rest of the list now (a run of Load all that is going on does it already)
     else if (!prefs.autoLoad && loadOrigin === "auto" && loadAbort) loadAbort.abort();          // switched off: stop what it began
   });
 

@@ -194,6 +194,9 @@
   "resolveDone": {
     "message": "Valmis."
   },
+  "resolveUnreadable": {
+    "message": "Pysäytetty: Scholarin artikkelisivuja ei voitu lukea. Yritä myöhemmin uudelleen."
+  },
   "coverAbsent": {
     "message": "$N1$ artikkelia, joissa profiilin omistajan nimeä ei ole kirjoittajaluettelossa",
     "placeholders": {

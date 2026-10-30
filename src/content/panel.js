@@ -585,8 +585,9 @@
           status.push(h("div", { class: "rr-cover-line", ...P("panel.status.cutoff") },
             h("span", { class: "rr-note" }, c.resolving ? t("resolving", [String(c.resolving.done), String(c.resolving.total)]) : tn("coverHidden", c.hidden, [String(c.hidden)])),
             c.resolving ? h("button", { class: "rr-link", type: "button", "data-focus": "resolve", onClick: () => cb.onCancelResolve() }, t("cancel"))
+              : c.loadingAll ? null          // (not while the list is loading: Scholar would get both at once, and the papers still to come would be left out)
               : h("button", { class: "rr-link", type: "button", "data-focus": "resolve", "data-act": "resolve", ...L("resolveBtn"), onClick: () => cb.onResolve() }, t("resolveBtn"))));
-          if (!c.resolving) status.push(h("div", { class: "rr-faint", "data-rr": "resolve-hint", ...P("panel.status.cutoff") }, t(m.prefs.semanticScholar ? "resolveHintSemantic" : "resolveHint")));        // (what it does and who it asks, titles included: before it is pressed, not in a tooltip)
+          if (!c.resolving && !c.loadingAll) status.push(h("div", { class: "rr-faint", "data-rr": "resolve-hint", ...P("panel.status.cutoff") }, t(m.prefs.semanticScholar ? "resolveHintSemantic" : "resolveHint")));        // (what it does and who it asks, titles included: before it is pressed, not in a tooltip)
         }
         if (c.resolveMessage) status.push(h("div", { class: "rr-faint", "data-rr": "resolve-msg", ...P("panel.status.cutoff") }, c.resolveMessage));
       }

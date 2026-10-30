@@ -109,8 +109,7 @@
   async function loadAll({ onProgress, signal, maxStalls = 2, startDelay = 0, foregroundOnly = false, timing } = {}) {
     const T = Object.assign({}, TIMING, timing);
     // (an orphaned content script — the extension was updated, disabled or removed — stops pressing)
-    const orphaned = () => { try { return !(chrome.runtime && chrome.runtime.id); } catch (e) { return true; } };
-    const aborted = () => !!(signal && signal.aborted) || (typeof chrome !== "undefined" && orphaned());
+    const aborted = () => !!(signal && signal.aborted) || B.dom.orphaned();
     const foreground = () => !foregroundOnly || !document.hidden;
     if (startDelay) await waitUntil(() => false, startDelay, signal);
     let stalls = 0;
@@ -122,6 +121,7 @@
       // (a press still in flight — slow, or made by the user — is not the end either)
       if (btn && btn.disabled) { await waitUntil(() => { const b = showMoreButton(); return !b || !b.disabled; }, T.regrace, signal); btn = showMoreButton(); }
       if (!btn || btn.disabled) { if (stalls > 0) { if (foregroundOnly) dropLock(); return "stalled"; } break; }
+      if (aborted()) break;          // (cancelled while it waited for the button)
       const before = rowElements().length;
       btn.click();
       await waitUntil(() => rowElements().length > before, T.rowTimeout, signal);

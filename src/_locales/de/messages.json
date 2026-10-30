@@ -194,6 +194,9 @@
   "resolveDone": {
     "message": "Fertig."
   },
+  "resolveUnreadable": {
+    "message": "Angehalten: Die Paper-Seiten von Scholar konnten nicht gelesen werden. Versuche es später erneut."
+  },
   "coverAbsent": {
     "message": "$N1$ Paper, bei denen der Name des Profilinhabers nicht in der Autorenliste steht",
     "placeholders": {

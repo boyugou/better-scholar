@@ -194,6 +194,9 @@
   "resolveDone": {
     "message": "Готово."
   },
+  "resolveUnreadable": {
+    "message": "Остановлено: не удалось прочитать страницы статей в Scholar. Попробуйте позже."
+  },
   "coverAbsent": {
     "message": "Статей, где имени владельца профиля нет среди авторов: $N1$",
     "placeholders": {

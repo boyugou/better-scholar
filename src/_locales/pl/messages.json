@@ -194,6 +194,9 @@
   "resolveDone": {
     "message": "Gotowe."
   },
+  "resolveUnreadable": {
+    "message": "Zatrzymano: nie udało się odczytać stron prac w Scholar. Spróbuj ponownie później."
+  },
   "coverAbsent": {
     "message": "Prace, w których nie ma nazwiska właściciela profilu: $N1$",
     "placeholders": {

@@ -194,6 +194,9 @@
   "resolveDone": {
     "message": "Terminé."
   },
+  "resolveUnreadable": {
+    "message": "Arrêté : impossible de lire les pages des articles sur Scholar. Réessayez plus tard."
+  },
   "coverAbsent": {
     "message": "$N1$ articles où le nom du titulaire du profil ne figure pas dans la liste des auteurs",
     "placeholders": {

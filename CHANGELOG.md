@@ -83,6 +83,19 @@ give the details and every review):
   old rule), with the one known limit reported and not counted: a chip keeps its name on one line, so a 30-character chip name is cut
   in a preview of 330 px or less. The overflow audit no longer counts a break at a soft hyphen (Finnish "Yhteis-|ensimmäinen") as a
   word cut in two.
+- **A review of what talks to Scholar and Semantic Scholar** (an independent agent; every finding fixed or written down). (1) *Clear
+  saved paper details* is no longer undone by an open profile tab: the page forgets them too, and a save adds what that page read to
+  what is stored instead of writing its whole copy back (two profile tabs no longer overwrite each other's papers). What a run reads is
+  saved ten papers at a time, so a page closed in the middle keeps it. (2) *Read full lists* stops when the extension is switched off
+  or removed under the page, as the list loader already did. (3) A Semantic Scholar answer is used only when its authors are the names
+  that the row shows — the ones before the cut first, in order, the ones after it last — not merely when the first author's surname
+  is somewhere in it (another record of the same title was kept for 90 days). (4) Two paper pages in a row that give no author list
+  (an error page, a page of another layout) stop the run, which says *Scholar's paper pages could not be read* instead of *Done*; a
+  403 stops it as a 429 does; a failed request (Google's block page is on another site) stops it at the first, not the second.
+  (5) A paper titled "Detecting unusual traffic …" is no CAPTCHA page: a block page's words count only on a page without the field
+  table. (6) *Read full lists* is not offered while the list loads (Scholar got both at once). (7) Switching *Load all papers
+  automatically* on during a *Load all* no longer starts a second run after a stall or a *Cancel*; a run cancelled while it waited for
+  the button does not press it. PRIVACY.md says each of these.
 - **A review of the award chips and the exports** (an independent agent; every finding fixed). Exports: (1) a handbook, an encyclopedia,
   a manuscript or a publisher with a "volume (issue)" ("Encyclopedia of machine learning 15 (1)", "Now Publishers 1 (1–2)", "Arpaci-Dusseau
   Books, LLC 1, 15") was cited as a journal article in every style; 9 of the 22,744 real lines change, all of them these. (2) BibTeX

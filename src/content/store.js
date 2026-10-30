@@ -94,7 +94,9 @@
   // The details read from Scholar's paper pages (and from Semantic Scholar): the newest first, up to three thousand papers and three million characters — an author list of a large
   // collaboration is tens of thousands. What does not fit is read again when it is asked for. One write that Chrome refuses must not be the end of all of them.
   const RESOLVED_BUDGET = 3000000;
-  async function saveResolved(map) {
+  // (`fresh`: what this page read; it is added to what is stored now, so that another tab's papers stay and a cleared store is not written back)
+  async function saveResolved(fresh) {
+    const map = Object.assign(await loadResolved(), fresh);
     let size = 0;
     const keep = [];
     for (const [id, v] of Object.entries(map).sort((a, b) => b[1].ts - a[1].ts)) {
@@ -105,6 +107,13 @@
     return set("local", "resolved", Object.fromEntries(keep));
   }
   const clearResolved = () => remove("local", "resolved");
+  // Run `fn()` when the stored details are cleared (the settings page's button, in any tab)
+  function onResolvedCleared(fn) {
+    if (!live()) return () => {};
+    const listener = (changes, area) => { if (area === "local" && changes.resolved && changes.resolved.newValue === undefined) fn(); };
+    try { chrome.storage.onChanged.addListener(listener); } catch (e) { return () => {}; }
+    return () => { try { chrome.storage.onChanged.removeListener(listener); } catch (e) { /* gone */ } };
+  }
 
   // The optional Semantic Scholar API key: on this device only (never synced), sent only to Semantic Scholar
   const loadS2Key = async () => { const k = await get("local", "s2key"); return typeof k === "string" ? k.replace(/[^\x21-\x7e]/g, "") : ""; };      // (visible ASCII only: a header cannot carry anything else)
@@ -125,5 +134,5 @@
     return () => { try { chrome.storage.onChanged.removeListener(listener); } catch (e) { /* gone */ } };
   }
 
-  B.store = { loadMine, saveMine, onMineChanged, cleanMine, askVenue, takeVenue, onVenueAsked, loadS2Key, saveS2Key, loadPrefs, savePrefs, loadUi, saveUi, onPrefsChanged, loadVariants, saveVariants, loadResolved, saveResolved, clearResolved };
+  B.store = { loadMine, saveMine, onMineChanged, cleanMine, askVenue, takeVenue, onVenueAsked, loadS2Key, saveS2Key, loadPrefs, savePrefs, loadUi, saveUi, onPrefsChanged, loadVariants, saveVariants, loadResolved, saveResolved, clearResolved, onResolvedCleared };
 })();

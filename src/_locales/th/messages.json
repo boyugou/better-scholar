@@ -194,6 +194,9 @@
   "resolveDone": {
     "message": "เสร็จแล้ว"
   },
+  "resolveUnreadable": {
+    "message": "หยุดแล้ว: ไม่สามารถอ่านหน้างานวิจัยของ Scholar ได้ โปรดลองอีกครั้งภายหลัง"
+  },
   "coverAbsent": {
     "message": "$N1$ เรื่องที่ไม่มีชื่อเจ้าของโปรไฟล์ในรายชื่อผู้เขียน",
     "placeholders": {

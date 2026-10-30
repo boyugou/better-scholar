@@ -194,6 +194,9 @@
   "resolveDone": {
     "message": "Selesai."
   },
+  "resolveUnreadable": {
+    "message": "Dihentikan: halaman makalah di Scholar tidak dapat dibaca. Coba lagi nanti."
+  },
   "coverAbsent": {
     "message": "$N1$ makalah yang daftar penulisnya tidak memuat nama pemilik profil",
     "placeholders": {

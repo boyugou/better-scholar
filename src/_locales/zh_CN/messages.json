@@ -194,6 +194,9 @@
   "resolveDone": {
     "message": "完成。"
   },
+  "resolveUnreadable": {
+    "message": "已停止：无法读取 Scholar 的论文页面，请稍后再试。"
+  },
   "coverAbsent": {
     "message": "$N1$ 篇的作者列表里没找到本人姓名",
     "placeholders": {

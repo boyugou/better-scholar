@@ -354,7 +354,7 @@ What the extension is made of, counted from its code and its data. Nothing here 
 | **171** | settings you can change, in 18 cards: 94 switches, 55 names you can set, and 22 colours, choices, orders and languages | the settings tree (`src/lib/prefs.js`) |
 | **189** | nodes in that tree, 5 levels deep: card, panel switch, part switch, item, sub-item | cards and rows; each row hangs on its part's switch |
 | **9 · 12 · 13 · 6 · 4** | panel parts, copy formats and quick filters (each with a switch, most in an order you set), then chip looks and presets | `SECTIONS`, `COPY_BUTTONS`, `PILLS`, `CHIP_THEMES`, `PRESETS` |
-| **30** | interface languages: 391 strings each, 29 translated from English | `src/_locales/*/messages.json` |
+| **30** | interface languages: 392 strings each, 29 translated from English | `src/_locales/*/messages.json` |
 | **1,178** | ranked venues in 1,481 rows of the two lists (386 CCF conferences, 295 CCF journals, 800 CORE conferences); 299 venues have a row in both | the rows of `src/data/ccf.js` and `src/data/core.js`, linked by `idx.partners` |
 | **400+** | venue names that Scholar prints but the lists do not have, in 280+ curated entries: old and renamed venues, other spellings, the lists' own typos, and look-alike events that get no chip | `src/data/aliases.js` |
 | **2,500+** · **1,100+** | name forms and acronyms that the matcher looks up | the keys of its indexes |

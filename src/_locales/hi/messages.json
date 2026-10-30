@@ -194,6 +194,9 @@
   "resolveDone": {
     "message": "हो गया।"
   },
+  "resolveUnreadable": {
+    "message": "रुक गया: Scholar पर पेपर के पेज पढ़े नहीं जा सके। बाद में दोबारा कोशिश करें।"
+  },
   "coverAbsent": {
     "message": "$N1$ पेपर जिनकी लेखक सूची में प्रोफ़ाइल स्वामी का नाम नहीं है",
     "placeholders": {

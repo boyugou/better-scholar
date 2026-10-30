@@ -93,7 +93,9 @@ ${(r.venue.match(/,\s*(\d+-\d+),/) || [])[1] ? `<div class="gs_scl"><div class="
 </div></body></html>`;
 }
 
-function start({ slug = "ion-stoica", pageSize = 20, header, port = 0, hl = "en", repeat = 1, brokenLayout = false, stopAfter, latency = 150, rows } = {}) {
+// detailFail: what a paper page answers instead of itself — a status (403, 500), "layout" (a page of another shape, without the field table) or "traffic"
+// (the page itself, under a title with a block page's words in it)
+function start({ slug = "ion-stoica", pageSize = 20, header, port = 0, hl = "en", repeat = 1, brokenLayout = false, stopAfter, latency = 150, rows, detailFail } = {}) {
   ROW_HL = hl;
   BROKEN = brokenLayout;
   const profile = loadProfile(slug, repeat, rows);
@@ -105,7 +107,10 @@ function start({ slug = "ion-stoica", pageSize = 20, header, port = 0, hl = "en"
       detailRequests++;
       detailHls.push(u.searchParams.get("hl"));
       res.setHeader("content-type", "text/html; charset=utf-8");
-      return res.end(detailPage(profile, u.searchParams.get("citation_for_view"), u.searchParams.get("hl")));
+      if (typeof detailFail === "number") { res.statusCode = detailFail; return res.end("<!doctype html><title>error</title>error"); }
+      if (detailFail === "layout") return res.end("<!doctype html><title>paper</title><div id='gsc_vcd'>A paper page of another shape</div>");
+      const page = detailPage(profile, u.searchParams.get("citation_for_view"), u.searchParams.get("hl"));
+      return res.end(detailFail === "traffic" ? page.replace(/<div id="gsc_oci_title">[^<]*/, '<div id="gsc_oci_title">Detecting unusual traffic patterns: are you not a robot?') : page);
     }
     if (u.pathname === "/citations") {
       res.setHeader("content-type", "text/html; charset=utf-8");

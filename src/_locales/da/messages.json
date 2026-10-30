@@ -194,6 +194,9 @@
   "resolveDone": {
     "message": "Færdig."
   },
+  "resolveUnreadable": {
+    "message": "Stoppet: Scholars artikelsider kunne ikke læses. Prøv igen senere."
+  },
   "coverAbsent": {
     "message": "$N1$ artikler hvor profilejerens navn ikke står på forfatterlisten",
     "placeholders": {

@@ -55,8 +55,8 @@ code on real Scholar data, and why there is no build step.
 | `content/chips.js` | The rank and award / talk chips (what the panel marks for the editor: `data-rr-label`); shared by the Scholar page and the settings page's preview. A rank chip that stands for both lists (`rows.prefer`) carries `data-also` and names the other rank in its tooltip. |
 | `content/store.js` | `chrome.storage` wrappers for every key (see [Storage](#storage-and-privacy)) and `onPrefsChanged`; degrades to memory if the extension context disappears. |
 | `content/scholar.js` | Read rows, place the panel (sidebar when wide, above the list when narrow), press *Show more* until the list is complete (`loadAll`). |
-| `content/semantic.js` | Optional (setting `semanticScholar`, off by default): one title lookup at Semantic Scholar's public API for a cut-off author list, used before Scholar's own page by `detail.js`; an answer counts only when its title, first author and year agree. |
-| `content/detail.js` | Read a paper's own page for its full author list (user-triggered, throttled, stops at a CAPTCHA). |
+| `content/semantic.js` | Optional (setting `semanticScholar`, off by default): one title lookup at Semantic Scholar's public API for a cut-off author list, used before Scholar's own page by `detail.js`; an answer counts only when its title and year agree, and its authors with the names the row shows (the ones before the cut first, in order; the ones after it last). |
+| `content/detail.js` | Read a paper's own page for its full author list (user-triggered, throttled; stops at a CAPTCHA, a 403/429/503, a failed request, two pages in a row without an author list, and an orphaned script). |
 | `content/panel.js` | The panel: renders a model, reports intent via callbacks, owns no state (below). |
 | `content/image.js` | "Copy as image": draws the panel's role × rank table on an `OffscreenCanvas` (the role colours, mirrored for a right-to-left language) and returns a PNG; `main.js` puts it on the clipboard with the summary text, and the `export` call returns it as a data: address. |
 | `content/bridge.js` | Carries the calls of `lib/agent.js` on two transports — the extension's own messages (`{ type: "rr:call", method, params }`, the popup) and page events — after `validate`; answers `{ id, ok: true, result }` or `{ id, ok: false, error }`; sets `data-rr-ready="true"` on `<html>`. What a call does is in `main.js`. |
@@ -302,7 +302,8 @@ about a second apart, and an automatic run presses only while its tab is the one
 Scholar's `localStorage` (`rr-load-lock`) so that profiles opened in many tabs at once do not press together; a press that brings
 no rows within nine seconds ends the automatic run at once (a manual one gets a second try) and the panel says so; *Cancel* ends it
 and it does not start again by itself; switching the setting off ends a run it started, and switching it on starts one on the open
-profile. `loadAll` returns why it stopped (`done`, `cancelled`, `stalled`).
+profile (unless *Load all* is running: that run goes on as it is). While either runs, the panel does not offer *Read full lists*, so
+that Scholar never gets both at once from a tab. `loadAll` returns why it stopped (`done`, `cancelled`, `stalled`).
 
 ## The panel
 
@@ -542,7 +543,7 @@ Six buttons put a second flavour on the clipboard: *Copy as table* (`summaryHtml
 | `chrome.storage.sync` | `variants` | `{ profileId: [spellings] }`, at most 8 per profile, 40 profiles | the Scholar page |
 | `chrome.storage.sync` | `mine` | the person's venue mappings `[{ text, list, name, kind }]`, as many as fit 8 KB (about fifty; the page says when the oldest go) | the settings page |
 | `chrome.storage.local` | `ui` | `{ collapsed, source }` | the Scholar page only |
-| `chrome.storage.local` | `resolved` | `{ paperId: { authors, venue, ts, via? } }` from *Read full lists*; 90 days, at most 3,000 | the Scholar page; cleared from the settings page |
+| `chrome.storage.local` | `resolved` | `{ paperId: { authors, venue, ts, via? } }` from *Read full lists*; 90 days, at most 3,000; saved ten at a time, merged into what is stored (another tab's papers stay) | the Scholar page; cleared from the settings page (an open profile tab forgets them too) |
 | `chrome.storage.local` | `s2key` | The optional Semantic Scholar API key (never synced) | the settings page |
 | `chrome.storage.local` | `askVenue` | A venue text and the time, from the unranked list's *Check* link, until the settings page takes it (it then fills *Check a venue*; an entry older than 30 s is ignored) | the Scholar page; the settings page removes it |
 | Scholar's `localStorage` | `rr-load-lock` | `{ id, t }` while an automatic load presses *Show more* | `content/scholar.js` |

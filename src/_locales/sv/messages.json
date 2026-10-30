@@ -194,6 +194,9 @@
   "resolveDone": {
     "message": "Klart."
   },
+  "resolveUnreadable": {
+    "message": "Stoppat: Scholars artikelsidor gick inte att läsa. Försök igen senare."
+  },
   "coverAbsent": {
     "message": "$N1$ artiklar där profilägarens namn inte finns i författarlistan",
     "placeholders": {

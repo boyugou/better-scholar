@@ -194,6 +194,9 @@
   "resolveDone": {
     "message": "완료되었습니다."
   },
+  "resolveUnreadable": {
+    "message": "중단되었습니다. Scholar의 논문 페이지를 읽을 수 없었습니다. 나중에 다시 시도하세요."
+  },
   "coverAbsent": {
     "message": "저자 목록에 프로필 주인의 이름이 없는 논문 $N1$편",
     "placeholders": {

@@ -194,6 +194,9 @@
   "resolveDone": {
     "message": "Xong."
   },
+  "resolveUnreadable": {
+    "message": "Đã dừng: không thể đọc các trang bài báo trên Scholar. Hãy thử lại sau."
+  },
   "coverAbsent": {
     "message": "$N1$ bài có danh sách tác giả không chứa tên chủ hồ sơ",
     "placeholders": {

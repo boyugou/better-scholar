@@ -194,6 +194,9 @@
   "resolveDone": {
     "message": "Kész."
   },
+  "resolveUnreadable": {
+    "message": "Leállítva: a Scholar cikkoldalait nem sikerült beolvasni. Próbáld újra később."
+  },
   "coverAbsent": {
     "message": "$N1$ cikk, amelynek szerzői listájában nincs ott a profil tulajdonosának neve",
     "placeholders": {

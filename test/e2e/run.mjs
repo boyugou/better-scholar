@@ -1003,9 +1003,15 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
           if (r && asked.length === 1) {                                  // one answer that is another paper's author list: it must not be used
             return route.fulfill({ status: 200, contentType: "application/json", headers: { "access-control-allow-origin": "*" }, body: JSON.stringify({ data: [{ title: r.title, authors: [{ name: "Zed Nobody" }] }] }) });
           }
-          const visible = r ? r.authors.split(/,\s*/).filter((t) => t && !/\.\.\.|…/.test(t)) : [];
+          // (the answer of a whole list: the names the row shows before its cut, the owner, the names after it)
+          const parts = r ? r.authors.split(/\.\.\.|…/) : [];
+          const names = (s) => (s || "").split(/,\s*/).map((t) => t.trim()).filter(Boolean);
+          const head = names(parts[0]), tail = names(parts[1]), surname = fxS.profile.owner.split(" ").pop();
+          const whole = [...head, ...([...head, ...tail].some((n) => n.endsWith(surname)) ? [] : [fxS.profile.owner]), ...tail];
+          // and one whose first author is the row's but whose second is not: another record of the title, refused too
+          if (r && asked.length === 2) whole.splice(1, 0, "Xiao Wang");
           await route.fulfill({ status: r ? 200 : 404, contentType: "application/json", headers: { "access-control-allow-origin": "*" },
-            body: JSON.stringify(r ? { data: [{ title: r.title, venue: "", authors: [...visible, fxS.profile.owner].map((name) => ({ name })) }] } : { error: "Title match not found" }) });
+            body: JSON.stringify(r ? { data: [{ title: r.title, venue: "", authors: whole.map((name) => ({ name })) }] } : { error: "Title match not found" }) });
         });
         const optsS = await openOptions(ctxS);
         await setPref(optsS, "semanticScholar", true);
@@ -1023,11 +1029,11 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
         await pg.click('[data-act="resolve"]');
         await pg.waitForFunction(() => !document.querySelector('tr[data-role="hidden"]'), null, { timeout: 30000 });
         assert.deepEqual(await readMatrix(pg), resolvedExpect, "the same roles as when Scholar's own pages are read");
-        assert.equal(fxS.detailRequests(), 27, "Scholar's own page is read for the paper whose answer did not fit (another first author) and for everything after Semantic Scholar asked to slow down");
+        assert.equal(fxS.detailRequests(), 28, "Scholar's own page is read for the two papers whose answer did not fit (another first author; another second one) and for everything after Semantic Scholar asked to slow down");
         assert.match(await pg.locator('[data-rr="resolve-msg"]').textContent(), /asked to slow down/);
         assert.equal(asked.length, 3, "after the 429 it is not asked again");
         assert.ok(asked.every((u) => u.startsWith("https://api.semanticscholar.org/graph/v1/paper/search/match?") && !/user=|TEST/.test(u)), "only the title is sent");
-        ok("Semantic Scholar: cut-off author lists completed from its API (title only); an answer whose first author is not the row's is refused and that paper is read from Scholar instead");
+        ok("Semantic Scholar: cut-off author lists completed from its API (title only); an answer whose authors are not the row's shown ones, in order, is refused and that paper is read from Scholar instead");
       } finally { await ctxS.close(); await fxS.close(); }
     }
 
@@ -2446,6 +2452,37 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
   }
 
   if (PART === "" || PART === "2") {
+  // -- 16b. Read full lists gives up: a page that refuses (403) stops it at once, as a CAPTCHA does; pages that give no author list (an error, another layout) stop it at
+  // the second; a paper titled with a block page's words is read like any other; the button is not offered while the list loads
+  for (const [fail, requests, message] of [[403, 1, /CAPTCHA/], [500, 2, /could not be read/], ["layout", 2, /could not be read/], ["traffic", null, /^Done/]]) {
+    const fxF = await start({ slug: "ion-stoica", pageSize: 100, detailFail: fail });
+    const ctxF = await launch();
+    try {
+      const pg = await ctxF.newPage();
+      await pg.goto(fxF.url);
+      await pg.waitForSelector('[data-act="resolve"]');
+      await pg.click('[data-act="resolve"]');
+      await pg.waitForSelector('[data-rr="resolve-msg"]', { timeout: 20000 });
+      assert.match(await pg.locator('[data-rr="resolve-msg"]').textContent(), message, `${fail}: the panel says why it stopped`);
+      await pg.waitForTimeout(300);
+      if (requests) assert.equal(fxF.detailRequests(), requests, `${fail}: ${requests} paper page(s) asked for, then no more`);
+      else assert.equal(await pg.locator('tr[data-role="hidden"]').count(), 0, `${fail}: every cut list was read`);
+    } finally { await ctxF.close(); await fxF.close(); }
+  }
+  {
+    const fxL = await start({ slug: "ion-stoica", pageSize: 20, latency: 1500 });
+    const ctxL = await launch();
+    try {
+      const pg = await ctxL.newPage();
+      await pg.goto(fxL.url);
+      await pg.bringToFront();
+      await pg.waitForSelector('[data-rr="coverage"] [data-focus="load"]:not([data-act])');          // (the loader is running: its button is Cancel)
+      assert.equal(await pg.locator('[data-act="resolve"]').count(), 0, "no Read full lists while the list loads");
+      await pg.waitForSelector('[data-act="resolve"]', { timeout: 30000 });
+    } finally { await ctxL.close(); await fxL.close(); }
+  }
+  ok("Read full lists stops at a refusal (403) and at two pages in a row without an author list, and says so; a title with a block page's words is no block page; it is not offered while the list loads");
+
   // -- 17. a profile whose header name cannot be read in any other order: the owner adds a spelling by hand
   const fx2 = await start({ slug: "ion-stoica", pageSize: 100, header: "Stoica-Ion", hl: "zh-CN" });
   const ctx2 = await launch();

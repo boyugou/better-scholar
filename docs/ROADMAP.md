@@ -157,7 +157,13 @@ of HotStorage, and the year written with a hyphen or jammed onto a mixed-case wo
 
 - **Name spellings beyond today's rules**: composite, hyphenated and other romanised names (Iberian double surnames,
   Nordic and East Asian romanisations). Like every name rule, only from real Scholar strings added to
-  `test/fixtures`, never guessed: a wrong owner match is a wrong role.
+  `test/fixtures`, never guessed: a wrong owner match is a wrong role. The roles review of 2026-10-29 left three more, for the same
+  reason: "and" in other languages as a separator ("y", "und", "et" — also words of names and titles), the reversed spelling
+  ("Wei Zhang" printed "Zhang W") taken without the person's say, and lists in alphabetical order (economics, mathematics), where
+  first and last say nothing of the work: a setting could say so, the page cannot tell.
+- **An export's type with the rank lists off**: with both lists switched off, "Advances in neural information processing systems 25,
+  1097-1105" is typed by its words alone (a journal's shape: volume, pages) — as Scholar's own BibTeX does. The kind of venue the lists
+  know could be used whether or not their chips are shown.
 - **A list of the keys in the panel**: built (2.41) — the `/` hint's tooltip has a line of the keys (Enter, Shift+Enter, ↓, Esc),
   and the search box's description for a screen reader is that line.
 - **User-defined weighting of ranks**, a score per role and rank. The panel shows CCF's own statement that its list

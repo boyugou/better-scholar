@@ -194,6 +194,9 @@
   "resolveDone": {
     "message": "הסתיים."
   },
+  "resolveUnreadable": {
+    "message": "הופסק: לא ניתן היה לקרוא את דפי המאמרים ב-Scholar. נסו שוב מאוחר יותר."
+  },
   "coverAbsent": {
     "message": "$N1$ מאמרים שבהם שם בעל הפרופיל אינו ברשימת המחברים",
     "placeholders": {

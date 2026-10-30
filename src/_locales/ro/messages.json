@@ -194,6 +194,9 @@
   "resolveDone": {
     "message": "Gata."
   },
+  "resolveUnreadable": {
+    "message": "Oprit: paginile lucrărilor de pe Scholar nu au putut fi citite. Încearcă din nou mai târziu."
+  },
   "coverAbsent": {
     "message": "Lucrările în care numele titularului profilului nu apare în lista de autori: $N1$",
     "placeholders": {

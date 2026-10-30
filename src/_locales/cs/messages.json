@@ -194,6 +194,9 @@
   "resolveDone": {
     "message": "Hotovo."
   },
+  "resolveUnreadable": {
+    "message": "Zastaveno: nepodařilo se přečíst stránky prací na Scholaru. Zkuste to později."
+  },
   "coverAbsent": {
     "message": "Práce, kde jméno majitele profilu není mezi autory: $N1$",
     "placeholders": {

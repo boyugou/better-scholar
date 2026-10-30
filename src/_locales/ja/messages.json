@@ -194,6 +194,9 @@
   "resolveDone": {
     "message": "完了しました。"
   },
+  "resolveUnreadable": {
+    "message": "中止しました。Scholar の論文ページを読み込めませんでした。しばらくしてから、もう一度お試しください。"
+  },
   "coverAbsent": {
     "message": "$N1$ 件は著者リストにプロフィール本人の名前がありません",
     "placeholders": {
