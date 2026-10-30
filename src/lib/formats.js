@@ -530,7 +530,8 @@
   const gbtHtml = (papers, { markMe = false } = {}) => papers.map((p, i) => `<p style="margin:0 0 0.4em 0">${ownToHtml(esc(gbLine(p, i + 1, markMe ? p.me : undefined)))}</p>`).join("\n");
 
   // ---- JSON ---------------------------------------------------------------------------------------------------------------------------------------
-  const json = ({ owner, source, papers }) => JSON.stringify({ owner, source, total: papers.length, papers }, null, 2);
+  // (`complete`: false while the profile's list is not all loaded — the papers are those so far)
+  const json = ({ owner, source, complete = true, papers }) => JSON.stringify({ owner, source, complete, total: papers.length, papers }, null, 2);
 
   return { ROLE_LABEL, summaryText, summaryTable, summaryTsv, summaryHtml, rowsTsv, rowsCsv, rowsHtml, table, papersTsv, papersCsv, papersHtml, bibtex, markdown, apa, apaHtml, apaAuthor, ieee, ieeeHtml, acm, acmHtml, gbt, gbtHtml, venueParts, json };
 });

@@ -24,7 +24,7 @@
   // under it (placed with fixed coordinates so the panel's own overflow cannot clip it), arrow keys, Escape and a click outside to close.
   //   dd.setOptions([{ value, label }], value)  ·  dd.value  ·  dd.el (the button)  ·  dd.list (the popup; lives next to the button)
   function dropdown(act, placeholder, onChange) {
-    let options = [], value = "", open = false, active = -1, lastSig = "";
+    let options = [], value = "", open = false, active = -1, lastSig = "", redrawing = false;
     const label = h("span", { class: "rr-dd-label" });
     const el = h("button", { class: "rr-dd", type: "button", "data-act": act, "aria-haspopup": "listbox", "aria-expanded": "false" }, label, h("span", { class: "rr-dd-caret", "aria-hidden": "true" }));
     const list = h("ul", { class: "rr-dd-list", role: "listbox", tabindex: "-1", hidden: true });
@@ -37,8 +37,13 @@
       el.setAttribute("aria-label", cur && cur.value !== "" && base ? `${base}: ${cur.label}` : base || label.textContent);
       if (base) list.setAttribute("aria-label", base);
       el.classList.toggle("rr-dd-set", !!(cur && cur.value !== ""));
+      // (new options while the list is open — rows that bring new years arrived — keep the focus on the same choice: lost to the page, an Escape would clear every filter)
+      const focused = open && list.contains(document.activeElement) ? document.activeElement.dataset.value : null;
+      redrawing = true;
       list.replaceChildren(...options.map((o, i) => h("li", { role: "option", tabindex: "-1", "data-value": o.value, "aria-selected": String(o.value === value),
         onClick: () => choose(i) }, o.label)));
+      redrawing = false;
+      if (focused != null) { const i = options.findIndex((o) => o.value === focused); focusItem(i >= 0 ? i : active); }
     };
     const focusItem = (i) => { active = Math.max(0, Math.min(options.length - 1, i)); const li = items()[active]; if (li) { li.focus(); li.scrollIntoView({ block: "nearest" }); } };
     const close = (back) => {
@@ -49,20 +54,27 @@
     };
     const onScroll = (e) => { if (!list.contains(e.target)) close(false); };          // (scrolling the list itself — arrow keys on a long one — must not close it)
     const outside = (e) => { if (!list.contains(e.target) && !el.contains(e.target)) close(false); };
-    const show = () => {
-      if (open || !options.length) return;
-      open = true; list.hidden = false; el.setAttribute("aria-expanded", "true");
+    // (placed with fixed coordinates under — or over — its button; again when the panel moves under it: rows that arrived grew a part above it)
+    const place = () => {
+      if (!open) return;
       const r = el.getBoundingClientRect(), room = window.innerHeight - r.bottom - 12, up = room < 150 && r.top > room;
       list.style.minWidth = Math.max(r.width, 84) + "px";
       list.style.left = Math.min(r.left, Math.max(8, window.innerWidth - 120)) + "px";
       list.style.maxHeight = Math.max(120, Math.min(260, up ? r.top - 12 : room)) + "px";
       if (up) { list.style.top = ""; list.style.bottom = (window.innerHeight - r.top + 4) + "px"; } else { list.style.bottom = ""; list.style.top = (r.bottom + 4) + "px"; }
+    };
+    const show = () => {
+      if (open || !options.length) return;
+      open = true; list.hidden = false; el.setAttribute("aria-expanded", "true");
+      place();
       document.addEventListener("pointerdown", outside, true); window.addEventListener("resize", close); window.addEventListener("scroll", onScroll, true);
       focusItem(Math.max(0, options.findIndex((o) => o.value === value)));
     };
     const choose = (i) => { const o = options[i]; if (!o) return; const changed = o.value !== value; value = o.value; draw(); close(true); if (changed) onChange(value); };
     el.addEventListener("click", () => (open ? close(true) : show()));
     el.addEventListener("keydown", (e) => { if (e.key === "ArrowDown" || e.key === "ArrowUp") { e.preventDefault(); show(); } });
+    // (the focus leaving the list for anything but its button — the "/" key, a click elsewhere — closes it, so that it does not stay open over the panel)
+    list.addEventListener("focusout", (e) => { if (open && !redrawing && !list.contains(e.relatedTarget) && e.relatedTarget !== el) close(false); });
     list.addEventListener("keydown", (e) => {
       const k = e.key;
       if (k === "Escape") { e.preventDefault(); close(true); }
@@ -74,7 +86,7 @@
       else if (k === "Tab") close(true);          // (the focus goes back to the button first: the Tab then moves on from it — "To" after "From" — not from the list, which stands elsewhere)
     });
     return {
-      el, list,
+      el, list, place,
       get value() { return value; },
       setOptions(opts, v) { const sig = JSON.stringify([opts, v]); if (sig === lastSig) return; lastSig = sig; options = opts; value = v; draw(); }
     };
@@ -515,7 +527,7 @@
         h("th", {}, h("button", { class: "rr-rolebtn", type: "button", "data-role": r.role, "aria-pressed": pressed({ role: r.role, tier: undefined }), ...L(ROLE_KEY[r.role]),
           onClick: () => cb.onSelect({ role: r.role, tier: undefined }) }, dot(r.role), t(ROLE_KEY[r.role]))),
         ...cols.map((c) => h("td", { ...tierPart(c) },
-          h("button", { class: "rr-cell" + (r[c] ? "" : " rr-zero"), type: "button", tabindex: r[c] ? null : "-1", "data-role": r.role, "data-tier": c,
+          h("button", { class: "rr-cell" + (r[c] ? "" : " rr-zero"), type: "button", tabindex: r[c] || sameSel(sel, { role: r.role, tier: c }) ? null : "-1", "data-role": r.role, "data-tier": c,          // (a pressed cell whose count fell to 0 can still be reached, to be released)
             "aria-pressed": pressed({ role: r.role, tier: c }), "aria-label": `${t(ROLE_KEY[r.role])}, ${c === "none" ? t("tipUnranked") : [srcName, tierText(c)].filter(Boolean).join(" ")}: ${r[c]}`,
             onClick: () => cb.onSelect({ role: r.role, tier: c }) }, r[c] ? String(r[c]) : "·"))),
         showTotal ? h("td", { class: "rr-total", ...P("panel.table.total") }, String(r.total)) : null));
@@ -574,7 +586,8 @@
       const loadedLine = h("div", { class: "rr-cover-line", ...P("panel.status.loaded") },
         h("span", { class: "rr-note" }, c.loadingAll ? t("loadingAll", [String(c.loaded)]) : tn("coverLoaded", c.loaded, [String(c.loaded)])),
         c.loadingAll ? h("button", { class: "rr-link", type: "button", "data-focus": "load", onClick: () => cb.onCancelLoad() }, t("cancel"))
-          : c.canLoadMore ? h("button", { class: "rr-link", type: "button", "data-focus": "load", "data-act": "load-all", ...L("loadAll"), onClick: () => cb.onLoadAll() }, t("loadAll")) : null);
+          // (no Load all while Read full lists runs: it reads the papers that were there when it began)
+          : c.canLoadMore && !c.resolving ? h("button", { class: "rr-link", type: "button", "data-focus": "load", "data-act": "load-all", ...L("loadAll"), onClick: () => cb.onLoadAll() }, t("loadAll")) : null);
       const status = [];
       if (sp.loaded) {
         status.push(loadedLine);
@@ -618,10 +631,12 @@
           unmatchedEl = h("details", { "data-rr": "unmatched", open: unmatchedOpen, ...P("panel.status.unranked"), onToggle: (e) => { unmatchedOpen = e.target.open; } },
             h("summary", {}, tn("coverUnmatched", total, [String(total)])),
             h("ul", { class: "rr-list", tabindex: "0", "aria-label": tn("coverUnmatched", total, [String(total)]) }, ...c.unmatched.slice(0, 20).map((u) => h("li", {}, u.count > 1 ? h("b", {}, u.count + "× ") : null, u.venue,
-              " ", h("button", { class: "rr-link rr-vcheck", type: "button", "data-act": "check-venue", title: t("optVenueTitle"), "aria-label": `${t("optVenueTitle")}: ${u.venue}`, onClick: () => cb.onCheckVenue(u.venue) }, t("venueCheckLink"))))),
+              " ", h("button", { class: "rr-link rr-vcheck", type: "button", "data-act": "check-venue", "data-focus": "check:" + u.venue, title: t("optVenueTitle"), "aria-label": `${t("optVenueTitle")}: ${u.venue}`, onClick: () => cb.onCheckVenue(u.venue) }, t("venueCheckLink"))))),
             h("div", { class: "rr-actions" }, copyBtn,
               h("a", { class: "rr-link", href: issueUrl("Venue not recognised", report), target: "_blank", rel: "noopener noreferrer", "data-act": "report-unmatched" }, t("reportLink"))));
+          const scroll = (coverList.querySelector("ul.rr-list") || {}).scrollTop || 0;          // (drawn again as rows arrive: the list keeps its place, and the focus its button — data-focus)
           coverList.replaceChildren(unmatchedEl);
+          if (scroll) unmatchedEl.querySelector("ul.rr-list").scrollTop = scroll;
         }
       } else if (unmatchedSig) { unmatchedSig = ""; coverList.replaceChildren(); }
       // Scholar changes its markup now and then: say so, at the top, instead of silently showing nothing
@@ -640,14 +655,14 @@
       const c = m.coverage, np = m.prefs.panel.names;
       const found = np.hints && c.absent > 0 && m.nameHints.suggestions.length;
       suggestBox.replaceChildren(...(found ? [h("div", { class: "rr-cover-line", "data-rr": "suggest", ...P("panel.names.hints") }, h("span", { class: "rr-note" }, t("variantSuggest")),
-        ...m.nameHints.suggestions.map((sg) => h("button", { class: "rr-link rr-pill", type: "button", "data-act": "suggest-variant", title: t("variantSuggestTip", [String(sg.rows)]),
+        ...m.nameHints.suggestions.map((sg) => h("button", { class: "rr-link rr-pill", type: "button", "data-act": "suggest-variant", "data-focus": "suggest:" + sg.name, title: t("variantSuggestTip", [String(sg.rows)]),
           onClick: () => cb.onAddVariant(sg.name) }, `${sg.name} (${sg.rows})`)))] : []));
       variantBox.hidden = !np.add;
       namesSec.hidden = !np.show || (!found && !np.add);
       variantList.replaceChildren(
         ...m.nameHints.auto.map((v) => h("span", { class: "rr-variant rr-variant-auto", title: t("variantAutoTip", [String(v.rows)]) }, v.name)),
         ...m.variants.map((v) => h("span", { class: "rr-variant" }, v,
-          h("button", { type: "button", "aria-label": t("variantRemove"), onClick: () => cb.onRemoveVariant(v) }, "×"))));
+          h("button", { type: "button", "data-act": "variant-remove", "data-focus": "variant:" + v, "aria-label": `${t("variantRemove")}: ${v}`, onClick: () => cb.onRemoveVariant(v) }, "×"))));
     }
 
     function syncFilters(m) {
@@ -755,7 +770,7 @@
               onClick: () => {
                 if (disabled) return;
                 if (isSelected) cb.onYear("", "");
-                else cb.onYear(String(d.year), String(d.year));
+                else cb.onYear(String(d.year), String(d.year), { bar: true });          // (a bar lists what it counts: the highlighted papers of its year)
               }
             },
             h("div", { class: "rr-stack", style: "height:" + Math.max(d.total ? 6 : 0, Math.round(d.total / top * 100)) + "%" },
@@ -848,6 +863,9 @@
       noteBox.hidden = !m.prefs.panel.table.note || !noteBox.textContent;
       // the titles of the parts are headings (a screen reader lists them and jumps between them); the panel's own name is the title bar's
       for (const n of el.querySelectorAll(".rr-sec-title")) if (!n.hasAttribute("role")) { n.setAttribute("role", "heading"); n.setAttribute("aria-level", "3"); }
+      // (a list that is open stays by its control when the panel grew above it: it would cover the words being typed)
+      if (!suggestList.hidden) placeSuggest();
+      yearStart.place(); yearEnd.place();
       restoreFocus(focused);
     }
 

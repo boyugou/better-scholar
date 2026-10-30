@@ -820,6 +820,14 @@
       }
     }
   },
+  "popupCopyFiltered": {
+    "message": "Kopier af artikler: de $N1$ artikler, som sidens filtre viser",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "resolveSemanticKey": {
     "message": "Semantic Scholar accepterede ikke API-nøglen, så resten blev hentet fra Scholars egne sider."
   },

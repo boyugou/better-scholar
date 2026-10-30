@@ -250,13 +250,13 @@ Result: { version, owner, loaded, complete } — the extension's version, the pr
 The numbers the panel shows: the role × rank tables, the awards and talks counts, the citation metrics. The tables and the counts are over every loaded paper unless `filtered` is true (the panel's own table follows the filters); `metrics.highlighted` follows the filters.
 Parameters:
   - `filtered`: true: the tables and the awards and talks counts are of the papers the filters leave, as the panel counts them (when `panel.filters.follow` is on; `counted` then says how many papers that is, and the tables keep the rows of the whole profile); false (the default): every loaded paper.
-Result: { owner, loaded, counted, shown, loadingAll, layoutBroken, edition, noRanks, mapped, summaries: { ccf, core, none }, marks, metrics: { highlighted, all } } — `counted` is the number of papers the tables are of; `mapped.<list>` the number of those papers whose rank in that list comes from the person's own venue mappings, not from the list;  `summaries.<list>` is { columns, rows: [{ role, A, B, …, total }], totals, hidden, absent, papers }; `marks` counts the papers by award or talk group (the groups the panel counts); `metrics.<which>` is { papers, citations, h, i10 }.
+Result: { owner, loaded, complete, counted, shown, loadingAll, layoutBroken, edition, noRanks, mapped, summaries: { ccf, core, none }, marks, metrics: { highlighted, all } } — `complete`: the profile's whole list is loaded (false: more papers are on Scholar than `loaded`); `counted` is the number of papers the tables are of; `mapped.<list>` the number of those papers whose rank in that list comes from the person's own venue mappings, not from the list;  `summaries.<list>` is { columns, rows: [{ role, A, B, …, total }], totals, hidden, absent, papers }; `marks` counts the papers by award or talk group (the groups the panel counts); `metrics.<which>` is { papers, citations, h, i10 }.
 
 ### `papers`
 The papers, one record each: who you are in the author list, the venue's ranks, award and talk marks.
 Parameters:
   - `filtered`: true (the default): only the papers the page shows now, after the filters; false: every loaded paper.
-Result: { owner, total, papers: [{ id, title, authors, venue, pages?, year, citations, role, status, highlighted, type, me, rank: { ccf: { tier, name, mine? } | null, core: { rank, name, mine? } | null }, marks: [string], url }] } — `role` is first | cofirst | second | last | middle | null; `type` is conference | journal | null (the kind the rank lists give the venue); `me` is the profile owner's name as this paper's author line prints it (an empty text when it was not found); `mine: true` marks a rank from the person's own venue mappings, not from the list.
+Result: { owner, total, complete, papers: [{ id, title, authors, venue, pages?, year, citations, role, status, highlighted, type, me, rank: { ccf: { tier, name, mine? } | null, core: { rank, name, mine? } | null }, marks: [string], url }] } — `complete`: the profile's whole list is loaded (false: the papers so far); `role` is first | cofirst | second | last | middle | null; `type` is conference | journal | null (the kind the rank lists give the venue); `me` is the profile owner's name as this paper's author line prints it (an empty text when it was not found); `mine: true` marks a rank from the person's own venue mappings, not from the list.
 
 ### `export`
 The papers or the summary as text, in the format of a copy button.
@@ -275,7 +275,7 @@ Parameters:
   - `yearStart`: Papers from this year on.
   - `yearEnd`: Papers up to this year.
   - `minCitations`: Papers cited at least this often.
-  - `impact`: The highlighted papers behind the h-index (at least h citations, h counted over the highlighted papers the other filters let through) or the i10-index (at least 10 citations).
+  - `impact`: The highlighted papers behind the h-index (at least h citations, h counted over the highlighted papers the other filters let through — not counting a pick, a table cell or an awards row) or the i10-index (at least 10 citations).
 Result: { shown, total, filters: { query, onlyHighlighted, yearStart, yearEnd, minCitations, impact }, errors, ignored } — `errors` names the terms of the query that could not be read (an operator with a value it does not take matches nothing); `ignored` names the filters asked for that were not applied because the settings leave them with no control on the page to undo them (the search box, the filter bar, the citation totals …).
 
 ### `clearFilters`

@@ -820,6 +820,14 @@
       }
     }
   },
+  "popupCopyFiltered": {
+    "message": "งานวิจัยที่คัดลอกได้: $N1$ เรื่องที่ตัวกรองในหน้าแสดงอยู่",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "resolveSemanticKey": {
     "message": "Semantic Scholar ไม่ยอมรับคีย์ API จึงใช้หน้าของ Scholar เองสำหรับส่วนที่เหลือ"
   },

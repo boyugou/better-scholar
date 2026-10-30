@@ -119,12 +119,15 @@
           // (a paper whose author list does not have the profile name is not in the table: "19 of 20 papers", and the tooltip says why)
           h("span", { title: s.absent > 0 ? tn("coverAbsent", s.absent, [String(s.absent)]) : null },
             data.loadingAll ? t("loadingAll", [String(data.loaded)])                         // (the list is still being loaded: the table is not final)
+              : !data.complete ? t("copyNotLoaded", [String(data.loaded)])                  // (more papers are on Scholar than the page has loaded)
               : s.absent > 0 ? t("popupPapersOf", [String(data.loaded - s.absent), String(data.loaded)]) : tn("popupPapers", data.loaded, [String(data.loaded)]))),
         tp.show ? seg : null, tp.show ? table : null,
         tp.show && source !== "none" && tp.unranked ? h("p", { class: "legend" }, "– " + t("tipUnranked")) : null,
         tp.show && source !== "none" && data.mapped && data.mapped[source] ? h("p", { class: "legend", "data-rr": "mapped" }, B.dom.tn("coverMapped", data.mapped[source], [String(data.mapped[source])])) : null,          // (the panel's own line)          // (ranks the person mapped by hand are counted, and said to be)
         markParts.length ? h("p", { class: "marks", title: t("marksHint") }, mp.title ? h("b", {}, t("marksTitle") + B.dom.colon()) : null, markParts.join(" · ")) : null,
         copyBar,
+        // (the paper formats copy the papers the page's filters show, as the panel's buttons do: said when that is not all of them)
+        copyBar && copyKinds.some((k) => !["summary", "table", "image"].includes(k)) && data.shown < data.loaded ? h("p", { class: "legend", "data-rr": "copy-filtered" }, t("popupCopyFiltered", [String(data.shown)])) : null,
         tp.show && tp.note && (data.noRanks || sources.length) ? h("p", { class: "note" }, t(data.noRanks ? "noRanksNote" : "dataNote", [(listed.length ? listed : ["ccf", "core"]).map((k) => listName(data.edition[k])).join(" · ")])) : null
       ].filter(Boolean));
     };
@@ -132,7 +135,10 @@
   }
 
   main.replaceChildren(h("p", { class: "empty", role: "status" }, t("popupReading")));
-  const answer = await call("summary");
+  // (a profile still loading has no content script while the tab loads, and one that is starting says so: asked again, for ten seconds at most, before "not a profile")
+  const loading = async () => { const tab = await pageTab(); if (!tab) return false; try { return (await chrome.tabs.get(tab.id)).status === "loading"; } catch (e) { return false; } };
+  let answer = await call("summary");
+  for (let i = 0; i < 40 && !(answer && answer.ok) && ((answer && answer.error === "starting") || await loading()); i++) { await B.dom.sleep(250); answer = await call("summary"); }
   if (answer && answer.ok) {
     if (reloadHint) { try { await chrome.storage.local.remove("reloadHint"); } catch (e) { /* no storage */ } }          // (a profile answered: the extension runs in the pages opened now)
     const prefs = await B.store.loadPrefs(); B.dom.setLabels(prefs.labels); render(answer.result, prefs, await B.store.loadUi());

@@ -5,6 +5,10 @@
   "use strict";
   const B = globalThis.RolesRanks;
   if (!B || !B.scholar || !B.data || !B.data.ccf || !B.data.core || !B.scholar.isProfile()) return;
+  // (the toolbar popup may ask before the calls are there — the settings and the first rows are read first: until then it is told so, and asks again)
+  let calling = false;
+  const starting = (msg, _sender, send) => { if (calling || !msg || msg.type !== "rr:call") return false; send({ ok: false, error: "starting" }); return false; };
+  try { chrome.runtime.onMessage.addListener(starting); } catch (e) { /* no extension context */ }
 
   const { venues, analysis, metrics, marks, names, formats, chips: chip } = B;
   const { h, t, copyText, frame } = B.dom;
@@ -35,6 +39,7 @@
     venueKey: null,                             // a venue of the panel's venue list: only its papers are shown
     markGroup: null,                            // 'award' | 'oral' | 'spotlight' | 'highlight' filter
     filters: { onlyHighlighted: false, yearStart: null, yearEnd: null, query: "", minCitations: null, impact: null },     // impact: null | "h" | "i10" — the highlighted papers behind that number
+    barYear: null,                                // a year bar pressed: the highlighted papers of that year, what the bar counts (the From / To range lists every paper)
     searchCursor: -1,
     venuesExpanded: false,
     loadingAll: false,
@@ -44,7 +49,7 @@
     resolveMessage: "",
     updated: false                              // the extension was updated (or reloaded, or switched off) under this page: this script is cut off from it
   };
-  let loadAbort = null, loadOrigin = "", resolveAbort = null;       // loadOrigin: "auto" (the setting started it) or "manual" (Load all)
+  let loadAbort = null, loadOrigin = "", resolveAbort = null, loadAfterRead = "";       // loadOrigin: "auto" (the setting started it) or "manual" (Load all)
 
   // What the rows say about the owner's spelling (see names.suggestVariants): the profile name in the other order is used at
   // once when it finds the owner and the name as printed hardly does; other rearrangements ("SY Philip") are only offered.
@@ -215,10 +220,11 @@
   }
 
   // The impact filter (the h-index and i10 buttons of the panel) shows the highlighted papers behind the number: at least h citations, h being the h-index of the
-  // highlighted papers the other filters let through, as the button says (a pick — a table cell, an awards row — is one of the filters); at least 10 for i10. 0: no such filter.
-  // The counts (`counted()`) take the minimum without the picks (`picks: false`), so that picking one never moves it and with it the counts.
+  // highlighted papers the other filters let through, as the button says — not counting a pick (a table cell, an awards row): a pick lists papers of that set, so that a cell's
+  // count is what its click lists, and picking one never moves the minimum and with it the counts; at least 10 for i10. 0: no such filter. (While the button is pressed its
+  // number is this minimum; a venue narrows it as a year does, and each row of the venue list counts what its own click lists: venueRows.)
   // (an h-index of 0 means no highlighted paper has a citation: the filter then shows nothing, so the minimum is one citation, which none of them has)
-const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "h" ? Math.max(1, metrics.citationMetrics(scoped(source, { skipImpact: true, skipPicks: !picks })).highlighted.h) : state.filters.impact === "i10" ? 10 : 0);
+const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metrics.citationMetrics(scoped(source, { skipImpact: true, skipPicks: true })).highlighted.h) : state.filters.impact === "i10" ? 10 : 0);
 
   // Do the filters let this row through? `skip`: choices to leave out — `venue` (the venue list is not narrowed by its own choice), `selection` (the table's cell, for the table's
   // own counts), `marks` (an awards row, for the awards counts).
@@ -240,7 +246,8 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
   }
 
   // Do the filters keep this row out of the list? (the same `skip` as `passes`)
-  const hides = (row, source, min, skip) => (state.filters.onlyHighlighted && !row.highlighted) || (state.venueKey && !row.highlighted) || !passes(row, source, min, skip);
+  const barYear = () => state.barYear != null && state.filters.yearStart === state.barYear && state.filters.yearEnd === state.barYear;          // (the range still the bar's own year)
+  const hides = (row, source, min, skip) => (state.filters.onlyHighlighted && !row.highlighted) || ((state.venueKey || barYear()) && !row.highlighted) || !passes(row, source, min, skip);
 
   function applyFilters() {
     const source = currentSource(), min = impactMin(source);
@@ -291,7 +298,7 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
   // The rows the table, the awards and talks counts and the panel's copy summary count: the rows those filters leave (with the counts following the filters, a setting), else every row
   function counted() {
     if (!prefs.panel.filters.follow || !scopeFiltering()) return live();
-    const source = currentSource(), min = impactMin(source, { picks: false }), skip = { selection: true, marks: true };
+    const source = currentSource(), min = impactMin(source), skip = { selection: true, marks: true };
     return live().filter((r) => !hides(r, source, min, skip));
   }
   // The table's summary: of the rows counted, with the rows (roles) of the whole list so that the table does not change its shape under a filter
@@ -319,9 +326,24 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
 
   // The venue list: the venues of the papers the other filters let through, most papers first, and always the chosen venue (a pressed row, so that the
   // filter can be undone) even when the other filters leave it out of the first few
+  // The papers the venue list counts: those the other filters let through; under the h-index button, of each venue the papers behind the h-index of that venue's papers —
+  // what a click on its row lists (the venue narrows the h-index as a year does)
+  function venueRows(source) {
+    if (state.filters.impact !== "h") return scoped(source, { skipVenue: true });
+    const lists = B.prefs.lists(prefs), winner = B.prefs.winner(prefs), byKey = new Map();
+    for (const r of live()) {
+      if (!passes(r, source, 0, { venue: true, selection: true, marks: true })) continue;
+      const k = metrics.venueKey(r.a.venue, lists, winner);
+      if (k) { if (!byKey.has(k)) byKey.set(k, []); byKey.get(k).push(r); }
+    }
+    return [...byKey.values()].flatMap((rs) => {
+      const h = Math.max(1, metrics.citationMetrics(rs.map(paperOf)).highlighted.h);
+      return rs.filter((r) => r.highlighted && r.shown >= h && passes(r, source, 0, { venue: true })).map(paperOf);
+    });
+  }
   function venueList(source) {
     const max = state.venuesExpanded ? 24 : 6;
-    const list = metrics.topVenues(scoped(source, { skipVenue: true }), max, B.prefs.lists(prefs), B.prefs.winner(prefs));
+    const list = metrics.topVenues(venueRows(source), max, B.prefs.lists(prefs), B.prefs.winner(prefs));
     if (state.venueKey && !list.some((v) => v.key === state.venueKey)) {
       const mine = metrics.topVenues(scoped(source), 99, B.prefs.lists(prefs), B.prefs.winner(prefs)).find((v) => v.key === state.venueKey);
       list.push({ key: state.venueKey, count: mine ? mine.count : 0, name: mine ? mine.name : state.venueKey, ccf: mine ? mine.ccf : null, core: mine ? mine.core : null });
@@ -336,7 +358,7 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
     const yearBars = metrics.yearBars(list);
     const whole = metrics.summarize(list, bare ? null : source);          // (the coverage numbers are about the whole profile)
     const summary = tableSummary(whole, bare ? null : source);
-    const allVenues = metrics.topVenues(scoped(source, { skipVenue: true }), 99, B.prefs.lists(prefs), B.prefs.winner(prefs));
+    const allVenues = metrics.topVenues(venueRows(source), 99, B.prefs.lists(prefs), B.prefs.winner(prefs));
     return {
       ownerName: headerName, edition, prefs, ui, sources: B.prefs.sources(prefs), source, summary, hasHidden: whole.hidden > 0, noRanks: bare, pillFinds: pillFinds(),
       selection: state.selection, filters: state.filters,
@@ -344,7 +366,7 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
       filterBar: filtering() ? { shown: shownRows().length, total: live().length, impact: state.filters.impact ? { kind: state.filters.impact, min: impactMin(source) } : null } : null,
       marks: markCounts(), marksWhole: markCounts(false), markKinds: markKinds(), markGroup: state.markGroup,
       years: Array.from(new Set(list.map((p) => p.year).filter((y) => y != null))).sort((a, b) => b - a),
-      metrics: { highlighted: metrics.citationMetrics(scoped(source, { skipImpact: true })).highlighted, all: metrics.citationMetrics(list).all },
+      metrics: { highlighted: metrics.citationMetrics(scoped(source, { skipImpact: true, skipPicks: state.filters.impact === "h" })).highlighted, all: metrics.citationMetrics(list).all },
       byYear: yearBars.bars, byYearOlder: yearBars.older,
       topVenues: venueList(source), venueKey: state.venueKey,
       venuesHasMore: allVenues.length > 6, venuesExpanded: state.venuesExpanded,
@@ -377,8 +399,8 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
   // ---- what the page shows, as records and as text --------------------------------------------------------------------------------------------
   // The papers the page shows now (the filters count) as plain records: what every copy button, the toolbar popup and the page-event calls are made from
   // (the shape is described at the top of lib/formats.js).
-  const isShown = (r) => !r.raw.tr.classList.contains("rr-hide");
-  const shownRows = (filtered = true) => (filtered ? live().filter(isShown) : live());
+  // (what the filters let through, decided now — not read from the rows' class, which the next frame's refresh sets: rows that just arrived, or a tab in the back, would pass unfiltered)
+  const shownRows = (filtered = true) => { if (!filtered) return live(); const source = currentSource(), min = impactMin(source); return live().filter((r) => !hides(r, source, min)); };
   const markLabels = (a) => B.prefs.visibleMarks(prefs, a.marks).map((m) => B.chips.markLabel(m, true) + (m.source === "list" && m.venue ? ` (${m.venue} ${m.year})` : ""));
   const KIND = { C: "conference", J: "journal" };
   function paperRecords(filtered = true) {
@@ -418,7 +440,7 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
     if (!prefs.panel.filters.follow || !scopeFiltering()) return "";
     const source = currentSource();
     const parts = panel.filterParts({ source, selection: null, markGroup: null, venueKey: state.venueKey, filters: state.filters,
-      filterBar: { impact: state.filters.impact ? { kind: state.filters.impact, min: impactMin(source, { picks: false }) } : null } }, true, td);
+      filterBar: { impact: state.filters.impact ? { kind: state.filters.impact, min: impactMin(source) } : null } }, true, td);
     return td("filterShowing", [String(counted().length), String(live().length)]) + (parts.length ? " · " + parts.join(" · ") : "");
   }
   // What a copied summary says about where it is from, so that it can be filed or sent on: the profile's own link (nothing else of the address) and the day, when the setting is on; and,
@@ -463,7 +485,7 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
       case "ieee": return formats.ieee(records);
       case "acm": return formats.acm(records);
       case "gbt": return formats.gbt(records);
-      default: return formats.json({ owner: headerName, source: currentSource(), papers: records });          // "json" (a call's format is checked before it gets here)
+      default: return formats.json({ owner: headerName, source: currentSource(), complete: listComplete(), papers: records });          // "json" (a call's format is checked before it gets here)
     }
   }
 
@@ -553,7 +575,7 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
 
   const panel = B.panel.create({
     onCollapse() { ui.collapsed = !ui.collapsed; B.store.saveUi(ui); refresh(); },
-    onSource(src) { ui.source = src; state.selection = null; B.store.saveUi(ui); refresh(); },
+    onSource(src) { ui.source = src; if (state.selection && state.selection.tier) state.selection = null; B.store.saveUi(ui); refresh(); },          // (a role alone holds in either ranking)
     // a content script cannot open the options page itself; the service worker does it on request
     onSettings() { if (B.dom.orphaned()) { checkOrphan(); return; } try { chrome.runtime.sendMessage({ type: "rr:options" }); } catch (e) { checkOrphan(); } },
     // a venue of the unranked list, explained on the settings page (its "Check a venue", with the text in it)
@@ -578,9 +600,10 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
       refresh();
     },
     onSearchNext(dir) { stepSearchMatch(dir); },
-    onYear(start, end) {
+    onYear(start, end, { bar = false } = {}) {
       state.filters.yearStart = start === "" ? null : parseInt(start, 10);
       state.filters.yearEnd = end === "" ? null : parseInt(end, 10);
+      state.barYear = bar && state.filters.yearStart != null ? state.filters.yearStart : null;
       state.searchCursor = -1; clearFocusedRow();
       refresh();
     },
@@ -618,6 +641,7 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
       freshResolved = () => {};
       state.resolving = null;
       resolveAbort = null;
+      if (loadAfterRead) { const o = loadAfterRead; loadAfterRead = ""; setTimeout(() => startLoad(o), 0); }
       state.resolveMessage = res.stopped === "captcha" ? t("resolveCaptcha") : res.stopped === "unreadable" ? t("resolveUnreadable") : res.stopped === "cancelled" ? "" : res.semanticKey ? t("resolveDone") + " " + t("resolveSemanticKey") : res.semanticLimited ? t("resolveDone") + " " + t("resolveSemanticBusy") : t("resolveDone");
       rehint();
       refresh();
@@ -642,6 +666,7 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
   // The rest of the paper list, through Scholar's own "Show more" button (scholar.loadAll): started by itself when the settings say so
   // ("auto" — after a moment, and at the first sign of trouble it gives up) or by the panel's Load all ("manual").
   async function startLoad(origin) {
+    if (state.resolving) { loadAfterRead = origin; return; }          // (not while Read full lists runs: Scholar would get both at once — it starts when the read ends)
     if (state.loadingAll || !B.scholar.canLoadMore()) return;
     state.loadingAll = true;
     state.loadMessage = "";
@@ -725,7 +750,7 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
     const before = currentSource();
     const wasAuto = prefs.autoLoad;
     prefs = next;
-    if (currentSource() !== before) state.selection = null;                        // its tier belonged to the other ranking
+    if (currentSource() !== before && state.selection && state.selection.tier) state.selection = null;                        // its tier belonged to the other ranking (a role alone holds in either)
     refresh();                                                                      // (which also clears the filters left without a control)
     if (prefs.autoLoad && !wasAuto && !state.loadingAll) startLoad("auto");                                          // switched on: load the rest of the list now (a run of Load all that is going on does it already)
     else if (!prefs.autoLoad && loadOrigin === "auto" && loadAbort) loadAbort.abort();          // switched off: stop what it began
@@ -777,7 +802,8 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
     // (a key typed into a field of a shadow tree — another extension's widget on the page — is retargeted to the tree's host: the field itself is the first of its path)
     const target = (e.composedPath && e.composedPath()[0]) || e.target;
     const el = target instanceof Element ? target : document.body;
-    const typing = /^(?:input|textarea|select)$/i.test(el.tagName) || el.isContentEditable;
+    // (typing: a field that takes text — a switch, a box to tick or a button takes no letters, and "/" or Escape there do what they do on the page)
+    const typing = /^(?:textarea|select)$/i.test(el.tagName) || (/^input$/i.test(el.tagName) && !/^(?:checkbox|radio|button|submit|reset|range|color|file|image)$/i.test(el.type)) || el.isContentEditable;
     if (e.key === "/" && !typing) {
       if (!prefs.panel.show || !prefs.panel.filters.show || !prefs.panel.filters.search || !prefs.panel.filters.key) return;          // (a character key that does something can be switched off)
       e.preventDefault();
@@ -802,14 +828,14 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
       const rows = filtered && prefs.panel.filters.follow && scopeFiltering() ? counted().map(paperOf) : list;          // (the papers the tables are of)
       const table = (src) => { const whole = metrics.summarize(list, src); return rows === list ? whole : metrics.summarize(rows, src, { keep: whole.rows.map((r) => r.role) }); };
       return {
-        owner: headerName, loaded: list.length, counted: rows.length, shown: shownRows().length, loadingAll: state.loadingAll, layoutBroken: layoutBroken(), edition,
+        owner: headerName, loaded: list.length, complete: listComplete(), counted: rows.length, shown: shownRows().length, loadingAll: state.loadingAll, layoutBroken: layoutBroken(), edition,
         noRanks: noRanks(list), mapped: { ccf: mappedCount(tableRows(filtered), ["ccf"]), core: mappedCount(tableRows(filtered), ["core"]) },
         summaries: { ccf: table("ccf"), core: table("core"), none: table(null) },
         marks: markCounts(rows !== list),
-        metrics: { highlighted: metrics.citationMetrics(scoped(source, { skipImpact: true })).highlighted, all: metrics.citationMetrics(list).all }
+        metrics: { highlighted: metrics.citationMetrics(scoped(source, { skipImpact: true, skipPicks: state.filters.impact === "h" })).highlighted, all: metrics.citationMetrics(list).all }
       };
     },
-    papers: ({ filtered = true } = {}) => ({ owner: headerName, total: live().length, papers: paperRecords(filtered) }),
+    papers: ({ filtered = true } = {}) => ({ owner: headerName, total: live().length, complete: listComplete(), papers: paperRecords(filtered) }),
     export: async ({ format, source, html, filtered }) => {
       const rich = html ? exportHtml(format, { source, filtered }) : "", text = exportText(format, { source, filtered });          // (the text first: the picture is of the same rows)
       const png = format === "image" ? await B.image.dataUrl(await tableImage({ source, filtered })) : "";
@@ -831,4 +857,6 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
     clearFilters: () => { clearAllFilters(); return filterState(); }
   };
   B.bridge.install(methods);
+  calling = true;
+  try { chrome.runtime.onMessage.removeListener(starting); } catch (e) { /* gone */ }
 })();

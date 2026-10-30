@@ -820,6 +820,14 @@
       }
     }
   },
+  "popupCopyFiltered": {
+    "message": "Copias de artículos: los $N1$ artículos que muestran los filtros de la página",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "resolveSemanticKey": {
     "message": "Semantic Scholar no aceptó la clave de API, así que para el resto se usaron las páginas de Scholar."
   },

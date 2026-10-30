@@ -820,6 +820,14 @@
       }
     }
   },
+  "popupCopyFiltered": {
+    "message": "Копии статей, показанных фильтрами страницы: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "resolveSemanticKey": {
     "message": "Semantic Scholar не принял ключ API, поэтому остальное взято со страниц самого Scholar."
   },

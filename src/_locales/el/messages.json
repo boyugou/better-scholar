@@ -820,6 +820,14 @@
       }
     }
   },
+  "popupCopyFiltered": {
+    "message": "Αντίγραφα εργασιών: οι $N1$ εργασίες που εμφανίζουν τα φίλτρα της σελίδας",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "resolveSemanticKey": {
     "message": "Το Semantic Scholar δεν αποδέχθηκε το κλειδί API, οπότε για το υπόλοιπο χρησιμοποιήθηκαν οι σελίδες του ίδιου του Scholar."
   },

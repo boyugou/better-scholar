@@ -710,7 +710,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
       assert.equal(await yearBar.getAttribute("aria-pressed"), "true");
       assert.equal(await page.locator('#rr-panel button[data-act="year-start"] .rr-dd-label').textContent(), String(sampleYear));
       assert.equal(await page.locator('#rr-panel button[data-act="year-end"] .rr-dd-label').textContent(), String(sampleYear));
-      assert.equal(await visibleRows(page), all.filter((p) => p.year === sampleYear).length);
+      assert.equal(await visibleRows(page), Number((await yearBar.getAttribute("aria-label")).split(": ").pop()), "a bar lists what it counts: the highlighted papers of its year");
       assert.match(await page.locator("#rr-panel .rr-fb-what").textContent(), new RegExp(String(sampleYear)));
       await yearBar.click();
       assert.equal(await yearBar.getAttribute("aria-pressed"), "false");
@@ -1630,14 +1630,14 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
       const parts = [...noneTitle.matchAll(/(?:Preprints|Secondary tracks|Other venues) (\d+)/g)].map((x) => Number(x[1]));
       assert.ok(parts.length >= 1, "the header says: " + noneTitle);
       assert.equal(parts.reduce((a, b) => a + b, 0), Object.entries(narrow).filter(([k]) => k !== "hidden").reduce((n, [, r]) => n + (r.none || 0), 0), "and the kinds add up to the column's total: " + noneTitle);
-      // the h-index filter: the counts take its minimum without the picks (a cell leaves them as they were), while the button, with a cell picked, still lists the papers behind its own number
+      // the h-index filter: its minimum is taken without the picks — a cell leaves the counts as they were, and lists exactly the papers its count says
       await page.click('[data-metric="mH"]');
       await eventually(page, () => document.querySelector('[data-metric="mH"][aria-pressed="true"]'));
       const withH = await readMatrix(page);
       await page.click(cell);
       await eventually(page, () => document.querySelector('button.rr-cell[data-role="last"][data-tier="A"][aria-pressed="true"]'));
       assert.deepEqual(await readMatrix(page), withH, "a pick, with the h-index papers listed, leaves the counts as they were");
-      if (narrow.last.A) assert.ok((await visibleRows(page)) > 0, "and the button still lists the papers behind its own number");
+      assert.equal(await visibleRows(page), (withH.last && withH.last.A) || 0, "and lists the papers its count says");
       await page.click(cell);
       await page.click('[data-metric="mH"]');
       await eventually(page, () => !document.querySelector('[data-metric="mH"][aria-pressed="true"]') && !document.querySelector('button.rr-cell[aria-pressed="true"]'));

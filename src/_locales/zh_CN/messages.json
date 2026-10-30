@@ -820,6 +820,14 @@
       }
     }
   },
+  "popupCopyFiltered": {
+    "message": "复制的论文：页面筛选条件所显示的 $N1$ 篇",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "resolveSemanticKey": {
     "message": "Semantic Scholar 不接受这个 API 密钥，其余的改为读取 Scholar 自己的页面。"
   },

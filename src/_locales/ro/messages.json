@@ -820,6 +820,14 @@
       }
     }
   },
+  "popupCopyFiltered": {
+    "message": "Copii ale lucrărilor afișate de filtrele paginii: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "resolveSemanticKey": {
     "message": "Semantic Scholar nu a acceptat cheia API, așa că restul a fost preluat din paginile Scholar."
   },

@@ -162,7 +162,7 @@ Real examples. The middle column is what the lists give; by default the panel dr
 - **Awards and talks**: the counts. Click a count to list its papers.
 - **Search and filters**: words and [operators](#search-operators); quick buttons such as *CCF A*, *>100* (citations), *First author*, *Award* and *Last 5 years*, and up to three of your own words; *Only highlighted*; a year range. The table, the award counts and the copied summary count only the papers that the filters leave. (A switch on the settings page turns this off.)
 - **Citation totals**: papers, citations, h-index and i10-index of your highlighted papers, beside the totals of all papers. The **h-index** and **i10-index** buttons list the papers behind the number.
-- **Papers by year**: a bar for each year (at most 50 years), in the role colours. Click a bar to filter to that year.
+- **Papers by year**: a bar for each year (at most 50 years), in the role colours. Click a bar to list the papers it counts: your highlighted papers of that year (*From* and *To* list every paper of a range).
 - **Top venues** (off by default): the ranked venues of your highlighted papers, most papers first. Click a venue to list its papers.
 - **Status lines**: how many papers are loaded; the roles that cut author lists hide (**Read full lists**); duplicate entries; papers at venues neither list holds, with **Copy list**, **Report**, and a **Check** link for each venue.
 - **The whole list.** Scholar shows the first papers of a profile, and more when you press its **Show more** button. By default the extension presses that button for you until the list is complete: one press at a time, about once a second, and only in the tab that you look at. It stops at the first press that brings no new papers. With **Load all papers automatically** off, the panel shows a **Load all** button.
@@ -358,7 +358,7 @@ What the extension is made of, counted from its code and its data. Nothing here 
 | **171** | settings you can change, in 18 cards: 94 switches, 55 names you can set, and 22 colours, choices, orders and languages | the settings tree (`src/lib/prefs.js`) |
 | **189** | nodes in that tree, 5 levels deep: card, panel switch, part switch, item, sub-item | cards and rows; each row hangs on its part's switch |
 | **9 · 12 · 13 · 6 · 4** | panel parts, copy formats and quick filters (each with a switch, most in an order you set), then chip looks and presets | `SECTIONS`, `COPY_BUTTONS`, `PILLS`, `CHIP_THEMES`, `PRESETS` |
-| **30** | interface languages: 392 strings each, 29 translated from English | `src/_locales/*/messages.json` |
+| **30** | interface languages: 393 strings each, 29 translated from English | `src/_locales/*/messages.json` |
 | **1,178** | ranked venues in 1,481 rows of the two lists (386 CCF conferences, 295 CCF journals, 800 CORE conferences); 299 venues have a row in both | the rows of `src/data/ccf.js` and `src/data/core.js`, linked by `idx.partners` |
 | **400+** | venue names that Scholar prints but the lists do not have, in 280+ curated entries: old and renamed venues, other spellings, the lists' own typos, and look-alike events that get no chip | `src/data/aliases.js` |
 | **2,500+** · **1,100+** | name forms and acronyms that the matcher looks up | the keys of its indexes |

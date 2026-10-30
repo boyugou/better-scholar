@@ -83,6 +83,22 @@ give the details and every review):
   old rule), with the one known limit reported and not counted: a chip keeps its name on one line, so a 30-character chip name is cut
   in a preview of 330 px or less. The overflow audit no longer counts a break at a soft hyphen (Finnish "Yhteis-|ensimmäinen") as a
   word cut in two.
+- **A review of the panel and the popup in use** (an independent agent driving the real extension; no crash, no wrong data). Fixed:
+  (1) under the h-index button a table cell or a venue row could say 3 and list 5: the button's minimum is now taken without the picks
+  (a cell, an awards row), so a cell lists what its count says and picking one never moves the minimum; while the button is pressed its
+  number is that minimum, and each venue row counts what its own click lists. (2) A year bar counts your highlighted papers of its
+  year and now lists those (it listed every paper of the year; *From* and *To* still list every paper of a range). (3) New years
+  arriving while the year list was open took the keyboard's focus to the page, and an Escape then cleared every filter: the focus
+  stays on the same year, and the list closes when the focus leaves it. (4) The unranked list's **Check** buttons, the name
+  suggestions and the spellings' × keep the focus on the same one when the panel is drawn again (it jumped to the first, so Enter
+  checked another venue), and the list keeps its scroll. (5) An open suggestion list or year list follows its box when the panel
+  grows above it. (6) *Load all* is not offered while *Read full lists* runs, and a load switched on meanwhile starts when the read
+  ends. (7) The toolbar popup opened on a profile that is still loading says *Reading…* and asks again, instead of "not a profile".
+  (8) The `papers` and `summary` calls and the JSON export say `complete`; the popup says when not all papers are loaded, and
+  under its copy buttons when they copy only the papers the page's filters show. (9) "Shown" is decided from the filters, not from
+  the rows' class that the next frame sets (rows that had just arrived, or a tab in the back, passed unfiltered). (10) On a switch or
+  a box to tick, "/" and Escape do what they do on the page; a role picked alone stays when the table switches between CCF and CORE;
+  a pressed cell whose count fell to 0 can still be reached with the keyboard.
 - **A review of the settings, the configuration and the page events** (an independent agent; 20,000 fuzzed records could not break
   `normalize`, and no call writes storage or reaches the network). Fixed: (1) the quick filters did not read the new search words — your
   own filter `NOT survey` put in `not survey` (the opposite), `cas9 OR cas12a` three words, and a phrase was split; the First button
