@@ -175,7 +175,7 @@
     "message": "Membaca halaman tiap makalah di Scholar di latar belakang (sekitar satu per detik) untuk mendapatkan daftar penulis lengkap."
   },
   "resolveHintSemantic": {
-    "message": "Meminta daftar penulis tiap makalah ke Semantic Scholar lebih dulu (hanya judul makalah yang dikirim). Lalu membuka halaman Scholar untuk makalah lainnya, sekitar satu per detik."
+    "message": "Meminta daftar penulis tiap makalah ke Semantic Scholar lebih dulu (hanya judul makalah yang dikirim). Lalu membaca halaman makalah lainnya di Scholar di latar belakang (sekitar satu per detik)."
   },
   "resolving": {
     "message": "Membaca daftar penulis… $N1$/$N2$",

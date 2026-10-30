@@ -7,18 +7,29 @@ give the details and every review):
 
 - **Your own venue mappings**: tie a venue that no list ranks to a listed one; its chip says it is your mapping.
 - **Copy as image**, **Copy IEEE**, **Copy ACM** and **Copy GB/T 7714** (each off until switched on); references and the papers table paste
-  into Word, Docs or Pages with real italics and your name in bold.
+  into Word, Docs or Pages as a real table or reference list (italics where the style has them) with your name in bold. BibTeX writes
+  "Van Gool, L" and "Heath, Jr., R W"; a book or a handbook is no journal article.
 - **Your own quick filters**: up to three buttons of your own search words under the search box.
 - **Check a venue**: on the settings page, or from the panel's list of unranked venues — what the lists make of a line, and by which rule.
 - **The counts follow the filters**: the table, the award counts and the copied summary count the papers the filters leave.
-- **Search**: `role:first,last` (either), `type:journal`, `age:<5`, and the whole author list once it was read.
+- **Search**: `role:first,last` (either), `type:journal`, `age:<5`, `"a phrase"`, `-word` / `NOT word`, `a OR b`, `author:` `title:`
+  `venue:`, and the whole author list once it was read. A word is found at the start of a word (`he` is the author He, not "the"),
+  accents and full-width letters aside (`dollar` finds "Dollár", `ccf：a` is `ccf:a`).
+- **Duplicates** (*Merge duplicates*): the published, ranked entry that shows your name stays; a conference paper and its journal
+  version are never merged.
 - **One chip where both lists rank a venue** (CCF first by default; a setting changes it).
 - **The reference styles read the venue line's parts** (volume, issue, pages), and the page range from the paper's own page.
 - **Matching**: many wrong chips removed and missing ones added, from sweeps over 75,000 real venue lines and twenty independent reviews —
-  the last ones: "Frontiers in" is not "Frontiers of", an "International Journal of X" not a listed "Journal of X", a line without "Joint"
-  not a venue that always says it, PODS's issue of PACMMOD not SIGMOD, a congress not a conference, JMLR's workshop proceedings not JMLR.
-- **The toolbar popup** offers *Open my profile* when the tab is no profile, and right after an install or update says that a profile
-  already open needs a reload.
+  the last ones: "Frontiers in" is not "Frontiers of", an "International Journal of X" not a listed "Journal of X", PODS's issue of
+  PACMMOD not SIGMOD, an edition the venue cannot have held that year another venue's, the second volume of SIGCSE's posters no paper.
+- **Roles**: "等" cuts a list as "et al" does, "Hung Van Nguyen" and "Su-Bin Kim" are read right, and half of a hyphenated given name
+  is another person.
+- **Read full lists** stops at a refusal and at pages it cannot read, and says so; clearing the saved paper details is not undone by an
+  open tab; Semantic Scholar's answer is used only when every name the row shows agrees.
+- **The toolbar popup** offers *Open my profile* when the tab is no profile, says *Reading…* on a profile still loading, says when not
+  all papers are loaded, and right after an install or update says that a profile already open needs a reload.
+- **A count lists what it says**: under the h-index button a table cell or a venue row lists exactly its number, and a year bar its
+  highlighted papers; the line under the table names the papers at venues neither list holds.
 - **An update under an open page is said**: the panel's top bar says the extension was updated and offers *Reload this page*.
 - **Copy buttons**: a copy the clipboard refused says *Not copied*; a long name you gave a button wraps instead of running out.
 - **The settings page** works on a phone.
@@ -83,6 +94,14 @@ give the details and every review):
   old rule), with the one known limit reported and not counted: a chip keeps its name on one line, so a 30-character chip name is cut
   in a preview of 330 px or less. The overflow audit no longer counts a break at a soft hyphen (Finnish "Yhteis-|ensimmäinen") as a
   word cut in two.
+- **A review of the docs against the code** (an independent agent: 30 statements that the code no longer bore out, all fixed). The
+  README's BibTeX and JSON rows, the page calls' results (`complete`, `mapped`, `mine`), the popup's new states, the unranked list (a
+  track or a preprint is counted under "–", not listed), the accessibility audit (it runs in CI), the storage table (`reloadHint`, the
+  settings page's report), the stop rules of *Read full lists*, the h-index rule, the search language, the name and track rules in
+  ARCHITECTURE.md; the store's storage justification and claims file (8 keys, `chrome.tabs.get`, the dblp link); PRIVACY.md's Semantic
+  Scholar rule, *Copy as image* and the load lock; done or decided items left in the ROADMAP; the "In short" list above. A UI line
+  still said *Read full lists* "opens" Scholar's pages: it reads them in the background (30 languages). A test now holds the JSON
+  shape the docs give to the one the export writes.
 - **A review of the panel and the popup in use** (an independent agent driving the real extension; no crash, no wrong data). Fixed:
   (1) under the h-index button a table cell or a venue row could say 3 and list 5: the button's minimum is now taken without the picks
   (a cell, an awards row), so a cell lists what its count says and picking one never moves the minimum; while the button is pressed its
@@ -141,7 +160,7 @@ give the details and every review):
   (5) A paper titled "Detecting unusual traffic …" is no CAPTCHA page: a block page's words count only on a page without the field
   table. (6) *Read full lists* is not offered while the list loads (Scholar got both at once). (7) Switching *Load all papers
   automatically* on during a *Load all* no longer starts a second run after a stall or a *Cancel*; a run cancelled while it waited for
-  the button does not press it. PRIVACY.md says each of these.
+  the button does not press it. PRIVACY.md says what concerns a request or a stored key.
 - **A review of the award chips and the exports** (an independent agent; every finding fixed). Exports: (1) a handbook, an encyclopedia,
   a manuscript or a publisher with a "volume (issue)" ("Encyclopedia of machine learning 15 (1)", "Now Publishers 1 (1–2)", "Arpaci-Dusseau
   Books, LLC 1, 15") was cited as a journal article in every style; 9 of the 22,744 real lines change, all of them these. (2) BibTeX

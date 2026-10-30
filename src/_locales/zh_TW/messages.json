@@ -175,7 +175,7 @@
     "message": "在背景逐一讀取各論文在 Scholar 上的頁面（約每秒一篇），取得完整作者列表。"
   },
   "resolveHintSemantic": {
-    "message": "先向 Semantic Scholar 查詢每篇論文的作者列表（只傳送論文標題）。其餘論文則逐一開啟它們在 Scholar 上的頁面，約每秒一篇。"
+    "message": "先向 Semantic Scholar 查詢每篇論文的作者列表（只傳送論文標題）。其餘論文則在背景逐一讀取它們在 Scholar 上的頁面（約每秒一篇）。"
   },
   "resolving": {
     "message": "正在讀取作者列表… $N1$/$N2$",

@@ -1,9 +1,9 @@
 # Screenshots and promo images
 
 The eight files in `store/chrome/images/` (five screenshots, two promo tiles, the icon) are made by one command, from the real
-extension, and are current. They were regenerated at commit `8c5fe05` (version 2.41.0) and checked on 2026-10-15; `src/` has
-changed since only in the German strings and the preview editor's drag handling (`touch-action`, a cancelled drag), none of
-which any picture shows. All have the sizes and formats the store asks for (`listing.md`, "Graphic assets": screenshots
+extension, and are current. They were last made on 2026-10-28 (`listing.md`, "Graphic assets"); `src/` has changed since in ways a picture can show — the
+settings page's tray now holds more hidden things than screenshot 4 shows, and the panel's lines and popup words grew — so they
+are to be made again before a submission (`npm run store:images`, then look at each). All have the sizes and formats the store asks for (`listing.md`, "Graphic assets": screenshots
 1280×800 JPEG, small tile 440×280, marquee 1400×560, icon 128×128 PNG).
 
 ## How they are made

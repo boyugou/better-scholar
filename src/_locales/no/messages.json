@@ -175,7 +175,7 @@
     "message": "Leser hver artikkels side på Scholar i bakgrunnen (omtrent én per sekund) for å hente hele forfatterlisten."
   },
   "resolveHintSemantic": {
-    "message": "Utvidelsen spør først Semantic Scholar etter hver artikkels forfatterliste (Semantic Scholar får bare tittelen). Deretter åpnes sidene til de andre artiklene på Scholar, omtrent én per sekund."
+    "message": "Utvidelsen spør først Semantic Scholar etter hver artikkels forfatterliste (Semantic Scholar får bare tittelen). Deretter leses sidene til de andre artiklene på Scholar i bakgrunnen (omtrent én per sekund)."
   },
   "resolving": {
     "message": "Leser forfatterlister… $N1$/$N2$",

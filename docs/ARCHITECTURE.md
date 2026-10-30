@@ -2,7 +2,7 @@
 
 This is a Manifest V3 extension built for Chrome: **two content scripts, a toolbar popup and a settings page**,
 one permission (`storage`), and a small service worker whose only jobs are to open the settings page for the
-panel's button and to hand over the strings of the chosen interface language. It has no network access of its own
+panel's button, to hand over the strings of the chosen interface language, and to note an install or update (`reloadHint`). It has no network access of its own
 except the user-triggered read of a paper's own page on Scholar (*Read full lists*) and, only if switched on, a
 title lookup at Semantic Scholar's public API. (It also presses Scholar's own *Show more* button for you, by
 default — the page's script makes that request, see [Loading the whole list](#loading-the-whole-list).) The same
@@ -43,11 +43,11 @@ code on real Scholar data, and why there is no build step.
 | `lib/marks.js` | Find the award and talk-level words an author wrote in a title or venue string (precision first); merge them with the award list's; the panel's award / talk rows and counts (`rows`, `summarize`, `summarizeKinds`). |
 | `lib/awards.js` | The bundled list of award-winning papers: match a row by identical full title and the award's first author. |
 | `lib/duplicates.js` | Entries that are one paper listed twice (same title apart from capitals / accents / punctuation, same first-author surname; not two venues the lists know apart, nor — neither a preprint — years more than one apart: a conference paper and its journal version are two): which one stays (the published one, then a ranked one, then one that shows the owner, then the most cited) and the citations it shows. Used when *Merge duplicates* is on. |
-| `lib/analysis.js` | One row → `{ status, role, venue, marks, … }`, folding in a paper's detail page when there is one; `isHighlighted`; `needsDetail`; `queryMatcher(q, marksOf)`, which compiles a search query (`lib/query.js`) once into a test of a row — the words are looked for in the title, the author line, the venue line, the venue's abbreviation and name in each list, the year, the role and the marks that the settings leave on. |
-| `lib/query.js` | The search language. `OPERATORS` — `cites`, `year` (compared with `>` `>=` `<` `<=` `=`), `ccf`, `core`, `role`, `type`, `has` — each with its value pattern, an example, the suggestions and a line of documentation; `POPULAR` (what the panel offers on an empty box); `parse(q)` → `{ terms, errors }` (an operator with a value it does not take becomes a term that matches nothing, named in `errors`); `matches(parsed, fields)`. The panel's suggestions, the agent guide and the matcher all read `OPERATORS`. |
+| `lib/analysis.js` | One row → `{ status, role, venue, marks, … }`, folding in a paper's detail page when there is one; `isHighlighted`; `needsDetail`; `queryMatcher(q, marksOf)`, which compiles a search query (`lib/query.js`) once into a test of a row — the words are looked for in the title, the author line (and the whole list once *Read full lists* has read it), the venue line (and the paper page's own line once read), the venue's abbreviation and name in each list, the year, the role and the marks that the settings leave on. |
+| `lib/query.js` | The search language. `OPERATORS` — `cites`, `year`, `age` (compared with `>` `>=` `<` `<=` `=`), `ccf`, `core`, `role`, `type`, `has`, and the fields `author`, `title`, `venue` — each with its value pattern, an example, the suggestions and a line of documentation; `POPULAR` (what the panel offers on an empty box); `fold` (accents, capitals and full-width letters aside); `parse(q)` → `{ terms, errors, problems }` (quoted phrases, `-word` / `NOT word`, `a OR b`; a listed operator's values past a space or an ideographic comma; an operator with a value it does not take becomes a term that matches nothing, named in `errors`); `matches(parsed, fields)` (a word at the start of a word, one of one or two letters or digits as a whole word, a word without Latin letters anywhere). The quick-filter helpers (`hasValue`, `toggleValue`, `keepOnly`, `searchParts`, `hasAll`, `toggleAll`) read the query in the same units — a phrase, NOT and what follows, an OR group are never a button's. The panel's suggestions, the agent guide and the matcher all read `OPERATORS`. |
 | `lib/metrics.js` | h-index / i10 and the citation totals (highlighted and all), the role × tier summary (`summarize`, by role only with `source` null), matrix selection, the year bars (`yearBars`, at most `YEAR_BARS` = 50 years), top venues, unmatched venues. |
-| `lib/formats.js` | The text of the copy buttons, the popup and the `export` call: `summaryText`, `summaryTsv`, `papersTsv`, `papersCsv`, `bibtex`, `markdown`, `apa`, `ieee`, `gbt`, `json`, the HTML flavours `summaryHtml`, `papersHtml`, `apaHtml`, `ieeeHtml`, and `venueParts`, the one reading of a venue line that the reference styles share (see [Exports](#exports)). Titles and names are treated as untrusted text. |
-| `lib/prefs.js` | The screen, described once: `CARDS`, a card for each part of what the extension draws in the order it is drawn (`{ id, title, hint, rows }`; the settings page lists them in that order beside the preview), and `SETTINGS`, the cards' rows in one list `{ path, kind, def, doc, label, … }` (kind: `bool`, `choice`, `color`, `language`, `order`, `text`). Derived from it: `defaults()`, `normalize(raw)` (a complete, well-typed record; unknown keys dropped, wrong values back to the default; an order is always a whole permutation), `apply(current, patch)` → `{ prefs, applied, unchanged, ignored }` (imports, presets, the editor), `flatten()`. Also `NAMES` (the 48 texts a person can name: where each is drawn and its English words, checked against the catalogue), `PRESETS` (`all`, `last`, `first`, `minimal`), `CHIP_THEMES`, `normalizeUi`, and the rules: what is drawn (`listShown`, `lists`, `markShown`, `visibleMarks` for the search and the exports, `chipMarks` for the rows, `panelMarks` for the counts), which list's rank stands alone where both rank a venue (`winner` for the venue list and the notes of the copies, `chipLists` for the chips: `rows.prefer`, CCF first by default; between lists that are drawn only; the table, the search and the table copies keep both), the quick filters that are drawn (`pills`), which ranking the table uses (`sources`, `source`) and which copy buttons are on, in order (`copyButtons`). |
+| `lib/formats.js` | The text of the copy buttons, the popup and the `export` call: `summaryText`, `summaryTsv`, `papersTsv`, `papersCsv`, `bibtex`, `markdown`, `apa`, `ieee`, `acm`, `gbt`, `json`, the HTML flavours `summaryHtml`, `papersHtml`, `apaHtml`, `ieeeHtml`, `acmHtml`, `gbtHtml`, and `venueParts`, the one reading of a venue line that the reference styles share (see [Exports](#exports)). Titles and names are treated as untrusted text. |
+| `lib/prefs.js` | The screen, described once: `CARDS`, a card for each part of what the extension draws in the order it is drawn (`{ id, title, hint, rows }`; the settings page lists them in that order beside the preview), and `SETTINGS`, the cards' rows in one list `{ path, kind, def, doc, label, … }` (kind: `bool`, `choice`, `color`, `language`, `order`, `text`). Derived from it: `defaults()`, `normalize(raw)` (a complete, well-typed record; unknown keys dropped, wrong values back to the default; an order is always a whole permutation), `apply(current, patch)` → `{ prefs, applied, unchanged, ignored }` (imports, presets, the editor), `flatten()`. Also `NAMES` (the texts a person can name (55; `npm run numbers` counts them): where each is drawn and its English words, checked against the catalogue), `PRESETS` (`all`, `last`, `first`, `minimal`), `CHIP_THEMES`, `normalizeUi`, and the rules: what is drawn (`listShown`, `lists`, `markShown`, `visibleMarks` for the search and the exports, `chipMarks` for the rows, `panelMarks` for the counts), which list's rank stands alone where both rank a venue (`winner` for the venue list and the notes of the copies, `chipLists` for the chips: `rows.prefer`, CCF first by default; between lists that are drawn only; the table, the search and the table copies keep both), the quick filters that are drawn (`pills`), which ranking the table uses (`sources`, `source`) and which copy buttons are on, in order (`copyButtons`). |
 | `lib/palette.js` | The chips' colours from one colour per family (`ccf`, `core`, `award`, `talk`): `vars(family, hex)` → the custom properties (`--rr-ccf-1-ink`, …; the tiers fade, the text on a solid fill is white or near black by contrast), `on`, `mix`, `contrast`. `styles.css` reads them with the built-in colours as the fallback of each. |
 | `lib/agent.js` | The calls of the page events and the popup: `METHODS` (`ping`, `summary`, `papers`, `export`, `filter`, `clearFilters`, each with its parameters and result), `validate(method, params)`, `EVENTS` (`better-scholar:request`, `better-scholar:response`, the marker `data-rr-ready`), `FORMATS` (= `COPY_BUTTONS`), and `guide({ current, version })`: the Markdown guide for AI agents, written from `SETTINGS`, `PRESETS`, `METHODS` and `OPERATORS`. |
 | `lib/i18n.js` | The 30 interface languages, Scholar's `hl=` value for each, and Chrome's message format (`format`). |
@@ -55,7 +55,7 @@ code on real Scholar data, and why there is no build step.
 | `content/chips.js` | The rank and award / talk chips (what the panel marks for the editor: `data-rr-label`); shared by the Scholar page and the settings page's preview. A rank chip that stands for both lists (`rows.prefer`) carries `data-also` and names the other rank in its tooltip. |
 | `content/store.js` | `chrome.storage` wrappers for every key (see [Storage](#storage-and-privacy)) and `onPrefsChanged`; degrades to memory if the extension context disappears. |
 | `content/scholar.js` | Read rows, place the panel (sidebar when wide, above the list when narrow), press *Show more* until the list is complete (`loadAll`). |
-| `content/semantic.js` | Optional (setting `semanticScholar`, off by default): one title lookup at Semantic Scholar's public API for a cut-off author list, used before Scholar's own page by `detail.js`; an answer counts only when its title and year agree, and its authors with the names the row shows (the ones before the cut first, in order; the ones after it last). |
+| `content/semantic.js` | Optional (setting `semanticScholar`, off by default): one title lookup at Semantic Scholar's public API for a cut-off author list, used before Scholar's own page by `detail.js`; an answer counts only when its title agrees (16 letters or more) and its year (within two), and its authors with the names the row shows (the ones before the cut first, in order; the ones after it last). |
 | `content/detail.js` | Read a paper's own page for its full author list (user-triggered, throttled; stops at a CAPTCHA, a 403/429/503, a failed request, two pages in a row without an author list, and an orphaned script). |
 | `content/panel.js` | The panel: renders a model, reports intent via callbacks, owns no state (below). |
 | `content/image.js` | "Copy as image": draws the panel's role × rank table on an `OffscreenCanvas` (the role colours, mirrored for a right-to-left language) and returns a PNG; `main.js` puts it on the clipboard with the summary text, and the `export` call returns it as a data: address. |
@@ -64,7 +64,7 @@ code on real Scholar data, and why there is no build step.
 | `content/lang-redirect.js` | The setting *Open Scholar in*: a second, tiny content script (run at document start on `scholar.google.*/*`, checks the path itself: `/scholar` and `/citations` only — search, profiles, author search, paper details — never downloads or redirects) that reopens a page with the chosen `hl=`, once per tab and language. It reads one setting and nothing else. |
 | `options/*` | The settings page (below): `options.js` builds it from `CARDS`, `editor.js` makes the preview a place to edit. |
 | `popup/*` | The toolbar popup: asks the active tab for `summary` and reads the settings itself, then draws the table, the awards and talks line and the copy buttons the settings leave on, in their order and under their names; a button asks for `export` and copies the text (CSV: a file). |
-| `background.js` | Opens the settings page when the panel asks (a content script cannot), and hands a page the strings of the chosen language from the extension's own `_locales`. Nothing else. |
+| `background.js` | Opens the settings page when the panel asks (a content script cannot), hands a page the strings of the chosen language from the extension's own `_locales`, and on an install or update sets `reloadHint` (local), so that the popup can say that a profile already open needs a reload. Nothing else. |
 | `data/*.js` | **Generated** from `data/*.json` by `scripts/build-data.mjs` (`ccf.js`, `core.js`, `awards.js`); `aliases.js` is curated by hand. |
 
 ## Script order
@@ -92,7 +92,9 @@ and calls `bridge.install`. The second content script — `lib/i18n.js`, `conten
 ## Author detection and roles
 
 The profile owner is the text of `#gsc_prf_in`. `cleanOwnerHeader` strips honorifics,
-suffixes and parentheticals (`Prof. John Smith, PhD`, `Wei Zhang (张伟)`).
+suffixes and parentheticals (`Prof. Dr.-Ing. John Smith, PhD, FIEEE`, `Wei Zhang (张伟)`; a title that is also a name or a word —
+`Ing.`, `Doc.`, `Mag.`, `Ir.`, `hab.` — only with its full stop: `Eng Siong Chng` keeps his name); a header in another script with its
+Latin form in brackets (`张伟 (Wei Zhang)`) is the Latin form.
 
 Matching an author token to the owner (`names.js`):
 
@@ -104,8 +106,11 @@ Matching an author token to the owner (`names.js`):
   source of silent misses: 57 of 100 rows on a real profile;
 - full given names must agree (`Jane` ≠ `John`); a single letter matches any name starting
   with it; an all-caps *name* is not treated as initials;
-- family-name particles (`van der`, `von`, …) belong to the surname; `de/di/da/le/la` do
-  not, because they are common given names;
+- family-name particles (`van der`, `von`, `bin`, …) belong to the surname when written as particles — in lower case, or beside
+  another (`L Van Der Maaten`); a capitalised one alone is a given name (Vietnamese Văn: `Hung Van Nguyen`), and so is the part of a
+  hyphenated given name (`Su-Bin Kim`); `de/di/da/le/la` never are, because they are common given names;
+- half of a hyphenated given name is another person: a spelled-out `Ming` with nothing after it is not `Ming-Hsuan` (`MH Yang` and
+  `M Yang` can be) — `nameParts().joined`;
 - a surname joined by a hyphen or an apostrophe (`Carreira-Perpinan`, `O'Connell`) is a **compound**: it equals only
   another compound of the same words, never its last part (`MA Carreira-Perpinan` is not `Miguel Perpinan`'s,
   `H Molina` is not `Hector Garcia-Molina`'s) — `nameParts().compound`, checked by `sameSurname`;
@@ -122,7 +127,8 @@ Matching an author token to the owner (`names.js`):
   a suggestion that is accepted becomes an ordinary variant. Once the automatic spelling is chosen the owner is `{ …, exactName: true }`: the profile name as
   printed then finds only its *identical* self (`Li Wei` printed `W Li`: `L Wei` is somebody else; `matchStrength`).
 
-Author lists (`parseAuthors`) are cut at a cut mark (`…`, `⋯`, `‥`, two dots or more, `. . .`, `et al`) and told apart at `,` `;` `·` `|` the ideographic and
+Author lists (`parseAuthors`) are cut at a cut mark (`…`, `⋯`, `‥`, two dots or more, `. . .`, `et al`, and `等` / `他` / `외` standing
+as a word of their own) and told apart at `,` `;` `·` `|` the ideographic and
 Arabic commas, a spaced slash, ` and ` and `&`; a name after a cut has no known position (`afterCut`: always middle, never in a leading group).
 
 ```mermaid
@@ -269,7 +275,10 @@ whole name (it may go on: `… Search-Based Software …` is Engineering or Test
 words of its own besides the track word and the connectives, all there is before the cut. The result says the word
 (`secondary`) and, when a listed venue was matched — or the string without its track words names one that is
 not a journal — and its badge withheld, `refused`: the panel's *Not ranked → secondary tracks* counts those and not every
-string with a track word (a journal called "Surveys & Tutorials" is not a track of anything). A list whose row is blocked by a track word its name lacks is un-blocked when the other list's row of the same venue (`idx.partners`) carries the word and the string is that row's whole official name (the same `whole` reading). Results are memoised per string
+string with a track word (a journal called "Surveys & Tutorials" is not a track of anything). Two more: a journal's own track keeps the
+journal's chip ("ACM Transactions on Reconfigurable Technology and Systems (FCCM Journal Track)"), and the second volume of a venue
+that prints its posters, panels and workshops there (`trackVolume` in `aliases.js`: SIGCSE TS, ITiCSE, ICER, SPLC) is no paper of the
+venue's. A list whose row is blocked by a track word its name lacks is un-blocked when the other list's row of the same venue (`idx.partners`) carries the word and the string is that row's whole official name (the same `whole` reading). Results are memoised per string
 and carry the rule and entry that matched, which the chip tooltip shows.
 
 The behaviour is pinned by `test/venues.test.js`: targeted regression cases for every bug found
@@ -302,8 +311,9 @@ about a second apart, and an automatic run presses only while its tab is the one
 Scholar's `localStorage` (`rr-load-lock`) so that profiles opened in many tabs at once do not press together; a press that brings
 no rows within nine seconds ends the automatic run at once (a manual one gets a second try) and the panel says so; *Cancel* ends it
 and it does not start again by itself; switching the setting off ends a run it started, and switching it on starts one on the open
-profile (unless *Load all* is running: that run goes on as it is). While either runs, the panel does not offer *Read full lists*, so
-that Scholar never gets both at once from a tab. `loadAll` returns why it stopped (`done`, `cancelled`, `stalled`).
+profile (unless *Load all* is running: that run goes on as it is). While either runs, the panel does not offer *Read full lists*, and while
+*Read full lists* runs it offers no *Load all* (a load switched on meanwhile starts when the read ends), so that Scholar never gets both
+at once from a tab. `loadAll` returns why it stopped (`done`, `cancelled`, `stalled`).
 
 ## The panel
 
@@ -387,11 +397,12 @@ search words, the least citations, the papers behind the h-index). The cell pick
 list papers and narrow no count (`passes(…, skip)` with `selection` and `marks`), so that picking one never empties the list it
 is picked from and what is copied is what the panel shows. The table keeps the rows of the whole profile (`summarize(…, { keep })`)
 and the copied text says what it counted ("Showing 25 of 100 papers · 2021–…": a line under the summary's title, a row under the
-tab-separated table, the caption of the real table). Only the year bars stay whole (a range is chosen against them), and so do
+tab-separated table, the caption of the real table). Only the year bars stay whole (a range is chosen against them; a pressed bar lists what it counts, the highlighted papers of its year), and so do
 the coverage lines (loaded, hidden, absent) and the toolbar popup; the `summary` and `export` calls count every paper unless
-they are given `filtered: true` (the panel's way of counting). The minimum of the h-index filter for the *counts* is worked out
-without the picks (`impactMin(source, { picks: false })`), so that a pick never moves it and with it the counts; the list and the
-button use the h-index as the button says it, picks included, so that the button lists the papers behind its own number. A paper
+they are given `filtered: true` (the panel's way of counting). The minimum of the h-index filter is worked out
+without the picks (`impactMin(source)`: a table cell, an awards row), everywhere — the rows, the counts, the filter bar, the copies —
+so that a pick never moves it and a cell lists what its count says; while the button is pressed its number is that minimum, and each
+row of the venue list counts what its own click lists (a venue narrows the minimum, as a year does: `venueRows`). A paper
 with no year is in no year range.
 
 The impact filter is the h-index and i10 buttons: it shows the highlighted papers behind the number — at least *h* citations,
@@ -422,10 +433,15 @@ arrangement is redone when the window crosses the breakpoint. When Scholar's lay
 ## The toolbar popup
 
 The popup sends `{ type: "rr:call", method: "summary" }` to the active tab (`chrome.tabs.sendMessage`; no `tabs`
-permission is needed for that). The answer carries the numbers only: the three summaries (CCF, CORE, by role only), the awards and
-talks counts, the citation totals. What to draw is read from the settings by the popup itself (`B.store.loadPrefs()`), so it obeys the
+permission is needed for that). The answer carries the profile's name, the lists' editions, how many papers are loaded and whether
+that is all of them (`complete`), the three summaries (CCF, CORE, by role only), the awards and talks counts, the citation totals and
+the papers ranked by the person's own mappings — numbers and names, no paper. A profile still loading has no content script yet, and
+one that is starting answers `{ ok: false, error: "starting" }` until its calls exist: the popup says *Reading…* and asks again, for
+ten seconds at most, while the tab loads (`chrome.tabs.get(id).status`). What to draw is read from the settings by the popup itself (`B.store.loadPrefs()`), so it obeys the
 same switches, order and names as the panel. A copy button asks for `export` and copies the text (with its HTML, or for *Copy as image* the `png` the page drew); CSV is saved as a file. A tab that
-is not a profile gets no answer, and the popup offers to open Google Scholar.
+is not a profile gets no answer, and the popup offers *Open my profile* and Google Scholar; right after an install or update
+(`reloadHint`) it says that a profile already open needs a reload. It says when not all papers are loaded, and when the paper
+copies are only the papers the page's filters show.
 
 ## The settings page
 
@@ -506,7 +522,7 @@ in the stand-in: it is never written to `localStorage`, and a reload empties it)
   There is no origin check: any script in the page can call. `bridge.install` sets `data-rr-ready="true"` on `<html>`.
 - **Messages.** The popup sends `{ type: "rr:call", method, params }`; `chrome.runtime.onMessage` reaches this extension's own
   pages only.
-- **The calls.** `ping`, `summary`, `papers` (`filtered`), `export` (`format`, `source`), `filter` (`query`, `onlyHighlighted`,
+- **The calls.** `ping`, `summary` (`filtered`), `papers` (`filtered`), `export` (`format`, `source`, `html`, `filtered`), `filter` (`query`, `onlyHighlighted`,
   `yearStart`, `yearEnd`, `minCitations`, `impact`) and `clearFilters`. `validate()` checks the method and every parameter
   (type, choice, integer range, strings up to 500 characters) before anything runs. They read what the panel shows and set the
   page's filters; none reads or writes the settings or storage, and none makes a network request.
@@ -521,10 +537,11 @@ the list is not all here, `Not fully loaded` (`copyNotes()` in `main.js`); the o
 RFC 4180 with a UTF-8 byte-order mark and CRLF line ends (`papersCsv`); in both, a cell that begins with `=`, `+`, `-` or `@` and
 is not a plain number gets a leading apostrophe. BibTeX keys are surname + year + the first title word of three or more letters
 that is not a stop word (`he2016deep`, `nodate` without a year), made unique with `b`, `c`, …; the author list ends `and others`
-where Scholar cut it, and every character TeX reads is escaped. Markdown escapes what Markdown reads; APA keeps surname
-particles (`van der Maaten, L.`). JSON is `{ owner, source, total, papers }`.
+where Scholar cut it (a list cut in its middle: the names before the cut, then `others`), a surname of several words or with a suffix is
+written `Van Gool, L` / `Heath, Jr., R W`, a group's name is braced, and every character TeX reads is escaped. Markdown escapes what Markdown reads; APA keeps surname
+particles (`van der Maaten, L.`). JSON is `{ owner, source, complete, total, papers }`.
 
-The four reference styles (BibTeX, APA, IEEE, GB/T 7714) share one reading of Scholar's venue line. `venueParts` splits it into
+The five reference styles (BibTeX, APA, IEEE, ACM, GB/T 7714) share one reading of Scholar's venue line. `venueParts` splits it into
 name, volume, issue, pages and year, and only in shapes it knows; a line it cannot read whole stays in the name, as printed, never
 half read. `entryType` says journal or proceedings from the rank lists' type and the line's words; `periodical` takes an unclassified
 line with a volume as a journal's unless its name says meeting, book, report or web address; patents, theses, reports and publishers
@@ -543,19 +560,22 @@ Six buttons put a second flavour on the clipboard: *Copy as table* (`summaryHtml
 | `chrome.storage.sync` | `variants` | `{ profileId: [spellings] }`, at most 8 per profile, 40 profiles | the Scholar page |
 | `chrome.storage.sync` | `mine` | the person's venue mappings `[{ text, list, name, kind }]`, as many as fit 8 KB (about fifty; the page says when the oldest go) | the settings page |
 | `chrome.storage.local` | `ui` | `{ collapsed, source }` | the Scholar page only |
-| `chrome.storage.local` | `resolved` | `{ paperId: { authors, venue, ts, via? } }` from *Read full lists*; 90 days, at most 3,000; saved ten at a time, merged into what is stored (another tab's papers stay) | the Scholar page; cleared from the settings page (an open profile tab forgets them too) |
+| `chrome.storage.local` | `resolved` | `{ paperId: { authors, venue, pages?, ts, via? } }` from *Read full lists*; 90 days, at most 3,000; saved ten at a time, merged into what is stored (another tab's papers stay) | the Scholar page; cleared from the settings page (an open profile tab forgets them too) |
 | `chrome.storage.local` | `s2key` | The optional Semantic Scholar API key (never synced) | the settings page |
 | `chrome.storage.local` | `askVenue` | A venue text and the time, from the unranked list's *Check* link, until the settings page takes it (it then fills *Check a venue*; an entry older than 30 s is ignored) | the Scholar page; the settings page removes it |
+| `chrome.storage.local` | `reloadHint` | `true` from an install or update until a profile answers the popup (the popup then says that a profile already open needs a reload) | the service worker; the popup removes it |
 | Scholar's `localStorage` | `rr-load-lock` | `{ id, t }` while an automatic load presses *Show more* | `content/scholar.js` |
 | Scholar's `sessionStorage` | `rr-hl` | The language code and time of the last redirect, the guard against a loop | `content/lang-redirect.js` |
+| the settings page's `sessionStorage` | `rr-config-report` | What *Apply configuration* applied and left out, kept across the reload a new interface language makes; removed when shown | `options/options.js` |
 
 - `prefs` and `ui` have one writer each, so a stale Scholar tab can never overwrite what the settings page saved.
 - There is no migration (2.39.0 removed it). A stored `prefs` record is read setting by setting through `normalize()`: a value
   whose path and kind match a row of `SETTINGS` is kept, anything else falls back to the default, and the combined `settings`
   record of versions before 2.2 is not read.
-- No other persistence, no remote code, no third-party requests except the opt-in Semantic Scholar lookup. *Read full lists*
-  fetches `scholar.google.*` itself, same-origin, about once a second, only after a click, and stops at the first CAPTCHA or
-  HTTP 429/503. [`PRIVACY.md`](../PRIVACY.md) has the user-facing account.
+- No persistence beyond the table above, no remote code, no third-party requests except the opt-in Semantic Scholar lookup.
+  *Read full lists* fetches `scholar.google.*` itself, same-origin, about once a second, only after a click, and stops at the first
+  CAPTCHA, HTTP 403/429/503 or failed request (Google's block page is on another site), at two pages in a row without an author list,
+  and when the extension is switched off or removed under the page. [`PRIVACY.md`](../PRIVACY.md) has the user-facing account.
 
 ## Testing
 
@@ -582,7 +602,7 @@ Six buttons put a second flavour on the clipboard: *Copy as table* (`summaryHtml
 | `test/e2e/run.mjs` | the real extension in Chromium against a local Scholar stand-in: placement, matrix = library result, filters, search, the h-index and i10 buttons, the whole list loading by itself, *Load all*, *Read full lists*, Semantic Scholar, clipboard and downloads, persistence, popup, settings page (every setting has its control), presets and the configuration editor, the agent guide, the page events, i18n |
 | `test/e2e/demo.mjs` | the web demo (`scripts/build-demo.mjs`) in a plain Chromium page, no extension: the build's contents, the cards and the real panel, in a same-origin frame as on the website, a switch changes the preview and survives a reload, a second tab follows, presets, the configuration editor, the clipboard, a download and a dialog, `?lang=` (hyphen and underscore forms, right to left), no `localStorage`, no console error and no request to another origin |
 | `scripts/check-saved-profile.mjs` | not part of `npm test`: the same real extension on a *real saved* Scholar profile page (offline) — selector contract plus tints / chips / marks against the libraries. Run it when Scholar's markup may have changed. |
-| `scripts/axe-audit.mjs` | not part of CI: axe-core 4.10's default rules over the panel (light, dark system, filtered, every part on, narrow window, four languages), the settings page (light, dark) and the popup without a profile; exit 1 on any violation |
+| `scripts/axe-audit.mjs` | in CI (Linux and Windows) and `scripts/check-all.sh`: axe-core 4.10's default rules over the panel (light, dark system, filtered, every part on, narrow window, four languages), the settings page (light, dark) and the popup without a profile; exit 1 on any violation |
 | `scripts/diff-matcher.mjs` | not part of CI: the matcher of a commit (default `HEAD`) against the working tree over the corpus lines and the 50,000+ titles of `test/fixtures/real-titles.txt` (Crossref and OpenAlex, refreshed by `scripts/pull-real-titles.mjs`): LOST / MOVED / GAIN lines — the check that sees what the snapshot cannot (a badge lost or moved on a title that is not in the corpus) |
 
 The stand-in mimics Scholar's DOM, but only the real page can confirm that it still does. On

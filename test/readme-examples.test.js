@@ -69,3 +69,12 @@ for (const file of ["README.md", "README.zh-CN.md"]) {
     assert.deepEqual(recordFields(row("papers")), recordFields(agent.METHODS.papers.result), `${file}: the fields of a papers record`);
   });
 }
+
+test("the JSON shape the README and ARCHITECTURE give is the one the export writes, key for key", () => {
+  const formats = require("../src/lib/formats.js");
+  const keys = Object.keys(JSON.parse(formats.json({ owner: "A", source: "ccf", complete: false, papers: [] })));
+  const shape = "`{ " + keys.join(", ") + " }`";
+  for (const file of ["README.md", "README.zh-CN.md", "docs/ARCHITECTURE.md"]) {
+    assert.ok(fs.readFileSync(path.join(__dirname, "..", file), "utf8").includes(shape), `${file} gives the JSON as ${shape}`);
+  }
+});

@@ -33,7 +33,7 @@ Better Scholar is a free Chrome extension for [Google Scholar](https://scholar.g
 
 A panel beside the list counts your papers by role and by rank. It also shows citation totals and papers by year, and it has a search box and copy buttons.
 
-- **No guesses.** A venue that the lists do not hold for certain gets no chip, and the panel lists it. The tooltip of each chip names the venue, the rule that found it and the list's edition. You may tie such a venue to a listed one yourself; its chip is then dashed and every copy says "(your mapping)".
+- **No guesses.** A venue that the lists do not hold for certain gets no chip. The panel lists the venues that neither list holds (a preprint, a track such as a workshop or a demo, a report is counted in the table's "–" column, not listed). The tooltip of each chip names the venue, the rule that found it and the list's edition. You may tie such a venue to a listed one yourself; its chip is then dashed and every copy says "(your mapping)".
 - **Private.** No account, no analytics, no tracking. All the work happens in your browser. The only request to a site other than Scholar is the Semantic Scholar lookup, which is off by default.
 - **Open and simple.** Open source (Apache 2.0), with no dependencies and no build step.
 
@@ -108,7 +108,7 @@ The extension finds the profile's name in each author line. Your place in the li
 
 - **Initials match.** Scholar prints `GE Hinton` for Geoffrey Hinton. The extension matches it.
 - **Cut author lists.** Scholar cuts long author lists with "…". When the cut hides your place, the role is hidden too. Click **Read full lists** in the panel. The extension then reads the page of each such paper on Scholar (about one a second, and only after the click) and finds the role. If you allow it, it asks Semantic Scholar first.
-- **Two authors with your spelling.** An author line can hold your spelling two times (`X Wang, X Wang, P Cong`). When the two places give different roles, the line cannot say which one is you. The paper then counts as *Other*, never as first, second or last author. On 5,000 real author lines, with OpenAlex's author positions as the truth, this rule removed every wrong first, second or last claim.
+- **Two authors with your spelling.** An author line can hold your spelling two times (`X Wang, X Wang, P Cong`). When the two places give different roles, the line cannot say which one is you. The paper then counts as *Other*, never as first, second or last author. On 5,400 real author lines, with OpenAlex's author positions as the truth, this rule removed every wrong first, second or last claim.
 - **Other spellings.** The extension also tries your name in the other order (`Tang Jie` for Jie Tang), but only when the profile's own rows show that order. It suggests other spellings that it finds in your papers. You can add up to eight spellings per profile (**Name not matching? Add a spelling**).
 
 ### The venue rank
@@ -124,7 +124,7 @@ flowchart LR
   B -- yes --> T{"A track word that<br/>the venue's name lacks?<br/>workshop · poster · Findings"}
   C -- yes --> T
   D -- yes --> T
-  T -- yes --> X
+  T -- yes --> Y["No chip<br/>(a track: counted under –)"]
   T -- no --> R["Rank chip, with the<br/>rule that found it"]
 ```
 
@@ -167,7 +167,7 @@ Real examples. The middle column is what the lists give; by default the panel dr
 - **Status lines**: how many papers are loaded; the roles that cut author lists hide (**Read full lists**); duplicate entries; papers at venues neither list holds, with **Copy list**, **Report**, and a **Check** link for each venue.
 - **The whole list.** Scholar shows the first papers of a profile, and more when you press its **Show more** button. By default the extension presses that button for you until the list is complete: one press at a time, about once a second, and only in the tab that you look at. It stops at the first press that brings no new papers. With **Load all papers automatically** off, the panel shows a **Load all** button.
 - A bar at the top of the panel says how many papers the filters show, and clears them. `Escape` on the page clears all filters too.
-- **Toolbar popup**: the table, the award counts and the copy buttons, for the profile in the open tab.
+- **Toolbar popup**: the table, the award counts and the copy buttons, for the profile in the open tab. On a profile still loading it says *Reading…* and asks again; it says when not all papers are loaded, and when the paper copies are only the papers the page's filters show. Off a profile it offers *Open my profile*; right after an install or update it says that a profile already open needs a reload.
 
 ### The settings page
 
@@ -195,7 +195,7 @@ All settings are on one page. A change is saved at once, and open Scholar tabs r
 | Summary panel | The panel; the order of its parts; the parts of its title bar; the bar that says the list is filtered; *Compact* |
 | Role × rank table, Copy & export, Awards and talks, Filters, Citation totals, Papers by year, Top venues, Loaded papers and unranked venues, Name spelling help | One card for each part of the panel: its switch, a switch (and a name) for each thing in it, and its order where it has one |
 | Scholar's own blocks | Hide *Cited by* (or only its table or its chart), *Co-authors*, *Public access* |
-| Duplicate entries | *Merge duplicates* |
+| Duplicate entries | *Merge duplicates*: entries with the same title and first author become one. The published, ranked entry that shows your name stays, before the most cited one; a conference paper and its journal version (two venues the lists know apart, or years more than one apart) stay two |
 | Paper list | *Load all papers automatically* |
 | Semantic Scholar | *Read author lists from Semantic Scholar first* (off by default); an optional API key |
 | Check a venue | A text box for a venue line, and what the lists make of it; your venue mappings |
@@ -271,9 +271,9 @@ Each format is a button in the panel's copy row and in the toolbar popup. Each h
 | *Copy IEEE* | A numbered IEEE reference list: `[1] A. Author and B. Writer, "Title," in *Venue*, Year, pp. 1–10.`; for a journal `*Journal*, vol. 44, no. 8, pp. 4012–4025, Year.` Also with real italics for a word processor. Off by default: turn it on under *Settings → Copy & export*. |
 | *Copy ACM* | The ACM Reference Format, the style of ACM's own papers: `[1] A. Author and B. Writer. Year. Title. In *Venue*. 1–10.`; for a journal `*Journal* 44, 8 (Year), 4012–4025.` Also with real italics for a word processor. Off by default. |
 | *Copy GB/T 7714* | A GB/T 7714-2015 reference list, the Chinese national standard (NSFC and most Chinese forms): `[1] HE K, ZHANG X, REN S, et al. Title[C]//Venue. 2016: 770-778.`; `Title[J]. Journal, 2022, 44(8): 4012-4025.` Off by default. |
-| *Copy BibTeX* | BibTeX entries. A list Scholar cut ends in `and others` (BibTeX has no way to mark a gap in the middle, so a known last author stands before it). |
+| *Copy BibTeX* | BibTeX entries. A list Scholar cut ends in `and others`; BibTeX has no way to mark a gap, so a list cut in its middle is the names before the cut, then `others`. A surname of several words or with a suffix is written `Van Gool, L` and `Heath, Jr., R W`; a group's name is braced. |
 | *Copy Markdown* | A numbered Markdown list: the linked title, authors, venue and year, ranks, awards, citations |
-| *Copy JSON* | `{ owner, source, total, papers }`: one record per paper, with its role, ranks and marks |
+| *Copy JSON* | `{ owner, source, complete, total, papers }`: one record per paper, with its role, ranks and marks; `complete` is false while not all of the profile's papers are loaded |
 | *Export CSV* | The papers' table as a file: `<profile name>-papers.csv` |
 
 <details>
@@ -294,7 +294,7 @@ Each format is a button in the panel's copy row and in the toolbar popup. Each h
 - **IEEE.** Initials first (`MF Kaashoek` → `M. F. Kaashoek`). Two authors are joined with `and`, three to six with commas and `and`. Above six authors, or when Scholar cut the list, the first author and `et al.` The title is in quotes; proceedings get `in`; a journal gets `vol.`, `no.` and `pp.` (or `Art. no.` for an article number) from the venue line.
 - **ACM Reference Format.** Initials first, as in IEEE, but every author is named (a cut list ends in `et al.`, or keeps the gap where Scholar cut it: `…, B. Writer, … A. Example`; APA does the same). Then the year (`[n. d.]` without one), the title, and `In *Proceedings*.` with the pages, or `*Journal* volume, issue (year), pages`; a journal's article number is `Article 28`.
 - **GB/T 7714-2015.**
-  - The surname in capitals and the initials without full stops (`MF Kaashoek` → `KAASHOEK M F`); a name in Chinese characters stays as written. Above three authors, or for a cut list, the first three and `et al`.
+  - The surname in capitals and the initials without full stops (`MF Kaashoek` → `KAASHOEK M F`); a name in Chinese characters stays as written. Above three authors, or for a cut list, the first three and `et al` (`等` after Chinese names).
   - `[J]` for a journal, `[C]//` for proceedings (a number Scholar printed after the name stays there: `Advances in Neural Information Processing Systems 35`), `[P]` for a patent, `[D]` for a thesis, `[R]` for a report, `[M]` for a book from a publisher, `[Z]` for anything else.
   - A journal titled *Proceedings* (PVLDB, *Proceedings of the ACM on …*, PNAS) is `[J]`. A venue line that starts with its year (`2016 IEEE …`, IEEE's title for a meeting) is `[C]`.
 - **Markdown.** Every character that Markdown reads is escaped, so a title cannot become a link or markup.
@@ -305,7 +305,7 @@ Each format is a button in the panel's copy row and in the toolbar popup. Each h
   - A spreadsheet or a text box takes the text. All text in the HTML is escaped. A cell that looks like a formula is made text, as in the tab-separated form.
   - The toolbar popup and the `export` call (`html: true`) give the same.
 - **Spreadsheet formulas.** In the CSV and the tab-separated formats, a cell that starts with `=`, `+`, `-` or `@` (and is not a plain number) gets a leading apostrophe. A spreadsheet then shows it as text.
-- When the filters leave no paper, nothing is copied, and the button says *Nothing to copy*.
+- When the filters leave no paper, nothing is copied, and the button says *Nothing to copy*. When the browser refuses the clipboard, the button says *Not copied*.
 
 </details>
 
@@ -338,8 +338,8 @@ The request's `detail` is `{ id, method, params }`. An `id` that is a string or 
 | Call | Parameters | Result |
 |---|---|---|
 | `ping` | none | `{ version, owner, loaded, complete }` |
-| `summary` | `filtered` (`true`: the tables and the award counts of the papers that the filters leave, as the panel counts them; default `false`: every loaded paper) | The role × rank tables (CCF, CORE, by role only), the awards and talks counts, the citation totals, and `counted` (how many papers the tables count) |
-| `papers` | `filtered` (default `true`: the papers that the page shows; `false`: every loaded paper) | `{ owner, total, papers: [{ id, title, authors, me, venue, pages?, year, citations, role, status, highlighted, type, rank, marks, url }] }` |
+| `summary` | `filtered` (`true`: the tables and the award counts of the papers that the filters leave, as the panel counts them; default `false`: every loaded paper) | The role × rank tables (CCF, CORE, by role only), the awards and talks counts, the citation totals, `counted` (how many papers the tables count), `complete` (false while not all papers are loaded) and `mapped` (papers ranked by your own venue mappings) |
+| `papers` | `filtered` (default `true`: the papers that the page shows; `false`: every loaded paper) | `{ owner, total, complete, papers: [{ id, title, authors, me, venue, pages?, year, citations, role, status, highlighted, type, rank, marks, url }] }` (`rank.ccf` / `rank.core` carry `mine: true` when the rank is your own mapping) |
 | `export` | `format` (required: `summary`, `table`, `papers`, `apa`, `ieee`, `acm`, `gbt`, `bibtex`, `markdown`, `json`, `csv`, `image`); `source` (`ccf`, `core`, `none`; for the summary and the table); `html` (`true`: also return `html` for `table`, `papers`, `apa`, `ieee`, `acm` and `gbt`); `filtered` (`true`: the summary and the table count the papers that the filters leave) | `{ format, text, html?, png? }` (`png`: for `image`, the picture as a data: address) |
 | `filter` | `query`, `onlyHighlighted`, `yearStart`, `yearEnd`, `minCitations`, `impact` (`h` or `i10`); `null` clears a number | `{ shown, total, filters, errors, ignored }` (`ignored`: the filters that the settings left without a control) |
 | `clearFilters` | none | `{ shown, total, filters, errors }` |
@@ -422,7 +422,7 @@ Everything in `src/lib/` is pure: no DOM and no `chrome.*`. In the extension eac
 
 What is checked, and how. This is not a claim of conformance to a WCAG level.
 
-- `node scripts/axe-audit.mjs` runs the default rules of axe-core 4.10 over the panel on the local Scholar stand-in, the settings page and the toolbar popup. It covers light and dark mode, a filtered list, every part on, the narrow-window layout, the settings page in the states that a person puts it in (a part hovered, a name being renamed, the tray open, a venue checked), and four languages (Arabic, Japanese, Thai and German). It exits with 1 on any violation. It runs by hand, not in CI.
+- `node scripts/axe-audit.mjs` runs the default rules of axe-core 4.10 over the panel on the local Scholar stand-in, the settings page and the toolbar popup. It covers light and dark mode, a filtered list, every part on, the narrow-window layout, the settings page in the states that a person puts it in (a part hovered, a name being renamed, the tray open, a venue checked), and four languages (Arabic, Japanese, Thai and German). It exits with 1 on any violation. It runs in CI (Linux and Windows) and in `scripts/check-all.sh`.
 - A unit test keeps the faint text colours of the panel, the settings page and the popup, the last-author name on its tint, and Scholar's grey lines on the row tints at a contrast of 4.5:1 or more.
 - On the settings page, each role colour shows its contrast badge.
 
@@ -434,9 +434,9 @@ What is checked, and how. This is not a claim of conformance to a WCAG level.
 better-scholar/
 ├── src/                    The extension (load unpacked from here)
 │   ├── manifest.json       Manifest V3; one permission (storage); scripts on Scholar pages
-│   ├── background.js       Opens the settings page for the panel; serves the chosen language's strings
-│   ├── content/            On Scholar: page reader, panel, chips, storage, page events, paper pages, language redirect, styles
-│   ├── lib/                Pure logic: names, venues, marks, awards, metrics, query, formats, prefs, agent, analysis, duplicates, i18n
+│   ├── background.js       Opens the settings page for the panel; serves the chosen language's strings; notes an install or update (reloadHint)
+│   ├── content/            On Scholar: page reader, panel, chips, picture of the table, storage, page events, paper pages, Semantic Scholar, language redirect, styles
+│   ├── lib/                Pure logic: names, venues, marks, awards, metrics, query, formats, prefs, palette, agent, analysis, duplicates, i18n
 │   ├── data/               The bundled CCF and CORE lists, the award list, the curated venue aliases
 │   ├── options/            The settings page, with a live preview
 │   ├── popup/              The toolbar popup: the summary table and the copy buttons

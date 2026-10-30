@@ -58,8 +58,8 @@ In `chrome.storage.local`, on this device only (`content/store.js`):
 
 In the Scholar site's own browser storage:
 
-- `localStorage`, key `rr-load-lock`: a random id and a time. It is written while the extension presses Scholar's *Show more*
-  button for you, so that only one tab presses at a time. It is removed when the run ends, and ignored once it is twelve seconds
+- `localStorage`, key `rr-load-lock`: a random id and a time. It is written while the automatic run (*Load all papers
+  automatically*) presses Scholar's *Show more* button for you, so that only one tab presses at a time. It is removed when the run ends, and ignored once it is twelve seconds
   old (`content/scholar.js`).
 - `sessionStorage` of the settings page, key `rr-config-report`: what *Apply configuration* applied and left out, kept only across the
   reload that a new interface language makes, and removed when the page shows it (`options/options.js`).
@@ -102,7 +102,8 @@ A request to Semantic Scholar, off by default:
 - The request carries the paper's title as its search text, and the list of fields wanted (title, authors, year). It is sent
   without cookies and without a referrer. The extension waits 1.1 seconds after each request.
 - If you entered an API key, it goes in the request's `x-api-key` header, and to no other address.
-- An answer is used only when its title and year agree with the paper's, and its authors with the names that the profile's line
+- An answer is used only when its title agrees with the paper's (a title of at least 16 letters), its year is within two of the
+  paper's, and its authors with the names that the profile's line
   shows: the names before the cut are the answer's first ones, in the same order, and the names after it its last ones (by
   surname). The papers that Semantic Scholar does not
   know go to Scholar's own page, as above. So do all the remaining papers once Semantic Scholar refuses a request or cannot be
@@ -157,7 +158,8 @@ The extension writes to the clipboard only when you click a button that copies. 
   and as HTML (which a word processor reads as a real table or as italics). The HTML is made from the same data and contains
   nothing else.
 - *Copy as image* puts a picture (PNG) of the role × rank table on the clipboard, with the summary text beside it. The picture is
-  drawn in the page from the same numbers and contains nothing else.
+  drawn in the page from the same numbers: the table, the profile's name, how many papers are loaded and the copy's notes (the
+  profile's link and the day, when *Copy & export → Add the profile's link and the day to the copied summary* is on). It contains nothing else.
 - *Copy summary* and *Copy as table* end with a line that gives the profile's link (`…/citations?user=<id>`, nothing else of the
   address) and the date, unless you turn that off in the settings. They also say when the paper list is not fully loaded.
 - On the settings page: *Copy guide for agents* (it contains your current settings), *Copy configuration (JSON)*, *Copy saved details (JSON)*
@@ -203,7 +205,8 @@ the requests for its files as any web host does.
 
 The extension asks for one permission: `storage`. It declares no host permissions (its scripts run only on the Scholar pages
 listed in `manifest.json`). It asks for no `tabs`, `activeTab`, `scripting`, `cookies` or `webRequest` permission. The toolbar
-popup asks Chrome for the active tab's id, and sends a message to the extension's own script in that tab.
+popup asks Chrome for the active tab's id and whether that tab is still loading, and sends a message to the extension's own script
+in that tab.
 
 ## Chrome Web Store user data policy
 

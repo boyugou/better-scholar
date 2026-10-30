@@ -310,7 +310,7 @@
       bool("autoLoad", true, "Press Scholar's own \"Show more\" button until the whole paper list is loaded, as the profile opens.", { label: "optAutoLoad", hint: "optAutoLoadHint" })
     ]),
     card("semantic", "optSemanticTitle", "optSemanticHint", [
-      bool("semanticScholar", false, "Ask Semantic Scholar's public API (paper titles only, no cookies) for a cut-off author list before opening the paper's Scholar page. Sends titles to a third party: leave off unless the user asks for it.",
+      bool("semanticScholar", false, "Ask Semantic Scholar's public API (paper titles only, no cookies) for a cut-off author list before reading the paper's Scholar page in the background. Sends titles to a third party: leave off unless the user asks for it.",
         { label: "optSemanticLabel", hint: "optSemanticLabelHint" })
     ])
   ];

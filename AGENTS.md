@@ -28,7 +28,7 @@ Rules:
 - Colours are `"#rrggbb"` only; `""` restores the built-in colour of a role.
 - A name (`labels.<message key>`) is a text of the screen in the user's own words — a title, a column, a button. It replaces the translated text in every language; `""` brings the built-in text back. Names are for the eye: the search operators (`role:first`), the exports and the page calls keep the standard words. A name is one line; control characters, invisible and zero-width characters, direction overrides, embeddings and isolates and the Unicode tag characters are removed from it (the left-to-right and right-to-left marks stay). The whole record has to fit Chrome's 8 KB for one synced item (a `<` counts six bytes): a configuration that would not is refused, with the reason.
 - A language is a code from the list below. Changing `language` reloads the settings page.
-- Not settings, so not in the JSON: the Semantic Scholar API key, the spellings of the user's name (kept per profile) and the cache of paper details; the user sets those on the settings page itself.
+- Not settings, so not in the JSON: the Semantic Scholar API key, the spellings of the user's name (kept per profile), the user's own venue mappings and the cache of paper details; the user sets those on the settings page itself.
 
 ## Settings
 
@@ -204,7 +204,7 @@ Rules:
 | `hide.access` | true / false | `false` | Hide Scholar's "Public access" block. |
 | `mergeDuplicates` | true / false | `false` | Count a paper once when Scholar lists it twice (titles that differ only in capitals or punctuation; a conference paper and its journal version stay two). The published, ranked entry that shows your name stays, before the most cited one. |
 | `autoLoad` | true / false | `true` | Press Scholar's own "Show more" button until the whole paper list is loaded, as the profile opens. |
-| `semanticScholar` | true / false | `false` | Ask Semantic Scholar's public API (paper titles only, no cookies) for a cut-off author list before opening the paper's Scholar page. Sends titles to a third party: leave off unless the user asks for it. |
+| `semanticScholar` | true / false | `false` | Ask Semantic Scholar's public API (paper titles only, no cookies) for a cut-off author list before reading the paper's Scholar page in the background. Sends titles to a third party: leave off unless the user asks for it. |
 
 Language codes: en (English), zh_CN (简体中文), zh_TW (繁體中文), ja (日本語), ko (한국어), es (Español), fr (Français), de (Deutsch), it (Italiano), pt_BR (Português (Brasil)), pt_PT (Português (Portugal)), ru (Русский), uk (Українська), pl (Polski), cs (Čeština), nl (Nederlands), sv (Svenska), da (Dansk), fi (Suomi), no (Norsk), tr (Türkçe), ar (العربية), he (עברית), hi (हिन्दी), id (Bahasa Indonesia), vi (Tiếng Việt), th (ไทย), el (Ελληνικά), hu (Magyar), ro (Română).
 
@@ -262,9 +262,9 @@ Result: { owner, total, complete, papers: [{ id, title, authors, venue, pages?, 
 The papers or the summary as text, in the format of a copy button.
 Parameters:
   - `format` (required): summary: the summary as text · table: the summary table, tab-separated · papers: the papers, tab-separated · apa · ieee (a numbered IEEE reference list) · acm (the ACM Reference Format) · gbt (GB/T 7714-2015) · bibtex · markdown · json (the `papers` records) · csv (RFC 4180) · image: the summary table as a picture, returned as `png` (a data: address) beside its text.
-  - `source`: Which ranking summary and table use (default: the one the panel shows; none: by role only; a list that nothing draws is not used, the default is used instead). The other formats ignore it.
+  - `source`: Which ranking summary and table use (default: the one the panel shows; none: by role only; a list that nothing draws is not used, the default is used instead). summary, table and image use it; the paper formats ignore it.
   - `html`: true: for table, papers, apa, ieee, acm and gbt also return `html`, the same content for a word processor (a real table, real italics): what the copy buttons put on the clipboard next to the text.
-  - `filtered`: true: summary and table count only the papers the filters leave, as the panel's own buttons do (when `panel.filters.follow` is on; the text then says what it counted); false (the default): every paper. The other formats always use the papers the page shows.
+  - `filtered`: true: summary and table count only the papers the filters leave, as the panel's own buttons do (when `panel.filters.follow` is on; the text then says what it counted); false (the default): every paper. summary, table and image use it; the paper formats always use the papers the page shows.
 Result: { format, text, html?, png? } — `png` for image only; `html` only when asked for, and only for table, papers, apa, ieee, acm and gbt (the references with the owner's name in bold when the page marks it).
 
 ### `filter`
@@ -279,7 +279,7 @@ Parameters:
 Result: { shown, total, filters: { query, onlyHighlighted, yearStart, yearEnd, minCitations, impact }, errors, ignored } — `errors` names the terms of the query that could not be read (an operator with a value it does not take matches nothing); `ignored` names the filters asked for that were not applied because the settings leave them with no control on the page to undo them (the search box, the filter bar, the citation totals …).
 
 ### `clearFilters`
-Remove every filter: the search, a table cell, an awards row, a venue, the year range.
+Remove every filter: the search, a table cell, an awards row, a venue, the year range, Only highlighted, the least citations, the h-index or i10 papers.
 Parameters: none.
 Result: { shown, total, filters, errors } — as `filter` returns it (without `ignored`), after the filters are cleared.
 

@@ -175,7 +175,7 @@
     "message": "Elolvassa az egyes cikkek oldalát a Scholaron a háttérben (kb. másodpercenként egyet), hogy megkapja a teljes szerzői listát."
   },
   "resolveHintSemantic": {
-    "message": "Először a Semantic Scholartól kéri le minden cikk szerzői listáját (csak a cikk címe kerül elküldésre). Ezután a többi cikk oldalát nyitja meg a Scholaron, kb. másodpercenként egyet."
+    "message": "Először a Semantic Scholartól kéri le minden cikk szerzői listáját (csak a cikk címe kerül elküldésre). Ezután elolvassa a többi cikk oldalát a Scholaron a háttérben (kb. másodpercenként egyet)."
   },
   "resolving": {
     "message": "Szerzői listák olvasása… $N1$/$N2$",
