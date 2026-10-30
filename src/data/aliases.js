@@ -365,6 +365,9 @@
     { core: "VLSI-SOC", names: ["IFIP International Conference on Very Large Scale Integration", "IEEE/IFIP International Conference on VLSI and System-on-Chip", "IFIP International Conference on VLSI and System-on-Chip"] },
     { core: "HPC Asia", names: ["International Conference on High Performance Computing in Asia-Pacific Region", "International Conference on High Performance Computing in the Asia-Pacific Region"] },
     { core: "VizSec", names: ["IEEE Symposium on Visualization for Cyber Security"] },
+    // (ACM titles PPDP's proceedings "… ACM SIGPLAN conference on Principles and practice of declarative programming", a sponsor CORE's name leaves out: without it a cut
+    // "… ACM SIGPLAN conference on Principles and practice of …" — PPDP's — saw only CCF's PPoPP, the one venue of either list that names ACM SIGPLAN)
+    { core: "PPDP", names: ["ACM SIGPLAN Conference on Principles and Practice of Declarative Programming", "ACM SIGPLAN International Symposium on Principles and Practice of Declarative Programming"] },
     { core: "Broadnets", names: ["International Conference on Broadband Networks", "International Conference on Broadband Communications, Networks and Systems"] },
     { ccf: "ANCS", names: ["ACM/IEEE Symposium on Architectures for Networking and Communications Systems"] },
     { core: "ICSoft", names: ["International Conference on Software Technologies", "International Joint Conference on Software Technologies"] },

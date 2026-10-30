@@ -78,6 +78,13 @@ give the details and every review):
   old rule), with the one known limit reported and not counted: a chip keeps its name on one line, so a 30-character chip name is cut
   in a preview of 330 px or less. The overflow audit no longer counts a break at a soft hyphen (Finnish "Yhteis-|ensimmäinen") as a
   word cut in two.
+- **BibTeX: Scholar's run-together initials apart.** `DS Weld` was written as printed, and BibTeX reads `DS` as one given name (an
+  abbreviating style prints "D. Weld"); each initial stands alone now (`D S Weld`, as a single one already did: `K He`). APA, IEEE,
+  ACM and GB/T 7714 already split them.
+- **PPDP's cut title is PPDP's.** "… 11th ACM SIGPLAN conference on Principles and practice of …" (PPDP 2009) had PPoPP's CCF A:
+  CORE names PPDP without its sponsor, so of either list only PPoPP named ACM SIGPLAN. ACM's printed names for PPDP are aliases now;
+  each cut line goes by its own event word ("symposium" stays PPoPP's). No real line changes. The wider question — cut starts that
+  unlisted venues share — is measured in the ROADMAP.
 - **"Joint", the other way round.** A second review found the shape of the International-Journal bug in another word: a line without
   "Joint" got a venue only whose names say it. *Annual conference on artificial intelligence, 2010* (KI 2010) had IJCAI's badge — no
   IJCAI met in 2010 —, UbiComp '13's adjunct volume (titled without the word; the main volume has it) had UbiComp's, *International

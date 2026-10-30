@@ -1702,6 +1702,9 @@ test("real prints that missed a badge: a cut IEEE citation form, joint proceedin
   eq("UbiComp '13: Proceedings of the 2013 ACM international joint conference on Pervasive and ubiquitous computing, 2013", "CCF A UbiComp");
   eq("Proceedings 7th International Conference on Computer Communications and …, 1998", "CCF C ICCCN · CORE B ICCCN");
   eq("Proceedings of the Informing Science and IT Education Conference", "CORE C InSITE");
+  // a cut "ACM SIGPLAN … on Principles and practice of …" is PPDP's as much as PPoPP's (CORE names PPDP without its sponsor; ACM's titles name it): each by its own event word
+  eq("Proceedings of the 11th ACM SIGPLAN conference on Principles and practice of …, 2009", "CORE C PPDP");
+  eq("Proceedings of the 12th ACM SIGPLAN symposium on Principles and practice of …, 2007", "CCF A PPoPP · CORE B PPoPP");
   // acronyms of other events that the names of a ranked venue boil down to, and the predecessors of IPDPS
   none("2022 2nd International Conference on Artificial Intelligence (ICAI)");
   none("2020 International Conference on Artificial Intelligence and Education (ICAIE)");

@@ -93,6 +93,10 @@ test("bibtex: a standard entry with a key, authors, booktitle or journal, the ad
   assert.ok(bib.includes("@inproceedings{vaswani2017attention,"));
   assert.ok(!bib.includes("url = {},") && !bib.split("@inproceedings{vaswani")[1].includes("url ="), "no address, no field");
   assert.ok(f.bibtex([paper()], { ccfOn: false, coreOn: false }).includes("note = {Best Paper Award}"));
+  // Scholar's run-together initials are one given name to BibTeX ("D. Weld" in an abbreviating style): each stands alone, as a single initial does; a surname,
+  // a name in capitals and a spelled-out name are left alone
+  const clusters = f.bibtex([paper({ authors: "Mausam, DS Weld, MF Kaashoek, L van der Maaten, JEAN DUPONT, Jean-Pierre Sartre" })]);
+  assert.ok(clusters.includes("  author = {Mausam and D S Weld and M F Kaashoek and L van der Maaten and JEAN DUPONT and Jean-Pierre Sartre},"), clusters);
   // the kind of venue: what the lists say, then the words of the venue
   const type = (over) => /^@(\w+)\{/.exec(f.bibtex([paper(over)]))[1];
   assert.equal(type({ type: "journal", venue: "Something" }), "article");

@@ -170,6 +170,16 @@ of HotStorage, and the year written with a hyphen or jammed onto a mixed-case wo
   through native messaging: a new permission (`nativeMessaging`) and a program the user installs, which the
   permission policy asks a very good reason for. Agents that drive a browser already have the page events and the
   agent guide.
+- **Stricter reading of cut-off venue lines.** Scholar cuts a long venue name ("… International Conference on Machine Learning and …"),
+  and the start-of-a-cut-name rule gives the badge of the one listed venue whose name begins that way. The lists cannot say which
+  *unlisted* venues begin so too. Measured 2026-10-29 by cutting the 52,800 Crossref / OpenAlex titles of `test/fixtures/real-titles.txt`
+  where Scholar would (about 78 characters): of 13,997 titles long enough to be cut, the cut line keeps the whole title's badge in 2,006,
+  gets another in 434 (150 of them a track word the cut hid — "… Workshops", "Companion", "Demonstrations" — the rest unlisted venues
+  sharing a listed start: CIDM, FedCSIS, ICMLA, COLING …), and loses it in 212. No narrow rule separates them: even a cut right after a
+  connective with two content words visible ("… Machine Learning and …") is right 263 times to 104. Two directions, each an owner's
+  decision: claim fewer cut starts (precision over recall says so; it costs hundreds of right badges), or check a visible edition number
+  against the venue's own numbering ("5th … 2016" is not ICPR, which held its 23rd that year) — learned from real lines that carry the
+  acronym (265 venues have four or more such lines), which would make generated data part of the package.
 - **Exact advice in the popup for a profile opened before an install or update.** Chrome puts no script into tabs that were open
   before; the popup then gets no answer and cannot tell that tab from any other page, because with `storage` alone it may not read a
   tab's address (checked 2026-10-29: `chrome.tabs.query` gives no `url`). Since 2026-10-29 it says in a general line that such a

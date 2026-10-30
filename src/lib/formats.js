@@ -266,6 +266,13 @@
 
   // Standard entries: a citation key (surname, year, first long word of the title; a repeated key gets b, c, … so that no entry is dropped), the authors joined with "and"
   // (and "and others" where Scholar cut the list), the venue as booktitle / journal, the year, the address, the ranks and marks in a note.
+  // Scholar's "DS Weld" for BibTeX: run-together initials are one given name to it ("D. Weld" in an abbreviating style), so each initial stands alone, as a single
+  // one already does ("D S Weld", like "K He"); a name in capitals, the surname (the last word) and spelled-out names are left as they are
+  const bibName = (name) => {
+    const raw = clean(name), words = raw.split(/\s+/);
+    if (words.length < 2 || raw === raw.toUpperCase()) return raw;
+    return words.map((w, i) => (i < words.length - 1 && /^\p{Lu}{2,3}$/u.test(w) ? w.split("").join(" ") : w)).join(" ");
+  };
   function bibtex(papers, ctx = {}) {
     const used = new Set();
     return papers.map((p) => {
@@ -284,7 +291,7 @@
       const notes = [...rankNotes(p, ctx), ...p.marks.map(tex)];
       const fields = [
         `  title = {${tex(p.title)}}`,
-        names.length ? `  author = {${[...names.map((n) => (/\band\b/i.test(n) ? "{" + tex(n) + "}" : tex(n))), ...(cut ? ["others"] : [])].join(" and ")}}` : null,
+        names.length ? `  author = {${[...names.map((n) => (/\band\b/i.test(n) ? "{" + tex(n) + "}" : tex(bibName(n)))), ...(cut ? ["others"] : [])].join(" and ")}}` : null,
         field && venue ? `  ${field} = {${venue}}` : null,
         field && field !== "howpublished" && parts.volume ? `  volume = {${parts.volume}}` : null,
         field && field !== "howpublished" && parts.issue ? `  number = {${tex(parts.issue)}}` : null,
