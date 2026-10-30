@@ -171,7 +171,7 @@
   const DOCUMENT = new RegExp(`\\bpatent\\b|\\b(?:thesis|dissertation)\\b|${REPORT.source}`, "i");
   // a publisher's name on its own ("MIT Press", "Springer", "O'Reilly Media, Inc."): a book, given as printed too (APA does not italicise a publisher)
   const CHAPTER = /\b(?:chapter|ch)\.?:?$/i;          // ("chapter 13": the number right after it is a chapter's, not a volume — "…SIGCHI Chapter, 66-73" keeps its pages)
-  const PUBLISHER = /^(?:the\s)?[^,]*\b(?:press|springer|wiley|elsevier|o'?reilly|publish(?:ing|ers?)|verlag|addison[- ]wesley|house|erlbaum|routledge|cengage|pearson|mcgraw)\b(?![/-]subscri)(?![^,]*\b(?:quarterly|gazette|bulletin|research|letters|journal|review|news)\b)[^,]*(?:,\s*(?:inc|ltd|llc|gmbh)\.?)?$/i;
+  const PUBLISHER = /^(?:the\s)?[^,]*\b(?:press|springer|wiley|elsevier|o'?reilly|publish(?:ing|ers?)|books|verlag|addison[- ]wesley|house|erlbaum|routledge|cengage|pearson|mcgraw)\b(?![/-]subscri)(?![^,]*\b(?:quarterly|gazette|bulletin|research|letters|journal|review|news)\b)[^,]*(?:,\s*(?:inc|ltd|llc|gmbh)\.?)?$/i;
   // (journals whose title is a publishing word: no publisher)
   const PUBLISHING_JOURNAL = /^(?:learned publishing|publishing research quarterly|logos|publishers weekly)\b/i;
   const isPublisher = (text) => !PUBLISHING_JOURNAL.test(asPrinted(text)) && (PUBLISHER.test(asPrinted(text)) || PUBLISHER.test(venueParts(text).name));          // ("Morgan & Claypool Publishers 13, 1-187": the name before Scholar's numbers)
@@ -257,7 +257,7 @@
     if (p.type === "conference") return { type: "inproceedings", field: "booktitle" };
     // ("2015 IEEE Trustcom/BigDataSE/ISPA 1", "2010 Internet of Things (IOT)": a name that opens with its year is the title of a meeting's proceedings, IEEE's form)
     if (/^(?:19|20)\d{2}\s+\S/.test(venue) && !/journal|transactions|letters|magazine/i.test(venue) && !DOCUMENT.test(venue) && !venueParts(p.venue).issue) return { type: "inproceedings", field: "booktitle" };
-    if ((venueParts(p.venue).issue || /\s\d{1,4}\s\(\d+\s?…/.test(p.venue)) && !/\b(?:conference|symposium|workshop|tech(?:nical|\.)?\s*rep(?:ort)?)\b|https?:|\bwww\./i.test(venue)) return { type: "article", field: "journal" };           // ("44 (8)", or cut "44 (8 …": a volume with an issue is a periodical's)
+    if ((venueParts(p.venue).issue || /\s\d{1,4}\s\(\d+\s?…/.test(p.venue)) && !/\b(?:conference|symposium|workshop|tech(?:nical|\.)?\s*rep(?:ort)?|handbook|encyclopa?edia|manuscript|draft)\b|https?:|\bwww\./i.test(venue) && !isPublisher(p.venue)) return { type: "article", field: "journal" };           // ("44 (8)", or cut "44 (8 …": a volume with an issue is a periodical's — not a handbook's, a manuscript's or a publisher's: "Encyclopedia of machine learning 15 (1)", "Now Publishers 1 (1–2)")
     if (/journal(?!is)|transactions|letters|review|annals|magazine|ieee\/acm trans/i.test(venue)) return { type: "article", field: "journal" };
     if (/conference|symposi(?:um|a)|proceedings?\b|workshop|annual|proc\.|\bcongress\b|extended abstracts|^findings of (?:the )?(?:association|acl|emnlp|naacl|eacl|aacl)\b|system demonstrations?|datasets and benchmarks|companion proceedings/i.test(venue)
       || /\b(?:ACL|EMNLP|NAACL|EACL|AACL|COLING)(?:-[A-Z]+)?(?:[ -]?'?\d{2,4})?[ -]*\(?[Ff]indings\)?(?:[ ,]*(?:19|20)\d{2})?$|^\(?[Ff]indings\)?[ -]*\(?(?:ACL|EMNLP|NAACL|EACL|AACL)\b/.test(venue)) return { type: "inproceedings", field: "booktitle" };          // ("ACL 2025 Findings", "EMNLP (Findings)", "EMNLP Findings 2023": the acronym in capitals; "Clinical Findings" is no meeting)
@@ -268,16 +268,26 @@
   // (and "and others" where Scholar cut the list), the venue as booktitle / journal, the year, the address, the ranks and marks in a note.
   // Scholar's "DS Weld" for BibTeX: run-together initials are one given name to it ("D. Weld" in an abbreviating style), so each initial stands alone, as a single
   // one already does ("D S Weld", like "K He"); a name in capitals, the surname (the last word) and spelled-out names are left as they are
+  // A surname of more than one word that starts in a capital ("L Van Gool", "N Le Roux") or a suffix ("RW Heath Jr") is written "Van Gool, L" and "Heath, Jr., R W": BibTeX would read "Van" as
+  // a given name and "Jr" as the surname. A group's name ("ATLAS Collaboration", "Gemini Team") is one name in braces.
+  const GROUP = /^\S.*\s(?:collaboration|consortium|team|group|committee|investigators|alliance|initiative)$/i;
+  const bibInitials = (given) => given.split(/\s+/).map((w) => (/^\p{Lu}{2,3}$/u.test(w) ? w.split("").join(" ") : w)).join(" ");
   const bibName = (name) => {
-    const raw = clean(name), words = raw.split(/\s+/);
-    if (words.length < 2 || raw === raw.toUpperCase()) return raw;
-    return words.map((w, i) => (i < words.length - 1 && /^\p{Lu}{2,3}$/u.test(w) ? w.split("").join(" ") : w)).join(" ");
+    const raw = clean(name);
+    if (/\band\b/i.test(raw) || GROUP.test(raw)) return `{${tex(raw)}}`;
+    if (raw.split(/\s+/).length < 2 || raw === raw.toUpperCase() || raw.includes(",")) return tex(raw);
+    const { given, last, suffix } = nameSplit(raw);
+    if (!given) return tex(raw);
+    return !suffix && (!/\s/.test(last) || /^\p{Ll}/u.test(last)) ? tex(`${bibInitials(given)} ${last}`)          // ("L van der Maaten": BibTeX reads a particle in lower case as one)
+      : tex(`${last}, ${suffix ? suffix + ", " : ""}${bibInitials(given)}`);
   };
   function bibtex(papers, ctx = {}) {
     const used = new Set();
     return papers.map((p) => {
-      const { names, cut } = authorList(p.authors);
-      const surname = ascii(names[0] || "").split(/\s+/).pop().replace(/[^A-Za-z0-9]/g, "").toLowerCase() || "paper";
+      const { names: all, cut, cutAt } = authorList(p.authors);
+      // (BibTeX has no gap: a list cut in its middle — "C Writer, E Writer, …, A Example" — is the names before the cut and "others", so that no one moves up)
+      const names = cutAt > 0 ? all.slice(0, cutAt) : all;
+      const first = clean(names[0] || ""), surname = ascii(GROUP.test(first) ? first.split(/\s+/)[0] : nameSplit(first).last).replace(/[^A-Za-z0-9]/g, "").toLowerCase() || "paper";
       const year = p.year ? String(p.year).replace(/[^0-9]/g, "") : "";                          // (a year is digits: it goes into the key and a field as it is)
       const words = ascii(clean(p.title)).toLowerCase().match(/[a-z]+/g) || [];          // (letters: "Über die Welt" is "uber", "2016 Survey of Things" is "survey")
       const word = words.find((w) => !STOP.has(w) && w.length >= 3) || words[0] || "paper";
@@ -287,11 +297,11 @@
       used.add(key);
 
       const { type, field } = periodical(p) ? { type: "article", field: "journal" } : entryType(p);          // (as in the other styles: "Scientific Reports 6, 29545" is a periodical's)
-      const parts = partsFor(p, type), venue = tex(field === "howpublished" ? clean(p.venue) : parts.name);
+      const parts = partsFor(p, type), venue = tex(field === "howpublished" ? asPrinted(p.venue) : parts.name);
       const notes = [...rankNotes(p, ctx), ...p.marks.map(tex)];
       const fields = [
         `  title = {${tex(p.title)}}`,
-        names.length ? `  author = {${[...names.map((n) => (/\band\b/i.test(n) ? "{" + tex(n) + "}" : tex(bibName(n)))), ...(cut ? ["others"] : [])].join(" and ")}}` : null,
+        names.length ? `  author = {${[...names.map(bibName), ...(cut ? ["others"] : [])].join(" and ")}}` : null,
         field && venue ? `  ${field} = {${venue}}` : null,
         field && field !== "howpublished" && parts.volume ? `  volume = {${parts.volume}}` : null,
         field && field !== "howpublished" && parts.issue ? `  number = {${tex(parts.issue)}}` : null,
@@ -334,6 +344,25 @@
   // ---- APA 7th edition ----------------------------------------------------------------------------------------------------------------------------
   // The words that belong to the surname when they stand in front of it ("van der Maaten", "de León").
   const PARTICLE = new Set(["van", "von", "der", "den", "de", "del", "della", "di", "da", "dos", "das", "du", "la", "le", "ter", "ten"]);
+  // (a capitalised "Van" or "Le" alone right before a Vietnamese surname is a middle name, Văn or Lê: "Thanh Van Nguyen" is "Nguyen, T. V."; "L Van Gool" keeps his)
+  const VIETNAMESE = new Set(["nguyen", "tran", "le", "pham", "hoang", "huynh", "phan", "vu", "vo", "dang", "bui", "do", "ho", "ngo", "duong", "ly", "truong", "dinh", "trinh", "dao", "doan", "luong", "vuong", "quach", "nghiem", "phung", "kieu", "luu"]);
+  const surnameStart = (parts) => {
+    for (let i = 1; i < parts.length - 1; i++) {
+      if (!PARTICLE.has(parts[i].toLowerCase())) continue;
+      if (i === parts.length - 2 && parts[i] !== parts[i].toLowerCase() && VIETNAMESE.has(ascii(parts[i + 1]).toLowerCase())) continue;
+      return i;          // the surname starts at the first particle that has a given name before it
+    }
+    return parts.length - 1;
+  };
+  // the given names, the surname and a suffix of a name as Scholar prints it: "L van der Maaten" → "L", "van der Maaten"; "RW Heath Jr" → "RW", "Heath", "Jr."
+  function nameSplit(name) {
+    const raw = clean(name), m = /\s+(jr\.?|sr\.?|i{2,3}|iv)$/i.exec(raw), s = m ? m[1].toLowerCase() : "";
+    const suffix = !m ? "" : s.startsWith("jr") ? "Jr." : s.startsWith("sr") ? "Sr." : s.toUpperCase();
+    const parts = (m ? raw.slice(0, m.index) : raw).split(/\s+/).filter(Boolean);
+    if (parts.length < 2) return { given: "", last: parts[0] || "", suffix };
+    const at = surnameStart(parts);
+    return { given: parts.slice(0, at).join(" "), last: parts.slice(at).join(" "), suffix };
+  }
   const initialsOf = (given) => given.split(/\s+/).filter(Boolean).map((g) => (/^\p{Lu}{2,3}$/u.test(g) ? g.split("").join(". ") + "." : g.split("-").map((x) => (x.endsWith(".") ? x : x.charAt(0).toUpperCase() + ".")).join("-"))).join(" ");
 
   // "I Stoica" → "Stoica, I."; "MF Kaashoek" → "Kaashoek, M. F."; "L van der Maaten" → "van der Maaten, L."; "Jane Doe" → "Doe, J."
@@ -357,8 +386,7 @@
     }
     const parts = raw.split(/\s+/);
     if (parts.length === 1) return parts[0];
-    let at = parts.length - 1;
-    for (let i = 1; i < parts.length - 1; i++) if (PARTICLE.has(parts[i].toLowerCase())) { at = i; break; }      // the surname starts at the first particle that has a given name before it
+    const at = surnameStart(parts);
     return `${parts.slice(at).join(" ")}, ${initialsOf(parts.slice(0, at).join(" "))}`;
   }
 
@@ -415,7 +443,7 @@
     const { names, cut } = authorList(p.authors);
     const list = markList(names, ieeeAuthor, me);
     const by = !list.length ? "" : list.length > 6 || cut ? `${list[0]} et al.` : list.length === 1 ? list[0] : list.length === 2 ? `${list[0]} and ${list[1]}` : `${list.slice(0, -1).join(", ")}, and ${list[list.length - 1]}`;
-    const title = clean(p.title).replace(/(?<!\.)\.$/, "");          // (a title's own "..." stays whole)
+    const title = clean(p.title).replace(/(?<!\.)\.$/, "").replace(/"([^"]*)"|“([^”]*)”/g, (_, a, b) => `'${a ?? b}'`);          // (a title's own "..." stays whole; its own quotes are single inside IEEE's)
     const kind = entryType(p), type = kind.type, ieeeParts = partsFor(p, periodical(p) ? "article" : type), { name, volume, issue, pages } = type === "inproceedings" && !periodical(p) ? unlabelled(ieeeParts) : ieeeParts, year = p.year ? String(p.year) : "";
     const misc = isDocument(p) || WEB.test(p.venue), venue = misc ? asPrinted(p.venue) : name;
     const range = pages.replace("-", "–"), where = [], page = pages && (pages.includes("-") ? `pp. ${range}` : `Art. no. ${pages}`);

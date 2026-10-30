@@ -674,3 +674,29 @@ test("ACM over every real venue line: no doubled full stop, nothing undefined; t
   assert.match(f.gbt([{ ...p, title: "To be continued..." }]), /To be continued\.\.\.\[C\]/, "GB/T too");
 });
 
+
+test("an export review, 2026-10-29: books are no journal articles, BibTeX's surnames and groups, the gap of a cut list, Vietnamese middle names, IEEE's inner quotes", () => {
+  // a handbook, an encyclopedia, a manuscript or a publisher with "volume (issue)" is not a journal's
+  for (const venue of ["Encyclopedia of machine learning 15 (1), 713-714", "Handbook of Satisfiability 336 (2021), 391-435", "Now Publishers 1 (1–2), 1-305", "Chapman & Hall/CRC Press 53 (5)", "Unpublished manuscript 40 (7), 1-9", "Arpaci-Dusseau Books, LLC 1, 15"])
+    assert.ok(!/^@article/.test(f.bibtex([paper({ type: null, venue })])), venue);
+  assert.ok(/^@article/.test(f.bibtex([paper({ type: null, venue: "Nature 521 (7553), 436-444" })])));
+  // a capitalised particle and a suffix in BibTeX's "Last, Jr, First" form; a group in braces; a particle in lower case is BibTeX's own form already
+  const by = (authors) => /author = \{(.*)\},/.exec(f.bibtex([paper({ authors })]))[1];
+  assert.equal(by("L Van Gool, N Le Roux, G Van den Broeck"), "Van Gool, L and Le Roux, N and Van den Broeck, G");
+  assert.equal(by("RW Heath Jr, J Smith III"), "Heath, Jr., R W and Smith, III, J");
+  assert.equal(by("ATLAS Collaboration"), "{ATLAS Collaboration}");
+  assert.equal(by("L van der Maaten, Thanh Van Nguyen"), "L van der Maaten and Thanh Van Nguyen");
+  assert.match(f.bibtex([paper({ authors: "RW Heath Jr, A B" })]), /^@\w+\{heath/);
+  assert.match(f.bibtex([paper({ authors: "L Van Gool" })]), /^@\w+\{vangool/);
+  // a list cut in its middle: the names before the cut and "others" — no one moves up to the place of the one after the gap
+  assert.equal(by("C Writer, E Writer, B Writer, ..., A Example"), "C Writer and E Writer and B Writer and others");
+  // "Van" or "Le" alone before a Vietnamese surname is a middle name
+  assert.equal(f.apaAuthor("Thanh Van Nguyen"), "Nguyen, T. V.");
+  assert.equal(f.apaAuthor("Hoang Le Pham"), "Pham, H. L.");
+  assert.equal(f.apaAuthor("L Van Gool"), "Van Gool, L.");
+  assert.equal(f.apaAuthor("N Le Roux"), "Le Roux, N.");
+  // IEEE's title quotes hold the title's own quotes as single ones; a document's howpublished does not repeat the year
+  assert.ok(f.ieee([paper({ title: "On \"good\" code" })]).includes(`"On 'good' code,"`));
+  const pat = f.bibtex([paper({ type: null, venue: "US Patent 10,000,000, 2018", year: 2018 })]);
+  assert.ok(pat.includes("howpublished = {US Patent 10,000,000}"), pat);
+});

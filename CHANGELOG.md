@@ -83,6 +83,20 @@ give the details and every review):
   old rule), with the one known limit reported and not counted: a chip keeps its name on one line, so a 30-character chip name is cut
   in a preview of 330 px or less. The overflow audit no longer counts a break at a soft hyphen (Finnish "Yhteis-|ensimmäinen") as a
   word cut in two.
+- **A review of the award chips and the exports** (an independent agent; every finding fixed). Exports: (1) a handbook, an encyclopedia,
+  a manuscript or a publisher with a "volume (issue)" ("Encyclopedia of machine learning 15 (1)", "Now Publishers 1 (1–2)", "Arpaci-Dusseau
+  Books, LLC 1, 15") was cited as a journal article in every style; 9 of the 22,744 real lines change, all of them these. (2) BibTeX
+  writes "Van Gool, L", "Le Roux, N" and "Heath, Jr., R W" (BibTeX read "Van" as a given name and "Jr" as the surname, and the key was
+  `jr2020…`), and a group ("ATLAS Collaboration") in braces. (3) BibTeX has no gap: a list cut in its middle is now the names before the
+  cut and "others", where the name after the gap had moved up to fourth. (4) "Thanh Van Nguyen" is "Nguyen, T. V." (a capitalised "Van" or
+  "Le" alone before a Vietnamese surname is a middle name; "L Van Gool" keeps his). (5) IEEE's title quotes hold the title's own quotes
+  as single ones; a document's `howpublished` no longer repeats the year. Award chips: (6) of two rows as near the award's year (the
+  conference paper and its arXiv copy, or its journal version of the same year) the one at the award's venue gets the chip, then the one
+  that is no preprint — it went to whichever came first. (7) Rankings ("#3 Most Influential Paper, Paper Digest", "Ranked 2nd …", "Top ten
+  …") and a "Most Influential Paper Award nominee" are no test-of-time award. (8) An award named as the reason for a journal version
+  ("extended version of CVPR 2016 Best Paper", "Special issue: Best Paper of ICDE 2019") is the other paper's. (9) A talk word that is a
+  journal's name ("Oral, 2022", MDPI's *Oral*) or a series ("SPIE Spotlight") is no talk, nor a bare lower-case "(oral)" in a title. The
+  13 author notes among the real venue lines all still read.
 - **A review of the roles: five ways the owner was found at the wrong place.** (1) A capitalised "Van" standing alone is a given name
   (Vietnamese Văn: "Hung Van Nguyen" is not "HD Nguyen"), and so is the second part of a hyphenated given name ("Su-Bin Kim" is "SB
   Kim"; the line's "Su-Hyun Kim" is someone else); a particle counts as one only when written as one, in lower case ("van der Maaten",

@@ -274,3 +274,28 @@ test("a moved award follows merge's rules across kinds: a listed runner-up drops
   assert.deepEqual(move([{ kind: "best", text: "Best Paper", source: "author" }], "runner-up"), ["runner-up/list"]);
   assert.deepEqual(move([{ kind: "finalist", text: "Best Paper Finalist", source: "author" }], "best"), ["best/list"]);
 });
+
+test("an awards review, 2026-10-29: rankings and nominees are no awards, an award named for a journal version is the other paper's, a talk word that names a journal or a series is none, a tie goes to the award's venue", () => {
+  const kinds = (fields) => marks.detect(fields).map((m) => m.kind);
+  // "most influential paper" as a ranking, or a nominee
+  for (const venue of ["(#3 Most Influential Paper, Paper Digest)", "(Ranked 2nd Most Influential Paper)", "(Top ten Most Influential Paper)", "(Paper Digest Most Influential Paper)", "Most Influential Paper Award nominee"])
+    assert.deepEqual(kinds({ venue }), [], venue);
+  assert.deepEqual(kinds({ venue: "ICSE 2020 Most Influential Paper" }), ["tot"]);
+  assert.deepEqual(kinds({ venue: "ASE 2024 Most Influential Paper Award. 2013 IEEE/ACM International …, 2013" }), ["tot"]);
+  // the award of the conference paper a journal version extends
+  for (const venue of ["IEEE TPAMI 40 (1), 2018 (extended version of CVPR 2016 Best Paper)", "Special issue: Best Paper of ICDE 2019", "Invited to the special issue for best paper of ICDE"])
+    assert.deepEqual(kinds({ venue }), [], venue);
+  assert.deepEqual(kinds({ venue: "Extended Abstracts of CHI 2019 (Best Paper)" }), ["best"]);
+  // a talk word that is a journal's name or a publisher's series; one in lower case alone in a title
+  for (const venue of ["Oral, 2022", "Oral 12 (3), 45-50, 2022", "SPIE Spotlight", "BMJ Spotlight, 2020"]) assert.deepEqual(kinds({ venue }), [], venue);
+  assert.deepEqual(kinds({ venue: "ICLR 2025 (Oral), 2024" }), ["oral"]);
+  for (const title of ["Candida infections (oral)", "Drug delivery routes – oral"]) assert.deepEqual(kinds({ title }), [], title);
+  assert.deepEqual(kinds({ title: "Attention (Oral)" }), ["oral"]);
+  assert.deepEqual(kinds({ title: "X (oral presentation)" }), ["oral"]);
+  // two rows as near the award's year: the one at the award's venue, then the one that is no preprint
+  const once = (rows) => marks.listedOnce(rows.map((r) => ({ title: "Neural ODE", marks: [{ source: "list", kind: "best", venue: "NeurIPS", year: 2018 }], ...r }))).map((m) => m.length);
+  assert.deepEqual(once([{ year: 2018, venue: "arXiv preprint arXiv:1806.07366" }, { year: 2018, venue: "Advances in neural information processing systems 31", abbrs: ["NeurIPS"] }]), [0, 1]);
+  assert.deepEqual(once([{ year: 2018, venue: "Journal X 1 (2)" }, { year: 2018, venue: "Some line", abbrs: [null, "NeurIPS"] }]), [0, 1]);
+  assert.deepEqual(once([{ year: 2018, venue: "arXiv preprint" }, { year: 2018, venue: "Workshop" }]), [0, 1]);
+  assert.deepEqual(once([{ year: 2018, venue: "arXiv preprint" }, { year: 2020, venue: "NeurIPS", abbrs: ["NeurIPS"] }]), [1, 0]);
+});

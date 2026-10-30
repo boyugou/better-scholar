@@ -50,7 +50,7 @@
   const FOR = `(?:${S}(?:for|of|in)|,)?${S}(?:the${S})?`;          // "Honorable Mention for Best Paper", "Runner-up, Best Paper Award", "Nominee for the Best Paper Award"
   const PHRASES = [
     { kind: "finalist", label: "Best paper finalist",
-      re: new RegExp(`\\b(?:${BEST}${SEP}${FINAL}|(?:award${S})?${FINAL}${FOR}${BEST}|(?:nominated|shortlisted)${S}for${S}(?:the${S})?${BEST}|(?:best${S}paper|award)${S}(?:finalist|nominee|candidate)|award${S}candidates?)\\b`, "gi") },
+      re: new RegExp(`\\b(?:${BEST}${SEP}${FINAL}|(?:award${S})?${FINAL}${FOR}${BEST}|(?:nominated|shortlisted)${S}for${S}(?:the${S})?${BEST}|(?:best${S}paper|(?<!(?:influential${S}paper|test${S}of${S}time(?:${S}paper)?)${S})award)${S}(?:finalist|nominee|candidate)|award${S}candidates?)\\b`, "gi") },          // ("Most Influential Paper Award nominee" is nothing: no best paper, no award won)
     { kind: "runner-up", label: (m) => (/runner/i.test(m) ? "Best paper runner-up" : "Honorable mention"),
       re: new RegExp(`\\b(?:${BEST}${SEP}${RUNNER}|(?:second|2nd|third|3rd)${S}best${S}paper(?:${S}award)?|${RUNNER}${FOR}${BEST}|test${S}of${S}time(?:${S}paper)?(?:${S}award)?${S}${RUNNER}|honou?rable${S}mentions?(?:${S}award)?)\\b`, "gi") },
     { kind: "best-student", label: "Best student paper", re: new RegExp(`\\b(?:best|outstanding)${S}student${S}paper(?:${S}award)?\\b`, "gi") },
@@ -61,7 +61,7 @@
       re: new RegExp(`\\boutstanding${S}(?:(?:long|short|main${S}track|research)${S})*paper(?:${S}award)?\\b`, "gi") },
     { kind: "distinguished", label: "Distinguished paper", re: new RegExp(`\\bdistinguished${S}(?:student${S})?paper(?:${S}award)?\\b`, "gi") },
     { kind: "tot", label: "Test of time",
-      re: new RegExp(`\\b(?:test${S}of${S}time(?:${S}(?:paper${S})?award)?|(?<!\\btop[-\\s]?\\d{1,3}\\s{0,3})most${S}influential${S}paper(?:${S}award)?|(?:10|ten)${S}years?${S}(?:most${S}influential|test${S}of${S}time)(?:${S}paper)?(?:${S}award)?|classic${S}paper${S}award)\\b`, "gi") },
+      re: new RegExp(`\\b(?:test${S}of${S}time(?:${S}(?:paper${S})?award)?|(?<!(?:\\btop[-\\s]?(?:\\d{1,3}|ten|five|twenty|hundred)|#\\s?\\d{1,3}|\\b\\d{1,3}(?:st|nd|rd|th)|\\branked|\\bdigest)\\s{0,3})most${S}influential${S}paper(?!(?:${S}award)?${S}(?:finalist|nominee|candidate|nomination)|[^()\\[\\]]{0,20}paper\\s?digest)(?:${S}award)?|(?:10|ten)${S}years?${S}(?:most${S}influential|test${S}of${S}time)(?:${S}paper)?(?:${S}award)?|classic${S}paper${S}award)\\b`, "gi") },
     // ICLR's own wording for orals and spotlights
     { kind: "oral", label: "Oral", talk: true, re: /\bnotable[-\s]top[-\s]?5\s*%/gi },
     { kind: "spotlight", label: "Spotlight", talk: true, re: /\bnotable[-\s]top[-\s]?25\s*%/gi },
@@ -135,6 +135,9 @@
     return rest.split(/[\s,;:&+/|–—-]+/).filter(Boolean).every((tok) => filler(tok, venueWord));
   }
 
+  // (an award or a talk named as the reason for a journal version is the other paper's: "(extended version of CVPR 2016 Best Paper)", "Special issue: Best Paper of ICDE 2019")
+  const OTHER_PAPERS = /\b(?:(?:extended|journal|full)\s+version|version\s+of|extension\s+of|extends|special\s+issue)\b[^()\[\]]*$/i;
+
   // fields: { title?: string, venue?: string | string[] };  opts: { venueWord?: (lowercase word) => boolean }
   // → [{ kind, group, label, text, field }] — one per kind, most notable first.
   function detect(fields, opts = {}) {
@@ -144,13 +147,21 @@
 
     const venues = [].concat(fields.venue || []).map(norm).filter(Boolean);
     for (const v of venues) {
-      for (const m of scan(v)) if (!m.talk || standsAlone(v, m, venueWord)) add(m, "venue");
+      for (const m of scan(v)) {
+        if (OTHER_PAPERS.test(v.slice(0, m.start))) continue;
+        // ("Oral, 2022", "Spotlight 4 (2)": the word is a journal's name; "SPIE Spotlight", "BMJ Spotlight": a publisher's series)
+        if (m.talk && (!standsAlone(v, m, venueWord) || (!v.slice(0, m.start).trim() && /^[\s\d,.()–-]*$/.test(v.slice(m.end))) || /\b(?:spie|bmj|mdpi|iop|osa|optica|ieee|acm|springer|elsevier|wiley)\s*$/i.test(v.slice(0, m.start)))) continue;
+        add(m, "venue");
+      }
     }
     const title = norm(fields.title);
     if (title) {
       for (const seg of titleSegments(title)) {
         const ms = scan(seg);
-        if (ms.length && markerOnly(seg, ms, venueWord)) for (const m of ms) add(m, "title");
+        if (!ms.length || !markerOnly(seg, ms, venueWord)) continue;
+        // (a talk word in lower case with nothing beside it is the title's own word: "Candida infections (oral)", "Drug delivery routes – oral"; "(ICLR 2023 oral)" is a mark)
+        if (ms.every((m) => m.talk && /^(?:oral|spotlight|highlight)$/.test(m.text)) && markerOnly(seg, ms, () => false) && !/\d/.test(seg)) continue;
+        for (const m of ms) add(m, "title");
       }
     }
     return KINDS.filter((k) => found.has(k)).map((k) => found.get(k));
@@ -211,9 +222,10 @@
 
   // One award of the list marks one row of a profile. A title the profile lists twice — the conference paper and its journal or magazine reprint
   // ("MapReduce" 2004 and 2008, AlexNet 2012 and 2017) — gets it once: a test-of-time award on the earliest row, any other on the row whose year is
-  // closest to the award's. rows: [{ title, year, marks }] → the marks of each row, without the award copies the other row keeps.
+  // closest to the award's (on a tie, the row at the award's venue, then one that is no preprint). rows: [{ title, year, venue?, abbrs?, marks }] → the marks of each row, without the award copies the other row keeps.
   // (titleKey: the award list's own key of a title, so that "Naïve" and "Naive" are one title here as in the lookup; a row hidden as a duplicate keeps no award another row can hold)
   const titleOf = (t) => String(t || "").toLowerCase().replace(/[^\p{L}\p{N}]+/gu, "");
+  const PREPRINT = /\b(?:arxiv|biorxiv|medrxiv|chemrxiv|ssrn|preprints?|corr|openreview)\b/i;
   function listedOnce(rows, titleKey = titleOf) {
     const keyOf = (r, m) => [titleKey(r.title), m.kind, m.venue, m.year, m.awardLabel].join("|");
     const best = new Map();
@@ -221,7 +233,9 @@
       const y = Number(r.year);
       for (const m of r.marks || []) {
         if (m.source !== "list") continue;
-        const score = r.hidden ? Infinity : !Number.isFinite(y) || !y ? 1e9 : m.kind === "tot" ? y : Math.abs(y - m.year);
+        // (two rows as near the award's year — the conference paper and its arXiv copy, or its journal version of the same year — the one at the award's venue, then the one that is no preprint)
+        const tie = ((r.abbrs || []).some((a) => a && String(a).toLowerCase() === String(m.venue || "").toLowerCase()) ? 0 : 0.25) + (PREPRINT.test(r.venue || "") ? 0.5 : 0);
+        const score = r.hidden ? Infinity : !Number.isFinite(y) || !y ? 1e9 : (m.kind === "tot" ? y : Math.abs(y - m.year)) + tie;
         const k = keyOf(r, m), b = best.get(k);
         if (!b || score < b.score) best.set(k, { i, score });
       }
