@@ -93,7 +93,7 @@ test("pages: the popup and the settings page load only files that exist, depende
   }
 });
 
-test("background.js only opens the settings page and hands out this extension's own language files", () => {
+test("background.js only opens the settings page, hands out this extension's own language files and notes an install or update", () => {
   const code = read("background.js").replace(/^\s*\/\/.*$/gm, "");
   assert.match(code, /chrome\.runtime\.onMessage\.addListener/);
   assert.match(code, /chrome\.runtime\.openOptionsPage\(\)/);
@@ -101,7 +101,10 @@ test("background.js only opens the settings page and hands out this extension's 
   // the one fetch reads a file of this package, nothing from the network
   assert.equal((code.match(/fetch\(/g) || []).length, 1);
   assert.match(code, /fetch\(chrome\.runtime\.getURL\("_locales\//);
-  for (const bad of ["XMLHttpRequest", "WebSocket", "chrome.storage", "chrome.tabs", "chrome.scripting", "importScripts", "eval(", "http"]) assert.ok(!code.includes(bad), "background.js must not use " + bad);
+  // the one thing it stores: a flag, on an install or an update, for the popup (PRIVACY.md says so)
+  assert.equal((code.match(/chrome\.storage/g) || []).length, 1);
+  assert.match(code, /chrome\.storage\.local\.set\(\{ reloadHint: true \}\)/);
+  for (const bad of ["XMLHttpRequest", "WebSocket", "chrome.tabs", "chrome.scripting", "importScripts", "eval(", "http"]) assert.ok(!code.includes(bad), "background.js must not use " + bad);
   assert.ok(code.split("\n").filter((l) => l.trim()).length <= 16, "keep it tiny");
 });
 

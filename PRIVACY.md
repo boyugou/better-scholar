@@ -53,6 +53,8 @@ In `chrome.storage.local`, on this device only (`content/store.js`):
 - `askVenue`: a venue text that you asked the settings page to check, with *Check* beside a venue of the unranked list (at most
   300 characters, as Scholar printed it). The settings page takes it within a moment and removes it. A text that nobody takes is
   ignored after 30 seconds.
+- `reloadHint`: `true` from the moment the extension is installed or updated until the toolbar popup first reaches a profile (it
+  then removes it). While it is there, the popup says that a profile opened before needs a reload (`background.js`, `popup/popup.js`).
 
 In the Scholar site's own browser storage:
 
@@ -104,8 +106,8 @@ Nothing else:
 - No analytics, no telemetry, no advertising, no tracking and no account.
 - No code is loaded from the network. Every script runs from the extension package.
 - The rank lists (CCF 2026, ICORE 2026) and the list of award-winning papers are part of the package. They are never downloaded.
-- The background service worker only opens the settings page when the panel asks, and reads the extension's own language files.
-  It makes no network request and does not use storage (`background.js`).
+- The background service worker only opens the settings page when the panel asks, reads the extension's own language files, and
+  notes an install or update (`reloadHint`, above). It makes no network request and stores nothing else (`background.js`).
 
 Links, which open only when you click them:
 

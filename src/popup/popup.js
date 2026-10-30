@@ -20,15 +20,18 @@
   // a list's name without its edition note, unbreakable and isolated from right-to-left text ("CCF 2026")
   const listName = (label) => "\u2068" + String(label).replace(/\s*\(.*?\)\s*$/, "").replace(/ /g, "\u00a0") + "\u2069";
 
+  // (said only while it can be so: from an install or update until a profile has answered — not on every other page, for good)
+  let reloadHint = false;
+  try { reloadHint = !!(await chrome.storage.local.get("reloadHint")).reloadHint; } catch (e) { /* no storage */ }
   function notProfile() {
-    main.replaceChildren(
+    main.replaceChildren(...[          // (an absent part dropped: replaceChildren would print "null")
       h("p", { class: "empty" }, t("popupNotProfile")),
       // (Scholar's own "My profile" address: the person's profile when signed in; most people look at their own first)
       h("div", { class: "actions" }, h("a", { class: "btn primary", href: "https://scholar.google.com/citations", target: "_blank", rel: "noopener" }, t("popupMyProfile")),
         h("a", { class: "btn", href: "https://scholar.google.com/", target: "_blank", rel: "noopener" }, t("popupOpenScholar"))),
       // (a tab opened before the extension was installed or updated has no script of it: the popup cannot tell it from any other page without a permission to read
-      // the tab's address, so the advice covers both)
-      h("p", { class: "note" }, t("popupReloadHint")));
+      // the tab's address, so the advice is general, and given only in the time after an install or update)
+      reloadHint ? h("p", { class: "note" }, t("popupReloadHint")) : null].filter(Boolean));
   }
 
   // The page's own tab (?tab=<id> lets the end-to-end test aim the popup at a specific tab) and a call to it: { ok: true, result } | { ok: false, error }
@@ -130,5 +133,8 @@
 
   main.replaceChildren(h("p", { class: "empty", role: "status" }, t("popupReading")));
   const answer = await call("summary");
-  if (answer && answer.ok) { const prefs = await B.store.loadPrefs(); B.dom.setLabels(prefs.labels); render(answer.result, prefs, await B.store.loadUi()); } else notProfile();
+  if (answer && answer.ok) {
+    if (reloadHint) { try { await chrome.storage.local.remove("reloadHint"); } catch (e) { /* no storage */ } }          // (a profile answered: the extension runs in the pages opened now)
+    const prefs = await B.store.loadPrefs(); B.dom.setLabels(prefs.labels); render(answer.result, prefs, await B.store.loadUi());
+  } else notProfile();
 })();

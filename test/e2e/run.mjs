@@ -1238,7 +1238,14 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     await popup.locator('.actions button.btn[data-act="copy-summary"]', { hasText: "Not copied" }).waitFor({ timeout: 5000 });
     assert.equal(await popup.locator('.actions button.btn[data-act="copy-summary"].btn-flashed').count(), 0, "a copy that failed is not shown as done");
     await popup.close();
-    ok("toolbar popup renders the active profile's summary (and a hint on other pages); a refused clipboard is said ('Not copied')");
+    // the reload advice is for the time after an install or update only: a profile has answered now, so a page that is no profile gets the plain hint
+    const popupAfter = await context.newPage();
+    await popupAfter.goto(`chrome-extension://${extId}/popup/popup.html`);
+    await popupAfter.waitForSelector("#main .empty");
+    assert.doesNotMatch(await popupAfter.textContent("#main"), /until it is reloaded/, "the reload advice outlives the install");
+    assert.doesNotMatch(await popupAfter.textContent("#main"), /\bnull\b/);
+    await popupAfter.close();
+    ok("toolbar popup renders the active profile's summary (and a hint on other pages, with the reload advice only until a profile has answered after the install); a refused clipboard is said ('Not copied')");
 
     // -- 16. i18n substitutions resolved (no raw $N1$ placeholders anywhere)
     const body = await page.evaluate(() => document.getElementById("rr-panel").textContent);
