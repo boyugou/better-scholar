@@ -748,6 +748,12 @@
       if (wholeName(hit) && !rivalNamed && !postRival) return true;
       return owned.length ? owned.some((sig) => ownersOf(sig.key).includes(hit)) : !(rivalNamed || postRival);
     };
+    const rareEventHere = ((/\b(colloquium|congress|forum|summit)\b/i.exec(p.plain) || [])[1] || "").toLowerCase();
+    const rawTokensHaveOrg = canonTokens(p.plain, "full").some((w) => ORG.has(w));
+    // a name's shape: its words in order, without the sponsors, "proceedings", "the", "annual", "international", editions and years ("conference on multimedia")
+    const shape = (s) => fold(String(s)).toLowerCase().replace(/\([^()]*\)/g, " ").replace(/\b\d+(?:st|nd|rd|th)?\b/g, " ").replace(/[^a-z\s]/g, " ").split(/\s+/)
+      .filter((w) => w && !ORG.has(w) && !/^(?:proceedings?|proc|of|the|annual|international|intl|first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|eleventh|twelfth|[a-z]+teenth|twentieth|thirtieth|fortieth|fiftieth|twenty|thirty|forty|fifty)$/.test(w)).map(us).join(" ");
+    const shapeHere = shape(p.plain);
     const intlJournalWithoutIntl = (e) => e.kind === "J" && /^(?:the\s+)?international\s+journal\b/i.test(e.name) && !/\b(?:international|intl|int)\b/i.test(p.plain);
     // (and the other way round: "International Journal of Machine Learning Research" is not JMLR, "International Journal of Computer Science and Technology" not
     // JCST — a string that says "International Journal" or "Int. J." is not a journal none of whose names says "International")
@@ -791,6 +797,16 @@
       if (d && d !== "ambiguous" && otherJournal(d)) continue;
       // (a string that says "Joint" is not a venue whose names never do: the "Joint Symposium on Parallel Processing" of Japan is neither ICPP nor IPDPS)
       if (d && d !== "ambiguous" && /\bjoint\b/i.test(p.plain) && !hasWord(d, "joint")) continue;
+      // (a name that is one word once its sponsor is dropped — IFIP's "Networking Conference", IEEE's "Visualization Conference" — is not met by an event of another
+      // shape without the sponsor or the acronym: "International Conference on Networking" is ICN, "International Conference Visualisation" London's VIZ. An event of the
+      // name's own shape is the venue ("international conference on Multimedia" is ACM's title for MM, "International Symposium on Multimedia" IEEE's ISM), and a string
+      // with no event word is the venue's short name ("Proceedings Visualization'93")
+      if (d && d !== "ambiguous" && tokens.length === 1 && rawWords.length && !rawTokensHaveOrg && !saysOwnAcronym(d) && ![d.name, ...d.extra].some((n) => shape(n) === shapeHere)) continue;
+      // (an IEEE region's conference is that region's: "IEEE Region 5 Conference" is not TENCON, Region 10's)
+      if (d && d !== "ambiguous" && /\bregion\s+\d+/i.test(p.plain) && [d.name, ...d.extra].some((n) => /\bregion\s+\d+/i.test(n)) && ![d.name, ...d.extra].some((n) => (/\bregion\s+(\d+)/i.exec(n) || [])[1] === (/\bregion\s+(\d+)/i.exec(p.plain) || [])[1])) continue;
+      // (a congress, a colloquium, a forum or a summit is an event of its own kind — Scholar swaps conference, symposium and workshop, not these, as the cut-name rule
+      // knows too: "IEEE International Congress on Big Data" is the BigData Congress, not IEEE BigData; "International Congress on Image and Signal Processing" is CISP)
+      if (d && d !== "ambiguous" && rareEventHere && !hasWordAny(d, rareEventHere)) continue;
       // (and the other way round: a string that does not say "Joint" is not a venue only whose names that do boil down to its words — "Annual conference on artificial
       // intelligence" (KI 2010) is not IJCAI, "International Conference on Biometrics (ICB)" not IJCB; a venue's names without the word still find it)
       if (d && d !== "ambiguous" && !/\bjoint\b/i.test(p.plain) && hasWord(d, "joint") && !idx.jointFree(d).has(ukey) && !idx.jointFree(d).has(key) && !saysOwnAcronym(d)) continue;          // (its own acronym in the string says it: "Artificial Intelligence: IJCAI 2005")
@@ -1276,7 +1292,15 @@
     }
 
     function resolveUncached(raw, inner) {
+      // PODS's papers come out in issue 2 of each volume of Proceedings of the ACM on Management of Data from its second volume (2024) on; the other issues are SIGMOD's,
+      // whose the journal is by an alias. A line that names PODS in the issue ("4 (2 (PODS), 1-26, 2026") says so itself
+      const pacmmod = !inner && /^\s*Proceedings of the ACM on Management of Data\s+(\d+)\s*\(\s*(\d+)/i.exec(raw);
+      if (pacmmod && ((+pacmmod[1] >= 2 && +pacmmod[2] === 2) || /\bPODS\b/.test(raw))) return { ...resolveUncached("ACM SIGMOD-SIGACT-SIGAI Symposium on Principles of Database Systems", true), name: prepare(raw).name };
       const out = { ccf: null, core: null, secondary: null, refused: false, truncated: false, name: "", kind: null };
+      // (JMLR's "Workshop and Conference Proceedings" — "W&CP", in dblp "Proceedings Track" — were conferences' proceedings, ICML's and AISTATS's, before PMLR: not the journal)
+      if (/\b(?:JMLR|Journal of Machine Learning Research)\b/i.test(raw) && /\b(?:W\s*(?:&|&amp;)\s*CP|Workshop and Conference Proceedings|Proceedings Track)\b/i.test(raw)) return { ...out, name: prepare(raw).name };
+      // (Proceedings of the ACM on Software Engineering is FSE's and ISSTA's journal, which the issue names — "1 (FSE)", "2 (ISSTA)"; without it, it is no venue of the lists, ICSE least)
+      if (/^\s*Proceedings of the ACM on Software Engineering\b/i.test(raw) && !/\(\s*(?:ESEC\s*\/\s*)?(?:FSE|ISSTA)\b/i.test(raw)) return { ...out, name: prepare(raw).name };
       const p = prepare(raw);
       out.truncated = p.truncated;
       out.name = p.name;
