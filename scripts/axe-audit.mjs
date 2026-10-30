@@ -121,15 +121,19 @@ for (const [kind, text] of [["words", "Wmw Wmw Wmw Wmw Wmw Wmw Wmw Wm"], ["full-
   await setPrefs({ labels: Object.fromEntries(NAMES.map((k) => [k, text])) });
   await popup.waitForTimeout(300);
   await popup.goto(`chrome-extension://${id}/popup/popup.html?tab=${profileTab}`); await popup.waitForSelector(".who"); await popup.waitForTimeout(300);
-  let flashed = true, tookMs = 0;
+  let flashed = true, tookMs = 0, waitError = "";
   if (kind.includes("clicked")) {          // (a pressed button keeps its label's width while it says "Copied", 1.2 s — at most the row's; measured once it has said so)
     await popup.bringToFront();          // (a page in the back gets no animation frames: the wait polls on a timer, and the page is in front anyway; on a CI machine the copy — a call to
                                           // the page and back — has taken three seconds, once more than eight, before the button said so)
     const label = (await popup.textContent('.actions button.btn[data-act="copy-summary"]')).trim(), t0 = Date.now();
+    flashed = false;
     await popup.click('.actions button.btn[data-act="copy-summary"]');
     // (a popup that draws its buttons again has none for a moment: the wait must not end there — a function that throws ends it at once; on CI the button has
     // read "Copied" only after more than 20 s: the time it took is said, to find out why)
-    flashed = await popup.waitForFunction((was) => { const b = document.querySelector('.actions button.btn[data-act="copy-summary"]'); return !!b && (!!b.style.minWidth || b.classList.contains("btn-flashed") || b.textContent.trim() !== was); }, label, { timeout: 60000, polling: 50 }).then(() => true, () => false);
+    // (a wait that ends at once without a timeout — on CI it did, after 85 ms — says why, and is tried again: a page that was drawn again or replaced ends a wait)
+    for (let i = 0; i < 3 && !flashed; i++) {
+      flashed = await popup.waitForFunction((was) => { const b = document.querySelector('.actions button.btn[data-act="copy-summary"]'); return !!b && (!!b.style.minWidth || b.classList.contains("btn-flashed") || b.textContent.trim() !== was); }, label, { timeout: 60000, polling: 50 }).then(() => true, (e) => { waitError = String(e && e.message || e).split("\n")[0].slice(0, 160); return false; });
+    }
     tookMs = Date.now() - t0;
   }
   const out = await popup.evaluate(() => {          // (the popup is as wide as its body, 340 px; its content keeps 16 px from each side: what is not a full-width bar must end before that margin)
@@ -140,7 +144,7 @@ for (const [kind, text] of [["words", "Wmw Wmw Wmw Wmw Wmw Wmw Wmw Wm"], ["full-
   const bad = out.scrollWidth > out.w + 1 || out.over.length || !flashed;          // (a copy button's label wraps once it is wider than the row: 30 wide letters ran 5 px past the popup on Linux's fonts)
   if (bad) total++;
   const said = kind.includes("clicked") ? `, pressed: "${(await popup.textContent('.actions button.btn[data-act="copy-summary"]')).trim().slice(0, 20)}"` : "";          // (what the pressed button says: "Copied", or "Not copied" where the clipboard refuses)
-  console.log(`${bad ? "✗" : "✓"} popup with every name at its longest (${kind}): width ${out.w}, scrollWidth ${out.scrollWidth}${out.over.length ? ", sticks out: " + out.over.join("; ") : ""}${flashed ? "" : ", the pressed button never said it had copied"}${said}${tookMs ? `, answered after ${tookMs} ms` : ""}`);
+  console.log(`${bad ? "✗" : "✓"} popup with every name at its longest (${kind}): width ${out.w}, scrollWidth ${out.scrollWidth}${out.over.length ? ", sticks out: " + out.over.join("; ") : ""}${flashed ? "" : ", the pressed button never said it had copied"}${said}${tookMs ? `, answered after ${tookMs} ms` : ""}${waitError ? ` (a wait ended: ${waitError})` : ""}`);
   if (kind.includes("clicked")) {          // (and the panel's: a pressed copy button stays in its row)
     await page.bringToFront();
     await page.click('#rr-panel .rr-copybar [data-act="copy-summary"]');
