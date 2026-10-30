@@ -170,6 +170,12 @@ of HotStorage, and the year written with a hyphen or jammed onto a mixed-case wo
   through native messaging: a new permission (`nativeMessaging`) and a program the user installs, which the
   permission policy asks a very good reason for. Agents that drive a browser already have the page events and the
   agent guide.
+- **Exact advice in the popup for a profile opened before an install or update.** Chrome puts no script into tabs that were open
+  before; the popup then gets no answer and cannot tell that tab from any other page, because with `storage` alone it may not read a
+  tab's address (checked 2026-10-29: `chrome.tabs.query` gives no `url`). Since 2026-10-29 it says in a general line that such a
+  profile needs a reload. `activeTab` (no install warning; granted only when the person opens the popup) would let it say so only on a
+  Scholar page, with a *Reload this page* button. An owner's decision: a new permission, and PRIVACY.md and the store listing would
+  name it.
 - **End-to-end pictures at other display scalings** (Chromium only — other engines are out of scope by the platform
   policy). The end-to-end run already takes `E2E_SCALE` for the website's pictures; nothing compares them yet.
 

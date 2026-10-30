@@ -83,7 +83,10 @@ give the details and every review):
   The panel now says so at its top, with *Reload this page* (30 languages), as soon as the tab comes back into view or Settings is
   pressed. And a cut-off panel drawn again (by a click on a filter) showed every word as its key — "summaryTitle", "roleFirst" —
   because Chrome no longer looks the words up there: the panel keeps a spare copy of its language's strings now. An end-to-end check
-  cuts the extension off under an open profile and checks both.
+  cuts the extension off under an open profile and checks both. The toolbar popup, which gets no answer from a profile opened before
+  the extension was installed or updated (Chrome puts no script into tabs that were open), now says such a profile shows nothing
+  until it is reloaded — the first thing many people meet right after installing (30 languages; telling that tab apart from any other
+  page would take a new permission, `activeTab`, left to the owner in the ROADMAP).
 - **Measured: nothing piles up with use.** On 1,000 papers, 400 rounds of searches, picks and copies: the heap stays flat once
   warmed up, the page's elements and listeners stay the same, and the browser's count of nodes too — but for two things of the
   browser's own (the text box's undo history of typed keys, and its record of layout shifts, which stops at 150). The end-to-end check

@@ -339,6 +339,9 @@
   "popupNotProfile": {
     "message": "Hãy mở hồ sơ tác giả trên Google Scholar để xem tóm tắt tại đây."
   },
+  "popupReloadHint": {
+    "message": "Hồ sơ tác giả đã mở sẵn khi tiện ích được cài đặt hoặc cập nhật sẽ không hiển thị gì ở đây cho đến khi được tải lại."
+  },
   "popupReading": {
     "message": "Đang đọc trang…"
   },

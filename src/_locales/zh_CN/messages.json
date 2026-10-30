@@ -339,6 +339,9 @@
   "popupNotProfile": {
     "message": "打开 Google Scholar 作者主页，即可在这里查看摘要。"
   },
+  "popupReloadHint": {
+    "message": "扩展安装或更新时已打开的作者主页，在重新加载之前此处不会显示任何内容。"
+  },
   "popupReading": {
     "message": "正在读取页面…"
   },

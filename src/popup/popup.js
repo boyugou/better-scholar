@@ -25,7 +25,10 @@
       h("p", { class: "empty" }, t("popupNotProfile")),
       // (Scholar's own "My profile" address: the person's profile when signed in; most people look at their own first)
       h("div", { class: "actions" }, h("a", { class: "btn primary", href: "https://scholar.google.com/citations", target: "_blank", rel: "noopener" }, t("popupMyProfile")),
-        h("a", { class: "btn", href: "https://scholar.google.com/", target: "_blank", rel: "noopener" }, t("popupOpenScholar"))));
+        h("a", { class: "btn", href: "https://scholar.google.com/", target: "_blank", rel: "noopener" }, t("popupOpenScholar"))),
+      // (a tab opened before the extension was installed or updated has no script of it: the popup cannot tell it from any other page without a permission to read
+      // the tab's address, so the advice covers both)
+      h("p", { class: "note" }, t("popupReloadHint")));
   }
 
   // The page's own tab (?tab=<id> lets the end-to-end test aim the popup at a specific tab) and a call to it: { ok: true, result } | { ok: false, error }

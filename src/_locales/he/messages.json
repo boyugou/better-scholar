@@ -339,6 +339,9 @@
   "popupNotProfile": {
     "message": "פתחו פרופיל מחבר ב-Google Scholar כדי לראות כאן את הסיכום שלו."
   },
+  "popupReloadHint": {
+    "message": "פרופיל מחבר שכבר היה פתוח כשהתוסף הותקן או עודכן לא מציג כאן דבר, עד שייטען מחדש."
+  },
   "popupReading": {
     "message": "קורא את הדף…"
   },

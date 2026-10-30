@@ -339,6 +339,9 @@
   "popupNotProfile": {
     "message": "Apri un profilo autore di Google Scholar per vederne qui il riepilogo."
   },
+  "popupReloadHint": {
+    "message": "Un profilo autore già aperto quando l’estensione è stata installata o aggiornata non mostra nulla qui finché non viene ricaricato."
+  },
   "popupReading": {
     "message": "Lettura della pagina…"
   },

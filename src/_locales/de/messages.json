@@ -339,6 +339,9 @@
   "popupNotProfile": {
     "message": "Öffne ein Google-Scholar-Autorenprofil, um hier die Übersicht zu sehen."
   },
+  "popupReloadHint": {
+    "message": "Ein Autorenprofil, das schon offen war, als die Erweiterung installiert oder aktualisiert wurde, zeigt hier nichts an, bis es neu geladen wird."
+  },
   "popupReading": {
     "message": "Seite wird gelesen…"
   },

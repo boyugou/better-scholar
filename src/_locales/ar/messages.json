@@ -339,6 +339,9 @@
   "popupNotProfile": {
     "message": "افتح ملف مؤلف على Google Scholar لترى ملخصه هنا."
   },
+  "popupReloadHint": {
+    "message": "ملف مؤلف كان مفتوحًا عند تثبيت الإضافة أو تحديثها لا يعرض شيئًا هنا حتى يُعاد تحميله."
+  },
   "popupReading": {
     "message": "جارٍ قراءة الصفحة…"
   },

@@ -339,6 +339,9 @@
   "popupNotProfile": {
     "message": "Deschide un profil de autor Google Scholar pentru a vedea aici rezumatul."
   },
+  "popupReloadHint": {
+    "message": "Un profil de autor deschis deja la instalarea sau actualizarea extensiei nu afișează nimic aici până când nu este reîncărcat."
+  },
   "popupReading": {
     "message": "Se citește pagina…"
   },

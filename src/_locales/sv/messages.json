@@ -339,6 +339,9 @@
   "popupNotProfile": {
     "message": "Öppna en författarprofil på Google Scholar för att se sammanfattningen här."
   },
+  "popupReloadHint": {
+    "message": "En författarprofil som redan var öppen när tillägget installerades eller uppdaterades visar ingenting här förrän den har lästs in igen."
+  },
   "popupReading": {
     "message": "Läser sidan…"
   },

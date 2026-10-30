@@ -1196,6 +1196,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     await popup.goto(`chrome-extension://${extId}/popup/popup.html`);
     await popup.waitForSelector("#main");
     assert.match(await popup.textContent("#main"), /Open a Google Scholar author profile/);
+    assert.match(await popup.textContent("#main"), /already open when the extension was installed or updated shows nothing here until it is reloaded/, "a profile opened before the extension needs a reload: said");
     const tabId = await popup.evaluate(async () => {
       for (const t of await chrome.tabs.query({})) { try { const r = await chrome.tabs.sendMessage(t.id, { type: "rr:call", method: "summary" }); if (r && r.ok) return t.id; } catch (e) { /* not a profile */ } }
       return null;
@@ -3442,8 +3443,10 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     assert.equal(await page.locator('#rr-panel [data-rr="updated"]').count(), 0);
     const optsU = await ctxU.newPage();
     await optsU.goto(optionsUrl);
+    const worker = ctxU.serviceWorkers()[0] || await ctxU.waitForEvent("serviceworker");
+    const gone = new Promise((resolve) => worker.once("close", resolve));
     await optsU.evaluate(() => { setTimeout(() => chrome.runtime.reload(), 50); });          // (as an update does: the open page keeps the old script, cut off)
-    await page.waitForTimeout(1500);
+    await Promise.race([gone, new Promise((resolve, reject) => setTimeout(() => reject(new Error("the extension did not stop")), 15000))]);
     await page.bringToFront();
     await page.click('#rr-panel [data-act="settings"]');
     const bar = page.locator('#rr-panel [data-rr="updated"]');

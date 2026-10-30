@@ -339,6 +339,9 @@
   "popupNotProfile": {
     "message": "Özetini burada görmek için bir Google Scholar yazar profili açın."
   },
+  "popupReloadHint": {
+    "message": "Eklenti kurulduğunda veya güncellendiğinde zaten açık olan yazar profili, yeniden yüklenene kadar burada hiçbir şey göstermez."
+  },
   "popupReading": {
     "message": "Sayfa okunuyor…"
   },
