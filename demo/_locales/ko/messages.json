@@ -339,6 +339,9 @@
   "popupNotProfile": {
     "message": "Google Scholar 저자 프로필을 열면 여기에 요약이 표시됩니다."
   },
+  "popupReloadHint": {
+    "message": "확장 프로그램을 설치하거나 업데이트할 때 이미 열려 있던 저자 프로필은 새로 고침하기 전까지 여기에 아무것도 표시되지 않습니다."
+  },
   "popupReading": {
     "message": "페이지를 읽는 중…"
   },

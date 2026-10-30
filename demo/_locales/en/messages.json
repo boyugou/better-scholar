@@ -339,6 +339,9 @@
   "popupNotProfile": {
     "message": "Open a Google Scholar author profile to see its summary here."
   },
+  "popupReloadHint": {
+    "message": "A profile that was already open when the extension was installed or updated shows nothing here until it is reloaded."
+  },
   "popupReading": {
     "message": "Reading the page…"
   },

@@ -339,6 +339,9 @@
   "popupNotProfile": {
     "message": "Open een Google Scholar-auteursprofiel om hier het overzicht te zien."
   },
+  "popupReloadHint": {
+    "message": "Een auteursprofiel dat al open was toen de extensie werd geïnstalleerd of bijgewerkt, toont hier niets totdat het opnieuw is geladen."
+  },
   "popupReading": {
     "message": "Pagina lezen…"
   },

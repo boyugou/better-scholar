@@ -339,6 +339,9 @@
   "popupNotProfile": {
     "message": "Nyiss meg egy Google Scholar szerzői profilt, hogy itt lásd az összesítését."
   },
+  "popupReloadHint": {
+    "message": "Szerzői profil, amely már nyitva volt a bővítmény telepítésekor vagy frissítésekor, addig nem jelenít meg itt semmit, amíg újra nem töltik be."
+  },
   "popupReading": {
     "message": "Az oldal olvasása…"
   },

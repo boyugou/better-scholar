@@ -339,6 +339,9 @@
   "popupNotProfile": {
     "message": "Otevřete profil autora v Google Scholar a uvidíte tu jeho přehled."
   },
+  "popupReloadHint": {
+    "message": "Profil autora, který byl otevřený již při instalaci nebo aktualizaci rozšíření, se zde nezobrazí, dokud se znovu nenačte."
+  },
   "popupReading": {
     "message": "Čtení stránky…"
   },

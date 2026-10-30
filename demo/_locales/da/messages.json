@@ -339,6 +339,9 @@
   "popupNotProfile": {
     "message": "Åbn en forfatterprofil på Google Scholar for at se oversigten her."
   },
+  "popupReloadHint": {
+    "message": "En forfatterprofil, der allerede var åben, da udvidelsen blev installeret eller opdateret, viser ikke noget her, før den er genindlæst."
+  },
   "popupReading": {
     "message": "Læser siden…"
   },

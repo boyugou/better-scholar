@@ -339,6 +339,9 @@
   "popupNotProfile": {
     "message": "Buka profil penulis Google Scholar untuk melihat ringkasannya di sini."
   },
+  "popupReloadHint": {
+    "message": "Profil penulis yang sudah terbuka saat ekstensi dipasang atau diperbarui tidak menampilkan apa pun di sini sampai dimuat ulang."
+  },
   "popupReading": {
     "message": "Membaca halaman…"
   },

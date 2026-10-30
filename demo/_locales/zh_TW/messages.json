@@ -339,6 +339,9 @@
   "popupNotProfile": {
     "message": "開啟 Google 學術搜尋的作者頁面，即可在此查看摘要。"
   },
+  "popupReloadHint": {
+    "message": "擴充功能安裝或更新時已開啟的作者頁面，在重新載入之前此處不會顯示任何內容。"
+  },
   "popupReading": {
     "message": "正在讀取頁面…"
   },

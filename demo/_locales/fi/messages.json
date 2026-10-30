@@ -339,6 +339,9 @@
   "popupNotProfile": {
     "message": "Avaa Google Scholarin kirjoittajaprofiili nähdäksesi sen yhteenvedon tässä."
   },
+  "popupReloadHint": {
+    "message": "Kirjoittajaprofiili, joka oli jo auki laajennuksen asennuksen tai päivityksen aikaan, ei näytä tässä mitään ennen kuin se ladataan uudelleen."
+  },
   "popupReading": {
     "message": "Luetaan sivua…"
   },

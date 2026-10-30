@@ -339,6 +339,9 @@
   "popupNotProfile": {
     "message": "Google Scholar の著者プロフィールを開くと、ここに集計が表示されます。"
   },
+  "popupReloadHint": {
+    "message": "拡張機能のインストールや更新の時点で既に開いていたプロフィールは、再読み込みするまでここに何も表示されません。"
+  },
   "popupReading": {
     "message": "ページを読み取り中…"
   },
