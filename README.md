@@ -233,7 +233,7 @@ Press `/` on a profile to jump to the search box. (The panel and its filters mus
 | `-` `NOT` | `-crispr`, `NOT crispr`, `-role:first` | Papers without the word, or that the operator does not match. |
 | `OR` | `cas9 OR cas12a` | Either term. Write `OR` in capitals. |
 
-- **A comma means "or".** `role:first,last` is first or last author. `ccf:a,b` is a CCF A or B venue (`ccf:a, b` with a space is the same). Separate words must all match. Two quick buttons of the same operator join into one word: *First author* and *Last author* give `role:first,last`.
+- **A comma means "or".** `role:first,last` is first or last author. `ccf:a,b` is a CCF A or B venue (`ccf:a, b` with a space is the same, and so is `、` or `،` in place of the comma). Separate words must all match. Two quick buttons of the same operator join into one word: *First author* and *Last author* give `role:first,last`.
 - **Errors.** An operator with a value that it does not take (`ccf:x`) matches nothing. The box is then marked, and its tooltip says why. A word with a colon after no operator (`http://…`) is an ordinary word.
 - **Suggestions.** Type an operator's colon (`role:`) to see its values. `↓`, or a click on the `/` hint, shows common searches. `↑` and `↓` choose; `Enter` or `Tab` takes the choice. Without a list, `Enter` jumps to the next matching row and `Shift`+`Enter` to the previous one.
 - `Escape` closes the list, and then clears the box. On the page, `Escape` clears every filter.

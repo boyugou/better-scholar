@@ -339,6 +339,7 @@ test("a review of the search, 2026-10-29: words at the start of a word (short on
   assert.deepEqual(query.parse("ｒｏｌｅ:first，last").terms, [{ kind: "role", values: ["first", "last"] }]);
   // a listed operator's values go on past a space after the comma or the colon
   assert.deepEqual(query.parse("ccf:a, b").terms, [{ kind: "ccf", values: ["a", "b"] }]);
+  assert.deepEqual(query.parse("role:first、last ccf:a،b").terms, [{ kind: "role", values: ["first", "last"] }, { kind: "ccf", values: ["a", "b"] }], "the ideographic and Arabic commas list values too");
   assert.deepEqual(query.parse("role: first, last deep").terms, [{ kind: "role", values: ["first", "last"] }, { kind: "text", text: "deep" }]);
   // a phrase, NOT, OR, and a field
   const crispr = row({ title: "A programmable dual-RNA-guided DNA endonuclease in adaptive bacterial immunity", authorsText: "M Jinek, K Chylinski, JA Doudna", venueText: "Science 337 (6096), 816-821, 2012" });

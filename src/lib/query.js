@@ -69,7 +69,7 @@
     while ((m = re.exec(q))) out.push(m[3] !== undefined ? { word: m[3] } : { word: m[1] + m[2].trim().replace(/\s+/g, " "), phrase: true });
     for (let i = 0; i < out.length - 1; i++) {
       const w = out[i].word, at = w.indexOf(":"), op = at > 0 && !out[i].phrase ? BY_NAME.get(fold(w.slice(w[0] === "-" ? 1 : 0, at))) : undefined;
-      if (op && LISTED.has(op.name) && /[:,]$/.test(w) && !out[i + 1].phrase && !out[i + 1].word.includes(":")) { out[i].word = w + out[i + 1].word; out.splice(i + 1, 1); i--; }
+      if (op && LISTED.has(op.name) && /[:,、،]$/.test(w) && !out[i + 1].phrase && !out[i + 1].word.includes(":")) { out[i].word = w + out[i + 1].word; out.splice(i + 1, 1); i--; }
     }
     return out;
   }
@@ -93,8 +93,8 @@
       if (!op) { put({ kind: "text", text: word }); continue; }
       const raw = word.slice(at + 1), bad = () => { not = false; put({ kind: "never" }); errors.push(`${word} — ${op.doc.replace(/\.$/, "")}`); problems.push({ word, name: op.name }); };
       if (op.field) { if (raw) put({ kind: "text", text: raw, field: op.name }); else not = false; continue; }
-      if (LISTED.has(op.name)) {                                              // (a comma lists values: "role:first,last"; one still typing, "role:first,", has the one it has)
-        const values = [...new Set(raw.split(",").filter(Boolean))];
+      if (LISTED.has(op.name)) {                                              // (a comma lists values: "role:first,last"; one still typing, "role:first,", has the one it has; the ideographic and Arabic commas too)
+        const values = [...new Set(raw.split(/[,、،]/).filter(Boolean))];
         if (!values.length || values.some((v) => !op.value.test(v))) bad(); else put({ kind: op.name, values });
         continue;
       }
