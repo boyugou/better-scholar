@@ -24,6 +24,12 @@
 //   uncut         names that are only read whole, with their organisation, in a string that Scholar did not cut off: where the cut ends the same words
 //                 begin another venue's name (HiPC's old "IEEE International Conference on High Performance Computing" — its cut is as much HPCC's "… and Communications")
 //   volume        names of a journal that are also a field ("Computational Geometry"): they count for a line that has a volume, a journal's — "Computational geometry, 307-317, 2000" is a chapter of a book
+//   trackVolume   the venue's proceedings come in two volumes and the second holds posters, panels, workshops or demos ("V. 2", "Vol. 2", "Volume 2", "Volume B"): a line that names
+//                 that volume gets no rank (checked against ACM's own records, 2026-10-29: SIGCSE TS 2022–25, ITiCSE 2023, ICER 2022–26 — one- or two-page items —, SPLC 2011–25 — workshops,
+//                 demos, tutorials)
+//   edition       [a year, the edition held that year, every how many years (1 if left out)]: the venue's numbering, checked against the venue's own lines in the corpora; a line whose
+//                 edition number is more than two from it, for the line's year, is another venue's ("2015 18th International Conference on Computer and Information Technology" is
+//                 Bangladesh's ICCIT, IEEE's CIT held its 15th). Only for venues whose names other events share
 //   shadow        (an entry of its own, no ccf / core) acronyms of unranked events whose names boil down to the words of a ranked venue's: a string that names one of them
 //                 by its acronym — "International Conference on Computer and Communications (ICCC)" is not INFOCOM, "International Congress on Image and Signal
 //                 Processing (CISP)" not ICISP, "IEEE Region 10 Symposium (TENSYMP)" not TENCON — gets no badge from either list. An entry may be { acronym, with }:
@@ -365,6 +371,30 @@
     { core: "VLSI-SOC", names: ["IFIP International Conference on Very Large Scale Integration", "IEEE/IFIP International Conference on VLSI and System-on-Chip", "IFIP International Conference on VLSI and System-on-Chip"] },
     { core: "HPC Asia", names: ["International Conference on High Performance Computing in Asia-Pacific Region", "International Conference on High Performance Computing in the Asia-Pacific Region"] },
     { core: "VizSec", names: ["IEEE Symposium on Visualization for Cyber Security"] },
+    // (the numbering of venues whose names, or the start of them, other events share — see `edition` above; each checked against the venue's lines that carry its acronym)
+    { ccf: "ICSE", core: "ICSE", edition: [2017, 39] },
+    { ccf: "ICPR", core: "ICPR", edition: [2016, 23, 2] },
+    { ccf: "COLING", core: "COLING", edition: [2018, 27, 2] },
+    { ccf: "ICCCN", core: "ICCCN", edition: [2007, 16] },
+    { ccf: "MASCOTS", core: "MASCOTS", edition: [2003, 11] },
+    { ccf: "SIGIR", core: "SIGIR", edition: [2019, 42] },
+    { ccf: "INFOCOM", core: "INFOCOM", edition: [2012, 31] },
+    { ccf: "DSN", core: "DSN", edition: [2011, 41] },
+    { ccf: "SIGGRAPH", core: "SIGGRAPH", edition: [2008, 35] },
+    { ccf: "ICICS", core: "ICICS", edition: [2022, 24] },
+    { ccf: "PERCOM", core: "PERCOM", edition: [2016, 14] },
+    { core: "FedCSIS", edition: [2024, 19] },
+    { core: "ICMLA", edition: [2018, 17] },
+    { core: "CIT", edition: [2015, 15] },
+    { core: "BPM", edition: [2020, 18] },
+    { core: "IEA/AIE", edition: [2018, 31] },
+    { core: "TrustBus", edition: [2023, 20] },
+    { core: "PEMWN", edition: [2022, 11] },
+    // (second volumes of posters, panels, workshops and demos — see `trackVolume` above)
+    { core: "SIGCSE", trackVolume: true },
+    { core: "ITiCSE", trackVolume: true },
+    { core: "ICER", trackVolume: true },
+    { core: "SPLC", trackVolume: true },
     // (ACM titles PPDP's proceedings "… ACM SIGPLAN conference on Principles and practice of declarative programming", a sponsor CORE's name leaves out: without it a cut
     // "… ACM SIGPLAN conference on Principles and practice of …" — PPDP's — saw only CCF's PPoPP, the one venue of either list that names ACM SIGPLAN)
     { core: "PPDP", names: ["ACM SIGPLAN Conference on Principles and Practice of Declarative Programming", "ACM SIGPLAN International Symposium on Principles and Practice of Declarative Programming"] },

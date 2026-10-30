@@ -22,11 +22,16 @@
   // ---------------------------------------------------------------- text utils
 
   const SPECIAL = { "ł": "l", "ø": "o", "đ": "d", "ß": "ss", "æ": "ae", "œ": "oe" };
+  const foldSeen = new Map();          // (the same names and lines are folded again and again: each answer is kept)
   function fold(s) {
-    return String(s == null ? "" : s)
-      .normalize("NFKD")
-      .replace(/[̀-ͯ]/g, "")
-      .replace(/[łøđßæœ]/gi, (c) => SPECIAL[c.toLowerCase()]);
+    const str = String(s == null ? "" : s);
+    let r = foldSeen.get(str);
+    if (r === undefined) {
+      r = /[^\x00-\x7f]/.test(str) ? str.normalize("NFKD").replace(/[̀-ͯ]/g, "").replace(/[łøđßæœ]/gi, (c) => SPECIAL[c.toLowerCase()]) : str;          // (plain ASCII has nothing to fold)
+      if (foldSeen.size > 20000) foldSeen.clear();
+      foldSeen.set(str, r);
+    }
+    return r;
   }
 
   const STOP = new Set(["the", "of", "on", "in", "for", "and", "a", "an", "at", "to", "with", "by"]);
@@ -58,9 +63,17 @@
   const us = (t) => US[t] || t.replace(/isation(s?)$/, "ization$1");
   const TYPE_WORDS = ["symposium", "conference", "workshop", "meeting"];
 
-  const isNoiseToken = (t) =>
-    /^\d+$/.test(t) || /^\d+(st|nd|rd|th)$/.test(t) || ORDINAL_WORDS.has(t) || (t.length === 1 && t !== "a") ||
-    /^(?:twenty|thirty|forty|fifty|sixty)(?:first|second|third|fourth|fifth|sixth|seventh|eighth|ninth)$/.test(t);          // ("TwentySecond": the IJCAI Organization's proceedings write the hyphen out)
+  const noiseSeen = new Map();          // (a word's answer, kept: the same few thousand words are asked about again and again)
+  const isNoiseToken = (t) => {
+    let v = noiseSeen.get(t);
+    if (v === undefined) {
+      v = /^\d+$/.test(t) || /^\d+(st|nd|rd|th)$/.test(t) || ORDINAL_WORDS.has(t) || (t.length === 1 && t !== "a") ||
+        /^(?:twenty|thirty|forty|fifty|sixty)(?:first|second|third|fourth|fifth|sixth|seventh|eighth|ninth)$/.test(t);          // ("TwentySecond": the IJCAI Organization's proceedings write the hyphen out)
+      if (noiseSeen.size > 50000) noiseSeen.clear();
+      noiseSeen.set(t, v);
+    }
+    return v;
+  };
   // Authors often drop the "h" of an ordinal: "The Thirty-eight Conference on Neural Information Processing
   // Systems" (NeurIPS 2024 was the thirty-eighth). After a tens word, "eight" / "nine" / "nineth" is that ordinal.
   const TENS = new Set(["twenty", "thirty", "forty", "fifty", "sixty"]);
@@ -84,18 +97,25 @@
   //   "noOrg" — drops them,
   //   "noAcr" — also drops all-caps tokens listed in `known` (acronyms of real venues,
   //             the "2020 CHI Conference on Human Factors…" case).
+  // The lower-case words of a text, before any mode's filter: what canonTokens and canonTokensKeepStops share. Kept per text — the same names and lines are read in
+  // several modes, and the index of some 3,000 names is built on every profile page. (Never handed out as such: each caller gets a filtered copy.)
+  const baseSeen = new Map();
+  function baseTokens(s) {
+    let t = baseSeen.get(s);
+    if (!t) {
+      t = dropOrdinalTypos(fold(s).replace(/&/g, " and ").toLowerCase().replace(/[^a-z0-9]+/g, " ").split(" ").filter(Boolean)).map((w) => ISO[w] || w);
+      if (baseSeen.size > 20000) baseSeen.clear();
+      baseSeen.set(s, t);
+    }
+    return t;
+  }
   function canonTokens(s, mode, known) {
-    let r = fold(s).replace(/&/g, " and ");
+    let base;
     if (mode === "noAcr" && known) {
       // (an acronym with its year jammed on — "TCC2020 International Colloquium on Automata, Languages, and Programming" — is the acronym as well)
-      r = r.replace(/\b[A-Z][A-Z0-9]{1,9}\b/g, (m) => (known.has(m.toLowerCase()) || known.has(m.toLowerCase().replace(/(?:19|20)\d{2}$|\d{2}$/, "")) ? " " : m));
-    }
-    const out = dropOrdinalTypos(r.toLowerCase()
-      .replace(/[^a-z0-9]+/g, " ")
-      .split(" ")
-      .filter(Boolean))
-      .map((t) => ISO[t] || t)
-      .filter((t) => !STOP.has(t) && !BOILER.has(t) && !isNoiseToken(t) && !(mode !== "full" && ORG.has(t)));
+      base = baseTokens(fold(s).replace(/&/g, " and ").replace(/\b[A-Z][A-Z0-9]{1,9}\b/g, (m) => (known.has(m.toLowerCase()) || known.has(m.toLowerCase().replace(/(?:19|20)\d{2}$|\d{2}$/, "")) ? " " : m)));
+    } else base = baseTokens(s);
+    const out = base.filter((t) => !STOP.has(t) && !BOILER.has(t) && !isNoiseToken(t) && !(mode !== "full" && ORG.has(t)));
     // an organisation named twice is named once ("2015 IEEE/ACM 37th IEEE International Conference on Software Engineering")
     return mode === "full" ? out.filter((t, i) => !ORG.has(t) || out.indexOf(t) === i) : out;
   }
@@ -103,9 +123,7 @@
   // Like canonTokens but keeps connectives ("in", "and", "of"): used where the exact
   // connective after a truncated prefix matters ("Information processing in …").
   function canonTokensKeepStops(s, mode) {
-    return dropOrdinalTypos(fold(s).replace(/&/g, " and ").toLowerCase()
-      .replace(/[^a-z0-9]+/g, " ").split(" ").filter(Boolean)).map((t) => ISO[t] || t)
-      .filter((t) => !BOILER.has(t) && !isNoiseToken(t) && !(mode !== "full" && ORG.has(t)));
+    return baseTokens(s).filter((t) => !BOILER.has(t) && !isNoiseToken(t) && !(mode !== "full" && ORG.has(t)));
   }
 
   // The words of a name in their order with everything that varies from edition to edition taken out (proceedings, the,
@@ -292,6 +310,8 @@
     const known = new Set();                           // every abbreviation key, for noAcr
     // the name keys each venue has from its names that do not say "Joint" (a string that does not say it reaches a venue whose names do only through these)
     const jointFreeKeys = new Map();
+    // each anchored venue's numbering (aliases.js `edition`): list|acronym → [a year, the edition held that year, every how many years]
+    const editions = new Map();
     const jointFree = (e) => jointFreeKeys.get(e) || new Set();
 
     function newSide() {
@@ -317,10 +337,6 @@
           if (a) { push(side.abbrs, a, entry); known.add(a); }
         }
         const plain = n.replace(/\([^()]*\)/g, " ");
-        if (!/\bjoint\b/i.test(plain)) {
-          if (!jointFreeKeys.has(entry)) jointFreeKeys.set(entry, new Set());
-          for (const t of [canonTokens(plain, "full"), canonTokens(plain, "noOrg")]) if (t.length) { jointFreeKeys.get(entry).add(t.join(" ")); jointFreeKeys.get(entry).add(t.map(us).join(" ")); }
-        }
         // token forms are computed once here, not on every lookup
         const form = {
           full: canonTokens(plain, "full"), noOrg: canonTokens(plain, "noOrg"),
@@ -331,6 +347,10 @@
           needsJoint: /\bjoint\b/i.test(plain),
           noPrefix: !!noPrefix          // a curated name for whole strings only: the start of a cut-off string is never read as it
         };
+        if (!form.needsJoint) {
+          if (!jointFreeKeys.has(entry)) jointFreeKeys.set(entry, new Set());
+          for (const t of [form.full, form.noOrg]) if (t.length) { jointFreeKeys.get(entry).add(t.join(" ")); jointFreeKeys.get(entry).add(t.map(us).join(" ")); }
+        }
         if (volumeOnly) {          // (a title that is also a field: it counts for a line with a volume, a journal's — never as a start, never bare)
           push(side.volumeNames, form.full.join(" "), entry);
           continue;
@@ -345,7 +365,7 @@
         }
         if (form.full.length && form.full.length === contentWords(plain).length) { push(side.bare, form.full.join(" "), entry); push(side.bare, form.full.map(us).join(" "), entry); }
         // order-insensitive key for journals ("…, IEEE Transactions on")
-        const bag = canonTokens(plain, "noOrg");
+        const bag = form.noOrg;
         if (kind === "J" && bag.length >= 3) push(side.bags, uniq(bag).sort().join(" "), entry);
       }
       for (const a of abbrs) { const k = squash(a); push(side.abbrs, k, entry); if (k.length >= 2) known.add(k); }
@@ -384,7 +404,9 @@
           if (a.fullOnly) { entry.extra.push(...a.fullOnly); register(src, kind, entry, a.fullOnly, [], true, false, true); }
           if (a.volume) { entry.extra.push(...a.volume); register(src, kind, entry, a.volume, [], true, false, false, true); }
           if (a.uncut) { entry.extra.push(...a.uncut); register(src, kind, entry, a.uncut, [], true, false, false, false, true); }
-          if (a.renamed) entry.renamed = true;          // (the list's name is a name it had: its "Workshop" says nothing about the venue of today)
+          if (a.renamed) entry.renamed = true;
+          if (a.trackVolume) entry.trackVolume = true;          // (its second volume holds posters, panels, workshops or demos: see resolveUncached)
+          if (a.edition) editions.set(src + "|" + squash(entry.abbr || entry.name), a.edition);          // (the list's name is a name it had: its "Workshop" says nothing about the venue of today)
           if (a.former) { entry.former = (entry.former || []).concat(a.former); register(src, kind, entry, a.former, [], true); }          // (found by name; not part of its wording — `extra` — so "Workshop" in them is no type clash)
           if (a.noBareAcronym) {            // the acronym says nothing without the name: ACM's SAC is not Selected Areas in Cryptography
             const side = sources[src][kind], k = squash(entry.abbr), list = side.abbrs.get(k);
@@ -430,7 +452,7 @@
     const pairs = new Set();
     for (const a of aliases) if (a.ccf && a.core) pairs.add(squash(a.ccf) + "|" + squash(a.core));
     const sameVenue = (ccfAbbr, coreAbbr) => pairs.has(squash(ccfAbbr) + "|" + squash(coreAbbr));
-    return { sources, known, df, sameVenue, shadow, shadowNames, partners, jointFree };
+    return { sources, known, df, sameVenue, shadow, shadowNames, partners, jointFree, editions };
   }
 
   // ---------------------------------------------------------------- matching
@@ -1317,6 +1339,9 @@
       }
       out.kind = hint;
       const secs = secondaryWords(raw);
+      // (a venue whose proceedings come in two volumes, the second of posters, panels, workshops or demos — SIGCSE TS's and ITiCSE's "V. 2", ICER's "Volume 2", SPLC's "Volume 2"
+      // and "Volume B" (aliases.js `trackVolume`) — has its rank for the first only)
+      const secondVolume = (/\b(?:V|Vol|Volume)\.?\s*(?:2|B|II)\b/i.exec(raw) || [])[0];
       const matched = {}, tied = {}, clashed = {}, weak = {};
       const saysAcronymOf = (e) => [...acronymSignals(p), ...embeddedSignals(p)].some((x) => x.key === squash(e.abbr || "") || stripDigits(x.key) === squash(e.abbr || ""));
       const realEntry = (e) => (Object.getPrototypeOf(e) === Object.prototype ? e : Object.getPrototypeOf(e));          // (the prefix rule hands out a view of the row: `through`)
@@ -1346,7 +1371,7 @@
           const again = resolveUncached(raw.replace(/\s*\(?\s*journal[- ](?:tracks?|first)\s*\)?/gi, " "), true)[src];
           return !!(again && again.kind === "J" && again.name === r.entry.name);
         })();
-        const blocking = secs.find((w) => !ownWord(r.entry, w, raw) && !(sameJournal && journalTrack(w)));
+        const blocking = secondVolume && realEntry(r.entry).trackVolume ? secondVolume : secs.find((w) => !ownWord(r.entry, w, raw) && !(sameJournal && journalTrack(w)));
         if (blocking) blocked.push({ src, r, blocking });
         else take(src, r);
       }
@@ -1355,7 +1380,7 @@
       const wholeName = (e, w) => ownWord(e, w, raw, true);
       for (const b of blocked) {
         const other = b.src === "ccf" ? "core" : "ccf";
-        if (matched[other] && (idx.partners.get(realEntry(matched[other])) || []).includes(realEntry(b.r.entry)) && secs.every((w) => ownWord(b.r.entry, w, raw) || wholeName(matched[other], w))) take(b.src, b.r);
+        if (b.blocking !== secondVolume && matched[other] && (idx.partners.get(realEntry(matched[other])) || []).includes(realEntry(b.r.entry)) && secs.every((w) => ownWord(b.r.entry, w, raw) || wholeName(matched[other], w))) take(b.src, b.r);
         else { out.secondary = b.blocking; out.refused = true; }
       }
       // The lists read the string by name as two different venues, one from the whole name as it is spelled, the other only once its organisation or an acronym was left out, or against
@@ -1388,6 +1413,14 @@
         // ("International Conference on Computer Animation …" is no symposium on it): then the two readings disagree and neither is more than a guess
         else if (out.ccf.rule === "prefix" && out.core.rule === "name") { if (clashed.core) { out.ccf = null; out.core = null; } else out.ccf = null; }
         else if (out.core.rule === "prefix" && out.ccf.rule === "name") { if (clashed.ccf) { out.ccf = null; out.core = null; } else out.core = null; }
+      }
+      // An edition the venue cannot have held that year is another venue's (aliases.js `edition`, a venue's numbering checked against its own lines): "2015 18th International
+      // Conference on Computer and Information Technology" is Bangladesh's ICCIT, IEEE's CIT held its 15th; "… 5th International Conference on Pattern Recognition …, 2016" is not
+      // ICPR, which held its 23rd. Two editions either way are allowed: the year may be the publication's, a numbering may skip
+      const nth = ordinalIn(raw), year = +((/\b(?:19[5-9]\d|20[0-3]\d)\b/.exec(raw) || [])[0] || 0);
+      if (nth && year) for (const src of ["ccf", "core"]) {
+        const ed = out[src] && idx.editions.get(src + "|" + squash(out[src].abbr || out[src].name));
+        if (ed && Math.abs(nth - (ed[1] + (year - ed[0]) / (ed[2] || 1))) > 2) out[src] = null;
       }
       // the person's own mapping of a line no rule ranks: that row, and the other list's row of the same venue; marked as theirs (rule "mine") wherever a rank goes
       // (`assignable`: a line the person may tie to a listed venue — no list ranks it, it is no track, not refused and not cut off, and it has a name; a cut line's visible start would take every line that starts the same)
