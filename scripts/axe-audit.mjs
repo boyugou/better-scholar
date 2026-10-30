@@ -123,9 +123,10 @@ for (const [kind, text] of [["words", "Wmw Wmw Wmw Wmw Wmw Wmw Wmw Wm"], ["full-
   await popup.goto(`chrome-extension://${id}/popup/popup.html?tab=${profileTab}`); await popup.waitForSelector(".who"); await popup.waitForTimeout(300);
   let flashed = true;
   if (kind.includes("clicked")) {          // (a pressed button keeps its label's width while it says "Copied", 1.2 s — at most the row's; measured once it has said so)
-    await popup.bringToFront();          // (a page in the back gets no animation frames: the wait polls on a timer, and the page is in front anyway)
+    await popup.bringToFront();          // (a page in the back gets no animation frames: the wait polls on a timer, and the page is in front anyway; on a CI machine the copy — a call to
+                                          // the page and back — has taken three seconds before the button said so)
     await popup.click('.actions button.btn[data-act="copy-summary"]');
-    flashed = await popup.waitForFunction(() => !!document.querySelector('.actions button.btn[data-act="copy-summary"]').style.minWidth, null, { timeout: 3000, polling: 50 }).then(() => true, () => false);
+    flashed = await popup.waitForFunction(() => !!document.querySelector('.actions button.btn[data-act="copy-summary"]').style.minWidth, null, { timeout: 8000, polling: 50 }).then(() => true, () => false);
   }
   const out = await popup.evaluate(() => {          // (the popup is as wide as its body, 340 px; its content keeps 16 px from each side: what is not a full-width bar must end before that margin)
     const w = Math.round(document.body.getBoundingClientRect().width);
@@ -139,7 +140,7 @@ for (const [kind, text] of [["words", "Wmw Wmw Wmw Wmw Wmw Wmw Wmw Wm"], ["full-
   if (kind.includes("clicked")) {          // (and the panel's: a pressed copy button stays in its row)
     await page.bringToFront();
     await page.click('#rr-panel .rr-copybar [data-act="copy-summary"]');
-    const panelFlashed = await page.waitForFunction(() => /min-width/.test(document.querySelector('#rr-panel .rr-copybar [data-act="copy-summary"]').getAttribute("style") || ""), null, { timeout: 3000, polling: 50 }).then(() => true, () => false);
+    const panelFlashed = await page.waitForFunction(() => /min-width/.test(document.querySelector('#rr-panel .rr-copybar [data-act="copy-summary"]').getAttribute("style") || ""), null, { timeout: 8000, polling: 50 }).then(() => true, () => false);
     const outside = await page.evaluate(() => { const bar = document.querySelector("#rr-panel .rr-copybar").getBoundingClientRect(); return [...document.querySelectorAll("#rr-panel .rr-copybar .rr-btn")].map((b) => b.getBoundingClientRect()).filter((r) => r.right > bar.right + 1 || r.left < bar.left - 1).map((r) => Math.round(r.width)); });
     if (outside.length || !panelFlashed) total++;
     const panelSaid = (await page.textContent('#rr-panel .rr-copybar [data-act="copy-summary"]')).trim().slice(0, 20);
