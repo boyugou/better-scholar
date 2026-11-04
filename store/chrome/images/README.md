@@ -21,7 +21,7 @@ The panel up close, in the two-column layout it takes in a narrower window: the 
 
 **Filter by role, rank and citations.** Type role:first ccf:a cites:>100 and the list, the table and the citation totals follow.
 
-The panel's search box with the query `role:first ccf:a cites:>100` typed in: the paper list keeps the five first-author CCF A papers with more than 100 citations, the filter bar at the top of the panel says "Showing 5 of 12 papers" and offers Clear, the matching quick-filter pills light up, and the citation totals count only those papers.
+The panel's search box with the query `role:first ccf:a cites:>100` typed in: the paper list keeps the five first-author CCF A papers with more than 100 citations, the filter bar at the top of the panel names the query, says "5 / 12" and offers Clear, the matching quick-filter pills light up, and the citation totals count only those papers.
 
 ## screenshot-4.jpg (1280×800)
 
