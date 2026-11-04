@@ -893,6 +893,66 @@
     }
   }
 
+  // An order whose items are switches of the same card (the copy buttons, the quick filters) is drawn as those switches themselves, each with the arrows that
+  // move it: one row per item — arrows, name, name field, switch — in the order the panel draws them (an order list, then the same items again as switches, listed
+  // each one twice). The panel's parts keep their plain order list: their switches are on cards of their own.
+  function mergedOrders(rows) {
+    const lists = new Map(), consumed = new Set();
+    for (const row of rows) {
+      if (row.kind !== "order") continue;
+      const base = row.path.replace(/\.order$/, ""), parts = new Map();
+      for (const id of row.values) {
+        const i = rows.findIndex((r) => r.kind === "bool" && r.path === base + "." + id);
+        if (i < 0) { parts.clear(); break; }
+        const sw = rows[i], name = rows[i + 1] && rows[i + 1].kind === "text" && rows[i + 1].inline ? rows[i + 1] : null;
+        parts.set(id, { sw, name, under: rows.filter((r) => r.parent === sw.path) });          // (under it: the words of your own quick filter)
+      }
+      if (!parts.size) continue;
+      for (const { sw, name, under } of parts.values()) for (const r of [sw, name, ...under]) if (r) consumed.add(r);
+      lists.set(row, orderedRows(row, rows, parts));
+    }
+    return { lists, consumed };
+  }
+  function orderedRows(row, rows, parts) {
+    const d = described(t(row.label), row.hint ? t(row.hint) : "");
+    const list = h("ol", { class: "order-rows", "data-pref": row.path, ...d.ids });
+    const items = new Map();
+    let focus = null;                                                      // (the arrow that was pressed: its row moves, and the keyboard stays on it)
+    const move = (id, by) => {
+      const order = at(row.path).slice(), i = order.indexOf(id), j = i + by;
+      if (j < 0 || j >= order.length) return;
+      [order[i], order[j]] = [order[j], order[i]];
+      focus = { id, act: by < 0 ? "move-up" : "move-down" };
+      put(row.path, order);
+      save();
+    };
+    for (const [id, { sw, name, under }] of parts) {
+      const up = h("button", { type: "button", class: "order-btn", "data-act": "move-up", title: t("optMoveUp"), onClick: () => move(id, -1) }, "▲");
+      const down = h("button", { type: "button", class: "order-btn", "data-act": "move-down", title: t("optMoveDown"), onClick: () => move(id, 1) }, "▼");
+      const body = h("div", { class: "order-body" }, ...[control(sw, rows, name), ...under.map((r) => control(r, rows, null))].filter(Boolean));
+      items.set(id, { li: h("li", { class: "order-row", "data-id": id }, h("span", { class: "order-arrows" }, up, down), body), up, down });
+    }
+    const head = h("div", { class: "opt opt-order-head" }, h("span", { class: "txt" }, d.name, d.hint));
+    const sync = () => {
+      const order = at(row.path).filter((id) => items.has(id)), dead = inert(row);
+      head.classList.toggle("disabled", dead);
+      if ([...list.children].map((li) => li.dataset.id).join() !== order.join()) {
+        const had = list.contains(document.activeElement) ? document.activeElement : null;          // (a row that moves loses the focus: it is given back)
+        list.append(...order.map((id) => items.get(id).li));
+        if (had && !focus && document.activeElement !== had) had.focus({ preventScroll: true });
+      }
+      order.forEach((id, i) => {
+        const it = items.get(id), n = itemName(row.path, id);
+        it.up.disabled = dead || i === 0; it.down.disabled = dead || i === order.length - 1;
+        it.up.setAttribute("aria-label", `${n}: ${t("optMoveUp")}`); it.down.setAttribute("aria-label", `${n}: ${t("optMoveDown")}`);
+      });
+      if (focus) { const it = items.get(focus.id), b = focus.act === "move-up" ? it.up : it.down; (b.disabled ? (b === it.up ? it.down : it.up) : b).focus(); focus = null; }
+    };
+    syncers.push(sync);
+    sync();
+    return h("div", { class: "order-block" }, head, list);
+  }
+
   // "Enable all" / "Disable all" for the switches of a card; turning them on also turns on what they hang on outside the card (the panel itself, for its parts)
   function bulkOf(c, ...extra) {
     // (the panel's own card switches its title bar and its parts; the panel itself is what they hang on, and is turned on with them but never off by them)
@@ -908,11 +968,13 @@
   const compactBtn = h("button", { class: "btn", type: "button", "data-act": "panel-compact", onClick: () => applyPatch({ panel: B.prefs.PRESETS.minimal.panel }) }, t("optPanelCompact"));
   const cardsOfPrefs = B.prefs.CARDS.map((c) => {
     const kids = c.id === "colors" ? [themePresetsBar(), ...B.prefs.ROLES.map(roleStudioCard)] : [];
+    const merged = mergedOrders(c.rows);
     let group = null;
     c.rows.forEach((row, i) => {
+      if (merged.consumed.has(row)) return;                                // (drawn in its order's rows)
       if (row.group !== group) { group = row.group; if (group === "optChipLook") kids.push(chipThemesBar()); if (group) kids.push(h("h3", { class: "opt-group" }, t(group))); }
       const next = c.rows[i + 1];
-      const el = control(row, c.rows, next && next.kind === "text" && next.inline ? next : null);       // (a name beside its switch is drawn on the switch's row)
+      const el = merged.lists.get(row) || control(row, c.rows, next && next.kind === "text" && next.inline ? next : null);       // (a name beside its switch is drawn on the switch's row)
       if (el) kids.push(el);
     });
     if (c.id === "colors") kids.push(h("div", { class: "row" }, colorsResetBtn));
@@ -1082,6 +1144,7 @@
       if (!q) {
         card.hidden = false;
         opts.forEach((o) => { o.hidden = false; });
+        for (const li of card.querySelectorAll(".order-row")) li.hidden = false;
         if (toc.children[idx]) toc.children[idx].hidden = false;
         return;
       }
@@ -1099,6 +1162,7 @@
         const sw = row.previousElementSibling;
         if (sw && (!row.hidden || !sw.hidden)) { row.hidden = false; sw.hidden = false; }
       }
+      for (const li of card.querySelectorAll(".order-row")) li.hidden = [...li.querySelectorAll(".opt")].every((o) => o.hidden);          // (its arrows go with its rows)
       const show = cardMatch || optMatch;
       card.hidden = !show;
       if (toc.children[idx]) toc.children[idx].hidden = !show;

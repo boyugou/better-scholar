@@ -2118,6 +2118,16 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     await settle(opts);
     assert.equal((await stored(opts, "sync", "prefs")).panel.copy.order[0], "csv", "a button moved by its grip");
     assert.equal(await opts.locator('#pv-panel [data-rr="export-row"] button').first().getAttribute("data-act"), "copy-csv");
+    // …and on the left, where each button is listed once — its arrows, its name and its switch on one row, in the panel's order (it was an order list, then
+    // every button again with its switch); an arrow moves its row, and the keyboard stays on that arrow
+    const copyRows = () => opts.evaluate(() => [...document.querySelectorAll("#card-copy .order-row")].map((li) => li.dataset.id));
+    assert.deepEqual(await copyRows(), (await stored(opts, "sync", "prefs")).panel.copy.order, "the copy buttons' rows are in the panel's order");
+    assert.deepEqual(await opts.evaluate(() => [document.querySelectorAll('#card-copy [data-pref="panel.copy.apa"]').length, document.querySelectorAll("#card-copy .order-list").length]), [1, 0], "each copy button is listed once");
+    await opts.locator('#card-copy .order-row[data-id="apa"] [data-act="move-up"]').click();
+    await settle(opts);
+    const movedRows = await copyRows();
+    assert.equal(movedRows.indexOf("apa"), (await stored(opts, "sync", "prefs")).panel.copy.order.indexOf("apa"), "an arrow moves its row");
+    assert.equal(await opts.evaluate(() => { const b = document.activeElement; return b && b.closest(".order-row") && b.closest(".order-row").dataset.id + ":" + b.dataset.act; }), "apa:move-up", "the keyboard stays on the arrow");
     // Escape gives a drag up
     await opts.hover('#pv-panel [data-section="copy"]', { position: { x: 4, y: 4 } });
     const grip = await opts.locator(".pv-rail .pv-grip").boundingBox();

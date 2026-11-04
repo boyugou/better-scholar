@@ -50,6 +50,9 @@ give the details and every review):
   tooltip); "Is this you?" before a suggested spelling (was "Maybe you:"), and the layout warning no longer says "Please report it."
   beside its Report link — in all 30 languages. The status lines that filter (papers without your name) or open a list (unranked venues)
   are rows like the Awards rows — text colour, the whole line the target, a funnel or an arrow in front — not two sentences in link blue.
+  Settings: Copy & export and Quick filters list each item once — its arrows, its name, its name field and its switch on one row, in the
+  panel's order — where they had an order list and then every item again with its switch (24 rows became 12, 23 became 13); the
+  presets sit in even columns under their label.
 - **Your own venue mappings** (settings → *Check a venue* → *Assign it to a listed venue…*). A venue line that no rule ranks can now be
   tied by you to a row of the CCF or CORE list; the same venue in other editions (years, ordinals, "Proceedings of the" and a bracketed acronym aside) gets that
   rank too. It is never passed off as the lists' rank: the chip is dashed with a dotted tier and its tooltip says "Your own mapping", a

@@ -435,6 +435,17 @@ html { scroll-padding-top: 72px; }
 .order-item { display: flex; align-items: center; gap: 2px; padding: 3px 4px 3px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--card); }
 .order-item.off { opacity: 0.65; }                     /* (dimmed, and still 4.5:1) */
 .order-name { flex: 1; min-width: 0; font-size: 13px; color: var(--text); overflow-wrap: anywhere; }
+/* An order whose items are the card's own switches: one row per item, the arrows that move it in front (options.js orderedRows) */
+.order-block { border-top: 1px solid var(--line); }
+.order-block > .opt-order-head { border-top: none; cursor: default; padding-bottom: 6px; }
+.order-rows { list-style: none; margin: 0; padding: 0; }
+.order-row { display: flex; align-items: center; border-top: 1px solid var(--line); background: var(--sub); box-shadow: inset 3px 0 0 var(--line); }
+[dir="rtl"] .order-row { box-shadow: inset -3px 0 0 var(--line); }
+.order-arrows { flex: none; display: flex; flex-direction: column; padding-inline-start: 9px; }
+.order-arrows .order-btn { height: 20px; }
+.order-body { flex: 1; min-width: 0; }
+.order-body > .opt { border-top: none; background: transparent; box-shadow: none; padding-inline-start: 6px; }
+.order-body > .opt + .opt { padding-top: 0; }          /* (the words of your own quick filter, under its switch) */
 .order-btn {
   width: 28px; height: 26px; padding: 0; border: 0; border-radius: 6px; background: none; color: var(--muted);
   font: inherit; font-size: 10px; line-height: 1; cursor: pointer;
@@ -1299,13 +1310,15 @@ input.key:focus-visible {
    Presets & Configuration Studio
    ========================================================================== */
 
+/* the presets in even columns under their label (two, or one on a phone): not three and a lone "Minimalist" on a second line */
 .presets {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(max(140px, 40%), 1fr));
   align-items: center;
   gap: 8px;
-  flex-wrap: wrap;
   margin-bottom: 8px;
 }
+.presets > .presets-title { grid-column: 1 / -1; }
 
 button.btn.preset-chip {
   padding: 5px 14px;
