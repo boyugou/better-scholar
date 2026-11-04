@@ -71,7 +71,7 @@
       const cols = s.columns.filter((c) => c !== "none" || tp.unranked);
       const showTotal = tp.total || !cols.length;                                     // (a table with no tier column has no number but the total: it is drawn whatever its switch says)
       // (the count of the "hidden" row is its only number: with no total column it takes the room of the columns)
-      const hiddenRow = s.hidden && tp.hidden ? h("tr", {}, h("th", {}, h("span", { class: "dot", style: "background:#dadce0" }), t("roleHidden")),
+      const hiddenRow = s.hidden && tp.hidden ? h("tr", {}, h("th", {}, h("span", { class: "dot dot-hidden" }), t("roleHidden")),
         showTotal ? [cols.length ? h("td", { colspan: String(cols.length), class: "z" }, "") : null, h("td", { class: "t" }, String(s.hidden))] : h("td", { colspan: String(Math.max(1, cols.length)), class: "t" }, String(s.hidden))) : null;
       const table = h("table", {},
         h("thead", {}, h("tr", {}, h("th", {}, h("span", { class: "sr" }, t("colRole"))), ...cols.map((c) => h("th", c === "none" ? { title: [t("tipUnranked"), unrankedWords(s)].filter(Boolean).join("\n") } : {}, tier(c))), showTotal ? h("th", { class: "rr-col-total" }, t("colTotal")) : null)),

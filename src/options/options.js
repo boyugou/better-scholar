@@ -77,6 +77,25 @@
       s("ellipse", { cx: "12", cy: "5", rx: "9", ry: "3" }),
       s("path", { d: "M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" }),
       s("path", { d: "M3 12c0 1.66 4 3 9 3s9-1.34 9-3" })),
+    award: () => s("svg", { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-linecap": "round", "stroke-linejoin": "round" },
+      s("circle", { cx: "12", cy: "8", r: "6" }),
+      s("path", { d: "M15.5 13.2 17 22l-5-3-5 3 1.5-8.8" })),
+    trend: () => s("svg", { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-linecap": "round", "stroke-linejoin": "round" },
+      s("polyline", { points: "22 7 13.5 15.5 8.5 10.5 2 17" }),
+      s("polyline", { points: "16 7 22 7 22 13" })),
+    calendar: () => s("svg", { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-linecap": "round", "stroke-linejoin": "round" },
+      s("rect", { x: "3", y: "4", width: "18", height: "18", rx: "2" }),
+      s("path", { d: "M16 2v4M8 2v4M3 10h18" })),
+    pin: () => s("svg", { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-linecap": "round", "stroke-linejoin": "round" },
+      s("path", { d: "M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z" }),
+      s("circle", { cx: "12", cy: "10", r: "3" })),
+    pencil: () => s("svg", { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-linecap": "round", "stroke-linejoin": "round" },
+      s("path", { d: "M17 3a2.85 2.85 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5z" })),
+    code: () => s("svg", { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-linecap": "round", "stroke-linejoin": "round" },
+      s("polyline", { points: "16 18 22 12 16 6" }),
+      s("polyline", { points: "8 6 2 12 8 18" })),
+    list: () => s("svg", { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-linecap": "round", "stroke-linejoin": "round" },
+      s("path", { d: "M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01" })),
     duplicate: () => s("svg", { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-linecap": "round", "stroke-linejoin": "round" },
       s("rect", { x: "9", y: "9", width: "13", height: "13", rx: "2" }),
       s("path", { d: "M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" })),
@@ -100,34 +119,34 @@
       s("rect", { x: "3", y: "4", width: "18", height: "16", rx: "2", fill: "currentColor", "fill-opacity": "0.2" }))
   };
 
-  // the badge of each card (the ids are lib/prefs.js CARDS')
+  // the badge of each card (the ids are lib/prefs.js CARDS'): a picture of its own, in one colour (the tile is that colour, faint; the dark page lightens both)
   const CARD_ICONS = {
-    language: { icon: "globe", color: "#4f46e5", bg: "rgba(79, 70, 229, 0.12)" },
-    highlight: { icon: "users", color: "#2563eb", bg: "rgba(37, 99, 235, 0.12)" },
-    colors: { icon: "palette", color: "#9333ea", bg: "rgba(147, 51, 234, 0.12)" },
-    chips: { icon: "star", color: "#ca8a04", bg: "rgba(202, 138, 4, 0.12)" },
-    panel: { icon: "chart", color: "#0891b2", bg: "rgba(8, 145, 178, 0.12)" },
-    table: { icon: "columns", color: "#d97706", bg: "rgba(217, 119, 6, 0.12)" },
-    copy: { icon: "duplicate", color: "#0f766e", bg: "rgba(15, 118, 110, 0.12)" },
-    marks: { icon: "star", color: "#ca8a04", bg: "rgba(202, 138, 4, 0.12)" },
-    filters: { icon: "sliders", color: "#2563eb", bg: "rgba(37, 99, 235, 0.12)" },
-    metrics: { icon: "chart", color: "#0891b2", bg: "rgba(8, 145, 178, 0.12)" },
-    years: { icon: "chart", color: "#059669", bg: "rgba(5, 150, 105, 0.12)" },
-    venues: { icon: "columns", color: "#7c3aed", bg: "rgba(124, 58, 237, 0.12)" },
-    status: { icon: "database", color: "#475569", bg: "rgba(71, 85, 105, 0.12)" },
-    names: { icon: "users", color: "#0d9488", bg: "rgba(13, 148, 136, 0.12)" },
-    hide: { icon: "eye", color: "#475569", bg: "rgba(71, 85, 105, 0.12)" },
-    merge: { icon: "merge", color: "#059669", bg: "rgba(5, 150, 105, 0.12)" },
-    load: { icon: "download", color: "#0d9488", bg: "rgba(13, 148, 136, 0.12)" },
-    semantic: { icon: "brain", color: "#7c3aed", bg: "rgba(124, 58, 237, 0.12)" },
-    venue: { icon: "search", color: "#7c3aed", bg: "rgba(124, 58, 237, 0.12)" },
-    agent: { icon: "terminal", color: "#4338ca", bg: "rgba(67, 56, 202, 0.12)" },
-    config: { icon: "sliders", color: "#ea580c", bg: "rgba(234, 88, 12, 0.12)" },
-    data: { icon: "database", color: "#e11d48", bg: "rgba(225, 29, 72, 0.12)" }
+    language: { icon: "globe", color: "#4f46e5" },
+    highlight: { icon: "users", color: "#2563eb" },
+    colors: { icon: "palette", color: "#9333ea" },
+    chips: { icon: "star", color: "#ca8a04" },
+    panel: { icon: "chart", color: "#0891b2" },
+    table: { icon: "columns", color: "#d97706" },
+    copy: { icon: "duplicate", color: "#0f766e" },
+    marks: { icon: "award", color: "#ca8a04" },
+    filters: { icon: "sliders", color: "#2563eb" },
+    metrics: { icon: "trend", color: "#0891b2" },
+    years: { icon: "calendar", color: "#059669" },
+    venues: { icon: "pin", color: "#7c3aed" },
+    status: { icon: "list", color: "#475569" },
+    names: { icon: "pencil", color: "#0d9488" },
+    hide: { icon: "eye", color: "#475569" },
+    merge: { icon: "merge", color: "#059669" },
+    load: { icon: "download", color: "#0d9488" },
+    semantic: { icon: "brain", color: "#7c3aed" },
+    venue: { icon: "search", color: "#7c3aed" },
+    agent: { icon: "terminal", color: "#4338ca" },
+    config: { icon: "code", color: "#ea580c" },
+    data: { icon: "database", color: "#e11d48" }
   };
 
-  function makeIconBadge({ icon, color, bg }) {
-    const badge = h("span", { class: "card-icon", style: `background: ${bg}; color: ${color};` });
+  function makeIconBadge({ icon, color }) {
+    const badge = h("span", { class: "card-icon", style: `--ic: ${color}` });
     if (ICONS[icon]) badge.append(ICONS[icon]());
     return badge;
   }
@@ -142,7 +161,7 @@
   document.title = t("extName") + " — " + t("optHeading");
   $("title").textContent = t("extName");
   $("sub").textContent = t("optHeading");
-  $("pv-title").replaceChildren(makeIconBadge({ icon: "sparkles", color: "#1a73e8", bg: "rgba(26, 115, 232, 0.12)" }), h("span", { class: "card-title-text" }, t("optPreviewTitle")));
+  $("pv-title").replaceChildren(makeIconBadge({ icon: "sparkles", color: "#1a73e8" }), h("span", { class: "card-title-text" }, t("optPreviewTitle")));
   $("pv-note").textContent = t("optPreviewNote");
   $("pv-hint").textContent = t("optPreviewEdit");
   $("storage").textContent = t("optStorage");
@@ -302,6 +321,26 @@
       ...extra);
   }
 
+  // A segmented control's choices share one row while they fit in it (each at least its own width); when they do not, they wrap in even rows of equal
+  // buttons (2 + 2, not 3 + 1; three choices one under another, not 2 + 1): the most columns the widest choice allows that divide the choices evenly
+  // (from five choices on, the last row may be one short: 3 + 2)
+  const balanced = new ResizeObserver((entries) => {
+    for (const seg of new Set(entries.map((e) => e.target.closest(".seg-control")))) {
+      const btns = [...seg.children];
+      seg.classList.add("seg-measure");                                    // (each button at its own width, on one line: measured, then put back before anything is drawn)
+      const widths = btns.map((b) => b.getBoundingClientRect().width), widest = Math.max(...widths);
+      seg.classList.remove("seg-measure");
+      const cs = getComputedStyle(seg), gap = parseFloat(cs.columnGap) || 0;
+      const room = seg.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+      const fit = Math.max(1, Math.floor((room + gap) / (widest + gap)));
+      const n = btns.length, oneRow = widths.reduce((a, b) => a + b, 0) + gap * (n - 1) <= room;
+      let cols = oneRow ? n : Math.min(fit, n);
+      while (cols > 1 && n % cols && !(n >= 5 && n % cols === cols - 1)) cols--;
+      seg.classList.toggle("seg-row", oneRow);
+      if (seg.style.getPropertyValue("--seg-cols") !== String(cols)) seg.style.setProperty("--seg-cols", String(cols));
+    }
+  });
+
   // A choice among a few values, as radio buttons drawn as one segmented control (the arrow keys move between them, as in any radio group)
   function segmented({ path, label, hint, choices, icons = {}, off }) {
     const d = described(label, hint);
@@ -309,8 +348,10 @@
       const input = h("input", { type: "radio", class: "seg-radio", name: "seg-" + path, value, "data-pref": path, onChange: () => { if (input.checked) { put(path, value); save(); } } });
       return { value, input, label: h("label", { class: "seg-btn", "data-val": value }, input, icons[value] ? icons[value]() : null, h("span", { class: "seg-text" }, text)) };
     });
-    const row = h("div", { class: "opt opt-segmented" }, h("span", { class: "txt" }, d.name, d.hint),
-      h("div", { class: "seg-control", role: "radiogroup", ...d.ids }, ...radios.map((r) => r.label)));
+    const seg = h("div", { class: "seg-control seg-row", role: "radiogroup", style: "--seg-cols: " + choices.length, ...d.ids }, ...radios.map((r) => r.label));
+    const row = h("div", { class: "opt opt-segmented" }, h("span", { class: "txt" }, d.name, d.hint), seg);
+    balanced.observe(seg);
+    for (const r of radios) for (const part of r.label.children) balanced.observe(part);          // (the label's parts, sized by their text — the label itself is the column's width: a font that loads late, a chip renamed in its sample, is measured again)
     const sync = () => {
       const dead = off ? off() : false;                                    // (greyed with the switch it hangs on, as a switch is)
       row.classList.toggle("disabled", dead);
@@ -533,7 +574,7 @@
       const isCustom = current !== defaultColor.toLowerCase();
       resetBtn.style.display = isCustom ? "inline-flex" : "none";
       const { pass, label } = barContrast(current);
-      contrastPill.className = "contrast-badge " + (pass || !isCustom ? "pass" : "warn");          // (the built-in colour does not warn about itself: the warning is for a colour that was picked)
+      contrastPill.className = "contrast-badge " + (pass ? "pass" : isCustom ? "warn" : "plain");          // (the built-in colour does not warn about itself — the warning is for a colour that was picked — nor shows as passing: a plain grey ratio)
       contrastPill.textContent = label;
     }
 
@@ -584,7 +625,7 @@
   }
 
   const card = (id, title, desc, ...rows) => {
-    const iconObj = CARD_ICONS[id] || { icon: "sliders", color: "#2563eb", bg: "rgba(37, 99, 235, 0.12)" };
+    const iconObj = CARD_ICONS[id] || { icon: "sliders", color: "#2563eb" };
     const h2 = h("h2", {}, makeIconBadge(iconObj), h("span", { class: "card-title-text" }, title));
     return h("section", { class: "card", id: "card-" + id }, h2, desc ? h("p", { class: "desc" }, desc) : null, ...rows);
   };

@@ -36,6 +36,16 @@ give the details and every review):
 - **30 languages**: one word for one thing throughout.
 - **Accessibility**: an independent WCAG 2.2 AA review, its findings fixed.
 
+- **From a review of the screenshots (2026-11-03)**, each fault now measured by the end-to-end checks: no space before the comma after
+  your marked name; the copy buttons two to a row, of equal width (as in the popup); one gap between the filters' parts; the role dots
+  on the section's edge, as the Awards rows' icons; the year chart across the section, with each year under its bar for eight years or
+  fewer; rank columns of 26px, so Finnish "Ensimmäinen" no longer breaks; the rule between the panel's parts at their tops, so the
+  shorter column of the wide panel ends without one; a list of unranked venues that scrolls fades at its foot; the "Hidden" row's marker
+  a dashed ring (it looked like a box to tick); clearer APA, BibTeX ("@") and JSON ("{ }") icons. Settings: a name field with no switch
+  beside it lines up with the others; every row under another has its rule; the choices of a segmented control wrap in even rows (2 + 2,
+  never 3 + 1); the configuration editor is inset as the card's rows; each card has a picture of its own, legible in dark mode; the
+  switch's knob stays white in dark mode; the built-in role colours show their contrast in grey, not as passing. Popup: the chosen list
+  in dark mode is lighter than its track, not sunk into it.
 - **Your own venue mappings** (settings → *Check a venue* → *Assign it to a listed venue…*). A venue line that no rule ranks can now be
   tied by you to a row of the CCF or CORE list; the same venue in other editions (years, ordinals, "Proceedings of the" and a bracketed acronym aside) gets that
   rank too. It is never passed off as the lists' rank: the chip is dashed with a dotted tier and its tooltip says "Your own mapping", a

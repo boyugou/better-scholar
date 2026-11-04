@@ -615,10 +615,11 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
         }
       }
       const d = document.documentElement, label = document.querySelector("#controls .opt:has(select.sel) .name"), sel = document.querySelector("#controls .opt:has(select.sel) select.sel");
-      return { broken, sideways: d.scrollWidth - d.clientWidth, selectBelow: !!(label && sel && sel.getBoundingClientRect().top >= label.getBoundingClientRect().bottom - 1) };
+      const beyond = [...document.querySelectorAll("body *")].filter((e) => e.getBoundingClientRect().right > d.clientWidth + 1 && !e.querySelector("*")).slice(0, 4).map((e) => `${e.tagName.toLowerCase()}.${[...e.classList].join(".")} "${(e.textContent || "").trim().slice(0, 24)}"`);
+      return { broken, sideways: d.scrollWidth - d.clientWidth, beyond, selectBelow: !!(label && sel && sel.getBoundingClientRect().top >= label.getBoundingClientRect().bottom - 1) };
     });
     assert.deepEqual(phone.broken, [], `on a phone no word is cut in two: ${phone.broken.join(", ")}`);
-    assert.ok(phone.sideways <= 1, `on a phone the page does not scroll sideways: ${phone.sideways}px`);
+    assert.ok(phone.sideways <= 1, `on a phone the page does not scroll sideways: ${phone.sideways}px (beyond the edge: ${phone.beyond.join(", ")})`);
     assert.ok(phone.selectBelow, "on a phone a select goes under its label");
     await opts.evaluate(() => window.scrollTo(0, 0));
     await opts.setViewportSize({ width: 1360, height: 900 });
@@ -2450,11 +2451,42 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     await opts.waitForTimeout(300);
     await opts.bringToFront(); await opts.screenshot({ path: path.join(outDir, "settings-top.png"), fullPage: true, clip: { x: 0, y: 0, width: 1360, height: 1180 } });
     await opts.setViewportSize({ width: 1360, height: 900 });
+    // the settings page's layout, measured (each one a fault that a review of the screenshots found)
+    await opts.waitForTimeout(100);
+    const setLayout = await opts.evaluate(() => {
+      const R = (el) => el.getBoundingClientRect(), shown = (el) => !!el.offsetParent;
+      const out = {};
+      // in a card with names beside a switch and names alone, the name fields line up
+      out.nameColumns = [...document.querySelectorAll(".card")].filter((c) => c.querySelector(".opt-named") && c.querySelector(".opt-name"))
+        .map((c) => new Set([...c.querySelectorAll(".opt-named .name-input, .opt-name .name-input")].filter(shown).map((i) => Math.round(R(i).right))).size);
+      // a row under another row has its rule; the first one, under the title or the description, does not need one
+      out.noRule = [...document.querySelectorAll(".card > .opt")].filter((o) => shown(o) && o.previousElementSibling && o.previousElementSibling.matches(".opt") && getComputedStyle(o).borderTopWidth === "0px").map((o) => o.textContent.trim().slice(0, 30));
+      // a segmented control that wraps does so in even rows (2 + 2, not 3 + 1 or 2 + 1; from five choices on the last row may be one short)
+      out.unevenSegments = [...document.querySelectorAll(".opt-segmented .seg-control")].filter(shown).filter((sc) => {
+        const rows = {};
+        for (const b of sc.children) rows[Math.round(R(b).top)] = (rows[Math.round(R(b).top)] || 0) + 1;
+        const counts = Object.keys(rows).sort((a, b) => a - b).map((k) => rows[k]), last = counts.pop();
+        return counts.some((c) => c !== (counts[0] || last)) || !(last === (counts[0] || last) || (sc.children.length >= 5 && last === counts[0] - 1));
+      }).map((sc) => sc.textContent.trim().slice(0, 40));
+      // the configuration card's editor is inset as its rows' buttons are
+      const cfg = document.getElementById("card-config");
+      out.editorInset = Math.round(R(cfg.querySelector(".config-editor > summary")).left - R(cfg.querySelector(".row:not(.presets) .btn")).left);
+      // every card has a picture of its own
+      const icons = [...document.querySelectorAll(".card > h2 .card-icon")].map((i) => i.innerHTML);
+      out.sharedIcons = icons.length - new Set(icons).size;
+      return out;
+    });
+    assert.ok(setLayout.nameColumns.length && setLayout.nameColumns.every((n) => n === 1), `the name fields of a card line up (right edges per card: ${setLayout.nameColumns})`);
+    assert.deepEqual(setLayout.noRule, [], "a settings row under another row has its rule");
+    assert.deepEqual(setLayout.unevenSegments, [], "a segmented control wraps in even rows");
+    assert.equal(setLayout.editorInset, 0, "the configuration editor is inset as the card's buttons");
+    assert.equal(setLayout.sharedIcons, 0, "no two settings cards share a picture");
     assert.deepEqual(await lowContrast(opts, "body"), [], "settings page (light): text under 4.5:1");
     assert.deepEqual(await unnamed(opts, "body"), [], "settings page: a control without an accessible name");
     await opts.emulateMedia({ colorScheme: "dark" });
     await opts.waitForTimeout(400);
     assert.deepEqual(await lowContrast(opts, "body"), [], "settings page (dark): text under 4.5:1");
+    assert.equal(await opts.evaluate(() => getComputedStyle(document.querySelector(".sw:checked"), "::after").backgroundColor), "rgb(255, 255, 255)", "a switch's knob is white when it is on, in the dark as in the light");
     // the preview is Scholar's own page, which is always light: the system's dark theme does not darken it, and there is no Light / Dark switch to mislead
     assert.deepEqual(await opts.evaluate(() => ({
       card: getComputedStyle(document.querySelector(".preview > .card")).backgroundColor,
@@ -3050,6 +3082,37 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     // a button label is never cut off, in the sidebar and in the wide panel
     const cut = () => page.evaluate(() => [...document.querySelectorAll("#rr-panel .rr-btn")].filter((b) => b.offsetParent && b.scrollWidth > b.clientWidth + 1).map((b) => b.textContent.trim()));
     assert.deepEqual(await cut(), [], "a panel button label is cut off in the sidebar");
+    // the panel's layout, measured (each one a fault that a review of the screenshots found)
+    const layout = await page.evaluate(() => {
+      const P = document.getElementById("rr-panel"), R = (el) => el.getBoundingClientRect(), shown = (el) => !!el.offsetParent, mid = (el) => (R(el).left + R(el).right) / 2;
+      const out = {};
+      // the marked name: the comma after it follows its last letter (the tint's room around the name is not a space in the text)
+      const name = [...document.querySelectorAll(".rr-name")].find((n) => /^,/.test((n.nextSibling || {}).nodeValue || ""));
+      const rg = document.createRange();
+      rg.selectNodeContents(name.firstChild);
+      const end = rg.getBoundingClientRect().right;
+      rg.setStart(name.nextSibling, 0); rg.setEnd(name.nextSibling, 1);
+      out.commaGap = Math.round(rg.getBoundingClientRect().left - end);
+      // the copy buttons line up in two columns, row under row (they ran 3 / 3 / 2, each row's edges somewhere else)
+      out.copyColumns = new Set([...P.querySelectorAll(".rr-copybar .rr-btn")].filter(shown).map((b) => Math.round(R(b).left))).size;
+      // the filters: one gap between the parts they show
+      const kids = [...P.querySelector(".rr-filters").children].filter(shown);
+      out.filterGaps = [...new Set(kids.slice(1).map((k, i) => Math.round(R(k).top - R(kids[i]).bottom)))];
+      // the role dots on the section's edge, where the Awards rows' icons are
+      const sec = P.querySelector(".rr-summary");
+      out.dotOffset = Math.round(R(P.querySelector(".rr-matrix tbody .rr-dot")).left - (R(sec).left + parseFloat(getComputedStyle(sec).paddingLeft)));
+      // the year chart: the section's whole width, and (five years) each year under its bar
+      const bars = [...P.querySelectorAll(".rr-bar")], ys = P.querySelector(".rr-years"), labels = [...P.querySelectorAll(".rr-bars-axis span")];
+      out.chartGap = Math.round(R(ys).right - parseFloat(getComputedStyle(ys).paddingRight) - R(bars[bars.length - 1]).right);
+      out.yearsUnderBars = labels.length === bars.length && labels.every((l, i) => Math.abs(mid(l) - mid(bars[i])) <= 1);
+      return out;
+    });
+    assert.ok(Math.abs(layout.commaGap) <= 1, `the comma after the marked name is ${layout.commaGap}px from its last letter`);
+    assert.equal(layout.copyColumns, 2, "the copy buttons line up in two columns");
+    assert.deepEqual(layout.filterGaps, [8], "the filters' parts are one gap apart");
+    assert.ok(Math.abs(layout.dotOffset) <= 1, `the role dots are ${layout.dotOffset}px in from the section's edge`);
+    assert.ok(Math.abs(layout.chartGap) <= 1, `the year chart ends ${layout.chartGap}px before the section's edge`);
+    assert.ok(layout.yearsUnderBars, "each year is under its bar (five years)");
     if (process.env.E2E_SHOWCASE_H) await page.setViewportSize({ width: 1360, height: parseInt(process.env.E2E_SHOWCASE_H, 10) });      // (the README and website picture: tall enough for the whole panel)
     await page.screenshot({ path: path.join(outDir, "showcase.png") });
     assert.deepEqual(await lowContrast(page, "#rr-panel"), [], "panel (light): text under 4.5:1");
@@ -3062,6 +3125,14 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     await page.setViewportSize({ width: 760, height: 900 });
     await page.waitForFunction(() => document.getElementById("rr-panel").classList.contains("rr-wide"));
     assert.deepEqual(await cut(), [], "a panel button label is cut off in the wide panel");
+    // two columns: the parts' rules are at their tops, so none is drawn under the shorter column's last part, above empty space
+    assert.deepEqual(await page.evaluate(() => {
+      const cols = {};
+      for (const s of document.querySelectorAll("#rr-panel .rr-body > .rr-sec")) if (s.offsetParent) (cols[Math.round(s.getBoundingClientRect().left)] ||= []).push(s);
+      return Object.values(cols).map((c) => getComputedStyle(c[c.length - 1]).borderBottomWidth);
+    }), ["0px", "0px"], "a column's last part has no rule under it");
+    assert.equal(await page.evaluate(() => new Set([...document.querySelectorAll("#rr-panel .rr-copybar .rr-btn")].filter((b) => b.offsetParent).map((b) => Math.round(b.getBoundingClientRect().left))).size), 2,
+      "the copy buttons line up in two columns in the wide panel too");
     await page.screenshot({ path: path.join(outDir, "showcase-narrow.png") });
     // a very narrow window: a row's chips (they wrap as one group) never reach beyond the title column, and the page does not scroll sideways
     await page.setViewportSize({ width: 480, height: 900 });
@@ -3390,6 +3461,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     assert.match(await page.locator('[data-rr="absent"]').textContent(), /^2 papers where/, "only the two papers that really lack the name are left");
     assert.equal(await page.locator('[data-rr="suggest"]').count(), 0);
     await page.click('[data-rr="variants"] summary');
+    await page.waitForTimeout(250);                                          // (the arrow turns in 0.15 s: the picture after it, not in the middle)
     await page.locator("#rr-panel").screenshot({ path: path.join(outDir, "panel-auto-spelling.png") });
     ok("a surname-first profile name is read the other way round at once, as an automatic spelling");
   } finally {

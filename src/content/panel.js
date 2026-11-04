@@ -759,7 +759,7 @@
       };
       yearsSec.replaceChildren(...[
         yp.title ? h("div", { class: "rr-sec-head" }, h("span", { class: "rr-sec-title", ...P("panel.years.title"), ...L("yearsTitle") }, t("yearsTitle"))) : null,
-      h("div", { class: "rr-yearsbox", style: "width:min(100%," + data.length * 28 + "px)" },
+      h("div", { class: "rr-yearsbox" },
         h("div", { class: "rr-bars", style: data.length > 24 ? "gap:1px" : null, role: "group", onKeydown: onBarKey, "aria-label": t("yearsTitle") + ": " + data.map((d) => d.year + " " + d.total).join(", ") + (older ? ". " + olderNote : "") },
           ...data.map((d) => {
             const isSelected = !!m.barYear && m.filters.yearStart === d.year && m.filters.yearEnd === d.year;          // (pressed in its own way only: the same year chosen with From and To is a range of every paper)
@@ -778,7 +778,9 @@
             h("div", { class: "rr-stack", style: "height:" + Math.max(d.total ? 6 : 0, Math.round(d.total / top * 100)) + "%" },
               ...B.prefs.ROLES.filter((r) => d[r]).map((r) => h("i", { style: "flex:" + d[r] + ";background:" + ROLE_COLOR[r] }))));
           })),
-        yp.axis ? h("div", { class: "rr-bars-axis", ...P("panel.years.axis") }, h("span", { title: older ? olderNote : null }, String(data[0].year)), h("span", {}, String(data[data.length - 1].year))) : null)].filter(Boolean));
+        // (eight years or fewer: each bar has its year under it; more: the first and the last year, at the two ends)
+        yp.axis ? h("div", { class: "rr-bars-axis" + (data.length <= 8 ? " rr-bars-axis-each" : ""), ...P("panel.years.axis") },
+          ...(data.length <= 8 ? data : [data[0], data[data.length - 1]]).map((d, i) => h("span", { title: i === 0 && older ? olderNote : null }, String(d.year)))) : null)].filter(Boolean));
       if (focusedYear) { const again = yearsSec.querySelector('button.rr-bar[data-year="' + focusedYear + '"]:not([disabled])'); if (again) again.focus({ preventScroll: true }); }
     }
 

@@ -28,7 +28,6 @@
   --hover: #f1f5f9;
   --btn-line: #cbd5e1;        /* Slate 300 */
   --sw-off: #8392a7;          /* 3.2:1 on the white card (Slate 400, #94a3b8, was 2.6:1: the edge of a control is 3:1) */
-  --sw-thumb-on: #ffffff;
   --chip-bg: #f1f5f9;
   --chip-border: #e2e8f0;
 
@@ -72,7 +71,7 @@
     --hover: #293548;
     --btn-line: #475569;      /* Slate 600 */
     --sw-off: #64748b;        /* Slate 500 */
-    --sw-thumb-on: #0f172a;
+    --sw-on: #3b82f6;         /* Blue 500: the white knob on it is 3.7:1 (the light accent of the dark page left it 2.5:1) */
     --chip-bg: #273449;
     --chip-border: #3b495e;
 
@@ -308,6 +307,8 @@ html { scroll-padding-top: 72px; }
 }
 
 .card-icon {
+  color: var(--ic);
+  background: color-mix(in srgb, var(--ic) 12%, transparent);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -320,6 +321,13 @@ html { scroll-padding-top: 72px; }
 
 .card:hover .card-icon {
   transform: scale(1.08);
+}
+
+@media (prefers-color-scheme: dark) {
+  .card-icon {                           /* (the light page's colour, lightened: a dark indigo or slate on the dark card was 1.8:1) */
+    color: color-mix(in srgb, var(--ic) 55%, #fff);
+    background: color-mix(in srgb, var(--ic) 22%, transparent);
+  }
 }
 
 .card-icon svg {
@@ -358,7 +366,8 @@ html { scroll-padding-top: 72px; }
   user-select: none;
 }
 
-.card > .opt:first-of-type {
+/* (the first row under the title or the card's description: their own line is enough) */
+.card > :is(h2, .desc) + .opt {
   border-top: none;
 }
 
@@ -436,10 +445,12 @@ html { scroll-padding-top: 72px; }
 
 /* A name: the person's own words for a title or a name on the screen (empty: the built-in text, in grey) */
 .opt.opt-name { cursor: default; }
+/* a name with no switch beside it lines up with the names that have one (the switch, 42px, and the row's gap, 16px), in a card that has both */
+@media (min-width: 561px) { .card:has(.opt-named) .opt.opt-name > .name-edit { margin-inline-end: 58px; } }
 .name-edit { display: inline-flex; align-items: center; gap: 4px; flex: none; cursor: default; user-select: text; }
 .name-input {
   width: 172px; max-width: 42vw; padding: 5px 10px; border: 1px solid var(--btn-line); border-radius: 8px; background: transparent;
-  color: var(--text); font: inherit; font-size: 12.5px; cursor: text;
+  color: var(--text); font: inherit; font-size: 12.5px; cursor: text; text-overflow: ellipsis;
 }
 .name-input::placeholder { color: var(--faint); opacity: 1; }          /* (the faint colour is already rated 4.5:1; fading it more took the dark page to 3.2:1) */
 .name-input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-ring); }
@@ -507,7 +518,16 @@ body.pv-dragging, body.pv-dragging * { cursor: grabbing !important; user-select:
 .pv-rename-input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-ring); }
 .pv-rename-hint { font: 11px Arial, sans-serif; color: #5f6368; }
 .pv-tray { margin: 0 16px 10px; border: 1px dashed var(--btn-line); border-radius: 10px; font-size: 12.5px; }
-.pv-tray > summary { padding: 6px 10px; cursor: pointer; color: var(--muted); font-weight: 600; }
+.pv-tray > summary { display: flex; align-items: center; gap: 6px; padding: 6px 10px; cursor: pointer; color: var(--muted); font-weight: 600; list-style: none; }
+.pv-tray > summary::-webkit-details-marker { display: none; }
+/* (the panel's own thin chevron, not the browser's filled triangle) */
+.pv-tray > summary::before {
+  content: ""; width: 12px; height: 12px; flex: none; background: currentColor; transform: rotate(-90deg); transition: transform 0.15s;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+[dir="rtl"] .pv-tray > summary::before { transform: rotate(90deg); }
+.pv-tray[open] > summary::before { transform: none; }
 .pv-tray-list { display: flex; flex-wrap: wrap; gap: 6px; padding: 2px 10px 10px; }
 .pv-chip {
   padding: 3px 10px; border: 1px solid var(--btn-line); border-radius: 999px; background: var(--card); color: var(--text); font: inherit; font-size: 12px; cursor: pointer;
@@ -555,12 +575,11 @@ body.pv-dragging, body.pv-dragging * { cursor: grabbing !important; user-select:
 }
 
 .sw:checked {
-  background: var(--accent);
+  background: var(--sw-on, var(--accent));
 }
 
 .sw:checked::after {
   transform: translateX(18px);
-  background: var(--sw-thumb-on);
 }
 
 [dir="rtl"] .sw:checked::after {
@@ -590,13 +609,24 @@ body.pv-dragging, body.pv-dragging * { cursor: grabbing !important; user-select:
   gap: 10px;
 }
 
+/* The choices share one row while they fit (seg-row: each at least its own width, the room left shared out; past that they wrap, which is also what a
+   window narrowed under them shows until options.js has measured them again), else they go in even rows of equal columns: options.js (balanced) counts them */
 .opt.opt-segmented .seg-control {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
 }
+.opt.opt-segmented .seg-control.seg-row > .seg-btn { flex: 1 1 0; white-space: nowrap; }          /* (measured to fit on one line: not wrapped by the phone rule below) */
+.opt.opt-segmented .seg-control:not(.seg-row) { display: grid; grid-template-columns: repeat(var(--seg-cols), minmax(0, 1fr)); }
+.opt.opt-segmented .seg-control:not(.seg-row) > .seg-btn {
+  min-width: 0;
+  white-space: normal;                   /* (the columns are chosen so that the widest choice is on one line: a choice wraps only when one column is too narrow for it) */
+}
+/* (measuring: each button at its own width, on one line — last, to win over the two layouts) */
+.opt.opt-segmented .seg-control.seg-measure { display: flex; flex-wrap: nowrap; }
+.opt.opt-segmented .seg-control.seg-measure > .seg-btn { flex: none; white-space: nowrap; }
 
 .opt.opt-segmented .seg-btn {
-  flex: 1 1 0;
   text-align: center;
 }
 
@@ -626,7 +656,7 @@ body.pv-dragging, body.pv-dragging * { cursor: grabbing !important; user-select:
   font-weight: 500;
   border-radius: 8px;
   cursor: pointer;
-  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: background-color 0.18s cubic-bezier(0.16, 1, 0.3, 1), color 0.18s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.18s cubic-bezier(0.16, 1, 0.3, 1);          /* (not "all": a width or a flex that changes is there at once — options.js measures the buttons) */
   user-select: none;
   white-space: nowrap;
 }
@@ -918,6 +948,12 @@ select.sel:focus-visible {
   background: #fef3c7;
   color: #78350f;
   border: 1px solid #fde68a;
+}
+
+.contrast-badge.plain {
+  background: var(--chip-bg);
+  color: var(--muted);
+  border: 1px solid var(--chip-border);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -1287,7 +1323,8 @@ button.btn.preset-chip:hover {
 }
 
 .config-editor {
-  margin-top: 10px;
+  margin-top: -3px;                      /* (under the buttons' row, at the gap between its own lines) */
+  padding: 0 20px 13px;
 }
 
 .config-editor summary {
@@ -1326,6 +1363,7 @@ button.btn.preset-chip:hover {
 
 .venue-input {
   width: 100%;
+  text-overflow: ellipsis;
   box-sizing: border-box;
   font: inherit;
   font-size: 13.5px;
@@ -1424,6 +1462,8 @@ button.btn.preset-chip:hover {
 }
 
 .config-status {
+  margin-top: -7px;
+  padding: 0 20px 13px;
   font-size: 12.5px;
   font-weight: 600;
   color: var(--success);

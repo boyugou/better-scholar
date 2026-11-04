@@ -104,7 +104,7 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
 .rr-chip-mark-finalist { background: transparent; color: var(--rr-finalist-ink, #7a6a3a); border: 1px dashed color-mix(in srgb, var(--rr-finalist-edge, #d8c070) var(--look-fin, 100%), transparent); }
 .rr-chip-mark-finalist::before { -webkit-mask-image: var(--rr-star-o); mask-image: var(--rr-star-o); background: currentColor; }
 
-.rr-name { font-weight: 700; border-radius: 3px; padding: 0 3px; }
+.rr-name { font-weight: 700; border-radius: 3px; padding: 0 2px; margin-inline: -2px -1px; }   /* (the tint reaches past the name, the text keeps its place: no gap before the comma that follows) */
 .rr-name-first   { background: color-mix(in srgb, var(--rr-c-first, #1a73e8) 12%, transparent); color: color-mix(in srgb, var(--rr-c-first, #1a73e8) 62%, black); }
 .rr-name-cofirst { background: color-mix(in srgb, var(--rr-c-cofirst, #a142f4) 12%, transparent); color: color-mix(in srgb, var(--rr-c-cofirst, #a142f4) 62%, black); }
 .rr-name-second  { background: color-mix(in srgb, var(--rr-c-second, #f9ab00) 16%, transparent);  color: color-mix(in srgb, var(--rr-c-second, #f9ab00) 48%, black); }
@@ -141,7 +141,7 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
   width: 100%; min-width: 0; outline: none; transition: border-color .15s, box-shadow .15s;
 }
 #rr-panel input[type="text"]:focus, #rr-panel input[type="search"]:focus { border-color: var(--rr-accent); box-shadow: 0 0 0 3px rgba(26,115,232,.15); }
-#rr-panel .rr-search { position: relative; margin-bottom: 8px; }
+#rr-panel .rr-search { position: relative; }
 #rr-panel .rr-search-input { padding-inline-end: 28px; }
 #rr-panel .rr-search-input:not(:placeholder-shown) { padding-inline-end: 72px; }
 /* (in a right-to-left panel the box stays right-to-left, so that the room it keeps is on the side of the count and the clear button, and what is typed takes its own
@@ -156,7 +156,7 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
   transition: background .15s, color .15s;
 }
 #rr-panel .rr-search-count.rr-search-count-empty { background: #fce8e6; color: #c5221f; font-weight: 600; }
-#rr-panel .rr-search-error { margin: -4px 0 8px; font-size: 11px; line-height: 1.35; color: #c5221f; overflow-wrap: anywhere; }
+#rr-panel .rr-search-error { margin-top: -4px; font-size: 11px; line-height: 1.35; color: #c5221f; overflow-wrap: anywhere; }
 #rr-panel .rr-search-error[hidden] { display: none; }
 #rr-panel .rr-search-kbd {
   position: absolute; inset-inline-end: 7px; top: 50%; transform: translateY(-50%);
@@ -205,11 +205,11 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
   cursor: pointer; padding: 0; transition: background .15s, color .15s;
 }
 #rr-panel .rr-search-clear:hover { background: #bdc1c6; color: #202124; }
-#rr-panel .rr-search-pills { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 5px; }
+#rr-panel .rr-search-pills { display: flex; flex-wrap: wrap; gap: 4px; }
 #rr-panel .rr-spill {
   appearance: none; border: 1px solid #dadce0; background: #f8f9fa; color: #3c4043;
   border-radius: 10px; font-size: 11px; line-height: 1; padding: 3px 7px; cursor: pointer;
-  transition: background .15s, color .15s, border-color .15s; font-family: inherit; font-weight: 500;
+  transition: background .15s, color .15s, border-color .15s; font-family: inherit; font-weight: 400;
 }
 #rr-panel .rr-spill:hover { background: #f1f3f4; color: var(--rr-text); border-color: #bdc1c6; }
 #rr-panel .rr-spill[aria-pressed="true"], #rr-panel .rr-spill.rr-spill-active {
@@ -248,8 +248,9 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
 #rr-panel .rr-src{ font-size: 11px; font-weight: 700; color: var(--rr-muted); letter-spacing: .02em; }
 #rr-panel.rr-collapsed .rr-body { display: none; }
 #rr-panel.rr-collapsed .rr-head { border-bottom: 0; }
-#rr-panel .rr-sec{ padding: 10px 14px; border-bottom: 1px solid var(--rr-line); }
-#rr-panel .rr-body { margin-bottom: -1px; }          /* (every part ends in its rule; the last one's is cut off by the panel's own edge) */
+#rr-panel .rr-sec{ padding: 10px 14px; border-top: 1px solid var(--rr-line); }
+#rr-panel .rr-filters{ display: flex; flex-direction: column; gap: 8px; }          /* (one step between the search, its pills, the switch and the years, whichever are shown) */
+#rr-panel .rr-body { margin-top: -1px; }          /* (every part starts with its rule; the first one's lies on the head's own line — in two columns, both columns' first: no rule above empty space at the foot of the shorter column) */
 #rr-panel.rr-bare .rr-head { border-bottom: 0; }
 #rr-panel .rr-head-notitle { justify-content: flex-end; }
 #rr-panel .rr-body > .rr-sec { break-inside: avoid; }
@@ -258,13 +259,14 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
 #rr-panel .rr-note{ color: var(--rr-muted); font-size: 12px; }
 #rr-panel .rr-faint{ color: var(--rr-faint); font-size: 11.5px; line-height: 1.35; }
 #rr-panel .rr-link{ color: var(--rr-link); cursor: pointer; }
+#rr-panel a.rr-link{ text-decoration: none; }          /* (a link drawn as the panel's other links: the page's own underline left out) */
 #rr-panel .rr-link:hover{ text-decoration: underline; }
 #rr-panel .rr-seg{ display: inline-flex; gap: 2px; padding: 2px; border-radius: 8px; background: #f1f3f4; }
 #rr-panel .rr-seg button{ padding: 2px 10px; border-radius: 6px; font-size: 11px; font-weight: 700; color: var(--rr-muted); letter-spacing: .02em; transition: background .15s, color .15s, box-shadow .15s; }
 #rr-panel .rr-seg button:hover{ color: var(--rr-text); }
 #rr-panel .rr-seg button[aria-pressed="true"]{ background: #fff; color: var(--rr-accent); box-shadow: 0 1px 2px rgba(60,64,67,.28); }
 #rr-panel .rr-matrix{ width: 100%; border-collapse: collapse; table-layout: fixed; font-variant-numeric: tabular-nums; }
-#rr-panel .rr-matrix thead th:not(:first-child){ width: 30px; }
+#rr-panel .rr-matrix thead th:not(:first-child){ width: 26px; }          /* (five rank columns of 26px leave the role names 114px: Finnish "Ensimmäinen" on one line) */
 #rr-panel .rr-matrix thead th.rr-col-total{ width: 44px; }          /* (Hungarian "Összes" is 39px wide) */
 #rr-panel .rr-matrix th, #rr-panel .rr-matrix td{ padding: 1px 0; text-align: center; font-weight: 400; }
 #rr-panel .rr-matrix thead th{ color: var(--rr-muted); font-size: 11px; font-weight: 700; padding-bottom: 3px; }
@@ -273,10 +275,11 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
 #rr-panel .rr-matrix tfoot td, #rr-panel .rr-matrix tfoot th{ border-top: 1px solid var(--rr-line); padding-top: 3px; color: var(--rr-muted); }
 #rr-panel .rr-matrix tfoot th{ text-align: start; padding-inline-start: 19px; }
 #rr-panel .rr-rolebtn{ display: inline-flex; align-items: center; gap: 6px; padding: 2px 4px; border-radius: 4px; }
+#rr-panel .rr-matrix{ margin-inline-start: -4px; width: calc(100% + 4px); }          /* (the role dots on the section's edge, as the Awards rows' icons: the table starts in the role buttons' padding) */
 #rr-panel .rr-dot{ width: 9px; height: 9px; border-radius: 2.5px; flex: none; }
-#rr-panel .rr-cell{ display: inline-block; min-width: 25px; min-height: 24px; padding: 3px 0; box-sizing: border-box; border-radius: 4px; text-align: center; font-weight: 700; }
+#rr-panel .rr-cell{ display: inline-block; min-width: 24px; min-height: 24px; padding: 3px 0; box-sizing: border-box; border-radius: 4px; text-align: center; font-weight: 700; }
 #rr-panel .rr-matrix thead .rr-rolebtn{ min-width: 24px; min-height: 24px; justify-content: center; }
-@media (max-width: 420px){ #rr-panel .rr-matrix thead th:not(:first-child):not(.rr-col-total){ width: 24px; } #rr-panel .rr-matrix thead th.rr-col-total{ width: 40px; } #rr-panel .rr-cell{ min-width: 20px; } #rr-panel .rr-rolebtn{ gap: 3px; padding: 2px 1px; font-size: 10.5px; } }          /* (a phone: the role names, in the first column, get what the rank columns give up) */
+@media (max-width: 420px){ #rr-panel .rr-matrix thead th:not(:first-child):not(.rr-col-total){ width: 24px; } #rr-panel .rr-matrix thead th.rr-col-total{ width: 40px; } #rr-panel .rr-cell{ min-width: 20px; } #rr-panel .rr-rolebtn{ gap: 3px; padding: 2px 1px; font-size: 10.5px; } #rr-panel .rr-matrix{ margin-inline-start: -1px; width: calc(100% + 1px); } #rr-panel .rr-matrix tfoot th{ padding-inline-start: 13px; } }          /* (a phone: the role names, in the first column, get what the rank columns give up) */
 #rr-panel .rr-cell.rr-zero{ color: #bdc1c6; font-weight: 400; }
 #rr-panel .rr-cell:hover:not(.rr-zero), #rr-panel .rr-rolebtn:hover{ background: #f1f3f4; }
 #rr-panel .rr-cell[aria-pressed="true"], #rr-panel .rr-rolebtn[aria-pressed="true"]{ background: #e8f0fe; box-shadow: inset 0 0 0 1px var(--rr-accent); }
@@ -288,10 +291,10 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
   --rr-ico-gbt: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='black'%3E%3Cpath d='M4 5h3v2H4zm5 0h11v2H9zM4 11h3v2H4zm5 0h11v2H9zM4 17h3v2H4zm5 0h11v2H9z'/%3E%3C/svg%3E");
   --rr-ico-ieee: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='black'%3E%3Cpath d='M5 4h5v2H7v12h3v2H5zm14 0h-5v2h3v12h-3v2h5zM11 9h2v6h-2z'/%3E%3C/svg%3E");
   --rr-ico-acm: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='black'%3E%3Cpath d='M4 5h16v2H4zm4 5h12v2H8zm0 5h12v2H8zM4 19h2v2H4z'/%3E%3C/svg%3E");
-  --rr-ico-apa: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='black'%3E%3Cpath d='M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z'/%3E%3C/svg%3E");
-  --rr-ico-bibtex: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M7 4a2 2 0 0 0-2 2v3a2 2 0 0 1-2 2 2 2 0 0 1 2 2v3a2 2 0 0 0 2 2M17 4a2 2 0 0 1 2 2v3a2 2 0 0 0 2 2 2 2 0 0 0-2 2v3a2 2 0 0 1-2 2'/%3E%3C/svg%3E");
+  --rr-ico-apa: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='black'%3E%3Cpath d='M3 5h7v7.5L7.2 19H4.4l2.4-6.5H3zm11 0h7v7.5L18.2 19h-2.8l2.4-6.5H14z'/%3E%3C/svg%3E");
+  --rr-ico-bibtex: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='4'/%3E%3Cpath d='M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.9 7.9'/%3E%3C/svg%3E");
   --rr-ico-markdown: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round'%3E%3Crect x='3' y='4' width='18' height='16' rx='2'/%3E%3Cpath d='M7 15V9l2.5 3L12 9v6M16 11l2 2.5 2-2.5'/%3E%3C/svg%3E");
-  --rr-ico-json: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M4 6h2v12H4M20 6h-2v12h2M9 10l2 2-2 2M15 10l-2 2 2 2'/%3E%3C/svg%3E");
+  --rr-ico-json: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5a2 2 0 0 0 2 2h1M16 21h1a2 2 0 0 0 2-2v-5a2 2 0 0 1 2-2 2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1'/%3E%3C/svg%3E");
   --rr-ico-csv: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M12 3v11M8 10l4 4 4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2'/%3E%3C/svg%3E");
   --rr-ico-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='3' width='18' height='18' rx='2'/%3E%3Ccircle cx='8.5' cy='8.5' r='1.5'/%3E%3Cpath d='M21 15l-5-5L5 21'/%3E%3C/svg%3E");
   --rr-ico-check: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
@@ -299,10 +302,11 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
 #rr-panel .rr-actions{ display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap; }
 #rr-panel .rr-copybar{ display: flex; flex-wrap: wrap; gap: 6px; }
 #rr-panel .rr-copy .rr-actions{ margin-top: 0; }
-#rr-panel .rr-copybar .rr-btn{          /* (a label stays on one line while the row can hold it, and wraps only beyond that: min-width: fit-content, as in the popup) */
-  flex: 1 1 0; min-width: fit-content; padding: 4px 6px; font-size: 11.5px; text-align: center;
+#rr-panel .rr-copybar .rr-btn{          /* (two equal buttons to a row; a label longer than half the row takes the row, and wraps only beyond that: min-width: fit-content, as in the popup) */
+  flex: 1 1 40%; min-width: fit-content; padding: 4px 6px; font-size: 11.5px; text-align: center;
   display: inline-flex; align-items: center; justify-content: center; gap: 4px;
 }
+#rr-panel .rr-copybar .rr-btn:nth-last-child(1 of :not([hidden])):nth-child(odd of :not([hidden])) { flex: 0 1 calc(50% - 3px); }          /* (an odd last button keeps its column: a lone full-width one reads as the main button) */
 #rr-panel .rr-copybar .rr-btn::before {
   content: ""; display: inline-block; width: 11px; height: 11px; flex: none;
   background-color: currentColor; opacity: .7;
@@ -331,10 +335,10 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
 #rr-panel .rr-btn{ padding: 4px 12px; border: 1px solid #dadce0; border-radius: 7px; background: #fff; font-size: 12px; font-weight: 600; color: var(--rr-text); transition: background .15s, border-color .15s, box-shadow .15s; }
 #rr-panel .rr-btn:hover:not([disabled]){ background: #f8f9fa; border-color: #c4c7cc; box-shadow: 0 1px 2px rgba(60,64,67,.14); }
 #rr-panel .rr-btn:active:not([disabled]){ background: #f1f3f4; box-shadow: none; }
-#rr-panel .rr-row{ display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 3px 0; }
+#rr-panel .rr-row{ display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
 #rr-panel .rr-row > .rr-label{ font-weight: 400; margin-inline-end: 2px; }
 #rr-panel .rr-check{ display: inline-flex; align-items: center; gap: 8px; max-width: 100%; cursor: pointer; overflow-wrap: anywhere; }
-#rr-panel .rr-year{ display: flex; align-items: center; gap: 6px; margin-top: 8px; }
+#rr-panel .rr-year{ display: flex; align-items: center; gap: 6px; }
 #rr-panel .rr-dash{ color: var(--rr-faint); }
 #rr-panel .rr-year > .rr-label{ font-weight: 400; color: var(--rr-muted); }
 #rr-panel .rr-metrics .rr-m{ display: flex; justify-content: space-between; align-items: baseline; padding: 2px 0; font-variant-numeric: tabular-nums; }
@@ -349,6 +353,10 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
 #rr-panel .rr-cover-line{ display: flex; justify-content: space-between; align-items: center; gap: 8px; }
 #rr-panel .rr-cover-line:not([data-rr="suggest"]) > .rr-link{ flex: 0 0 auto; max-width: 55%; text-align: end; }          /* (the action keeps its width, so "Read full lists" does not break in two: the note beside it wraps instead) */
 #rr-panel .rr-list{ max-height: 9lh; overflow: auto; margin: 4px 0 0; padding: 0; list-style: none; font-size: 11.5px; color: var(--rr-muted); }
+/* a list longer than its box fades at the foot until it is scrolled to the end (a scroll-driven animation: a list that fits has no timeline, and no fade) */
+@property --rr-fade { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@keyframes rr-list-fade { 0%, 92% { --rr-fade: 1.6em; } 100% { --rr-fade: 0px; } }
+#rr-panel .rr-list{ -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - var(--rr-fade)), transparent); mask-image: linear-gradient(to bottom, #000 calc(100% - var(--rr-fade)), transparent); animation: rr-list-fade linear both; animation-timeline: scroll(self); }
 #rr-panel .rr-list li{ padding: 1px 0; overflow-wrap: anywhere; }
 #rr-panel .rr-list b{ color: var(--rr-text); }
 #rr-panel .rr-warn{ padding: 6px 8px; border-radius: 4px; background: #fef7e0; color: #7a4f01; font-size: 12px; line-height: 1.4; }
@@ -399,8 +407,8 @@ tr.rr-dup { display: none !important; }
 td.gsc_a_c a.rr-merged { text-decoration: underline dotted; text-underline-offset: 3px; }
 
 /* highlighted papers per year */
-#rr-panel .rr-bars{ display: flex; align-items: flex-end; gap: 3px; height: 44px; margin-top: 4px; }
-#rr-panel .rr-bar{ flex: 1 1 0; min-width: 3px; height: 100%; display: flex; align-items: flex-end; cursor: pointer; border-radius: 3px 3px 1px 1px; }
+#rr-panel .rr-bars{ display: flex; align-items: flex-end; justify-content: space-between; gap: 3px; height: 44px; margin-top: 4px; }          /* (the whole width, bars of at most 32px: a few years spread out, many years packed) */
+#rr-panel .rr-bar{ flex: 1 1 0; min-width: 3px; max-width: 32px; height: 100%; display: flex; align-items: flex-end; cursor: pointer; border-radius: 3px 3px 1px 1px; }
 #rr-panel .rr-bar[disabled]{ cursor: default; opacity: .3; }
 #rr-panel .rr-bar:not([disabled]):hover .rr-stack{ filter: brightness(.92); }
 #rr-panel .rr-bar[aria-pressed="true"] .rr-stack{ outline: 2px solid var(--rr-accent); outline-offset: 1px; }
@@ -408,6 +416,8 @@ td.gsc_a_c a.rr-merged { text-decoration: underline dotted; text-underline-offse
 #rr-panel .rr-stack{ width: 100%; display: flex; flex-direction: column; border-radius: 3px 3px 1px 1px; overflow: hidden; }
 #rr-panel .rr-stack i{ display: block; min-height: 2px; }
 #rr-panel .rr-bars-axis{ display: flex; justify-content: space-between; margin-top: 3px; color: var(--rr-faint); font-size: 11px; font-variant-numeric: tabular-nums; }
+#rr-panel .rr-bars-axis-each{ gap: 3px; font-size: 10px; }
+#rr-panel .rr-bars-axis-each > span{ flex: 1 1 0; max-width: 32px; text-align: center; white-space: nowrap; display: flex; justify-content: center; }          /* (the bars' own widths and gaps: each year under its bar, wider than it if need be) */
 
 /* printing or saving the profile as a PDF keeps the colours, and the panel is not split across pages */
 @media print {
@@ -475,7 +485,7 @@ html.rr-rows-none tr[class*="rr-r-"] > td:first-child { box-shadow: none !import
 /* the papers whose position is not known come after the total and are not in it */
 #rr-panel .rr-matrix tfoot .rr-hiddenrow th, #rr-panel .rr-matrix tfoot .rr-hiddenrow td { border-top: 0; padding-top: 1px; color: var(--rr-muted); }
 #rr-panel .rr-matrix tfoot .rr-hiddenrow th { padding-inline-start: 0; }
-#rr-panel .rr-hiddenrow .rr-dot { background: transparent !important; box-shadow: inset 0 0 0 1.5px #9aa0a6; }
+#rr-panel .rr-hiddenrow .rr-dot { background: transparent !important; border: 1.5px dashed #80868b; border-radius: 50%; box-sizing: border-box; }          /* (no colour: the role is not known — a dashed ring, not a box to tick) */
 #rr-panel .rr-hiddenrow .rr-total { font-weight: 400; }
 
 /* typography for the scripts that need more air, and headings that wrap in balanced lines */
@@ -484,7 +494,6 @@ html.rr-rows-none tr[class*="rr-r-"] > td:first-child { box-shadow: none !import
 #rr-panel:lang(ja), #rr-panel:lang(zh), #rr-panel:lang(ko), #rr-panel:lang(th), #rr-panel:lang(ar), #rr-panel:lang(he) { line-height: 1.6; }
 #rr-panel:lang(th) .rr-faint, #rr-panel:lang(ar) .rr-faint, #rr-panel:lang(he) .rr-faint, #rr-panel:lang(ja) .rr-faint, #rr-panel:lang(zh) .rr-faint, #rr-panel:lang(ko) .rr-faint { font-size: 12px; line-height: 1.55; }
 #rr-panel:lang(ja) { word-break: auto-phrase; }
-#rr-panel .rr-row[hidden] + .rr-year { margin-top: 0; }
 /* a suggested spelling is an action that changes the table: a button-like pill, not a link in a sentence */
 #rr-panel .rr-pill { display: inline-flex; align-items: center; padding: 1px 9px; border: 1px solid #c1c8ef; border-radius: 12px; background: #fff; font-size: 11.5px; }
 #rr-panel .rr-pill:hover { background: #e8f0fe; text-decoration: none; }
