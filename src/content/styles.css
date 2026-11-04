@@ -466,12 +466,14 @@ html.rr-rows-none tr[class*="rr-r-"] > td:first-child { box-shadow: none !import
 #rr-panel .rr-dd-label { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 #rr-panel .rr-sec-head { flex-wrap: wrap; }
 
-/* "Showing 25 of 100 papers · Clear": the list is filtered */
+/* "Last · CCF A  25 / 100  Clear": the list is filtered, by what and by how much */
 #rr-panel .rr-filterbar { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 6px 14px; background: #e8f0fe; border-bottom: 1px solid var(--rr-line); font-size: 12px; }
 #rr-panel .rr-filterbar.rr-fb-empty { background: #fef7e0; border-bottom-color: #fce8b2; }
 #rr-panel .rr-filterbar.rr-fb-empty .rr-fb-text { color: #995200; font-weight: 600; }
-#rr-panel .rr-fb-text { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }          /* (one line: all of it is on hover) */
-#rr-panel .rr-fb-what { color: var(--rr-muted); }
+#rr-panel .rr-fb-text { flex: 1; min-width: 0; display: flex; align-items: center; gap: 6px; white-space: nowrap; }          /* (one line: all of it is on hover) */
+#rr-panel .rr-fb-what { flex: 0 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; }          /* (the filter gives way, the count keeps its place) */
+#rr-panel .rr-fb-count { flex: none; padding: 0 6px; border-radius: 9px; background: rgba(26,115,232,.12); color: #174ea6; font-weight: 700; font-size: 11px; line-height: 17px; font-variant-numeric: tabular-nums; }
+#rr-panel .rr-fb-empty .rr-fb-count { background: rgba(249,171,0,.2); color: #7a4f01; }
 /* in the title bar, in place of the title: the panel is as tall with a filter on as without, so that nothing moves under the pointer or the caret */
 #rr-panel .rr-head > .rr-filterbar { flex: 1; min-width: 0; padding: 0; background: none; border: 0; }
 #rr-panel .rr-head.rr-head-filtered { background: #e8f0fe; }

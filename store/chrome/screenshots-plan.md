@@ -31,7 +31,7 @@ npm run store:images        # = node scripts/store-images.mjs
 |---|---|---|
 | `screenshot-1.jpg` | "See your role in every paper." Rows coloured by authorship role; venues found on the CCF and CORE lists carry today's rank. | The profile with rows tinted by role, the owner's name marked, rank, award and talk chips, and the panel at the right. |
 | `screenshot-2.jpg` | "Papers by role and rank." One table, with awards and talks, citation totals and one-click copy or export. | The panel up close in its two-column layout. |
-| `screenshot-3.jpg` | "Filter by role, rank and citations." Type `role:first ccf:a cites:>100` and the list, the table and the citation totals follow. | The search typed in: "Showing 5 of 12 papers", the quick filters lit. |
+| `screenshot-3.jpg` | "Filter by role, rank and citations." Type `role:first ccf:a cites:>100` and the list, the table and the citation totals follow. | The search typed in: the bar names it with "5 / 12", the quick filters lit. |
 | `screenshot-4.jpg` | "Choose what you see." Every part of the panel has its own switch and every colour its own picker, with a live preview. | The settings page: the card "Highlight my papers" and the preview with its hint and the tray "Hidden: 11". |
 | `screenshot-5.jpg` | "Your summary in the toolbar." The toolbar button shows the open profile's table, with the same copy and export. | The toolbar popup over the profile, by CORE rank, with the eight copy and export buttons. |
 | `promo-small.jpg` | "Better Scholar", "Roles and ranks on every paper" | The icon and the top of the real panel's table on the icon's navy. |
@@ -44,7 +44,7 @@ the editor of the preview in use (hovering, dragging) and the HTML on the clipbo
 ## When the interface changes
 
 1. Run `npm run store:images`, then open every picture. Check what the words promise against what the picture shows: the eight
-   copy buttons, "Showing 5 of 12 papers", "Hidden: 11" (the eleven things that are off by default: the four copy buttons
+   copy buttons, the filter bar's "5 / 12", "Hidden: 11" (the eleven things that are off by default: the four copy buttons
    that are off until switched on — image, IEEE, ACM, GB/T 7714 —, six quick filters and the venue list), the CORE tab of the popup.
 2. Commit the pictures with the change that made them stale. They are used beyond the store: README.md and README.zh-CN.md show
    all five, and the project site's hero picture is `screenshot-1.jpg` (`CONTRIBUTING.md`, "The website"), so the site needs

@@ -188,10 +188,8 @@ of HotStorage, and the year written with a hyphen or jammed onto a mixed-case wo
   yet anchored — more anchors, each checked against the venue's own lines, as the measurement shows where they pay.
 - **What the screenshot review of 2026-11-03 left for later** (its smaller faults are fixed and measured in the end-to-end checks):
   the panel's status lines drawn as the Awards rows are (a label and a count, one arrow for what opens) instead of whole sentences in
-  link blue; the filter bar leading with the filter ("Last · CCF A — 25 / 100") rather than "Showing 25 of 100 papers", which the
-  one-line bar cuts; one settings row per item (order arrows, name field and switch together) where Copy & export, Quick filters and
-  the panel's parts list each item twice; "Is this you?" for "Maybe you:", and "Please report it." no longer said twice beside the
-  Report link (both new text in 30 languages); the "Minimalist" preset alone on a second line; Arabic letters a size smaller than the
+  link blue; one settings row per item (order arrows, name field and switch together) where Copy & export, Quick filters and
+  the panel's parts list each item twice; the "Minimalist" preset alone on a second line; Arabic letters a size smaller than the
   Latin words beside them on the settings page.
 - **End-to-end pictures at other display scalings** (Chromium only — other engines are out of scope by the platform
   policy). The end-to-end run already takes `E2E_SCALE` for the website's pictures; nothing compares them yet.

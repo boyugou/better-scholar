@@ -631,7 +631,8 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     assert.equal(await visibleRows(page), lastA);
     assert.equal(await page.getAttribute('button.rr-cell[data-role="last"][data-tier="A"]', "aria-pressed"), "true");
     await page.bringToFront(); await page.locator("#rr-panel").screenshot({ path: path.join(outDir, "state-filtered.png") });
-    assert.equal(await page.locator('[data-rr="filterbar"] > span').textContent(), `Showing ${lastA} of 100 papers · Last, CCF A`, "the panel says the list is filtered, and by what");
+    assert.deepEqual(await page.evaluate(() => { const b = document.querySelector('[data-rr="filterbar"]'); return [b.querySelector(".rr-fb-what").textContent, b.querySelector(".rr-fb-count").textContent, b.querySelector(".rr-fb-text").textContent, b.querySelector(".rr-fb-text").title]; }),
+      ["Last, CCF A", `${lastA} / 100`, `Showing ${lastA} of 100 papers · Last, CCF A${lastA} / 100`, `Showing ${lastA} of 100 papers · Last, CCF A`], "the panel says the list is filtered, by what first, and by how much (the sentence for a screen reader and on hover)");
     assert.equal(await page.locator('[data-metric="mPapers"] b').textContent(), String(lastA), "papers counted in the cell");
     assert.match(await page.locator('[data-metric="mPapers"]').getAttribute("title"), /^\d+%$/, "mPapers has percentage title");
     assert.match(await page.locator('[data-metric="mCitations"]').getAttribute("title"), /^\d+%$/, "mCitations has percentage title");

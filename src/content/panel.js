@@ -426,9 +426,10 @@
     const sections = { table: summarySec, copy: copySec, marks: marksSec, filters: filtersSec, metrics: metricsSec, years: yearsSec, venues: venuesSec, status: coverSec, names: namesSec };
     for (const [id, sec] of Object.entries(sections)) sec.setAttribute("data-section", id);
     const body = h("div", { class: "rr-body", "data-rr-order": "panel.order" });
-    // a bar that says the list is filtered, by how much, and clears every filter
-    const fbCount = document.createTextNode(""), fbWhat = h("span", { class: "rr-fb-what" });
-    const fbText = h("span", { class: "rr-fb-text", role: "status" }, fbCount, fbWhat);          // (a status: what the filters leave is said when it changes)
+    // a bar that says the list is filtered, by what and by how much, and clears every filter: the filter first ("Last · CCF A"), then the count as a
+    // small "25 / 100" that the line's end never cuts; the sentence ("Showing 25 of 100 papers") is what a screen reader says, and the bar's tooltip
+    const fbSay = h("span", { class: "rr-sr" }), fbWhat = h("span", { class: "rr-fb-what" }), fbCount = h("span", { class: "rr-fb-count", dir: "ltr", "aria-hidden": "true" });
+    const fbText = h("span", { class: "rr-fb-text", role: "status" }, fbSay, fbWhat, fbCount);          // (a status: what the filters leave is said when it changes)
     const fbClear = h("button", { class: "rr-link", type: "button", "data-act": "clear-filters", onClick: (e) => { cb.onClearFilters(); if (e.detail === 0) queryInput.focus({ preventScroll: true }); } });          // (the bar goes with the filters: a key press goes on in the search box, not to the page)
     let fbSig = "";
     const filterBar = h("div", { class: "rr-filterbar", "data-rr": "filterbar", hidden: true, ...P("panel.filters.bar") }, fbText, fbClear);
@@ -835,8 +836,10 @@
         const sig = count + "\u0001" + parts.join("\u0001");
         if (sig !== fbSig) {
           fbSig = sig;
-          fbCount.nodeValue = count;
-          fbWhat.replaceChildren(...parts.flatMap((part) => [" · ", h("bdi", {}, part)]));          // (each part isolated: a query in quotes does not reorder the words around it in a right-to-left line)
+          fbSay.textContent = parts.length ? count + " · " : "";
+          fbWhat.replaceChildren(...(parts.length ? parts.flatMap((part, i) => [i ? " · " : "", h("bdi", {}, part)]) : [count]));          // (each part isolated: a query in quotes does not reorder the words around it in a right-to-left line)
+          fbCount.textContent = parts.length ? m.filterBar.shown + " / " + m.filterBar.total : "";
+          fbCount.hidden = !parts.length;
           fbText.title = count + (parts.length ? " · " + parts.join(" · ") : "");          // (the bar is one line: all of it on hover)
         }
       }

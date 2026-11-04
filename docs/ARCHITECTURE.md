@@ -386,8 +386,8 @@ slowed 4× (Chrome's emulation of a low-end laptop) 1,000 papers stay near 200 m
 all of it the browser styling and laying out the rows shown again — "Only highlighted" off: 31 ms of script, 254 ms in all. Hiding
 rows with `visibility: collapse` instead of `display: none` was measured too: showing got a little cheaper, hiding two to three times
 dearer, so `display: none` stays; only drawing fewer of Scholar's rows at once would go further); `filtering()` says whether any is on, which shows
-the panel's filter bar ("Showing 25 of 100 papers · Last, CCF A · 2020–2024" and *Clear*). The bar stands in the title bar in place of the title (one line,
-the whole text on hover, a `role="status"` so that it is said when it changes; with no title bar it stands in front of the parts), so that a filter does not
+the panel's filter bar ("Last, CCF A · 2020–2024", a small "25 / 100" and *Clear*). The bar stands in the title bar in place of the title (one line:
+the filter gives way at its end, the count never; the sentence "Showing 25 of 100 papers · …" on hover and in a `role="status"` so that it is said when it changes; with no title bar it stands in front of the parts), so that a filter does not
 make the panel taller: nothing under the pointer or the caret moves — which is also why the awards rows stay, quiet, while the filters leave none of their papers
 (`marksWhole`). `Escape` on the page clears them all when nothing else has taken the key. The numbers under the filters follow them (`scoped()`: highlighted papers, citations,
 h-index, i10, the venue list — the venue list is not narrowed by its own choice). So do the role × rank table, the awards and

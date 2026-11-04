@@ -46,7 +46,7 @@ const SHOTS = {
   search: {
     file: "screenshot-3.jpg", title: "Filter by role, rank and citations",
     caption: "Type " + QUERY + " and the list, the table and the citation totals follow.",
-    about: "The panel's search box with the query `" + QUERY + "` typed in: the paper list keeps the five first-author CCF A papers with more than 100 citations, the filter bar at the top of the panel says \"Showing 5 of 12 papers\" and offers Clear, the matching quick-filter pills light up, and the citation totals count only those papers."
+    about: "The panel's search box with the query `" + QUERY + "` typed in: the paper list keeps the five first-author CCF A papers with more than 100 citations, the filter bar at the top of the panel names the query, says \"5 / 12\" and offers Clear, the matching quick-filter pills light up, and the citation totals count only those papers."
   },
   settings: {
     file: "screenshot-4.jpg", title: "Choose what you see",
@@ -257,11 +257,12 @@ try {
   }, total, { timeout: 10000, polling: 100 });
   const searchState = await page.evaluate(() => ({
     bar: document.querySelector('#rr-panel [data-rr="filterbar"]').textContent.replace(/\s+/g, " ").trim(),
+    count: document.querySelector('#rr-panel [data-rr="filterbar"] .rr-fb-count').textContent,
     shown: document.querySelectorAll("#gsc_a_b tr.gsc_a_tr:not(.rr-hide)").length,
     boxBottom: document.querySelector("#rr-panel .rr-search-pills").getBoundingClientRect().bottom + scrollY,
     listTop: document.querySelector("#gsc_a_t").getBoundingClientRect().top + scrollY
   }));
-  if (!/Showing \d+ of \d+ papers/.test(searchState.bar)) throw new Error("the filter bar does not say how many papers are shown: " + searchState.bar);
+  if (!/^\d+ \/ \d+$/.test(searchState.count)) throw new Error("the filter bar does not say how many papers are shown: " + searchState.bar);
   const searchScroll = Math.max(0, Math.min(Math.floor(searchState.listTop) - 10, Math.ceil(searchState.boxBottom + 34 - (800 - WIN_TOP - BAR_H) / PAGE_ZOOM)));
   await page.evaluate((y) => window.scrollTo(0, y), searchScroll);
   const shotSearch = await shoot(page);

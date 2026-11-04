@@ -226,7 +226,7 @@
     "message": "Rapportér"
   },
   "layoutWarning": {
-    "message": "Scholars sidelayout ser ud til at være ændret: udvidelsen kan ikke læse forfatterlinjerne. Rapportér det gerne."
+    "message": "Scholars sidelayout ser ud til at være ændret: udvidelsen kan ikke læse forfatterlinjerne."
   },
   "extUpdated": {
     "message": "Udvidelsen blev opdateret, mens siden var åben: siden kører stadig den gamle version, og ændringer af indstillingerne når ikke frem til den."
@@ -250,7 +250,7 @@
     "message": "Tilføjet automatisk: dit profilnavn i omvendt rækkefølge finder dig i $1 artikler"
   },
   "variantSuggest": {
-    "message": "Måske dig:"
+    "message": "Er det dig?"
   },
   "variantSuggestTip": {
     "message": "Forekommer i $1 artikler, hvis forfatterliste ellers ikke nævner dig — klik for at tilføje denne stavemåde"

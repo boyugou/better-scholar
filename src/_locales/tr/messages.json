@@ -226,7 +226,7 @@
     "message": "Bildir"
   },
   "layoutWarning": {
-    "message": "Scholar'ın sayfa düzeni değişmiş görünüyor: bu eklenti yazar satırlarını okuyamıyor. Lütfen bildirin."
+    "message": "Scholar'ın sayfa düzeni değişmiş görünüyor: bu eklenti yazar satırlarını okuyamıyor."
   },
   "extUpdated": {
     "message": "Bu sayfa açıkken eklenti güncellendi: sayfa hâlâ eski sürümle çalışıyor ve ayar değişiklikleri ona ulaşmıyor."
@@ -250,7 +250,7 @@
     "message": "Otomatik eklendi: profil adınızın ters sıradaki hali sizi $1 makalede buluyor"
   },
   "variantSuggest": {
-    "message": "Belki siz:"
+    "message": "Bu siz misiniz?"
   },
   "variantSuggestTip": {
     "message": "Yazar listesinde başka türlü adınız geçmeyen $1 makalede görünüyor — bu yazımı eklemek için tıklayın"

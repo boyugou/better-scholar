@@ -226,7 +226,7 @@
     "message": "Signaler"
   },
   "layoutWarning": {
-    "message": "La mise en page de Scholar semble avoir changé : cette extension ne peut plus lire les lignes d’auteurs. Merci de le signaler."
+    "message": "La mise en page de Scholar semble avoir changé : cette extension ne peut plus lire les lignes d’auteurs."
   },
   "extUpdated": {
     "message": "L’extension a été mise à jour pendant que cette page était ouverte : la page exécute toujours l’ancienne version, et les modifications des réglages ne lui parviennent pas."
@@ -250,7 +250,7 @@
     "message": "Ajoutée automatiquement : le nom de votre profil dans l’autre ordre vous trouve dans $1 articles"
   },
   "variantSuggest": {
-    "message": "Peut-être vous :"
+    "message": "C’est vous ?"
   },
   "variantSuggestTip": {
     "message": "Apparaît dans $1 articles dont la liste d’auteurs ne vous nomme pas autrement — cliquez pour ajouter cette graphie"

@@ -226,7 +226,7 @@
     "message": "Raportează"
   },
   "layoutWarning": {
-    "message": "Aspectul paginii Scholar pare să se fi schimbat: extensia nu poate citi rândurile cu autori. Te rugăm să raportezi."
+    "message": "Aspectul paginii Scholar pare să se fi schimbat: extensia nu poate citi rândurile cu autori."
   },
   "extUpdated": {
     "message": "Extensia a fost actualizată cât timp era deschisă această pagină: pagina rulează în continuare versiunea veche, iar modificările setărilor nu ajung la ea."
@@ -250,7 +250,7 @@
     "message": "Adăugat automat: numele din profil în ordine inversă te găsește în $1 lucrări"
   },
   "variantSuggest": {
-    "message": "Poate tu:"
+    "message": "Ești tu?"
   },
   "variantSuggestTip": {
     "message": "Apare în $1 lucrări a căror listă de autori nu te menționează altfel — clic pentru a adăuga această grafie"

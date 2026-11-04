@@ -226,7 +226,7 @@
     "message": "Comunicar"
   },
   "layoutWarning": {
-    "message": "O esquema do Scholar parece ter mudado: esta extensão não consegue ler as linhas de autores. Por favor, comunique o problema."
+    "message": "O esquema do Scholar parece ter mudado: esta extensão não consegue ler as linhas de autores."
   },
   "extUpdated": {
     "message": "A extensão foi atualizada enquanto esta página estava aberta: a página continua a correr a versão antiga, e as alterações às definições não chegam a ela."
@@ -250,7 +250,7 @@
     "message": "Adicionada automaticamente: o nome do seu perfil na outra ordem encontra-o em $1 artigos"
   },
   "variantSuggest": {
-    "message": "Talvez você:"
+    "message": "É você?"
   },
   "variantSuggestTip": {
     "message": "Aparece em $1 artigos cuja lista de autores não o refere de outra forma — clique para adicionar esta grafia"
