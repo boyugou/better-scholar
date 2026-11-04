@@ -94,6 +94,12 @@ give the details and every review):
   old rule), with the one known limit reported and not counted: a chip keeps its name on one line, so a 30-character chip name is cut
   in a preview of 330 px or less. The overflow audit no longer counts a break at a soft hyphen (Finnish "Yhteis-|ensimmäinen") as a
   word cut in two.
+- **The 2026 awards of 30 more conferences** (a sweep of the venues on the list whose 2026 edition has taken place, each read from
+  the conference's own page): 256 papers — ICSE, ASE, FSE and ISSTA's distinguished papers, KDD, ISMAR, UIST, ECCV, IMC, MobiCom,
+  SenSys, RecSys, OOPSLA, ICFP, S&P (and its test-of-time papers, read for the first time), ISCA, SIGCOMM, COLT, GECCO, DATE,
+  IPDPS, IEEE VR, HT, JCDL, NOMS, KR, CHI PLAY, CI, CHES and VIS's test-of-time awards. Two author lists that a page misprints are put
+  right in `data/exclusions.json` ("Kurzhalz", a family name written first); a paper the page does not clearly name as the winner (ASE's
+  most influential paper) is left out. The list holds 8,113 awards.
 - **EMNLP 2026's paper awards** (announced on 27 October; the ACL Anthology's award metadata, merged on 30 October): 27 papers — 2
   best papers, 22 outstanding papers and the best theme, social impact and resource papers. SAC highlights are not paper awards here,
   as for every earlier year. The list holds 7,857 awards.
