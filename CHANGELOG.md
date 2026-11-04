@@ -48,7 +48,8 @@ give the details and every review):
   in dark mode is lighter than its track, not sunk into it. Then: the filter bar names the filter first ("Last, CCF A") and the count
   as a small "25 / 100" the line's end never cuts (the sentence "Showing 25 of 100 papers" is what a screen reader says, and the
   tooltip); "Is this you?" before a suggested spelling (was "Maybe you:"), and the layout warning no longer says "Please report it."
-  beside its Report link — in all 30 languages.
+  beside its Report link — in all 30 languages. The status lines that filter (papers without your name) or open a list (unranked venues)
+  are rows like the Awards rows — text colour, the whole line the target, a funnel or an arrow in front — not two sentences in link blue.
 - **Your own venue mappings** (settings → *Check a venue* → *Assign it to a listed venue…*). A venue line that no rule ranks can now be
   tied by you to a row of the CCF or CORE list; the same venue in other editions (years, ordinals, "Proceedings of the" and a bracketed acronym aside) gets that
   rank too. It is never passed off as the lists' rank: the chip is dashed with a dotted tier and its tooltip says "Your own mapping", a

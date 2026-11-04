@@ -187,8 +187,7 @@ of HotStorage, and the year written with a hyphen or jammed onto a mixed-case wo
   cost no right badge there. What is left: venues whose lines print no edition (CIDM, SIGGRAPH's other conferences) and venues not
   yet anchored — more anchors, each checked against the venue's own lines, as the measurement shows where they pay.
 - **What the screenshot review of 2026-11-03 left for later** (its smaller faults are fixed and measured in the end-to-end checks):
-  the panel's status lines drawn as the Awards rows are (a label and a count, one arrow for what opens) instead of whole sentences in
-  link blue; one settings row per item (order arrows, name field and switch together) where Copy & export, Quick filters and
+  one settings row per item (order arrows, name field and switch together) where Copy & export, Quick filters and
   the panel's parts list each item twice; the "Minimalist" preset alone on a second line; Arabic letters a size smaller than the
   Latin words beside them on the settings page.
 - **End-to-end pictures at other display scalings** (Chromium only — other engines are out of scope by the platform

@@ -966,6 +966,14 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     const hiddenBefore = (await readMatrix(page)).hidden;
     assert.equal(hiddenBefore, 28);
     await page.bringToFront(); await page.locator("#rr-panel").screenshot({ path: path.join(outDir, "state-hidden-roles.png") });
+    // the status lines that filter (the papers without the owner's name) or open a list (the unranked venues) are rows of one kind, as the Awards rows: in the
+    // text's colour (not two sentences in link blue), their words starting at one place, a mark in front of each
+    assert.deepEqual(await page.evaluate(() => {
+      const rows = [document.querySelector('[data-rr="absent"] > .rr-link'), document.querySelector('details[data-rr="unmatched"] > summary')];
+      const text = getComputedStyle(document.getElementById("rr-panel")).color, rg = document.createRange();
+      return rows.map((r) => { const t = [...r.childNodes].find((n) => n.nodeType === 3 && n.data.trim()); rg.setStart(t, 0); rg.setEnd(t, 1);
+        return [getComputedStyle(r).color === text, Math.round(rg.getBoundingClientRect().left - r.getBoundingClientRect().left), getComputedStyle(r, "::before").content !== "none"]; });
+    }), [[true, 23, true], [true, 23, true]], "the filtering and the opening status lines are rows of one kind");
     // the status lines keep their spacing (the slots of the status section take no room of their own)
     const gaps = await page.evaluate(() => { const l = [...document.querySelectorAll('[data-rr="coverage"] .rr-cover-line')].map((e) => e.getBoundingClientRect()); return l.slice(1).map((r, i) => Math.round(r.top - l[i].bottom)); });
     assert.ok(gaps.length >= 1 && gaps.every((g) => g >= 3), "status lines are spaced: " + gaps);
