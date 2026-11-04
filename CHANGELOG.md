@@ -94,6 +94,14 @@ give the details and every review):
   old rule), with the one known limit reported and not counted: a chip keeps its name on one line, so a 30-character chip name is cut
   in a preview of 330 px or less. The overflow audit no longer counts a break at a soft hyphen (Finnish "Yhteis-|ensimmäinen") as a
   word cut in two.
+- **The fifth review of the matcher, completed** (an independent agent; five wrong chips, each fix measured at no correct chip lost
+  over the 75,521 corpus lines). (1) A journal's volume tells it from another journal of the same name: "Science China: Information
+  Sciences 53, …, 2023" is the Chinese edition (中国科学：信息科学, a real line of two profiles), SCIS printed volume 66 that year — no
+  CCF A; the same for JCST and Argentina's "Journal of Computer Science and Technology" (`volumeYear` in aliases.js). (2) "HCI (2),
+  937-940, 1997" — DBLP's label of HCI International's second volume — is not the journal HCI (a real line). (3) Springer's "Fast Software
+  Encryption: 23rd International Conference, FSE 2016" is the cryptography FSE (B), not Foundations of Software Engineering (A): venues
+  that share an acronym are told apart by the series title. (4) MDPI's journals *AI* and *IoT* are not Artificial Intelligence (A) and
+  IEEE IoT-J, nor is the Korean WISA (information security) the Web Information Systems WISA.
 - **Older years the award list lacked** (each from the conference's or society's own page): CCS 2024 and 2025 (57 distinguished
   papers), SOSP's best papers of 2009, 2013, 2017, 2019 and 2025, ASPLOS 2011 and 2015, The Web Conference 2015, 2019 and 2026, VLDB's
   best papers of 2014–2026 (48, with runners-up and its industry and benchmark categories), MICRO 2019, 2020, 2024 and 2025, SIGIR 2026

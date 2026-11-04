@@ -10,6 +10,8 @@ const core = require("../src/data/core.js");
 const aliases = require("../src/data/aliases.js");
 
 const resolver = venues.createResolver({ ccf: ccf.venues, core: core.venues, aliases, strict: true });     // strict: a throwing rule fails the test instead of being contained
+// a journal's volume of a year, where aliases.js knows its numbering (`volumeYear`), else 12 (the made-up lines' volume)
+const volumeOf = (abbr, year) => { const a = aliases.find((x) => x.ccf === abbr && Array.isArray(x.volumeYear)); return a ? a.volumeYear[1] + year - a.volumeYear[0] : 12; };
 const FIX = path.join(__dirname, "fixtures");
 
 // compact "CCF A ACL · CORE A* ACL" form used by the snapshot and the assertions
@@ -238,7 +240,7 @@ test("every alias points at a real dataset row", () => {
       assert.ok(hit.length, `CORE row not found for alias ${JSON.stringify(a.core)}`);
     }
     assert.ok(a.ccf || a.core, "alias needs a target");
-    assert.ok((a.names && a.names.length) || (a.former && a.former.length) || (a.exact && a.exact.length) || (a.fullOnly && a.fullOnly.length) || (a.volume && a.volume.length) || (a.uncut && a.uncut.length) || (a.starts && a.starts.length) || a.trackVolume === true || (Array.isArray(a.edition) && a.edition.length >= 2));
+    assert.ok((a.names && a.names.length) || (a.former && a.former.length) || (a.exact && a.exact.length) || (a.fullOnly && a.fullOnly.length) || (a.volume && a.volume.length) || (a.uncut && a.uncut.length) || (a.starts && a.starts.length) || a.trackVolume === true || (Array.isArray(a.edition) && a.edition.length >= 2) || (Array.isArray(a.volumeYear) && a.volumeYear.length === 2));
   }
 });
 
@@ -1112,9 +1114,10 @@ test("a journal's own name with a volume is that journal: a one-word title in ca
   // journal-first form of conferences: their papers are POPL's, CSCW's … and stay unranked)
   const journals = ccf.venues.filter((v) => v.kind === "J" && !/^Proceedings of the ACM on /.test(v.name));
   assert.ok(journals.length > 280);
-  for (const v of journals) for (const f of [(n) => n + " 12 (3), 123-145, 2019", (n) => n.toLowerCase() + " 12 (3), 123-145, 2019", (n) => n.toUpperCase() + " 12 (3), 123-145, 2019",
+  // (the volume of the year where the journal's numbering is known — aliases.js `volumeYear` — and 12 elsewhere)
+  for (const v of journals) for (const f of [(n) => n + ` ${volumeOf(v.abbr, 2019)} (3), 123-145, 2019`, (n) => n.toLowerCase() + ` ${volumeOf(v.abbr, 2019)} (3), 123-145, 2019`, (n) => n.toUpperCase() + ` ${volumeOf(v.abbr, 2019)} (3), 123-145, 2019`,
     // ... and with an article number where the pages would be (ACM's "Article No.: 137", "article 75", "No. 3"; cut off at it)
-    (n) => n + " 12 (3), Article No.: 45, 2020", (n) => n.toLowerCase() + " 12 (3), article 45, 2020", (n) => n + " 12 (3), Article …, 2020", (n) => n + " 12 (3), No. 45, 2020"]) {
+    (n) => n + ` ${volumeOf(v.abbr, 2020)} (3), Article No.: 45, 2020`, (n) => n.toLowerCase() + ` ${volumeOf(v.abbr, 2020)} (3), article 45, 2020`, (n) => n + ` ${volumeOf(v.abbr, 2020)} (3), Article …, 2020`, (n) => n + ` ${volumeOf(v.abbr, 2020)} (3), No. 45, 2020`]) {
     const raw = f(v.name), r = resolver.resolve(raw);
     assert.ok(r.ccf && r.ccf.kind === "J" && r.ccf.name === v.name, `${raw} → ${r.ccf && r.ccf.name}`);
   }
@@ -1943,7 +1946,7 @@ test("every ranked venue's own official name gets its own list's badge — excep
     const n = row.name.replace(/\s*\([^()]*\)\s*/g, " ").replace(/\s+/g, " ").trim();
     // (the edition in the made-up line is the one the venue held in 2019 where its numbering is known — aliases.js `edition` — and the 15th elsewhere)
     const ed = resolver.index.editions.get(`${row.src}|${venues.squash(row.abbr || row.name)}`), nth = ed ? Math.round(ed[1] + (2019 - ed[0]) / (ed[2] || 1)) : 15;
-    for (const raw of row.kind === "J" ? [`${n} 12 (3), 100-110, 2019`] : [n, `Proceedings of the ${nth}th ${n}, 100-110, 2019`]) {
+    for (const raw of row.kind === "J" ? [`${n} ${row.src === "ccf" ? volumeOf(row.abbr, 2019) : 12} (3), 100-110, 2019`] : [n, `Proceedings of the ${nth}th ${n}, 100-110, 2019`]) {
       const b = resolver.resolve(raw)[row.src];
       if (!b) missed.push(`${row.src}:${row.abbr}`);
       else if (sq(b.abbr) !== sq(row.abbr) && b.name !== row.name) other.push(`${raw} → ${b.abbr}`);
@@ -2208,4 +2211,20 @@ test("a fifth review, 2026-11-03: unranked events that share a ranked venue's wo
     ["2018 IEEE International Conference on Web Services (ICWS), 2018", "ICWS"], ["2019 IEEE 12th International Conference on Cloud Computing (CLOUD), 2019", "CLOUD"], ["International Conference on Computational Creativity (ICCC), 2019", "ICCC"]]) {
     assert.equal((resolver.resolve(line).core || {}).abbr, abbr, line);
   }
+});
+
+test("a fifth review, completed (2026-11-03): another journal of the same name by its volume, DBLP's proceedings part, a series named by its title, and two MDPI and one Korean namesake", () => {
+  const brief2 = (line) => { const r = resolver.resolve(line); return [r.ccf && `CCF ${r.ccf.tier} ${r.ccf.abbr}`, r.core && `CORE ${r.core.rank} ${r.core.abbr}`].filter(Boolean).join(" · "); };
+  // SCIS printed volume 66 in 2023; volume 53 that year is the Chinese edition (中国科学：信息科学, a real line of two profiles)
+  assert.equal(brief2("Science China: Information Sciences 53, 1645-1687, 2023"), "");
+  assert.equal(brief2("Science China Information Sciences 66 (7), 1-15, 2023"), "CCF A SCIS");
+  assert.equal(brief2("Journal of Computer Science and Technology 34 (5), 1-20, 2019"), "CCF B JCST");
+  assert.equal(brief2("Journal of Computer Science and Technology 19 (1), 1-20, 2019"), "", "Argentina's journal of the same name");
+  // "HCI (2)" is DBLP's label of HCI International's second volume, not the journal (a real line)
+  assert.equal(brief2("HCI (2), 937-940, 1997"), "");
+  assert.equal(brief2("IJCAI (1), 901-907, 1995"), "CCF B IJCAI · CORE A* IJCAI", "a conference's part stays");
+  // Springer's series title names which FSE it is
+  assert.equal(brief2("Fast Software Encryption: 23rd International Conference, FSE 2016, Bochum, Germany, 2016"), "CCF B FSE · CORE B FSE");
+  // MDPI's "AI" and "IoT" are no Artificial Intelligence and no IEEE IoT-J; the Korean WISA is no Web Information Systems and Applications
+  for (const line of ["AI 4 (1), 28-43, 2023", "IoT 3 (1), 109-130, 2022", "Information Security Applications: 20th International Conference, WISA 2019, Jeju Island, 2019"]) assert.equal(brief2(line), "", line);
 });
