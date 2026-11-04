@@ -205,13 +205,13 @@
     // the panel, top to bottom
     card("panel", "optPanelTitle", null, [
       bool("panel.show", true, "The panel in the right-hand column of the profile page: off hides all of it. The settings of the table, of the awards and talks counts and of the copy buttons still decide what the toolbar popup shows; every other panel.* setting has no effect then.", { label: "optPanelShow", hint: "optPanelShowHint" }),
-      order("panel.order", SECTIONS, "The parts of the panel from top to bottom: a list of part ids (" + SECTIONS.join(", ") + "). Ids left out follow in the default order; a part's own show switch hides it without changing its place.",
-        { label: "optPanelOrder", hint: "optPanelOrderHint", parent: "panel.show" }),
       bool("panel.header.name", true, "The panel's title at the top.", { label: "optHeadName", parent: "panel.show" }),
       { parent: "panel.show", ...named("extShortName") },
       bool("panel.header.settings", true, "The button in the panel's title bar that opens the settings page.", { label: "optHeadSettings", parent: "panel.show" }),
       bool("panel.header.fold", true, "The button that folds the panel to its title bar. Off: the panel is always open.", { label: "optHeadFold", parent: "panel.show" }),
-      bool("panel.filters.bar", true, "The line in the panel's title bar that says how many papers the filters leave, and clears them: it takes the place of the title while a filter is on.", { label: "optFiltersBar", parent: "panel.show" })
+      bool("panel.filters.bar", true, "The line in the panel's title bar that says how many papers the filters leave, and clears them: it takes the place of the title while a filter is on.", { label: "optFiltersBar", parent: "panel.show" }),
+      order("panel.order", SECTIONS, "The parts of the panel from top to bottom: a list of part ids (" + SECTIONS.join(", ") + "). Ids left out follow in the default order; a part's own show switch hides it without changing its place.",
+        { label: "optPanelOrder", hint: "optPanelOrderHint", parent: "panel.show" })
     ]),
     card("table", "optPanelSummary", "optPanelSummaryHint", part("table", "The table of your papers by position and rank (also the toolbar popup's table).", [
       ["title", true, "optPartTitle", "The title line of the table.", { name: "summaryTitle" }],
@@ -263,7 +263,7 @@
       { parent: "panel.filters.show", ...named("onlyHighlighted") },
       bool("panel.filters.years", true, "The year range: From and To.", { label: "optFiltersYears", parent: "panel.filters.show" }),
       { parent: "panel.filters.show", ...named("yearLabel") },
-      ...names("yearStart", "yearEnd").map((r) => ({ parent: "panel.filters.show", ...r })),
+      ...names("yearStart", "yearEnd").map((r) => ({ parent: "panel.filters.years", ...r })),          // (the names of From and To hang on the year range)
       bool("panel.filters.follow", true, "The counts follow the filters: the table, the awards and talks counts and the panel's copy summary and copy table count the papers the filters leave (a year range, a search, a quick filter, a venue, Only highlighted, the papers behind the h-index); the cell or the row picked in a count narrows no count. Off: they count every paper.",
         { label: "optFiltersFollow", hint: "optFiltersFollowHint", parent: "panel.show" })
     ]),

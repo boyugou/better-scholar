@@ -68,12 +68,12 @@ Rules:
 | `colors.award` | "#rrggbb" or "" | `""` | Colour of the award chips, "#rrggbb"; "" is the built-in gold. |
 | `colors.talk` | "#rrggbb" or "" | `""` | Colour of the talk chips (Oral, Spotlight, Highlight), "#rrggbb"; "" is the built-in slate. |
 | `panel.show` | true / false | `true` | The panel in the right-hand column of the profile page: off hides all of it. The settings of the table, of the awards and talks counts and of the copy buttons still decide what the toolbar popup shows; every other panel.* setting has no effect then. |
-| `panel.order` | list of ids | `["table","copy","marks","filters","metrics","years","venues","status","names"]` | The parts of the panel from top to bottom: a list of part ids (table, copy, marks, filters, metrics, years, venues, status, names). Ids left out follow in the default order; a part's own show switch hides it without changing its place. |
 | `panel.header.name` | true / false | `true` | The panel's title at the top. |
 | `labels.extShortName` | text, at most 30 characters | `""` | The text of the panel's title (default: "Better Scholar"): your own words, in every language; "" brings the built-in text back. |
 | `panel.header.settings` | true / false | `true` | The button in the panel's title bar that opens the settings page. |
 | `panel.header.fold` | true / false | `true` | The button that folds the panel to its title bar. Off: the panel is always open. |
 | `panel.filters.bar` | true / false | `true` | The line in the panel's title bar that says how many papers the filters leave, and clears them: it takes the place of the title while a filter is on. |
+| `panel.order` | list of ids | `["table","copy","marks","filters","metrics","years","venues","status","names"]` | The parts of the panel from top to bottom: a list of part ids (table, copy, marks, filters, metrics, years, venues, status, names). Ids left out follow in the default order; a part's own show switch hides it without changing its place. |
 | `panel.table.show` | true / false | `true` | The table of your papers by position and rank (also the toolbar popup's table). |
 | `panel.table.title` | true / false | `true` | The title line of the table. |
 | `labels.summaryTitle` | text, at most 30 characters | `""` | The text of the title of the role × rank table (default: "Papers by role and rank"): your own words, in every language; "" brings the built-in text back. |

@@ -366,7 +366,7 @@ const { ok, result, error } = await answer;   // result.text is the BibTeX
 | **5 · 27** | 道识别步骤（全名、期刊词袋、缩写、被截断名称的可见开头、全名加副标题）和防止较弱判断压过较强判断的防护 | `src/lib/venues.js` 中标注的步骤与 `docs/ARCHITECTURE.md` 的检查表 |
 | **5,931** | 篇获奖论文，另有 2,231 篇获荣誉提名或亚军（共 8,282 项奖项），来自 194 个会议和系列，1990–2026 年 | `src/data/awards.js` |
 | **22,744** | 行真实的 Scholar 发表场所文本，每一行的结果都逐一核对并记录 | `test/fixtures/venues.expected.json` |
-| **600+ · 100+ · 15** | 个单元测试、在加载了扩展的真实 Chromium 里运行的端到端检查、网页演示的检查 | `test/*.test.js`、`test/e2e/` |
+| **600+ · 100+ · 16** | 个单元测试、在加载了扩展的真实 Chromium 里运行的端到端检查、网页演示的检查 | `test/*.test.js`、`test/e2e/` |
 | **0** | 个依赖，也没有构建步骤 | `package.json` |
 
 这些数字由 `npm run numbers` 从代码和数据里统计，并有测试保证与实际一致；随每次修复增长的数目只写成向下取整的“N+”。

@@ -73,6 +73,8 @@ async function open(search = "", { locale = "en-US", init } = {}) {
 }
 async function newPage(context) {
   const page = await context.newPage();
+  // (an error event that is no exception — "ResizeObserver loop completed with undelivered notifications" — is said on the console, and so counted)
+  await page.addInitScript(() => window.addEventListener("error", (e) => { if (!e.error) console.error("window error: " + e.message); }));
   page.on("console", (m) => { if (m.type() === "error") problems.push("console: " + m.text()); });
   page.on("pageerror", (e) => problems.push("pageerror: " + e.message));
   page.on("response", (r) => { if (r.status() >= 400) problems.push(`${r.status()}: ${r.url()}`); });
@@ -259,6 +261,14 @@ try {
   assert.equal(await blocked.page.locator('input[data-pref="rows.ccf"]').isChecked(), true, "nothing was kept: the defaults are back");
   await blocked.context.close();
   ok("without localStorage the page works and keeps its changes in memory only");
+
+  // -- 11b. the window narrowed and widened: the controls that measure themselves (the segmented choices, the panel's copy buttons) do so without a loop
+  {
+    const { context, page } = await open("?lang=ru");
+    for (const w of [700, 330, 1100, 420, 1360]) { await page.setViewportSize({ width: w, height: 900 }); await page.waitForTimeout(250); }
+    await context.close();
+    ok("narrowing and widening the window raises no error (the controls that measure themselves)");
+  }
 
   // -- 12. no console errors, no failed request, nothing asked of any other server
   assert.deepEqual(problems, [], "console errors / failed requests:\n" + problems.join("\n"));

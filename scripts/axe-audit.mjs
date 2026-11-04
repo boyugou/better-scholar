@@ -122,7 +122,7 @@ for (const [kind, text] of [["words", "Wmw Wmw Wmw Wmw Wmw Wmw Wmw Wm"], ["full-
   await popup.waitForTimeout(300);
   await popup.goto(`chrome-extension://${id}/popup/popup.html?tab=${profileTab}`); await popup.waitForSelector(".who"); await popup.waitForTimeout(300);
   let flashed = true, tookMs = 0, waitError = "";
-  if (kind.includes("clicked")) {          // (a pressed button keeps its label's width while it says "Copied", 1.2 s — at most the row's; measured once it has said so)
+  if (kind.includes("clicked")) {          // (a pressed button keeps its place while it says "Copied", 1.2 s; measured once it has said so)
     await popup.bringToFront();          // (a page in the back gets no animation frames: the wait polls on a timer, and the page is in front anyway; on a CI machine the copy — a call to
                                           // the page and back — has taken three seconds, once more than eight, before the button said so)
     const label = (await popup.textContent('.actions button.btn[data-act="copy-summary"]')).trim(), t0 = Date.now();
@@ -149,7 +149,7 @@ for (const [kind, text] of [["words", "Wmw Wmw Wmw Wmw Wmw Wmw Wmw Wm"], ["full-
   if (kind.includes("clicked")) {          // (and the panel's: a pressed copy button stays in its row)
     await page.bringToFront();
     await page.click('#rr-panel .rr-copybar [data-act="copy-summary"]');
-    const panelFlashed = await page.waitForFunction(() => { const b = document.querySelector('#rr-panel .rr-copybar [data-act="copy-summary"]'); return !!b && /min-width/.test(b.getAttribute("style") || ""); }, null, { timeout: 20000, polling: 50 }).then(() => true, () => false);
+    const panelFlashed = await page.waitForFunction(() => { const b = document.querySelector('#rr-panel .rr-copybar [data-act="copy-summary"]'); return !!b && (b.classList.contains("rr-btn-flashed") || /min-height/.test(b.getAttribute("style") || "")); }, null, { timeout: 20000, polling: 50 }).then(() => true, () => false);
     const outside = await page.evaluate(() => { const bar = document.querySelector("#rr-panel .rr-copybar").getBoundingClientRect(); return [...document.querySelectorAll("#rr-panel .rr-copybar .rr-btn")].map((b) => b.getBoundingClientRect()).filter((r) => r.right > bar.right + 1 || r.left < bar.left - 1).map((r) => Math.round(r.width)); });
     if (outside.length || !panelFlashed) total++;
     const panelSaid = (await page.textContent('#rr-panel .rr-copybar [data-act="copy-summary"]')).trim().slice(0, 20);

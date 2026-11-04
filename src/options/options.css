@@ -290,9 +290,7 @@ html { scroll-padding-top: 72px; }
   border-bottom-right-radius: 15px;
 }
 
-.card:hover {
-  border-color: color-mix(in srgb, var(--accent) 30%, var(--card-border));
-}
+
 
 .card > h2 {
   margin: 0;
@@ -319,9 +317,7 @@ html { scroll-padding-top: 72px; }
   transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.card:hover .card-icon {
-  transform: scale(1.08);
-}
+
 
 @media (prefers-color-scheme: dark) {
   .card-icon {                           /* (the light page's colour, lightened: a dark indigo or slate on the dark card was 1.8:1) */
@@ -416,6 +412,8 @@ html { scroll-padding-top: 72px; }
   box-shadow: inset -3px 0 0 var(--line);
 }
 
+.opt.sub.sub2 { padding-inline-start: 60px; }          /* (From and To, under Year range) */
+
 /* A heading over a run of rows that belong together */
 .opt-group {
   margin: 0;
@@ -429,12 +427,7 @@ html { scroll-padding-top: 72px; }
 }
 
 /* An order: the parts (or buttons) of a list, top to bottom, with the buttons that move them; a part that is switched off is dimmed and keeps its place */
-.opt.opt-order { flex-direction: column; align-items: stretch; gap: 8px; cursor: default; }
-.opt.opt-order .txt, .opt.opt-segmented .txt { flex: none; }          /* (in a column the label's 10rem basis would be its height: a gap of 140 px above the list or the choices) */
-.order-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
-.order-item { display: flex; align-items: center; gap: 2px; padding: 3px 4px 3px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--card); }
-.order-item.off { opacity: 0.65; }                     /* (dimmed, and still 4.5:1) */
-.order-name { flex: 1; min-width: 0; font-size: 13px; color: var(--text); overflow-wrap: anywhere; }
+.opt.opt-segmented .txt { flex: none; }          /* (in a column the label's 10rem basis would be its height: a gap of 140 px above the list or the choices) */
 /* An order whose items are the card's own switches: one row per item, the arrows that move it in front (options.js orderedRows) */
 .order-block { border-top: 1px solid var(--line); }
 .order-block > .opt-order-head { border-top: none; cursor: default; padding-bottom: 6px; }
@@ -442,14 +435,21 @@ html { scroll-padding-top: 72px; }
 .order-row { display: flex; align-items: center; border-top: 1px solid var(--line); background: var(--sub); box-shadow: inset 3px 0 0 var(--line); }
 [dir="rtl"] .order-row { box-shadow: inset -3px 0 0 var(--line); }
 .order-arrows { flex: none; display: flex; flex-direction: column; padding-inline-start: 9px; }
-.order-arrows .order-btn { height: 20px; }
 .order-body { flex: 1; min-width: 0; }
-.order-body > .opt { border-top: none; background: transparent; box-shadow: none; padding-inline-start: 6px; }
+.order-body > .opt, [dir="rtl"] .order-body > .opt { border-top: none; background: transparent; box-shadow: none; padding-inline-start: 3px; }          /* (the names at 40 px, as the other indented rows') */
+.order-body > .order-name { display: block; padding: 10px 20px 10px 3px; font-size: 13px; color: var(--text); overflow-wrap: anywhere; }
+.order-row.off .order-name { color: var(--muted); }          /* (a part that is off: its name is dimmed, not its arrows, which still work) */
 .order-body > .opt + .opt { padding-top: 0; }          /* (the words of your own quick filter, under its switch) */
 .order-btn {
-  width: 28px; height: 26px; padding: 0; border: 0; border-radius: 6px; background: none; color: var(--muted);
-  font: inherit; font-size: 10px; line-height: 1; cursor: pointer;
+  width: 28px; height: 24px; padding: 0; border: 0; border-radius: 6px; background: none; color: var(--muted);
+  font: inherit; font-size: 0; line-height: 1; cursor: pointer; display: inline-flex; align-items: center; justify-content: center;
 }
+.order-btn::before {
+  content: ""; width: 12px; height: 12px; background: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 15l6-6 6 6'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 15l6-6 6 6'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.order-btn[data-act="move-down"]::before { transform: rotate(180deg); }
 .order-btn:hover:not(:disabled) { background: var(--hover); color: var(--text); }
 .order-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
 .order-btn:disabled { opacity: 0.3; cursor: default; }
@@ -471,10 +471,16 @@ html { scroll-padding-top: 72px; }
 }
 .name-reset:hover { background: var(--hover); color: var(--text); }
 .name-reset:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
-@media (max-width: 560px) { .opt.opt-named { flex-wrap: wrap; } .opt.opt-named .name-edit { order: 3; width: 100%; } .name-input { width: 100%; max-width: none; flex: 1; } }
+@media (max-width: 560px) {
+  .opt.opt-named, .opt.opt-name { flex-wrap: wrap; }
+  .opt.opt-named .txt, .opt:has(> .sw) > .txt { flex: 1 1 0; }          /* (a switch stays on its name's line, however deep the row; a name field goes under both) */
+  .opt.opt-named .name-edit, .opt.opt-name .name-edit { order: 3; width: 100%; }
+  .name-input { width: 100%; max-width: none; flex: 1; }
+  .opt-words > .search-words { flex: 1 0 100%; }          /* (under its name, the row's whole width: not a 30 px box beside a long hint) */
+}
 /* the words of your own quick filter: a wider field, in the search's own type; what cannot be read under it */
 .opt.opt-words { cursor: default; }
-.search-words { width: 240px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12px; }
+.search-words { width: 230px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12px; }
 .search-bad { flex: 1 0 100%; color: var(--danger); font-size: 12px; line-height: 1.45; }
 @media (max-width: 560px) { .search-words { width: 100%; } }
 
@@ -822,14 +828,16 @@ select.sel:focus-visible {
 .role-info-wrap {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   min-width: 140px;
 }
 
+.role-info-wrap .name { font-weight: 600; font-size: 13.5px; color: var(--text); }          /* (as the role names of the Highlight card) */
+
 .role-swatch-badge {
-  width: 14px;
-  height: 14px;
-  border-radius: 4px;
+  width: 11px;
+  height: 11px;
+  border-radius: 3.5px;
   flex-shrink: 0;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.1);
   transition: background-color 0.15s ease;
@@ -845,8 +853,8 @@ select.sel:focus-visible {
 .curated-palette-row {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  padding: 3px 6px;
+  gap: 8px;
+  padding: 5px 8px;
   background: var(--chip-bg);
   border: 1px solid var(--chip-border);
   border-radius: 999px;
@@ -870,8 +878,7 @@ select.sel:focus-visible {
 }
 
 .curated-dot-btn.active {
-  box-shadow: 0 0 0 2px var(--card), 0 0 0 4px var(--accent);
-  transform: scale(1.15);
+  box-shadow: 0 0 0 2px var(--card), 0 0 0 3.5px var(--accent);          /* (the ring inside the tray's room: not over the next swatch) */
 }
 
 .curated-dot-btn:focus-visible {
@@ -1286,17 +1293,16 @@ button.btn.danger:hover {
   pointer-events: none;
 }
 
-input.key {
+input.key {                              /* (drawn as the name fields are) */
   -webkit-text-security: disc;
   font: inherit;
-  font-size: 13px;
-  width: 180px;
-  padding: 7px 12px;
+  font-size: 12.5px;
+  width: 172px;
+  padding: 5px 10px;
   border: 1px solid var(--btn-line);
   border-radius: 8px;
-  background: var(--card);
+  background: transparent;
   color: var(--text);
-  box-shadow: var(--btn-shadow);
   transition: border-color 0.15s, box-shadow 0.15s;
 }
 
@@ -1320,13 +1326,8 @@ input.key:focus-visible {
 }
 .presets > .presets-title { grid-column: 1 / -1; }
 
-button.btn.preset-chip {
-  padding: 5px 14px;
-  border-radius: 999px;
+button.btn.preset-chip {                  /* (a plain button, as the others on the page) */
   font-size: 12.5px;
-  font-weight: 600;
-  background: var(--chip-bg);
-  border: 1px solid var(--chip-border);
 }
 
 button.btn.preset-chip:hover {
@@ -1347,11 +1348,13 @@ button.btn.preset-chip:hover {
   list-style: none;
   user-select: none;
   padding: 6px 14px;
-  border: 1px solid var(--chip-border);
+  min-height: 34px;
+  border: 1px solid var(--btn-line);          /* (the editor's switch drawn as the buttons above it) */
   border-radius: 9px;
-  background: var(--chip-bg);
-  font-size: 12.5px;
-  font-weight: 500;
+  background: var(--card);
+  box-shadow: var(--btn-shadow);
+  font-size: 13px;
+  font-weight: 600;
 }
 
 .config-editor summary:focus-visible {
@@ -1548,8 +1551,9 @@ button.btn.preset-chip:hover {
 }
 
 #pv-panel {
-  margin: 0 0 14px;
+  margin: 0 16px 16px;                     /* (inset as the tray above it: its own border and corners not on the preview card's) */
 }
+@media (max-width: 560px) { #pv-panel { margin: 0 0 14px; } }          /* (a phone: the panel takes the strip's whole width, its role names on one line) */
 
 /* ==========================================================================
    Saved Paper Cache Modal

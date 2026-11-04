@@ -291,7 +291,7 @@
         "data-op": B.prefs.PILL_OPERATORS[id] || "",
         "data-pill": id,
         "aria-pressed": "false",
-        ...(id === "cites100" ? { dir: "ltr" } : ownPill(id) ? { dir: "auto" } : {}),          // (">100" is a comparison: in a right-to-left panel its sign would be mirrored to "<100"; your own words go their own way)
+        ...(id === "cites100" ? { dir: "ltr" } : ownPill(id) || id === "coreA" ? { dir: "auto" } : {}),          // ("CORE A*" takes its letters' direction: in a right-to-left panel the star stays after the A)          // (">100" is a comparison: in a right-to-left panel its sign would be mirrored to "<100"; your own words go their own way)
         ...P("panel.filters.pills." + id), "data-rr-item": id, ...(PILL_NAME[id] ? L(PILL_NAME[id]) : {}),
         onClick: (e) => {
           closeSuggest();
@@ -432,6 +432,18 @@
     const fbText = h("span", { class: "rr-fb-text", role: "status" }, fbSay, fbWhat, fbCount);          // (a status: what the filters leave is said when it changes)
     const fbClear = h("button", { class: "rr-link", type: "button", "data-act": "clear-filters", onClick: (e) => { cb.onClearFilters(); if (e.detail === 0) queryInput.focus({ preventScroll: true }); } });          // (the bar goes with the filters: a key press goes on in the search box, not to the page)
     let fbSig = "";
+    // The copy buttons are two columns while every label fits in half the row, else one (styles.css): the widest label is measured on one line, once for a
+    // set of labels — when they are drawn, or when the row is first laid out (a panel drawn before it is in the page, or while it is folded, has nothing to
+    // measure). Never a label wrapped in its button, never a row of one beside rows of two.
+    let copySig = "", copyWant = "";
+    function measureCopy() {
+      if (!copyWant || copyWant === copySig || ui.flash) return;
+      actions.classList.add("rr-measure");
+      const widest = Math.max(0, ...[...actions.children].map((b) => b.getBoundingClientRect().width));
+      actions.classList.remove("rr-measure");
+      if (widest) { copySig = copyWant; actions.style.setProperty("--rr-copy-w", Math.ceil(widest) + "px"); }
+    }
+    if (typeof ResizeObserver === "function") new ResizeObserver(() => { if (copyWant !== copySig) setTimeout(measureCopy, 0); }).observe(actions);          // (after the observer's turn: a row that changes its columns inside it is a "loop" error)
     const filterBar = h("div", { class: "rr-filterbar", "data-rr": "filterbar", hidden: true, ...P("panel.filters.bar") }, fbText, fbClear);
     // Scholar's page changed under us: the warning is the first thing in the panel
     const warnBar = h("div", { class: "rr-warn", "data-rr": "layout-warning", hidden: true });
@@ -523,7 +535,7 @@
         ...cols.map((c) => h("th", { ...tierPart(c) },
           h("button", { class: "rr-rolebtn", type: "button", style: "padding:1px 5px", "data-tier": c, "aria-pressed": pressed({ role: undefined, tier: c }),
             "aria-label": c === "none" ? t("tipUnranked") : [srcName, tierText(c)].filter(Boolean).join(" "),          // (the list and the tier, in words; "–" is the column of what is not ranked)
-            title: c === "none" ? [t("tipUnranked"), unrankedWords(s)].filter(Boolean).join("\n") : "", onClick: () => cb.onSelect({ role: undefined, tier: c }) }, tierText(c)))),
+            title: c === "none" ? [t("tipUnranked"), unrankedWords(s)].filter(Boolean).join("\n") : "", dir: c === "A*" ? "ltr" : null, onClick: () => cb.onSelect({ role: undefined, tier: c }) }, tierText(c)))),          // ("A*" stays "A*" in a right-to-left panel)
         totalHead);
       const rows = s.rows.filter((r) => r.role !== "middle" || tp.other);
       const bodyRows = rows.map((r) => h("tr", { "data-role": r.role, ...(r.role === "middle" ? P("panel.table.other") : {}) },
@@ -556,11 +568,12 @@
       actions.replaceChildren(...on.map((kind) => {
         const flashed = ui.flash && ui.flash.kind === kind;
         const cls = "rr-btn" + (flashed && !ui.flash.mode ? " rr-btn-flashed" : "");          // (only a copy that happened is green: not "Nothing to copy", not "Not copied")
-        // (a flashed button keeps the width of its own label, so that the shorter word does not let the buttons after it move up: the next click would land on another one;
-        // at most the row's width — a long label wraps there)
-        return h("button", { class: cls, type: "button", "data-act": "copy-" + kind, style: flashed && ui.flash.width ? `min-width:min(${ui.flash.width}px, 100%)` : null, ...P("panel.copy." + kind), "data-rr-item": kind, ...L(B.dom.COPY_LABEL[kind]), onClick: () => cb.onCopy(kind) },
+        // (a flashed button keeps its height, so that the shorter word does not let the rows under it move up: the next click would land on another button)
+        return h("button", { class: cls, type: "button", "data-act": "copy-" + kind, style: flashed && ui.flash.height ? `min-height:${ui.flash.height}px` : null, ...P("panel.copy." + kind), "data-rr-item": kind, ...L(B.dom.COPY_LABEL[kind]), onClick: () => cb.onCopy(kind) },
           flashed ? flashText() : t(B.dom.COPY_LABEL[kind]));
       }));
+      copyWant = on.map((k) => t(B.dom.COPY_LABEL[k])).join("\u0001");
+      measureCopy();
       restoreFocus(focused);
     }
     // what a copy button says for a moment after it was pressed: done, or why nothing was copied
@@ -893,12 +906,10 @@
     // `mode` "empty": nothing was copied, the button says why; said to a screen reader too
     let flashTimer = 0;
     function flash(kind, mode) {
-      // the width the button's own label asks for (the button itself may have grown to fill its row)
+      // the height the button has (a label that wraps in its column is taller than "Copied")
       const own = actions.querySelector('[data-act="copy-' + kind + '"]');
-      let width = 0;
-      if (own && !(ui.flash && ui.flash.kind === kind)) { const was = own.style.cssText; own.style.cssText = "flex:none;min-width:0;width:max-content"; width = Math.ceil(own.getBoundingClientRect().width); own.style.cssText = was; }
-      else if (ui.flash && ui.flash.kind === kind) width = ui.flash.width || 0;
-      ui.flash = { kind, mode, width };
+      const height = ui.flash && ui.flash.kind === kind ? ui.flash.height || 0 : own ? own.getBoundingClientRect().height : 0;          // (exact: a height rounded up made the rows under it move by a pixel)
+      ui.flash = { kind, mode, height };
       if (lastModel) renderActions(lastModel);
       flashSr.textContent = flashText();
       clearTimeout(flashTimer);

@@ -255,6 +255,7 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
 #rr-panel .rr-head-notitle { justify-content: flex-end; }
 #rr-panel .rr-body > .rr-sec { break-inside: avoid; }
 #rr-panel .rr-sec-head{ display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 6px; }
+#rr-panel .rr-sec-head > .rr-seg{ margin-inline-start: auto; }          /* (a CCF / CORE switch wrapped under a long title stays at the end) */
 #rr-panel .rr-sec-title{ font-weight: 600; }
 #rr-panel .rr-note{ color: var(--rr-muted); font-size: 12px; }
 #rr-panel .rr-faint{ color: var(--rr-faint); font-size: 11.5px; line-height: 1.35; }
@@ -273,7 +274,8 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
 #rr-panel .rr-matrix tbody th{ text-align: start; overflow-wrap: anywhere; }
 #rr-panel .rr-rolebtn{ max-width: 100%; text-align: start; overflow-wrap: anywhere; hyphens: auto; }
 #rr-panel .rr-matrix tfoot td, #rr-panel .rr-matrix tfoot th{ border-top: 1px solid var(--rr-line); padding-top: 3px; color: var(--rr-muted); }
-#rr-panel .rr-matrix tfoot th{ text-align: start; padding-inline-start: 19px; }
+#rr-panel .rr-matrix tfoot th{ text-align: start; padding-inline-start: 19px; border-top-color: transparent; background: linear-gradient(var(--rr-line), var(--rr-line)) right top / calc(100% - 4px) 1px no-repeat; }          /* (the rule over "Total" starts at the section's edge, not in the 4 px the table starts before it) */
+#rr-panel[dir="rtl"] .rr-matrix tfoot th{ background-position: left top; }
 #rr-panel .rr-rolebtn{ display: inline-flex; align-items: center; gap: 6px; padding: 2px 4px; border-radius: 4px; }
 #rr-panel .rr-matrix{ margin-inline-start: -4px; width: calc(100% + 4px); }          /* (the role dots on the section's edge, as the Awards rows' icons: the table starts in the role buttons' padding) */
 #rr-panel .rr-dot{ width: 9px; height: 9px; border-radius: 2.5px; flex: none; }
@@ -300,13 +302,16 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
   --rr-ico-check: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
 }
 #rr-panel .rr-actions{ display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap; }
-#rr-panel .rr-copybar{ display: flex; flex-wrap: wrap; gap: 6px; }
+/* two equal columns while the widest label (--rr-copy-w, measured by panel.js) fits in half the row, else one: a label is never wrapped in its button, and
+   there is never a row of one beside rows of two (Russian made 1 / 1 / 2 / 1 / 1 / 2) */
+#rr-panel .rr-copybar{ display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, max(var(--rr-copy-w, 0px), calc(50% - 3px))), 1fr)); gap: 6px; }
+#rr-panel .rr-copybar.rr-measure{ display: flex; flex-wrap: wrap; }
+#rr-panel .rr-copybar.rr-measure .rr-btn{ flex: none; width: max-content; white-space: nowrap; }
 #rr-panel .rr-copy .rr-actions{ margin-top: 0; }
-#rr-panel .rr-copybar .rr-btn{          /* (two equal buttons to a row; a label longer than half the row takes the row, and wraps only beyond that: min-width: fit-content, as in the popup) */
-  flex: 1 1 40%; min-width: fit-content; padding: 4px 6px; font-size: 11.5px; text-align: center;
+#rr-panel .rr-copybar .rr-btn{
+  min-width: 0; padding: 4px 6px; font-size: 11.5px; line-height: 1.25; text-align: center; overflow-wrap: anywhere;
   display: inline-flex; align-items: center; justify-content: center; gap: 4px;
 }
-#rr-panel .rr-copybar .rr-btn:last-child:nth-child(odd) { flex: 0 1 calc(50% - 3px); }          /* (an odd last button keeps its column: a lone full-width one reads as the main button) */
 #rr-panel .rr-copybar .rr-btn::before {
   content: ""; display: inline-block; width: 11px; height: 11px; flex: none;
   background-color: currentColor; opacity: .7;
@@ -367,13 +372,14 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
   display: block; width: calc(100% + 12px); margin: 0 -6px; padding-block: 3px; padding-inline: 23px 6px; text-indent: -17px; border-radius: 4px; color: var(--rr-text);
 }
 #rr-panel details > summary { cursor: pointer; list-style: none; }
+#rr-panel details[data-rr] > :not(summary) { margin-inline-start: 17px; }          /* (what opens under a status line starts under its words, not at the section's edge) */
 #rr-panel details > summary:hover, #rr-panel [data-rr="absent"] > .rr-link:hover { background: #f1f3f4; text-decoration: none; }
 #rr-panel [data-rr="absent"] > .rr-link[aria-pressed="true"] { background: #e8f0fe; box-shadow: inset 0 0 0 1px var(--rr-accent); }
 #rr-panel [data-rr="absent"] > .rr-link::before {
-  content: ""; display: inline-block; width: 9px; height: 9px; margin-inline: 0 8px; vertical-align: -1px; background: var(--rr-faint); text-indent: 0;
+  content: ""; display: inline-block; width: 11px; height: 11px; margin-inline: -1px 7px; vertical-align: -2px; background: var(--rr-faint); text-indent: 0;
   -webkit-mask: var(--rr-funnel) center / contain no-repeat; mask: var(--rr-funnel) center / contain no-repeat;
 }
-#rr-panel { --rr-funnel: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M2 3h20l-8 9.5V20l-4 2v-9.5z'/%3E%3C/svg%3E"); }
+#rr-panel { --rr-funnel: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linejoin='round'%3E%3Cpath d='M3 4h18l-7 8.5V19l-4 2v-8.5z'/%3E%3C/svg%3E"); }          /* (an outlined funnel: a solid one read as an open arrow ▼ beside the closed ones) */
 #rr-panel details > summary::-webkit-details-marker { display: none; }
 #rr-panel details[data-rr="variants"] > summary { color: var(--rr-muted); }          /* (a help, not a result: quieter than the list of unranked venues) */
 #rr-panel details > summary::before { content: ""; display: inline-block; width: 5px; height: 5px; margin-block: 0 1px; margin-inline: 2px 8.5px; border-right: 1.5px solid var(--rr-faint); border-bottom: 1.5px solid var(--rr-faint); transform: rotate(-45deg); transition: transform .15s; }
@@ -419,17 +425,17 @@ tr.rr-dup { display: none !important; }
 td.gsc_a_c a.rr-merged { text-decoration: underline dotted; text-underline-offset: 3px; }
 
 /* highlighted papers per year */
-#rr-panel .rr-bars{ display: flex; align-items: flex-end; justify-content: space-between; gap: 3px; height: 44px; margin-top: 4px; }          /* (the whole width, bars of at most 32px: a few years spread out, many years packed) */
-#rr-panel .rr-bar{ flex: 1 1 0; min-width: 3px; max-width: 32px; height: 100%; display: flex; align-items: flex-end; cursor: pointer; border-radius: 3px 3px 1px 1px; }
+#rr-panel .rr-bars{ display: flex; align-items: flex-end; gap: 3px; height: 44px; margin-top: 4px; }          /* (the whole width, bars of at most 32px: a few years spread out, many years packed) */
+#rr-panel .rr-bar{ flex: 1 1 0; min-width: 3px; height: 100%; display: flex; align-items: flex-end; cursor: pointer; border-radius: 3px 3px 1px 1px; }
 #rr-panel .rr-bar[disabled]{ cursor: default; opacity: .3; }
 #rr-panel .rr-bar:not([disabled]):hover .rr-stack{ filter: brightness(.92); }
 #rr-panel .rr-bar[aria-pressed="true"] .rr-stack{ outline: 2px solid var(--rr-accent); outline-offset: 1px; }
 #rr-panel .rr-bar:focus-visible{ outline: 2px solid var(--rr-accent); outline-offset: 1px; }
-#rr-panel .rr-stack{ width: 100%; display: flex; flex-direction: column; border-radius: 3px 3px 1px 1px; overflow: hidden; }
+#rr-panel .rr-stack{ width: 100%; max-width: 32px; margin-inline: auto; display: flex; flex-direction: column; border-radius: min(3px, 25%) min(3px, 25%) 1px 1px / 3px 3px 1px 1px; overflow: hidden; }          /* (each year an equal slot of the width, its bar at most 32 px in the middle: two years are not pinned to the two edges; a thin bar's corners stay square enough not to read as a dot) */
 #rr-panel .rr-stack i{ display: block; min-height: 2px; }
 #rr-panel .rr-bars-axis{ display: flex; justify-content: space-between; margin-top: 3px; color: var(--rr-faint); font-size: 11px; font-variant-numeric: tabular-nums; }
 #rr-panel .rr-bars-axis-each{ gap: 3px; font-size: 10px; }
-#rr-panel .rr-bars-axis-each > span{ flex: 1 1 0; max-width: 32px; text-align: center; white-space: nowrap; display: flex; justify-content: center; }          /* (the bars' own widths and gaps: each year under its bar, wider than it if need be) */
+#rr-panel .rr-bars-axis-each > span{ flex: 1 1 0; min-width: 3px; text-align: center; white-space: nowrap; display: flex; justify-content: center; }          /* (the bars' own widths and gaps: each year under its bar, wider than it if need be) */
 
 /* printing or saving the profile as a PDF keeps the colours, and the panel is not split across pages */
 @media print {

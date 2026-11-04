@@ -53,6 +53,16 @@ give the details and every review):
   Settings: Copy & export and Quick filters list each item once — its arrows, its name, its name field and its switch on one row, in the
   panel's order — where they had an order list and then every item again with its switch (24 rows became 12, 23 became 13); the
   presets sit in even columns under their label.
+- **A second screenshot review (2026-11-03)**, 24 faults, several of the first round's own; each fixed one measured by an end-to-end check,
+  seen red first: the copy buttons are two columns while every label fits in half the row, else one (Russian had rows of one beside rows
+  of two; the widest label is measured, never wrapped); two years in the chart get two equal slots, not the two edges; the rule over Total
+  starts at the section's edge; the unranked list opens under its line's words; the funnel is outlined
+  (it read as an open arrow); "CORE A*" keeps its star after the A in a right-to-left page. Settings: one design for every order (rows,
+  arrows in front, 24 px), the panel's parts with their names dimmed when off; one heading over the quick filters; From and To one step
+  under Year range; on a phone a switch stays on its name's line and your own filter's words take the row (they were a 30 px box); no
+  second rail in right to left; the ready-made chip looks under their heading; the preview's panel inset as the tray above it; a chosen
+  swatch's ring clear of the next; an empty key field is empty (it showed dots); plain buttons throughout (presets, the editor, the
+  agent guide); no accent border on a card under the pointer. The web demo now fails on any error event, a ResizeObserver loop included.
 - **Your own venue mappings** (settings → *Check a venue* → *Assign it to a listed venue…*). A venue line that no rule ranks can now be
   tied by you to a row of the CCF or CORE list; the same venue in other editions (years, ordinals, "Proceedings of the" and a bracketed acronym aside) gets that
   rank too. It is never passed off as the lists' rank: the chip is dashed with a dotted tier and its tooltip says "Your own mapping", a

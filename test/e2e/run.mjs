@@ -482,6 +482,12 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     await pollPage(opts, () => document.documentElement.dir === "rtl", null, 15000);
     await opts.waitForTimeout(400);
     await opts.bringToFront(); await opts.screenshot({ path: path.join(outDir, "settings-ar.png"), fullPage: true });
+    assert.deepEqual(await opts.evaluate(() => {
+      const rails = [...document.querySelectorAll(".order-body > .opt")].filter((o) => getComputedStyle(o).boxShadow !== "none").length;
+      const name = document.querySelector('.order-row[data-id="coreA"] .name'), tx = name.textContent, i = tx.indexOf("*"), rg = document.createRange(), node = name.querySelector("bdi") ? name.querySelector("bdi").firstChild : name.firstChild;
+      rg.setStart(node, node.data.indexOf("*")); rg.setEnd(node, node.data.indexOf("*") + 1); const star = rg.getBoundingClientRect().left; rg.setStart(node, 0); rg.setEnd(node, 1);
+      return [rails, i > 0 && star > rg.getBoundingClientRect().left];
+    }), [0, true], "right to left: an ordered row has one rail, and CORE A* keeps its star at the end");
     await page.bringToFront(); await page.waitForTimeout(400);
     await page.locator("#rr-panel").screenshot({ path: path.join(outDir, "panel-ar.png") });
     // (a built-in text with a character that a name drops — the soft hyphen of Finnish "Yhteis­ensimmäinen" — opened on the preview and left as it was saves no name)
@@ -615,10 +621,14 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
         }
       }
       const d = document.documentElement, label = document.querySelector("#controls .opt:has(select.sel) .name"), sel = document.querySelector("#controls .opt:has(select.sel) select.sel");
+      const switchBelow = [...document.querySelectorAll("#controls .opt")].filter((o) => { const sw = o.querySelector(":scope > .sw"), tx = o.querySelector(":scope > .txt"); return o.offsetParent && sw && tx && sw.getBoundingClientRect().top >= tx.getBoundingClientRect().bottom - 1; }).map((o) => o.textContent.trim().slice(0, 20));
+      const narrowWords = [...document.querySelectorAll("#controls .search-words")].filter((f) => f.offsetParent && f.getBoundingClientRect().width < 150).length;
       const beyond = [...document.querySelectorAll("body *")].filter((e) => e.getBoundingClientRect().right > d.clientWidth + 1 && !e.querySelector("*")).slice(0, 4).map((e) => `${e.tagName.toLowerCase()}.${[...e.classList].join(".")} "${(e.textContent || "").trim().slice(0, 24)}"`);
-      return { broken, sideways: d.scrollWidth - d.clientWidth, beyond, selectBelow: !!(label && sel && sel.getBoundingClientRect().top >= label.getBoundingClientRect().bottom - 1) };
+      return { broken, switchBelow, narrowWords, sideways: d.scrollWidth - d.clientWidth, beyond, selectBelow: !!(label && sel && sel.getBoundingClientRect().top >= label.getBoundingClientRect().bottom - 1) };
     });
     assert.deepEqual(phone.broken, [], `on a phone no word is cut in two: ${phone.broken.join(", ")}`);
+    assert.deepEqual(phone.switchBelow, [], "on a phone a switch stays on its name's line");
+    assert.equal(phone.narrowWords, 0, "on a phone the words of your own quick filter take the row's width (it was a 30 px box beside the hint)");
     assert.ok(phone.sideways <= 1, `on a phone the page does not scroll sideways: ${phone.sideways}px (beyond the edge: ${phone.beyond.join(", ")})`);
     assert.ok(phone.selectBelow, "on a phone a select goes under its label");
     await opts.evaluate(() => window.scrollTo(0, 0));
@@ -2102,7 +2112,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     await settle(opts);
     assert.deepEqual((await stored(opts, "sync", "prefs")).panel.order.slice(0, 3), ["table", "marks", "copy"], "a part moved by its grip: the order of the settings follows");
     assert.deepEqual(await opts.locator("#pv-panel .rr-body > [data-section]").evaluateAll((els) => els.filter((e) => !e.hidden).map((e) => e.dataset.section).slice(0, 3)), ["table", "marks", "copy"], "…and the preview");
-    assert.deepEqual(await opts.locator('.order-list[data-pref="panel.order"] li').evaluateAll((els) => els.map((e) => e.dataset.id).slice(0, 3)), ["table", "marks", "copy"], "…and the list on the left");
+    assert.deepEqual(await opts.locator('.order-rows[data-pref="panel.order"] li').evaluateAll((els) => els.map((e) => e.dataset.id).slice(0, 3)), ["table", "marks", "copy"], "…and the list on the left");
     // (no box on the settings page much taller than what it holds: in a row that stacks its name over its control — an order list, a row of choices — the name's
     // 10rem flex basis had become its height, a blank of 140 px under nine names)
     const stretched = await opts.evaluate(() => [...document.querySelectorAll("#controls *")].filter((el) => {
@@ -2495,6 +2505,24 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
       out.editorInset = Math.round(R(cfg.querySelector(".config-editor > summary")).left - R(cfg.querySelector(".row:not(.presets) .btn")).left);
       // the preview's copy buttons (eleven, an odd count) are all one width: the last one keeps its column, no full-width button that reads as the main one
       out.copyWidths = [...new Set([...document.querySelectorAll(".preview .rr-copybar .rr-btn")].filter(shown).map((b) => Math.round(R(b).width)))];
+      // your own quick filter's words: under its name field, to the end of its switch
+      out.wordsOff = [...document.querySelectorAll(".opt-words")].filter(shown).filter((w) => { const f = w.querySelector(".search-words"), above = w.previousElementSibling, n = above && above.querySelector(".name-input"), sw = above && above.querySelector(".sw");
+        return !n || !sw || Math.abs(R(f).left - R(n).left) > 1 || Math.abs(R(f).right - R(sw).right) > 1; }).length;
+      // one design for an order: rows with the arrows in front, arrows of 24 px
+      out.orderLook = [document.querySelectorAll(".order-list").length, [...document.querySelectorAll(".order-btn")].filter((b) => shown(b) && R(b).height < 24).length];
+      // one heading over a list: the group's, not a second one under it
+      out.doubleHeads = [...document.querySelectorAll("h3.opt-group")].filter((g) => g.nextElementSibling && g.nextElementSibling.querySelector(".opt-order-head")).length;
+      // the ready-made chip looks under their heading
+      out.looksHeaded = !!document.querySelector("h3.opt-group + .chip-themes");
+      // From and To one step deeper than the year range they belong to
+      const txt = (p) => R(document.querySelector(`.opt:has([data-pref="${p}"]) .txt`)).left;
+      out.fromDeeper = Math.round(txt("labels.yearStart") - txt("panel.filters.years"));
+      // the preview's panel inset as the tray above it, its corners not on the card's
+      out.pvInset = Math.round(R(document.getElementById("pv-panel")).left - R(document.querySelector(".preview > .card")).left);
+      // a chosen swatch's ring stays clear of the next swatch
+      out.ringClear = [...document.querySelectorAll(".curated-dot-btn.active")].every((b) => !b.nextElementSibling || R(b.nextElementSibling).left - R(b).right >= 3.5);
+      // an empty key field is empty: no dots that look like a saved key
+      out.keyDots = (document.querySelector("input.key") || {}).placeholder || "";
       // every card has a picture of its own
       const icons = [...document.querySelectorAll(".card > h2 .card-icon")].map((i) => i.innerHTML);
       out.sharedIcons = icons.length - new Set(icons).size;
@@ -2505,6 +2533,8 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     assert.deepEqual(setLayout.unevenSegments, [], "a segmented control wraps in even rows");
     assert.equal(setLayout.editorInset, 0, "the configuration editor is inset as the card's buttons");
     assert.equal(setLayout.sharedIcons, 0, "no two settings cards share a picture");
+    assert.deepEqual([setLayout.wordsOff, setLayout.orderLook, setLayout.doubleHeads, setLayout.looksHeaded, setLayout.fromDeeper >= 15, setLayout.pvInset >= 15, setLayout.ringClear, setLayout.keyDots],
+      [0, [0, 0], 0, true, true, true, true, ""], "the second screenshot review's faults: words field, one order design, one heading, chip looks, From/To, preview inset, swatch ring, key field");
     assert.equal(setLayout.copyWidths.length, 1, `the preview's copy buttons are all one width (${setLayout.copyWidths})`);
     assert.deepEqual(await lowContrast(opts, "body"), [], "settings page (light): text under 4.5:1");
     assert.deepEqual(await unnamed(opts, "body"), [], "settings page: a control without an accessible name");
@@ -2999,6 +3029,8 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
       assert.match(await pg.locator("#rr-panel .rr-bars").getAttribute("aria-label"), /1 older paper is not drawn/, "and to screen readers");
       const widths = await pg.locator("#rr-panel .rr-bar").evaluateAll((els) => els.map((e) => Math.round(e.getBoundingClientRect().width)));
       assert.ok(widths.every((w) => w >= 12), "the bars are wide enough to see: " + widths);
+      const slots = await pg.evaluate(() => { const box = document.querySelector("#rr-panel .rr-bars").getBoundingClientRect(); return [...document.querySelectorAll("#rr-panel .rr-stack")].map((st) => { const r = st.getBoundingClientRect(); return Math.round(((r.left + r.right) / 2 - box.left) / box.width * 100); }); });
+      assert.ok(slots.length === 2 && Math.abs(slots[0] - 25) <= 3 && Math.abs(slots[1] - 75) <= 3, `two years are two equal slots, each bar in the middle of its own — not pinned to the two edges: ${slots}`);
       await pg.bringToFront(); await pg.locator("#rr-panel").screenshot({ path: path.join(outDir, "state-old-year.png") });
       ok("a paper Scholar dates 1803 does not stretch the year chart: at most the last fifty years are drawn and the older paper is said on hover");
     } finally { await ctxY.close(); await fxY.close(); }
@@ -3252,6 +3284,11 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
             const spill = await page.evaluate(() => [...document.querySelectorAll("#rr-panel .rr-matrix th, #rr-panel .rr-matrix .rr-rolebtn")].filter((e) => e.offsetParent && e.scrollWidth > e.clientWidth + 1).map((e) => e.textContent.trim()));
             if (spill.length) bad.push(`${lang}/${mode}/${src}: table label spills: ${spill.join(", ")}`);
           }
+          // the copy buttons are one width in every language: two columns, or one where a label does not fit in half (Russian made rows of one beside rows of two)
+          if (mode === "sidebar") {
+            const ws = await page.evaluate(() => [...new Set([...document.querySelectorAll("#rr-panel .rr-copybar .rr-btn")].filter((b) => b.offsetParent).map((b) => Math.round(b.getBoundingClientRect().width)))]);
+            if (ws.length > 1) bad.push(`${lang}: the copy buttons are not one width (${ws})`);
+          }
           if (mode === "sidebar" && ["ja", "de", "ru", "fi", "th"].includes(lang)) { await page.bringToFront(); await page.locator("#rr-panel").screenshot({ path: path.join(outDir, `lang-${lang}.png`) }); }
         }
       }
@@ -3439,6 +3476,8 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     assert.equal(await page.evaluate(() => document.querySelector('[data-rr="unmatched"]').open), true, "an opened list is not closed by a redraw");
     await page.uncheck('input[data-act="only"]');
     await page.bringToFront(); await page.locator("#rr-panel").screenshot({ path: path.join(outDir, "state-unmatched.png") });
+    assert.equal(await page.evaluate(() => { const d = document.querySelector('details[data-rr="unmatched"]'); d.open = true; const sm = d.querySelector("summary"), tx = [...sm.childNodes].find((n) => n.nodeType === 3 && n.data.trim()), rg = document.createRange(); rg.setStart(tx, 0); rg.setEnd(tx, 1);
+      return Math.abs(d.querySelector("ul").getBoundingClientRect().left - rg.getBoundingClientRect().left) <= 1; }), true, "the unranked list opens under its line's words, not at the section's edge");
     await page.click('[data-act="copy-unmatched"]');
     const text = await page.evaluate(() => navigator.clipboard.readText());
     assert.match(text, /^\d+× \S/m);
@@ -3676,8 +3715,8 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
       // the settings page: a list that can be moved and a choice are greyed while the part they belong to is off, and wake with it
       await opts.bringToFront();
       const state = () => opts.evaluate(() => {
-        const order = document.querySelector('ol[data-pref="panel.order"]').closest(".opt"), choice = document.querySelector('input[data-pref="panel.marks.grouping"]').closest(".opt");
-        return { orderGrey: order.classList.contains("disabled"), orderButtons: [...order.querySelectorAll(".order-btn")].every((b) => b.disabled), choiceGrey: choice.classList.contains("disabled"), choiceInputs: [...choice.querySelectorAll("input")].every((i) => i.disabled) };
+        const order = document.querySelector('ol[data-pref="panel.order"]').closest(".order-block"), choice = document.querySelector('input[data-pref="panel.marks.grouping"]').closest(".opt");
+        return { orderGrey: order.querySelector(".opt-order-head").classList.contains("disabled"), orderButtons: [...order.querySelectorAll(".order-btn")].every((b) => b.disabled), choiceGrey: choice.classList.contains("disabled"), choiceInputs: [...choice.querySelectorAll("input")].every((i) => i.disabled) };
       });
       assert.deepEqual(await state(), { orderGrey: false, orderButtons: false, choiceGrey: false, choiceInputs: false }, "both are live while the panel and its marks part are on");
       await setPref(opts, "panel.show", false);

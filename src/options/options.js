@@ -249,7 +249,8 @@
   const put = (path, value) => { const keys = path.split("."); keys.slice(0, -1).reduce((o, k) => o[k], prefs)[keys[keys.length - 1]] = value; };
   let uid = 0;
   // the name of a control is its label; its hint is what a screen reader reads after it
-  const described = (label, hint) => { const id = "opt-" + ++uid; const words = document.createTextNode(label); return { id, words, name: h("span", { class: "name", id: id + "-n" }, words), hint: hint ? h("span", { class: "hint", id: id + "-h" }, hint) : null, ids: { "aria-labelledby": id + "-n", "aria-describedby": hint ? id + "-h" : null } }; };
+  // (a name with no right-to-left letter — "CORE A*", "APA" — is isolated, so that a right-to-left page does not move its star or its signs to the front: "*CORE A")
+  const described = (label, hint) => { const id = "opt-" + ++uid; const words = document.createTextNode(label); return { id, words, name: h("span", { class: "name", id: id + "-n" }, /[\u0590-\u08ff\ufb1d-\ufdff\ufe70-\ufeff]/.test(label) ? words : h("bdi", {}, words)), hint: hint ? h("span", { class: "hint", id: id + "-h" }, hint) : null, ids: { "aria-labelledby": id + "-n", "aria-describedby": hint ? id + "-h" : null } }; };
 
   // A name: the text of a title or a name on the screen, in the person's own words, in every language. Empty is the built-in text, shown in grey: what the field would say.
   // (It is shown in the preview and saved as it is typed (the writes are spaced, see save()), trimmed when the field is left or Enter is pressed; Escape gives the old name back.)
@@ -299,7 +300,7 @@
     if (key) syncers.push(() => { d.words.nodeValue = t(key); });                    // (a switch is named by what it shows: when that is renamed, so is it)
     const input = h("input", { type: "checkbox", role: "switch", class: "sw", id: d.id + "-sw", "data-pref": path, ...d.ids, onChange: () => { put(path, input.checked); save(); } });
     if (swatch) d.name.prepend(h("span", { class: "swatch", style: "background:" + swatch }));
-    const row = h("label", { class: "opt" + (sub ? " sub" : "") + (name ? " opt-named" : ""), for: input.id }, h("span", { class: "txt" }, d.name, d.hint), name ? nameEdit(name, name.free ? null : off) : null, input);          // (a free name: drawn elsewhere too, never greyed out — lib/prefs.js part())
+    const row = h("label", { class: "opt" + (sub ? " sub" : "") + (sub > 1 ? " sub2" : "") + (name ? " opt-named" : ""), for: input.id }, h("span", { class: "txt" }, d.name, d.hint), name ? nameEdit(name, name.free ? null : off) : null, input);          // (a free name: drawn elsewhere too, never greyed out — lib/prefs.js part())
     const sync = () => {
       input.checked = !!at(path);
       const disabled = off ? off() : false;
@@ -360,34 +361,6 @@
     syncers.push(sync);
     sync();
     return row;
-  }
-
-  // An order: the parts (or buttons) of a list, top to bottom, each with the buttons that move it. The ids a switch hides are dimmed, not removed: they keep their place.
-  function orderList({ path, label, hint, nameOf, offOf, off }) {
-    const d = described(label, hint);
-    const list = h("ol", { class: "order-list", "data-pref": path, ...d.ids });
-    let focus = null;                                                      // (the button that was pressed: the list is drawn again, and the keyboard must stay on it)
-    const move = (id, by) => {
-      const order = at(path).slice(), i = order.indexOf(id), j = i + by;
-      if (j < 0 || j >= order.length) return;
-      [order[i], order[j]] = [order[j], order[i]];
-      focus = { id, act: by < 0 ? "move-up" : "move-down" };
-      put(path, order);
-      save();
-    };
-    const wrap = h("div", { class: "opt opt-order" }, h("span", { class: "txt" }, d.name, d.hint), list);
-    const sync = () => {
-      const order = at(path), dead = off ? off() : false;                  // (greyed with the switch it hangs on, as a switch is)
-      wrap.classList.toggle("disabled", dead);
-      list.replaceChildren(...order.map((id, i) => h("li", { class: "order-item" + (offOf(id) ? " off" : ""), "data-id": id },
-        h("span", { class: "order-name" }, nameOf(id)),
-        h("button", { type: "button", class: "order-btn", "data-act": "move-up", "aria-label": `${nameOf(id)}: ${t("optMoveUp")}`, title: t("optMoveUp"), disabled: dead || i === 0, onClick: () => move(id, -1) }, "▲"),
-        h("button", { type: "button", class: "order-btn", "data-act": "move-down", "aria-label": `${nameOf(id)}: ${t("optMoveDown")}`, title: t("optMoveDown"), disabled: dead || i === order.length - 1, onClick: () => move(id, 1) }, "▼"))));
-      if (focus) { const b = list.querySelector(`[data-id="${focus.id}"] [data-act="${focus.act}"]`) || list.querySelector(`[data-id="${focus.id}"] .order-btn:not([disabled])`); if (b) b.focus(); focus = null; }
-    };
-    syncers.push(sync);
-    sync();
-    return wrap;
   }
 
   // A language: the plain list of the languages (each in its own name) with the setting's own "none" first. The interface language reloads the page once chosen.
@@ -608,7 +581,6 @@
       "data-pref": "s2key",
       autocomplete: "off",
       spellcheck: "false",
-      placeholder: "••••••••",
       "aria-label": t("optSemanticKey"),
       onChange: async () => {
         input.value = input.value.replace(/[^\x21-\x7e]/g, "");
@@ -799,7 +771,7 @@
     h("div", { class: "config-editor-body" }, configText, h("div", { class: "row" }, configApplyBtn)));
 
   // what an AI assistant needs to set the extension up: every setting, its values, this user's current ones and how to hand the answer back (lib/agent.js)
-  const agentBtn = h("button", { class: "btn primary", type: "button", "data-act": "agent-guide-copy", onClick: async () => {
+  const agentBtn = h("button", { class: "btn", type: "button", "data-act": "agent-guide-copy", onClick: async () => {
     if (await B.dom.copyText(B.agent.guide({ current: prefs, version: chrome.runtime.getManifest().version }))) done(agentBtn, t("optAgentCopy"));
   } }, t("optAgentCopy"));
 
@@ -882,11 +854,13 @@
   // the control of one row, by what the row is
   function control(row, rows, name) {
     const label = t(row.label), hint = row.hint ? t(row.hint) : "";
+    let depth = 0;                                                         // (how many of the rows it hangs on are in this card: From and To under Year range are two deep)
+    for (let p = row.parent; p && rows.some((r) => r.path === p); p = (SETTING.get(p) || {}).parent) depth++;
     switch (row.kind) {
-      case "bool": return option({ path: row.path, label, hint, swatch: row.swatch ? ROLE_COLOR[row.swatch] : null, sub: !!row.parent && rows.some((r) => r.path === row.parent), off: () => inert(row), name, key: row.label });
-      case "text": return row.inline ? null : row.search ? searchWords(row, row.parent && rows.some((r) => r.path === row.parent)) : h("div", { class: "opt opt-name" + (row.parent && rows.some((r) => r.path === row.parent) ? " sub" : "") }, h("span", { class: "txt" }, h("span", { class: "name" }, label)), nameEdit(row, row.free ? null : () => inert(row)));
+      case "bool": return option({ path: row.path, label, hint, swatch: row.swatch ? ROLE_COLOR[row.swatch] : null, sub: depth, off: () => inert(row), name, key: row.label });
+      case "text": return row.inline ? null : row.search ? searchWords(row, row.parent && rows.some((r) => r.path === row.parent)) : h("div", { class: "opt opt-name" + (depth ? " sub" : "") + (depth > 1 ? " sub2" : "") }, h("span", { class: "txt" }, h("span", { class: "name" }, label)), nameEdit(row, row.free ? null : () => inert(row)));
       case "choice": { const c = CHOICES[row.path]; return segmented({ path: row.path, label, hint, choices: row.values.map((v) => [v, t(c.labels[v])]), icons: c.icons, off: () => inert(row) }); }
-      case "order": return orderList({ path: row.path, label, hint, nameOf: (id) => itemName(row.path, id), offOf: (id) => itemOff(row.path, id), off: () => inert(row) });
+      case "order": return orderRows(row, new Map(row.values.map((id) => [id, [h("span", { class: "order-name" }, itemName(row.path, id))]])), (id) => itemOff(row.path, id)).block;
       case "language": return languageSelect({ path: row.path, label, hint, none: [row.none, t(NONE_WORD[row.path])], reload: row.path === "language" });
       case "color": return B.prefs.ROLES.includes(row.path.split(".")[1]) ? null : chipColor(row);        // (the role colours have their own studio)
       default: return null;
@@ -909,14 +883,16 @@
       }
       if (!parts.size) continue;
       for (const { sw, name, under } of parts.values()) for (const r of [sw, name, ...under]) if (r) consumed.add(r);
-      lists.set(row, orderedRows(row, rows, parts));
+      lists.set(row, orderRows(row, new Map([...parts].map(([id, { sw, name, under }]) => [id, [control(sw, rows, name), ...under.map((r) => control(r, rows, null))].filter(Boolean)]))));
     }
     return { lists, consumed };
   }
-  function orderedRows(row, rows, parts) {
+  // An order, as rows: each item one row, the arrows that move it in front of what it is — its switch and its name (mergedOrders), or only its name (the panel's
+  // parts, whose switches are on cards of their own: dimmed while off). `items`: id → the row's elements. The rows are moved, not drawn again: a switch keeps its state.
+  function orderRows(row, items, offOf) {
     const d = described(t(row.label), row.hint ? t(row.hint) : "");
     const list = h("ol", { class: "order-rows", "data-pref": row.path, ...d.ids });
-    const items = new Map();
+    const lis = new Map();
     let focus = null;                                                      // (the arrow that was pressed: its row moves, and the keyboard stays on it)
     const move = (id, by) => {
       const order = at(row.path).slice(), i = order.indexOf(id), j = i + by;
@@ -926,31 +902,31 @@
       put(row.path, order);
       save();
     };
-    for (const [id, { sw, name, under }] of parts) {
-      const up = h("button", { type: "button", class: "order-btn", "data-act": "move-up", title: t("optMoveUp"), onClick: () => move(id, -1) }, "▲");
-      const down = h("button", { type: "button", class: "order-btn", "data-act": "move-down", title: t("optMoveDown"), onClick: () => move(id, 1) }, "▼");
-      const body = h("div", { class: "order-body" }, ...[control(sw, rows, name), ...under.map((r) => control(r, rows, null))].filter(Boolean));
-      items.set(id, { li: h("li", { class: "order-row", "data-id": id }, h("span", { class: "order-arrows" }, up, down), body), up, down });
+    for (const [id, els] of items) {
+      const up = h("button", { type: "button", class: "order-btn", "data-act": "move-up", title: t("optMoveUp"), onClick: () => move(id, -1) });
+      const down = h("button", { type: "button", class: "order-btn", "data-act": "move-down", title: t("optMoveDown"), onClick: () => move(id, 1) });
+      lis.set(id, { li: h("li", { class: "order-row", "data-id": id }, h("span", { class: "order-arrows" }, up, down), h("div", { class: "order-body" }, ...els)), up, down });
     }
     const head = h("div", { class: "opt opt-order-head" }, h("span", { class: "txt" }, d.name, d.hint));
     const sync = () => {
-      const order = at(row.path).filter((id) => items.has(id)), dead = inert(row);
+      const order = at(row.path).filter((id) => lis.has(id)), dead = inert(row);
       head.classList.toggle("disabled", dead);
       if ([...list.children].map((li) => li.dataset.id).join() !== order.join()) {
         const had = list.contains(document.activeElement) ? document.activeElement : null;          // (a row that moves loses the focus: it is given back)
-        list.append(...order.map((id) => items.get(id).li));
+        list.append(...order.map((id) => lis.get(id).li));
         if (had && !focus && document.activeElement !== had) had.focus({ preventScroll: true });
       }
       order.forEach((id, i) => {
-        const it = items.get(id), n = itemName(row.path, id);
+        const it = lis.get(id), n = itemName(row.path, id);
+        it.li.classList.toggle("off", !!(offOf && offOf(id)));
         it.up.disabled = dead || i === 0; it.down.disabled = dead || i === order.length - 1;
         it.up.setAttribute("aria-label", `${n}: ${t("optMoveUp")}`); it.down.setAttribute("aria-label", `${n}: ${t("optMoveDown")}`);
       });
-      if (focus) { const it = items.get(focus.id), b = focus.act === "move-up" ? it.up : it.down; (b.disabled ? (b === it.up ? it.down : it.up) : b).focus(); focus = null; }
+      if (focus) { const it = lis.get(focus.id), b = focus.act === "move-up" ? it.up : it.down; (b.disabled ? (b === it.up ? it.down : it.up) : b).focus(); focus = null; }
     };
     syncers.push(sync);
     sync();
-    return h("div", { class: "order-block" }, head, list);
+    return { block: h("div", { class: "order-block" }, head, list), head };
   }
 
   // "Enable all" / "Disable all" for the switches of a card; turning them on also turns on what they hang on outside the card (the panel itself, for its parts)
@@ -972,9 +948,11 @@
     let group = null;
     c.rows.forEach((row, i) => {
       if (merged.consumed.has(row)) return;                                // (drawn in its order's rows)
-      if (row.group !== group) { group = row.group; if (group === "optChipLook") kids.push(chipThemesBar()); if (group) kids.push(h("h3", { class: "opt-group" }, t(group))); }
-      const next = c.rows[i + 1];
-      const el = merged.lists.get(row) || control(row, c.rows, next && next.kind === "text" && next.inline ? next : null);       // (a name beside its switch is drawn on the switch's row)
+      let headed = false;
+      if (row.group !== group) { group = row.group; if (group) { kids.push(h("h3", { class: "opt-group" }, t(group))); headed = true; } if (group === "optChipLook") kids.push(chipThemesBar()); }          // (the ready-made looks under their heading)
+      const next = c.rows[i + 1], ordered = merged.lists.get(row);
+      if (ordered && headed) { ordered.head.remove(); ordered.block.querySelector("ol").setAttribute("aria-label", t(group)); }          // (one heading over the list: the group's)
+      const el = ordered ? ordered.block : control(row, c.rows, next && next.kind === "text" && next.inline ? next : null);       // (a name beside its switch is drawn on the switch's row)
       if (el) kids.push(el);
     });
     if (c.id === "colors") kids.push(h("div", { class: "row" }, colorsResetBtn));

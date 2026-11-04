@@ -130,6 +130,8 @@
         copyBar && copyKinds.some((k) => !["summary", "table", "image"].includes(k)) && data.shown < data.loaded ? h("p", { class: "legend", "data-rr": "copy-filtered" }, t("popupCopyFiltered", [String(data.shown)])) : null,
         tp.show && tp.note && (data.noRanks || sources.length) ? h("p", { class: "note" }, t(data.noRanks ? "noRanksNote" : "dataNote", [(listed.length ? listed : ["ccf", "core"]).map((k) => listName(data.edition[k])).join(" · ")])) : null
       ].filter(Boolean));
+      // two columns while every label fits in half the row, else one (popup.css), as in the panel: the widest label measured on one line
+      if (copyBar) { copyBar.classList.add("measure"); const w = Math.max(0, ...[...copyBar.children].map((b) => b.getBoundingClientRect().width)); copyBar.classList.remove("measure"); copyBar.style.setProperty("--copy-w", Math.ceil(w) + "px"); }
     };
     draw();
   }
