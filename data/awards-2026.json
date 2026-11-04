@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 7830
+  "count": 7857
  },
  "entries": [
   {
@@ -57152,6 +57152,533 @@
    ]
   },
   {
+   "venue": "EMNLP",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "DiscoTrace: Representing and Comparing Answering Strategies of Humans and LLMs in Information-Seeking Question Answering",
+   "authors": [
+    "Neha Srikanth",
+    "Jordan Boyd-Graber",
+    "Rachel Rudinger"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.emnlp-main.140/",
+   "evidence": "DiscoTrace: Representing and Comparing Answering Strategies of Humans and LLMs in Information-Seeking Question Answering — Best Paper Award"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Don’t Read Everything: A Curvature-Conditioned Query for Linear Attention",
+   "authors": [
+    "Dong Le",
+    "Thong Thanh Nguyen",
+    "Cong-Duy T Nguyen",
+    "Anh Tuan Luu"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.emnlp-main.1153/",
+   "evidence": "Don’t Read Everything: A Curvature-Conditioned Query for Linear Attention — Best Paper Award"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2026,
+   "award": "category",
+   "awardLabel": "Best Theme Paper",
+   "title": "Beyond “To whom it may concern”: Tailoring Machine Translation to Audience and Intent",
+   "authors": [
+    "Raphaël Merx",
+    "Ekaterina Vylomova",
+    "Trevor Cohn"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.emnlp-main.2523/",
+   "evidence": "Beyond “To whom it may concern”: Tailoring Machine Translation to Audience and Intent — Best Theme Paper"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2026,
+   "award": "category",
+   "awardLabel": "Best Social Impact Paper",
+   "title": "Clinically Grounded Privacy Evaluation of Medical LMs",
+   "authors": [
+    "Sasha Ronaghi",
+    "Sana Tonekaboni",
+    "Lena Stempfle",
+    "Vivian Utti",
+    "Jordan Li Cahoon",
+    "Nathaniel Hendrix",
+    "Ayin Vala",
+    "Marzyeh Ghassemi",
+    "Emily Alsentzer"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.emnlp-main.2388/",
+   "evidence": "Clinically Grounded Privacy Evaluation of Medical LMs — Best Social Impact Paper"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2026,
+   "award": "category",
+   "awardLabel": "Best Resource Paper",
+   "title": "XYBench: Can LLMs Respond Pragmatically to Queries with Misconceptions?",
+   "authors": [
+    "Akhila Yerukola",
+    "Jena D. Hwang",
+    "Mingqian Zheng",
+    "Jenna Godsey",
+    "Hyunwoo Kim",
+    "Valentina Pyatkin",
+    "Jennifer Hu",
+    "Maarten Sap"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.emnlp-main.2646/",
+   "evidence": "XYBench: Can LLMs Respond Pragmatically to Queries with Misconceptions? — Best Resource Paper"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2026,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Accelerating Constrained Decoding with Token Space Compression",
+   "authors": [
+    "Michael Sullivan",
+    "Alexander Koller"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.emnlp-main.749/",
+   "evidence": "Accelerating Constrained Decoding with Token Space Compression — Outstanding Paper Award"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2026,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Accountable AI with Grounded, Faithful, Consistent, Actionable Rationales: A Case Study in Clinical Trial Matching with VERDICT",
+   "authors": [
+    "Zikai Zhou",
+    "Yufei Jin",
+    "Yilin Xu",
+    "Yu-Chiang Wang",
+    "Chieh-Ju Chao",
+    "Monica Lam"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.emnlp-main.2598/",
+   "evidence": "Accountable AI with Grounded, Faithful, Consistent, Actionable Rationales: A Case Study in Clinical Trial Matching with VERDICT — Outstanding Paper Award"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2026,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Aligned but Not Partner-Specific: How Multimodal LLM Agents Succeed in Reference Games Without Forming Conceptual Pacts",
+   "authors": [
+    "Po-Ya Angela Wang",
+    "Chinmaya Mishra",
+    "Asli Ozyurek",
+    "Paula Rubio-Fernandez",
+    "Esam Ghaleb"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.emnlp-main.1978/",
+   "evidence": "Aligned but Not Partner-Specific: How Multimodal LLM Agents Succeed in Reference Games Without Forming Conceptual Pacts — Outstanding Paper Award"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2026,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Can MLLMs Perceive and Describe Medical Image Quality Beyond Scores?",
+   "authors": [
+    "Jiyao Liu",
+    "Jinjie Wei",
+    "Wanying Qu",
+    "Chenglong Ma",
+    "Junzhi Ning",
+    "Yunheng Li",
+    "Ying Chen",
+    "Jiafan Zhang",
+    "Pengcheng Chen",
+    "Xin Gao",
+    "Ming Hu",
+    "Xin Wang",
+    "Shujian Gao",
+    "Dingkang Yang",
+    "Zhongying Deng",
+    "Jin Ye",
+    "Lihao Liu",
+    "Junjun He",
+    "Ningsheng Xu"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.emnlp-main.1129/",
+   "evidence": "Can MLLMs Perceive and Describe Medical Image Quality Beyond Scores? — Outstanding Paper Award"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2026,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Conformal Certification of Reasoning Trace Prefixes",
+   "authors": [
+    "Matt Y. Cheung",
+    "Ashok Veeraraghavan",
+    "Hanjie Chen",
+    "Guha Balakrishnan"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.emnlp-main.1776/",
+   "evidence": "Conformal Certification of Reasoning Trace Prefixes — Outstanding Paper Award"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2026,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Counterfactual Constraint-Conditioned On-Policy Distillation for Multi-Constraint Instruction Following",
+   "authors": [
+    "Yanzhao Zheng",
+    "Yuanqiang Yu",
+    "Tianze Xu",
+    "Chao Ma",
+    "Zhentao Zhang",
+    "Jihuai Zhu",
+    "Baohua Dong",
+    "Hangcheng Zhu",
+    "Ruohui Huang"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.emnlp-main.1037/",
+   "evidence": "Counterfactual Constraint-Conditioned On-Policy Distillation for Multi-Constraint Instruction Following — Outstanding Paper Award"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2026,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "D3-Gym: Constructing Real-World Verifiable Environments for Data-Driven Discovery",
+   "authors": [
+    "Hanane Nour Moussa",
+    "Yifei Li",
+    "Zhuoyang Li",
+    "Yankai Yang",
+    "Cheng Tang",
+    "Tianshu Zhang",
+    "Nesreen K. Ahmed",
+    "Ali Payani",
+    "Ziru Chen",
+    "Huan Sun"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.emnlp-main.1501/",
+   "evidence": "D3-Gym: Constructing Real-World Verifiable Environments for Data-Driven Discovery — Outstanding Paper Award"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2026,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Diffusion Large Language Models for Visual Speech Recognition",
+   "authors": [
+    "Jeong Hun Yeo",
+    "Chae Won Kim",
+    "Hyeongseop Rha",
+    "Yong Man Ro"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.emnlp-main.1826/",
+   "evidence": "Diffusion Large Language Models for Visual Speech Recognition — Outstanding Paper Award"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2026,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Do Benchmarks Measure the Same Thing? Evaluation-Free Benchmark Redundancy Analysis with SAE",
+   "authors": [
+    "Yaoning Wang",
+    "Jiahao Ying",
+    "Yubo Ma",
+    "Yu Wan",
+    "Dayiheng Liu",
+    "Yixin Cao",
+    "Yu-Gang Jiang"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.emnlp-main.1284/",
+   "evidence": "Do Benchmarks Measure the Same Thing? Evaluation-Free Benchmark Redundancy Analysis with SAE — Outstanding Paper Award"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2026,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Double Trouble: Bilingual Pretraining Leaves Language-Conditioned Effects in Shared-Language Representations",
+   "authors": [
+    "Anjishnu Mukherjee",
+    "Ziwei Zhu",
+    "Antonios Anastasopoulos"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.emnlp-main.2062/",
+   "evidence": "Double Trouble: Bilingual Pretraining Leaves Language-Conditioned Effects in Shared-Language Representations — Outstanding Paper Award"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2026,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Format as Nuisance: Intervention-Inspired Cross-Format Distillation for Knowledge Conflicts",
+   "authors": [
+    "Yue Yu",
+    "Wang Luo",
+    "Shenghao Ye",
+    "Zepeng Bao",
+    "Jiacheng Liu",
+    "Yongqi Li",
+    "Wenxin Tang",
+    "Tieyun Qian"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.emnlp-main.2028/",
+   "evidence": "Format as Nuisance: Intervention-Inspired Cross-Format Distillation for Knowledge Conflicts — Outstanding Paper Award"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2026,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "From Token Probabilities to Semantic Constraints: Towards Declarative Probabilistic Evaluation of Language Models",
+   "authors": [
+    "Kyle Richardson",
+    "Cullen Anderson",
+    "Pranav Balakrishnan",
+    "Takuto Ban",
+    "Daksha Ladia",
+    "Ankita Gupta",
+    "Marisa Hudspeth"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.emnlp-main.1752/",
+   "evidence": "From Token Probabilities to Semantic Constraints: Towards Declarative Probabilistic Evaluation of Language Models — Outstanding Paper Award"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2026,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "In-Place Feedback: Reliable Refinement for Multi-Turn Expert-LLM Collaboration",
+   "authors": [
+    "Youngbin Choi",
+    "Minjong Lee",
+    "Saemi Moon",
+    "Seunghyuk Cho",
+    "Chaehyeon Chung",
+    "MoonJeong Park",
+    "Dongwoo Kim"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.emnlp-main.1338/",
+   "evidence": "In-Place Feedback: Reliable Refinement for Multi-Turn Expert-LLM Collaboration — Outstanding Paper Award"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2026,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Language Identification for Non-Standard Varieties: Language Varieties as Geolects on a Geodesic Grid",
+   "authors": [
+    "Sina Ahmadi",
+    "Rico Sennrich"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.emnlp-main.2175/",
+   "evidence": "Language Identification for Non-Standard Varieties: Language Varieties as Geolects on a Geodesic Grid — Outstanding Paper Award"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2026,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Omnilingual MT: Machine Translation for 1,600 Languages",
+   "authors": [
+    "Belen Alastruey",
+    "Niyati Bafna",
+    "Andrea Caciolai",
+    "Kevin Heffernan",
+    "Artyom Kozhevnikov",
+    "Christophe Ropers",
+    "Eduardo Sánchez",
+    "Charles-Éric Saint-James",
+    "Ioannis Tsiamas",
+    "Xiang Tony Cao",
+    "Chierh Cheng",
+    "Joe Chuang",
+    "Paul-Ambroise Duquenne",
+    "Mark Duppenthaler",
+    "Cynthia Gao",
+    "Pere-Lluís Huguet Cabot",
+    "João Maria Janeiro",
+    "Jean Maillard",
+    "Gabriel Eduardo Mejia-Gonzalez",
+    "Holger Schwenk",
+    "Edan Toledo",
+    "Arina Turkatenko",
+    "Albert Ventayol-Boada",
+    "Ravi Arikapudi",
+    "Nathanial Paul Ekberg",
+    "Rashel Moritz",
+    "Alexandre Mourachko",
+    "Surya Parimi",
+    "Mary Williamson",
+    "Shireen Yates",
+    "David Dale",
+    "Marta R. Costa-jussà"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.emnlp-main.1280/",
+   "evidence": "Omnilingual MT: Machine Translation for 1,600 Languages — Outstanding Paper Award"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2026,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "OptiMer: Optimal Distribution Vector Merging Is Better than Data Mixing for Continual Pre-Training",
+   "authors": [
+    "Haiyue Song",
+    "Huy Hien Vu",
+    "Masao Utiyama"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.emnlp-main.1090/",
+   "evidence": "OptiMer: Optimal Distribution Vector Merging Is Better than Data Mixing for Continual Pre-Training — Outstanding Paper Award"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2026,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Race in the Record: Measuring Racial Signal and Model Inference in Police Arrest Narratives",
+   "authors": [
+    "Arka Dutta",
+    "Ted Forsyth",
+    "O. Nicholas Robertson",
+    "Ashiqur R. KhudaBukhsh"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.emnlp-main.1850/",
+   "evidence": "Race in the Record: Measuring Racial Signal and Model Inference in Police Arrest Narratives — Outstanding Paper Award"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2026,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Rethinking the Evaluation of Efficiency Methods for Multi-Agent Systems",
+   "authors": [
+    "Jiamu Zhang",
+    "Lingxi Zhang",
+    "Pengjun Lu",
+    "Qiyue Zhang",
+    "Yu-Neng Chuang",
+    "Zhengchen Li",
+    "Shuai Xu",
+    "Vipin Chaudhary",
+    "Hanjie Chen"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.emnlp-main.798/",
+   "evidence": "Rethinking the Evaluation of Efficiency Methods for Multi-Agent Systems — Outstanding Paper Award"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2026,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "SkillHarm: Lifecycle-Aware Skill-Based Attacks via Automated Construction",
+   "authors": [
+    "Yuting Ning",
+    "Zhehao Zhang",
+    "Yash Kumar Lal",
+    "Boyu Gou",
+    "Junyi Li",
+    "Weitong Ruan",
+    "Chentao Ye",
+    "Rahul Gupta",
+    "Diyi Yang",
+    "Yu Su",
+    "Huan Sun"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.emnlp-main.948/",
+   "evidence": "SkillHarm: Lifecycle-Aware Skill-Based Attacks via Automated Construction — Outstanding Paper Award"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2026,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "The Cost of Sounding Different: Accent Bias in Audio Language Models",
+   "authors": [
+    "Aruna Srivastava",
+    "Orevaoghene Ahia",
+    "Li Lucy",
+    "Ashley Christendat",
+    "Sameep Chattopadhyay",
+    "Farhan Samir",
+    "Tejumade Afonja",
+    "Valentin Hofmann",
+    "Sachin Kumar",
+    "Noah A. Smith",
+    "Yulia Tsvetkov"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.emnlp-main.1612/",
+   "evidence": "The Cost of Sounding Different: Accent Bias in Audio Language Models — Outstanding Paper Award"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2026,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "UReason: Benchmarking Reasoning-to-Generation Alignment in Unified Multimodal Models",
+   "authors": [
+    "Cheng Yang",
+    "Chufan Shi",
+    "Bo Shui",
+    "Yaokang Wu",
+    "Muzi Tao",
+    "Huijuan Wang",
+    "Ivan Yee Lee",
+    "Yong Liu",
+    "Xuezhe Ma",
+    "Taylor Berg-Kirkpatrick"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.emnlp-main.2519/",
+   "evidence": "UReason: Benchmarking Reasoning-to-Generation Alignment in Unified Multimodal Models — Outstanding Paper Award"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2026,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "When Must Faithful Chain-of-Thought Fail? An Information-Theoretic Bound and Its Empirical Limits",
+   "authors": [
+    "Jikun Wu",
+    "Dongxin Guo",
+    "SM Yiu"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.emnlp-main.1823/",
+   "evidence": "When Must Faithful Chain-of-Thought Fail? An Information-Theoretic Bound and Its Empirical Limits — Outstanding Paper Award"
+  },
+  {
    "venue": "EMSOFT",
    "year": 2008,
    "award": "best",
@@ -81668,6 +82195,21 @@
    "year": 2008,
    "award": "distinguished",
    "awardLabel": "ACM SIGSOFT Distinguished Paper",
+   "title": "Asking and Answering Why and Why Not Questions about Program Behavior",
+   "authors": [
+    "Andrew Ko",
+    "Brad Myers",
+    "Debugging Reinvented"
+   ],
+   "track": "main",
+   "source": "https://www2.sigsoft.org/awards/distinguishedpaper/",
+   "evidence": "30th International Conference on Software Engineering (ICSE 2008): Andrew Ko, Brad Myers, Debugging Reinvented: Asking and Answering Why and Why Not Questions about Program Behavior"
+  },
+  {
+   "venue": "ICSE",
+   "year": 2008,
+   "award": "distinguished",
+   "awardLabel": "ACM SIGSOFT Distinguished Paper",
    "title": "Predicting Accurate and Actionable Static Analysis Warnings: An Experimental Approach",
    "authors": [
     "Joseph Ruthruff",
@@ -81679,21 +82221,6 @@
    "track": "main",
    "source": "https://www2.sigsoft.org/awards/distinguishedpaper/",
    "evidence": "30th International Conference on Software Engineering (ICSE 2008): Joseph Ruthruff, John Penix, David Morgenthaler, Sebastian Elbaum, Gregg Rothermel, Predicting Accurate and Actionable Static Analysis Warnings: An Experimental Approach [the page runs the title into the author list; the paper is \"Predicting Accurate and Actionable Static Analysis Warnings: An Experimental Approach\" — data/exclusions.json]"
-  },
-  {
-   "venue": "ICSE",
-   "year": 2008,
-   "award": "distinguished",
-   "awardLabel": "ACM SIGSOFT Distinguished Paper",
-   "title": "Asking and Answering Why and Why Not Questions about Program Behavior",
-   "authors": [
-    "Andrew Ko",
-    "Brad Myers",
-    "Debugging Reinvented"
-   ],
-   "track": "main",
-   "source": "https://www2.sigsoft.org/awards/distinguishedpaper/",
-   "evidence": "30th International Conference on Software Engineering (ICSE 2008): Andrew Ko, Brad Myers, Debugging Reinvented: Asking and Answering Why and Why Not Questions about Program Behavior"
   },
   {
    "venue": "ICSE",

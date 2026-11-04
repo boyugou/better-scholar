@@ -94,6 +94,9 @@ give the details and every review):
   old rule), with the one known limit reported and not counted: a chip keeps its name on one line, so a 30-character chip name is cut
   in a preview of 330 px or less. The overflow audit no longer counts a break at a soft hyphen (Finnish "Yhteis-|ensimmäinen") as a
   word cut in two.
+- **EMNLP 2026's paper awards** (announced on 27 October; the ACL Anthology's award metadata, merged on 30 October): 27 papers — 2
+  best papers, 22 outstanding papers and the best theme, social impact and resource papers. SAC highlights are not paper awards here,
+  as for every earlier year. The list holds 7,857 awards.
 - **A fifth review of the matcher** (an independent agent; it stopped before its report, so its notes were checked line by line here).
   Unranked events that share a ranked venue's words now get no chip, by their whole name: the vacuum coaters' "52nd Annual Technical
   Conference" (it had USENIX ATC's CCF A), "Virtual Reality International Conference" (Laval) and "International Conference on Virtual
