@@ -2514,6 +2514,91 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
   }
   ok("Read full lists stops at a refusal (403) and at two pages in a row without an author list, and says so; a title with a block page's words is no block page; it is not offered while the list loads");
 
+  // -- 16f. the panel review's fixes that drivers had shown (2026-10-30), held here: Escape after the year list is drawn again keeps the filters; a filtered `papers`
+  // call right after a batch arrives filters the new rows too; no Load all while Read full lists runs; "/" and Escape on the Only-highlighted switch act as on the page
+  {
+    // (a) the year list open while rows bring new years: the focus stays on the list, Escape closes it only
+    const fxY = await start({ slug: "ion-stoica", pageSize: 20, latency: 400 });
+    const ctxY = await launch();
+    try {
+      const pg = await ctxY.newPage();
+      await pg.goto(fxY.url);
+      await pg.bringToFront();
+      await pg.waitForSelector('#rr-panel button[data-act="year-start"]');
+      await pg.fill('#rr-panel input[data-act="filter-query"]', "learning");
+      await pg.press('#rr-panel input[data-act="filter-query"]', "Enter");
+      await pg.focus('#rr-panel button[data-act="year-start"]');
+      await pg.keyboard.press("ArrowDown");
+      const before = await pg.evaluate(() => document.querySelectorAll(".rr-dd-list:not([hidden]) li").length);
+      await pg.waitForFunction((n) => document.querySelectorAll(".rr-dd-list:not([hidden]) li").length > n, before, { timeout: 30000 });
+      await pg.keyboard.press("Escape");
+      assert.equal(await pg.evaluate(() => document.querySelector('#rr-panel input[data-act="filter-query"]').value), "learning", "Escape after the list was drawn again closes the list, and the search stays");
+      assert.equal(await pg.evaluate(() => document.activeElement && document.activeElement.dataset.act), "year-start", "the focus goes back to the year button");
+    } finally { await ctxY.close(); await fxY.close(); }
+
+    // (b) a filtered `papers` call made the moment a batch arrives: the new rows are filtered too (the rows' class is set by the next frame's refresh)
+    const fxR = await start({ slug: "ion-stoica", pageSize: 20 });
+    const ctxR = await launch();
+    try {
+      const optsR = await openOptions(ctxR);
+      await setPref(optsR, "autoLoad", false);
+      const pg = await ctxR.newPage();
+      await pg.goto(fxR.url);
+      await pg.bringToFront();
+      await pg.waitForSelector('[data-act="load-all"]');
+      await pg.fill('#rr-panel input[data-act="filter-query"]', "role:last");
+      await pg.press('#rr-panel input[data-act="filter-query"]', "Enter");
+      // (the call is made inside the observer's callback, before the next frame; the button is pressed for real — the panel's buttons answer no click a script makes)
+      await pg.evaluate(() => { window.__race = new Promise((resolve) => {
+        const rows = () => document.querySelectorAll("#gsc_a_b tr.gsc_a_tr").length, start = rows();
+        new MutationObserver((_, o) => {
+          if (rows() <= start) return;
+          o.disconnect();
+          document.addEventListener("better-scholar:response", (e) => { if (e.detail && e.detail.id === "race") resolve(e.detail.result.papers.map((p) => p.role)); });
+          document.dispatchEvent(new CustomEvent("better-scholar:request", { detail: { id: "race", method: "papers", params: { filtered: true } } }));
+        }).observe(document.querySelector("#gsc_a_b"), { childList: true, subtree: true });
+      }); });
+      await pg.click('[data-act="load-all"]');
+      const roles = await pg.evaluate(() => window.__race);
+      assert.ok(roles.length > 0 && roles.every((r) => r === "last"), `a filtered call right after a batch gives only what the filters leave: ${[...new Set(roles)].join(", ")}`);
+    } finally { await ctxR.close(); await fxR.close(); }
+
+    // (c) no Load all while Read full lists runs (it reads the papers that were there when it began)
+    const fxL = await start({ slug: "ion-stoica", pageSize: 20, detailLatency: 400 });
+    const ctxL = await launch();
+    try {
+      const optsL = await openOptions(ctxL);
+      await setPref(optsL, "autoLoad", false);
+      const pg = await ctxL.newPage();
+      await pg.goto(fxL.url);
+      await pg.bringToFront();
+      await pg.waitForSelector('[data-act="resolve"]');
+      assert.equal(await pg.locator('[data-act="load-all"]').count(), 1, "Load all is offered before");
+      await pg.click('[data-act="resolve"]');
+      await pg.waitForSelector('[data-rr="coverage"] [data-focus="resolve"]:not([data-act])');
+      assert.equal(await pg.locator('[data-act="load-all"]').count(), 0, "and not while the read runs");
+    } finally { await ctxL.close(); await fxL.close(); }
+
+    // (d) "/" and Escape on the Only-highlighted switch act as on the page (a box to tick takes no letters)
+    const fxK = await start({ slug: "ion-stoica", pageSize: 100, latency: 0 });
+    const ctxK = await launch();
+    try {
+      const pg = await ctxK.newPage();
+      await pg.goto(fxK.url);
+      await pg.bringToFront();
+      await pg.waitForSelector('#rr-panel input[data-act="only"]');
+      await pg.focus('#rr-panel input[data-act="only"]');
+      await pg.keyboard.press("/");
+      assert.equal(await pg.evaluate(() => document.activeElement && document.activeElement.dataset.act), "filter-query", "/ on the switch jumps to the search box");
+      await pg.fill('#rr-panel input[data-act="filter-query"]', "learning");
+      await pg.press('#rr-panel input[data-act="filter-query"]', "Enter");
+      await pg.focus('#rr-panel input[data-act="only"]');
+      await pg.keyboard.press("Escape");
+      await eventually(pg, () => document.querySelector('#rr-panel input[data-act="filter-query"]').value === "");
+    } finally { await ctxK.close(); await fxK.close(); }
+    ok("the panel review's driver checks, held: Escape after the year list is drawn again keeps the search; a filtered call right after a batch filters the new rows; no Load all while Read full lists runs; / and Escape on the Only-highlighted switch");
+  }
+
   // -- 16e. the toolbar popup opened on a profile that is still loading says "Reading…" and asks again until the page answers (it said "not a profile")
   {
     const fxP = await start({ slug: "ion-stoica", pageSize: 20, slowPage: 2500 });

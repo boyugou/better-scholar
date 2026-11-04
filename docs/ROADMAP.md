@@ -153,6 +153,13 @@ official name still says Workshop (HotOS, CORE's WACV).
 no real string has them: a **publisher after the name** (", Springer, 2019": 31–40 rows lose their badge, and "SIAM International Conference on Data Mining, ACM, 2019" reads as ICDM; none of the 22,744 real Scholar lines ends with a publisher), "15th Annual" in front
 of HotStorage, and the year written with a hyphen or jammed onto a mixed-case word ("Mobisys2019"; the jammed capital-letter acronyms and the apostrophe forms are read as events since 2.41.0). The probe: resolve each form of every row, count rows that lose the badge or get another venue's.
 
+## Waiting on time (2026-11-03)
+
+- **The awards of the conferences still to come this year**: CCS (Nov 15–19), CIKM, ACM MM, ICCAD and VIS's own papers (Nov),
+  NeurIPS (Dec), ICDM, SC, Middleware, FOCS and the others of late autumn — each from its own page once it is over, as in
+  data/README.md (`scripts/awards/`, `merge-raw.mjs`). UbiComp/ISWC 2026, IJCAI-ECAI 2026 and MICRO 2026 had no paper awards on their
+  pages on 2026-11-03; worth a second look.
+
 ## Other ideas, not started
 
 - **Name spellings beyond today's rules**: composite, hyphenated and other romanised names (Iberian double surnames,

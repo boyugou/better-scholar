@@ -473,3 +473,12 @@ test("a test-of-time award whose page names the paper's year is for that publica
   const at = (year) => idx.lookup({ title: "A Classic Paper", authorsText: "A Author, B Writer", year }).length;
   assert.deepEqual([at(2009), at(2010), at(2013)], [1, 1, 0]);
 });
+
+test("a badge read from a conference's researchr (or SIGPLAN, SPLASH) page is a distinguished PAPER award, never an artifact badge: its evidence says so", () => {
+  const badged = data.entries.filter((e) => e.award === "distinguished" && /(?:researchr\.org|sigplan\.org|splashcon\.org)/.test(e.source || ""));
+  assert.ok(badged.length >= 80, `the 2026 research tracks are there: ${badged.length}`);
+  for (const e of badged) {
+    assert.match(e.evidence || "", /distinguished paper/i, `${e.venue} ${e.year} ${e.title}`);
+    assert.doesNotMatch(e.evidence || "", /artifact/i, `${e.venue} ${e.year} ${e.title}`);
+  }
+});

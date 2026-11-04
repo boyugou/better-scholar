@@ -94,6 +94,14 @@ give the details and every review):
   old rule), with the one known limit reported and not counted: a chip keeps its name on one line, so a 30-character chip name is cut
   in a preview of 330 px or less. The overflow audit no longer counts a break at a soft hyphen (Finnish "Yhteis-|ensimmäinen") as a
   word cut in two.
+- **The new awards, audited** (a second read of the 450 merged entries against the saved official pages): every ICSE, ASE, ISSTA,
+  ICFP and OOPSLA entry sits in a row with a *Distinguished Paper* badge, FSE's in its *Distinguished Paper Awards* section, CCS 2025's
+  30 in its "Distinguished Paper Award" group (its 5 distinguished artifacts are not taken), MICRO 2025's two are the "Best Paper
+  Award" of a program that also lists candidates; a random sample of 25 others matched title, first author and award. A test now holds
+  that a researchr badge is a paper award, never an artifact badge. The Kurzhals correction cites SIGCHI's own spelling of the name.
+  And four fixes of the panel review that only scripts had shown are end-to-end checks now, each failing on the code before: Escape
+  after the year list is drawn again keeps the search; a filtered `papers` call right after a batch filters the new rows; no *Load
+  all* while *Read full lists* runs; "/" and Escape on the *Only highlighted* switch.
 - **The fifth review of the matcher, completed** (an independent agent; five wrong chips, each fix measured at no correct chip lost
   over the 75,521 corpus lines). (1) A journal's volume tells it from another journal of the same name: "Science China: Information
   Sciences 53, …, 2023" is the Chinese edition (中国科学：信息科学, a real line of two profiles), SCIS printed volume 66 that year — no
