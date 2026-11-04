@@ -306,7 +306,7 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
   flex: 1 1 40%; min-width: fit-content; padding: 4px 6px; font-size: 11.5px; text-align: center;
   display: inline-flex; align-items: center; justify-content: center; gap: 4px;
 }
-#rr-panel .rr-copybar .rr-btn:nth-last-child(1 of :not([hidden])):nth-child(odd of :not([hidden])) { flex: 0 1 calc(50% - 3px); }          /* (an odd last button keeps its column: a lone full-width one reads as the main button) */
+#rr-panel .rr-copybar .rr-btn:last-child:nth-child(odd) { flex: 0 1 calc(50% - 3px); }          /* (an odd last button keeps its column: a lone full-width one reads as the main button) */
 #rr-panel .rr-copybar .rr-btn::before {
   content: ""; display: inline-block; width: 11px; height: 11px; flex: none;
   background-color: currentColor; opacity: .7;

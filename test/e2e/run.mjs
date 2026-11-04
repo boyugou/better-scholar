@@ -2475,6 +2475,8 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
       // the configuration card's editor is inset as its rows' buttons are
       const cfg = document.getElementById("card-config");
       out.editorInset = Math.round(R(cfg.querySelector(".config-editor > summary")).left - R(cfg.querySelector(".row:not(.presets) .btn")).left);
+      // the preview's copy buttons (eleven, an odd count) are all one width: the last one keeps its column, no full-width button that reads as the main one
+      out.copyWidths = [...new Set([...document.querySelectorAll(".preview .rr-copybar .rr-btn")].filter(shown).map((b) => Math.round(R(b).width)))];
       // every card has a picture of its own
       const icons = [...document.querySelectorAll(".card > h2 .card-icon")].map((i) => i.innerHTML);
       out.sharedIcons = icons.length - new Set(icons).size;
@@ -2485,6 +2487,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     assert.deepEqual(setLayout.unevenSegments, [], "a segmented control wraps in even rows");
     assert.equal(setLayout.editorInset, 0, "the configuration editor is inset as the card's buttons");
     assert.equal(setLayout.sharedIcons, 0, "no two settings cards share a picture");
+    assert.equal(setLayout.copyWidths.length, 1, `the preview's copy buttons are all one width (${setLayout.copyWidths})`);
     assert.deepEqual(await lowContrast(opts, "body"), [], "settings page (light): text under 4.5:1");
     assert.deepEqual(await unnamed(opts, "body"), [], "settings page: a control without an accessible name");
     await opts.emulateMedia({ colorScheme: "dark" });
