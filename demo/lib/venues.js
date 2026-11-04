@@ -407,6 +407,7 @@
           if (a.uncut) { entry.extra.push(...a.uncut); register(src, kind, entry, a.uncut, [], true, false, false, false, true); }
           if (a.renamed) entry.renamed = true;
           if (a.trackVolume) entry.trackVolume = true;          // (its second volume holds posters, panels, workshops or demos: see resolveUncached)
+          if (a.volumeYear) entry.volumeYear = a.volumeYear;          // (a journal's volume of a year: see resolveUncached)
           if (a.edition) editions.set(src + "|" + squash(entry.abbr || entry.name), a.edition);          // (the list's name is a name it had: its "Workshop" says nothing about the venue of today)
           if (a.former) { entry.former = (entry.former || []).concat(a.former); register(src, kind, entry, a.former, [], true); }          // (found by name; not part of its wording — `extra` — so "Workshop" in them is no type clash)
           if (a.noBareAcronym) {            // the acronym says nothing without the name: ACM's SAC is not Selected Areas in Cryptography
@@ -657,7 +658,13 @@
       // when the series title shares a word with the venue's name ("Selected Areas in Cryptography–SAC 2013", not "Applied Computing–SAC").
       for (const side of hint === "J" ? sides : sides.filter((s) => s === idx.sources[src].C)) {
         const strong = side.abbrs.get(k) || null;
-        const list = strong || (side.weakAbbrs.get(k) || []).filter((e) => title.some((w) => vocabOf(e).has(w))) || side.abbrs.get(stripDigits(k));
+        let list = strong || (side.weakAbbrs.get(k) || []).filter((e) => title.some((w) => vocabOf(e).has(w))) || side.abbrs.get(stripDigits(k));
+        // (venues that share the acronym are told apart by the series' title, which names the venue: the one whose words it holds most — "Fast Software Encryption:
+        // 23rd International Conference, FSE 2016" is not Foundations of Software Engineering, though its word "Conference" says so)
+        if (list && list.length > 1 && title.length >= 2) {
+          const score = (e) => title.filter((w) => vocabOf(e).has(w)).length, best = Math.max(...list.map(score));
+          if (best > 0) { const top = list.filter((e) => score(e) === best); if (top.length < list.length) list = top; }
+        }
         const d = decide(list && list.length ? list : side.abbrs.get(stripDigits(k)), rawWords, true);
         if (d === "ambiguous") break;
         // (a title that is the name of an event of its own — "American Control Conference - ACC'95" — names the acronym of that event: ACC is not CORE's Applied Computing Conference;
@@ -1431,6 +1438,19 @@
       if (nth && year) for (const src of ["ccf", "core"]) {
         const ed = out[src] && idx.editions.get(src + "|" + squash(out[src].abbr || out[src].name));
         if (ed && Math.abs(nth - (ed[1] + (year - ed[0]) / (ed[2] || 1))) > 2) out[src] = null;
+      }
+      // A journal whose volume of a year is known (aliases.js `volumeYear`): a line whose volume is more than one from it, for the line's year, is another journal of the same
+      // name — "Science China: Information Sciences 53, …, 2023" is the Chinese edition (中国科学：信息科学, volume 53 in 2023), SCIS printed volume 66
+      { const vm = /^[^\d]*?\s(\d{1,3})\s*(?:\([^)]*\)?\s*)?,/.exec(raw), fy = +((/\b((?:19|20)\d{2})\s*$/.exec(raw) || [])[1] || 0);
+        if (vm && fy) for (const src of ["ccf", "core"]) {
+          const e = out[src] && out[src].kind === "J" && matched[src] && realEntry(matched[src]);
+          if (e && e.volumeYear && Math.abs(+vm[1] - (e.volumeYear[1] + fy - e.volumeYear[0])) > 1) out[src] = null;
+        } }
+      // DBLP's form of a proceedings volume — "HCI (2), 937-940, 1997" is HCI International's second volume: a journal's abbreviation with a part in brackets and no volume
+      // is no line of the journal (it always prints a volume)
+      for (const src of ["ccf", "core"]) {
+        const b = out[src];
+        if (b && b.kind === "J" && b.rule === "acronym" && new RegExp("^\\s*" + (b.abbr || "").replace(/[^A-Za-z0-9]/g, ".") + "\\s*\\(\\d{1,2}\\)\\s*(?:,|$)", "i").test(raw)) out[src] = null;
       }
       // (a journal's abbreviation behind another publisher's name is that publisher's journal: "IEEE TOS" is not ACM's Transactions on Storage, "IEEE TAP" not ACM's Transactions on
       // Applied Perception — where the venue's own names name a publisher at all)
