@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 8113
+  "count": 8282
  },
  "entries": [
   {
@@ -8467,6 +8467,76 @@
   },
   {
    "venue": "ASPLOS",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "DoublePlay: Parallelizing sequential logging and replay",
+   "authors": [
+    "Kaushik Veeraraghavan",
+    "Dongyoon Lee",
+    "Benjamin Wester",
+    "Jessica Ouyang",
+    "Peter Chen",
+    "Jason Flinn",
+    "Satish Narayanasamy"
+   ],
+   "track": "main",
+   "source": "https://www.asplos-conference.org/asplos2011/",
+   "evidence": "ASPLOS 2011 Best Paper Awards: DoublePlay: Parallelizing sequential logging and replay by Kaushik Veeraraghavan, Dongyoon Lee, Benjamin Wester, Jessica Ouyang, Peter Chen, Jason Flinn, Satish Narayanasamy"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "S2E: A Platform for In Vivo Multi-Path Analysis of Software Systems",
+   "authors": [
+    "Vitaly Chipounov",
+    "Volodymyr Kuznetsov",
+    "George Candea"
+   ],
+   "track": "main",
+   "source": "https://www.asplos-conference.org/asplos2011/",
+   "evidence": "ASPLOS 2011 Best Paper Awards: S2E: A Platform for In Vivo Multi-Path Analysis of Software Systems by Vitaly Chipounov, Volodymyr Kuznetsov, George Candea"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "GhostRider: A Hardware-Software System for Memory Trace Oblivious Computation",
+   "authors": [
+    "Chang Liu",
+    "Austin Harris",
+    "Martin Maas",
+    "Michael Hicks",
+    "Mohit Tiwari",
+    "Elaine Shi"
+   ],
+   "track": "main",
+   "source": "https://www.asplos-conference.org/asplos2015/",
+   "evidence": "ASPLOS 2015 Best Paper Award: Best Paper Award is presented to Chang Liu, Austin Harris, Martin Maas, Michael Hicks, Mohit Tiwari, and Elaine Shi for GhostRider: A Hardware-Software System for Memory Trace Oblivious Computation"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2015,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "The Case for a Single-Chip Multiprocessor",
+   "authors": [
+    "Kunle Olukotun",
+    "Basem A. Nayfeh",
+    "Lance Hammond",
+    "Ken Wilson",
+    "Kunyung Chang"
+   ],
+   "track": "main",
+   "paperYear": 1996,
+   "source": "https://www.asplos-conference.org/asplos2015/",
+   "evidence": "ASPLOS Influential Paper Award: ASPLOS 1996 paper titled \"The Case for a Single-Chip Multiprocessor\" by Kunle Olukotun, Basem A. Nayfeh, Lance Hammond, Ken Wilson, and Kunyung Chang has been selected to receive the ASPLOS Influential Paper Award at ASPLOS 2015."
+  },
+  {
+   "venue": "ASPLOS",
    "year": 2017,
    "award": "tot",
    "awardLabel": "Most Influential Paper Award",
@@ -13820,6 +13890,470 @@
   {
    "venue": "CCS",
    "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "“Better Be Computer or I’m Dumb”: A Large-Scale Evaluation of Humans as Audio Deepfake Detectors",
+   "authors": [
+    "K. Warren",
+    "T. Tucker",
+    "A. Crowder",
+    "D. Olszewski",
+    "A. Lu",
+    "C. Fedele",
+    "M. Pasternak",
+    "S. Layton",
+    "K. Butler",
+    "C. Gates",
+    "P. Traynor"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2024/program/awards.html",
+   "evidence": "CCS 2024 Awards, Distinguished Paper Awards: “Better Be Computer or I’m Dumb”: A Large-Scale Evaluation of Humans as Audio Deepfake Detectors — Authors: K. Warren, T. Tucker, A. Crowder, D. Olszewski, A. Lu, C. Fedele, M. Pasternak, S. Layton, K. Butler, C. Gates, P. Traynor"
+  },
+  {
+   "venue": "CCS",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Atomic and Fair Data Exchange via Blockchain",
+   "authors": [
+    "E. Tas",
+    "I. Seres",
+    "Y. Zhang",
+    "M. Melczer",
+    "M. Kelkar",
+    "J. Bonneau",
+    "V. Nikolaenko"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2024/program/awards.html",
+   "evidence": "CCS 2024 Awards, Distinguished Paper Awards: Atomic and Fair Data Exchange via Blockchain — Authors: E. Tas, I. Seres, Y. Zhang, M. Melczer, M. Kelkar, J. Bonneau, V. Nikolaenko"
+  },
+  {
+   "venue": "CCS",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Content, Nudges and Incentives: A Study on the Effectiveness and Perception of Embedded Phishing Training",
+   "authors": [
+    "D. Lain",
+    "T. Jost",
+    "S. Matetic",
+    "K. Kostiainen",
+    "S. Čapkun"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2024/program/awards.html",
+   "evidence": "CCS 2024 Awards, Distinguished Paper Awards: Content, Nudges and Incentives: A Study on the Effectiveness and Perception of Embedded Phishing Training — Authors: D. Lain, T. Jost, S. Matetic, K. Kostiainen, S. Čapkun"
+  },
+  {
+   "venue": "CCS",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Cross-silo Federated Learning with Record-level Personalized Differential Privacy",
+   "authors": [
+    "J. Liu",
+    "J. Lou",
+    "L. Xiong",
+    "X. Meng"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2024/program/awards.html",
+   "evidence": "CCS 2024 Awards, Distinguished Paper Awards: Cross-silo Federated Learning with Record-level Personalized Differential Privacy (Paper 1093) — Authors: J. Liu, J. Lou, L. Xiong, J. Liu, X. Meng"
+  },
+  {
+   "venue": "CCS",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Distributed Backdoor Attacks on Federated Graph Learning and Certified Defenses",
+   "authors": [
+    "Y. Yang",
+    "Q. Li",
+    "J. Jia",
+    "Y. Hong",
+    "B. Wang"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2024/program/awards.html",
+   "evidence": "CCS 2024 Awards, Distinguished Paper Awards: Distributed Backdoor Attacks on Federated Graph Learning and Certified Defenses — Authors: Y. Yang, Q. Li, J. Jia, Y. Hong, B. Wang"
+  },
+  {
+   "venue": "CCS",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "DoubleUp Roll: Double-spending in Arbitrum by Rolling It Back",
+   "authors": [
+    "Z. Sun",
+    "Z. Li",
+    "X. Peng",
+    "X. Luo",
+    "M. Jiang",
+    "H. Zhou",
+    "Y. Zhang"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2024/program/awards.html",
+   "evidence": "CCS 2024 Awards, Distinguished Paper Awards: DoubleUp Roll: Double-spending in Arbitrum by Rolling It Back — Authors: Z. Sun, Z. Li, X. Peng, X. Luo, M. Jiang, H. Zhou, Y. Zhang"
+  },
+  {
+   "venue": "CCS",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "ERACAN: Defending Against an Emerging CAN Threat Model",
+   "authors": [
+    "Z. Tang",
+    "K. S. S. Zonouz",
+    "Z. B. Celik",
+    "D. Xu",
+    "R. Beyah"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2024/program/awards.html",
+   "evidence": "CCS 2024 Awards, Distinguished Paper Awards: ERACAN: Defending Against an Emerging CAN Threat Model — Authors: Z. Tang, K. S. S. Zonouz, Z. B. Celik, D. Xu, R. Beyah"
+  },
+  {
+   "venue": "CCS",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Fast Two-party Threshold ECDSA with Proactive Security",
+   "authors": [
+    "S. Gordon",
+    "C. Gentry",
+    "B. Koziel"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2024/program/awards.html",
+   "evidence": "CCS 2024 Awards, Distinguished Paper Awards: Fast Two-party Threshold ECDSA with Proactive Security — Authors: S. Gordon, C. Gentry, B. Koziel"
+  },
+  {
+   "venue": "CCS",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "FuzzCache: Optimizing Web Application Fuzzing Through Software-Based Data Cache",
+   "authors": [
+    "P. Li",
+    "M. Zhang"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2024/program/awards.html",
+   "evidence": "CCS 2024 Awards, Distinguished Paper Awards: FuzzCache: Optimizing Web Application Fuzzing Through Software-Based Data Cache — Authors: P. Li, M. Zhang"
+  },
+  {
+   "venue": "CCS",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Isolate and Detect the Untrusted Driver with a Virtual Box",
+   "authors": [
+    "Y. Li",
+    "S. Jiang",
+    "Y. Bao",
+    "P. CHEN",
+    "Y. Zhou",
+    "Y. Chung"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2024/program/awards.html",
+   "evidence": "CCS 2024 Awards, Distinguished Paper Awards: Isolate and Detect the Untrusted Driver with a Virtual Box — Authors: Y. Li, S. Jiang, Y. Bao, P. CHEN, Y. Zhou, Y. Chung"
+  },
+  {
+   "venue": "CCS",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Jäger: Automated Telephone Call Traceback",
+   "authors": [
+    "D. Adei",
+    "V. Madathil",
+    "S. Prasad",
+    "B. Reaves",
+    "A. Scafuro"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2024/program/awards.html",
+   "evidence": "CCS 2024 Awards, Distinguished Paper Awards: Jäger: Automated Telephone Call Traceback — Authors: D. Adei, V. Madathil, S. Prasad, B. Reaves, A. Scafuro"
+  },
+  {
+   "venue": "CCS",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Libra: Architectural Support for Principled, Secure, and Efficient Balanced Execution on High-End Processors",
+   "authors": [
+    "H. Winderix",
+    "M. Bognar",
+    "L. Daniel",
+    "F. Piessens"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2024/program/awards.html",
+   "evidence": "CCS 2024 Awards, Distinguished Paper Awards: Libra: Architectural Support for Principled, Secure, and Efficient Balanced Execution on High-End Processors — Authors: H. Winderix, M. Bognar, L. Daniel, F. Piessens"
+  },
+  {
+   "venue": "CCS",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Lutris: A Blockchain Combining Broadcast and Consensus",
+   "authors": [
+    "S. Blackshear",
+    "A. Chursin",
+    "G. Danezis",
+    "A. Kichidis",
+    "L. Kokoris-Kogias",
+    "X. Li",
+    "A. Menon",
+    "T. Nowacki",
+    "A. Sonnino",
+    "Williams",
+    "L. Zhang"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2024/program/awards.html",
+   "evidence": "CCS 2024 Awards, Distinguished Paper Awards: Lutris: A Blockchain Combining Broadcast and Consensus — Authors: S. Blackshear, A. Chursin, G. Danezis, A. Kichidis, L. Kokoris-Kogias, X. Li, A. Menon, T. Nowacki, A. Sonnino, Williams, L. Zhang"
+  },
+  {
+   "venue": "CCS",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Manipulative Interference Attacks",
+   "authors": [
+    "S. Mergendahl",
+    "S. Fickas",
+    "B. Norris",
+    "R. Skowyra"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2024/program/awards.html",
+   "evidence": "CCS 2024 Awards, Distinguished Paper Awards: Manipulative Interference Attacks — Authors: S. Mergendahl, S. Fickas, B. Norris, R. Skowyra"
+  },
+  {
+   "venue": "CCS",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Moderator: Moderating Text-to-Image Diffusion Models through Fine-grained Context-based Policies",
+   "authors": [
+    "P. Wang",
+    "Q. Li",
+    "L. Yu",
+    "Z. Wang",
+    "A. Li",
+    "H. Jin"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2024/program/awards.html",
+   "evidence": "CCS 2024 Awards, Distinguished Paper Awards: Moderator: Moderating Text-to-Image Diffusion Models through Fine-grained Context-based Policies — Authors: P. Wang, Q. Li, L. Yu, Z. Wang, A. Li, H. Jin"
+  },
+  {
+   "venue": "CCS",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Organic or Diffused: Can We Distinguish Human Art from AI-generated Images?",
+   "authors": [
+    "A. Ha",
+    "J. Passananti",
+    "R. Bhaskar",
+    "S. Shan",
+    "R. Southen",
+    "H. Zheng",
+    "B. Zhao"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2024/program/awards.html",
+   "evidence": "CCS 2024 Awards, Distinguished Paper Awards: Organic or Diffused: Can We Distinguish Human Art from AI-generated Images? — Authors: A. Ha, J. Passananti, R. Bhaskar, S. Shan, R. Southen, H. Zheng, B. Zhao"
+  },
+  {
+   "venue": "CCS",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Practical Key Extraction Attacks in Leading MPC Wallets",
+   "authors": [
+    "N. Makriyannis",
+    "O. Yomtov",
+    "A. Galansky"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2024/program/awards.html",
+   "evidence": "CCS 2024 Awards, Distinguished Paper Awards: Practical Key Extraction Attacks in Leading MPC Wallets — Authors: N. Makriyannis, O. Yomtov, A. Galansky"
+  },
+  {
+   "venue": "CCS",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Principled Microarchitectural Isolation on Cloud CPUs",
+   "authors": [
+    "S. Volos",
+    "C. Fournet",
+    "J. Hofmann",
+    "B. Köpf",
+    "O. Oleksenko"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2024/program/awards.html",
+   "evidence": "CCS 2024 Awards, Distinguished Paper Awards: Principled Microarchitectural Isolation on Cloud CPUs — Authors: S. Volos, C. Fournet, J. Hofmann, B. Köpf, O. Oleksenko"
+  },
+  {
+   "venue": "CCS",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "QueryCheetah: Fast Automated Discovery of Attribute Inference Attacks Against Query-Based Systems",
+   "authors": [
+    "B. Stevanoski",
+    "A. Cretu",
+    "Y. de Montjoye"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2024/program/awards.html",
+   "evidence": "CCS 2024 Awards, Distinguished Paper Awards: QueryCheetah: Fast Automated Discovery of Attribute Inference Attacks Against Query-Based Systems — Authors: B. Stevanoski, A. Cretu, Y. de Montjoye"
+  },
+  {
+   "venue": "CCS",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "RefleXnoop: Passwords Snooping on NLoS Laptops Leveraging Screen-Induced Sound Reflection",
+   "authors": [
+    "P. Wang",
+    "J. Hu",
+    "C. Liu",
+    "J. Luo"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2024/program/awards.html",
+   "evidence": "CCS 2024 Awards, Distinguished Paper Awards: RefleXnoop: Passwords Snooping on NLoS Laptops Leveraging Screen-Induced Sound Reflection — Authors: P. Wang, J. Hu, C. Liu, J. Luo"
+  },
+  {
+   "venue": "CCS",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "ReSym: Harnessing LLMs to Recover Variable and Data Structure Symbols from Stripped Binaries",
+   "authors": [
+    "D. Xie",
+    "Z. Zhang",
+    "N. Jiang",
+    "X. Xu",
+    "L. Tan",
+    "X. Zhang"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2024/program/awards.html",
+   "evidence": "CCS 2024 Awards, Distinguished Paper Awards: ReSym: Harnessing LLMs to Recover Variable and Data Structure Symbols from Stripped Binaries — Authors: D. Xie, Z. Zhang, N. Jiang, X. Xu, L. Tan, X. Zhang"
+  },
+  {
+   "venue": "CCS",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Spec-o-Scope: Cache Probing at Cache Speed",
+   "authors": [
+    "G. Horowitz",
+    "E. Ronen",
+    "Y. Yarom"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2024/program/awards.html",
+   "evidence": "CCS 2024 Awards, Distinguished Paper Awards: Spec-o-Scope: Cache Probing at Cache Speed — Authors: G. Horowitz, E. Ronen, Y. Yarom"
+  },
+  {
+   "venue": "CCS",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Stealing Trust: Unraveling Blind Message Attacks in Web3 Authentication",
+   "authors": [
+    "K. Yan",
+    "X. Zhang",
+    "W. Diao"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2024/program/awards.html",
+   "evidence": "CCS 2024 Awards, Distinguished Paper Awards: Stealing Trust: Unraveling Blind Message Attacks in Web3 Authentication — Authors: K. Yan, X. Zhang, W. Diao"
+  },
+  {
+   "venue": "CCS",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Testing Side-channel Security of Cryptographic Implementations Against Future Microarchitectures",
+   "authors": [
+    "G. Barthe",
+    "M. Böhme",
+    "S. Cauligi",
+    "C. Chuengsatiansup",
+    "D. Genkin",
+    "M. Guarnieri",
+    "D. Romero",
+    "P. Schwabe",
+    "D. Wu",
+    "Y. Yarom"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2024/program/awards.html",
+   "evidence": "CCS 2024 Awards, Distinguished Paper Awards: Testing Side-channel Security of Cryptographic Implementations Against Future Microarchitectures — Authors: G. Barthe, M. Böhme, S. Cauligi, C. Chuengsatiansup, D. Genkin, M. Guarnieri, D. Romero, P. Schwabe, D. Wu, Y. Yarom"
+  },
+  {
+   "venue": "CCS",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "The Harder You Try, The Harder You Fail: The KeyTrap Denial-of-Service Algorithmic Complexity Attacks on DNSSEC",
+   "authors": [
+    "E. Heftrig",
+    "H. Schulmann",
+    "N. Vogel",
+    "M. Waidner"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2024/program/awards.html",
+   "evidence": "CCS 2024 Awards, Distinguished Paper Awards: The Harder You Try, The Harder You Fail: The KeyTrap Denial-of-Service Algorithmic Complexity Attacks on DNSSEC — Authors: E. Heftrig, H. Schulmann, N. Vogel, M. Waidner"
+  },
+  {
+   "venue": "CCS",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "uMMU: Securing Data Confidentiality with Unobservable Memory Subsystem",
+   "authors": [
+    "H. Lim",
+    "J. Kim",
+    "H. Lee"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2024/program/awards.html",
+   "evidence": "CCS 2024 Awards, Distinguished Paper Awards: uMMU: Securing Data Confidentiality with Unobservable Memory Subsystem — Authors: H. Lim, J. Kim, H. Lee"
+  },
+  {
+   "venue": "CCS",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Unmasking the Security and Usability of Password Masking",
+   "authors": [
+    "Y. Hu",
+    "S. Alroomi",
+    "S. Sahin",
+    "F. Li"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2024/program/awards.html",
+   "evidence": "CCS 2024 Awards, Distinguished Paper Awards: Unmasking the Security and Usability of Password Masking — Authors: Y. Hu, S. Alroomi, S. Sahin, F. Li"
+  },
+  {
+   "venue": "CCS",
+   "year": 2024,
    "award": "tot",
    "awardLabel": "Test of Time Award",
    "title": "Rappor: Randomized aggregatable privacy-preserving ordinal response",
@@ -13832,6 +14366,612 @@
    "paperYear": 2014,
    "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-tta.html",
    "evidence": "CCS 2024 Test-of-Time Award: Ulfar Erlingsson, Vasyl Pihur, Aleksandra Korolova: Rappor: Randomized aggregatable privacy-preserving ordinal response"
+  },
+  {
+   "venue": "CCS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "A Decade-long Landscape of Advanced Persistent Threats: Longitudinal Analysis and Global Trends",
+   "authors": [
+    "Shakhzod Yuldoshkhujaev",
+    "Mijin Jeon",
+    "Doowon Kim",
+    "Nick Nikiforakis",
+    "Hyungjoon Koo"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2025/assets/awards.json",
+   "alsoAt": [
+    "https://www.sigsac.org/ccs/CCS2025/awards/"
+   ],
+   "evidence": "CCS 2025 Awards, Distinguished Paper Award: A Decade-long Landscape of Advanced Persistent Threats: Longitudinal Analysis and Global Trends — Shakhzod Yuldoshkhujaev, Mijin Jeon, Doowon Kim, Nick Nikiforakis, and Hyungjoon Koo"
+  },
+  {
+   "venue": "CCS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Adversarial Observations in Weather Forecasting",
+   "authors": [
+    "Erik Imgrund",
+    "Thorsten Eisenhofer",
+    "Konrad Rieck"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2025/assets/awards.json",
+   "alsoAt": [
+    "https://www.sigsac.org/ccs/CCS2025/awards/"
+   ],
+   "evidence": "CCS 2025 Awards, Distinguished Paper Award: Adversarial Observations in Weather Forecasting — Erik Imgrund, Thorsten Eisenhofer, and Konrad Rieck"
+  },
+  {
+   "venue": "CCS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Automatically Detecting Online Deceptive Patterns",
+   "authors": [
+    "Asmit Nayak",
+    "Yash Wani",
+    "Shirley Zhang",
+    "Rishabh Khandelwal",
+    "Kassem Fawaz"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2025/assets/awards.json",
+   "alsoAt": [
+    "https://www.sigsac.org/ccs/CCS2025/awards/"
+   ],
+   "evidence": "CCS 2025 Awards, Distinguished Paper Award: Automatically Detecting Online Deceptive Patterns — Asmit Nayak, Yash Wani, Shirley Zhang, Rishabh Khandelwal, and Kassem Fawaz"
+  },
+  {
+   "venue": "CCS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "BACScan: Automatic Black-Box Detection of Broken-Access-Control Vulnerabilities in Web Applications",
+   "authors": [
+    "Fengyu Liu",
+    "Yuan Zhang",
+    "Enhao Li",
+    "Wei Meng",
+    "Youkun Shi",
+    "Qianheng Wang",
+    "Chenlin Wang",
+    "Zihan Lin",
+    "Min Yang"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2025/assets/awards.json",
+   "alsoAt": [
+    "https://www.sigsac.org/ccs/CCS2025/awards/"
+   ],
+   "evidence": "CCS 2025 Awards, Distinguished Paper Award: BACScan: Automatic Black-Box Detection of Broken-Access-Control Vulnerabilities in Web Applications — Fengyu Liu, Yuan Zhang, Enhao Li, Wei Meng, Youkun Shi, Qianheng Wang, Chenlin Wang, Zihan Lin, and Min Yang"
+  },
+  {
+   "venue": "CCS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "BadAML: Exploiting Legacy Firmware Interfaces to Compromise Confidential Virtual Machines",
+   "authors": [
+    "Satoru Takekoshi",
+    "Manami Mori",
+    "Takaaki Fukai",
+    "Takahiro Shinagawa"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2025/assets/awards.json",
+   "alsoAt": [
+    "https://www.sigsac.org/ccs/CCS2025/awards/"
+   ],
+   "evidence": "CCS 2025 Awards, Distinguished Paper Award: BadAML: Exploiting Legacy Firmware Interfaces to Compromise Confidential Virtual Machines — Satoru Takekoshi, Manami Mori, Takaaki Fukai, and Takahiro Shinagawa"
+  },
+  {
+   "venue": "CCS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "CITesting: Systematic Testing of Context Integrity Violations in Cellular Core Networks",
+   "authors": [
+    "Mincheol Son",
+    "Kwangmin Kim",
+    "Beomseok Oh",
+    "CheolJun Park",
+    "Yongdae Kim"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2025/assets/awards.json",
+   "alsoAt": [
+    "https://www.sigsac.org/ccs/CCS2025/awards/"
+   ],
+   "evidence": "CCS 2025 Awards, Distinguished Paper Award: CITesting: Systematic Testing of Context Integrity Violations in Cellular Core Networks — Mincheol Son, Kwangmin Kim, Beomseok Oh, CheolJun Park, and Yongdae Kim"
+  },
+  {
+   "venue": "CCS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "DivTrackee versus DynTracker: Promoting Diversity in Anti-Facial Recognition against Dynamic FR Strategy",
+   "authors": [
+    "Wenshu Fan",
+    "Minxing Zhang",
+    "Hongwei Li",
+    "Wenbo Jiang",
+    "Hanxiao Chen",
+    "Xiangyu Yue",
+    "Michael Backes",
+    "Xiao Zhang"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2025/assets/awards.json",
+   "alsoAt": [
+    "https://www.sigsac.org/ccs/CCS2025/awards/"
+   ],
+   "evidence": "CCS 2025 Awards, Distinguished Paper Award: DivTrackee versus DynTracker: Promoting Diversity in Anti-Facial Recognition against Dynamic FR Strategy — Wenshu Fan, Minxing Zhang, Hongwei Li, Wenbo Jiang, Hanxiao Chen, Xiangyu Yue, Michael Backes, and Xiao Zhang"
+  },
+  {
+   "venue": "CCS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Don’t Look Up: There Are Sensitive Internal Links in the Clear on GEO Satellites",
+   "authors": [
+    "Wenyi (Morty) Zhang",
+    "Annie Dai",
+    "Keegan Ryan",
+    "Dave Levin",
+    "Nadia Heninger",
+    "Aaron Schulman"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2025/assets/awards.json",
+   "alsoAt": [
+    "https://www.sigsac.org/ccs/CCS2025/awards/"
+   ],
+   "evidence": "CCS 2025 Awards, Distinguished Paper Award: Don’t Look Up: There Are Sensitive Internal Links in the Clear on GEO Satellites — Wenyi (Morty) Zhang, Annie Dai, Keegan Ryan, Dave Levin, Nadia Heninger, and Aaron Schulman"
+  },
+  {
+   "venue": "CCS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Empirical Security Analysis of Software-based Fault Isolation through Controlled Fault Injection",
+   "authors": [
+    "Nils Bars",
+    "Lukas Bernhard",
+    "Moritz Schloegel",
+    "Thorsten Holz"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2025/assets/awards.json",
+   "alsoAt": [
+    "https://www.sigsac.org/ccs/CCS2025/awards/"
+   ],
+   "evidence": "CCS 2025 Awards, Distinguished Paper Award: Empirical Security Analysis of Software-based Fault Isolation through Controlled Fault Injection — Nils Bars, Lukas Bernhard, Moritz Schloegel, and Thorsten Holz"
+  },
+  {
+   "venue": "CCS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Exact Robustness Certification of k-Nearest Neighbors",
+   "authors": [
+    "Francesco Ranzato",
+    "Ahmad Shakeel",
+    "Marco Zanella"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2025/assets/awards.json",
+   "alsoAt": [
+    "https://www.sigsac.org/ccs/CCS2025/awards/"
+   ],
+   "evidence": "CCS 2025 Awards, Distinguished Paper Award: Exact Robustness Certification of k-Nearest Neighbors — Francesco Ranzato, Ahmad Shakeel, and Marco Zanella"
+  },
+  {
+   "venue": "CCS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Forking the RANDAO: Manipulating Ethereum's Distributed Randomness Beacon",
+   "authors": [
+    "Ábel Nagy",
+    "János Tapolcai",
+    "Bence Ladóczki",
+    "István András Seres"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2025/assets/awards.json",
+   "alsoAt": [
+    "https://www.sigsac.org/ccs/CCS2025/awards/"
+   ],
+   "evidence": "CCS 2025 Awards, Distinguished Paper Award: Forking the RANDAO: Manipulating Ethereum's Distributed Randomness Beacon — Ábel Nagy, János Tapolcai, Bence Ladóczki, and István András Seres"
+  },
+  {
+   "venue": "CCS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "From OT to OLE with Subquadratic Communication",
+   "authors": [
+    "Jack Doerner",
+    "Iftach Haitner",
+    "Yuval Ishai",
+    "Nikolaos Makriyannis"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2025/assets/awards.json",
+   "alsoAt": [
+    "https://www.sigsac.org/ccs/CCS2025/awards/"
+   ],
+   "evidence": "CCS 2025 Awards, Distinguished Paper Award: From OT to OLE with Subquadratic Communication — Jack Doerner, Iftach Haitner, Yuval Ishai, and Nikolaos Makriyannis"
+  },
+  {
+   "venue": "CCS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Harnessing Sparsification in Federated Learning: A Secure, Efficient, and Differentially Private Realization",
+   "authors": [
+    "Shuangqing Xu",
+    "Yifeng Zheng",
+    "Zhongyun Hua"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2025/assets/awards.json",
+   "alsoAt": [
+    "https://www.sigsac.org/ccs/CCS2025/awards/"
+   ],
+   "evidence": "CCS 2025 Awards, Distinguished Paper Award: Harnessing Sparsification in Federated Learning: A Secure, Efficient, and Differentially Private Realization — Shuangqing Xu, Yifeng Zheng, and Zhongyun Hua"
+  },
+  {
+   "venue": "CCS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Harnessing Vital Sign Vibration Harmonics for Effortless and Inbuilt XR User Authentication",
+   "authors": [
+    "Tianfang Zhang",
+    "Qiufan Ji",
+    "Md Mojibur Rahman Redoy Akanda",
+    "Zhengkun Ye",
+    "Ahmed Tanvir Mahdad",
+    "Cong Shi",
+    "Yan Wang",
+    "Nitesh Saxena",
+    "Yingying Chen"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2025/assets/awards.json",
+   "alsoAt": [
+    "https://www.sigsac.org/ccs/CCS2025/awards/"
+   ],
+   "evidence": "CCS 2025 Awards, Distinguished Paper Award: Harnessing Vital Sign Vibration Harmonics for Effortless and Inbuilt XR User Authentication — Tianfang Zhang, Qiufan Ji, Md Mojibur Rahman Redoy Akanda, Zhengkun Ye, Ahmed Tanvir Mahdad, Cong Shi, Yan Wang, Nitesh Saxena, and Yingying Chen"
+  },
+  {
+   "venue": "CCS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "High-Throughput Universally Composable Threshold FHE Decryption",
+   "authors": [
+    "Guy Zyskind",
+    "Doron Zarchy",
+    "Max Leibovich",
+    "Chris Peikert"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2025/assets/awards.json",
+   "alsoAt": [
+    "https://www.sigsac.org/ccs/CCS2025/awards/"
+   ],
+   "evidence": "CCS 2025 Awards, Distinguished Paper Award: High-Throughput Universally Composable Threshold FHE Decryption — Guy Zyskind, Doron Zarchy, Max Leibovich, and Chris Peikert"
+  },
+  {
+   "venue": "CCS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Jazzline: Composable CryptoLine functional correctness proofs for Jasmin programs",
+   "authors": [
+    "José Bacelar Almeida",
+    "Manuel Barbosa",
+    "Gilles Barthe",
+    "Lionel Blatter",
+    "Gustavo Delerue",
+    "João Diogo Duarte",
+    "Benjamin Gregoire",
+    "Tiago Oliveira",
+    "Miguel Quaresma",
+    "Pierre-Yves Strub",
+    "Ming-Hsien Tsai",
+    "Bow-Yaw Wang",
+    "Bo-Yin Yang"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2025/assets/awards.json",
+   "alsoAt": [
+    "https://www.sigsac.org/ccs/CCS2025/awards/"
+   ],
+   "evidence": "CCS 2025 Awards, Distinguished Paper Award: Jazzline: Composable CryptoLine functional correctness proofs for Jasmin programs — José Bacelar Almeida, Manuel Barbosa, Gilles Barthe, Lionel Blatter, Gustavo Delerue, João Diogo Duarte, Benjamin Gregoire, Tiago Oliveira, Miguel Quaresma, Pierre-Yves Strub, Ming-Hsien Tsai, Bow-Yaw Wang, and Bo-Yin Yang"
+  },
+  {
+   "venue": "CCS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Layered, Overlapping, and Inconsistent: A Large-Scale Analysis of the Multiple Privacy Policies and Controls of U.S. Banks",
+   "authors": [
+    "Lu Xian",
+    "Van Tran",
+    "Lauren Lee",
+    "Meera Kumar",
+    "Yichen Zhang",
+    "Florian Schaub"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2025/assets/awards.json",
+   "alsoAt": [
+    "https://www.sigsac.org/ccs/CCS2025/awards/"
+   ],
+   "evidence": "CCS 2025 Awards, Distinguished Paper Award: Layered, Overlapping, and Inconsistent: A Large-Scale Analysis of the Multiple Privacy Policies and Controls of U.S. Banks — Lu Xian, Van Tran, Lauren Lee, Meera Kumar, Yichen Zhang, and Florian Schaub"
+  },
+  {
+   "venue": "CCS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Leaky Apps: Large-scale Analysis of Secrets Distributed in Android and iOS Apps",
+   "authors": [
+    "David Schmidt",
+    "Sebastian Schrittwieser",
+    "Edgar Weippl"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2025/assets/awards.json",
+   "alsoAt": [
+    "https://www.sigsac.org/ccs/CCS2025/awards/"
+   ],
+   "evidence": "CCS 2025 Awards, Distinguished Paper Award: Leaky Apps: Large-scale Analysis of Secrets Distributed in Android and iOS Apps — David Schmidt, Sebastian Schrittwieser, and Edgar Weippl"
+  },
+  {
+   "venue": "CCS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Looping for Good: Cyclic Proofs for Security Protocols",
+   "authors": [
+    "Felix Linker",
+    "Christoph Sprenger",
+    "Cas Cremers",
+    "David Basin"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2025/assets/awards.json",
+   "alsoAt": [
+    "https://www.sigsac.org/ccs/CCS2025/awards/"
+   ],
+   "evidence": "CCS 2025 Awards, Distinguished Paper Award: Looping for Good: Cyclic Proofs for Security Protocols — Felix Linker, Christoph Sprenger, Cas Cremers, and David Basin"
+  },
+  {
+   "venue": "CCS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "On the Security of SSH Client Signatures",
+   "authors": [
+    "Fabian Bäumer",
+    "Marcus Brinkmann",
+    "Maximilian Radoy",
+    "Jörg Schwenk",
+    "Juraj Somorovsky"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2025/assets/awards.json",
+   "alsoAt": [
+    "https://www.sigsac.org/ccs/CCS2025/awards/"
+   ],
+   "evidence": "CCS 2025 Awards, Distinguished Paper Award: On the Security of SSH Client Signatures — Fabian Bäumer, Marcus Brinkmann, Maximilian Radoy, Jörg Schwenk, and Juraj Somorovsky"
+  },
+  {
+   "venue": "CCS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Optimistic, Signature-Free Reliable Broadcast and Its Applications",
+   "authors": [
+    "Nibesh Shrestha",
+    "Qianyu Yu",
+    "Aniket Kate",
+    "Giuliano Losa",
+    "Kartik Nayak",
+    "Xuechao Wang"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2025/assets/awards.json",
+   "alsoAt": [
+    "https://www.sigsac.org/ccs/CCS2025/awards/"
+   ],
+   "evidence": "CCS 2025 Awards, Distinguished Paper Award: Optimistic, Signature-Free Reliable Broadcast and Its Applications — Nibesh Shrestha, Qianyu Yu, Aniket Kate, Giuliano Losa, Kartik Nayak, and Xuechao Wang"
+  },
+  {
+   "venue": "CCS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "PAnDA: Rethinking Metric Differential Privacy Optimization at Scale with Anchor-Based Approximation",
+   "authors": [
+    "Ruiyao Liu",
+    "Chenxi Qiu"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2025/assets/awards.json",
+   "alsoAt": [
+    "https://www.sigsac.org/ccs/CCS2025/awards/"
+   ],
+   "evidence": "CCS 2025 Awards, Distinguished Paper Award: PAnDA: Rethinking Metric Differential Privacy Optimization at Scale with Anchor-Based Approximation — Ruiyao Liu and Chenxi Qiu"
+  },
+  {
+   "venue": "CCS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Rethinking Tamper-Evident Logging: A High-Performance, Co-Designed Auditing System",
+   "authors": [
+    "Rui Zhao",
+    "Muhammad Shoaib",
+    "Viet Tung Hoang",
+    "Wajih Ul Hassan"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2025/assets/awards.json",
+   "alsoAt": [
+    "https://www.sigsac.org/ccs/CCS2025/awards/"
+   ],
+   "evidence": "CCS 2025 Awards, Distinguished Paper Award: Rethinking Tamper-Evident Logging: A High-Performance, Co-Designed Auditing System — Rui Zhao, Muhammad Shoaib, Viet Tung Hoang, and Wajih Ul Hassan"
+  },
+  {
+   "venue": "CCS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "RingSG: Optimal Secure Vertex-Centric Computation for Collaborative Graph Processing",
+   "authors": [
+    "Zhenhua Zou",
+    "Zhuotao Liu",
+    "Jinyong Shan",
+    "Qi Li",
+    "Ke Xu",
+    "Mingwei Xu"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2025/assets/awards.json",
+   "alsoAt": [
+    "https://www.sigsac.org/ccs/CCS2025/awards/"
+   ],
+   "evidence": "CCS 2025 Awards, Distinguished Paper Award: RingSG: Optimal Secure Vertex-Centric Computation for Collaborative Graph Processing — Zhenhua Zou, Zhuotao Liu, Jinyong Shan, Qi Li, Ke Xu, and Mingwei Xu"
+  },
+  {
+   "venue": "CCS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Sliced PIR: Offloading Heavyweight Work with NTT",
+   "authors": [
+    "Jonathan Weiss",
+    "Yossi Gilad"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2025/assets/awards.json",
+   "alsoAt": [
+    "https://www.sigsac.org/ccs/CCS2025/awards/"
+   ],
+   "evidence": "CCS 2025 Awards, Distinguished Paper Award: Sliced PIR: Offloading Heavyweight Work with NTT — Jonathan Weiss and Yossi Gilad"
+  },
+  {
+   "venue": "CCS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Split Unlearning",
+   "authors": [
+    "Yanna Jiang",
+    "Guangsheng Yu",
+    "QIN WANG",
+    "Xu Wang",
+    "Baihe Ma",
+    "Caijun Sun",
+    "Wei Ni",
+    "Ren Ping Liu"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2025/assets/awards.json",
+   "alsoAt": [
+    "https://www.sigsac.org/ccs/CCS2025/awards/"
+   ],
+   "evidence": "CCS 2025 Awards, Distinguished Paper Award: Split Unlearning — Yanna Jiang, Guangsheng Yu, QIN WANG, Xu Wang, Baihe Ma, Caijun Sun, Wei Ni, and Ren Ping Liu"
+  },
+  {
+   "venue": "CCS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "SyzSpec: Specification Generation for Linux Kernel Fuzzing via Under-Constrained Symbolic Execution",
+   "authors": [
+    "Yu Hao",
+    "Juefei Pu",
+    "Xingyu Li",
+    "Zhiyun Qian",
+    "Ardalan Amiri Sani"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2025/assets/awards.json",
+   "alsoAt": [
+    "https://www.sigsac.org/ccs/CCS2025/awards/"
+   ],
+   "evidence": "CCS 2025 Awards, Distinguished Paper Award: SyzSpec: Specification Generation for Linux Kernel Fuzzing via Under-Constrained Symbolic Execution — Yu Hao, Juefei Pu, Xingyu Li, Zhiyun Qian, and Ardalan Amiri Sani"
+  },
+  {
+   "venue": "CCS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "The OCH Authenticated Encryption Scheme",
+   "authors": [
+    "Sanketh Menda",
+    "Mihir Bellare",
+    "Viet Tung Hoang",
+    "Julia Len",
+    "Thomas Ristenpart"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2025/assets/awards.json",
+   "alsoAt": [
+    "https://www.sigsac.org/ccs/CCS2025/awards/"
+   ],
+   "evidence": "CCS 2025 Awards, Distinguished Paper Award: The OCH Authenticated Encryption Scheme — Sanketh Menda, Mihir Bellare, Viet Tung Hoang, Julia Len, and Thomas Ristenpart"
+  },
+  {
+   "venue": "CCS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "The Odyssey of robots.txt Governance: Measuring Convention Implications of Web Bots in Large Language Model Services",
+   "authors": [
+    "Jian Cui",
+    "Mingming Zha",
+    "XiaoFeng Wang",
+    "Xiaojing Liao"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2025/assets/awards.json",
+   "alsoAt": [
+    "https://www.sigsac.org/ccs/CCS2025/awards/"
+   ],
+   "evidence": "CCS 2025 Awards, Distinguished Paper Award: The Odyssey of robots.txt Governance: Measuring Convention Implications of Web Bots in Large Language Model Services — Jian Cui, Mingming Zha, XiaoFeng Wang, and Xiaojing Liao"
+  },
+  {
+   "venue": "CCS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "WireTap: Breaking Server SGX via DRAM Bus Interposition",
+   "authors": [
+    "Alex Seto",
+    "Oytun Kuday Duran",
+    "Samy Amer",
+    "Jalen Chuang",
+    "Stephan van Schaik",
+    "Daniel Genkin",
+    "Christina Garman"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS2025/assets/awards.json",
+   "alsoAt": [
+    "https://www.sigsac.org/ccs/CCS2025/awards/"
+   ],
+   "evidence": "CCS 2025 Awards, Distinguished Paper Award: WireTap: Breaking Server SGX via DRAM Bus Interposition — Alex Seto, Oytun Kuday Duran, Samy Amer, Jalen Chuang, Stephan van Schaik, Daniel Genkin, and Christina Garman"
   },
   {
    "venue": "CCS",
@@ -97011,6 +98151,69 @@
   {
    "venue": "MICRO",
    "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Simba: Scaling Deep-Learning Inference with Multi-Chip-Module-Based Architecture",
+   "authors": [
+    "Yakun Sophia Shao",
+    "Jason Clemons",
+    "Rangharajan Venkatesan",
+    "Brian Zimmer",
+    "Matthew Fojtik",
+    "Nan Jiang",
+    "Ben Keller",
+    "Alicia Klinefelter",
+    "Nathaniel Pinckney",
+    "Priyanka Raina",
+    "Stephen G Tell",
+    "Yanqing Zhang",
+    "William J. Dally",
+    "Joel Emer",
+    "C. Thomas Gray",
+    "Brucek Khailany",
+    "Stephen W. Keckler"
+   ],
+   "track": "main",
+   "source": "https://www.microarch.org/micro52/program/bestpaper.html",
+   "evidence": "MICRO 2019 program: Simba: Scaling Deep-Learning Inference with Multi-Chip-Module-Based Architecture — Best Paper Winner — Yakun Sophia Shao, Jason Clemons, Rangharajan Venkatesan, Brian Zimmer, Matthew Fojtik, Nan Jiang, Ben Keller, Alicia Klinefelter, Nathaniel Pinckney (NVIDIA); Priyanka Raina (Stanford University); Stephen G Tell and Yanqing Zhang (NVIDIA); William J. Dally (NVIDIA/Stanford); Joel Emer (NVIDIA, MIT); C. Thomas Gray and Brucek Khailany (NVIDIA); Stephen W. Keckler (NVIDIA and UT-Austin)"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Speculative Taint Tracking (STT): A Comprehensive Protection for Speculatively Accessed Data",
+   "authors": [
+    "Jiyong Yu",
+    "Mengjia Yan",
+    "Artem Khyzha",
+    "Adam Morrison",
+    "Josep Torrellas",
+    "Christopher Fletcher"
+   ],
+   "track": "main",
+   "source": "https://www.microarch.org/micro52/program/bestpaper.html",
+   "evidence": "MICRO 2019 program: Speculative Taint Tracking (STT): A Comprehensive Protection for Speculatively Accessed Data — Best Paper Winner — Jiyong Yu and Mengjia Yan (University of Illinois at Urbana-Champaign); Artem Khyzha and Adam Morrison (Tel Aviv University); Josep Torrellas and Christopher Fletcher (University of Illinois at Urbana-Champaign)"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2019,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-Up",
+   "title": "Dynamic Multi-Resolution Data Storage",
+   "authors": [
+    "Yu-Ching Hu",
+    "Murtuza Taher Lokhandwala",
+    "Te I",
+    "Hung-Wei Tseng"
+   ],
+   "track": "main",
+   "source": "https://www.microarch.org/micro52/program/bestpaper.html",
+   "evidence": "MICRO 2019 program: Dynamic Multi-Resolution Data Storage — Best Paper Runner-Up — Yu-Ching Hu (University of California, Riverside); Murtuza Taher Lokhandwala (North Carolina State University); Te I (Google); Hung-Wei Tseng (University of California, Riverside)"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2019,
    "award": "tot",
    "awardLabel": "Test of Time Award",
    "title": "Selective Cache Ways: On-Demand Cache Resource Allocation",
@@ -97036,6 +98239,39 @@
    "paperYear": 2001,
    "source": "https://www.sigmicro.org/awards/tot/",
    "evidence": "MICRO 2019 Test of Time Award: MICRO 2001: Speculative Lock Elision: Enabling Highly Concurrent Multithreaded Execution — Ravi Rajwar, James R. Goodman"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Bit-Exact ECC Recovery (BEER): Determining DRAM On-Die ECC Functions by Exploiting DRAM Data Retention Characteristics",
+   "authors": [
+    "Minesh Patel",
+    "Jeremie Kim",
+    "Taha Shahroodi",
+    "Hasan Hassan",
+    "Onur Mutlu"
+   ],
+   "track": "main",
+   "source": "https://www.microarch.org/micro53/program/",
+   "evidence": "MICRO 2020 program: Bit-Exact ECC Recovery (BEER): Determining DRAM On-Die ECC Functions by Exploiting DRAM Data Retention Characteristics — Best Paper Winner — Minesh Patel, Jeremie Kim, Taha Shahroodi, Hasan Hassan, Onur Mutlu (ETH Zurich)"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2020,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-Up",
+   "title": "Virtualized Logical Qubits: A 2.5D Architecture for Error-Corrected Quantum Computing",
+   "authors": [
+    "Casey Duckering",
+    "Jonathan Baker",
+    "David Schuster",
+    "Fred Chong"
+   ],
+   "track": "main",
+   "source": "https://www.microarch.org/micro53/program/",
+   "evidence": "MICRO 2020 program: Virtualized Logical Qubits: A 2.5D Architecture for Error-Corrected Quantum Computing — Best Paper Runner-Up — Casey Duckering, Jonathan Baker, David Schuster, Fred Chong (University of Chicago)"
   },
   {
    "venue": "MICRO",
@@ -97217,6 +98453,73 @@
   {
    "venue": "MICRO",
    "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Fusion-3D: Integrated Acceleration for Instant 3D Reconstruction and Real-Time Rendering",
+   "authors": [
+    "Sixu Li",
+    "Yang Zhao",
+    "Chaojian Li",
+    "Bowei Guo",
+    "Jingqun Zhang",
+    "Wenbo Zhu",
+    "Zhifan Ye",
+    "Cheng Wan",
+    "Yingyan Lin"
+   ],
+   "track": "main",
+   "source": "https://www.microarch.org/micro57/program/",
+   "evidence": "MICRO 2024 program: Fusion-3D: Integrated Acceleration for Instant 3D Reconstruction and Real-Time Rendering — Best Paper Award — Sixu Li, Yang Zhao, Chaojian Li, Bowei Guo, Jingqun Zhang, Wenbo Zhu, Zhifan Ye, Cheng Wan, Yingyan (Celine) Lin (Georgia Institute of Technology)"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-Up",
+   "title": "A Mess of Memory System Benchmarking, Simulation and Application Profiling",
+   "authors": [
+    "Pouya Esmaili-Dokht",
+    "Francesco Sgherzi",
+    "Valeria Soldera Girelli",
+    "Isaac Boixaderas",
+    "Mariana Carmin",
+    "Alireza Monemi",
+    "Adria Armejach",
+    "Estanislao Mercadal",
+    "Germán Llort",
+    "Petar Radojković",
+    "Miquel Moreto",
+    "Judit Giménez",
+    "Xavier Martorell",
+    "Eduard Ayguadé",
+    "Jesus Labarta",
+    "Emanuele Confalonieri",
+    "Rishabh Dubey",
+    "Jason Adlard"
+   ],
+   "track": "main",
+   "source": "https://www.microarch.org/micro57/program/",
+   "evidence": "MICRO 2024 program: A Mess of Memory System Benchmarking, Simulation and Application Profiling — Best Paper Runner-up — Pouya Esmaili-Dokht, Francesco Sgherzi, Valeria Soldera Girelli (Barcelona Supercomputing Center, Unversitat Politecnica De Catalunya); Isaac Boixaderas, Mariana Carmin, Alireza Monemi (Barcelona Supercomputing Center); Adria Armejach (Barcelona Supercomputing Center, Unversitat Politecnica De Catalunya); Estanislao Mercadal, Germán Llort, Petar Radojković (Barcelona Supercomputing Center); Miquel Moreto, Judit Giménez, Xavier Martorell, Eduard Ayguadé, Jesus Labarta (Barcelona Supercomputing Center, Unversitat Politecnica De Catalunya); Emanuele Confalonieri, Rishabh Dubey, Jason Adlard (Micron Technology)"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-Up",
+   "title": "Hardware-Assisted Virtualization of Neural Processing Units for Cloud Platforms",
+   "authors": [
+    "Yuqi Xue",
+    "Yiqi Liu",
+    "Lifeng Nai",
+    "Jian Huang"
+   ],
+   "track": "main",
+   "source": "https://www.microarch.org/micro57/program/",
+   "evidence": "MICRO 2024 program: Hardware-Assisted Virtualization of Neural Processing Units for Cloud Platforms — Best Paper Runner-up — Yuqi Xue, Yiqi Liu (University of Illinois Urbana-Champaign); Lifeng Nai (Google); Jian Huang (University of Illinois Urbana-Champaign)"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2024,
    "award": "tot",
    "awardLabel": "Test of Time Award",
    "title": "Utility-Based Cache Partitioning: A Low-Overhead, High-Performance, Runtime Mechanism to Partition Shared Caches",
@@ -97228,6 +98531,43 @@
    "paperYear": 2006,
    "source": "https://www.sigmicro.org/awards/tot/",
    "evidence": "MICRO 2024 Test of Time Award: MICRO 2006: Utility-Based Cache Partitioning: A Low-Overhead, High-Performance, Runtime Mechanism to Partition Shared Caches — Moinuddin K. Qureshi, Yale N. Patt"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Flexing RISC-V Instruction Subset Processors to Extreme Edge",
+   "authors": [
+    "Alireza Raisiardali",
+    "Konstantinos Iordanou",
+    "Jedrzej Kufel",
+    "Kowshik Gudimetla",
+    "Kris Myny",
+    "Emre Ozer"
+   ],
+   "track": "main",
+   "source": "https://www.microarch.org/micro58/program/",
+   "evidence": "MICRO 2025 program: Flexing RISC-V Instruction Subset Processors to Extreme Edge — Best Paper Award — Alireza Raisiardali (Pragmatic Semiconductor / KU Leuven); Konstantinos Iordanou, Jedrzej Kufel, Kowshik Gudimetla (Pragmatic Semiconductor); Kris Myny (KU Leuven); Emre Ozer (Pragmatic Semiconductor)"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "LLM.265: Video Codecs are Secretly Tensor Codecs",
+   "authors": [
+    "Ceyu Xu",
+    "Yongji Wu",
+    "Xinyu Yang",
+    "Beidi Chen",
+    "Matthew Lentz",
+    "Danyang Zhuo",
+    "Lisa Wu Wills"
+   ],
+   "track": "main",
+   "source": "https://www.microarch.org/micro58/program/",
+   "evidence": "MICRO 2025 program: LLM.265: Video Codecs are Secretly Tensor Codecs — Best Paper Award — Ceyu Xu, Yongji Wu (Duke Univ.); Xinyu Yang, Beidi Chen (Carnegie Mellon Univ.); Matthew Lentz, Danyang Zhuo, Lisa Wu Wills (Duke Univ.)"
   },
   {
    "venue": "MICRO",
@@ -109430,6 +110770,244 @@
   },
   {
    "venue": "S&P",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Hookt on fon-iks: Phonotactic Reconstruction of Encrypted VoIP Conversations",
+   "authors": [
+    "Andrew M. White",
+    "Kevin Snow",
+    "Austin Matthews",
+    "Fabian Monrose"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/TC/SP2011/awards.html",
+   "evidence": "S&P 2011 Best Paper: Hookt on fon-iks: Phonotactic Reconstruction of Encrypted VoIP Conversations — Andrew M. White, Kevin Snow, Austin Matthews, Fabian Monrose (University of North Carolina at Chapel Hill)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2011,
+   "award": "category",
+   "awardLabel": "Best Practical Paper",
+   "title": "How to Shop for Free Online - Security Analysis of Cashier-as-a-Service Based Web Stores",
+   "authors": [
+    "Rui Wang",
+    "Shuo Chen",
+    "XiaoFeng Wang",
+    "Shaz Qadeer"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/TC/SP2011/awards.html",
+   "evidence": "S&P 2011 Best Practical Paper sponsored by IEEE Security and Privacy Magazine: How to Shop for Free Online - Security Analysis of Cashier-as-a-Service Based Web Stores — Rui Wang (Indiana University Bloomington), Shuo Chen (Microsoft Research), XiaoFeng Wang (Indiana University Bloomington), Shaz Qadeer (Microsoft Research)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2011,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "OpenConflict: Preventing Real Time Map Hacks in Online Games",
+   "authors": [
+    "Elie Bursztein",
+    "Mike Hamburg",
+    "Jocelyn Lagarenne",
+    "Dan Boneh"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/TC/SP2011/awards.html",
+   "evidence": "S&P 2011 Best Student Paper: OpenConflict: Preventing Real Time Map Hacks in Online Games — Elie Bursztein, Mike Hamburg, Jocelyn Lagarenne, Dan Boneh (Stanford University)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Don't Trust Satellite Phones: A Security Analysis of Two Satphone Standards",
+   "authors": [
+    "Benedikt Driessen",
+    "Ralf Hund",
+    "Carsten Willems",
+    "Christof Paar",
+    "Thorsten Holz"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/TC/SP2012/awards.html",
+   "evidence": "S&P 2012 Best Paper: Don't Trust Satellite Phones: A Security Analysis of Two Satphone Standards — Benedikt Driessen, Ralf Hund, Carsten Willems, Christof Paar, and Thorsten Holz (Horst-Goertz Institute)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2012,
+   "award": "category",
+   "awardLabel": "Best Practical Paper",
+   "title": "User-Driven Access Control: Rethinking Permission Granting in Modern Operating Systems",
+   "authors": [
+    "Franziska Roesner",
+    "Tadayoshi Kohno",
+    "Alexander Moshchuk",
+    "Bryan Parno",
+    "Helen J. Wang",
+    "Crispin Cowan"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/TC/SP2012/awards.html",
+   "evidence": "S&P 2012 Best Practical Paper sponsored by IEEE Security and Privacy Magazine: User-Driven Access Control: Rethinking Permission Granting in Modern Operating Systems — Franziska Roesner and Tadayoshi Kohno (University of Washington), Alexander Moshchuk, Bryan Parno, and Helen J. Wang (Microsoft Research), and Crispin Cowan (Microsoft)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2012,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Memento: Learning Secrets from Process Footprints",
+   "authors": [
+    "Suman Jana",
+    "Vitaly Shmatikov"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/TC/SP2012/awards.html",
+   "evidence": "S&P 2012 Best Student Paper sponsored by Google: Memento: Learning Secrets from Process Footprints — Suman Jana and Vitaly Shmatikov (University of Texas at Austin)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Secure Multiparty Computations on Bitcoin",
+   "authors": [
+    "Marcin Andrychowicz",
+    "Stefan Dziembowski",
+    "Daniel Malinowski",
+    "Łukasz Mazurek"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/TC/SP2014/awards.html",
+   "evidence": "Best Paper: Secure Multiparty Computations on Bitcoin — Marcin Andrychowicz (University of Warsaw) , Stefan Dziembowski (University of Warsaw and Sapienza University of Rome) , Daniel Malinowski, and Łukasz Mazurek (University of Warsaw)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2014,
+   "award": "category",
+   "awardLabel": "Best Practical Paper",
+   "title": "Using Frankencerts for Automated Adversarial Testing of Certificate Validation in SSL/TLS Implementations",
+   "authors": [
+    "Chad Brubaker",
+    "Suman Jana",
+    "Baishakhi Ray",
+    "Sarfraz Khurshid",
+    "Vitaly Shmatikov"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/TC/SP2014/awards.html",
+   "evidence": "Best Practical Paper: Using Frankencerts for Automated Adversarial Testing of Certificate Validation in SSL/TLS Implementations — Chad Brubaker and Suman Jana (University of Texas at Austin), Baishakhi Ray (University Of California Davis), and Sarfraz Khurshid and Vitaly Shmatikov (University of Texas at Austin)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2014,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Bootstrapping Privacy Compliance in Big Data Systems",
+   "authors": [
+    "Shayak Sen",
+    "Saikat Guha",
+    "Anupam Datta",
+    "Sriram Rajamani",
+    "Janice Tsai",
+    "Jeannette Wing"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/TC/SP2014/awards.html",
+   "evidence": "Best Student Papers: Bootstrapping Privacy Compliance in Big Data Systems — Shayak Sen (Carnegie Mellon University), Saikat Guha (Microsoft Research, India), Anupam Datta (Carnegie Mellon University), Sriram Rajamani (Microsoft Research, India), Janice Tsai (Microsoft Research, Redmond), and Jeannette Wing (Microsoft Research)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2014,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Framing Signals — A Return to Portable Shellcode",
+   "authors": [
+    "Erik Bosman",
+    "Herbert Bos"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/TC/SP2014/awards.html",
+   "evidence": "Best Student Papers: Framing Signals — A Return to Portable Shellcode — Erik Bosman and Herbert Bos (Vrije Universiteit Amsterdam)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2015,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "A Messy State of the Union: Taming the Composite State Machines of TLS",
+   "authors": [
+    "Benjamin Beurdouche",
+    "Karthikeyan Bhargavan",
+    "Antoine Delignat-Lavaud",
+    "Cédric Fournet",
+    "Markulf Kohlweiss",
+    "Alfredo Pironti",
+    "Pierre-Yves Strub",
+    "Jean Karim Zinzindohoue"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/TC/SP2015/awards.html",
+   "evidence": "Distinguished Papers: A Messy State of the Union: Taming the Composite State Machines of TLS — Benjamin Beurdouche (INRIA), Karthikeyan Bhargavan (INRIA), Antoine Delignat-Lavaud (INRIA), Cédric Fournet (Microsoft Research), Markulf Kohlweiss (Microsoft Research), Alfredo Pironti (INRIA), Pierre-Yves Strub (IMDEA), Jean Karim Zinzindohoue (INRIA)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2015,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Practical Paper",
+   "title": "Ad Injection at Scale: Assessing Deceptive Advertisement Modifications",
+   "authors": [
+    "Kurt Thomas",
+    "Elie Bursztein",
+    "Chris Grier",
+    "Grant Ho",
+    "Nav Jagpal",
+    "Alexandros Kapravelos",
+    "Damon McCoy",
+    "Antonio Nappa",
+    "Vern Paxson",
+    "Paul Pearce",
+    "Niels Provos",
+    "Moheeb Abu Rajab"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/TC/SP2015/awards.html",
+   "evidence": "Distinguished Practical Paper: Ad Injection at Scale: Assessing Deceptive Advertisement Modifications — Kurt Thomas (Google), Elie Bursztein (Google), Chris Grier (International Computer Science Institute, Databricks), Grant Ho (UC Berkeley), Nav Jagpal (Google), Alexandros Kapravelos (UC Santa Barbara, Google), Damon McCoy (International Computer Science Institute, George Mason University), Antonio Nappa (International Computer Science Institute, IMDEA), Vern Paxson (International Computer Science Institute, UC Berkeley), Paul Pearce (UC Berkeley), Niels Provos (Google), Moheeb Abu Rajab (Google)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2015,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Riposte: An Anonymous Messaging System Handling Millions of Users",
+   "authors": [
+    "Henry Corrigan-Gibbs",
+    "Dan Boneh",
+    "David Mazières"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/TC/SP2015/awards.html",
+   "evidence": "Distinguished Papers: Riposte: An Anonymous Messaging System Handling Millions of Users — Henry Corrigan-Gibbs (Stanford University), Dan Boneh (Stanford University), David Mazières (Stanford University)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2015,
+   "award": "student",
+   "awardLabel": "Distinguished Student Paper",
+   "title": "GenoGuard: Protecting Genomic Data Against Brute-Force Attacks",
+   "authors": [
+    "Zhicong Huang",
+    "Erman Ayday",
+    "Jacques Fellay",
+    "Jean-Pierre Hubaux",
+    "Ari Juels"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/TC/SP2015/awards.html",
+   "evidence": "Distinguished Student Paper Award: GenoGuard: Protecting Genomic Data Against Brute-Force Attacks — Zhicong Huang (Ecole Polytechnique Federale de Lausanne), Erman Ayday (Bilkent University), Jacques Fellay (Ecole Polytechnique Federale de Lausanne), Jean-Pierre Hubaux (Ecole Polytechnique Federale de Lausanne), Ari Juels (Jacobs Institute, Cornell Tech)"
+  },
+  {
+   "venue": "S&P",
    "year": 2016,
    "award": "distinguished",
    "awardLabel": "Distinguished Paper",
@@ -115352,6 +116930,22 @@
   },
   {
    "venue": "SIGIR",
+   "year": 2014,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Beyond independent relevance: methods and evaluation metrics for subtopic retrieval",
+   "authors": [
+    "ChengXiang Zhai",
+    "William W. Cohen",
+    "John Lafferty"
+   ],
+   "track": "main",
+   "paperYear": 2003,
+   "source": "https://sigir.org/test-of-time-award-winners/",
+   "evidence": "SIGIR 2014 Test of Time Award: Beyond independent relevance: methods and evaluation metrics for subtopic retrieval — ChengXiang Zhai, William W. Cohen, John Lafferty — SIGIR 2003"
+  },
+  {
+   "venue": "SIGIR",
    "year": 2015,
    "award": "best",
    "awardLabel": "Best Paper",
@@ -115387,6 +116981,25 @@
   },
   {
    "venue": "SIGIR",
+   "year": 2015,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Stuff I’ve seen: a system for personal information retrieval and re-use",
+   "authors": [
+    "Susan Dumais",
+    "Edward Cutrell",
+    "JJ Cadiz",
+    "Gavin Jancke",
+    "Raman Sarin",
+    "Daniel C. Robbins"
+   ],
+   "track": "main",
+   "paperYear": 2003,
+   "source": "https://sigir.org/test-of-time-award-winners/",
+   "evidence": "SIGIR 2015 Test of Time Award: Stuff I’ve seen: a system for personal information retrieval and re-use — Susan Dumais, Edward Cutrell, JJ Cadiz, Gavin Jancke, Raman Sarin, Daniel C. Robbins — SIGIR 2003"
+  },
+  {
+   "venue": "SIGIR",
    "year": 2016,
    "award": "best",
    "awardLabel": "Best Paper",
@@ -115418,6 +117031,24 @@
   },
   {
    "venue": "SIGIR",
+   "year": 2016,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Accurately interpreting clickthrough data as implicit feedback",
+   "authors": [
+    "Thorsten Joachims",
+    "Laura Granka",
+    "Bing Pan",
+    "Helene Hembrooke",
+    "Geri Ga"
+   ],
+   "track": "main",
+   "paperYear": 2005,
+   "source": "https://sigir.org/test-of-time-award-winners/",
+   "evidence": "SIGIR 2016 Test of Time Award: Accurately interpreting clickthrough data as implicit feedback — Thorsten Joachims, Laura Granka, Bing Pan, Helene Hembrooke, Geri Ga — SIGIR 2005"
+  },
+  {
+   "venue": "SIGIR",
    "year": 2017,
    "award": "best",
    "awardLabel": "Best Paper",
@@ -115434,6 +117065,22 @@
    "track": "main",
    "source": "https://sigir.org/awards/best-paper-awards/",
    "evidence": "Best Paper: 2017 BitFunnel: Revisiting Signatures for Search — Bob Goodwin, Michael Hopcroft, Dan Luu, Alex Clemmer, Mihaela Curmei, Sameh Elnikety, Yuxiong He"
+  },
+  {
+   "venue": "SIGIR",
+   "year": 2017,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Personalizing search via automated analysis of interests and activities",
+   "authors": [
+    "Jaime Teevan",
+    "Susan T. Dumais",
+    "Eric Horvitz"
+   ],
+   "track": "main",
+   "paperYear": 2005,
+   "source": "https://sigir.org/test-of-time-award-winners/",
+   "evidence": "SIGIR 2017 Test of Time Award: Personalizing search via automated analysis of interests and activities — Jaime Teevan, Susan T. Dumais, Eric Horvitz — SIGIR 2005"
   },
   {
    "venue": "SIGIR",
@@ -115481,6 +117128,22 @@
    "track": "main",
    "source": "https://sigir.org/awards/best-short-paper-awards/",
    "evidence": "Best Short Paper: 2018 Towards Designing Better Session Search Evaluation Metrics — Mengyang Liu, Yiqun Liu, Jiaxin Mao, Cheng Luo, Shaoping Ma"
+  },
+  {
+   "venue": "SIGIR",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Improving web search ranking by incorporating user behavior information",
+   "authors": [
+    "Eugene Agichtein",
+    "Eric Brill",
+    "Susan Dumais"
+   ],
+   "track": "main",
+   "paperYear": 2006,
+   "source": "https://sigir.org/test-of-time-award-winners/",
+   "evidence": "SIGIR 2018 Test of Time Award: Improving web search ranking by incorporating user behavior information — Eugene Agichtein, Eric Brill, Susan Dumais — SIGIR 2006"
   },
   {
    "venue": "SIGIR",
@@ -115532,6 +117195,26 @@
   },
   {
    "venue": "SIGIR",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Novelty and diversity in information retrieval evaluation",
+   "authors": [
+    "Charles L.A. Clarke",
+    "Maheedhar Kolla",
+    "Gordon V. Cormack",
+    "Olga Vechtomova",
+    "Azin Ashkan",
+    "Stefan Büttcher",
+    "Ian MacKinnon"
+   ],
+   "track": "main",
+   "paperYear": 2008,
+   "source": "https://sigir.org/test-of-time-award-winners/",
+   "evidence": "SIGIR 2019 Test of Time Award: Novelty and diversity in information retrieval evaluation — Charles L.A. Clarke, Maheedhar Kolla, Gordon V. Cormack, Olga Vechtomova, Azin Ashkan, Stefan Büttcher, Ian MacKinnon — SIGIR 2008"
+  },
+  {
+   "venue": "SIGIR",
    "year": 2020,
    "award": "best",
    "awardLabel": "Best Paper",
@@ -115564,6 +117247,22 @@
    "track": "main",
    "source": "https://sigir.org/awards/best-short-paper-awards/",
    "evidence": "Best Short Paper: 2020 Few-Shot Generative Conversation Query Rewriting — Shi Yu, Jiahua Liu, Jingqin Yang, Chenyan Xiong, Paul Bennett, Jianfeng Gao, Zhiyuan Liu"
+  },
+  {
+   "venue": "SIGIR",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Learning to recommend with social trust ensemble",
+   "authors": [
+    "Hao Ma",
+    "Irwin King",
+    "Michael R. Lyu"
+   ],
+   "track": "main",
+   "paperYear": 2009,
+   "source": "https://sigir.org/test-of-time-award-winners/",
+   "evidence": "SIGIR 2020 Test of Time Award: Learning to recommend with social trust ensemble. — Hao Ma, Irwin King, Michael R. Lyu — SIGIR 2009"
   },
   {
    "venue": "SIGIR",
@@ -115615,6 +117314,23 @@
   },
   {
    "venue": "SIGIR",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Exploiting geographical influence for collaborative point-of-interest recommendation",
+   "authors": [
+    "Mao Ye",
+    "Peifeng Yin",
+    "Wang Chien Lee",
+    "Dik Lun Lee"
+   ],
+   "track": "main",
+   "paperYear": 2011,
+   "source": "https://sigir.org/test-of-time-award-winners/",
+   "evidence": "SIGIR 2021 Test of Time Award: Exploiting geographical influence for collaborative point-of-interest recommendation — Mao Ye, Peifeng Yin, Wang Chien Lee, Dik Lun Lee — SIGIR 2011"
+  },
+  {
+   "venue": "SIGIR",
    "year": 2022,
    "award": "best",
    "awardLabel": "Best Paper",
@@ -115644,6 +117360,26 @@
    "track": "main",
    "source": "https://sigir.org/awards/best-short-paper-awards/",
    "evidence": "Best Short Paper: 2022 Curriculum Learning for Dense Retrieval Distillation — Hansi Zeng, Hamed Zamani, Vishwa Vinay"
+  },
+  {
+   "venue": "SIGIR",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Modeling the impact of short- and long-term behavior on search personalization",
+   "authors": [
+    "Paul Bennett",
+    "Ryen W. White",
+    "Wei Chu",
+    "Susan Dumais",
+    "Peter Bailey",
+    "Fedor Borisyuk",
+    "Xiaoyuan Cui"
+   ],
+   "track": "main",
+   "paperYear": 2012,
+   "source": "https://sigir.org/test-of-time-award-winners/",
+   "evidence": "SIGIR 2022 Test of Time Award: Modeling the impact of short- and long-term behavior on search personalization — Paul Bennett, Ryen W. White, Wei Chu, Susan Dumais, Peter Bailey, Fedor Borisyuk, Xiaoyuan Cui — SIGIR 2012"
   },
   {
    "venue": "SIGIR",
@@ -115701,6 +117437,20 @@
   },
   {
    "venue": "SIGIR",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Beliefs and biases in web search",
+   "authors": [
+    "Ryen W. White"
+   ],
+   "track": "main",
+   "paperYear": 2013,
+   "source": "https://sigir.org/test-of-time-award-winners/",
+   "evidence": "SIGIR 2023 Test of Time Award: Beliefs and biases in web search — Ryen W. White — SIGIR 2013"
+  },
+  {
+   "venue": "SIGIR",
    "year": 2024,
    "award": "best",
    "awardLabel": "Best Paper",
@@ -115744,6 +117494,25 @@
    "track": "main",
    "source": "https://sigir.org/awards/best-short-paper-awards/",
    "evidence": "Best Short Paper: 2024 Evaluating Retrieval Quality in Retrieval-Augmented Generation — Alireza Salemi, Hamed Zamani"
+  },
+  {
+   "venue": "SIGIR",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Explicit factor models for explainable recommendation based on phrase-level sentiment analysis",
+   "authors": [
+    "Yongfeng Zhang",
+    "Guokun Lai",
+    "Min Zhang",
+    "Yi Zhang",
+    "Yiqun Liu",
+    "Shaoping Ma"
+   ],
+   "track": "main",
+   "paperYear": 2014,
+   "source": "https://sigir.org/test-of-time-award-winners/",
+   "evidence": "SIGIR 2024 Test of Time Award: Explicit factor models for explainable recommendation based on phrase-level sentiment analysis — Yongfeng Zhang, Guokun Lai, Min Zhang, Yi Zhang, Yiqun Liu, Shaoping Ma — SIGIR 2014"
   },
   {
    "venue": "SIGIR",
@@ -115793,6 +117562,86 @@
    "track": "main",
    "source": "https://sigir.org/awards/best-short-paper-awards/",
    "evidence": "Best Short Paper: 2025 GINGER: Grounded Information Nugget-Based Generation of Responses — Weronika Łajewska, Krisztian Balog"
+  },
+  {
+   "venue": "SIGIR",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Image-based recommendations on styles and substitutes",
+   "authors": [
+    "Julian McAuley",
+    "Christopher Targett",
+    "Javen Shi",
+    "Anton van den Hengel"
+   ],
+   "track": "main",
+   "paperYear": 2015,
+   "source": "https://sigir.org/test-of-time-award-winners/",
+   "evidence": "SIGIR 2025 Test of Time Award: Image-based recommendations on styles and substitutes — Julian McAuley, Christopher Targett, Javen Shi, Anton van den Hengel — SIGIR 2015"
+  },
+  {
+   "venue": "SIGIR",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Why Advanced Encoders Lag on Sparse Retrieval? The Answer and an Approach to Bridging Vocabulary Gaps",
+   "authors": [
+    "Zhichao Geng",
+    "Yang Yang"
+   ],
+   "track": "main",
+   "source": "https://sigir2026.org/en-AU/pages/program/awards",
+   "evidence": "SIGIR 2026 Awards, SIGIR 2026 Best Paper Award: Why Advanced Encoders Lag on Sparse Retrieval? The Answer and an Approach to Bridging Vocabulary Gaps — Zhichao Geng and Yang Yang"
+  },
+  {
+   "venue": "SIGIR",
+   "year": 2026,
+   "award": "category",
+   "awardLabel": "Best Short Paper",
+   "title": "When RAG Disagrees: Detecting Latent Epistemic Conflict via Logit Interactions",
+   "authors": [
+    "Saisab Sadhu",
+    "Dwaipayan Roy",
+    "Tanmay Basu"
+   ],
+   "track": "main",
+   "source": "https://sigir2026.org/en-AU/pages/program/awards",
+   "evidence": "SIGIR 2026 Awards, SIGIR 2026 Best Short Paper Award: When RAG Disagrees: Detecting Latent Epistemic Conflict via Logit Interactions — Saisab Sadhu, Dwaipayan Roy, and Tanmay Basu"
+  },
+  {
+   "venue": "SIGIR",
+   "year": 2026,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Topic-Specific Classifiers are Better Relevance Judges than Prompted LLMs",
+   "authors": [
+    "Lukas Gienapp",
+    "Martin Potthast",
+    "Andrew Yates",
+    "Harrisen Scells",
+    "Eugene Yang"
+   ],
+   "track": "main",
+   "source": "https://sigir2026.org/en-AU/pages/program/awards",
+   "evidence": "SIGIR 2026 Awards, SIGIR 2026 Best Student Paper Award: Topic-Specific Classifiers are Better Relevance Judges than Prompted LLMs — Lukas Gienapp, Martin Potthast, Andrew Yates, Harrisen Scells, and Eugene Yang"
+  },
+  {
+   "venue": "SIGIR",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Learning to Rank with Selection Bias in Personal Search",
+   "authors": [
+    "Xuanhui Wang",
+    "Michael Bendersky",
+    "Donald Metzler",
+    "Marc Najork"
+   ],
+   "track": "main",
+   "paperYear": 2016,
+   "source": "https://sigir2026.org/en-AU/pages/program/awards",
+   "evidence": "SIGIR 2026 Awards, 2026 Test of Time Award: Learning to Rank with Selection Bias in Personal Search (SIGIR 2016) — Xuanhui Wang, Michael Bendersky, Donald Metzler, and Marc Najork"
   },
   {
    "venue": "SIGMETRICS",
@@ -121158,6 +123007,188 @@
   },
   {
    "venue": "SOSP",
+   "year": 2009,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "FAWN: A Fast Array of Wimpy Nodes",
+   "authors": [
+    "David G. Andersen",
+    "Jason Franklin",
+    "Michael Kaminsky",
+    "Amar Phanishayee",
+    "Lawrence Tan",
+    "Vijay Vasudevan"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/s/conferences/sosp/2009/program.html",
+   "evidence": "SOSP 2009 program: Awarded Best Paper! FAWN: A Fast Array of Wimpy Nodes — David G. Andersen (Carnegie Mellon University), Jason Franklin (Carnegie Mellon University), Michael Kaminsky (Intel Research Pittsburgh), Amar Phanishayee (Carnegie Mellon University), Lawrence Tan (Carnegie Mellon University), Vijay Vasudevan (Carnegie Mellon University)"
+  },
+  {
+   "venue": "SOSP",
+   "year": 2009,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "RouteBricks: Exploiting Parallelism to Scale Software Routers",
+   "authors": [
+    "Mihai Dobrescu",
+    "Norbert Egi",
+    "Katerina Argyraki",
+    "Byung-Gon Chun",
+    "Kevin Fall",
+    "Gianluca Iannaccone",
+    "Allan Knies",
+    "Maziar Manesh",
+    "Sylvia Ratnasamy"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/s/conferences/sosp/2009/program.html",
+   "evidence": "SOSP 2009 program: Awarded Best Paper! RouteBricks: Exploiting Parallelism to Scale Software Routers — Mihai Dobrescu (EPFL) and Norbert Egi (Lancaster University/Intel Research), Katerina Argyraki (EPFL), Byung-Gon Chun (Intel Research), Kevin Fall (Intel Research), Gianluca Iannaccone (Intel Research), Allan Knies (Intel Research), Maziar Manesh (Intel Research), Sylvia Ratnasamy (Intel Research)"
+  },
+  {
+   "venue": "SOSP",
+   "year": 2009,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "seL4: Formal Verification of an OS Kernel",
+   "authors": [
+    "Gerwin Klein",
+    "Kevin Elphinstone",
+    "Gernot Heiser",
+    "June Andronick",
+    "David Cock",
+    "Philip Derrin",
+    "Dhammika Elkaduwe",
+    "Kai Engelhardt",
+    "Michael Norrish",
+    "Rafal Kolanski",
+    "Thomas Sewell",
+    "Harvey Tuch",
+    "Simon Winwood"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/s/conferences/sosp/2009/program.html",
+   "evidence": "SOSP 2009 program: Awarded Best Paper! seL4: Formal Verification of an OS Kernel — Gerwin Klein (NICTA, UNSW), Kevin Elphinstone (NICTA, UNSW), Gernot Heiser (NICTA, UNSW, Open Kernel Labs), June Andronick (NICTA), David Cock (NICTA), Philip Derrin (NICTA), Dhammika Elkaduwe (NICTA, UNSW, University of Peradeniya), Kai Engelhardt (NICTA, UNSW), Michael Norrish (NICTA, ANU), Rafal Kolanski (NICTA, UNSW), Thomas Sewell (NICTA), Harvey Tuch (NICTA, UNSW), Simon Winwood (NICTA, UNSW)"
+  },
+  {
+   "venue": "SOSP",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Naiad: A Timely Dataflow System",
+   "authors": [
+    "Derek G. Murray",
+    "Frank McSherry",
+    "Rebecca Isaacs",
+    "Michael Isard",
+    "Paul Barham",
+    "Martin Abadi"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/s/conferences/sosp/2013/program.html",
+   "evidence": "SOSP 2013 program: [Best Paper] Naiad: A Timely Dataflow System — Derek G. Murray, Frank McSherry, Rebecca Isaacs, Michael Isard, Paul Barham, Martin Abadi (Microsoft Research)"
+  },
+  {
+   "venue": "SOSP",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "The Scalable Commutativity Rule: Designing Scalable Software for Multicore Processors",
+   "authors": [
+    "Austin T. Clements",
+    "M. Frans Kaashoek",
+    "Nickolai Zeldovich",
+    "Robert Morris",
+    "Eddie Kohler"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/s/conferences/sosp/2013/program.html",
+   "evidence": "SOSP 2013 program: [Best Paper] The Scalable Commutativity Rule: Designing Scalable Software for Multicore Processors — Austin T. Clements, M. Frans Kaashoek, Nickolai Zeldovich, Robert Morris (MIT CSAIL), Eddie Kohler (Harvard)"
+  },
+  {
+   "venue": "SOSP",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Towards Optimization-Safe Systems: Analyzing the Impact of Undefined Behavior",
+   "authors": [
+    "Xi Wang",
+    "Nickolai Zeldovich",
+    "M. Frans Kaashoek",
+    "Armando Solar-Lezama"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/s/conferences/sosp/2013/program.html",
+   "evidence": "SOSP 2013 program: [Best Paper] Towards Optimization-Safe Systems: Analyzing the Impact of Undefined Behavior — Xi Wang, Nickolai Zeldovich, M. Frans Kaashoek, Armando Solar-Lezama (MIT CSAIL)"
+  },
+  {
+   "venue": "SOSP",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "DeepXplore: Automated Whitebox Testing of Deep Learning Systems",
+   "authors": [
+    "Kexin Pei",
+    "Yinzhi Cao",
+    "Junfeng Yang",
+    "Suman Jana"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/s/conferences/sosp/2017/program.html",
+   "evidence": "SOSP 2017 program: [Best Paper] DeepXplore: Automated Whitebox Testing of Deep Learning Systems — Kexin Pei (Columbia University); Yinzhi Cao (Lehigh University); Junfeng Yang, Suman Jana (Columbia University)"
+  },
+  {
+   "venue": "SOSP",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "The Efficient Server Audit Problem, Deduplicated Re-execution, and the Web",
+   "authors": [
+    "Cheng Tan",
+    "Lingfan Yu",
+    "Joshua B. Leners",
+    "Michael Walfish"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/s/conferences/sosp/2017/program.html",
+   "evidence": "SOSP 2017 program: [Best Paper] The Efficient Server Audit Problem, Deduplicated Re-execution, and the Web — Cheng Tan, Lingfan Yu (NYU); Joshua B. Leners (Two Sigma); Michael Walfish (NYU)"
+  },
+  {
+   "venue": "SOSP",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Efficient and Scalable Thread-Safety Violation Detection",
+   "authors": [
+    "Guangpu Li",
+    "Shan Lu",
+    "Madanlal Musuvathi",
+    "Suman Nath",
+    "Rohan Padhye"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/s/conferences/sosp/2019/awards.html",
+   "evidence": "SOSP 2019 Awards, Best Papers: Efficient and Scalable Thread-Safety Violation Detection, Guangpu Li (University of Chicago), Shan Lu (University of Chicago), Madanlal Musuvathi (Microsoft Research), Suman Nath (Microsoft Research), and Rohan Padhye (UC Berkeley)"
+  },
+  {
+   "venue": "SOSP",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Scaling symbolic evaluation for automated verification of systems code with Serval",
+   "authors": [
+    "Luke Nelson",
+    "James Bornholt",
+    "Ronghui Gu",
+    "Andrew Baumann",
+    "Emina Torlak",
+    "Xi Wang"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/s/conferences/sosp/2019/awards.html",
+   "evidence": "SOSP 2019 Awards, Best Papers: Scaling symbolic evaluation for automated verification of systems code with Serval, Luke Nelson (University of Washington), James Bornholt (University of Washington), Ronghui Gu (Columbia University), Andrew Baumann (Microsoft Research), Emina Torlak (University of Washington), and Xi Wang (University of Washington)"
+  },
+  {
+   "venue": "SOSP",
    "year": 2021,
    "award": "best",
    "awardLabel": "Best Paper Award",
@@ -121341,6 +123372,72 @@
     "https://www.sigops.org/s/conferences/sosp/2024/accepted.html"
    ],
    "evidence": "SOSP 2024 Best Paper Award: OZZ: Identifying Kernel Out-of-Order Concurrency Bugs with In-Vivo Memory Access Reordering — Dae R. Jeong, Yewon Choi, Byoungyoung Lee, Insik Shin, Youngjin Kwon"
+  },
+  {
+   "venue": "SOSP",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "CortenMM: Efficient Memory Management with Strong Correctness Guarantees",
+   "authors": [
+    "Junyang Zhang",
+    "Xiangcan Xu",
+    "Yonghao Zou",
+    "Zhe Tang",
+    "Xinyi Wan",
+    "Kang Hu",
+    "Siyuan Wang",
+    "Wenbo Xu",
+    "Di Wang",
+    "Hao Chen",
+    "Lin Huang",
+    "Shoumeng Yan",
+    "Yuval Tamir",
+    "Yingwei Luo",
+    "Xiaolin Wang",
+    "Huashan Yu",
+    "Zhenlin Wang",
+    "Hongliang Tian",
+    "Diyu Zhou"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/s/conferences/sosp/2025/schedule.html",
+   "evidence": "SOSP 2025 program: CortenMM: Efficient Memory Management with Strong Correctness Guarantees — Junyang Zhang (Peking University and Zhongguancun Laboratory); Xiangcan Xu, Yonghao Zou (Peking University); Zhe Tang (Peking University and Zhongguancun Laboratory); Xinyi Wan (Ant Group); Kang Hu, Siyuan Wang, Wenbo Xu, Di Wang (Peking University and Zhongguancun Laboratory); Hao Chen (CertiK); Lin Huang, Shoumeng Yan (Ant Group); Yuval Tamir (UCLA); Yingwei Luo, Xiaolin Wang, Huashan Yu (Peking University and Zhongguancun Laboratory); Zhenlin Wang (Michigan Tech); Hongliang Tian (Ant Group); Diyu Zhou (Peking University) — Best Paper Award"
+  },
+  {
+   "venue": "SOSP",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "How to Copy Memory? Coordinated Asynchronous Copy as a First-Class OS Service",
+   "authors": [
+    "Jingkai He",
+    "Yunpeng Dong",
+    "Dong Du",
+    "Mo Zou",
+    "Zhitai Yu",
+    "Yuxin Ren",
+    "Ning Jia",
+    "Yubin Xia",
+    "Haibo Chen"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/s/conferences/sosp/2025/schedule.html",
+   "evidence": "SOSP 2025 program: How to Copy Memory? Coordinated Asynchronous Copy as a First-Class OS Service — Jingkai He, Yunpeng Dong, Dong Du (Shanghai Jiao Tong University); Mo Zou, Zhitai Yu, Yuxin Ren, Ning Jia (Huawei Technologies); Yubin Xia, Haibo Chen (Shanghai Jiao Tong University) — Best Paper Award"
+  },
+  {
+   "venue": "SOSP",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Prove It to the Kernel: Precise Extension Analysis via Proof-Guided Abstraction Refinement",
+   "authors": [
+    "Hao Sun",
+    "Zhendong Su"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/s/conferences/sosp/2025/schedule.html",
+   "evidence": "SOSP 2025 program: Prove It to the Kernel: Precise Extension Analysis via Proof-Guided Abstraction Refinement — Hao Sun, Zhendong Su (ETH Zurich) — Best Paper Award"
   },
   {
    "venue": "SOUPS",
@@ -132295,6 +134392,85 @@
   {
    "venue": "VLDB",
    "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper Awards",
+   "title": "Building Efficient Query Engines in a High-Level Language",
+   "authors": [
+    "Yannis Klonatos",
+    "Christoph Koch",
+    "Tiark Rompf",
+    "Hassan Chafi"
+   ],
+   "track": "main",
+   "source": "https://vldb.org/2014/awards.html",
+   "evidence": "VLDB 2014 Awards, Best Paper Awards: Building Efficient Query Engines in a High-Level Language — Yannis Klonatos, Christoph Koch, Tiark Rompf, Hassan Chafi"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper Awards",
+   "title": "epiC: an Extensible and Scalable System for Processing Big Data",
+   "authors": [
+    "Dawei Jiang",
+    "Gang Chen",
+    "Beng Chin Ooi",
+    "Kian-Lee Tan",
+    "Sai Wu"
+   ],
+   "track": "main",
+   "source": "https://vldb.org/2014/awards.html",
+   "evidence": "VLDB 2014 Awards, Best Paper Awards: epiC: an Extensible and Scalable System for Processing Big Data — Dawei Jiang, Gang Chen, Beng Chin Ooi, Kian-Lee Tan, Sai Wu"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper Awards",
+   "title": "M4: A Visualization-Oriented Time Series Data Aggregation",
+   "authors": [
+    "Uwe Jugel",
+    "Zbigniew Jerzak",
+    "Gregor Hackenbroich",
+    "Volker Markl"
+   ],
+   "track": "main",
+   "source": "https://vldb.org/2014/awards.html",
+   "evidence": "VLDB 2014 Awards, Best Paper Awards: M4: A Visualization-Oriented Time Series Data Aggregation — Uwe Jugel, Zbigniew Jerzak, Gregor Hackenbroich, Volker Markl"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper Awards",
+   "title": "On k-Path Covers and their Applications",
+   "authors": [
+    "Stefan Funke",
+    "Andre Nusser",
+    "Sabine Storandt"
+   ],
+   "track": "main",
+   "source": "https://vldb.org/2014/awards.html",
+   "evidence": "VLDB 2014 Awards, Best Paper Awards: On k-Path Covers and their Applications — Stefan Funke, Andre Nusser, Sabine Storandt"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper Awards",
+   "title": "The Uncracked Pieces in Database Cracking",
+   "authors": [
+    "Felix Martin Schuhknecht",
+    "Alekh Jindal",
+    "Jens Dittrich"
+   ],
+   "track": "main",
+   "source": "https://vldb.org/2014/awards.html",
+   "evidence": "VLDB 2014 Awards, Best Paper Awards: The Uncracked Pieces in Database Cracking — Felix Martin Schuhknecht, Alekh Jindal, Jens Dittrich"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2014,
    "award": "tot",
    "awardLabel": "Test of Time Award",
    "title": "Efficient Query Evaluation on Probabilistic Databases",
@@ -132305,6 +134481,35 @@
    "track": "main",
    "source": "https://vldb.org/awards_10year.html",
    "evidence": "VLDB 2014 Test of Time Award: Nilesh Dalvi, Dan Suciu: Efficient Query Evaluation on Probabilistic Databases"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "The VLDB PC Best-Paper Award",
+   "title": "Constructing an Interactive Natural Language Interface for Relational Databases",
+   "authors": [
+    "Fei Li",
+    "H. V. Jagadish"
+   ],
+   "track": "main",
+   "source": "https://vldb.org/2015/awards.html",
+   "evidence": "VLDB 2015 Conference Awards, The VLDB PC Best-Paper Award: Constructing an Interactive Natural Language Interface for Relational Databases — Fei Li and H. V. Jagadish"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2015,
+   "award": "runner-up",
+   "awardLabel": "The VLDB PC Best-Paper Runner Up",
+   "title": "Resource Bricolage for Parallel Database Systems",
+   "authors": [
+    "Jiexing Li",
+    "Jeffrey Naughton",
+    "Rimma V. Nehme"
+   ],
+   "track": "main",
+   "source": "https://vldb.org/2015/awards.html",
+   "evidence": "VLDB 2015 Conference Awards, The VLDB PC Best-Paper Runner Up: Resource Bricolage for Parallel Database Systems — Jiexing Li, Jeffrey Naughton, and Rimma V. Nehme"
   },
   {
    "venue": "VLDB",
@@ -132351,6 +134556,21 @@
   },
   {
    "venue": "VLDB",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Provenance for Natural Language Queries",
+   "authors": [
+    "Daniel Deutch",
+    "Nave Frost",
+    "Amir Gilad"
+   ],
+   "track": "main",
+   "source": "https://vldb.org/2017/awards.php",
+   "evidence": "VLDB 2017 Conference Awards, Best Paper Award: Provenance for Natural Language Queries — Daniel Deutch (Tel Aviv University), Nave Frost (Tel Aviv University), Amir Gilad (Tel Aviv University)"
+  },
+  {
+   "venue": "VLDB",
    "year": 2018,
    "award": "tot",
    "awardLabel": "Test of Time Award",
@@ -132366,6 +134586,43 @@
    "paperYear": 2008,
    "source": "https://vldb.org/awards_10year.html",
    "evidence": "VLDB 2018 Test of Time Award: Michael J. Cafarella, Alon Y. Halevy, Daisy Zhe Wang, Eugene Wu, Yang Zhang: WebTables: exploring the power of tables on the web"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Fine-Grained, Secure and Efficient Data Provenance on Blockchain Systems",
+   "authors": [
+    "Pingcheng Ruan",
+    "Gang Chen",
+    "Tien Tuan Anh Dinh",
+    "Qian Lin",
+    "Beng Chin Ooi",
+    "Meihui Zhang"
+   ],
+   "track": "main",
+   "source": "https://vldb.org/2019/?conference-awards",
+   "evidence": "VLDB 2019 Conference Awards, Best Paper Award: Fine-Grained, Secure and Efficient Data Provenance on Blockchain Systems — Pingcheng Ruan (National University of Singapore), Gang Chen (Zhejiang University), Tien Tuan Anh Dinh (National University of Singapore), Qian Lin (National University of Singapore), Beng Chin Ooi (National University of Singapore), and Meihui Zhang (Beijing Institute of Technology)"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2019,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Declarative Recursive Computation on an RDBMS, or, Why You Should Use a Database For Distributed Machine Learning",
+   "authors": [
+    "Dimitrije Jankov",
+    "Shangyu Luo",
+    "Binhang Yuan",
+    "Zhuhua Cai",
+    "Jia Zou",
+    "Chris Jermaine",
+    "Zekai J Gao"
+   ],
+   "track": "main",
+   "source": "https://vldb.org/2019/?conference-awards",
+   "evidence": "VLDB 2019 Conference Awards, Honorable Mention: Declarative Recursive Computation on an RDBMS, or, Why You Should Use a Database For Distributed Machine Learning — Dimitrije Jankov (Rice University), Shangyu Luo (Rice University), Binhang Yuan (Rice University), Zhuhua Cai (Rice University), Jia Zou (Rice university), Chris Jermaine (Rice University), and Zekai J Gao (Rice University)"
   },
   {
    "venue": "VLDB",
@@ -132410,6 +134667,89 @@
   {
    "venue": "VLDB",
    "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Opportunities for Optimism in Contended Main-Memory Multicore Transactions",
+   "authors": [
+    "Yihe Huang",
+    "William Qian",
+    "Eddie Kohler",
+    "Barbara Liskov",
+    "Liuba Shrira"
+   ],
+   "track": "main",
+   "source": "https://vldb2020.org/vldb-2020-awards.html",
+   "evidence": "VLDB 2020 Awards, Best Paper Award, Best Paper, Best Paper Award: Opportunities for Optimism in Contended Main-Memory Multicore Transactions — Yihe Huang (Harvard University), William Qian (Harvard University), Eddie Kohler (Harvard University), Barbara Liskov (MIT), Liuba Shrira (Brandeis University)"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2020,
+   "award": "category",
+   "awardLabel": "Best Industrial Paper Award",
+   "title": "DIAMetrics: Benchmarking Query Engines at Scale",
+   "authors": [
+    "Anja Gruenheid",
+    "Shaleen Deep",
+    "Kruthi Nagaraj",
+    "Hiro Naito",
+    "Jeff Naughton",
+    "Stratis Viglas"
+   ],
+   "track": "main",
+   "source": "https://vldb2020.org/vldb-2020-awards.html",
+   "evidence": "VLDB 2020 Awards, Best Industrial Paper Award, Best Paper, Best Industrial Paper Award: DIAMetrics: Benchmarking Query Engines at Scale — Anja Gruenheid (Google Inc.), Shaleen Deep (University of Wisconsin-Madison), Kruthi Nagaraj (Google Inc.), Hiro Naito (Google Inc.), Jeff Naughton (Google), Stratis Viglas (University of Edinburgh)"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2020,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-Up",
+   "title": "Maximum Biclique Search at Billion Scale",
+   "authors": [
+    "Bingqing Lyu",
+    "Lu Qin",
+    "Xuemin Lin",
+    "Ying Zhang",
+    "Zhengping Qian",
+    "Jingren Zhou"
+   ],
+   "track": "main",
+   "source": "https://vldb2020.org/vldb-2020-awards.html",
+   "evidence": "VLDB 2020 Awards, Best Paper Award, Best Paper Runner-Up (2), Best Paper Runner-Up: Maximum Biclique Search at Billion Scale — Bingqing Lyu (Alibaba Group), Lu Qin (Uiversity of Technology Sydney), Xuemin Lin (University of New South Wales), Ying Zhang (University of Technology Sydney), Zhengping Qian (Alibaba Group), Jingren Zhou (Alibaba Group)"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2020,
+   "award": "runner-up",
+   "awardLabel": "Best Industrial Paper Honorable Mention",
+   "title": "MyRocks: LSM-Tree Database Storage Engine Serving Facebook's Social Graph",
+   "authors": [
+    "Yoshinori Matsunobu",
+    "Siying Dong",
+    "Herman Lee"
+   ],
+   "track": "main",
+   "source": "https://vldb2020.org/vldb-2020-awards.html",
+   "evidence": "VLDB 2020 Awards, Best Industrial Paper Award, Honorable Mention, Best Industrial Paper Honorable Mention: MyRocks: LSM-Tree Database Storage Engine Serving Facebook's Social Graph — Yoshinori Matsunobu (Facebook), Siying Dong (Facebook), Herman Lee (Facebook)"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2020,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-Up",
+   "title": "Pushing Data-Induced Predicates Through Joins in Big-Data Clusters",
+   "authors": [
+    "Srikanth Kandula",
+    "Laurel Orr",
+    "Surajit Chaudhuri"
+   ],
+   "track": "main",
+   "source": "https://vldb2020.org/vldb-2020-awards.html",
+   "evidence": "VLDB 2020 Awards, Best Paper Award, Best Paper Runner-Up (1), Best Paper Runner-Up: Pushing Data-Induced Predicates Through Joins in Big-Data Clusters — Srikanth Kandula (Microsoft Research), Laurel Orr (Stanford University), Surajit Chaudhuri (Microsoft Research)"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2020,
    "award": "tot",
    "awardLabel": "Test of Time Award",
    "title": "Dremel: interactive analysis of web-scale datasets",
@@ -132430,6 +134770,78 @@
   {
    "venue": "VLDB",
    "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Research Paper Award",
+   "title": "Scaling Attributed Network Embedding to Massive Graphs",
+   "authors": [
+    "Renchi Yang",
+    "Jieming Shi",
+    "Xiaokui Xiao",
+    "Yin Yang",
+    "Juncheng Liu",
+    "Sourav S Bhowmick"
+   ],
+   "track": "main",
+   "source": "https://vldb.org/2021/?conference-awards",
+   "evidence": "VLDB 2021 Conference Awards, Best Research Paper Award: Scaling Attributed Network Embedding to Massive Graphs — Renchi Yang (National University of Singapore), Jieming Shi (The Hong Kong Polytechnic University), Xiaokui Xiao (National University of Singapore), Yin Yang (Hamad bin Khalifa University), Juncheng Liu (National University of Singapore), Sourav S Bhowmick (Nanyang Technological University)"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2021,
+   "award": "category",
+   "awardLabel": "Best Experiments, Analysis & Benchmark Paper Award",
+   "title": "Are We Ready For Learned Cardinality Estimation?",
+   "authors": [
+    "Xiaoying Wang",
+    "Changbo Qu",
+    "Weiyuan Wu",
+    "Jiannan Wang",
+    "Qingqing Zhou"
+   ],
+   "track": "main",
+   "source": "https://vldb.org/2021/?conference-awards",
+   "evidence": "VLDB 2021 Conference Awards, Best Experiments, Analysis & Benchmark Paper Award: Are We Ready For Learned Cardinality Estimation? — Xiaoying Wang (Simon Fraser University), Changbo Qu (Simon Fraser University), Weiyuan Wu (Simon Fraser University), Jiannan Wang (Simon Fraser University), Qingqing Zhou (Tencent Inc.)"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2021,
+   "award": "category",
+   "awardLabel": "Best Scalable Data Science Paper Award",
+   "title": "Optimizing Bipartite Matching in Real-World Applications by Incremental Cost Computation",
+   "authors": [
+    "Tenindra Abeywickrama",
+    "Victor Liang",
+    "Kian-Lee Tan"
+   ],
+   "track": "main",
+   "source": "https://vldb.org/2021/?conference-awards",
+   "evidence": "VLDB 2021 Conference Awards, Best Scalable Data Science Paper Award: Optimizing Bipartite Matching in Real-World Applications by Incremental Cost Computation — Tenindra Abeywickrama (GrabTaxi Holdings Pte Ltd), Victor Liang (GrabTaxi Holdings Pte Ltd), Kian-Lee Tan (National University of Singapore)"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2021,
+   "award": "category",
+   "awardLabel": "Best Industry Paper Award",
+   "title": "RAMP-TAO: Layering Atomic Transactions on Facebook's Online TAO Data Store",
+   "authors": [
+    "Audrey Cheng",
+    "Xiao Shi",
+    "Lu Pan",
+    "Anthony Simpson",
+    "Neil Wheaton",
+    "Shilpa Lawande",
+    "Nathan Bronson",
+    "Peter Bailis",
+    "Natacha Crooks",
+    "Ion Stoica"
+   ],
+   "track": "main",
+   "source": "https://vldb.org/2021/?conference-awards",
+   "evidence": "VLDB 2021 Conference Awards, Best Industry Paper Award: RAMP-TAO: Layering Atomic Transactions on Facebook's Online TAO Data Store — Audrey Cheng (UC Berkeley), Xiao Shi (Facebook, Inc.), Lu Pan (Facebook, Inc.), Anthony Simpson (Facebook, Inc.), Neil Wheaton (Facebook, Inc.), Shilpa Lawande (Facebook, Inc.), Nathan Bronson (Rockset), Peter Bailis (Sisu Data), Natacha Crooks (UC Berkeley), Ion Stoica (UC Berkeley)"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2021,
    "award": "tot",
    "awardLabel": "Test of Time Award",
    "title": "Efficiently Compiling Efficient Query Plans for Modern Hardware",
@@ -132440,6 +134852,114 @@
    "paperYear": 2011,
    "source": "https://vldb.org/awards_10year.html",
    "evidence": "VLDB 2021 Test of Time Award: Thomas Neumann: Efficiently Compiling Efficient Query Plans for Modern Hardware"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Regular Research Paper",
+   "title": "Sancus: Staleness-Aware Communication-Avoiding Full-Graph Decentralized Training in Large-Scale Graph Neural Networks",
+   "authors": [
+    "Jingshu Peng",
+    "Zhao Chen",
+    "Yingxia Shao",
+    "Yanyan Shen",
+    "Lei Chen",
+    "Jiannong Cao"
+   ],
+   "track": "main",
+   "source": "https://vldb.org/2022/?conference-awards",
+   "evidence": "VLDB 2022 Conference Awards, Best Regular Research Paper: Sancus: Staleness-Aware Communication-Avoiding Full-Graph Decentralized Training in Large-Scale Graph Neural Networks — Jingshu Peng (Hong Kong University of Science and Technology)*, Zhao Chen (Hong Kong University of Science and Technology), Yingxia Shao (BUPT), Yanyan Shen (Shanghai Jiao Tong University), Lei Chen (Hong Kong University of Science and Technology), Jiannong Cao (The Hong Kong Polytechnic University)"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2022,
+   "award": "category",
+   "awardLabel": "Best Experiment, Analysis and Benchmark Paper",
+   "title": "Accurate Summary-based Cardinality Estimation Through the Lens of Cardinality Estimation Graphs",
+   "authors": [
+    "Jeremy Chen",
+    "Yuqing Huang",
+    "Mushi Wang",
+    "Semih Salihoglu",
+    "Kenneth Salem"
+   ],
+   "track": "main",
+   "source": "https://vldb.org/2022/?conference-awards",
+   "evidence": "VLDB 2022 Conference Awards, Best Experiment, Analysis and Benchmark Paper: Accurate Summary-based Cardinality Estimation Through the Lens of Cardinality Estimation Graphs — Jeremy Chen (University of Waterloo)*, Yuqing Huang (University of Waterloo), Mushi Wang (University of Waterloo), Semih Salihoglu (University of Waterloo), Kenneth Salem (University of Waterloo)"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2022,
+   "award": "category",
+   "awardLabel": "Best Industry Paper",
+   "title": "Hardware Acceleration of Compression and Encryption in SAP HANA",
+   "authors": [
+    "Monica Chiosa",
+    "Fabio Maschi",
+    "Ingo Müller",
+    "Gustavo Alonso",
+    "Norman May"
+   ],
+   "track": "main",
+   "source": "https://vldb.org/2022/?conference-awards",
+   "evidence": "VLDB 2022 Conference Awards, Best Industry Paper: Hardware Acceleration of Compression and Encryption in SAP HANA — Monica Chiosa (ETH Zurich)*, Fabio Maschi (ETH Zurich), Ingo Müller (Google), Gustavo Alonso (ETH Zurich), Norman May (SAP SE)"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2022,
+   "award": "category",
+   "awardLabel": "Best Scalable Data Science Paper",
+   "title": "HET: Scaling out Huge Embedding Model Training via Cache-enabled Distributed Framework",
+   "authors": [
+    "Xupeng Miao",
+    "Hailin Zhang",
+    "Yining Shi",
+    "Xiaonan Nie",
+    "Zhi Yang",
+    "Yangyu Tao",
+    "Bin Cui"
+   ],
+   "track": "main",
+   "source": "https://vldb.org/2022/?conference-awards",
+   "evidence": "VLDB 2022 Conference Awards, Best Scalable Data Science Paper: HET: Scaling out Huge Embedding Model Training via Cache-enabled Distributed Framework — Xupeng Miao (Peking University)*, Hailin Zhang (Peking University), Yining Shi (Peking University), Xiaonan Nie (Peking University), Zhi Yang (Peking University), Yangyu Tao (Tencent), Bin Cui (Peking University)"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Best Regular Research Paper Runner Ups",
+   "title": "Sortledton: a universal, transactional graph data structure",
+   "authors": [
+    "Per Fuchs",
+    "Jana Giceva",
+    "Domagoj Margan"
+   ],
+   "track": "main",
+   "source": "https://vldb.org/2022/?conference-awards",
+   "evidence": "VLDB 2022 Conference Awards, Best Regular Research Paper Runner Ups: Sortledton: a universal, transactional graph data structure — Per Fuchs (TU Munich)*, Jana Giceva (TU Munich), Domagoj Margan (Imperial College London)"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Best Regular Research Paper Runner Ups",
+   "title": "Threshold Queries in Theory and in the Wild",
+   "authors": [
+    "Angela Bonifati",
+    "Stefania Dumbrava",
+    "George Fletcher",
+    "Jan Hidders",
+    "Matthias Hofer",
+    "Wim Martens",
+    "Filip Murlak",
+    "Joshua Shinavier",
+    "Sławek Staworko",
+    "Dominik Tomaszuk"
+   ],
+   "track": "main",
+   "source": "https://vldb.org/2022/?conference-awards",
+   "evidence": "VLDB 2022 Conference Awards, Best Regular Research Paper Runner Ups: Threshold Queries in Theory and in the Wild — Angela Bonifati (Univ. of Lyon), Stefania Dumbrava (ENSIIE), George Fletcher (Eindhoven University of Technology), Jan Hidders (University of London, Birbeck), Matthias Hofer (University of Bayreuth), Wim Martens (University of Bayreuth), Filip Murlak (University of Warsaw), Joshua Shinavier (Uber), Sławek Staworko (University of Lille)*, Dominik Tomaszuk (University of Bialystok)"
   },
   {
    "venue": "VLDB",
@@ -132458,6 +134978,206 @@
    "paperYear": 2011,
    "source": "https://vldb.org/awards_10year.html",
    "evidence": "VLDB 2022 Test of Time Award: Yizhou Sun, Jiawei Han, Xifeng Yan, Philip S. Yu, Tianyi Wu: PathSim: Meta Path-Based Top-K Similarity Search in Heterogeneous Information Networks"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Research Papers",
+   "title": "Auto-Tables: Synthesizing Multi-Step Transformations to Relationalize Tables without Using Examples",
+   "authors": [
+    "Peng Li",
+    "Yeye He",
+    "Cong Yan",
+    "Yue Wang",
+    "Surajit Chaudhuri"
+   ],
+   "track": "main",
+   "source": "https://vldb.org/2023/?conference-awards",
+   "evidence": "VLDB 2023 Conference Awards, Best Research Papers: Auto-Tables: Synthesizing Multi-Step Transformations to Relationalize Tables without Using Examples — Peng Li (Georgia Institute of Technology); Yeye He (Microsoft Research); Cong Yan (Microsoft Research); Yue Wang (Microsoft Research); Surajit Chaudhuri (Microsoft Research)"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Research Papers",
+   "title": "DBSP: Automatic Incremental View Maintenance for Rich Query Languages",
+   "authors": [
+    "Mihai Budiu",
+    "Tej Chajed",
+    "Frank McSherry",
+    "Leonid Ryzhyk",
+    "Val Tannen"
+   ],
+   "track": "main",
+   "source": "https://vldb.org/2023/?conference-awards",
+   "evidence": "VLDB 2023 Conference Awards, Best Research Papers: DBSP: Automatic Incremental View Maintenance for Rich Query Languages — Mihai Budiu (VMware Research); Tej Chajed (VMware Research); Frank McSherry (Materialize); Leonid Ryzhyk (VMware Research); Val Tannen (University of Pennsylvania)"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2023,
+   "award": "category",
+   "awardLabel": "Best Industry Paper",
+   "title": "Kora: A Cloud-Native Event Streaming Platform For Kafka",
+   "authors": [
+    "Anna Povzner",
+    "Prince Mahajan",
+    "Jason Gustafson",
+    "Kamal Gupta",
+    "Jun Rao",
+    "Ismael Juma",
+    "Feng Min",
+    "Shriram Sridharan",
+    "Nikhil Bhatia",
+    "Gopi Attaluri",
+    "Adithya Chandra",
+    "Stanislav Kozlovski",
+    "Rajini Sivaram",
+    "Lucas Bradstreet",
+    "Bob Barrett",
+    "Dhruvil Shah",
+    "David Jacot",
+    "David Arthur",
+    "Manveer Chawla",
+    "Ron Dagostino",
+    "Colin McCabe",
+    "Manikumar Reddy Obili",
+    "Kowshik Prakasam",
+    "Jose Garcia Sancio",
+    "Vikas Singh",
+    "Alok Nikhil"
+   ],
+   "track": "main",
+   "source": "https://vldb.org/2023/?conference-awards",
+   "evidence": "VLDB 2023 Conference Awards, Best Industry Paper: Kora: A Cloud-Native Event Streaming Platform For Kafka — Anna Povzner (Confluent Inc.); Prince Mahajan (Confluent Inc); Jason Gustafson (Confluent Inc.); Kamal Gupta (Confluent Inc.); Jun Rao (Confluent Inc. ); Ismael Juma (Confluent Inc.); Feng Min (Confluent); Shriram Sridharan (Confluent Inc.); Nikhil Bhatia (Confluent Inc.); Gopi Attaluri (Confluent Inc.); Adithya Chandra (Confluent Inc.); Stanislav Kozlovski (Confluent Inc.); Rajini Sivaram (Confluent Inc.); Lucas Bradstreet (Confluent Inc.); Bob Barrett (Confluent Inc.); Dhruvil Shah (Confluent Inc.); David Jacot (Confluent Inc.); David Arthur (Confluent Inc.); Manveer Chawla (Confluent Inc.); Ron Dagostino (Confluent Inc.); Colin McCabe (Confluent Inc.); Manikumar Reddy Obili (Confluent Inc.); Kowshik Prakasam (Confluent Inc.); Jose Garcia Sancio (Confluent Inc.); Vikas Singh ( Confluent Inc.); Alok Nikhil (Confluent Inc.)"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2023,
+   "award": "category",
+   "awardLabel": "Best Experiment, Analysis, & Benchmark Paper",
+   "title": "The LDBC Social Network Benchmark: Business Intelligence Workload",
+   "authors": [
+    "Gabor Szarnyas",
+    "Jack Waudby",
+    "Ben Steer",
+    "David Szakallas",
+    "Altan Birler",
+    "Mingxi Wu",
+    "Yuchen Zhang",
+    "Peter Boncz"
+   ],
+   "track": "main",
+   "source": "https://vldb.org/2023/?conference-awards",
+   "evidence": "VLDB 2023 Conference Awards, Best Experiment, Analysis, & Benchmark Paper: The LDBC Social Network Benchmark: Business Intelligence Workload — Gabor Szarnyas (CWI); Jack Waudby (Newcastle University); Ben Steer (pometry); David Szakallas (LDBC); Altan Birler (TUM); Mingxi Wu (Tigergraph); Yuchen Zhang (TigerGraph); Peter Boncz (CWI)"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Best Experiment, Analysis, & Benchmark Paper Runner-ups",
+   "title": "A Deep Dive into Common Open Formats for Analytical DBMSs",
+   "authors": [
+    "Chunwei Liu",
+    "Anna Pavlenko",
+    "Matteo Interlandi",
+    "Brandon Haynes"
+   ],
+   "track": "main",
+   "source": "https://vldb.org/2023/?conference-awards",
+   "evidence": "VLDB 2023 Conference Awards, Best Experiment, Analysis, & Benchmark Paper Runner-ups: A Deep Dive into Common Open Formats for Analytical DBMSs — Chunwei Liu (MIT); Anna Pavlenko (Microsoft Gray Systems Lab); Matteo Interlandi (Microsoft); Brandon Haynes (Microsoft Gray Systems Lab)"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Best Experiment, Analysis, & Benchmark Paper Runner-ups",
+   "title": "Epistemic Parity: Reproducibility as an Evaluation Metric for Differential Privacy",
+   "authors": [
+    "Lucas Rosenblatt",
+    "Bernease Herman",
+    "Anastasia Holovenko",
+    "Wonkwon Lee",
+    "Joshua Loftus",
+    "Elizabeth McKinnie",
+    "Taras Rumezhak",
+    "Andrii Stadnik",
+    "Bill G Howe",
+    "Julia Stoyanovich"
+   ],
+   "track": "main",
+   "source": "https://vldb.org/2023/?conference-awards",
+   "evidence": "VLDB 2023 Conference Awards, Best Experiment, Analysis, & Benchmark Paper Runner-ups: Epistemic Parity: Reproducibility as an Evaluation Metric for Differential Privacy — Lucas Rosenblatt (New York University); Bernease Herman (University of Washington); Anastasia Holovenko (Ukrainian Catholic University); Wonkwon Lee (New York University); Joshua Loftus (London School of Economics); Elizabeth McKinnie (Microsoft); Taras Rumezhak (Ukrainian Catholic University); Andrii Stadnik (Ukrainian Catholic University); Bill G Howe (University of Washington); Julia Stoyanovich (New York University)"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Best Industry Runner Ups",
+   "title": "FEBench: A Benchmark for Real-Time Relational Data Feature Extraction",
+   "authors": [
+    "Xuanhe Zhou",
+    "Cheng Chen",
+    "Kunyi Li",
+    "Bingsheng He",
+    "mian lu",
+    "Qiaosheng Liu",
+    "Wei Huang",
+    "Guoliang Li",
+    "zhao zheng",
+    "Yuqiang Chen"
+   ],
+   "track": "main",
+   "source": "https://vldb.org/2023/?conference-awards",
+   "evidence": "VLDB 2023 Conference Awards, Best Industry Runner Ups: FEBench: A Benchmark for Real-Time Relational Data Feature Extraction — Xuanhe Zhou (Tsinghua); Cheng Chen (4Paradigm); Kunyi Li (Tsinghua); Bingsheng He (National University of Singapore); mian lu (4Paradigm Inc.)*; Qiaosheng Liu (4Paradigm); Wei Huang (4Paradigm); Guoliang Li (Tsinghua University); zhao zheng (4Paradigm Inc.); Yuqiang Chen (4th Paradigm)"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Best Research Paper Runner-up",
+   "title": "PIM-tree: A Skew-resistant Index for Processing-in-Memory",
+   "authors": [
+    "Hongbo Kang",
+    "Yiwei Zhao",
+    "Guy E Blelloch",
+    "Laxman Dhulipala",
+    "Yan Gu",
+    "Charles McGuffey",
+    "Phillip B Gibbons"
+   ],
+   "track": "main",
+   "source": "https://vldb.org/2023/?conference-awards",
+   "evidence": "VLDB 2023 Conference Awards, Best Research Paper Runner-up: PIM-tree: A Skew-resistant Index for Processing-in-Memory — Hongbo Kang (Tsinghua University); Yiwei Zhao (Carnegie Mellon University); Guy E Blelloch (Carnegie Mellon University); Laxman Dhulipala (University of Maryland, College Park); Yan Gu (UC Riverside); Charles McGuffey (Reed University); Phillip B Gibbons (CMU)"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Best Industry Runner Ups",
+   "title": "PyTorch FSDP: Experiences on Scaling Fully Sharded Data Parallel",
+   "authors": [
+    "Yanli Zhao",
+    "Andrew Gu",
+    "Rohan Varma",
+    "Liang Luo",
+    "Chien-Chin Huang",
+    "Min Xu",
+    "Less Wright",
+    "Hamid Shojanazeri",
+    "Myle Ott",
+    "Sam Shleifer",
+    "Alban Desmaison",
+    "Can Balioglu",
+    "Pritam H Damania",
+    "Bernard Nguyen",
+    "Geeta Chauhan",
+    "Yuchen Hao",
+    "Shen Li"
+   ],
+   "track": "main",
+   "source": "https://vldb.org/2023/?conference-awards",
+   "evidence": "VLDB 2023 Conference Awards, Best Industry Runner Ups: PyTorch FSDP: Experiences on Scaling Fully Sharded Data Parallel — Yanli Zhao (Meta Inc.); Andrew Gu (Meta); Rohan Varma (Meta); Liang Luo (Meta Inc); Chien-Chin Huang (Meta Platforms, Inc.); Min Xu (Meta Platforms, Inc.); Less Wright (Meta Platforms, Inc.); Hamid Shojanazeri (Meta Platforms, Inc.); Myle Ott (Facebook); Sam Shleifer (Stanford University); Alban Desmaison (Meta); Can Balioglu (Meta Platforms, Inc.); Pritam H Damania (Meta Platforms); Bernard Nguyen (Meta Platforms, Inc.); Geeta Chauhan ( Meta Platforms, Inc.); Yuchen Hao (Meta Platforms, Inc.); Shen Li (Meta)"
   },
   {
    "venue": "VLDB",
@@ -132500,6 +135220,169 @@
   {
    "venue": "VLDB",
    "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Research Papers",
+   "title": "AnyBlox: A Framework for Self-Decoding Datasets",
+   "authors": [
+    "Mateusz Gienieczko",
+    "Maximilian Kuschewski",
+    "Thomas Neumann",
+    "Viktor Leis",
+    "Jana Giceva"
+   ],
+   "track": "main",
+   "source": "https://vldb.org/2025/?conference-awards",
+   "evidence": "VLDB 2025 Conference Awards, Best Research Papers: AnyBlox: A Framework for Self-Decoding Datasets — Mateusz Gienieczko (TUM);Maximilian Kuschewski (Technical University of Munich);Thomas Neumann (Technical University of Munich);Viktor Leis (Technical University of Munich);Jana Giceva (Technical University of Munich)"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Research Papers",
+   "title": "Diva: Dynamic Range Filter for Var-Length Keys and Queries",
+   "authors": [
+    "Navid Eslami",
+    "Ioana Bercea",
+    "Niv Dayan"
+   ],
+   "track": "main",
+   "source": "https://vldb.org/2025/?conference-awards",
+   "evidence": "VLDB 2025 Conference Awards, Best Research Papers: Diva: Dynamic Range Filter for Var-Length Keys and Queries — Navid Eslami (University of Toronto);Ioana Bercea (KTH Royal Institute of Technology);Niv Dayan (University of Toronto)"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2025,
+   "award": "category",
+   "awardLabel": "Best Scalable Data Science Paper",
+   "title": "Chameleon: a Heterogeneous and Disaggregated Accelerator System for Retrieval-Augmented Language Models",
+   "authors": [
+    "Wenqi Jiang",
+    "Marco Zeller",
+    "Roger Waleffe",
+    "Torsten Hoefler",
+    "Gustavo Alonso"
+   ],
+   "track": "main",
+   "source": "https://vldb.org/2025/?conference-awards",
+   "evidence": "VLDB 2025 Conference Awards, Best Scalable Data Science Paper: Chameleon: a Heterogeneous and Disaggregated Accelerator System for Retrieval-Augmented Language Models — Wenqi Jiang (ETH Zurich);Marco Zeller (ETH Zurich);Roger Waleffe (University of Wisconsin-Madison);Torsten Hoefler (ETH Zurich);Gustavo Alonso (ETHZ)"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2025,
+   "award": "category",
+   "awardLabel": "Best Experiment, Analysis & Benchmark Paper",
+   "title": "The UDFBench Benchmark for General-purpose UDF Queries",
+   "authors": [
+    "Yannis Foufoulas",
+    "Theoni Palaiologou",
+    "Alkis Simitsis"
+   ],
+   "track": "main",
+   "source": "https://vldb.org/2025/?conference-awards",
+   "evidence": "VLDB 2025 Conference Awards, Best Experiment, Analysis & Benchmark Paper: The UDFBench Benchmark for General-purpose UDF Queries — Yannis Foufoulas (Athena Research Center);Theoni Palaiologou (Athena Research Center);Alkis Simitsis (Athena Research Center)"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2025,
+   "award": "category",
+   "awardLabel": "Best Industry Paper",
+   "title": "Ursa: A Lakehouse-Native Data Streaming Engine for Kafka",
+   "authors": [
+    "Sijie Guo",
+    "Matteo Merli",
+    "Hang Chen",
+    "Neng Lu",
+    "Penghui Li"
+   ],
+   "track": "main",
+   "source": "https://vldb.org/2025/?conference-awards",
+   "evidence": "VLDB 2025 Conference Awards, Best Industry Paper: Ursa: A Lakehouse-Native Data Streaming Engine for Kafka — Sijie Guo (StreamNative);Matteo Merli (StreamNative);Hang Chen (StreamNative);Neng Lu (StreamNative);Penghui Li (StreamNative)"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Industry Paper Runner-Up",
+   "title": "Delta Sharing: An Open Protocol for Cross-Platform Data Sharing",
+   "authors": [
+    "Krishna Puttaswamy",
+    "Abhijit Chakankar",
+    "Tao Tao",
+    "Zaheera Valani",
+    "Ramesh Chandra",
+    "William Chau",
+    "Mengxi Chen",
+    "Akram Chetibi",
+    "Tianyi Huang",
+    "Jonathan Keller",
+    "Celia Kung",
+    "Andy Liu",
+    "Charlene Lyu",
+    "Samarth Shetty",
+    "Xiaotong Sun",
+    "Steve Weis",
+    "Lin Zhou",
+    "Ryan Zhu",
+    "Reynold Xin",
+    "Matei Zaharia"
+   ],
+   "track": "main",
+   "source": "https://vldb.org/2025/?conference-awards",
+   "evidence": "VLDB 2025 Conference Awards, Best Industry Paper Runner-Up: Delta Sharing: An Open Protocol for Cross-Platform Data Sharing — Krishna Puttaswamy (Databricks);Abhijit Chakankar (Databricks);Tao Tao (Databricks);Zaheera Valani (Databricks);Ramesh Chandra (Databricks);William Chau (Databricks);Mengxi Chen (Databricks);Akram Chetibi (Databricks);Tianyi Huang (Databricks);Jonathan Keller (Databricks);Celia Kung (Databricks);Andy Liu (Databricks);Charlene Lyu (Databricks);Samarth Shetty (Databricks);Xiaotong Sun (Databricks);Steve Weis (Databricks);Lin Zhou (Databricks);Ryan Zhu (Databricks);Reynold Xin (Databricks);Matei Zaharia (Databricks)"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Research Paper Runner-Up",
+   "title": "The Key to Effective UDF Optimization: Before Inlining, First Perform Outlining",
+   "authors": [
+    "Samuel Arch",
+    "Yuchen Liu",
+    "Todd Mowry",
+    "Jignesh Patel",
+    "Andrew Pavlo"
+   ],
+   "track": "main",
+   "source": "https://vldb.org/2025/?conference-awards",
+   "evidence": "VLDB 2025 Conference Awards, Best Research Paper Runner-Up: The Key to Effective UDF Optimization: Before Inlining, First Perform Outlining — Samuel Arch (Carnegie Mellon University);Yuchen Liu (Carnegie Mellon University);Todd Mowry (Carnegie Mellon University);Jignesh Patel (Carnegie Mellon University);Andrew Pavlo (Carnegie Mellon University)"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Experiment, Analysis & Benchmark Paper Runner-Up",
+   "title": "The LDBC Financial Benchmark: Transaction Workload",
+   "authors": [
+    "Shipeng Qi",
+    "Bing Tong",
+    "Jiatao Hu",
+    "Heng Lin",
+    "Yue Pang",
+    "Wei Yuan",
+    "Songlin Lyu",
+    "Zhihui Guo",
+    "Ke Huang",
+    "Xujin Ba",
+    "Qiang Yin",
+    "Youren Shen",
+    "Yan Zhou",
+    "Tao Lv",
+    "Jia Li",
+    "Lei Zou",
+    "Yongwei Wu",
+    "Gábor Szárnyas",
+    "Xiaowei Zhu",
+    "Wenguang Chen",
+    "Chuntao Hong"
+   ],
+   "track": "main",
+   "source": "https://vldb.org/2025/?conference-awards",
+   "evidence": "VLDB 2025 Conference Awards, Best Experiment, Analysis & Benchmark Paper Runner-Up: The LDBC Financial Benchmark: Transaction Workload — Shipeng Qi (Ant Group);Bing Tong (CreateLink Technology);Jiatao Hu (Tsinghua University);Heng Lin (Ant Group);Yue Pang (Peking University);Wei Yuan ( China Software Testing Center);Songlin Lyu (Ant Group);Zhihui Guo (Ant Group);Ke Huang (Ant Group);Xujin Ba (Shanghai Jiao Tong University);Qiang Yin (Shanghai Jiao Tong University);Youren Shen (Beijing Haizhixingtu Technology);Yan Zhou (CreateLink Technology);Tao Lv (China Software Testing Center);Jia Li (The Hong Kong University of Science and Technology (Guangzhou));Lei Zou (Peking University);Yongwei Wu (Tsinghua University);Gábor Szárnyas (LDBC);Xiaowei Zhu (Ant Group);Wenguang Chen (Tsinghua University);Chuntao Hong (Ant Group)"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2025,
    "award": "tot",
    "awardLabel": "Test of Time Award",
    "title": "How good are query optimizers, really?",
@@ -132514,6 +135397,130 @@
    "track": "main",
    "source": "https://vldb.org/awards_10year.html",
    "evidence": "VLDB 2025 Test of Time Award: Viktor Leis, Andrey Gubichev, Atanas Mirchev, Peter Boncz, Alfons Kemper, and Thomas Neumann: How good are query optimizers, really?"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Research Paper",
+   "title": "Garnet: A Next-Generation Cache-Store for Accelerating Applications and Services",
+   "authors": [
+    "Badrish Chandramouli",
+    "Vasileios Zois",
+    "Ted Hart",
+    "Tal Zaccai",
+    "Lukas Maas",
+    "Yoganand Rajasekaran",
+    "Darren Gehring"
+   ],
+   "track": "main",
+   "source": "https://vldb.org/2026/conference-awards.html",
+   "evidence": "VLDB 2026 Conference Awards, Best Research Paper: Garnet: A Next-Generation Cache-Store for Accelerating Applications and Services — Badrish Chandramouli, Vasileios Zois, Ted Hart, Tal Zaccai, Lukas Maas, Yoganand Rajasekaran, Darren Gehring"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2026,
+   "award": "category",
+   "awardLabel": "Best Industry Paper",
+   "title": "OmniTable: A Unified Wide-Table System for Petabyte-Scale LLM Data Curation and Exploration",
+   "authors": [
+    "Yuzhuo Fu",
+    "Xiangchun Wang",
+    "Chao Huang",
+    "Liyi Wang",
+    "Binwei Zeng",
+    "Yuhan Wang",
+    "Taotao Nie",
+    "Dongke Hu",
+    "Wang Hong",
+    "Jiayi Wang",
+    "Wenwen Cui",
+    "Zhuyan Zhou",
+    "Yushun Guo",
+    "Yuhan Xing",
+    "Jiaxin Lian",
+    "Peng Lin",
+    "Qing Cui",
+    "Wenhui Shi"
+   ],
+   "track": "main",
+   "source": "https://vldb.org/2026/conference-awards.html",
+   "evidence": "VLDB 2026 Conference Awards, Best Industry Paper: OmniTable: A Unified Wide-Table System for Petabyte-Scale LLM Data Curation and Exploration — Yuzhuo Fu, Xiangchun Wang, Chao Huang, Liyi Wang, Binwei Zeng, Yuhan Wang, Taotao Nie, Dongke Hu, Wang Hong, Jiayi Wang, Wenwen Cui, Zhuyan Zhou, Yushun Guo, Yuhan Xing, Jiaxin Lian, Peng Lin, Qing Cui, Wenhui Shi"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Best Research Paper Honorable Mention",
+   "title": "Demystifying and Improving Lazy Promotion in Cache Eviction",
+   "authors": [
+    "Qinghan Chen",
+    "Muhammad Haekal Muhyidin Al-Araby",
+    "Ziyue Qiu",
+    "Zhuofan Chen",
+    "Rashmi Vinayak",
+    "Juncheng Yang"
+   ],
+   "track": "main",
+   "source": "https://vldb.org/2026/conference-awards.html",
+   "evidence": "VLDB 2026 Conference Awards, Best Research Paper Honorable Mention: Demystifying and Improving Lazy Promotion in Cache Eviction (EA&B) — Qinghan Chen, Muhammad Haekal Muhyidin Al-Araby, Ziyue Qiu, Zhuofan Chen, Rashmi Vinayak, Juncheng Yang"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Best Industry Paper Honorable Mention",
+   "title": "FastCompose: Eliminating Compilation Cold Starts in Query Execution with Composition",
+   "authors": [
+    "Venkatraman Govindaraju",
+    "Yankun Shen",
+    "Kiran Chinta",
+    "Shermal Fernando",
+    "Pascal Pfeil",
+    "Orestis Polychroniou",
+    "Naresh Chainani"
+   ],
+   "track": "main",
+   "source": "https://vldb.org/2026/conference-awards.html",
+   "evidence": "VLDB 2026 Conference Awards, Best Industry Paper Honorable Mention: FastCompose: Eliminating Compilation Cold Starts in Query Execution with Composition — Venkatraman Govindaraju, Yankun Shen, Kiran Chinta, Shermal Fernando, Pascal Pfeil, Orestis Polychroniou, Naresh Chainani"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Best Research Paper Honorable Mention",
+   "title": "How to Write to SSDs",
+   "authors": [
+    "Bohyun Lee",
+    "Tobias Ziegler",
+    "Viktor Leis"
+   ],
+   "track": "main",
+   "source": "https://vldb.org/2026/conference-awards.html",
+   "evidence": "VLDB 2026 Conference Awards, Best Research Paper Honorable Mention: How to Write to SSDs — Bohyun Lee, Tobias Ziegler, Viktor Leis"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Best Research Paper Honorable Mention",
+   "title": "Scalable GPU Acceleration of Scalar Functions in Analytical Databases: Compilation, Benchmarking, and Optimization",
+   "authors": [
+    "Kaushik Rajan",
+    "Sampath Rajendra",
+    "Momin Al-Ghosien",
+    "Nicolas Bruno",
+    "Carlo Curino",
+    "Matteo Interlandi",
+    "Yinan Li",
+    "Lukas M. Maas",
+    "Craig Peeper",
+    "Surajit Chaudhuri",
+    "Johannes Gehrke"
+   ],
+   "track": "main",
+   "source": "https://vldb.org/2026/conference-awards.html",
+   "evidence": "VLDB 2026 Conference Awards, Best Research Paper Honorable Mention: Scalable GPU Acceleration of Scalar Functions in Analytical Databases: Compilation, Benchmarking, and Optimization — Kaushik Rajan, Sampath Rajendra, Momin Al-Ghosien, Nicolas Bruno, Carlo Curino, Matteo Interlandi, Yinan Li, Lukas M. Maas, Craig Peeper, Surajit Chaudhuri, Johannes Gehrke"
   },
   {
    "venue": "VLDB",
@@ -133603,6 +136610,38 @@
   {
    "venue": "WWW",
    "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "HypTrails: A Bayesian Approach for Comparing Hypotheses about Human Trails",
+   "authors": [
+    "Philipp Singer",
+    "Denis Helic",
+    "Andreas Hotho",
+    "Markus Strohmaier"
+   ],
+   "track": "main",
+   "source": "https://archives.iw3c2.org/www2015/award-papers/",
+   "evidence": "WWW 2015 Award Papers, Best Paper Award: HypTrails: A Bayesian Approach for Comparing Hypotheses about Human Trails — Philipp Singer (Lebnitz Institute for Social Sciences GESIS), Denis Helic (TU-Graz), Andreas Hotho (University of Wuerzburg), Markus Strohmaier (Lebnitz Institute for Social Sciences GESIS)"
+  },
+  {
+   "venue": "WWW",
+   "year": 2015,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Secrets, lies, and account recovery: Lessons from the use of personal knowledge questions at Google",
+   "authors": [
+    "Joseph Bonneau",
+    "Elie Bursztein",
+    "Rob Jackson",
+    "Mike Williamson"
+   ],
+   "track": "main",
+   "source": "https://archives.iw3c2.org/www2015/award-papers/",
+   "evidence": "WWW 2015 Award Papers, Best Student Paper Award: Secrets, lies, and account recovery: Lessons from the use of personal knowledge questions at Google — Joseph Bonneau (Princeton University), Elie Bursztein (Google), Rob Jackson (Google), Mike Williamson (Google)"
+  },
+  {
+   "venue": "WWW",
+   "year": 2015,
    "award": "tot",
    "awardLabel": "Seoul Test of Time Award",
    "title": "The Anatomy of a Large-Scale Hypertextual Web Search Engine",
@@ -133679,6 +136718,60 @@
    "track": "main",
    "source": "https://www.iw3c2.org/ToT/",
    "evidence": "The Web Conference 2018 Seoul Test of Time Award: Fabian M. Suchanek, Gjergji Kasneci and Gerhard Weikum for their paper “YAGO: A Core of Semantic Knowledge Unifying WordNet and Wikipedia”"
+  },
+  {
+   "venue": "WWW",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Emoji-Powered Representation Learning for Cross-Lingual Sentiment Classification",
+   "authors": [
+    "Zhenpeng Chen",
+    "Sheng Shen",
+    "Ziniu Hu",
+    "Xuan Lu",
+    "Qiaozhu Mei",
+    "Xuanzhe Liu"
+   ],
+   "track": "main",
+   "source": "https://archives.iw3c2.org/www2019/winners/",
+   "evidence": "The Web Conference 2019 Winners, Best Full Paper: Emoji-Powered Representation Learning for Cross-Lingual Sentiment Classification — Zhenpeng Chen, Sheng Shen, Ziniu Hu, Xuan Lu, Qiaozhu Mei, and Xuanzhe Liu"
+  },
+  {
+   "venue": "WWW",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "OUTGUARD: Detecting In-Browser Covert Cryptocurrency Mining in the Wild",
+   "authors": [
+    "Amin Kharraz",
+    "Zane Ma",
+    "Paul Murley",
+    "Charles Lever",
+    "Joshua Mason",
+    "Andrew Miller",
+    "Nikita Borisov",
+    "Manos Antonakakis",
+    "Michael Bailey"
+   ],
+   "track": "main",
+   "source": "https://archives.iw3c2.org/www2019/winners/",
+   "evidence": "The Web Conference 2019 Winners, Best Full Paper: OUTGUARD: Detecting In-Browser Covert Cryptocurrency Mining in the Wild — Amin Kharraz, Zane Ma, Paul Murley, Charles Lever, Joshua Mason, Andrew Miller, Nikita Borisov, Manos Antonakakis, and Michael Bailey"
+  },
+  {
+   "venue": "WWW",
+   "year": 2019,
+   "award": "category",
+   "awardLabel": "Best Short Paper Award",
+   "title": "ViTOR: Learning to Rank Web Pages Based on Visual Features",
+   "authors": [
+    "Bram van den Akker",
+    "Ilya Markov",
+    "Maarten de Rijke"
+   ],
+   "track": "main",
+   "source": "https://archives.iw3c2.org/www2019/winners/",
+   "evidence": "The Web Conference 2019 Winners, Best Short Paper: ViTOR: Learning to Rank Web Pages Based on Visual Features — Bram van den Akker, Ilya Markov and Maarten de Rijke"
   },
   {
    "venue": "WWW",
@@ -133854,6 +136947,42 @@
    "track": "main",
    "source": "https://www.iw3c2.org/ToT/",
    "evidence": "The Web Conference 2025 Seoul Test of Time Award: Steffen Rendle, Christoph Freudenthaler and Lars Schmidt-Thieme for their paper “Factorizing Personalized Markov Chains for Next-Basket Recommendation”"
+  },
+  {
+   "venue": "WWW",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "From Retrieval to Generation: Unifying External and Parametric Knowledge for Medical Question Answering",
+   "authors": [
+    "Lei Li",
+    "Xiao Zhou",
+    "Yingying Zhang",
+    "Xian Wu"
+   ],
+   "track": "main",
+   "source": "https://www2026.thewebconf.org/",
+   "evidence": "The Web Conference 2026, Best paper award winner: From Retrieval to Generation: Unifying External and Parametric Knowledge for Medical Question Answering — Lei Li, Xiao Zhou, Yingying Zhang and Xian Wu"
+  },
+  {
+   "venue": "WWW",
+   "year": 2026,
+   "award": "category",
+   "awardLabel": "Best Short Paper Award",
+   "title": "DualGR: Generative Retrieval with Long and Short-Term Interests Modeling",
+   "authors": [
+    "Zhongchao Yi",
+    "Kai Feng",
+    "Xiaojian Ma",
+    "Yalong Wang",
+    "Yongqi Liu",
+    "Han Li",
+    "Zhengyang Zhou",
+    "Yang Wang"
+   ],
+   "track": "main",
+   "source": "https://www2026.thewebconf.org/",
+   "evidence": "The Web Conference 2026, Best short paper award winner: DualGR: Generative Retrieval with Long and Short-Term Interests Modeling — Zhongchao Yi, Kai Feng, Xiaojian Ma, Yalong Wang, Yongqi Liu, Han Li, Zhengyang Zhou and Yang Wang"
   },
   {
    "venue": "WWW",

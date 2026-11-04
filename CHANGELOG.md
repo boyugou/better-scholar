@@ -94,6 +94,11 @@ give the details and every review):
   old rule), with the one known limit reported and not counted: a chip keeps its name on one line, so a 30-character chip name is cut
   in a preview of 330 px or less. The overflow audit no longer counts a break at a soft hyphen (Finnish "Yhteis-|ensimmäinen") as a
   word cut in two.
+- **Older years the award list lacked** (each from the conference's or society's own page): CCS 2024 and 2025 (57 distinguished
+  papers), SOSP's best papers of 2009, 2013, 2017, 2019 and 2025, ASPLOS 2011 and 2015, The Web Conference 2015, 2019 and 2026, VLDB's
+  best papers of 2014–2026 (48, with runners-up and its industry and benchmark categories), MICRO 2019, 2020, 2024 and 2025, SIGIR 2026
+  and SIGIR's test-of-time winners of 2014–2025 (the first SIGIR test-of-time rows), S&P 2011–2015: 169 papers. The years whose pages
+  name no winner (SIGCOMM 2023, ISCA before 2024, MICRO's nominee-only years) stay out. The list holds 8,282 awards.
 - **The 2026 awards of 30 more conferences** (a sweep of the venues on the list whose 2026 edition has taken place, each read from
   the conference's own page): 256 papers — ICSE, ASE, FSE and ISSTA's distinguished papers, KDD, ISMAR, UIST, ECCV, IMC, MobiCom,
   SenSys, RecSys, OOPSLA, ICFP, S&P (and its test-of-time papers, read for the first time), ISCA, SIGCOMM, COLT, GECCO, DATE,
