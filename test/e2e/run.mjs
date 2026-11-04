@@ -1083,9 +1083,12 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     assert.ok(paperRows.slice(1).every((r) => r.length === 9));
     await page.check('input[data-act="only"]');
     await page.click('[data-act="copy-papers"]');
-    await page.waitForFunction((n) => navigator.clipboard.readText().then((t) => t.split("\n").length !== n), paperRows.length);          // (the button still says "Copied" from the click before: wait for the new content)
+    // (the button still says "Copied" from the click before: wait for the new content — the count it should have, not merely another one, which a
+    // clipboard read in the middle of the write once gave, under load)
+    const wantRows = 1 + (await visibleRows(page));
+    await page.waitForFunction((n) => navigator.clipboard.readText().then((t) => t.split("\n").length === n), wantRows, { timeout: 8000 }).catch(() => {});
     const onlyRows = (await page.evaluate(() => navigator.clipboard.readText())).split("\n");
-    assert.equal(onlyRows.length, 1 + (await visibleRows(page)), "the filters count");
+    assert.equal(onlyRows.length, wantRows, "the filters count");
     assert.ok(onlyRows.length < paperRows.length);
     await page.uncheck('input[data-act="only"]');
     ok("Copy papers puts the papers shown (the filters count) on the clipboard, one line each, with role, ranks, awards and citations");
