@@ -226,7 +226,7 @@
     "message": "Melden"
   },
   "layoutWarning": {
-    "message": "Das Seitenlayout von Scholar scheint sich geändert zu haben: Diese Erweiterung kann die Autorenzeilen nicht lesen. Bitte melde das."
+    "message": "Das Seitenlayout von Scholar scheint sich geändert zu haben: Diese Erweiterung kann die Autorenzeilen nicht lesen."
   },
   "extUpdated": {
     "message": "Die Erweiterung wurde aktualisiert, während diese Seite geöffnet war: Die Seite läuft noch mit der alten Version, und Änderungen an den Einstellungen kommen dort nicht an."
@@ -250,7 +250,7 @@
     "message": "Automatisch hinzugefügt: Dein Profilname in umgekehrter Reihenfolge findet dich in $1 Papern"
   },
   "variantSuggest": {
-    "message": "Vielleicht du:"
+    "message": "Bist du das?"
   },
   "variantSuggestTip": {
     "message": "Kommt in $1 Papern vor, deren Autorenliste dich sonst nicht nennt – klicken, um diese Schreibweise hinzuzufügen"

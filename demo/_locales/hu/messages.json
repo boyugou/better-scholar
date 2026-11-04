@@ -226,7 +226,7 @@
     "message": "Jelentés"
   },
   "layoutWarning": {
-    "message": "Úgy tűnik, a Scholar oldalának felépítése megváltozott: a bővítmény nem tudja olvasni a szerzői sorokat. Jelentsd, kérlek."
+    "message": "Úgy tűnik, a Scholar oldalának felépítése megváltozott: a bővítmény nem tudja olvasni a szerzői sorokat."
   },
   "extUpdated": {
     "message": "A bővítmény frissült, miközben ez az oldal nyitva volt: az oldal még a régi verziót futtatja, és a beállítások módosításai nem jutnak el hozzá."
@@ -250,7 +250,7 @@
     "message": "Automatikusan hozzáadva: a profilneved fordított sorrendben $1 cikkben talál meg"
   },
   "variantSuggest": {
-    "message": "Talán te vagy:"
+    "message": "Ez te vagy?"
   },
   "variantSuggestTip": {
     "message": "$1 cikkben szerepel, amelynek szerzői listája más módon nem nevez meg — kattints az írásmód hozzáadásához"

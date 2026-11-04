@@ -226,7 +226,7 @@
     "message": "Relatar"
   },
   "layoutWarning": {
-    "message": "O layout do Scholar parece ter mudado: esta extensão não consegue ler as linhas de autores. Por favor, relate o problema."
+    "message": "O layout do Scholar parece ter mudado: esta extensão não consegue ler as linhas de autores."
   },
   "extUpdated": {
     "message": "A extensão foi atualizada enquanto esta página estava aberta: a página continua rodando a versão antiga, e as mudanças nas configurações não chegam a ela."
@@ -250,7 +250,7 @@
     "message": "Adicionada automaticamente: o nome do seu perfil na outra ordem encontra você em $1 artigos"
   },
   "variantSuggest": {
-    "message": "Talvez você:"
+    "message": "É você?"
   },
   "variantSuggestTip": {
     "message": "Aparece em $1 artigos cuja lista de autores não cita você de outra forma — clique para adicionar esta grafia"

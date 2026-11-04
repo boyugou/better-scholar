@@ -226,7 +226,7 @@
     "message": "Nahlásit"
   },
   "layoutWarning": {
-    "message": "Zdá se, že se změnilo rozvržení stránky Scholar: rozšíření nemůže přečíst řádky s autory. Nahlaste to prosím."
+    "message": "Zdá se, že se změnilo rozvržení stránky Scholar: rozšíření nemůže přečíst řádky s autory."
   },
   "extUpdated": {
     "message": "Rozšíření bylo aktualizováno, zatímco byla tato stránka otevřená: stránka stále běží ve staré verzi a změny nastavení se k ní nedostanou."
@@ -250,7 +250,7 @@
     "message": "Přidáno automaticky: jméno z profilu v opačném pořadí vás najde v $1 pracích"
   },
   "variantSuggest": {
-    "message": "Možná vy:"
+    "message": "Jste to vy?"
   },
   "variantSuggestTip": {
     "message": "Objevuje se v $1 pracích, kde vás seznam autorů jinak neuvádí — kliknutím tuto variantu přidáte"

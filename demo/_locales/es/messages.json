@@ -226,7 +226,7 @@
     "message": "Informar"
   },
   "layoutWarning": {
-    "message": "Parece que el diseño de la página de Scholar ha cambiado: esta extensión no puede leer las líneas de autores. Por favor, infórmalo."
+    "message": "Parece que el diseño de la página de Scholar ha cambiado: esta extensión no puede leer las líneas de autores."
   },
   "extUpdated": {
     "message": "La extensión se actualizó mientras esta página estaba abierta: la página sigue ejecutando la versión anterior y los cambios en los ajustes no llegan a ella."
@@ -250,7 +250,7 @@
     "message": "Añadida automáticamente: el nombre de tu perfil en el otro orden te encuentra en $1 artículos"
   },
   "variantSuggest": {
-    "message": "¿Quizá tú?"
+    "message": "¿Eres tú?"
   },
   "variantSuggestTip": {
     "message": "Aparece en $1 artículos cuya lista de autores no te nombra de otro modo: haz clic para añadir esta grafía"

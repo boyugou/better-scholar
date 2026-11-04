@@ -226,7 +226,7 @@
     "message": "回報"
   },
   "layoutWarning": {
-    "message": "Scholar 的頁面版面似乎已更動，本擴充功能無法讀取作者行。請回報此問題。"
+    "message": "Scholar 的頁面版面似乎已更動，本擴充功能無法讀取作者行。"
   },
   "extUpdated": {
     "message": "此頁面開啟期間擴充功能已更新：頁面仍在執行舊版本，設定的變更不會套用到此頁面。"
@@ -250,7 +250,7 @@
     "message": "已自動新增：將本人姓名前後對調後，可在 $1 篇論文中找到您"
   },
   "variantSuggest": {
-    "message": "可能是您："
+    "message": "這是您嗎？"
   },
   "variantSuggestTip": {
     "message": "出現在 $1 篇作者列表中原本未列出您的論文裡——點擊即可新增此拼法"

@@ -226,7 +226,7 @@
     "message": "Report"
   },
   "layoutWarning": {
-    "message": "Scholar's page layout seems to have changed: this extension cannot read the author lines. Please report it."
+    "message": "Scholar's page layout seems to have changed: this extension cannot read the author lines."
   },
   "extUpdated": {
     "message": "The extension was updated while this page was open: the page still runs the old version, and changes to the settings do not reach it."
@@ -250,7 +250,7 @@
     "message": "Added automatically: your profile name in the other order finds you in $1 papers"
   },
   "variantSuggest": {
-    "message": "Maybe you:"
+    "message": "Is this you?"
   },
   "variantSuggestTip": {
     "message": "Appears in $1 papers whose author list does not otherwise name you — click to add this spelling"

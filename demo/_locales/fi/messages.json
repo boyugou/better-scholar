@@ -226,7 +226,7 @@
     "message": "Ilmoita"
   },
   "layoutWarning": {
-    "message": "Scholarin sivun ulkoasu näyttää muuttuneen: laajennus ei pysty lukemaan kirjoittajarivejä. Ilmoita siitä."
+    "message": "Scholarin sivun ulkoasu näyttää muuttuneen: laajennus ei pysty lukemaan kirjoittajarivejä."
   },
   "extUpdated": {
     "message": "Laajennus päivitettiin, kun tämä sivu oli auki: sivu toimii yhä vanhalla versiolla, eivätkä asetusten muutokset tavoita sitä."
@@ -250,7 +250,7 @@
     "message": "Lisätty automaattisesti: profiilisi nimi päinvastaisessa järjestyksessä löytää sinut $1 artikkelista"
   },
   "variantSuggest": {
-    "message": "Ehkä sinä:"
+    "message": "Oletko se sinä?"
   },
   "variantSuggestTip": {
     "message": "Esiintyy $1 artikkelissa, joiden kirjoittajaluettelo ei muuten mainitse sinua — lisää tämä kirjoitusasu napsauttamalla"

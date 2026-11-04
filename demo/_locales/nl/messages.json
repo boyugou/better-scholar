@@ -226,7 +226,7 @@
     "message": "Melden"
   },
   "layoutWarning": {
-    "message": "De opmaak van Scholar lijkt gewijzigd: deze extensie kan de auteursregels niet lezen. Meld dit alsjeblieft."
+    "message": "De opmaak van Scholar lijkt gewijzigd: deze extensie kan de auteursregels niet lezen."
   },
   "extUpdated": {
     "message": "De extensie is bijgewerkt terwijl deze pagina open was: de pagina draait nog de oude versie, en wijzigingen in de instellingen komen er niet bij."
@@ -250,7 +250,7 @@
     "message": "Automatisch toegevoegd: je profielnaam in de andere volgorde vindt je in $1 papers"
   },
   "variantSuggest": {
-    "message": "Misschien jij:"
+    "message": "Ben jij dat?"
   },
   "variantSuggestTip": {
     "message": "Komt voor in $1 papers waarvan de auteurslijst je verder niet noemt — klik om deze spelling toe te voegen"

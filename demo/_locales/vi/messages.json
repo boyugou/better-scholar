@@ -226,7 +226,7 @@
     "message": "Báo lỗi"
   },
   "layoutWarning": {
-    "message": "Bố cục trang Scholar dường như đã thay đổi: tiện ích này không đọc được dòng tác giả. Vui lòng báo lỗi."
+    "message": "Bố cục trang Scholar dường như đã thay đổi: tiện ích này không đọc được dòng tác giả."
   },
   "extUpdated": {
     "message": "Tiện ích đã được cập nhật khi trang này đang mở: trang vẫn chạy phiên bản cũ, và các thay đổi trong cài đặt không đến được trang."
@@ -250,7 +250,7 @@
     "message": "Tự động thêm: tên hồ sơ của bạn theo thứ tự ngược lại tìm thấy bạn trong $1 bài"
   },
   "variantSuggest": {
-    "message": "Có thể là bạn:"
+    "message": "Có phải bạn không?"
   },
   "variantSuggestTip": {
     "message": "Xuất hiện trong $1 bài mà danh sách tác giả không nêu tên bạn — nhấp để thêm cách viết này"

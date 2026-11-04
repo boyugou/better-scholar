@@ -226,7 +226,7 @@
     "message": "Zgłoś"
   },
   "layoutWarning": {
-    "message": "Wygląda na to, że układ strony Scholar się zmienił: rozszerzenie nie może odczytać wierszy z autorami. Prosimy o zgłoszenie."
+    "message": "Wygląda na to, że układ strony Scholar się zmienił: rozszerzenie nie może odczytać wierszy z autorami."
   },
   "extUpdated": {
     "message": "Rozszerzenie zostało zaktualizowane, gdy ta strona była otwarta: strona nadal działa na starej wersji, a zmiany ustawień do niej nie docierają."
@@ -250,7 +250,7 @@
     "message": "Dodano automatycznie: nazwisko z profilu w odwrotnej kolejności znajduje Cię w $1 pracach"
   },
   "variantSuggest": {
-    "message": "Może Ty:"
+    "message": "Czy to Ty?"
   },
   "variantSuggestTip": {
     "message": "Występuje w $1 pracach, w których lista autorów inaczej Cię nie wymienia — kliknij, aby dodać tę pisownię"

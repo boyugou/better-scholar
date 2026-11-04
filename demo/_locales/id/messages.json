@@ -226,7 +226,7 @@
     "message": "Laporkan"
   },
   "layoutWarning": {
-    "message": "Tata letak halaman Scholar tampaknya berubah: ekstensi ini tidak dapat membaca baris penulis. Mohon laporkan."
+    "message": "Tata letak halaman Scholar tampaknya berubah: ekstensi ini tidak dapat membaca baris penulis."
   },
   "extUpdated": {
     "message": "Ekstensi diperbarui saat halaman ini terbuka: halaman masih menjalankan versi lama, dan perubahan pengaturan tidak sampai ke halaman itu."
@@ -250,7 +250,7 @@
     "message": "Ditambahkan otomatis: nama profil Anda dengan urutan terbalik menemukan Anda di $1 makalah"
   },
   "variantSuggest": {
-    "message": "Mungkin Anda:"
+    "message": "Apakah ini Anda?"
   },
   "variantSuggestTip": {
     "message": "Muncul di $1 makalah yang daftar penulisnya tidak menyebut Anda — klik untuk menambahkan ejaan ini"
