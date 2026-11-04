@@ -426,9 +426,10 @@
     const sections = { table: summarySec, copy: copySec, marks: marksSec, filters: filtersSec, metrics: metricsSec, years: yearsSec, venues: venuesSec, status: coverSec, names: namesSec };
     for (const [id, sec] of Object.entries(sections)) sec.setAttribute("data-section", id);
     const body = h("div", { class: "rr-body", "data-rr-order": "panel.order" });
-    // a bar that says the list is filtered, by how much, and clears every filter
-    const fbCount = document.createTextNode(""), fbWhat = h("span", { class: "rr-fb-what" });
-    const fbText = h("span", { class: "rr-fb-text", role: "status" }, fbCount, fbWhat);          // (a status: what the filters leave is said when it changes)
+    // a bar that says the list is filtered, by what and by how much, and clears every filter: the filter first ("Last · CCF A"), then the count as a
+    // small "25 / 100" that the line's end never cuts; the sentence ("Showing 25 of 100 papers") is what a screen reader says, and the bar's tooltip
+    const fbSay = h("span", { class: "rr-sr" }), fbWhat = h("span", { class: "rr-fb-what" }), fbCount = h("span", { class: "rr-fb-count", dir: "ltr", "aria-hidden": "true" });
+    const fbText = h("span", { class: "rr-fb-text", role: "status" }, fbSay, fbWhat, fbCount);          // (a status: what the filters leave is said when it changes)
     const fbClear = h("button", { class: "rr-link", type: "button", "data-act": "clear-filters", onClick: (e) => { cb.onClearFilters(); if (e.detail === 0) queryInput.focus({ preventScroll: true }); } });          // (the bar goes with the filters: a key press goes on in the search box, not to the page)
     let fbSig = "";
     const filterBar = h("div", { class: "rr-filterbar", "data-rr": "filterbar", hidden: true, ...P("panel.filters.bar") }, fbText, fbClear);
@@ -759,7 +760,7 @@
       };
       yearsSec.replaceChildren(...[
         yp.title ? h("div", { class: "rr-sec-head" }, h("span", { class: "rr-sec-title", ...P("panel.years.title"), ...L("yearsTitle") }, t("yearsTitle"))) : null,
-      h("div", { class: "rr-yearsbox", style: "width:min(100%," + data.length * 28 + "px)" },
+      h("div", { class: "rr-yearsbox" },
         h("div", { class: "rr-bars", style: data.length > 24 ? "gap:1px" : null, role: "group", onKeydown: onBarKey, "aria-label": t("yearsTitle") + ": " + data.map((d) => d.year + " " + d.total).join(", ") + (older ? ". " + olderNote : "") },
           ...data.map((d) => {
             const isSelected = !!m.barYear && m.filters.yearStart === d.year && m.filters.yearEnd === d.year;          // (pressed in its own way only: the same year chosen with From and To is a range of every paper)
@@ -778,7 +779,9 @@
             h("div", { class: "rr-stack", style: "height:" + Math.max(d.total ? 6 : 0, Math.round(d.total / top * 100)) + "%" },
               ...B.prefs.ROLES.filter((r) => d[r]).map((r) => h("i", { style: "flex:" + d[r] + ";background:" + ROLE_COLOR[r] }))));
           })),
-        yp.axis ? h("div", { class: "rr-bars-axis", ...P("panel.years.axis") }, h("span", { title: older ? olderNote : null }, String(data[0].year)), h("span", {}, String(data[data.length - 1].year))) : null)].filter(Boolean));
+        // (eight years or fewer: each bar has its year under it; more: the first and the last year, at the two ends)
+        yp.axis ? h("div", { class: "rr-bars-axis" + (data.length <= 8 ? " rr-bars-axis-each" : ""), ...P("panel.years.axis") },
+          ...(data.length <= 8 ? data : [data[0], data[data.length - 1]]).map((d, i) => h("span", { title: i === 0 && older ? olderNote : null }, String(d.year)))) : null)].filter(Boolean));
       if (focusedYear) { const again = yearsSec.querySelector('button.rr-bar[data-year="' + focusedYear + '"]:not([disabled])'); if (again) again.focus({ preventScroll: true }); }
     }
 
@@ -833,8 +836,10 @@
         const sig = count + "\u0001" + parts.join("\u0001");
         if (sig !== fbSig) {
           fbSig = sig;
-          fbCount.nodeValue = count;
-          fbWhat.replaceChildren(...parts.flatMap((part) => [" · ", h("bdi", {}, part)]));          // (each part isolated: a query in quotes does not reorder the words around it in a right-to-left line)
+          fbSay.textContent = parts.length ? count + " · " : "";
+          fbWhat.replaceChildren(...(parts.length ? parts.flatMap((part, i) => [i ? " · " : "", h("bdi", {}, part)]) : [count]));          // (each part isolated: a query in quotes does not reorder the words around it in a right-to-left line)
+          fbCount.textContent = parts.length ? m.filterBar.shown + " / " + m.filterBar.total : "";
+          fbCount.hidden = !parts.length;
           fbText.title = count + (parts.length ? " · " + parts.join(" · ") : "");          // (the bar is one line: all of it on hover)
         }
       }
