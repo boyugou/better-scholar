@@ -94,6 +94,14 @@ give the details and every review):
   old rule), with the one known limit reported and not counted: a chip keeps its name on one line, so a 30-character chip name is cut
   in a preview of 330 px or less. The overflow audit no longer counts a break at a soft hyphen (Finnish "Yhteis-|ensimmäinen") as a
   word cut in two.
+- **A fifth review of the matcher** (an independent agent; it stopped before its report, so its notes were checked line by line here).
+  Unranked events that share a ranked venue's words now get no chip, by their whole name: the vacuum coaters' "52nd Annual Technical
+  Conference" (it had USENIX ATC's CCF A), "Virtual Reality International Conference" (Laval) and "International Conference on Virtual
+  Reality" (IEEE VR's A*), "International Symposium on Computer Vision" (ICCV), "International Symposium on Computers in Education",
+  "IEEE Region 10 Symposium" (TENCON's), "Symposium on Applied Computing", "Annual Information Security Symposium"; and the Services
+  Conference Federation's own Springer volumes ("Web Services–ICWS 2018 … Held as Part of the Services Conference Federation") are not
+  IEEE's ICWS and CLOUD, nor is its "Cognitive Computing–ICCC" CORE's ICCC (Computational Creativity). Over the 75,521 corpus lines
+  only these lose a chip; USENIX ATC, IEEE VR, IEEE ICWS and CLOUD keep theirs.
 - **A third read, of the second read's fixes** (an independent agent; one regression of them, fixed with the rest). (1) A header
   written surname-first in brackets ("唐杰 (Tang Jie)") found the owner on no paper: the page now matches by the bracketed Latin form,
   which the other order is read for as for any Latin header (the real Tang Jie rows: 76 of 100 found again), and by the name as

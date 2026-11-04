@@ -2194,3 +2194,18 @@ test("a line made only of sponsors and publishers cannot be mapped: it names no 
   assert.equal(!!r.resolve("Springer-Verlag, 2006").generic, true);
   assert.equal(!!r.resolve("TMLR, 2024").generic, false);
 });
+
+test("a fifth review, 2026-11-03: unranked events that share a ranked venue's words — by their whole name — get no chip; the venues themselves keep theirs", () => {
+  for (const line of ["52nd Annual Technical Conference Proceedings, 2009", "Annual Technical Conference Proceedings, 2019", "Proceedings of the 2016 Virtual Reality International Conference, 1-4, 2016", "International Conference on Virtual Reality, 2019",
+    "2019 9th International Conference on Virtual Reality (ICVR), 2019", "International Symposium on Computer Vision, 2019", "International Symposium on Computers in Education, 2019", "2014 IEEE REGION 10 SYMPOSIUM, 2014", "Symposium on Applied Computing, 2019", "Annual Information Security Symposium, 2019",
+    // the Services Conference Federation's own events (Springer), not IEEE's ICWS and CLOUD; "Cognitive Computing" is not CORE's ICCC (Computational Creativity)
+    "Web Services–ICWS 2018: 25th International Conference, Held as Part of the Services Conference Federation, SCF 2018, 2018", "Cloud Computing–CLOUD 2018: 11th International Conference, Held as Part of the Services Conference Federation, SCF 2018, 2018",
+    "Blockchain–ICBC 2018: First International Conference, Held as Part of the Services Conference Federation, SCF 2018, 2018", "Cognitive Computing–ICCC 2018: Second International Conference, Held as Part of the Services Conference Federation, SCF 2018, 2018"]) {
+    const r = resolver.resolve(line);
+    assert.ok(!r.ccf && !r.core, line + " → " + JSON.stringify([r.ccf && r.ccf.abbr, r.core && r.core.abbr]));
+  }
+  for (const [line, abbr] of [["2019 USENIX Annual Technical Conference (USENIX ATC 19), 475-488, 2019", "USENIX"], ["Proceedings of the USENIX Annual Technical Conference, 2005", "USENIX"], ["IEEE Virtual Reality Conference, 2010", "VR"], ["2019 IEEE Conference on Virtual Reality and 3D User Interfaces (VR), 2019", "VR"],
+    ["2018 IEEE International Conference on Web Services (ICWS), 2018", "ICWS"], ["2019 IEEE 12th International Conference on Cloud Computing (CLOUD), 2019", "CLOUD"], ["International Conference on Computational Creativity (ICCC), 2019", "ICCC"]]) {
+    assert.equal((resolver.resolve(line).core || {}).abbr, abbr, line);
+  }
+});
