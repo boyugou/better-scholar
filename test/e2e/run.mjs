@@ -608,6 +608,8 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     await pollPage(opts, () => !!document.querySelector(".toc-next").offsetParent && !document.querySelector(".toc-prev").offsetParent, null, 5000).catch(() => assert.fail("at its start the strip has an arrow at its end, and none at its start"));
     await opts.click(".toc-next");
     await pollPage(opts, () => document.querySelector(".toc").scrollLeft > 50 && !!document.querySelector(".toc-prev").offsetParent, null, 5000).catch(() => assert.fail("the arrow at the end scrolls the strip"));
+    await opts.evaluate(() => document.querySelector(".toc").scrollTo({ left: 0 }));          // (back to the start: the arrow may have taken the strip to its end, where a wheel has nowhere to go — on Linux's narrower strip)
+    await pollPage(opts, () => document.querySelector(".toc").scrollLeft === 0, null, 3000).catch(() => {});
     const stripAt = await opts.evaluate(() => document.querySelector(".toc").scrollLeft);
     await opts.hover(".toc a:nth-child(2)"); await opts.mouse.wheel(0, 240);
     await pollPage(opts, (was) => document.querySelector(".toc").scrollLeft > was + 50, stripAt, 5000).catch(() => assert.fail("the wheel scrolls the strip"));
