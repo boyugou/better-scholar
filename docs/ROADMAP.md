@@ -55,7 +55,7 @@ trailing or leading `( … )` / `[ … ]` made of nothing but marker and venue/y
 low by nature — across four real profiles (400 rows, including one whose owner has CVPR'16 and ICCV'17
 best papers) Scholar's text contained **no** such markers — so this is best effort, not a promise.
 
-**Built — a bundled list of award-winning papers** (9325 entries on 2026-11-05: the ACL family, ICLR, NeurIPS, ICML,
+**Built — a bundled list of award-winning papers** (9309 entries on 2026-11-05: the ACL family, ICLR, NeurIPS, ICML,
 CVPR / ICCV / ECCV from the Computer Vision Foundation's list, AAAI, IJCAI 2020–2023, USENIX, SIGIR, KDD, SIGSOFT, STOC, SIGCOMM, S&P,
 CCS, NDSS, SIGMOD, PODS, VLDB, and the test-of-time awards of WWW, ISCA, MICRO, USENIX, SIGMOD, SIGPLAN's most influential papers, SIGMETRICS, FOCS's test of time, SIGOPS's Hall of Fame, EuroSys's test of time, AAMAS's and ASPLOS's influential papers, the IACR test of time (CRYPTO / EUROCRYPT / ASIACRYPT), the TCC, PKC and CHES tests of time, HPCA's, IMC's and IEEE VIS's test of time, ICDE's influential papers, ISMAR's best and impact papers, ICSE's most influential papers, LICS's test of time and distinguished papers, AAAI's classic papers, ICAPS's influential papers, ISWC's ten-year papers, SIGMM's test of time, Hypertext's and DocEng's best papers, SIGDA's Newton technical impact award, SIGSPATIAL's best and 10-year impact papers, SIGCSE's test of time, ICWSM's test of time and best papers, SIGMOBILE's and SenSys's test of time, SIGecom's test of time and PODC / DISC's Dijkstra Prize; CHI, CSCW, UIST and other SIGCHI conferences from SIGCHI's own program data). Only official pages are sources (the ACL Anthology's award metadata; each
 conference's own or the CVF's awards pages), each entry carries its page and a quoted snippet, and the matcher requires
@@ -156,7 +156,7 @@ of HotStorage, and the year written with a hyphen or jammed onto a mixed-case wo
 
 ## Waiting on time (2026-11-05)
 
-- **The awards of the conferences still to come this year**: CCS (Nov 15–19), CoRL (Nov 9–11), CIKM, ACM MM, ICCAD, VIS (its 2026 best papers are read from the program's badges: check them against the awards page after 9–13 November)
+- **The awards of the conferences still to come this year**: CCS (Nov 15–19), CoRL (Nov 9–11), CIKM, ACM MM, ICCAD, VIS (its 2026 program already badges its best papers, as FOCS 2026's program has a best-paper session: both wait for the awards pages after the conferences, 9–13 and 8–11 November)
   (Nov), NeurIPS (Dec), ICDM, SC, Middleware, FOCS and the others of late autumn — each from its own page once it is over, as in
   data/README.md (`scripts/awards/`, `merge-raw.mjs`). IJCAI-ECAI 2026 and MICRO 2026 had no paper awards on their pages on 2026-11-03.
   Held, but no winners on an official page on 2026-11-05 (finalists or nominees only, or nothing yet): ICRA and CASE 2026 (the RAS
@@ -165,7 +165,9 @@ of HotStorage, and the year written with a hyphen or jammed onto a mixed-case wo
 
 ## Other ideas, not started
 
-- **Name spellings beyond today's rules**: composite, hyphenated and other romanised names (Iberian double surnames,
+- **Name spellings beyond today's rules** (one rule went in on 2026-11-05 without a real Scholar string: a generational suffix, "RW Heath Jr",
+  is the owner's only where the profile's own name says the same — safe by construction, as it only adds a match where both sides carry
+  it; `nameParts` and `headerParts` in `src/lib/names.js`, revert both to remove it; put a real "Jr" line into `test/fixtures` when one is seen): composite, hyphenated and other romanised names (Iberian double surnames,
   Nordic and East Asian romanisations). Like every name rule, only from real Scholar strings added to
   `test/fixtures`, never guessed: a wrong owner match is a wrong role. The roles review of 2026-10-29 left three more, for the same
   reason: "and" in other languages as a separator ("y", "und", "et" — also words of names and titles), the reversed spelling
