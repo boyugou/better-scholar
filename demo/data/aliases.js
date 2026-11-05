@@ -30,8 +30,9 @@
 //   edition       [a year, the edition held that year, every how many years (1 if left out)]: the venue's numbering, checked against the venue's own lines in the corpora; a line whose
 //                 edition number is more than two from it, for the line's year, is another venue's ("2015 18th International Conference on Computer and Information Technology" is
 //                 Bangladesh's ICCIT, IEEE's CIT held its 15th). Only for venues whose names other events share
-//   reach         a word of the venue's name that the visible start of a cut-off line must reach for the line to be this venue: before it, many events begin
-//                 the same way ("… Conference on Computational Intelligence and …" is CIDM's start, and CICN's, CIDS's …; "data" tells it). Only takes a badge away
+//   reach         a word of the venue's name, as written, that the visible start of a cut-off line must reach for the line to be this venue: before it, many events
+//                 begin the same way ("… Conference on Computational Intelligence and …" is CIDM's start, and CICN's, CIDS's …; "data" tells it). The venue stays a rival
+//                 of a start it does not reach: no other venue claims it either. Only takes a badge away
 //   volumeYear    [a year, the journal's volume that year] (a journal of one volume a year): a line whose volume is more than one from it, for the line's year, is another journal
 //                 of the same name — the Chinese edition of SCIS, Argentina's own "Journal of Computer Science and Technology"
 //   shadow        (an entry of its own, no ccf / core) acronyms of unranked events whose names boil down to the words of a ranked venue's: a string that names one of them
@@ -428,7 +429,7 @@
     { core: "FedCSIS", reach: "federated" },          // ("… International Conference on Computer Science and …")
     { core: "LATA", reach: "automata" },          // ("… Conference on Language, Art and …")
     { ccf: "WCNC", core: "WCNC", reach: "networking" },          // ("… Conference on Wireless Communication …")
-    { core: "ICCSA", reach: "applications" },          // (both rows: "… Conference on Computational Science and …" is CSE's too, "… on Communication …" many)
+    { core: "ICCSA", reach: "its" },          // (both rows: "… Conference on Computational Science and …" is the IEEE's CSE too — "Its" tells ICCSA's —, "… on Communication …" many)
     // (names the lists lack: ACM's proceedings title of PACT leaves out "Techniques"; the IEEE's of MASCOTS says "Computers")
     { ccf: "PACT", core: "PACT", names: ["International Conference on Parallel Architectures and Compilation"] },
     { ccf: "MASCOTS", core: "MASCOTS", names: ["International Symposium on Modeling, Analysis and Simulation of Computers and Telecommunication Systems"] },
