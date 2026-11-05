@@ -67,6 +67,12 @@ give the details and every review):
   wheel, and fades only on a side that has more; a band ends the quick filters before "Only highlighted".
   In forced colours (Windows high contrast) the icons drawn as masks — the order arrows, the strip's arrows, the preview tray's chevron,
   the funnel and the copy buttons' icons — keep a text colour: the system had painted them in the page's own colour, out of sight.
+- **Every row's bar stands out from Scholar's white page** (3:1, WCAG's rule for graphics), whatever the colour: a colour too light is
+  drawn darker in the bar only, step by step as the chips' text already was (`lib/palette.js` `bar`), and the row's tint keeps the colour.
+  The built-in amber of Second was 1.9:1; its bar is now `#c38500` (3.1:1). The contrast badge of each role colour on the settings page,
+  which warned about exactly this, is gone with the problem; the Colours card says it in one sentence (30 languages).
+- **Arabic on the settings page and in the popup** is drawn in Geeza Pro on macOS: the system face there has no Arabic, and the
+  fall-back Arial's Arabic is a size smaller than the Latin beside it ("Scholar" in an Arabic line looked larger than its words).
 - **Your own venue mappings** (settings → *Check a venue* → *Assign it to a listed venue…*). A venue line that no rule ranks can now be
   tied by you to a row of the CCF or CORE list; the same venue in other editions (years, ordinals, "Proceedings of the" and a bracketed acronym aside) gets that
   rank too. It is never passed off as the lists' rank: the chip is dashed with a dotted tier and its tooltip says "Your own mapping", a

@@ -639,7 +639,7 @@
     "message": "Colours"
   },
   "optColorsHint": {
-    "message": "The colour of each author role: rows, name marks, the panel and the toolbar popup."
+    "message": "The colour of each author role: rows, name marks, the panel and the toolbar popup. A colour too light to show on Scholar's white page is drawn a little darker in the row's bar."
   },
   "optColorsReset": {
     "message": "Back to the standard colours"
@@ -662,9 +662,7 @@
   "optThemeSoft": {
     "message": "Soft"
   },
-  "optContrastTip": {
-    "message": "Contrast of this colour with Scholar's white page. 3:1 or more keeps the row's bar visible."
-  },
+
   "markSpotlightHighlight": {
     "message": "Spotlight & highlight"
   },

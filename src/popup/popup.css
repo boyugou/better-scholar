@@ -18,7 +18,7 @@
 @media (prefers-color-scheme: dark) { :root { --text: #e8eaed; --muted: #b0b5ba; --faint: #969ca2; --line: #3c4043; --accent: #8ab4f8; --bg: #202124; --hover: #3a3b3e; --seg: #151618; --seg-on: #3a3b3e; --btn-line: #5f6368; --zero: #5f6368; } }
 * { box-sizing: border-box; }
 html, body { margin: 0; width: 340px; background: var(--bg); color: var(--text);
-  font: 13px/1.45 system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif; }
+  font: 13px/1.45 system-ui, "Segoe UI", "Geeza Pro", "Noto Sans Arabic", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif; }          /* (Arabic in Geeza Pro on macOS, as on the settings page: Arial's Arabic is a size small) */
 .head { display: flex; align-items: center; gap: 8px; padding: 12px 16px; border-bottom: 1px solid var(--line); }
 .head h1 { margin: 0; flex: 1; font-size: 15px; font-weight: 600; }
 .icon { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; padding: 0; border: 0; border-radius: 6px; background: none; color: var(--muted); cursor: pointer; }

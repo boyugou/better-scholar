@@ -639,7 +639,7 @@
     "message": "Renkler"
   },
   "optColorsHint": {
-    "message": "Her yazar rolünün rengi: satırlar, ad işaretleri, panel ve araç çubuğu açılır penceresi."
+    "message": "Her yazar rolünün rengi: satırlar, ad işaretleri, panel ve araç çubuğu açılır penceresi. Scholar'ın beyaz sayfasında belirgin olmayacak kadar açık bir renk, satırın çubuğunda biraz daha koyu bir tonda çizilir."
   },
   "optColorsReset": {
     "message": "Standart renklere dön"
@@ -662,9 +662,7 @@
   "optThemeSoft": {
     "message": "Yumuşak"
   },
-  "optContrastTip": {
-    "message": "Bu rengin Scholar'ın beyaz sayfasıyla kontrastı. 3:1 ve üzeri, satırın çubuğunu görünür tutar."
-  },
+
   "markSpotlightHighlight": {
     "message": "Spotlight ve highlight"
   },

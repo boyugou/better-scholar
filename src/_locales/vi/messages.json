@@ -639,7 +639,7 @@
     "message": "Màu sắc"
   },
   "optColorsHint": {
-    "message": "Màu của từng vai trò tác giả: dòng, dấu tên, bảng tóm tắt và cửa sổ trên thanh công cụ."
+    "message": "Màu của từng vai trò tác giả: dòng, dấu tên, bảng tóm tắt và cửa sổ trên thanh công cụ. Màu quá nhạt để hiển thị rõ trên trang trắng của Scholar, được vẽ trong thanh của dòng với tông màu đậm hơn một chút."
   },
   "optColorsReset": {
     "message": "Về màu tiêu chuẩn"
@@ -662,9 +662,7 @@
   "optThemeSoft": {
     "message": "Dịu nhẹ"
   },
-  "optContrastTip": {
-    "message": "Độ tương phản của màu này với nền trắng của Scholar. Từ 3:1 trở lên, thanh của hàng vẫn nhìn thấy được."
-  },
+
   "markSpotlightHighlight": {
     "message": "Spotlight & Highlight"
   },

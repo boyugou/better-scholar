@@ -639,7 +639,7 @@
     "message": "색상"
   },
   "optColorsHint": {
-    "message": "저자 순서별 색상: 논문 행, 이름 표시, 패널, 도구 모음 팝업."
+    "message": "저자 순서별 색상: 논문 행, 이름 표시, 패널, 도구 모음 팝업. Scholar의 흰 페이지에서 잘 보이지 않을 만큼 옅은 색은 행의 막대가 조금 더 진하게 그려집니다."
   },
   "optColorsReset": {
     "message": "기본 색상으로 되돌리기"
@@ -662,9 +662,7 @@
   "optThemeSoft": {
     "message": "부드러운 색"
   },
-  "optContrastTip": {
-    "message": "Scholar의 흰 페이지와 이 색의 대비. 3:1 이상이면 행의 막대가 잘 보입니다."
-  },
+
   "markSpotlightHighlight": {
     "message": "Spotlight 및 Highlight"
   },

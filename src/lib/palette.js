@@ -32,6 +32,10 @@
   const darker = (hex) => mix(hex, "#000000", 0.94);
   function legible(ink, bg) { let c = ink; for (let i = 0; i < 60 && contrast(c, bg) < AA; i++) c = darker(c); return c; }
   function solid(fill) { let c = fill; for (let i = 0; i < 60 && contrast(on(c), c) < AA; i++) c = darker(c); return c; }
+  // A row's bar (the stripe at the left edge of a highlighted paper) is a graphic on Scholar's white page: it has to stand out at the contrast WCAG asks of graphics,
+  // 3:1. A colour too light for that (the built-in amber of Second is 1.9:1) is darkened, step by step, in the bar only: the row's tint keeps the colour picked.
+  const GRAPHIC = 3;
+  function bar(hex) { let c = hex; for (let i = 0; i < 60 && contrast(c, WHITE) < GRAPHIC; i++) c = darker(c); return c; }
   // (the soft look lays a tenth of the fill on white; the outline and text looks are on white itself: the tint is the harder of the two)
   const tint = (fill) => mix(fill, WHITE, 0.1);
 
@@ -65,5 +69,5 @@
   const BY_FAMILY = Object.fromEntries(FAMILIES.map((f) => [f, Object.keys(vars(f, DEFAULTS[f]))]));
   const NAMES = FAMILIES.flatMap((f) => BY_FAMILY[f]);
 
-  return { FAMILIES, DEFAULTS, NAMES, BY_FAMILY, AA, vars, mix, on, contrast, luminance, legible, solid };
+  return { FAMILIES, DEFAULTS, NAMES, BY_FAMILY, AA, GRAPHIC, vars, mix, on, contrast, luminance, legible, solid, bar };
 });

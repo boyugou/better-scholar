@@ -639,7 +639,7 @@
     "message": "色"
   },
   "optColorsHint": {
-    "message": "著者順ごとの色：論文の行、名前のマーク、パネル、ツールバーのポップアップ。"
+    "message": "著者順ごとの色：論文の行、名前のマーク、パネル、ツールバーのポップアップ。Scholar の白いページでは見えにくいほど薄い色は、行のバーでは少し濃い色で描かれます。"
   },
   "optColorsReset": {
     "message": "標準の色に戻す"
@@ -662,9 +662,7 @@
   "optThemeSoft": {
     "message": "ソフト"
   },
-  "optContrastTip": {
-    "message": "この色と Scholar の白いページとのコントラスト。3:1 以上なら、行のバーが見えたままになります。"
-  },
+
   "markSpotlightHighlight": {
     "message": "Spotlight と Highlight"
   },

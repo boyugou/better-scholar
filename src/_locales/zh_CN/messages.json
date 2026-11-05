@@ -639,7 +639,7 @@
     "message": "颜色"
   },
   "optColorsHint": {
-    "message": "每种作者角色的颜色：论文行、名字标记、面板和工具栏弹窗。"
+    "message": "每种作者角色的颜色：论文行、名字标记、面板和工具栏弹窗。在 Scholar 白色页面上显示不清的过浅颜色，论文行中的色条会用略深一点的同色调绘制。"
   },
   "optColorsReset": {
     "message": "恢复默认颜色"
@@ -662,9 +662,7 @@
   "optThemeSoft": {
     "message": "柔和"
   },
-  "optContrastTip": {
-    "message": "此颜色与 Scholar 白色页面的对比度。3:1 或更高时，行内色条仍然可见。"
-  },
+
   "markSpotlightHighlight": {
     "message": "Spotlight 与 Highlight"
   },

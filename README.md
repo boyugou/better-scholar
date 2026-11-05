@@ -177,7 +177,7 @@ All settings are on one page. A change is saved at once, and open Scholar tabs r
 - **A switch for every thing**: each part of the panel, and each thing in a part (a title, a column, a button, a quick filter, a number). A switch decides what is drawn. What you see is what you search and copy.
 - **Order**: drag the parts of the panel, the copy buttons and the quick filters on the preview, or use the buttons on the left.
 - **Your own names** for titles, columns, buttons and chip words. A name replaces the translation in every language. Exports, search operators and page calls keep the standard words.
-- **Colours**: five colour themes, or a colour for each role. Each role colour shows its contrast with Scholar's white page, and warns below 3:1 (the WCAG minimum for graphics).
+- **Colours**: five colour themes, or a colour for each role. A colour too light to show on Scholar's white page is drawn a little darker in the row's bar, so that the bar always stands out (3:1, the WCAG minimum for graphics); the row's tint keeps the colour.
 - **Chip looks**: outline, soft, solid or text only; rounded or square; with the list's name or the tier only; a colour for CCF, CORE, awards and talks; six ready-made looks.
 - **Check a venue**: paste a venue line as Scholar prints it. The page shows the CCF and CORE rank, the name it matched and the rule. For a CCF venue it also shows the research area and a link to its DBLP page. When there is no rank, it says why. A line no rule ranks can be tied by you to a listed venue (*Assign it to a listed venue…*): it then gets that venue's rank in every edition of the same name, as *your mapping* — a dashed chip, a status line, "(your mapping)" in every copy — and never over a rank the lists give. The mappings are listed below the box, each with *Remove*.
 - **Presets and JSON**: *All features*, *Last author focus*, *First author focus*, *Minimalist*; copy, export, import or edit the configuration as JSON.
@@ -190,7 +190,7 @@ All settings are on one page. A change is saved at once, and open Scholar tabs r
 |---|---|
 | Language | The extension's language (or follow the browser); *Open Scholar in* |
 | Highlight my papers | A switch for each role; *Mark my name in the author line* |
-| Colours | Five colour themes (Default, Cool, Warm, High contrast, Soft); a colour for each role, with a contrast badge; the row highlight: tint and bar, bar only, tint only, none |
+| Colours | Five colour themes (Default, Cool, Warm, High contrast, Soft); a colour for each role (its row bar always at least 3:1); the row highlight: tint and bar, bar only, tint only, none |
 | Chips on each paper | CCF, CORE, award and talk chips; which list's chip shows where both rank a venue (CCF first, CORE first, both); the names of the award chips; the look of the chips |
 | Summary panel | The panel; the order of its parts; the parts of its title bar; the bar that says the list is filtered; *Compact* |
 | Role × rank table, Copy & export, Awards and talks, Filters, Citation totals, Papers by year, Top venues, Loaded papers and unranked venues, Name spelling help | One card for each part of the panel: its switch, a switch (and a name) for each thing in it, and its order where it has one |
@@ -358,7 +358,7 @@ What the extension is made of, counted from its code and its data. Nothing here 
 | **171** | settings you can change, in 18 cards: 94 switches, 55 names you can set, and 22 colours, choices, orders and languages | the settings tree (`src/lib/prefs.js`) |
 | **189** | nodes in that tree, 5 levels deep: card, panel switch, part switch, item, sub-item | cards and rows; each row hangs on its part's switch |
 | **9 · 12 · 13 · 6 · 4** | panel parts, copy formats and quick filters (each with a switch, most in an order you set), then chip looks and presets | `SECTIONS`, `COPY_BUTTONS`, `PILLS`, `CHIP_THEMES`, `PRESETS` |
-| **30** | interface languages: 393 strings each, 29 translated from English | `src/_locales/*/messages.json` |
+| **30** | interface languages: 392 strings each, 29 translated from English | `src/_locales/*/messages.json` |
 | **1,178** | ranked venues in 1,481 rows of the two lists (386 CCF conferences, 295 CCF journals, 800 CORE conferences); 299 venues have a row in both | the rows of `src/data/ccf.js` and `src/data/core.js`, linked by `idx.partners` |
 | **400+** | venue names that Scholar prints but the lists do not have, in 280+ curated entries: old and renamed venues, other spellings, the lists' own typos, and look-alike events that get no chip | `src/data/aliases.js` |
 | **2,500+** · **1,100+** | name forms and acronyms that the matcher looks up | the keys of its indexes |
@@ -424,7 +424,7 @@ What is checked, and how. This is not a claim of conformance to a WCAG level.
 
 - `node scripts/axe-audit.mjs` runs the default rules of axe-core 4.10 over the panel on the local Scholar stand-in, the settings page and the toolbar popup. It covers light and dark mode, a filtered list, every part on, the narrow-window layout, the settings page in the states that a person puts it in (a part hovered, a name being renamed, the tray open, a venue checked), and four languages (Arabic, Japanese, Thai and German). It exits with 1 on any violation. It runs in CI (Linux and Windows) and in `scripts/check-all.sh`.
 - A unit test keeps the faint text colours of the panel, the settings page and the popup, the last-author name on its tint, and Scholar's grey lines on the row tints at a contrast of 4.5:1 or more.
-- On the settings page, each role colour shows its contrast badge.
+- Each row's bar stands out from Scholar's white page at 3:1 or more, whatever the colour: a colour too light is drawn darker in the bar (`lib/palette.js` `bar`; a unit test and an end-to-end check).
 
 </details>
 

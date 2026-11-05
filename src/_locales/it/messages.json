@@ -639,7 +639,7 @@
     "message": "Colori"
   },
   "optColorsHint": {
-    "message": "Il colore di ogni ruolo d’autore: righe, segni sul nome, pannello e popup della barra degli strumenti."
+    "message": "Il colore di ogni ruolo d’autore: righe, segni sul nome, pannello e popup della barra degli strumenti. Un colore troppo chiaro per essere ben visibile sulla pagina bianca di Scholar viene disegnato nella barra della riga con una tonalità un po’ più scura."
   },
   "optColorsReset": {
     "message": "Torna ai colori standard"
@@ -662,9 +662,7 @@
   "optThemeSoft": {
     "message": "Tenue"
   },
-  "optContrastTip": {
-    "message": "Contrasto di questo colore con la pagina bianca di Scholar. 3:1 o più mantiene visibile la barra della riga."
-  },
+
   "markSpotlightHighlight": {
     "message": "Spotlight e highlight"
   },

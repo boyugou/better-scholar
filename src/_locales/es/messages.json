@@ -639,7 +639,7 @@
     "message": "Colores"
   },
   "optColorsHint": {
-    "message": "El color de cada posición de autoría: filas, marcas del nombre, el panel y la ventana de la barra de herramientas."
+    "message": "El color de cada posición de autoría: filas, marcas del nombre, el panel y la ventana de la barra de herramientas. Un color demasiado claro para verse bien en la página blanca de Scholar se dibuja en la barra de la fila con un tono algo más oscuro."
   },
   "optColorsReset": {
     "message": "Volver a los colores estándar"
@@ -662,9 +662,7 @@
   "optThemeSoft": {
     "message": "Suave"
   },
-  "optContrastTip": {
-    "message": "Contraste de este color con la página blanca de Scholar. Con 3:1 o más, la barra de la fila sigue visible."
-  },
+
   "markSpotlightHighlight": {
     "message": "Spotlight y highlight"
   },

@@ -639,7 +639,7 @@
     "message": "Barvy"
   },
   "optColorsHint": {
-    "message": "Barva každé autorské role: řádky, označení jména, panel a vyskakovací okno na panelu nástrojů."
+    "message": "Barva každé autorské role: řádky, označení jména, panel a vyskakovací okno na panelu nástrojů. Barva, která je na bílé stránce Scholaru příliš světlá na dobrou viditelnost, se v pruhu řádku vykresluje o něco tmavším odstínem."
   },
   "optColorsReset": {
     "message": "Zpět na standardní barvy"
@@ -662,9 +662,7 @@
   "optThemeSoft": {
     "message": "Jemný"
   },
-  "optContrastTip": {
-    "message": "Kontrast této barvy vůči bílé stránce Scholar. Hodnota 3:1 a více udrží pruh řádku viditelný."
-  },
+
   "markSpotlightHighlight": {
     "message": "Spotlight a highlight"
   },

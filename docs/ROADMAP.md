@@ -186,9 +186,6 @@ of HotStorage, and the year written with a hyphen or jammed onto a mixed-case wo
   another. The owner chose the edition check: 18 venues have their numbering in aliases.js (`edition`), which took the 183 to 132 and
   cost no right badge there. What is left: venues whose lines print no edition (CIDM, SIGGRAPH's other conferences) and venues not
   yet anchored — more anchors, each checked against the venue's own lines, as the measurement shows where they pay.
-- **Arabic letters on the settings page** look a size smaller than the Latin words beside them (the screenshot review of 2026-11-03;
-  its other faults are fixed and measured in the end-to-end checks). The page's sizes are in pixels, so a larger size for `:lang(ar)`
-  would have to be set rule by rule; not done.
 - **End-to-end pictures at other display scalings** (Chromium only — other engines are out of scope by the platform
   policy). The end-to-end run already takes `E2E_SCALE` for the website's pictures; nothing compares them yet.
 

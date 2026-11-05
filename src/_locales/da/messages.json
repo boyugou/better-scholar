@@ -639,7 +639,7 @@
     "message": "Farver"
   },
   "optColorsHint": {
-    "message": "Farven for hver forfatterrolle: rækker, navnemarkeringer, panelet og værktøjslinjens popup."
+    "message": "Farven for hver forfatterrolle: rækker, navnemarkeringer, panelet og værktøjslinjens popup. En farve, der er for lys til at blive tydeligt vist på Scholars hvide side, tegnes i rækkens bjælke med en lidt mørkere nuance."
   },
   "optColorsReset": {
     "message": "Tilbage til standardfarverne"
@@ -662,9 +662,7 @@
   "optThemeSoft": {
     "message": "Blød"
   },
-  "optContrastTip": {
-    "message": "Kontrasten mellem denne farve og Scholars hvide side. 3:1 eller mere holder rækkens søjle synlig."
-  },
+
   "markSpotlightHighlight": {
     "message": "Spotlight & highlight"
   },

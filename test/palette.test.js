@@ -126,3 +126,21 @@ test("the built-in colours in the stylesheet read too (4.5:1 on white, on the so
   assert.match(css, /\.rr-chips-full\s*\{[^}]*--look-core: 0%/);
   assert.doesNotMatch(css, /\.rr-chips-tier \.rr-chip/, "no rule that reads an ancestor's class: a sample on a button with its own look would leak");
 });
+
+test("a row's bar stands out from Scholar's white page at 3:1 in any colour: a colour too light is drawn darker there, only as much as it needs", () => {
+  const W = "#ffffff";
+  assert.equal(palette.bar("#f9ab00"), "#c38500", "the built-in amber of Second (1.9:1) is darkened for its bar");
+  assert.ok(palette.contrast(palette.bar("#f9ab00"), W) >= palette.GRAPHIC);
+  for (const ok of ["#1a73e8", "#a142f4", "#1e8e3e", "#ff0000", "#000000"]) assert.equal(palette.bar(ok), ok, ok + " already stands out: drawn as it is");
+  for (const pale of ["#fff59d", "#ffffff", "#e0f7fa", "#ffd54f", "#c8e6c9"]) {
+    const b = palette.bar(pale);
+    assert.ok(palette.contrast(b, W) >= palette.GRAPHIC, `${pale} → ${b}`);
+  }
+  // (only as dark as it needs: one step lighter would not stand out)
+  const one = palette.mix("#f9ab00", "#000000", Math.pow(0.94, 3));
+  assert.ok(palette.contrast(one, W) < palette.GRAPHIC, "three steps were not enough, four are");
+  // the stylesheet's own bar for Second is that shade, and every role's bar reads its --rr-b- shade before the colour
+  const css = fs.readFileSync(path.join(__dirname, "..", "src", "content", "styles.css"), "utf8");
+  assert.match(css, /tr\.rr-r-second\s+> td:first-child \{ box-shadow: inset 4px 0 0 var\(--rr-b-second, var\(--rr-c-second, #c38500\)\)/);
+  for (const role of ["first", "cofirst", "second", "last"]) assert.equal((css.match(new RegExp(`var\\(--rr-b-${role}, var\\(--rr-c-${role},`, "g")) || []).length, 2, role + ": left to right and right to left");
+});

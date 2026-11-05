@@ -97,7 +97,7 @@ body {
   margin: 0;
   background: var(--ground);
   color: var(--text);
-  font: 14px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font: 14px/1.55 system-ui, -apple-system, "Segoe UI", "Geeza Pro", "Noto Sans Arabic", Roboto, "Helvetica Neue", Arial, sans-serif;          /* (Arabic letters: the system face has none on macOS, and Arial's are a size smaller than the Latin beside them — "Scholar" in an Arabic line looked larger than its words; Geeza Pro's match) */
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -944,50 +944,6 @@ select.sel:focus-visible {
   font-weight: 700;
   color: var(--text);
   letter-spacing: 0.03em;
-}
-
-/* Contrast ratio badge */
-.contrast-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  padding: 3px 8px;
-  border-radius: 6px;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  user-select: none;
-}
-
-.contrast-badge.pass {
-  background: var(--success-bg);
-  color: #14532d;
-  border: 1px solid var(--success-border);
-}
-
-.contrast-badge.warn {
-  background: #fef3c7;
-  color: #78350f;
-  border: 1px solid #fde68a;
-}
-
-.contrast-badge.plain {
-  background: var(--chip-bg);
-  color: var(--muted);
-  border: 1px solid var(--chip-border);
-}
-
-@media (prefers-color-scheme: dark) {
-  .contrast-badge.pass {
-    background: rgba(74, 222, 128, 0.16);
-    color: #86efac;
-    border-color: rgba(74, 222, 128, 0.35);
-  }
-  .contrast-badge.warn {
-    background: rgba(245, 158, 11, 0.16);
-    color: #fcd34d;
-    border-color: rgba(245, 158, 11, 0.35);
-  }
 }
 
 .color-reset-btn {

@@ -10,14 +10,16 @@ tr.rr-r-first   > td { background: color-mix(in srgb, var(--rr-c-first, #1a73e8)
 tr.rr-r-cofirst > td { background: color-mix(in srgb, var(--rr-c-cofirst, #a142f4) 12%, transparent) !important; }
 tr.rr-r-second  > td { background: color-mix(in srgb, var(--rr-c-second, #f9ab00) 14%, transparent)  !important; }
 tr.rr-r-last    > td { background: color-mix(in srgb, var(--rr-c-last, #1e8e3e) 12%, transparent)  !important; }
-tr.rr-r-first   > td:first-child { box-shadow: inset 4px 0 0 var(--rr-c-first, #1a73e8) !important; }
-tr.rr-r-cofirst > td:first-child { box-shadow: inset 4px 0 0 var(--rr-c-cofirst, #a142f4) !important; }
-tr.rr-r-second  > td:first-child { box-shadow: inset 4px 0 0 var(--rr-c-second, #f9ab00) !important; }
-tr.rr-r-last    > td:first-child { box-shadow: inset 4px 0 0 var(--rr-c-last, #1e8e3e) !important; }
-html[dir="rtl"] tr.rr-r-first   > td:first-child { box-shadow: inset -4px 0 0 var(--rr-c-first, #1a73e8) !important; }
-html[dir="rtl"] tr.rr-r-cofirst > td:first-child { box-shadow: inset -4px 0 0 var(--rr-c-cofirst, #a142f4) !important; }
-html[dir="rtl"] tr.rr-r-second  > td:first-child { box-shadow: inset -4px 0 0 var(--rr-c-second, #f9ab00) !important; }
-html[dir="rtl"] tr.rr-r-last    > td:first-child { box-shadow: inset -4px 0 0 var(--rr-c-last, #1e8e3e) !important; }
+/* the bar: the role's colour, or a darker shade of it where the colour is too light to stand out from the white page at 3:1 (lib/palette.js bar; the built-in
+   amber of Second is drawn #c38500 there, 3.1:1) */
+tr.rr-r-first   > td:first-child { box-shadow: inset 4px 0 0 var(--rr-b-first, var(--rr-c-first, #1a73e8)) !important; }
+tr.rr-r-cofirst > td:first-child { box-shadow: inset 4px 0 0 var(--rr-b-cofirst, var(--rr-c-cofirst, #a142f4)) !important; }
+tr.rr-r-second  > td:first-child { box-shadow: inset 4px 0 0 var(--rr-b-second, var(--rr-c-second, #c38500)) !important; }
+tr.rr-r-last    > td:first-child { box-shadow: inset 4px 0 0 var(--rr-b-last, var(--rr-c-last, #1e8e3e)) !important; }
+html[dir="rtl"] tr.rr-r-first   > td:first-child { box-shadow: inset -4px 0 0 var(--rr-b-first, var(--rr-c-first, #1a73e8)) !important; }
+html[dir="rtl"] tr.rr-r-cofirst > td:first-child { box-shadow: inset -4px 0 0 var(--rr-b-cofirst, var(--rr-c-cofirst, #a142f4)) !important; }
+html[dir="rtl"] tr.rr-r-second  > td:first-child { box-shadow: inset -4px 0 0 var(--rr-b-second, var(--rr-c-second, #c38500)) !important; }
+html[dir="rtl"] tr.rr-r-last    > td:first-child { box-shadow: inset -4px 0 0 var(--rr-b-last, var(--rr-c-last, #1e8e3e)) !important; }
 tr.rr-hide { display: none !important; }
 @keyframes rr-row-glow {
   0% { outline-color: var(--rr-accent, #1a73e8); background-color: rgba(26, 115, 232, 0.14); }

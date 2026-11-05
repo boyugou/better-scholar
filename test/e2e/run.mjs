@@ -429,6 +429,20 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     await setPref(opts, "panel.venues.show", false);
     ok("venue list: off by default; on, it lists the ranked venues most papers first, and a click shows just that venue's papers");
 
+    // -- 6a2c'. the row's bar stands out from Scholar's white page (3:1, WCAG's rule for graphics) in each role's colour: one too light — the built-in amber of
+    // Second was 1.9:1 — is drawn darker in the bar (its tint keeps the colour)
+    const barRatios = (pg, scope) => pg.evaluate((sc) => {
+      const lum = (c) => { const [r, g, b] = c.map((v) => { const x = v / 255; return x <= 0.03928 ? x / 12.92 : Math.pow((x + 0.055) / 1.055, 2.4); }); return 0.2126 * r + 0.7152 * g + 0.0722 * b; };
+      const out = {};
+      for (const role of ["first", "cofirst", "second", "last"]) {
+        const td = document.querySelector(`${sc} tr.rr-r-${role} > td:first-child`), m = td && getComputedStyle(td).boxShadow.match(/rgb\((\d+), (\d+), (\d+)\)/);
+        if (m) out[role] = Math.round(1.05 / (lum([+m[1], +m[2], +m[3]]) + 0.05) * 10) / 10;
+      }
+      return out;
+    }, scope);
+    const profileBars = await barRatios(page, "#gsc_a_b");
+    assert.ok(Object.keys(profileBars).length >= 3 && Object.values(profileBars).every((r) => r >= 3), `every role's bar stands out from the white page at 3:1: ${JSON.stringify(profileBars)}`);
+
     // -- 6a2d. forced colours (Windows high contrast): the row bar becomes a real border, so a role is still seen
     await page.bringToFront();
     await page.emulateMedia({ forcedColors: "active" });
@@ -447,6 +461,11 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     await opts.bringToFront();
     await opts.locator('input[data-pref="colors.first"]').evaluate((el) => { el.value = "#ff0000"; el.dispatchEvent(new Event("input", { bubbles: true })); el.dispatchEvent(new Event("change", { bubbles: true })); });
     await eventually(page, () => /255, 0, 0/.test(getComputedStyle(document.querySelector("tr.rr-r-first > td:first-child")).boxShadow));
+    // (a colour too light for the bar — a pale yellow, 1.2:1 — is drawn darker there, on the profile and in the preview, and the row's tint keeps it)
+    await opts.locator('input[data-pref="colors.first"]').evaluate((el) => { el.value = "#fff59d"; el.dispatchEvent(new Event("input", { bubbles: true })); el.dispatchEvent(new Event("change", { bubbles: true })); });
+    await eventually(page, () => !/255, 0, 0/.test(getComputedStyle(document.querySelector("tr.rr-r-first > td:first-child")).boxShadow));
+    const lightBars = [(await barRatios(page, "#gsc_a_b")).first, (await barRatios(opts, "#preview")).first];
+    assert.ok(lightBars.every((r) => r >= 3), `a pale colour's bar is drawn dark enough to stand out (3:1), on the profile and in the preview: ${lightBars}`);
     await opts.click('[data-act="colors-reset"]');
     await eventually(page, () => /26, 115, 232/.test(getComputedStyle(document.querySelector("tr.rr-r-first > td:first-child")).boxShadow));
     assert.equal(await rowColor(), before);
@@ -493,6 +512,16 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
       rg.setStart(node, node.data.indexOf("*")); rg.setEnd(node, node.data.indexOf("*") + 1); const star = rg.getBoundingClientRect().left; rg.setStart(node, 0); rg.setEnd(node, 1);
       return [rails, i > 0 && star > rg.getBoundingClientRect().left];
     }), [0, true], "right to left: an ordered row has one rail, and CORE A* keeps its star at the end");
+    // (the face that draws the Arabic letters: on macOS the system face has none, and the fall-back Arial draws them a size smaller than the Latin words beside them)
+    if (process.platform === "darwin") {
+      const cdp = await opts.context().newCDPSession(opts);
+      await cdp.send("DOM.enable"); await cdp.send("CSS.enable");
+      const { root } = await cdp.send("DOM.getDocument", { depth: -1 });
+      const { nodeId } = await cdp.send("DOM.querySelector", { nodeId: root.nodeId, selector: "#card-language h2 .card-title-text" });
+      const faces = (await cdp.send("CSS.getPlatformFontsForNode", { nodeId })).fonts.map((f) => f.familyName);
+      await cdp.detach();
+      assert.ok(faces.length && !faces.includes("Arial"), `the settings page's Arabic is not drawn in Arial's small Arabic: ${faces}`);
+    }
     await page.bringToFront(); await page.waitForTimeout(400);
     await page.locator("#rr-panel").screenshot({ path: path.join(outDir, "panel-ar.png") });
     // (a built-in text with a character that a name drops — the soft hyphen of Finnish "Yhteis­ensimmäinen" — opened on the preview and left as it was saves no name)

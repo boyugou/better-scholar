@@ -639,7 +639,7 @@
     "message": "Kolory"
   },
   "optColorsHint": {
-    "message": "Kolor każdej roli autora: wiersze, zaznaczenia nazwiska, panel i okienko na pasku narzędzi."
+    "message": "Kolor każdej roli autora: wiersze, zaznaczenia nazwiska, panel i okienko na pasku narzędzi. Kolor zbyt jasny, by był dobrze widoczny na białej stronie Scholara, rysuje się w pasku wiersza nieco ciemniejszym odcieniem."
   },
   "optColorsReset": {
     "message": "Przywróć standardowe kolory"
@@ -662,9 +662,7 @@
   "optThemeSoft": {
     "message": "Łagodny"
   },
-  "optContrastTip": {
-    "message": "Kontrast tego koloru z białą stroną Scholar. Wartość 3:1 lub więcej sprawia, że pasek wiersza jest widoczny."
-  },
+
   "markSpotlightHighlight": {
     "message": "Spotlight i highlight"
   },

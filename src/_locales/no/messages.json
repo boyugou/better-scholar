@@ -639,7 +639,7 @@
     "message": "Farger"
   },
   "optColorsHint": {
-    "message": "Fargen for hver forfatterrolle: rader, navnemarkeringer, panelet og verktøylinjens popup."
+    "message": "Fargen for hver forfatterrolle: rader, navnemarkeringer, panelet og verktøylinjens popup. En farge som er for lys til å vises godt på Scholars hvite side, tegnes i stolpen på raden med en litt mørkere nyanse."
   },
   "optColorsReset": {
     "message": "Tilbake til standardfargene"
@@ -662,9 +662,7 @@
   "optThemeSoft": {
     "message": "Myk"
   },
-  "optContrastTip": {
-    "message": "Kontrasten mellom denne fargen og den hvite Scholar-siden. 3:1 eller mer gjør at radens stolpe er synlig."
-  },
+
   "markSpotlightHighlight": {
     "message": "Spotlight og highlight"
   },

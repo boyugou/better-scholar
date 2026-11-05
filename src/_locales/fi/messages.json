@@ -639,7 +639,7 @@
     "message": "Värit"
   },
   "optColorsHint": {
-    "message": "Jokaisen kirjoittajaroolin väri: rivit, nimimerkinnät, paneeli ja työkalupalkin ponnahdusikkuna."
+    "message": "Jokaisen kirjoittajaroolin väri: rivit, nimimerkinnät, paneeli ja työkalupalkin ponnahdusikkuna. Väri, joka on liian vaalea näkyäkseen selvästi Scholarin valkoisella sivulla, piirretään rivin palkissa hieman tummempana sävynä."
   },
   "optColorsReset": {
     "message": "Palauta oletusvärit"
@@ -662,9 +662,7 @@
   "optThemeSoft": {
     "message": "Pehmeä"
   },
-  "optContrastTip": {
-    "message": "Tämän värin kontrasti Scholarin valkoista sivua vasten. Vähintään 3:1 pitää rivin palkin näkyvissä."
-  },
+
   "markSpotlightHighlight": {
     "message": "Spotlight ja highlight"
   },
