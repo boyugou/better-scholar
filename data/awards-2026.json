@@ -137,8 +137,12 @@
     "Richard E Korf"
    ],
    "track": "main",
+   "paperYear": 1987,
    "source": "https://aaai.org/about-aaai/aaai-awards/aaai-classic-paper-award/",
-   "evidence": "AAAI 2006 Classic Paper Honorable Mention: Richard E Korf “Real-Time Heuristic Search: First Results”"
+   "alsoAt": [
+    "https://aaai.org/conference/aaai/aaai87/"
+   ],
+   "evidence": "AAAI 2006 Classic Paper Honorable Mention: Richard E Korf “Real-Time Heuristic Search: First Results” … Real-Time Heuristic Search: First Results, presented at the Sixth National Conference on Artificial Intelligence (AAAI-87), Seattle, Washington … The Sixth National Conference on Artificial Intelligence (AAAI-87) was held July 13–17, 1987, in Seattle, Washington."
   },
   {
    "venue": "AAAI",
@@ -151,8 +155,12 @@
     "Thomas Verma"
    ],
    "track": "main",
+   "paperYear": 1987,
    "source": "https://aaai.org/about-aaai/aaai-awards/aaai-classic-paper-award/",
-   "evidence": "AAAI 2006 Classic Paper Honorable Mention: Judea Pearl and Thomas Verma “The Logic of Representing Dependencies by Directed Graphs”"
+   "alsoAt": [
+    "https://aaai.org/conference/aaai/aaai87/"
+   ],
+   "evidence": "AAAI 2006 Classic Paper Honorable Mention: Judea Pearl and Thomas Verma “The Logic of Representing Dependencies by Directed Graphs” … The Logic of Representing Dependencies by Directed Graphs, presented at the Sixth National Conference on Artificial Intelligence (AAAI-87), Seattle, Washington … The Sixth National Conference on Artificial Intelligence (AAAI-87) was held July 13–17, 1987, in Seattle, Washington."
   },
   {
    "venue": "AAAI",
@@ -193,8 +201,12 @@
     "Yung-Tai Byun"
    ],
    "track": "main",
+   "paperYear": 1988,
    "source": "https://aaai.org/about-aaai/aaai-awards/aaai-classic-paper-award/",
-   "evidence": "AAAI 2007 Classic Paper Honorable Mention: Benjamin J. Kuipers and Yung-Tai Byun “A Robust, Qualitative Method for Robot Spatial Learning”"
+   "alsoAt": [
+    "https://aaai.org/conference/aaai/aaai88/"
+   ],
+   "evidence": "AAAI 2007 Classic Paper Honorable Mention: Benjamin J. Kuipers and Yung-Tai Byun “A Robust, Qualitative Method for Robot Spatial Learning” … A Robust, Qualitative Method for Robot Spatial Learning presented at the Seventh National Conference on Artificial Intelligence (AAAI-88), St. Paul, Minnesota … The Seventh National Conference on Artificial Intelligence (AAAI-88) was held August 21–26, 1988, in Saint Paul, Minnesota."
   },
   {
    "venue": "AAAI",
@@ -224,8 +236,12 @@
     "Rodney A. Brooks"
    ],
    "track": "main",
+   "paperYear": 1990,
    "source": "https://aaai.org/about-aaai/aaai-awards/aaai-classic-paper-award/",
-   "evidence": "AAAI 2008 Classic Paper Honorable Mention: Pattie Maes and Rodney A. Brooks “Learning to Coordinate Behaviors”"
+   "alsoAt": [
+    "https://aaai.org/conference/aaai/aaai90/"
+   ],
+   "evidence": "AAAI 2008 Classic Paper Honorable Mention: Pattie Maes and Rodney A. Brooks “Learning to Coordinate Behaviors” … Learning to Coordinate Behaviors presented at the Eighth National Conference on Artificial Intelligence (AAAI-90), Boston, Massachusetts … The Eighth National Conference on Artificial Intelligence (AAAI-90) was held July 29–August 3, 1990, in Boston, Massachusetts."
   },
   {
    "venue": "AAAI",
@@ -364,8 +380,12 @@
     "Marie-Odile Cordier"
    ],
    "track": "main",
+   "paperYear": 1993,
    "source": "https://aaai.org/about-aaai/aaai-awards/aaai-classic-paper-award/",
-   "evidence": "2012 Honorable Mention Corecipients: Christian Bessiere and Marie-Odile Cordier Arc-Consistency and Arc-Consistency Again presented at the Eleventh National Conference on Artificial Intelligence (AAAI-93), Washington, DC, USA Citation: For contributions to the foundations of constraint programming, providing an influential optimal propagation algorithm."
+   "alsoAt": [
+    "https://aaai.org/conference/aaai/aaai93/"
+   ],
+   "evidence": "2012 Honorable Mention Corecipients: Christian Bessiere and Marie-Odile Cordier Arc-Consistency and Arc-Consistency Again presented at the Eleventh National Conference on Artificial Intelligence (AAAI-93), Washington, DC, USA Citation: For contributions to the foundations of constraint programming, providing an influential optimal propagation algorithm. … The Eleventh National Conference on Artificial Intelligence (AAAI-93) was held July 11–15, 1993, at the Washington Convention Center, Washington, D.C."
   },
   {
    "venue": "AAAI",
@@ -377,8 +397,12 @@
     "Ellen Riloff"
    ],
    "track": "main",
+   "paperYear": 1993,
    "source": "https://aaai.org/about-aaai/aaai-awards/aaai-classic-paper-award/",
-   "evidence": "2012 Honorable Mention Recipient: Ellen Riloff Automatically Constructing a Dictionary for Information Extraction Tasks presented at the Eleventh National Conference on Artificial Intelligence (AAAI-93), Washington, DC, USA Citation: For contributions to automated information extraction from text corpora leveraging natural language processing and structural analysis of news reports."
+   "alsoAt": [
+    "https://aaai.org/conference/aaai/aaai93/"
+   ],
+   "evidence": "2012 Honorable Mention Recipient: Ellen Riloff Automatically Constructing a Dictionary for Information Extraction Tasks presented at the Eleventh National Conference on Artificial Intelligence (AAAI-93), Washington, DC, USA Citation: For contributions to automated information extraction from text corpora leveraging natural language processing and structural analysis of news reports. … The Eleventh National Conference on Artificial Intelligence (AAAI-93) was held July 11–15, 1993, at the Washington Convention Center, Washington, D.C."
   },
   {
    "venue": "AAAI",
@@ -571,8 +595,12 @@
     "Timo Schmidt"
    ],
    "track": "main",
+   "paperYear": 1996,
    "source": "https://aaai.org/about-aaai/aaai-awards/aaai-classic-paper-award/",
-   "evidence": "2014 Honorable Mention Corecipients: Wolfram Burgard, Dieter Fox, Daniel Hennig, and Timo Schmidt Estimating the Absolute Position of a Mobile Robot Using Position Probability Grids presented at the Thirteenth National Conference on Artificial Intelligence (AAAI-96), Portland, Oregon, USA For significant contributions to solving the problem of self-localization of mobile robots."
+   "alsoAt": [
+    "https://aaai.org/conference/aaai/aaai96/"
+   ],
+   "evidence": "2014 Honorable Mention Corecipients: Wolfram Burgard, Dieter Fox, Daniel Hennig, and Timo Schmidt Estimating the Absolute Position of a Mobile Robot Using Position Probability Grids presented at the Thirteenth National Conference on Artificial Intelligence (AAAI-96), Portland, Oregon, USA For significant contributions to solving the problem of self-localization of mobile robots. … The Thirteenth National Conference on Artificial Intelligence (AAAI-96) was held August 4–8, 1996, at the convention center in Portland, Oregon."
   },
   {
    "venue": "AAAI",
@@ -629,8 +657,12 @@
     "Bart Selman"
    ],
    "track": "main",
+   "paperYear": 1996,
    "source": "https://aaai.org/about-aaai/aaai-awards/aaai-classic-paper-award/",
-   "evidence": "2014 Honorable Mention Corecipients: Henry Kautz and Bart Selman Pushing the Envelope: Planning, Propositional Logic, and Stochastic Search presented at the Thirteenth National Conference on Artificial Intelligence (AAAI-96), Portland, Oregon, USA For establishing satisfiability testing as a wide-ranging method for solving planning problems."
+   "alsoAt": [
+    "https://aaai.org/conference/aaai/aaai96/"
+   ],
+   "evidence": "2014 Honorable Mention Corecipients: Henry Kautz and Bart Selman Pushing the Envelope: Planning, Propositional Logic, and Stochastic Search presented at the Thirteenth National Conference on Artificial Intelligence (AAAI-96), Portland, Oregon, USA For establishing satisfiability testing as a wide-ranging method for solving planning problems. … The Thirteenth National Conference on Artificial Intelligence (AAAI-96) was held August 4–8, 1996, at the convention center in Portland, Oregon."
   },
   {
    "venue": "AAAI",
@@ -719,8 +751,12 @@
     "Robert C. Schrag"
    ],
    "track": "main",
+   "paperYear": 1997,
    "source": "https://aaai.org/about-aaai/aaai-awards/aaai-classic-paper-award/",
-   "evidence": "2015 Honorable Mention Corecipients: Roberto J. Bayardo Jr. and Robert C. Schrag Using CSP Look-Back Techniques to Solve Real-World SAT Instances presented at the Fourteenth National Conference on Artificial Intelligence (AAAI-97), Providence, Rhode Island, USA For significant contributions to enhance proof procedures for propositional satisfiability on large instances of real-world problems."
+   "alsoAt": [
+    "https://aaai.org/conference/aaai/aaai97/"
+   ],
+   "evidence": "2015 Honorable Mention Corecipients: Roberto J. Bayardo Jr. and Robert C. Schrag Using CSP Look-Back Techniques to Solve Real-World SAT Instances presented at the Fourteenth National Conference on Artificial Intelligence (AAAI-97), Providence, Rhode Island, USA For significant contributions to enhance proof procedures for propositional satisfiability on large instances of real-world problems. … The Fourteenth National Conference on Artificial Intelligence (AAAI-97) was held July 27–31, 1997, at the convention center in Providence, Rhode Island."
   },
   {
    "venue": "AAAI",
@@ -846,8 +882,12 @@
     "John Riedl"
    ],
    "track": "main",
+   "paperYear": 1999,
    "source": "https://aaai.org/about-aaai/aaai-awards/aaai-classic-paper-award/",
-   "evidence": "2017 Classic Paper Honorable Mention Recipients: Nathaniel Good, J. Ben Schafer, Joseph A. Konstan, Al Borchers, Badrul Sarwar, Jon Herlocker, and John Riedl Combining Collaborative Filtering with Personal Agents for Better Recommendations presented at the Sixteenth National Conference on Artificial Intelligence (AAAI-99), Orlando, Florida, USA For developing an effective way to combine collaborat"
+   "alsoAt": [
+    "https://aaai.org/conference/aaai/aaai99/"
+   ],
+   "evidence": "2017 Classic Paper Honorable Mention Recipients: Nathaniel Good, J. Ben Schafer, Joseph A. Konstan, Al Borchers, Badrul Sarwar, Jon Herlocker, and John Riedl Combining Collaborative Filtering with Personal Agents for Better Recommendations presented at the Sixteenth National Conference on Artificial Intelligence (AAAI-99), Orlando, Florida, USA For developing an effective way to combine collaborat … The Sixteenth National Conference on Artificial Intelligence (AAAI-99) was held July 18–22, 1999, at the conference center in Orlando, Florida."
   },
   {
    "venue": "AAAI",
@@ -860,8 +900,12 @@
     "Rosie Jones"
    ],
    "track": "main",
+   "paperYear": 1999,
    "source": "https://aaai.org/about-aaai/aaai-awards/aaai-classic-paper-award/",
-   "evidence": "2017 Classic Paper Honorable Mention Recipients: Ellen Riloff and Rosie Jones Learning Dictionaries for Information Extraction by Multi-Level Bootstrapping presented at the Sixteenth National Conference on Artificial Intelligence (AAAI-99), Orlando, Florida, USA For introducing a mutual bootstrapping technique for information extraction that simultaneously learns the semantic lexicon and the extra"
+   "alsoAt": [
+    "https://aaai.org/conference/aaai/aaai99/"
+   ],
+   "evidence": "2017 Classic Paper Honorable Mention Recipients: Ellen Riloff and Rosie Jones Learning Dictionaries for Information Extraction by Multi-Level Bootstrapping presented at the Sixteenth National Conference on Artificial Intelligence (AAAI-99), Orlando, Florida, USA For introducing a mutual bootstrapping technique for information extraction that simultaneously learns the semantic lexicon and the extra … The Sixteenth National Conference on Artificial Intelligence (AAAI-99) was held July 18–22, 1999, at the conference center in Orlando, Florida."
   },
   {
    "venue": "AAAI",
@@ -1546,6 +1590,7 @@
     "Carlo Strapparava"
    ],
    "track": "main",
+   "paperYear": 2006,
    "source": "https://aaai.org/about-aaai/aaai-awards/aaai-classic-paper-award/",
    "evidence": "2022 Classic Paper Honorable Mention Recipients: Rada Mihalcea, Courtney Corley, and Carlo Strapparava Corpus-Based and Knowledge-Based Measures of Text Semantic Similarity presented at the Twenty-First National Conference on Artificial Intelligence, held in 2006 in Boston, Massachusetts, USA For pioneering work on using word semantics to assess text similarity."
   },
@@ -6586,8 +6631,12 @@
     "Eric P. Xing"
    ],
    "track": "main",
+   "paperYear": 2016,
    "source": "https://virtual.aistats.org/Conferences/2026",
-   "evidence": "Test of Time Award, Honorable Mention: \"Deep Kernel Learning\" by Andrew Gordon Wilson, Zhiting Hu, Ruslan Salakhutdinov, and Eric P. Xing"
+   "alsoAt": [
+    "https://proceedings.mlr.press/v51/wilson16.html"
+   ],
+   "evidence": "Test of Time Award, Honorable Mention: \"Deep Kernel Learning\" by Andrew Gordon Wilson, Zhiting Hu, Ruslan Salakhutdinov, and Eric P. Xing … Deep Kernel Learning Andrew Gordon Wilson, Zhiting Hu, Ruslan Salakhutdinov, Eric P. Xing … PMLR 51:370-378, 2016."
   },
   {
    "venue": "AISTATS",
@@ -72725,8 +72774,9 @@
     "Froduald Kabanza"
    ],
    "track": "main",
+   "paperYear": 1995,
    "source": "https://www.icaps-conference.org/icaps-awards/",
-   "evidence": "ICAPS 2007 Influential Paper Honorable Mention: Fahiem Bacchus and Froduald Kabanza. Using Temporal Logic to Control Search in a Forward Chaining Planner"
+   "evidence": "ICAPS 2007 Influential Paper Honorable Mention: Fahiem Bacchus and Froduald Kabanza. Using Temporal Logic to Control Search in a Forward Chaining Planner … Fahiem Bacchus and Froduald Kabanza. Using Temporal Logic to Control Search in a Forward Chaining Planner. (ECP 1995)"
   },
   {
    "venue": "ICAPS",
@@ -72755,8 +72805,9 @@
     "Yannis Dimopoulos"
    ],
    "track": "main",
+   "paperYear": 1997,
    "source": "https://www.icaps-conference.org/icaps-awards/",
-   "evidence": "ICAPS 2008 Influential Paper Honorable Mention: Jana Koehler, Bernhard Nebel, Jörg Hoffmann and Yannis Dimopoulos. Extending Planning Graphs to an ADL Subset"
+   "evidence": "ICAPS 2008 Influential Paper Honorable Mention: Jana Koehler, Bernhard Nebel, Jörg Hoffmann and Yannis Dimopoulos. Extending Planning Graphs to an ADL Subset … Jana Koehler, Bernhard Nebel, Jörg Hoffmann and Yannis Dimopoulos. Extending Planning Graphs to an ADL Subset. (ECP 1997)"
   },
   {
    "venue": "ICAPS",
@@ -72786,8 +72837,9 @@
     "Dana Nau"
    ],
    "track": "main",
+   "paperYear": 1994,
    "source": "https://www.icaps-conference.org/icaps-awards/",
-   "evidence": "ICAPS 2009 Influential Paper Honorable Mention: Kutluhan Erol, James Hendler and Dana Nau. UMCP: A Sound and Complete Procedure for Hierarchical Task-Network Planning"
+   "evidence": "ICAPS 2009 Influential Paper Honorable Mention: Kutluhan Erol, James Hendler and Dana Nau. UMCP: A Sound and Complete Procedure for Hierarchical Task-Network Planning … Kutluhan Erol, James Hendler and Dana Nau. UMCP: A Sound and Complete Procedure for Hierarchical Task-Network Planning. (AIPS 1994)"
   },
   {
    "venue": "ICAPS",
@@ -72827,8 +72879,9 @@
     "Rao Kambhampati"
    ],
    "track": "main",
+   "paperYear": 2000,
    "source": "https://www.icaps-conference.org/icaps-awards/",
-   "evidence": "ICAPS 2010 Influential Paper Honorable Mention: Minh Do and Rao Kambhampati. Solving Planning-Graph by Compiling It into CSP"
+   "evidence": "ICAPS 2010 Influential Paper Honorable Mention: Minh Do and Rao Kambhampati. Solving Planning-Graph by Compiling It into CSP … Minh Do and Rao Kambhampati. Solving Planning-Graph by Compiling It into CSP. (AIPS 2000)"
   },
   {
    "venue": "ICAPS",
@@ -72895,8 +72948,9 @@
     "David E. Smith"
    ],
    "track": "main",
+   "paperYear": 2004,
    "source": "https://www.icaps-conference.org/icaps-awards/",
-   "evidence": "ICAPS 2014 Influential Paper Honorable Mention: David E. Smith. Choosing Objectives in Over-Subscription Planning"
+   "evidence": "ICAPS 2014 Influential Paper Honorable Mention: David E. Smith. Choosing Objectives in Over-Subscription Planning … David E. Smith. Choosing Objectives in Over-Subscription Planning. (ICAPS 2004)"
   },
   {
    "venue": "ICAPS",
@@ -72925,8 +72979,9 @@
     "Kanna Rajan"
    ],
    "track": "main",
+   "paperYear": 2005,
    "source": "https://www.icaps-conference.org/icaps-awards/",
-   "evidence": "ICAPS 2016 Influential Paper Honorable Mention: John L. Bresina, Ari K. Jonsson, Paul H. Morris, and Kanna Rajan. Activity Planning for the Mars Exploration Rovers"
+   "evidence": "ICAPS 2016 Influential Paper Honorable Mention: John L. Bresina, Ari K. Jonsson, Paul H. Morris, and Kanna Rajan. Activity Planning for the Mars Exploration Rovers … John L. Bresina, Ari K. Jonsson, Paul H. Morris, and Kanna Rajan. Activity Planning for the Mars Exploration Rovers. (ICAPS 2005)"
   },
   {
    "venue": "ICAPS",
@@ -72941,8 +72996,9 @@
     "Angelo Oddi"
    ],
    "track": "main",
+   "paperYear": 2004,
    "source": "https://www.icaps-conference.org/icaps-awards/",
-   "evidence": "ICAPS 2016 Influential Paper Honorable Mention: Nicola Policella, Stephen F. Smith, Amedeo Cesta, and Angelo Oddi. Generating Robust Schedules through Temporal Flexibility"
+   "evidence": "ICAPS 2016 Influential Paper Honorable Mention: Nicola Policella, Stephen F. Smith, Amedeo Cesta, and Angelo Oddi. Generating Robust Schedules through Temporal Flexibility … Nicola Policella, Stephen F. Smith, Amedeo Cesta, and Angelo Oddi. Generating Robust Schedules through Temporal Flexibility. (ICAPS 2004)"
   },
   {
    "venue": "ICAPS",
@@ -72969,8 +73025,9 @@
     "Piergiorgio Bertoli"
    ],
    "track": "main",
+   "paperYear": 2005,
    "source": "https://www.icaps-conference.org/icaps-awards/",
-   "evidence": "ICAPS 2017 Influential Paper Honorable Mention: Marco Pistore, Paolo Traverso, Piergiorgio Bertoli. Automated Composition of Web Services by Planning in Asynchronous Domains"
+   "evidence": "ICAPS 2017 Influential Paper Honorable Mention: Marco Pistore, Paolo Traverso, Piergiorgio Bertoli. Automated Composition of Web Services by Planning in Asynchronous Domains … Marco Pistore, Paolo Traverso, Piergiorgio Bertoli. Automated Composition of Web Services by Planning in Asynchronous Domains. (ICAPS 2005)"
   },
   {
    "venue": "ICAPS",
@@ -72983,8 +73040,9 @@
     "Joerg Hoffmann"
    ],
    "track": "main",
+   "paperYear": 2004,
    "source": "https://www.icaps-conference.org/icaps-awards/",
-   "evidence": "ICAPS 2017 Influential Paper Honorable Mention: Ronen Brafman and Joerg Hoffmann. Conformant Planning via Heuristic Forward Search: A New Approach"
+   "evidence": "ICAPS 2017 Influential Paper Honorable Mention: Ronen Brafman and Joerg Hoffmann. Conformant Planning via Heuristic Forward Search: A New Approach … Ronen Brafman and Joerg Hoffmann. Conformant Planning via Heuristic Forward Search: A New Approach. (ICAPS 2004)"
   },
   {
    "venue": "ICAPS",
@@ -73013,8 +73071,9 @@
     "Jussi Rintanen"
    ],
    "track": "main",
+   "paperYear": 2004,
    "source": "https://www.icaps-conference.org/icaps-awards/",
-   "evidence": "ICAPS 2018 Influential Paper Honorable Mention: Jussi Rintanen. Complexity of Planning with Partial Observability"
+   "evidence": "ICAPS 2018 Influential Paper Honorable Mention: Jussi Rintanen. Complexity of Planning with Partial Observability … Jussi Rintanen. Complexity of Planning with Partial Observability. (ICAPS 2004)"
   },
   {
    "venue": "ICAPS",
@@ -73028,8 +73087,9 @@
     "Daniel Weld"
    ],
    "track": "main",
+   "paperYear": 1994,
    "source": "https://www.icaps-conference.org/icaps-awards/",
-   "evidence": "ICAPS 2018 Influential Paper Honorable Mention: Denise Draper, Steve Hanks, Daniel Weld. Probabilistic planning with information gathering and contingent execution"
+   "evidence": "ICAPS 2018 Influential Paper Honorable Mention: Denise Draper, Steve Hanks, Daniel Weld. Probabilistic planning with information gathering and contingent execution … Denise Draper, Steve Hanks, Daniel Weld. Probabilistic planning with information gathering and contingent execution. (AIPS 1994)"
   },
   {
    "venue": "ICAPS",
@@ -73145,8 +73205,9 @@
     "Andrew Coles"
    ],
    "track": "main",
+   "paperYear": 2012,
    "source": "https://www.icaps-conference.org/icaps-awards/",
-   "evidence": "ICAPS 2022 Influential Paper Honorable Mention: J. Benton, Amanda Coles, Andrew Coles. Temporal Planning with Preferences and Time-Dependent Continuous Costs"
+   "evidence": "ICAPS 2022 Influential Paper Honorable Mention: J. Benton, Amanda Coles, Andrew Coles. Temporal Planning with Preferences and Time-Dependent Continuous Costs … J. Benton, Amanda Coles, Andrew Coles. Temporal Planning with Preferences and Time-Dependent Continuous Costs (ICAPS 2012)"
   },
   {
    "venue": "ICAPS",
@@ -73176,8 +73237,9 @@
     "Ivan Serina"
    ],
    "track": "main",
+   "paperYear": 2006,
    "source": "https://www.icaps-conference.org/icaps-awards/",
-   "evidence": "ICAPS 2023 Influential Paper Honorable Mention: Maria Fox, Alfonso Gerevini, Derek Long, Ivan Serina. Plan Stability: Replanning versus Plan Repair"
+   "evidence": "ICAPS 2023 Influential Paper Honorable Mention: Maria Fox, Alfonso Gerevini, Derek Long, Ivan Serina. Plan Stability: Replanning versus Plan Repair … Maria Fox, Alfonso Gerevini, Derek Long, Ivan Serina. Plan Stability: Replanning versus Plan Repair (ICAPS 2006)"
   },
   {
    "venue": "ICAPS",
@@ -80610,8 +80672,9 @@
     "Yoshua Bengio"
    ],
    "track": "main",
+   "paperYear": 2015,
    "source": "https://blog.iclr.cc/2025/04/14/announcing-the-test-of-time-award-winners-from-iclr-2015/",
-   "evidence": "Runner Up: Neural Machine Translation by Jointly Learning to Align and Translate — Dzmitry Bahdanau, Kyunghyun Cho, Yoshua Bengio"
+   "evidence": "Runner Up: Neural Machine Translation by Jointly Learning to Align and Translate — Dzmitry Bahdanau, Kyunghyun Cho, Yoshua Bengio … Runner Up Neural Machine Translation by Jointly Learning to Align and Translate Dzmitry Bahdanau, Kyunghyun Cho, Yoshua Bengio … The 2025 program chairs and general chair reviewed the papers published at ICLR 2015, and selected the two papers below"
   },
   {
    "venue": "ICLR",
@@ -80763,8 +80826,12 @@
     "Steve Hanneke"
    ],
    "track": "main",
+   "paperYear": 2007,
    "source": "https://icml.cc/Conferences/2017/Awards",
-   "evidence": "Test of Time Honorable Mention: A Bound on the Label Complexity of Agnostic Active Learning — Steve Hanneke"
+   "alsoAt": [
+    "https://icml.cc/Conferences/2007/sessions.html"
+   ],
+   "evidence": "Test of Time Honorable Mention: A Bound on the Label Complexity of Agnostic Active Learning — Steve Hanneke … ICML 2007 Sessions Listings"
   },
   {
    "venue": "ICML",
@@ -80825,8 +80892,12 @@
     "Nathan Srebro"
    ],
    "track": "main",
+   "paperYear": 2007,
    "source": "https://icml.cc/Conferences/2017/Awards",
-   "evidence": "Test of Time Honorable Mention: Pegasos: Primal estimated sub-gradient solver for SVM — Shai Shalev-Shwartz, Yoram Singer, Nathan Srebro"
+   "alsoAt": [
+    "https://icml.cc/Conferences/2007/sessions.html"
+   ],
+   "evidence": "Test of Time Honorable Mention: Pegasos: Primal estimated sub-gradient solver for SVM — Shai Shalev-Shwartz, Yoram Singer, Nathan Srebro … Pegasos: Primal Estimated sub-GrAdient SOlver for SVM … ICML 2007 Sessions Listings"
   },
   {
    "venue": "ICML",
@@ -81363,8 +81434,12 @@
     "Andrew Ng"
    ],
    "track": "main",
+   "paperYear": 2012,
    "source": "https://icml.cc/virtual/2022/awards_detail",
-   "evidence": "Building high-level features using large scale unsupervised learning — Test of Time Honorable Mention"
+   "alsoAt": [
+    "https://icml.cc/2012/papers.1.html"
+   ],
+   "evidence": "Building high-level features using large scale unsupervised learning — Test of Time Honorable Mention … Building high-level features using large scale unsupervised learning Quoc Le, Marc'Aurelio Ranzato, Rajat Monga, Matthieu Devin, Greg Corrado, Kai Chen, Jeff Dean, Andrew Ng … International Conference on Machine Learning — June 26–July 1, 2012 — Edinburgh, Scotland"
   },
   {
    "venue": "ICML",
@@ -81438,8 +81513,12 @@
     "Joris Mooij"
    ],
    "track": "main",
+   "paperYear": 2012,
    "source": "https://icml.cc/virtual/2022/awards_detail",
-   "evidence": "On causal and anticausal learning — Test of Time Honorable Mention"
+   "alsoAt": [
+    "https://icml.cc/2012/papers.1.html"
+   ],
+   "evidence": "On causal and anticausal learning — Test of Time Honorable Mention … On causal and anticausal learning Bernhard Schoelkopf, Dominik Janzing, Jonas Peters, Eleni Sgouritsa, Kun Zhang, Joris Mooij … International Conference on Machine Learning — June 26–July 1, 2012 — Edinburgh, Scotland"
   },
   {
    "venue": "ICML",
@@ -81962,8 +82041,12 @@
     "Philipp Moritz"
    ],
    "track": "main",
+   "paperYear": 2015,
    "source": "https://icml.cc/virtual/2025/awards_detail",
-   "evidence": "Trust Region Policy Optimization — Test of Time Honorable Mention"
+   "alsoAt": [
+    "https://proceedings.mlr.press/v37/schulman15.html"
+   ],
+   "evidence": "Trust Region Policy Optimization — Test of Time Honorable Mention … Trust Region Policy Optimization John Schulman, Sergey Levine, Pieter Abbeel, Michael Jordan, Philipp Moritz … PMLR 37:1889-1897, 2015."
   },
   {
    "venue": "ICML",
@@ -81976,8 +82059,12 @@
     "Shakir Mohamed"
    ],
    "track": "main",
+   "paperYear": 2015,
    "source": "https://icml.cc/virtual/2025/awards_detail",
-   "evidence": "Variational Inference with Normalizing Flows — Test of Time Honorable Mention"
+   "alsoAt": [
+    "https://proceedings.mlr.press/v37/rezende15.html"
+   ],
+   "evidence": "Variational Inference with Normalizing Flows — Test of Time Honorable Mention … Variational Inference with Normalizing Flows Danilo Rezende, Shakir Mohamed … PMLR 37:1530-1538, 2015."
   },
   {
    "venue": "ICML",
@@ -88562,8 +88649,12 @@
     "David W. McDonald"
    ],
    "track": "main",
+   "paperYear": 2008,
    "source": "https://www.icwsm.org/awards/",
-   "evidence": "ICWSM 2018 Test of Time Award Runner Up: Wikipedian Self-Governance in Action: Motivating the Policy Lens — Ivan Beschastnikh, Travis Kriplean, DavidW. McDonald"
+   "alsoAt": [
+    "https://www.icwsm.org/blog/2008/03/icwsm-2008-papers.html"
+   ],
+   "evidence": "ICWSM 2018 Test of Time Award Runner Up: Wikipedian Self-Governance in Action: Motivating the Policy Lens — Ivan Beschastnikh, Travis Kriplean, DavidW. McDonald … 2008 Wikipedian Self-Governance in Action: Motivating the Policy Lens Ivan Beschastnikh, Travis Kriplean, DavidW. McDonald … ICWSM 2008 - Papers Sunday, March 30, 2008"
   },
   {
    "venue": "ICWSM",
@@ -120964,8 +121055,9 @@
     "Bernd Girod"
    ],
    "track": "main",
+   "paperYear": 2008,
    "source": "https://www.sigmm.org/Awards/testoftime",
-   "evidence": "SIGMM 2020 Test of Time Honorable Mention: Gabriel Takacs, Vijay Chandrasekhar, Natasha Gelfand, Yingen Xiong, Wei-Chao Chen, Thanos Bismpigiannis, Radek Grzeszczuk, Kari Pulli, and Bernd Girod Outdoors augmented reality on mobile phone using loxel-based visual feature organization"
+   "evidence": "SIGMM 2020 Test of Time Honorable Mention: Gabriel Takacs, Vijay Chandrasekhar, Natasha Gelfand, Yingen Xiong, Wei-Chao Chen, Thanos Bismpigiannis, Radek Grzeszczuk, Kari Pulli, and Bernd Girod Outdoors augmented reality on mobile phone using loxel-based visual feature organization … In Proceedings of the 1st ACM International Conference on Multimedia Information Retrieval, MIR '08, page 427-434, New York, NY, USA, 2008."
   },
   {
    "venue": "SIGMM",
@@ -120993,8 +121085,9 @@
     "Constantine Dovrolis"
    ],
    "track": "main",
+   "paperYear": 2011,
    "source": "https://www.sigmm.org/Awards/testoftime",
-   "evidence": "SIGMM 2022 Test of Time Honorable Mention: Saamer Akhshabi, Ali Begen, and Constantine Dovrolis An experimental evaluation of rate-adaptation algorithms in adaptive streaming over http"
+   "evidence": "SIGMM 2022 Test of Time Honorable Mention: Saamer Akhshabi, Ali Begen, and Constantine Dovrolis An experimental evaluation of rate-adaptation algorithms in adaptive streaming over http … An experimental evaluation of rate-adaptation algorithms in adaptive streaming over http. In Proceedings of the 2nd Annual ACM Conference on Multimedia Systems, MMSys, page 157-168, 2011"
   },
   {
    "venue": "SIGMM",
@@ -121016,8 +121109,9 @@
     "Alessandro Piva"
    ],
    "track": "main",
+   "paperYear": 2010,
    "source": "https://www.sigmm.org/Awards/testoftime",
-   "evidence": "SIGMM 2022 Test of Time Honorable Mention: Mauro Barni, Tiziano Bianchi, Dario Catalano, Mario Di Raimondo, Ruggero Donida Labati, Pierluigi Failla, Dario Fiore, Riccardo Lazzeretti, Vincenzo Piuri, Fabio Scotti, and Alessandro Piva Privacy-preserving fingercode authentication"
+   "evidence": "SIGMM 2022 Test of Time Honorable Mention: Mauro Barni, Tiziano Bianchi, Dario Catalano, Mario Di Raimondo, Ruggero Donida Labati, Pierluigi Failla, Dario Fiore, Riccardo Lazzeretti, Vincenzo Piuri, Fabio Scotti, and Alessandro Piva Privacy-preserving fingercode authentication … Privacy-preserving fingercode authentication. In Proceedings of the 12th ACM Workshop on Multimedia and Security, MM&Sec, page 231-240, 2010"
   },
   {
    "venue": "SIGMM",
@@ -121032,8 +121126,9 @@
     "Albrecht Schmidt"
    ],
    "track": "main",
+   "paperYear": 2010,
    "source": "https://www.sigmm.org/Awards/testoftime",
-   "evidence": "SIGMM 2022 Test of Time Honorable Mention: Jörg Müller, Florian Alt, Daniel Michelis, and Albrecht Schmidt Requirements and design space for interactive public displays"
+   "evidence": "SIGMM 2022 Test of Time Honorable Mention: Jörg Müller, Florian Alt, Daniel Michelis, and Albrecht Schmidt Requirements and design space for interactive public displays … Requirements and design space for interactive public displays. In Proceedings of the 18th ACM International Conference on Multimedia, page 1285-1294, 2010"
   },
   {
    "venue": "SIGMM",
@@ -121060,8 +121155,9 @@
     "Jessica Fridrich"
    ],
    "track": "main",
+   "paperYear": 2013,
    "source": "https://www.sigmm.org/Awards/testoftime",
-   "evidence": "SIGMM 2023 Test of Time Honorable Mention: Vojtech Holub and Jessica Fridrich Digital image steganography using universal distortion"
+   "evidence": "SIGMM 2023 Test of Time Honorable Mention: Vojtech Holub and Jessica Fridrich Digital image steganography using universal distortion … Digital image steganography using universal distortion. In Proceedings of the First ACM Workshop on Information Hiding and Multimedia Security, IH&MMSec ’13, page 59–68, New York, NY, USA, 2013"
   },
   {
    "venue": "SIGMM",
@@ -121075,8 +121171,9 @@
     "Christian Timmerer"
    ],
    "track": "main",
+   "paperYear": 2012,
    "source": "https://www.sigmm.org/Awards/testoftime",
-   "evidence": "SIGMM 2023 Test of Time Honorable Mention: Stefan Lederer, Christopher Mueller, and Christian Timmerer Dynamic adaptive streaming over http dataset"
+   "evidence": "SIGMM 2023 Test of Time Honorable Mention: Stefan Lederer, Christopher Mueller, and Christian Timmerer Dynamic adaptive streaming over http dataset … Dynamic adaptive streaming over http dataset. In Proceedings of the 3rd Multimedia Systems Conference, MMSys ’12, page 89–94, New York, NY, USA, 2012"
   },
   {
    "venue": "SIGMM",
@@ -121091,8 +121188,9 @@
     "Bjoern Schuller"
    ],
    "track": "main",
+   "paperYear": 2013,
    "source": "https://www.sigmm.org/Awards/testoftime",
-   "evidence": "SIGMM 2023 Test of Time Honorable Mention: Florian Eyben, Felix Weninger, Florian Gross, and Bjoern Schuller Recent developments in opensmile, the munich open-source multimedia feature extractor"
+   "evidence": "SIGMM 2023 Test of Time Honorable Mention: Florian Eyben, Felix Weninger, Florian Gross, and Bjoern Schuller Recent developments in opensmile, the munich open-source multimedia feature extractor … Recent developments in opensmile, the munich open-source multimedia feature extractor. In Proceedings of the 21st ACM International Conference on Multimedia, MM ’13, page 835–838, New York, NY, USA, 2013"
   },
   {
    "venue": "SIGMM",
@@ -121123,8 +121221,9 @@
     "Juan Pablo Bello"
    ],
    "track": "main",
+   "paperYear": 2014,
    "source": "https://www.sigmm.org/Awards/testoftime",
-   "evidence": "SIGMM 2024 Test of Time Honorable Mention: Justin Salamon, Christopher Jacoby, and Juan Pablo Bello. A dataset and taxonomy for urban sound research"
+   "evidence": "SIGMM 2024 Test of Time Honorable Mention: Justin Salamon, Christopher Jacoby, and Juan Pablo Bello. A dataset and taxonomy for urban sound research … A dataset and taxonomy for urban sound research. In Proceedings of the 22nd ACM International Conference on Multimedia, MM '14, page 1041-1044, New York, NY, USA, 2014"
   },
   {
    "venue": "SIGMM",
@@ -121143,8 +121242,9 @@
     "Tomas Pevny"
    ],
    "track": "main",
+   "paperYear": 2013,
    "source": "https://www.sigmm.org/Awards/testoftime",
-   "evidence": "SIGMM 2024 Test of Time Honorable Mention: Andrew D. Ker, Patrick Bas, Rainer Boehme, Remi Cogranne, Scott Craver, Tomas Filler, Jessica Fridrich, and Tomas Pevny Moving steganography and steganalysis from the laboratory into the real world"
+   "evidence": "SIGMM 2024 Test of Time Honorable Mention: Andrew D. Ker, Patrick Bas, Rainer Boehme, Remi Cogranne, Scott Craver, Tomas Filler, Jessica Fridrich, and Tomas Pevny Moving steganography and steganalysis from the laboratory into the real world … Moving steganography and steganalysis from the laboratory into the real world. In Proceedings of the First ACM Workshop on Information Hiding and Multimedia Security, MMSec ’13, page 45–58, New York, NY, USA, 2013"
   },
   {
    "venue": "SIGMM",
@@ -121159,8 +121259,9 @@
     "Constantine Dovrolis"
    ],
    "track": "main",
+   "paperYear": 2012,
    "source": "https://www.sigmm.org/Awards/testoftime",
-   "evidence": "SIGMM 2024 Test of Time Honorable Mention: Saamer Akhshabi, Lakshmi Anantakrishnan, Ali C. Begen, and Constantine Dovrolis. What happens when http adaptive streaming players compete for bandwidth?"
+   "evidence": "SIGMM 2024 Test of Time Honorable Mention: Saamer Akhshabi, Lakshmi Anantakrishnan, Ali C. Begen, and Constantine Dovrolis. What happens when http adaptive streaming players compete for bandwidth? … What happens when http adaptive streaming players compete for bandwidth? In Proceedings of the 22nd International Work- shop on Network and Operating System Support for Digital Audio and Video, NOSSDAV ’12, page 9–14, New York, NY, USA, 2012"
   },
   {
    "venue": "SIGMM",
@@ -121193,8 +121294,9 @@
     "Jessica Fridrich"
    ],
    "track": "main",
+   "paperYear": 2013,
    "source": "https://www.sigmm.org/Awards/testoftime",
-   "evidence": "SIGMM 2025 Test of Time Honorable Mention: Vojtech Holub and Jessica Fridrich. Digital image steganography using universal distortion"
+   "evidence": "SIGMM 2025 Test of Time Honorable Mention: Vojtech Holub and Jessica Fridrich. Digital image steganography using universal distortion … Digital image steganography using universal distortion. In Proceedings of the First ACM Workshop on Information Hiding and Multimedia Security, IH&MMSec ’13, page 59–68, 3 New York, NY, USA, 2013"
   },
   {
    "venue": "SIGMM",
@@ -121209,8 +121311,9 @@
     "Kuan-Ta Chen"
    ],
    "track": "main",
+   "paperYear": 2013,
    "source": "https://www.sigmm.org/Awards/testoftime",
-   "evidence": "SIGMM 2025 Test of Time Honorable Mention: Chun-Ying Huang, Cheng-Hsin Hsu, Yu-Chun Chang, and Kuan-Ta Chen. Gaminganywhere: an open cloud gaming system"
+   "evidence": "SIGMM 2025 Test of Time Honorable Mention: Chun-Ying Huang, Cheng-Hsin Hsu, Yu-Chun Chang, and Kuan-Ta Chen. Gaminganywhere: an open cloud gaming system … Gaminganywhere: an open cloud gaming system. In Proceedings of the 4th ACM Multimedia Systems Conference, MMSys ’13, page 36–47, New York, NY, USA, 2013"
   },
   {
    "venue": "SIGMM",
@@ -130402,8 +130505,12 @@
     "Mirco Musolesi"
    ],
    "track": "main",
+   "paperYear": 2014,
    "source": "https://ubicomp.org/ubicomp-iswc-2024/awards/",
-   "evidence": "UbiComp 2024 10-Year Impact Award Runner-up: InterruptMe: designing intelligent prompting mechanisms for pervasive applications — Veljko Pejovic and Mirco Musolesi"
+   "alsoAt": [
+    "https://ubicomp.org/ubicomp2014/attending/program-papers.php"
+   ],
+   "evidence": "UbiComp 2024 10-Year Impact Award Runner-up: InterruptMe: designing intelligent prompting mechanisms for pervasive applications — Veljko Pejovic and Mirco Musolesi … InterruptMe: Designing Intelligent Prompting Mechanisms for Pervasive Applications … Ubicomp 2014 is colocated with"
   },
   {
    "venue": "UbiComp",
@@ -130442,8 +130549,12 @@
     "Sean A. Munson"
    ],
    "track": "main",
+   "paperYear": 2015,
    "source": "https://ubicomp.org/ubicomp-iswc-2025/awards/",
-   "evidence": "UbiComp 2025 10-Year Impact Award Runner-up: A Lived Informatics Model of Personal Informatics — Daniel A. Epstein, An Ping, James Fogarty, and Sean A. Munson (University of Washington)"
+   "alsoAt": [
+    "https://www.ubicomp.org/ubicomp2015/program/proceedings.html"
+   ],
+   "evidence": "UbiComp 2025 10-Year Impact Award Runner-up: A Lived Informatics Model of Personal Informatics — Daniel A. Epstein, An Ping, James Fogarty, and Sean A. Munson (University of Washington) … A lived informatics model of personal informatics Daniel A. Epstein , An Ping , James Fogarty , Sean A. Munson … UbiComp '15- Proceedings of the 2015 ACM International Joint Conference on Pervasive and Ubiquitous Computing"
   },
   {
    "venue": "UbiComp",
@@ -139810,8 +139921,12 @@
     "Tamas Jambor"
    ],
    "track": "main",
+   "paperYear": 2012,
    "source": "https://www.wsdm-conference.org/2024/wsdm-best-papers/",
-   "evidence": "Honorable Mentions (Test of Time Award) … Auralist: introducing serendipity into music recommendation Yuan Cao Zhang, Diarmuid Ó Séaghdha, Daniele Quercia, Tamas Jambor"
+   "alsoAt": [
+    "https://www.wsdm2012.org/program/detailed.html"
+   ],
+   "evidence": "Honorable Mentions (Test of Time Award) … Auralist: introducing serendipity into music recommendation Yuan Cao Zhang, Diarmuid Ó Séaghdha, Daniele Quercia, Tamas Jambor … Auralist: Introducing Serendipity into Music Recommendation Yuan Cao Zhang, Diarmuid Séaghdha, Daniele Quercia and Tamas Jambor … WSDM 2012 will be held from Feb. 8-12, 2012."
   },
   {
    "venue": "WSDM",
@@ -139880,8 +139995,12 @@
     "Ari Rappoport"
    ],
    "track": "main",
+   "paperYear": 2012,
    "source": "https://www.wsdm-conference.org/2024/wsdm-best-papers/",
-   "evidence": "Honorable Mentions (Test of Time Award) What’s in a hashtag?: content based prediction of the spread of ideas in microblogging communities Oren Tsur, Ari Rappoport"
+   "alsoAt": [
+    "https://www.wsdm2012.org/program/detailed.html"
+   ],
+   "evidence": "Honorable Mentions (Test of Time Award) What’s in a hashtag?: content based prediction of the spread of ideas in microblogging communities Oren Tsur, Ari Rappoport … What's in a Hashtag? Content based Prediction of the Spread of Ideas in Microblogging Communities Oren Tsur and Ari Rappoport … WSDM 2012 will be held from Feb. 8-12, 2012."
   },
   {
    "venue": "WSDM",

@@ -196,8 +196,12 @@ give the details and every review):
   classic-paper, influential-paper and ten-year awards (ICML, ICAPS, AAAI, SIGMM, WSDM, UbiComp …) were checked against the award's own
   year, so they could never mark the old paper. An award whose entry names the paper's own year (`paperYear`, as an official page prints
   it) is now matched to that year whatever its kind, and such a runner-up no longer cancels the paper's own "Best Paper" (it says
-  nothing of the paper's conference, as a test-of-time award does not). Three entries carried the year already (WSDM 2022 and 2023,
-  UbiComp 2026); the others stay unmatched until their year is read from an official page — no mark is better than a guessed year.
+  nothing of the paper's conference, as a test-of-time award does not). 53 of the 55 now carry the paper's year, each read from an
+  official page and quoted: the award page itself where it prints it (ICAPS, SIGMM, WSDM, UbiComp 2026, ICLR's "papers published at
+  ICLR 2015"), AAAI's own page of the edition the classic-paper page names ("AAAI-87 … was held July 13–17, 1987"), the conference's
+  own proceedings or program (ICML, PMLR, UbiComp 2014 and 2015, WSDM 2012, ICWSM 2008). Two stay unmatched — SIGSPATIAL 2020's
+  T-Drive and WSDM 2024's "Overlapping community detection at scale" — as no official page that answers prints their year: no mark is
+  better than a guessed year.
 - **The awards of 39 more conference years** (a sweep of 2026 editions, and earlier years the list lacked, each read from the conference's
   or society's own page): 200 papers — AISTATS, UAI and HRI 2026 (HRI's first test-of-time papers), CRYPTO, CCC, SAT and CP 2026, ECIR,
   CHIIR (its first test-of-time awards), UMAP 2025 and 2026 (and its James Chen student awards of 2009–2024), ICDT, SIGCSE and DASFAA 2026, WSDM 2022–2026, ICC 2026 and the two ICC 2022

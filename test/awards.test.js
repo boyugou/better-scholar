@@ -397,6 +397,17 @@ test("the bundled list: USENIX's own test-of-time winners (Security, NSDI, FAST)
   assert.deepEqual(find("Approximate frequency counts over data streams", "GS Manku, R Motwani"), ["VLDB 2012 tot"]);
 });
 
+test("the bundled list: a test-of-time honorable mention marks its paper's own year (each year read from an official page)", () => {
+  const idx = awards.createIndex(require("../src/data/awards.js").items);
+  const at = (title, authorsText, year) => idx.lookup({ title, authorsText, year }).map((m) => `${m.venue} ${m.year} ${m.kind}`).sort();
+  assert.deepEqual(at("Building high-level features using large scale unsupervised learning", "QV Le, MA Ranzato, R Monga, M Devin, K Chen, GS Corrado, J Dean, AY Ng", 2012), ["ICML 2022 runner-up"]);
+  assert.deepEqual(at("Building high-level features using large scale unsupervised learning", "QV Le, MA Ranzato, R Monga", 2022), [], "not a row of the award's year");
+  assert.deepEqual(at("Neural machine translation by jointly learning to align and translate", "D Bahdanau, K Cho, Y Bengio", 2014), ["ICLR 2025 runner-up"], "the arXiv year, one before ICLR 2015");
+  assert.deepEqual(at("Real-Time Heuristic Search: First Results", "RE Korf", 1987), ["AAAI 2006 runner-up"], "AAAI-87, as AAAI's own page dates it");
+  const data = JSON.parse(fs.readFileSync(path.join(ROOT, "data/awards-2026.json"), "utf8")).entries;
+  for (const e of data) if (e.paperYear) assert.ok(e.paperYear < e.year || (e.award === "tot" && e.paperYear <= e.year), `${e.venue} ${e.year} ${e.title}: paper year ${e.paperYear} after the award`);
+});
+
 test("provenance: every host an award was read from is on the reviewed list (test/fixtures/award-source-hosts.json) — a new source has to be added there by hand", () => {
   const reviewed = Object.keys(JSON.parse(fs.readFileSync(path.join(ROOT, "test/fixtures/award-source-hosts.json"), "utf8")).hosts).sort();
   const used = [...new Set(data.entries.map((e) => new URL(e.source).host))].sort();
