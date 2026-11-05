@@ -51,7 +51,7 @@ tfoot td, tfoot th { border-top: 1px solid var(--line); color: var(--muted); pad
 tfoot th { text-align: start; padding-inline-start: 15px; overflow-wrap: anywhere; }
 .dot { display: inline-block; width: 9px; height: 9px; border-radius: 2.5px; margin-inline-end: 6px; vertical-align: -1px; }
 .dot-hidden { border: 1.5px dashed #80868b; border-radius: 50%; box-sizing: border-box; }          /* (no colour: the role is not known — as in the panel) */
-.actions { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, max(var(--copy-w, 0px), calc(50% - 3px))), 1fr)); gap: 6px; margin-top: 12px; }
+.actions { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, max(var(--copy-w, 100%), calc(50% - 3px))), 1fr)); gap: 6px; margin-top: 12px; }
 .actions.measure { display: flex; flex-wrap: wrap; }
 .actions.measure button.btn { flex: none; width: max-content; white-space: nowrap; }
 button.btn, a.btn { font: inherit; font-weight: 600; padding: 5px 12px; border: 1px solid var(--btn-line); border-radius: 7px; background: var(--bg); color: var(--text); cursor: pointer; text-decoration: none; transition: background .15s, border-color .15s, box-shadow .15s; }

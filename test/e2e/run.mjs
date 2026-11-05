@@ -1211,7 +1211,8 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     ok("collapsed state is stored in chrome.storage and restored");
 
     await page.bringToFront();
-    await page.screenshot({ path: path.join(outDir, "wide.png") });
+    // (the pictures the README and the reviews use: the pointer away and a moment for what it hovered to settle — a fold arrow was caught mid-turn)
+    await page.mouse.move(0, 0); await page.waitForTimeout(250); await page.screenshot({ path: path.join(outDir, "wide.png") });
 
     // -- 14. narrow window: the panel moves above the list
     await page.setViewportSize({ width: 840, height: 900 });
@@ -2481,7 +2482,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     await opts.setViewportSize({ width: 1360, height: 1500 });
     for (let i = 0; i < 40 && (await opts.evaluate(() => document.querySelector(".preview").classList.contains("more"))); i++) await opts.waitForTimeout(100);
     await opts.waitForTimeout(300);
-    await opts.bringToFront(); await opts.screenshot({ path: path.join(outDir, "settings-top.png"), fullPage: true, clip: { x: 0, y: 0, width: 1360, height: 1180 } });
+    await opts.mouse.move(0, 0); await opts.waitForTimeout(250); await opts.bringToFront(); await opts.screenshot({ path: path.join(outDir, "settings-top.png"), fullPage: true, clip: { x: 0, y: 0, width: 1360, height: 1180 } });
     await opts.setViewportSize({ width: 1360, height: 900 });
     // the settings page's layout, measured (each one a fault that a review of the screenshots found)
     await opts.waitForTimeout(100);
@@ -3087,7 +3088,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     const text = await page.evaluate(() => navigator.clipboard.readText());
     assert.match(text, /Awards & talks: Awards 4, Oral 2, Spotlight 1 \(from the authors' own words or the award list\)/);
     ok("Copy summary includes the awards and talks line");
-    await page.screenshot({ path: path.join(outDir, "marks.png") });
+    await page.mouse.move(0, 0); await page.waitForTimeout(250); await page.screenshot({ path: path.join(outDir, "marks.png") });
     // each group has its own switch on the settings page; a finalist follows the awards
     const optsM = await openOptions(ctx3);
     await pill("award").click();
@@ -3289,7 +3290,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
             const ws = await page.evaluate(() => [...new Set([...document.querySelectorAll("#rr-panel .rr-copybar .rr-btn")].filter((b) => b.offsetParent).map((b) => Math.round(b.getBoundingClientRect().width)))]);
             if (ws.length > 1) bad.push(`${lang}: the copy buttons are not one width (${ws})`);
           }
-          if (mode === "sidebar" && ["ja", "de", "ru", "fi", "th"].includes(lang)) { await page.bringToFront(); await page.locator("#rr-panel").screenshot({ path: path.join(outDir, `lang-${lang}.png`) }); }
+          if (mode === "sidebar" && ["ja", "de", "ru", "fi", "th"].includes(lang)) { await page.mouse.move(0, 0); await page.waitForTimeout(250); await page.bringToFront(); await page.locator("#rr-panel").screenshot({ path: path.join(outDir, `lang-${lang}.png`) }); }
         }
       }
       // the settings page and the popup too: nothing makes the page wider than the window, in a narrow window as well
@@ -3867,7 +3868,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     const bar = page.locator('#rr-panel [data-rr="updated"]');
     await bar.waitFor({ timeout: 5000 });
     assert.match(await bar.textContent(), /updated while this page was open.*Reload this page/);
-    await page.locator("#rr-panel").screenshot({ path: path.join(outDir, "panel-updated.png") });
+    await page.mouse.move(0, 0); await page.waitForTimeout(250); await page.locator("#rr-panel").screenshot({ path: path.join(outDir, "panel-updated.png") });
     // and the panel, drawn again cut off, still has its words (Chrome's lookup answers nothing there: a spare copy of the strings, kept at the start, does)
     assert.doesNotMatch(await page.locator("#rr-panel").innerText(), /\b(?:extShortName|summaryTitle|roleFirst|copySummary|filterPlaceholder)\b/, "a key instead of its words");
     assert.match(await page.locator("#rr-panel").innerText(), /Papers by role and rank/);

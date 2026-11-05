@@ -304,7 +304,7 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
 #rr-panel .rr-actions{ display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap; }
 /* two equal columns while the widest label (--rr-copy-w, measured by panel.js) fits in half the row, else one: a label is never wrapped in its button, and
    there is never a row of one beside rows of two (Russian made 1 / 1 / 2 / 1 / 1 / 2) */
-#rr-panel .rr-copybar{ display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, max(var(--rr-copy-w, 0px), calc(50% - 3px))), 1fr)); gap: 6px; }
+#rr-panel .rr-copybar{ display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, max(var(--rr-copy-w, 100%), calc(50% - 3px))), 1fr)); gap: 6px; }          /* (not yet measured — a panel drawn before it is in the page: one column, never a wrapped label) */
 #rr-panel .rr-copybar.rr-measure{ display: flex; flex-wrap: wrap; }
 #rr-panel .rr-copybar.rr-measure .rr-btn{ flex: none; width: max-content; white-space: nowrap; }
 #rr-panel .rr-copy .rr-actions{ margin-top: 0; }
