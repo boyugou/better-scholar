@@ -75,6 +75,10 @@ give the details and every review):
   International ISC Conference on Information Security and Cryptology" is the Iranian ISCISC, not Inscrypt, whose name it is with "ISC"
   in it (two real rows of the corpus lose a wrong CCF C badge; nothing else of the 75,521 lines changes). For a shadow only: it can take a
   badge away, never give one.
+- **A reference's type from the lists, whether or not their ranks are shown**: with both lists switched off, "Advances in neural
+  information processing systems 36, 46595-46623, 2023" — a journal's shape, volume and pages — was typed by its words (no conference
+  paper); the kind the lists know now types it in every export and in the `papers` call, while the ranks stay out. (The search's
+  `type:` still follows the lists that are on, as `ccf:` and `core:` do.) From the ROADMAP's open ideas.
 - **Arabic on the settings page and in the popup** is drawn in Geeza Pro on macOS: the system face there has no Arabic, and the
   fall-back Arial's Arabic is a size smaller than the Latin beside it ("Scholar" in an Arabic line looked larger than its words).
 - **Your own venue mappings** (settings → *Check a venue* → *Assign it to a listed venue…*). A venue line that no rule ranks can now be

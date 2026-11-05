@@ -168,9 +168,6 @@ of HotStorage, and the year written with a hyphen or jammed onto a mixed-case wo
   reason: "and" in other languages as a separator ("y", "und", "et" — also words of names and titles), the reversed spelling
   ("Wei Zhang" printed "Zhang W") taken without the person's say, and lists in alphabetical order (economics, mathematics), where
   first and last say nothing of the work: a setting could say so, the page cannot tell.
-- **An export's type with the rank lists off**: with both lists switched off, "Advances in neural information processing systems 25,
-  1097-1105" is typed by its words alone (a journal's shape: volume, pages) — as Scholar's own BibTeX does. The kind of venue the lists
-  know could be used whether or not their chips are shown.
 - **User-defined weighting of ranks**, a score per role and rank. The panel shows CCF's own statement that its list
   is not a basis for academic evaluation; a score would have to keep saying so.
 - **An MCP server** for AI assistants outside the browser. An extension reaches a program outside the browser only

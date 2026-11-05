@@ -420,7 +420,9 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
         venue: (/…|\.\.\./.test(r.raw.venueText || "") && resolved && resolved.venue) || r.raw.venueText || (resolved && resolved.venue) || "",
         ...(resolved && resolved.pages ? { pages: resolved.pages } : {}),          // (the paper page's own page range, when "Read full lists" read one)
         year: a.year, citations: r.shown, role: a.role, status: a.status, highlighted: r.highlighted,
-        type: KIND[(shown.ccf && v.ccf && v.ccf.kind) || (shown.core && v.core && v.core.kind)] || null,          // (a list that is switched off does not tell the kind, as in the search)
+        // (the kind of venue the lists know types the reference whether or not their ranks are shown — "Advances in neural information processing systems 36, 46595-46623"
+        // has a journal's shape and is a conference's proceedings; the search's type: follows the lists that are on, as its ccf: and core: do)
+        type: KIND[(v.ccf && v.ccf.kind) || (v.core && v.core.kind)] || null,
         rank: { ccf: shown.ccf && v.ccf ? { tier: v.ccf.tier, name: v.ccf.name, ...(v.ccf.rule === "mine" ? { mine: true } : {}) } : null,
           core: shown.core && v.core ? { rank: v.core.rank, name: v.core.name, ...(v.core.rule === "mine" ? { mine: true } : {}) } : null },          // (mine: the person's own mapping, not the list's)
         marks: markLabels(a),

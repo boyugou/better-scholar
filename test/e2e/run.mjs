@@ -1050,6 +1050,21 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
       document.dispatchEvent(new CustomEvent("better-scholar:request", { detail: { id, method: "papers", params: { filtered: false } } }));
     }));
     assert.ok(readRecords.result.papers.some((x) => /^\d+-\d+$/.test(x.pages || "")), "a paper read from its page has its page range");
+    // the kind of venue the lists know types a paper's reference whether or not their ranks are shown: with both lists switched off, "Advances in neural information
+    // processing systems 36, 46595-46623, 2023" — a journal's shape, volume and pages — is still a conference paper (it was typed by its words: a journal, or nothing)
+    const neurips = (rs) => rs.filter((x) => /^Advances in neural information processing systems \d+, \d+-\d+/i.test(x.venue)).map((x) => [x.type, !!(x.rank.ccf || x.rank.core)]);
+    assert.ok(neurips(readRecords.result.papers).length && neurips(readRecords.result.papers).every(([type, ranked]) => type === "conference" && ranked), "NeurIPS lines: conference papers, ranked");
+    await opts.evaluate(async () => { const r = await chrome.storage.sync.get("prefs"); const pr = r.prefs; pr.rows.ccf = false; pr.rows.core = false; pr.panel.table.ccf = false; pr.panel.table.core = false; await chrome.storage.sync.set({ prefs: pr }); });
+    await eventually(page, () => !document.querySelector('#gsc_a_b .rr-chip[data-kind="ccf"], #gsc_a_b .rr-chip[data-kind="core"]'));
+    const unranked = await page.evaluate(() => new Promise((resolve) => {
+      const id = "c" + Math.random();
+      const on = (e) => { if (e.detail.id === id) { document.removeEventListener("better-scholar:response", on); resolve(e.detail.result.papers); } };
+      document.addEventListener("better-scholar:response", on);
+      document.dispatchEvent(new CustomEvent("better-scholar:request", { detail: { id, method: "papers", params: { filtered: false } } }));
+    }));
+    assert.ok(neurips(unranked).length && neurips(unranked).every(([type, ranked]) => type === "conference" && !ranked), `with the lists switched off, the NeurIPS lines are conference papers still, and carry no rank: ${JSON.stringify(neurips(unranked))}`);
+    await opts.evaluate(async () => { const r = await chrome.storage.sync.get("prefs"); const pr = r.prefs; pr.rows.ccf = true; pr.rows.core = true; pr.panel.table.ccf = true; pr.panel.table.core = true; await chrome.storage.sync.set({ prefs: pr }); });
+    await eventually(page, () => !!document.querySelector('#gsc_a_b .rr-chip[data-kind="ccf"]'));
 
     // -- 11b. Semantic Scholar: with the setting on, cut-off author lists come from its API (title only), and Scholar's own pages are not read
     {
