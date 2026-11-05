@@ -189,6 +189,11 @@ give the details and every review):
   Encryption: 23rd International Conference, FSE 2016" is the cryptography FSE (B), not Foundations of Software Engineering (A): venues
   that share an acronym are told apart by the series title. (4) MDPI's journals *AI* and *IoT* are not Artificial Intelligence (A) and
   IEEE IoT-J, nor is the Korean WISA (information security) the Web Information Systems WISA.
+- **The best papers of EuroSys, HPCA and FOCS (90) and of the IACR conferences (67)**, from their own pages: EuroSys 2011 and 2018–2026,
+  HPCA 2005–2024 (the IEEE TCCA's award page, which answers again, and the conference programs), FOCS 2013–2024 (the conference archive's
+  award pages and proceedings front matter; FOCS's Machtey award as best student paper); CRYPTO, EUROCRYPT, ASIACRYPT, CHES, PKC and TCC
+  2015–2026 from their program pages (best paper, best young researcher paper as a named category, honourable mentions). A year whose
+  program puts several award papers in one session without saying which award each got is left out. The list holds 8,986 awards.
 - **The best papers of AAMAS, ICAPS and ICDE** (115), from each year's own site: AAMAS 2010–2026 (IFAAMAS's copies of the
   conference sites; AAMAS 2025 from its proceedings' awards page), ICAPS 2007–2026 (but 2023, whose winners are named only behind a bot
   challenge), ICDE 2010 and 2022–2026 (the other years' sites are gone or parked). The list held only their influential-paper awards.

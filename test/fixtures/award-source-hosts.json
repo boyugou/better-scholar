@@ -292,6 +292,23 @@
   "ieee-icde.org": "the ICDE conference's own site (2025)",
   "www.aamas2024-conference.auckland.ac.nz": "AAMAS 2024's own site (linked from ifaamas.org)",
   "www.icde2010.org": "ICDE 2010's own site (checked: the real site, not a parked domain)",
-  "www.ifaamas.org": "IFAAMAS, the AAMAS conference's own foundation (its mirror of each year's site)"
+  "www.ifaamas.org": "IFAAMAS, the AAMAS conference's own foundation (its mirror of each year's site)",
+  "2018.eurosys.org": "EuroSys 2018's own site (its awards page)",
+  "2019.eurosys.org": "EuroSys 2019's own site (its awards page)",
+  "2020.eurosys.org": "EuroSys 2020's own site (its awards page)",
+  "2021.eurosys.org": "EuroSys 2021's own site (its awards page)",
+  "2022.eurosys.org": "EuroSys 2022's own site (its awards page)",
+  "2023.eurosys.org": "EuroSys 2023's own site (its awards page)",
+  "2024.eurosys.org": "EuroSys 2024's own site (its awards page)",
+  "2025.eurosys.org": "EuroSys 2025's own site (its awards page)",
+  "2026.eurosys.org": "EuroSys 2026's own site (its awards page)",
+  "asiacrypt.iacr.org": "the IACR's own ASIACRYPT sites",
+  "eurocrypt.iacr.org": "the IACR's own EUROCRYPT sites",
+  "eurosys2011.cs.uni-salzburg.at": "EuroSys 2011's own site",
+  "hpca-conf.org": "the HPCA series' own site (its program pages)",
+  "ieee-focs.org": "the FOCS conference archive (linked from the IEEE TCMF pages): the conference pages and the proceedings' front matter",
+  "pkc.iacr.org": "the IACR's own PKC sites",
+  "tcc.iacr.org": "the IACR's own TCC sites",
+  "www.blog.ieeetcca.org": "the IEEE TCCA's own blog (linked as Blog from ieeetcca.org)"
  }
 }

@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 8829
+  "count": 8986
  },
  "entries": [
   {
@@ -8518,6 +8518,85 @@
   },
   {
    "venue": "ASIACRYPT",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Improved security proofs in lattice-based cryptography using the Renyi divergence rather than the statistical distance",
+   "authors": [
+    "Shi Bai",
+    "Adeline Langlois",
+    "Tancrède Lepoint",
+    "Damien Stehlé",
+    "Ron Steinfeld"
+   ],
+   "track": "main",
+   "source": "https://www.iacr.org/conferences/asiacrypt2015/index.html",
+   "alsoAt": [
+    "https://www.iacr.org/conferences/asiacrypt2015/acc.html"
+   ],
+   "evidence": "Ron Steinfeld presenting the best paper \"Improved security proofs in lattice-based cryptography using the Renyi divergence rather than the statistical distance\"."
+  },
+  {
+   "venue": "ASIACRYPT",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Faster Fully Homomorphic Encryption: Bootstrapping in less than 0.1 Seconds",
+   "authors": [
+    "Ilaria Chillotti",
+    "Nicolas Gama",
+    "Mariya Georgieva",
+    "Malika Izabachène"
+   ],
+   "track": "main",
+   "source": "https://www.iacr.org/conferences/asiacrypt2016/www.asiacrypt2016.org/indexc583.html?page_id=28",
+   "evidence": "Best Paper Faster Fully Homomorphic Encryption: Bootstrapping in less than 0.1 Seconds; Ilaria Chillotti; Nicolas Gama; Mariya Georgieva; Malika Izabachène"
+  },
+  {
+   "venue": "ASIACRYPT",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Identification Protocols and Signature Schemes Based on Supersingular Isogeny Problems",
+   "authors": [
+    "Steven D. Galbraith",
+    "Christophe Petit",
+    "Javier Silva"
+   ],
+   "track": "main",
+   "source": "https://asiacrypt.iacr.org/2017/program.html",
+   "evidence": "Best Paper Christian Cachin Identification Protocols and Signature Schemes Based on Supersingular Isogeny Problems Steven D. Galbraith Christophe Petit Javier Silva"
+  },
+  {
+   "venue": "ASIACRYPT",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Block Cipher Invariants as Eigenvectors of Correlation Matrices",
+   "authors": [
+    "Tim Beyne"
+   ],
+   "track": "main",
+   "source": "https://asiacrypt.iacr.org/2018/program.html",
+   "evidence": "Best Paper Award Z Block Room 411 (Z411) Thomas Peyrin Block Cipher Invariants as Eigenvectors of Correlation Matrices Tim Beyne"
+  },
+  {
+   "venue": "ASIACRYPT",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Wave: A New Family of Trapdoor One-Way Preimage Sampleable Functions Based on Codes",
+   "authors": [
+    "Thomas Debris-Alazard",
+    "Nicolas Sendrier",
+    "Jean-Pierre Tillich"
+   ],
+   "track": "main",
+   "source": "https://asiacrypt.iacr.org/2019/program.html",
+   "evidence": "Best Paper KAIRAKU 1&2 Steven Galbraith Wave: A New Family of Trapdoor One-Way Preimage Sampleable Functions Based on Codes Thomas Debris-Alazard Nicolas Sendrier Jean-Pierre Tillich"
+  },
+  {
+   "venue": "ASIACRYPT",
    "year": 2019,
    "award": "tot",
    "awardLabel": "Test of Time Award",
@@ -8621,6 +8700,64 @@
    "paperYear": 2009,
    "source": "https://iacr.org/testoftime/",
    "evidence": "ASIACRYPT 2024 Test of Time Award: Vadim Lyubashevsky “Fiat-Shamir with aborts:Applications to lattice and factoring-based signatures”"
+  },
+  {
+   "venue": "ASIACRYPT",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Theory Paper",
+   "title": "Integral cryptanalysis in characteristic $p$",
+   "authors": [
+    "Tim Beyne",
+    "Michiel Verbauwhede"
+   ],
+   "track": "main",
+   "source": "https://asiacrypt.iacr.org/2025/program.php",
+   "evidence": "Integral cryptanalysis in characteristic $p$ (Best Theory + Early Career) Tim Beyne Michiel Verbauwhede"
+  },
+  {
+   "venue": "ASIACRYPT",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Practice Paper",
+   "title": "Practical cryptanalysis of pseudorandom correlation generators based on quasi-Abelian syndrome decoding",
+   "authors": [
+    "Charles Bouillaguet",
+    "Claire Delaplace",
+    "Mickaël Hamdad",
+    "Damien Vergnaud"
+   ],
+   "track": "main",
+   "source": "https://asiacrypt.iacr.org/2025/program.php",
+   "evidence": "Practical cryptanalysis of pseudorandom correlation generators based on quasi-Abelian syndrome decoding (Best Practice) Charles Bouillaguet Claire Delaplace Mickaël Hamdad Damien Vergnaud"
+  },
+  {
+   "venue": "ASIACRYPT",
+   "year": 2025,
+   "award": "category",
+   "awardLabel": "Best Early Career Paper",
+   "title": "Integral cryptanalysis in characteristic $p$",
+   "authors": [
+    "Tim Beyne",
+    "Michiel Verbauwhede"
+   ],
+   "track": "main",
+   "source": "https://asiacrypt.iacr.org/2025/program.php",
+   "evidence": "Integral cryptanalysis in characteristic $p$ (Best Theory + Early Career) Tim Beyne Michiel Verbauwhede"
+  },
+  {
+   "venue": "ASIACRYPT",
+   "year": 2025,
+   "award": "category",
+   "awardLabel": "Best Early Career Paper",
+   "title": "On Split-State Quantum Tamper Detection",
+   "authors": [
+    "Thiago Bergamaschi",
+    "Naresh Boddu"
+   ],
+   "track": "main",
+   "source": "https://asiacrypt.iacr.org/2025/program.php",
+   "evidence": "On Split-State Quantum Tamper Detection (Best Early Career) Thiago Bergamaschi Naresh Boddu"
   },
   {
    "venue": "ASIACRYPT",
@@ -15840,6 +15977,53 @@
   },
   {
    "venue": "CHES",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Differential Computation Analysis: Hiding your White-Box Designs is Not Enough",
+   "authors": [
+    "Joppe W. Bos",
+    "Charles Hubain",
+    "Wil Michiels",
+    "Philippe Teuwen"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/workshops/ches/ches2016/program.php",
+   "evidence": "CHES Best Paper 2016 Joppe W. Bos; Charles Hubain; Wil Michiels; Philippe Teuwen Differential Computation Analysis: Hiding your White-Box Designs is Not Enough"
+  },
+  {
+   "venue": "CHES",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Cold Boot Attacks on Ring and Module LWE Keys Under the NTT",
+   "authors": [
+    "Martin R. Albrecht",
+    "Amit Deo",
+    "Kenneth G. Paterson"
+   ],
+   "track": "main",
+   "source": "https://ches.iacr.org/2018/program.shtml",
+   "evidence": "Best Paper Award:Cold Boot Attacks on Ring and Module LWE Keys Under the NTT. Martin R. Albrecht (Royal Holloway, University of London), Amit Deo (Royal Holloway, University of London), Kenneth G. Paterson (Royal Holloway, University of London)"
+  },
+  {
+   "venue": "CHES",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Minerva: The curse of ECDSA nonces Systematic analysis of lattice attacks on noisy leakage of bit-length of ECDSA nonces",
+   "authors": [
+    "Jan Jancar",
+    "Vladimir Sedlacek",
+    "Petr Svenda",
+    "Marek Sys"
+   ],
+   "track": "main",
+   "source": "https://ches.iacr.org/2020/program.php",
+   "evidence": "Minerva: The curse of ECDSA nonces Systematic analysis of lattice attacks on noisy leakage of bit-length of ECDSA nonces (Best Paper) Jan Jancar Vladimir Sedlacek Petr Svenda Marek Sys"
+  },
+  {
+   "venue": "CHES",
    "year": 2020,
    "award": "tot",
    "awardLabel": "Test of Time Award",
@@ -15869,6 +16053,21 @@
   {
    "venue": "CHES",
    "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "MIRACLE: MIcRo-ArChitectural Leakage Evaluation",
+   "authors": [
+    "Ben Marshall",
+    "Dan Page",
+    "James Webb"
+   ],
+   "track": "main",
+   "source": "https://ches.iacr.org/2022/program.php",
+   "evidence": "Best Paper Session Location: Pieter de Somer Session Chair: Sonia Belaïd, Thomas Eisenbarth YouTube MIRACLE: MIcRo-ArChitectural Leakage Evaluation Ben Marshall Dan Page James Webb"
+  },
+  {
+   "venue": "CHES",
+   "year": 2022,
    "award": "tot",
    "awardLabel": "Test of Time Award",
    "title": "Template Attacks",
@@ -15885,6 +16084,20 @@
   {
    "venue": "CHES",
    "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Threshold Implementations in Software: Micro-architectural Leakages in Algorithms",
+   "authors": [
+    "John Gaspoz",
+    "Siemen Dhooghe"
+   ],
+   "track": "main",
+   "source": "https://ches.iacr.org/2023/program.php",
+   "evidence": "Best Paper Session Location: South Hall 3 Session Chairs: Diego F. Aranha, Marcel Medwed YouTube Threshold Implementations in Software: Micro-architectural Leakages in Algorithms John Gaspoz Siemen Dhooghe"
+  },
+  {
+   "venue": "CHES",
+   "year": 2023,
    "award": "tot",
    "awardLabel": "Test of Time Award",
    "title": "A Differential Fault Attack Technique against SPN Structures, with Application to the AES and Khazad",
@@ -15896,6 +16109,37 @@
    "paperYear": 2003,
    "source": "https://ches.iacr.org/testoftime.php",
    "evidence": "CHES 2023 Test of Time Award: Gilles Piret, Jean-Jacques Quisquater “A Differential Fault Attack Technique against SPN Structures, with Application to the AES and Khazad”"
+  },
+  {
+   "venue": "CHES",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Closing the Gap: Leakage Contracts for Processors with Transitions and Glitches",
+   "authors": [
+    "Johannes Haring",
+    "Vedad Hadžić",
+    "Roderick Bloem"
+   ],
+   "track": "main",
+   "source": "https://ches.iacr.org/2024/program.php",
+   "evidence": "(Best Paper, 35min) Closing the Gap: Leakage Contracts for Processors with Transitions and Glitches Johannes Haring Vedad Hadžić Roderick Bloem"
+  },
+  {
+   "venue": "CHES",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Runner-up",
+   "title": "Fast and Clean: Auditable high-performance assembly via constraint solving",
+   "authors": [
+    "Amin Abdulrahman",
+    "Hanno Becker",
+    "Matthias J. Kannwischer",
+    "Fabien Klein"
+   ],
+   "track": "main",
+   "source": "https://ches.iacr.org/2024/program.php",
+   "evidence": "(Runner-up) Fast and Clean: Auditable high-performance assembly via constraint solving Amin Abdulrahman Hanno Becker Matthias J. Kannwischer Fabien Klein"
   },
   {
    "venue": "CHES",
@@ -15916,6 +16160,42 @@
   {
    "venue": "CHES",
    "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "KyberSlash: Exploiting secret-dependent division timings in Kyber implementations",
+   "authors": [
+    "Daniel J. Bernstein",
+    "Karthikeyan Bhargavan",
+    "Shivam Bhasin",
+    "Anupam Chattopadhyay",
+    "Tee Kiah Chia",
+    "Matthias J. Kannwischer",
+    "Franziskus Kiefer",
+    "Thales B. Paiva",
+    "Prasanna Ravi",
+    "Goutam Tamvada"
+   ],
+   "track": "main",
+   "source": "https://ches.iacr.org/2025/program.php",
+   "evidence": "(Best Paper) KyberSlash: Exploiting secret-dependent division timings in Kyber implementations Daniel J. Bernstein Karthikeyan Bhargavan Shivam Bhasin Anupam Chattopadhyay Tee Kiah Chia Matthias J. Kannwischer Franziskus Kiefer Thales B. Paiva Prasanna Ravi Goutam Tamvada"
+  },
+  {
+   "venue": "CHES",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Runner-up",
+   "title": "Bit t-SNI Secure Multiplication Gadget for Inner Product Masking",
+   "authors": [
+    "John Gaspoz",
+    "Siemen Dhooghe"
+   ],
+   "track": "main",
+   "source": "https://ches.iacr.org/2025/program.php",
+   "evidence": "(Runner-up) Bit t-SNI Secure Multiplication Gadget for Inner Product Masking John Gaspoz Siemen Dhooghe"
+  },
+  {
+   "venue": "CHES",
+   "year": 2025,
    "award": "tot",
    "awardLabel": "Test of Time Award",
    "title": "A Very Compact S-box for AES",
@@ -15926,6 +16206,20 @@
    "paperYear": 2005,
    "source": "https://ches.iacr.org/testoftime.php",
    "evidence": "CHES 2025 Test of Time Award: David Canright “A Very Compact S-box for AES”"
+  },
+  {
+   "venue": "CHES",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Racing Against the Clock: Side-Channel Leakage from Crossing Asynchronous Clock Domains",
+   "authors": [
+    "Martin Thompson",
+    "David Oswald"
+   ],
+   "track": "main",
+   "source": "https://ches.iacr.org/2026/program.php",
+   "evidence": "Best Paper Award Ceremony + Presentation Meeting Room 1/C Chair: Patrick Schaumont Racing Against the Clock: Side-Channel Leakage from Crossing Asynchronous Clock Domains Martin Thompson David Oswald"
   },
   {
    "venue": "CHES",
@@ -45634,6 +45928,137 @@
   },
   {
    "venue": "CRYPTO",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Integral Cryptanalysis on Full MISTY1",
+   "authors": [
+    "Yosuke Todo"
+   ],
+   "track": "main",
+   "source": "https://www.iacr.org/conferences/crypto2015/program.html",
+   "evidence": "Integral Cryptanalysis on Full MISTY1 Yosuke Todo Best Paper Award and Best Young Researcher Award"
+  },
+  {
+   "venue": "CRYPTO",
+   "year": 2015,
+   "award": "category",
+   "awardLabel": "Best Young Researcher Award",
+   "title": "Integral Cryptanalysis on Full MISTY1",
+   "authors": [
+    "Yosuke Todo"
+   ],
+   "track": "main",
+   "source": "https://www.iacr.org/conferences/crypto2015/program.html",
+   "evidence": "Integral Cryptanalysis on Full MISTY1 Yosuke Todo Best Paper Award and Best Young Researcher Award"
+  },
+  {
+   "venue": "CRYPTO",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Breaking the Circuit Size Barrier for Secure Computation Under DDH",
+   "authors": [
+    "Elette Boyle",
+    "Niv Gilboa",
+    "Yuval Ishai"
+   ],
+   "track": "main",
+   "source": "https://www.iacr.org/news/item/7203",
+   "alsoAt": [
+    "https://www.iacr.org/conferences/crypto2016/program.html"
+   ],
+   "evidence": "The program committee has chosen Breaking the Circuit Size Barrier for Secure Computation Under DDH by Elette Boyle, Niv Gilboa, and Yuval Ishai as the best paper of Crypto 2016."
+  },
+  {
+   "venue": "CRYPTO",
+   "year": 2016,
+   "award": "category",
+   "awardLabel": "Early Career Award",
+   "title": "The Magic of ELFs",
+   "authors": [
+    "Mark Zhandry"
+   ],
+   "track": "main",
+   "source": "https://www.iacr.org/news/item/7203",
+   "alsoAt": [
+    "https://www.iacr.org/conferences/crypto2016/program.html"
+   ],
+   "evidence": "The program committee has also recognized Mark Zhandry with the early career award for his paper The Magic of ELFs."
+  },
+  {
+   "venue": "CRYPTO",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Yes, There is an Oblivious RAM Lower Bound!",
+   "authors": [
+    "Kasper Green Larsen",
+    "Jesper Buus Nielsen"
+   ],
+   "track": "main",
+   "source": "https://crypto.iacr.org/2018/program.html",
+   "evidence": "Yes, There is an Oblivious RAM Lower Bound! Best Paper Award Kasper Green Larsen Jesper Buus Nielsen"
+  },
+  {
+   "venue": "CRYPTO",
+   "year": 2018,
+   "award": "category",
+   "awardLabel": "Best Young Researcher Paper Award",
+   "title": "Multi-Theorem Preprocessing NIZKs from Lattices",
+   "authors": [
+    "Sam Kim",
+    "David J. Wu"
+   ],
+   "track": "main",
+   "source": "https://crypto.iacr.org/2018/program.html",
+   "evidence": "Multi-Theorem Preprocessing NIZKs from Lattices Best Young Researcher Paper Award Sam Kim David J. Wu"
+  },
+  {
+   "venue": "CRYPTO",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Cryptanalysis of OCB2: Attacks on Authenticity and Confidentiality",
+   "authors": [
+    "Akiko Inoue",
+    "Tetsu Iwata",
+    "Kazuhiko Minematsu",
+    "Bertram Poettering"
+   ],
+   "track": "main",
+   "source": "https://crypto.iacr.org/2019/program.html",
+   "evidence": "Best Paper Lotte Lehmann Hall Session chair: Alexandra Boldyreva Cryptanalysis of OCB2: Attacks on Authenticity and Confidentiality Akiko Inoue Tetsu Iwata Kazuhiko Minematsu Bertram Poettering"
+  },
+  {
+   "venue": "CRYPTO",
+   "year": 2019,
+   "award": "category",
+   "awardLabel": "Best Young Researcher Paper",
+   "title": "Fully Secure Attribute-Based Encryption for t-CNF from LWE",
+   "authors": [
+    "Rotem Tsabary"
+   ],
+   "track": "main",
+   "source": "https://crypto.iacr.org/2019/program.html",
+   "evidence": "Best Young Researcher Papers Lotte Lehmann Hall Session chair: Daniele Micciancio Quantum cryptanalysis in the RAM model: Claw-finding attacks on SIKE Samuel Jaques John M. Schanck Media: Fully Secure Attribute-Based Encryption for t-CNF from LWE Rotem Tsabary"
+  },
+  {
+   "venue": "CRYPTO",
+   "year": 2019,
+   "award": "category",
+   "awardLabel": "Best Young Researcher Paper",
+   "title": "Quantum cryptanalysis in the RAM model: Claw-finding attacks on SIKE",
+   "authors": [
+    "Samuel Jaques",
+    "John M. Schanck"
+   ],
+   "track": "main",
+   "source": "https://crypto.iacr.org/2019/program.html",
+   "evidence": "Best Young Researcher Papers Lotte Lehmann Hall Session chair: Daniele Micciancio Quantum cryptanalysis in the RAM model: Claw-finding attacks on SIKE Samuel Jaques John M. Schanck Media: Fully Secure Attribute-Based Encryption for t-CNF from LWE Rotem Tsabary"
+  },
+  {
+   "venue": "CRYPTO",
    "year": 2019,
    "award": "tot",
    "awardLabel": "Test of Time Award",
@@ -45645,6 +46070,77 @@
    "paperYear": 2004,
    "source": "https://iacr.org/testoftime/",
    "evidence": "CRYPTO 2019 Test of Time Award: Antoine Joux “Multicollisions in Iterated Hash Functions. Application to Cascaded Constructions”"
+  },
+  {
+   "venue": "CRYPTO",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Breaking the decisional Diffie-Hellman problem for class group actions using genus theory",
+   "authors": [
+    "Wouter Castryck",
+    "Jana Sotáková",
+    "Frederik Vercauteren"
+   ],
+   "track": "main",
+   "source": "https://crypto.iacr.org/2020/program.php",
+   "alsoAt": [
+    "https://www.iacr.org/news/item/14473"
+   ],
+   "evidence": "Breaking the decisional Diffie-Hellman problem for class group actions using genus theory (Best Paper Award) Wouter Castryck Jana Sotáková Frederik Vercauteren"
+  },
+  {
+   "venue": "CRYPTO",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Chosen Ciphertext Security from Injective Trapdoor Functions",
+   "authors": [
+    "Susan Hohenberger",
+    "Venkata Koppula",
+    "Brent Waters"
+   ],
+   "track": "main",
+   "source": "https://crypto.iacr.org/2020/program.php",
+   "alsoAt": [
+    "https://www.iacr.org/news/item/14473"
+   ],
+   "evidence": "Chosen Ciphertext Security from Injective Trapdoor Functions (Best Paper Award) Susan Hohenberger Venkata Koppula Brent Waters"
+  },
+  {
+   "venue": "CRYPTO",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Improved Differential-Linear Attacks with Applications to ARX Ciphers",
+   "authors": [
+    "Christof Beierle",
+    "Gregor Leander",
+    "Yosuke Todo"
+   ],
+   "track": "main",
+   "source": "https://crypto.iacr.org/2020/program.php",
+   "alsoAt": [
+    "https://www.iacr.org/news/item/14473"
+   ],
+   "evidence": "Improved Differential-Linear Attacks with Applications to ARX Ciphers (Best Paper Award) Christof Beierle Gregor Leander Yosuke Todo"
+  },
+  {
+   "venue": "CRYPTO",
+   "year": 2020,
+   "award": "category",
+   "awardLabel": "Best Paper by Early Career Researchers Award",
+   "title": "Handling Adaptive Compromise for Practical Encryption Schemes",
+   "authors": [
+    "Joseph Jaeger",
+    "Nirvan Tyagi"
+   ],
+   "track": "main",
+   "source": "https://crypto.iacr.org/2020/program.php",
+   "alsoAt": [
+    "https://www.iacr.org/news/item/14473"
+   ],
+   "evidence": "Handling Adaptive Compromise for Practical Encryption Schemes (Best Paper by Early Career Researchers Award) Joseph Jaeger Nirvan Tyagi"
   },
   {
    "venue": "CRYPTO",
@@ -45679,6 +46175,48 @@
   {
    "venue": "CRYPTO",
    "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Batch Arguments for NP and More from Standard Bilinear Group Assumptions",
+   "authors": [
+    "Brent Waters",
+    "David Wu"
+   ],
+   "track": "main",
+   "source": "https://crypto.iacr.org/2022/program.php",
+   "evidence": "Batch Arguments for NP and More from Standard Bilinear Group Assumptions best paper Brent Waters David Wu"
+  },
+  {
+   "venue": "CRYPTO",
+   "year": 2022,
+   "award": "category",
+   "awardLabel": "Best Early Career Researcher Paper",
+   "title": "Breaking Rainbow Takes a Weekend on a Laptop",
+   "authors": [
+    "Ward Beullens"
+   ],
+   "track": "main",
+   "source": "https://crypto.iacr.org/2022/program.php",
+   "evidence": "Breaking Rainbow Takes a Weekend on a Laptop best early career researcher paper Ward Beullens"
+  },
+  {
+   "venue": "CRYPTO",
+   "year": 2022,
+   "award": "category",
+   "awardLabel": "Best Early Career Researcher Paper",
+   "title": "Some Easy Instances of Ideal-SVP and Implications to the Partial Vandermonde Knapsack Problem",
+   "authors": [
+    "Katharina Boudgoust",
+    "Erell Gachon",
+    "Alice Pellet-Mary"
+   ],
+   "track": "main",
+   "source": "https://crypto.iacr.org/2022/program.php",
+   "evidence": "Some Easy Instances of Ideal-SVP and Implications to the Partial Vandermonde Knapsack Problem best early career researcher paper Katharina Boudgoust Erell Gachon Alice Pellet-Mary"
+  },
+  {
+   "venue": "CRYPTO",
+   "year": 2022,
    "award": "tot",
    "awardLabel": "Test of Time Award",
    "title": "Deterministic and Efficiently Searchable Encryption",
@@ -45707,6 +46245,50 @@
    "paperYear": 2008,
    "source": "https://iacr.org/testoftime/",
    "evidence": "CRYPTO 2023 Test of Time Award: Chris Peikert, Vinod Vaikuntanathan, and Brent Waters “A Framework for Efficient and Composable Oblivious Transfer”"
+  },
+  {
+   "venue": "CRYPTO",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Space-Efficient and Noise-Robust Quantum Factoring",
+   "authors": [
+    "Seyoon Ragavan",
+    "Vinod Vaikuntanathan"
+   ],
+   "track": "main",
+   "source": "https://crypto.iacr.org/2024/program.php",
+   "evidence": "Space-Efficient and Noise-Robust Quantum Factoring Best Paper Award Seyoon Ragavan Vinod Vaikuntanathan"
+  },
+  {
+   "venue": "CRYPTO",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "STIR: Reed–Solomon Proximity Testing with Fewer Queries",
+   "authors": [
+    "Gal Arnon",
+    "Alessandro Chiesa",
+    "Giacomo Fenzi",
+    "Eylon Yogev"
+   ],
+   "track": "main",
+   "source": "https://crypto.iacr.org/2024/program.php",
+   "evidence": "STIR: Reed–Solomon Proximity Testing with Fewer Queries Best Paper Award Gal Arnon Alessandro Chiesa Giacomo Fenzi Eylon Yogev"
+  },
+  {
+   "venue": "CRYPTO",
+   "year": 2024,
+   "award": "category",
+   "awardLabel": "Best Paper Authored by Early Career Researchers",
+   "title": "Lossy Cryptography from Code-Based Assumptions",
+   "authors": [
+    "Quang Dao",
+    "Aayush Jain"
+   ],
+   "track": "main",
+   "source": "https://crypto.iacr.org/2024/program.php",
+   "evidence": "Lossy Cryptography from Code-Based Assumptions Best Paper Authored by Early Career Researchers Quang Dao Aayush Jain"
   },
   {
    "venue": "CRYPTO",
@@ -63495,6 +64077,120 @@
   },
   {
    "venue": "EUROCRYPT",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Scrypt is Maximally Memory-Hard",
+   "authors": [
+    "Joël Alwen",
+    "Binyi Chen",
+    "Krzysztof Pietrzak",
+    "Leonid Reyzin",
+    "Stefano Tessaro"
+   ],
+   "track": "main",
+   "source": "https://eurocrypt.iacr.org/2017/program.html",
+   "alsoAt": [
+    "https://eurocrypt.iacr.org/2017/accepted.html"
+   ],
+   "evidence": "Scrypt is Maximally Memory-Hard Best Paper Award Joël Alwen, Binyi Chen, Krzysztof Pietrzak, Leonid Reyzin, Stefano Tessaro"
+  },
+  {
+   "venue": "EUROCRYPT",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "k-Round Multiparty Computation from k-Round Oblivious Transfer via Garbled Interactive Circuits",
+   "authors": [
+    "Fabrice Benhamouda",
+    "Huijia Lin"
+   ],
+   "track": "main",
+   "source": "https://eurocrypt.iacr.org/2018/program.html",
+   "alsoAt": [
+    "https://www.iacr.org/news/item/9801"
+   ],
+   "evidence": "Best Paper Awards Main hall (Israel A) Chair: Eike Kiltz Simple Proofs of Sequential Work (Slides) Bram Cohen Krzysztof Pietrzak Two-Round Multiparty Secure Computation from Minimal Assumptions (Slides) Sanjam Garg Akshayaram Srinivasan k-Round Multiparty Computation from k-Round Oblivious Transfer via Garbled Interactive Circuits (Slides) Fabrice Benhamouda Huijia Lin"
+  },
+  {
+   "venue": "EUROCRYPT",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Simple Proofs of Sequential Work",
+   "authors": [
+    "Bram Cohen",
+    "Krzysztof Pietrzak"
+   ],
+   "track": "main",
+   "source": "https://eurocrypt.iacr.org/2018/program.html",
+   "alsoAt": [
+    "https://www.iacr.org/news/item/9801"
+   ],
+   "evidence": "Best Paper Awards Main hall (Israel A) Chair: Eike Kiltz Simple Proofs of Sequential Work (Slides) Bram Cohen Krzysztof Pietrzak Two-Round Multiparty Secure Computation from Minimal Assumptions (Slides) Sanjam Garg Akshayaram Srinivasan k-Round Multiparty Computation from k-Round Oblivious Transfer via Garbled Interactive Circuits (Slides) Fabrice Benhamouda Huijia Lin"
+  },
+  {
+   "venue": "EUROCRYPT",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Two-Round Multiparty Secure Computation from Minimal Assumptions",
+   "authors": [
+    "Sanjam Garg",
+    "Akshayaram Srinivasan"
+   ],
+   "track": "main",
+   "source": "https://eurocrypt.iacr.org/2018/program.html",
+   "alsoAt": [
+    "https://www.iacr.org/news/item/9801"
+   ],
+   "evidence": "Best Paper Awards Main hall (Israel A) Chair: Eike Kiltz Simple Proofs of Sequential Work (Slides) Bram Cohen Krzysztof Pietrzak Two-Round Multiparty Secure Computation from Minimal Assumptions (Slides) Sanjam Garg Akshayaram Srinivasan k-Round Multiparty Computation from k-Round Oblivious Transfer via Garbled Interactive Circuits (Slides) Fabrice Benhamouda Huijia Lin"
+  },
+  {
+   "venue": "EUROCRYPT",
+   "year": 2018,
+   "award": "category",
+   "awardLabel": "Best Young Researcher Paper Award",
+   "title": "The Discrete-Logarithm Problem with Preprocessing",
+   "authors": [
+    "Henry Corrigan-Gibbs",
+    "Dmitry Kogan"
+   ],
+   "track": "main",
+   "source": "https://eurocrypt.iacr.org/2018/program.html",
+   "alsoAt": [
+    "https://www.iacr.org/news/item/9801"
+   ],
+   "evidence": "Best Young Researcher Award Main hall (Israel A) Chair: Eike Kiltz The Discrete-Logarithm Problem with Preprocessing (Slides) Henry Corrigan-Gibbs Dmitry Kogan"
+  },
+  {
+   "venue": "EUROCRYPT",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Quantum Lightning Never Strikes the Same State Twice",
+   "authors": [
+    "Mark Zhandry"
+   ],
+   "track": "main",
+   "source": "https://eurocrypt.iacr.org/2019/program.html",
+   "evidence": "Best Paper Quantum Lightning Never Strikes the Same State Twice Mark Zhandry"
+  },
+  {
+   "venue": "EUROCRYPT",
+   "year": 2019,
+   "award": "category",
+   "awardLabel": "Best Young Researcher Paper",
+   "title": "Efficient Verifiable Delay Functions",
+   "authors": [
+    "Benjamin Wesolowski"
+   ],
+   "track": "main",
+   "source": "https://eurocrypt.iacr.org/2019/program.html",
+   "evidence": "Best Young Researcher Paper Efficient Verifiable Delay Functions Benjamin Wesolowski"
+  },
+  {
+   "venue": "EUROCRYPT",
    "year": 2019,
    "award": "tot",
    "awardLabel": "Test of Time Award",
@@ -63508,6 +64204,34 @@
    "paperYear": 2004,
    "source": "https://iacr.org/testoftime/",
    "evidence": "EUROCRYPT 2019 Test of Time Award: Yevgeniy Dodis, Leonid Reyzin, and Adam D. Smith “Fuzzy Extractors: How to Generate Strong Keys from Biometrics and Other Noisy Data”"
+  },
+  {
+   "venue": "EUROCRYPT",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Optimal Broadcast Encryption from Pairings and LWE",
+   "authors": [
+    "Shweta Agrawal",
+    "Shota Yamada"
+   ],
+   "track": "main",
+   "source": "https://eurocrypt.iacr.org/2020/program.php",
+   "evidence": "Best Paper Award YouTube Moderators: Yilei Chen and Romain Gay Optimal Broadcast Encryption from Pairings and LWE Shweta Agrawal Shota Yamada"
+  },
+  {
+   "venue": "EUROCRYPT",
+   "year": 2020,
+   "award": "category",
+   "awardLabel": "Best Young Researcher Award",
+   "title": "Private Information Retrieval with Sublinear Online Time",
+   "authors": [
+    "Henry Corrigan-Gibbs",
+    "Dmitry Kogan"
+   ],
+   "track": "main",
+   "source": "https://eurocrypt.iacr.org/2020/program.php",
+   "evidence": "Best Young Researcher Award YouTube Moderators: Nishanth Chandran and Tancrède Lepoint Private Information Retrieval with Sublinear Online Time Henry Corrigan-Gibbs Dmitry Kogan"
   },
   {
    "venue": "EUROCRYPT",
@@ -63542,6 +64266,21 @@
   {
    "venue": "EUROCRYPT",
    "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "EpiGRAM: Practical Garbled RAM",
+   "authors": [
+    "David Heath",
+    "Vladimir Kolesnikov",
+    "Rafail Ostrovsky"
+   ],
+   "track": "main",
+   "source": "https://eurocrypt.iacr.org/2022/program.php",
+   "evidence": "Best paper award talk Cosmos 1/2 Session chair: Yuval Ishai Chat EpiGRAM: Practical Garbled RAM David Heath Vladimir Kolesnikov Rafail Ostrovsky"
+  },
+  {
+   "venue": "EUROCRYPT",
+   "year": 2022,
    "award": "tot",
    "awardLabel": "Test of Time Award",
    "title": "An Efficient Protocol for Secure Two-Party Computation in the Presence of Malicious Adversaries",
@@ -63553,6 +64292,63 @@
    "paperYear": 2007,
    "source": "https://iacr.org/testoftime/",
    "evidence": "EUROCRYPT 2022 Test of Time Award: Yehuda Lindell and Benny Pinkas “An Efficient Protocol for Secure Two-Party Computation in the Presence of Malicious Adversaries”"
+  },
+  {
+   "venue": "EUROCRYPT",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "An Efficient Key Recovery Attack on SIDH",
+   "authors": [
+    "Wouter Castryck",
+    "Thomas Decru"
+   ],
+   "track": "main",
+   "source": "https://eurocrypt.iacr.org/2023/program.php",
+   "evidence": "An Efficient Key Recovery Attack on SIDH Best Paper Award Wouter Castryck Thomas Decru"
+  },
+  {
+   "venue": "EUROCRYPT",
+   "year": 2023,
+   "award": "category",
+   "awardLabel": "Early Career Best Paper Award",
+   "title": "Worst-Case Subexponential Attacks on PRGs of Constant Degree or Constant Locality",
+   "authors": [
+    "Akın Ünal"
+   ],
+   "track": "main",
+   "source": "https://eurocrypt.iacr.org/2023/program.php",
+   "evidence": "Worst-Case Subexponential Attacks on PRGs of Constant Degree or Constant Locality Early Career Best Paper Award Akın Ünal"
+  },
+  {
+   "venue": "EUROCRYPT",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Honourable Mention",
+   "title": "A Direct Key Recovery Attack on SIDH",
+   "authors": [
+    "Luciano Maino",
+    "Chloe Martindale",
+    "Lorenz Panny",
+    "Giacomo Pope",
+    "Benjamin Wesolowski"
+   ],
+   "track": "main",
+   "source": "https://eurocrypt.iacr.org/2023/program.php",
+   "evidence": "A Direct Key Recovery Attack on SIDH Honourable Mention Luciano Maino Chloe Martindale Lorenz Panny Giacomo Pope Benjamin Wesolowski"
+  },
+  {
+   "venue": "EUROCRYPT",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Honourable Mention",
+   "title": "Breaking SIDH in Polynomial Time",
+   "authors": [
+    "Damien Robert"
+   ],
+   "track": "main",
+   "source": "https://eurocrypt.iacr.org/2023/program.php",
+   "evidence": "Breaking SIDH in Polynomial Time Honourable Mention Damien Robert"
   },
   {
    "venue": "EUROCRYPT",
@@ -63601,6 +64397,49 @@
    "paperYear": 2009,
    "source": "https://iacr.org/testoftime/",
    "evidence": "EUROCRYPT 2024 Test of Time Award: François-Xavier Standaert, Tal G. Malkin and Moti Yung “A Unified Framework for the Analysis of Side-Channel Key Recovery Attacks”"
+  },
+  {
+   "venue": "EUROCRYPT",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Polynomial Time Cryptanalytic Extraction of Deep Neural Networks in the Hard-Label Setting",
+   "authors": [
+    "Nicholas Carlini",
+    "Jorge Chávez-Saab",
+    "Anna Hambitzer",
+    "Francisco Rodríguez-Henríquez",
+    "Adi Shamir"
+   ],
+   "track": "main",
+   "source": "https://eurocrypt.iacr.org/2025/program.php",
+   "evidence": "Polynomial Time Cryptanalytic Extraction of Deep Neural Networks in the Hard-Label Setting Best Paper Award Nicholas Carlini Jorge Chávez-Saab Anna Hambitzer Francisco Rodríguez-Henríquez Adi Shamir"
+  },
+  {
+   "venue": "EUROCRYPT",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "The syzygy Distinguisher",
+   "authors": [
+    "Hugues Randriambololona"
+   ],
+   "track": "main",
+   "source": "https://eurocrypt.iacr.org/2025/program.php",
+   "evidence": "The syzygy Distinguisher Best Paper Award Hugues Randriambololona"
+  },
+  {
+   "venue": "EUROCRYPT",
+   "year": 2025,
+   "award": "category",
+   "awardLabel": "Early-Career Best Paper Award",
+   "title": "Improved Cryptanalysis of SNOVA",
+   "authors": [
+    "Ward Beullens"
+   ],
+   "track": "main",
+   "source": "https://eurocrypt.iacr.org/2025/program.php",
+   "evidence": "Improved Cryptanalysis of SNOVA Early-Career Best Paper Award Ward Beullens"
   },
   {
    "venue": "EUROCRYPT",
@@ -63937,6 +64776,38 @@
   },
   {
    "venue": "EuroSys",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Cycles, Cells and Platters: An empirical analysis of hardware failures on a million consumer PCs",
+   "authors": [
+    "Edmund B Nightingale",
+    "John R. Douceur",
+    "Vince Orgovan"
+   ],
+   "track": "main",
+   "source": "https://eurosys2011.cs.uni-salzburg.at/accepted.html",
+   "evidence": "Cycles, Cells and Platters: An empirical analysis of hardware failures on a million consumer PCs (Best paper award) Edmund B Nightingale (Microsoft Research), John R. Douceur (Microsoft Research), Vince Orgovan (Microsoft)"
+  },
+  {
+   "venue": "EuroSys",
+   "year": 2011,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Keypad: An Auditing File System for Theft-Prone Devices",
+   "authors": [
+    "Roxana Geambasu",
+    "John P. John",
+    "Steven D. Gribble",
+    "Tadayoshi Kohno",
+    "Henry M. Levy"
+   ],
+   "track": "main",
+   "source": "https://eurosys2011.cs.uni-salzburg.at/accepted.html",
+   "evidence": "Keypad: An Auditing File System for Theft-Prone Devices (Best student paper award) Roxana Geambasu (University of Washington), John P. John (University of Washington), Steven D. Gribble (University of Washington), Tadayoshi Kohno (University of Washington), Henry M. Levy (University of Washington)"
+  },
+  {
+   "venue": "EuroSys",
    "year": 2016,
    "award": "tot",
    "awardLabel": "Test of Time Award",
@@ -63976,6 +64847,49 @@
   {
    "venue": "EuroSys",
    "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Dynamic Control Flow in Large-Scale Machine Learning",
+   "authors": [
+    "Yuan Yu",
+    "Martín Abadi",
+    "Paul Barham",
+    "Eugene Brevdo",
+    "Mike Burrows",
+    "Andy Davis",
+    "Jeff Dean",
+    "Sanjay Ghemawat",
+    "Tim Harley",
+    "Peter Hawkins",
+    "Michael Isard",
+    "Manjunath Kudlur",
+    "Rajat Monga",
+    "Derek Murray",
+    "Xiaoqiang Zheng"
+   ],
+   "track": "main",
+   "source": "https://2018.eurosys.org/awards/",
+   "evidence": "Best Paper Award Dynamic Control Flow in Large-Scale Machine Learning | Yuan Yu (Microsoft), MartínAbadi, Paul Barham, Eugene Brevdo, Mike Burrows, Andy Davis, Jeff Dean (Google Brain), Sanjay Ghemawat(Google), Tim Harley (DeepMind), Peter Hawkins, Michael Isard(Google Brain), ManjunathKudlur(CerebrasSystems), RajatMonga, Derek Murray, XiaoqiangZheng (Google Brain)"
+  },
+  {
+   "venue": "EuroSys",
+   "year": 2018,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "TurboFlow: Information Rich Flow Record Generation on Commodity Switches",
+   "authors": [
+    "John Sonchack",
+    "Adam J. Aviv",
+    "Eric Keller",
+    "Jonathan M. Smith"
+   ],
+   "track": "main",
+   "source": "https://2018.eurosys.org/awards/",
+   "evidence": "Best Student Paper Award TurboFlow: Information Rich Flow Record Generation on Commodity Switches | John Sonchack (University of Pennsylvania), Adam J. Aviv (United States Naval Academy), Eric Keller (University of Colorado), Jonathan M. Smith (University of Pennsylvania)"
+  },
+  {
+   "venue": "EuroSys",
+   "year": 2018,
    "award": "tot",
    "awardLabel": "Test of Time Award",
    "title": "Documenting and Automating Collateral Evolutions in Linux Device Drivers",
@@ -63989,6 +64903,37 @@
    "paperYear": 2008,
    "source": "https://www.eurosys.org/awards/test-of-time-award",
    "evidence": "EuroSys 2018 Test-of-Time Award: Yoann Padioleau, Julia Lawall, René Rydhof Hansen, and Gilles Muller for “Documenting and Automating Collateral Evolutions in Linux Device Drivers”"
+  },
+  {
+   "venue": "EuroSys",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Time Protection: the Missing OS Abstraction",
+   "authors": [
+    "Qian Ge",
+    "Yuval Yarom",
+    "Tom Chothia",
+    "Gernot Heiser"
+   ],
+   "track": "main",
+   "source": "https://2019.eurosys.org/awards/",
+   "evidence": "Best Paper Award Time Protection: the Missing OS Abstraction Qian Ge (UNSW Australia, Data61 CSIRO Australia), Yuval Yarom (The University of Adelaide, Data61 CSIRO Australia), Tom Chothia (University of Birmingham), Gernot Heiser (UNSW Australia, Data61 CSIRO Australia)"
+  },
+  {
+   "venue": "EuroSys",
+   "year": 2019,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Efficient and Safe Network Updates with Suffix Causal Consistency",
+   "authors": [
+    "Sheng Liu",
+    "Theophilus A. Benson",
+    "Michael K. Reiter"
+   ],
+   "track": "main",
+   "source": "https://2019.eurosys.org/awards/",
+   "evidence": "Best Student Paper Award Efficient and Safe Network Updates with Suffix Causal Consistency Sheng Liu (University of North Carolina at Chapel Hill), Theophilus A. Benson (Brown University), Michael K. Reiter (University of North Carolina at Chapel Hill"
   },
   {
    "venue": "EuroSys",
@@ -64014,6 +64959,35 @@
   {
    "venue": "EuroSys",
    "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Don’t shoot down TLB shootdowns!",
+   "authors": [
+    "Nadav Amit",
+    "Amy Tai",
+    "Michael Wei"
+   ],
+   "track": "main",
+   "source": "https://2020.eurosys.org/awards/",
+   "evidence": "Best Paper Award Don’t shoot down TLB shootdowns! Nadav Amit, Amy Tai, Michael Wei (VMware Research)"
+  },
+  {
+   "venue": "EuroSys",
+   "year": 2020,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "HovercRaft: Achieving Scalability and Fault-tolerance for μs-scale Datacenter Services",
+   "authors": [
+    "Marios Kogias",
+    "Edouard Bugnion"
+   ],
+   "track": "main",
+   "source": "https://2020.eurosys.org/awards/",
+   "evidence": "Best Student Paper Award HovercRaft: Achieving Scalability and Fault-tolerance for μs-scale Datacenter Services Marios Kogias, Edouard Bugnion (EPFL)"
+  },
+  {
+   "venue": "EuroSys",
+   "year": 2020,
    "award": "tot",
    "awardLabel": "Test of Time Award",
    "title": "Delay Scheduling: A Simple Technique for Achieving Locality and Fairness in Cluster Scheduling",
@@ -64029,6 +65003,50 @@
    "paperYear": 2010,
    "source": "https://www.eurosys.org/awards/test-of-time-award",
    "evidence": "EuroSys 2020 Test-of-Time Award: Matei Zaharia, Dhruba Borthakur, Joydeep Sen Sarma, Khaled Elmeleegy, Scott Shenker, Ion Stoica for “Delay Scheduling: A Simple Technique for Achieving Locality and Fairness in Cluster Scheduling”"
+  },
+  {
+   "venue": "EuroSys",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Pash: Light-touch Data-Parallel Shell Processing",
+   "authors": [
+    "Nikos Vasilakis",
+    "Konstantinos Kallas",
+    "Konstantinos Mamouras",
+    "Achilleas Benetopoulos",
+    "Lazar Cvetković"
+   ],
+   "track": "main",
+   "source": "https://2021.eurosys.org/eurosys-awards.html",
+   "evidence": "Best paper awards Pash: Light-touch Data-Parallel Shell Processing, Nikos Vasilakis (MIT, USA), Konstantinos Kallas (University of Pennsylvania, USA), Konstantinos Mamouras (Rice University, United States of America), Achilleas Benetopoulos (unaffiliated), Lazar Cvetković (University of Belgrade, Serbia)"
+  },
+  {
+   "venue": "EuroSys",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Unikraft: Fast, Specialized Unikernels the Easy Way",
+   "authors": [
+    "Simon Kuenzer",
+    "Vlad-Andrei Bădoiu",
+    "Hugo Lefeuvre",
+    "Sharan Santhanam",
+    "Alexander Jung",
+    "Gaulthier Gain",
+    "Cyril Soldani",
+    "Costin Lupu",
+    "Stefan Teodorescu",
+    "Costi Răducanu",
+    "Cristian Banu",
+    "Laurent Mathy",
+    "Răzvan Deaconescu",
+    "Costin Raiciu",
+    "Felipe Huici"
+   ],
+   "track": "main",
+   "source": "https://2021.eurosys.org/eurosys-awards.html",
+   "evidence": "Best paper awards Pash: Light-touch Data-Parallel Shell Processing, Nikos Vasilakis (MIT, USA), Konstantinos Kallas (University of Pennsylvania, USA), Konstantinos Mamouras (Rice University, United States of America), Achilleas Benetopoulos (unaffiliated), Lazar Cvetković (University of Belgrade, Serbia) [Certificate] (sponsored by ACM Europe Council) Unikraft: Fast, Specialized Unikernels the Easy Way, Simon Kuenzer (NEC Laboratories Europe GmbH), Vlad-Andrei Bădoiu (University Politehnica of Bucharest), Hugo Lefeuvre (The University of Manchester), Sharan Santhanam (NEC Laboratories Europe GmbH), Alexander Jung (Lancaster University), Gaulthier Gain (University of Liège), Cyril Soldani (University of Liège), Costin Lupu (University Politehnica of Bucharest), Stefan Teodorescu (University Politehnica of Bucharest), Costi Răducanu (University Politehnica of Bucharest), Cristian Banu (University Politehnica of Bucharest), Laurent Mathy (University of Liège), Răzvan Deaconescu (University Politehnica of Bucharest), Costin Raiciu (University Politehnica of Bucharest), Felipe Huici (NEC Laboratories Europe GmbH, Germany)"
   },
   {
    "venue": "EuroSys",
@@ -64051,6 +65069,60 @@
   {
    "venue": "EuroSys",
    "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Narwhal and Tusk: A DAG-based Mempool and Efficient BFT Consensus",
+   "authors": [
+    "George Danezis",
+    "Lefteris Kokoris-Kogias",
+    "Alberto Sonnino",
+    "Alexander Spiegelman"
+   ],
+   "track": "main",
+   "source": "https://2022.eurosys.org/index.html@p=652.html",
+   "evidence": "Best Paper Awards PKRU-Safe: Automatically Locking Down the Heap Between Safe and Unsafe Languages. Paul Kirth, Mitchel Dickerson, Stephen Crane, Per Larsen, Adrian Dabrowski, David Gens, Yeoul Na, Stijn Volckaert, Michael Franz Varuna: Scalable, Low-cost Training of Massive Deep Learning Models Sanjith Athlur, Nitika Saran, Muthian Sivathanu, Ramachandran Ramjee, Nipun Kwatra Narwhal and Tusk: A DAG-based Mempool and Efficient BFT Consensus George Danezis, Lefteris Kokoris-Kogias, Alberto Sonnino, Alexander Spiegelman"
+  },
+  {
+   "venue": "EuroSys",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "PKRU-Safe: Automatically Locking Down the Heap Between Safe and Unsafe Languages",
+   "authors": [
+    "Paul Kirth",
+    "Mitchel Dickerson",
+    "Stephen Crane",
+    "Per Larsen",
+    "Adrian Dabrowski",
+    "David Gens",
+    "Yeoul Na",
+    "Stijn Volckaert",
+    "Michael Franz"
+   ],
+   "track": "main",
+   "source": "https://2022.eurosys.org/index.html@p=652.html",
+   "evidence": "Best Paper Awards PKRU-Safe: Automatically Locking Down the Heap Between Safe and Unsafe Languages. Paul Kirth, Mitchel Dickerson, Stephen Crane, Per Larsen, Adrian Dabrowski, David Gens, Yeoul Na, Stijn Volckaert, Michael Franz"
+  },
+  {
+   "venue": "EuroSys",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Varuna: Scalable, Low-cost Training of Massive Deep Learning Models",
+   "authors": [
+    "Sanjith Athlur",
+    "Nitika Saran",
+    "Muthian Sivathanu",
+    "Ramachandran Ramjee",
+    "Nipun Kwatra"
+   ],
+   "track": "main",
+   "source": "https://2022.eurosys.org/index.html@p=652.html",
+   "evidence": "Best Paper Awards PKRU-Safe: Automatically Locking Down the Heap Between Safe and Unsafe Languages. Paul Kirth, Mitchel Dickerson, Stephen Crane, Per Larsen, Adrian Dabrowski, David Gens, Yeoul Na, Stijn Volckaert, Michael Franz Varuna: Scalable, Low-cost Training of Massive Deep Learning Models Sanjith Athlur, Nitika Saran, Muthian Sivathanu, Ramachandran Ramjee, Nipun Kwatra"
+  },
+  {
+   "venue": "EuroSys",
+   "year": 2022,
    "award": "tot",
    "awardLabel": "Test of Time Award",
    "title": "Where is the energy spent inside my app? Fine Grained Energy Accounting on Smartphones with Eprof",
@@ -64063,6 +65135,57 @@
    "paperYear": 2012,
    "source": "https://www.eurosys.org/awards/test-of-time-award",
    "evidence": "EuroSys 2022 Test-of-Time Award: Abhinav Pathak, Y. Charlie Hu, Ming Zhang for “Where is the energy spent inside my app? Fine Grained Energy Accounting on Smartphones with Eprof”"
+  },
+  {
+   "venue": "EuroSys",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Chipmunk: Investigating Crash-Consistency in Persistent-Memory File Systems",
+   "authors": [
+    "Hayley LeBlanc",
+    "Shankara Pailoor",
+    "Om Saran K. R. E.",
+    "Isil Dillig",
+    "James Bornholt",
+    "Vijay Chidambaram"
+   ],
+   "track": "main",
+   "source": "https://2023.eurosys.org/best-paper.html",
+   "evidence": "Best Paper Awards OFence: Pairing Barriers to Find Concurrency Bugs in the Linux Kernel Baptiste Lepers (Université de Neuchâtel), Josselin Giet (ENS), Willy Zwaenepoel (The University of Sydney), Julia Lawall (Inria) Dissecting BFT Consensus: In Trusted Components we Trust! Suyash Gupta (UC Berkeley), Sajjad Rahnama (University of California, Davis), Shubham Pandey (University of California, Davis), Natacha Crooks (UC Berkeley), Mohammad Sadoghi (University of California, Davis) Chipmunk: Investigating Crash-Consistency in Persistent-Memory File Systems Hayley LeBlanc (University of Texas at Austin), Shankara Pailoor (University of Texas at Austin), Om Saran K. R. E. (University of Texas at Austin), Isil Dillig (University of Texas at Austin), James Bornholt (University of Texas at Austin), Vijay Chidambaram (University of Texas at Austin, VMware Research)"
+  },
+  {
+   "venue": "EuroSys",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Dissecting BFT Consensus: In Trusted Components we Trust!",
+   "authors": [
+    "Suyash Gupta",
+    "Sajjad Rahnama",
+    "Shubham Pandey",
+    "Natacha Crooks",
+    "Mohammad Sadoghi"
+   ],
+   "track": "main",
+   "source": "https://2023.eurosys.org/best-paper.html",
+   "evidence": "Best Paper Awards OFence: Pairing Barriers to Find Concurrency Bugs in the Linux Kernel Baptiste Lepers (Université de Neuchâtel), Josselin Giet (ENS), Willy Zwaenepoel (The University of Sydney), Julia Lawall (Inria) Dissecting BFT Consensus: In Trusted Components we Trust! Suyash Gupta (UC Berkeley), Sajjad Rahnama (University of California, Davis), Shubham Pandey (University of California, Davis), Natacha Crooks (UC Berkeley), Mohammad Sadoghi (University of California, Davis)"
+  },
+  {
+   "venue": "EuroSys",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "OFence: Pairing Barriers to Find Concurrency Bugs in the Linux Kernel",
+   "authors": [
+    "Baptiste Lepers",
+    "Josselin Giet",
+    "Willy Zwaenepoel",
+    "Julia Lawall"
+   ],
+   "track": "main",
+   "source": "https://2023.eurosys.org/best-paper.html",
+   "evidence": "Best Paper Awards OFence: Pairing Barriers to Find Concurrency Bugs in the Linux Kernel Baptiste Lepers (Université de Neuchâtel), Josselin Giet (ENS), Willy Zwaenepoel (The University of Sydney), Julia Lawall (Inria)"
   },
   {
    "venue": "EuroSys",
@@ -64103,6 +65226,115 @@
   {
    "venue": "EuroSys",
    "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Serialization/Deserialization-free State Transfer in Serverless Workflows",
+   "authors": [
+    "Fangming Lu",
+    "Xingda Wei",
+    "Zhuobin Huang",
+    "Rong Chen",
+    "Mingyu Wu",
+    "Haibo Chen"
+   ],
+   "track": "main",
+   "source": "https://2024.eurosys.org/awards.html",
+   "evidence": "Best Paper Awards Serialization/Deserialization-free State Transfer in Serverless Workflows Fangming Lu (Shanghai Jiao Tong University), Xingda Wei (Shanghai Jiao Tong University, Shanghai Artificial Intelligence Laboratory), Zhuobin Huang (University of Electronic Science and Technology of China), Rong Chen (Shanghai Jiao Tong University, Shanghai Artificial Intelligence Laboratory), Mingyu Wu (Shanghai Jiao Tong University, Shanghai Artificial Intelligence Laboratory), Haibo Chen (Shanghai Jiao Tong University)"
+  },
+  {
+   "venue": "EuroSys",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Validating Database System Isolation Level Implementations with Version Certificate Recovery",
+   "authors": [
+    "Jack Clark",
+    "Alastair F. Donaldson",
+    "John Wickerson",
+    "Manuel Rigger"
+   ],
+   "track": "main",
+   "source": "https://2024.eurosys.org/awards.html",
+   "evidence": "Best Paper Awards Serialization/Deserialization-free State Transfer in Serverless Workflows Fangming Lu (Shanghai Jiao Tong University), Xingda Wei (Shanghai Jiao Tong University, Shanghai Artificial Intelligence Laboratory), Zhuobin Huang (University of Electronic Science and Technology of China), Rong Chen (Shanghai Jiao Tong University, Shanghai Artificial Intelligence Laboratory), Mingyu Wu (Shanghai Jiao Tong University, Shanghai Artificial Intelligence Laboratory), Haibo Chen (Shanghai Jiao Tong University) Validating Database System Isolation Level Implementations with Version Certificate Recovery Jack Clark (Imperial College London), Alastair F. Donaldson (Imperial College London), John Wickerson (Imperial College London), Manuel Rigger (National University of Singapore)"
+  },
+  {
+   "venue": "EuroSys",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Best Runner-up Paper Award",
+   "title": "Exploring Performance and Cost Optimization with ASIC-Based CXL Memory",
+   "authors": [
+    "Yupeng Tang",
+    "Ping Zhou",
+    "Wenhui Zhang",
+    "Henry Hu",
+    "Qirui Yang",
+    "Hao Xiang",
+    "Tongping Liu",
+    "Jiaxin Shan",
+    "Ruoyun Huang",
+    "Cheng Zhao",
+    "Cheng Chen",
+    "Hui Zhang",
+    "Fei Liu",
+    "Shuai Zhang",
+    "Xiaoning Ding",
+    "Jianjun Chen"
+   ],
+   "track": "main",
+   "source": "https://2024.eurosys.org/awards.html",
+   "evidence": "Best Runner-up Paper Awards TraceUpscaler: Upscaling Traces to Evaluate Systems at High Load Sultan Mahmud Sajal (The Pennsylvania State University), Timothy Zhu (The Pennsylvania State University), Bhuvan Urgaonkar (The Pennsylvania State University), Siddhartha Sen (Microsoft Research) Exploring Performance and Cost Optimization with ASIC-Based CXL Memory Yupeng Tang (Yale University), Ping Zhou (ByteDance), Wenhui Zhang (ByteDance), Henry Hu (ByteDance), Qirui Yang (ByteDance), Hao Xiang (ByteDance), Tongping Liu (ByteDance), Jiaxin Shan (ByteDance), Ruoyun Huang (ByteDance), Cheng Zhao (ByteDance), Cheng Chen (ByteDance), Hui Zhang (ByteDance), Fei Liu (ByteDance), Shuai Zhang (ByteDance), Xiaoning Ding (ByteDance), Jianjun Chen (ByteDance)"
+  },
+  {
+   "venue": "EuroSys",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Best Runner-up Paper Award",
+   "title": "TraceUpscaler: Upscaling Traces to Evaluate Systems at High Load",
+   "authors": [
+    "Sultan Mahmud Sajal",
+    "Timothy Zhu",
+    "Bhuvan Urgaonkar",
+    "Siddhartha Sen"
+   ],
+   "track": "main",
+   "source": "https://2024.eurosys.org/awards.html",
+   "evidence": "Best Runner-up Paper Awards TraceUpscaler: Upscaling Traces to Evaluate Systems at High Load Sultan Mahmud Sajal (The Pennsylvania State University), Timothy Zhu (The Pennsylvania State University), Bhuvan Urgaonkar (The Pennsylvania State University), Siddhartha Sen (Microsoft Research)"
+  },
+  {
+   "venue": "EuroSys",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Snatch: Online Streaming Analytics at the Network Edge",
+   "authors": [
+    "Yunming Xiao",
+    "Yibo Zhao",
+    "Sen Lin",
+    "Aleksandar Kuzmanovic"
+   ],
+   "track": "main",
+   "source": "https://2024.eurosys.org/awards.html",
+   "evidence": "Best Student Paper Awards Snatch: Online Streaming Analytics at the Network Edge Yunming Xiao (Northwestern University), Yibo Zhao (Boston University), Sen Lin (Northwestern University), Aleksandar Kuzmanovic (Northwestern University)"
+  },
+  {
+   "venue": "EuroSys",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Trinity: A Fast Compressed Multi-attribute Data Store",
+   "authors": [
+    "Ziming Mao",
+    "Kiran Srinivasan",
+    "Anurag Khandelwal"
+   ],
+   "track": "main",
+   "source": "https://2024.eurosys.org/awards.html",
+   "evidence": "Best Student Paper Awards Snatch: Online Streaming Analytics at the Network Edge Yunming Xiao (Northwestern University), Yibo Zhao (Boston University), Sen Lin (Northwestern University), Aleksandar Kuzmanovic (Northwestern University) Trinity: A Fast Compressed Multi-attribute Data Store Ziming Mao (UC Berkeley), Kiran Srinivasan (NetApp), Anurag Khandelwal (Yale University)"
+  },
+  {
+   "venue": "EuroSys",
+   "year": 2024,
    "award": "tot",
    "awardLabel": "Test of Time Award",
    "title": "System software for persistent memory",
@@ -64123,6 +65355,89 @@
   {
    "venue": "EuroSys",
    "year": 2025,
+   "award": "best",
+   "awardLabel": "EuroSys Best Paper",
+   "title": "CacheBlend: Fast Large Language Model Serving for RAG with Cached Knowledge Fusion",
+   "authors": [
+    "Jiayi Yao",
+    "Hanchen Li",
+    "Yuhan Liu",
+    "Siddhant Ray",
+    "Yihua Cheng",
+    "Qizheng Zhang",
+    "Kuntai Du",
+    "Shan Lu",
+    "Junchen Jiang"
+   ],
+   "track": "main",
+   "source": "https://2025.eurosys.org/awards.html",
+   "evidence": "EuroSys Best Papers: Spring submissions: CacheBlend: Fast Large Language Model Serving for RAG with Cached Knowledge Fusion Jiayi Yao, Hanchen Li, Yuhan Liu, Siddhant Ray, Yihua Cheng, Qizheng Zhang, Kuntai Du, Shan Lu, Junchen Jiang"
+  },
+  {
+   "venue": "EuroSys",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "EuroSys Best Paper",
+   "title": "SpInfer: Leveraging Low-Level Sparsity for Efficient Large Language Model Inference on GPUs",
+   "authors": [
+    "Ruibo Fan",
+    "Xiangrui Yu",
+    "Peijie Dong",
+    "Zeyu Li",
+    "Gu Gong",
+    "Qiang Wang",
+    "Wei Wang",
+    "Xiaowen Chu"
+   ],
+   "track": "main",
+   "source": "https://2025.eurosys.org/awards.html",
+   "evidence": "EuroSys Best Papers: Spring submissions: CacheBlend: Fast Large Language Model Serving for RAG with Cached Knowledge Fusion Jiayi Yao, Hanchen Li, Yuhan Liu, Siddhant Ray, Yihua Cheng, Qizheng Zhang, Kuntai Du, Shan Lu, Junchen Jiang Fall submissions: SpInfer: Leveraging Low-Level Sparsity for Efficient Large Language Model Inference on GPUs Ruibo Fan, Xiangrui Yu, Peijie Dong, Zeyu Li, Gu Gong, Qiang Wang, Wei Wang, Xiaowen Chu"
+  },
+  {
+   "venue": "EuroSys",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "EuroSys Best Student Paper",
+   "title": "Enabling Virtual Priority in Data Center Congestion Control",
+   "authors": [
+    "Zhaochen Zhang",
+    "Feiyang Xue",
+    "Keqiang He",
+    "Zhimeng Yin",
+    "Gianni Antichi",
+    "Jiaqi Gao",
+    "Yizhi Wang",
+    "Rui Ning",
+    "Haixin Nan",
+    "Xu Zhang",
+    "Peirui Cao",
+    "Xiaoliang Wang",
+    "Wanchun Dou",
+    "Guihai Chen",
+    "Chen Tian"
+   ],
+   "track": "main",
+   "source": "https://2025.eurosys.org/awards.html",
+   "evidence": "EuroSys Best student paper: Spring submissions: Understanding the Linux Kernel, Visually Hanzhi Liu, Yanyan Jiang, Chang Xu Fall submissions: Enabling Virtual Priority in Data Center Congestion Control Zhaochen Zhang, Feiyang Xue, Keqiang He, Zhimeng Yin, Gianni Antichi, Jiaqi Gao, Yizhi Wang, Rui Ning, Haixin Nan, Xu Zhang, Peirui Cao, Xiaoliang Wang, Wanchun Dou, Guihai Chen, Chen Tian"
+  },
+  {
+   "venue": "EuroSys",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "EuroSys Best Student Paper",
+   "title": "Understanding the Linux Kernel, Visually",
+   "authors": [
+    "Hanzhi Liu",
+    "Yanyan Jiang",
+    "Chang Xu"
+   ],
+   "track": "main",
+   "source": "https://2025.eurosys.org/awards.html",
+   "evidence": "EuroSys Best student paper: Spring submissions: Understanding the Linux Kernel, Visually Hanzhi Liu, Yanyan Jiang, Chang Xu"
+  },
+  {
+   "venue": "EuroSys",
+   "year": 2025,
    "award": "tot",
    "awardLabel": "Test of Time Award",
    "title": "Large-scale cluster management at Google with Borg",
@@ -64138,6 +65453,39 @@
    "paperYear": 2015,
    "source": "https://www.eurosys.org/awards/test-of-time-award",
    "evidence": "EuroSys 2025 Test-of-Time Award: Abhishek Verma, Luis Pedrosa, Madhukar Korupolu, David Oppenheimer, Eric Tune, John Wilkes for “Large-scale cluster management at Google with Borg”"
+  },
+  {
+   "venue": "EuroSys",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Avicenna: Masking Slowdowns in Replicated State Machines with Counterfactual Evaluation",
+   "authors": [
+    "Christopher Hodsdon",
+    "Zijian Qin",
+    "Khiem Ngo",
+    "Siddhartha Sen",
+    "Ethan Katz-Bassett",
+    "Wyatt Lloyd"
+   ],
+   "track": "main",
+   "source": "https://2026.eurosys.org/eurosys-awards.html",
+   "evidence": "Best Paper Awards Avicenna: Masking Slowdowns in Replicated State Machines with Counterfactual Evaluation Christopher Hodsdon (Databricks), Zijian Qin (Princeton University), Khiem Ngo (Datadog), Siddhartha Sen (Microsoft Research), Ethan Katz-Bassett (Columbia University), Wyatt Lloyd (Princeton University)"
+  },
+  {
+   "venue": "EuroSys",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "PaCaR: Improved Buffered I/O Locality on NUMA Systems with Page Cache Replication",
+   "authors": [
+    "Jérôme Coquisart",
+    "Julien Sopena",
+    "Redha Gouicem"
+   ],
+   "track": "main",
+   "source": "https://2026.eurosys.org/eurosys-awards.html",
+   "evidence": "Best Paper Awards Avicenna: Masking Slowdowns in Replicated State Machines with Counterfactual Evaluation Christopher Hodsdon (Databricks), Zijian Qin (Princeton University), Khiem Ngo (Datadog), Siddhartha Sen (Microsoft Research), Ethan Katz-Bassett (Columbia University), Wyatt Lloyd (Princeton University) PaCaR: Improved Buffered I/O Locality on NUMA Systems with Page Cache Replication Jérôme Coquisart (RWTH Aachen University), Julien Sopena (LIP6 UPMC/CNRS — Inria), Redha Gouicem (RWTH Aachen University)"
   },
   {
    "venue": "EuroSys",
@@ -66029,6 +67377,338 @@
   },
   {
    "venue": "FOCS",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Interlacing Families I: Bipartite Ramanujan Graphs of All Degrees",
+   "authors": [
+    "Adam Marcus",
+    "Daniel A. Spielman",
+    "Nikhil Srivastava"
+   ],
+   "track": "main",
+   "source": "https://ieee-focs.org/focs2013/awards.html",
+   "evidence": "Best Paper Awards: “Interlacing Families I: Bipartite Ramanujan Graphs of All Degrees\" by Adam Marcus, Daniel A. Spielman and Nikhil Srivastava"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Navigating Central Path with Electrical Flows: from Flows to Matchings, and Back",
+   "authors": [
+    "Aleksander Madry"
+   ],
+   "track": "main",
+   "source": "https://ieee-focs.org/focs2013/awards.html",
+   "evidence": "Best Paper Awards: “Interlacing Families I: Bipartite Ramanujan Graphs of All Degrees\" by Adam Marcus, Daniel A. Spielman and Nikhil Srivastava; “Navigating Central Path with Electrical Flows: from Flows to Matchings, and Back\" by Aleksander Madry"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "On Kinetic Delaunay Triangulations: A Near Quadratic Bound for Unit Speed Motions",
+   "authors": [
+    "Natan Rubin"
+   ],
+   "track": "main",
+   "source": "https://ieee-focs.org/focs2013/awards.html",
+   "evidence": "Best Paper Awards: “Interlacing Families I: Bipartite Ramanujan Graphs of All Degrees\" by Adam Marcus, Daniel A. Spielman and Nikhil Srivastava; “Navigating Central Path with Electrical Flows: from Flows to Matchings, and Back\" by Aleksander Madry; and “On Kinetic Delaunay Triangulations: A Near Quadratic Bound for Unit Speed Motions\" by Natan Rubin"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2013,
+   "award": "student",
+   "awardLabel": "Machtey Award for Best Student Paper",
+   "title": "Nearly Maximum Flows in Nearly Linear Time",
+   "authors": [
+    "Jonah Sherman"
+   ],
+   "track": "main",
+   "source": "https://ieee-focs.org/focs2013/awards.html",
+   "evidence": "The Machtey Award for Best Student Paper: “Nearly Maximum Flows in Nearly Linear Time\" by Jonah Sherman"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Path-Finding Methods for Linear Programming: Solving Linear Programs in Õ(√rank) Iterations and Faster Algorithms for Maximum Flow",
+   "authors": [
+    "Yin Tat Lee",
+    "Aaron Sidford"
+   ],
+   "track": "main",
+   "source": "https://ieee-focs.org/focs2014/focs14-frontmatter.pdf",
+   "evidence": "Best Paper Award and the Machtey Award for Best Student Paper The program committee of FOCS 2014 gives the Best Paper award, as well as the Machtey Award for the best paper written solely by one or more students, to Yin Tat Lee and Aaron Sidford for their paper “Path-Finding Methods for Linear Programming: Solving Linear Programs in˜ O(√rank) Iterations and Faster Algorithms for Maximum Flow”"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2014,
+   "award": "student",
+   "awardLabel": "Machtey Award for Best Student Paper",
+   "title": "Path-Finding Methods for Linear Programming: Solving Linear Programs in Õ(√rank) Iterations and Faster Algorithms for Maximum Flow",
+   "authors": [
+    "Yin Tat Lee",
+    "Aaron Sidford"
+   ],
+   "track": "main",
+   "source": "https://ieee-focs.org/focs2014/focs14-frontmatter.pdf",
+   "evidence": "Best Paper Award and the Machtey Award for Best Student Paper The program committee of FOCS 2014 gives the Best Paper award, as well as the Machtey Award for the best paper written solely by one or more students, to Yin Tat Lee and Aaron Sidford for their paper “Path-Finding Methods for Linear Programming: Solving Linear Programs in˜ O(√rank) Iterations and Faster Algorithms for Maximum Flow”"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "An average-case depth hierarchy theorem for Boolean circuits",
+   "authors": [
+    "Benjamin Rossman",
+    "Rocco A. Servedio",
+    "Li-Yang Tan"
+   ],
+   "track": "main",
+   "source": "https://ieee-focs.org/focs2015/awards.html",
+   "alsoAt": [
+    "https://ieee-focs.org/focs2015/program_concise.html"
+   ],
+   "evidence": "Best Paper Award: The program committee of FOCS 2015 is pleased to present the Best Paper Award to the paper An average-case depth hierarchy theorem for Boolean circuits by Benjamin Rossman, Rocco A. Servedio, and Li-Yang Tan || An average-case depth hierarchy theorem for Boolean circuits [best paper award] Benjamin Rossman, Rocco A. Servedio, Li-Yang Tan"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2015,
+   "award": "student",
+   "awardLabel": "Machtey Award for Best Student Paper",
+   "title": "A Faster Cutting Plane Method and its Implications for Combinatorial and Convex Optimization",
+   "authors": [
+    "Yin Tat Lee",
+    "Aaron Sidford",
+    "Sam Chiu-wai Wong"
+   ],
+   "track": "main",
+   "source": "https://ieee-focs.org/focs2015/awards.html",
+   "alsoAt": [
+    "https://ieee-focs.org/focs2015/program_concise.html"
+   ],
+   "evidence": "The Machtey Award for Best Student Paper: The program committee of FOCS 2015 is pleased to present the Machtey Award for Best Student Paper, which is given annually at FOCS to the most outstanding paper(s) written solely by one or more students, jointly to the following two papers: Lower Bounds for Clique vs. Independent Set by Mika Göös and A Faster Cutting Plane Method and its Implications for Combinatorial and Convex Optimization by Yin Tat Lee, Aaron Sidford, and Sam Chiu-wai Wong || A Faster Cutting Plane Method and its Implications for Combinatorial and Convex Optimization [best student paper award] Yin Tat Lee, Aaron Sidford, Sam Chiu-wai Wong"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2015,
+   "award": "student",
+   "awardLabel": "Machtey Award for Best Student Paper",
+   "title": "Lower Bounds for Clique vs. Independent Set",
+   "authors": [
+    "Mika Göös"
+   ],
+   "track": "main",
+   "source": "https://ieee-focs.org/focs2015/awards.html",
+   "alsoAt": [
+    "https://ieee-focs.org/focs2015/program_concise.html"
+   ],
+   "evidence": "The Machtey Award for Best Student Paper: The program committee of FOCS 2015 is pleased to present the Machtey Award for Best Student Paper, which is given annually at FOCS to the most outstanding paper(s) written solely by one or more students, jointly to the following two papers: Lower Bounds for Clique vs. Independent Set by Mika Göös || Lower Bounds for Clique vs. Independent Set [best student paper award] Mika Göös"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "A dichotomy theorem for nonuniform CSPs",
+   "authors": [
+    "Andrei Bulatov"
+   ],
+   "track": "main",
+   "source": "https://ieee-focs.org/FOCS-2017-Papers/3464z020.pdf",
+   "evidence": "Best Paper Award The FOCS 2017 program committee is pleased to present the Best Paper Award jointly to the following papers: A dichotomy theorem for nonuniform CSPs by Andrei Bulatov"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "A Proof of CSP Dichotomy Conjecture",
+   "authors": [
+    "Dmitriy Zhuk"
+   ],
+   "track": "main",
+   "source": "https://ieee-focs.org/FOCS-2017-Papers/3464z020.pdf",
+   "evidence": "Best Paper Award The FOCS 2017 program committee is pleased to present the Best Paper Award jointly to the following papers: A dichotomy theorem for nonuniform CSPs by Andrei Bulatov A Proof of CSP Dichotomy Conjecture by Dmitriy Zhuk"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "The Matching Problem in General Graphs is in Quasi-NC",
+   "authors": [
+    "Ola Svensson",
+    "Jakub Tarnawski"
+   ],
+   "track": "main",
+   "source": "https://ieee-focs.org/FOCS-2017-Papers/3464z020.pdf",
+   "evidence": "Best Paper Award The FOCS 2017 program committee is pleased to present the Best Paper Award jointly to the following papers: A dichotomy theorem for nonuniform CSPs by Andrei Bulatov A Proof of CSP Dichotomy Conjecture by Dmitriy Zhuk The Matching Problem in General Graphs is in Quasi-NC by Ola Svensson and Jakub Tarnawski"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2017,
+   "award": "student",
+   "awardLabel": "Machtey Award for Best Student Paper",
+   "title": "Hardness Results for Structured Linear Systems",
+   "authors": [
+    "Rasmus Kyng",
+    "Peng Zhang"
+   ],
+   "track": "main",
+   "source": "https://ieee-focs.org/FOCS-2017-Papers/3464z020.pdf",
+   "evidence": "The Machtey Award for Best Student Paper The FOCS 2017 program committee is pleased to present the Machtey Award for Best Student Paper, which is given annually at FOCS to the most outstanding paper written solely by one or more students, to: Hardness Results for Structured Linear Systems by Rasmus Kyng and Peng Zhang"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Approximating Edit Distance within Constant Factor in Truly Sub-Quadratic Time",
+   "authors": [
+    "Diptarka Chakraborty",
+    "Debarati Das",
+    "Elazar Goldenberg",
+    "Michal Koucky",
+    "Michael Saks"
+   ],
+   "track": "main",
+   "source": "https://ieee-focs.org/FOCS-2018-Papers/pdfs/59fxxii.pdf",
+   "evidence": "Best Paper Award The program committee of FOCS 2018 is pleased to present the Best Paper Award jointly to the following three papers: Classical Verification of Quantum Computations by Urmila Mahadev Pseudorandom Sets in Grassmann Graph Have Near-Perfect Expansion by Subhash Khot, Dor Minzer, and Muli Safra Approximating Edit Distance within Constant Factor in Truly Sub-Quadratic Time by Diptarka Chakraborty, Debarati Das, Elazar Goldenberg, Michal Koucky, and Michael Saks"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Classical Verification of Quantum Computations",
+   "authors": [
+    "Urmila Mahadev"
+   ],
+   "track": "main",
+   "source": "https://ieee-focs.org/FOCS-2018-Papers/pdfs/59fxxii.pdf",
+   "evidence": "Best Paper Award The program committee of FOCS 2018 is pleased to present the Best Paper Award jointly to the following three papers: Classical Verification of Quantum Computations by Urmila Mahadev"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Pseudorandom Sets in Grassmann Graph Have Near-Perfect Expansion",
+   "authors": [
+    "Subhash Khot",
+    "Dor Minzer",
+    "Muli Safra"
+   ],
+   "track": "main",
+   "source": "https://ieee-focs.org/FOCS-2018-Papers/pdfs/59fxxii.pdf",
+   "evidence": "Best Paper Award The program committee of FOCS 2018 is pleased to present the Best Paper Award jointly to the following three papers: Classical Verification of Quantum Computations by Urmila Mahadev Pseudorandom Sets in Grassmann Graph Have Near-Perfect Expansion by Subhash Khot, Dor Minzer, and Muli Safra"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2018,
+   "award": "student",
+   "awardLabel": "Machtey Award for Best Student Paper",
+   "title": "Classical Verification of Quantum Computations",
+   "authors": [
+    "Urmila Mahadev"
+   ],
+   "track": "main",
+   "source": "https://ieee-focs.org/FOCS-2018-Papers/pdfs/59fxxii.pdf",
+   "evidence": "The Machtey Award for Best Student Paper The program committee of FOCS 2018 is pleased to present the Machtey Award for the Best Student Paper, which is given annually at FOCS to the most outstanding paper(s) written solely by one or more students, jointly to the following two papers: Non-Black-Box Worst-Case to Average-Case Reductions within NP by Shuichi Hirahara Classical Verification of Quantum Computations by Urmila Mahadev"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2018,
+   "award": "student",
+   "awardLabel": "Machtey Award for Best Student Paper",
+   "title": "Non-Black-Box Worst-Case to Average-Case Reductions within NP",
+   "authors": [
+    "Shuichi Hirahara"
+   ],
+   "track": "main",
+   "source": "https://ieee-focs.org/FOCS-2018-Papers/pdfs/59fxxii.pdf",
+   "evidence": "The Machtey Award for Best Student Paper The program committee of FOCS 2018 is pleased to present the Machtey Award for the Best Student Paper, which is given annually at FOCS to the most outstanding paper(s) written solely by one or more students, jointly to the following two papers: Non-Black-Box Worst-Case to Average-Case Reductions within NP by Shuichi Hirahara"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Automating Resolution is NP-Hard",
+   "authors": [
+    "Albert Atserias",
+    "Moritz Müller"
+   ],
+   "track": "main",
+   "source": "https://ieee-focs.org/focs2019/awards/",
+   "evidence": "Best Paper Award Lower bounds for maximal matchings and maximal independent sets Authors: Alkida Balliu (Aalto University); Sebastian Brandt (ETH Zurich); Juho Hirvonen, Dennis Olivetti (Aalto University); Mikaël Rabie (Aalto University and University Paris Sorbonne); Jukka Suomela (Aalto University) NEEXP ⊆ MIP* Authors: Anand Natarajan (California Institute of Technology); John Wright (Massachusetts Institute of Technology) Automating Resolution is NP-Hard Authors: Albert Atserias, Moritz Müller (Universitat Politecnica de Catalunya)"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Lower bounds for maximal matchings and maximal independent sets",
+   "authors": [
+    "Alkida Balliu",
+    "Sebastian Brandt",
+    "Juho Hirvonen",
+    "Dennis Olivetti",
+    "Mikaël Rabie",
+    "Jukka Suomela"
+   ],
+   "track": "main",
+   "source": "https://ieee-focs.org/focs2019/awards/",
+   "evidence": "Best Paper Award Lower bounds for maximal matchings and maximal independent sets Authors: Alkida Balliu (Aalto University); Sebastian Brandt (ETH Zurich); Juho Hirvonen, Dennis Olivetti (Aalto University); Mikaël Rabie (Aalto University and University Paris Sorbonne); Jukka Suomela (Aalto University)"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "NEEXP ⊆ MIP*",
+   "authors": [
+    "Anand Natarajan",
+    "John Wright"
+   ],
+   "track": "main",
+   "source": "https://ieee-focs.org/focs2019/awards/",
+   "evidence": "Best Paper Award Lower bounds for maximal matchings and maximal independent sets Authors: Alkida Balliu (Aalto University); Sebastian Brandt (ETH Zurich); Juho Hirvonen, Dennis Olivetti (Aalto University); Mikaël Rabie (Aalto University and University Paris Sorbonne); Jukka Suomela (Aalto University) NEEXP ⊆ MIP* Authors: Anand Natarajan (California Institute of Technology); John Wright (Massachusetts Institute of Technology)"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2019,
+   "award": "student",
+   "awardLabel": "Machtey Award (Best Student Paper)",
+   "title": "Efficient Construction of Rigid Matrices Using an NP Oracle",
+   "authors": [
+    "Josh Alman",
+    "Lijie Chen"
+   ],
+   "track": "main",
+   "source": "https://ieee-focs.org/focs2019/awards/",
+   "evidence": "Machtey Award (Best Student Paper) Efficient Construction of Rigid Matrices Using an NP Oracle Authors: Josh Alman, Lijie Chen (MIT)"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2019,
+   "award": "student",
+   "awardLabel": "Machtey Award (Best Student Paper)",
+   "title": "Faster Minimum k-cut of a Simple Graph",
+   "authors": [
+    "Jason Li"
+   ],
+   "track": "main",
+   "source": "https://ieee-focs.org/focs2019/awards/",
+   "evidence": "Machtey Award (Best Student Paper) Efficient Construction of Rigid Matrices Using an NP Oracle Authors: Josh Alman, Lijie Chen (MIT) Faster Minimum k-cut of a Simple Graph Authors: Jason Li (Carnegie Mellon University)"
+  },
+  {
+   "venue": "FOCS",
    "year": 2019,
    "award": "tot",
    "awardLabel": "Test of Time Award",
@@ -66043,6 +67723,64 @@
    "paperYear": 1999,
    "source": "https://tc.computer.org/tcmf/focs-test-time-award/",
    "evidence": "FOCS 2019 Test of Time Award (1999): Matteo Frigo, Charles Leiserson, Harald Prokop, Sridhar Ramachandran: Cache-Oblivious Algorithms"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "A New Minimax Theorem for Randomized Algorithms",
+   "authors": [
+    "Shalev Ben-David",
+    "Eric Blais"
+   ],
+   "track": "main",
+   "source": "https://ieee-focs.org/FOCS-2020-Papers/pdfs/FOCS2020-SFPLmbQgSLgOwZlanGgzq/962100z026/962100z026.pdf",
+   "evidence": "Best Paper Award The program committee of FOCS 2020 is pleased to present the Best Paper Award jointly to the following three papers: An Equivalence Between Private Classification and Online Prediction by Mark Bun, Roi Livni, and Shay Moran Edge-Weighted Online Bipartite Matching by Matthew Fahrbach, Zhiyi Huang, Runzhou Tao, and Morteza Zadimoghaddam A New Minimax Theorem for Randomized Algorithms by Shalev Ben-David and Eric Blais"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "An Equivalence Between Private Classification and Online Prediction",
+   "authors": [
+    "Mark Bun",
+    "Roi Livni",
+    "Shay Moran"
+   ],
+   "track": "main",
+   "source": "https://ieee-focs.org/FOCS-2020-Papers/pdfs/FOCS2020-SFPLmbQgSLgOwZlanGgzq/962100z026/962100z026.pdf",
+   "evidence": "Best Paper Award The program committee of FOCS 2020 is pleased to present the Best Paper Award jointly to the following three papers: An Equivalence Between Private Classification and Online Prediction by Mark Bun, Roi Livni, and Shay Moran"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Edge-Weighted Online Bipartite Matching",
+   "authors": [
+    "Matthew Fahrbach",
+    "Zhiyi Huang",
+    "Runzhou Tao",
+    "Morteza Zadimoghaddam"
+   ],
+   "track": "main",
+   "source": "https://ieee-focs.org/FOCS-2020-Papers/pdfs/FOCS2020-SFPLmbQgSLgOwZlanGgzq/962100z026/962100z026.pdf",
+   "evidence": "Best Paper Award The program committee of FOCS 2020 is pleased to present the Best Paper Award jointly to the following three papers: An Equivalence Between Private Classification and Online Prediction by Mark Bun, Roi Livni, and Shay Moran Edge-Weighted Online Bipartite Matching by Matthew Fahrbach, Zhiyi Huang, Runzhou Tao, and Morteza Zadimoghaddam"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2020,
+   "award": "student",
+   "awardLabel": "Machtey Award for Best Student Paper",
+   "title": "The Constant Depth Formula and Partial Function Versions of MCSP are Hard",
+   "authors": [
+    "Rahul Ilango"
+   ],
+   "track": "main",
+   "source": "https://ieee-focs.org/FOCS-2020-Papers/pdfs/FOCS2020-SFPLmbQgSLgOwZlanGgzq/962100z026/962100z026.pdf",
+   "evidence": "Machtey Award for Best Student Paper The program committee of FOCS 2020 is pleased to present the Machtey Award for the Best Student Paper, which is given annually at FOCS to the most outstanding paper(s) written solely by one or more students to the following two paper: The Constant Depth Formula and Partial Function Versions of MCSP are Hard by Rahul Ilango"
   },
   {
    "venue": "FOCS",
@@ -66072,6 +67810,34 @@
    "paperYear": 2000,
    "source": "https://tc.computer.org/tcmf/focs-test-time-award/",
    "evidence": "FOCS 2020 Test of Time Award (2000): Tim Roughgarden and Éva Tardos: How bad is selfish routing?"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Superpolynomial Lower Bounds Against Low-Depth Algebraic Circuits",
+   "authors": [
+    "Nutan Limaye",
+    "Srikanth Srinivasan",
+    "Sébastien Tavenas"
+   ],
+   "track": "main",
+   "source": "https://ieee-focs.org/FOCS-2021-Papers/pdfs/FOCS2021-5stbVHiOp5jRHWlSl41FkR/205500z026/205500z026.pdf",
+   "evidence": "Best Paper Award: The program committee of FOCS 2021 is pleased to present the Best Paper Award to the following paper: Superpolynomial Lower Bounds Against Low-Depth Algebraic Circuits by Nutan Limaye, Srikanth Srinivasan and Sébastien Tavenas."
+  },
+  {
+   "venue": "FOCS",
+   "year": 2021,
+   "award": "student",
+   "awardLabel": "Machtey Award for Best Student Paper",
+   "title": "Breaking the Cubic Barrier for (Unweighted) Tree Edit Distance",
+   "authors": [
+    "Xiao Mao"
+   ],
+   "track": "main",
+   "source": "https://ieee-focs.org/FOCS-2021-Papers/pdfs/FOCS2021-5stbVHiOp5jRHWlSl41FkR/205500z026/205500z026.pdf",
+   "evidence": "Machtey Award for Best Student Paper: The program committee of FOCS 2021 is pleased to present the Machtey Award for the Best Student Paper, which is given annually at FOCS to the most outstanding paper(s) written solely by one or more students to the following paper: Breaking the Cubic Barrier for (Unweighted) Tree Edit Distance by Xiao Mao"
   },
   {
    "venue": "FOCS",
@@ -66135,6 +67901,99 @@
   },
   {
    "venue": "FOCS",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Maximum Flow and Minimum-Cost Flow in Almost-Linear Time",
+   "authors": [
+    "Li Chen",
+    "Rasmus Kyng",
+    "Yang P. Liu",
+    "Richard Peng",
+    "Maximilian Probst Gutenberg",
+    "Sushant Sachdeva"
+   ],
+   "track": "main",
+   "source": "https://ieee-focs.org/focs2022/awards.html",
+   "evidence": "Best Paper Award co-winners Negative-Weight Single-Source Shortest Paths in Near-Linear Time Aaron Bernstein, Danupon Nanongkai and Christian Wulff-Nilsen Maximum Flow and Minimum-Cost Flow in Almost-Linear Time Li Chen, Rasmus Kyng, Yang P. Liu, Richard Peng, Maximilian Probst Gutenberg and Sushant Sachdeva"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Negative-Weight Single-Source Shortest Paths in Near-Linear Time",
+   "authors": [
+    "Aaron Bernstein",
+    "Danupon Nanongkai",
+    "Christian Wulff-Nilsen"
+   ],
+   "track": "main",
+   "source": "https://ieee-focs.org/focs2022/awards.html",
+   "evidence": "Best Paper Award co-winners Negative-Weight Single-Source Shortest Paths in Near-Linear Time Aaron Bernstein, Danupon Nanongkai and Christian Wulff-Nilsen"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2022,
+   "award": "student",
+   "awardLabel": "Machtey Award for Best Student Paper",
+   "title": "On Matrix Multiplication and Polynomial Identity Testing",
+   "authors": [
+    "Robert Andrews"
+   ],
+   "track": "main",
+   "source": "https://ieee-focs.org/focs2022/awards.html",
+   "evidence": "Machtey Award for Best Student Paper On Matrix Multiplication and Polynomial Identity Testing Robert Andrews"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Strong Bounds for 3-Progressions",
+   "authors": [
+    "Zander Kelley",
+    "Raghu Meka"
+   ],
+   "track": "main",
+   "source": "https://ieee-focs.org/FOCS-2023-Papers/pdfs/FOCS2023-35YPEGokY3iqqos5xlCDsn/189400z020/189400z020.pdf",
+   "alsoAt": [
+    "https://focs.computer.org/2023/schedule/"
+   ],
+   "evidence": "Two papers: (1) \"Strong Bounds for 3-Progressions\" by Zander Kelley (UIUC) and Raghu Meka (UCLA); and (2) \"The Subspace Flatness Conjecture and Faster Integer Programming\" by Victor Reis (University of Washington) and Thomas Rothvoss (University of Washington) were chosen by the PC as recipients of the FOCS 2023 Best Paper Awards. || Best Paper Talks (Sequoia A-B) Strong Bounds for 3-Progressions Zander Kelley (UIUC) and Raghu Meka (UCLA)"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "The Subspace Flatness Conjecture and Faster Integer Programming",
+   "authors": [
+    "Victor Reis",
+    "Thomas Rothvoss"
+   ],
+   "track": "main",
+   "source": "https://ieee-focs.org/FOCS-2023-Papers/pdfs/FOCS2023-35YPEGokY3iqqos5xlCDsn/189400z020/189400z020.pdf",
+   "alsoAt": [
+    "https://focs.computer.org/2023/schedule/"
+   ],
+   "evidence": "Two papers: (1) \"Strong Bounds for 3-Progressions\" by Zander Kelley (UIUC) and Raghu Meka (UCLA); and (2) \"The Subspace Flatness Conjecture and Faster Integer Programming\" by Victor Reis (University of Washington) and Thomas Rothvoss (University of Washington) were chosen by the PC as recipients of the FOCS 2023 Best Paper Awards. || Best Paper Talks (Sequoia A-B) Strong Bounds for 3-Progressions Zander Kelley (UIUC) and Raghu Meka (UCLA) The Subspace Flatness Conjecture and Faster Integer Programming Victor Reis (University of Washington) and Thomas Rothvoss (University of Washington)"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2023,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "SAT Reduces to the Minimum Circuit Size Problem with a Random Oracle",
+   "authors": [
+    "Rahul Ilango"
+   ],
+   "track": "main",
+   "source": "https://ieee-focs.org/FOCS-2023-Papers/pdfs/FOCS2023-35YPEGokY3iqqos5xlCDsn/189400z020/189400z020.pdf",
+   "evidence": "The paper \"SAT Reduces to the Minimum Circuit Size Problem with a Random Oracle\" by Rahul Ilango (MIT) was chosen by the PC as the recipient of the Best Student Paper Award."
+  },
+  {
+   "venue": "FOCS",
    "year": 2023,
    "award": "tot",
    "awardLabel": "Test of Time Award",
@@ -66180,6 +68039,77 @@
    "paperYear": 2003,
    "source": "https://tc.computer.org/tcmf/focs-test-time-award/",
    "evidence": "FOCS 2023 Test of Time Award (2003): Robert D. Kleinberg and Frank Thomson Leighton: The Value of Knowing a Demand Curve: Bounds on Regret for Online Posted-Price Auctions"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Near-Optimal Deterministic Network Decomposition and Ruling Set, and Improved MIS",
+   "authors": [
+    "Mohsen Ghaffari",
+    "Christoph Grunau"
+   ],
+   "track": "main",
+   "source": "https://focs.computer.org/2024/program/schedule/",
+   "alsoAt": [
+    "https://focs.computer.org/2024/accepted-papers-for-focs-2024/"
+   ],
+   "evidence": "Session 9: Best Papers (Session chair: Aravindan Vijayaraghavan) Universal Optimality of Dijkstra via Beyond-Worst-Case Heaps Authors: B. Haeupler, R. Hladík, V. Rozhon, R. Tarjan, J. Tětek Near-Optimal Deterministic Network Decomposition and Ruling Set, and Improved MIS Authors: M. Ghaffari, C. Grunau || Near-Optimal Deterministic Network Decomposition and Ruling Set, and Improved MIS Mohsen Ghaffari (MIT); Christoph Grunau (ETH Zurich)"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Universal Optimality of Dijkstra via Beyond-Worst-Case Heaps",
+   "authors": [
+    "Bernhard Haeupler",
+    "Richard Hladík",
+    "Vaclav Rozhon",
+    "Robert Tarjan",
+    "Jakub Tětek"
+   ],
+   "track": "main",
+   "source": "https://focs.computer.org/2024/program/schedule/",
+   "alsoAt": [
+    "https://focs.computer.org/2024/accepted-papers-for-focs-2024/"
+   ],
+   "evidence": "Session 9: Best Papers (Session chair: Aravindan Vijayaraghavan) Universal Optimality of Dijkstra via Beyond-Worst-Case Heaps Authors: B. Haeupler, R. Hladík, V. Rozhon, R. Tarjan, J. Tětek || Universal Optimality of Dijkstra via Beyond-Worst-Case Heaps Bernhard Haeupler, Richard Hladík (INSAIT, University of Sofia “St. Kliment Ohridski” & ETH Zurich); Vaclav Rozhon (INSAIT, University of Sofia “St. Kliment Ohridski”); Robert Tarjan (Princeton University); Jakub Tětek (INSAIT, University of Sofia “St. Kliment Ohridski”)"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "Best Student Paper (Machtey Prize)",
+   "title": "Capacity Threshold for the Ising Perceptron",
+   "authors": [
+    "Brice Huang"
+   ],
+   "track": "main",
+   "source": "https://focs.computer.org/2024/program/schedule/",
+   "alsoAt": [
+    "https://focs.computer.org/2024/accepted-papers-for-focs-2024/"
+   ],
+   "evidence": "Session 5: Best Student Papers (Machtey Prize) (Session chair: Santosh Vempala) Capacity Threshold for the Ising Perceptron Authors: B. Huang || Capacity Threshold for the Ising Perceptron Brice Huang (MIT)"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "Best Student Paper (Machtey Prize)",
+   "title": "Optimal quantile estimation: beyond the comparison model",
+   "authors": [
+    "Mihir Singhal",
+    "Meghal Gupta",
+    "Hongxun Wu"
+   ],
+   "track": "main",
+   "source": "https://focs.computer.org/2024/program/schedule/",
+   "alsoAt": [
+    "https://focs.computer.org/2024/accepted-papers-for-focs-2024/"
+   ],
+   "evidence": "Session 5: Best Student Papers (Machtey Prize) (Session chair: Santosh Vempala) Capacity Threshold for the Ising Perceptron Authors: B. Huang Optimal quantile estimation: beyond the comparison model Authors: M. Singhal, M. Gupta, H. Wu || Optimal quantile estimation: beyond the comparison model Mihir Singhal, Meghal Gupta, Hongxun Wu (UC Berkeley)"
   },
   {
    "venue": "FOCS",
@@ -69569,6 +71499,261 @@
   },
   {
    "venue": "HPCA",
+   "year": 2005,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Checkpointed Early Load Retirement",
+   "authors": [
+    "Nevin Kirman",
+    "Meyrem Kirman",
+    "Mainak Chaudhuri",
+    "José F. Martínez"
+   ],
+   "track": "main",
+   "source": "https://ieeetcca.org/awards/hpca-best-paper-award/",
+   "evidence": "2005: Checkpointed Early Load Retirement. Nevin Kirman, Meyrem Kirman, Mainak Chaudhuri, José F. Martínez (Cornell University)."
+  },
+  {
+   "venue": "HPCA",
+   "year": 2007,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Evaluating MapReduce for Multicore and Multiprocessor Systems",
+   "authors": [
+    "C. Ranger",
+    "R. Raghuraman",
+    "A. Penmetsa",
+    "G. Bradski",
+    "C. Kozyrakis"
+   ],
+   "track": "main",
+   "source": "https://ieeetcca.org/awards/hpca-best-paper-award/",
+   "evidence": "2007: Evaluating MapReduce for Multicore and Multiprocessor Systems. C. Ranger, R. Raghuraman, A. Penmetsa, G. Bradski and C. Kozyrakis (Stanford University)."
+  },
+  {
+   "venue": "HPCA",
+   "year": 2008,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "CMP Network-on-Chip Overlaid with Multi-Band RF-Interconnect",
+   "authors": [
+    "M. Frank Chang",
+    "Jason Cong",
+    "Adam Kaplan",
+    "Mishali Naik",
+    "Glenn Reinman",
+    "Eran Socher",
+    "Sai-Wang Tam"
+   ],
+   "track": "main",
+   "source": "https://ieeetcca.org/awards/hpca-best-paper-award/",
+   "evidence": "2008: CMP Network-on-Chip Overlaid with Multi-Band RF-Interconnect. M. Frank Chang, Jason Cong, Adam Kaplan, Mishali Naik, Glenn Reinman, Eran Socher, Sai-Wang Tam (UCLA)."
+  },
+  {
+   "venue": "HPCA",
+   "year": 2009,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Voltage Emergency Prediction: A Signature-Based Approach To Reducing Voltage Emergencies",
+   "authors": [
+    "Vijay Janapa Reddi",
+    "Meeta S. Gupta",
+    "Glenn Holloway",
+    "Michael D. Smith",
+    "Gu-Yeon Wei",
+    "David Brooks"
+   ],
+   "track": "main",
+   "source": "https://ieeetcca.org/awards/hpca-best-paper-award/",
+   "evidence": "2009: Voltage Emergency Prediction: A Signature-Based Approach To Reducing Voltage Emergencies. Vijay Janapa Reddi, Meeta S. Gupta, Glenn Holloway, Michael D. Smith, Gu-Yeon Wei, and David Brooks (Harvard University)."
+  },
+  {
+   "venue": "HPCA",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "SolarCore: Solar Energy Driven Multi-core Architecture Power Management",
+   "authors": [
+    "Chao Li",
+    "Wangyuan Zhang",
+    "Chang-Burm Cho",
+    "Tao Li"
+   ],
+   "track": "main",
+   "source": "https://ieeetcca.org/awards/hpca-best-paper-award/",
+   "evidence": "2011: SolarCore: Solar Energy Driven Multi-core Architecture Power Management. Chao Li, Wangyuan Zhang, Chang-Burm Cho, and Tao Li (University of Florida)."
+  },
+  {
+   "venue": "HPCA",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Computational Sprinting",
+   "authors": [
+    "Arun Raghavan",
+    "Yixin Luo",
+    "Anuj Chandawalla",
+    "Marios Papaefthymiou",
+    "Kevin P. Pipe",
+    "Thomas F. Wenisch",
+    "Milo M. K. Martin"
+   ],
+   "track": "main",
+   "source": "https://ieeetcca.org/awards/hpca-best-paper-award/",
+   "evidence": "2012: Computational Sprinting. Arun Raghavan (University of Pennsylvania), Yixin Luo (University of Michigan), Anuj Chandawalla (University of Michigan), Marios Papaefthymiou (University of Michigan), Kevin P. Pipe (University of Michigan), Thomas F. Wenisch (University of Michigan), Milo M. K. Martin (University of Pennsylvania)."
+  },
+  {
+   "venue": "HPCA",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Sonic Millip3De: A Massively Parallel 3D-Stacked Accelerator for 3D Ultrasound",
+   "authors": [
+    "Ming Yang",
+    "Siyuan Wei",
+    "Chaitali Chakrabarti",
+    "Thomas F. Wenisch"
+   ],
+   "track": "main",
+   "source": "https://ieeetcca.org/awards/hpca-best-paper-award/",
+   "evidence": "2013: Sonic Millip3De: A Massively Parallel 3D-Stacked Accelerator for 3D Ultrasound. Ming Yang (Arizona State University), Siyuan Wei (Arizona State University), Chaitali Chakrabarti (Arizona State University), and Thomas F. Wenisch (University of Michigan)."
+  },
+  {
+   "venue": "HPCA",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "PVCoherence: Designing Flat Coherence Protocols for Scalable Verification",
+   "authors": [
+    "Meng Zhang",
+    "Jesse D. Bingham",
+    "John Erickson",
+    "Daniel J. Sorin"
+   ],
+   "track": "main",
+   "source": "https://ieeetcca.org/awards/hpca-best-paper-award/",
+   "evidence": "2014: PVCoherence: Designing Flat Coherence Protocols for Scalable Verification. Meng Zhang (Duke University), Jesse D. Bingham (Intel), John Erickson (Intel), Daniel J. Sorin (Duke University)."
+  },
+  {
+   "venue": "HPCA",
+   "year": 2014,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-Up",
+   "title": "NUAT: A Non-Uniform Access Time Memory Controller",
+   "authors": [
+    "Wongyu Shin",
+    "Jeongmin Yang",
+    "Jungwhan Choi",
+    "Lee-Sup Kim"
+   ],
+   "track": "main",
+   "source": "https://ieeetcca.org/awards/hpca-best-paper-award/",
+   "evidence": "2014: PVCoherence: Designing Flat Coherence Protocols for Scalable Verification. Meng Zhang (Duke University), Jesse D. Bingham (Intel), John Erickson (Intel), Daniel J. Sorin (Duke University). Best Paper Runner-Up: NUAT: A Non-Uniform Access Time Memory Controller. Wongyu Shin, Jeongmin Yang, Jungwhan Choi, Lee-Sup Kim (KAIST)."
+  },
+  {
+   "venue": "HPCA",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Architecture Exploration for Ambient Energy Harvesting Nonvolatile Processors",
+   "authors": [
+    "Kaisheng Ma",
+    "Yang Zheng",
+    "Shuangchen Li",
+    "Karthik Swaminathan",
+    "Xueqing Li",
+    "Yongpan Liu",
+    "Jack Sampson",
+    "Yuan Xie",
+    "Vijaykrishnan Narayanan"
+   ],
+   "track": "main",
+   "source": "https://ieeetcca.org/awards/hpca-best-paper-award/",
+   "evidence": "2015: Architecture Exploration for Ambient Energy Harvesting Nonvolatile Processors. Kaisheng Ma (PSU), Yang Zheng (PSU), Shuangchen Li (PSU), Karthik Swaminathan (PSU), Xueqing Li (PSU), Yongpan Liu (Tsinghua University), Jack Sampson (PSU), Yuan Xie (UCSB), Vijaykrishnan Narayanan (PSU)."
+  },
+  {
+   "venue": "HPCA",
+   "year": 2015,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-Up",
+   "title": "Data Retention in MLC NAND Flash Memory: Characterization, Optimization and Recovery",
+   "authors": [
+    "Yu Cai",
+    "Yixin Luo",
+    "Erich Haratsch",
+    "Ken Mai",
+    "Onur Mutlu"
+   ],
+   "track": "main",
+   "source": "https://ieeetcca.org/awards/hpca-best-paper-award/",
+   "evidence": "2015: Architecture Exploration for Ambient Energy Harvesting Nonvolatile Processors. Kaisheng Ma (PSU), Yang Zheng (PSU), Shuangchen Li (PSU), Karthik Swaminathan (PSU), Xueqing Li (PSU), Yongpan Liu (Tsinghua University), Jack Sampson (PSU), Yuan Xie (UCSB), Vijaykrishnan Narayanan (PSU). Best Paper Runner-Up: Data Retention in MLC NAND Flash Memory: Characterization, Optimization and Recovery Yu Cai, Yixin Luo (Carnegie Mellon University), Erich Haratsch (LSI Corporation), Ken Mai, Onur Mutlu (Carnegie Mellon University)."
+  },
+  {
+   "venue": "HPCA",
+   "year": 2016,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "Memristive Boltzmann Machine: A Hardware Accelerator for Combinatorial Optimization and Deep Learning",
+   "authors": [
+    "Mahdi Nazm Bojnordi",
+    "Engin Ipek"
+   ],
+   "track": "main",
+   "source": "https://ieeetcca.org/awards/hpca-best-paper-award/",
+   "evidence": "2016: Two Distinguished Paper awards: Memristive Boltzmann Machine: A Hardware Accelerator for Combinatorial Optimization and Deep Learning. Mahdi Nazm Bojnordi and Engin Ipek (University of Rochester)."
+  },
+  {
+   "venue": "HPCA",
+   "year": 2016,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "TABLA: A Unified Template-based Architecture for Accelerating Statistical Machine Learning",
+   "authors": [
+    "Divya Mahajan",
+    "Jongse Park",
+    "Emmanuel Amaro",
+    "Hardik Sharma",
+    "Amir Yazdanbaksh",
+    "Joon Kim",
+    "Hadi Esmaeilzadeh"
+   ],
+   "track": "main",
+   "source": "https://ieeetcca.org/awards/hpca-best-paper-award/",
+   "evidence": "2016: Two Distinguished Paper awards: Memristive Boltzmann Machine: A Hardware Accelerator for Combinatorial Optimization and Deep Learning. Mahdi Nazm Bojnordi and Engin Ipek (University of Rochester). TABLA: A Unified Template-based Architecture for Accelerating Statistical Machine Learning. Divya Mahajan, Jongse Park, Emmanuel Amaro, Hardik Sharma, Amir Yazdanbaksh, Joon Kim, and Hadi Esmaeilzadeh (Georgia Institute of Technology)."
+  },
+  {
+   "venue": "HPCA",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Near-Optimal Access Partitioning for Memory Hierarchies with Multiple Heterogeneous Bandwidth Sources",
+   "authors": [
+    "Jayesh Gaur",
+    "Mainak Chaudhuri",
+    "Pradeep Ramachandran",
+    "Sreenivas Subramoney"
+   ],
+   "track": "main",
+   "source": "https://ieeetcca.org/awards/hpca-best-paper-award/",
+   "evidence": "2017: Near-Optimal Access Partitioning for Memory Hierarchies with Multiple Heterogeneous Bandwidth Sources. Jayesh Gaur (Intel), Mainak Chaudhuri (Indian Institute of Technology Kanpur), Pradeep Ramachandran (MulticoreWare Inc/Intel), and Sreenivas Subramoney (Intel)."
+  },
+  {
+   "venue": "HPCA",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Amdahl’s Law in the Datacenter Era: A Market for Fair Processor Allocation",
+   "authors": [
+    "Seyed Majid Zahedi",
+    "Qiuyun Llull",
+    "Benjamin C. Lee"
+   ],
+   "track": "main",
+   "source": "https://ieeetcca.org/awards/hpca-best-paper-award/",
+   "evidence": "2018: Amdahl’s Law in the Datacenter Era: A Market for Fair Processor Allocation. Seyed Majid Zahedi (Duke University), Qiuyun Llull (VMware/Duke University), Benjamin C. Lee (Duke University)."
+  },
+  {
+   "venue": "HPCA",
    "year": 2018,
    "award": "tot",
    "awardLabel": "Test of Time Award",
@@ -69585,6 +71770,22 @@
   {
    "venue": "HPCA",
    "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Stretch: Balancing QoS and Throughput for Colocated Server Workloads on SMT Cores",
+   "authors": [
+    "Artemiy Margaritov",
+    "Siddharth Gupta",
+    "Rekai Gonzalez-Alberquilla",
+    "Boris Grot"
+   ],
+   "track": "main",
+   "source": "https://ieeetcca.org/awards/hpca-best-paper-award/",
+   "evidence": "2019: Stretch: Balancing QoS and Throughput for Colocated Server Workloads on SMT Cores. Artemiy Margaritov (University of Edinburgh); Siddharth Gupta (EPFL); Rekai Gonzalez-Alberquilla (Arm Ltd, Cambridge, UK); Boris Grot (University of Edinburgh)."
+  },
+  {
+   "venue": "HPCA",
+   "year": 2019,
    "award": "tot",
    "awardLabel": "Test of Time Award",
    "title": "Dynamic Branch Prediction with Perceptrons",
@@ -69596,6 +71797,26 @@
    "paperYear": 2001,
    "source": "https://ieeetcca.org/awards/hpca-test-of-time-award/",
    "evidence": "HPCA 2019 Test of Time Award: D.A. Jimenez and C. Lin “Dynamic Branch Predication with Perceptrons” [the page misprints the title; the paper is \"Dynamic Branch Prediction with Perceptrons\" — data/exclusions.json]"
+  },
+  {
+   "venue": "HPCA",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "SIGMA: A Sparse and Irregular GEMM Accelerator with Flexible Interconnects for DNN Training",
+   "authors": [
+    "Eric Qin",
+    "Ananda Samajdar",
+    "Hyoukjun Kwon",
+    "Vineet Nadella",
+    "Sudarshan Srinivasan",
+    "Dipankar Das",
+    "Bharat Kaul",
+    "Tushar Krishna"
+   ],
+   "track": "main",
+   "source": "https://ieeetcca.org/awards/hpca-best-paper-award/",
+   "evidence": "2020: SIGMA: A Sparse and Irregular GEMM Accelerator with Flexible Interconnects for DNN Training. Eric Qin, Ananda Samajdar, Hyoukjun Kwon, and Vineet Nadella (Georgia Institute of Technology); Sudarshan Srinivasan, Dipankar Das, and Bharat Kaul (Intel); Tushar Krishna (Georgia Institute of Technology)."
   },
   {
    "venue": "HPCA",
@@ -69647,6 +71868,28 @@
   {
    "venue": "HPCA",
    "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "SupermarQ: A Scalable Quantum Benchmark Suite",
+   "authors": [
+    "Teague Tomesh",
+    "Pranav Gokhale",
+    "Victory Omole",
+    "Gokul Subramanian Ravi",
+    "Kaitlin N. Smith",
+    "Joshua Viszlai",
+    "Xin-Chuan Wu",
+    "Nikos Hardavellas",
+    "Margaret Martonosi",
+    "Frederic T. Chong"
+   ],
+   "track": "main",
+   "source": "https://www.blog.ieeetcca.org/hpca-2022-trip-report/",
+   "evidence": "Finally, after the review of the Best Paper Committee, the Best Paper Award went to “SupermarQ: A Scalable Quantum Benchmark Suite” by Teague Tomesh, Pranav Gokhale, Victory Omole, Gokul Subramanian Ravi, Kaitlin N. Smith, Joshua Viszlai, Xin-Chuan Wu, Nikos Hardavellas, Margaret Martonosi, Frederic T. Chong."
+  },
+  {
+   "venue": "HPCA",
+   "year": 2022,
    "award": "tot",
    "awardLabel": "Test of Time Award",
    "title": "Energy-Efficient Processor Design Using Multiple Clock Domains with Dynamic Voltage and Frequency Scaling",
@@ -69666,6 +71909,37 @@
   {
    "venue": "HPCA",
    "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "DIMM-Link: Enabling Efficient Inter-DIMM Communication for Near-Memory Processing",
+   "authors": [
+    "Zhe Zhou",
+    "Cong Li",
+    "Fan Yang",
+    "Guangyu Sun"
+   ],
+   "track": "main",
+   "source": "https://hpca-conf.org/2023/main-program/",
+   "evidence": "DIMM-Link: Enabling Efficient Inter-DIMM Communication for Near-Memory Processing Zhe Zhou (Peking University), Cong Li (Peking University), Fan Yang (Nankai University), Guangyu Sun (Peking University) **HPCA23 Best Paper**"
+  },
+  {
+   "venue": "HPCA",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Scalable and Secure Row-Swap: Efficient and Safe Row Hammer Mitigation in Memory Systems",
+   "authors": [
+    "Jeonghyun Woo",
+    "Gururaj Saileshwar",
+    "Prashant J. Nair"
+   ],
+   "track": "main",
+   "source": "https://hpca-conf.org/2023/main-program/",
+   "evidence": "Scalable and Secure Row-Swap: Efficient and Safe Row Hammer Mitigation in Memory Systems Jeonghyun Woo (University of British Columbia), Gururaj Saileshwar (Georgia Institute of Technology), Prashant J. Nair (University of British Columbia) **HPCA23 Best Paper**"
+  },
+  {
+   "venue": "HPCA",
+   "year": 2023,
    "award": "tot",
    "awardLabel": "Test of Time Award",
    "title": "Predicting Inter-Thread Cache Contention on a Chip Multi-Processor Architecture",
@@ -69679,6 +71953,54 @@
    "paperYear": 2005,
    "source": "https://ieeetcca.org/awards/hpca-test-of-time-award/",
    "evidence": "HPCA 2023 Test of Time Award: Dhruba Chandra, Fei Guo, Seongbeom Kim, and Yan Solihin “Predicting Inter-Thread Cache Contention on a Chip Multi-Processor Architecture”"
+  },
+  {
+   "venue": "HPCA",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Pathfinding Future PIM Architectures by Demystifying a Commercial PIM Technology",
+   "authors": [
+    "Bongjoon Hyun",
+    "Taehun Kim",
+    "Dongjae Lee",
+    "Minsoo Rhu"
+   ],
+   "track": "main",
+   "source": "https://hpca-conf.org/2024/program/main.php",
+   "evidence": "Best Paper Winner 11:30 AM – 11:50 AM Pathfinding Future PIM Architectures by Demystifying a Commercial PIM Technology Bongjoon Hyun,Taehun Kim, Dongjae Lee, Minsoo Rhu"
+  },
+  {
+   "venue": "HPCA",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention",
+   "title": "Effective Context-Sensitive Memory Dependence Prediction",
+   "authors": [
+    "Sebastian S. Kim",
+    "Alberto Ros"
+   ],
+   "track": "main",
+   "source": "https://hpca-conf.org/2024/program/main.php",
+   "evidence": "Best Paper Honorable Mention 10:00 AM – 10:20 AM Effective Context-Sensitive Memory Dependence Prediction Sebastian S. Kim, Alberto Ros"
+  },
+  {
+   "venue": "HPCA",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention",
+   "title": "Smart-Infinity: Fast Large Language Model Training using Near-Storage Processing on a Real System",
+   "authors": [
+    "Hongsun Jang",
+    "Jaeyong Song",
+    "Jaewon Jung",
+    "Jaeyoung Park",
+    "Youngsok Kim",
+    "Jinho Lee"
+   ],
+   "track": "main",
+   "source": "https://hpca-conf.org/2024/program/main.php",
+   "evidence": "Best Paper Honorable Mention 2:40 PM – 3:00 PM Smart-Infinity: Fast Large Language Model Training using Near-Storage Processing on a Real System Hongsun Jang, Jaeyong Song, Jaewon Jung, Jaeyoung Park, Youngsok Kim, Jinho Lee"
   },
   {
    "venue": "HPCA",
@@ -112641,6 +114963,34 @@
   {
    "venue": "PKC",
    "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Post-Quantum Anonymity of Kyber",
+   "authors": [
+    "Varun Maram",
+    "Keita Xagawa"
+   ],
+   "track": "main",
+   "source": "https://pkc.iacr.org/2023/program.php",
+   "evidence": "Post-Quantum Anonymity of Kyber 🏆 Best Paper winner 🏆 Varun Maram Keita Xagawa"
+  },
+  {
+   "venue": "PKC",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "The Hidden Number Problem with Small Unknown Multipliers: Cryptanalyzing MEGA in Six Queries and Other Applications",
+   "authors": [
+    "Nadia Heninger",
+    "Keegan Ryan"
+   ],
+   "track": "main",
+   "source": "https://pkc.iacr.org/2023/program.php",
+   "evidence": "The Hidden Number Problem with Small Unknown Multipliers: Cryptanalyzing MEGA in Six Queries and Other Applications 🏆 Best Paper winner 🏆 Nadia Heninger Keegan Ryan"
+  },
+  {
+   "venue": "PKC",
+   "year": 2023,
    "award": "tot",
    "awardLabel": "Test of Time Award",
    "title": "Unidirectional chosen-ciphertext secure proxy re-encryption",
@@ -112667,6 +115017,27 @@
    "paperYear": 2007,
    "source": "https://iacr.org/meetings/pkc/test_of_time_award",
    "evidence": "PKC 2024 Test of Time Award: Eiichiro Fujisaki and Koutarou Suzuki “Traceable Ring Signature”"
+  },
+  {
+   "venue": "PKC",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "PRISM: Simple And Compact Identification and Signatures From Large Prime Degree Isogenies",
+   "authors": [
+    "Andrea Basso",
+    "Giacomo Borin",
+    "Wouter Castryck",
+    "Maria Corte-Real Santos",
+    "Riccardo Invernizzi",
+    "Antonin Leroux",
+    "Luciano Maino",
+    "Frederik Vercauteren",
+    "Benjamin Wesolowski"
+   ],
+   "track": "main",
+   "source": "https://pkc.iacr.org/2025/program.php",
+   "evidence": "PRISM: Simple And Compact Identification and Signatures From Large Prime Degree Isogenies Best Paper Award Andrea Basso Giacomo Borin Wouter Castryck Maria Corte-Real Santos Riccardo Invernizzi Antonin Leroux Luciano Maino Frederik Vercauteren Benjamin Wesolowski"
   },
   {
    "venue": "PKC",
@@ -112698,6 +115069,22 @@
    "track": "main",
    "source": "https://iacr.org/meetings/pkc/test_of_time_award",
    "evidence": "PKC 2025 Test of Time Award: Dan Boneh, David Freeman, Jonathan Katz, and Brent Waters. “Signing a Linear Subspace: Signature Schemes for Network Coding”"
+  },
+  {
+   "venue": "PKC",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "SQIsign with Fixed-Precision Integer Arithmetic",
+   "authors": [
+    "Won Kim",
+    "Jeonghwan Lee",
+    "Hyeonhak Kim",
+    "Changmin Lee"
+   ],
+   "track": "main",
+   "source": "https://pkc.iacr.org/2026/program.php",
+   "evidence": "SQIsign with Fixed-Precision Integer Arithmetic Best paper award Won Kim Jeonghwan Lee Hyeonhak Kim Changmin Lee"
   },
   {
    "venue": "PKC",
@@ -134716,6 +137103,20 @@
   {
    "venue": "TCC",
    "year": 2019,
+   "award": "category",
+   "awardLabel": "Best Young Researcher Award",
+   "title": "The Function-Inversion Problem: Barriers and Opportunities",
+   "authors": [
+    "Henry Corrigan-Gibbs",
+    "Dmitry Kogan"
+   ],
+   "track": "main",
+   "source": "https://tcc.iacr.org/2019/program.html",
+   "evidence": "Best young researcher award Chair: Dennis Hofheinz The Function-Inversion Problem: Barriers and Opportunities Henry Corrigan-Gibbs Dmitry Kogan"
+  },
+  {
+   "venue": "TCC",
+   "year": 2019,
    "award": "tot",
    "awardLabel": "Test of Time Award",
    "title": "Incrementally Verifiable Computation or Proofs of Knowledge Imply Time/Space Efficiency",
@@ -134745,6 +137146,23 @@
   {
    "venue": "TCC",
    "year": 2021,
+   "award": "category",
+   "awardLabel": "Best Young Researcher Paper",
+   "title": "Simple Constructions from (Almost) Regular One-Way Functions",
+   "authors": [
+    "Noam Mazor",
+    "Jiapeng Zhang"
+   ],
+   "track": "main",
+   "source": "https://tcc.iacr.org/2021/currentProgram.php",
+   "alsoAt": [
+    "https://tcc.iacr.org/2021/program.php"
+   ],
+   "evidence": "\"authors\":[\"Noam Mazor\",\"Jiapeng Zhang\"],\"award\":\"Best Young Researcher Paper\",\"category\":\"Uncategorized\",\"id\":\"talk-44\",\"paperId\":154,\"paperUrl\":\"http:\\/\\/dx.doi.org\\/10.1007\\/978-3-030-90453-1_16\",\"title\":\"Simple Constructions from (Almost) Regular One-Way Functions\""
+  },
+  {
+   "venue": "TCC",
+   "year": 2021,
    "award": "tot",
    "awardLabel": "Test of Time Award",
    "title": "Keyword Search and Oblivious Pseudorandom Functions",
@@ -134762,6 +137180,19 @@
   {
    "venue": "TCC",
    "year": 2022,
+   "award": "category",
+   "awardLabel": "Best Young Researcher Award",
+   "title": "A Tight Computational Indistinguishability Bound of Product Distributions",
+   "authors": [
+    "Nathan Geier"
+   ],
+   "track": "main",
+   "source": "https://tcc.iacr.org/2022/program.php",
+   "evidence": "The Best Young Researcher Award was given to Nathan Geier. … A Tight Computational Indistinguishability Bound of Product Distributions Nathan Geier"
+  },
+  {
+   "venue": "TCC",
+   "year": 2022,
    "award": "tot",
    "awardLabel": "Test of Time Award",
    "title": "Perfectly secure oblivious RAM without random oracles",
@@ -134774,6 +137205,19 @@
    "paperYear": 2011,
    "source": "https://www.iacr.org/workshops/tcc/awards.html",
    "evidence": "TCC 2022 Test of Time Award: Ivan Damgård, Sigurd Meldgaard, and Jesper Buus Nielsen “Perfectly secure oblivious RAM without random oracles”"
+  },
+  {
+   "venue": "TCC",
+   "year": 2023,
+   "award": "category",
+   "awardLabel": "Best Young Researcher Paper Award",
+   "title": "Memory Checking for Parallel RAMs",
+   "authors": [
+    "Surya Mathialagan"
+   ],
+   "track": "main",
+   "source": "https://tcc.iacr.org/2023/program.php",
+   "evidence": "Memory Checking for Parallel RAMs Best Young Researcher Paper Award Surya Mathialagan"
   },
   {
    "venue": "TCC",
@@ -134802,6 +137246,63 @@
    "track": "main",
    "source": "https://www.iacr.org/workshops/tcc/awards.html",
    "evidence": "TCC 2024 Test of Time Award: Omer Reingold, Luca Trevisan, and Salil P. Vadhan “Notions of Reducibility between Cryptographic Primitives”"
+  },
+  {
+   "venue": "TCC",
+   "year": 2025,
+   "award": "category",
+   "awardLabel": "Luca Trevisan Best Young Researcher Paper Award",
+   "title": "Special Genera of Hermitian Lattices and Applications to HAWK",
+   "authors": [
+    "Guilhem Mureau"
+   ],
+   "track": "main",
+   "source": "https://tcc.iacr.org/2025/program.php",
+   "evidence": "Special Genera of Hermitian Lattices and Applications to HAWK Luca Trevisan Best Young Researcher Paper Award Guilhem Mureau"
+  },
+  {
+   "venue": "TCC",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Black-Box Crypto is Useless for Pseudorandom Codes",
+   "authors": [
+    "Sam Gunn",
+    "Sanjam Garg",
+    "Mingyuan Wang"
+   ],
+   "track": "main",
+   "source": "https://tcc.iacr.org/2025/program.php",
+   "evidence": "Black-Box Crypto is Useless for Pseudorandom Codes Outstanding Paper Award Sam Gunn Sanjam Garg Mingyuan Wang"
+  },
+  {
+   "venue": "TCC",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Generalized and Unified Equivalences between Hardness and Pseudoentropy",
+   "authors": [
+    "Lunjia Hu",
+    "Salil P. Vadhan"
+   ],
+   "track": "main",
+   "source": "https://tcc.iacr.org/2025/program.php",
+   "evidence": "Generalized and Unified Equivalences between Hardness and Pseudoentropy Outstanding Paper Award Lunjia Hu Salil P. Vadhan"
+  },
+  {
+   "venue": "TCC",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Separating Pseudorandom Codes from Local Oracles",
+   "authors": [
+    "Nico Döttling",
+    "Anne Müller",
+    "Mahesh Sreekumar Rajasree"
+   ],
+   "track": "main",
+   "source": "https://tcc.iacr.org/2025/program.php",
+   "evidence": "Separating Pseudorandom Codes from Local Oracles Outstanding Paper Award Nico Döttling Anne Müller Mahesh Sreekumar Rajasree"
   },
   {
    "venue": "TCC",
