@@ -184,10 +184,16 @@ of HotStorage, and the year written with a hyphen or jammed onto a mixed-case wo
   words. 14 more anchors took them to 115 (one right badge lost: HPCC 2013, whose own IEEE title says "10th"); two names the lists lacked, to
   110. Beyond the owner's choice, a narrow form of the other direction ("claim fewer cut starts"): `reach`, a word per venue that a cut start
   must show — for 12 venues whose start many events share — took them to 50 at no right badge (cut lines that keep their whole title's badge:
-  945, from 943); revert it if the owner prefers. What is left: starts that are a listed venue's whole name (SIGIR-AP's "… ACM SIGIR Conference
-  on …", ICDM's "… Conference on Data Mining …"), one pair of listed venues (CSCWD's "… Computer Supported Cooperative Work …" read as CSCW,
-  its "in Design" cut away; their numbering is one apart), and the 101 lines whose cut hides a track word ("… Workshops", "… Companion": only
-  Read full lists sees it).
+  945, from 943); revert it if the owner prefers. A second round (2026-11-05: eleven more venues' words, CIDM's "mining" for "data", four
+  more numberings — MMSys, Inscrypt, SECRYPT, ICRA —, and a venue short of its word a rival only where the start fits it otherwise) took the 50
+  to 28, again at no right badge. 8 of the 28 are right: the whole title says more than the matcher reads (ICSE 2000's "… ICSE 2000 the New
+  Millennium", INFOCOM 2000, ISCAS'99, ASRU-97, UIC 2012, Pacific Graphics 2001, TIME 2003, FOGA XIII). What is left of the 20 wrong: starts that
+  are a listed venue's whole name (ICDM's "… Conference on Data Mining …", ICIP, ICIG, IEEE IS, and Inscrypt and ICRA where the line prints
+  no edition), SIGIR-AP's "… ACM SIGIR Conference on Research …", tracks the cut hides that no track word names (DSN's "Supplemental Volume",
+  ICER's "Volume 2", UbiComp 2015's joint proceedings), CSEET's "… Software Engineering: Education and …" (New Zealand's "… and Practice"),
+  AIME's "… Artificial Intelligence for Medicine …" (ISAIMS: AIME went from every two years to every year in 2019, so no one numbering
+  holds); one pair of listed venues (CSCWD's "… Computer Supported Cooperative Work …" read as CSCW, its "in Design" cut away; their numbering
+  is one apart); and the 100 lines whose cut hides a track word ("… Workshops", "… Companion": only Read full lists sees it).
 - **End-to-end pictures at other display scalings** (Chromium only — other engines are out of scope by the platform
   policy). The end-to-end run already takes `E2E_SCALE` for the website's pictures; nothing compares them yet.
 

@@ -94,6 +94,18 @@ give the details and every review):
   Two cut lines of the tests are no badge now, as they are ambiguous: "… 12th … Conference on Machine Learning and …, 2012" (ICMLC held
   its 12th that year too) and "… 12th … Conference on Computational Science …, 2012" (ICCS's 12th as much as ICCSA's). Two names the lists
   lack, found the same way: PACT's ACM title without "Techniques", MASCOTS's IEEE one with "Computers" (3 gained).
+- **Matching: the cut-line measurement's second round (2026-11-05).** Of the 50 cut lines left with a badge their whole title lacks, 8 are
+  right (the whole title says more than the matcher reads: ICSE 2000, INFOCOM 2000, ISCAS'99 …) and 22 more are gone: a `reach` word for
+  eleven more venues (ISMB "molecular", WACV "computer", SIGMOD "data", ASONAM "networks", CAIN "engineering", CIMSIVP "signal", AIME
+  "medicine", CISDA "defence" or "defense", both ICEC rows by their own word, SNPD its sponsor "ACIS", which each of its lines prints before
+  the cut — `reach` may now list words, any of them —; CIDM's is "mining" now: "… Computational Intelligence in Data …" is ICCIDS) and the
+  numbering of MMSys, Inscrypt, SECRYPT and ICRA (`edition`; "2024 IEEE 3rd International Conference on Robotics, Automation …" is RAAICON,
+  not ICRA's 41st). A venue short of its word is a rival only where the start fits it otherwise, and one the event words may pass over:
+  "… Symposium on Software Engineering for …" stays SEAMS's, "… Annual Meeting of the Special Interest Group on …" SIGdial's (SIGMOD's
+  CORE name is "ACM Special Interest Group on Management of Data Conference"). Turkey's ISCTürkiye (its name since 2023) is shadowed as
+  ISCTURKEY was: "2024 17th International Conference on Information Security and Cryptology (ISCTürkiye)" lost a wrong CCF C Inscrypt
+  badge, the one change over the 75,521 lines. By the measurement: 50 → 28, and no cut line lost its whole title's badge; what is left is
+  in the ROADMAP.
 - **Matching: two names the lists lack**: SIGCOMM's proceedings title as ACM prints it from 2003 on, "… protocols for computer
   communications" (the plural missed the list's "Communication": CCF A / CORE A* papers without a chip), and GPCE's later name, "Generative
   Programming: Concepts and Experiences". Over the corpus: 7 gained, nothing lost or moved.

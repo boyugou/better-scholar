@@ -240,7 +240,7 @@ test("every alias points at a real dataset row", () => {
       assert.ok(hit.length, `CORE row not found for alias ${JSON.stringify(a.core)}`);
     }
     assert.ok(a.ccf || a.core, "alias needs a target");
-    assert.ok((a.names && a.names.length) || (a.former && a.former.length) || (a.exact && a.exact.length) || (a.fullOnly && a.fullOnly.length) || (a.volume && a.volume.length) || (a.uncut && a.uncut.length) || (a.starts && a.starts.length) || a.trackVolume === true || (Array.isArray(a.edition) && a.edition.length >= 2) || (Array.isArray(a.volumeYear) && a.volumeYear.length === 2) || (typeof a.reach === "string" && /^[a-z]+$/i.test(a.reach)));
+    assert.ok((a.names && a.names.length) || (a.former && a.former.length) || (a.exact && a.exact.length) || (a.fullOnly && a.fullOnly.length) || (a.volume && a.volume.length) || (a.uncut && a.uncut.length) || (a.starts && a.starts.length) || a.trackVolume === true || (Array.isArray(a.edition) && a.edition.length >= 2) || (Array.isArray(a.volumeYear) && a.volumeYear.length === 2) || ([].concat(a.reach).length > 0 && [].concat(a.reach).every((w) => typeof w === "string" && /^[a-z]+$/i.test(w))));
   }
 });
 
@@ -540,9 +540,28 @@ test("a cut line that stops inside a start many events share is no venue's: it m
   assert.equal(brief("2015 15th International Conference on Computational Science and Its …, 2015"), "CORE C ICCSA", "ICCSA's own, cut after its \"Its\" (the word is matched as written)");
   assert.equal(brief("Proceedings of the 2023 8th International Conference on Cloud Computing and …, 2023"), "", "not CLOSER");
   assert.equal(brief("Proceedings of the 2017 International Conference on Machine Learning and …, 2017"), "", "not ICMLA");
-  // the venues themselves, by their own lines, whole or cut after the word
-  assert.match(brief("2011 IEEE Symposium on Computational Intelligence and Data …, 2011"), /^CORE C IEEE Symposium on Computational Intelligence and Data Mining|CIDM/);
+  // 2026-11-05, the next round: each the start of an unlisted event's whole title in the corpus
+  assert.equal(brief("2017 International Conference on Computational Intelligence in Data …, 2017"), "", "ICCIDS (\"… in Data Science\"), not CIDM: its word is \"Mining\" now");
+  assert.equal(brief("2011 IEEE Symposium on Computational Intelligence and Data …, 2011"), "", "(so CIDM's own line cut before \"Mining\" has none either: a missing badge, not a wrong one)");
+  assert.equal(brief("2018 14th International Conference on Computational Intelligence and Security …, 2018"), "", "CIS, not CISDA");
+  assert.equal(brief("2023 IEEE 3rd International Conference on Software Engineering and Artificial …, 2023"), "", "SEAI, not SNPD");
+  assert.equal(brief("2026 Second International Conference on Intelligent Systems for …, 2026"), "", "ICISCoIS, not ISMB");
+  assert.equal(brief("Proceedings of 1994 IEEE International Symposium on Applications of …, 1994"), "", "of Ferroelectrics, not WACV");
+  assert.equal(brief("Proceedings of the 4th Annual International Conference on Management …, 2018"), "", "ICMESD, not SIGMOD");
+  assert.equal(brief("Proceedings of the 2020 4th International Conference on Electronic …, 2020"), "", "\"… Electronic Information Technology …\", not either ICEC");
+  assert.equal(brief("Proceedings of the 2018 International Conference on Advances in Social …, 2018"), "", "ASSSD, not ASONAM");
+  assert.equal(brief("Proceedings of the 2024 IEEE/ACM First International Conference on AI …, 2024"), "", "\"… AI Foundation Models …\", not CAIN");
+  assert.equal(brief("International Conference on Computational Intelligence and Multimedia …, 2007"), "", "ICCIMA, not CIMSIVP");
+  assert.equal(brief("[1988] Proceedings. The Fourth Conference on Artificial Intelligence …, 1988"), "", "the IEEE's CAIA, not AIME");
+  // the venues themselves, by their own lines, whole or cut after the word (SNPD's word is its sponsor's, ACIS, which each of its lines prints before the cut)
   assert.match(brief("2016 15th IEEE International Conference on Machine Learning and Applications (ICMLA), 1-6"), /ICMLA|Machine Learning and Applications/);
+  assert.equal(brief("2008 Ninth ACIS International Conference on Software Engineering, Artificial …, 2008"), "CORE C SNPD");
+  assert.equal(brief("2011 IEEE Symposium on Computational Intelligence and Data Mining (CIDM), 1-8, 2011"), "CORE C CIDM");
+  assert.match(brief("2015 IEEE Symposium on Computational Intelligence for Security and Defense Applications (CISDA), 1-8, 2015"), /^CORE C IEEE CISDA/);
+  // a venue short of its word is a rival that the event words may pass over, never the answer: "Symposium … for" is SEAMS's (not CSEET's or SNPD's start), "Annual
+  // Meeting of the Special Interest Group on" SIGdial's (not SIGMOD's — whose CORE name is "ACM Special Interest Group on Management of Data Conference")
+  assert.equal(brief("2015 IEEE/ACM 10th International Symposium on Software Engineering for …, 2015"), "CORE A SEAMS");
+  assert.equal(brief("Proceedings of the 22nd Annual Meeting of the Special Interest Group on …, 2021"), "CORE B SIGdial");
 });
 
 test("names the lists lack: PACT's ACM title without 'Techniques', MASCOTS with 'Computers' (real titles of the corpus, 2026-11-04)", () => {
@@ -558,6 +577,15 @@ test("names the lists lack: SIGCOMM's proceedings title in ACM's plural, GPCE's 
 test("a cut line that begins a listed name with an edition that venue cannot have held that year is another venue's (aliases.js `edition`, 2026-11-04)", () => {
   // (real titles of test/fixtures/real-titles.txt, cut where Scholar cuts a line: scripts/measure-cut-lines.mjs)
   assert.equal(brief("Proceedings of the 2018 10th International Conference on Machine Learning and …, 2018"), "", "ICMLC, not ICML's 35th");
+  // (2026-11-05) MMSys, Inscrypt and SECRYPT — and Turkey's ISCTürkiye by its acronym, whole (aliases.js `shadow`)
+  assert.equal(brief("Proceedings of the 2019 4th International Conference on Multimedia Systems …, 2019"), "", "not MMSys's 10th");
+  assert.equal(brief("Proceedings of the 9th ACM Multimedia Systems Conference, 450-455, 2018"), "CORE A MMSys");
+  assert.equal(brief("2024 17th International Conference on Information Security and Cryptology …, 2024"), "", "ISCTürkiye, not Inscrypt's 20th");
+  assert.equal(brief("2024 17th International Conference on Information Security and Cryptology (ISCTürkiye), 1-6, 2024"), "");
+  assert.equal(brief("Information Security and Cryptology: 11th International Conference, Inscrypt 2015, 2015"), "CCF C Inscrypt");
+  assert.equal(brief("2022 15th International Conference on Information Security and Cryptography …, 2022"), "", "ISCTURKEY 2022, not SECRYPT's 19th");
+  assert.equal(brief("2024 IEEE 3rd International Conference on Robotics, Automation …, 2024"), "", "RAAICON, not ICRA's 41st");
+  assert.equal(brief("2024 IEEE International Conference on Robotics and Automation (ICRA), 16961 …, 2024"), "CCF B ICRA · CORE A* ICRA");
   assert.equal(brief("2016 Second International Conference on Research in Computational …, 2016"), "", "ICRCICN, not RECOMB's 20th");
   assert.equal(brief("Proceedings of the 2024 3rd International Conference on Cyber Security, …, 2024"), "", "not CSCloud's 11th");
   assert.equal(brief("Proceedings of the 20th International Conference on Spoken Language …, 2023"), "", "IWSLT, not the SLT workshop");
