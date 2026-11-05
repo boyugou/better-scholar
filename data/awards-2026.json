@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 8452
+  "count": 8475
  },
  "entries": [
   {
@@ -131743,6 +131743,34 @@
   },
   {
    "venue": "UMAP",
+   "year": 2009,
+   "award": "student",
+   "awardLabel": "James Chen Best Student Paper Award",
+   "title": "Non-Intrusive Personalisation of the Museum Experience",
+   "authors": [
+    "Fabian Bohnert",
+    "Ingrid Zukerman"
+   ],
+   "track": "main",
+   "source": "https://um.org/awards/james-chen-best-student-paper-awards",
+   "evidence": "James Chen Best Student Paper Award Winners … 2009 The 17th International Conference on User Modeling, Adaptation and Personalization, UMAP 2009, in Trento, Italy awarded the following papers: Social Navigation Support for Information Seeking: If You Build It, Will They Come? Rosta Farzan and Peter Brusilovsky, University of Pittsburg, USA Non-Intrusive Personalisation of the Museum Experience Fabian Bohnert and Ingrid Zukerman, Monash University, Australia"
+  },
+  {
+   "venue": "UMAP",
+   "year": 2009,
+   "award": "student",
+   "awardLabel": "James Chen Best Student Paper Award",
+   "title": "Social Navigation Support for Information Seeking: If You Build It, Will They Come?",
+   "authors": [
+    "Rosta Farzan",
+    "Peter Brusilovsky"
+   ],
+   "track": "main",
+   "source": "https://um.org/awards/james-chen-best-student-paper-awards",
+   "evidence": "James Chen Best Student Paper Award Winners … 2009 The 17th International Conference on User Modeling, Adaptation and Personalization, UMAP 2009, in Trento, Italy awarded the following papers: Social Navigation Support for Information Seeking: If You Build It, Will They Come? Rosta Farzan and Peter Brusilovsky, University of Pittsburg, USA"
+  },
+  {
+   "venue": "UMAP",
    "year": 2010,
    "award": "best",
    "awardLabel": "Best Paper Award",
@@ -131763,6 +131791,22 @@
   },
   {
    "venue": "UMAP",
+   "year": 2010,
+   "award": "student",
+   "awardLabel": "James Chen Best Student Paper Award",
+   "title": "Inducing Effective Pedagogical Strategies Using Learning Context Features",
+   "authors": [
+    "Min Chi",
+    "Kurt Van Lehn",
+    "Diane Litman",
+    "Pamela Jordan"
+   ],
+   "track": "main",
+   "source": "https://um.org/awards/james-chen-best-student-paper-awards",
+   "evidence": "James Chen Best Student Paper Award Winners … 2010 The 18th International Conference on User Modeling, Adaptation and Personalization, UMAP 2010, in Kona, Hawaii, USA, awarded the following paper: Inducing Effective Pedagogical Strategies Using Learning Context Features Min Chi, Kurt Van Lehn, Diane Litman and Pamela Jordan, CMU and University of Pittsburg, USA"
+  },
+  {
+   "venue": "UMAP",
    "year": 2011,
    "award": "best",
    "awardLabel": "Best Paper Award",
@@ -131776,6 +131820,22 @@
    "track": "main",
    "source": "https://um.org/awards/best-paper-awards",
    "evidence": "UMAP 2011 Best Paper Award: Analyzing User Modeling on Twitter for Personalized News Recommendations — Fabian Abel, Qi Gao, Geert-Jan Houben and Ke Tao"
+  },
+  {
+   "venue": "UMAP",
+   "year": 2011,
+   "award": "student",
+   "awardLabel": "James Chen Best Student Paper Award",
+   "title": "Early Detection of Potential Experts in Question Answering Communities",
+   "authors": [
+    "Aditya Pal",
+    "Rosta Farzan",
+    "Joseph A. Konstan",
+    "Robert E. Kraut"
+   ],
+   "track": "main",
+   "source": "https://um.org/awards/james-chen-best-student-paper-awards",
+   "evidence": "James Chen Best Student Paper Award Winners … 2011 The 19th International Conference on User Modeling, Adaptation and Personalization, UMAP 2011, in Girona, Spain, awarded the following papers: Early Detection of Potential Experts in Question Answering Communities Aditya Pal, Rosta Farzan, Joseph A. Konstan and Robert E. Kraut"
   },
   {
    "venue": "UMAP",
@@ -131795,6 +131855,37 @@
   },
   {
    "venue": "UMAP",
+   "year": 2012,
+   "award": "student",
+   "awardLabel": "James Chen Best Student Paper Award",
+   "title": "A Comparative Study of Users' Microblogging Behavior on Sina Weibo and Twitter",
+   "authors": [
+    "Qi Gao",
+    "Fabian Abel",
+    "Geert-Jan Houben",
+    "Yong Yu"
+   ],
+   "track": "main",
+   "source": "https://um.org/awards/james-chen-best-student-paper-awards",
+   "evidence": "James Chen Best Student Paper Award Winners … 2012 The 20th International Conference on User Modeling, Adaptation and Personalization, UMAP 2012, in Montreal, Canada, awarded the following papers: A Comparative Study of Users' Microblogging Behavior on Sina Weibo and Twitter Qi Gao, Fabian Abel, Geert-Jan Houben and Yong Yu"
+  },
+  {
+   "venue": "UMAP",
+   "year": 2012,
+   "award": "student",
+   "awardLabel": "James Chen Best Student Paper Award",
+   "title": "Improving Construct Validity Yields Better Models of Systematic Inquiry, Even with Less Information",
+   "authors": [
+    "Michael Sao Pedro",
+    "Ryan S.J.D. Baker",
+    "Janice Gobert"
+   ],
+   "track": "main",
+   "source": "https://um.org/awards/james-chen-best-student-paper-awards",
+   "evidence": "James Chen Best Student Paper Award Winners … 2012 The 20th International Conference on User Modeling, Adaptation and Personalization, UMAP 2012, in Montreal, Canada, awarded the following papers: A Comparative Study of Users' Microblogging Behavior on Sina Weibo and Twitter Qi Gao, Fabian Abel, Geert-Jan Houben and Yong Yu Improving Construct Validity Yields Better Models of Systematic Inquiry, Even with Less Information Michael Sao Pedro, Ryan S.J.D. Baker and Janice Gobert"
+  },
+  {
+   "venue": "UMAP",
    "year": 2013,
    "award": "best",
    "awardLabel": "Best Paper Award",
@@ -131806,6 +131897,24 @@
    "track": "main",
    "source": "https://um.org/awards/best-paper-awards",
    "evidence": "UMAP 2013 Best Paper Award: Comparing and Combining Eye Gaze and Interface Actions for Determining User Learning with an Interactive Simulation — Samad Kardan and Cristina Conati"
+  },
+  {
+   "venue": "UMAP",
+   "year": 2013,
+   "award": "student",
+   "awardLabel": "James Chen Best Student Paper Award",
+   "title": "Utilizing Dynamic Bayes Nets to Improve Early Prediction Models of Self-Regulated Learning",
+   "authors": [
+    "Jennifer Sabourin",
+    "Bradford Mott",
+    "James Lester"
+   ],
+   "track": "main",
+   "source": "https://um.org/awards/james-chen-best-student-paper-awards",
+   "alsoAt": [
+    "https://um.org/announcements/23-umap-2013-best-paper-awards"
+   ],
+   "evidence": "James Chen Best Student Paper Award Winners … 2013 The 21th International Conference on User Modeling, Adaptation and Personalization, UMAP 2013, in Rome, Italy, awarded the following paper: Utilizing Dynamic Bayes Nets to Improve Early Prediction Models of Self-Regulated Learning Jennifer Sabourin, Bradford Mott and James Lester"
   },
   {
    "venue": "UMAP",
@@ -131826,6 +131935,43 @@
   },
   {
    "venue": "UMAP",
+   "year": 2014,
+   "award": "student",
+   "awardLabel": "James Chen Best Student Paper Award",
+   "title": "Adaptive support versus alternating worked examples and tutored problems: Which leads to better learning?",
+   "authors": [
+    "Amir Shareghi Najar",
+    "Tanja Mitrovic",
+    "Bruce M. McLaren"
+   ],
+   "track": "main",
+   "source": "https://um.org/awards/james-chen-best-student-paper-awards",
+   "alsoAt": [
+    "https://um.org/umap2014/umap2014/index5b7c.html?q=bestPaperAwardsNewsItem",
+    "https://um.org/announcements/19-umap-2014-best-paper-awards"
+   ],
+   "evidence": "James Chen Best Student Paper Award Winners … 2014 The 22nd International Conference on User Modeling, Adaptation and Personalization, UMAP 2014, in Aalborg, Denmark, awarded the following papers: Toward Fully Automated Person-Independent Detection of Mind Wandering Robert Bixler and Sidney D'Mello Adaptive support versus alternating worked examples and tutored problems: Which leads to better learning? Amir Shareghi Najar, Tanja Mitrovic and Bruce M. McLaren"
+  },
+  {
+   "venue": "UMAP",
+   "year": 2014,
+   "award": "student",
+   "awardLabel": "James Chen Best Student Paper Award",
+   "title": "Toward Fully Automated Person-Independent Detection of Mind Wandering",
+   "authors": [
+    "Robert Bixler",
+    "Sidney D'Mello"
+   ],
+   "track": "main",
+   "source": "https://um.org/awards/james-chen-best-student-paper-awards",
+   "alsoAt": [
+    "https://um.org/umap2014/umap2014/index5b7c.html?q=bestPaperAwardsNewsItem",
+    "https://um.org/announcements/19-umap-2014-best-paper-awards"
+   ],
+   "evidence": "James Chen Best Student Paper Award Winners … 2014 The 22nd International Conference on User Modeling, Adaptation and Personalization, UMAP 2014, in Aalborg, Denmark, awarded the following papers: Toward Fully Automated Person-Independent Detection of Mind Wandering Robert Bixler and Sidney D'Mello"
+  },
+  {
+   "venue": "UMAP",
    "year": 2015,
    "award": "best",
    "awardLabel": "Best Paper Award",
@@ -131839,6 +131985,42 @@
    "track": "main",
    "source": "https://um.org/awards/best-paper-awards",
    "evidence": "UMAP 2015 Best Paper Award: The Mars and Venus Effect: The Influence of User Gender on the Effectiveness of Adaptive Task Support — Alexandria Katarina Vail, Kristy Elizabeth Boyer, Eric N. Wiebe, James C. Lester"
+  },
+  {
+   "venue": "UMAP",
+   "year": 2015,
+   "award": "student",
+   "awardLabel": "James Chen Best Student Paper Award",
+   "title": "Counteracting Anchoring Effects in Group Decision Making",
+   "authors": [
+    "Martin Stettinger",
+    "Alexander Felfernig",
+    "Gerhard Leitner",
+    "Stefan Reiterer"
+   ],
+   "track": "main",
+   "source": "https://um.org/awards/james-chen-best-student-paper-awards",
+   "alsoAt": [
+    "https://um.org/announcements/21-umap-2015-best-paper-awards"
+   ],
+   "evidence": "James Chen Best Student Paper Award Winners … 2015 The 23rd International Conference on User Modeling, Adaptation and Personalization, UMAP 2015, in Dublin, Ireland, awarded the following papers: Counteracting Anchoring Effects in Group Decision Making Martin Stettinger, Alexander Felfernig, Gerhard Leitner, Stefan Reiterer"
+  },
+  {
+   "venue": "UMAP",
+   "year": 2015,
+   "award": "student",
+   "awardLabel": "James Chen Best Student Paper Award",
+   "title": "Implicit Acquisition of User Personality for Augmenting Movie Recommendations",
+   "authors": [
+    "Wen Wu",
+    "Li Chen"
+   ],
+   "track": "main",
+   "source": "https://um.org/awards/james-chen-best-student-paper-awards",
+   "alsoAt": [
+    "https://um.org/announcements/21-umap-2015-best-paper-awards"
+   ],
+   "evidence": "James Chen Best Student Paper Award Winners … 2015 The 23rd International Conference on User Modeling, Adaptation and Personalization, UMAP 2015, in Dublin, Ireland, awarded the following papers: Counteracting Anchoring Effects in Group Decision Making Martin Stettinger, Alexander Felfernig, Gerhard Leitner, Stefan Reiterer Implicit Acquisition of User Personality for Augmenting Movie Recommendations Wen Wu, Li Chen"
   },
   {
    "venue": "UMAP",
@@ -131859,6 +132041,45 @@
   },
   {
    "venue": "UMAP",
+   "year": 2016,
+   "award": "student",
+   "awardLabel": "James Chen Best Student Paper Award",
+   "title": "Analyzing and Predicting Task Reminders",
+   "authors": [
+    "David Graus",
+    "Paul Bennett",
+    "Ryen White",
+    "Eric Horvitz"
+   ],
+   "track": "main",
+   "source": "https://um.org/awards/james-chen-best-student-paper-awards",
+   "alsoAt": [
+    "https://um.org/umap2016/",
+    "https://um.org/announcements/27-umap-2016-best-paper-awards"
+   ],
+   "evidence": "James Chen Best Student Paper Award Winners … 2016 The 24th International Conference on User Modeling, Adaptation and Personalization, UMAP 2016, in Halifax, Canada, awarded the following papers: On the Value of Reminders within E-Commerce Recommendations Lukas Lerche, Dietmar Jannach and Malte Ludewig Analyzing and Predicting Task Reminders David Graus, Paul Bennett, Ryen White and Eric Horvitz"
+  },
+  {
+   "venue": "UMAP",
+   "year": 2016,
+   "award": "student",
+   "awardLabel": "James Chen Best Student Paper Award",
+   "title": "On the Value of Reminders within E-Commerce Recommendations",
+   "authors": [
+    "Lukas Lerche",
+    "Dietmar Jannach",
+    "Malte Ludewig"
+   ],
+   "track": "main",
+   "source": "https://um.org/awards/james-chen-best-student-paper-awards",
+   "alsoAt": [
+    "https://um.org/umap2016/",
+    "https://um.org/announcements/27-umap-2016-best-paper-awards"
+   ],
+   "evidence": "James Chen Best Student Paper Award Winners … 2016 The 24th International Conference on User Modeling, Adaptation and Personalization, UMAP 2016, in Halifax, Canada, awarded the following papers: On the Value of Reminders within E-Commerce Recommendations Lukas Lerche, Dietmar Jannach and Malte Ludewig"
+  },
+  {
+   "venue": "UMAP",
    "year": 2017,
    "award": "best",
    "awardLabel": "Best Paper Award",
@@ -131870,6 +132091,49 @@
    "track": "main",
    "source": "https://um.org/awards/best-paper-awards",
    "evidence": "UMAP 2017 Best Paper Award: Experimental Analysis of Mastery Learning Criteria — Radek Pelánek and Jiří Řihák"
+  },
+  {
+   "venue": "UMAP",
+   "year": 2017,
+   "award": "student",
+   "awardLabel": "James Chen Best Student Paper Award",
+   "title": "Fine-Grained Open Learner Models: Complexity Versus Support",
+   "authors": [
+    "Julio Guerra-Hollstein",
+    "Jordan Barria-Pineda",
+    "Christian D. Schunn",
+    "Susan Bull",
+    "Peter Brusilovsky"
+   ],
+   "track": "main",
+   "source": "https://um.org/awards/james-chen-best-student-paper-awards",
+   "alsoAt": [
+    "https://um.org/umap2017/awards/index.html",
+    "https://um.org/announcements/30-umap-2017-best-paper-awards"
+   ],
+   "evidence": "James Chen Best Student Paper Award Winners … 2017 The 25th International Conference on User Modeling, Adaptation and Personalization, UMAP 2016, in Bratislava, Slovakia, awarded the following papers: Out of the Fr-“Eye”-ing Pan: Towards Gaze-Based Models of Attention during Learning with Technology in the Classroom Stephen Hutt, Caitlin Mills, Nigel Bosch, Kristina Krasich, James Brockmole and Sidney D’Mello Fine-Grained Open Learner Models: Complexity Versus Support Julio Guerra-Hollstein, Jordan Barria-Pineda, Christian D. Schunn, Susan Bull and Peter Brusilovsky"
+  },
+  {
+   "venue": "UMAP",
+   "year": 2017,
+   "award": "student",
+   "awardLabel": "James Chen Best Student Paper Award",
+   "title": "Out of the Fr-“Eye”-ing Pan: Towards Gaze-Based Models of Attention during Learning with Technology in the Classroom",
+   "authors": [
+    "Stephen Hutt",
+    "Caitlin Mills",
+    "Nigel Bosch",
+    "Kristina Krasich",
+    "James Brockmole",
+    "Sidney D’Mello"
+   ],
+   "track": "main",
+   "source": "https://um.org/awards/james-chen-best-student-paper-awards",
+   "alsoAt": [
+    "https://um.org/umap2017/awards/index.html",
+    "https://um.org/announcements/30-umap-2017-best-paper-awards"
+   ],
+   "evidence": "James Chen Best Student Paper Award Winners … 2017 The 25th International Conference on User Modeling, Adaptation and Personalization, UMAP 2016, in Bratislava, Slovakia, awarded the following papers: Out of the Fr-“Eye”-ing Pan: Towards Gaze-Based Models of Attention during Learning with Technology in the Classroom Stephen Hutt, Caitlin Mills, Nigel Bosch, Kristina Krasich, James Brockmole and Sidney D’Mello"
   },
   {
    "venue": "UMAP",
@@ -131888,6 +132152,45 @@
   },
   {
    "venue": "UMAP",
+   "year": 2018,
+   "award": "student",
+   "awardLabel": "James Chen Best Student Paper Award",
+   "title": "Intent-aware Item-based Collaborative Filtering for Personalised Diversification",
+   "authors": [
+    "Jacek Wasilewski",
+    "Neil Hurley"
+   ],
+   "track": "main",
+   "source": "https://um.org/awards/james-chen-best-student-paper-awards",
+   "alsoAt": [
+    "https://www.um.org/umap2018/award/index.html",
+    "https://um.org/announcements/36-umap-2018-best-paper-awards"
+   ],
+   "evidence": "James Chen Best Student Paper Award Winners … 2018 The 26th International Conference on User Modeling, Adaptation and Personalization, ACM UMAP 2018, in Singapore, awarded the following papers: Predict Demographic Information Using Word2vec on Spatial Trajectories Adir Solomon, Ariel Bar, Chen Yanai, Bracha Shapira and Lior Rokach Intent-aware Item-based Collaborative Filtering for Personalised Diversification Jacek Wasilewski and Neil Hurley."
+  },
+  {
+   "venue": "UMAP",
+   "year": 2018,
+   "award": "student",
+   "awardLabel": "James Chen Best Student Paper Award",
+   "title": "Predict Demographic Information Using Word2vec on Spatial Trajectories",
+   "authors": [
+    "Adir Solomon",
+    "Ariel Bar",
+    "Chen Yanai",
+    "Bracha Shapira",
+    "Lior Rokach"
+   ],
+   "track": "main",
+   "source": "https://um.org/awards/james-chen-best-student-paper-awards",
+   "alsoAt": [
+    "https://www.um.org/umap2018/award/index.html",
+    "https://um.org/announcements/36-umap-2018-best-paper-awards"
+   ],
+   "evidence": "James Chen Best Student Paper Award Winners … 2018 The 26th International Conference on User Modeling, Adaptation and Personalization, ACM UMAP 2018, in Singapore, awarded the following papers: Predict Demographic Information Using Word2vec on Spatial Trajectories Adir Solomon, Ariel Bar, Chen Yanai, Bracha Shapira and Lior Rokach"
+  },
+  {
+   "venue": "UMAP",
    "year": 2019,
    "award": "best",
    "awardLabel": "Best Paper Award",
@@ -131899,6 +132202,26 @@
    "track": "main",
    "source": "https://um.org/awards/best-paper-awards",
    "evidence": "UMAP 2019 Best Paper Award: Effect of Values and Technology Use on Exercise: Implications for Personalized Behavior Change Interventions — Yelena Mejova and Kyriaki Kalimeri"
+  },
+  {
+   "venue": "UMAP",
+   "year": 2019,
+   "award": "student",
+   "awardLabel": "James Chen Best Student Paper Award",
+   "title": "One size does not fit all: Badge Behavior in Q&A sites",
+   "authors": [
+    "Stav Yanovsky",
+    "Nicholas Hoernle",
+    "Omer Lev",
+    "Kobi Gal"
+   ],
+   "track": "main",
+   "source": "https://um.org/awards/james-chen-best-student-paper-awards",
+   "alsoAt": [
+    "https://www.cyprusconferences.org/umap2019/",
+    "https://um.org/announcements/38-umap-2019-best-paper-awards"
+   ],
+   "evidence": "James Chen Best Student Paper Award Winners … 2019 The 27th International Conference on User Modeling, Adaptation and Personalization, ACM UMAP 2019, in Larnaca, Cyprus, awarded the following paper: One size does not fit all: Badge Behavior in Q&A sites Stav Yanovsky, Nicholas Hoernle, Omer Lev and Kobi Gal"
   },
   {
    "venue": "UMAP",
@@ -131917,6 +132240,23 @@
   },
   {
    "venue": "UMAP",
+   "year": 2020,
+   "award": "student",
+   "awardLabel": "James Chen Best Student Paper Award",
+   "title": "Predicting User Intents and Satisfaction with Dialogue-based Conversational Recommendations",
+   "authors": [
+    "Wanling Cai",
+    "Li Chen"
+   ],
+   "track": "main",
+   "source": "https://um.org/awards/james-chen-best-student-paper-awards",
+   "alsoAt": [
+    "https://um.org/announcements/42-acm-umap-2020-best-paper-awards"
+   ],
+   "evidence": "James Chen Best Student Paper Award Winners … 2020 Predicting User Intents and Satisfaction with Dialogue-based Conversational Recommendations Wanling Cai and Li Chen, Hong Kong Baptist University, China"
+  },
+  {
+   "venue": "UMAP",
    "year": 2021,
    "award": "best",
    "awardLabel": "Best Paper Award",
@@ -131928,6 +132268,25 @@
    "track": "main",
    "source": "https://um.org/awards/best-paper-awards",
    "evidence": "UMAP 2021 Best Paper Award: Data-Driven Modeling of Learners' Individual Differences for Predicting Engagement and Success in Online Learning — Kamil Akhuseyinoglu and Peter Brusilovsky (University of Pittsburgh, USA)"
+  },
+  {
+   "venue": "UMAP",
+   "year": 2021,
+   "award": "student",
+   "awardLabel": "James Chen Best Student Paper Award",
+   "title": "Generating Interesting Song-to-Song Segues With Dave",
+   "authors": [
+    "Giovanni Gabbolini",
+    "Derek Bridge"
+   ],
+   "track": "main",
+   "source": "https://um.org/awards/james-chen-best-student-paper-awards",
+   "alsoAt": [
+    "https://www.um.org/umap2021/",
+    "https://www.um.org/umap2021/program/schedule.html",
+    "https://um.org/announcements/43-acm-umap-2021-best-paper-awards"
+   ],
+   "evidence": "James Chen Best Student Paper Award Winners … 2021 Generating Interesting Song-to-Song Segues With Dave Giovanni Gabbolini and Derek Bridge (Insight Centre for Data Analytics, University College Cork, Ireland)"
   },
   {
    "venue": "UMAP",
@@ -131957,6 +132316,25 @@
   },
   {
    "venue": "UMAP",
+   "year": 2022,
+   "award": "student",
+   "awardLabel": "James Chen Best Student Paper Award",
+   "title": "How to Ask for Donations? Learning User-Specific Persuasive Dialogue Policies through Online Interactions",
+   "authors": [
+    "Nhat Tran",
+    "Malihe Alikhani",
+    "Diane Litman"
+   ],
+   "track": "main",
+   "source": "https://um.org/awards/james-chen-best-student-paper-awards",
+   "alsoAt": [
+    "https://www.um.org/umap2022/awards/",
+    "https://um.org/announcements/45-acm-umap-2022-best-paper-awards"
+   ],
+   "evidence": "James Chen Best Student Paper Award Winners … 2022 How to Ask for Donations? Learning User-Specific Persuasive Dialogue Policies through Online Interactions Nhat Tran, Malihe Alikhani and Diane Litman"
+  },
+  {
+   "venue": "UMAP",
    "year": 2023,
    "award": "best",
    "awardLabel": "Best Paper Award",
@@ -131968,6 +132346,24 @@
    "track": "main",
    "source": "https://um.org/awards/best-paper-awards",
    "evidence": "UMAP 2023 Best Paper Award: Combining Reinforcement Learning and Spatial Proximity Exploration for New User and New POI Recommendations — David Massimo, Francesco Ricci"
+  },
+  {
+   "venue": "UMAP",
+   "year": 2023,
+   "award": "student",
+   "awardLabel": "James Chen Best Student Paper Award",
+   "title": "Combining Graph Neural Networks and Sentence Encoders for Knowledge-aware Recommendations",
+   "authors": [
+    "Giuseppe Spillo",
+    "Cataldo Musto",
+    "Marco Polignano",
+    "Pasquale Lops",
+    "Marco de Gemmis",
+    "Giovanni Semeraro"
+   ],
+   "track": "main",
+   "source": "https://um.org/awards/james-chen-best-student-paper-awards",
+   "evidence": "James Chen Best Student Paper Award Winners … 2023 Combining Graph Neural Networks and Sentence Encoders for Knowledge-aware Recommendations Giuseppe Spillo, Cataldo Musto, Marco Polignano, Pasquale Lops, Marco de Gemmis, Giovanni Semeraro"
   },
   {
    "venue": "UMAP",
@@ -131984,6 +132380,24 @@
    "track": "main",
    "source": "https://um.org/awards/best-paper-awards",
    "evidence": "UMAP 2024 Best Paper Award: Explaining the Unexplainable: The Impact of Misleading Explanations on Trust in Unreliable Predictions for Hardly Assessable Tasks — Mersedeh Sadeghi, Daniel Pöttgen, Patrick Ebel, Andreas Vogelsang"
+  },
+  {
+   "venue": "UMAP",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "James Chen Best Student Paper Award",
+   "title": "User Perceptions of Diversity in Recommender Systems",
+   "authors": [
+    "Patrik Dokoupil",
+    "Ludovico Boratto",
+    "Ladislav Peska"
+   ],
+   "track": "main",
+   "source": "https://um.org/awards/james-chen-best-student-paper-awards",
+   "alsoAt": [
+    "https://www.um.org/umap2024/awards/"
+   ],
+   "evidence": "James Chen Best Student Paper Award Winners … 2024 User Perceptions of Diversity in Recommender Systems Patrik Dokoupil, Ludovico Boratto, Ladislav Peska"
   },
   {
    "venue": "UMAP",

@@ -5,6 +5,7 @@
 //   node scripts/overflow-audit.mjs --long-names [spaced|cjk|wide]
 //                 every renamable text named with 30 characters (the longest a name can be) and the venue list on: "spaced" (default) is words with spaces,
 //                 "cjk" 30 full-width characters in a row, "wide" 30 capital Ws in a row (a stress test: nothing real is that wide)
+//   node scripts/overflow-audit.mjs --scale 1.25          at a display scaling of 125 % (Windows laptops: 125 %, 150 %, 175 %), where text is laid out to fractions of a pixel
 // Exit code 1 if anything is found. Nothing here is a dependency; it needs the same Chromium as the end-to-end tests.
 import { pathToFileURL, fileURLToPath } from "node:url";
 import { createRequire } from "node:module";
@@ -22,6 +23,7 @@ const manifest = JSON.parse(fs.readFileSync(path.join(root, "src/manifest.json")
 const languages = arg("lang", fs.readdirSync(path.join(root, "src/_locales")).map((c) => c.replace("_", "-")));
 const widths = arg("width", ["1360", "1100", "900", "700", "420", "330", "300"]).map(Number);          // (330 and 300: the settings page in the website's frame on a 390 and a 360 px phone)
 const schemes = arg("scheme", ["light", "dark"]);
+const scale = Number(arg("scale", ["1"])[0]);
 const longAt = process.argv.indexOf("--long-names");
 const longNames = longAt > 0;
 const longKind = longNames && process.argv[longAt + 1] && !process.argv[longAt + 1].startsWith("--") ? process.argv[longAt + 1] : "spaced";
@@ -116,7 +118,7 @@ function measure(opts) {
 const found = new Map();                                              // "kind · what (selectors only)" → where it was seen
 let loads = 0;
 for (const scheme of schemes) for (const width of widths) {
-  const ctx = await browser.newContext({ viewport: { width, height: 900 }, colorScheme: scheme });
+  const ctx = await browser.newContext({ viewport: { width, height: 900 }, colorScheme: scheme, deviceScaleFactor: scale });
   const page = await ctx.newPage();
   if (longNames) await page.addInitScript((labels) => { try { localStorage.setItem("rr-demo:sync:prefs", JSON.stringify({ labels, panel: { venues: { show: true } } })); } catch (e) { /* no localStorage */ } }, LABELS);
   for (const lang of languages) {
@@ -135,7 +137,7 @@ for (const scheme of schemes) for (const width of widths) {
 }
 await browser.close();
 server.close();
-console.log(`${loads} page loads (version ${manifest.version}; ${languages.length} languages × ${widths.length} widths × ${schemes.length} schemes)`);
+console.log(`${loads} page loads (version ${manifest.version}; ${languages.length} languages × ${widths.length} widths × ${schemes.length} schemes${scale !== 1 ? `, at ${scale * 100} %` : ""})`);
 // the one known limit: a chip keeps its name on one line, so a chip named with 30 characters is cut in a preview of 330 px or less (reported, not counted)
 const known = (key, where) => longNames && /^cut by its own box · span#rr-chip#rr-chip-mark/.test(key) && where.every((w) => +w.match(/@(\d+)/)[1] <= 330);
 let problems = 0;

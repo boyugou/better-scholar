@@ -55,7 +55,7 @@ trailing or leading `( … )` / `[ … ]` made of nothing but marker and venue/y
 low by nature — across four real profiles (400 rows, including one whose owner has CVPR'16 and ICCV'17
 best papers) Scholar's text contained **no** such markers — so this is best effort, not a promise.
 
-**Built — a bundled list of award-winning papers** (8452 entries on 2026-11-05: the ACL family, ICLR, NeurIPS, ICML,
+**Built — a bundled list of award-winning papers** (8475 entries on 2026-11-05: the ACL family, ICLR, NeurIPS, ICML,
 CVPR / ICCV / ECCV from the Computer Vision Foundation's list, AAAI, IJCAI 2020–2023, USENIX, SIGIR, KDD, SIGSOFT, STOC, SIGCOMM, S&P,
 CCS, NDSS, SIGMOD, PODS, VLDB, and the test-of-time awards of WWW, ISCA, MICRO, USENIX, SIGMOD, SIGPLAN's most influential papers, SIGMETRICS, FOCS's test of time, SIGOPS's Hall of Fame, EuroSys's test of time, AAMAS's and ASPLOS's influential papers, the IACR test of time (CRYPTO / EUROCRYPT / ASIACRYPT), the TCC, PKC and CHES tests of time, HPCA's, IMC's and IEEE VIS's test of time, ICDE's influential papers, ISMAR's best and impact papers, ICSE's most influential papers, LICS's test of time and distinguished papers, AAAI's classic papers, ICAPS's influential papers, ISWC's ten-year papers, SIGMM's test of time, Hypertext's and DocEng's best papers, SIGDA's Newton technical impact award, SIGSPATIAL's best and 10-year impact papers, SIGCSE's test of time, ICWSM's test of time and best papers, SIGMOBILE's and SenSys's test of time, SIGecom's test of time and PODC / DISC's Dijkstra Prize; CHI, CSCW, UIST and other SIGCHI conferences from SIGCHI's own program data). Only official pages are sources (the ACL Anthology's award metadata; each
 conference's own or the CVF's awards pages), each entry carries its page and a quoted snippet, and the matcher requires
@@ -197,7 +197,8 @@ of HotStorage, and the year written with a hyphen or jammed onto a mixed-case wo
   holds); one pair of listed venues (CSCWD's "… Computer Supported Cooperative Work …" read as CSCW, its "in Design" cut away; their numbering
   is one apart); and the 100 lines whose cut hides a track word ("… Workshops", "… Companion": only Read full lists sees it).
 - **End-to-end pictures at other display scalings** (Chromium only — other engines are out of scope by the platform
-  policy). The end-to-end run already takes `E2E_SCALE` for the website's pictures; nothing compares them yet.
+  policy). Measured since 2026-11-05: the overflow audit takes `--scale` (clean at 125, 150 and 175 % in 30 languages; CI runs Linux at
+  150 %, Windows at 125 % and 150 %), and the panel's end-to-end part 2 passes at `E2E_SCALE=1.5`. Left: comparing the pictures themselves.
 
 ## Accessibility
 

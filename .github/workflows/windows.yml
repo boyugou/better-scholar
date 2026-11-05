@@ -1,8 +1,8 @@
 name: windows
 
 # The checks that measure the page on Windows' own fonts (Segoe UI, Microsoft YaHei, Yu Gothic …) and on Windows' Chromium, beside the
-# Linux run of test.yml: nothing runs out of its box in 30 languages, every name at 30 characters, axe-core, the web demo, and the panel in
-# every language (e2e part 2). A workflow of its own, so that test.yml's result does not wait for the slower Windows machines.
+# Linux run of test.yml: nothing runs out of its box in 30 languages, every name at 30 characters, at the display scalings Windows laptops
+# come with (125 %, 150 %), axe-core, the web demo, and the panel in every language (e2e part 2). A workflow of its own, so that test.yml's result does not wait for the slower Windows machines.
 on:
   push:
     branches: [main]
@@ -21,6 +21,8 @@ jobs:
       - run: npm test
       - run: node scripts/overflow-audit.mjs --width 1360,700,330 --scheme light
       - run: node scripts/overflow-audit.mjs --long-names spaced --lang en,de,ja,ar,ru,fi,zh-CN,ko,th --width 700,330 --scheme light
+      - run: node scripts/overflow-audit.mjs --scale 1.25 --width 1360,330 --scheme light
+      - run: node scripts/overflow-audit.mjs --scale 1.5 --width 700,330 --scheme light
       - run: node scripts/axe-audit.mjs
       - run: npm run test:demo
 

@@ -189,6 +189,9 @@ give the details and every review):
   Encryption: 23rd International Conference, FSE 2016" is the cryptography FSE (B), not Foundations of Software Engineering (A): venues
   that share an acronym are told apart by the series title. (4) MDPI's journals *AI* and *IoT* are not Artificial Intelligence (A) and
   IEEE IoT-J, nor is the Korean WISA (information security) the Web Information Systems WISA.
+- **The overflow audit at other display scalings** (`--scale`; Windows laptops come at 125 % and 150 %, where text is laid out to fractions
+  of a pixel): the settings page and its preview are clean at 125, 150 and 175 % in all 30 languages, and the panel's end-to-end checks
+  (part 2, every language) pass at 150 %. CI runs it now: Linux at 150 %, Windows at 125 % and 150 %.
 - **A test-of-time honorable mention marks the paper it is for**: the list's 55 honorable mentions and runners-up of test-of-time,
   classic-paper, influential-paper and ten-year awards (ICML, ICAPS, AAAI, SIGMM, WSDM, UbiComp …) were checked against the award's own
   year, so they could never mark the old paper. An award whose entry names the paper's own year (`paperYear`, as an official page prints
@@ -196,8 +199,8 @@ give the details and every review):
   nothing of the paper's conference, as a test-of-time award does not). Three entries carried the year already (WSDM 2022 and 2023,
   UbiComp 2026); the others stay unmatched until their year is read from an official page — no mark is better than a guessed year.
 - **The awards of 39 more conference years** (a sweep of 2026 editions, and earlier years the list lacked, each read from the conference's
-  or society's own page): 177 papers — AISTATS, UAI and HRI 2026 (HRI's first test-of-time papers), CRYPTO, CCC, SAT and CP 2026, ECIR,
-  CHIIR (its first test-of-time awards), UMAP 2025 and 2026, ICDT, SIGCSE and DASFAA 2026, WSDM 2022–2026, ICC 2026 and the two ICC 2022
+  or society's own page): 200 papers — AISTATS, UAI and HRI 2026 (HRI's first test-of-time papers), CRYPTO, CCC, SAT and CP 2026, ECIR,
+  CHIIR (its first test-of-time awards), UMAP 2025 and 2026 (and its James Chen student awards of 2009–2024), ICDT, SIGCSE and DASFAA 2026, WSDM 2022–2026, ICC 2026 and the two ICC 2022
   winners the list missed, WCNC 2025 and 2026, ICSME and RE 2026 (both new to the list), ICASSP and Interspeech 2025, MICCAI 2026, ISWC 2026
   (its best papers and ten-year award), UbiComp 2026 (IMWUT's distinguished papers and the ten-year award), ESWEEK's EMSOFT, CODES+ISSS
   and CASES 2025 and 2026, ASP-DAC 2025, ICS 2025 and 2026. Put right on the way: five
@@ -208,7 +211,7 @@ give the details and every review):
   page misprints a title ("Version" for "Versions"): corrected there too. Left out: MSR's FOSS Impact Award (a tool-track prize the list
   never held), finalists and nominees (ICRA, CASE, Interspeech 2026), events whose pages name no winner yet (EACL, ICASSP 2026, SOUPS,
   EC, ASSETS, PIMRC 2026, CCNC 2026, MODELS 2026, ASP-DAC 2026, WSDM 2025's best paper, DASFAA 2025) or that are not yet held (CoRL).
-  The list holds 8,452 awards.
+  The list holds 8,475 awards.
 - **Older years the award list lacked** (each from the conference's or society's own page): CCS 2024 and 2025 (57 distinguished
   papers), SOSP's best papers of 2009, 2013, 2017, 2019 and 2025, ASPLOS 2011 and 2015, The Web Conference 2015, 2019 and 2026, VLDB's
   best papers of 2014–2026 (48, with runners-up and its industry and benchmark categories), MICRO 2019, 2020, 2024 and 2025, SIGIR 2026

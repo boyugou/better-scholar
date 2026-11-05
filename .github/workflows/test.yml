@@ -57,4 +57,6 @@ jobs:
       - run: node scripts/overflow-audit.mjs --width 1360,700,330 --scheme light
       # (and with every name at 30 characters, in six languages: a copy button's long name wraps instead of sticking out — a few seconds)
       - run: node scripts/overflow-audit.mjs --long-names spaced --lang en,de,ja,ar,ru,fi --width 700,330 --scheme light
+      # (and at a display scaling of 150 %, where text is laid out to fractions of a pixel)
+      - run: node scripts/overflow-audit.mjs --scale 1.5 --width 1360,330 --scheme light
       - run: node scripts/axe-audit.mjs
