@@ -4,7 +4,9 @@
 // badge is not its whole title's is counted, by kind:
 //   swap         the whole title has another venue's badge (two listed venues begin the same way)
 //   track        the whole title has none, and what the cut hides holds a track word ("… Workshops", "… Companion"): only Read full lists can see it
-//   other        the whole title has none: an unlisted venue whose name begins a listed one's (an anchor — aliases.js `edition` — can refuse it when the line prints an edition)
+//   other        the whole title has none: an unlisted venue whose name begins a listed one's (an anchor — aliases.js `edition` — can refuse it when the line prints an edition,
+//                a `reach` word when what is visible stops before the word that tells the venue)
+//   lost         (listed too) the cut line has no badge where the whole title has one
 //   node scripts/measure-cut-lines.mjs            the counts
 //   node scripts/measure-cut-lines.mjs --list     and the lines, by the badge they got
 // (docs/ROADMAP.md quotes its counts: "Cut-off venue lines that unlisted venues share".)
@@ -23,21 +25,22 @@ const brief = (s) => {
 };
 const TRACK = /\b(?:workshops?|companion|demo(?:nstration)?s?|posters?|student|doctoral|tutorials?|abstracts|industry|short papers|findings|satellite|adjunct|extended|forum|challenge|competition)\b/i;
 const CUT = 77;
-const counts = { cut: 0, same: 0, lost: 0, swap: 0, track: 0, other: 0 }, lines = { swap: [], track: [], other: [] };
+const counts = { cut: 0, same: 0, lost: 0, swap: 0, track: 0, other: 0 }, lines = { swap: [], track: [], other: [], lost: [] };
 for (const title of fs.readFileSync(path.join(root, "test/fixtures/real-titles.txt"), "utf8").split("\n")) {
   const year = (/\b(19[5-9]\d|20[0-3]\d)\b/.exec(title) || [])[1];
   if (!year || title.length < CUT + 3) continue;
-  const visible = title.slice(0, CUT).replace(/\s+\S*$/, "").replace(/[\s,:;(–-]+$/, "");
+  // (the word the cut falls in is dropped — not one that ends right at it: "… Distributed Processing with" stays whole when "with" ends at the cut)
+  const visible = (/\s/.test(title[CUT] || " ") ? title.slice(0, CUT) : title.slice(0, CUT).replace(/\s+\S*$/, "")).replace(/[\s,:;(–-]+$/, "");
   const line = `${visible} …, ${year}`, whole = brief(title), cut = brief(line);
   counts.cut++;
-  if (!cut) { if (whole) counts.lost++; continue; }
+  if (!cut) { if (whole) { counts.lost++; lines.lost.push(["", whole, line]); } continue; }
   if (cut === whole) { counts.same++; continue; }
   const kind = whole ? "swap" : TRACK.test(title.slice(visible.length)) ? "track" : "other";
   counts[kind]++;
   lines[kind].push([cut, whole, line]);
 }
 console.log(`${counts.cut} cut lines: ${counts.same} keep the whole title's badge, ${counts.lost} lose it; a badge the whole title lacks — ${counts.swap} another listed venue's, ${counts.track} with a track word hidden, ${counts.other} otherwise`);
-if (process.argv.includes("--list")) for (const kind of ["swap", "other", "track"]) {
+if (process.argv.includes("--list")) for (const kind of ["swap", "other", "track", "lost"]) {
   console.log(`\n${kind}:`);
   for (const [cut, whole, line] of lines[kind].sort((a, b) => a[0].localeCompare(b[0]))) console.log(`  ${cut.padEnd(36)} ${whole ? "(whole: " + whole + ") " : ""}${line}`);
 }

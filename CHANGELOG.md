@@ -80,14 +80,17 @@ give the details and every review):
   have, outside hidden track words. A cut line that begins a listed name with an edition that venue cannot have held that year is now
   another venue's: "Proceedings of the 2018 10th International Conference on Machine Learning and …" is ICMLC, not ICML's 35th (ICML, RECOMB,
   ICIG, HPCC, CSCloud, IEEE IS, ISDA, ICARCV, IWQoS, SLT, ICFHR, ICCE, EDM, CICM; each numbering from the venue's own lines or proceedings).
-  148 became 119. One right badge goes with them: HPCC 2013's own IEEE title says "10th" (its numbering gives the 15th) — a missing badge,
-  where the anchor takes a wrong one away elsewhere. Not anchored: CORE's ICCSA, whose acronym two rows share.
+  138 became 115 (`scripts/measure-cut-lines.mjs`). One right badge goes with them: HPCC 2013's own IEEE title says "10th" (its numbering
+  gives the 15th) — a missing badge, where the anchor takes a wrong one away elsewhere. Not anchored: CORE's ICCSA, whose acronym two rows share.
 - **Matching: a cut line that stops inside a start many events share** is no venue's (aliases.js `reach`, a new construct): "2014 IEEE
   International Conference on Computational Intelligence and …" was CORE C CIDM, as were thirty-odd other cut lines of other conferences
   (CICN, CIDS, CINTI …); the listed venue's start must now reach the word that tells it ("data" for CIDM; eleven more: CIFEr, IoTBDS, CLOSER,
   ICOCI, WADS, ICMLA, AROB, FedCSIS, LATA, WCNC, ICCSA). A venue short of its word stays a rival, as a "Joint" one does: the start is
-  claimed by none, in either list (so "Machine Learning, 2006 IEEE …" does not fall to ICML). By the measurement: 119 cut lines with a
-  badge their whole title lacks became 47; over the 75,521 lines, five wrong badges went (the IEEE's CSE read as ICCSA) and nothing right.
+  claimed by none, in either list (so "Machine Learning, 2006 IEEE …" does not fall to ICML). The word is matched as written: "its" tells
+  ICCSA ("… Computational Science and Its …") from the IEEE's CSE. By the measurement: 110 cut lines with a badge their whole title lacks
+  became 50, and no cut line lost its whole title's badge; over the 75,521 lines, five wrong badges went (the IEEE's CSE read as ICCSA) and
+  nothing right. This goes beyond the owner's choice of 2026-10-29 (edition anchors rather than claiming fewer cut starts), narrowly; it can
+  be reverted on its own.
   Two cut lines of the tests are no badge now, as they are ambiguous: "… 12th … Conference on Machine Learning and …, 2012" (ICMLC held
   its 12th that year too) and "… 12th … Conference on Computational Science …, 2012" (ICCS's 12th as much as ICCSA's). Two names the lists
   lack, found the same way: PACT's ACM title without "Techniques", MASCOTS's IEEE one with "Computers" (3 gained).

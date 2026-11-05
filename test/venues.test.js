@@ -537,6 +537,7 @@ test("a cut line that stops inside a start many events share is no venue's: it m
   // (real titles of test/fixtures/real-titles.txt, cut where Scholar cuts a line: scripts/measure-cut-lines.mjs)
   assert.equal(brief("2014 IEEE International Conference on Computational Intelligence and …, 2014"), "", "CICN, CIDS … not CIDM");
   assert.equal(brief("2011 14th IEEE International Conference on Computational Science and …, 2011"), "", "the IEEE's CSE, not ICCSA");
+  assert.equal(brief("2015 15th International Conference on Computational Science and Its …, 2015"), "CORE C ICCSA", "ICCSA's own, cut after its \"Its\" (the word is matched as written)");
   assert.equal(brief("Proceedings of the 2023 8th International Conference on Cloud Computing and …, 2023"), "", "not CLOSER");
   assert.equal(brief("Proceedings of the 2017 International Conference on Machine Learning and …, 2017"), "", "not ICMLA");
   // the venues themselves, by their own lines, whole or cut after the word
@@ -848,7 +849,7 @@ test("a cut-off name is not claimed for the one venue of a list when the other l
   assert.equal(brief("Proceedings of the Twelfth International Conference on Distributed …, 2012"), "");
   // the ACL Anthology's COLING volumes are cut right here: curated (aliases.js `starts`)
   assert.equal(brief("Proceedings of the 23rd international conference on computational …, 2010"), "CCF B COLING · CORE B COLING");
-  // (not ICCSA since 2026-11-04: the start stops before "Applications" — aliases.js `reach` —, and ICCS held its 12th in 2012 as ICCSA did)
+  // (not ICCSA since 2026-11-04: the start stops before its "Its" — aliases.js `reach` —, and ICCS held its 12th in 2012 as ICCSA did)
   assert.equal(brief("Proceedings of the 12th International Conference on Computational Science …, 2012"), "");
   assert.equal(brief("Proceedings of the 36th annual international symposium on Computer …, 2009"), "CCF A ISCA · CORE A* ISCA");
 });

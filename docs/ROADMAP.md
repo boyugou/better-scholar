@@ -179,13 +179,15 @@ of HotStorage, and the year written with a hyphen or jammed onto a mixed-case wo
   unlisted venues begin so too. Measured 2026-10-29 by cutting the 52,800 Crossref / OpenAlex titles of `test/fixtures/real-titles.txt`
   where Scholar would: of the cut titles that carry a year (and no hidden track word), 882 keep the whole title's badge and 183 got
   another. The owner chose the edition check: 18 venues have their numbering in aliases.js (`edition`), which took the 183 to 132 and
-  cost no right badge there. Measured again on 2026-11-04 (`node scripts/measure-cut-lines.mjs`: cut at about 76 characters at a word, punctuation dropped, as Scholar does): 148 cut
-  lines with a badge their whole title lacks, outside hidden track words; 14 more anchors took them to 119 and cost one right badge (HPCC 2013,
-  whose own IEEE title says "10th"); `reach` words for 12 venues whose start many events share took them to 47, at no right badge. What is left:
-  starts that are a listed venue's whole name (SIGIR-AP's "… ACM SIGIR Conference on …", ICDM's "… Conference on Data Mining …"), the 110 lines whose cut hides a track word ("… Workshops", "… Companion": only Read full lists sees it), and one pair of listed
-  venues: a cut "2008 IEEE International Symposium on Parallel and Distributed Processing …" is IPDPS's name of 2008–09 or the start of ISPA's
-  (four ISPA lines are read as IPDPS; making the name whole-only would hand IPDPS's cut lines to ISPA — only "no badge" is right, which no
-  construct of aliases.js says yet).
+  cost no right badge there. Measured again on 2026-11-04 (`node scripts/measure-cut-lines.mjs`: cut at about 76 characters, the word the
+  cut falls in dropped, punctuation before it too, as Scholar does): 138 cut lines with a badge their whole title lacks, outside hidden track
+  words. 14 more anchors took them to 115 (one right badge lost: HPCC 2013, whose own IEEE title says "10th"); two names the lists lacked, to
+  110. Beyond the owner's choice, a narrow form of the other direction ("claim fewer cut starts"): `reach`, a word per venue that a cut start
+  must show — for 12 venues whose start many events share — took them to 50 at no right badge (cut lines that keep their whole title's badge:
+  945, from 943); revert it if the owner prefers. What is left: starts that are a listed venue's whole name (SIGIR-AP's "… ACM SIGIR Conference
+  on …", ICDM's "… Conference on Data Mining …"), one pair of listed venues (CSCWD's "… Computer Supported Cooperative Work …" read as CSCW,
+  its "in Design" cut away; their numbering is one apart), and the 101 lines whose cut hides a track word ("… Workshops", "… Companion": only
+  Read full lists sees it).
 - **End-to-end pictures at other display scalings** (Chromium only — other engines are out of scope by the platform
   policy). The end-to-end run already takes `E2E_SCALE` for the website's pictures; nothing compares them yet.
 
