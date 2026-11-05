@@ -465,7 +465,8 @@ html.rr-rows-none tr[class*="rr-r-"] > td:first-child { box-shadow: none !import
   #rr-panel .rr-dot { outline: 1px solid ButtonText; }
   #rr-panel .rr-filterbar, #rr-panel > .rr-warn { border: 1px solid CanvasText; }
   /* masks are drawn with a background colour, which the system would turn into the page colour: keep them in the text colour */
-  #rr-panel .rr-ico-settings::before, #rr-panel .rr-ico-caret::before, #rr-panel .rr-mi::before, .rr-chip-mark::before, .rr-chip-mark-award[data-mark="runner-up"]::before { background-color: CanvasText; }
+  #rr-panel .rr-ico-settings::before, #rr-panel .rr-ico-caret::before, #rr-panel .rr-mi::before, .rr-chip-mark::before, .rr-chip-mark-award[data-mark="runner-up"]::before, #rr-panel [data-rr="absent"] > .rr-link::before { background-color: CanvasText; }
+  #rr-panel .rr-copybar .rr-btn::before { background-color: ButtonText; }
   #rr-panel input[type="checkbox"] { -webkit-appearance: auto; appearance: auto; width: 16px; height: 16px; border-radius: 0; background: Field; }
   #rr-panel input[type="checkbox"]::after { display: none; }
   #rr-panel .rr-seg button[aria-pressed="true"] { outline: 2px solid Highlight; }

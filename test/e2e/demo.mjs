@@ -263,12 +263,12 @@ try {
   ok("without localStorage the page works and keeps its changes in memory only");
 
   // -- 11b. the window narrowed and widened: the controls that measure themselves (the segmented choices, the panel's copy buttons) do so without a loop
-  {
-    const { context, page } = await open("?lang=ru");
+  for (const lang of ["ru", "de", "fi", "el", "ar", "ja"]) {          // (labels of every length: a control that changes its columns does so in some of them only)
+    const { context, page } = await open("?lang=" + lang);
     for (const w of [700, 330, 1100, 420, 1360]) { await page.setViewportSize({ width: w, height: 900 }); await page.waitForTimeout(250); }
     await context.close();
-    ok("narrowing and widening the window raises no error (the controls that measure themselves)");
   }
+  ok("narrowing and widening the window raises no error, in six languages (the controls that measure themselves)");
 
   // -- 12. no console errors, no failed request, nothing asked of any other server
   assert.deepEqual(problems, [], "console errors / failed requests:\n" + problems.join("\n"));

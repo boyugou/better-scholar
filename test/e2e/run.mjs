@@ -433,6 +433,11 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     await page.bringToFront();
     await page.emulateMedia({ forcedColors: "active" });
     await eventually(page, () => parseFloat(getComputedStyle(document.querySelector("tr.rr-r-first > td:first-child")).borderInlineStartWidth) === 4);
+    // (an icon drawn as a mask is painted with a background colour, which the system turns into the page's: each keeps a text colour, or it is gone)
+    assert.deepEqual(await page.evaluate(() => {
+      const canvas = getComputedStyle(document.body).backgroundColor;
+      return [...document.querySelectorAll('#rr-panel .rr-copybar .rr-btn, #rr-panel [data-rr="absent"] > .rr-link')].filter((e) => e.offsetParent && getComputedStyle(e, "::before").backgroundColor === canvas).map((e) => e.textContent.trim().slice(0, 20));
+    }), [], "forced colours: no icon of the panel is painted in the page's own colour");
     await page.emulateMedia({ forcedColors: null });
     ok("forced colours: a highlighted row keeps a 4 px border where the system drops the tint and the bar");
 
@@ -2544,6 +2549,12 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     assert.deepEqual(setLayout.unevenSegments, [], "a segmented control wraps in even rows");
     assert.equal(setLayout.editorInset, 0, "the configuration editor is inset as the card's buttons");
     assert.equal(setLayout.sharedIcons, 0, "no two settings cards share a picture");
+    await opts.emulateMedia({ forcedColors: "active" });
+    assert.deepEqual(await opts.evaluate(() => {
+      const canvas = getComputedStyle(document.body).backgroundColor;
+      return [...document.querySelectorAll(".order-btn, .toc-arrow, .pv-tray > summary")].filter((e) => getComputedStyle(e, "::before").backgroundColor === canvas).map((e) => e.className || e.tagName).filter((v, i, a) => a.indexOf(v) === i);
+    }), [], "forced colours: the order arrows, the strip's arrows and the tray's chevron keep a text colour (masks painted in the page's colour vanish)");
+    await opts.emulateMedia({ forcedColors: null });
     assert.equal(setLayout.groupEnded, true, "a band ends the quick filters before the rows that are not of them");
     assert.deepEqual([setLayout.wordsOff, setLayout.orderLook, setLayout.doubleHeads, setLayout.looksHeaded, setLayout.fromDeeper >= 15, setLayout.pvInset >= 15, setLayout.ringClear, setLayout.keyDots],
       [0, [0, 0], 0, true, true, true, true, ""], "the second screenshot review's faults: words field, one order design, one heading, chip looks, From/To, preview inset, swatch ring, key field");

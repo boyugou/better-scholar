@@ -104,4 +104,4 @@ a.btn.primary:hover { filter: brightness(1.08); }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } }
 
 /* forced colours: the pressed tab of the ranking switch is outlined */
-@media (forced-colors: active) { .seg button[aria-pressed="true"] { outline: 2px solid Highlight; } .dot { forced-color-adjust: none; outline: 1px solid ButtonText; } }
+@media (forced-colors: active) { .seg button[aria-pressed="true"] { outline: 2px solid Highlight; } .dot { forced-color-adjust: none; outline: 1px solid ButtonText; } .actions button.btn::before { background-color: ButtonText; } }

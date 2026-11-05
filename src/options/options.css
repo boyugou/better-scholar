@@ -1782,6 +1782,10 @@ button.btn.preset-chip:hover {
   .seg-btn.active {
     outline: 2px solid Highlight;
   }
+  /* masks are drawn with a background colour, which the system would turn into the page's: they keep a text colour */
+  .order-btn::before { background-color: ButtonText; }
+  .order-btn:disabled::before { background-color: GrayText; }
+  .toc-arrow::before, .pv-tray > summary::before { background-color: CanvasText; }
 }
 
 /* text for screen readers only */
