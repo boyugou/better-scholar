@@ -569,6 +569,14 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     // (polled with evaluate: the settings page's content security policy has no 'unsafe-eval', which waitForFunction needs on some builds)
     for (let i = 0; i < 50; i++) { const t = await opts.evaluate(() => document.querySelector("#card-chips").getBoundingClientRect().top); if (t >= 0 && t < 140) break; await opts.waitForTimeout(100); if (i === 49) assert.fail("the card did not come to the top: " + JSON.stringify(await opts.evaluate(() => ({ top: document.querySelector("#card-3").getBoundingClientRect().top, y: scrollY, h: innerHeight, doc: document.documentElement.scrollHeight })))); }
     await opts.locator('.toc a[data-card="card-chips"][aria-current]').waitFor({ timeout: 5000 }).catch(() => assert.fail("the link of the card in view is marked"));
+    // the strip shows that it goes on (four of 22 links in view): an arrow at its end scrolls it, and then there is one at its start; the wheel scrolls it too
+    await opts.evaluate(() => document.querySelector(".toc").scrollTo({ left: 0 }));
+    await pollPage(opts, () => !!document.querySelector(".toc-next").offsetParent && !document.querySelector(".toc-prev").offsetParent, null, 5000).catch(() => assert.fail("at its start the strip has an arrow at its end, and none at its start"));
+    await opts.click(".toc-next");
+    await pollPage(opts, () => document.querySelector(".toc").scrollLeft > 50 && !!document.querySelector(".toc-prev").offsetParent, null, 5000).catch(() => assert.fail("the arrow at the end scrolls the strip"));
+    const stripAt = await opts.evaluate(() => document.querySelector(".toc").scrollLeft);
+    await opts.hover(".toc a:nth-child(2)"); await opts.mouse.wheel(0, 240);
+    await pollPage(opts, (was) => document.querySelector(".toc").scrollLeft > was + 50, stripAt, 5000).catch(() => assert.fail("the wheel scrolls the strip"));
     await opts.emulateMedia({ reducedMotion: "no-preference" });
     await opts.evaluate(() => window.scrollTo(0, 0));
     ok(`settings page: ${links} links to its cards under the header, each one scrolls its card into view`);
@@ -2511,6 +2519,8 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
         return !n || !sw || Math.abs(R(f).left - R(n).left) > 1 || Math.abs(R(f).right - R(sw).right) > 1; }).length;
       // one design for an order: rows with the arrows in front, arrows of 24 px
       out.orderLook = [document.querySelectorAll(".order-list").length, [...document.querySelectorAll(".order-btn")].filter((b) => shown(b) && R(b).height < 24).length];
+      // the rows after the quick filters are not of them: a band ends the group before "Only highlighted"
+      out.groupEnded = !!document.querySelector('#card-filters .opt-group-end + .opt:has([data-pref="panel.filters.only"])');
       // one heading over a list: the group's, not a second one under it
       out.doubleHeads = [...document.querySelectorAll("h3.opt-group")].filter((g) => g.nextElementSibling && g.nextElementSibling.querySelector(".opt-order-head")).length;
       // the ready-made chip looks under their heading
@@ -2534,6 +2544,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     assert.deepEqual(setLayout.unevenSegments, [], "a segmented control wraps in even rows");
     assert.equal(setLayout.editorInset, 0, "the configuration editor is inset as the card's buttons");
     assert.equal(setLayout.sharedIcons, 0, "no two settings cards share a picture");
+    assert.equal(setLayout.groupEnded, true, "a band ends the quick filters before the rows that are not of them");
     assert.deepEqual([setLayout.wordsOff, setLayout.orderLook, setLayout.doubleHeads, setLayout.looksHeaded, setLayout.fromDeeper >= 15, setLayout.pvInset >= 15, setLayout.ringClear, setLayout.keyDots],
       [0, [0, 0], 0, true, true, true, true, ""], "the second screenshot review's faults: words field, one order design, one heading, chip looks, From/To, preview inset, swatch ring, key field");
     assert.equal(setLayout.copyWidths.length, 1, `the preview's copy buttons are all one width (${setLayout.copyWidths})`);

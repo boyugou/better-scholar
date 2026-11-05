@@ -63,6 +63,8 @@ give the details and every review):
   second rail in right to left; the ready-made chip looks under their heading; the preview's panel inset as the tray above it; a chosen
   swatch's ring clear of the next; an empty key field is empty (it showed dots); plain buttons throughout (presets, the editor, the
   agent guide); no accent border on a card under the pointer. The web demo now fails on any error event, a ResizeObserver loop included.
+  Then: the settings page's strip of section links (four of 22 in view) has an arrow at each end where there is more, scrolls with the
+  wheel, and fades only on a side that has more; a band ends the quick filters before "Only highlighted".
 - **Your own venue mappings** (settings → *Check a venue* → *Assign it to a listed venue…*). A venue line that no rule ranks can now be
   tied by you to a row of the CCF or CORE list; the same venue in other editions (years, ordinals, "Proceedings of the" and a bracketed acronym aside) gets that
   rank too. It is never passed off as the lists' rank: the chip is dashed with a dotted tier and its tooltip says "Your own mapping", a
