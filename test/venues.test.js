@@ -533,6 +533,11 @@ test("an unranked event's acronym inside the name shadows it too: the Iranian IS
   assert.match(brief("Information Security: 23rd International Conference, ISC 2020, Bali, Indonesia"), /^CCF C ISC/);
 });
 
+test("names the lists lack: SIGCOMM's proceedings title in ACM's plural, GPCE's later name (real titles of the corpus, 2026-11-04)", () => {
+  assert.equal(brief("Proceedings of the 2003 conference on Applications, technologies, architectures, and protocols for computer communications, 27-38"), "CCF A SIGCOMM · CORE A* SIGCOMM");
+  assert.match(brief("Proceedings of the 2015 ACM SIGPLAN International Conference on Generative Programming: Concepts and Experiences"), /^CORE B GPCE/);
+});
+
 test("a cut line that begins a listed name with an edition that venue cannot have held that year is another venue's (aliases.js `edition`, 2026-11-04)", () => {
   // (real titles of test/fixtures/real-titles.txt, cut where Scholar cuts a line: scripts/measure-cut-lines.mjs)
   assert.equal(brief("Proceedings of the 2018 10th International Conference on Machine Learning and …, 2018"), "", "ICMLC, not ICML's 35th");

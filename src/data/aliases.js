@@ -155,8 +155,11 @@
     { ccf: "HPDC", core: "HPDC", names: ["IEEE International Symposium on High Performance Distributed Computing", "International Symposium on High Performance Distributed Computing"] },
     { ccf: "HPCA", core: "HPCA", names: ["IEEE International Symposium on High Performance Computer Architecture", "International Symposium on High-Performance Computer Architecture"] },
     { ccf: "SC", core: "SC", names: ["International Conference for High Performance Computing, Networking, Storage and Analysis", "Supercomputing", "ACM/IEEE Conference on Supercomputing", "ACM/IEEE Supercomputing Conference", "Conference on Supercomputing"] },
+    // (GPCE's name in its proceedings of the 2010s, "Generative Programming: Concepts and Experiences" — the corpus's 2015 and 2016 titles; CORE keeps the older "… and Component Engineering")
+    { core: "GPCE", names: ["International Conference on Generative Programming: Concepts and Experiences", "ACM SIGPLAN International Conference on Generative Programming: Concepts and Experiences"] },
     { ccf: "SIGCOMM", core: "SIGCOMM", names: [
       "ACM SIGCOMM Conference", "Conference on Applications, Technologies, Architectures, and Protocols for Computer Communication",
+      "Conference on Applications, Technologies, Architectures, and Protocols for Computer Communications",          // (ACM's proceedings of 2003 on print the plural)
       "ACM Special Interest Group on Data Communication", "SIGCOMM Conference on Data Communication"
     ] },
     { ccf: "INFOCOM", core: "INFOCOM", names: ["IEEE Conference on Computer Communications", "IEEE INFOCOM", "Annual Joint Conference of the IEEE Computer and Communications Societies"] },

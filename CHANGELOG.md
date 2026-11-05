@@ -82,6 +82,9 @@ give the details and every review):
   ICIG, HPCC, CSCloud, IEEE IS, ISDA, ICARCV, IWQoS, SLT, ICFHR, ICCE, EDM, CICM; each numbering from the venue's own lines or proceedings).
   148 became 119. One right badge goes with them: HPCC 2013's own IEEE title says "10th" (its numbering gives the 15th) — a missing badge,
   where the anchor takes a wrong one away elsewhere. Not anchored: CORE's ICCSA, whose acronym two rows share.
+- **Matching: two names the lists lack**: SIGCOMM's proceedings title as ACM prints it from 2003 on, "… protocols for computer
+  communications" (the plural missed the list's "Communication": CCF A / CORE A* papers without a chip), and GPCE's later name, "Generative
+  Programming: Concepts and Experiences". Over the corpus: 7 gained, nothing lost or moved.
 - **A reference's type from the lists, whether or not their ranks are shown**: with both lists switched off, "Advances in neural
   information processing systems 36, 46595-46623, 2023" — a journal's shape, volume and pages — was typed by its words (no conference
   paper); the kind the lists know now types it in every export and in the `papers` call, while the ranks stay out. (The search's
