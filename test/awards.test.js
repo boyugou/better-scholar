@@ -55,6 +55,19 @@ test("a row matches by full title and a first-author surname that is among its a
   assert.deepEqual(index.lookup({ title: "A Classic", authorsText: "A Old" }).map((m) => m.kind), ["tot"]);
 });
 
+test("an award whose entry names the paper's own year is matched to that year, whatever its kind: a test-of-time runner-up (WSDM 2022's, for a paper of 2011)", () => {
+  const idx = awards.createIndex([[...item("Patterns of temporal variation in online media", "Jaewon Yang", "WSDM", 2022, "runner-up", "Test-of-Time Award Runner-up"), 2011]]);
+  const at = (year) => idx.lookup({ title: "Patterns of temporal variation in online media", authorsText: "J Yang, J Leskovec", year });
+  assert.deepEqual(at(2011), [{ kind: "runner-up", venue: "WSDM", year: 2022, awardLabel: "Test-of-Time Award Runner-up", paperYear: 2011 }]);
+  assert.equal(at(2012).length, 1, "the proceedings may come out the next year");
+  assert.deepEqual(at(2022), [], "a row of the award's year is another publication of the title");
+  assert.deepEqual(at(2015), []);
+  // (without the paper's year a runner-up is the conference's own: that year or the next)
+  const plain = awards.createIndex([item("A Runner Up", "Ann Lee", "X", 2022, "runner-up")]);
+  assert.equal(plain.lookup({ title: "A Runner Up", authorsText: "A Lee", year: 2011 }).length, 0);
+  assert.equal(plain.lookup({ title: "A Runner Up", authorsText: "A Lee", year: 2022 }).length, 1);
+});
+
 test("unknown award names are ignored rather than guessed", () => {
   const idx = awards.createIndex([item("X", "A Person", "V", 2020, "mystery")]);
   assert.deepEqual(idx.lookup({ title: "X", authorsText: "A Person" }), []);

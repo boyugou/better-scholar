@@ -253,6 +253,24 @@ test("a test-of-time award on the list leaves the authors' own \"Best Paper\" st
   assert.deepEqual(marks.listedOnce([{ title: "Naïve Bayes", year: 2001, marks: [L("best", "X", 2001)] }, { title: "Naive Bayes", year: 2003, marks: [L("best", "X", 2001)] }], fold).map((ms) => ms.length), [1, 0]);
 });
 
+test("a test-of-time runner-up (its paper's year named) leaves the authors' own \"Best Paper\" standing, and marks the row of the paper's year", () => {
+  const retro = { kind: "runner-up", venue: "WSDM", year: 2022, awardLabel: "Test-of-Time Award Runner-up", paperYear: 2011 };
+  const merged = marks.merge([{ kind: "best", text: "Best Paper Award" }], [retro]);
+  assert.deepEqual(merged.map((m) => m.kind).sort(), ["best", "runner-up"]);
+  assert.equal(merged.find((m) => m.kind === "runner-up").paperYear, 2011);
+  const once = marks.listedOnce([
+    { title: "Patterns", year: 2011, marks: [{ ...retro, source: "list" }] },
+    { title: "Patterns", year: 2012, marks: [{ ...retro, source: "list" }] }
+  ]);
+  assert.deepEqual(once.map((ms) => ms.length), [1, 0], "the row of the paper's year, not the one nearer the award's");
+  // (a hidden duplicate moving onto the kept row: the same rule)
+  const moved = marks.listedOnce([
+    { title: "P", year: 2011, marks: [{ kind: "best", source: "author", text: "Best Paper" }] },
+    { title: "P", year: 2011, hidden: true, into: 0, marks: [{ ...retro, source: "list" }] }
+  ]);
+  assert.deepEqual(moved[0].map((m) => m.kind).sort(), ["best", "runner-up"]);
+});
+
 test("a hidden duplicate's award that no other row holds goes to the row that stands for it", () => {
   const L = (kind, venue, year) => ({ kind, venue, year, awardLabel: "", source: "list" });
   const once = marks.listedOnce([{ title: "A", year: 2021, marks: [] }, { title: "A", year: 2024, hidden: true, into: 0, marks: [L("best", "AAAI", 2024)] }]);

@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 8438
+  "count": 8452
  },
  "entries": [
   {
@@ -94469,6 +94469,74 @@
   {
    "venue": "ISWC",
    "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Research Track Paper Award",
+   "title": "Tractable Query Answering under Epistemic Confidentiality Policies in Description Logic Ontologies",
+   "authors": [
+    "Lorenzo Marconi",
+    "Daniela Rieti",
+    "Riccardo Rosati"
+   ],
+   "track": "main",
+   "source": "https://iswc2026.semanticweb.org/#/program/awards",
+   "evidence": "Best Research Paper Tractable Query Answering under Epistemic Confidentiality Policies in Description Logic Ontologies Lorenzo Marconi, Daniela Rieti and Riccardo Rosati"
+  },
+  {
+   "venue": "ISWC",
+   "year": 2026,
+   "award": "category",
+   "awardLabel": "Best In-Use Track Paper Award",
+   "title": "Evolving FedX: High-Performance SPARQL Federation in the Eclipse RDF4J Ecosystem",
+   "authors": [
+    "Andreas Schwarte",
+    "Peter Haase",
+    "Katja Hose"
+   ],
+   "track": "main",
+   "source": "https://iswc2026.semanticweb.org/#/program/awards",
+   "evidence": "Best In-Use Paper Evolving FedX: High-Performance SPARQL Federation in the Eclipse RDF4J Ecosystem Andreas Schwarte, Peter Haase and Katja Hose"
+  },
+  {
+   "venue": "ISWC",
+   "year": 2026,
+   "award": "category",
+   "awardLabel": "Best Resource Track Paper Award",
+   "title": "Vibes Lore Core: the Aesthetics Knowledge Graph",
+   "authors": [
+    "Silvia Cappa",
+    "Anna Sofia Lippolis",
+    "Anouk Flinkert",
+    "Ekaterina Krasnova",
+    "Shiho Nakamura",
+    "Andrea Giovanni Nuzzolese",
+    "Aldo Gangemi"
+   ],
+   "track": "main",
+   "source": "https://iswc2026.semanticweb.org/#/program/awards",
+   "evidence": "Best Resource Paper Vibes Lore Core: the Aesthetics Knowledge Graph Silvia Cappa, Anna Sofia Lippolis, Anouk Flinkert, Ekaterina Krasnova, Shiho Nakamura, Andrea Giovanni Nuzzolese and Aldo Gangemi"
+  },
+  {
+   "venue": "ISWC",
+   "year": 2026,
+   "award": "student",
+   "awardLabel": "Best Research Track Student Paper Award",
+   "title": "FITTER: Vocabulary-Agnostic Inference on Temporal Knowledge Graphs",
+   "authors": [
+    "Jiaxin Pan",
+    "Mojtaba Nayyeri",
+    "Osama Mohammed",
+    "Daniel Hernández",
+    "Rongchuan Zhang",
+    "Cheng Cheng",
+    "Steffen Staab"
+   ],
+   "track": "main",
+   "source": "https://iswc2026.semanticweb.org/#/program/awards",
+   "evidence": "Best Student Research Paper FITTER: Vocabulary-Agnostic Inference on Temporal Knowledge Graphs Jiaxin Pan, Mojtaba Nayyeri, Osama Mohammed, Daniel Hernández, Rongchuan Zhang, Cheng Cheng and Steffen Staab"
+  },
+  {
+   "venue": "ISWC",
+   "year": 2026,
    "award": "tot",
    "awardLabel": "Ten-Year Award",
    "title": "RDF2Vec: RDF Graph Embeddings for Data Mining",
@@ -130394,6 +130462,154 @@
   {
    "venue": "UbiComp",
    "year": 2026,
+   "award": "distinguished",
+   "awardLabel": "IMWUT Distinguished Paper Award",
+   "title": "Acoustoscillogram: Unlocking Arterial Health Insights via Acoustic Sensing with Low-cost Wired Earphones",
+   "authors": [
+    "Xiaoxuan Liang",
+    "Zhaolong Wei",
+    "Shirui Cao",
+    "Quan Zhang",
+    "Longfei Shangguan",
+    "Dong Li",
+    "Jeremy Gummeson"
+   ],
+   "track": "main",
+   "source": "https://ubicomp.org/ubicomp-iswc-2026/awards-all/",
+   "evidence": "Acoustoscillogram: Unlocking Arterial Health Insights via Acoustic Sensing with Low-cost Wired Earphones Xiaoxuan Liang, Zhaolong Wei, Shirui Cao, Quan Zhang, Longfei Shangguan, Dong Li, Jeremy Gummeson"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2026,
+   "award": "distinguished",
+   "awardLabel": "IMWUT Distinguished Paper Award",
+   "title": "AudioCast: Enabling Ubiquitous Connectivity for Embedded Systems through Audio-broadcasting Low-power Tags",
+   "authors": [
+    "Rajashekar Reddy Chinthalapani",
+    "Dhairya Jigar Shah",
+    "Nobel Ang",
+    "Ambuj Varshney"
+   ],
+   "track": "main",
+   "source": "https://ubicomp.org/ubicomp-iswc-2026/awards-all/",
+   "evidence": "AudioCast: Enabling Ubiquitous Connectivity for Embedded Systems through Audio-broadcasting Low-power Tags Rajashekar Reddy Chinthalapani, Dhairya Jigar Shah, Nobel Ang, Ambuj Varshney"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2026,
+   "award": "distinguished",
+   "awardLabel": "IMWUT Distinguished Paper Award",
+   "title": "Digital Olfaction System Driven by Terahertz Sensing",
+   "authors": [
+    "Rui Lyu",
+    "Hang Lei",
+    "Langcheng Zhao",
+    "Anfu Zhou",
+    "Huadong Ma"
+   ],
+   "track": "main",
+   "source": "https://ubicomp.org/ubicomp-iswc-2026/awards-all/",
+   "evidence": "Digital Olfaction System Driven by Terahertz Sensing Rui Lyu, Hang Lei, Langcheng Zhao, Anfu Zhou, Huadong Ma"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2026,
+   "award": "distinguished",
+   "awardLabel": "IMWUT Distinguished Paper Award",
+   "title": "Ethical Disengagement in Mobile Games: The Effects of Loading Delay and Grayscale on User Engagement",
+   "authors": [
+    "Yugo Nakamura",
+    "Ryota Takao",
+    "Shogo Fukushima",
+    "Yutaka Arakawa"
+   ],
+   "track": "main",
+   "source": "https://ubicomp.org/ubicomp-iswc-2026/awards-all/",
+   "evidence": "IMWUT Distinguished Paper Awards Ethical Disengagement in Mobile Games: The Effects of Loading Delay and Grayscale on User Engagement Yugo Nakamura, Ryota Takao, Shogo Fukushima, Yutaka Arakawa"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2026,
+   "award": "distinguished",
+   "awardLabel": "IMWUT Distinguished Paper Award",
+   "title": "My Pillow Knows My Sleep: Sleep Monitoring with Computational Fabrics in the Pillowcase",
+   "authors": [
+    "Qijia Shao",
+    "Junxiao Chen",
+    "Ho Man Colman Leung",
+    "Meiqi Zhao",
+    "Ruoyu Xu",
+    "Jiting Liu",
+    "Lisa Maria DiSalvo García",
+    "Xiaofan Jiang",
+    "Marie-Pierre St-Onge",
+    "Xia Zhou"
+   ],
+   "track": "main",
+   "source": "https://ubicomp.org/ubicomp-iswc-2026/awards-all/",
+   "evidence": "My Pillow Knows My Sleep: Sleep Monitoring with Computational Fabrics in the Pillowcase Qijia Shao, Junxiao Chen, Ho Man Colman Leung, Meiqi Zhao, Ruoyu Xu, Jiting Liu, Lisa Maria DiSalvo García, Xiaofan Jiang, Marie-Pierre St-Onge, Xia Zhou"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2026,
+   "award": "distinguished",
+   "awardLabel": "IMWUT Distinguished Paper Award",
+   "title": "OpenEarable 2.0: Open-Source Earphone Platform for Physiological Ear Sensing",
+   "authors": [
+    "Tobias Röddiger",
+    "Michael Küttner",
+    "Philipp Lepold",
+    "Tobias King",
+    "Dennis Moschina",
+    "Oliver Bagge",
+    "Joseph A. Paradiso",
+    "Christopher Clarke",
+    "Michael Beigl"
+   ],
+   "track": "main",
+   "source": "https://ubicomp.org/ubicomp-iswc-2026/awards-all/",
+   "evidence": "OpenEarable 2.0: Open-Source Earphone Platform for Physiological Ear Sensing Tobias Röddiger, Michael Küttner, Philipp Lepold, Tobias King, Dennis Moschina, Oliver Bagge, Joseph A. Paradiso, Christopher Clarke, Michael Beigl"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2026,
+   "award": "distinguished",
+   "awardLabel": "IMWUT Distinguished Paper Award",
+   "title": "RadioGami: Batteryless, Long-range Wireless Paper Sensors Using Tunnel Diodes",
+   "authors": [
+    "Imran Fahad",
+    "Danny Scott",
+    "Azizul Zahid",
+    "Matthew Bringle",
+    "Srinayana Patil",
+    "Ella Bevins",
+    "Carmen Palileo",
+    "Sai Swaminathan"
+   ],
+   "track": "main",
+   "source": "https://ubicomp.org/ubicomp-iswc-2026/awards-all/",
+   "evidence": "RadioGami: Batteryless, Long-range Wireless Paper Sensors Using Tunnel Diodes Imran Fahad, Danny Scott, Azizul Zahid, Matthew Bringle, Srinayana Patil, Ella Bevins, Carmen Palileo, Sai Swaminathan"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2026,
+   "award": "distinguished",
+   "awardLabel": "IMWUT Distinguished Paper Award",
+   "title": "S2Pair: Secure and Simple Device Pairing Using Human Bone as a Key Generator",
+   "authors": [
+    "Yao Wang",
+    "Yufei Chen",
+    "Haibin Zhang",
+    "Minjie Lyu",
+    "Tao Gu"
+   ],
+   "track": "main",
+   "source": "https://ubicomp.org/ubicomp-iswc-2026/awards-all/",
+   "evidence": "S2Pair: Secure and Simple Device Pairing Using Human Bone as a Key Generator Yao Wang, Yufei Chen, Haibin Zhang, Minjie Lyu, Tao Gu"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2026,
    "award": "runner-up",
    "awardLabel": "10-Year Impact Award Runner-up",
    "title": "CrossCheck: toward passive sensing and detection of mental health changes in people with schizophrenia",
@@ -131787,6 +132003,44 @@
    "track": "main",
    "source": "https://um.org/awards/best-paper-awards",
    "evidence": "UMAP 2025 Best Paper Award: Synthetic Voices: Evaluating the Fidelity of LLM-Generated Personas in Representing People’s Financial Wellbeing — Arshnoor Kaur, Amanda Aird, Harris Borman, Andrea Nicastro, Anna Leontjeva, Luiz Pizzato, and Dan Jermyn"
+  },
+  {
+   "venue": "UMAP",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "James Chen Best Student Paper Award",
+   "title": "Legal but Unfair: Auditing the Impact of Data Minimization on Fairness and Accuracy Trade-off in Recommender Systems",
+   "authors": [
+    "Salvatore Bufi",
+    "Vincenzo Paparella",
+    "Vito Walter Anelli",
+    "Tommaso Di Noia"
+   ],
+   "track": "main",
+   "source": "https://www.um.org/umap2025/awards/",
+   "alsoAt": [
+    "https://um.org/awards/james-chen-best-student-paper-awards",
+    "https://um.org/announcements/49-acm-umap-2025-best-paper-awards"
+   ],
+   "evidence": "James Chen Best Student Paper Award Sponsored by UM. Inc Salvatore Bufi, Vincenzo Paparella, Vito Walter Anelli and Tommaso Di Noia. Legal but Unfair: Auditing the Impact of Data Minimization on Fairness and Accuracy Trade-off in Recommender Systems"
+  },
+  {
+   "venue": "UMAP",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Modeling Individualization in a Bayesian Networks Implementation of Knowledge Tracing",
+   "authors": [
+    "Zachary A. Pardos",
+    "Neil T. Heffernan"
+   ],
+   "track": "main",
+   "paperYear": 2010,
+   "source": "https://www.um.org/umap2025/awards/",
+   "alsoAt": [
+    "https://um.org/announcements/49-acm-umap-2025-best-paper-awards"
+   ],
+   "evidence": "Test-of-Time Award Sponsored by UM. Inc Zachary A. Pardos, Neil T. Heffernan. Modeling Individualization in a Bayesian Networks Implementation of Knowledge Tracing (ACM UMAP 2010)"
   },
   {
    "venue": "UMAP",

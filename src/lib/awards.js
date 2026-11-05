@@ -3,7 +3,8 @@
 //
 // Precision first: the title must be identical once case, accents and punctuation are ignored,
 // AND the award's first author must be among the row's authors, AND the row's year must fit the award's
-// (a conference's award: that year or the next; a test-of-time award: the paper is not younger than it).
+// (a conference's award: that year or the next; a test-of-time award: the paper is not younger than it; an award whose page names the
+// paper's own year — a test-of-time award or its honorable mention — that year).
 // A near title, a similar surname or a shared venue is never enough. The list only knows the paper awards of the venues and years it covers
 // (best papers of the main conferences, test-of-time awards); a paper that is not on it simply has no mark.
 (function (root, factory) {
@@ -45,8 +46,9 @@
     }
     // A row's year is the year of its publication: the award of a conference is for a paper of that year's event (one more for the proceedings that come out after it), and a test-of-time
     // award is for a paper that is older than the award. A row of another year is another publication of the same title — the journal version of a conference's best paper.
-    // (a test-of-time award whose page names the paper's year is for that publication, not for a reprint of the title years later: MapReduce's CACM version of 2008)
-    const yearFits = (h, year) => (h.a === "tot" ? (h.py ? Math.abs(year - h.py) <= 1 : year <= h.y) : Math.abs(year - h.y) <= 1);
+    // (an award whose page names the paper's year is for that publication, not for a reprint of the title years later — MapReduce's CACM version of 2008 —, and
+    // so is the honorable mention of a test-of-time award: "Test-of-Time Award Runner-up … WSDM 2011" is for a paper of 2011, not of the award's year)
+    const yearFits = (h, year) => (h.py ? Math.abs(year - h.py) <= 1 : h.a === "tot" ? year <= h.y : Math.abs(year - h.y) <= 1);
     // fields: { title, authorsText, year? } — authorsText is the list view's text, or a paper page's full list; year: the row's own (none: no check)
     function lookup({ title, authorsText, year }) {
       const hits = byTitle.get(titleKey(title));
@@ -56,7 +58,7 @@
       for (const h of hits) {
         if (!authors.has(h.s)) continue;
         if (Number.isFinite(year) && !yearFits(h, year)) continue;
-        out.push({ kind: KIND[h.a], venue: h.v, year: h.y, awardLabel: h.l });
+        out.push({ kind: KIND[h.a], venue: h.v, year: h.y, awardLabel: h.l, ...(h.py ? { paperYear: h.py } : {}) });
       }
       return out;
     }

@@ -171,16 +171,18 @@
   // kind (it is the better evidence) but remembers the author's words in `declared`.
   //   listed: [{ kind, venue, year, awardLabel }]  →  [{ kind, group, label, source, … }], most notable first
   const TOP = new Set(["best", "best-student", "outstanding", "distinguished", "best-category"]);
+  // (an award for an older paper — a test-of-time award, or a runner-up of one, whose page names the paper's year — says nothing of the paper's own conference)
+  const lostThen = (m) => (m.kind === "runner-up" && !m.paperYear) || m.kind === "finalist";
   function merge(declared, listed) {
     const byKind = new Map();
     for (const m of declared || []) byKind.set(m.kind, m);
     if ((listed || []).some((m) => TOP.has(m.kind))) byKind.delete("finalist");          // (a paper the list says won is no mere finalist, whatever its authors typed)
-    else if ((listed || []).some((m) => m.kind === "runner-up" || m.kind === "finalist")) for (const k of TOP) byKind.delete(k);          // (and one the list names as a runner-up or a finalist did not win, whatever its authors typed; a test-of-time award says nothing of that)
+    else if ((listed || []).some(lostThen)) for (const k of TOP) byKind.delete(k);          // (and one the list names as a runner-up or a finalist did not win, whatever its authors typed; a test-of-time award, or its runner-up, says nothing of that)
     for (const m of listed || []) {
       const prev = byKind.get(m.kind);
       byKind.set(m.kind, {
         kind: m.kind, group: GROUP[m.kind], label: m.kind === "best-category" ? categoryLabel(m.awardLabel) : LABEL[m.kind], text: "", field: "list", source: "list",
-        venue: m.venue, year: m.year, awardLabel: m.awardLabel || "", ...(prev ? { declared: prev.text } : {})
+        venue: m.venue, year: m.year, awardLabel: m.awardLabel || "", ...(m.paperYear ? { paperYear: m.paperYear } : {}), ...(prev ? { declared: prev.text } : {})
       });
     }
     return KINDS.filter((k) => byKind.has(k)).map((k) => byKind.get(k));
@@ -222,7 +224,7 @@
 
   // One award of the list marks one row of a profile. A title the profile lists twice — the conference paper and its journal or magazine reprint
   // ("MapReduce" 2004 and 2008, AlexNet 2012 and 2017) — gets it once: a test-of-time award on the earliest row, any other on the row whose year is
-  // closest to the award's (on a tie, the row at the award's venue, then one that is no preprint). rows: [{ title, year, venue?, abbrs?, marks }] → the marks of each row, without the award copies the other row keeps.
+  // closest to the award's, or to the paper's own year where the award names it (on a tie, the row at the award's venue, then one that is no preprint). rows: [{ title, year, venue?, abbrs?, marks }] → the marks of each row, without the award copies the other row keeps.
   // (titleKey: the award list's own key of a title, so that "Naïve" and "Naive" are one title here as in the lookup; a row hidden as a duplicate keeps no award another row can hold)
   const titleOf = (t) => String(t || "").toLowerCase().replace(/[^\p{L}\p{N}]+/gu, "");
   const PREPRINT = /\b(?:arxiv|biorxiv|medrxiv|chemrxiv|ssrn|preprints?|corr|openreview)\b/i;
@@ -235,7 +237,7 @@
         if (m.source !== "list") continue;
         // (two rows as near the award's year — the conference paper and its arXiv copy, or its journal version of the same year — the one at the award's venue, then the one that is no preprint)
         const tie = ((r.abbrs || []).some((a) => a && String(a).toLowerCase() === String(m.venue || "").toLowerCase()) ? 0 : 0.25) + (PREPRINT.test(r.venue || "") ? 0.5 : 0);
-        const score = r.hidden ? Infinity : !Number.isFinite(y) || !y ? 1e9 : (m.kind === "tot" ? y : Math.abs(y - m.year)) + tie;
+        const score = r.hidden ? Infinity : !Number.isFinite(y) || !y ? 1e9 : (m.kind === "tot" ? y : Math.abs(y - (m.paperYear || m.year))) + tie;
         const k = keyOf(r, m), b = best.get(k);
         if (!b || score < b.score) best.set(k, { i, score });
       }
@@ -253,7 +255,7 @@
       const typed = new Map(out[r.into].filter((m) => m.source !== "list").map((m) => [m.kind, m]));
       const replaced = new Set(arriving.map((m) => m.kind).filter((k) => typed.has(k)));
       if (arriving.some((m) => TOP.has(m.kind))) replaced.add("finalist");          // (merge's two rules across kinds: a winner is no finalist, a runner-up no winner)
-      else if (arriving.some((m) => m.kind === "runner-up" || m.kind === "finalist")) for (const k of TOP) replaced.add(k);
+      else if (arriving.some(lostThen)) for (const k of TOP) replaced.add(k);
       out[r.into] = [...out[r.into].filter((m) => m.source === "list" || !replaced.has(m.kind)), ...arriving.map((m) => (typed.has(m.kind) && !m.declared ? { ...m, declared: typed.get(m.kind).text } : m))];
       out[r.into].sort((x, y) => KINDS.indexOf(x.kind) - KINDS.indexOf(y.kind));          // (in the order merge gives: most notable first)
     });
