@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 8475
+  "count": 8496
  },
  "entries": [
   {
@@ -121042,6 +121042,102 @@
    "year": 2020,
    "award": "runner-up",
    "awardLabel": "Test of Time Paper Award Honorable Mention",
+   "title": "Automatically extracting highlights for tv baseball programs",
+   "authors": [
+    "Yong Rui",
+    "Anoop Gupta",
+    "Alex Acero"
+   ],
+   "track": "main",
+   "paperYear": 2000,
+   "source": "https://www.sigmm.org/Awards/testoftime",
+   "evidence": "Automatically extracting highlights for tv baseball programs. In Proceedings of the Eighth ACM International Conference on Multimedia, MULTIMEDIA ’00, page 105–115, New York, NY, USA, 2000"
+  },
+  {
+   "venue": "SIGMM",
+   "year": 2020,
+   "award": "runner-up",
+   "awardLabel": "Test of Time Paper Award Honorable Mention",
+   "title": "Comparing images using color coherence vectors",
+   "authors": [
+    "Greg Pass",
+    "Ramin Zabih",
+    "Justin Miller"
+   ],
+   "track": "main",
+   "paperYear": 1996,
+   "source": "https://www.sigmm.org/Awards/testoftime",
+   "evidence": "1996 1997 Greg Pass, Ramin Zabih, and Justin Miller. Comparing images using color coherence vectors. In Proceedings of the Fourth ACM International Conference on Multimedia, MULTIMEDIA ’96, page 65–73, New York, NY, USA, 1997"
+  },
+  {
+   "venue": "SIGMM",
+   "year": 2020,
+   "award": "runner-up",
+   "awardLabel": "Test of Time Paper Award Honorable Mention",
+   "title": "Contrast-based image attention analysis by using fuzzy growing",
+   "authors": [
+    "Yu-Fei Ma",
+    "Hong-Jiang Zhang"
+   ],
+   "track": "main",
+   "paperYear": 2003,
+   "source": "https://www.sigmm.org/Awards/testoftime",
+   "evidence": "Contrast-based image attention analysis by using fuzzy growing. In Proceedings of the Eleventh ACM International Conference on Multimedia, MULTIMEDIA ’03, page 374–381, New York, NY, USA, 2003"
+  },
+  {
+   "venue": "SIGMM",
+   "year": 2020,
+   "award": "runner-up",
+   "awardLabel": "Test of Time Paper Award Honorable Mention",
+   "title": "Digital video segmentation",
+   "authors": [
+    "A. Hampapur",
+    "T. Weymouth",
+    "R. Jain"
+   ],
+   "track": "main",
+   "paperYear": 1994,
+   "source": "https://www.sigmm.org/Awards/testoftime",
+   "evidence": "Digital video segmentation. In Proceedings of the Second ACM International Conference on Multimedia, MULTIMEDIA ’94, page 357–364, New York, NY, USA, 1994"
+  },
+  {
+   "venue": "SIGMM",
+   "year": 2020,
+   "award": "runner-up",
+   "awardLabel": "Test of Time Paper Award Honorable Mention",
+   "title": "Distributing streaming media content using cooperative networking",
+   "authors": [
+    "Venkata N. Padmanabhan",
+    "Helen J. Wang",
+    "Philip A. Chou",
+    "Kunwadee Sripanidkulchai"
+   ],
+   "track": "main",
+   "paperYear": 2002,
+   "source": "https://www.sigmm.org/Awards/testoftime",
+   "evidence": "Distributing streaming media content using cooperative networking. In Proceedings of the 12th International Workshop on Network and Operating Systems Support for Digital Audio and Video, NOSSDAV '02, page 177–186, New York, NY, USA, 2002"
+  },
+  {
+   "venue": "SIGMM",
+   "year": 2020,
+   "award": "runner-up",
+   "awardLabel": "Test of Time Paper Award Honorable Mention",
+   "title": "Early versus late fusion in semantic video analysis",
+   "authors": [
+    "Cees G. M. Snoek",
+    "Marcel Worring",
+    "Arnold W. M. Smeulders"
+   ],
+   "track": "main",
+   "paperYear": 2005,
+   "source": "https://www.sigmm.org/Awards/testoftime",
+   "evidence": "Early versus late fusion in semantic video analysis. In Proceedings of the 13th Annual ACM International Conference on Multimedia, MULTIMEDIA ’05, page 399–402, New York, NY, USA, 2005"
+  },
+  {
+   "venue": "SIGMM",
+   "year": 2020,
+   "award": "runner-up",
+   "awardLabel": "Test of Time Paper Award Honorable Mention",
    "title": "Outdoors augmented reality on mobile phone using loxel-based visual feature organization",
    "authors": [
     "Gabriel Takacs",
@@ -121062,6 +121158,162 @@
   {
    "venue": "SIGMM",
    "year": 2020,
+   "award": "runner-up",
+   "awardLabel": "Test of Time Paper Award Honorable Mention",
+   "title": "Patching: A multicast technique for true video-on-demand services",
+   "authors": [
+    "Kien A. Hua",
+    "Ying Cai",
+    "Simon Sheu"
+   ],
+   "track": "main",
+   "paperYear": 1998,
+   "source": "https://www.sigmm.org/Awards/testoftime",
+   "evidence": "Patching: A multicast technique for true video-on-demand services. In Proceedings of the Sixth ACM International Conference on Multimedia, MULTIMEDIA ’98, page 191–200, New York, NY, USA, 1998"
+  },
+  {
+   "venue": "SIGMM",
+   "year": 2020,
+   "award": "runner-up",
+   "awardLabel": "Test of Time Paper Award Honorable Mention",
+   "title": "Query by humming: Musical information retrieval in an audio database",
+   "authors": [
+    "Asif Ghias",
+    "Jonathan Logan",
+    "David Chamberlin",
+    "Brian C. Smith"
+   ],
+   "track": "main",
+   "paperYear": 1995,
+   "source": "https://www.sigmm.org/Awards/testoftime",
+   "evidence": "Query by humming: Musical information retrieval in an audio database. In Proceedings of the Third ACM International Conference on Multimedia, MULTIMEDIA ’95, page 231–236, New York, NY, USA, 1995"
+  },
+  {
+   "venue": "SIGMM",
+   "year": 2020,
+   "award": "runner-up",
+   "awardLabel": "Test of Time Paper Award Honorable Mention",
+   "title": "Representing shape with a spatial pyramid kernel",
+   "authors": [
+    "Anna Bosch",
+    "Andrew Zisserman",
+    "Xavier Munoz"
+   ],
+   "track": "main",
+   "paperYear": 2007,
+   "source": "https://www.sigmm.org/Awards/testoftime",
+   "evidence": "Representing shape with a spatial pyramid kernel. In Proceedings of the 6th ACM International Conference on Image and Video Retrieval, CIVR ’07, page 401–408, New York, NY, USA, 2007"
+  },
+  {
+   "venue": "SIGMM",
+   "year": 2020,
+   "award": "runner-up",
+   "awardLabel": "Test of Time Paper Award Honorable Mention",
+   "title": "Scheduling policies for an on-demand video server with batching",
+   "authors": [
+    "Dan",
+    "D. Sitaram",
+    "P. Shahabuddin"
+   ],
+   "track": "main",
+   "paperYear": 1994,
+   "source": "https://www.sigmm.org/Awards/testoftime",
+   "evidence": "Scheduling policies for an on-demand video server with batching. In Proceedings of the Second ACM International Conference on Multimedia, MULTIMEDIA ’94, page 15–23, New York, NY, USA, 1994"
+  },
+  {
+   "venue": "SIGMM",
+   "year": 2020,
+   "award": "runner-up",
+   "awardLabel": "Test of Time Paper Award Honorable Mention",
+   "title": "Support vector machine active learning for image retrieval",
+   "authors": [
+    "Simon Tong",
+    "Edward Chang"
+   ],
+   "track": "main",
+   "paperYear": 2001,
+   "source": "https://www.sigmm.org/Awards/testoftime",
+   "evidence": "Support vector machine active learning for image retrieval. In Proceedings of the Ninth ACM International Conference on Multimedia, MULTIMEDIA ’01, page 107–118, New York, NY, USA, 2001"
+  },
+  {
+   "venue": "SIGMM",
+   "year": 2020,
+   "award": "runner-up",
+   "awardLabel": "Test of Time Paper Award Honorable Mention",
+   "title": "The challenge of information visualization evaluation",
+   "authors": [
+    "Catherine Plaisant"
+   ],
+   "track": "main",
+   "paperYear": 2004,
+   "source": "https://www.sigmm.org/Awards/testoftime",
+   "evidence": "The challenge of information visualization evaluation. In Proceedings of the Working Conference on Advanced Visual Interfaces, AVI ’04, page 109–116, New York, NY, USA, 2004"
+  },
+  {
+   "venue": "SIGMM",
+   "year": 2020,
+   "award": "runner-up",
+   "awardLabel": "Test of Time Paper Award Honorable Mention",
+   "title": "Vic: A flexible framework for packet video",
+   "authors": [
+    "Steven McCanne",
+    "Van Jacobson"
+   ],
+   "track": "main",
+   "paperYear": 1995,
+   "source": "https://www.sigmm.org/Awards/testoftime",
+   "evidence": "Vic: A flexible framework for packet video. In Proceedings of the Third ACM International Conference on Multimedia, MULTIMEDIA ’95, page 511–522, New York NY, USA, 1995"
+  },
+  {
+   "venue": "SIGMM",
+   "year": 2020,
+   "award": "runner-up",
+   "awardLabel": "Test of Time Paper Award Honorable Mention",
+   "title": "Video manga: Generating semantically meaningful video summaries",
+   "authors": [
+    "Shingo Uchihashi",
+    "Jonathan Foote",
+    "Andreas Girgensohn",
+    "John Boreczky"
+   ],
+   "track": "main",
+   "paperYear": 1999,
+   "source": "https://www.sigmm.org/Awards/testoftime",
+   "evidence": "Video manga: Generating semantically meaningful video summaries. In Proceedings of the Seventh ACM International Conference on Multimedia (Part 1), MULTIMEDIA ’99, page 383–392, New York, NY, USA, 1999"
+  },
+  {
+   "venue": "SIGMM",
+   "year": 2020,
+   "award": "runner-up",
+   "awardLabel": "Test of Time Paper Award Honorable Mention",
+   "title": "Visual attention detection in video sequences using spatiotemporal cues",
+   "authors": [
+    "Yun Zhai",
+    "Mubarak Shah"
+   ],
+   "track": "main",
+   "paperYear": 2006,
+   "source": "https://www.sigmm.org/Awards/testoftime",
+   "evidence": "Visual attention detection in video sequences using spatiotemporal cues. In Proceedings of the 14th ACM International Conference on Multimedia, MM ’06, page 815–824, New York, NY, USA, 2006"
+  },
+  {
+   "venue": "SIGMM",
+   "year": 2020,
+   "award": "runner-up",
+   "awardLabel": "Test of Time Paper Award Honorable Mention",
+   "title": "Visualseek: A fully automated content-based image query system",
+   "authors": [
+    "John R. Smith",
+    "Shih-Fu Chang"
+   ],
+   "track": "main",
+   "paperYear": 1996,
+   "source": "https://www.sigmm.org/Awards/testoftime",
+   "evidence": "1996 1997 Greg Pass, Ramin Zabih, and Justin Miller. Comparing images using color coherence vectors. In Proceedings of the Fourth ACM International Conference on Multimedia, MULTIMEDIA ’96, page 65–73, New York, NY, USA, 1997. John R. Smith and Shih-Fu Chang. Visualseek: A fully automated content-based image query system. In Proceedings of the Fourth ACM International Conference on Multimedia, MULTIMEDIA ’96, page 87–98, New York, NY, USA, 1997"
+  },
+  {
+   "venue": "SIGMM",
+   "year": 2020,
    "award": "tot",
    "awardLabel": "Test of Time Paper Award",
    "title": "Vlfeat: An open and portable library of computer vision algorithms",
@@ -121072,6 +121324,71 @@
    "track": "main",
    "source": "https://www.sigmm.org/Awards/testoftime",
    "evidence": "SIGMM 2020 Test of Time Paper Award: Andrea Vedaldi and Brian Fulkerson Vlfeat: An open and portable library of computer vision algorithms"
+  },
+  {
+   "venue": "SIGMM",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Test of Time Paper Award Honorable Mention",
+   "title": "A new approach to cross-modal multimedia retrieval",
+   "authors": [
+    "Nikhil Rasiwasia",
+    "Jose Costa Pereira",
+    "Emanuele Coviello",
+    "Gabriel Doyle",
+    "Gert R.G. Lanckriet",
+    "Roger Levy",
+    "Nuno Vasconcelos"
+   ],
+   "track": "main",
+   "paperYear": 2010,
+   "source": "https://www.sigmm.org/Awards/testoftime",
+   "evidence": "A new approach to cross-modal multimedia retrieval. In Proceedings of the 18th ACM International Conference on Multimedia, MM '10, pp. 251-260, 2010"
+  },
+  {
+   "venue": "SIGMM",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Test of Time Paper Award Honorable Mention",
+   "title": "Calibration revisited",
+   "authors": [
+    "Jan Kodovsky̒",
+    "Jessica Fridrich"
+   ],
+   "track": "main",
+   "paperYear": 2009,
+   "source": "https://www.sigmm.org/Awards/testoftime",
+   "evidence": "Calibration revisited, In Proceedings of the 11th ACM Workshop on Multimedia and Security, MM&Sec '09, pp. 63-74, 2009"
+  },
+  {
+   "venue": "SIGMM",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Test of Time Paper Award Honorable Mention",
+   "title": "Opensmile: The Munich versatile and fast open-source audio feature extractor",
+   "authors": [
+    "Florian Eyben",
+    "Martin Wöllmer",
+    "Björn Schuller"
+   ],
+   "track": "main",
+   "paperYear": 2010,
+   "source": "https://www.sigmm.org/Awards/testoftime",
+   "evidence": "Opensmile: The Munich versatile and fast open-source audio feature extractor. In Proceedings of the 18th ACM InternationalConference on Multimedia, MM pp. 1459-1462, 2010"
+  },
+  {
+   "venue": "SIGMM",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Test of Time Paper Award",
+   "title": "Dynamic Adaptive Streaming over HTTP - Standards and Design Principles",
+   "authors": [
+    "Thomas Stockhammer"
+   ],
+   "track": "main",
+   "paperYear": 2011,
+   "source": "https://www.sigmm.org/Awards/testoftime",
+   "evidence": "Dynamic Adaptive Streaming over HTTP - Standards and Design Principles, In Proceedings of the 2nd ACM Conference on Multimedia Systems, MMSys, pp. 133-144, 2011"
   },
   {
    "venue": "SIGMM",
@@ -121282,6 +121599,28 @@
    "track": "main",
    "source": "https://www.sigmm.org/Awards/testoftime",
    "evidence": "SIGMM 2024 Test of Time Paper Award: Yangqing Jia, Evan Shelhamer, Jeff Donahue, Sergey Karayev, Jonathan Long, Ross Girshick, Sergio Guadarrama, and Trevor Darrell. Caffe: Convolutional architecture for fast feature embedding"
+  },
+  {
+   "venue": "SIGMM",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Test of Time Paper Award Honorable Mention",
+   "title": "Avec 2013: the continuous audio/visual emotion and depression recognition challenge",
+   "authors": [
+    "Michel Valstar",
+    "Bj¨orn Schuller",
+    "Kirsty Smith",
+    "Florian Eyben",
+    "Bihan Jiang",
+    "Sanjay Bilakhia",
+    "Sebastian Schnieder",
+    "Roddy Cowie",
+    "Maja Pantic"
+   ],
+   "track": "main",
+   "paperYear": 2013,
+   "source": "https://www.sigmm.org/Awards/testoftime",
+   "evidence": "Avec 2013: the continuous audio/visual emotion and depression recognition challenge. In Proceedings of the 3rd ACM International Workshop on Audio/Visual Emotion Challenge, AVEC ’13, page 3–10, New York, NY, USA, 2013"
   },
   {
    "venue": "SIGMM",

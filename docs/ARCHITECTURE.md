@@ -292,7 +292,7 @@ diff is reviewed and `npm run test:update` is run.
 (`scripts/ccf/`, see [`data/README.md`](../data/README.md)); its totals match the published
 catalogue (386 + 295; A 95 / B 245 / C 341). `data/core-2026.json` comes from the ICORE
 export (`scripts/core/build-core.mjs`; 800 ranked conferences). `scripts/build-data.mjs` turns both, and
-`data/awards-2026.json` (8,475 entries), into `src/data/*.js`; a test fails if they are stale.
+`data/awards-2026.json` (8,496 entries), into `src/data/*.js`; a test fails if they are stale.
 `.github/workflows/data-fresh.yml` runs `scripts/check-data-fresh.mjs` every Monday: it fails when the
 official CCF file or ICORE export no longer matches the checksum the data was built from, is gone, or a newer
 edition is offered (exit 1), and when a source cannot be reached or refuses the check (exit 2, no verdict).
