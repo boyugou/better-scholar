@@ -189,6 +189,14 @@ give the details and every review):
   Encryption: 23rd International Conference, FSE 2016" is the cryptography FSE (B), not Foundations of Software Engineering (A): venues
   that share an acronym are told apart by the series title. (4) MDPI's journals *AI* and *IoT* are not Artificial Intelligence (A) and
   IEEE IoT-J, nor is the Korean WISA (information security) the Web Information Systems WISA.
+- **The best papers of AAMAS, ICAPS and ICDE** (115), from each year's own site: AAMAS 2010–2026 (IFAAMAS's copies of the
+  conference sites; AAMAS 2025 from its proceedings' awards page), ICAPS 2007–2026 (but 2023, whose winners are named only behind a bot
+  challenge), ICDE 2010 and 2022–2026 (the other years' sites are gone or parked). The list held only their influential-paper awards.
+  ICAPS 2025's student winner, printed "Path Planinng" on both its pages, is put right (`exclusions.json`). The list holds 8,829 awards.
+- **The distinguished papers of PLDI, POPL, ICFP and OOPSLA** (218, 2015–2026), from the conferences' own sites: the home page's list
+  or the "Distinguished Paper" badge beside a title on the year's research track (its alt text quoted). The list held only their
+  most-influential-paper awards; PLDI 2024, POPL 2017–2018, ICFP before 2018 and OOPSLA 2014 mark none on any page that answered.
+  ICFP 2019's first author is printed family name first on the site and put right (`exclusions.json`). The list holds 8,714 awards.
 - **The overflow audit at other display scalings** (`--scale`; Windows laptops come at 125 % and 150 %, where text is laid out to fractions
   of a pixel): the settings page and its preview are clean at 125, 150 and 175 % in all 30 languages, and the panel's end-to-end checks
   (part 2, every language) pass at 150 %. CI runs it now: Linux at 150 %, Windows at 125 % and 150 %.

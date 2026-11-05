@@ -150,7 +150,7 @@ flowchart LR
 
 ### 获奖与报告形式
 
-- **获奖名单。** 扩展收录了 8,496 项取自官方页面的论文奖项：最佳论文、最佳学生论文、杰出论文与卓越论文、荣誉提名，以及时间检验奖。来源包括 ACL Anthology 的获奖数据、计算机视觉基金会（CVF），以及各会议和学会的获奖页面（NeurIPS、ICML、ICLR、CVPR、ICCV、ECCV、ACL、EMNLP、NAACL、AAAI、IJCAI、SIGCOMM、S&P、CCS、USENIX Security、SIGMOD、VLDB、OSDI、SOSP、CHI 等）。只有标题完全相同，并且获奖记录的第一作者是该论文的作者之一，论文才与该奖项匹配。
+- **获奖名单。** 扩展收录了 8,829 项取自官方页面的论文奖项：最佳论文、最佳学生论文、杰出论文与卓越论文、荣誉提名，以及时间检验奖。来源包括 ACL Anthology 的获奖数据、计算机视觉基金会（CVF），以及各会议和学会的获奖页面（NeurIPS、ICML、ICLR、CVPR、ICCV、ECCV、ACL、EMNLP、NAACL、AAAI、IJCAI、SIGCOMM、S&P、CCS、USENIX Security、SIGMOD、VLDB、OSDI、SOSP、CHI 等）。只有标题完全相同，并且获奖记录的第一作者是该论文的作者之一，论文才与该奖项匹配。
 - **作者自己写的文字。** 扩展从标题或发表场所行中读出获奖用语（Best Paper、Outstanding Paper、Test of Time、最佳论文入围），以及报告形式 Oral、Spotlight 和 Highlight。它的规则不处理普通词：*Oral Oncology* 是一份期刊。
 
 ## 核心功能
@@ -364,7 +364,7 @@ const { ok, result, error } = await answer;   // result.text is the BibTeX
 | **2,500+** · **1,100+** | 个名称写法和缩写，匹配器逐一查找 | 各索引的键 |
 | **50+** | 个两份名录叫法不同、但匹配器知道是同一场所的发表场所：一份名录匹配上，另一份名录的等级也一并给出 | `idx.partners` |
 | **5 · 27** | 道识别步骤（全名、期刊词袋、缩写、被截断名称的可见开头、全名加副标题）和防止较弱判断压过较强判断的防护 | `src/lib/venues.js` 中标注的步骤与 `docs/ARCHITECTURE.md` 的检查表 |
-| **6,083** | 篇获奖论文，另有 2,295 篇获荣誉提名或亚军（共 8,496 项奖项），来自 195 个会议和系列，1990–2026 年 | `src/data/awards.js` |
+| **6,373** | 篇获奖论文，另有 2,335 篇获荣誉提名或亚军（共 8,829 项奖项），来自 195 个会议和系列，1990–2026 年 | `src/data/awards.js` |
 | **22,744** | 行真实的 Scholar 发表场所文本，每一行的结果都逐一核对并记录 | `test/fixtures/venues.expected.json` |
 | **600+ · 100+ · 16** | 个单元测试、在加载了扩展的真实 Chromium 里运行的端到端检查、网页演示的检查 | `test/*.test.js`、`test/e2e/` |
 | **0** | 个依赖，也没有构建步骤 | `package.json` |
