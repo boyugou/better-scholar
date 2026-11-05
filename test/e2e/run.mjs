@@ -3336,6 +3336,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
         }
       }
       await opts.evaluate(async () => { const r = await chrome.storage.sync.get("prefs"); await chrome.storage.sync.set({ prefs: { ...r.prefs, language: "auto" } }); });
+      await reloadSafe(); await page.waitForSelector('#rr-panel button[data-src="ccf"]');          // (the profile reloads itself on a change of language: a click that meets that reload waits for a page that is gone — on CI, 30 s)
       await page.click('button[data-src="ccf"]');                       // (the loop ended on the CORE tab, which is remembered: the pictures show the usual one)
       // every part of the panel on, as a picture (light, dark, and the wide layout)
       await reloadSafe(); await page.waitForSelector("#rr-panel"); await page.bringToFront();       // (a background tab cannot be photographed)
