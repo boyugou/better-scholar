@@ -240,7 +240,7 @@ test("every alias points at a real dataset row", () => {
       assert.ok(hit.length, `CORE row not found for alias ${JSON.stringify(a.core)}`);
     }
     assert.ok(a.ccf || a.core, "alias needs a target");
-    assert.ok((a.names && a.names.length) || (a.former && a.former.length) || (a.exact && a.exact.length) || (a.fullOnly && a.fullOnly.length) || (a.volume && a.volume.length) || (a.uncut && a.uncut.length) || (a.starts && a.starts.length) || a.trackVolume === true || (Array.isArray(a.edition) && a.edition.length >= 2) || (Array.isArray(a.volumeYear) && a.volumeYear.length === 2));
+    assert.ok((a.names && a.names.length) || (a.former && a.former.length) || (a.exact && a.exact.length) || (a.fullOnly && a.fullOnly.length) || (a.volume && a.volume.length) || (a.uncut && a.uncut.length) || (a.starts && a.starts.length) || a.trackVolume === true || (Array.isArray(a.edition) && a.edition.length >= 2) || (Array.isArray(a.volumeYear) && a.volumeYear.length === 2) || (typeof a.reach === "string" && /^[a-z]+$/i.test(a.reach)));
   }
 });
 
@@ -533,6 +533,22 @@ test("an unranked event's acronym inside the name shadows it too: the Iranian IS
   assert.match(brief("Information Security: 23rd International Conference, ISC 2020, Bali, Indonesia"), /^CCF C ISC/);
 });
 
+test("a cut line that stops inside a start many events share is no venue's: it must reach the word that tells the listed one (aliases.js `reach`, 2026-11-04)", () => {
+  // (real titles of test/fixtures/real-titles.txt, cut where Scholar cuts a line: scripts/measure-cut-lines.mjs)
+  assert.equal(brief("2014 IEEE International Conference on Computational Intelligence and …, 2014"), "", "CICN, CIDS … not CIDM");
+  assert.equal(brief("2011 14th IEEE International Conference on Computational Science and …, 2011"), "", "the IEEE's CSE, not ICCSA");
+  assert.equal(brief("Proceedings of the 2023 8th International Conference on Cloud Computing and …, 2023"), "", "not CLOSER");
+  assert.equal(brief("Proceedings of the 2017 International Conference on Machine Learning and …, 2017"), "", "not ICMLA");
+  // the venues themselves, by their own lines, whole or cut after the word
+  assert.match(brief("2011 IEEE Symposium on Computational Intelligence and Data …, 2011"), /^CORE C IEEE Symposium on Computational Intelligence and Data Mining|CIDM/);
+  assert.match(brief("2016 15th IEEE International Conference on Machine Learning and Applications (ICMLA), 1-6"), /ICMLA|Machine Learning and Applications/);
+});
+
+test("names the lists lack: PACT's ACM title without 'Techniques', MASCOTS with 'Computers' (real titles of the corpus, 2026-11-04)", () => {
+  assert.equal(brief("Proceedings of the 2016 International Conference on Parallel Architectures and Compilation"), "CCF B PACT · CORE B PACT");
+  assert.match(brief("2008 IEEE International Symposium on Modeling, Analysis and Simulation of Computers and Telecommunication Systems"), /^CCF C MASCOTS · CORE B/);
+});
+
 test("names the lists lack: SIGCOMM's proceedings title in ACM's plural, GPCE's later name (real titles of the corpus, 2026-11-04)", () => {
   assert.equal(brief("Proceedings of the 2003 conference on Applications, technologies, architectures, and protocols for computer communications, 27-38"), "CCF A SIGCOMM · CORE A* SIGCOMM");
   assert.match(brief("Proceedings of the 2015 ACM SIGPLAN International Conference on Generative Programming: Concepts and Experiences"), /^CORE B GPCE/);
@@ -810,8 +826,9 @@ test("Springer's series form 'Name− ACRONYM 2017 …' cut after the acronym, a
 });
 
 test("a curated name for whole strings only is never the start of a cut-off one; ESEC/FSE's ACM Digital Library titles and FM's old name", () => {
-  // "Machine Learning and Knowledge Discovery in Databases" (ECML PKDD) also begins ICMLA's name: a cut-off "… Machine Learning and …" is not claimed for ECML PKDD
-  assert.equal(brief("Proceedings of the 12th International Conference on Machine Learning and …, 2012"), "CORE C ICMLA");
+  // "Machine Learning and Knowledge Discovery in Databases" (ECML PKDD) also begins ICMLA's name: a cut-off "… Machine Learning and …" is not claimed for ECML PKDD —
+  // nor, since 2026-11-04, for ICMLA: its start stops before "Applications" (aliases.js `reach`), and ICMLC ("… and Cybernetics") held its 11th and 12th the same years
+  assert.equal(brief("Proceedings of the 12th International Conference on Machine Learning and …, 2012"), "");
   assert.equal(brief("Machine Learning and Knowledge Discovery in Databases: European Conference, ECML PKDD 2008, Antwerp, Belgium, 2008"), "CCF B ECML-PKDD · CORE A ECML PKDD");
   assert.equal(brief("Machine Learning and Knowledge Discovery in Databases, 2012"), "CCF B ECML-PKDD · CORE A ECML PKDD");
   assert.equal(brief("Proceedings of the 19th ACM SIGSOFT symposium and the 13th European …, 2011"), "CCF A FSE · CORE A* FSE");
@@ -831,7 +848,8 @@ test("a cut-off name is not claimed for the one venue of a list when the other l
   assert.equal(brief("Proceedings of the Twelfth International Conference on Distributed …, 2012"), "");
   // the ACL Anthology's COLING volumes are cut right here: curated (aliases.js `starts`)
   assert.equal(brief("Proceedings of the 23rd international conference on computational …, 2010"), "CCF B COLING · CORE B COLING");
-  assert.equal(brief("Proceedings of the 12th International Conference on Computational Science …, 2012"), "CORE C ICCSA");
+  // (not ICCSA since 2026-11-04: the start stops before "Applications" — aliases.js `reach` —, and ICCS held its 12th in 2012 as ICCSA did)
+  assert.equal(brief("Proceedings of the 12th International Conference on Computational Science …, 2012"), "");
   assert.equal(brief("Proceedings of the 36th annual international symposium on Computer …, 2009"), "CCF A ISCA · CORE A* ISCA");
 });
 

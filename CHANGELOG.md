@@ -82,6 +82,15 @@ give the details and every review):
   ICIG, HPCC, CSCloud, IEEE IS, ISDA, ICARCV, IWQoS, SLT, ICFHR, ICCE, EDM, CICM; each numbering from the venue's own lines or proceedings).
   148 became 119. One right badge goes with them: HPCC 2013's own IEEE title says "10th" (its numbering gives the 15th) — a missing badge,
   where the anchor takes a wrong one away elsewhere. Not anchored: CORE's ICCSA, whose acronym two rows share.
+- **Matching: a cut line that stops inside a start many events share** is no venue's (aliases.js `reach`, a new construct): "2014 IEEE
+  International Conference on Computational Intelligence and …" was CORE C CIDM, as were thirty-odd other cut lines of other conferences
+  (CICN, CIDS, CINTI …); the listed venue's start must now reach the word that tells it ("data" for CIDM; eleven more: CIFEr, IoTBDS, CLOSER,
+  ICOCI, WADS, ICMLA, AROB, FedCSIS, LATA, WCNC, ICCSA). A venue short of its word stays a rival, as a "Joint" one does: the start is
+  claimed by none, in either list (so "Machine Learning, 2006 IEEE …" does not fall to ICML). By the measurement: 119 cut lines with a
+  badge their whole title lacks became 47; over the 75,521 lines, five wrong badges went (the IEEE's CSE read as ICCSA) and nothing right.
+  Two cut lines of the tests are no badge now, as they are ambiguous: "… 12th … Conference on Machine Learning and …, 2012" (ICMLC held
+  its 12th that year too) and "… 12th … Conference on Computational Science …, 2012" (ICCS's 12th as much as ICCSA's). Two names the lists
+  lack, found the same way: PACT's ACM title without "Techniques", MASCOTS's IEEE one with "Computers" (3 gained).
 - **Matching: two names the lists lack**: SIGCOMM's proceedings title as ACM prints it from 2003 on, "… protocols for computer
   communications" (the plural missed the list's "Communication": CCF A / CORE A* papers without a chip), and GPCE's later name, "Generative
   Programming: Concepts and Experiences". Over the corpus: 7 gained, nothing lost or moved.

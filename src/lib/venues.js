@@ -408,6 +408,7 @@
           if (a.renamed) entry.renamed = true;
           if (a.trackVolume) entry.trackVolume = true;          // (its second volume holds posters, panels, workshops or demos: see resolveUncached)
           if (a.volumeYear) entry.volumeYear = a.volumeYear;          // (a journal's volume of a year: see resolveUncached)
+          if (a.reach) entry.reach = canonTokens(a.reach, "full")[0];          // (the word a cut line's start must reach to be this venue: see the prefix rule)
           if (a.edition) editions.set(src + "|" + squash(entry.abbr || entry.name), a.edition);          // (the list's name is a name it had: its "Workshop" says nothing about the venue of today)
           if (a.former) { entry.former = (entry.former || []).concat(a.former); register(src, kind, entry, a.former, [], true); }          // (found by name; not part of its wording — `extra` — so "Workshop" in them is no type clash)
           if (a.noBareAcronym) {            // the acronym says nothing without the name: ACM's SAC is not Selected Areas in Cryptography
@@ -1044,7 +1045,7 @@
       const through = (found) => Array.from(found, ([entry, names]) => Object.create(entry, { extra: { value: names } }));
       const prefixPass = (mode, listSides = sides) => {
         const Rm = canonTokens(p.plain, mode);
-        const found = new Map(), jointOnly = new Set();
+        const found = new Map(), jointOnly = new Set(), short = new Set();
         // One content word says too little ("… the IEEE Computer and …" is INFOCOM, not CCS; "Principles of …"
         // is PODC, PODS or POPL) unless the word is rare among venue names ("Architectural …" is ASPLOS).
         if (!Rm.length || (Rm.length < 2 && (idx.df.get(Rm[0]) || 0) > 5)) return [];
@@ -1054,6 +1055,9 @@
             // an entry whose whole name is what is visible is a candidate too: "… International Conference on
             // Software Engineering 1 …" is ICSE as much as it begins SEKE ("… and Knowledge Engineering")
             if (form.noPrefix || !(t.length >= Rm.length && Rm.every((w, i) => t[i] === w))) continue;
+            // (a start that stops before the word that tells this venue from the many that begin the same way — "… Conference on Computational Intelligence and …" —
+            // is any of them: aliases.js `reach`. The venue stays a rival, as a "Joint" one does: a start it shares is claimed by none)
+            if (entry.reach && !Rm.includes(entry.reach)) { short.add(entry); continue; }
             const jointLacking = joint ? !hasWord(entry, "joint") : form.needsJoint;
             if (joint && jointLacking) continue;
             if (rareEvent && !hasWord(entry, rareEvent)) continue;
@@ -1070,6 +1074,7 @@
         // (a start that a "Joint" venue's name begins too, which the string is not — it does not say "Joint" — is a start other venues share: claimed by none.
         // "… International Conference on Natural Language …" begins IJCNLP's name as much as INLG's, and ICON's, which no list has)
         if ([...jointOnly].some((e) => !found.has(e))) return [];
+        if ([...short].some((e) => !found.has(e))) return "shared";          // (… and so is one a venue's name begins before its `reach` word: shared — to the other list's reading too, a rival)
         return through(found);
       };
       // strict pass first (organisation words must agree), then a looser one without them
@@ -1082,6 +1087,7 @@
       // "IEEE … Conference on Computer and …")
       const joint = /\bjoint\b/i.test(p.plain);
       const decideHere = (list) => {
+        if (list === "shared") return "ambiguous";
         let x = decide(list, rawWords, true);
         if (x === "ambiguous" && annual) { const only = list.filter((e) => hasWord(e, "annual")); if (only.length) x = decide(only, rawWords, true); }
         return x;
@@ -1117,7 +1123,7 @@
                 // (the bucket is the string's first word, an organisation when it begins with one: "ACM/IEEE …" is not the ACM's CIKM, and
                 // "ACM SIGPLAN …" is not the ACM/IEEE ICSE — every organisation the string names must be among the form's own)
                 if (!form.noPrefix && form.seq.length >= seq.length && seq.every((w, i) => form.seq[i] === w) && !(joint ? !hasWord(entry, "joint") : form.needsJoint) &&
-                  R.every((w) => !ORG.has(w) || form.full.includes(w))) found.set(entry, [...(found.get(entry) || []), form.raw]);
+                  R.every((w) => !ORG.has(w) || form.full.includes(w))) found.set(entry, [...(found.get(entry) || []), form.raw]);          // (a venue whose `reach` word is not visible is a candidate here too: a rival, never the answer — below)
               }
             }
             let list = through(found);
@@ -1126,7 +1132,7 @@
             return list;
           };
           const cands = seqCandidates(sides);
-          d = cands.length === 1 ? cands[0] : null;      // one venue, not "same rating, pick any": the tooltip names it
+          d = cands.length === 1 && !(cands[0].reach && !R.includes(cands[0].reach)) ? cands[0] : null;      // one venue, not "same rating, pick any": the tooltip names it (and not one whose `reach` word the start stops before)
           // The other list reads the same words too: a venue that only one list has is not "the only one" it fits ("… Conference on
           // Computational …" is COLING to CCF, but CORE also has ICCSA, ICCCI …). Unless it is the same venue, nothing is claimed.
           if (d) {

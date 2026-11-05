@@ -181,8 +181,8 @@ of HotStorage, and the year written with a hyphen or jammed onto a mixed-case wo
   another. The owner chose the edition check: 18 venues have their numbering in aliases.js (`edition`), which took the 183 to 132 and
   cost no right badge there. Measured again on 2026-11-04 (`node scripts/measure-cut-lines.mjs`: cut at about 76 characters at a word, punctuation dropped, as Scholar does): 148 cut
   lines with a badge their whole title lacks, outside hidden track words; 14 more anchors took them to 119 and cost one right badge (HPCC 2013,
-  whose own IEEE title says "10th"). What is left: venues whose lines print no edition (CIDM: 29 of the 119), an acronym two CORE rows share
-  (ICCSA), the 110 lines whose cut hides a track word ("… Workshops", "… Companion": only Read full lists sees it), and one pair of listed
+  whose own IEEE title says "10th"); `reach` words for 12 venues whose start many events share took them to 47, at no right badge. What is left:
+  starts that are a listed venue's whole name (SIGIR-AP's "… ACM SIGIR Conference on …", ICDM's "… Conference on Data Mining …"), the 110 lines whose cut hides a track word ("… Workshops", "… Companion": only Read full lists sees it), and one pair of listed
   venues: a cut "2008 IEEE International Symposium on Parallel and Distributed Processing …" is IPDPS's name of 2008–09 or the start of ISPA's
   (four ISPA lines are read as IPDPS; making the name whole-only would hand IPDPS's cut lines to ISPA — only "no badge" is right, which no
   construct of aliases.js says yet).
