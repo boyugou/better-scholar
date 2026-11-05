@@ -177,8 +177,6 @@ of HotStorage, and the year written with a hyphen or jammed onto a mixed-case wo
   through native messaging: a new permission (`nativeMessaging`) and a program the user installs, which the
   permission policy asks a very good reason for. Agents that drive a browser already have the page events and the
   agent guide.
-- **An acronym inside a name** (seen 2026-10-29): "International ISC Conference on Information Security and Cryptology" is the Iranian ISCISC,
-  read as Inscrypt — shadows count an acronym in front or in a parenthesis only.
 - **Cut-off venue lines that unlisted venues share.** Scholar cuts a long venue name ("… International Conference on Machine Learning and
   …"), and the start-of-a-cut-name rule gives the badge of the one listed venue whose name begins that way; the lists cannot say which
   unlisted venues begin so too. Measured 2026-10-29 by cutting the 52,800 Crossref / OpenAlex titles of `test/fixtures/real-titles.txt`

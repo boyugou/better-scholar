@@ -522,6 +522,17 @@ test("an unranked event named by its own acronym gets no badge from the ranked v
   assert.equal(brief("International Conference on Image and Signal Processing (ICISP)"), "CORE C ICISP");
 });
 
+test("an unranked event's acronym inside the name shadows it too: the Iranian ISCISC is not Inscrypt, though its name is Inscrypt's with 'ISC' in it", () => {
+  // (two real rows of test/fixtures/real-titles.txt, badged CCF C Inscrypt before: a shadow counted an acronym in front or in a parenthesis only)
+  assert.equal(brief("2012 9th International ISC Conference on Information Security and Cryptology"), "");
+  assert.equal(brief("2014 11th International ISC Conference on Information Security and Cryptology"), "");
+  assert.equal(brief("2013 10th International ISC Conference on Information Security and Cryptology (ISCISC)"), "");
+  // Inscrypt itself, and the Information Security Conference (ISC) of Springer's series, keep theirs
+  assert.equal(brief("International Conference on Information Security and Cryptology, 2018"), "CCF C Inscrypt");
+  assert.equal(brief("Information Security and Cryptology: 15th International Conference, Inscrypt 2019"), "CCF C Inscrypt");
+  assert.match(brief("Information Security: 23rd International Conference, ISC 2020, Bali, Indonesia"), /^CCF C ISC/);
+});
+
 test("a place in a parenthesis is no acronym: '(Cambridge, Mass.)' is not the IEEE MASS conference", () => {
   assert.equal(brief("Cell (Cambridge, Mass.)"), "");
   assert.equal(brief("MIT Press (Cambridge, Mass.)"), "");

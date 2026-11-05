@@ -613,6 +613,9 @@
     // an unranked event named by its own acronym (aliases.js `shadow`)
     const shadowed = (key) => (idx.shadow.get(key) || []).some((w) => !w || fold(p.withParens).toLowerCase().includes(w));
     if (idx.shadow.size && [...acronymSignals(p), ...embeddedSignals(p)].some((x) => shadowed(x.key))) return null;
+    // ... and one inside the name, between its first words and its event word: "2012 9th International ISC Conference on Information Security and Cryptology" is the Iranian
+    // ISCISC, whose name is Inscrypt's with "ISC" in it. (For a shadow only, which can take a badge away and never give one: an acronym there is no signal of what the event is.)
+    if (idx.shadow.size && [...p.withParens.matchAll(/\b(?:International|Annual|Joint|National|Regional)\s+([A-Z][A-Z0-9]{1,9})\s+(?:Conference|Symposium|Workshop|Congress)\b/g)].some((m) => shadowed(squash(m[1])))) return null;
     if (idx.shadowNames.size && idx.shadowNames.has(literalKey(p.plain))) return null;          // (an unranked event of the name the string spells: "ACM Conference on Computer Graphics and Interactive Techniques" is not the journal "Proceedings of the ACM on …", whose words boil down to the same)
     // (a volume's title in a publisher's series — "Machine Learning - Lecture Notes in Computer Science" — is a book of proceedings, not the journal of that title: the conferences only, and the
     // bare-name guard below still holds, as it does for a string whose type is not known)

@@ -71,6 +71,10 @@ give the details and every review):
   drawn darker in the bar only, step by step as the chips' text already was (`lib/palette.js` `bar`), and the row's tint keeps the colour.
   The built-in amber of Second was 1.9:1; its bar is now `#c38500` (3.1:1). The contrast badge of each role colour on the settings page,
   which warned about exactly this, is gone with the problem; the Colours card says it in one sentence (30 languages).
+- **Matching: an unranked event's acronym inside the name** shadows it, as one in front or in a parenthesis already did: "2012 9th
+  International ISC Conference on Information Security and Cryptology" is the Iranian ISCISC, not Inscrypt, whose name it is with "ISC"
+  in it (two real rows of the corpus lose a wrong CCF C badge; nothing else of the 75,521 lines changes). For a shadow only: it can take a
+  badge away, never give one.
 - **Arabic on the settings page and in the popup** is drawn in Geeza Pro on macOS: the system face there has no Arabic, and the
   fall-back Arial's Arabic is a size smaller than the Latin beside it ("Scholar" in an Arabic line looked larger than its words).
 - **Your own venue mappings** (settings → *Check a venue* → *Assign it to a listed venue…*). A venue line that no rule ranks can now be
