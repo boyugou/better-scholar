@@ -359,6 +359,20 @@ test("a two-word name keeps its second word, however much it looks like a degree
   assert.equal(roleOf("Prof. Dr. Jane Doe, PhD", "J Doe, A Lee"), "first");
 });
 
+test("an author printed with a generational suffix ('RW Heath Jr', 'MS Smith III') is the owner whose own name says the same suffix — and nobody else", () => {
+  assert.equal(roleOf("Robert W. Heath Jr.", "RW Heath Jr, A Lee"), "first");
+  assert.equal(roleOf("Robert W. Heath Jr.", "A Lee, B Kim, RW Heath Jr"), "last");
+  assert.equal(roleOf("Robert W Heath Jr, PhD", "RW Heath Jr., A Lee"), "first");
+  assert.equal(roleOf("Michael S. Smith III", "MS Smith III, A Lee"), "first");
+  assert.equal(roleOf("Robert W. Heath Jr.", "RW Heath, A Lee"), "first", "the line without the suffix, as before");
+  assert.equal(roleOf("John Smith", "J Smith Jr, A Lee"), "absent", "a Jr the profile's name does not say: perhaps the son");
+  assert.equal(roleOf("John Smith Sr.", "J Smith Jr, A Lee"), "absent");
+  assert.equal(roleOf("Naoki Ii", "A Lee, N Ii"), "last", "two words: a surname, not a suffix");
+  // (an award's first author is read the same way: "Robert L. Logan IV" is a Logan)
+  assert.equal(require("../src/lib/awards.js").surnameKey("Robert L. Logan IV"), "logan");
+  assert.equal(require("../src/lib/awards.js").surnameKey("RL Logan IV"), "logan");
+});
+
 test("a mark on every author of a list of three or more is no equal contribution of a leading few; two marked authors of two are co-first", () => {
   assert.equal(roleOf("Alex Example", "A Example*, B Writer*, C Lee*"), "first");
   assert.equal(roleOf("Alex Example", "A Writer*, B Writer*, A Example*"), "last");

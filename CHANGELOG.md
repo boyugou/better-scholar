@@ -189,6 +189,11 @@ give the details and every review):
   Encryption: 23rd International Conference, FSE 2016" is the cryptography FSE (B), not Foundations of Software Engineering (A): venues
   that share an acronym are told apart by the series title. (4) MDPI's journals *AI* and *IoT* are not Artificial Intelligence (A) and
   IEEE IoT-J, nor is the Korean WISA (information security) the Web Information Systems WISA.
+- **Roles: an author printed with a generational suffix** ("RW Heath Jr", "MS Smith III") was never the owner — the suffix was read as the
+  surname, so Robert W. Heath Jr.'s own papers lost their role wherever the line printed the "Jr". The suffix now goes before the name is
+  compared (after two words or more, as the exports and the duplicates already read it: "Naoki Ii" keeps its surname), and such a name is
+  the owner's only where the profile's own name says the same suffix: "J Smith Jr" is not John Smith's, who may be John Smith Sr. An
+  award's first author is read the same way (5 entries: "Robert L. Logan IV" is a Logan, no longer an "IV").
 - **The best papers of EuroSys, HPCA and FOCS (90) and of the IACR conferences (67)**, from their own pages: EuroSys 2011 and 2018–2026,
   HPCA 2005–2024 (the IEEE TCCA's award page, which answers again, and the conference programs), FOCS 2013–2024 (the conference archive's
   award pages and proceedings front matter; FOCS's Machtey award as best student paper); CRYPTO, EUROCRYPT, ASIACRYPT, CHES, PKC and TCC

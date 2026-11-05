@@ -80,13 +80,17 @@
   // The profile header is free text: "Prof. John Smith", "John Smith, PhD",
   // "Wei Zhang (张伟)". Reduce it to the name proper.
   // (a name is not longer than a few hundred characters, and runs of white space are made one before the patterns below look at them: a long run would make them quadratic)
-  function cleanOwnerHeader(s) {
+  function cleanOwnerHeader(s) { return headerParts(s).name; }
+  // ... and the generational suffix it ended with ("Robert W. Heath Jr." → "jr"; "" for none): a name printed with one is the owner's only with the same (matchStrength)
+  const GENERATIONAL = new Set(["jr", "sr", "ii", "iii", "iv"]);
+  function headerParts(s) {
     let r = fold(String(s == null ? "" : s).slice(0, 300)).replace(/\s+/g, " ").replace(/\([^)]*\)|\[[^\]]*\]/g, " ");
     r = r.replace(/[,;|]+/g, " ").replace(/\s+/g, " ").replace(/ (?:ph\.?\s?d|m\.?\s?d)\.?\s*$/i, "");
     const toks = r.split(/\s+/).filter(Boolean);
     while (toks.length > 1 && (PREFIXES.has(bare(toks[0])) || (DOTTED_PREFIXES.has(bare(toks[0])) && /\.$/.test(toks[0])))) toks.shift();
-    while (toks.length > 2 && SUFFIXES.has(bare(toks[toks.length - 1]))) toks.pop();          // (not the second word of a two-word name: "Chidi Mba", "Naoki Ii")
-    return toks.join(" ");
+    let suffix = "";
+    while (toks.length > 2 && SUFFIXES.has(bare(toks[toks.length - 1]))) { const t = bare(toks.pop()); if (!suffix && GENERATIONAL.has(t)) suffix = t; }          // (not the second word of a two-word name: "Chidi Mba", "Naoki Ii")
+    return { name: toks.join(" "), suffix };
   }
 
   // The Latin form of a name written in another script, in brackets after it — "张伟 (Wei Zhang)", "Иван Петров (Ivan Petrov)" — or "" (Scholar's author lines are mostly in
@@ -109,9 +113,15 @@
   // { givens: [tokens], particles: [..], last: surname token, compound: the surname is joined by a hyphen or an apostrophe ("Carreira-Perpinan", "O'Connell"),
   //   head: the parts of a joined surname before its last one ("carreira", "o"), which are no given names }
   function nameParts(s, { owner = false } = {}) {
-    const raw = owner ? cleanOwnerHeader(s) : String(s == null ? "" : s);
+    let raw = owner ? cleanOwnerHeader(s) : String(s == null ? "" : s), suffix = "";
+    // a generational suffix after two words or more is no surname: "RW Heath Jr" is a Heath, "MS Smith III" a Smith (a suffix only after two words, as the exports read it:
+    // "Naoki Ii" is a Japanese surname). It is kept apart: the owner's only where the owner's own name says the same (matchStrength)
+    if (!owner) {
+      const m = /[\s,]+(jr|sr|ii|iii|iv)\.?$/i.exec(raw);
+      if (m && raw.slice(0, m.index).trim().split(/\s+/).length >= 2) { suffix = m[1].toLowerCase(); raw = raw.slice(0, m.index); }
+    }
     const toks = normalize(raw).split(" ").filter(Boolean);
-    if (!toks.length) return { givens: [], particles: [], last: "", compound: false, head: "", joined: [] };
+    if (!toks.length) return { givens: [], particles: [], last: "", compound: false, head: "", joined: [], suffix };
     const lastWord = fold(raw).trim().split(/\s+/).pop().replace(/^[-'’.]+|[-'’.]+$/g, "");
     const compound = /[-'’]/.test(lastWord);
     const last = toks[toks.length - 1];
@@ -128,7 +138,7 @@
     while (end > 1 && PARTICLES.has(toks[end - 1]) && writtenAsParticle.has(toks[end - 1])) particles.unshift(toks[--end]);
     // the given names written as one with a hyphen ("Ming-Hsuan"): a spelled-out name that has only the first part is another person's ("Ming Yang" is not Ming-Hsuan Yang)
     const joined = words.slice(0, -1).filter((w) => /^\p{L}+(?:-\p{L}+)+$/u.test(w)).map((w) => normalize(w).split(" ").filter(Boolean)).filter((g) => g.length > 1);
-    return { givens: toks.slice(0, end), particles, last, compound, head: take ? headParts.join(" ") : "", joined };
+    return { givens: toks.slice(0, end), particles, last, compound, head: take ? headParts.join(" ") : "", joined, suffix };
   }
 
   // True when a concatenated-initials token (one side) lines up letter by letter
@@ -194,7 +204,7 @@
     if (!f) {
       if (forms.size >= 200) forms.clear();
       const norm = normalize(cleanOwnerHeader(key));
-      f = { norm, words: norm.split(" ").filter(Boolean), parts: nameParts(key, { owner: true }), caps: isAllCaps(key) };
+      f = { norm, words: norm.split(" ").filter(Boolean), parts: nameParts(key, { owner: true }), caps: isAllCaps(key), suffix: headerParts(key).suffix };
       forms.set(key, f);
     }
     return f;
@@ -208,6 +218,9 @@
     const variants = [owner.name, ...(owner.alternates || [])].filter(Boolean);
     let best = 0, authorCaps;
     for (const v of variants) {
+      // a name printed with a generational suffix ("RW Heath Jr") is the owner's only where the spelling says the same ("Robert W. Heath Jr."): "J Smith Jr" is not
+      // John Smith's — he may be John Smith Sr. — while "RW Heath" stays Robert W. Heath Jr.'s, as before
+      if (a.suffix && ownerForm(v).suffix !== a.suffix) continue;
       // a spelling in capitals ("JA DOUDNA", offered from a patent) names the capitals: it must not make every "Wu Li" the owner's, as an ordinary spelling would
       // (not when the profile's own name is in capitals: its rearrangements, which the page derives, are in capitals too)
       if (v !== owner.name && ownerForm(v).caps) {
