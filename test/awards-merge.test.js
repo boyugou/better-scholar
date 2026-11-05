@@ -54,6 +54,19 @@ test("merge-raw: a page's misprinted title that data/exclusions.json corrects do
   assert.match(r.stdout, /\(0 new\)/, r.stdout);
 });
 
+test("merge-raw: an exclusion that names an award drops that kind only (UbiComp 2024: InterruptMe read as the winner, the runner-up it was stays)", () => {
+  const raw = path.join(dir, "kind.json");
+  const base = {
+    venue: "UbiComp", year: 2024, title: "InterruptMe: designing intelligent prompting mechanisms for pervasive applications", authors: ["Veljko Pejovic", "Mirco Musolesi"],
+    source: "https://ubicomp.org/sc/awards.html", evidence: "UbiComp 2024 10-year Impact Awards: InterruptMe: designing intelligent prompting mechanisms for pervasive applications"
+  };
+  fs.writeFileSync(raw, JSON.stringify({ entries: [{ ...base, award: "tot", awardLabel: "10-year Impact Award", paperYear: 2014 }, { ...base, award: "runner-up", awardLabel: "10-Year Impact Award Runner-up" }] }));
+  const r = spawnSync(process.execPath, [MERGE, raw], { encoding: "utf8" });
+  assert.equal(r.status, 0, r.stderr);
+  assert.match(r.stdout, /dropped by data\/exclusions\.json: 1\n/, r.stdout);          // (the winner's row only: the runner-up is in the list and stays)
+  assert.match(r.stdout, /\(0 new\)/, r.stdout);
+});
+
 test("the bundled list prints no LaTeX quote marks (`` '' or `x') in a title; merge-raw turns them into typographic quotes", () => {
   const list = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "data", "awards-2026.json"), "utf8"));
   const rows = list.awards || list.entries;

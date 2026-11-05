@@ -102,9 +102,9 @@ for (const e of accepted.values()) {
 }
 
 // entries an official page gets wrong (data/exclusions.json), dropped from every merge
-const exclusions = JSON.parse(readFileSync(join(root, "data", "exclusions.json"), "utf8")).exclude.map((x) => [x.venue, x.year, awards.titleKey(x.title)].join("|"));
-let excluded = 0;
-for (const [k, e] of [...accepted]) if (exclusions.includes([e.venue, e.year, awards.titleKey(e.title)].join("|"))) { accepted.delete(k); excluded++; }
+const exclusions = JSON.parse(readFileSync(join(root, "data", "exclusions.json"), "utf8")).exclude.map((x) => [x.venue, x.year, awards.titleKey(x.title), x.award || ""].join("|"));
+let excluded = 0;          // (an exclusion that names an award drops that kind only: the paper's other award of the same year stays)
+for (const [k, e] of [...accepted]) if ([e.award, ""].some((a) => exclusions.includes([e.venue, e.year, awards.titleKey(e.title), a].join("|")))) { accepted.delete(k); excluded++; }
 const corrections = new Map((JSON.parse(readFileSync(join(root, "data", "exclusions.json"), "utf8")).correct || []).flatMap((x) => [[[x.venue, x.year, awards.titleKey(x.title)].join("|"), x], ...(x.newTitle ? [[[x.venue, x.year, awards.titleKey(x.newTitle)].join("|"), x]] : [])]));      // (found by the misprinted title in a fresh read, by the right one once it is in the list)
 let corrected = 0;
 for (const e of accepted.values()) {

@@ -55,7 +55,7 @@ trailing or leading `( … )` / `[ … ]` made of nothing but marker and venue/y
 low by nature — across four real profiles (400 rows, including one whose owner has CVPR'16 and ICCV'17
 best papers) Scholar's text contained **no** such markers — so this is best effort, not a promise.
 
-**Built — a bundled list of award-winning papers** (8282 entries on 2026-11-03: the ACL family, ICLR, NeurIPS, ICML,
+**Built — a bundled list of award-winning papers** (8438 entries on 2026-11-05: the ACL family, ICLR, NeurIPS, ICML,
 CVPR / ICCV / ECCV from the Computer Vision Foundation's list, AAAI, IJCAI 2020–2023, USENIX, SIGIR, KDD, SIGSOFT, STOC, SIGCOMM, S&P,
 CCS, NDSS, SIGMOD, PODS, VLDB, and the test-of-time awards of WWW, ISCA, MICRO, USENIX, SIGMOD, SIGPLAN's most influential papers, SIGMETRICS, FOCS's test of time, SIGOPS's Hall of Fame, EuroSys's test of time, AAMAS's and ASPLOS's influential papers, the IACR test of time (CRYPTO / EUROCRYPT / ASIACRYPT), the TCC, PKC and CHES tests of time, HPCA's, IMC's and IEEE VIS's test of time, ICDE's influential papers, ISMAR's best and impact papers, ICSE's most influential papers, LICS's test of time and distinguished papers, AAAI's classic papers, ICAPS's influential papers, ISWC's ten-year papers, SIGMM's test of time, Hypertext's and DocEng's best papers, SIGDA's Newton technical impact award, SIGSPATIAL's best and 10-year impact papers, SIGCSE's test of time, ICWSM's test of time and best papers, SIGMOBILE's and SenSys's test of time, SIGecom's test of time and PODC / DISC's Dijkstra Prize; CHI, CSCW, UIST and other SIGCHI conferences from SIGCHI's own program data). Only official pages are sources (the ACL Anthology's award metadata; each
 conference's own or the CVF's awards pages), each entry carries its page and a quoted snippet, and the matcher requires
@@ -153,12 +153,14 @@ official name still says Workshop (HotOS, CORE's WACV).
 no real string has them: a **publisher after the name** (", Springer, 2019": 31–40 rows lose their badge, and "SIAM International Conference on Data Mining, ACM, 2019" reads as ICDM; none of the 22,744 real Scholar lines ends with a publisher), "15th Annual" in front
 of HotStorage, and the year written with a hyphen or jammed onto a mixed-case word ("Mobisys2019"; the jammed capital-letter acronyms and the apostrophe forms are read as events since 2.41.0). The probe: resolve each form of every row, count rows that lose the badge or get another venue's.
 
-## Waiting on time (2026-11-03)
+## Waiting on time (2026-11-05)
 
-- **The awards of the conferences still to come this year**: CCS (Nov 15–19), CIKM, ACM MM, ICCAD and VIS's own papers (Nov),
-  NeurIPS (Dec), ICDM, SC, Middleware, FOCS and the others of late autumn — each from its own page once it is over, as in
-  data/README.md (`scripts/awards/`, `merge-raw.mjs`). UbiComp/ISWC 2026, IJCAI-ECAI 2026 and MICRO 2026 had no paper awards on their
-  pages on 2026-11-03; worth a second look.
+- **The awards of the conferences still to come this year**: CCS (Nov 15–19), CoRL (Nov 9–11), CIKM, ACM MM, ICCAD and VIS's own papers
+  (Nov), NeurIPS (Dec), ICDM, SC, Middleware, FOCS and the others of late autumn — each from its own page once it is over, as in
+  data/README.md (`scripts/awards/`, `merge-raw.mjs`). IJCAI-ECAI 2026 and MICRO 2026 had no paper awards on their pages on 2026-11-03.
+  Held, but no winners on an official page on 2026-11-05 (finalists or nominees only, or nothing yet): ICRA and CASE 2026 (the RAS
+  pages stop at 2025), EACL, ICASSP and Interspeech 2026, SOUPS, EC and SIGecom's test of time 2026, CRYPTO's test of time 2026, ASSETS,
+  PIMRC, CCNC, MODELS and ASP-DAC 2026, WSDM 2025's best paper, DASFAA 2025 — worth a second look.
 
 ## Other ideas, not started
 

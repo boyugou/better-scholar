@@ -1,5 +1,5 @@
 {
- "note": "Entries read from an official page that the page itself gets wrong: `exclude` drops one (a title printed under another paper's authors), `correct` puts right an author list written in another order (a family name first) or a misspelt title (`newTitle`). scripts/awards/merge-raw.mjs applies them to every merge; each says what is wrong and where.",
+ "note": "Entries read from an official page that the page itself gets wrong: `exclude` drops one (a title printed under another paper's authors; with `award`, that kind only: a runner-up read as the winner), `correct` puts right an author list written in another order (a family name first) or a misspelt title (`newTitle`). scripts/awards/merge-raw.mjs applies them to every merge; each says what is wrong and where.",
  "exclude": [
   {
    "venue": "KDD",
@@ -12,18 +12,125 @@
    "year": 2005,
    "title": "A Hit-Miss Model for Duplicate Detection in the WHO Drug Safety Database",
    "reason": "the same page prints this title (Norén et al.'s paper) under the 2005 application runner-up's authors, Jiang, Pei, Ramanathan, Tang and Zhang (the 2004 runners-up)"
+  },
+  {
+   "venue": "GLOBECOM",
+   "year": 2023,
+   "title": "MetaCIDS: Metaverse Collaborative Intrusion Detection based on Blockchain and Federated Learning",
+   "reason": "a workshop's best paper (\"Best Paper Award (WORKSHOP: UNCONVENTIONAL IOT APPLICATIONS)\" on globecom2023.ieee-globecom.org): the list keeps the main conference's awards"
+  },
+  {
+   "venue": "GLOBECOM",
+   "year": 2023,
+   "title": "Neural Estimation for Rate-Distortion Function in Semantic Communications",
+   "reason": "a workshop's best paper (\"Best Paper Award (WORKSHOP: SEMANTIC COMMUNICATION FOR 6G)\" on globecom2023.ieee-globecom.org): the list keeps the main conference's awards"
+  },
+  {
+   "venue": "PIMRC",
+   "year": 2025,
+   "title": "Affine Frequency Division Multiplexing with Practical DAC and ADC Filters",
+   "reason": "a workshop's best paper (\"Best Paper Award (WS01-S2: AFDM and Emerging Waveforms)\" on pimrc2025.ieee-pimrc.org): the list keeps the main conference's awards"
+  },
+  {
+   "venue": "PIMRC",
+   "year": 2025,
+   "title": "Bistatic Non-Line-of-Sight Environment Sensing in Wireless Networks",
+   "reason": "a workshop's best paper (\"Best Paper Award (WS02-S2: Integrated Sensing, AI, and Communication II)\" on pimrc2025.ieee-pimrc.org): the list keeps the main conference's awards"
+  },
+  {
+   "venue": "PIMRC",
+   "year": 2025,
+   "title": "NearLink: Emerging Short Range Wireless Standard with Ultra-Low Latency and Ultra-High Reliability",
+   "reason": "a workshop's best paper (\"Best Paper Award (WS13-S2: Short Range Wireless Communications, Localization and Sensing)\" on pimrc2025.ieee-pimrc.org): the list keeps the main conference's awards"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2024,
+   "title": "InterruptMe: designing intelligent prompting mechanisms for pervasive applications",
+   "award": "tot",
+   "reason": "ubicomp.org/sc/awards.html lists it under the 2024 10-year Impact Awards with the label \"Runner-up\", which the reading dropped; StudentLife won (ubicomp.org/ubicomp-iswc-2024/awards/ says the same). Its runner-up entry stays"
+  },
+  {
+   "venue": "UbiComp-ISWC",
+   "year": 2024,
+   "title": "DIPA2: An Image Dataset with Cross-cultural Privacy Perception Annotations",
+   "reason": "the SIGCHI program flags it \"Best Paper\"; UbiComp's own 2024 awards page (ubicomp.org/ubicomp-iswc-2024/awards/) names the award, an IMWUT Distinguished Paper Award, which the list has under UbiComp 2024"
   }
  ],
  "correct": [
-  {"venue":"NAACL","year":2016,"title":"Feuding Families and Former Friends; Unsupervised Learning for Dynamic Fictional Relationships","newTitle":"Feuding Families and Former Friends: Unsupervised Learning for Dynamic Fictional Relationships","reason":"naacl.org/naacl-hlt-2016/best_papers.html prints a semicolon where the paper has a colon (the page replaces it), so the title matched nothing on Scholar"},
-  {"venue":"NAACL","year":2016,"title":"Black Holes and White Rabbits; Metaphor Identification with Visual Features","newTitle":"Black Holes and White Rabbits: Metaphor Identification with Visual Features","reason":"naacl.org/naacl-hlt-2016/best_papers.html prints a semicolon where the paper has a colon (the page replaces it), so the title matched nothing on Scholar"},
-  {"venue":"KDD","year":2004,"title":"Probabilistic Framework for Semi-Supervised Clustering >>","newTitle":"A Probabilistic Framework for Semi-Supervised Clustering","reason":"kdd.org/awards/view/2004-sigkdd-best-paper-award prints the title without its article and with a stray \">>\"; the paper (Basu, Bilenko and Mooney, KDD 2004) is \"A Probabilistic Framework for Semi-Supervised Clustering\", so the title matched nothing on Scholar"},
-  {"venue":"DAC","year":2024,"title":"Token-Picker: Accelerating Attention in Text. Generation and Minimized Memory Transfer via Probability Estimation","newTitle":"Token-Picker: Accelerating Attention in Text Generation with Minimized Memory Transfer via Probability Estimation","reason":"dac.com's 61st-DAC press release prints \"Text. Generation and Minimized\"; the paper (Park, Kang, Han, Kim and Kim, DAC 2024) is \"Token-Picker: Accelerating Attention in Text Generation with Minimized Memory Transfer via Probability Estimation\", so the title matched nothing on Scholar"},
-  {"venue":"BPM","year":2016,"title":"Semantics and Analysisnof DMN Decision Tables","newTitle":"Semantics and Analysis of DMN Decision Tables","reason":"bpm-conference.org/awards/ prints \"Analysisnof\" (the space lost); the paper (Calvanese, Dumas, Laurson, Maggi, Montali and Teinemaa, BPM 2016) is \"Semantics and Analysis of DMN Decision Tables\", so the title matched nothing on Scholar"},
-  {"venue":"DSN","year":2017,"title":"What Can We Learn from For Years of Data Center Hardware Failures?","newTitle":"What Can We Learn from Four Years of Data Center Hardware Failures?","reason":"dependability.org/?p=370 prints \"For Years\"; the paper (Wang and Xu, DSN 2017) is \"What Can We Learn from Four Years of Data Center Hardware Failures?\", so the title matched nothing on Scholar"},
-  {"venue":"ICDT","year":2019,"title":"Counting Triangles under Updates in WorstCase Optimal Time","newTitle":"Counting Triangles under Updates in Worst-Case Optimal Time","reason":"databasetheory.org/ICDT/awards prints \"WorstCase\" (the hyphen lost); the paper (Kara, Ngo, Nikolic, Olteanu and Zhang, ICDT 2019) is \"Counting Triangles under Updates in Worst-Case Optimal Time\", so the title matched nothing on Scholar"},
-  {"venue":"VIS","year":2026,"title":"Gaze Stripes: Image-Based Visualization of Eye Tracking Data","authors":["Kuno Kurzhals","Marcel Hlawatsch","Florian Heimerl","Michael Burch"],"reason":"aa.ieeevis.org/year/2026/info/awards/test-of-time-awards prints the first author as \"Kuno Kurzhalz\"; the paper (VIS 2015, TVCG) is by Kuno Kurzhals — the spelling SIGCHI's CHI 2020 program gives for the same researcher (an entry of this list) —, so the surname matched nothing on Scholar"},
-  {"venue":"ICSE","year":2026,"title":"An Empirical Study on Static Application Security Testing (SAST) Tools for Python","authors":["Zhuohang Liu","Zhi Wang","Haotong Liu","Wanpeng Li"],"reason":"conf.researchr.org/track/icse-2026/icse-2026-research-track prints the first author family name first (\"Liu Zhuohang\"), unlike the other names of the list; Scholar prints \"Z Liu\", so the surname \"Zhuohang\" matched nothing. The same words, the family name last."},
+  {
+   "venue": "NAACL",
+   "year": 2016,
+   "title": "Feuding Families and Former Friends; Unsupervised Learning for Dynamic Fictional Relationships",
+   "newTitle": "Feuding Families and Former Friends: Unsupervised Learning for Dynamic Fictional Relationships",
+   "reason": "naacl.org/naacl-hlt-2016/best_papers.html prints a semicolon where the paper has a colon (the page replaces it), so the title matched nothing on Scholar"
+  },
+  {
+   "venue": "NAACL",
+   "year": 2016,
+   "title": "Black Holes and White Rabbits; Metaphor Identification with Visual Features",
+   "newTitle": "Black Holes and White Rabbits: Metaphor Identification with Visual Features",
+   "reason": "naacl.org/naacl-hlt-2016/best_papers.html prints a semicolon where the paper has a colon (the page replaces it), so the title matched nothing on Scholar"
+  },
+  {
+   "venue": "KDD",
+   "year": 2004,
+   "title": "Probabilistic Framework for Semi-Supervised Clustering >>",
+   "newTitle": "A Probabilistic Framework for Semi-Supervised Clustering",
+   "reason": "kdd.org/awards/view/2004-sigkdd-best-paper-award prints the title without its article and with a stray \">>\"; the paper (Basu, Bilenko and Mooney, KDD 2004) is \"A Probabilistic Framework for Semi-Supervised Clustering\", so the title matched nothing on Scholar"
+  },
+  {
+   "venue": "DAC",
+   "year": 2024,
+   "title": "Token-Picker: Accelerating Attention in Text. Generation and Minimized Memory Transfer via Probability Estimation",
+   "newTitle": "Token-Picker: Accelerating Attention in Text Generation with Minimized Memory Transfer via Probability Estimation",
+   "reason": "dac.com's 61st-DAC press release prints \"Text. Generation and Minimized\"; the paper (Park, Kang, Han, Kim and Kim, DAC 2024) is \"Token-Picker: Accelerating Attention in Text Generation with Minimized Memory Transfer via Probability Estimation\", so the title matched nothing on Scholar"
+  },
+  {
+   "venue": "BPM",
+   "year": 2016,
+   "title": "Semantics and Analysisnof DMN Decision Tables",
+   "newTitle": "Semantics and Analysis of DMN Decision Tables",
+   "reason": "bpm-conference.org/awards/ prints \"Analysisnof\" (the space lost); the paper (Calvanese, Dumas, Laurson, Maggi, Montali and Teinemaa, BPM 2016) is \"Semantics and Analysis of DMN Decision Tables\", so the title matched nothing on Scholar"
+  },
+  {
+   "venue": "DSN",
+   "year": 2017,
+   "title": "What Can We Learn from For Years of Data Center Hardware Failures?",
+   "newTitle": "What Can We Learn from Four Years of Data Center Hardware Failures?",
+   "reason": "dependability.org/?p=370 prints \"For Years\"; the paper (Wang and Xu, DSN 2017) is \"What Can We Learn from Four Years of Data Center Hardware Failures?\", so the title matched nothing on Scholar"
+  },
+  {
+   "venue": "ICDT",
+   "year": 2019,
+   "title": "Counting Triangles under Updates in WorstCase Optimal Time",
+   "newTitle": "Counting Triangles under Updates in Worst-Case Optimal Time",
+   "reason": "databasetheory.org/ICDT/awards prints \"WorstCase\" (the hyphen lost); the paper (Kara, Ngo, Nikolic, Olteanu and Zhang, ICDT 2019) is \"Counting Triangles under Updates in Worst-Case Optimal Time\", so the title matched nothing on Scholar"
+  },
+  {
+   "venue": "VIS",
+   "year": 2026,
+   "title": "Gaze Stripes: Image-Based Visualization of Eye Tracking Data",
+   "authors": [
+    "Kuno Kurzhals",
+    "Marcel Hlawatsch",
+    "Florian Heimerl",
+    "Michael Burch"
+   ],
+   "reason": "aa.ieeevis.org/year/2026/info/awards/test-of-time-awards prints the first author as \"Kuno Kurzhalz\"; the paper (VIS 2015, TVCG) is by Kuno Kurzhals — the spelling SIGCHI's CHI 2020 program gives for the same researcher (an entry of this list) —, so the surname matched nothing on Scholar"
+  },
+  {
+   "venue": "ICSE",
+   "year": 2026,
+   "title": "An Empirical Study on Static Application Security Testing (SAST) Tools for Python",
+   "authors": [
+    "Zhuohang Liu",
+    "Zhi Wang",
+    "Haotong Liu",
+    "Wanpeng Li"
+   ],
+   "reason": "conf.researchr.org/track/icse-2026/icse-2026-research-track prints the first author family name first (\"Liu Zhuohang\"), unlike the other names of the list; Scholar prints \"Z Liu\", so the surname \"Zhuohang\" matched nothing. The same words, the family name last."
+  },
   {
    "venue": "EuroSys",
    "year": 2024,
@@ -79,8 +186,21 @@
    "year": 2008,
    "title": "An Experimental Approach",
    "newTitle": "Predicting Accurate and Actionable Static Analysis Warnings: An Experimental Approach",
-   "authors": ["Joseph Ruthruff", "John Penix", "David Morgenthaler", "Sebastian Elbaum", "Gregg Rothermel"],
+   "authors": [
+    "Joseph Ruthruff",
+    "John Penix",
+    "David Morgenthaler",
+    "Sebastian Elbaum",
+    "Gregg Rothermel"
+   ],
    "reason": "www2.sigsoft.org/awards/distinguishedpaper/ prints this paper's title run into its author list (\"… Gregg Rothermel, Predicting Accurate and Actionable Static Analysis Warnings: An Experimental Approach\"): the reader split it at the \"and\" and kept only the subtitle as the title, so the paper matched nothing on Scholar"
+  },
+  {
+   "venue": "SAT",
+   "year": 2026,
+   "title": "New Algorithms for Parity-SAT and Its Bounded-Occurrence Version",
+   "newTitle": "New Algorithms for Parity-SAT and Its Bounded-Occurrence Versions",
+   "reason": "satassociation.org/awards/ prints \"Version\" where the paper (LIPIcs SAT 2026, paper 20) and the FLoC 2026 program say \"Versions\", so the title matched nothing on Scholar"
   }
  ]
 }

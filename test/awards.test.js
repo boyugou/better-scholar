@@ -411,7 +411,7 @@ test("data/exclusions.json: an entry an official page gets wrong is not in the b
   assert.ok(exclude.length >= 1);
   for (const x of exclude) {
     assert.ok(x.reason && x.reason.length > 20, `${x.venue} ${x.year}: no reason`);
-    assert.equal(data.entries.some((e) => e.venue === x.venue && e.year === x.year && awards.titleKey(e.title) === awards.titleKey(x.title)), false, `${x.venue} ${x.year} ${x.title} is back in the list`);
+    assert.equal(data.entries.some((e) => e.venue === x.venue && e.year === x.year && awards.titleKey(e.title) === awards.titleKey(x.title) && (!x.award || e.award === x.award)), false, `${x.venue} ${x.year} ${x.title} is back in the list`);
   }
 });
 

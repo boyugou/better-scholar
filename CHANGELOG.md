@@ -189,6 +189,19 @@ give the details and every review):
   Encryption: 23rd International Conference, FSE 2016" is the cryptography FSE (B), not Foundations of Software Engineering (A): venues
   that share an acronym are told apart by the series title. (4) MDPI's journals *AI* and *IoT* are not Artificial Intelligence (A) and
   IEEE IoT-J, nor is the Korean WISA (information security) the Web Information Systems WISA.
+- **The awards of 39 more conference years** (a sweep of 2026 editions, and earlier years the list lacked, each read from the conference's
+  or society's own page): 163 papers — AISTATS, UAI and HRI 2026 (HRI's first test-of-time papers), CRYPTO, CCC, SAT and CP 2026, ECIR,
+  CHIIR (its first test-of-time awards), UMAP, ICDT, SIGCSE and DASFAA 2026, WSDM 2022–2026, ICC 2026 and the two ICC 2022 winners the
+  list missed, WCNC 2025 and 2026, ICSME and RE 2026 (both new to the list), ICASSP and Interspeech 2025, MICCAI 2026, ISWC's and UbiComp's
+  2026 ten-year awards, ESWEEK's EMSOFT, CODES+ISSS and CASES 2025 and 2026, ASP-DAC 2025, ICS 2025 and 2026. Put right on the way: five
+  workshop awards out (GLOBECOM 2023, PIMRC 2025), ICC 2022's ProductAE label (it held another paper's citation), UbiComp's 2024 runner-up
+  InterruptMe was also listed as that year's winner (the steering committee's page labels it "Runner-up"; StudentLife won), and DIPA2 had a
+  second "Best Paper" under the name "UbiComp-ISWC" from the SIGCHI program, where UbiComp's own page names an IMWUT Distinguished Paper —
+  `data/exclusions.json` keeps them out of later merges (an exclusion may now name the award kind: the runner-up entry stays). SAT 2026's
+  page misprints a title ("Version" for "Versions"): corrected there too. Left out: MSR's FOSS Impact Award (a tool-track prize the list
+  never held), finalists and nominees (ICRA, CASE, Interspeech 2026), events whose pages name no winner yet (EACL, ICASSP 2026, SOUPS,
+  EC, ASSETS, PIMRC 2026, CCNC 2026, MODELS 2026, ASP-DAC 2026, WSDM 2025's best paper, DASFAA 2025) or that are not yet held (CoRL).
+  The list holds 8,438 awards.
 - **Older years the award list lacked** (each from the conference's or society's own page): CCS 2024 and 2025 (57 distinguished
   papers), SOSP's best papers of 2009, 2013, 2017, 2019 and 2025, ASPLOS 2011 and 2015, The Web Conference 2015, 2019 and 2026, VLDB's
   best papers of 2014–2026 (48, with runners-up and its industry and benchmark categories), MICRO 2019, 2020, 2024 and 2025, SIGIR 2026

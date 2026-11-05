@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 8282
+  "count": 8438
  },
  "entries": [
   {
@@ -6559,6 +6559,70 @@
    "evidence": "AISTATS 2025 Test of Time Award: Deeply supervised Nets — Chen-Yu Lee, Saining Xie, Patrick Gallagher, Zhengyou Zhang, Zhuowen Tu"
   },
   {
+   "venue": "AISTATS",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "EventFlow: Forecasting Temporal Point Processes with Flow Matching",
+   "authors": [
+    "Gavin Kerrigan",
+    "Kai Nelson",
+    "Padhraic Smyth"
+   ],
+   "track": "main",
+   "source": "https://virtual.aistats.org/Conferences/2026",
+   "evidence": "Best Paper Award: “EventFlow: Forecasting Temporal Point Processes with Flow Matching” by Gavin Kerrigan, Kai Nelson, and Padhraic Smyth"
+  },
+  {
+   "venue": "AISTATS",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Test of Time Award, Honorable Mention",
+   "title": "Deep Kernel Learning",
+   "authors": [
+    "Andrew Gordon Wilson",
+    "Zhiting Hu",
+    "Ruslan Salakhutdinov",
+    "Eric P. Xing"
+   ],
+   "track": "main",
+   "source": "https://virtual.aistats.org/Conferences/2026",
+   "evidence": "Test of Time Award, Honorable Mention: \"Deep Kernel Learning\" by Andrew Gordon Wilson, Zhiting Hu, Ruslan Salakhutdinov, and Eric P. Xing"
+  },
+  {
+   "venue": "AISTATS",
+   "year": 2026,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "We Still Don’t Understand High-Dimensional Bayesian Optimization",
+   "authors": [
+    "Colin Doumont",
+    "Donney Fan",
+    "Natalie Maus",
+    "Jacob Gardner",
+    "Henry Moss",
+    "Geoff Pleiss"
+   ],
+   "track": "main",
+   "source": "https://virtual.aistats.org/Conferences/2026",
+   "evidence": "Best Student Paper Award: “We Still Don’t Understand High-Dimensional Bayesian Optimization” by Colin Doumont, Donney Fan, Natalie Maus, Jacob Gardner, Henry Moss, and Geoff Pleiss"
+  },
+  {
+   "venue": "AISTATS",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Non-stochastic Best Arm Identification and Hyperparameter Optimization",
+   "authors": [
+    "Kevin Jamieson",
+    "Ameet Talwalkar"
+   ],
+   "track": "main",
+   "paperYear": 2016,
+   "source": "https://virtual.aistats.org/Conferences/2026",
+   "evidence": "Test of Time Award: “Non-stochastic Best Arm Identification and Hyperparameter Optimization” by Kevin Jamieson and Ameet Talwalkar — paper year, from the PMLR page https://proceedings.mlr.press/v51/jamieson16.html: \"Proceedings of the 19th International Conference on Artificial Intelligence and Statistics, PMLR 51:240-248, 2016.\""
+  },
+  {
    "venue": "AIware",
    "year": 2024,
    "award": "distinguished",
@@ -8464,6 +8528,37 @@
    "track": "main",
    "source": "https://ieee-ceda.org/paper-award/asp-dac-best-paper-award",
    "evidence": "ASP-DAC 2024 Best Paper Award: SPIRAL: Signal-Power Integrity Co-Analysis for High-Speed Inter-Chiplet Serial Links Validation — X. Dong, S. Sun, Y. Jiang, J. Hu, D. Gao and C. Zhuo"
+  },
+  {
+   "venue": "ASP-DAC",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "A Practical Randomized GMRES Algorithm for Solving Linear Equation System in Circuit Simulation",
+   "authors": [
+    "Baiyu Chen",
+    "Jiawen Cheng",
+    "Wenjian Yu"
+   ],
+   "track": "main",
+   "source": "https://www.aspdac.com/aspdac2025/archive/program/program.html",
+   "evidence": "Best Paper Award 2B-1 (Time: 13:15 - 13:40) Title A Practical Randomized GMRES Algorithm for Solving Linear Equation System in Circuit Simulation Author *Baiyu Chen, Jiawen Cheng, Wenjian Yu (Tsinghua Univ., China)"
+  },
+  {
+   "venue": "ASP-DAC",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "ViDA: Video Diffusion Transformer Acceleration with Differential Approximation and Adaptive Dataflow",
+   "authors": [
+    "Li Ding",
+    "Jun Liu",
+    "Shan Huang",
+    "Guohao Dai"
+   ],
+   "track": "main",
+   "source": "https://www.aspdac.com/aspdac2025/archive/program/program.html",
+   "evidence": "Best Paper Award 2A-1 (Time: 13:15 - 13:40) Title ViDA: Video Diffusion Transformer Acceleration with Differential Approximation and Adaptive Dataflow Author *Li Ding, Jun Liu, Shan Huang, Guohao Dai (Shanghai Jiao Tong Univ., China)"
   },
   {
    "venue": "ASPLOS",
@@ -12514,6 +12609,80 @@
    "evidence": "CASES 2024 Test-of-Time: Highly Energy and Performance Efficient Embedded Computing through Approximately Correct Arithmetic: A Mathematical Foundation and Preliminary Experimental Validation — Lakshmi N.B. Chakrapani, Kirthi Krishna Muntimadugu, Avinash Lingamneni, Jason George, Krishna V. Palem"
   },
   {
+   "venue": "CASES",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Large or Small: Harnessing the Erase Duality of Emerging Bit-Alterable NAND Flash to Suppress Tail Latency",
+   "authors": [
+    "Guangliang Yao",
+    "Tsun-Yu Yang",
+    "Yingjia Wang",
+    "Tseng-Yi Chen",
+    "Ming-Chang Yang"
+   ],
+   "track": "main",
+   "source": "https://2025.esweek.org/awards-2025/",
+   "evidence": "CASES Best Paper Awards Large or Small: Harnessing the Erase Duality of Emerging Bit-Alterable NAND Flash to Suppress Tail Latency Guangliang Yao (The Chinese University of Hong Kong, Hong Kong), Tsun-Yu Yang (The Chinese University of Hong Kong, Hong Kong), Yingjia Wang (The Chinese University of Hong Kong, Hong Kong), Tseng-Yi Chen (National Central University, Taiwan), Ming-Chang Yang (The Chinese University of Hong Kong, Hong Kong)"
+  },
+  {
+   "venue": "CASES",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Practical Aggregation of Semantical Program Properties for Machine Learning Based Optimization",
+   "authors": [
+    "Mircea Namolaru",
+    "Albert Cohen",
+    "Grigori Fursin",
+    "Ayal Zaks",
+    "Ari Freund"
+   ],
+   "track": "main",
+   "paperYear": 2010,
+   "source": "https://2025.esweek.org/awards-2025/",
+   "evidence": "Test of Time Awards CASES Practical Aggregation of Semantical Program Properties for Machine Learning Based Optimization (CASES 2010) Mircea Namolaru, Albert Cohen, Grigori Fursin, Ayal Zaks, and Ari Freund"
+  },
+  {
+   "venue": "CASES",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Reliving the Youth: Deterministic TRIM for Capacity-Full Parity-Based SSD RAID Arrays",
+   "authors": [
+    "Tianyu Wang",
+    "Hang Li",
+    "Chenlin Ma",
+    "Jiaxian Chen",
+    "Kecheng Huang",
+    "Minhua Lu",
+    "Rui Mao",
+    "Yi Wang"
+   ],
+   "track": "main",
+   "source": "https://esweek.org/awards-2025/",
+   "evidence": "CASES Best Paper Awards Reliving the Youth: Deterministic TRIM for Capacity-Full Parity-Based SSD RAID Arrays Tianyu Wang (Shenzhen Univ.), Hang Li (Shenzhen Univ.), Chenlin Ma (Shenzhen Univ.), Jiaxian Chen (Beijing Inst. of Technology, Zhuhai), Kecheng Huang (Beijing Inst. of Technology, Zhuhai), Minhua Lu (Shenzhen Univ.), Rui Mao (Shenzhen Univ.), Yi Wang (Shenzhen Univ.)"
+  },
+  {
+   "venue": "CASES",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "SiblingRivalry: Online Autotuning through Local Competitions",
+   "authors": [
+    "Jason Ansel",
+    "Maciej Pacula",
+    "Yee Lok Wong",
+    "Cy Chan",
+    "Marek Olszewski",
+    "Una-May O’Reilly",
+    "Saman Amarasinghe"
+   ],
+   "track": "main",
+   "source": "https://esweek.org/awards-2025/",
+   "evidence": "Test of Time Awards CASES SiblingRivalry: Online Autotuning through Local Competitions Jason Ansel, Maciej Pacula, Yee Lok Wong, Cy Chan, Marek Olszewski, Una-May O’Reilly, Saman Amarasinghe"
+  },
+  {
    "venue": "CC",
    "year": 2011,
    "award": "best",
@@ -12675,6 +12844,33 @@
    "track": "main",
    "source": "https://www.computationalcomplexity.org/Archive/2025/program.html",
    "evidence": "CCC 2025 Best Student Paper Award: Switching Graph Matrix Norm Bounds: from i.i.d. to Random Regular Graphs — Jeff Xu"
+  },
+  {
+   "venue": "CCC",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "A weak regularity lemma for polynomials",
+   "authors": [
+    "Guy Moshkovitz",
+    "Dora Woodruff"
+   ],
+   "track": "main",
+   "source": "https://www.computationalcomplexity.org/Archive/2026/program.html",
+   "evidence": "Best paper: A weak regularity lemma for polynomials Guy Moshkovitz, Dora Woodruff"
+  },
+  {
+   "venue": "CCC",
+   "year": 2026,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Randomized separations in black-box TFNP",
+   "authors": [
+    "Fyodor Kiselyov"
+   ],
+   "track": "main",
+   "source": "https://www.computationalcomplexity.org/Archive/2026/program.html",
+   "evidence": "Best student paper: Randomized separations in black-box TFNP Fyodor Kiselyov"
   },
   {
    "venue": "CCNC",
@@ -42136,6 +42332,68 @@
    "evidence": "CHIIR 2025 Best Paper Award: Fitting to the Body: The Role of Embodiment in Beauty Information Seeking — Catherine Chavula, Cassandra Kist"
   },
   {
+   "venue": "CHIIR",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Can You Tell Me? Designing Copilots to Support Human Judgment in Online Information Seeking",
+   "authors": [
+    "Markus Bink",
+    "Marten Risius",
+    "David Elsweiler",
+    "Udo Kruschwitz"
+   ],
+   "track": "main",
+   "source": "https://chiir2026.github.io/awards.html",
+   "evidence": "Best Paper Can You Tell Me? Designing Copilots to Support Human Judgment in Online Information Seeking Markus Bink, Marten Risius, David Elsweiler, and Udo Kruschwitz"
+  },
+  {
+   "venue": "CHIIR",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "Does It Still Make Sense? Organizing and Summarizing Resources in Cross-Session Aggregated Search",
+   "authors": [
+    "Milad Momeni",
+    "Orland Hoeber"
+   ],
+   "track": "main",
+   "source": "https://chiir2026.github.io/awards.html",
+   "evidence": "Best Paper Runner-up Does It Still Make Sense? Organizing and Summarizing Resources in Cross-Session Aggregated Search Milad Momeni and Orland Hoeber"
+  },
+  {
+   "venue": "CHIIR",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "A Theoretical Framework for Conversational Search",
+   "authors": [
+    "Filip Radlinski",
+    "Nick Craswell"
+   ],
+   "track": "main",
+   "paperYear": 2017,
+   "source": "https://chiir2026.github.io/awards.html",
+   "evidence": "Test of Time 2017 A Theoretical Framework for Conversational Search Filip Radlinski and Nick Craswell"
+  },
+  {
+   "venue": "CHIIR",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Assessing Learning Outcomes in Web Search: A Comparison of Tasks and Query Strategies",
+   "authors": [
+    "Kevyn Collins-Thompson",
+    "Soo Young Rieh",
+    "Carl C. Haynes",
+    "Rohail Syed"
+   ],
+   "track": "main",
+   "paperYear": 2016,
+   "source": "https://chiir2026.github.io/awards.html",
+   "evidence": "Test of Time 2016 Assessing Learning Outcomes in Web Search: A Comparison of Tasks and Query Strategies Kevyn Collins-Thompson, Soo Young Rieh, Carl C. Haynes, and Rohail Syed"
+  },
+  {
    "venue": "CI",
    "year": 2025,
    "award": "best",
@@ -42923,6 +43181,78 @@
    "track": "main",
    "source": "https://2024.esweek.org/?p=613",
    "evidence": "CODES+ISSS 2024 Test-of-Time: Temperature-aware Processor Frequency Assignment for MPSoCs Using Convex Optimization — Srinivasan Murali, Almir Mutapcic, David Atienza, Rajesh Gupta, Stephen Boyd, Giovanni De Micheli"
+  },
+  {
+   "venue": "CODES+ISSS",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Re-Thinking Memory-Bound Limitations in CGRAs",
+   "authors": [
+    "Xiangfeng Liu",
+    "Zhe Jiang",
+    "Anzhen Zhu",
+    "Xiaomeng Han",
+    "Mingsong Lyu",
+    "Qingxu Deng",
+    "Nan Guan"
+   ],
+   "track": "main",
+   "source": "https://2025.esweek.org/awards-2025/",
+   "evidence": "CODES+ISSS Best Paper Awards Re-Thinking Memory-Bound Limitations in CGRAs Xiangfeng Liu (Northeastern University, China), Zhe Jiang (Southeast University, China), Anzhen Zhu (Northeastern University, China), Xiaomeng Han (Southeast University, China), Mingsong Lyu (The Hong Kong Polytechnic University, HK), Qingxu Deng (Northeastern University, China), Nan Guan (City University of Hong Kong, HK)"
+  },
+  {
+   "venue": "CODES+ISSS",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Accurate Online Power Estimation and Automatic Battery Behavior Based Power Model Generation for Smartphones",
+   "authors": [
+    "Lide Zhang",
+    "Birjodh Tiwana",
+    "Zhiyun Qian",
+    "Zhaoguang Wang",
+    "Robert P. Dick",
+    "Zhuoqing Morley Mao",
+    "Lei Yang"
+   ],
+   "track": "main",
+   "paperYear": 2010,
+   "source": "https://2025.esweek.org/awards-2025/",
+   "evidence": "CODES+ISSS Accurate Online Power Estimation and Automatic Battery Behavior Based Power Model Generation for Smartphones (CODES+ISSS 2010) Lide Zhang, Birjodh Tiwana, Zhiyun Qian, Zhaoguang Wang, Robert P. Dick, Zhuoqing Morley Mao, and Lei Yang"
+  },
+  {
+   "venue": "CODES+ISSS",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "ThAME: 3D Memory-Enabled Heterogeneous Accelerator for LLM Mixture of Experts",
+   "authors": [
+    "Pratyush Dhingra",
+    "Pramit Kumar Pal",
+    "Jana Doppa",
+    "Partha Pratim Pande"
+   ],
+   "track": "main",
+   "source": "https://esweek.org/awards-2025/",
+   "evidence": "CODES Best Paper Awards ThAME: 3D Memory-Enabled Heterogeneous Accelerator for LLM Mixture of Experts Pratyush Dhingra (Washington State University), Pramit Kumar Pal (Washington State University), Jana Doppa (Washington State University), Partha Pratim Pande (Washington State University)"
+  },
+  {
+   "venue": "CODES+ISSS",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "PRET DRAM Controller: Bank Privatization for Predictability and Temporal Isolation",
+   "authors": [
+    "Jan Reineke",
+    "Isaac Liu",
+    "Hiren D. Patel",
+    "Sungjun Kim",
+    "Edward A. Lee"
+   ],
+   "track": "main",
+   "source": "https://esweek.org/awards-2025/",
+   "evidence": "CODES PRET DRAM Controller: Bank Privatization for Predictability and Temporal Isolation Jan Reineke, Isaac Liu, Hiren D. Patel, Sungjun Kim, Edward A. Lee"
   },
   {
    "venue": "COLING",
@@ -44588,6 +44918,97 @@
    "evidence": "CP 2025 Best Student Paper: Hannes Ihalainen, Jeremias Berg, Matti Järvisalo, and Bart Bogaerts. Symmetric Core Learning for Pseudo-Boolean Optimization by Implicit Hitting Sets"
   },
   {
+   "venue": "CP",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "GPU-Accelerated Relaxed Decision Diagrams for Branch-and-Bound Optimization",
+   "authors": [
+    "Fabio Tardivo",
+    "Laurent Michel",
+    "Willem-Jan van Hoeve"
+   ],
+   "track": "main",
+   "source": "https://cp2026.a4cp.org/schedule.html",
+   "evidence": "GPU-Accelerated Relaxed Decision Diagrams for Branch-and-Bound Optimization (Best Paper) Fabio Tardivo · Laurent Michel* · Willem-Jan van Hoeve"
+  },
+  {
+   "venue": "CP",
+   "year": 2026,
+   "award": "category",
+   "awardLabel": "Best Application Paper",
+   "title": "CrewAId: Interactive Optimisation for Human-In-The-Loop Crew Rostering and Rerostering",
+   "authors": [
+    "Matthias Klapperstueck",
+    "Frits de Nijs",
+    "Ilankaikone Senthooran",
+    "Matteo Miceli",
+    "Michael Wybrow"
+   ],
+   "track": "main",
+   "source": "https://cp2026.a4cp.org/schedule.html",
+   "evidence": "CrewAId: Interactive Optimisation for Human-In-The-Loop Crew Rostering and Rerostering (Best Application Paper) Matthias Klapperstueck · Frits de Nijs · Ilankaikone Senthooran · Matteo Miceli · Michael Wybrow*"
+  },
+  {
+   "venue": "CP",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Best Application Paper Runner-Up",
+   "title": "A Scheduling-Based Approach to Railway Capacity Estimation for Industrial Freight Junctions",
+   "authors": [
+    "Luca Di Gaspero",
+    "Alessia Grosso",
+    "Giovanni Longo"
+   ],
+   "track": "main",
+   "source": "https://cp2026.a4cp.org/schedule.html",
+   "evidence": "A Scheduling-Based Approach to Railway Capacity Estimation for Industrial Freight Junctions (Best Application Paper Runner-Up) Luca Di Gaspero · Alessia Grosso* · Giovanni Longo"
+  },
+  {
+   "venue": "CP",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Best Student Paper Runner-Up",
+   "title": "An Iterative Constraint Programming Approach to Integrate Maximum Workload Constraints in Preemptive Jobshop Scheduling",
+   "authors": [
+    "Tanguy Terrien",
+    "Cyrille Briand"
+   ],
+   "track": "main",
+   "source": "https://cp2026.a4cp.org/schedule.html",
+   "evidence": "An Iterative Constraint Programming Approach to Integrate Maximum Workload Constraints in Preemptive Jobshop Scheduling (Best Student Paper Runner-Up) Tanguy Terrien* · Cyrille Briand"
+  },
+  {
+   "venue": "CP",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-Up",
+   "title": "Fairness of Classifiers in the Presence of Constraints Between Features",
+   "authors": [
+    "Martin C. Cooper",
+    "Imane Bousdira"
+   ],
+   "track": "main",
+   "source": "https://cp2026.a4cp.org/schedule.html",
+   "evidence": "Fairness of Classifiers in the Presence of Constraints Between Features (Best Paper Runner-Up) Martin C. Cooper · Imane Bousdira*"
+  },
+  {
+   "venue": "CP",
+   "year": 2026,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Solving the Multiple Constant Multiplication Problem with Constraint Programming",
+   "authors": [
+    "Théo Cantaloube",
+    "Xiao Peng",
+    "Christine Solnon",
+    "Anastasia Volkova"
+   ],
+   "track": "main",
+   "source": "https://cp2026.a4cp.org/schedule.html",
+   "evidence": "Solving the Multiple Constant Multiplication Problem with Constraint Programming (Best Student Paper) Théo Cantaloube* · Xiao Peng · Christine Solnon · Anastasia Volkova"
+  },
+  {
    "venue": "CRYPTO",
    "year": 2019,
    "award": "tot",
@@ -44731,6 +45152,37 @@
    "paperYear": 2010,
    "source": "https://iacr.org/testoftime/",
    "evidence": "CRYPTO 2025 Test of Time Award: Thorsten Kleinjung, Kazumaro Aoki, Jens Franke, Arjen K. Lenstra, Emmanuel Thomé, Joppe W. Bos, Pierrick Gaudry, Alexander Kruppa, Peter L. Montgomery, Dag Arne Osvik, Herman te Riele, Andrey Timofeev, and Paul Zimmermann “Factorization of a 768-bit RSA modulus”"
+  },
+  {
+   "venue": "CRYPTO",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "An attack on the CFS scheme and on TII McEliece challenges",
+   "authors": [
+    "Magali Bardet",
+    "Axel Lemoine",
+    "Jean-Pierre Tillich"
+   ],
+   "track": "main",
+   "source": "https://crypto.iacr.org/2026/program.php",
+   "evidence": "An attack on the CFS scheme and on TII McEliece challenges Best Paper Award Magali Bardet Axel Lemoine Jean-Pierre Tillich"
+  },
+  {
+   "venue": "CRYPTO",
+   "year": 2026,
+   "award": "category",
+   "awardLabel": "Best Paper Authored by Early Career Researchers",
+   "title": "CORAL: Faster Isogeny Group Action for Post-Quantum NIKE",
+   "authors": [
+    "Andrea Basso",
+    "Giacomo Borin",
+    "Ryan Rueger",
+    "Sina Schaeffler"
+   ],
+   "track": "main",
+   "source": "https://crypto.iacr.org/2026/program.php",
+   "evidence": "CORAL: Faster Isogeny Group Action for Post-Quantum NIKE Best Paper Authored by Early Career Researchers Andrea Basso Giacomo Borin Ryan Rueger Sina Schaeffler"
   },
   {
    "venue": "CSCW",
@@ -51894,6 +52346,62 @@
    "evidence": "DASFAA 2024 Best Student Paper: Cost-aware Outdated Facts Correction in the Knowledge Bases — Hao Xin, Lei Chen (Hong Kong University of Science and Technology), Yanyan Shen (Shanghai Jiao Tong University)"
   },
   {
+   "venue": "DASFAA",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "DynamicPO: Dynamic Preference Optimization for Recommendation",
+   "authors": [
+    "Xingyu Hu",
+    "Kai Zhang",
+    "Jiancan Wu",
+    "Shuli Wang",
+    "Chi Wang",
+    "Wenshuai Chen",
+    "Yinhua Zhu",
+    "Haitao Wang",
+    "Xingxing Wang",
+    "Xiang Wang"
+   ],
+   "track": "main",
+   "source": "https://dasfaa2026.github.io/program/awards.html",
+   "evidence": "Best Paper Title DynamicPO: Dynamic Preference Optimization for Recommendation Authors Xingyu Hu, Kai Zhang, Jiancan Wu, Shuli Wang, Chi Wang, Wenshuai Chen, Yinhua Zhu, Haitao Wang, Xingxing Wang, Xiang Wang"
+  },
+  {
+   "venue": "DASFAA",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "Mitigating Generic Token Dominance in Cross-Domain Foundation Model for Text-Attributed Graphs",
+   "authors": [
+    "Heng Zheng",
+    "Haochen You",
+    "Zijian Zhang",
+    "Lubin Gan",
+    "Hao Zhang",
+    "Wenjun Huang",
+    "Jin Huang"
+   ],
+   "track": "main",
+   "source": "https://dasfaa2026.github.io/program/awards.html",
+   "evidence": "Best Paper Runner-Up Title Mitigating Generic Token Dominance in Cross-Domain Foundation Model for Text-Attributed Graphs Authors Heng Zheng, Haochen You, Zijian Zhang, Lubin Gan, Hao Zhang, Wenjun Huang, Jin Huang"
+  },
+  {
+   "venue": "DASFAA",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "10-Year Best Paper Award",
+   "title": "Deep Convolutional Neural Network Based Regression Approach for Estimation of Remaining Useful Life",
+   "authors": [
+    "G. Sateesh Babu",
+    "Peilin Zhao",
+    "Xiao-Li Li"
+   ],
+   "track": "main",
+   "source": "https://dasfaa2026.github.io/program/awards.html",
+   "evidence": "10-Year Best Paper Award Presented to G. Sateesh Babu, Peilin Zhao, and Xiao-Li Li Institute for Infocomm Research, A*STAR In recognition of the outstanding technical paper Deep Convolutional Neural Network Based Regression Approach for Estimation of Remaining Useful Life"
+  },
+  {
    "venue": "DATE",
    "year": 2005,
    "award": "best",
@@ -57248,6 +57756,122 @@
    "evidence": "ECIR 2025 Best Short Student Paper: Investigating the Scalability of Approximate Sparse Retrieval Algorithms to Massive Datasets — Sebastian Bruch, Franco Maria Nardini, Cosimo Rulli, Rossano Venturini, Leonardo Venuta"
   },
   {
+   "venue": "ECIR",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "LLM-based Listwise Reranking under the Effect of Positional Bias",
+   "authors": [
+    "Jingfen Qiao",
+    "Jin Huang",
+    "Xinyu Ma",
+    "Shuaiqiang Wang",
+    "Dawei Yin",
+    "Evangelos Kanoulas",
+    "Andrew Yates"
+   ],
+   "track": "main",
+   "source": "https://sigir.org/wp-content/uploads/2026/07/p08.pdf",
+   "alsoAt": [
+    "https://ecir2026.eu/programme/abstract-archive/abstract/public/21/llm-based-listwise-reranking-under-the-effect-of-positional-bias"
+   ],
+   "evidence": "Best full paper: LLM-based Listwise Reranking under the Effect of Positional Bias. Jingfen Qiao, Jin Huang, Xinyu Ma, Shuaiqiang Wang, Dawei Yin, Evangelos Kanoulas, and Andrew Yates."
+  },
+  {
+   "venue": "ECIR",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Short Paper Award",
+   "title": "ReFormeR: Learning and Applying Explicit Query Reformulation Patterns",
+   "authors": [
+    "Amin Bigdeli",
+    "Mert Incesu",
+    "Negar Arabzadeh",
+    "Charles L. A. Clarke",
+    "Ebrahim Bagheri"
+   ],
+   "track": "main",
+   "source": "https://sigir.org/wp-content/uploads/2026/07/p08.pdf",
+   "alsoAt": [
+    "https://ecir2026.eu/programme/abstract-archive/abstract/public/86/reformer-learning-and-applying-explicit-query-reformulation-patterns"
+   ],
+   "evidence": "Best short paper: ReFormeR: Learning and Applying Explicit Query Reformulation Patterns. Amin Bigdeli, Mert Incesu, Negar Arabzadeh, Charles L. A. Clarke, and Ebrahim Bagheri."
+  },
+  {
+   "venue": "ECIR",
+   "year": 2026,
+   "award": "category",
+   "awardLabel": "Best IR4Good Paper Award",
+   "title": "Measuring Political Stance and Consistency in Large Language Models",
+   "authors": [
+    "Salah Feras Alali",
+    "Mohammad Nashat Maasfeh",
+    "Mucahid Kutlu",
+    "Şaban Kardaş"
+   ],
+   "track": "main",
+   "source": "https://sigir.org/wp-content/uploads/2026/07/p08.pdf",
+   "alsoAt": [
+    "https://ecir2026.eu/programme/abstract-archive/abstract/public/155/measuring-political-stance-and-consistency-in-large-language-models"
+   ],
+   "evidence": "Best IR-for-Good paper: Measuring Political Stance and Consistency in Large Language Models. Salah Feras Alali, Mohammad Nashat Maasfeh, Mucahid Kutlu, and Şaban Kardaş."
+  },
+  {
+   "venue": "ECIR",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Best IR4Good Paper Honourable Mention",
+   "title": "Bias in Book Recommendation: A Case Study on the Danish Public Libraries",
+   "authors": [
+    "Savvina Daniil",
+    "Søren Højlund Mollerup",
+    "Laura Hollink"
+   ],
+   "track": "main",
+   "source": "https://sigir.org/wp-content/uploads/2026/07/p08.pdf",
+   "alsoAt": [
+    "https://ecir2026.eu/programme/abstract-archive/abstract/public/144/bias-in-book-recommendation-a-case-study-on-the-danish-public-libraries"
+   ],
+   "evidence": "IR-for-Good paper honourable mention: Bias in Book Recommendation: A Case Study on the Danish Public Libraries. Savvina Daniil, Søren Højlund Mollerup, and Laura Hollink."
+  },
+  {
+   "venue": "ECIR",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Best Short Paper Honourable Mention",
+   "title": "Query Performance Prediction using a Child-focused Definition of Relevance",
+   "authors": [
+    "Hrishita Chakrabarti",
+    "Maria Soledad Pera"
+   ],
+   "track": "main",
+   "source": "https://sigir.org/wp-content/uploads/2026/07/p08.pdf",
+   "alsoAt": [
+    "https://ecir2026.eu/programme/abstract-archive/abstract/public/85/query-performance-prediction-using-a-child-focused-definition-of-relevance"
+   ],
+   "evidence": "Short paper honourable mention: Query Performance Prediction using a Child-focused Definition of Relevance. Hrishita Chakrabarti and Maria Soledad Pera."
+  },
+  {
+   "venue": "ECIR",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honourable Mention",
+   "title": "When Reducing Representations Improves Performance",
+   "authors": [
+    "Andrea Pasin",
+    "Guglielmo Faggioli",
+    "Nicola Ferro",
+    "Raffaele Perego",
+    "Nicola Tonellotto"
+   ],
+   "track": "main",
+   "source": "https://sigir.org/wp-content/uploads/2026/07/p08.pdf",
+   "alsoAt": [
+    "https://ecir2026.eu/programme/abstract-archive/abstract/public/48/when-reducing-representations-improves-performance"
+   ],
+   "evidence": "Full paper honourable mention: When Reducing Representations Improves Performance. Andrea Pasin, Guglielmo Faggioli, Nicola Ferro, Raffaele Perego, and Nicola Tonellotto."
+  },
+  {
    "venue": "ECML PKDD",
    "year": 2020,
    "award": "best",
@@ -59938,6 +60562,73 @@
    "track": "main",
    "source": "https://2024.esweek.org/?p=613",
    "evidence": "EMSOFT 2024 Test-of-Time: Symbolic analysis for improving simulation coverage of Simulink/Stateflow models — Rajeev Alur, Aditya Kanade, S. Ramesh, K.C. Shashidhar"
+  },
+  {
+   "venue": "EMSOFT",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Cumulative-Time Signal Temporal Logic",
+   "authors": [
+    "Hongkai Chen",
+    "Zeyu Zhang",
+    "Shouvik Roy",
+    "Ezio Bartocci",
+    "Scott Smolka",
+    "Scott D. Stoller",
+    "Shan Lin"
+   ],
+   "track": "main",
+   "source": "https://2025.esweek.org/awards-2025/",
+   "evidence": "EMSOFT Best Paper Awards Cumulative-Time Signal Temporal Logic Hongkai Chen (The Chinese University of Hong Kong), Zeyu Zhang (Stony Brook University, USA), Shouvik Roy (Illinois Institute of Technology, USA), Ezio Bartocci (TU Vienna, Austria), Scott Smolka, Scott D. Stoller (Stony Brook University, USA), Shan Lin (Stony Brook University, USA)"
+  },
+  {
+   "venue": "EMSOFT",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "RT-Xen: Towards Real-Time Hypervisor Scheduling in Xen",
+   "authors": [
+    "Sisu Xi",
+    "Justin Wilson",
+    "Chenyang Lu",
+    "Christopher D. Gill"
+   ],
+   "track": "main",
+   "paperYear": 2011,
+   "source": "https://2025.esweek.org/awards-2025/",
+   "evidence": "EMSOFT RT-Xen: Towards Real-Time Hypervisor Scheduling in Xen (EMSOFT 2011) Sisu Xi, Justin Wilson, Chenyang Lu, and Christopher D. Gill"
+  },
+  {
+   "venue": "EMSOFT",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "The zeroLET Task Model and its Application to Offset Design Space Exploration",
+   "authors": [
+    "Shumo Wang",
+    "Enrico Bini",
+    "Qingxu Deng",
+    "Martina Maggio"
+   ],
+   "track": "main",
+   "source": "https://esweek.org/awards-2025/",
+   "evidence": "EMSOFT Best Paper Awards The zeroLET Task Model and its Application to Offset Design Space Exploration Shumo Wang (Northeastern University), Enrico Bini (University of Turin), Qingxu Deng (Northeastern University), Martina Maggio (Saarland University)"
+  },
+  {
+   "venue": "EMSOFT",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Computing Semi-Algebraic Invariants for Polynomial Dynamical Systems",
+   "authors": [
+    "Jiang Liu",
+    "Naijun Zhan",
+    "Hengjun Zhao"
+   ],
+   "track": "main",
+   "source": "https://esweek.org/awards-2025/",
+   "evidence": "EMSOFT Computing Semi-Algebraic Invariants for Polynomial Dynamical Systems Jiang Liu, Naijun Zhan, Hengjun Zhao"
   },
   {
    "venue": "ESA",
@@ -68154,38 +68845,6 @@
    "venue": "GLOBECOM",
    "year": 2023,
    "award": "best",
-   "awardLabel": "Best Paper Award (WORKSHOP: UNCONVENTIONAL IOT APPLICATIONS)",
-   "title": "MetaCIDS: Metaverse Collaborative Intrusion Detection based on Blockchain and Federated Learning",
-   "authors": [
-    "Vu Tuan Truong",
-    "Vu Thai Nguyen",
-    "Long Bao Le"
-   ],
-   "track": "main",
-   "source": "https://globecom2023.ieee-globecom.org/program/best-paper-awards",
-   "evidence": "GLOBECOM 2023 Best Paper Award, WORKSHOP: UNCONVENTIONAL IOT APPLICATIONS: MetaCIDS: Metaverse Collaborative Intrusion Detection based on Blockchain and Federated Learning — Vu Tuan Truong, Vu Thai Nguyen, Long Bao Le"
-  },
-  {
-   "venue": "GLOBECOM",
-   "year": 2023,
-   "award": "best",
-   "awardLabel": "Best Paper Award (WORKSHOP: SEMANTIC COMMUNICATION FOR 6G)",
-   "title": "Neural Estimation for Rate-Distortion Function in Semantic Communications",
-   "authors": [
-    "Dongxu Li",
-    "Jianhao Huang",
-    "Chuan Huang",
-    "Xiaoqi Qin",
-    "Han Zhang"
-   ],
-   "track": "main",
-   "source": "https://globecom2023.ieee-globecom.org/program/best-paper-awards",
-   "evidence": "GLOBECOM 2023 Best Paper Award, WORKSHOP: SEMANTIC COMMUNICATION FOR 6G: Neural Estimation for Rate-Distortion Function in Semantic Communications — Dongxu Li, Jianhao Huang, Chuan Huang, Xiaoqi Qin, Han Zhang"
-  },
-  {
-   "venue": "GLOBECOM",
-   "year": 2023,
-   "award": "best",
    "awardLabel": "Best Paper Award (SAC: SOCIAL NETWORKS)",
    "title": "Opti-Safe: Optimal Supply and Demand For Providing Safety Services in SIoV Environment",
    "authors": [
@@ -69234,6 +69893,443 @@
    "track": "main",
    "source": "https://humanrobotinteraction.org/2025/awards/",
    "evidence": "HRI 2025 Best Paper Award (Demonstrations): What Would Jim Henson Do? Roleplaying Human-Robot Collaborations Through Puppeteering — James L. Dwyer, Stine S. Johansen, Jared Donovan, Markus Rittenbruch, Rafael Gomez"
+  },
+  {
+   "venue": "HRI",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Can VR Robots Stand in for the Real Thing? Comparing a Physical Cobot and Its Virtual Twin for User Perceptions, Experimental Effects, and Study Costs",
+   "authors": [
+    "Martina Mara",
+    "Andreas Winklbauer",
+    "Sandra Maria Siedl",
+    "Benedikt Leichtmann"
+   ],
+   "track": "main",
+   "source": "https://humanrobotinteraction.org/2026/award-nominees/",
+   "evidence": "Theory Track … Best Paper … Can VR Robots Stand in for the Real Thing? Comparing a Physical Cobot and Its Virtual Twin for User Perceptions, Experimental Effects, and Study Costs Martina Mara, Andreas Winklbauer, Sandra Maria Siedl, and Benedikt Leichtmann"
+  },
+  {
+   "venue": "HRI",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Context-Aware Generation and Modulation of Expressive Motion Behavior using Multimodal Foundation Models",
+   "authors": [
+    "Till Hielscher",
+    "Fabio Scaparro",
+    "Kai O. Arras"
+   ],
+   "track": "main",
+   "source": "https://humanrobotinteraction.org/2026/award-nominees/",
+   "evidence": "Technical Track … Best Paper … Context-Aware Generation and Modulation of Expressive Motion Behavior using Multimodal Foundation Models Till Hielscher, Fabio Scaparro, and Kai O. Arras"
+  },
+  {
+   "venue": "HRI",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Expensive, Limited, and Still Here: The Paradox of Weak Robots in Family Homes",
+   "authors": [
+    "Zhao Zhao"
+   ],
+   "track": "main",
+   "source": "https://humanrobotinteraction.org/2026/award-nominees/",
+   "evidence": "User Studies Track … Best Papers … Expensive, Limited, and Still Here: The Paradox of Weak Robots in Family Homes Zhao Zhao"
+  },
+  {
+   "venue": "HRI",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Fictional vs. Factual Robot Tutor Dialogue Can Shape Child Social-Emotional Learning",
+   "authors": [
+    "Lauren L. Wright",
+    "Kaitlyn Li",
+    "Hewitt Watkins",
+    "Kiljoong Kim",
+    "Sarah Sebo"
+   ],
+   "track": "main",
+   "source": "https://humanrobotinteraction.org/2026/award-nominees/",
+   "evidence": "User Studies Track … Best Papers … Fictional vs. Factual Robot Tutor Dialogue Can Shape Child Social-Emotional Learning Lauren L. Wright, Kaitlyn Li, Hewitt Watkins, Kiljoong Kim, Sarah Sebo"
+  },
+  {
+   "venue": "HRI",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Long-Term Integration of a Robot in an Inclusive Daycare: An Ethnographic Study Focused on Children and Caregivers",
+   "authors": [
+    "Jan Ole Rixen",
+    "Kathrin Gerling",
+    "Barbara Bruno"
+   ],
+   "track": "main",
+   "source": "https://humanrobotinteraction.org/2026/award-nominees/",
+   "evidence": "User Studies Track … Best Papers … Long-Term Integration of a Robot in an Inclusive Daycare: An Ethnographic Study Focused on Children and Caregivers Jan Ole Rixen, Kathrin Gerling, Barbara Bruno"
+  },
+  {
+   "venue": "HRI",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Quest2ROS2: A ROS 2 Framework for Bi-manual VR Teleoperation",
+   "authors": [
+    "Jialong Li",
+    "Zhenguo Wang",
+    "Tianci Wang",
+    "Maj Stenmark",
+    "Volker Krueger"
+   ],
+   "track": "main",
+   "source": "https://humanrobotinteraction.org/2026/award-nominees/",
+   "evidence": "Short Contributions … Best Short Contribution … Quest2ROS2: A ROS 2 Framework for Bi-manual VR Teleoperation Jialong Li, Zhenguo Wang, Tianci Wang, Maj Stenmark and Volker Krueger"
+  },
+  {
+   "venue": "HRI",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Robot-Mediated Mutual Gaze: How a Mobile Robot with Actuated Mirrors Facilitates Encounters between Strangers",
+   "authors": [
+    "Serena Ge Guo",
+    "Jenny J. Yu",
+    "Wenqian Niu",
+    "Yifei Gao",
+    "Guy Hoffman",
+    "Gilly Leshed",
+    "Keith Evan Green"
+   ],
+   "track": "main",
+   "source": "https://humanrobotinteraction.org/2026/award-nominees/",
+   "evidence": "Design Track … Best Paper … Robot-Mediated Mutual Gaze: How a Mobile Robot with Actuated Mirrors Facilitates Encounters between Strangers Serena Ge Guo, Jenny J. Yu, Wenqian Niu, Yifei Gao, Guy Hoffman, Gilly Leshed, and Keith Evan Green"
+  },
+  {
+   "venue": "HRI",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "WAFFLE: A Wearable Approach to Bite Timing Estimation in Robot-Assisted Feeding",
+   "authors": [
+    "Akhil Padmanabha",
+    "Jessie Yuan",
+    "Tanisha S. Mehta",
+    "Rajat Kumar Jenamani",
+    "Eric Hu",
+    "Victoria de León",
+    "Anthony Wertz",
+    "Janavi Gupta",
+    "Ben Dodson",
+    "Yunting Yan",
+    "Carmel Majidi",
+    "Tapomayukh Bhattacharjee",
+    "Zackory Erickson"
+   ],
+   "track": "main",
+   "source": "https://humanrobotinteraction.org/2026/award-nominees/",
+   "evidence": "Systems Track … Best Paper … WAFFLE: A Wearable Approach to Bite Timing Estimation in Robot-Assisted Feeding Akhil Padmanabha, Jessie Yuan, Tanisha S. Mehta, Rajat Kumar Jenamani, Eric Hu, Victoria de León, Anthony Wertz, Janavi Gupta, Ben Dodson, Yunting Yan, Carmel Majidi, Tapomayukh Bhattacharjee, and Zackory Erickson"
+  },
+  {
+   "venue": "HRI",
+   "year": 2026,
+   "award": "category",
+   "awardLabel": "Best Paper Award (Demonstrations)",
+   "title": "A Replicable, Autonomous System for In-the-Wild Mental Health Applications with the Ommie Robot",
+   "authors": [
+    "Kayla Matheus",
+    "Debasmita Ghose",
+    "Jirachaya (Fern) Limprayoon",
+    "Michal A. Lewkowicz",
+    "Brian Scassellati"
+   ],
+   "track": "main",
+   "source": "https://humanrobotinteraction.org/2026/award-nominees/",
+   "evidence": "Interactivity … Best Demo … A Replicable, Autonomous System for In-the-Wild Mental Health Applications with the Ommie Robot Kayla Matheus, Debasmita Ghose, Jirachaya (Fern) Limprayoon, Michal A. Lewkowicz and Brian Scassellati"
+  },
+  {
+   "venue": "HRI",
+   "year": 2026,
+   "award": "category",
+   "awardLabel": "Best Paper Award (Late Breaking Reports)",
+   "title": "Beyond Justification: Command Rejections That Include Constructive Elaborations May Improve Evaluations of Trustworthiness",
+   "authors": [
+    "Gordon Briggs",
+    "Christina Wasylyshyn"
+   ],
+   "track": "main",
+   "source": "https://humanrobotinteraction.org/2026/award-nominees/",
+   "evidence": "Late-Breaking Reports … Best Late Breaking Report … Beyond Justification: Command Rejections That Include Constructive Elaborations May Improve Evaluations of Trustworthiness Gordon Briggs and Christina Wasylyshyn"
+  },
+  {
+   "venue": "HRI",
+   "year": 2026,
+   "award": "category",
+   "awardLabel": "Best Paper Award (alt.HRI)",
+   "title": "We Cannot Outsource What We Value Most: Toward Deployable Research Products in HRI",
+   "authors": [
+    "Kayla Matheus",
+    "Brian Scassellati"
+   ],
+   "track": "main",
+   "source": "https://humanrobotinteraction.org/2026/award-nominees/",
+   "evidence": "Alt.HRI … Best Paper and Presentation Award … We Cannot Outsource What We Value Most: Toward Deployable Research Products in HRI Kayla Matheus, Brian Scassellati"
+  },
+  {
+   "venue": "HRI",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Anticipating Disengagement: Physiology-Informed Adaptation for Child–Robot Reading Companions",
+   "authors": [
+    "Zhao Zhao"
+   ],
+   "track": "main",
+   "source": "https://humanrobotinteraction.org/2026/award-nominees/",
+   "evidence": "User Studies Track … Honourable Mentions … Anticipating Disengagement: Physiology-Informed Adaptation for Child–Robot Reading Companions Zhao Zhao"
+  },
+  {
+   "venue": "HRI",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Bidirectional Human-Robot Communication for Physical Human-Robot Interaction",
+   "authors": [
+    "Junxiang Wang",
+    "Cindy Wang",
+    "Rana Soltani Zarrin",
+    "Zackory Erickson"
+   ],
+   "track": "main",
+   "source": "https://humanrobotinteraction.org/2026/award-nominees/",
+   "evidence": "Systems Track … Honourable Mentions … Bidirectional Human-Robot Communication for Physical Human-Robot Interaction Junxiang Wang, Cindy Wang, Rana Soltani Zarrin, and Zackory Erickson"
+  },
+  {
+   "venue": "HRI",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Cognitive Trust in HRI: “Pay Attention to Me and I’ll Trust You Even If You Are Wrong”",
+   "authors": [
+    "Adi Manor",
+    "Dan Cohen",
+    "Ziv Keidar",
+    "Avi Parush",
+    "Hadas Erel"
+   ],
+   "track": "main",
+   "source": "https://humanrobotinteraction.org/2026/award-nominees/",
+   "evidence": "User Studies Track … Honourable Mentions … Cognitive Trust in HRI: “Pay Attention to Me and I’ll Trust You Even If You Are Wrong” Adi Manor, Dan Cohen, Ziv Keidar, Avi Parush, and Hadas Erel"
+  },
+  {
+   "venue": "HRI",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Designing Care-fully: Robots for Acute Cancer Care",
+   "authors": [
+    "Sandhya Jayaraman",
+    "Pratyusha Ghosh",
+    "Soyon Kim",
+    "Soham Satyadharma",
+    "Angelique Taylor",
+    "Christopher Coyne",
+    "Laurel D. Riek"
+   ],
+   "track": "main",
+   "source": "https://humanrobotinteraction.org/2026/award-nominees/",
+   "evidence": "Design Track … Honourable Mentions … Designing Care-fully: Robots for Acute Cancer Care Sandhya Jayaraman, Pratyusha Ghosh, Soyon Kim, Soham Satyadharma, Angelique Taylor, Christopher Coyne, and Laurel D. Riek"
+  },
+  {
+   "venue": "HRI",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "From Metrics to Meaning: Insights from a Mixed-Methods Field Experiment on Retail Robot Deployment",
+   "authors": [
+    "Sichao Song",
+    "Yuki Okafuji",
+    "Takuya Iwamoto",
+    "Jun Baba",
+    "Hiroshi Ishiguro"
+   ],
+   "track": "main",
+   "source": "https://humanrobotinteraction.org/2026/award-nominees/",
+   "evidence": "User Studies Track … Honourable Mentions … From Metrics to Meaning: Insights from a Mixed-Methods Field Experiment on Retail Robot Deployment Sichao Song, Yuki Okafuji, Takuya Iwamoto, Jun Baba, and Hiroshi Ishiguro"
+  },
+  {
+   "venue": "HRI",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Generative Encounters with Robin: Design through Adaptation and Appropriation of a Social Robot in Four Eldercare Facilities",
+   "authors": [
+    "Nan Hu",
+    "Selma Šabanović"
+   ],
+   "track": "main",
+   "source": "https://humanrobotinteraction.org/2026/award-nominees/",
+   "evidence": "User Studies Track … Honourable Mentions … Generative Encounters with Robin: Design through Adaptation and Appropriation of a Social Robot in Four Eldercare Facilities Nan Hu and Selma Šabanović"
+  },
+  {
+   "venue": "HRI",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "GuideNav: User-Informed Development of a Vision-Only Robotic Navigation Assistant for Blind Travelers",
+   "authors": [
+    "Hochul Hwang",
+    "Soowan Yang",
+    "Jahir Sadik Monon",
+    "Nicholas A. Giudice",
+    "Sunghoon Ivan Lee",
+    "Joydeep Biswas",
+    "Donghyun Kim"
+   ],
+   "track": "main",
+   "source": "https://humanrobotinteraction.org/2026/award-nominees/",
+   "evidence": "Systems Track … Honourable Mentions … GuideNav: User-Informed Development of a Vision-Only Robotic Navigation Assistant for Blind Travelers Hochul Hwang, Soowan Yang, Jahir Sadik Monon, Nicholas A. Giudice, Sunghoon Ivan Lee, Joydeep Biswas, and Donghyun Kim"
+  },
+  {
+   "venue": "HRI",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "If It’s Safe, Don’t Ask: Decreasing Frustration through User Involvement for Risky Robot Behaviors",
+   "authors": [
+    "Jan Leusmann",
+    "Sarah Schömbs",
+    "Maximilian Diedrich",
+    "Florian Müller"
+   ],
+   "track": "main",
+   "source": "https://humanrobotinteraction.org/2026/award-nominees/",
+   "evidence": "User Studies Track … Honourable Mentions … If It’s Safe, Don’t Ask: Decreasing Frustration through User Involvement for Risky Robot Behaviors Jan Leusmann, Sarah Schömbs, Maximilian Diedrich, and Florian Müller"
+  },
+  {
+   "venue": "HRI",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Plant-Inspired Robot Design Metaphors for Ambient HRI",
+   "authors": [
+    "Victor Nikhil Antony",
+    "Adithya R N",
+    "Sarah Derrick",
+    "Zhili Gong",
+    "Peter M. Donley",
+    "Chien-Ming Huang"
+   ],
+   "track": "main",
+   "source": "https://humanrobotinteraction.org/2026/award-nominees/",
+   "evidence": "Design Track … Honourable Mentions … Plant-Inspired Robot Design Metaphors for Ambient HRI Victor Nikhil Antony, Adithya R N, Sarah Derrick, Zhili Gong, Peter M. Donley, and Chien-Ming Huang"
+  },
+  {
+   "venue": "HRI",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Pluriversal Approach to Co-designing Delivery Robots with People with Disabilities",
+   "authors": [
+    "Abena Boadi-Agyemang",
+    "Sanika Moharana",
+    "Cynthia L. Bennett",
+    "Elizabeth J. Carter",
+    "Patrick Carrington",
+    "Aaron Steinfeld"
+   ],
+   "track": "main",
+   "source": "https://humanrobotinteraction.org/2026/award-nominees/",
+   "evidence": "Design Track … Honourable Mentions … Pluriversal Approach to Co-designing Delivery Robots with People with Disabilities Abena Boadi-Agyemang, Sanika Moharana, Cynthia L. Bennett, Elizabeth J. Carter, Patrick Carrington, and Aaron Steinfeld"
+  },
+  {
+   "venue": "HRI",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "RoboCritics: Enabling Reliable End-to-End LLM Robot Programming through Expert-Informed Critics",
+   "authors": [
+    "Callie Y. Kim",
+    "Nathan Thomas White",
+    "Evan He",
+    "Frederic Sala",
+    "Bilge Mutlu"
+   ],
+   "track": "main",
+   "source": "https://humanrobotinteraction.org/2026/award-nominees/",
+   "evidence": "Technical Track … Honourable Mention … RoboCritics: Enabling Reliable End-to-End LLM Robot Programming through Expert-Informed Critics Callie Y. Kim, Nathan Thomas White, Evan He, Frederic Sala, and Bilge Mutlu"
+  },
+  {
+   "venue": "HRI",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "The RUSH Checklist: A Standardized Framework for Reporting User Studies in Human-Robot Interaction",
+   "authors": [
+    "Shruti Chandra",
+    "Katie Seaborn",
+    "Giulia Barbareschi",
+    "Wing-Yue Geoffrey Louie",
+    "Shelly Bagchi",
+    "Sara Cooper",
+    "Zhao Han",
+    "Daniel Tozadore"
+   ],
+   "track": "main",
+   "source": "https://humanrobotinteraction.org/2026/award-nominees/",
+   "evidence": "Theory Track … Honourable Mention … The RUSH Checklist: A Standardized Framework for Reporting User Studies in Human-Robot Interaction Shruti Chandra, Katie Seaborn, Giulia Barbareschi, Wing-Yue Geoffrey Louie, Shelly Bagchi, Sara Cooper, Zhao Han, and Daniel Tozadore"
+  },
+  {
+   "venue": "HRI",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "What Is a Robot? Understanding Baseball’s “Robot Umpire” through the Lens of Fluid Technology",
+   "authors": [
+    "Waki Kamino",
+    "Andrea W. Wen-Yi",
+    "Guy Hoffman",
+    "Selma Šabanović",
+    "Malte F. Jung"
+   ],
+   "track": "main",
+   "source": "https://humanrobotinteraction.org/2026/award-nominees/",
+   "evidence": "User Studies Track … Honourable Mentions … What Is a Robot? Understanding Baseball’s “Robot Umpire” through the Lens of Fluid Technology Waki Kamino, Andrea W. Wen-Yi, Guy Hoffman, Selma Šabanović, and Malte F. Jung"
+  },
+  {
+   "venue": "HRI",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Common metrics for human-robot interaction",
+   "authors": [
+    "Aaron Steinfeld",
+    "Terrence Fong",
+    "David Kaber",
+    "Michael Lewis",
+    "Jean Scholtz",
+    "Alan Schultz",
+    "Michael Goodrich"
+   ],
+   "track": "main",
+   "source": "https://humanrobotinteraction.org/2026/award-nominees/",
+   "evidence": "Test of Time Awards … Common metrics for human-robot interaction Aaron Steinfeld, Terrence Fong, David Kaber, Michael Lewis, Jean Scholtz, Alan Schultz, Michael Goodrich"
+  },
+  {
+   "venue": "HRI",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Legibility and predictability of robot motion",
+   "authors": [
+    "Anca Dragan",
+    "Kenton Lee",
+    "Siddhartha Srinivasa"
+   ],
+   "track": "main",
+   "source": "https://humanrobotinteraction.org/2026/award-nominees/",
+   "evidence": "Test of Time Awards … Legibility and predictability of robot motion Anca Dragan, Kenton Lee, Siddhartha Srinivasa"
   },
   {
    "venue": "HSCC",
@@ -72348,6 +73444,127 @@
    "evidence": "ICASSP 2024 Best Student Paper Award: STAR: Distilling Speech Temporal Relation for Lightweight Speech Self-Supervised Learning Models — Kangwook Jang, Sungnyun Kim, Hoirin Kim"
   },
   {
+   "venue": "ICASSP",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Bayesian Filtering on Graphs",
+   "authors": [
+    "Bishwadeep Das",
+    "Madeline Navarro",
+    "Santiago Segarra",
+    "Elvin Isufi"
+   ],
+   "track": "main",
+   "source": "https://2025.ieeeicassp.org/paper-awards/",
+   "evidence": "Best Paper Award: 6949: Bayesian Filtering on Graphs Bishwadeep Das (TU Delft); Madeline Navarro (Rice University); Santiago Segarra (Rice University); Elvin Isufi (Tu Delft); ICASSP 2025 Main Tracks Signal Processing Theory and Methods"
+  },
+  {
+   "venue": "ICASSP",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Industry Paper Award",
+   "title": "Efficient Streaming LLM for Speech Recognition",
+   "authors": [
+    "Junteng Jia",
+    "Gil Keren",
+    "Wei Zhou",
+    "Egor Lakomkin",
+    "Xiaohui Zhang",
+    "Chunyang Wu",
+    "Frank Seide",
+    "Jay Mahadeokar",
+    "Ozlem Kalinli"
+   ],
+   "track": "main",
+   "source": "https://2025.ieeeicassp.org/paper-awards/",
+   "evidence": "Best Industry Paper Award: 1666: Efficient Streaming LLM for Speech Recognition Junteng Jia (Meta AI); Gil Keren (Meta); Wei Zhou (Meta); Egor Lakomkin (Meta); Xiaohui Zhang (Meta AI); Chunyang Wu (Meta AI); Frank Seide (Meta Platforms, Inc.); Jay Mahadeokar (Meta AI); Ozlem Kalinli (Meta AI); ICASSP 2025 Main Track Speech and Language Processing"
+  },
+  {
+   "venue": "ICASSP",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Label-constrained Unsupervised Domain Adaptation for Semantic Segmentation with Diffusion Models",
+   "authors": [
+    "Alexandre Stenger",
+    "Etienne Baudrier",
+    "Benoit Naegel",
+    "Nicolas Passat"
+   ],
+   "track": "main",
+   "source": "https://2025.ieeeicassp.org/paper-awards/",
+   "evidence": "2700: Label-constrained Unsupervised Domain Adaptation for Semantic Segmentation with Diffusion Models Alexandre Stenger (Laboratoire ICube – CNRS – Unistra); Etienne Baudrier (University of Strasbourg); Benoit Naegel (ICube, CNRS, University of Strasbourg); Nicolas Passat (Université Reims Champagne-Ardenne) ICASSP 2025 Main Tracks Biomedical Signal and Image Processing"
+  },
+  {
+   "venue": "ICASSP",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Let There Be Light: Robust Lensless Imaging Under External Illumination With Deep Learning",
+   "authors": [
+    "Eric Bezzam",
+    "Stefan Peters",
+    "Martin Vetterli"
+   ],
+   "track": "main",
+   "source": "https://2025.ieeeicassp.org/paper-awards/",
+   "evidence": "4010: Let There Be Light: Robust Lensless Imaging Under External Illumination With Deep Learning Eric Bezzam (EPFL); Stefan Peters (EPFL); Martin Vetterli (EPFL) ICASSP 2025 Main Tracks Computational Imaging"
+  },
+  {
+   "venue": "ICASSP",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Network Games Induced Prior for Graph Topology Learning",
+   "authors": [
+    "Chenyue Zhang",
+    "Shangyuan LIU",
+    "Hoi-To Wai",
+    "Anthony Man-Cho So"
+   ],
+   "track": "main",
+   "source": "https://2025.ieeeicassp.org/paper-awards/",
+   "evidence": "Best Student Paper Awards: 3016: Network Games Induced Prior for Graph Topology Learning Chenyue Zhang (The Chinese University of Hong Kong); Shangyuan LIU (The Chinese University of Hong Kong); Hoi-To Wai (Chinese University of Hong Kong)*; Anthony Man-Cho So (The Chinese University of Hong Kong); ICASSP 2025 Main Tracks Signal Processing Theory and Methods"
+  },
+  {
+   "venue": "ICASSP",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "SwapTalk: Audio-Driven Talking Face Generation with One-Shot Customization in Latent Space",
+   "authors": [
+    "Zeren Zhang",
+    "Haibo Qin",
+    "Jiayu Huang",
+    "Jo-Ku Cheng",
+    "Yixin Li",
+    "Hui Lin",
+    "Yitao Duan",
+    "Jinwen Ma"
+   ],
+   "track": "main",
+   "source": "https://2025.ieeeicassp.org/paper-awards/",
+   "evidence": "1354: SwapTalk: Audio-Driven Talking Face Generation with One-Shot Customization in Latent Space Zeren Zhang (Peking University); Haibo Qin (Youdao AI); Jiayu Huang (Youdao AI); Jo-Ku Cheng (Peking University); Yixin Li (Youdao AI); Hui Lin (Youdao AI); Yitao Duan (Youdao AI); Jinwen Ma (Peking University) ICASSP 2025 Main Tracks Multimedia Signal Processing"
+  },
+  {
+   "venue": "ICASSP",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Universal Training of Neural Networks to Achieve Bayes Optimal Classification Accuracy",
+   "authors": [
+    "Mohammadreza Tavasoli Naeini",
+    "Ali Bereyhi",
+    "Morteza Noshad Iranzad",
+    "Ben Liang",
+    "Alfred Hero"
+   ],
+   "track": "main",
+   "source": "https://2025.ieeeicassp.org/paper-awards/",
+   "evidence": "6995: Universal Training of Neural Networks to Achieve Bayes Optimal Classification Accuracy Mohammadreza Tavasoli Naeini (University of Michigan); Ali Bereyhi (University of Toronto); Morteza Noshad Iranzad (University of Michigan); Ben Liang (University of Toronto); Alfred Hero (University of Michigan) ICASSP 2025 Main Tracks Machine Learning in Signal Processing"
+  },
+  {
    "venue": "ICC",
    "year": 2019,
    "award": "best",
@@ -72878,6 +74095,22 @@
    "venue": "ICC",
    "year": 2022,
    "award": "best",
+   "awardLabel": "Best Paper Award (SELECTED AREAS IN COMMUNICATIONS)",
+   "title": "Efficient Error-correcting Output Codes for Adversarial Learning Robustness",
+   "authors": [
+    "Li Wan",
+    "Tansu Alpcan",
+    "Emanuele Viterbo",
+    "Margreta Kuijper"
+   ],
+   "track": "main",
+   "source": "https://icc2022.ieee-icc.org/program/best-paper-awards",
+   "evidence": "SELECTED AREAS IN COMMUNICATIONS “Cooperative Reinforcement Learning Aided Dynamic Routing in UAV Swarm Networks,” by Zunliang Wang, Haipeng Yao, Tianle Mai, Zehui Xiong, and F. Richard Yu “Efficient Error-correcting Output Codes for Adversarial Learning Robustness,” by Li Wan, Tansu Alpcan, Emanuele Viterbo, and Margreta Kuijper"
+  },
+  {
+   "venue": "ICC",
+   "year": 2022,
+   "award": "best",
    "awardLabel": "Best Paper Award (COMMUNICATION QOS, RELIABILITY & MODELING)",
    "title": "Enhanced C-V2X Uplink Resource Allocation Using Vehicle Maneuver Prediction",
    "authors": [
@@ -72980,7 +74213,7 @@
    "venue": "ICC",
    "year": 2022,
    "award": "best",
-   "awardLabel": "Best Paper Award (“Efficient Error-correcting Output Codes for Adversarial Learning Robustness,” by Li Wan, Tansu Alpcan, Emanuele Viterbo, and Margreta Kuijper)",
+   "awardLabel": "Best Paper Award (SELECTED AREAS IN COMMUNICATIONS)",
    "title": "ProductAE: Toward Training Larger Channel Codes Based on Neural Product Codes",
    "authors": [
     "Mohammad Vahid Jamali",
@@ -72990,7 +74223,7 @@
    ],
    "track": "main",
    "source": "https://icc2022.ieee-icc.org/program/best-paper-awards",
-   "evidence": "ICC 2022 Best Paper Award, “Efficient Error-correcting Output Codes for Adversarial Learning Robustness,” by Li Wan, Tansu Alpcan, Emanuele Viterbo, and Margreta Kuijper: ProductAE: Toward Training Larger Channel Codes Based on Neural Product Codes — Mohammad Vahid Jamali, Hamid Saber, Homayoon Hatami, Jung Hyun Bae"
+   "evidence": "SELECTED AREAS IN COMMUNICATIONS “Cooperative Reinforcement Learning Aided Dynamic Routing in UAV Swarm Networks,” by Zunliang Wang, Haipeng Yao, Tianle Mai, Zehui Xiong, and F. Richard Yu “Efficient Error-correcting Output Codes for Adversarial Learning Robustness,” by Li Wan, Tansu Alpcan, Emanuele Viterbo, and Margreta Kuijper “ProductAE: Toward Training Larger Channel Codes Based on Neural Product Codes,” by Mohammad Vahid Jamali, Hamid Saber, Homayoon Hatami, and Jung Hyun Bae"
   },
   {
    "venue": "ICC",
@@ -73042,6 +74275,22 @@
    "track": "main",
    "source": "https://icc2022.ieee-icc.org/program/best-paper-awards",
    "evidence": "ICC 2022 Best Paper Award, COMMUNICATION & INFORMATION SYSTEMS SECURITY SYMPOSIUM: Towards Accurate DGA Detection based on Siamese Network with Insufficient Training Samples — Xiaoyan Hu, Miao Li, Guang Cheng, Ruidong Li, Hua Wu, Jian Gong"
+  },
+  {
+   "venue": "ICC",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award (WIRELESS COMMUNICATIONS)",
+   "title": "Unified Characterization and Precoding for Non-Stationary Channels",
+   "authors": [
+    "Zhibin Zou",
+    "Maqsood Abdul Careem",
+    "Aveek Dutta",
+    "Ngwe Thawdar"
+   ],
+   "track": "main",
+   "source": "https://icc2022.ieee-icc.org/program/best-paper-awards",
+   "evidence": "WIRELESS COMMUNICATIONS SYMPOSIUM “Channel Customization for RISs-assisted mmWave MIMO Communication Systems,” by Weicong Chen, Chao-Kai Wen, Xiao Li, and Shi Jin “Unified Characterization and Precoding for Non-Stationary Channels,” by Zhibin Zou, Maqsood Abdul Careem, Aveek Dutta, and Ngwe Thawdar"
   },
   {
    "venue": "ICC",
@@ -73742,6 +74991,293 @@
    "track": "main",
    "source": "https://icc2025.ieee-icc.org/program/best-paper-awards",
    "evidence": "ICC 2025 Best Paper Award, Communication and Information Systems Security: User Behavior-Based Dynamic Authentication Design for Enhanced Identity Security — Ye Zhang, Feng Wang, Jianbin Zeng, Lutong Chen, Xuanbo Huang, Zhonghui Li, Kaiping Xue"
+  },
+  {
+   "venue": "ICC",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award (SAC - Molecular, Biological, and Multi-scale Communications)",
+   "title": "Concentration Field Sensing-Based Long-Range Underwater Target Detection and Search",
+   "authors": [
+    "Mingyue Cheng",
+    "Jiarui Chen",
+    "Miaowen Wen",
+    "Fei Ji",
+    "Chan-Byoung Chae",
+    "Tony Q. S. Quek"
+   ],
+   "track": "main",
+   "source": "https://icc2026.ieee-icc.org/programme/best-paper-awards",
+   "evidence": "Symposium on AC - Molecular, Biological, and Multi-scale Communications Concentration Field Sensing-Based Long-Range Underwater Target Detection and Search Mingyue Cheng and Jiarui Chen (South China Agricultural University, China); Miaowen Wen and Fei Ji (South China University of Technology, China); Chan-Byoung Chae (Yonsei University, Korea (South)); Tony Q. S. Quek (Singapore University of Technology and Design, Singapore)"
+  },
+  {
+   "venue": "ICC",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award (IoT and Sensor Networks)",
+   "title": "Epistemology-Inspired Bayesian Games for Distributed IoT Uplink Power Control",
+   "authors": [
+    "Nirmal Danushka Wickramasinghe",
+    "John Dooley",
+    "Dirk Pesch",
+    "Indrakshi Dey"
+   ],
+   "track": "main",
+   "source": "https://icc2026.ieee-icc.org/programme/best-paper-awards",
+   "evidence": "Symposium on IoT and Sensor Networks Epistemology-Inspired Bayesian Games for Distributed IoT Uplink Power Control Nirmal Danushka Wickramasinghe (Maynooth University, Ireland); John Dooley (National University of Ireland Maynooth, Ireland); Dirk Pesch (University College Cork, Ireland); Indrakshi Dey (South East Technological University, Waterford, Ireland)"
+  },
+  {
+   "venue": "ICC",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Cognitive Radio and AI-Enabled Networks)",
+   "title": "iRadioDiff: Physics-Informed Diffusion Model for Indoor Radio Map Construction and Localization",
+   "authors": [
+    "Xiucheng Wang",
+    "Tingwei Yuan",
+    "Yang Cao",
+    "Nan Cheng",
+    "Ruijin Sun",
+    "Weihua Zhuang"
+   ],
+   "track": "main",
+   "source": "https://icc2026.ieee-icc.org/programme/best-paper-awards",
+   "evidence": "Symposium on Cognitive Radio and AI-Enabled Networks iRadioDiff: Physics-Informed Diffusion Model for Indoor Radio Map Construction and Localization Xiucheng Wang and Tingwei Yuan (Xidian University, China); Yang Cao (Southwest Jiaotong University, China); Nan Cheng and Ruijin Sun (Xidian University, China); Weihua Zhuang (University of Waterloo, Canada)"
+  },
+  {
+   "venue": "ICC",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Wireless Communications)",
+   "title": "Learning Multi-Access Point Coordination in Agentic AI Wi-Fi with Large Language Models",
+   "authors": [
+    "Yifan Fan",
+    "Le Liang",
+    "Peng Liu",
+    "Xiao Li",
+    "Ziyang Guo",
+    "Qiao Lan",
+    "Shi Jin",
+    "Wen Tong"
+   ],
+   "track": "main",
+   "source": "https://icc2026.ieee-icc.org/programme/best-paper-awards",
+   "evidence": "Symposium on Wireless Communications Learning Multi-Access Point Coordination in Agentic AI Wi-Fi with Large Language Models Yifan Fan and Le Liang (Southeast University, China); Peng Liu (Huawei Technologies Co., Ltd., China); Xiao Li (Southeast University, China); Ziyang Guo and Qiao Lan (Huawei Technologies Co., Ltd., China); Shi Jin (Southeast University, China); Wen Tong (Huawei Technologies Canada Co., Ltd., Canada)"
+  },
+  {
+   "venue": "ICC",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Communication QoS, Reliability and Modeling)",
+   "title": "Lightweight Radio Resource Swapping for Max-Min Fair Allocation in URLLC Systems",
+   "authors": [
+    "Qiaohan Zhang",
+    "Philipp Schulz",
+    "Gerhard P. Fettweis"
+   ],
+   "track": "main",
+   "source": "https://icc2026.ieee-icc.org/programme/best-paper-awards",
+   "evidence": "Symposium on Communication QoS, Reliability and Modeling Lightweight Radio Resource Swapping for Max-Min Fair Allocation in URLLC Systems Qiaohan Zhang (TU Dresden, Germany); Philipp Schulz and Gerhard P. Fettweis (Technische Universität Dresden, Germany)"
+  },
+  {
+   "venue": "ICC",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Wireless Communications)",
+   "title": "On the Channel Quality of XL-MIMO Systems",
+   "authors": [
+    "Yuhao Zhu",
+    "Zheng Wang",
+    "Yong Zeng",
+    "Yongming Huang"
+   ],
+   "track": "main",
+   "source": "https://icc2026.ieee-icc.org/programme/best-paper-awards",
+   "evidence": "Symposium on Wireless Communications On the Channel Quality of XL-MIMO Systems Yuhao Zhu, Zheng Wang, Yong Zeng and Yongming Huang (Southeast University, China)"
+  },
+  {
+   "venue": "ICC",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Mobile and Wireless Networks)",
+   "title": "Optimizing Security Performance of LEO Satellite Communications with IRS against Mobile Diverse Eavesdroppers",
+   "authors": [
+    "Yingying Wu",
+    "Bomin Mao",
+    "Wei Zhao",
+    "Hongzhi Guo",
+    "Yijie Xun",
+    "Nei Kato"
+   ],
+   "track": "main",
+   "source": "https://icc2026.ieee-icc.org/programme/best-paper-awards",
+   "evidence": "Symposium on Mobile and Wireless Networks Optimizing Security Performance of LEO Satellite Communications with IRS against Mobile Diverse Eavesdroppers Yingying Wu (Northwestern Polytechnical University, China); Bomin Mao (School of Cybersecurity, Northwestern Polytechnical University, China); Wei Zhao (Anhui University of Technology (Xiushan), China & Anhui Engineering Laboratory for Intelligent Applications and Security of Industrial Internet, China); Hongzhi Guo and Yijie Xun (Northwestern Polytechnical University, China); Nei Kato (Tohoku University, Japan)"
+  },
+  {
+   "venue": "ICC",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award (SAC - Machine Learning for Communications and Networking)",
+   "title": "Progressive Latent Refinement for Deadline-Aware Generative AI over Wireless Channels",
+   "authors": [
+    "Anders E. Kalør",
+    "Tomoaki Ohtsuki"
+   ],
+   "track": "main",
+   "source": "https://icc2026.ieee-icc.org/programme/best-paper-awards",
+   "evidence": "Symposium on SAC - Machine Learning for Communications and Networking Progressive Latent Refinement for Deadline-Aware Generative AI over Wireless Channels Anders E. Kalør and Tomoaki Ohtsuki (Keio University, Japan)"
+  },
+  {
+   "venue": "ICC",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Communication and Information Systems Security)",
+   "title": "R.S.D: A Regulatory Anonymity System with Decentralized Identity",
+   "authors": [
+    "Zixuan Wang",
+    "Xuyuan CAI",
+    "Shang Gao",
+    "Zhe Peng",
+    "Bin Xiao"
+   ],
+   "track": "main",
+   "source": "https://icc2026.ieee-icc.org/programme/best-paper-awards",
+   "evidence": "Symposium on Communication and Information Systems Security R.S.D: A Regulatory Anonymity System with Decentralized Identity Zixuan Wang (The Hong Kong Polytechnic University, Hong Kong & Xi'an Jiaotong University, China); Xuyuan CAI, Shang Gao, Zhe Peng and Bin Xiao (The Hong Kong Polytechnic University, Hong Kong)"
+  },
+  {
+   "venue": "ICC",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Next-Generation Networking and Internet)",
+   "title": "Reliability-Aware Multi-Agent Resource Scheduling for Vehicular Network Slicing under RSU Failures",
+   "authors": [
+    "Zishuo Yin",
+    "Hongzhi Guo",
+    "Bomin Mao",
+    "Yijie Xun",
+    "Zhiying Mu",
+    "Dejun Mu"
+   ],
+   "track": "main",
+   "source": "https://icc2026.ieee-icc.org/programme/best-paper-awards",
+   "evidence": "Symposium on Next-Generation Networking and Internet Reliability-Aware Multi-Agent Resource Scheduling for Vehicular Network Slicing under RSU Failures Zishuo Yin and Hongzhi Guo (Northwestern Polytechnical University, China); Bomin Mao (School of Cybersecurity, Northwestern Polytechnical University, China); Yijie Xun and Zhiying Mu (Northwestern Polytechnical University, China); Dejun Mu (College of Automation, Northwestern Polytechnical University, China)"
+  },
+  {
+   "venue": "ICC",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Communication and Information Systems Security)",
+   "title": "RF-Vision Fusion Non-Cooperative UAV Detection and Identification for Low-Altitude Security",
+   "authors": [
+    "Yiyao Wan",
+    "Hongtao Liang",
+    "Guangyu Wu",
+    "Fuhui Zhou",
+    "Bruno Crispo",
+    "Qihui Wu"
+   ],
+   "track": "main",
+   "source": "https://icc2026.ieee-icc.org/programme/best-paper-awards",
+   "evidence": "Symposium on Communication and Information Systems Security RF-Vision Fusion Non-Cooperative UAV Detection and Identification for Low-Altitude Security Yiyao Wan (Nanjing University of Aeronautics and Astronautics, China); Hongtao Liang (NanJing University of Aeronautics and Astronautics, China); Guangyu Wu (Peking University, China); Fuhui Zhou (Nanjing University of Aeronautics and Astronautics, China); Bruno Crispo (Universita di Trento, Italy); Qihui Wu (Nanjing University of Aeronautics and Astronautics, China)"
+  },
+  {
+   "venue": "ICC",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award (SAC - Big Data)",
+   "title": "SemCast: One Representation Semantic Communication for Multi-task Receivers",
+   "authors": [
+    "Sheng Yun",
+    "Ping Wang"
+   ],
+   "track": "main",
+   "source": "https://icc2026.ieee-icc.org/programme/best-paper-awards",
+   "evidence": "Symposium on SAC - Big Data SemCast: One Representation Semantic Communication for Multi-task Receivers Sheng Yun and Ping Wang (York University, Canada)"
+  },
+  {
+   "venue": "ICC",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Communications Software and Multimedia)",
+   "title": "Service Traffic Prediction for Mixed Traffic Scenario: Integrating Vehicular Mobility and Service Spatio-Temporal Attributes",
+   "authors": [
+    "Yi Zhi",
+    "Lina Zhu",
+    "BaiYi Li",
+    "Jalel Ben Othman"
+   ],
+   "track": "main",
+   "source": "https://icc2026.ieee-icc.org/programme/best-paper-awards",
+   "evidence": "Symposium on Communications Software and Multimedia Service Traffic Prediction for Mixed Traffic Scenario: Integrating Vehicular Mobility and Service Spatio-Temporal Attributes Yi Zhi, Lina Zhu and BaiYi Li (Xidian University, China); Jalel Ben Othman (University Paris East at Creteil, France)"
+  },
+  {
+   "venue": "ICC",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Green Communications Systems and Networks)",
+   "title": "Submodularity-Driven Communication-Efficient Distributed Reinforcement Learning for Wireless Networks",
+   "authors": [
+    "Jialin Xing",
+    "Ning Yang",
+    "Haijun Zhang",
+    "Xu Ma",
+    "Yan Liang",
+    "Yuzheng Ren"
+   ],
+   "track": "main",
+   "source": "https://icc2026.ieee-icc.org/programme/best-paper-awards",
+   "evidence": "Symposium on Green Communications Systems and Networks Submodularity-Driven Communication-Efficient Distributed Reinforcement Learning for Wireless Networks Jialin Xing (University of Science and Technology Beijing, China); Ning Yang (Chinese Academy of Sciences, China); Haijun Zhang, Xu Ma, Yan Liang and Yuzheng Ren (University of Science and Technology Beijing, China)"
+  },
+  {
+   "venue": "ICC",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Optical Networks and Systems)",
+   "title": "Symbol Rate Maximization in Rolling-Shutter OCC: Design and Implementation Considerations",
+   "authors": [
+    "Xinyu Zhang",
+    "Alexis Alfredo Dowhuszko",
+    "Miguel Rêgo",
+    "Pedro Fonseca",
+    "Luis Nero Alves",
+    "Jyri Hämäläinen",
+    "Risto Wichman"
+   ],
+   "track": "main",
+   "source": "https://icc2026.ieee-icc.org/programme/best-paper-awards",
+   "evidence": "Symposium on Optical Networks and Systems Symbol Rate Maximization in Rolling-Shutter OCC: Design and Implementation Considerations Xinyu Zhang and Alexis Alfredo Dowhuszko (Aalto University, Finland); Miguel Rêgo and Pedro Fonseca (University of Aveiro, Portugal & Instituto de Telecomunicações, Portugal); Luis Nero Alves (DETI, Universidade of Aveiro, Portugal & Instituto de Telecomunicações, Portugal); Jyri Hämäläinen and Risto Wichman (Aalto University, Finland)"
+  },
+  {
+   "venue": "ICC",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Signal Processing for Communications)",
+   "title": "Synergizing Global Pattern Learning and Time Order Characterization in Mobile Channel Prediction: An RWKV-Based Approach",
+   "authors": [
+    "Zili Wang",
+    "Zirui Chen",
+    "Ridong Li",
+    "Zhaoyang Zhang",
+    "Zhaohui Yang"
+   ],
+   "track": "main",
+   "source": "https://icc2026.ieee-icc.org/programme/best-paper-awards",
+   "evidence": "Symposium on Signal Processing for Communications Synergizing Global Pattern Learning and Time Order Characterization in Mobile Channel Prediction: An RWKV-Based Approach Zili Wang, Zirui Chen, Ridong Li, Zhaoyang Zhang and Zhaohui Yang (Zhejiang University, China)"
+  },
+  {
+   "venue": "ICC",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Communication Theory)",
+   "title": "The Explicit Capacity Region of Deterministic Broadcast Channels: A Bipartite Graph Approach",
+   "authors": [
+    "Yiyu Qiu",
+    "Wei Chen",
+    "H. Vincent Poor"
+   ],
+   "track": "main",
+   "source": "https://icc2026.ieee-icc.org/programme/best-paper-awards",
+   "evidence": "Symposium on Communication Theory The Explicit Capacity Region of Deterministic Broadcast Channels: A Bipartite Graph Approach Yiyu Qiu and Wei Chen (Tsinghua University, China); H. Vincent Poor (Princeton University, USA)"
   },
   {
    "venue": "ICCAD",
@@ -77639,6 +79175,39 @@
    "track": "main",
    "source": "https://databasetheory.org/ICDT/awards",
    "evidence": "ICDT 2025 Best Student Paper Award: Kyle Deeds and Timo Camillo Merkl — Worst-Case Optimal Joins Meet Partition Constraints"
+  },
+  {
+   "venue": "ICDT",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Lower Bounds for the Algorithmic Complexity of Learned Indexes",
+   "authors": [
+    "Luis Alberto Croquevielle",
+    "Roman Sokolovskii",
+    "Thomas Heinis"
+   ],
+   "track": "main",
+   "source": "https://edbticdt2026.github.io/contents/awards_bp_icdt.html",
+   "evidence": "The ICDT 2026 Best Paper Award After careful consideration, the committee has decided to select the following paper for the ICDT 2026 Best Paper Award: \"Lower Bounds for the Algorithmic Complexity of Learned Indexes\" authored by Luis Alberto Croquevielle, Roman Sokolovskii and Thomas Heinis"
+  },
+  {
+   "venue": "ICDT",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Declarative Probabilistic Programming with Datalog",
+   "authors": [
+    "Vince Bárány",
+    "Balder ten Cate",
+    "Benny Kimelfeld",
+    "Dan Olteanu",
+    "Zografoula Vagena"
+   ],
+   "track": "main",
+   "paperYear": 2016,
+   "source": "https://edbticdt2026.github.io/contents/ICDT_Test-of-time.html",
+   "evidence": "ICDT 2026 Test-of-Time Award will be awarded to the following paper: Vince Bárány, Balder ten Cate, Benny Kimelfeld, Dan Olteanu, Zografoula Vagena: Declarative Probabilistic Programming with Datalog."
   },
   {
    "venue": "ICFP",
@@ -84233,6 +85802,90 @@
    "evidence": "ICS 2024 Best Paper Runner-up: Shared Virtual Memory: Its Design and Performance Implications for Diverse Applications — Bennett Cooper, Thomas R.W. Scogland, Rong Ge"
   },
   {
+   "venue": "ICS",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "DIMPLES: Distributed Influence Maximization for Pandemic pLanning on Exascale Systems",
+   "authors": [
+    "Marco Minutoli",
+    "Reece Neff",
+    "Naw Safrin Sattar",
+    "Hao Lu",
+    "John Feo",
+    "Henning Mortveit",
+    "Anil Vullikanti",
+    "Dawen Xie",
+    "Mandy L Wilson",
+    "Gregor von Laszewski",
+    "Parantapa Bhattacharya",
+    "S M Ferdous",
+    "Ananth Kalyanaraman",
+    "Michela Becchi",
+    "Madhav Marathe",
+    "Mahantesh Halappanavar"
+   ],
+   "track": "main",
+   "source": "https://hpcrl.github.io/ICS2025-webpage/",
+   "evidence": "BEST PAPER AWARD DIMPLES: Distributed Influence Maximization for Pandemic pLanning on Exascale Systems Marco Minutoli:Pacific Northwest National Laboratory;Reece Neff:North Carolina State University;Naw Safrin Sattar:Oak Ridge National Laboratory;Hao Lu:Oak Ridge National Laboratory;John Feo:Pacific Northwest National Laboratory;Henning Mortveit:University of Virginia;Anil Vullikanti:University of Virginia;Dawen Xie:University of Virginia;Mandy L Wilson:University of Virginia;Gregor von Laszewski:University of Virginia;Parantapa Bhattacharya:University of Virginia;S M Ferdous:Pacific Northwest National Laboratory;Ananth Kalyanaraman:Washington State University;Michela Becchi:North Carolina State University;Madhav Marathe:University of Virginia;Mahantesh Halappanavar:Pacific Northwest National Laboratory"
+  },
+  {
+   "venue": "ICS",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "BMQSim: Overcoming Memory Constraints in Quantum Circuit Simulation with a High-Fidelity Compression Framework",
+   "authors": [
+    "Boyuan Zhang",
+    "Bo Fang",
+    "Fanjiang Ye",
+    "Luanzheng Guo",
+    "Fengguang Song",
+    "Nathan Tallent",
+    "Dingwen Tao"
+   ],
+   "track": "main",
+   "source": "https://hpcrl.github.io/ICS2025-webpage/",
+   "evidence": "BEST PAPER AWARD RUNNER-UPs BMQSim: Overcoming Memory Constraints in Quantum Circuit Simulation with a High-Fidelity Compression Framework Boyuan Zhang:Indiana University;Bo Fang:Pacific Northwest National Laboratory;Fanjiang Ye:Indiana University;Luanzheng Guo:Pacific Northwest National Laboratory;Fengguang Song:Indiana University;Nathan Tallent:Pacific Northwest National Laboratory;Dingwen Tao:Indiana University"
+  },
+  {
+   "venue": "ICS",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "Light-FP: Analyze Floating-Point Error in a Highly Condensed Approach",
+   "authors": [
+    "Jiazhi Mi",
+    "Li Chen",
+    "Haoyu Wang",
+    "Ruixiang Gao",
+    "Hongze Zhang",
+    "Ronghong Shen",
+    "Kai Lin",
+    "You Fu",
+    "Huimin Cui"
+   ],
+   "track": "main",
+   "source": "https://hpcrl.github.io/ICS2025-webpage/",
+   "evidence": "Light-FP: Analyze Floating-Point Error in a Highly Condensed Approach Jiazhi Mi:Institute of Computing Technology, Chinese Academy of Sciences,University of Chinese Academy of Sciences;Li Chen:Institute of Computing Technology, Chinese Academy of Sciences,Laboratory for Advanced Computing and Intelligence Engineering;Haoyu Wang:Institute of Computing Technology, Chinese Academy of Sciences,University of Chinese Academy of Sciences;Ruixiang Gao:Shandong University of Science and Technology;Hongze Zhang:Shandong University of Science and Technology;Ronghong Shen:Institute of Computing Technology, Chinese Academy of Sciences,University of Chinese Academy of Sciences;Kai Lin:Beijing Institute of Technology;You Fu:Shandong University of Science and Technology;Huimin Cui:Institute of Computing Technology, Chinese Academy of Sciences,University of Chinese Academy of Sciences"
+  },
+  {
+   "venue": "ICS",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "OCTANE: Breaking the Neighbor-List Bottleneck in GPU Molecular Dynamics",
+   "authors": [
+    "Hanieh Toutouni",
+    "Suman Chakraborty",
+    "Yicheng Tu",
+    "Jiajun Huang"
+   ],
+   "track": "main",
+   "source": "https://dipsa-qub.github.io/ICS2026-webpage/",
+   "evidence": "Best Paper Award Hanieh Toutouni, Suman Chakraborty, Yicheng Tu, Jiajun Huang OCTANE: Breaking the Neighbor-List Bottleneck in GPU Molecular Dynamics"
+  },
+  {
    "venue": "ICSE",
    "year": 1990,
    "award": "tot",
@@ -86577,6 +88230,88 @@
    "evidence": "ICSE 2026 Research Track, Distinguished Paper Award: WhisperCatcher: Demystifying Unauthorized and Encrypted Private Data Transmission in Android Applications — Zhaoyu Qiu, Ming Fan, Bocan Ma, Yutian Tang, Lei Xue, Haijun Wang, Ting Liu"
   },
   {
+   "venue": "ICSME",
+   "year": 2026,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "\"It Comes in Notebooks\": Changes and Challenges When Operationalizing ML Prototypes",
+   "authors": [
+    "Arumoy Shome",
+    "Luís Cruz",
+    "Diomidis Spinellis",
+    "Arie van Deursen"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/track/icsme-2026/icsme-2026-papers",
+   "evidence": "\"It Comes in Notebooks\": Changes and Challenges When Operationalizing ML Prototypes Distinguished Paper Award Research Papers Track Arumoy Shome Delft University of Technology, Luís Cruz TU Delft, Diomidis Spinellis AUEB & TU Delft, Arie van Deursen TU Delft"
+  },
+  {
+   "venue": "ICSME",
+   "year": 2026,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "DebTrace: Tracing, Verifying, and Revisiting a Decade of Debian Reproducibility",
+   "authors": [
+    "Abhishek Reddypalle",
+    "William Boulton",
+    "Sabine Brunswicker",
+    "Santiago Torres-Arias"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/track/icsme-2026/icsme-2026-papers",
+   "evidence": "DebTrace: Tracing, Verifying, and Revisiting a Decade of Debian Reproducibility Distinguished Paper Award Research Papers Track Abhishek Reddypalle Purdue University, William Boulton Purdue University, Sabine Brunswicker Purdue University, Santiago Torres-Arias Purdue University"
+  },
+  {
+   "venue": "ICSME",
+   "year": 2026,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "Optimizing Spectral Signature in Code Backdoor Detection",
+   "authors": [
+    "Quoc Hung Le",
+    "Thanh Le-Cong",
+    "Xuan-Bach D. Le",
+    "Bowen Xu"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/track/icsme-2026/icsme-2026-papers",
+   "evidence": "Optimizing Spectral Signature in Code Backdoor Detection Distinguished Paper Award Research Papers Track Quoc Hung Le North Carolina State University, Thanh Le-Cong Singapore University of Technology and Design, Singapore, Xuan-Bach D. Le University of Melbourne, Bowen Xu North Carolina State University"
+  },
+  {
+   "venue": "ICSME",
+   "year": 2026,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "Smelly Bad Practices in Performance System Tests: Detection, Prevalence, and Lifetime",
+   "authors": [
+    "Sergio Di Meglio",
+    "Valeria Pontillo",
+    "Luigi Libero Lucio Starace",
+    "Luana Martins",
+    "Dario Di Nucci",
+    "Fabio Palomba"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/track/icsme-2026/icsme-2026-papers",
+   "evidence": "Smelly Bad Practices in Performance System Tests: Detection, Prevalence, and Lifetime Distinguished Paper Award Research Papers Track Sergio Di Meglio Università degli Studi di Napoli Federico II, Valeria Pontillo Gran Sasso Science Institute (GSSI), L’Aquila, Italy, Luigi Libero Lucio Starace Department of Electrical Engineering and Information Technology Università degli Studi di Napoli Federico II, Luana Martins University of Salerno, Dario Di Nucci Software Engineering (SeSa) Lab, University of Salerno, Italy, Fabio Palomba University of Salerno"
+  },
+  {
+   "venue": "ICSME",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "“Automated Debugging Considered Harmful” Considered Harmful - A User Study Revisiting the Usefulness of Spectra-Based Fault Localization Techniques with Professionals Using Real Bugs from Large Systems",
+   "authors": [
+    "Xin Xia",
+    "Lingfeng Bao",
+    "David Lo",
+    "Shanping Li"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/track/icsme-2026/icsme-2026-icsme-plenary-events",
+   "evidence": "Most Influential Paper Award Plenary Events at Auditorium Title: “Automated Debugging Considered Harmful” Considered Harmful - A User Study Revisiting the Usefulness of Spectra-Based Fault Localization Techniques with Professionals Using Real Bugs from Large Systems Authors: Xin Xia, Lingfeng Bao, David Lo and Shanping Li"
+  },
+  {
    "venue": "ICWSM",
    "year": 2007,
    "award": "best",
@@ -88445,6 +90180,78 @@
    "track": "main",
    "source": "https://interspeech2024.org/best-paper-award-2024/",
    "evidence": "Interspeech 2024 Best Paper Award: EFFUSE: Efficient Self-Supervised Feature Fusion for E2E ASR in Low Resource and Multilingual Scenarios — Tejes Srivastava, Jiatong Shi, William Chen, Shinji Watanabe"
+  },
+  {
+   "venue": "Interspeech",
+   "year": 2025,
+   "award": "category",
+   "awardLabel": "Best Theme Paper Award",
+   "title": "Recognizing Every Voice: Towards Inclusive ASR for Rural Bhojpuri Women",
+   "authors": [
+    "Sakshi Joshi",
+    "Eldho Ittan George",
+    "Tahir Javed",
+    "Kaushal Bhogale",
+    "Nikhil Narasimhan",
+    "Mitesh M. Khapra"
+   ],
+   "track": "main",
+   "source": "https://www.interspeech2025.org/best-theme-papers",
+   "alsoAt": [
+    "https://www.isca-archive.org/interspeech_2025/joshi25_interspeech.html"
+   ],
+   "evidence": "Interspeech 2025 Best Theme Paper Award + Nominations Winner Joshi, S., Ittan George, E., Javed, T., Bhogale, K., Narasimhan, N., Khapra, M.M. (2025) Recognizing Every Voice: Towards Inclusive ASR for Rural Bhojpuri Women. Proc. Interspeech 2025, 4243-4247, doi: 10.21437/Interspeech.2025-2734 [full author names from the ISCA Archive page https://www.isca-archive.org/interspeech_2025/joshi25_interspeech.html: Recognizing Every Voice: Towards Inclusive ASR for Rural Bhojpuri Women Sakshi Joshi, Eldho Ittan George, Tahir Javed, Kaushal Bhogale, Nikhil Narasimhan, Mitesh M. Khapra]"
+  },
+  {
+   "venue": "Interspeech",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Attention Models and Auditory Transduction Features for Noise Robustness",
+   "authors": [
+    "Cathal Ó Faoláin",
+    "Andrew Hines"
+   ],
+   "track": "main",
+   "source": "https://www.interspeech2025.org/best-student-papers",
+   "evidence": "\"Attention Models and Auditory Transduction Features for Noise Robustness\", Cathal Ó Faoláin and Andrew Hines"
+  },
+  {
+   "venue": "Interspeech",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "On the Relationship between Accent Strength and Articulatory Features",
+   "authors": [
+    "Kevin Huang",
+    "Sean Foley",
+    "Jihwan Lee",
+    "Yoonjeong Lee",
+    "Dani Byrd",
+    "Shrikanth Narayanan"
+   ],
+   "track": "main",
+   "source": "https://www.interspeech2025.org/best-student-papers",
+   "evidence": "Winners \"On the Relationship between Accent Strength and Articulatory Features\", Kevin Huang, Sean Foley, Jihwan Lee, Yoonjeong Lee, Dani Byrd, Shrikanth Narayanan"
+  },
+  {
+   "venue": "Interspeech",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "OWSM v4: Improving Open Whisper-Style Speech Models via Data Scaling and Cleaning",
+   "authors": [
+    "Yifan Peng",
+    "Muhammad Shakeel",
+    "Yui Sudo",
+    "William Chen",
+    "Jinchuan Tian",
+    "Chyi-Jiunn Lin",
+    "Shinji Watanabe"
+   ],
+   "track": "main",
+   "source": "https://www.interspeech2025.org/best-student-papers",
+   "evidence": "\"OWSM v4: Improving Open Whisper-Style Speech Models via Data Scaling and Cleaning Models\", Yifan Peng, Muhammad Shakeel, Yui Sudo, William Chen, Jinchuan Tian, Chyi-Jiunn Lin and Shinji Watanabe [the page's nominee list prints the title without \"Models\": Yifan Peng, Shakeel Muhammad, Yui Sudo, William Chen, Jinchuan Tian, Chyi-Jiunn Lin, Shinji Watanabe, \"OWSM v4: Improving Open Whisper-Style Speech Models via Data Scaling and Cleaning\".]"
   },
   {
    "venue": "IPDPS",
@@ -92658,6 +94465,21 @@
    "paperYear": 2015,
    "source": "https://swsa.semanticweb.org/awards/swsa-ten-year-award/",
    "evidence": "ISWC 2025 SWSA Ten-Year Award: Yavor Nenov, Robert Piro, Boris Motik, Ian Horrocks, Zhe Wu, Jay Banerjee “RDFox: A Highly-Scalable RDF Store”"
+  },
+  {
+   "venue": "ISWC",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Ten-Year Award",
+   "title": "RDF2Vec: RDF Graph Embeddings for Data Mining",
+   "authors": [
+    "Petar Ristoski",
+    "Heiko Paulheim"
+   ],
+   "track": "main",
+   "paperYear": 2016,
+   "source": "https://iswc2026.semanticweb.org/#/program/awards",
+   "evidence": "SWSA Ten-Year Award RDF2Vec: RDF Graph Embeddings for Data Mining Petar Ristoski and Heiko Paulheim"
   },
   {
    "venue": "IUI",
@@ -97894,6 +99716,68 @@
    "track": "main",
    "source": "https://conferences.miccai.org/2025/en/BEST-PAPER-AWARDS.html",
    "evidence": "MICCAI 2025 Runner-up: Héloïse Bustin, Tom Meyer, Jakob Jordan, Lars Walczak, Heiko Tzschätzsch, Ingolf Sack and Anya Hennemuth (Charité - Universitätsmedizin Berlin), \"Multifrequency Neural Network-Based Wave Inversion\""
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Low-Rank-Modulated Functa: Exploring the Latent Space of Implicit Neural Representations for Interpretable Ultrasound Video Analysis",
+   "authors": [
+    "Julia Walleb",
+    "Cristiana Baloescu",
+    "Alicia Durrer",
+    "Hemant D. Tagare",
+    "Xenophon Papademetris"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Best Paper Award 2026 Julia Walleb, Cristiana Baloescu, Alicia Durrer, Hemant D. Tagare, Xenophon Papademetris. (Yale University) \"Low-Rank-Modulated Functa: Exploring the Latent Space of Implicit Neural Representations for Interpretable Ultrasound Video Analysis\""
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "CancerVerse: A Fully Open Longitudinal and Multimodal Dataset for Multicancer Screening",
+   "authors": [
+    "Wenxuan Li",
+    "Pedro Bassi",
+    "Xinze Zhou",
+    "Jakob Wasserthal",
+    "Sezgin ER",
+    "Ibrahim Hamamci",
+    "Bjoern Menze",
+    "Gulhan Ertan Akan",
+    "Szymon Płotka",
+    "Jakub Prządo",
+    "Qi Chen",
+    "Yucheng Tang",
+    "Daguang Xu",
+    "Arkadiusz Sitek",
+    "Kang Wang",
+    "Yang Yang",
+    "Alan Yuille",
+    "Zongwei Zhou"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Wenxuan Li, Pedro Bassi, Xinze Zhou, Jakob Wasserthal, Sezgin ER, Ibrahim Hamamci, Bjoern Menze, Gulhan Ertan Akan, Szymon Płotka, Jakub Prządo, Qi Chen, Yucheng Tang, Daguang Xu, Arkadiusz Sitek, Kang Wang, Yang Yang, Alan Yuille, Zongwei Zhou. (Johns Hopkins University) \"CancerVerse: A Fully Open Longitudinal and Multimodal Dataset for Multicancer Screening\""
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "L-TGVN: Leveraging Longitudinal Priors for Personalized Rapid MRI",
+   "authors": [
+    "Arda Atalik",
+    "Sumit Chopra",
+    "Daniel Sodickson"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Runners Up Arda Atalik, Sumit Chopra, Daniel Sodickson (New York University) \"L-TGVN: Leveraging Longitudinal Priors for Personalized Rapid MRI\""
   },
   {
    "venue": "MICRO",
@@ -106997,23 +108881,6 @@
    "venue": "PIMRC",
    "year": 2025,
    "award": "best",
-   "awardLabel": "Best Paper Award (WS01-S2: AFDM and Emerging Waveforms)",
-   "title": "Affine Frequency Division Multiplexing with Practical DAC and ADC Filters",
-   "authors": [
-    "Yuqing Liu",
-    "Yanqun Tang",
-    "Haoran Yin",
-    "Ruiqi Cao",
-    "Miaowen Wen"
-   ],
-   "track": "main",
-   "source": "https://pimrc2025.ieee-pimrc.org/program/best-paper-awards",
-   "evidence": "PIMRC 2025 Best Paper Award, WS01-S2: AFDM and Emerging Waveforms: Affine Frequency Division Multiplexing with Practical DAC and ADC Filters — Yuqing Liu, Yanqun Tang, Haoran Yin, Ruiqi Cao, Miaowen Wen"
-  },
-  {
-   "venue": "PIMRC",
-   "year": 2025,
-   "award": "best",
    "awardLabel": "Best Paper Award (Mobility Analytics and Route Resilience)",
    "title": "An Explainable AI Framework for Dynamic Resource Management in Vehicular Network Slicing",
    "authors": [
@@ -107033,24 +108900,6 @@
    "venue": "PIMRC",
    "year": 2025,
    "award": "best",
-   "awardLabel": "Best Paper Award (WS02-S2: Integrated Sensing, AI, and Communication II)",
-   "title": "Bistatic Non-Line-of-Sight Environment Sensing in Wireless Networks",
-   "authors": [
-    "Weijie Zhou",
-    "Zhaoyang Zhang",
-    "Xin Tong",
-    "Jingze Che",
-    "Zhaohui Yang",
-    "Lei Liu"
-   ],
-   "track": "main",
-   "source": "https://pimrc2025.ieee-pimrc.org/program/best-paper-awards",
-   "evidence": "PIMRC 2025 Best Paper Award, WS02-S2: Integrated Sensing, AI, and Communication II: Bistatic Non-Line-of-Sight Environment Sensing in Wireless Networks — Weijie Zhou, Zhaoyang Zhang, Xin Tong, Jingze Che, Zhaohui Yang, Lei Liu"
-  },
-  {
-   "venue": "PIMRC",
-   "year": 2025,
-   "award": "best",
    "awardLabel": "Best Paper Award (Resource Management)",
    "title": "Implicit Channel Quality-Driven Lightweight Resource Allocation in OFDMA WiFi Networks",
    "authors": [
@@ -107061,25 +108910,6 @@
    "track": "main",
    "source": "https://pimrc2025.ieee-pimrc.org/program/best-paper-awards",
    "evidence": "PIMRC 2025 Best Paper Award, T2-2: Resource Management: Implicit Channel Quality-Driven Lightweight Resource Allocation in OFDMA WiFi Networks — Qiaohan Zhang, Philipp Schulz, Gerhard P. Fettweis"
-  },
-  {
-   "venue": "PIMRC",
-   "year": 2025,
-   "award": "best",
-   "awardLabel": "Best Paper Award (WS13-S2: Short Range Wireless Communications, Localization and Sensing)",
-   "title": "NearLink: Emerging Short Range Wireless Standard with Ultra-Low Latency and Ultra-High Reliability",
-   "authors": [
-    "Zhan Yu",
-    "ZiChen Xie",
-    "Qian Yu",
-    "Kang Wang",
-    "Hang Fang",
-    "Weihua Li",
-    "Zhan Guo"
-   ],
-   "track": "main",
-   "source": "https://pimrc2025.ieee-pimrc.org/program/best-paper-awards",
-   "evidence": "PIMRC 2025 Best Paper Award, WS13-S2: Short Range Wireless Communications, Localization and Sensing: NearLink: Emerging Short Range Wireless Standard with Ultra-Low Latency and Ultra-High Reliability — Zhan Yu, ZiChen Xie, Qian Yu, Kang Wang, Hang Fang, Weihua Li, Zhan Guo"
   },
   {
    "venue": "PIMRC",
@@ -109297,6 +111127,38 @@
    "track": "main",
    "source": "https://ppopp23.sigplan.org/",
    "evidence": "PPoPP 2023 Best Paper Award: Provably Fast and Space-Efficient Parallel Biconnectivity — Xiaojun Dong, Letong Wang, Yan Gu, Yihan Sun"
+  },
+  {
+   "venue": "RE",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Writing Better Software Explanations: A Guideline-Based Approach",
+   "authors": [
+    "Martin Obaidi",
+    "Jean-Carl Kremser",
+    "Hannah Deters",
+    "Jakob Droste",
+    "Marc Herrmann",
+    "Kurt Schneider"
+   ],
+   "track": "main",
+   "source": "https://re-conferences.org/REConferenceAwards",
+   "evidence": "Best Paper Awards Annual best paper recipients, listed chronologically from most recent. 2026 \"Writing Better Software Explanations: A Guideline-Based Approach\" Martin Obaidi, Jean-Carl Kremser, Hannah Deters, Jakob Droste, Marc Herrmann, Kurt Schneider"
+  },
+  {
+   "venue": "RE",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "A Serious Game for Eliciting Social Engineering Security Requirements",
+   "authors": [
+    "Kristian Beckers",
+    "Sebastian Pape"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/program/RE-2026/program-RE-2026/",
+   "evidence": "MIP — Most Influential Paper Research Papers at A-1600 15:45 90m Awards A Serious Game for Eliciting Social Engineering Security Requirements Research Papers Kristian Beckers Technische Universitat Munchen, Sebastian Pape Goethe-University of Frankfurt"
   },
   {
    "venue": "RECOMB",
@@ -112369,6 +114231,38 @@
    "evidence": "SAT 2025 Best Student Paper was conferred on the paper Enumerating All Boolean Matches by Alexander Nadel and Yogev Shalmon"
   },
   {
+   "venue": "SAT",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Simplify, Order, Break, Repeat",
+   "authors": [
+    "Markus Anders",
+    "Cayden Codel",
+    "Marijn J. H. Heule"
+   ],
+   "track": "main",
+   "source": "https://satassociation.org/awards/",
+   "evidence": "Best Paper Award 2026: “Simplify, Order, Break, Repeat”, by Markus Anders, Cayden Codel, and Marijn J. H. Heule"
+  },
+  {
+   "venue": "SAT",
+   "year": 2026,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "New Algorithms for Parity-SAT and Its Bounded-Occurrence Versions",
+   "authors": [
+    "Sanjay Jain",
+    "Junqiang Peng",
+    "Frank Stephan",
+    "Haoyun Tang",
+    "Mingyu Xiao"
+   ],
+   "track": "main",
+   "source": "https://satassociation.org/awards/",
+   "evidence": "Best Student Paper Award 2026: “New Algorithms for Parity-SAT and Its Bounded-Occurrence Version”, by Sanjay Jain, Junqiang Peng, Frank Stephan, Haoyun Tang, and Mingyu Xiao [the page misprints the title; the paper is \"New Algorithms for Parity-SAT and Its Bounded-Occurrence Versions\" — data/exclusions.json]"
+  },
+  {
    "venue": "SC",
    "year": 2025,
    "award": "best",
@@ -114307,6 +116201,181 @@
    "paperYear": 2006,
    "source": "https://sigcse.org/programs/awards/test-of-time.html",
    "evidence": "SIGCSE 2025 Test of Time Award: Matthew C. Jadud. 2006. Methods and Tools for Exploring Novice Compilation Behaviour"
+  },
+  {
+   "venue": "SIGCSE",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Experience Reports and Tools)",
+   "title": "Closing the Loop: An Instructor-in-the-Loop AI Assistance System for Supporting Student Help-Seeking in Programming Education",
+   "authors": [
+    "Tung Phung",
+    "Heeryung Choi",
+    "Mengyan Wu",
+    "Christopher Brooks",
+    "Sumit Gulwani",
+    "Adish Singla"
+   ],
+   "track": "main",
+   "source": "https://sigcse2026.sigcse.org/track/sigcse-ts-2026-Papers",
+   "alsoAt": [
+    "https://sigcse2026.sigcse.org/program/program-sigcse-ts-2026/"
+   ],
+   "evidence": "Closing the Loop: An Instructor-in-the-Loop AI Assistance System for Supporting Student Help-Seeking in Programming Education … ERT Best Paper - This paper was selected as an exemplary contribution in the Experience Reports and Tools track. … Tung Phung MPI-SWS, Heeryung Choi University of Minnesota, Mengyan Wu University of Michigan - Ann Arbor, Christopher Brooks University of Michigan, Sumit Gulwani Microsoft, Adish Singla Max Planck Institute for Software Systems"
+  },
+  {
+   "venue": "SIGCSE",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Experience Reports and Tools)",
+   "title": "Creating a Second Pathway to the Computing Major",
+   "authors": [
+    "Ashley Pang",
+    "Paea LePendu",
+    "Mariam Salloum",
+    "Neftali Watkinson Medina",
+    "Carla Brodley"
+   ],
+   "track": "main",
+   "source": "https://sigcse2026.sigcse.org/track/sigcse-ts-2026-Papers",
+   "alsoAt": [
+    "https://sigcse2026.sigcse.org/program/program-sigcse-ts-2026/"
+   ],
+   "evidence": "Creating a Second Pathway to the Computing Major … ERT Best Paper - This paper was selected as an exemplary contribution in the Experience Reports and Tools track. … Ashley Pang UC Riverside, Paea LePendu pc, Mariam Salloum BCOE/Computer Science, Neftali Watkinson Medina University of California, Riverside, Carla Brodley Northeastern University, Center for Inclusive Computing"
+  },
+  {
+   "venue": "SIGCSE",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Position and Curriculum Initiatives)",
+   "title": "Like parsley in Greek food: Elementary set theory and the case for DM1",
+   "authors": [
+    "Siddharth Bhaskar"
+   ],
+   "track": "main",
+   "source": "https://sigcse2026.sigcse.org/track/sigcse-ts-2026-Papers",
+   "alsoAt": [
+    "https://sigcse2026.sigcse.org/program/program-sigcse-ts-2026/"
+   ],
+   "evidence": "Like parsley in Greek food: Elementary set theory and the case for DM1 … PCI Best Paper - This paper was selected as an exemplary contribution in the Position and Curriculum Initiatives track. … Siddharth Bhaskar University of Southern Denmark"
+  },
+  {
+   "venue": "SIGCSE",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Computing Education Research)",
+   "title": "Mapping Required Ethics Education in Computer Science: Insights from 100 U.S. Programs",
+   "authors": [
+    "Grace Barkhuff",
+    "Ellen Zegura"
+   ],
+   "track": "main",
+   "source": "https://sigcse2026.sigcse.org/track/sigcse-ts-2026-Papers",
+   "alsoAt": [
+    "https://sigcse2026.sigcse.org/program/program-sigcse-ts-2026/"
+   ],
+   "evidence": "Mapping Required Ethics Education in Computer Science: Insights from 100 U.S. Programs … CER Best Paper - This paper was selected as an exemplary contribution in the Computing Education Research track. … Grace Barkhuff Georgia Institute of Technology, Ellen Zegura Georgia Institute of Technology"
+  },
+  {
+   "venue": "SIGCSE",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Position and Curriculum Initiatives)",
+   "title": "Reflecting on Thematic Analysis in Computer Science Education Research: A Field Guide for Researchers and Reviewers",
+   "authors": [
+    "Aadarsh Padiyath",
+    "Tamara Nelson-Fromm"
+   ],
+   "track": "main",
+   "source": "https://sigcse2026.sigcse.org/track/sigcse-ts-2026-Papers",
+   "alsoAt": [
+    "https://sigcse2026.sigcse.org/program/program-sigcse-ts-2026/"
+   ],
+   "evidence": "Reflecting on Thematic Analysis in Computer Science Education Research: A Field Guide for Researchers and Reviewers … PCI Best Paper - This paper was selected as an exemplary contribution in the Position and Curriculum Initiatives track. … Aadarsh Padiyath University of Michigan, Tamara Nelson-Fromm"
+  },
+  {
+   "venue": "SIGCSE",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Position and Curriculum Initiatives)",
+   "title": "Rethinking How We Discuss the Guidance of Student Researchers in Computing",
+   "authors": [
+    "Shomir Wilson"
+   ],
+   "track": "main",
+   "source": "https://sigcse2026.sigcse.org/track/sigcse-ts-2026-Papers",
+   "alsoAt": [
+    "https://sigcse2026.sigcse.org/program/program-sigcse-ts-2026/"
+   ],
+   "evidence": "Rethinking How We Discuss the Guidance of Student Researchers in Computing … PCI Best Paper - This paper was selected as an exemplary contribution in the Position and Curriculum Initiatives track. … Shomir Wilson Pennsylvania State University"
+  },
+  {
+   "venue": "SIGCSE",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Computing Education Research)",
+   "title": "The Impostor Phenomenon and the Confidence Gap",
+   "authors": [
+    "Arto Hellas",
+    "Andrew Petersen"
+   ],
+   "track": "main",
+   "source": "https://sigcse2026.sigcse.org/track/sigcse-ts-2026-Papers",
+   "alsoAt": [
+    "https://sigcse2026.sigcse.org/program/program-sigcse-ts-2026/"
+   ],
+   "evidence": "The Impostor Phenomenon and the Confidence Gap … CER Best Paper - This paper was selected as an exemplary contribution in the Computing Education Research track. … Arto Hellas Aalto University, Andrew Petersen University of Toronto Mississauga"
+  },
+  {
+   "venue": "SIGCSE",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Experience Reports and Tools)",
+   "title": "The Linux Luminarium: Learning Linux by Leveraging Lightweight Labs and Ludicrous Lessons",
+   "authors": [
+    "Yan Shoshitaishvili",
+    "Adam Doupé",
+    "Connor Nelson"
+   ],
+   "track": "main",
+   "source": "https://sigcse2026.sigcse.org/track/sigcse-ts-2026-Papers",
+   "alsoAt": [
+    "https://sigcse2026.sigcse.org/program/program-sigcse-ts-2026/"
+   ],
+   "evidence": "The Linux Luminarium: Learning Linux by Leveraging Lightweight Labs and Ludicrous Lessons … ERT Best Paper - This paper was selected as an exemplary contribution in the Experience Reports and Tools track. … Yan Shoshitaishvili Arizona State University, Adam Doupé Arizona State University, Connor Nelson pc"
+  },
+  {
+   "venue": "SIGCSE",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Computing Education Research)",
+   "title": "Transforming Confusion into Diffusion: Advancing Machine Learning Education via Bottom-Up Instruction",
+   "authors": [
+    "Carlos Cotrini",
+    "Sverrir Thorgeirsson",
+    "Jesus Solano",
+    "Zhendong Su"
+   ],
+   "track": "main",
+   "source": "https://sigcse2026.sigcse.org/track/sigcse-ts-2026-Papers",
+   "alsoAt": [
+    "https://sigcse2026.sigcse.org/program/program-sigcse-ts-2026/"
+   ],
+   "evidence": "Transforming Confusion into Diffusion: Advancing Machine Learning Education via Bottom-Up Instruction … CER Best Paper - This paper was selected as an exemplary contribution in the Computing Education Research track. … Carlos Cotrini ETH Zürich, Sverrir Thorgeirsson ETH Zurich, Jesus Solano ETH Zürich, Zhendong Su ETH Zurich"
+  },
+  {
+   "venue": "SIGCSE",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Online Python Tutor: Embeddable Web-Based Program Visualization for CS Education",
+   "authors": [
+    "Philip J. Guo"
+   ],
+   "track": "main",
+   "paperYear": 2013,
+   "source": "https://sigcse.org/news/2026-01-SIGCSE-Awards-2026-Announced.html",
+   "evidence": "The 2026 ACM SIGCSE Test of Time Award is awarded to the paper Online Python Tutor: Embeddable Web-Based Program Visualization for CS Education by Philip J. Guo, In Proceedings of the 44th ACM Technical Symposium on Computer Science Education, Association for Computing Machinery, New York, NY, USA, 579-584."
   },
   {
    "venue": "SIGDA",
@@ -127205,6 +129274,53 @@
    "evidence": "UAI 2025 Best Student Paper: Proximal Interacting Particle Langevin Algorithms — Paula Cordero Encinar, Francesca Romana Crucinio, O. Deniz Akyildiz"
   },
   {
+   "venue": "UAI",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Fundamental Limits and Optimal Methods for Sharp Analytical Causal Bounds in Instrumental Variable Models",
+   "authors": [
+    "Arefe Boushehrian",
+    "Mohammad Reza Badri",
+    "Sina Akbari",
+    "Negar Kiyavash"
+   ],
+   "track": "main",
+   "source": "https://auai.org/uai2026/schedule",
+   "evidence": "Schedule page https://auai.org/uai2026/schedule: \"Fundamental Limits and Optimal Methods for Sharp Analytical Causal Bounds in Instrumental Variable Models (813) [slides] * Best Paper Award *\" — authors, from the Accepted Papers page https://auai.org/uai2026/accepted_papers: \"ID: 813 Fundamental Limits and Optimal Methods for Sharp Analytical Causal Bounds in Instrumental Variable Models Poster session 2 (Wednesday) Arefe Boushehrian, Mohammad Reza Badri, Sina Akbari, Negar Kiyavash\""
+  },
+  {
+   "venue": "UAI",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Award - Honorable Mention",
+   "title": "Gaussian Process Limit Reveals Structural Benefits of Graph Transformers",
+   "authors": [
+    "Nil Ayday",
+    "Lingchu Yang",
+    "Debarghya Ghoshdastidar"
+   ],
+   "track": "main",
+   "source": "https://auai.org/uai2026/schedule",
+   "evidence": "Schedule page https://auai.org/uai2026/schedule: \"Gaussian Process Limit Reveals Structural Benefits of Graph Transformers (860) [slides] * Best Paper Award - Honorable Mention *\" — authors, from the Accepted Papers page https://auai.org/uai2026/accepted_papers: \"ID: 860 Gaussian Process Limit Reveals Structural Benefits of Graph Transformers Poster session 3 (Thursday) Nil Ayday, Lingchu Yang, Debarghya Ghoshdastidar\""
+  },
+  {
+   "venue": "UAI",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "Nonlinear Axiomatic Attribution for Cooperative Games",
+   "authors": [
+    "Weida Li",
+    "Zhuanghua Liu",
+    "Yaoliang Yu",
+    "Bryan Kian Hsiang Low"
+   ],
+   "track": "main",
+   "source": "https://auai.org/uai2026/schedule",
+   "evidence": "Schedule page https://auai.org/uai2026/schedule: \"Nonlinear Axiomatic Attribution for Cooperative Games (803) [slides] * Best Paper Award - Runner-up *\" — authors, from the Accepted Papers page https://auai.org/uai2026/accepted_papers: \"ID: 803 Nonlinear Axiomatic Attribution for Cooperative Games Poster session 1 (Tuesday) Weida Li, Zhuanghua Liu, Yaoliang Yu, Bryan Kian Hsiang Low\""
+  },
+  {
    "venue": "UbiComp",
    "year": 2007,
    "award": "best",
@@ -128225,21 +130341,6 @@
    "venue": "UbiComp",
    "year": 2024,
    "award": "tot",
-   "awardLabel": "10-year Impact Award",
-   "title": "InterruptMe: designing intelligent prompting mechanisms for pervasive applications",
-   "authors": [
-    "Veljko Pejovic",
-    "Mirco Musolesi"
-   ],
-   "track": "main",
-   "paperYear": 2014,
-   "source": "https://ubicomp.org/sc/awards.html",
-   "evidence": "UbiComp 2024 10-year Impact Award: InterruptMe: designing intelligent prompting mechanisms for pervasive applications — Veljko Pejovic, Mirco Musolesi"
-  },
-  {
-   "venue": "UbiComp",
-   "year": 2024,
-   "award": "tot",
    "awardLabel": "10-Year Impact Award",
    "title": "StudentLife: assessing mental health, academic performance and behavioral trends of college students using smartphones",
    "authors": [
@@ -128291,22 +130392,50 @@
    "evidence": "UbiComp 2025 10-Year Impact Award: Trajectories of Depression: Unobtrusive Monitoring of Depressive States by Means of Smartphone Mobility Traces — Luca Canzian (University of Birmingham) and Mirco Musolesi (University College London and University of Birmingham)"
   },
   {
-   "venue": "UbiComp-ISWC",
-   "year": 2024,
-   "award": "best",
-   "awardLabel": "Best Paper",
-   "title": "DIPA2: An Image Dataset with Cross-cultural Privacy Perception Annotations",
+   "venue": "UbiComp",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "10-Year Impact Award Runner-up",
+   "title": "CrossCheck: toward passive sensing and detection of mental health changes in people with schizophrenia",
    "authors": [
-    "Anran Xu",
-    "Zhongyi Zhou",
-    "Kakeru Miyazaki",
-    "Ryo Yoshikawa",
-    "Simo Hosio",
-    "Koji Yatani"
+    "Rui Wang",
+    "Min S. H. Aung",
+    "Saeed Abdullah",
+    "Rachel Brian",
+    "Andrew T. Campbell",
+    "Tanzeem Choudhury",
+    "Marta Hauser",
+    "John Kane",
+    "Michael Merrill",
+    "Emily A. Scherer",
+    "Vincent W. S. Tseng",
+    "Dror Ben-Zeev"
    ],
    "track": "main",
-   "source": "https://files.sigchi.org/conference/cache/10125/22/program",
-   "evidence": "UbiComp-ISWC 2024 program, Best Paper: DIPA2: An Image Dataset with Cross-cultural Privacy Perception Annotations — Anran Xu, Zhongyi Zhou, Kakeru Miyazaki, Ryo Yoshikawa, Simo Hosio, Koji Yatani"
+   "paperYear": 2016,
+   "source": "https://ubicomp.org/ubicomp-iswc-2026/awards-all/",
+   "evidence": "Runner Up CrossCheck: toward passive sensing and detection of mental health changes in people with schizophrenia Rui Wang, Min S. H. Aung, Saeed Abdullah, Rachel Brian, Andrew T. Campbell, Tanzeem Choudhury, Marta Hauser, John Kane, Michael Merrill, Emily A. Scherer, Vincent W. S. Tseng and Dror Ben-Zeev UbiComp 2016, pp. 886–897"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "10-Year Impact Award",
+   "title": "Human respiration detection with commodity WiFi devices: do user location and body orientation matter?",
+   "authors": [
+    "Hao Wang",
+    "Daqing Zhang",
+    "Junyi Ma",
+    "Yasha Wang",
+    "Yuxiang Wang",
+    "Dan Wu",
+    "Tao Gu",
+    "Bing Xie"
+   ],
+   "track": "main",
+   "paperYear": 2016,
+   "source": "https://ubicomp.org/ubicomp-iswc-2026/awards-all/",
+   "evidence": "UbiComp 10-Year Impact Award Winner Human respiration detection with commodity WiFi devices: do user location and body orientation matter? Hao Wang, Daqing Zhang, Junyi Ma, Yasha Wang, Yuxiang Wang, Dan Wu, Tao Gu and Bing Xie UbiComp 2016, pp. 25–36"
   },
   {
    "venue": "UIST",
@@ -129658,6 +131787,37 @@
    "track": "main",
    "source": "https://um.org/awards/best-paper-awards",
    "evidence": "UMAP 2025 Best Paper Award: Synthetic Voices: Evaluating the Fidelity of LLM-Generated Personas in Representing People’s Financial Wellbeing — Arshnoor Kaur, Amanda Aird, Harris Borman, Andrea Nicastro, Anna Leontjeva, Luiz Pizzato, and Dan Jermyn"
+  },
+  {
+   "venue": "UMAP",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "To Explain or Not to Explain? An Empirical Investigation into Users’ Information Needs in News RecommenderSystems and Its Impact on User Engagement",
+   "authors": [
+    "Sophia Egbert",
+    "Stefanie M. Störtebek",
+    "Juliane A. Lischka"
+   ],
+   "track": "main",
+   "source": "https://www.um.org/umap2026/awards/",
+   "evidence": "Best Full Paper Award - Winner Sponsored by Springer Sophia Egbert, Stefanie M. Störtebek and Juliane A. Lischka. To Explain or Not to Explain? An Empirical Investigation into Users’ Information Needs in News RecommenderSystems and Its Impact on User Engagement"
+  },
+  {
+   "venue": "UMAP",
+   "year": 2026,
+   "award": "student",
+   "awardLabel": "James Chen Best Student Paper Award",
+   "title": "Let Me Introduce You: Stimulating Taste-Broadening Serendipity through Song Introductions",
+   "authors": [
+    "Brett Binst",
+    "Ulysse Maes",
+    "Martijn Willemsen",
+    "Annelien Smets"
+   ],
+   "track": "main",
+   "source": "https://www.um.org/umap2026/awards/",
+   "evidence": "James Chen Best Student Paper Award - Winner Sponsored by the Chen family Brett Binst, Ulysse Maes, Martijn Willemsen and Annelien Smets. Let Me Introduce You: Stimulating Taste-Broadening Serendipity through Song Introductions"
   },
   {
    "venue": "USENIX ATC",
@@ -136149,6 +138309,137 @@
    "evidence": "WCNC 2024 Best Paper Award, Track 4: Near Field Computational Imaging with RIS Generated Virtual Masks — Yuhua Jiang, Feifei Gao, Yimin Liu, Shi Jin, Tiejun Cui"
   },
   {
+   "venue": "WCNC",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Track 3)",
+   "title": "A DNN Framework on Waveform Design for Over-The-Air Computation",
+   "authors": [
+    "Nikos G. Evgenidis",
+    "Nikos Mitsiou",
+    "Sotiris A. Tegos",
+    "Panagiotis D. Diamantoulakis",
+    "Panagiotis Sarigiannidis",
+    "George K. Karagiannidis"
+   ],
+   "track": "main",
+   "source": "https://wcnc2025.ieee-wcnc.org/program-0/program-glance/best-paper-awards",
+   "evidence": "Track 3 A DNN Framework on Waveform Design for Over-The-Air Computation Nikos G. Evgenidis, Nikos Mitsiou, Sotiris A. Tegos and Panagiotis D. Diamantoulakis (Aristotle University of Thessaloniki, Greece); Panagiotis Sarigiannidis (University of Western Macedonia, Greece); George K. Karagiannidis (Aristotle University of Thessaloniki, Greece)"
+  },
+  {
+   "venue": "WCNC",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Track 1)",
+   "title": "NirvaWave: an Accurate and Efficient Near Field Wave Propagation Simulator for 6G and Beyond",
+   "authors": [
+    "Vahid Yazdnian",
+    "Yasaman Ghasempour"
+   ],
+   "track": "main",
+   "source": "https://wcnc2025.ieee-wcnc.org/program-0/program-glance/best-paper-awards",
+   "evidence": "Track 1 NirvaWave: an Accurate and Efficient Near Field Wave Propagation Simulator for 6G and Beyond Vahid Yazdnian and Yasaman Ghasempour (Princeton University, USA)"
+  },
+  {
+   "venue": "WCNC",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Track 2)",
+   "title": "Performance of Cell-Free Massive MIMO in Realistic Urban Propagation Environments",
+   "authors": [
+    "Yunlu Xiao",
+    "Ljiljana Simić"
+   ],
+   "track": "main",
+   "source": "https://wcnc2025.ieee-wcnc.org/program-0/program-glance/best-paper-awards",
+   "evidence": "Track 2 Performance of Cell-Free Massive MIMO in Realistic Urban Propagation Environments Yunlu Xiao and Ljiljana Simić (RWTH Aachen University, Germany)"
+  },
+  {
+   "venue": "WCNC",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Track 4)",
+   "title": "Whispers in the Snow: Exploring LoRa Technology for Avalanche Search and Rescue Scenarios",
+   "authors": [
+    "Michele Girolami",
+    "Giulio M Bianco",
+    "Fabio Mavilia",
+    "Gaetano Marrocco"
+   ],
+   "track": "main",
+   "source": "https://wcnc2025.ieee-wcnc.org/program-0/program-glance/best-paper-awards",
+   "evidence": "Track 4 Whispers in the Snow: Exploring LoRa Technology for Avalanche Search and Rescue Scenarios Michele Girolami (ISTI-CNR, Italy); Giulio M Bianco (University of Roma Tor Vergata, Italy); Fabio Mavilia (CNR-ISTI, Italy); Gaetano Marrocco (University of Rome Tor Vergata, Italy)"
+  },
+  {
+   "venue": "WCNC",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Track 1)",
+   "title": "Divergence Meets Dispersion: Eﬃcient Wideband Beam Training for XL-MIMO",
+   "authors": [
+    "Ran Li",
+    "Ziyi Xu",
+    "Wei Guo",
+    "Ying Jun (Angela) Zhang"
+   ],
+   "track": "main",
+   "source": "https://wcnc2026.ieee-wcnc.org/best-paper-awards",
+   "evidence": "Best Paper for Track 1: Divergence Meets Dispersion: Eﬃcient Wideband Beam Training for XL-MIMO Ran Li (The Chinese University of Hong Kong, Hong Kong); Ziyi Xu (The Chinese University of Hong Kong, Hong Kong); Wei Guo (The Hong Kong University of Science and Technology, Hong Kong); Ying Jun (Angela) Zhang (The Chinese University of Hong Kong, Hong Kong)"
+  },
+  {
+   "venue": "WCNC",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Track 4)",
+   "title": "Movable Arrays of Rydberg Sensors: Modelling and Optimization",
+   "authors": [
+    "Tao Xu",
+    "John Thompson",
+    "Wasiu O. Popoola",
+    "Constantinos Psomas",
+    "Kapila W S Palitharathna"
+   ],
+   "track": "main",
+   "source": "https://wcnc2026.ieee-wcnc.org/best-paper-awards",
+   "evidence": "Best Paper for Track 4 Movable Arrays of Rydberg Sensors: Modelling and Optimization Tao Xu (University of Edinburgh, United Kingdom (Great Britain)); John Thompson (University of Edinburgh & Univ of Edinburgh, United Kingdom (Great Britain)); Wasiu O. Popoola (University of Edinburgh, United Kingdom (GreatBritain)); Constantinos Psomas (European University Cyprus, Cyprus); Kapila W S Palitharathna (University of Cyprus, Cyprus)"
+  },
+  {
+   "venue": "WCNC",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Track 3)",
+   "title": "Neural Beam Field for Spatial Beam RSRP Prediction",
+   "authors": [
+    "Keqiang Guo",
+    "Yuheng Zhong",
+    "X. Tong",
+    "Jiangbin Lyu",
+    "Rui Zhang"
+   ],
+   "track": "main",
+   "source": "https://wcnc2026.ieee-wcnc.org/best-paper-awards",
+   "evidence": "Best Paper for Track 3: Neural Beam Field for Spatial Beam RSRP Prediction Keqiang Guo (Xiamen University, China); Yuheng Zhong (Xiamen University, China); X. Tong (Xiamen University, China); Jiangbin Lyu (Xiamen University, China); Rui Zhang (National University of Singapore, Singapore)"
+  },
+  {
+   "venue": "WCNC",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Track 2)",
+   "title": "On the Stabilizability and Scheduling of Wireless Control Network Design with RSMA",
+   "authors": [
+    "Haijia Jin",
+    "Weijie Yuan",
+    "Jun Wu",
+    "Yuanhao Cui",
+    "Fan Liu",
+    "Jie Xu",
+    "Pingzhi Fan"
+   ],
+   "track": "main",
+   "source": "https://wcnc2026.ieee-wcnc.org/best-paper-awards",
+   "evidence": "Best Paper for Track 2: On the Stabilizability and Scheduling of Wireless Control Network Design with RSMA Haijia Jin (Southern University of Science and Technology, China); Weijie Yuan (SUSTECH, Hong Kong); Jun Wu (SUSTech, China); Yuanhao Cui (Big Data Academy, Zhongke, China); Fan Liu (Southeast University, China); Jie Xu (The Chinese University of Hong Kong (Shenzhen), China); Pingzhi Fan (Southwest Jiaotong University, China)"
+  },
+  {
    "venue": "WOOT",
    "year": 2011,
    "award": "best",
@@ -136606,6 +138897,393 @@
    "paperYear": 2011,
    "source": "https://www.wsdm-conference.org/2021/",
    "evidence": "WSDM 2021 Test of Time Award: Everyone’s an influencer: Quantifying influence on Twitter — Eytan Bakshy, Jake Mark Hofman, Winter A Mason, Duncan J. Watts"
+  },
+  {
+   "venue": "WSDM",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Learning Discrete Representations via Constrained Clustering for Effective and Efficient Dense Retrieval",
+   "authors": [
+    "Jingtao Zhan",
+    "Jiaxin Mao",
+    "Yiqun LIU",
+    "Jiafeng Guo",
+    "Min Zhang",
+    "Shaoping Ma"
+   ],
+   "track": "main",
+   "source": "https://www.wsdm-conference.org/2022/timetable/event/best-papers-session/",
+   "evidence": "WSDM 2022 Best Paper Award Recipient Learning Discrete Representations via Constrained Clustering for Effective and Efficient Dense Retrieval Jingtao Zhan (Tsinghua University)*; Jiaxin Mao (Renmin University of China); Yiqun LIU (Tsinghua University); Jiafeng Guo (Institute of Computing Technology, Chinese Academy of Sciences); Min Zhang (Tsinghua University); Shaoping Ma (Tsinghua University)"
+  },
+  {
+   "venue": "WSDM",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "Doubly Robust Off-Policy Evaluation for Ranking Policies under the Cascade Behavior Model",
+   "authors": [
+    "Haruka Kiyohara",
+    "Yuta Saito",
+    "Tatsuya Matsuhiro",
+    "Yusuke Narita",
+    "Nobuyuki Shimizu",
+    "Yasuo Yamamoto"
+   ],
+   "track": "main",
+   "source": "https://www.wsdm-conference.org/2022/timetable/event/best-papers-session/",
+   "evidence": "WSDM 2022 Best Paper Award Runner-Ups Doubly Robust Off-Policy Evaluation for Ranking Policies under the Cascade Behavior Model Haruka Kiyohara (Tokyo Institute of Technology)*; Yuta Saito (Cornell University); Tatsuya Matsuhiro (Yahoo Japan Corporation); Yusuke Narita (Yale University); Nobuyuki Shimizu (Yahoo Japan Corporation); Yasuo Yamamoto (Yahoo! Japan)"
+  },
+  {
+   "venue": "WSDM",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "Evaluating Mixed-initiative Conversational Search Systems via User Simulation",
+   "authors": [
+    "Ivan Sekulic",
+    "Mohammad Aliannejadi",
+    "Fabio Crestani"
+   ],
+   "track": "main",
+   "source": "https://www.wsdm-conference.org/2022/timetable/event/best-papers-session/",
+   "evidence": "WSDM 2022 Best Paper Award Runner-Ups … Evaluating Mixed-initiative Conversational Search Systems via User Simulation Ivan Sekulic (USI); Mohammad Aliannejadi (University of Amsterdam)*; Fabio Crestani (Universita della Svizzera italiana)"
+  },
+  {
+   "venue": "WSDM",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Test of Time Award Runner-up",
+   "title": "Patterns of temporal variation in online media",
+   "authors": [
+    "Jaewon Yang",
+    "Jure Leskovec"
+   ],
+   "track": "main",
+   "paperYear": 2011,
+   "source": "https://www.wsdm-conference.org/2022/timetable/event/wsdm-awards-program-test-of-time-presentation/",
+   "evidence": "Test-of-Time Award Runner-up: Jaewon Yang and Jure Leskovec. “Patterns of temporal variation in online media”, WSDM 2011"
+  },
+  {
+   "venue": "WSDM",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "The Datasets Dilemma: How Much Do We Really Know About Recommendation Datasets?",
+   "authors": [
+    "Jin Yao Chin",
+    "Yile Chen",
+    "Gao Cong"
+   ],
+   "track": "main",
+   "source": "https://www.wsdm-conference.org/2022/timetable/event/best-papers-session/",
+   "evidence": "WSDM 2022 Best Paper Award Runner-Ups … The Datasets Dilemma: How Much Do We Really Know About Recommendation Datasets? Jin Yao Chin (Nanyang Technological University)*; Yile Chen (Nanyang Technological University); Gao Cong (Nanyang Technological Univesity)"
+  },
+  {
+   "venue": "WSDM",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Recommender systems with social regularization",
+   "authors": [
+    "Hao Ma",
+    "Dengyong Zhou",
+    "Chao Liu",
+    "Michael R. Lyu",
+    "Irwin King"
+   ],
+   "track": "main",
+   "paperYear": 2011,
+   "source": "https://www.wsdm-conference.org/2022/timetable/event/wsdm-awards-program-test-of-time-presentation/",
+   "evidence": "Test-of-Time Award Winner: Hao Ma, Dengyong Zhou, Chao Liu, Michael R. Lyu, and Irwin King. “Recommender systems with social regularization”, WSDM 2011."
+  },
+  {
+   "venue": "WSDM",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Learning Stance Embeddings from Signed Social Graphs",
+   "authors": [
+    "John Pougué-Biyong",
+    "Akshay Gupta",
+    "Aria Haghighi",
+    "Ahmed El-Kishky"
+   ],
+   "track": "main",
+   "source": "https://www.wsdm-conference.org/2023/program/awards",
+   "evidence": "Best Paper Award Learning Stance Embeddings from Signed Social Graphs John Pougué-Biyong (University of Oxford); Akshay Gupta (Facebook); Aria Haghighi (Twitter); Ahmed El-Kishky (Twitter)"
+  },
+  {
+   "venue": "WSDM",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Test of Time Award Honorable Mention",
+   "title": "Aspect and sentiment unification model for online review analysis",
+   "authors": [
+    "Yohan Jo",
+    "Alice H. Oh"
+   ],
+   "track": "main",
+   "paperYear": 2011,
+   "source": "https://www.wsdm-conference.org/2023/program/awards",
+   "evidence": "Test of Time Award – Honorable Mention Aspect and sentiment unification model for online review analysis (WSDM2011) Yohan Jo and Alice H. Oh"
+  },
+  {
+   "venue": "WSDM",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Award Honorable Mention",
+   "title": "Efficiently Leveraging Multi-level User Intent for Session-based Recommendation via Atten-Mixer Network",
+   "authors": [
+    "Peiyan Zhang",
+    "Jiayan Guo",
+    "Chaozhuo Li",
+    "Yueqi Xie",
+    "Jae Boum KIM",
+    "Yan Zhang",
+    "Xing Xie",
+    "Haohan Wang",
+    "Sunghun Kim"
+   ],
+   "track": "main",
+   "source": "https://www.wsdm-conference.org/2023/program/awards",
+   "evidence": "Best Paper Award – Honorable Mention Efficiently Leveraging Multi-level User Intent for Session-based Recommendation via Atten-Mixer Network Peiyan Zhang (HKUST); Jiayan Guo (Peking U); Chaozhuo Li (MSRA); Yueqi Xie (HKUST); Jae Boum KIM (HKUST); Yan Zhang (Peking U); Xing Xie (MSRA); Haohan Wang (UIUC); Sunghun Kim (HKUST)"
+  },
+  {
+   "venue": "WSDM",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Award Honorable Mention",
+   "title": "Knowledge Enhancement for Contrastive Multi-Behavior Recommendation",
+   "authors": [
+    "HongRui Xuan",
+    "Yi Liu",
+    "Bohan Li",
+    "Hongzhi Yin"
+   ],
+   "track": "main",
+   "source": "https://www.wsdm-conference.org/2023/program/awards",
+   "evidence": "Best Paper Award – Honorable Mention … Knowledge Enhancement for Contrastive Multi-Behavior Recommendation HongRui Xuan (Nanjing University of Aeronautics and Astronautics); Yi Liu (Nanjing University of Aeronautics and Astronautics); Bohan Li (Nanjing University of Aeronautics and Astronautics); Hongzhi Yin (The University of Queensland)"
+  },
+  {
+   "venue": "WSDM",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Award Honorable Mention",
+   "title": "Marketing Budget Allocation with Offline Constrained Deep Reinforcement Learning",
+   "authors": [
+    "Tianchi Cai",
+    "Wenpeng Zhang",
+    "Shiji Zhou",
+    "Jiyan Jiang",
+    "Xierui SONG",
+    "Li Yu",
+    "Lihong Gu",
+    "Xiaodong Zeng",
+    "Jinjie Gu",
+    "Guannan Zhang"
+   ],
+   "track": "main",
+   "source": "https://www.wsdm-conference.org/2023/program/awards",
+   "evidence": "Best Paper Award – Honorable Mention … Marketing Budget Allocation with Offline Constrained Deep Reinforcement Learning Tianchi Cai (Ant Group); Wenpeng Zhang (Ant Group); Shiji Zhou (Tsinghua University); Jiyan Jiang (Tsinghua University); Xierui SONG (Ant Group); Li Yu (Ant Financial Services Group); Lihong Gu (Ant Group); Xiaodong Zeng (Ant Services Group ); Jinjie Gu (Ant Group); Guannan Zhang (Ant Group)"
+  },
+  {
+   "venue": "WSDM",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Supervised random walks: predicting and recommending links in social networks",
+   "authors": [
+    "Lars Backstrom",
+    "Jure Leskovec"
+   ],
+   "track": "main",
+   "paperYear": 2011,
+   "source": "https://www.wsdm-conference.org/2023/program/awards",
+   "evidence": "Test of Time Award Supervised random walks: predicting and recommending links in social networks (WSDM2011) Lars Backstrom and Jure Leskovec"
+  },
+  {
+   "venue": "WSDM",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Long-Term Value of Exploration: Measurements, Findings and Algorithms",
+   "authors": [
+    "Yi Su",
+    "Ya Le",
+    "Xiangyu Wang",
+    "Liang Liu",
+    "Yuening Li",
+    "Haokai Lu",
+    "Benjamin Lipshitz",
+    "Sriraj Badam",
+    "Lukasz Heldt",
+    "Shuchao Bi",
+    "Ed H. Chi",
+    "Cristos Goodrow",
+    "Su-Lin Wu",
+    "Lexi Baugher",
+    "Minmin Chen"
+   ],
+   "track": "main",
+   "source": "https://www.wsdm-conference.org/2024/wsdm-best-papers/",
+   "evidence": "Best Paper Award Long-Term Value of Exploration: Measurements, Findings and Algorithms Yi Su; Ya Le; Xiangyu Wang; Liang Liu; Yuening Li; Haokai Lu; Benjamin Lipshitz; Sriraj Badam; Lukasz Heldt; Shuchao Bi; Ed H. Chi; Cristos Goodrow; Su-Lin Wu; Lexi Baugher; Minmin Chen"
+  },
+  {
+   "venue": "WSDM",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Test of Time Award Honorable Mention",
+   "title": "Auralist: introducing serendipity into music recommendation",
+   "authors": [
+    "Yuan Cao Zhang",
+    "Diarmuid Ó Séaghdha",
+    "Daniele Quercia",
+    "Tamas Jambor"
+   ],
+   "track": "main",
+   "source": "https://www.wsdm-conference.org/2024/wsdm-best-papers/",
+   "evidence": "Honorable Mentions (Test of Time Award) … Auralist: introducing serendipity into music recommendation Yuan Cao Zhang, Diarmuid Ó Séaghdha, Daniele Quercia, Tamas Jambor"
+  },
+  {
+   "venue": "WSDM",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Award Honorable Mention",
+   "title": "Debiasing Sequential Recommenders through Distributionally Robust Optimization over System Exposure",
+   "authors": [
+    "Jiyuan Yang",
+    "Yue Ding",
+    "Yidan Wang",
+    "Pengjie Ren",
+    "Zhumin Chen",
+    "Fei Cai",
+    "Jun Ma",
+    "Rui Zhang",
+    "Zhaochun Ren",
+    "Xin Xin"
+   ],
+   "track": "main",
+   "source": "https://www.wsdm-conference.org/2024/wsdm-best-papers/",
+   "evidence": "Honorable Mentions (Best Paper Award) Debiasing Sequential Recommenders through Distributionally Robust Optimization over System Exposure Jiyuan Yang; Yue Ding; Yidan Wang; Pengjie Ren; Zhumin Chen; Fei Cai; Jun Ma; Rui Zhang; Zhaochun Ren; Xin Xin"
+  },
+  {
+   "venue": "WSDM",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Test of Time Award Honorable Mention",
+   "title": "Overlapping community detection at scale: a nonnegative matrix factorization approach",
+   "authors": [
+    "Jaewon Yang",
+    "Jure Leskovec"
+   ],
+   "track": "main",
+   "source": "https://www.wsdm-conference.org/2024/wsdm-best-papers/",
+   "evidence": "Honorable Mentions (Test of Time Award) … Overlapping community detection at scale: a nonnegative matrix factorization approach Jaewon Yang, Jure Leskovec"
+  },
+  {
+   "venue": "WSDM",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Award Honorable Mention",
+   "title": "Source Free Graph Unsupervised Domain Adaptation",
+   "authors": [
+    "Haitao Mao",
+    "Lun Du",
+    "Yujia Zheng",
+    "Qiang Fu",
+    "Zelin Li",
+    "Xu Chen",
+    "Shi Han",
+    "Dongmei Zhang"
+   ],
+   "track": "main",
+   "source": "https://www.wsdm-conference.org/2024/wsdm-best-papers/",
+   "evidence": "Honorable Mentions (Best Paper Award) … Source Free Graph Unsupervised Domain Adaptation Haitao Mao; Lun Du; Yujia Zheng; Qiang Fu; Zelin Li; Xu Chen; Shi Han; Dongmei Zhang"
+  },
+  {
+   "venue": "WSDM",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Test of Time Award Honorable Mention",
+   "title": "What’s in a hashtag?: content based prediction of the spread of ideas in microblogging communities",
+   "authors": [
+    "Oren Tsur",
+    "Ari Rappoport"
+   ],
+   "track": "main",
+   "source": "https://www.wsdm-conference.org/2024/wsdm-best-papers/",
+   "evidence": "Honorable Mentions (Test of Time Award) What’s in a hashtag?: content based prediction of the spread of ideas in microblogging communities Oren Tsur, Ari Rappoport"
+  },
+  {
+   "venue": "WSDM",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Personalized entity recommendation: a heterogeneous information network approach",
+   "authors": [
+    "Xiao Yu",
+    "Xiang Ren",
+    "Yizhou Sun",
+    "Quanquan Gu",
+    "Bradley Sturt",
+    "Urvashi Khandelwal",
+    "Brandon Norick",
+    "Jiawei Han"
+   ],
+   "track": "main",
+   "source": "https://www.wsdm-conference.org/2024/wsdm-best-papers/",
+   "evidence": "Test of Time Award Personalized entity recommendation: a heterogeneous information network approach Xiao Yu , Xiang Ren , Yizhou Sun, Quanquan Gu, Bradley Sturt, Urvashi Khandelwal, Brandon Norick, Jiawei Han"
+  },
+  {
+   "venue": "WSDM",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Sarcasm detection on twitter: A behavioral modeling approach",
+   "authors": [
+    "Ashwin Rajadesingan",
+    "Reza Zafarani",
+    "Huan Liu"
+   ],
+   "track": "main",
+   "source": "https://www.wsdm-conference.org/2025/paper-presentation-schedule/",
+   "evidence": "Sarcasm detection on twitter: A behavioral modeling approach: Ashwin Rajadesingan, Reza Zafarani and Huan Liu (Test of time award)"
+  },
+  {
+   "venue": "WSDM",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Full Research Paper Award",
+   "title": "Diversification as Risk Minimization",
+   "authors": [
+    "Rikiya Takehi",
+    "Fernando Diaz",
+    "Tetsuya Sakai"
+   ],
+   "track": "main",
+   "source": "https://wsdm-conference.org/2026/index.php/awards/",
+   "evidence": "Best Full Research Paper Award “Diversification as Risk Minimization”. Rikiya Takehi, Fernando Diaz, and Tetsuya Sakai"
+  },
+  {
+   "venue": "WSDM",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Best Full Research Paper Runner-up",
+   "title": "TemporalExpertNet: Cross-Temporal Knowledge Reuse for Promotion-Aware CVR Prediction",
+   "authors": [
+    "Minmao Wang",
+    "Rui Zhang",
+    "Shijie Yi",
+    "Likang Wu",
+    "Hongke Zhao",
+    "Fei Pan",
+    "Qingpeng Cai",
+    "Peng Jiang"
+   ],
+   "track": "main",
+   "source": "https://wsdm-conference.org/2026/index.php/awards/",
+   "evidence": "Best Full Research Paper Runner-up “TemporalExpertNet: Cross-Temporal Knowledge Reuse for Promotion-Aware CVR Prediction”. Minmao Wang, Rui Zhang, Shijie Yi, Likang Wu, Hongke Zhao, Fei Pan, Qingpeng Cai, and Peng Jiang"
   },
   {
    "venue": "WWW",
