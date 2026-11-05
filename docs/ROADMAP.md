@@ -179,7 +179,7 @@ of HotStorage, and the year written with a hyphen or jammed onto a mixed-case wo
   unlisted venues begin so too. Measured 2026-10-29 by cutting the 52,800 Crossref / OpenAlex titles of `test/fixtures/real-titles.txt`
   where Scholar would: of the cut titles that carry a year (and no hidden track word), 882 keep the whole title's badge and 183 got
   another. The owner chose the edition check: 18 venues have their numbering in aliases.js (`edition`), which took the 183 to 132 and
-  cost no right badge there. Measured again on 2026-11-04 (cut at about 76 characters at a word, punctuation dropped, as Scholar does): 148 cut
+  cost no right badge there. Measured again on 2026-11-04 (`node scripts/measure-cut-lines.mjs`: cut at about 76 characters at a word, punctuation dropped, as Scholar does): 148 cut
   lines with a badge their whole title lacks, outside hidden track words; 14 more anchors took them to 119 and cost one right badge (HPCC 2013,
   whose own IEEE title says "10th"). What is left: venues whose lines print no edition (CIDM: 29 of the 119), an acronym two CORE rows share
   (ICCSA), the 110 lines whose cut hides a track word ("… Workshops", "… Companion": only Read full lists sees it), and one pair of listed

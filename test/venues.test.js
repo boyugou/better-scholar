@@ -533,6 +533,19 @@ test("an unranked event's acronym inside the name shadows it too: the Iranian IS
   assert.match(brief("Information Security: 23rd International Conference, ISC 2020, Bali, Indonesia"), /^CCF C ISC/);
 });
 
+test("a cut line that begins a listed name with an edition that venue cannot have held that year is another venue's (aliases.js `edition`, 2026-11-04)", () => {
+  // (real titles of test/fixtures/real-titles.txt, cut where Scholar cuts a line: scripts/measure-cut-lines.mjs)
+  assert.equal(brief("Proceedings of the 2018 10th International Conference on Machine Learning and …, 2018"), "", "ICMLC, not ICML's 35th");
+  assert.equal(brief("2016 Second International Conference on Research in Computational …, 2016"), "", "ICRCICN, not RECOMB's 20th");
+  assert.equal(brief("Proceedings of the 2024 3rd International Conference on Cyber Security, …, 2024"), "", "not CSCloud's 11th");
+  assert.equal(brief("Proceedings of the 20th International Conference on Spoken Language …, 2023"), "", "IWSLT, not the SLT workshop");
+  // the venues themselves, by their own lines
+  assert.equal(brief("Proceedings of the 25th international conference on Machine learning - ICML '08"), "CCF A ICML · CORE A* ICML");
+  assert.equal(brief("Proceedings of the 35th International Conference on Machine Learning, 2018"), "CCF A ICML · CORE A* ICML");
+  assert.match(brief("2013 Seventh International Conference on Image and Graphics"), /^CCF C ICIG/);
+  assert.match(brief("2022 17th International Conference on Control, Automation, Robotics and Vision (ICARCV)"), /CORE C ICARCV/);
+});
+
 test("a place in a parenthesis is no acronym: '(Cambridge, Mass.)' is not the IEEE MASS conference", () => {
   assert.equal(brief("Cell (Cambridge, Mass.)"), "");
   assert.equal(brief("MIT Press (Cambridge, Mass.)"), "");
