@@ -30,9 +30,9 @@
 //   edition       [a year, the edition held that year, every how many years (1 if left out)]: the venue's numbering, checked against the venue's own lines in the corpora; a line whose
 //                 edition number is more than two from it, for the line's year, is another venue's ("2015 18th International Conference on Computer and Information Technology" is
 //                 Bangladesh's ICCIT, IEEE's CIT held its 15th). Only for venues whose names other events share
-//   reach         a word of the venue's name, as written, that the visible start of a cut-off line must reach for the line to be this venue: before it, many events
-//                 begin the same way ("… Conference on Computational Intelligence and …" is CIDM's start, and CICN's, CIDS's …; "data" tells it). The venue stays a rival
-//                 of a start it does not reach: no other venue claims it either. Only takes a badge away
+//   reach         a word of the venue's name, as written (or a list: any of them), that the visible start of a cut-off line must reach for the line to be this venue: before
+//                 it, many events begin the same way ("… Conference on Computational Intelligence and …" is CIDM's start, and CICN's, CIDS's …; "mining" tells it). The venue
+//                 stays a rival of a start it does not reach: no other venue claims it either. Only takes a badge away
 //   volumeYear    [a year, the journal's volume that year] (a journal of one volume a year): a line whose volume is more than one from it, for the line's year, is another journal
 //                 of the same name — the Chinese edition of SCIS, Argentina's own "Journal of Computer Science and Technology"
 //   shadow        (an entry of its own, no ccf / core) acronyms of unranked events whose names boil down to the words of a ranked venue's: a string that names one of them
@@ -417,8 +417,15 @@
     { core: "ICCE", edition: [2020, 28] },
     { core: "EDM", edition: [2023, 16] },
     { core: "CICM", edition: [2017, 10] },
+    // (2026-11-05, the same measurement again: MMSys's own lines, "Proceedings of the 9th ACM Multimedia Systems Conference, …, 2018"; Inscrypt's, SECRYPT's and ICRA's own pages —
+    // Inscrypt 2024 the 20th, SECRYPT 2022 the 19th. "2024 17th International Conference on Information Security and Cryptology" is Turkey's ISCTürkiye, "2022 15th
+    // International Conference on Information Security and Cryptography" its 2022 edition, "2019 4th International Conference on Multimedia Systems and Signal Processing" no MMSys)
+    { core: "MMSys", edition: [2018, 9] },
+    { ccf: "Inscrypt", edition: [2024, 20] },
+    { core: "SECRYPT", edition: [2022, 19] },
+    { ccf: "ICRA", core: "ICRA", edition: [2009, 26] },          // (the 12th in 1995 and the 26th in 2009, both at Kobe, the 41st at Yokohama in 2024: "2024 IEEE 3rd International Conference on Robotics, Automation, Artificial-Intelligence and Internet-of-Things" is RAAICON)
     // (2026-11-04, from the same measurement: the shared starts that a cut line ends inside, read as the one listed venue they begin)
-    { core: "CIDM", reach: "data" },
+    { core: "CIDM", reach: "mining" },          // ("… Conference on Computational Intelligence in Data …": ICCIDS)
     { core: "IEEE CIFEr", reach: "financial" },          // ("… Conference on Computational Intelligence for …": CIMSA, CIVEMSA …)
     { core: "IoTBDS", reach: "big" },          // ("… Conference on Internet of Things …": iThings, the IEEE's joint events)
     { core: "CLOSER", reach: "services" },          // ("… Conference on Cloud Computing and …": "… and Internet of Things", "… and Big Data")
@@ -430,6 +437,17 @@
     { core: "LATA", reach: "automata" },          // ("… Conference on Language, Art and …")
     { ccf: "WCNC", core: "WCNC", reach: "networking" },          // ("… Conference on Wireless Communication …")
     { core: "ICCSA", reach: "its" },          // (both rows: "… Conference on Computational Science and …" is the IEEE's CSE too — "Its" tells ICCSA's —, "… on Communication …" many)
+    // (2026-11-05, the measurement's next round: each a start an unlisted event's whole title begins, in test/fixtures/real-titles.txt)
+    { core: "IEEE CISDA", reach: ["defence", "defense"] },          // ("… Conference on Computational Intelligence and Security …": CIS)
+    { core: "SNPD", reach: "acis" },          // ("… Conference on Software Engineering and Artificial …": SEAI; each of SNPD's own lines names its sponsor, ACIS, before the cut)
+    { ccf: "ISMB", core: "ISMB", reach: "molecular" },          // ("… Conference on Intelligent Systems for …": ICISCoIS)
+    { core: "WACV", reach: "computer" },          // ("… Symposium on Applications of …": of Ferroelectrics)
+    { ccf: "SIGMOD", core: "SIGMOD", reach: "data" },          // ("… Conference on Management …": "… Management, Economics and Social Development")
+    { core: "ICEC", reach: ["commerce", "entertainment"] },          // (both rows, each by its own word: "… Conference on Electronic …" is "… Electronic Information Technology …" too)
+    { core: "ASONAM", reach: "networks" },          // ("… Conference on Advances in Social …": "… Social Sciences and Sustainable Development")
+    { core: "CAIN", reach: "engineering" },          // ("… Conference on AI …": "… AI Foundation Models and Software Engineering")
+    { core: "IEEE CIMSIVP", reach: "signal" },          // ("… Conference on Computational Intelligence and Multimedia …": ICCIMA)
+    { core: "AIME", reach: "medicine" },          // ("… Conference on Artificial Intelligence …": the IEEE's "… Applications" of 1988)
     // (names the lists lack: ACM's proceedings title of PACT leaves out "Techniques"; the IEEE's of MASCOTS says "Computers")
     { ccf: "PACT", core: "PACT", names: ["International Conference on Parallel Architectures and Compilation"] },
     { ccf: "MASCOTS", core: "MASCOTS", names: ["International Symposium on Modeling, Analysis and Simulation of Computers and Telecommunication Systems"] },
@@ -493,6 +511,6 @@
     // JCC is the exception that proves the rule: CCF ranks the JointCloud conference, but the words of "IEEE … Joint Cloud Computing (JCC)" boil down to IEEE CLOUD's — no badge is better than that one
     { ccf: "SCIS", kind: "J", volumeYear: [2023, 66] },
     { ccf: "JCST", kind: "J", volumeYear: [2019, 34] },
-    { shadow: [{ name: "AI" }, { name: "IoT" }, { acronym: "WISA", with: "security" }, { acronym: "ISC", with: "supercomputing" }, { acronym: "ISC", with: "cryptology" }, { acronym: "ICCC", with: "communications" }, { acronym: "ICCC", with: "cybernetics" }, { acronym: "SPIN", with: "physics" }, { name: "ACM Symposium on Applied Computing" }, { name: "Symposium on Applied Computing" }, { acronym: "ICCC", with: "cognitive" }, { acronym: "ICWS", with: "held as part of the services" }, { acronym: "CLOUD", with: "held as part of the services" }, { acronym: "ICBC", with: "held as part of the services" }, { name: "Annual Technical Conference" }, { name: "Virtual Reality International Conference" }, { name: "International Conference on Virtual Reality" }, { name: "International Symposium on Computer Vision" }, { name: "International Symposium on Computers in Education" }, { name: "IEEE Region 10 Symposium" }, { name: "Annual Information Security Symposium" }, { name: "International Conference on Communications" }, { name: "International Conference on Networking" }, { acronym: "BigData", with: "congress" }, { acronym: "ICDM", with: "industrial" }, { acronym: "IAS", with: "industry" }, { acronym: "ICC", with: "cartographic" }, { acronym: "EURO", with: "asic" }, { acronym: "CIS", with: "cybernetic intelligent" }, { acronym: "ICIS", with: "systems" }, { acronym: "ICCE", with: "consumer" }, { acronym: "ICCE", with: "berlin" }, { name: "Proceedings of the ACM on Computer Graphics and Interactive Techniques" }, "SIGIR-AP", "ICAI", "ICAIE", "SIIE", "ISCTURKEY", "ICONIC", "ICSyS", { acronym: "ICCS", with: "circuits" }, { acronym: "ICCAS", with: "circuits" }, "ANNSIM", { acronym: "MAS", with: "simulation" }, "CISP", "TENSYMP", "ASYU", "CAI", "ICTIR", "ISCISC", "ICCIT", "COMM", "ICNLP", "MODSIM", "ONCON", "IntelliSys", "ICALTE", "ICSOFT-PT", { acronym: "JCC", with: "joint cloud" }, { acronym: "ICICS", with: "communication systems" }, "ICOIN", { acronym: "SOCC", with: "soc conference" }, { acronym: "SOCC", with: "system-on-chip" }] }
+    { shadow: [{ name: "AI" }, { name: "IoT" }, { acronym: "WISA", with: "security" }, { acronym: "ISC", with: "supercomputing" }, { acronym: "ISC", with: "cryptology" }, { acronym: "ICCC", with: "communications" }, { acronym: "ICCC", with: "cybernetics" }, { acronym: "SPIN", with: "physics" }, { name: "ACM Symposium on Applied Computing" }, { name: "Symposium on Applied Computing" }, { acronym: "ICCC", with: "cognitive" }, { acronym: "ICWS", with: "held as part of the services" }, { acronym: "CLOUD", with: "held as part of the services" }, { acronym: "ICBC", with: "held as part of the services" }, { name: "Annual Technical Conference" }, { name: "Virtual Reality International Conference" }, { name: "International Conference on Virtual Reality" }, { name: "International Symposium on Computer Vision" }, { name: "International Symposium on Computers in Education" }, { name: "IEEE Region 10 Symposium" }, { name: "Annual Information Security Symposium" }, { name: "International Conference on Communications" }, { name: "International Conference on Networking" }, { acronym: "BigData", with: "congress" }, { acronym: "ICDM", with: "industrial" }, { acronym: "IAS", with: "industry" }, { acronym: "ICC", with: "cartographic" }, { acronym: "EURO", with: "asic" }, { acronym: "CIS", with: "cybernetic intelligent" }, { acronym: "ICIS", with: "systems" }, { acronym: "ICCE", with: "consumer" }, { acronym: "ICCE", with: "berlin" }, { name: "Proceedings of the ACM on Computer Graphics and Interactive Techniques" }, "SIGIR-AP", "ICAI", "ICAIE", "SIIE", "ISCTURKEY", "ISCTurkiye", "ICONIC", "ICSyS", { acronym: "ICCS", with: "circuits" }, { acronym: "ICCAS", with: "circuits" }, "ANNSIM", { acronym: "MAS", with: "simulation" }, "CISP", "TENSYMP", "ASYU", "CAI", "ICTIR", "ISCISC", "ICCIT", "COMM", "ICNLP", "MODSIM", "ONCON", "IntelliSys", "ICALTE", "ICSOFT-PT", { acronym: "JCC", with: "joint cloud" }, { acronym: "ICICS", with: "communication systems" }, "ICOIN", { acronym: "SOCC", with: "soc conference" }, { acronym: "SOCC", with: "system-on-chip" }] }
   ];
 });
