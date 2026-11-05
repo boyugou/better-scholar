@@ -426,6 +426,9 @@ html { scroll-padding-top: 72px; }
   text-transform: uppercase;
 }
 
+/* the end of a group of rows: a band before the rows that are not of it */
+.opt-group-end { height: 10px; border-top: 1px solid var(--line); background: var(--ground); }
+
 /* An order: the parts (or buttons) of a list, top to bottom, with the buttons that move them; a part that is switched off is dimmed and keeps its place */
 .opt.opt-segmented .txt { flex: none; }          /* (in a column the label's 10rem basis would be its height: a gap of 140 px above the list or the choices) */
 /* An order whose items are the card's own switches: one row per item, the arrows that move it in front (options.js orderedRows) */
@@ -1117,31 +1120,54 @@ button.btn.danger:hover {
    Search Box & Sticky TOC
    ========================================================================== */
 
-.toc {
+.toc-bar {
   position: sticky;
   top: 0;
   z-index: 10;
-  display: flex;
-  gap: 6px;
-  overflow-x: auto;
-  padding: 10px 0;
   margin: 0 0 16px;
   background: color-mix(in srgb, var(--ground) 85%, transparent);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  scrollbar-width: none;
-  -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 32px), transparent);
-  mask-image: linear-gradient(90deg, #000 calc(100% - 32px), transparent);
 }
 
-[dir="rtl"] .toc {
-  -webkit-mask-image: linear-gradient(270deg, #000 calc(100% - 32px), transparent);
-  mask-image: linear-gradient(270deg, #000 calc(100% - 32px), transparent);
+.toc {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding: 10px 0;
+  scrollbar-width: none;
 }
+
+/* a fade on a side only where the strip has more (options.js: more-before, more-after) */
+.toc-bar.more-after .toc { -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 56px), transparent); mask-image: linear-gradient(90deg, #000 calc(100% - 56px), transparent); }
+.toc-bar.more-before .toc { -webkit-mask-image: linear-gradient(90deg, transparent, #000 56px); mask-image: linear-gradient(90deg, transparent, #000 56px); }
+.toc-bar.more-before.more-after .toc { -webkit-mask-image: linear-gradient(90deg, transparent, #000 56px, #000 calc(100% - 56px), transparent); mask-image: linear-gradient(90deg, transparent, #000 56px, #000 calc(100% - 56px), transparent); }
+[dir="rtl"] .toc-bar.more-after .toc { -webkit-mask-image: linear-gradient(270deg, #000 calc(100% - 56px), transparent); mask-image: linear-gradient(270deg, #000 calc(100% - 56px), transparent); }
+[dir="rtl"] .toc-bar.more-before .toc { -webkit-mask-image: linear-gradient(270deg, transparent, #000 56px); mask-image: linear-gradient(270deg, transparent, #000 56px); }
+[dir="rtl"] .toc-bar.more-before.more-after .toc { -webkit-mask-image: linear-gradient(270deg, transparent, #000 56px, #000 calc(100% - 56px), transparent); mask-image: linear-gradient(270deg, transparent, #000 56px, #000 calc(100% - 56px), transparent); }
+
+/* the arrows at the strip's ends: for a pointer (the keyboard moves along the links) */
+.toc-arrow {
+  position: absolute; top: 50%; transform: translateY(-50%); display: none; align-items: center; justify-content: center;
+  width: 28px; height: 28px; padding: 0; border: 1px solid var(--btn-line); border-radius: 50%; background: var(--card); color: var(--muted);
+  box-shadow: var(--btn-shadow); cursor: pointer;
+}
+.toc-arrow:hover { color: var(--text); }
+.toc-arrow::before {
+  content: ""; width: 12px; height: 12px; background: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 6l6 6-6 6'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 6l6 6-6 6'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.toc-prev { inset-inline-start: 0; }
+.toc-next { inset-inline-end: 0; }
+.toc-prev::before, [dir="rtl"] .toc-next::before { transform: rotate(180deg); }
+[dir="rtl"] .toc-prev::before { transform: none; }
+.toc-bar.more-before .toc-prev, .toc-bar.more-after .toc-next { display: inline-flex; }
+@media (hover: none) { .toc-bar .toc-arrow { display: none; } }          /* (a touch screen swipes the strip) */
 
 /* one column: the section links scroll away with the settings, the preview holds the top of the window */
 @media (max-width: 960px) {
-  .toc {
+  .toc-bar {
     position: static;
   }
 }

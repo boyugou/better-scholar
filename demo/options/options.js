@@ -949,7 +949,12 @@
     c.rows.forEach((row, i) => {
       if (merged.consumed.has(row)) return;                                // (drawn in its order's rows)
       let headed = false;
-      if (row.group !== group) { group = row.group; if (group) { kids.push(h("h3", { class: "opt-group" }, t(group))); headed = true; } if (group === "optChipLook") kids.push(chipThemesBar()); }          // (the ready-made looks under their heading)
+      if (row.group !== group) {
+        if (group && !row.group) kids.push(h("div", { class: "opt-group-end", "aria-hidden": "true" }));          // (the rows after a group are not of it: "Only highlighted" read as a quick filter)
+        group = row.group;
+        if (group) { kids.push(h("h3", { class: "opt-group" }, t(group))); headed = true; }
+        if (group === "optChipLook") kids.push(chipThemesBar());          // (the ready-made looks under their heading)
+      }
       const next = c.rows[i + 1], ordered = merged.lists.get(row);
       if (ordered && headed) { ordered.head.remove(); ordered.block.querySelector("ol").setAttribute("aria-label", t(group)); }          // (one heading over the list: the group's)
       const el = ordered ? ordered.block : control(row, c.rows, next && next.kind === "text" && next.inline ? next : null);       // (a name beside its switch is drawn on the switch's row)
@@ -1090,7 +1095,7 @@
         "aria-label": titleText,
         onClick: (e) => {
           e.preventDefault();
-          const pvBox = document.querySelector(".preview"), covered = getComputedStyle(toc).position === "sticky" ? toc.offsetHeight : (pvBox && getComputedStyle(pvBox).position === "sticky" ? pvBox.offsetHeight : 0);          // (what stays at the top of the window: the links, or in one column the preview)
+          const pvBox = document.querySelector(".preview"), covered = getComputedStyle(tocBar).position === "sticky" ? tocBar.offsetHeight : (pvBox && getComputedStyle(pvBox).position === "sticky" ? pvBox.offsetHeight : 0);          // (what stays at the top of the window: the links, or in one column the preview)
           window.scrollTo({
             top: Math.max(0, c.getBoundingClientRect().top + scrollY - covered - 14),
             behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"
@@ -1166,7 +1171,25 @@
     }
   });
 
-  $("controls").prepend(toc, searchBox, searchNone);
+  // The strip of section links scrolls sideways: an arrow at each end where there is more, for a pointer (the keyboard moves along the links, and the strip
+  // follows), and the wheel scrolls it. It fades only on a side that has more. (One card in view of 22: nothing else said that the strip goes on.)
+  const side = () => (document.documentElement.dir === "rtl" ? -1 : 1);
+  const smooth = () => (matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth");
+  const tocArrow = (cls, by) => h("span", { class: "toc-arrow " + cls, "aria-hidden": "true", onClick: () => toc.scrollBy({ left: by * side() * toc.clientWidth * 0.7, behavior: smooth() }) });          // (no control: a pointer's shortcut, which a screen reader and the keyboard do not need)
+  const tocBar = h("div", { class: "toc-bar" }, toc, tocArrow("toc-prev", -1), tocArrow("toc-next", 1));
+  const tocEnds = () => {
+    const room = toc.scrollWidth - toc.clientWidth, at = Math.abs(toc.scrollLeft);
+    tocBar.classList.toggle("more-before", room > 2 && at > 2);
+    tocBar.classList.toggle("more-after", room > 2 && at < room - 2);
+  };
+  toc.addEventListener("scroll", tocEnds, { passive: true });
+  new ResizeObserver(() => setTimeout(tocEnds, 0)).observe(toc);
+  toc.addEventListener("wheel", (e) => {
+    if (Math.abs(e.deltaY) <= Math.abs(e.deltaX) || toc.scrollWidth <= toc.clientWidth + 2) return;          // (a sideways wheel, or a strip that fits: as the browser does)
+    e.preventDefault();
+    toc.scrollBy({ left: e.deltaY * side() });
+  }, { passive: false });
+  $("controls").prepend(tocBar, searchBox, searchNone);
   // the section links are one stop for the Tab key (22 of them stood in front of the first setting): the arrows move among them, the section in view is the stop
   const placeTocStop = rove(toc, () => [...toc.querySelectorAll("a:not([hidden])")], (a) => a.hasAttribute("aria-current"));
   placeTocStop();
