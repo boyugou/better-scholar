@@ -179,8 +179,13 @@ of HotStorage, and the year written with a hyphen or jammed onto a mixed-case wo
   unlisted venues begin so too. Measured 2026-10-29 by cutting the 52,800 Crossref / OpenAlex titles of `test/fixtures/real-titles.txt`
   where Scholar would: of the cut titles that carry a year (and no hidden track word), 882 keep the whole title's badge and 183 got
   another. The owner chose the edition check: 18 venues have their numbering in aliases.js (`edition`), which took the 183 to 132 and
-  cost no right badge there. What is left: venues whose lines print no edition (CIDM, SIGGRAPH's other conferences) and venues not
-  yet anchored — more anchors, each checked against the venue's own lines, as the measurement shows where they pay.
+  cost no right badge there. Measured again on 2026-11-04 (cut at about 76 characters at a word, punctuation dropped, as Scholar does): 148 cut
+  lines with a badge their whole title lacks, outside hidden track words; 14 more anchors took them to 119 and cost one right badge (HPCC 2013,
+  whose own IEEE title says "10th"). What is left: venues whose lines print no edition (CIDM: 29 of the 119), an acronym two CORE rows share
+  (ICCSA), the 110 lines whose cut hides a track word ("… Workshops", "… Companion": only Read full lists sees it), and one pair of listed
+  venues: a cut "2008 IEEE International Symposium on Parallel and Distributed Processing …" is IPDPS's name of 2008–09 or the start of ISPA's
+  (four ISPA lines are read as IPDPS; making the name whole-only would hand IPDPS's cut lines to ISPA — only "no badge" is right, which no
+  construct of aliases.js says yet).
 - **End-to-end pictures at other display scalings** (Chromium only — other engines are out of scope by the platform
   policy). The end-to-end run already takes `E2E_SCALE` for the website's pictures; nothing compares them yet.
 
@@ -194,7 +199,8 @@ over a profile in light and dark and in four languages), measures the popup with
 violation; CI runs it in the demo job (since 2026-10-29), and `npm run check:all` in its second lane. `npm run audit:overflow` measures the settings page in 30 languages × 7 widths ×
 light and dark for anything that runs out of its box (also with every name at 30 characters). Unit tests keep the faint text
 colours at a contrast of 4.5:1 or more and the text of every chip at any picked colour (`test/palette.test.js`), and the
-settings page rates each role colour against Scholar's white page (3:1). The preview on the settings page is out of the tab
+row bar of every role at 3:1 or more on Scholar's white page, whatever the colour (`lib/palette.js` `bar`; an end-to-end check
+measures the bars on the profile and in the preview). The preview on the settings page is out of the tab
 order and not read out: the controls on the left are the page for a keyboard and a screen reader. None of this is a claim of
 conformance to a WCAG level.
 

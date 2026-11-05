@@ -392,6 +392,25 @@
     { core: "IEA/AIE", edition: [2018, 31] },
     { core: "TrustBus", edition: [2023, 20] },
     { core: "PEMWN", edition: [2022, 11] },
+    // (2026-11-04, from the cut-line measurement: a cut line whose visible words begin one of these names, with an edition the venue cannot have held that year — "Proceedings
+    // of the 2018 10th International Conference on Machine Learning and …" is ICMLC, not ICML's 35th. Each numbering is the venue's own lines' in test/fixtures/real-titles.txt
+    // (ICML 2005 22nd … 2009 26th, RECOMB 1997 1st … 2004 8th, ICIG 2009 5th / 2011 6th / 2013 7th, HPCC 2008 10th … 2021 23rd, CSCloud 2015 2nd … 2025 12th, IEEE IS 2006 3rd … 2012 6th,
+    // ISDA 2007 7th / 2009 9th, ICARCV 2006 9th … 2022 17th, IWQoS 2010 18th … 2025 33rd) or, with no line there, the venue's own proceedings (SLT 2018 the 7th; ICFHR 2020 the 17th;
+    // ICCE 2020 the 28th; EDM 2023 the 16th; CICM 2017 the 10th). Left out: CORE's ICCSA, an acronym two of its rows share.)
+    { ccf: "ICML", core: "ICML", edition: [2008, 25] },
+    { ccf: "RECOMB", core: "RECOMB", edition: [1997, 1] },
+    { ccf: "ICIG", edition: [2011, 6, 2] },
+    { ccf: "HPCC", core: "HPCC", edition: [2008, 10] },
+    { ccf: "CSCloud", edition: [2015, 2] },
+    { core: "IEEE IS", edition: [2006, 3, 2] },
+    { core: "ISDA", edition: [2009, 9] },
+    { core: "ICARCV", edition: [2006, 9, 2] },
+    { ccf: "IWQoS", core: "IWQoS", edition: [2010, 18] },
+    { ccf: "SLT", edition: [2018, 7, 2] },
+    { core: "ICFHR", edition: [2020, 17, 2] },
+    { core: "ICCE", edition: [2020, 28] },
+    { core: "EDM", edition: [2023, 16] },
+    { core: "CICM", edition: [2017, 10] },
     // (second volumes of posters, panels, workshops and demos — see `trackVolume` above)
     { core: "SIGCSE", trackVolume: true },
     { core: "ITiCSE", trackVolume: true },

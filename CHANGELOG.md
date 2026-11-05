@@ -75,6 +75,13 @@ give the details and every review):
   International ISC Conference on Information Security and Cryptology" is the Iranian ISCISC, not Inscrypt, whose name it is with "ISC"
   in it (two real rows of the corpus lose a wrong CCF C badge; nothing else of the 75,521 lines changes). For a shadow only: it can take a
   badge away, never give one.
+- **Matching: 14 more venues' numbering (aliases.js `edition`)**, from a fresh measurement: cutting the 75,521 real titles of the corpus
+  where Scholar cuts a line (about 76 characters, at a word, punctuation dropped) gave 148 cut lines a badge their whole title does not
+  have, outside hidden track words. A cut line that begins a listed name with an edition that venue cannot have held that year is now
+  another venue's: "Proceedings of the 2018 10th International Conference on Machine Learning and …" is ICMLC, not ICML's 35th (ICML, RECOMB,
+  ICIG, HPCC, CSCloud, IEEE IS, ISDA, ICARCV, IWQoS, SLT, ICFHR, ICCE, EDM, CICM; each numbering from the venue's own lines or proceedings).
+  148 became 119. One right badge goes with them: HPCC 2013's own IEEE title says "10th" (its numbering gives the 15th) — a missing badge,
+  where the anchor takes a wrong one away elsewhere. Not anchored: CORE's ICCSA, whose acronym two rows share.
 - **A reference's type from the lists, whether or not their ranks are shown**: with both lists switched off, "Advances in neural
   information processing systems 36, 46595-46623, 2023" — a journal's shape, volume and pages — was typed by its words (no conference
   paper); the kind the lists know now types it in every export and in the `papers` call, while the ranks stay out. (The search's
