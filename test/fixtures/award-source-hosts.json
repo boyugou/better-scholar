@@ -309,6 +309,8 @@
   "ieee-focs.org": "the FOCS conference archive (linked from the IEEE TCMF pages): the conference pages and the proceedings' front matter",
   "pkc.iacr.org": "the IACR's own PKC sites",
   "tcc.iacr.org": "the IACR's own TCC sites",
-  "www.blog.ieeetcca.org": "the IEEE TCCA's own blog (linked as Blog from ieeetcca.org)"
+  "www.blog.ieeetcca.org": "the IEEE TCCA's own blog (linked as Blog from ieeetcca.org)",
+  "conferences.computer.org": "the IEEE Computer Society's conference sites (IEEE VR 2010–2012)",
+  "ieeevis.org": "IEEE VIS's own site (its best paper history and per-year award pages)"
  }
 }

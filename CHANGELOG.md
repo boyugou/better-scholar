@@ -189,6 +189,10 @@ give the details and every review):
   Encryption: 23rd International Conference, FSE 2016" is the cryptography FSE (B), not Foundations of Software Engineering (A): venues
   that share an acronym are told apart by the series title. (4) MDPI's journals *AI* and *IoT* are not Artificial Intelligence (A) and
   IEEE IoT-J, nor is the Korean WISA (information security) the Web Information Systems WISA.
+- **The best papers of IEEE VIS and IEEE VR** (339, 2008–2026), from their own pages: VIS's best paper history (InfoVis, VAST and SciVis
+  before 2021, the part in the label), its 2024 and 2025 award pages and its 2026 program's badges (VIS 2026 is on 9–13 November: to be
+  checked against its awards page); IEEE VR's award pages of 2010–2026, honorable mentions included. Four misprints on those pages are put
+  right (`exclusions.json`). The list held only VIS's test-of-time awards and VR's best papers of 2024 and 2026. The list holds 9,325 awards.
 - **Roles: an author printed with a generational suffix** ("RW Heath Jr", "MS Smith III") was never the owner — the suffix was read as the
   surname, so Robert W. Heath Jr.'s own papers lost their role wherever the line printed the "Jr". The suffix now goes before the name is
   compared (after two words or more, as the exports and the duplicates already read it: "Naoki Ii" keeps its surname), and such a name is
