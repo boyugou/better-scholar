@@ -639,7 +639,7 @@
     "message": "顏色"
   },
   "optColorsHint": {
-    "message": "每種作者位次的顏色：論文列、姓名標記、面板與工具列彈出視窗。"
+    "message": "每種作者位次的顏色：論文列、姓名標記、面板與工具列彈出視窗。在 Scholar 白色頁面上顯示不清的過淺顏色，論文列中的色條會以略深的同色系繪製。"
   },
   "optColorsReset": {
     "message": "還原預設顏色"
@@ -662,9 +662,7 @@
   "optThemeSoft": {
     "message": "柔和"
   },
-  "optContrastTip": {
-    "message": "此顏色與 Scholar 白色頁面的對比。3:1 或更高時，列的色條仍可見。"
-  },
+
   "markSpotlightHighlight": {
     "message": "Spotlight 與 Highlight"
   },

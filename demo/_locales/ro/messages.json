@@ -639,7 +639,7 @@
     "message": "Culori"
   },
   "optColorsHint": {
-    "message": "Culoarea fiecărui rol de autor: rânduri, marcajul numelui, panoul și fereastra din bara de instrumente."
+    "message": "Culoarea fiecărui rol de autor: rânduri, marcajul numelui, panoul și fereastra din bara de instrumente. O culoare prea deschisă pentru a se vedea bine pe pagina albă a Scholar este desenată în bara rândului cu o nuanță puțin mai închisă."
   },
   "optColorsReset": {
     "message": "Înapoi la culorile standard"
@@ -662,9 +662,7 @@
   "optThemeSoft": {
     "message": "Blând"
   },
-  "optContrastTip": {
-    "message": "Contrastul acestei culori față de pagina albă a Scholar. 3:1 sau mai mult păstrează bara rândului vizibilă."
-  },
+
   "markSpotlightHighlight": {
     "message": "Spotlight și Highlight"
   },

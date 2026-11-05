@@ -639,7 +639,7 @@
     "message": "Kleuren"
   },
   "optColorsHint": {
-    "message": "De kleur van elke auteursrol: rijen, naammarkeringen, het paneel en de popup van de werkbalk."
+    "message": "De kleur van elke auteursrol: rijen, naammarkeringen, het paneel en de popup van de werkbalk. Een kleur die te licht is om goed zichtbaar te zijn op de witte pagina van Scholar, wordt in de balk van de rij iets donkerder getekend."
   },
   "optColorsReset": {
     "message": "Terug naar de standaardkleuren"
@@ -662,9 +662,7 @@
   "optThemeSoft": {
     "message": "Zacht"
   },
-  "optContrastTip": {
-    "message": "Contrast van deze kleur met de witte pagina van Scholar. 3:1 of meer houdt de balk van de rij zichtbaar."
-  },
+
   "markSpotlightHighlight": {
     "message": "Spotlight en highlight"
   },

@@ -639,7 +639,7 @@
     "message": "Farben"
   },
   "optColorsHint": {
-    "message": "Die Farbe jeder Autorenrolle: Zeilen, Namensmarkierungen, Übersichtsfeld und Popup der Symbolleiste."
+    "message": "Die Farbe jeder Autorenrolle: Zeilen, Namensmarkierungen, Übersichtsfeld und Popup der Symbolleiste. Eine Farbe, die auf Scholars weißer Seite zu hell ist, um gut sichtbar zu sein, wird im Balken der Zeile etwas dunkler gezeichnet."
   },
   "optColorsReset": {
     "message": "Zurück zu den Standardfarben"
@@ -662,9 +662,7 @@
   "optThemeSoft": {
     "message": "Sanft"
   },
-  "optContrastTip": {
-    "message": "Kontrast dieser Farbe zur weißen Scholar-Seite. Ab 3:1 bleibt der Balken der Zeile sichtbar."
-  },
+
   "markSpotlightHighlight": {
     "message": "Spotlight und Highlight"
   },

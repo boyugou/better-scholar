@@ -56,11 +56,16 @@
     if (!custom) { try { chrome.runtime.sendMessage({ type: "rr:messages", lang: language }).then((r) => { if (r && r.ok) spare = r.messages; }, () => {}); } catch (e) { /* gone already */ } }          // (not waited for: nothing is drawn later for it)
     return language;
   }
-  // The role colours the settings chose, as custom properties on the page root (a role without one keeps the stylesheet's own colour)
+  // The role colours the settings chose, as custom properties on the page root (a role without one keeps the stylesheet's own colour), and each one's shade for the
+  // row's bar (lib/palette.js bar: darker where the colour is too light to stand out from the white page)
   function applyColors(colors) {
+    const root = document.documentElement.style;
     for (const role of ["first", "cofirst", "second", "last"]) {
       const c = colors && colors[role];
-      if (typeof c === "string" && /^#[0-9a-f]{6}$/i.test(c)) document.documentElement.style.setProperty("--rr-c-" + role, c); else document.documentElement.style.removeProperty("--rr-c-" + role);          // (a colour is "#rrggbb" and nothing else, whoever wrote the record)
+      if (typeof c === "string" && /^#[0-9a-f]{6}$/i.test(c)) {          // (a colour is "#rrggbb" and nothing else, whoever wrote the record)
+        root.setProperty("--rr-c-" + role, c);
+        root.setProperty("--rr-b-" + role, B.palette ? B.palette.bar(c) : c);
+      } else { root.removeProperty("--rr-c-" + role); root.removeProperty("--rr-b-" + role); }
     }
   }
   // How the chips look: classes on <html> for the style, the shape and the words (styles.css turns them into a few custom properties), and the colours the

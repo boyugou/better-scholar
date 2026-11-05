@@ -409,23 +409,6 @@
     return () => { const list = items(); stopAt(list.find(isOn) || list[0]); };
   }
 
-  function calculateLuminance(hex) {
-    const clean = hex.replace("#", "");
-    if (clean.length !== 6) return 0.5;
-    const [r, g, b] = [0, 2, 4].map((i) => {
-      const v = parseInt(clean.slice(i, i + 2), 16) / 255;
-      return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
-    });
-    return 0.2126 * r + 0.7152 * g + 0.0722 * b;
-  }
-
-  // The row's bar is drawn in the role's colour on Scholar's white page: 3:1 (the WCAG rule for graphics) keeps it visible. (The marked name in the author line is the
-  // colour mixed with black, read on its own tint, and is always legible; the colour is what has to stand out.)
-  function barContrast(hex) {
-    const ratio = 1.05 / (calculateLuminance(hex) + 0.05);
-    return { pass: ratio >= 3, label: ratio.toFixed(1) + ":1" };
-  }
-
   // Theme Studio Bar Component
   function themePresetsBar() {
     const chips = THEME_PRESETS.map((p) => {
@@ -489,7 +472,6 @@
     const previewChip = h("span", { class: "role-swatch-badge", style: `background: ${defaultColor};`, "aria-hidden": "true" });
     const liveDot = h("span", { class: "color-dot-live", style: `background: ${defaultColor};` });
     const hexLabel = h("span", { class: "color-hex", dir: "ltr" }, defaultColor.toUpperCase());          // (a code: in a right-to-left page its "#" would end up after the digits)
-    const contrastPill = h("span", { class: "contrast-badge pass", title: t("optContrastTip") });
 
     const pill = h("label", { class: "hex-input-pill", "aria-label": roleLabel },
       liveDot,
@@ -546,9 +528,6 @@
       placeStop();
       const isCustom = current !== defaultColor.toLowerCase();
       resetBtn.style.display = isCustom ? "inline-flex" : "none";
-      const { pass, label } = barContrast(current);
-      contrastPill.className = "contrast-badge " + (pass ? "pass" : isCustom ? "warn" : "plain");          // (the built-in colour does not warn about itself — the warning is for a colour that was picked — nor shows as passing: a plain grey ratio)
-      contrastPill.textContent = label;
     }
 
     const paletteRow = h("div", { class: "curated-palette-row", role: "group", "aria-label": roleLabel }, ...dotButtons.map((d) => d.el));
@@ -560,7 +539,6 @@
       h("div", { class: "role-studio-controls" },
         paletteRow,
         pill,
-        contrastPill,
         resetBtn));
 
     const sync = () => {

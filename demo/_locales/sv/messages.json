@@ -639,7 +639,7 @@
     "message": "Färger"
   },
   "optColorsHint": {
-    "message": "Färgen för varje författarroll: rader, namnmarkeringar, panelen och verktygsfältets popup."
+    "message": "Färgen för varje författarroll: rader, namnmarkeringar, panelen och verktygsfältets popup. En färg som är för ljus för att synas bra på Scholars vita sida ritas i radens stapel med en något mörkare nyans."
   },
   "optColorsReset": {
     "message": "Tillbaka till standardfärgerna"
@@ -662,9 +662,7 @@
   "optThemeSoft": {
     "message": "Mjuk"
   },
-  "optContrastTip": {
-    "message": "Kontrasten mellan den här färgen och Scholars vita sida. 3:1 eller mer gör att radens stapel syns."
-  },
+
   "markSpotlightHighlight": {
     "message": "Spotlight & highlight"
   },

@@ -639,7 +639,7 @@
     "message": "Warna"
   },
   "optColorsHint": {
-    "message": "Warna setiap peran penulis: baris, tanda nama, panel, dan popup bilah alat."
+    "message": "Warna setiap peran penulis: baris, tanda nama, panel, dan popup bilah alat. Warna yang terlalu terang untuk terlihat jelas di halaman putih Scholar digambar sedikit lebih gelap pada bilah baris."
   },
   "optColorsReset": {
     "message": "Kembali ke warna standar"
@@ -662,9 +662,7 @@
   "optThemeSoft": {
     "message": "Lembut"
   },
-  "optContrastTip": {
-    "message": "Kontras warna ini dengan halaman putih Scholar. 3:1 atau lebih membuat bilah baris tetap terlihat."
-  },
+
   "markSpotlightHighlight": {
     "message": "Spotlight & highlight"
   },

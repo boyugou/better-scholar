@@ -639,7 +639,7 @@
     "message": "Cores"
   },
   "optColorsHint": {
-    "message": "A cor de cada posição de autoria: linhas, marcas do nome, o painel e o pop-up da barra de ferramentas."
+    "message": "A cor de cada posição de autoria: linhas, marcas do nome, o painel e o pop-up da barra de ferramentas. Uma cor clara demais para aparecer bem na página branca do Scholar é desenhada na barra da linha com um tom um pouco mais escuro."
   },
   "optColorsReset": {
     "message": "Voltar às cores padrão"
@@ -662,9 +662,7 @@
   "optThemeSoft": {
     "message": "Suave"
   },
-  "optContrastTip": {
-    "message": "Contraste desta cor com a página branca do Scholar. 3:1 ou mais mantém a barra da linha visível."
-  },
+
   "markSpotlightHighlight": {
     "message": "Spotlight e highlight"
   },

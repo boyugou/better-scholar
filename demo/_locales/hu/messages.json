@@ -639,7 +639,7 @@
     "message": "Színek"
   },
   "optColorsHint": {
-    "message": "Az egyes szerzői szerepek színe: sorok, névjelölés, panel és az eszköztár felugró ablaka."
+    "message": "Az egyes szerzői szerepek színe: sorok, névjelölés, panel és az eszköztár felugró ablaka. A Scholar fehér oldalán alig látszó, túl világos szín a sor sávjában kissé sötétebb árnyalatban jelenik meg."
   },
   "optColorsReset": {
     "message": "Vissza az alapszínekhez"
@@ -662,9 +662,7 @@
   "optThemeSoft": {
     "message": "Lágy"
   },
-  "optContrastTip": {
-    "message": "Ennek a színnek a kontrasztja a Scholar fehér oldalával. A 3:1 vagy nagyobb arány láthatóvá teszi a sor sávját."
-  },
+
   "markSpotlightHighlight": {
     "message": "Spotlight és Highlight"
   },

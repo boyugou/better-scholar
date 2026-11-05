@@ -639,7 +639,7 @@
     "message": "Couleurs"
   },
   "optColorsHint": {
-    "message": "La couleur de chaque rôle d’auteur : lignes, repères du nom, panneau et fenêtre de la barre d’outils."
+    "message": "La couleur de chaque rôle d’auteur : lignes, repères du nom, panneau et fenêtre de la barre d’outils. Une couleur trop claire pour bien apparaître sur la page blanche de Scholar est dessinée dans la barre de la ligne, avec une teinte légèrement plus foncée."
   },
   "optColorsReset": {
     "message": "Revenir aux couleurs standard"
@@ -662,9 +662,7 @@
   "optThemeSoft": {
     "message": "Doux"
   },
-  "optContrastTip": {
-    "message": "Contraste de cette couleur avec la page blanche de Scholar. Un rapport de 3:1 ou plus garde visible la barre de la ligne."
-  },
+
   "markSpotlightHighlight": {
     "message": "Spotlight et highlight"
   },
