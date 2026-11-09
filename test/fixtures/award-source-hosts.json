@@ -313,6 +313,12 @@
   "conferences.computer.org": "the IEEE Computer Society's conference sites (IEEE VR 2010–2012)",
   "ieeevis.org": "IEEE VIS's own site (its best paper history and per-year award pages)",
   "asia.siggraph.org": "SIGGRAPH Asia's own per-year sites (2023 awards PDF, 2024 press release, 2025 award page)",
-  "sa2022.siggraph.org": "SIGGRAPH Asia 2022's own site, kept as a static copy on the society's subdomain"
+  "sa2022.siggraph.org": "SIGGRAPH Asia 2022's own site, kept as a static copy on the society's subdomain",
+  "chi2012.acm.org": "CHI 2012's own site (an ACM subdomain)",
+  "chi2013.acm.org": "CHI 2013's own site (an ACM subdomain)",
+  "chi2014.acm.org": "CHI 2014's own site (an ACM subdomain)",
+  "chi2015.acm.org": "CHI 2015's own site (an ACM subdomain)",
+  "chi2016.acm.org": "CHI 2016's own site (an ACM subdomain)",
+  "uist.acm.org": "UIST's own per-year sites (an ACM subdomain)"
  }
 }
