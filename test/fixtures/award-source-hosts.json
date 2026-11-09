@@ -311,6 +311,8 @@
   "tcc.iacr.org": "the IACR's own TCC sites",
   "www.blog.ieeetcca.org": "the IEEE TCCA's own blog (linked as Blog from ieeetcca.org)",
   "conferences.computer.org": "the IEEE Computer Society's conference sites (IEEE VR 2010–2012)",
-  "ieeevis.org": "IEEE VIS's own site (its best paper history and per-year award pages)"
+  "ieeevis.org": "IEEE VIS's own site (its best paper history and per-year award pages)",
+  "asia.siggraph.org": "SIGGRAPH Asia's own per-year sites (2023 awards PDF, 2024 press release, 2025 award page)",
+  "sa2022.siggraph.org": "SIGGRAPH Asia 2022's own site, kept as a static copy on the society's subdomain"
  }
 }

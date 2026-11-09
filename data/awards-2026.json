@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 9325
+  "count": 9370
  },
  "entries": [
   {
@@ -8610,6 +8610,64 @@
    "paperYear": 2004,
    "source": "https://iacr.org/testoftime/",
    "evidence": "ASIACRYPT 2019 Test of Time Award: Thomas Baignères, Pascal Junod, and Serge Vaudenay “How Far Can We Go Beyond Linear Cryptanalysis?”"
+  },
+  {
+   "venue": "ASIACRYPT",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Finding Collisions in a Quantum World: Quantum Black-Box Separation of Collision-Resistance and One-Wayness",
+   "authors": [
+    "Akinori Hosoyamada",
+    "Takashi Yamakawa"
+   ],
+   "track": "main",
+   "source": "https://asiacrypt.iacr.org/2020/acceptedpapers.php",
+   "alsoAt": [
+    "https://asiacrypt.iacr.org/2020/program.php"
+   ],
+   "evidence": "Finding Collisions in a Quantum World: Quantum Black-Box Separation of Collision-Resistance and One-Wayness (Best Paper Award) Akinori Hosoyamada; Takashi Yamakawa"
+  },
+  {
+   "venue": "ASIACRYPT",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "New results on Gimli: full-permutation distinguishers and improved collisions",
+   "authors": [
+    "Antonio Flórez Gutiérrez",
+    "Gaëtan Leurent",
+    "María Naya-Plasencia",
+    "Léo Perrin",
+    "André Schrottenloher",
+    "Ferdinand Sibleyras"
+   ],
+   "track": "main",
+   "source": "https://asiacrypt.iacr.org/2020/acceptedpapers.php",
+   "alsoAt": [
+    "https://asiacrypt.iacr.org/2020/program.php"
+   ],
+   "evidence": "New results on Gimli: full-permutation distinguishers and improved collisions (Best Paper Award) Antonio Flórez Gutiérrez; Gaëtan Leurent; María Naya-Plasencia; Léo Perrin; André Schrottenloher; Ferdinand Sibleyras"
+  },
+  {
+   "venue": "ASIACRYPT",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "SQISign: Compact Post-Quantum signatures from Quaternions and Isogenies",
+   "authors": [
+    "Luca De Feo",
+    "David Kohel",
+    "Antonin Leroux",
+    "Christophe Petit",
+    "Benjamin Wesolowski"
+   ],
+   "track": "main",
+   "source": "https://asiacrypt.iacr.org/2020/acceptedpapers.php",
+   "alsoAt": [
+    "https://asiacrypt.iacr.org/2020/program.php"
+   ],
+   "evidence": "SQISign: Compact Post-Quantum signatures from Quaternions and Isogenies (Best Paper Award) Luca De Feo; David Kohel; Antonin Leroux; Christophe Petit; Benjamin Wesolowski"
   },
   {
    "venue": "ASIACRYPT",
@@ -46318,6 +46376,76 @@
    "paperYear": 2009,
    "source": "https://iacr.org/testoftime/",
    "evidence": "CRYPTO 2024 Test of Time Award: Nadia Heninger and Hovav Shacham “Reconstructing RSA Private Keys from Random Key Bits”"
+  },
+  {
+   "venue": "CRYPTO",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Compact Lattice Signatures via Iterative Rejection Sampling",
+   "authors": [
+    "Joel Gärtner"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/",
+   "alsoAt": [
+    "https://crypto.iacr.org/2025/program.php"
+   ],
+   "evidence": "Best Paper Award and Best Young Researcher Award, CRYPTO 2025, Compact Lattice Signatures via Iterative Rejection Sampling"
+  },
+  {
+   "venue": "CRYPTO",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "KLPT²: Algebraic pathfinding in dimension two and applications",
+   "authors": [
+    "Wouter Castryck",
+    "Thomas Decru",
+    "Péter Kutas",
+    "Abel Laval",
+    "Christophe Petit",
+    "Yan Bo Ti"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/",
+   "alsoAt": [
+    "https://crypto.iacr.org/2025/program.php"
+   ],
+   "evidence": "Best Paper Award, CRYPTO 2025, KLPT²: Algebraic pathfinding in dimension two and applications"
+  },
+  {
+   "venue": "CRYPTO",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "On One-Shot Signatures, Quantum vs Classical Binding, and Obfuscating Permutations",
+   "authors": [
+    "Omri Shmueli",
+    "Mark Zhandry"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/",
+   "alsoAt": [
+    "https://crypto.iacr.org/2025/program.php"
+   ],
+   "evidence": "CRYPTO 2025 Best Paper Award, CRYPTO 2025, On One-Shot Signatures, Quantum vs Classical Binding, and Obfuscating Permutations"
+  },
+  {
+   "venue": "CRYPTO",
+   "year": 2025,
+   "award": "category",
+   "awardLabel": "Best Young Researcher Award",
+   "title": "Compact Lattice Signatures via Iterative Rejection Sampling",
+   "authors": [
+    "Joel Gärtner"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/",
+   "alsoAt": [
+    "https://crypto.iacr.org/2025/program.php"
+   ],
+   "evidence": "Best Paper Award and Best Young Researcher Award, CRYPTO 2025, Compact Lattice Signatures via Iterative Rejection Sampling"
   },
   {
    "venue": "CRYPTO",
@@ -95447,6 +95575,25 @@
   {
    "venue": "ISCA",
    "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "NvMR: Non-Volatile Memory Renaming for Intermittent Computing",
+   "authors": [
+    "Abhishek Bhattacharyya",
+    "Abhijith Somashekhar",
+    "Joshua San Miguel"
+   ],
+   "track": "main",
+   "source": "https://www.sigarch.org/other-announcements/congratulating-isca-2022-awards-recipients/",
+   "alsoAt": [
+    "https://www.sigarch.org/benefit/awards/acm-sigarch-ieee-cs-tcca-isca-best-paper-awardacm-sigarch-ieee-cs-tcca-isca-best-paper-award/",
+    "https://www.sigarch.org/isca-2022-trip-report/"
+   ],
+   "evidence": "ISCA 2022 Best Paper Award: “NvMR: Non-Volatile Memory Renaming for Intermittent Computing” By Abhishek Bhattacharyya, Abhijith Somashekhar, Joshua San Miguel, University of Wisconsin-Madison"
+  },
+  {
+   "venue": "ISCA",
+   "year": 2022,
    "award": "tot",
    "awardLabel": "Influential ISCA Paper Award",
    "title": "Power provisioning for a warehouse-sized computer",
@@ -95459,6 +95606,52 @@
    "paperYear": 2007,
    "source": "https://www.sigarch.org/awards/acm-sigarchieee-cs-tcca-influential-isca-paper-award/",
    "evidence": "2022 (For ISCA 2007): Xiaobo Fan, Wolf-Dietrich Weber, Luiz Andre Barroso — Power provisioning for a warehouse-sized computer"
+  },
+  {
+   "venue": "ISCA",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Contiguitas: The Pursuit of Physical Memory Contiguity in Datacenters",
+   "authors": [
+    "Kaiyang Zhao",
+    "Kaiwen Xue",
+    "Ziqi Wang",
+    "Dan Schatzberg",
+    "Leon Yang",
+    "Antonis Manousis",
+    "Johannes Weiner",
+    "Rik van Riel",
+    "Bikash Sharma",
+    "Chunqiang Tang",
+    "Dimitrios Skarlatos"
+   ],
+   "track": "main",
+   "source": "https://www.sigarch.org/other-announcements/congratulating-isca-2023-awards-recipients/",
+   "alsoAt": [
+    "https://www.sigarch.org/benefit/awards/acm-sigarch-ieee-cs-tcca-isca-best-paper-awardacm-sigarch-ieee-cs-tcca-isca-best-paper-award/"
+   ],
+   "evidence": "ISCA Best Paper Award ”Contiguitas: The Pursuit of Physical Memory Contiguity in Datacenters” by Kaiyang Zhao, Kaiwen Xue, Ziqi Wang, Dan Schatzberg, Leon Yang, Antonis Manousis, Johannes Weiner, Rik van Riel, Bikash Sharma, Chunqiang Tang, Dimitrios Skarlatos"
+  },
+  {
+   "venue": "ISCA",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "SCALO: An Accelerator-Rich Distributed System for Scalable Brain-Computer Interfacing",
+   "authors": [
+    "Karthik Sriram",
+    "Raghavendra Pradyumna Pothukuchi",
+    "Michał Gerasimiuk",
+    "Muhammed Ugur",
+    "Oliver Ye",
+    "Rajit Manohar",
+    "Anurag Khandelwal",
+    "Abhishek Bhattacharjee"
+   ],
+   "track": "main",
+   "source": "https://www.sigarch.org/other-announcements/congratulating-isca-2023-awards-recipients/",
+   "evidence": "ISCA Best Paper Award ”Contiguitas: The Pursuit of Physical Memory Contiguity in Datacenters” by Kaiyang Zhao, Kaiwen Xue, Ziqi Wang, Dan Schatzberg, Leon Yang, Antonis Manousis, Johannes Weiner, Rik van Riel, Bikash Sharma, Chunqiang Tang, Dimitrios Skarlatos ”SCALO: An Accelerator-Rich Distributed System for Scalable Brain-Computer Interfacing” by Karthik Sriram, Raghavendra Pradyumna Pothukuchi, Michał Gerasimiuk, Muhammed Ugur, Oliver Ye, Rajit Manohar, Anurag Khandelwal, Abhishek Bhattacharjee"
   },
   {
    "venue": "ISCA",
@@ -95559,6 +95752,36 @@
    "track": "main",
    "source": "https://iscaconf.org/isca2025/",
    "evidence": "ISCA 2025 Best Paper Award: Precise exceptions in relaxed architectures — Ben Simner, Alasdair Armstrong, Thomas Bauereiss, Brian Campbell, Ohad Kammar, Jean Pichon-Pharabod, Peter Sewell"
+  },
+  {
+   "venue": "ISCA",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention",
+   "title": "Rethinking Prefetching for Intermittent Computing",
+   "authors": [
+    "Gan Fang",
+    "Jianping Zeng",
+    "Aditya Gupta",
+    "Changhee Jung"
+   ],
+   "track": "main",
+   "source": "https://iscaconf.org/isca2025/",
+   "evidence": "2025 ISCA Best Paper Honorable Mentions \"The XOR Cache: A Catalyst for Compression\" by Zhewen Pan, Joshua San Miguel \"Rethinking Prefetching for Intermittent Computing\" by Gan Fang, Jianping Zeng, Aditya Gupta, Changhee Jung"
+  },
+  {
+   "venue": "ISCA",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention",
+   "title": "The XOR Cache: A Catalyst for Compression",
+   "authors": [
+    "Zhewen Pan",
+    "Joshua San Miguel"
+   ],
+   "track": "main",
+   "source": "https://iscaconf.org/isca2025/",
+   "evidence": "2025 ISCA Best Paper Honorable Mentions \"The XOR Cache: A Catalyst for Compression\" by Zhewen Pan, Joshua San Miguel"
   },
   {
    "venue": "ISCA",
@@ -104571,6 +104794,195 @@
   },
   {
    "venue": "MICRO",
+   "year": 2006,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Phoenix: Detecting and Recovering from Permanent Processor Design Bugs with Programmable Hardware",
+   "authors": [
+    "Smruti Sarangi",
+    "Abhishek Tiwari",
+    "Josep Torrellas"
+   ],
+   "track": "main",
+   "source": "https://www.microarch.org/micro39/awards.html",
+   "evidence": "Best Paper Award Smruti Sarangi, Abhishek Tiwari, and Josep Torrellas, University of Illinois at Urbana-Champaign \"Phoenix: Detecting and Recovering from Permanent Processor Design Bugs with Programmable Hardware\""
+  },
+  {
+   "venue": "MICRO",
+   "year": 2007,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Data Access Partitioning for Fine-grain Parallelism on Multicore Architectures",
+   "authors": [
+    "Michael Chu",
+    "Rajiv Ravindran",
+    "Scott Mahlke"
+   ],
+   "track": "main",
+   "source": "https://www.microarch.org/micro40/awards.html",
+   "evidence": "Best Paper Award Michael Chu, University of Michigan Rajiv Ravindran, Hewlett Packard Scott Mahlke, University of Michigan \"Data Access Partitioning for Fine-grain Parallelism on Multicore Architectures\""
+  },
+  {
+   "venue": "MICRO",
+   "year": 2008,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "From Soda to Scotch: The Evolution of a Wireless Baseband Processor",
+   "authors": [
+    "Mark Woh",
+    "Yuan Lin",
+    "Sangwon Seo",
+    "Scott Mahlke",
+    "Trevor Mudge",
+    "Chaitali Chakrabarti",
+    "Richard Bruce",
+    "Danny Kershaw",
+    "Alastair Reid",
+    "Mladen Wilder",
+    "Krisztian Flautner"
+   ],
+   "track": "main",
+   "source": "https://www.microarch.org/micro41/pages/awards.html",
+   "evidence": "Best Paper Award From Soda to Scotch: The Evolution of a Wireless Baseband Processor Mark Woh (University of Michigan at Ann Arbor) Yuan Lin (University of Michigan at Ann Arbor) Sangwon Seo (University of Michigan at Ann Arbor) Scott Mahlke (University of Michigan at Ann Arbor) Trevor Mudge (University of Michigan at Ann Arbor) Chaitali Chakrabarti (Arizona State University) Richard Bruce (ARM Ltd.) Danny Kershaw (ARM Ltd.) Alastair Reid (ARM Ltd.) Mladen Wilder (ARM Ltd.) Krisztian Flautner (ARM Ltd.)"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2009,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "The BubbleWrap Many-core: Popping Cores for Sequential Acceleration",
+   "authors": [
+    "Ulya R. Karpuzcu",
+    "Brian Greskamp",
+    "Josep Torrellas"
+   ],
+   "track": "main",
+   "source": "https://www.microarch.org/micro42/awards.html",
+   "evidence": "Best Paper Award Ulya R. Kargpuzcu, Brian Greskamp, and Josep Torellas – University of Illinois at Urbana-Champaign \"The BubbleWrap Many-core: Popping Cores for Sequential Acceleration\""
+  },
+  {
+   "venue": "MICRO",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "MorphCore: An Energy-Efficient Microarchitecture for High Performance ILP and High Throughput TLP",
+   "authors": [
+    "Khubaib",
+    "Aater Suleman",
+    "Milad Hashemi",
+    "Chris Wilkerson",
+    "Yale Patt"
+   ],
+   "track": "main",
+   "source": "https://www.microarch.org/micro45/awards.html",
+   "evidence": "Best Paper Award: MorphCore: An Energy-Efficient Microarchitecture for High Performance ILP and High Throughput TLP, Khubaib (UT Austin), Aater Suleman (Calxeda/HPS), Milad Hashemi (UT Austin), Chris Wilkerson (Intel Labs), and Yale Patt (UT Austin)"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2012,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-Up",
+   "title": "Cache-Conscious Wavefront Scheduling",
+   "authors": [
+    "Timothy G. Rogers",
+    "Mike O'Connor",
+    "Tor M. Aamodt"
+   ],
+   "track": "main",
+   "source": "https://www.microarch.org/micro45/awards.html",
+   "evidence": "Best Paper Runners Up: Cache-Conscious Wavefront Scheduling, Timothy G. Rogers (University of British Columbia), Mike O'Connor (AMD Research), and Tor M. Aamodt (University of British Columbia)"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2012,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-Up",
+   "title": "Fundamental Latency Trade-offs in Architecting DRAM Caches",
+   "authors": [
+    "Moinuddin Qureshi",
+    "Gabriel H. Loh"
+   ],
+   "track": "main",
+   "source": "https://www.microarch.org/micro45/awards.html",
+   "evidence": "Best Paper Runners Up: Cache-Conscious Wavefront Scheduling, Timothy G. Rogers (University of British Columbia), Mike O'Connor (AMD Research), and Tor M. Aamodt (University of British Columbia) Fundamental Latency Trade-offs in Architecting DRAM Caches, Moinuddin Qureshi (Georgia Institute of Technology), Gabriel H. Loh (AMD Research)"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "SAGE: Self-Tuning Approximation for Graphics Engines",
+   "authors": [
+    "Mehrzad Samadi",
+    "Janghaeng Lee",
+    "Davoud Jamshidi",
+    "Amir Hormati",
+    "Scott Mahlke"
+   ],
+   "track": "main",
+   "source": "https://www.microarch.org/micro46/files/program.html",
+   "evidence": "Best Paper SAGE: Self-Tuning Approximation for Graphics Engines Mehrzad Samadi, Janghaeng Lee, Davoud Jamshidi (University of Michigan), Amir Hormati (Google), and Scott Mahlke (University of Michigan)"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2013,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention",
+   "title": "Kiln: Closing the Performance Gap Between Systems With and Without Persistence Support",
+   "authors": [
+    "Jishen Zhao",
+    "Sheng Li",
+    "Doe Hyun Yoon",
+    "Yuan Xie",
+    "Norman P. Jouppi"
+   ],
+   "track": "main",
+   "source": "https://www.microarch.org/micro46/files/program.html",
+   "evidence": "Best Paper Honorable Mention Kiln: Closing the Performance Gap Between Systems With and Without Persistence Support Jishen Zhao (Pennsylvania State University), Sheng Li (Hewlett-Packard Labs), Doe Hyun Yoon (IBM Thomas J. Watson Research Center), Yuan Xie (Pennsylvania State University/AMD Research), and Norman P. Jouppi (Google)"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2013,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-Up",
+   "title": "Meet the Walkers: Accelerating Index Traversals for In-Memory Databases",
+   "authors": [
+    "Onur Kocberber",
+    "Boris Grot",
+    "Javier Picorel",
+    "Babak Falsafi",
+    "Kevin Lim",
+    "Parthasarathy Ranganathan"
+   ],
+   "track": "main",
+   "source": "https://www.microarch.org/micro46/files/program.html",
+   "evidence": "Best Paper Runner Up Meet the Walkers: Accelerating Index Traversals for In-Memory Databases Onur Kocberber (EPFL), Boris Grot (University of Edinburgh), Javier Picorel, Babak Falsafi (EPFL), Kevin Lim (HP Labs), and Parthasarathy Ranganathan (Google)"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "DaDianNao: A Machine-Learning Supercomputer",
+   "authors": [
+    "Yunji Chen",
+    "Tao Luo",
+    "Shaoli Liu",
+    "Shijin Zhang",
+    "Liqiang He",
+    "Jia Wang",
+    "Ling Li",
+    "Tianshi Chen",
+    "Zhiwei Xu",
+    "Ninghui Sun",
+    "Olivier Temam"
+   ],
+   "track": "main",
+   "source": "https://www.microarch.org/micro47/files/program.html",
+   "evidence": "Best Paper - DaDianNao: A Machine-Learning Supercomputer Yunji Chen (ICT), Tao Luo (ICT), Shaoli Liu (ICT), Shijin Zhang (ICT), Liqiang He (INRIA), Jia Wang (ICT), Ling Li (ICT), Tianshi Chen (ICT), Zhiwei Xu (ICT), Ninghui Sun (ICT), Olivier Temam (INRIA)"
+  },
+  {
+   "venue": "MICRO",
    "year": 2014,
    "award": "tot",
    "awardLabel": "Test of Time Award",
@@ -104747,6 +105159,39 @@
    "paperYear": 1996,
    "source": "https://www.sigmicro.org/awards/tot/",
    "evidence": "MICRO 2015 Test of Time Award: MICRO 1996: Trace Cache: A Low Latency Approach to High Bandwidth Instruction Fetching — Eric Rotenberg, Steve Bennett, James E. Smith"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Graphicionado: A High-Performance and Energy-Efficient Accelerator for Graph Analytics",
+   "authors": [
+    "Tae Jun Ham",
+    "Lisa Wu",
+    "Narayanan Sundaram",
+    "Nadathur Satish",
+    "Margaret Martonosi"
+   ],
+   "track": "main",
+   "source": "https://www.microarch.org/micro49/program.php",
+   "evidence": "Best Paper Award: Graphicionado: A High-Performance and Energy-Efficient Accelerator for Graph Analytics Tae Jun Ham (Princeton University), Lisa Wu (University of California, Berkeley), Narayanan Sundaram (Intel), Nadathur Satish (Intel), Margaret Martonosi (Princeton University)"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Spectral Profiling: Observer-Effect-Free Profiling by Monitoring EM Emanations",
+   "authors": [
+    "Nader Sehatbakhsh",
+    "Alireza Nazari",
+    "Alenka Zajic",
+    "Milos Prvulovic"
+   ],
+   "track": "main",
+   "source": "https://www.microarch.org/micro49/program.php",
+   "evidence": "Best Paper Award: Graphicionado: A High-Performance and Energy-Efficient Accelerator for Graph Analytics Tae Jun Ham (Princeton University), Lisa Wu (University of California, Berkeley), Narayanan Sundaram (Intel), Nadathur Satish (Intel), Margaret Martonosi (Princeton University) Spectral Profiling: Observer-Effect-Free Profiling by Monitoring EM Emanations Nader Sehatbakhsh (Georgia Institute of Technology, Atlanta), Alireza Nazari (Georgia Institute of Technology, Atlanta), Alenka Zajic (Georgia Institute of Technology, Atlanta), Milos Prvulovic (Georgia Institute of Technology, Atlanta)"
   },
   {
    "venue": "MICRO",
@@ -104993,6 +105438,49 @@
    "paperYear": 1999,
    "source": "https://www.sigmicro.org/awards/tot/",
    "evidence": "MICRO 2020 Test of Time Award: MICRO 1999: Fetch Directed Instruction Prefetching — Glenn Reinman, Brad Calder, Todd M. Austin"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "APOLLO: An Automated Power Modeling Framework for Runtime Power Introspection in High-Volume Commercial Microprocessors",
+   "authors": [
+    "Zhiyao Xie",
+    "Xiaoqing Xu",
+    "Matt Walker",
+    "Joshua Knebel",
+    "Kumaraguru Palaniswamy",
+    "Nicolas Hebert",
+    "Jiang Hu",
+    "Huanrui Yang",
+    "Yiran Chen",
+    "Shidhartha Das"
+   ],
+   "track": "main",
+   "source": "https://www.microarch.org/micro54/program/",
+   "alsoAt": [
+    "https://www.microarch.org/micro54/"
+   ],
+   "evidence": "APOLLO: An Automated Power Modeling Framework for Runtime Power Introspection in High-Volume Commercial Microprocessors Zhiyao Xie (Duke University); Xiaoqing Xu, Matt Walker, Joshua Knebel, Kumaraguru Palaniswamy, Nicolas Hebert (ARM Ltd.); Jiang Hu (Texas A&M University); Huanrui Yang, Yiran Chen (Duke University); Shidhartha Das (ARM Ltd.)"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-Up",
+   "title": "TIP: Time-Proportional Instruction Profiling",
+   "authors": [
+    "Bjorn Gottschall",
+    "Lieven Eeckhout",
+    "Magnus Jahre"
+   ],
+   "track": "main",
+   "source": "https://www.microarch.org/micro54/program/",
+   "alsoAt": [
+    "https://www.microarch.org/micro54/"
+   ],
+   "evidence": "TIP: Time-Proportional Instruction Profiling Bjorn Gottschall (Norwegian University of Science and Technology); Lieven Eeckhout (Ghent University); Magnus Jahre (Norwegian University of Science and Technology)"
   },
   {
    "venue": "MICRO",
@@ -126306,6 +126794,648 @@
    "paperYear": 2014,
    "source": "https://blog.siggraph.org/2026/05/siggraph-2026-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
    "evidence": "SIGGRAPH 2026 Test-of-Time Award: Intrinsic Images in the Wild — Sean Bell, Kavita Bala, Noah Snavely"
+  },
+  {
+   "venue": "SIGGRAPH Asia",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "$S^3$-Slicer: A General Slicing Framework for Multi-Axis 3D Printing",
+   "authors": [
+    "Tianyu Zhang",
+    "Guoxin Fang",
+    "Yuming Huang",
+    "Neelotpal Dutta",
+    "Sylvain Lefebvre",
+    "Murat Kilic",
+    "Charlie C. L. Wang"
+   ],
+   "track": "main",
+   "source": "https://sa2022.siggraph.org/en/attend/award-winners/",
+   "alsoAt": [
+    "https://sa2022.siggraph.org/en/presentation/indexb584.html?id=papers_521&sess=sess179"
+   ],
+   "evidence": "Technical Papers Award Winners (4 Best Papers) … $S^3$-Slicer: A General Slicing Framework for Multi-Axis 3D Printing Authors: Tianyu Zhang, Guoxin Fang, Yuming Huang, Neelotpal Dutta, Murat Kilic, Charlie C. L. Wang from the University of Manchester and Sylvain Lefebvre from INRIA … Authors Tianyu Zhang The University of Manchester Guoxin Fang The University of Manchester Yuming Huang The University of Manchester Neelotpal Dutta The University of Manchester Sylvain Lefebvre INRIA Murat Kilic The University of Manchester Charlie C. L. Wang The University of Manchester"
+  },
+  {
+   "venue": "SIGGRAPH Asia",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Constant Time Median Filter using 2D Wavelet Matrix",
+   "authors": [
+    "Yuji Moroto",
+    "Nobuyuki Umetani"
+   ],
+   "track": "main",
+   "source": "https://sa2022.siggraph.org/en/attend/award-winners/",
+   "alsoAt": [
+    "https://sa2022.siggraph.org/en/presentation/index9c3f.html?id=papers_484&sess=sess153"
+   ],
+   "evidence": "Technical Papers Award Winners (4 Best Papers) … Constant Time Median Filter using 2D Wavelet Matrix Authors: Yuji Moroto and Nobuyuki Umetani from the University of Tokyo … Authors Yuji Moroto University of Tokyo Nobuyuki Umetani University of Tokyo"
+  },
+  {
+   "venue": "SIGGRAPH Asia",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Neural James-Stein Combiner for Unbiased and Biased Renderings",
+   "authors": [
+    "Jeongmin Gu",
+    "Jose A. Iglesias-Guitian",
+    "Bochang Moon"
+   ],
+   "track": "main",
+   "source": "https://sa2022.siggraph.org/en/attend/award-winners/",
+   "alsoAt": [
+    "https://sa2022.siggraph.org/en/presentation/index1d5a.html?id=papers_390&sess=sess173"
+   ],
+   "evidence": "Technical Papers Award Winners (4 Best Papers) … Neural James-Stein Combiner for Unbiased and Biased Renderings Authors: Jeongmin GuGwangju Institute of Science and Technology, Jose A. Iglesias-Guitian from the University of A CoruñaCITIC – Centre for ICT Research and Bochang MoonGwangju from the Institute of Science and Technology … Authors Jeongmin Gu Gwangju Institute of Science and Technology Jose A. Iglesias-Guitian University of A Coruña CITIC - Centre for ICT Research Bochang Moon Gwangju Institute of Science and Technology"
+  },
+  {
+   "venue": "SIGGRAPH Asia",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Rhythmic Gesticulator: Rhythm-Aware Co-Speech Gesture Synthesis with Hierarchical Neural Embeddings",
+   "authors": [
+    "Tenglong Ao",
+    "Qingzhe Gao",
+    "Yuke Lou",
+    "Baoquan Chen",
+    "Libin Liu"
+   ],
+   "track": "main",
+   "source": "https://sa2022.siggraph.org/en/attend/award-winners/",
+   "alsoAt": [
+    "https://sa2022.siggraph.org/en/presentation/index6420.html?id=papers_146&sess=sess162"
+   ],
+   "evidence": "Technical Papers Award Winners (4 Best Papers) … Rhythmic Gesticulator: Rhythm-Aware Co-Speech Gesture Synthesis with Hierarchical Neural Embeddings Authors: Tenglong Ao, Yuke Lou, Baoquan Chen and Libin Liu from Peking University, and Qingzhe Gao from Shandong University, Peking University. … Authors Tenglong Ao Peking University Qingzhe Gao Shandong University Peking University Yuke Lou Peking University Baoquan Chen Peking University Libin Liu Peking University"
+  },
+  {
+   "venue": "SIGGRAPH Asia",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Adaptive Shells for Efficient Neural Radiance Field Rendering",
+   "authors": [
+    "Zian Wang",
+    "Tianchang Shen",
+    "Merlin Nimier-David",
+    "Nicholas Sharp",
+    "Jun Gao",
+    "Alexander Keller",
+    "Sanja Fidler",
+    "Thomas Müller",
+    "Zan Gojcic"
+   ],
+   "track": "main",
+   "source": "https://asia.siggraph.org/2023/images/pdfs/SIGGRAPH_Asia_2023_Awards_Winners.pdf",
+   "alsoAt": [
+    "https://asia.siggraph.org/2023/full-program/"
+   ],
+   "evidence": "Best Paper Awards - Fluid Simulation on Neural Flow Maps - Adaptive Shells for Efficient Neural Radiance Field Rendering … Adaptive Shells for Efficient Neural Radiance Field Rendering Authors Zian Wang Tianchang Shen Merlin Nimier-David Nicholas Sharp Jun Gao Alexander Keller Sanja Fidler Thomas Müller Zan Gojcic"
+  },
+  {
+   "venue": "SIGGRAPH Asia",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Concept Decomposition for Visual Exploration and Inspiration",
+   "authors": [
+    "Yael Vinker",
+    "Andrey Voynov",
+    "Daniel Cohen-Or",
+    "Ariel Shamir"
+   ],
+   "track": "main",
+   "source": "https://asia.siggraph.org/2023/images/pdfs/SIGGRAPH_Asia_2023_Awards_Winners.pdf",
+   "alsoAt": [
+    "https://asia.siggraph.org/2023/full-program/"
+   ],
+   "evidence": "Best Paper Awards - Fluid Simulation on Neural Flow Maps - Adaptive Shells for Efficient Neural Radiance Field Rendering - Concept Decomposition for Visual Exploration and Inspiration … Concept Decomposition for Visual Exploration and Inspiration Authors Yael Vinker Andrey Voynov Daniel Cohen-Or Ariel Shamir"
+  },
+  {
+   "venue": "SIGGRAPH Asia",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Fluid Simulation on Neural Flow Maps",
+   "authors": [
+    "Yitong Deng",
+    "Hong-Xing Yu",
+    "Diyang Zhang",
+    "Jiajun Wu",
+    "Bo Zhu"
+   ],
+   "track": "main",
+   "source": "https://asia.siggraph.org/2023/images/pdfs/SIGGRAPH_Asia_2023_Awards_Winners.pdf",
+   "alsoAt": [
+    "https://asia.siggraph.org/2023/full-program/"
+   ],
+   "evidence": "Best Paper Awards - Fluid Simulation on Neural Flow Maps … Fluid Simulation on Neural Flow Maps Authors Yitong Deng Hong-Xing Yu Diyang Zhang Jiajun Wu Bo Zhu"
+  },
+  {
+   "venue": "SIGGRAPH Asia",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Meshes with Spherical Faces",
+   "authors": [
+    "Martin Kilian",
+    "Anthony Ramos Cisneros",
+    "Christian Müller",
+    "Helmut Pottmann"
+   ],
+   "track": "main",
+   "source": "https://asia.siggraph.org/2023/images/pdfs/SIGGRAPH_Asia_2023_Awards_Winners.pdf",
+   "alsoAt": [
+    "https://asia.siggraph.org/2023/full-program/"
+   ],
+   "evidence": "Best Paper Awards - Fluid Simulation on Neural Flow Maps - Adaptive Shells for Efficient Neural Radiance Field Rendering - Concept Decomposition for Visual Exploration and Inspiration - Meshes with Spherical Faces … Meshes with Spherical Faces Authors Martin Kilian Anthony Ramos Cisneros Christian Müller Helmut Pottmann"
+  },
+  {
+   "venue": "SIGGRAPH Asia",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Warped-Area Reparameterization of Differential Path Integrals",
+   "authors": [
+    "Peiyu Xu",
+    "Sai Bangaru",
+    "Tzu-Mao Li",
+    "Shuang Zhao"
+   ],
+   "track": "main",
+   "source": "https://asia.siggraph.org/2023/images/pdfs/SIGGRAPH_Asia_2023_Awards_Winners.pdf",
+   "alsoAt": [
+    "https://asia.siggraph.org/2023/full-program/"
+   ],
+   "evidence": "Best Paper Awards - Fluid Simulation on Neural Flow Maps - Adaptive Shells for Efficient Neural Radiance Field Rendering - Concept Decomposition for Visual Exploration and Inspiration - Meshes with Spherical Faces - Warped-Area Reparameterization of Differential Path Integrals … Warped-Area Reparameterization of Differential Path Integrals Authors Peiyu Xu Sai Bangaru Tzu-Mao Li Shuang Zhao"
+  },
+  {
+   "venue": "SIGGRAPH Asia",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "C-shells: Deployable Gridshells with Curved Beams",
+   "authors": [
+    "Quentin Becker",
+    "Seiichi Suzuki",
+    "Yingying Ren",
+    "Davide Pellis",
+    "Julian Panetta",
+    "Mark Pauly"
+   ],
+   "track": "main",
+   "source": "https://asia.siggraph.org/2023/images/pdfs/SIGGRAPH_Asia_2023_Awards_Winners.pdf",
+   "alsoAt": [
+    "https://asia.siggraph.org/2023/full-program/"
+   ],
+   "evidence": "Honorable Mention - Shrink & Morph: 3D-printed self-shaping shells actuated by a shape memory effect - From Skin to Skeleton: Towards Biomechanically Accurate 3D Digital Humans - C-shells: Deployable Gridshells with Curved Beams … C-shells: Deployable Gridshells with Curved Beams Authors Quentin Becker Seiichi Suzuki Yingying Ren Davide Pellis Julian Panetta Mark Pauly"
+  },
+  {
+   "venue": "SIGGRAPH Asia",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "From Skin to Skeleton: Towards Biomechanically Accurate 3D Digital Humans",
+   "authors": [
+    "Marilyn Keller",
+    "Keenon Werling",
+    "Soyong Shin",
+    "Scott Delp",
+    "Sergi Pujades",
+    "Karen Liu",
+    "Michael Black"
+   ],
+   "track": "main",
+   "source": "https://asia.siggraph.org/2023/images/pdfs/SIGGRAPH_Asia_2023_Awards_Winners.pdf",
+   "alsoAt": [
+    "https://asia.siggraph.org/2023/full-program/"
+   ],
+   "evidence": "Honorable Mention - Shrink & Morph: 3D-printed self-shaping shells actuated by a shape memory effect - From Skin to Skeleton: Towards Biomechanically Accurate 3D Digital Humans … From Skin to Skeleton : Towards Biomechanically Accurate 3D Digital Humans Authors Marilyn Keller Keenon Werling Soyong Shin Scott Delp Sergi Pujades Karen Liu Michael Black"
+  },
+  {
+   "venue": "SIGGRAPH Asia",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Neural Categorical Priors for Physics-Based Character Control",
+   "authors": [
+    "Qingxu Zhu",
+    "He Zhang",
+    "Mengting Lan",
+    "Lei Han"
+   ],
+   "track": "main",
+   "source": "https://asia.siggraph.org/2023/images/pdfs/SIGGRAPH_Asia_2023_Awards_Winners.pdf",
+   "alsoAt": [
+    "https://asia.siggraph.org/2023/full-program/"
+   ],
+   "evidence": "Honorable Mention - Shrink & Morph: 3D-printed self-shaping shells actuated by a shape memory effect - From Skin to Skeleton: Towards Biomechanically Accurate 3D Digital Humans - C-shells: Deployable Gridshells with Curved Beams - Neural Categorical Priors for Physics-Based Character Control … Neural Categorical Priors for Physics-Based Character Control Authors Qingxu Zhu He Zhang Mengting Lan Lei Han"
+  },
+  {
+   "venue": "SIGGRAPH Asia",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Shrink & Morph: 3D-printed self-shaping shells actuated by a shape memory effect",
+   "authors": [
+    "David Jourdan",
+    "Camille Schreck",
+    "Pierre-Alexandre Hugron",
+    "Jonas Martinez",
+    "Sylvain Lefebvre"
+   ],
+   "track": "main",
+   "source": "https://asia.siggraph.org/2023/images/pdfs/SIGGRAPH_Asia_2023_Awards_Winners.pdf",
+   "alsoAt": [
+    "https://asia.siggraph.org/2023/full-program/"
+   ],
+   "evidence": "Honorable Mention - Shrink & Morph: 3D-printed self-shaping shells actuated by a shape memory effect … Shrink & Morph: 3D-printed self-shaping shells actuated by a shape memory effect Authors David Jourdan Camille Schreck Pierre-Alexandre Hugron Jonas Martinez Sylvain Lefebvre"
+  },
+  {
+   "venue": "SIGGRAPH Asia",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Appearance Modeling of Iridescent Feathers with Diverse Nanostructures",
+   "authors": [
+    "Yunchen Yu",
+    "Andrea Weidlich",
+    "Bruce Walter",
+    "Eugene d’Eon",
+    "Steve Marschner"
+   ],
+   "track": "main",
+   "source": "https://asia.siggraph.org/2024/for-the-press/press-releases/siggraph-asia-2024-award-winners/",
+   "evidence": "Best Paper Awards: … Appearance Modeling of Iridescent Feathers with Diverse Nanostructures – Authors: Yunchen Yu, Cornell University Andrea Weidlich, NVIDIA Bruce Walter, Cornell University Eugene d’Eon, NVIDIA Steve Marschner, Cornell University, NVIDIA"
+  },
+  {
+   "venue": "SIGGRAPH Asia",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Differentiable Owen Scrambling",
+   "authors": [
+    "Bastien Doignies",
+    "David Coeurjolly",
+    "Nicolas Bonneel",
+    "Julie Digne",
+    "Jean-Claude Iehl",
+    "Victor Ostromoukhov"
+   ],
+   "track": "main",
+   "source": "https://asia.siggraph.org/2024/for-the-press/press-releases/siggraph-asia-2024-award-winners/",
+   "alsoAt": [
+    "https://asia.siggraph.org/2024/presentation/?id=papers_175&sess=sess140"
+   ],
+   "evidence": "Best Paper Awards: … Differentiable Owen Scrambling – Authors: Nicolas Bonneel, CNRS, LIRIS Julie Digne, CNRS, LIRIS Jean-Claude Iehl, Université Claude Bernard Lyon, LIRIS Victor Ostromoukhov, Université Claude Bernard Lyon, LIRIS … Authors Bastien Doignies Université Claude Bernard Lyon LIRIS David Coeurjolly CNRS LIRIS Nicolas Bonneel CNRS LIRIS Julie Digne CNRS LIRIS Jean-Claude Iehl Université Claude Bernard Lyon LIRIS Victor Ostromoukhov Université Claude Bernard Lyon LIRIS"
+  },
+  {
+   "venue": "SIGGRAPH Asia",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "GroomCap: High-Fidelity Prior-Free Hair Capture",
+   "authors": [
+    "Yuxiao Zhou",
+    "Menglei Chai",
+    "Daoye Wang",
+    "Sebastian Winberg",
+    "Erroll Wood",
+    "Kripasindhu Sarkar",
+    "Markus Gross",
+    "Thabo Beeler"
+   ],
+   "track": "main",
+   "source": "https://asia.siggraph.org/2024/for-the-press/press-releases/siggraph-asia-2024-award-winners/",
+   "alsoAt": [
+    "https://asia.siggraph.org/2024/presentation/?id=papers_204&sess=sess139"
+   ],
+   "evidence": "Best Paper Awards: … GroomCap: High-Fidelity Prior-Free Hair Capture – Authors: Yuxiao Zhou, ETH Zürich Menglei Chai, Google Inc. Daoye Wang, Google Inc. Sebastian Winberg, Google Inc. Erroll Wood, Google Inc. Kripasindhu Sarkar, Google Inc. Markus GrossETH Zürich Thabo BeelerGoogle Inc. … Authors Yuxiao Zhou ETH Zürich Menglei Chai Google Inc. Daoye Wang Google Inc. Sebastian Winberg Google Inc. Erroll Wood Google Inc. Kripasindhu Sarkar Google Inc. Markus Gross ETH Zürich Thabo Beeler Google Inc."
+  },
+  {
+   "venue": "SIGGRAPH Asia",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Particle Laden Fluid on Flow Maps",
+   "authors": [
+    "Zhiqi Li",
+    "Duowen Chen",
+    "Candong Lin",
+    "Jinyuan Liu",
+    "Bo Zhu"
+   ],
+   "track": "main",
+   "source": "https://asia.siggraph.org/2024/for-the-press/press-releases/siggraph-asia-2024-award-winners/",
+   "evidence": "Best Paper Awards: … Particle Laden Fluid on Flow Maps – Authors: Zhiqi Li, Georgia Institute of Technology Duowen Chen, Georgia Institute of Technology Candong Lin, Georgia Institute of Technology Jinyuan Liu, Dartmouth College Bo Zhu, Georgia Institute of Technology"
+  },
+  {
+   "venue": "SIGGRAPH Asia",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Perspective-Aligned AR Mirror with Under-Display Camera",
+   "authors": [
+    "Jian Wang",
+    "Sizhuo Ma",
+    "Karl Bayer",
+    "Yi Zhang",
+    "Peihao Wang",
+    "Bing Zhou",
+    "Shree Nayar",
+    "Gurunandan Krishnan"
+   ],
+   "track": "main",
+   "source": "https://asia.siggraph.org/2024/for-the-press/press-releases/siggraph-asia-2024-award-winners/",
+   "evidence": "Best Paper Awards: … Perspective-Aligned AR Mirror with Under-Display Camera – Authors: Jian Wang, Snap Inc. Sizhuo Ma, Snap Inc. Karl Bayer, Snap Inc. Yi Zhang, Snap Inc. Peihao Wang, Snap Inc. Bing Zhou, Snap Inc. Shree Nayar, Columbia University Gurunandan Krishnan, Snap Inc."
+  },
+  {
+   "venue": "SIGGRAPH Asia",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Quark: Real-time, High-resolution, and General Neural View Synthesis",
+   "authors": [
+    "John Flynn",
+    "Michael Broxton",
+    "Lukas Murmann",
+    "Lucy Chai",
+    "Matthew DuVall",
+    "Clément Godard",
+    "Kathryn Heal",
+    "Srinivas Kaza",
+    "Stephen Lombardi",
+    "Xuan Luo",
+    "Supreeth Achar",
+    "Kira Prabhu",
+    "Tiancheng Sun",
+    "Lynn Tsai",
+    "Ryan Overbeck"
+   ],
+   "track": "main",
+   "source": "https://asia.siggraph.org/2024/for-the-press/press-releases/siggraph-asia-2024-award-winners/",
+   "evidence": "Best Paper Awards: … Quark: Real-time, High-resolution, and General View Synthesis – Authors: John Flynn, Google Michael Broxton, Google Lukas Murmann, Google Lucy Chai, Google Matthew DuVall, Google Clément Godard, Google Kathryn Heal, Google Srinivas Kaza, Google Stephen Lombardi, Google Xuan Luo, Google Supreeth Achar, Google Kira Prabhu, Google Tiancheng Sun, Google Lynn Tsai, Google Ryan Overbeck, Google [the page misprints the title; the paper is \"Quark: Real-time, High-resolution, and General Neural View Synthesis\" — data/exclusions.json]"
+  },
+  {
+   "venue": "SIGGRAPH Asia",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "AR-DAVID: Augmented Reality Display Artifact Video Dataset",
+   "authors": [
+    "Alexandre Chapiro",
+    "Dongyeon Kim",
+    "Yuta Asano",
+    "Rafał K. Mantiuk"
+   ],
+   "track": "main",
+   "source": "https://asia.siggraph.org/2024/for-the-press/press-releases/siggraph-asia-2024-award-winners/",
+   "evidence": "Honorable Mention Awards: … AR-DAVID: Augmented Reality Display Artifact Video Dataset – Authors: Alexandre Chapiro, Reality Labs, Meta Dongyeon Kim, University of Cambridge Yuta Asano, Reality Labs, Meta Rafał K. Mantiuk, University of Cambridge"
+  },
+  {
+   "venue": "SIGGRAPH Asia",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Colorful Diffuse Intrinsic Image Decomposition in the Wild",
+   "authors": [
+    "Chris Careaga",
+    "Yağız Aksoy"
+   ],
+   "track": "main",
+   "source": "https://asia.siggraph.org/2024/for-the-press/press-releases/siggraph-asia-2024-award-winners/",
+   "alsoAt": [
+    "https://asia.siggraph.org/2024/presentation/?id=papers_1008&sess=sess108"
+   ],
+   "evidence": "Honorable Mention Awards: … Colorful Diffuse Intrinsic Image Decomposition in the Wild – Authors: Chris Careaga, Simon Fraser University Yağız Aksoy. Chris Careaga, Simon Fraser University … Authors Chris Careaga Simon Fraser University Yağız Aksoy Simon Fraser University"
+  },
+  {
+   "venue": "SIGGRAPH Asia",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Direct Manipulation of Procedural Implicit Surfaces",
+   "authors": [
+    "Marzia Riso",
+    "Élie Michel",
+    "Axel Paris",
+    "Valentin Deschaintre",
+    "Mathieu Gaillard",
+    "Fabio Pellacini"
+   ],
+   "track": "main",
+   "source": "https://asia.siggraph.org/2024/for-the-press/press-releases/siggraph-asia-2024-award-winners/",
+   "alsoAt": [
+    "https://asia.siggraph.org/2024/presentation/?id=papers_540&sess=sess130"
+   ],
+   "evidence": "Honorable Mention Awards: … Direct Manipulation of Procedural Implicit Surfaces – Authors: Marzia RisoSapienza University of RomeAdobe Élie Michel, Adobe Axel Paris, Adobe Valentin Deschaintre, Adobe Mathieu Gaillard, Adobe Fabio Pellacini, University of Modena and Reggio Emilia … Authors Marzia Riso Sapienza University of Rome Adobe Élie Michel Adobe Axel Paris Adobe Valentin Deschaintre Adobe Mathieu Gaillard Adobe Fabio Pellacini University of Modena and Reggio Emilia"
+  },
+  {
+   "venue": "SIGGRAPH Asia",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Fluid Implicit Particles on Coadjoint Orbits",
+   "authors": [
+    "Mohammad Sina Nabizadeh",
+    "Ritoban Roy-Chowdhury",
+    "Hang Yin",
+    "Ravi Ramamoorthi",
+    "Albert Chern"
+   ],
+   "track": "main",
+   "source": "https://asia.siggraph.org/2024/for-the-press/press-releases/siggraph-asia-2024-award-winners/",
+   "alsoAt": [
+    "https://asia.siggraph.org/2024/presentation/?id=papers_876&sess=sess144"
+   ],
+   "evidence": "Honorable Mention Awards: … Fluid Implicit Particles on Coadjoint Orbits – Authors: Mohammad Sina Nabizadeh, University of California San Diego Ritoban Roy-Chowdhury, University of California San Diego Hang Yin, University of California San Diego Ravi Ramamoorthi, University of California San Diego Albert Chern, University of California San Diego … Authors Mohammad Sina Nabizadeh University of California San Diego Ritoban Roy-Chowdhury University of California San Diego Hang Yin University of California San Diego Ravi Ramamoorthi University of California San Diego Albert Chern University of California San Diego"
+  },
+  {
+   "venue": "SIGGRAPH Asia",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "TEXGen: a Generative Diffusion Model for Mesh Textures",
+   "authors": [
+    "Xin Yu",
+    "Ze Yuan",
+    "Yuan-Chen Guo",
+    "Ying-Tian Liu",
+    "Jianhui Liu",
+    "Yangguang Li",
+    "Yan-Pei Cao",
+    "Ding Liang",
+    "Xiaojuan Qi"
+   ],
+   "track": "main",
+   "source": "https://asia.siggraph.org/2024/for-the-press/press-releases/siggraph-asia-2024-award-winners/",
+   "evidence": "Honorable Mention Awards: … TEXGen: a Generative Diffusion Model for Mesh Textures – Authors: Xin Yu, University of Hong Kong Ze Yuan, Beihang University Yuan-Chen Guo, VAST Ying-Tian Liu, Tsinghua University Jianhui Liu, University of Hong Kong Yangguang Li, VAST Yan-Pei Cao, VAST Ding Liang, VAST Xiaojuan Qi, University of Hong Kong"
+  },
+  {
+   "venue": "SIGGRAPH Asia",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Automatic Sampling for Discontinuities in Differentiable Shaders",
+   "authors": [
+    "Yash Belhe",
+    "Wesley Chang",
+    "Michael Gharbi",
+    "Ravi Ramamoorthi",
+    "Tzu-Mao Li"
+   ],
+   "track": "main",
+   "source": "https://asia.siggraph.org/2025/program/award-winners/",
+   "evidence": "Best Paper Award: Automatic Sampling for Discontinuities in Differentiable Shaders … Authors: Yash Belhe, Wesley Chang, Michael Gharbi, Ravi Ramamoorthi, Tzu-Mao Li"
+  },
+  {
+   "venue": "SIGGRAPH Asia",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "BSP-OT: Sparse transport plans between discrete measures in loglinear time",
+   "authors": [
+    "Baptiste Genest",
+    "Nicholas Bonneel",
+    "Vincent Nivoliers",
+    "David Coeurjolly"
+   ],
+   "track": "main",
+   "source": "https://asia.siggraph.org/2025/program/award-winners/",
+   "evidence": "Best Paper Award: BSP-OT: Sparse transport plans between discrete measures in loglinear time … Authors: Baptiste Genest, Nicholas Bonneel, Vincent Nivoliers, David Coeurjolly"
+  },
+  {
+   "venue": "SIGGRAPH Asia",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Control Operators for Interactive Character Animation",
+   "authors": [
+    "Ruiyu Gou",
+    "Michiel Van De Panne",
+    "Daniel Holden"
+   ],
+   "track": "main",
+   "source": "https://asia.siggraph.org/2025/program/award-winners/",
+   "evidence": "Best Paper Award: Control Operators for Interactive Character Animation … Authors: Ruiyu Gou, Michiel Van De Panne, Daniel Holden"
+  },
+  {
+   "venue": "SIGGRAPH Asia",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Curve-Based Slicer for Multi-Axis DLP 3D Printing",
+   "authors": [
+    "Chengkai Dai",
+    "Liu Tao",
+    "Dezhao Guo",
+    "Binzhi Sun",
+    "Guoxin Fang",
+    "Yeung Yam",
+    "Charlie C.L. Wang"
+   ],
+   "track": "main",
+   "source": "https://asia.siggraph.org/2025/program/award-winners/",
+   "evidence": "Best Paper Award: Curve-Based Slicer for Multi-Axis DLP 3D Printing … Authors: Chengkai Dai, Liu Tao, Dezhao Guo, Binzhi Sun, Guoxin Fang, Yeung Yam, Charlie C.L. Wang"
+  },
+  {
+   "venue": "SIGGRAPH Asia",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Fovea Stacking: Imaging with Dynamic Localized Aberration Correction",
+   "authors": [
+    "Shin Mao",
+    "Yogesgwar Nath Mishra",
+    "Wolfgang Heidrich"
+   ],
+   "track": "main",
+   "source": "https://asia.siggraph.org/2025/program/award-winners/",
+   "evidence": "Best Paper Award: Fovea Stacking: Imaging with Dynamic Localized Aberration Correction … Authors: Shin Mao, Yogesgwar Nath Mishra, Wolfgang Heidrich"
+  },
+  {
+   "venue": "SIGGRAPH Asia",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "A Highly-Efficient Hybrid Simulation System for Flight Controller Design and Evaluation of Unmanned Aerial Vehicles",
+   "authors": [
+    "Jiwei Wang",
+    "Wenbin Song",
+    "Yicheng Fan",
+    "Yang Wang",
+    "Xiaopei Liu"
+   ],
+   "track": "main",
+   "source": "https://asia.siggraph.org/2025/program/award-winners/",
+   "evidence": "Honorable Mention Award: A Highly-Efficient Hybrid Simulation System for Flight Controller Design and Evaluation of Unmanned Aerial Vehicles … Authors: Jiwei Wang, Wenbin Song, Yicheng Fan, Yang Wang, Xiaopei Liu"
+  },
+  {
+   "venue": "SIGGRAPH Asia",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Efficient and Scalable Spatial Regularization of Optimal Transport",
+   "authors": [
+    "Lucas Brifault",
+    "David Cohen-Steiner",
+    "Mathieu Desbrun"
+   ],
+   "track": "main",
+   "source": "https://asia.siggraph.org/2025/program/award-winners/",
+   "evidence": "Honorable Mention Award: Efficient and Scalable Spatial Regularization of Optimal Transport … Authors: Lucas Brifault, David Cohen-Steiner, Mathieu Desbrun"
+  },
+  {
+   "venue": "SIGGRAPH Asia",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Gaussian Integral Linear Operators for Precomputed Graphics",
+   "authors": [
+    "Haolin Lu",
+    "Yash Belhe",
+    "Tzu-Mao Li",
+    "Toshiya Hachisuka"
+   ],
+   "track": "main",
+   "source": "https://asia.siggraph.org/2025/program/award-winners/",
+   "evidence": "Honorable Mention Award: Gaussian Integral Linear Operators for Precomputed Graphics … Authors: Haolin Lu, Yash Belhe, Tzu-Mao Li, Toshiya Hachisuka"
+  },
+  {
+   "venue": "SIGGRAPH Asia",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "MILO: A Lightweight Perceptual Quality Metric for Image and Latent-Space Optimization",
+   "authors": [
+    "Ugur Cogalan",
+    "Mojitaba Bemana",
+    "Karol Myszkowski",
+    "Hans-Peter Seidel",
+    "Colin Groth"
+   ],
+   "track": "main",
+   "source": "https://asia.siggraph.org/2025/program/award-winners/",
+   "evidence": "Honorable Mention Award: MILO: A Lightweight Perceptual Quality Metric for Image and Latent-Space Optimization … Authors: Ugur Cogalan, Mojitaba Bemana, Karol Myszkowski, Hans-Peter Seidel, Colin Groth"
+  },
+  {
+   "venue": "SIGGRAPH Asia",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Scattering-Aware Color Calibration for 3D Printers Using a Simple Calibration Target",
+   "authors": [
+    "Tomas Iser",
+    "Tobias Rittig",
+    "Alexander Wilkie"
+   ],
+   "track": "main",
+   "source": "https://asia.siggraph.org/2025/program/award-winners/",
+   "evidence": "Honorable Mention Award: Scattering-Aware Color Calibration for 3D Printers Using a Simple Calibration Target … Authors: Tomas Iser, Tobias Rittig, Alexander Wilkie"
   },
   {
    "venue": "SIGIR",

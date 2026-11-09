@@ -205,7 +205,7 @@ try {
     colorScheme: "light",
     args: [`--disable-extensions-except=${extDir}`, `--load-extension=${extDir}`, "--no-first-run", "--lang=en-US", ...(process.env.CI ? ["--no-sandbox"] : [])]
   });
-  extId = new URL((context.serviceWorkers()[0] || await context.waitForEvent("serviceworker", { timeout: 15000 })).url()).host;
+  extId = new URL((context.serviceWorkers()[0] || await context.waitForEvent("serviceworker", { timeout: 60000 })).url()).host;
   const errors = [];
   context.on("page", (p) => p.on("pageerror", (e) => errors.push(p.url() + ": " + e.message)));
 

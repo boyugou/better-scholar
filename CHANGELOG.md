@@ -189,6 +189,13 @@ give the details and every review):
   Encryption: 23rd International Conference, FSE 2016" is the cryptography FSE (B), not Foundations of Software Engineering (A): venues
   that share an acronym are told apart by the series title. (4) MDPI's journals *AI* and *IoT* are not Artificial Intelligence (A) and
   IEEE IoT-J, nor is the Korean WISA (information security) the Web Information Systems WISA.
+- **ISCA, MICRO and SIGGRAPH Asia best papers** (54): ISCA's of 2022 and 2023 (its best paper award began in 2022, so no earlier year
+  lacks one) and ISCA 2025's two honorable mentions; MICRO's of 2006–2009, 2012–2014, 2016 and 2021 from the year sites (2015, 2017,
+  2018 and 2023 name nominees only); SIGGRAPH Asia 2022–2025's Technical Papers best papers and honorable mentions. Two misprints put
+  right: MICRO 2009's first author ("Kargpuzcu" for Karpuzcu, as MICRO's later pages spell her) and a SIGGRAPH Asia 2024 title missing
+  its "Neural". The README names the larger sources. Then 7 IACR papers whose session named several awards: ASIACRYPT 2020's accepted
+  papers mark each "(Best Paper Award)", and the IACR's home page names CRYPTO 2025's awards paper by paper (its "Recent Awards" box,
+  quoted on 2026-11-08). The list holds 9,370 awards.
 - **The best papers of IEEE VIS and IEEE VR** (323, 2008–2026), from their own pages: VIS's best paper history (InfoVis, VAST and SciVis
   before 2021, the part in the label) and its 2024 and 2025 award pages; IEEE VR's award pages of 2010–2026, honorable mentions included.
   VIS 2026's papers wait for the conference (9–13 November): its program's badges are no awards page, as FOCS 2026's best-paper session is

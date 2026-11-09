@@ -117,7 +117,9 @@ async function launch() {
     } catch (e) { /* no clipboard here */ }
   });
   if (!idRead) {
-    const sw = ctx.serviceWorkers()[0] || await ctx.waitForEvent("serviceworker", { timeout: 15000 });
+    // (60 s: a loaded machine — check-all's four lanes at once, beside other browser runs — once took more than 15 s to start the worker, and the lane failed
+    // before any check ran)
+    const sw = ctx.serviceWorkers()[0] || await ctx.waitForEvent("serviceworker", { timeout: 60000 });
     extId = new URL(sw.url()).host; optionsUrl = `chrome-extension://${extId}/options/options.html`; idRead = true;
   }
   return ctx;
