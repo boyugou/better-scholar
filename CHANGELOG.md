@@ -189,6 +189,13 @@ give the details and every review):
   Encryption: 23rd International Conference, FSE 2016" is the cryptography FSE (B), not Foundations of Software Engineering (A): venues
   that share an acronym are told apart by the series title. (4) MDPI's journals *AI* and *IoT* are not Artificial Intelligence (A) and
   IEEE IoT-J, nor is the Korean WISA (information security) the Web Information Systems WISA.
+- **Best papers of 27 more venues** (384): ACSAC, CoNEXT, MobiHoc, SECON, IPSN, EDBT, ICMR, ICME, Eurographics, EuroVis, CogSci and
+  ESORICS 2023, ECOOP, SoCC, SAS, CONCUR, ICPP, ISSRE, PACT, LCTES and VMCAI — from each conference's or society's own pages (CCF A and B
+  venues the list had no award of). Each entry's evidence carries the page's own heading or label. Held out: copies on web.archive.org
+  (15 EuroVis entries), ICME 2018's colour tiers, EuroVis 2011–2012, entries whose label also reads "runner-up" (SECON 2016), and
+  Eurographics' third prizes. Eurographics' 2nd prizes are runners-up ("Second Best Paper Prize"), the CogSci Marr Prize is the best
+  student paper award. An independent re-read of 40 sampled entries found none wrong (34 confirmed; 6 could not be re-read: three
+  researchr pages behind a CAPTCHA, a fourth, and SAS's two years the page does not print). The list holds 10,457 awards.
 - **The best papers and honorable mentions of CHI 2012–2016 and UIST 2010–2020** (552), from the conferences' own sites; the list held
   CHI from 2018 and UIST from 2021. Each year's kinds were re-derived from the saved pages by script, before merging: sections and
   headings (CHI 2013, 2016), a flag in each paper's record (CHI 2014: 21 best and 84 honorable mentions, CHI 2015: 21 and 98 — every
