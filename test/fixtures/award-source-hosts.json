@@ -319,6 +319,8 @@
   "chi2014.acm.org": "CHI 2014's own site (an ACM subdomain)",
   "chi2015.acm.org": "CHI 2015's own site (an ACM subdomain)",
   "chi2016.acm.org": "CHI 2016's own site (an ACM subdomain)",
-  "uist.acm.org": "UIST's own per-year sites (an ACM subdomain)"
+  "uist.acm.org": "UIST's own per-year sites (an ACM subdomain)",
+  "chi2017.acm.org": "CHI 2017's own site (an ACM subdomain)",
+  "cscw.acm.org": "CSCW's own per-year sites (an ACM subdomain)"
  }
 }

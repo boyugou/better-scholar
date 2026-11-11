@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 9922
+  "count": 10073
  },
  "entries": [
   {
@@ -24245,6 +24245,2356 @@
    "track": "main",
    "source": "https://chi2016.acm.org/wp/best-of-chi/",
    "evidence": "CHI 2016 Honorable Mention … We’re on the Same Page”: A Usability Study of Secure Email Using Pairs of Novice Users” Scott Ruoti, Jeff Andersen, Scott Heidbrink, Mark O’Neill, Justin Wu, Elham Vaziripour, Daniel Zappala, Kent Seamons"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "A Critical Lens on Dementia and Design in HCI",
+   "authors": [
+    "Amanda Lazar",
+    "Caroline Edasis",
+    "Anne Marie Piper"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "A Critical Lens on Dementia and Design in HCI Amanda Lazar Caroline Edasis Anne Marie Piper … [the printed program (alsoAt) marks it with a trophy icon; its legend: \"24 Papers and Notes received a Best Paper award, designated by a trophy icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "BIGnav: Bayesian Information Gain for Guiding Multiscale Navigation",
+   "authors": [
+    "Wanyu Liu",
+    "Rafael Lucas D'Oliveira",
+    "Michel Beaudouin-Lafon",
+    "Olivier Rioul"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "BIGnav: Bayesian Information Gain for Guiding Multiscale Navigation Wanyu Liu Rafael Lucas D'Oliveira Michel Beaudouin-Lafon Olivier Rioul … [the printed program (alsoAt) marks it with a trophy icon; its legend: \"24 Papers and Notes received a Best Paper award, designated by a trophy icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Design and Evaluation of a Data-Driven Password Meter",
+   "authors": [
+    "Blase Ur",
+    "Felicia Alfieri",
+    "Maung Aung",
+    "Lujo Bauer",
+    "Nicolas Christin",
+    "Jessica Colnago",
+    "Lorrie Faith Cranor",
+    "Henry Dixon",
+    "Pardis Emami Naeini",
+    "Hana Habib",
+    "Noah Johnson",
+    "William Melicher"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Design and Evaluation of a Data-Driven Password Meter Blase Ur Felicia Alfieri Maung Aung Lujo Bauer Nicolas Christin Jessica Colnago Lorrie Faith Cranor Henry Dixon Pardis Emami Naeini Hana Habib Noah Johnson William Melicher … [the printed program (alsoAt) marks it with a trophy icon; its legend: \"24 Papers and Notes received a Best Paper award, designated by a trophy icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Designing Gamified Applications that Make Safe Driving More Engaging",
+   "authors": [
+    "Fabius Steinberger",
+    "Ronald Schroeter",
+    "Marcus Foth",
+    "Daniel Johnson"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Designing Gamified Applications that Make Safe Driving More Engaging Fabius Steinberger Ronald Schroeter Marcus Foth Daniel Johnson … [the printed program (alsoAt) marks it with a trophy icon; its legend: \"24 Papers and Notes received a Best Paper award, designated by a trophy icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Empowered Participation: How Citizens Use Technology in Local Governance",
+   "authors": [
+    "Sheena Erete",
+    "Jennifer O. Burrell"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Empowered Participation: How Citizens Use Technology in Local Governance Sheena Erete Jennifer O. Burrell … [the printed program (alsoAt) marks it with a trophy icon; its legend: \"24 Papers and Notes received a Best Paper award, designated by a trophy icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Examining Menstrual Tracking to Inform the Design of Personal Informatics Tools",
+   "authors": [
+    "Daniel A. Epstein",
+    "Nicole B. Lee",
+    "Jennifer H. Kang",
+    "Elena Agapie",
+    "Jessica Schroeder",
+    "Laura R. Pina",
+    "James Fogarty",
+    "Julie A. Kientz",
+    "Sean Munson"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Examining Menstrual Tracking to Inform the Design of Personal Informatics Tools Daniel A. Epstein Nicole B. Lee Jennifer H. Kang Elena Agapie Jessica Schroeder Laura R. Pina James Fogarty Julie A. Kientz Sean Munson … [the printed program (alsoAt) marks it with a trophy icon; its legend: \"24 Papers and Notes received a Best Paper award, designated by a trophy icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Explaining the Gap: Visualizing One's Predictions Improves Recall and Comprehension of Data",
+   "authors": [
+    "Yea-Seul Kim",
+    "Katharina Reinecke",
+    "Jessica Hullman"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Explaining the Gap: Visualizing One's Predictions Improves Recall and Comprehension of Data Yea-Seul Kim Katharina Reinecke Jessica Hullman … [the printed program (alsoAt) marks it with a trophy icon; its legend: \"24 Papers and Notes received a Best Paper award, designated by a trophy icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Fingertip Tactile Devices for Virtual Object Manipulation and Exploration",
+   "authors": [
+    "Samuel B. Schorr",
+    "Allison M. Okamura"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Fingertip Tactile Devices for Virtual Object Manipulation and Exploration Samuel B. Schorr Allison M. Okamura … [the printed program (alsoAt) marks it with a trophy icon; its legend: \"24 Papers and Notes received a Best Paper award, designated by a trophy icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Flash Organizations: Crowdsourcing Complex Work by Structuring Crowds As Organizations",
+   "authors": [
+    "Melissa A. Valentine",
+    "Daniela Retelny",
+    "Alexandra To",
+    "Negar Rahmati",
+    "Tulsee Doshi",
+    "Michael S. Bernstein"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Flash Organizations: Crowdsourcing Complex Work by Structuring Crowds As Organizations Melissa A. Valentine Daniela Retelny Alexandra To Negar Rahmati Tulsee Doshi Michael S. Bernstein … [the printed program (alsoAt) marks it with a trophy icon; its legend: \"24 Papers and Notes received a Best Paper award, designated by a trophy icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Illumination Aesthetics: Light as a Creative Material within Computational Design",
+   "authors": [
+    "Cesar Torres",
+    "Jasper O'Leary",
+    "Molly Nicholas",
+    "Eric Paulos"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Illumination Aesthetics: Light as a Creative Material within Computational Design Cesar Torres Jasper O'Leary Molly Nicholas Eric Paulos … [the printed program (alsoAt) marks it with a trophy icon; its legend: \"24 Papers and Notes received a Best Paper award, designated by a trophy icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Kinecting with Orangutans: Zoo Visitors' Empathetic Responses to Animals? Use of Interactive Technology",
+   "authors": [
+    "Sarah Webber",
+    "Marcus Carter",
+    "Sally Sherwen",
+    "Wally Smith",
+    "Zaher Joukhadar",
+    "Frank Vetere"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Kinecting with Orangutans: Zoo Visitors' Empathetic Responses to Animals? Use of Interactive Technology Sarah Webber Marcus Carter Sally Sherwen Wally Smith Zaher Joukhadar Frank Vetere … [the printed program (alsoAt) marks it with a trophy icon; its legend: \"24 Papers and Notes received a Best Paper award, designated by a trophy icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "MakerWear: A Tangible Approach to Interactive Wearable Creation for Children",
+   "authors": [
+    "Majeed Kazemitabaar",
+    "Jason McPeak",
+    "Alexander Jiao",
+    "Liang He",
+    "Thomas Outing",
+    "Jon E. Froehlich"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "MakerWear: A Tangible Approach to Interactive Wearable Creation for Children Majeed Kazemitabaar Jason McPeak Alexander Jiao Liang He Thomas Outing Jon E. Froehlich … [the printed program (alsoAt) marks it with a trophy icon; its legend: \"24 Papers and Notes received a Best Paper award, designated by a trophy icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "mHealth for Maternal Mental Health: Everyday Wisdom in Ethical Design",
+   "authors": [
+    "Marguerite Barry",
+    "Kevin Doherty",
+    "Jose Marcano Belisario",
+    "Josip Car",
+    "Cecily Morrison",
+    "Gavin Doherty"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "mHealth for Maternal Mental Health: Everyday Wisdom in Ethical Design Marguerite Barry Kevin Doherty Jose Marcano Belisario Josip Car Cecily Morrison Gavin Doherty … [the printed program (alsoAt) marks it with a trophy icon; its legend: \"24 Papers and Notes received a Best Paper award, designated by a trophy icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Modelling Learning of New Keyboard Layouts",
+   "authors": [
+    "Jussi P. P. Jokinen",
+    "Sayan Sarcar",
+    "Antti Oulasvirta",
+    "Chaklam Silpasuwanchai",
+    "Zhenxin Wang",
+    "Xiangshi Ren"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Modelling Learning of New Keyboard Layouts Jussi P. P. Jokinen Sayan Sarcar Antti Oulasvirta Chaklam Silpasuwanchai Zhenxin Wang Xiangshi Ren … [the printed program (alsoAt) marks it with a trophy icon; its legend: \"24 Papers and Notes received a Best Paper award, designated by a trophy icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Organic Primitives: Synthesis and Design of pH-Reactive Materials using Molecular I/O for Sensing, Actuation, and Interaction",
+   "authors": [
+    "Viirj Kan",
+    "Emma Vargo",
+    "Noa Machover",
+    "Hiroshi Ishii",
+    "Serena Pan",
+    "Weixuan Chen",
+    "Yasuaki Kakehi"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Organic Primitives: Synthesis and Design of pH-Reactive Materials using Molecular I/O for Sensing, Actuation, and Interaction Viirj Kan Emma Vargo Noa Machover Hiroshi Ishii Serena Pan Weixuan Chen Yasuaki Kakehi … [the printed program (alsoAt) marks it with a trophy icon; its legend: \"24 Papers and Notes received a Best Paper award, designated by a trophy icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Reflective Practicum: A Framework of Sensitising Concepts to Design for Transformative Reflection",
+   "authors": [
+    "Petr Slovák",
+    "Christopher Frauenberger",
+    "Geraldine Fitzpatrick"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Reflective Practicum: A Framework of Sensitising Concepts to Design for Transformative Reflection Petr Slovák Christopher Frauenberger Geraldine Fitzpatrick … [the printed program (alsoAt) marks it with a trophy icon; its legend: \"24 Papers and Notes received a Best Paper award, designated by a trophy icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "ShareVR: Enabling Co-Located Experiences for Virtual Reality between HMD and Non-HMD Users",
+   "authors": [
+    "Jan Gugenheimer",
+    "Evgeny Stemasov",
+    "Julian Frommel",
+    "Enrico Rukzio"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "ShareVR: Enabling Co-Located Experiences for Virtual Reality between HMD and Non-HMD Users Jan Gugenheimer Evgeny Stemasov Julian Frommel Enrico Rukzio … [the printed program (alsoAt) marks it with a trophy icon; its legend: \"24 Papers and Notes received a Best Paper award, designated by a trophy icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Stories from Survivors: Privacy & Security Practices when Coping with Intimate Partner Abuse",
+   "authors": [
+    "Tara Matthews",
+    "Kathleen O'Leary",
+    "Anna Turner",
+    "Manya Sleeper",
+    "Jill Palzkill Woelfer",
+    "Martin Shelton",
+    "Cori Manthorne",
+    "Elizabeth F. Churchill",
+    "Sunny Consolvo"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Stories from Survivors: Privacy & Security Practices when Coping with Intimate Partner Abuse Tara Matthews Kathleen O'Leary Anna Turner Manya Sleeper Jill Palzkill Woelfer Martin Shelton Cori Manthorne Elizabeth F. Churchill Sunny Consolvo … [the printed program (alsoAt) marks it with a trophy icon; its legend: \"24 Papers and Notes received a Best Paper award, designated by a trophy icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Supporting Expressive Procedural Art Creation through Direct Manipulation",
+   "authors": [
+    "Jennifer Jacobs",
+    "Sumit Gogia",
+    "Radomír Mĕch",
+    "Joel R. Brandt"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Supporting Expressive Procedural Art Creation through Direct Manipulation Jennifer Jacobs Sumit Gogia Radomír Mĕch Joel R. Brandt … [the printed program (alsoAt) marks it with a trophy icon; its legend: \"24 Papers and Notes received a Best Paper award, designated by a trophy icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Supporting the Use of User Generated Content in Journalistic Practice",
+   "authors": [
+    "Peter Tolmie",
+    "Rob Procter",
+    "David William Randall",
+    "Mark Rouncefield",
+    "Christian Burger",
+    "Geraldine Wong Sak Hoi",
+    "Arkaitz Zubiaga",
+    "Maria Liakata"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Supporting the Use of User Generated Content in Journalistic Practice Peter Tolmie Rob Procter David William Randall Mark Rouncefield Christian Burger Geraldine Wong Sak Hoi Arkaitz Zubiaga Maria Liakata … [the printed program (alsoAt) marks it with a trophy icon; its legend: \"24 Papers and Notes received a Best Paper award, designated by a trophy icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Understanding Public Evaluation: Quantifying Experimenter Intervention",
+   "authors": [
+    "Julie R. Williamson",
+    "John Williamson"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Understanding Public Evaluation: Quantifying Experimenter Intervention Julie R. Williamson John Williamson … [the printed program (alsoAt) marks it with a trophy icon; its legend: \"24 Papers and Notes received a Best Paper award, designated by a trophy icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "What Can Be Predicted from Six Seconds of Driver Glances?",
+   "authors": [
+    "Lex Fridman",
+    "Heishiro Toyoda",
+    "Sean Seaman",
+    "Bobbie Seppelt",
+    "Linda Angell",
+    "Joonbum Lee",
+    "Bruce Mehler",
+    "Bryan Reimer"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "What Can Be Predicted from Six Seconds of Driver Glances? Lex Fridman Heishiro Toyoda Sean Seaman Bobbie Seppelt Linda Angell Joonbum Lee Bruce Mehler Bryan Reimer … [the printed program (alsoAt) marks it with a trophy icon; its legend: \"24 Papers and Notes received a Best Paper award, designated by a trophy icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "What Is Interaction?",
+   "authors": [
+    "Kasper Hornbæk",
+    "Antti Oulasvirta"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "What Is Interaction? Kasper Hornbæk Antti Oulasvirta … [the printed program (alsoAt) marks it with a trophy icon; its legend: \"24 Papers and Notes received a Best Paper award, designated by a trophy icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "You Want Me to Work with Who?: Stakeholder Perceptions of Automated Team Formation in Project-based Courses",
+   "authors": [
+    "Farnaz Jahanbakhsh",
+    "Wai-Tat Fu",
+    "Karrie Karahalios",
+    "Darko Marinov",
+    "Brian Bailey"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "You Want Me to Work with Who?: Stakeholder Perceptions of Automated Team Formation in Project-based Courses Farnaz Jahanbakhsh Wai-Tat Fu Karrie Karahalios Darko Marinov Brian Bailey … [the printed program (alsoAt) marks it with a trophy icon; its legend: \"24 Papers and Notes received a Best Paper award, designated by a trophy icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "\"Not another Z piece!\": Adaptive Difficulty in TETRIS",
+   "authors": [
+    "Katharina Spiel",
+    "Sven Bertel",
+    "Fares Kayali"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "\"Not another Z piece!\": Adaptive Difficulty in TETRIS Katharina Spiel Sven Bertel Fares Kayali … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "\"These are not my hands!\": Effect of Gender on the Perception of Avatar Hands in Virtual Reality",
+   "authors": [
+    "Valentin Schwind",
+    "Pascal Knierim",
+    "Cagri Tasci",
+    "Patrick Franczak",
+    "Nico Haas",
+    "Niels Henze"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "\"These are not my hands!\": Effect of Gender on the Perception of Avatar Hands in Virtual Reality Valentin Schwind Pascal Knierim Cagri Tasci Patrick Franczak Nico Haas Niels Henze … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "A Cognitive Model of How People Make Decisions Through Interaction with Visual Displays",
+   "authors": [
+    "Xiuli Chen",
+    "Sandra Dorothee Starke",
+    "Chris Baber",
+    "Andrew Howes"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "A Cognitive Model of How People Make Decisions Through Interaction with Visual Displays Xiuli Chen Sandra Dorothee Starke Chris Baber Andrew Howes … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "A Good Reason to Die: How Avatar Death and High Challenges Enable Positive Experiences",
+   "authors": [
+    "Serge Petralito",
+    "Florian Brühlmann",
+    "Glena Iten",
+    "Elisa D. Mekler",
+    "Klaus Opwis"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "A Good Reason to Die: How Avatar Death and High Challenges Enable Positive Experiences Serge Petralito Florian Brühlmann Glena Iten Elisa D. Mekler Klaus Opwis … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Cardboard Machine Kit: Modules for the Rapid Prototyping of Rapid Prototyping Machines",
+   "authors": [
+    "Nadya Peek",
+    "James Coleman",
+    "Ilan Moyer",
+    "Neil Gershenfeld"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Cardboard Machine Kit: Modules for the Rapid Prototyping of Rapid Prototyping Machines Nadya Peek James Coleman Ilan Moyer Neil Gershenfeld … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Care and Connect: Exploring Dementia-Friendliness Through an Online Community Commissioning Platform",
+   "authors": [
+    "Kellie Morrissey",
+    "Andrew Garbett",
+    "Peter Wright",
+    "Patrick Olivier",
+    "Edward Ian Jenkins",
+    "Katie Brittain"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Care and Connect: Exploring Dementia-Friendliness Through an Online Community Commissioning Platform Kellie Morrissey Andrew Garbett Peter Wright Patrick Olivier Edward Ian Jenkins Katie Brittain … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Chameleon Devices: Investigating More Secure and Discreet Mobile Interactions via Active Camouflaging",
+   "authors": [
+    "Jennifer Pearson",
+    "Simon Robinson",
+    "Matt Jones",
+    "Anirudha Joshi",
+    "Shashank Ahire",
+    "Deepak Sahoo",
+    "Sriram Subramanian"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Chameleon Devices: Investigating More Secure and Discreet Mobile Interactions via Active Camouflaging Jennifer Pearson Simon Robinson Matt Jones Anirudha Joshi Shashank Ahire Deepak Sahoo Sriram Subramanian … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Cinehacking Cape Town - Embracing Informality in Pursuit of High Quality Media",
+   "authors": [
+    "David Philip Green",
+    "Guy Schofield",
+    "Gary Pritchard",
+    "Patrick Olivier",
+    "Peter Wright"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Cinehacking Cape Town - Embracing Informality in Pursuit of High Quality Media David Philip Green Guy Schofield Gary Pritchard Patrick Olivier Peter Wright … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Collection Objects: Enabling Fluid Formation and Manipulation of Aggregate Selections",
+   "authors": [
+    "Haijun Xia",
+    "Bruno Araujo",
+    "Daniel Wigdor"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Collection Objects: Enabling Fluid Formation and Manipulation of Aggregate Selections Haijun Xia Bruno Araujo Daniel Wigdor … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Community Commerce: Facilitating Trust in Mom-to-Mom Sale Groups on Facebook",
+   "authors": [
+    "Carol Moser",
+    "Paul Resnick",
+    "Sarita Schoenebeck"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Community Commerce: Facilitating Trust in Mom-to-Mom Sale Groups on Facebook Carol Moser Paul Resnick Sarita Schoenebeck … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Community-Empowered Air Quality Monitoring System",
+   "authors": [
+    "Yen-Chia Hsu",
+    "Paul Dille",
+    "Jennifer Cross",
+    "Beatrice Dias",
+    "Randy Sargent",
+    "Illah Nourbakhsh"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Community-Empowered Air Quality Monitoring System Yen-Chia Hsu Paul Dille Jennifer Cross Beatrice Dias Randy Sargent Illah Nourbakhsh … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "COMPASS: Rotational Keyboard on Non-Touch Smartwatches",
+   "authors": [
+    "Xin Yi",
+    "Chun Yu",
+    "Weijie Xu",
+    "Xiaojun Bi",
+    "Yuanchun Shi"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "COMPASS: Rotational Keyboard on Non-Touch Smartwatches Xin Yi Chun Yu Weijie Xu Xiaojun Bi Yuanchun Shi … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Creating a Sociotechnical API: Designing City-Scale Community Engagement",
+   "authors": [
+    "Mariam Asad",
+    "Christopher A. Le Dantec",
+    "Becky Nielsen",
+    "Kate Diedrick"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Creating a Sociotechnical API: Designing City-Scale Community Engagement Mariam Asad Christopher A. Le Dantec Becky Nielsen Kate Diedrick … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Crowdsourcing GO: Effect of Worker Situation on Mobile Crowdsourcing Performance",
+   "authors": [
+    "Kazushi Ikeda",
+    "Keiichiro Hoashi"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Crowdsourcing GO: Effect of Worker Situation on Mobile Crowdsourcing Performance Kazushi Ikeda Keiichiro Hoashi … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "CrowdVerge: Predicting If People Will Agree on the Answer to a Visual Question",
+   "authors": [
+    "Danna Gurari",
+    "Kristen Grauman"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "CrowdVerge: Predicting If People Will Agree on the Answer to a Visual Question Danna Gurari Kristen Grauman … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Designing Digital Mindfulness: Presence-In and Presence-With versus Presence-Through",
+   "authors": [
+    "Bin Zhu",
+    "Anders Hedman",
+    "Haibo Li"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Designing Digital Mindfulness: Presence-In and Presence-With versus Presence-Through Bin Zhu Anders Hedman Haibo Li … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Does Practice Make Perfect?",
+   "authors": [
+    "Elie Cattan",
+    "Amélie Rochet-Capellan",
+    "Pascal Perrier",
+    "François Bérard"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Does Practice Make Perfect? Elie Cattan Amélie Rochet-Capellan Pascal Perrier François Bérard … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "EarFieldSensing: A Novel In-Ear Electric Field Sensing to Enrich Wearable Gesture Input through Facial Expressions",
+   "authors": [
+    "Denys J. C. Matthies",
+    "Bernhard A. Strecker",
+    "Bodo Urban"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "EarFieldSensing: A Novel In-Ear Electric Field Sensing to Enrich Wearable Gesture Input through Facial Expressions Denys J. C. Matthies Bernhard A. Strecker Bodo Urban … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Enhancing Personal Informatics Through Social Sensemaking",
+   "authors": [
+    "Aare Puussaar",
+    "Adrian K. Clear",
+    "Peter Wright"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Enhancing Personal Informatics Through Social Sensemaking Aare Puussaar Adrian K. Clear Peter Wright … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Examining Adult-Child Interactions in Intergenerational Participatory Design",
+   "authors": [
+    "Jason C. Yip",
+    "Kiley Sobel",
+    "Caroline Pitt",
+    "Kung Jin Lee",
+    "Sijin Chen",
+    "Kari Nasu",
+    "Laura R. Pina"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Examining Adult-Child Interactions in Intergenerational Participatory Design Jason C. Yip Kiley Sobel Caroline Pitt Kung Jin Lee Sijin Chen Kari Nasu Laura R. Pina … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Examining Crowd Work and Gig Work Through The Historical Lens of Piecework",
+   "authors": [
+    "Ali Alkhatib",
+    "Michael S. Bernstein",
+    "Margaret Levi"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Examining Crowd Work and Gig Work Through The Historical Lens of Piecework Ali Alkhatib Michael S. Bernstein Margaret Levi … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Exploring Seasonality in Mobile Cultural Heritage",
+   "authors": [
+    "David McGookin",
+    "Koray Tahiroălu",
+    "Tuomas Vaittinen",
+    "Mikko Kytö",
+    "Beatrice Monastero",
+    "Juan Carlos Vasquez"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Exploring Seasonality in Mobile Cultural Heritage David McGookin Koray Tahiroălu Tuomas Vaittinen Mikko Kytö Beatrice Monastero Juan Carlos Vasquez … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Exploring the Design Space of AAC Awareness Displays",
+   "authors": [
+    "Kiley Sobel",
+    "Alexander Fiannaca",
+    "Jon Campbell",
+    "Harish Kulkarni",
+    "Ann Paradiso",
+    "Ed Cutrell",
+    "Meredith Ringel Morris"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Exploring the Design Space of AAC Awareness Displays Kiley Sobel Alexander Fiannaca Jon Campbell Harish Kulkarni Ann Paradiso Ed Cutrell Meredith Ringel Morris … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Finding Similar People to Guide Life Choices: Challenge, Design, and Evaluation",
+   "authors": [
+    "Fan Du",
+    "Catherine Plaisant",
+    "Neil Spring",
+    "Ben Shneiderman"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Finding Similar People to Guide Life Choices: Challenge, Design, and Evaluation Fan Du Catherine Plaisant Neil Spring Ben Shneiderman … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Finding the Right Fit: Understanding Health Tracking in Workplace Wellness Programs",
+   "authors": [
+    "Chia-Fang Chung",
+    "Nanna Jensen",
+    "Irina A. Shklovski",
+    "Sean Munson"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Finding the Right Fit: Understanding Health Tracking in Workplace Wellness Programs Chia-Fang Chung Nanna Jensen Irina A. Shklovski Sean Munson … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Gender-Inclusiveness Personas vs. Stereotyping: Can We Have it Both Ways?",
+   "authors": [
+    "Charles G. Hill",
+    "Maren Haag",
+    "Alannah Oleson",
+    "Chris Mendez",
+    "Nicola Marsden",
+    "Anita Sarma",
+    "Margaret Burnett"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Gender-Inclusiveness Personas vs. Stereotyping: Can We Have it Both Ways? Charles G. Hill Maren Haag Alannah Oleson Chris Mendez Nicola Marsden Anita Sarma Margaret Burnett … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Generating Haptic Textures with a Vibrotactile Actuator",
+   "authors": [
+    "Paul Strohmeier",
+    "Kasper Hornbæk"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Generating Haptic Textures with a Vibrotactile Actuator Paul Strohmeier Kasper Hornbæk … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "GraphScape: A Model for Automated Reasoning about Visualization Similarity and Sequencing",
+   "authors": [
+    "Younghoon Kim",
+    "Kanit Wongsuphasawat",
+    "Jessica Hullman",
+    "Jeffrey Heer"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "GraphScape: A Model for Automated Reasoning about Visualization Similarity and Sequencing Younghoon Kim Kanit Wongsuphasawat Jessica Hullman Jeffrey Heer … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "HCI and Environmental Public Policy: Opportunities for Engagement",
+   "authors": [
+    "Vanessa Thomas",
+    "Christian Remy",
+    "Mike Hazas",
+    "Oliver Bates"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "HCI and Environmental Public Policy: Opportunities for Engagement Vanessa Thomas Christian Remy Mike Hazas Oliver Bates … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "HCI, Solidarity Movements and the Solidarity Economy",
+   "authors": [
+    "Vasillis Vlachokyriakos",
+    "Clara Crivellaro",
+    "Pete Wright",
+    "Evika Karamagioli",
+    "Eleni-Revekka Staiou",
+    "Dimitris Gouscos",
+    "Rowan Thorpe",
+    "Antonio Krüger",
+    "Johannes Schöning",
+    "Matt Jones",
+    "Shaun Lawson",
+    "Patrick Olivier"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "HCI, Solidarity Movements and the Solidarity Economy Vasillis Vlachokyriakos Clara Crivellaro Pete Wright Evika Karamagioli Eleni-Revekka Staiou Dimitris Gouscos Rowan Thorpe Antonio Krüger Johannes Schöning Matt Jones Shaun Lawson Patrick Olivier … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "HOBIT: Hybrid Optical Bench for Innovative Teaching",
+   "authors": [
+    "David Furió",
+    "Stéphanie Fleck",
+    "Bruno Bousquet",
+    "Jean-Paul Guillet",
+    "Lionel Canioni",
+    "Martin Hachet"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "HOBIT: Hybrid Optical Bench for Innovative Teaching David Furió Stéphanie Fleck Bruno Bousquet Jean-Paul Guillet Lionel Canioni Martin Hachet … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "How Data Workers Cope with Uncertainty: A Task Characterisation Study",
+   "authors": [
+    "Nadia Boukhelifa",
+    "Marc-Emmanuel Perrin",
+    "Samuel Huron",
+    "James Eagan"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "How Data Workers Cope with Uncertainty: A Task Characterisation Study Nadia Boukhelifa Marc-Emmanuel Perrin Samuel Huron James Eagan … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Hybrid HFR Depth: Fusing Commodity Depth and Color Cameras to Achieve High Frame Rate, Low Latency Depth Camera Interactions",
+   "authors": [
+    "Jiajun Lu",
+    "Hrvoje Benko",
+    "Andrew D. Wilson"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Hybrid HFR Depth: Fusing Commodity Depth and Color Cameras to Achieve High Frame Rate, Low Latency Depth Camera Interactions Jiajun Lu Hrvoje Benko Andrew D. Wilson … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "I Am The Passenger: How Visual Motion Cues Can Influence Sickness For In-Car VR",
+   "authors": [
+    "Mark McGill",
+    "Alexander Ng",
+    "Stephen Brewster"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "I Am The Passenger: How Visual Motion Cues Can Influence Sickness For In-Car VR Mark McGill Alexander Ng Stephen Brewster … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Improving Communication Between Pair Programmers Using Shared Gaze Awareness",
+   "authors": [
+    "Sarah D'Angelo",
+    "Andrew Begel"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Improving Communication Between Pair Programmers Using Shared Gaze Awareness Sarah D'Angelo Andrew Begel … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Increasing Users' Confidence in Uncertain Data by Aggregating Data from Multiple Sources",
+   "authors": [
+    "Miriam Greis",
+    "Emre Avci",
+    "Albrecht Schmidt",
+    "Tonja Machulla"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Increasing Users' Confidence in Uncertain Data by Aggregating Data from Multiple Sources Miriam Greis Emre Avci Albrecht Schmidt Tonja Machulla … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Inferring Motion Direction using Commodity Wi-Fi for Interactive Exergames",
+   "authors": [
+    "Kun Qian",
+    "Chenshu Wu",
+    "Zimu Zhou",
+    "Yue Zheng",
+    "Zheng Yang",
+    "Yunhao Liu"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Inferring Motion Direction using Commodity Wi-Fi for Interactive Exergames Kun Qian Chenshu Wu Zimu Zhou Yue Zheng Zheng Yang Yunhao Liu … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Informality and Invisibility: Traditional Technologies as Tools for Collaboration in an Informal Market",
+   "authors": [
+    "Priyank Chandra"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Informality and Invisibility: Traditional Technologies as Tools for Collaboration in an Informal Market Priyank Chandra … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Infrastructure as Creative Action: Online Buying, Selling, and Delivery in Phnom Penh",
+   "authors": [
+    "Margaret Jack",
+    "Jay Chen",
+    "Steven J. Jackson"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Infrastructure as Creative Action: Online Buying, Selling, and Delivery in Phnom Penh Margaret Jack Jay Chen Steven J. Jackson … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Inner Garden: Connecting Inner States to a Mixed Reality Sandbox for Mindfulness",
+   "authors": [
+    "Joan Sol Roo",
+    "Renaud Gervais",
+    "Jeremy Frey",
+    "Martin Hachet"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Inner Garden: Connecting Inner States to a Mixed Reality Sandbox for Mindfulness Joan Sol Roo Renaud Gervais Jeremy Frey Martin Hachet … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Interactive Performance as a Means of Civic Dialogue",
+   "authors": [
+    "Chiara Rossitto",
+    "Maria Normark",
+    "Louise Barkhuus"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Interactive Performance as a Means of Civic Dialogue Chiara Rossitto Maria Normark Louise Barkhuus … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Interactive Vectorization",
+   "authors": [
+    "Jun Xie",
+    "Holger Winnemöller",
+    "Wilmot Li",
+    "Stephen Schiller"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Interactive Vectorization Jun Xie Holger Winnemöller Wilmot Li Stephen Schiller … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Intersectional HCI: Engaging Identity through Gender, Race, and Class",
+   "authors": [
+    "Ari Schlesinger",
+    "W. Keith Edwards",
+    "Rebecca E. Grinter"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Intersectional HCI: Engaging Identity through Gender, Race, and Class Ari Schlesinger W. Keith Edwards Rebecca E. Grinter … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Investigating the Suitability of the Asynchronous, Remote, Community-based Method for Pregnant and New Mothers",
+   "authors": [
+    "Annu Sible Prabhakar",
+    "Lucia Guerra-Reyes",
+    "Vanessa M. Kleinschmidt",
+    "Ben Jelen",
+    "Haley MacLeod",
+    "Kay Connelly",
+    "Katie A. Siek"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Investigating the Suitability of the Asynchronous, Remote, Community-based Method for Pregnant and New Mothers Annu Sible Prabhakar Lucia Guerra-Reyes Vanessa M. Kleinschmidt Ben Jelen Haley MacLeod Kay Connelly Katie A. Siek … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Is Difficulty Overrated?: The Effects of Choice, Novelty and Suspense on Intrinsic Motivation in Educational Games",
+   "authors": [
+    "J. Derek Lomas",
+    "Kenneth Koedinger",
+    "Nirmal Patel",
+    "Sharan Shodhan",
+    "Nikhil Poonwala",
+    "Jodi L. Forlizzi"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Is Difficulty Overrated?: The Effects of Choice, Novelty and Suspense on Intrinsic Motivation in Educational Games J. Derek Lomas Kenneth Koedinger Nirmal Patel Sharan Shodhan Nikhil Poonwala Jodi L. Forlizzi … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Is Two Enough?: ! Studying Benefits, Barriers, and Biases of Multi-Tablet Use for Collaborative Visualization",
+   "authors": [
+    "Thomas Plank",
+    "Hans-Christian Jetter",
+    "Roman Rädle",
+    "Clemens N. Klokmose",
+    "Thomas Luger",
+    "Harald Reiterer"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Is Two Enough?: ! Studying Benefits, Barriers, and Biases of Multi-Tablet Use for Collaborative Visualization Thomas Plank Hans-Christian Jetter Roman Rädle Clemens N. Klokmose Thomas Luger Harald Reiterer … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Jackknife: A Reliable Recognizer with Few Samples and Many Modalities",
+   "authors": [
+    "Eugene M. Taranta II",
+    "Amirreza Samiei",
+    "Mehran Maghoumi",
+    "Pooya Khaloo",
+    "Corey R. Pittman",
+    "Joseph J. LaViola Jr."
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Jackknife: A Reliable Recognizer with Few Samples and Many Modalities Eugene M. Taranta II Amirreza Samiei Mehran Maghoumi Pooya Khaloo Corey R. Pittman Joseph J. LaViola Jr. … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Locating the Internet in the Parks of Havana",
+   "authors": [
+    "Michaelanne Dye",
+    "David Nemer",
+    "Laura R. Pina",
+    "Nithya Sambasivan",
+    "Amy S. Bruckman",
+    "Neha Kumar"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Locating the Internet in the Parks of Havana Michaelanne Dye David Nemer Laura R. Pina Nithya Sambasivan Amy S. Bruckman Neha Kumar … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Looking Coordinated: Bidirectional Gaze Mechanisms for Collaborative Interaction with Virtual Characters",
+   "authors": [
+    "Sean Andrist",
+    "Michael Gleicher",
+    "Bilge Mutlu"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Looking Coordinated: Bidirectional Gaze Mechanisms for Collaborative Interaction with Virtual Characters Sean Andrist Michael Gleicher Bilge Mutlu … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Low-Wage Precarious Workers' Sociotechnical Practices Working Towards Addressing Wage Theft",
+   "authors": [
+    "Lynn Dombrowski",
+    "Adriana Alvarado Garcia",
+    "Jessica Despard"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Low-Wage Precarious Workers' Sociotechnical Practices Working Towards Addressing Wage Theft Lynn Dombrowski Adriana Alvarado Garcia Jessica Despard … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Managing Uncertainty in Time Expressions for Virtual Assistants",
+   "authors": [
+    "Xin Rong",
+    "Adam Fourney",
+    "Robin N. Brewer",
+    "Meredith Ringel Morris",
+    "Paul N. Bennett"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Managing Uncertainty in Time Expressions for Virtual Assistants Xin Rong Adam Fourney Robin N. Brewer Meredith Ringel Morris Paul N. Bennett … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Managing Uncertainty: Using Social Media for Risk Assessment during a Public Health Crisis",
+   "authors": [
+    "Xinning Gui",
+    "Yubo Kou",
+    "Kathleen H. Pine",
+    "Yunan Chen"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Managing Uncertainty: Using Social Media for Risk Assessment during a Public Health Crisis Xinning Gui Yubo Kou Kathleen H. Pine Yunan Chen … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Means and Ends in Human-Computer Interaction: Sustainability through Disintermediation",
+   "authors": [
+    "Barath Raghavan",
+    "Daniel Pargman"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Means and Ends in Human-Computer Interaction: Sustainability through Disintermediation Barath Raghavan Daniel Pargman … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Misrepresentation of Health Research in Exertion Games Literature",
+   "authors": [
+    "Joe Marshall",
+    "Conor Linehan"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Misrepresentation of Health Research in Exertion Games Literature Joe Marshall Conor Linehan … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "MyriadHub: Efficiently Scaling Personalized Email Conversations with Valet Crowdsourcing",
+   "authors": [
+    "Nicolas Kokkalis",
+    "Chengdiao Fan",
+    "Johannes Roith",
+    "Michael S. Bernstein",
+    "Scott Klemmer"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "MyriadHub: Efficiently Scaling Personalized Email Conversations with Valet Crowdsourcing Nicolas Kokkalis Chengdiao Fan Johannes Roith Michael S. Bernstein Scott Klemmer … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Older Adults Learning Computer Programming: Motivations, Frustrations, and Design Opportunities",
+   "authors": [
+    "Philip J. Guo"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Older Adults Learning Computer Programming: Motivations, Frustrations, and Design Opportunities Philip J. Guo … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "On Speculative Enactments",
+   "authors": [
+    "Chris Elsden",
+    "David Chatting",
+    "Abigail C. Durrant",
+    "Andrew Garbett",
+    "Bettina Nissen",
+    "John Vines",
+    "David S. Kirk"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "On Speculative Enactments Chris Elsden David Chatting Abigail C. Durrant Andrew Garbett Bettina Nissen John Vines David S. Kirk … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Participatory Evaluation with Autistic Children",
+   "authors": [
+    "Katharina Spiel",
+    "Laura Malinverni",
+    "Judith Good",
+    "Christopher Frauenberger"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Participatory Evaluation with Autistic Children Katharina Spiel Laura Malinverni Judith Good Christopher Frauenberger … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "People with Visual Impairment Training Personal Object Recognizers: Feasibility and Challenges",
+   "authors": [
+    "Hernisa Kacorri",
+    "Kris M. Kitani",
+    "Jeffrey P. Bigham",
+    "Chieko Asakawa"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "People with Visual Impairment Training Personal Object Recognizers: Feasibility and Challenges Hernisa Kacorri Kris M. Kitani Jeffrey P. Bigham Chieko Asakawa … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Pressure-Based Gain Factor Control for Mobile 3D Interaction using Locally-Coupled Devices",
+   "authors": [
+    "Lonni Besançon",
+    "Mehdi Ammi",
+    "Tobias Isenberg"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Pressure-Based Gain Factor Control for Mobile 3D Interaction using Locally-Coupled Devices Lonni Besançon Mehdi Ammi Tobias Isenberg … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "ProbUI: Generalising Touch Target Representations to Enable Declarative Gesture Definition for Probabilistic GUIs",
+   "authors": [
+    "Daniel Buschek",
+    "Florian Alt"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "ProbUI: Generalising Touch Target Representations to Enable Declarative Gesture Definition for Probabilistic GUIs Daniel Buschek Florian Alt … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "ProCom: Designing and Evaluating a Mobile and Wearable System to Support Proximity Awareness for People with Autism",
+   "authors": [
+    "LouAnne E. Boyd",
+    "Xinlong Jiang",
+    "Gillian R. Hayes"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "ProCom: Designing and Evaluating a Mobile and Wearable System to Support Proximity Awareness for People with Autism LouAnne E. Boyd Xinlong Jiang Gillian R. Hayes … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Quantifying Aversion to Costly Typing Errors in Expert Mobile Text Entry",
+   "authors": [
+    "Nikola Banovic",
+    "Varun Rao",
+    "Abinaya Saravanan",
+    "Anind K. Dey",
+    "Jennifer Mankoff"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Quantifying Aversion to Costly Typing Errors in Expert Mobile Text Entry Nikola Banovic Varun Rao Abinaya Saravanan Anind K. Dey Jennifer Mankoff … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Quietto: An Interactive Timepiece Molded in Concrete and Milled Wood",
+   "authors": [
+    "Kyung-Ryong Lee",
+    "Geon-il Goh",
+    "Young-Woo Park"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Quietto: An Interactive Timepiece Molded in Concrete and Milled Wood Kyung-Ryong Lee Geon-il Goh Young-Woo Park … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Reducing Interruptions at Work: A Large-Scale Field Study of FlowLight",
+   "authors": [
+    "Manuela Züger",
+    "Christopher Corley",
+    "André N. Meyer",
+    "Boyang Li",
+    "Thomas Fritz",
+    "David Shepherd",
+    "Vinay Augustine",
+    "Patrick Francis",
+    "Nicholas Kraft",
+    "Will Snipes"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Reducing Interruptions at Work: A Large-Scale Field Study of FlowLight Manuela Züger Christopher Corley André N. Meyer Boyang Li Thomas Fritz David Shepherd Vinay Augustine Patrick Francis Nicholas Kraft Will Snipes … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Relational Distancing and Termination between Online Friends: An Application of the Investment Model",
+   "authors": [
+    "Christopher J. Carpenter",
+    "Stephanie Tom Tong"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Relational Distancing and Termination between Online Friends: An Application of the Investment Model Christopher J. Carpenter Stephanie Tom Tong … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Respeak: A Voice-based, Crowd-powered Speech Transcription System",
+   "authors": [
+    "Aditya Vashistha",
+    "Pooja Sethi",
+    "Richard Anderson"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Respeak: A Voice-based, Crowd-powered Speech Transcription System Aditya Vashistha Pooja Sethi Richard Anderson … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "ReTool: Interactive Microtask and Workflow Design through Demonstration",
+   "authors": [
+    "Chen Chen",
+    "Xiaojun Meng",
+    "Shengdong Zhao",
+    "Morten Fjeld"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "ReTool: Interactive Microtask and Workflow Design through Demonstration Chen Chen Xiaojun Meng Shengdong Zhao Morten Fjeld … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Same Stats, Different Graphs: Generating Datasets with Varied Appearance and Identical Statistics through Simulated Annealing",
+   "authors": [
+    "Justin Matejka",
+    "George Fitzmaurice"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Same Stats, Different Graphs: Generating Datasets with Varied Appearance and Identical Statistics through Simulated Annealing Justin Matejka George Fitzmaurice … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Scratch Community Blocks: Supporting Children as Data Scientists",
+   "authors": [
+    "Sayamindu Dasgupta",
+    "Benjamin Mako Hill"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Scratch Community Blocks: Supporting Children as Data Scientists Sayamindu Dasgupta Benjamin Mako Hill … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Self Harmony: Rethinking Hackathons to Design and Critique Digital Technologies for Those Affected by Self-Harm",
+   "authors": [
+    "Nataly Birbeck",
+    "Shaun Lawson",
+    "Kellie Morrissey",
+    "Tim Rapley",
+    "Patrick Olivier"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Self Harmony: Rethinking Hackathons to Design and Critique Digital Technologies for Those Affected by Self-Harm Nataly Birbeck Shaun Lawson Kellie Morrissey Tim Rapley Patrick Olivier … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "shiftIO: Reconfigurable Tactile Elements for Dynamic Affordances and Mobile Interaction",
+   "authors": [
+    "Evan Strasnick",
+    "Jackie Yang",
+    "Kesler Tanner",
+    "Alex Olwal",
+    "Sean Follmer"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "shiftIO: Reconfigurable Tactile Elements for Dynamic Affordances and Mobile Interaction Evan Strasnick Jackie Yang Kesler Tanner Alex Olwal Sean Follmer … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Showing People Behind Data: Does Anthropomorphizing Visualizations Elicit More Empathy for Human Rights Data?",
+   "authors": [
+    "Jeremy Boy",
+    "Anshul Vikram Pandey",
+    "John Emerson",
+    "Margaret Satterthwaite",
+    "Oded Nov",
+    "Enrico Bertini"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Showing People Behind Data: Does Anthropomorphizing Visualizations Elicit More Empathy for Human Rights Data? Jeremy Boy Anshul Vikram Pandey John Emerson Margaret Satterthwaite Oded Nov Enrico Bertini … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Sidestepping the Elephant in the Classroom: Using Culturally Localized Technology To Teach Around Taboos",
+   "authors": [
+    "Piya Sorcar",
+    "Benjamin Strauber",
+    "Prashant Loyalka",
+    "Neha Kumar",
+    "Shelley Goldman"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Sidestepping the Elephant in the Classroom: Using Culturally Localized Technology To Teach Around Taboos Piya Sorcar Benjamin Strauber Prashant Loyalka Neha Kumar Shelley Goldman … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Social Printers: A Physical Social Network for Political Debates",
+   "authors": [
+    "Katerina Gorkovenko",
+    "Nick Taylor",
+    "Jon Rogers"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Social Printers: A Physical Social Network for Political Debates Katerina Gorkovenko Nick Taylor Jon Rogers … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Sparkle: Hover Feedback with Touchable Electric Arcs",
+   "authors": [
+    "Daniel Spelmezan",
+    "Deepak Ranjan Sahoo",
+    "Sriram Subramanian"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Sparkle: Hover Feedback with Touchable Electric Arcs Daniel Spelmezan Deepak Ranjan Sahoo Sriram Subramanian … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Stay Cool! Understanding Thermal Attacks on Mobile-based User Authentication",
+   "authors": [
+    "Yomna Abdelrahman",
+    "Mohamed Khamis",
+    "Stefan Schneegass",
+    "Florian Alt"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Stay Cool! Understanding Thermal Attacks on Mobile-based User Authentication Yomna Abdelrahman Mohamed Khamis Stefan Schneegass Florian Alt … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Studying Space Use: Bringing HCI Tools to Architectural Projects",
+   "authors": [
+    "Himanshu Verma",
+    "Hamed S. Alavi",
+    "Denis Lalanne"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Studying Space Use: Bringing HCI Tools to Architectural Projects Himanshu Verma Hamed S. Alavi Denis Lalanne … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "SUGILITE: Creating Multimodal Smartphone Automation by Demonstration",
+   "authors": [
+    "Toby Jia-Jun Li",
+    "Amos Azaria",
+    "Brad A. Myers"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "SUGILITE: Creating Multimodal Smartphone Automation by Demonstration Toby Jia-Jun Li Amos Azaria Brad A. Myers … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Supporting Community Health Workers in India through Voice- and Web-Based Feedback",
+   "authors": [
+    "Brian DeRenzi",
+    "Nicola Dell",
+    "Jeremy Wacksman",
+    "Scott Lee",
+    "Neal Lesh"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Supporting Community Health Workers in India through Voice- and Web-Based Feedback Brian DeRenzi Nicola Dell Jeremy Wacksman Scott Lee Neal Lesh … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Supporting Cultures of Making: Technology, Policy, Visions, and Myths",
+   "authors": [
+    "Shaowen Bardzell",
+    "Jeffrey Bardzell",
+    "Sarah Ng"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Supporting Cultures of Making: Technology, Policy, Visions, and Myths Shaowen Bardzell Jeffrey Bardzell Sarah Ng … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Supporting People with Dementia in Digital Social Sharing",
+   "authors": [
+    "Amanda Lazar",
+    "Caroline Edasis",
+    "Anne Marie Piper"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Supporting People with Dementia in Digital Social Sharing Amanda Lazar Caroline Edasis Anne Marie Piper … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "The UX of Avatar Customization",
+   "authors": [
+    "Victoria McArthur"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "The UX of Avatar Customization Victoria McArthur … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Thin Grey Lines: Confrontations With Risk on Colorado's Front Range",
+   "authors": [
+    "Robert Soden",
+    "Leah Sprain",
+    "Leysia Palen"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Thin Grey Lines: Confrontations With Risk on Colorado's Front Range Robert Soden Leah Sprain Leysia Palen … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Through the Looking Glass: The Effects of Feedback on Self-Awareness and Conversational Behaviour during Video Chat",
+   "authors": [
+    "Matthew K. Miller",
+    "Regan L. Mandryk",
+    "Max V. Birk",
+    "Ansgar E. Depping",
+    "Tushita Patel"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Through the Looking Glass: The Effects of Feedback on Self-Awareness and Conversational Behaviour during Video Chat Matthew K. Miller Regan L. Mandryk Max V. Birk Ansgar E. Depping Tushita Patel … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Thumprint: Socially-Inclusive Local Group Authentication Through Shared Secret Knocks",
+   "authors": [
+    "Sauvik Das",
+    "Gierad Laput",
+    "Chris Harrison",
+    "Jason I. Hong"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Thumprint: Socially-Inclusive Local Group Authentication Through Shared Secret Knocks Sauvik Das Gierad Laput Chris Harrison Jason I. Hong … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Toward Everyday Gaze Input: Accuracy and Precision of Eye Tracking and Implications for Design",
+   "authors": [
+    "Anna Maria Feit",
+    "Shane Williams",
+    "Arturo Toledo",
+    "Ann Paradiso",
+    "Harish Kulkarni",
+    "Shaun Kane",
+    "Meredith Ringel Morris"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Toward Everyday Gaze Input: Accuracy and Precision of Eye Tracking and Implications for Design Anna Maria Feit Shane Williams Arturo Toledo Ann Paradiso Harish Kulkarni Shaun Kane Meredith Ringel Morris … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Trajectories of Engagement and Disengagement with a Story-Based Smoking Cessation App",
+   "authors": [
+    "Wally Smith",
+    "Bernd Ploderer",
+    "Greg Wadley",
+    "Sarah Webber",
+    "Ron Borland"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Trajectories of Engagement and Disengagement with a Story-Based Smoking Cessation App Wally Smith Bernd Ploderer Greg Wadley Sarah Webber Ron Borland … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "TummyTrials: A Feasibility Study of Using Self-Experimentation to Detect Individualized Food Triggers",
+   "authors": [
+    "Ravi Karkar",
+    "Jessica Schroeder",
+    "Daniel A. Epstein",
+    "Laura R. Pina",
+    "Jeffrey Scofield",
+    "James Fogarty",
+    "Julie A. Kientz",
+    "Sean A. Munson",
+    "Roger Vilardaga",
+    "Jasmine Zia"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "TummyTrials: A Feasibility Study of Using Self-Experimentation to Detect Individualized Food Triggers Ravi Karkar Jessica Schroeder Daniel A. Epstein Laura R. Pina Jeffrey Scofield James Fogarty Julie A. Kientz Sean A. Munson Roger Vilardaga Jasmine Zia … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Understanding Concept Maps: A Closer Look at How People Organise Ideas",
+   "authors": [
+    "Stefano Padilla",
+    "Thomas S. Methven",
+    "David A. Robb",
+    "Mike J. Chantler"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Understanding Concept Maps: A Closer Look at How People Organise Ideas Stefano Padilla Thomas S. Methven David A. Robb Mike J. Chantler … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Variolite: Supporting Exploratory Programming by Data Scientists",
+   "authors": [
+    "Mary Beth Kery",
+    "Amber Horvath",
+    "Brad Myers"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Variolite: Supporting Exploratory Programming by Data Scientists Mary Beth Kery Amber Horvath Brad Myers … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Video Consumption Patterns for First Time Smartphone Users: Community Health Workers in Lesotho",
+   "authors": [
+    "Maletsabisa Molapo",
+    "Melissa Densmore",
+    "Brian DeRenzi"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Video Consumption Patterns for First Time Smartphone Users: Community Health Workers in Lesotho Maletsabisa Molapo Melissa Densmore Brian DeRenzi … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Visualization Literacy at Elementary School",
+   "authors": [
+    "Basak Alper",
+    "Nathalie Henry Riche",
+    "Fanny Chevalier",
+    "Jeremy Boy",
+    "Metin Sezgin"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Visualization Literacy at Elementary School Basak Alper Nathalie Henry Riche Fanny Chevalier Jeremy Boy Metin Sezgin … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Vremiere: In-Headset Virtual Reality Video Editing",
+   "authors": [
+    "Cuong Nguyen",
+    "Stephen DiVerdi",
+    "Aaron Hertzmann",
+    "Feng Liu"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Vremiere: In-Headset Virtual Reality Video Editing Cuong Nguyen Stephen DiVerdi Aaron Hertzmann Feng Liu … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "When Empathy Is Not Enough: Assessing the Experiences of Autistic Children with Technologies",
+   "authors": [
+    "Katharina Spiel",
+    "Christopher Frauenberger",
+    "Eva Hornecker",
+    "Geraldine Fitzpatrick"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "When Empathy Is Not Enough: Assessing the Experiences of Autistic Children with Technologies Katharina Spiel Christopher Frauenberger Eva Hornecker Geraldine Fitzpatrick … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Why Tangibility Matters: A Design Case Study of At-Risk Children Learning to Read and Spell",
+   "authors": [
+    "Min Fan",
+    "Alissa N. Antle",
+    "Maureen Hoskyn",
+    "Carman Neustaedter",
+    "Emily S. Cramer"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "Why Tangibility Matters: A Design Case Study of At-Risk Children Learning to Read and Spell Min Fan Alissa N. Antle Maureen Hoskyn Carman Neustaedter Emily S. Cramer … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
+  },
+  {
+   "venue": "CHI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "WritLarge: Ink Unleashed by Unified Scope, Action, & Zoom",
+   "authors": [
+    "Haijun Xia",
+    "Ken Hinckley",
+    "Michel Pahud",
+    "Xiao Tu",
+    "Bill Buxton"
+   ],
+   "track": "main",
+   "source": "https://chi2017.acm.org/proceedings.html",
+   "alsoAt": [
+    "https://chi2017.acm.org/assets/chi2017printprogforweb.pdf"
+   ],
+   "evidence": "WritLarge: Ink Unleashed by Unified Scope, Action, & Zoom Haijun Xia Ken Hinckley Michel Pahud Xiao Tu Bill Buxton … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"97 papers and notes received Honorable Mention, designated by a medallion icon.\"]"
   },
   {
    "venue": "CHI",
@@ -54463,6 +56813,560 @@
    "track": "main",
    "source": "https://crypto.iacr.org/2026/program.php",
    "evidence": "CORAL: Faster Isogeny Group Action for Post-Quantum NIKE Best Paper Authored by Early Career Researchers Andrea Basso Giacomo Borin Ryan Rueger Sina Schaeffler"
+  },
+  {
+   "venue": "CSCW",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "'We can go anywhere': Understanding Independence through a Case Study of Ride-hailing Use by People with Visual Impairments in metropolitan India",
+   "authors": [
+    "Vaishnav Kameswaran",
+    "Jatin Gupta",
+    "Joyojeet Pal",
+    "Sile O'Modhrain",
+    "Tiffany C. Veinot",
+    "Robin Brewer",
+    "Aakanksha Parameshwar",
+    "Vidhya Y",
+    "Jacki O'Neill"
+   ],
+   "track": "main",
+   "source": "https://cscw.acm.org/2018/program/toc.html",
+   "alsoAt": [
+    "https://cscw.acm.org/2018/assets/CSCW-2018-Program.pdf"
+   ],
+   "evidence": "'We can go anywhere': Understanding Independence through a Case Study of Ride-hailing Use by People with Visual Impairments in metropolitan India Vaishnav Kameswaran Jatin Gupta Joyojeet Pal Sile O'Modhrain Tiffany C. Veinot Robin Brewer Aakanksha Parameshwar Vidhya Y Jacki O'Neill … [the printed program (alsoAt) marks it with a trophy icon; its legend: \"a trophy is labelled \"CSCW 2018 Best Paper, Awarded by SIGCHI\"\"]"
+  },
+  {
+   "venue": "CSCW",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "\"I just let him cry...: Designing Socio-Technical Interventions in Families to Prevent Mental Health Disorders",
+   "authors": [
+    "Petr Slovák",
+    "Nikki Theofanopoulou",
+    "Alessia Cecchet",
+    "Peter Cottrell",
+    "Ferran Altarriba Bertran",
+    "Ella Dagan",
+    "Julian Childs",
+    "Katherine Isbister"
+   ],
+   "track": "main",
+   "source": "https://cscw.acm.org/2018/program/toc.html",
+   "alsoAt": [
+    "https://cscw.acm.org/2018/assets/CSCW-2018-Program.pdf"
+   ],
+   "evidence": "\"I just let him cry...: Designing Socio-Technical Interventions in Families to Prevent Mental Health Disorders Petr Slovák Nikki Theofanopoulou Alessia Cecchet Peter Cottrell Ferran Altarriba Bertran Ella Dagan Julian Childs Katherine Isbister … [the printed program (alsoAt) marks it with a trophy icon; its legend: \"a trophy is labelled \"CSCW 2018 Best Paper, Awarded by SIGCHI\"\"]"
+  },
+  {
+   "venue": "CSCW",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Applications of Social Identity Theory to Research and Design in Computer-Supported Cooperative Work",
+   "authors": [
+    "Joseph Seering",
+    "Felicia Ng",
+    "Zheng Yao",
+    "Geoff Kaufman"
+   ],
+   "track": "main",
+   "source": "https://cscw.acm.org/2018/program/toc.html",
+   "alsoAt": [
+    "https://cscw.acm.org/2018/assets/CSCW-2018-Program.pdf"
+   ],
+   "evidence": "Applications of Social Identity Theory to Research and Design in Computer-Supported Cooperative Work Joseph Seering Felicia Ng Zheng Yao Geoff Kaufman … [the printed program (alsoAt) marks it with a trophy icon; its legend: \"a trophy is labelled \"CSCW 2018 Best Paper, Awarded by SIGCHI\"\"]"
+  },
+  {
+   "venue": "CSCW",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Collaborative Problem Solving in an Open-Ended Scientific Discovery Game",
+   "authors": [
+    "Aaron Bauer",
+    "Zoran Popović"
+   ],
+   "track": "main",
+   "source": "https://cscw.acm.org/2018/program/proceedings.html",
+   "alsoAt": [
+    "https://cscw.acm.org/2018/assets/CSCW-2018-Program.pdf"
+   ],
+   "evidence": "Collaborative Problem Solving in an Open-Ended Scientific Discovery Game Aaron Bauer Zoran Popović … [the printed program (alsoAt) marks it with a trophy icon; its legend: \"a trophy is labelled \"CSCW 2018 Best Paper, Awarded by SIGCHI\"\"]"
+  },
+  {
+   "venue": "CSCW",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Domino: A Descriptive Framework for Hybrid Collaboration and Coupling Styles in Partially Distributed Teams",
+   "authors": [
+    "Thomas Neumayr",
+    "Hans-Christian Jetter",
+    "Mirjam Augstein",
+    "Judith Friedl",
+    "Thomas Luger"
+   ],
+   "track": "main",
+   "source": "https://cscw.acm.org/2018/program/toc.html",
+   "alsoAt": [
+    "https://cscw.acm.org/2018/assets/CSCW-2018-Program.pdf"
+   ],
+   "evidence": "Domino: A Descriptive Framework for Hybrid Collaboration and Coupling Styles in Partially Distributed Teams Thomas Neumayr Hans-Christian Jetter Mirjam Augstein Judith Friedl Thomas Luger … [the printed program (alsoAt) marks it with a trophy icon; its legend: \"a trophy is labelled \"CSCW 2018 Best Paper, Awarded by SIGCHI\"\"]"
+  },
+  {
+   "venue": "CSCW",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Eliciting Values Reflections by Engaging Privacy Futures Using Design Workbooks",
+   "authors": [
+    "Richmond Y. Wong",
+    "Deirdre K. Mulligan",
+    "Ellen Van Wyk",
+    "James Pierce",
+    "John Chuang"
+   ],
+   "track": "main",
+   "source": "https://cscw.acm.org/2018/program/proceedings.html",
+   "alsoAt": [
+    "https://cscw.acm.org/2018/assets/CSCW-2018-Program.pdf"
+   ],
+   "evidence": "Eliciting Values Reflections by Engaging Privacy Futures Using Design Workbooks Richmond Y. Wong Deirdre K. Mulligan Ellen Van Wyk James Pierce John Chuang … [the printed program (alsoAt) marks it with a trophy icon; its legend: \"a trophy is labelled \"CSCW 2018 Best Paper, Awarded by SIGCHI\"\"]"
+  },
+  {
+   "venue": "CSCW",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Endorsements on Social Media: An Empirical Study of Affiliate Marketing Disclosures on YouTube and Pinterest",
+   "authors": [
+    "Arunesh Mathur",
+    "Arvind Narayanan",
+    "Marshini Chetty"
+   ],
+   "track": "main",
+   "source": "https://cscw.acm.org/2018/program/toc.html",
+   "alsoAt": [
+    "https://cscw.acm.org/2018/assets/CSCW-2018-Program.pdf"
+   ],
+   "evidence": "Endorsements on Social Media: An Empirical Study of Affiliate Marketing Disclosures on YouTube and Pinterest Arunesh Mathur Arvind Narayanan Marshini Chetty … [the printed program (alsoAt) marks it with a trophy icon; its legend: \"a trophy is labelled \"CSCW 2018 Best Paper, Awarded by SIGCHI\"\"]"
+  },
+  {
+   "venue": "CSCW",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Hacking with NPOs: Collaborative Analytics and Broker Roles in Civic Data Hackathons",
+   "authors": [
+    "Youyang Hou",
+    "Dakuo Wang"
+   ],
+   "track": "main",
+   "source": "https://cscw.acm.org/2018/program/proceedings.html",
+   "alsoAt": [
+    "https://cscw.acm.org/2018/assets/CSCW-2018-Program.pdf"
+   ],
+   "evidence": "Hacking with NPOs: Collaborative Analytics and Broker Roles in Civic Data Hackathons Youyang Hou Dakuo Wang … [the printed program (alsoAt) marks it with a trophy icon; its legend: \"a trophy is labelled \"CSCW 2018 Best Paper, Awarded by SIGCHI\"\"]"
+  },
+  {
+   "venue": "CSCW",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Making Sense of Group Chat through Collaborative Tagging and Summarization",
+   "authors": [
+    "Amy X. Zhang",
+    "Justin Cranshaw"
+   ],
+   "track": "main",
+   "source": "https://cscw.acm.org/2018/program/toc.html",
+   "alsoAt": [
+    "https://cscw.acm.org/2018/assets/CSCW-2018-Program.pdf"
+   ],
+   "evidence": "Making Sense of Group Chat through Collaborative Tagging and Summarization Amy X. Zhang Justin Cranshaw … [the printed program (alsoAt) marks it with a trophy icon; its legend: \"a trophy is labelled \"CSCW 2018 Best Paper, Awarded by SIGCHI\"\"]"
+  },
+  {
+   "venue": "CSCW",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Resolvable vs. Irresolvable Disagreement: A Study on Worker Deliberation in Crowd Work",
+   "authors": [
+    "Mike Schaekermann",
+    "Joslin Goh",
+    "Kate Larson",
+    "Edith Law"
+   ],
+   "track": "main",
+   "source": "https://cscw.acm.org/2018/program/toc.html",
+   "alsoAt": [
+    "https://cscw.acm.org/2018/assets/CSCW-2018-Program.pdf"
+   ],
+   "evidence": "Resolvable vs. Irresolvable Disagreement: A Study on Worker Deliberation in Crowd Work Mike Schaekermann Joslin Goh Kate Larson Edith Law … [the printed program (alsoAt) marks it with a trophy icon; its legend: \"a trophy is labelled \"CSCW 2018 Best Paper, Awarded by SIGCHI\"\"]"
+  },
+  {
+   "venue": "CSCW",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Trust in Data Science: Collaboration, Translation, and Accountability in Corporate Data Science Projects",
+   "authors": [
+    "Samir Passi",
+    "Steven J. Jackson"
+   ],
+   "track": "main",
+   "source": "https://cscw.acm.org/2018/program/toc.html",
+   "alsoAt": [
+    "https://cscw.acm.org/2018/assets/CSCW-2018-Program.pdf"
+   ],
+   "evidence": "Trust in Data Science: Collaboration, Translation, and Accountability in Corporate Data Science Projects Samir Passi Steven J. Jackson … [the printed program (alsoAt) marks it with a trophy icon; its legend: \"a trophy is labelled \"CSCW 2018 Best Paper, Awarded by SIGCHI\"\"]"
+  },
+  {
+   "venue": "CSCW",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "#pray4victims: Consistencies in Response to Disaster on Twitter",
+   "authors": [
+    "Cody L. Buntain",
+    "Jung Kyu Rhys Lim"
+   ],
+   "track": "main",
+   "source": "https://cscw.acm.org/2018/program/toc.html",
+   "alsoAt": [
+    "https://cscw.acm.org/2018/assets/CSCW-2018-Program.pdf"
+   ],
+   "evidence": "#pray4victims: Consistencies in Response to Disaster on Twitter Cody L. Buntain Jung Kyu Rhys Lim … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"a medallion is labelled \"CSCW 2018 Honorable Mention Award, Awarded by SIGCHI\"\"]"
+  },
+  {
+   "venue": "CSCW",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Auditing Partisan Audience Bias within Google Search",
+   "authors": [
+    "Ronald E. Robertson",
+    "Shan Jiang",
+    "Kenneth Joseph",
+    "Lisa Friedland",
+    "David Lazer",
+    "Christo Wilson"
+   ],
+   "track": "main",
+   "source": "https://cscw.acm.org/2018/program/toc.html",
+   "alsoAt": [
+    "https://cscw.acm.org/2018/assets/CSCW-2018-Program.pdf"
+   ],
+   "evidence": "Auditing Partisan Audience Bias within Google Search Ronald E. Robertson Shan Jiang Kenneth Joseph Lisa Friedland David Lazer Christo Wilson … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"a medallion is labelled \"CSCW 2018 Honorable Mention Award, Awarded by SIGCHI\"\"]"
+  },
+  {
+   "venue": "CSCW",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Collocated Use of Imaging Systems in Coordinated Surgical Practice",
+   "authors": [
+    "Helena M. Mentis"
+   ],
+   "track": "main",
+   "source": "https://cscw.acm.org/2018/program/proceedings.html",
+   "alsoAt": [
+    "https://cscw.acm.org/2018/assets/CSCW-2018-Program.pdf"
+   ],
+   "evidence": "Collocated Use of Imaging Systems in Coordinated Surgical Practice Helena M. Mentis … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"a medallion is labelled \"CSCW 2018 Honorable Mention Award, Awarded by SIGCHI\"\"]"
+  },
+  {
+   "venue": "CSCW",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Debiasing Desire: Addressing Bias & Discrimination on Intimate Platforms",
+   "authors": [
+    "Jevan A. Hutson",
+    "Jessie G. Taft",
+    "Solon Barocas",
+    "Karen Levy"
+   ],
+   "track": "main",
+   "source": "https://cscw.acm.org/2018/program/toc.html",
+   "alsoAt": [
+    "https://cscw.acm.org/2018/assets/CSCW-2018-Program.pdf"
+   ],
+   "evidence": "Debiasing Desire: Addressing Bias & Discrimination on Intimate Platforms Jevan A. Hutson Jessie G. Taft Solon Barocas Karen Levy … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"a medallion is labelled \"CSCW 2018 Honorable Mention Award, Awarded by SIGCHI\"\"]"
+  },
+  {
+   "venue": "CSCW",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Efficient Crowd Exploration of Large Networks: The Case of Causal Attribution",
+   "authors": [
+    "Daniel Berenberg",
+    "James P. Bagrow"
+   ],
+   "track": "main",
+   "source": "https://cscw.acm.org/2018/program/toc.html",
+   "alsoAt": [
+    "https://cscw.acm.org/2018/assets/CSCW-2018-Program.pdf"
+   ],
+   "evidence": "Efficient Crowd Exploration of Large Networks: The Case of Causal Attribution Daniel Berenberg James P. Bagrow … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"a medallion is labelled \"CSCW 2018 Honorable Mention Award, Awarded by SIGCHI\"\"]"
+  },
+  {
+   "venue": "CSCW",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Entangled with Numbers: Quantified Self and Others in a Team-Based Online Game",
+   "authors": [
+    "Yubo Kou",
+    "Xinning Gui"
+   ],
+   "track": "main",
+   "source": "https://cscw.acm.org/2018/program/toc.html",
+   "alsoAt": [
+    "https://cscw.acm.org/2018/assets/CSCW-2018-Program.pdf"
+   ],
+   "evidence": "Entangled with Numbers: Quantified Self and Others in a Team-Based Online Game Yubo Kou Xinning Gui … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"a medallion is labelled \"CSCW 2018 Honorable Mention Award, Awarded by SIGCHI\"\"]"
+  },
+  {
+   "venue": "CSCW",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "How Latino Children in the U.S. Engage in Collaborative Online Information Problem Solving with their Families",
+   "authors": [
+    "Laura R. Pina",
+    "Carmen Gonzalez",
+    "Carolina Nieto",
+    "Wendy Roldan",
+    "Edgar Onofre",
+    "Jason C. Yip"
+   ],
+   "track": "main",
+   "source": "https://cscw.acm.org/2018/program/toc.html",
+   "alsoAt": [
+    "https://cscw.acm.org/2018/assets/CSCW-2018-Program.pdf"
+   ],
+   "evidence": "How Latino Children in the U.S. Engage in Collaborative Online Information Problem Solving with their Families Laura R. Pina Carmen Gonzalez Carolina Nieto Wendy Roldan Edgar Onofre Jason C. Yip … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"a medallion is labelled \"CSCW 2018 Honorable Mention Award, Awarded by SIGCHI\"\"]"
+  },
+  {
+   "venue": "CSCW",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Information Needs in Contemporary Code Review",
+   "authors": [
+    "Luca Pascarella",
+    "Davide Spadini",
+    "Fabio Palomba",
+    "Magiel Bruntink",
+    "Alberto Bacchelli"
+   ],
+   "track": "main",
+   "source": "https://cscw.acm.org/2018/program/toc.html",
+   "alsoAt": [
+    "https://cscw.acm.org/2018/assets/CSCW-2018-Program.pdf"
+   ],
+   "evidence": "Information Needs in Contemporary Code Review Luca Pascarella Davide Spadini Fabio Palomba Magiel Bruntink Alberto Bacchelli … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"a medallion is labelled \"CSCW 2018 Honorable Mention Award, Awarded by SIGCHI\"\"]"
+  },
+  {
+   "venue": "CSCW",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Knowing That You Know What I Know Helps?: Understanding the Effects of Knowledge Transparency in Online Knowledge Transfer",
+   "authors": [
+    "Chi-Lan Yang",
+    "Chien Wen (Tina) Yuan",
+    "Tzu-Yang Wang",
+    "Hao-Chuan Wang"
+   ],
+   "track": "main",
+   "source": "https://cscw.acm.org/2018/program/toc.html",
+   "alsoAt": [
+    "https://cscw.acm.org/2018/assets/CSCW-2018-Program.pdf"
+   ],
+   "evidence": "Knowing That You Know What I Know Helps?: Understanding the Effects of Knowledge Transparency in Online Knowledge Transfer Chi-Lan Yang Chien Wen (Tina) Yuan Tzu-Yang Wang Hao-Chuan Wang … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"a medallion is labelled \"CSCW 2018 Honorable Mention Award, Awarded by SIGCHI\"\"]"
+  },
+  {
+   "venue": "CSCW",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Managing Organizational Culture in Online Group Mergers",
+   "authors": [
+    "Charles Kiene",
+    "Aaron Shaw",
+    "Benjamin Mako Hill"
+   ],
+   "track": "main",
+   "source": "https://cscw.acm.org/2018/program/toc.html",
+   "alsoAt": [
+    "https://cscw.acm.org/2018/assets/CSCW-2018-Program.pdf"
+   ],
+   "evidence": "Managing Organizational Culture in Online Group Mergers Charles Kiene Aaron Shaw Benjamin Mako Hill … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"a medallion is labelled \"CSCW 2018 Honorable Mention Award, Awarded by SIGCHI\"\"]"
+  },
+  {
+   "venue": "CSCW",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Mapping Silences, Reconfiguring Loss: Practices of Damage Assessment & Repair in Post-Earthquake Nepal",
+   "authors": [
+    "Robert Soden",
+    "Austin Lord"
+   ],
+   "track": "main",
+   "source": "https://cscw.acm.org/2018/program/toc.html",
+   "alsoAt": [
+    "https://cscw.acm.org/2018/assets/CSCW-2018-Program.pdf"
+   ],
+   "evidence": "Mapping Silences, Reconfiguring Loss: Practices of Damage Assessment & Repair in Post-Earthquake Nepal Robert Soden Austin Lord … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"a medallion is labelled \"CSCW 2018 Honorable Mention Award, Awarded by SIGCHI\"\"]"
+  },
+  {
+   "venue": "CSCW",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Personal Informatics in Interpersonal Contexts: Towards the Design of Technology that Supports the Social Ecologies of Long-Term Mental Health Management",
+   "authors": [
+    "Elizabeth L. Murnane",
+    "Tara G. Walker",
+    "Beck Tench",
+    "Stephen Voida",
+    "Jaime Snyder"
+   ],
+   "track": "main",
+   "source": "https://cscw.acm.org/2018/program/toc.html",
+   "alsoAt": [
+    "https://cscw.acm.org/2018/assets/CSCW-2018-Program.pdf"
+   ],
+   "evidence": "Personal Informatics in Interpersonal Contexts: Towards the Design of Technology that Supports the Social Ecologies of Long-Term Mental Health Management Elizabeth L. Murnane Tara G. Walker Beck Tench Stephen Voida Jaime Snyder … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"a medallion is labelled \"CSCW 2018 Honorable Mention Award, Awarded by SIGCHI\"\"]"
+  },
+  {
+   "venue": "CSCW",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Private Peer Feedback as Engagement Driver in Humanitarian Mapping",
+   "authors": [
+    "Martin Dittus",
+    "Licia Capra"
+   ],
+   "track": "main",
+   "source": "https://cscw.acm.org/2018/program/proceedings.html",
+   "alsoAt": [
+    "https://cscw.acm.org/2018/assets/CSCW-2018-Program.pdf"
+   ],
+   "evidence": "Private Peer Feedback as Engagement Driver in Humanitarian Mapping Martin Dittus Licia Capra … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"a medallion is labelled \"CSCW 2018 Honorable Mention Award, Awarded by SIGCHI\"\"]"
+  },
+  {
+   "venue": "CSCW",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Service Providers of the Sharing Economy: Who Joins and Who Benefits?",
+   "authors": [
+    "Qing Ke"
+   ],
+   "track": "main",
+   "source": "https://cscw.acm.org/2018/program/proceedings.html",
+   "alsoAt": [
+    "https://cscw.acm.org/2018/assets/CSCW-2018-Program.pdf"
+   ],
+   "evidence": "Service Providers of the Sharing Economy: Who Joins and Who Benefits? Qing Ke … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"a medallion is labelled \"CSCW 2018 Honorable Mention Award, Awarded by SIGCHI\"\"]"
+  },
+  {
+   "venue": "CSCW",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Social Media as Social Transition Machinery",
+   "authors": [
+    "Oliver Haimson"
+   ],
+   "track": "main",
+   "source": "https://cscw.acm.org/2018/program/toc.html",
+   "alsoAt": [
+    "https://cscw.acm.org/2018/assets/CSCW-2018-Program.pdf"
+   ],
+   "evidence": "Social Media as Social Transition Machinery Oliver Haimson … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"a medallion is labelled \"CSCW 2018 Honorable Mention Award, Awarded by SIGCHI\"\"]"
+  },
+  {
+   "venue": "CSCW",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Technologies, Methods, and Values: Changes in Empirical Research at CSCW 1990 - 2015",
+   "authors": [
+    "James R. Wallace",
+    "Saba Oji",
+    "Craig Anslow"
+   ],
+   "track": "main",
+   "source": "https://cscw.acm.org/2018/program/proceedings.html",
+   "alsoAt": [
+    "https://cscw.acm.org/2018/assets/CSCW-2018-Program.pdf"
+   ],
+   "evidence": "Technologies, Methods, and Values: Changes in Empirical Research at CSCW 1990 - 2015 James R. Wallace Saba Oji Craig Anslow … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"a medallion is labelled \"CSCW 2018 Honorable Mention Award, Awarded by SIGCHI\"\"]"
+  },
+  {
+   "venue": "CSCW",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Types of Motivation Affect Study Selection, Attention, and Dropouts in Online Experiments",
+   "authors": [
+    "Eunice Jun",
+    "Gary Hsieh",
+    "Katharina Reinecke"
+   ],
+   "track": "main",
+   "source": "https://cscw.acm.org/2018/program/proceedings.html",
+   "alsoAt": [
+    "https://cscw.acm.org/2018/assets/CSCW-2018-Program.pdf"
+   ],
+   "evidence": "Types of Motivation Affect Study Selection, Attention, and Dropouts in Online Experiments Eunice Jun Gary Hsieh Katharina Reinecke … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"a medallion is labelled \"CSCW 2018 Honorable Mention Award, Awarded by SIGCHI\"\"]"
+  },
+  {
+   "venue": "CSCW",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "UMI3D: A Unity3D Toolbox to Support CSCW Systems Properties in Generic 3D User Interfaces",
+   "authors": [
+    "Julien Casarin",
+    "Nicolas Pacqueriaud",
+    "Dominique Bechmann"
+   ],
+   "track": "main",
+   "source": "https://cscw.acm.org/2018/program/toc.html",
+   "alsoAt": [
+    "https://cscw.acm.org/2018/assets/CSCW-2018-Program.pdf"
+   ],
+   "evidence": "UMI3D: A Unity3D Toolbox to Support CSCW Systems Properties in Generic 3D User Interfaces Julien Casarin Nicolas Pacqueriaud Dominique Bechmann … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"a medallion is labelled \"CSCW 2018 Honorable Mention Award, Awarded by SIGCHI\"\"]"
+  },
+  {
+   "venue": "CSCW",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Why Users Do Not Want to Write Together When They Are Writing Together: Users' Rationales for Today's Collaborative Writing Practices",
+   "authors": [
+    "Dakuo Wang",
+    "Haodan Tan",
+    "Tun Lu"
+   ],
+   "track": "main",
+   "source": "https://cscw.acm.org/2018/program/proceedings.html",
+   "alsoAt": [
+    "https://cscw.acm.org/2018/assets/CSCW-2018-Program.pdf"
+   ],
+   "evidence": "Why Users Do Not Want to Write Together When They Are Writing Together: Users' Rationales for Today's Collaborative Writing Practices Dakuo Wang Haodan Tan Tun Lu … [the printed program (alsoAt) marks it with a medallion icon; its legend: \"a medallion is labelled \"CSCW 2018 Honorable Mention Award, Awarded by SIGCHI\"\"]"
   },
   {
    "venue": "CSCW",

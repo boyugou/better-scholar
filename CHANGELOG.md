@@ -194,8 +194,10 @@ give the details and every review):
   headings (CHI 2013, 2016), a flag in each paper's record (CHI 2014: 21 best and 84 honorable mentions, CHI 2015: 21 and 98 — every
   flagged paper is entered), an icon in each paper's block with the page's own legend (CHI 2012, UIST 2016 and 2020). UIST 2011's three
   "Notable Paper Awards" are a named category (the chip reads "Notable Paper"), as the list's own test refused them as honorable mentions.
-  Held back: CHI 2017 and CSCW 2018 (151 papers: their awards are icons in the printed program's PDF, read once by their position
-  beside the titles), CHI 2011 (a plain-http site) and CHI 2010 (icons whose meaning no page states). The list holds 9,922 awards.
+  Held back: CHI 2011 (a plain-http site) and CHI 2010 (icons whose meaning no page states). Then CHI 2017 and CSCW 2018 (151
+  papers; their awards are trophy and medallion icons in the printed programs' PDFs, matched to titles by position): merged after an
+  independent look at the rendered pages agreed on 25 of 25 sampled papers and 8 of 8 unmarked controls, and the programs' legends state
+  24 best papers and 97 honorable mentions for CHI 2017, as entered. The list holds 10,073 awards.
 - **ISCA, MICRO and SIGGRAPH Asia best papers** (54): ISCA's of 2022 and 2023 (its best paper award began in 2022, so no earlier year
   lacks one) and ISCA 2025's two honorable mentions; MICRO's of 2006–2009, 2012–2014, 2016 and 2021 from the year sites (2015, 2017,
   2018 and 2023 name nominees only); SIGGRAPH Asia 2022–2025's Technical Papers best papers and honorable mentions. Two misprints put
