@@ -1,45 +1,29 @@
-# Chrome Web Store listing: Better Scholar 2.41.0
+# Chrome Web Store 填写手册：Better Scholar 2.41.0
 
-Every field of the Developer Dashboard, in the order the dashboard shows it (Package, Store listing, Privacy,
-Distribution, Test instructions). Copy the text inside each `text` block as it is. Each factual statement has its
-evidence in `claims.md` (`node store/chrome/check-claims.mjs` searches every quote there); if the code changes, check there
-first.
+**用法：** 控制台左侧有 5 个页签：Package → Store listing → Privacy → Distribution → Test instructions。
+下面按这个顺序，**每个小标题就是页面上的字段名**，标题下面的代码块是要粘贴的内容（原样复制，不要改）。
+没有代码块的字段，按文字说明操作。每页填完点页面上的 **Save draft**。
 
-Prepared 2026-10-15 for the package built from commit `f1cd4f1` (see `package-check.md`). Brought up to date on 2026-10-28 for a
-package built from that day's `main`, which is still version 2.41.0: the description now names what CHANGELOG.md lists under 2.41.0
-after `f1cd4f1` (your own venue mappings, Copy IEEE, Copy GB/T 7714, Copy as image, the owner's name in bold in pasted
-references), and the pictures were made again.
+事实依据在 `claims.md`（`node store/chrome/check-claims.mjs` 会逐条核对）。代码改动后先看那里。
+安装包用 `bash scripts/package-chrome.sh` 构建，数据（如获奖名单）变了就要重新构建。
 
-## 1. Package
+---
 
-Upload `dist/better-scholar-chrome-2.41.0.zip` (built by `bash scripts/package-chrome.sh`). Nothing to type.
+## 页签 1：Package
 
-The dashboard takes the **title**, the **summary** and the **version** from the package (the store icon is uploaded
-separately, below). Google's "Prepare your extension" page: "After uploading your item, you won't be able to edit the
-metadata of your manifest in the developer dashboard." To change any of them, change the package and upload it again.
-
-## 2. Store listing
-
-### Title (from the package, read-only)
-
-```text
-Better Scholar
-```
-
-### Summary (from the package, read-only)
-
-What the dashboard will show: the `extDescription` of `src/_locales/en/messages.json` (130 characters; the limit is 132).
-Each of the 30 locales supplies its own translation, and the store shows the one that matches the visitor. (Changed on
-2026-10-17 from "Enhance Google Scholar: authorship roles, CCF & CORE ranks, …", which listed features in a promotional tone, to one
-plain sentence of what it does. A package built before that change still has the old one.)
+- 点 **Add new item**，上传 `dist/better-scholar-chrome-2.41.0.zip`。
+- 标题（Better Scholar）、摘要、版本都来自安装包，页面上是只读的，不用填。
+- 摘要（只读，供核对，130 字符，上限 132）：
 
 ```text
 On Google Scholar profiles: the profile owner's author role and the venue's CCF and CORE rank on each paper, counted in one table.
 ```
 
-### Description
+---
 
-Plain text, 3,209 characters, 10 lines starting with "• ". No Markdown. Paste it as it is.
+## 页签 2：Store listing
+
+### Description（必填，3210 字符，纯文本，原样粘贴）
 
 ```text
 Better Scholar adds two things to Google Scholar profile pages: the profile owner's authorship role in each paper, and the rank of the venue it appeared in. A panel counts them in one table.
@@ -63,193 +47,139 @@ Everything else runs in your browser: no account, no analytics, no ads. Settings
 Free and open source (Apache 2.0). Better Scholar is an independent project and is not affiliated with or endorsed by Google.
 ```
 
-Checks done on this text (re-counted 2026-10-28, after the ranks, copy and storage sentences took in the mappings, the three
-formats that are off by default and the bold name, then corrected after an independent review, and the own quick filters and ACM added): 3,209 characters; "Scholar" appears 5 times (counting "Better Scholar", "Google Scholar" and "Semantic Scholar"), "CCF" 3 (once as
-`ccf:a`), "CORE" 2 (once in "ICORE"), "rank" 4 (7 with "ranks" and "ranking"), all in sentences (policy: no "unnatural repetition of the same
-keyword more than 5 times"); no competitor is named; no superlatives. The text says what 2.40.0 and 2.41.0 added in two bullets (the
-HTML on the clipboard; the own names, chip looks, editable preview and venue box), each with its row in `claims.md` (L36 to L39),
-and what came after `f1cd4f1` in four sentences (L8, L13, L14, L29, L41, L42); `type:conference` and `type:journal` are not mentioned.
-
 ### Category
 
-```text
-Education
-```
-
-Under Productivity › Education. The pages `chromewebstore.google.com/category/extensions/productivity/education`,
-`…/tools` and `…/workflow` exist (checked 2026-10-15), so **Education**, **Tools** and **Workflow & Planning** are all
-offered. Education fits researchers reading publication records; Tools is the neutral alternative. Owner's choice: pick
-from the live drop-down.
+选 **Education**（下拉里没有就选 Tools）。
 
 ### Language
 
+选 **English**。
+
+### Store icon
+
+上传 `store/chrome/images/icon-128.png`（128×128）。
+
+### Global promo video
+
+**留空。** 框下面灰色的 YouTube 链接只是示例，不用填。
+
+### Localized screenshots（必填，至少 1 张，最多 5 张，1280×800，不要透明通道）
+
+按顺序上传 `store/chrome/images/screenshot-1.jpg` 到 `screenshot-5.jpg`：
+
+1. 主页面：按角色着色的论文行、CCF/CORE 芯片和右侧面板。
+2. 面板特写：角色×等级表、复制与导出按钮、年份图。
+3. 过滤：搜索 `role:first ccf:a cites:>100` 后剩下 5 篇。
+4. 设置页：开关、颜色和实时预览。
+5. 工具栏弹窗。
+
+（说明文字已画在图片里，商店没有单独的说明字段。）
+
+### Small promo tile（必填，440×280）
+
+上传 `store/chrome/images/promo-small.jpg`。
+
+### Marquee promo tile（可选，1400×560）
+
+上传 `store/chrome/images/promo-marquee.jpg`。
+
+### Official URL
+
+**留空。**
+
+### Homepage URL
+
 ```text
-English
+https://boyugou.github.io/better-scholar/
 ```
 
-The package carries 30 interface languages; the store shows each locale's own title and summary. A translated detailed
-description per locale is optional (Store listing → localize).
+### Support URL
 
-### Graphic assets
+```text
+https://github.com/boyugou/better-scholar/issues
+```
 
-Files are in `store/chrome/images/` (described in its `README.md`; both are written by `npm run store:images`, see
-`screenshots-plan.md`). They were made again on 2026-10-28 from the real extension of that day's `main` on a stand-in
-Scholar page with the fictional profile "Alex Example" (the popup's copy buttons now stand two to a row). Requirements from
-"Supplying images" and "Complete your listing information" (developer.chrome.com, read 2026-10-15). Sizes and formats below
-were measured with `sips` on 2026-10-28.
+### Mature content
 
-| Dashboard field | File | Required | File as made | Status |
-|---|---|---|---|---|
-| Store icon | `icon-128.png` | 128×128 PNG; guidance: 96×96 artwork with 16 px transparent padding | 128×128 PNG with alpha; same bytes as `src/icons/icon-128.png` | OK. The artwork fills the square (guidance, not a rule). |
-| Global promo video | none | optional | none | Leave empty. |
-| Screenshot 1 | `screenshot-1.jpg` | 1280×800 or 640×400; at least 1, at most 5; square corners, no padding | 1280×800 JPEG, no alpha (208 KB) | OK. Caption wording: see below. |
-| Screenshot 2 | `screenshot-2.jpg` | same | 1280×800 JPEG (137 KB) | OK. |
-| Screenshot 3 | `screenshot-3.jpg` | same | 1280×800 JPEG (169 KB) | OK. |
-| Screenshot 4 | `screenshot-4.jpg` | same | 1280×800 JPEG (163 KB) | OK. Caption wording: see below. |
-| Screenshot 5 | `screenshot-5.jpg` | same | 1280×800 JPEG (221 KB) | OK. Shows the popup with the eight copy buttons that are on by default, two to a row. |
-| Small promo tile | `promo-small.jpg` | 440×280, PNG or JPEG; required ("You must provide one small, 440x280-pixel promotional image"); guidance "Avoid text" | 440×280 JPEG (26 KB) | OK. Has the name and a line of text (guidance only). |
-| Marquee promo tile | `promo-marquee.jpg` | 1400×560, PNG or JPEG; optional | 1400×560 JPEG (104 KB) | OK. |
+**不勾。**
 
-What each screenshot shows (the headline and caption are drawn into the images; the store has no caption field). Upload them
-in this order:
+---
 
-1. "See your role in every paper." The profile of the fictional "Alex Example": rows tinted by role (blue, amber, green), the
-   owner's name marked, CCF and CORE chips, award (Best paper) and talk (Oral, Spotlight) chips, and at the right the panel:
-   the role × rank table with its CCF / CORE switch and the note that the ranks are today's lists, the eight copy and export
-   buttons, the Awards & talks counts and the search box with its quick filters.
-2. "Papers by role and rank." The panel up close in its two-column layout: the table, the note, the copy and export buttons,
-   the awards and talks counts, the search box, the quick filters, "Only highlighted", the year range, the citation totals of
-   the highlighted papers, the year chart and the name help.
-3. "Filter by role, rank and citations." The search `role:first ccf:a cites:>100` typed in: five papers left, the bar
-   naming the filter with "5 / 12" and Clear, the role × rank table counting those five, and the quick filters CCF A, >100 and
-   First lit (the citation totals below follow too; they are under the fold in this picture).
-4. "Choose what you see." The settings page: the row of section links, the card "Highlight my papers" (a switch for each
-   role and for marking your name) and the start of "Colours", and at the right the live preview (four sample rows, its note,
-   the hint "Hover a part to hide it (✕), move it (⠿) or find its setting (⚙). Double-click a name to rename it, anything
-   else to jump to its setting." and the tray "Hidden: 10", the parts that are off by default).
-5. "Your summary in the toolbar." The toolbar popup over the profile: owner and paper count, the table (here by CORE rank),
-   the Awards & talks line, the eight copy and export buttons and the note on the ranks.
+## 页签 3：Privacy
 
-The captions were made exact (screenshot 1 says "venues found on the CCF and CORE lists", the marquee "the venues it finds on
-the lists"; screenshot 4 says every colour has its own picker); the words live in `scripts/store-images.mjs`, see
-`screenshots-plan.md`.
+页面上每个文本框上限 1,000 字符，下面的内容都已在限制内。
 
-### Additional fields
-
-| Field | Value |
-|---|---|
-| Official URL | Leave empty. It lists only sites verified as yours (Search Console); not needed. |
-| Homepage URL | `https://boyugou.github.io/better-scholar/` (its badge now says "Runs in your browser"; its search-operator cards still show syntax removed in 2.39.0, `claims.md` 4.3: a should-fix on the `site` branch, it does not stop you entering the URL) |
-| Support URL | `https://github.com/boyugou/better-scholar/issues` |
-| Mature content | Off |
-
-## 3. Privacy
-
-The dashboard docs say: "Your disclosures are displayed to Chrome users, and should be consistent with the existing
-privacy policy URL that you provided." The site builds its privacy page from PRIVACY.md itself, so
-the two cannot differ once the site is deployed (live page checked 2026-10-28: it has the clipboard section with Copy as
-image and the venue mappings); the answers here describe the code as it is, and PRIVACY.md says the same.
-
-### Single purpose description
+### Single purpose description（必填，535 字符）
 
 ```text
 Better Scholar shows, on Google Scholar profile pages, the profile owner's authorship role in each paper (first, co-first, second or last author) and the CCF and CORE rank of the paper's venue, and counts the papers by role and rank in one table. Everything else serves that view: loading the whole paper list so that the count is complete, reading author lists that Scholar cuts off so that a hidden role can be found, filters, citation totals and copy or export of the same data, and settings for what is shown and in which language.
 ```
 
-### Permission justification: storage
+### storage justification（必填，860 字符）
 
 ```text
-storage keeps the user's settings and the extension's own working data. chrome.storage.sync: the settings (what to show and in which order, colours, chip looks, the user's own names for titles and buttons, languages); the extra spellings of a profile owner's name that the user adds on that profile, and the user's own venue mappings (a venue line tied by the user to a row of the CCF or CORE list), so that they follow the user's Chrome profile. chrome.storage.local, on this device only: whether the panel is folded and which ranking its table shows; the author lists, venue text and page ranges read with "Read full lists" (at most 3,000 papers, kept for 90 days, viewable and clearable on the settings page); an optional Semantic Scholar API key the user may enter; and, for a moment, a venue text (at most 300 characters) that the user asked the settings page to check by pressing Check beside a venue of the panel's unranked list; and, from an install or update until a profile next answers the toolbar popup, a flag that lets the popup say that a profile already open needs a reload. Nothing in storage is sent to the developer.
+storage keeps the user's settings and the extension's working data; nothing in it is sent to the developer. chrome.storage.sync: the settings (what to show, order, colours, chip looks, the user's own names for titles and buttons, language), extra spellings of a profile owner's name that the user adds, and the user's own venue mappings, so they follow the user's Chrome profile. chrome.storage.local, on this device only: whether the panel is folded and which ranking it shows; the author lists, venue text and page ranges read with "Read full lists" (at most 3,000 papers, kept 90 days, viewable and clearable on the settings page); an optional Semantic Scholar API key the user may enter; a venue text (at most 300 characters) that the user asked the settings page to check; and a flag that lets the popup say an open profile needs a reload after an update.
 ```
 
-### Host permission justification
+### Host permission justification（必填，964 字符）
 
-The manifest has no `host_permissions`; its site access comes from the content scripts' match patterns. If the tab shows a
-box for them, paste:
+页面上方的橙色提示（“可能需要深入审核”）是正常的，不用处理。
 
 ```text
 Site access comes only from two content scripts, both limited to Google Scholar. (1) The main script matches https://scholar.google.<domain>/citations*, the path of Scholar's author pages, and draws only on a profile page (it checks for the profile's name and paper table and leaves other pages alone). (2) A small script, content/lang-redirect.js (with lib/i18n.js, the list of languages it checks), matches https://scholar.google.<domain>/* at document start. It acts only on /scholar and /citations, and only if the user chose a language under "Open Scholar in" (off by default): it reopens the page with that hl= value. It reads no page content. Both list the same 187 domains because Scholar is served under Google's country domains (scholar.google.co.uk, scholar.google.com.sg and so on) and a match pattern cannot wildcard a top-level domain. The list is generated from Google's own list (https://www.google.com/supported_domains). No other site is matched.
 ```
 
-### Are you using remote code?
+### Are you using remote code?（如果页面有这一项）
 
-Select:
-
-```text
-No, I am not using remote code.
-```
-
-If a justification box appears anyway:
+选 **No, I am not using remote code.** 如果它要求填写理由，粘贴：
 
 ```text
 All code is in the package. The content scripts, toolbar popup, settings page and service worker load only files from the zip; there is no eval, new Function, dynamic import or remotely hosted script. The extension fetches data, never code: Scholar's own paper pages (parsed with DOMParser; only text is read), JSON from api.semanticscholar.org when the user switches that on, its own _locales files, and (for the popup's Copy as image) the picture the page drew, from a data: address. The rank and award lists are bundled; the settings page also loads the CCF and CORE lists from the zip, for its "Check a venue" box, and makes no request. The page-event listener for scripts on the page answers six fixed calls (ping, summary, papers, export, filter, clearFilters), checks their parameters, and runs nothing it receives.
 ```
 
-### Data usage
+### Data usage — What user data do you plan to collect…
 
-Google's User Data FAQ (FAQ 3): "Extensions are required to disclose how they handle user data, even when data is
-processed or stored locally." The boxes below are decided on that basis. The type names are as the dashboard form listed
-them when it was introduced; match by name in the live form.
+只勾 3 项，其余 6 项**不勾**：
 
-| Data type | Tick? | Why (from the code) |
+| 勾选 | 项目 | 原因 |
 |---|---|---|
-| Personally identifiable information | **Tick** (owner decision, see below) | It reads the author names Scholar prints on the open profile, and it stores spellings of the owner's name that the user types (`chrome.storage.sync`, per profile). Names are the FAQ's first example of personal information. They are never sent to the developer or to Semantic Scholar. |
-| Health information | Leave empty | Nothing health-related is read or stored. |
-| Financial and payment information | Leave empty | Free; no payments, no purchases. |
-| Authentication information | **Tick** | The optional Semantic Scholar API key: stored on this device only, sent only to `api.semanticscholar.org` (as `x-api-key`). Scholar's own cookies go with the same-site requests of "Read full lists", as when the user opens those pages; the extension never reads or stores them. |
-| Personal communications | Leave empty | No email, chat or messages. |
-| Location | Leave empty | No location is read. Like any web request, Scholar and (when switched on) Semantic Scholar see the IP address; the extension does not read or keep it. |
-| Web history | Leave empty | It keeps no list of pages visited. It reads the address of the Scholar page it runs on (profile id, `hl=`); on the device, the cache is keyed by Scholar's paper id and the spellings by profile id. |
-| User activity | Leave empty | It handles "/" and Escape and clicks on its own controls, closes its menus on an outside click or scroll, and notices a click on Scholar's "Show more" button (to know a load has started); nothing is logged, kept or sent. |
-| Website content | **Tick** | It reads titles, author lines, venues, years and citation counts of the open profile (in the browser), keeps author lists read from paper pages (90 days, on the device), and, only if the user switches on Semantic Scholar, sends paper titles to `api.semanticscholar.org`. |
+| ✅ | Personally identifiable information | 会读取并保存用户自己添加的姓名写法（保守读法；也可以不勾，见下） |
+| ✅ | Authentication information | 用户可选填的 Semantic Scholar API 密钥，只存本机，只发给 api.semanticscholar.org |
+| ✅ | Website content | 读取 Scholar 页面上的标题、作者、期刊、年份、引用数；仅在用户开启后把论文标题发给 Semantic Scholar |
+| 不勾 | Health information、Financial and payment information、Personal communications、Location、Web history、User activity | 代码里没有读取或保存这些 |
 
-Owner decision on personally identifiable information: ticking it is the conservative reading of FAQ 3 (names are
-handled and stored). Leaving it empty is defensible only if the names are treated as part of the website content (they are
-printed on a public page, and the spellings are spellings of that printed name). Ticking shows "Personally identifiable
-information" on the listing; the privacy policy then explains that it never leaves the browser.
+关于 Personally identifiable information：勾上是对 Google 用户数据 FAQ 的保守读法（姓名被处理和保存）。
+不勾的理由是姓名只是公开页面上印出的内容，属于 Website content。勾了会在商店页上显示这一项，隐私政策里写明它不会离开浏览器。你来决定。
 
-The clipboard and files are not a data type on the form. For the record: the extension writes to the clipboard only when the
-user clicks a copy button (the table, papers, APA, IEEE, ACM and GB/T 7714 buttons write the text and an HTML version of the same data, so that a
-word processor pastes a real table or real italics), saves a CSV or the settings as a file only on a click, and never reads
-the clipboard (`claims.md` L36, P19). PRIVACY.md says so under "Clipboard" and "Files".
+### I certify that the following disclosures are true — 三条**全部勾选**
 
-### Certifications
+- ✅ I do not sell or transfer user data to third parties, outside of the approved use cases
+- ✅ I do not use or transfer user data for purposes that are unrelated to my item's single purpose
+- ✅ I do not use or transfer user data to determine creditworthiness or for lending purposes
 
-Tick all three. The wording below is the form's as reported since its introduction in 2020; confirm it in the live tab.
+（唯一的一次传输是：用户自己打开 Semantic Scholar 选项后，把论文标题发给它。该选项默认关闭，属于提供用户要的功能。）
 
-| Statement | Why it is true |
-|---|---|
-| I do not sell or transfer user data to third parties, outside of the approved use cases | Nothing is sold. The one transfer is paper titles (and the user's own key) to Semantic Scholar, made only after the user switches the option on, to provide the feature the user asked for. Limited Use allows a transfer "if necessary to providing or improving your single purpose". |
-| I do not use or transfer user data for purposes that are unrelated to my item's single purpose | Every use is the profile view, its loading and its exports. |
-| I do not use or transfer user data to determine creditworthiness or for lending purposes | None. |
-
-The opt-in itself: the setting is off by default (`semanticScholar: false`) and its own text says "It gets the paper's
-title and nothing else."; once it is on, the panel's hint under "Read full lists" says the same before the click
-("First asks Semantic Scholar for each paper's author list (it gets only the title)"); no preset turns it on. That is
-the in-interface disclosure and affirmative action the User Data FAQ (FAQ 10) asks for.
-
-### Privacy policy URL
+### Privacy policy URL（必填）
 
 ```text
 https://boyugou.github.io/better-scholar/privacy/
 ```
 
-The page is built from the repository's PRIVACY.md (the site's `build.mjs` reads it), so it says what PRIVACY.md says
-once the site is deployed after a change to it. PRIVACY.md carries the Limited Use statement ("Chrome Web Store user data
-policy"), and the live page has it too.
+---
 
-## 4. Distribution
+## 页签 4：Distribution
 
-| Field | Value |
+| 页面字段 | 选什么 |
 |---|---|
-| Payments | Free (no payments, no in-app purchases) |
-| Visibility | Public. (Unlisted: installable only by link. Private: only trusted testers.) |
-| Regions | All regions. EU listing depends on the trader declaration on the Account page (`README.md`). |
+| Payments | Free |
+| Visibility | Public |
+| Regions | All regions（欧盟上架需要先在账号页完成“交易者声明”） |
 
-## 5. Test instructions
+---
 
-The tab is optional ("This step is not required for publishing"); it helps here because Scholar may refuse automated
-traffic.
+## 页签 5：Test instructions（可选，建议填）
+
+Scholar 有时会对自动化流量出验证码，这段说明能帮审核员复现。粘贴：
 
 ```text
 No account, login or payment is needed. Everything works on a public Google Scholar profile.
@@ -269,3 +199,44 @@ No account, login or payment is needed. Everything works on a public Google Scho
 
 Note: Google Scholar sometimes answers automated or data-center traffic with a CAPTCHA, or with "The system can't perform the operation now. Try again later." Both come from Scholar. The extension adds no CAPTCHA and does not try to get around one: it stops loading the list as soon as Scholar sends no more rows, and stops reading paper pages at the first CAPTCHA. When loading stops early, the panel says "Scholar sent no more papers (N loaded). Try “Load all” again in a moment." The table and the chips still cover the papers that did load; the example rows above are among the first 20 (Scholar lists the most cited first), so they show even then. Solving the CAPTCHA in the tab, or waiting and reloading, lets the rest load.
 ```
+
+---
+
+## 其他页面和常见问题（按 Google 开发者文档整理，2026-11-11 读取；以你看到的实际页面为准）
+
+### 左侧 Account（账号）页：提交前要先完成
+
+- **Publisher name / Contact email：** 填发布者名称和联系邮箱，审核通知都发到这个邮箱。邮箱可在控制台里直接改。
+- **Trader status（EU 交易者声明）：** 所有开发者都必须声明自己是 Trader 还是 Non-Trader。这是你自己的法律判断，Google 不替你判。
+  - 本扩展免费、无广告、不收费，没有任何商业行为。个人开发者常见选法是 **Non-Trader**。
+  - 选 Trader 要填法定姓名、电话（短信验证）、地址，并且电话会显示在商店页上，还需要 Google Payments 资料。
+  - 如果不声明，欧盟地区的上架会受影响（Regions 页提示过）。
+  - 声明后想改，要重新走验证流程。
+- **注册费：** 首次一次性 5 美元。
+
+### Distribution 页（官方文档确认的选项）
+
+- **Visibility：** Public（所有人可搜到）、Unlisted（只有链接可装）、Private（只有测试者或群组可装）。三种的审核标准一样。
+  - 想先试水可以选 **Unlisted**：能用链接给同事装，审核通过后随时改成 Public。
+- **Regions：** All regions，或只选部分国家；改完发布后立即生效。
+- 文档里没有价格 / 付款字段，免费不用设置。
+
+### 审核（官方说明）
+
+- 一般几天，新开发者或敏感权限可能更久；超过三周没消息，联系开发者支持。
+- 页面里的橙色提示“Due to the Host Permission…”是因为我们声明了 187 个 Scholar 域名的访问，会触发更深入的审核，**会拖慢发布，但不是错误**。
+  - 我们的权限理由（Host permission justification）已经写明：只在 Scholar 的 /citations 页面运行，域名清单来自 Google 官方的 supported_domains。
+- 通知只发邮件，没有状态页。
+- 被拒：邮件会写明违反的政策。可以在 Item 详情页点 **Appeal** 申诉，或改正后重新提交；被拒不会通知用户，已有的版本不变。
+- 不允许混淆代码；压缩过的可以。本扩展的源码没有混淆，也没有构建步骤。
+
+### 其他
+
+- **Store listing 的本地化（可选）：** 页面左上有语言下拉，对应安装包里的 30 种语言（`_locales`）。商店会自动显示各语言自己的标题和摘要，详细描述需要逐个语言另填，**可以先不做**。
+- **Official URL（可选）：** 只列出在 Google Search Console 里验证过的网站。不验证的话，页面上显示的是你的发布者名称，不影响上架。
+- **试用版：** 如果以后想并行发布测试版，名称末尾要加 “BETA”，描述里说明，否则两个版本可能因重复内容被下架。
+
+## 提交前
+
+- 每个页签的红色提示都消失。
+- 点 **Submit for review**（由你来点）。审核通常几天；被拒会给出意见，发给我来改。
