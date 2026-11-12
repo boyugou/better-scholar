@@ -662,7 +662,6 @@
   "optThemeSoft": {
     "message": "Mjuk"
   },
-
   "markSpotlightHighlight": {
     "message": "Spotlight & highlight"
   },
@@ -694,7 +693,7 @@
     "message": "Läs först författarlistor från Semantic Scholar"
   },
   "optSemanticLabelHint": {
-    "message": "När du trycker på ”Läs hela listorna” frågar tillägget först Semantic Scholar efter varje artikels fullständiga författarlista. Semantic Scholar får bara artikelns titel och inget annat. Scholars egen sida läses bara för de artiklar som Semantic Scholar inte känner till. Färre förfrågningar till Scholar betyder färre CAPTCHA-kontroller."
+    "message": "När du trycker på ”Läs hela listorna” frågar tillägget först Semantic Scholar efter varje artikels fullständiga författarlista. Semantic Scholar får bara artikelns titel (och din API-nyckel, om du har angett en) och inget annat. Scholars egen sida läses i bakgrunden bara för de artiklar som Semantic Scholar inte känner till eller svarar med en annan artikel, och för alla övriga när Semantic Scholar vägrar. Färre förfrågningar till Scholar betyder färre CAPTCHA-kontroller."
   },
   "yearsTitle": {
     "message": "Markerade artiklar per år"
@@ -1116,7 +1115,7 @@
     "message": "Ingen färg"
   },
   "optSaveFailed": {
-    "message": "Inte sparat: Chrome begränsar hur ofta inställningar kan sparas. Vänta en stund och ändra igen."
+    "message": "Inte sparat än: Chrome begränsar hur ofta inställningar kan sparas. Ändringen sparas igen om några sekunder."
   },
   "optNameTip": {
     "message": "Ditt eget namn för detta, på alla språk. Tomt: standardnamnet."

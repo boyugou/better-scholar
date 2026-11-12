@@ -10,9 +10,9 @@ The file names in parentheses point at the code that does each thing, in the ext
 | Account, analytics, tracking, advertising? | None. |
 | Where does the work happen? | In your browser. The rank lists and the award list are inside the extension. |
 | What goes over the network? | Requests to the Google Scholar site that you have open: Scholar's own *Show more* button, and the paper pages that *Read full lists* asks for after your click. A paper's title to Semantic Scholar, only if you turn that on (it is off by default). |
-| What is stored? | Your settings, your name spellings and your venue mappings (Chrome's synced storage). The full author lists that *Read full lists* found, for 90 days (this device only). |
+| What is stored? | Your settings, your name spellings and your venue mappings (Chrome's synced storage). The full author lists that *Read full lists* found, for 90 days, and the Semantic Scholar API key if you enter one (this device only). |
 | What is never sent? | Your settings, your name spellings, your venue mappings, the saved paper details, and anything from your clipboard. |
-| Which permissions? | One: `storage`. |
+| Which permissions? | One: `storage`. (Chrome also lists the Scholar sites that the content scripts run on, as site access, when you install.) |
 
 ## Where it runs
 
@@ -68,7 +68,7 @@ In the Scholar site's own browser storage:
 
 To see or delete what is stored, use the *Saved data* card on the settings page: *View saved details*, *Clear saved paper
 details* (a profile tab that is open forgets them too, and does not write them back), and *Reset to defaults* (every setting
-back to its default). To remove a name spelling, click the × beside it in the panel. To remove a venue mapping, use *Remove* in
+back to its default; the Semantic Scholar key stays, so empty its field to delete it). To remove a name spelling, click the × beside it in the panel. To remove a venue mapping, use *Remove* in
 the list under *Check a venue*.
 
 The extension stores nothing else. It creates no account and no identifier of you.
@@ -121,7 +121,7 @@ Nothing else:
 Links, which open only when you click them:
 
 - The *Report* links of the panel and the popup open a new issue on this project's GitHub tracker. The panel's links fill in the
-  text: the unranked venue strings that it lists or, when Scholar's page layout cannot be read, the page's address without the
+  text: up to six of the unranked venue strings that it lists or, when Scholar's page layout cannot be read, the page's address without the
   host, with the profile's `user=` id replaced by "…".
 - The footer of the settings page links to the privacy page, the issue tracker and the GitHub repository. The toolbar popup
   links to Google Scholar and to Scholar's own "My profile" page (`scholar.google.com/citations`) when the open tab is not a
@@ -203,8 +203,8 @@ the requests for its files as any web host does.
 
 ## Permissions
 
-The extension asks for one permission: `storage`. It declares no host permissions (its scripts run only on the Scholar pages
-listed in `manifest.json`). It asks for no `tabs`, `activeTab`, `scripting`, `cookies` or `webRequest` permission. The toolbar
+The extension asks for one permission: `storage`. It declares no `host_permissions` entry; its content scripts run only on the Scholar
+pages listed in `manifest.json` (187 Scholar domains), and Chrome counts those match patterns as site access and says so when you install. It asks for no `tabs`, `activeTab`, `scripting`, `cookies` or `webRequest` permission. The toolbar
 popup asks Chrome for the active tab's id and whether that tab is still loading, and sends a message to the extension's own script
 in that tab.
 

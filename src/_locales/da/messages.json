@@ -662,7 +662,6 @@
   "optThemeSoft": {
     "message": "Blød"
   },
-
   "markSpotlightHighlight": {
     "message": "Spotlight & highlight"
   },
@@ -694,7 +693,7 @@
     "message": "Læs først forfatterlister fra Semantic Scholar"
   },
   "optSemanticLabelHint": {
-    "message": "Når du trykker på “Læs fulde lister”, spørges Semantic Scholar først om hver artikels fulde forfatterliste. Den får kun artiklens titel og intet andet. Scholars egen side åbnes derefter kun for de artikler, som Semantic Scholar ikke kender. Færre forespørgsler til Scholar betyder færre CAPTCHA'er."
+    "message": "Når du trykker på “Læs fulde lister”, spørges Semantic Scholar først om hver artikels fulde forfatterliste. Den får kun artiklens titel (og din API-nøgle, hvis du har angivet en) og intet andet. Scholars egen side læses derefter i baggrunden for de artikler, som Semantic Scholar ikke kender eller ikke svarer med den samme artikel, og for alle de øvrige, når Semantic Scholar afviser. Færre forespørgsler til Scholar betyder færre CAPTCHA'er."
   },
   "yearsTitle": {
     "message": "Fremhævede artikler pr. år"
@@ -1116,7 +1115,7 @@
     "message": "Ingen farve"
   },
   "optSaveFailed": {
-    "message": "Ikke gemt: Chrome begrænser, hvor ofte indstillinger kan skrives. Vent et øjeblik, og prøv igen."
+    "message": "Endnu ikke gemt: Chrome begrænser, hvor ofte indstillinger kan skrives. Det gemmes igen om et par sekunder."
   },
   "optNameTip": {
     "message": "Dit eget navn til dette på alle sprog. Tomt: standardnavnet."

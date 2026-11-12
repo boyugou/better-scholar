@@ -662,7 +662,6 @@
   "optThemeSoft": {
     "message": "Zacht"
   },
-
   "markSpotlightHighlight": {
     "message": "Spotlight en highlight"
   },
@@ -694,7 +693,7 @@
     "message": "Auteurslijsten eerst lezen via Semantic Scholar"
   },
   "optSemanticLabelHint": {
-    "message": "Bij “Hele lijsten lezen” vraagt de extensie eerst Semantic Scholar om de volledige auteurslijst van elke paper. Semantic Scholar krijgt alleen de titel van de paper en verder niets. De eigen pagina van Scholar wordt daarna alleen geopend voor de papers die Semantic Scholar niet kent. Minder verzoeken aan Scholar betekent minder CAPTCHA’s."
+    "message": "Bij “Hele lijsten lezen” vraagt de extensie eerst Semantic Scholar om de volledige auteurslijst van elke paper. Semantic Scholar krijgt alleen de titel van de paper (en je API-sleutel, als je die hebt ingevoerd) en verder niets. De eigen pagina van Scholar wordt daarna op de achtergrond gelezen voor de papers die Semantic Scholar niet kent of waarvoor het niet met dezelfde paper antwoordt, en voor alle overige papers zodra Semantic Scholar weigert. Minder verzoeken aan Scholar betekent minder CAPTCHA’s."
   },
   "yearsTitle": {
     "message": "Gemarkeerde papers per jaar"
@@ -1116,7 +1115,7 @@
     "message": "Geen kleur"
   },
   "optSaveFailed": {
-    "message": "Niet opgeslagen: Chrome beperkt hoe vaak instellingen kunnen worden geschreven. Wacht even en wijzig het opnieuw."
+    "message": "Nog niet opgeslagen: Chrome beperkt hoe vaak instellingen kunnen worden geschreven. Ze worden over enkele seconden opnieuw opgeslagen."
   },
   "optNameTip": {
     "message": "Je eigen naam hiervoor, in elke taal. Leeg: de standaardnaam."

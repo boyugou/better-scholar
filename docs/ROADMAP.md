@@ -79,21 +79,18 @@ official page does is left out. The test-of-time rows whose award page omitted t
 - IROS (only 2022's conference site is a real page — later years' domains now serve spam or nothing; a past conference's own domain must be checked for what it serves before anything is read from it)
 - SC (every page but the current year's answers 403; 2025's is read since 2.10.16)
 - The Web Conference best papers other than 2022 and 2024 (one site per year, each laid out differently or gone)
-- Probed on 2026-10-12 and found to name no winner, or only finalists, or to be unreachable (so no reader was written), or later found to have no series page:
-  - SIGCOMM 2022 and 2023.
+- Probed on 2026-10-12 and found to name no winner, or only finalists, or to be unreachable (so no reader was written), or later found to have no series page (checked against the list on 2026-11-12: the venues and years that later waves read are taken out; the rest of the lines are as probed, and may be stale):
   - MobiSys 2018 (no award named) and 2024 (the program page is 2022's again)
   - ICWSM 2022+.
   - COLT 2023 (a copy of 2022's page) and 2025.
-  - SOSP 2022 and 2025.
+  - SOSP 2022.
   - ASPLOS 2021 and earlier (2021 names none)
   - RSS 2020, 2023 and 2024 (nominees / finalists)
   - CoRL 2020 and 2021.
   - AISTATS 2019, 2020 and 2024 (notable papers, no best paper)
-  - UAI 2022 and 2024.
-  - Interspeech 2023 (a shortlist)
+  - UAI 2022.
   - CIKM 2022–2024.
   - NOMS 2024 (PDF links only)
-  - MICCAI 2022–2024 (403) and 2021 (404)
   - 3DV 2025 (the awards page lists candidates only) and ACCV 2024 (no award page)
   - WACV (the Computer Vision Foundation's page for it is gone)
   - ACM EC 2025 (the program has a "Best Papers Session" slot with no titles marked) and KR 2025 (no award on the site)
@@ -113,11 +110,9 @@ official page does is left out. The test-of-time rows whose award page omitted t
   - RTSS, RTAS and ECRTS (the IEEE TCRTS best paper page answers a Cloudflare bot block, which is not worked around)
   - DATE 2026 (2005–2025 are read, the earlier years from IEEE CEDA's page from the archive PDFs; 2015's layout interleaves authors and affiliations; none found for the rest)
   - MICCAI's society page (its winners are for the IJCARS journal, not the conference)
-  - ACSAC 2024 (the program names the distinguished-paper session, not the papers), PETS, FPGA, HotOS, RAID, LAK and UMAP (no readable award page, or the site did not answer) and CoNEXT 2025 (a bare front page)
+  - HotOS and LAK (no readable award page, or the site did not answer) and CoNEXT 2025 (a bare front page)
   - ESORICS, CSF, ICSA, Middleware, FC, MMSys, ISMB, GD, AsiaCCS and MSWiM 2025 (no award named on the pages that answered; the rest did not answer or 404; ICSA is researchr-hosted)
   - ICNP 2025 (the visible page shows the winner as an image; the title sits only in an HTML comment, which is not read) and ICDCS (the site answers 406)
-  - WSDM 2022+.
-  - PPoPP 2020, 2021, 2024 and 2025.
   - CGO (a "Distinguished Papers" session whose author lines glue the affiliation to the name)
   - SC past years (finalists only on the program site)
   - SODA (SIAM's pages answer 403)

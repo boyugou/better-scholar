@@ -18,7 +18,7 @@ The totals match an independent third-party extraction of the same PDF. CCF itse
 only the *changes* against the 2022 edition (it states no totals).
 
 Each entry: `kind` (`C` conference / `J` journal), `tier` (`A`/`B`/`C`), `area` (as printed, in
-Chinese), `serial` (as printed), `abbr` (`""` when the PDF prints none — 48 journals), `name`, `publisher`,
+Chinese), `serial` (as printed), `abbr` (`""` when the PDF prints none — 47 journals and one conference, the IEEE World Haptics Conference), `name`, `publisher`,
 `dblp` (the DBLP URL printed per venue), `page`.
 
 ### Why not parse the text layer?

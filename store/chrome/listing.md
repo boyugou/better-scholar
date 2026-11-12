@@ -225,7 +225,7 @@ Note: Google Scholar sometimes answers automated or data-center traffic with a C
 
 - 一般几天，新开发者或敏感权限可能更久；超过三周没消息，联系开发者支持。
 - 页面里的橙色提示“Due to the Host Permission…”是因为我们声明了 187 个 Scholar 域名的访问，会触发更深入的审核，**会拖慢发布，但不是错误**。
-  - 我们的权限理由（Host permission justification）已经写明：只在 Scholar 的 /citations 页面运行，域名清单来自 Google 官方的 supported_domains。
+  - 我们的权限理由（Host permission justification）已经写明：主脚本只在 Scholar 的 /citations 页面运行，另一个小脚本在 Scholar 各页面的 document_start 运行（只处理 /scholar 和 /citations，用于“在…中打开 Scholar”的语言跳转），域名清单来自 Google 官方的 supported_domains。
 - 通知只发邮件，没有状态页。
 - 被拒：邮件会写明违反的政策。可以在 Item 详情页点 **Appeal** 申诉，或改正后重新提交；被拒不会通知用户，已有的版本不变。
 - 不允许混淆代码；压缩过的可以。本扩展的源码没有混淆，也没有构建步骤。

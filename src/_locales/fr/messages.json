@@ -662,7 +662,6 @@
   "optThemeSoft": {
     "message": "Doux"
   },
-
   "markSpotlightHighlight": {
     "message": "Spotlight et highlight"
   },
@@ -694,7 +693,7 @@
     "message": "Lire d’abord les listes d’auteurs sur Semantic Scholar"
   },
   "optSemanticLabelHint": {
-    "message": "Quand vous cliquez sur le bouton « Lire la liste complète », la liste complète des auteurs de chaque article est d’abord demandée à Semantic Scholar. Seul le titre de l’article est envoyé, rien d’autre. La propre page de Scholar n’est ensuite ouverte que pour les articles que Semantic Scholar ne connaît pas. Moins de requêtes vers Scholar, donc moins de CAPTCHA."
+    "message": "Quand vous cliquez sur le bouton « Lire la liste complète », la liste complète des auteurs de chaque article est d’abord demandée à Semantic Scholar. Seul le titre de l’article est envoyé (ainsi que votre clé d’API si vous en avez saisi une), rien d’autre. La propre page de Scholar est ensuite lue en arrière-plan pour les articles que Semantic Scholar ne connaît pas ou pour lesquels il ne répond pas avec le même article, et pour tous les autres dès que Semantic Scholar refuse. Moins de requêtes vers Scholar, donc moins de CAPTCHA."
   },
   "yearsTitle": {
     "message": "Articles mis en évidence par année"
@@ -1116,7 +1115,7 @@
     "message": "Aucune couleur"
   },
   "optSaveFailed": {
-    "message": "Non enregistré : Chrome limite la fréquence à laquelle les réglages peuvent être enregistrés. Patientez un instant, puis réessayez."
+    "message": "Pas encore enregistré : Chrome limite la fréquence à laquelle les réglages peuvent être enregistrés. Il sera de nouveau enregistré dans quelques secondes."
   },
   "optNameTip": {
     "message": "Votre propre nom pour cela, dans toutes les langues. Vide : le nom standard."

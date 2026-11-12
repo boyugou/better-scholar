@@ -662,7 +662,6 @@
   "optThemeSoft": {
     "message": "Łagodny"
   },
-
   "markSpotlightHighlight": {
     "message": "Spotlight i highlight"
   },
@@ -694,7 +693,7 @@
     "message": "Najpierw odczytuj listy autorów z Semantic Scholar"
   },
   "optSemanticLabelHint": {
-    "message": "Po naciśnięciu „Odczytaj pełne listy” rozszerzenie najpierw pyta Semantic Scholar o pełną listę autorów każdej pracy. Semantic Scholar dostaje tylko tytuł pracy i nic więcej. Strona samego Scholar jest otwierana tylko dla prac, których Semantic Scholar nie zna. Mniej zapytań do Scholar oznacza mniej CAPTCHA."
+    "message": "Po naciśnięciu „Odczytaj pełne listy” rozszerzenie najpierw pyta Semantic Scholar o pełną listę autorów każdej pracy. Semantic Scholar dostaje tylko tytuł pracy (oraz klucz API, jeśli został wpisany) i nic więcej. Strona samego Scholar jest odczytywana w tle dla prac, których Semantic Scholar nie zna albo nie odpowiada tą samą pracą, a dla wszystkich pozostałych, gdy Semantic Scholar odmówi. Mniej zapytań do Scholar oznacza mniej CAPTCHA."
   },
   "yearsTitle": {
     "message": "Wyróżnione prace według lat"
@@ -1116,7 +1115,7 @@
     "message": "Bez koloru"
   },
   "optSaveFailed": {
-    "message": "Nie zapisano: Chrome ogranicza, jak często można zapisywać ustawienia. Poczekaj chwilę i zmień ponownie."
+    "message": "Jeszcze nie zapisano: Chrome ogranicza, jak często można zapisywać ustawienia. Zostaną zapisane ponownie za kilka sekund."
   },
   "optNameTip": {
     "message": "Twoja własna nazwa, we wszystkich językach. Puste: nazwa standardowa."

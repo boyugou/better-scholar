@@ -662,7 +662,6 @@
   "optThemeSoft": {
     "message": "Myk"
   },
-
   "markSpotlightHighlight": {
     "message": "Spotlight og highlight"
   },
@@ -694,7 +693,7 @@
     "message": "Les forfatterlister først fra Semantic Scholar"
   },
   "optSemanticLabelHint": {
-    "message": "Når du trykker «Les fulle lister», spør utvidelsen først Semantic Scholar etter hver artikkels fulle forfatterliste. Semantic Scholar får tittelen på artikkelen og ingenting annet. Scholars egen side åpnes bare for artiklene Semantic Scholar ikke kjenner. Færre forespørsler til Scholar betyr færre CAPTCHA-er."
+    "message": "Når du trykker «Les fulle lister», spør utvidelsen først Semantic Scholar etter hver artikkels fulle forfatterliste. Semantic Scholar får tittelen på artikkelen (og API-nøkkelen din, hvis du har skrevet inn en) og ingenting annet. Scholars egen side leses i bakgrunnen for artiklene Semantic Scholar ikke kjenner eller ikke svarer med samme artikkel, og for alle de andre når Semantic Scholar avviser forespørselen. Færre forespørsler til Scholar betyr færre CAPTCHA-er."
   },
   "yearsTitle": {
     "message": "Uthevede artikler per år"
@@ -1116,7 +1115,7 @@
     "message": "Ingen farge"
   },
   "optSaveFailed": {
-    "message": "Ikke lagret: Chrome begrenser hvor ofte innstillinger kan lagres. Vent litt og endre på nytt."
+    "message": "Ikke lagret ennå: Chrome begrenser hvor ofte innstillinger kan lagres. Den lagres på nytt om noen sekunder."
   },
   "optNameTip": {
     "message": "Ditt eget navn for dette, på alle språk. Tomt: standardnavnet."

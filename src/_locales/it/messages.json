@@ -662,7 +662,6 @@
   "optThemeSoft": {
     "message": "Tenue"
   },
-
   "markSpotlightHighlight": {
     "message": "Spotlight e highlight"
   },
@@ -694,7 +693,7 @@
     "message": "Leggi prima gli elenchi degli autori da Semantic Scholar"
   },
   "optSemanticLabelHint": {
-    "message": "Premendo «Leggi elenchi completi», si chiede prima a Semantic Scholar l’elenco completo degli autori di ogni articolo. Viene inviato solo il titolo dell’articolo, nient’altro. La pagina di Scholar stessa viene poi aperta solo per gli articoli che Semantic Scholar non conosce. Meno richieste a Scholar, quindi meno CAPTCHA."
+    "message": "Premendo «Leggi elenchi completi», si chiede prima a Semantic Scholar l’elenco completo degli autori di ogni articolo. Vengono inviati solo il titolo dell’articolo (e la tua chiave API, se l’hai inserita), nient’altro. La pagina di Scholar stessa viene poi letta in background per gli articoli che Semantic Scholar non conosce o per i quali non risponde con lo stesso articolo, e per tutti gli altri una volta che Semantic Scholar rifiuta le richieste. Meno richieste a Scholar, quindi meno CAPTCHA."
   },
   "yearsTitle": {
     "message": "Articoli evidenziati per anno"
@@ -1116,7 +1115,7 @@
     "message": "Nessun colore"
   },
   "optSaveFailed": {
-    "message": "Non salvato: Chrome limita la frequenza con cui si possono scrivere le impostazioni. Attendi un momento e riprova."
+    "message": "Non ancora salvato: Chrome limita la frequenza con cui si possono scrivere le impostazioni. Verrà salvato di nuovo tra pochi secondi."
   },
   "optNameTip": {
     "message": "Il tuo nome per questo, in tutte le lingue. Vuoto: il nome standard."

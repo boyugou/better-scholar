@@ -662,7 +662,6 @@
   "optThemeSoft": {
     "message": "Dịu nhẹ"
   },
-
   "markSpotlightHighlight": {
     "message": "Spotlight & Highlight"
   },
@@ -694,7 +693,7 @@
     "message": "Đọc danh sách tác giả từ Semantic Scholar trước"
   },
   "optSemanticLabelHint": {
-    "message": "Khi nhấn “Đọc danh sách đầy đủ”, trước hết hỏi Semantic Scholar danh sách tác giả đầy đủ của từng bài. Semantic Scholar chỉ nhận tiêu đề bài báo, không nhận gì khác. Trang của Scholar chỉ được mở cho những bài mà Semantic Scholar không biết. Ít yêu cầu gửi đến Scholar nghĩa là ít CAPTCHA hơn."
+    "message": "Khi nhấn “Đọc danh sách đầy đủ”, trước hết hỏi Semantic Scholar danh sách tác giả đầy đủ của từng bài. Semantic Scholar chỉ nhận tiêu đề bài báo (và khóa API nếu bạn đã nhập), không nhận gì khác. Trang của Scholar được đọc ở chế độ nền cho những bài mà Semantic Scholar không biết hoặc trả về một bài khác, và cho tất cả các bài còn lại sau khi Semantic Scholar từ chối. Ít yêu cầu gửi đến Scholar nghĩa là ít CAPTCHA hơn."
   },
   "yearsTitle": {
     "message": "Bài được tô nổi theo năm"
@@ -1116,7 +1115,7 @@
     "message": "Không màu"
   },
   "optSaveFailed": {
-    "message": "Chưa lưu: Chrome giới hạn số lần ghi cài đặt. Hãy đợi một chút rồi thay đổi lại."
+    "message": "Chưa lưu: Chrome giới hạn số lần ghi cài đặt. Thay đổi sẽ được lưu lại sau vài giây."
   },
   "optNameTip": {
     "message": "Tên riêng của bạn cho mục này, dùng cho mọi ngôn ngữ. Để trống: tên chuẩn."

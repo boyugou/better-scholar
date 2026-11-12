@@ -289,8 +289,8 @@ diff is reviewed and `npm run test:update` is run.
 ## Data
 
 `data/ccf-2026.json` is extracted **reproducibly** from CCF's official PDF
-(`scripts/ccf/`, see [`data/README.md`](../data/README.md)); its totals match the published
-catalogue (386 + 295; A 95 / B 245 / C 341). `data/core-2026.json` comes from the ICORE
+(`scripts/ccf/`, see [`data/README.md`](../data/README.md)); its totals match an independent
+extraction of the same PDF (386 + 295; A 95 / B 245 / C 341; CCF publishes no totals). `data/core-2026.json` comes from the ICORE
 export (`scripts/core/build-core.mjs`; 800 ranked conferences). `scripts/build-data.mjs` turns both, and
 `data/awards-2026.json` (11,851 entries), into `src/data/*.js`; a test fails if they are stale.
 `.github/workflows/data-fresh.yml` runs `scripts/check-data-fresh.mjs` every Monday: it fails when the

@@ -662,7 +662,6 @@
   "optThemeSoft": {
     "message": "Blând"
   },
-
   "markSpotlightHighlight": {
     "message": "Spotlight și Highlight"
   },
@@ -694,7 +693,7 @@
     "message": "Citește mai întâi listele de autori din Semantic Scholar"
   },
   "optSemanticLabelHint": {
-    "message": "Când apeși „Citește lista completă”, extensia cere mai întâi de la Semantic Scholar lista completă de autori a fiecărei lucrări. Semantic Scholar primește doar titlul lucrării și nimic altceva. Pagina Scholar se deschide doar pentru lucrările pe care Semantic Scholar nu le cunoaște. Mai puține cereri către Scholar înseamnă mai puține CAPTCHA."
+    "message": "Când apeși „Citește lista completă”, extensia cere mai întâi de la Semantic Scholar lista completă de autori a fiecărei lucrări. Semantic Scholar primește doar titlul lucrării (și cheia ta API, dacă ai introdus-o) și nimic altceva. Pagina Scholar se citește în fundal doar pentru lucrările pe care Semantic Scholar nu le cunoaște sau pentru care răspunde cu o altă lucrare, iar pentru toate celelalte după ce Semantic Scholar refuză. Mai puține cereri către Scholar înseamnă mai puține CAPTCHA."
   },
   "yearsTitle": {
     "message": "Lucrări evidențiate pe an"
@@ -1116,7 +1115,7 @@
     "message": "Fără culoare"
   },
   "optSaveFailed": {
-    "message": "Nesalvat: Chrome limitează cât de des pot fi salvate setările. Așteaptă puțin și modifică din nou."
+    "message": "Nesalvat încă: Chrome limitează cât de des pot fi salvate setările. Modificarea va fi salvată din nou în câteva secunde."
   },
   "optNameTip": {
     "message": "Propriul tău nume pentru asta, în orice limbă. Gol: numele standard."

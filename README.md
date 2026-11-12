@@ -33,7 +33,7 @@ Better Scholar is a free Chrome extension for [Google Scholar](https://scholar.g
 
 A panel beside the list counts your papers by role and by rank. It also shows citation totals and papers by year, and it has a search box and copy buttons.
 
-- **No guesses.** A venue that the lists do not hold for certain gets no chip. The panel lists the venues that neither list holds (a preprint, a track such as a workshop or a demo, a report is counted in the table's "–" column, not listed). The tooltip of each chip names the venue, the rule that found it and the list's edition. You may tie such a venue to a listed one yourself; its chip is then dashed and every copy says "(your mapping)".
+- **No guesses.** A venue that the lists do not hold for certain gets no chip. The panel lists the venues that neither list holds (a preprint, a track such as a workshop or a demo, a report is counted in the table's "–" column, not listed). The tooltip of each chip names the venue, the rule that found it and the list's edition. You may tie such a venue to a listed one yourself; its chip is then dashed and every copy that gives a rank says "(your mapping)".
 - **Private.** No account, no analytics, no tracking. All the work happens in your browser. The only request to a site other than Scholar is the Semantic Scholar lookup, which is off by default.
 - **Open and simple.** Open source (Apache 2.0), with no dependencies and no build step.
 
@@ -160,7 +160,7 @@ Real examples. The middle column is what the lists give; by default the panel dr
 - **Role × rank table**, for CCF or for CORE. Click a cell, a role or a rank to list those papers.
 - **Copy row**: one button for each format that is switched on. See [Copy and export](#copy-and-export).
 - **Awards and talks**: the counts. Click a count to list its papers.
-- **Search and filters**: words and [operators](#search-operators); quick buttons such as *CCF A*, *>100* (citations), *First author*, *Award* and *Last 5 years*, and up to three of your own words; *Only highlighted*; a year range. The table, the award counts and the copied summary count only the papers that the filters leave. (A switch on the settings page turns this off.)
+- **Search and filters**: words and [operators](#search-operators); quick buttons such as *CCF A*, *>100* (citations), *First*, *Awards* and *Last 5 years*, and up to three of your own words; *Only highlighted*; a year range. The table, the award counts and the copied summary count only the papers that the filters leave. (A switch on the settings page turns this off.)
 - **Citation totals**: papers, citations, h-index and i10-index of your highlighted papers, beside the totals of all papers. The **h-index** and **i10-index** buttons list the papers behind the number.
 - **Papers by year**: a bar for each year (at most 50 years), in the role colours. Click a bar to list the papers it counts: your highlighted papers of that year (*From* and *To* list every paper of a range).
 - **Top venues** (off by default): the ranked venues of your highlighted papers, most papers first. Click a venue to list its papers.
@@ -179,7 +179,7 @@ All settings are on one page. A change is saved at once, and open Scholar tabs r
 - **Your own names** for titles, columns, buttons and chip words. A name replaces the translation in every language. Exports, search operators and page calls keep the standard words.
 - **Colours**: five colour themes, or a colour for each role. A colour too light to show on Scholar's white page is drawn a little darker in the row's bar, so that the bar always stands out (3:1, the WCAG minimum for graphics); the row's tint keeps the colour.
 - **Chip looks**: outline, soft, solid or text only; rounded or square; with the list's name or the tier only; a colour for CCF, CORE, awards and talks; six ready-made looks.
-- **Check a venue**: paste a venue line as Scholar prints it. The page shows the CCF and CORE rank, the name it matched and the rule. For a CCF venue it also shows the research area and a link to its DBLP page. When there is no rank, it says why. A line no rule ranks can be tied by you to a listed venue (*Assign it to a listed venue…*): it then gets that venue's rank in every edition of the same name, as *your mapping* — a dashed chip, a status line, "(your mapping)" in every copy — and never over a rank the lists give. The mappings are listed below the box, each with *Remove*.
+- **Check a venue**: paste a venue line as Scholar prints it. The page shows the CCF and CORE rank, the name it matched and the rule. For a CCF venue it also shows the research area and a link to its DBLP page. When there is no rank, it says why. A line no rule ranks can be tied by you to a listed venue (*Assign it to a listed venue…*): it then gets that venue's rank in every edition of the same name, as *your mapping* — a dashed chip, a status line, "(your mapping)" in every copy that gives a rank — and never over a rank the lists give. The mappings are listed below the box, each with *Remove*.
 - **Presets and JSON**: *All features*, *Last author focus*, *First author focus*, *Minimalist*; copy, export, import or edit the configuration as JSON.
 - A search box above the cards filters the settings. `/` jumps to it (a switch turns the key off).
 
@@ -233,7 +233,7 @@ Press `/` on a profile to jump to the search box. (The panel and its filters mus
 | `-` `NOT` | `-crispr`, `NOT crispr`, `-role:first` | Papers without the word, or that the operator does not match. |
 | `OR` | `cas9 OR cas12a` | Either term. Write `OR` in capitals. |
 
-- **A comma means "or".** `role:first,last` is first or last author. `ccf:a,b` is a CCF A or B venue (`ccf:a, b` with a space is the same, and so is `、` or `،` in place of the comma). Separate words must all match. Two quick buttons of the same operator join into one word: *First author* and *Last author* give `role:first,last`.
+- **A comma means "or".** `role:first,last` is first or last author. `ccf:a,b` is a CCF A or B venue (`ccf:a, b` with a space is the same, and so is `、` or `،` in place of the comma). Separate words must all match. Two quick buttons of the same operator join into one word: *First* and *Last* give `role:first,last`.
 - **Errors.** An operator with a value that it does not take (`ccf:x`) matches nothing. The box is then marked, and its tooltip says why. A word with a colon after no operator (`http://…`) is an ordinary word.
 - **Suggestions.** Type an operator's colon (`role:`) to see its values. `↓`, or a click on the `/` hint, shows common searches. `↑` and `↓` choose; `Enter` or `Tab` takes the choice. Without a list, `Enter` jumps to the next matching row and `Shift`+`Enter` to the previous one.
 - `Escape` closes the list, and then clears the box. On the page, `Escape` clears every filter.
@@ -298,7 +298,7 @@ Each format is a button in the panel's copy row and in the toolbar popup. Each h
   - `[J]` for a journal, `[C]//` for proceedings (a number Scholar printed after the name stays there: `Advances in Neural Information Processing Systems 35`), `[P]` for a patent, `[D]` for a thesis, `[R]` for a report, `[M]` for a book from a publisher, `[Z]` for anything else.
   - A journal titled *Proceedings* (PVLDB, *Proceedings of the ACM on …*, PNAS) is `[J]`. A venue line that starts with its year (`2016 IEEE …`, IEEE's title for a meeting) is `[C]`.
 - **Markdown.** Every character that Markdown reads is escaped, so a title cannot become a link or markup.
-- **CSV.** RFC 4180, with a UTF-8 byte-order mark (so that Excel reads non-Latin text) and CRLF line ends. A field with a comma, a quote, a semicolon or a line break is quoted.
+- **CSV.** RFC 4180, with a UTF-8 byte-order mark (so that Excel reads non-Latin text) and CRLF line ends. A line break in a field becomes a space; a field with a comma, a quote or a semicolon is quoted.
 - **Word, Google Docs, Pages.**
   - The table, papers, APA, IEEE, ACM and GB/T 7714 buttons put HTML on the clipboard beside the text. A word processor then pastes a real table (with borders), or a reference list with real italics, a link and a hanging indent. While the panel marks your name in the author lines, your name is in bold in the references (as NSFC's forms and most CVs ask).
   - *Copy as image* puts a picture of the table there instead, with the summary text beside it. The other formats are text only.

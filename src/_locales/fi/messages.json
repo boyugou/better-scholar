@@ -662,7 +662,6 @@
   "optThemeSoft": {
     "message": "Pehmeä"
   },
-
   "markSpotlightHighlight": {
     "message": "Spotlight ja highlight"
   },
@@ -694,7 +693,7 @@
     "message": "Lue ensin kirjoittajaluettelot Semantic Scholarilta"
   },
   "optSemanticLabelHint": {
-    "message": "Kun painat “Lue täydet luettelot”, Semantic Scholarilta kysytään ensin kunkin artikkelin koko kirjoittajaluetteloa. Lähetetään vain artikkelin otsikko, ei muuta. Scholarin oma sivu avataan sen jälkeen vain niille artikkeleille, joita Semantic Scholar ei tunne. Scholarille tehdään vähemmän pyyntöjä, joten CAPTCHA-tarkistuksia tulee vähemmän."
+    "message": "Kun painat “Lue täydet luettelot”, Semantic Scholarilta kysytään ensin kunkin artikkelin koko kirjoittajaluetteloa. Lähetetään vain artikkelin otsikko (ja API-avaimesi, jos olet antanut sellaisen), ei muuta. Scholarin oma sivu luetaan sen jälkeen taustalla vain niille artikkeleille, joita Semantic Scholar ei tunne tai joihin se ei vastaa samalla artikkelilla, ja kaikille muille, kun Semantic Scholar kieltäytyy. Scholarille tehdään vähemmän pyyntöjä, joten CAPTCHA-tarkistuksia tulee vähemmän."
   },
   "yearsTitle": {
     "message": "Korostetut artikkelit vuosittain"
@@ -1116,7 +1115,7 @@
     "message": "Ei väriä"
   },
   "optSaveFailed": {
-    "message": "Ei tallennettu: Chrome rajoittaa asetusten tallennustiheyttä. Odota hetki ja yritä uudelleen."
+    "message": "Ei vielä tallennettu: Chrome rajoittaa asetusten tallennustiheyttä. Se tallennetaan uudelleen muutaman sekunnin kuluttua."
   },
   "optNameTip": {
     "message": "Oma nimesi tälle kaikilla kielillä. Tyhjä: oletusnimi."

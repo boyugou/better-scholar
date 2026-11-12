@@ -962,7 +962,7 @@ A clean rewrite of how settings, copy buttons and agent access work, after an in
 - **Toolbar Popup Feature Parity & Direct Citations**:
   - Elevated the Chrome extension toolbar popup (`src/popup/`):
   - Users can now copy citations in any format (BibTeX, APA, Markdown, JSON, TSV, Summary) directly from the toolbar popup on any active Google Scholar profile without having to scroll the page.
-  - Responsive flex button grid with clean layout and 100% WCAG 2.1 AA contrast compliance in both light and dark themes.
+  - Responsive flex button grid with clean layout and text contrast of 4.5:1 or more in both light and dark themes (checked by test, no WCAG conformance claim).
 - **Verification & Test Suite Expansion**:
   - Expanded unit test suite to 416 tests (`test/metrics.test.js`) covering single/multiple/truncated author handling and formatting.
   - Expanded Playwright E2E test suite (`test/e2e/run.mjs`) verifying clipboard APA copying, agent messaging, and DOM bridge event flow (76/76 checks passing).
@@ -980,7 +980,7 @@ A clean rewrite of how settings, copy buttons and agent access work, after an in
   - Transformed preset selectors into tactile chips (`🎓 Senior author focus`, `🥇 First author focus`, `⚡ Minimalist`).
   - Added global quick search filter with SVG icon, clear button, and `/` shortcut key.
   - Refactored settings update cycle to render DOM synchronously before asynchronous storage write, eliminating latency in preview updates.
-  - Verified 100% WCAG 2.1 AA contrast compliance in both light and dark themes across all 30 languages.
+  - Verified text contrast of 4.5:1 or more in both light and dark themes (checked by test, no WCAG conformance claim) across all 30 languages.
 - **Documentation & Website Visual Synchronization**:
   - Updated high-resolution settings screenshots in `docs/` and synced with READMEs.
   - Rebuilt and deployed static marketing site on `site` and `gh-pages` branches with refreshed UI mockups.
@@ -997,7 +997,7 @@ A clean rewrite of how settings, copy buttons and agent access work, after an in
   - Enhanced `rr:export` extension runtime message handler with `format: "json"`.
 - **Comprehensive Verification**:
   - Expanded E2E tests in `test/e2e/run.mjs` with full assertions for clipboard JSON extraction and real-time DOM CustomEvent bridge communication (75/75 passed).
-  - Maintained 100% test pass rate (415 unit tests) and 0 WCAG 2.1 AAA violations across all themes and locales.
+  - Maintained 100% test pass rate (415 unit tests) and no axe-core violations in the checked themes and locales.
 
 ## 2.35.0 — 2026-10-14
 
@@ -1006,7 +1006,7 @@ A clean rewrite of how settings, copy buttons and agent access work, after an in
   - Clicking any pill toggles the corresponding operator (`ccf:a`, `>100`, `role:first`, `has:award`) into the search query in real time, updating the paper filter instantly while retaining focus for free-text search.
   - Dynamically adapts to active ranking preferences (switches to `CORE A*` when CORE is enabled instead of CCF).
   - Synchronizes active state (`aria-pressed="true"`, `.rr-spill-active`) with manual query input and clears seamlessly on `Escape` or clear.
-  - Fully localized across 30 languages with 100% WCAG 2.1 AAA accessibility compliance.
+  - Fully localized across 30 languages with no axe-core violations in the checked states.
 - **Brand Consistency & User-Agent Modernization**:
   - Modernized metadata across `PRIVACY.md`, `NOTICE`, and all offline award fetchers to Better Scholar.
   - Rebuilt and deployed synchronized 30-language documentation to GitHub Pages.
@@ -1043,7 +1043,7 @@ A clean rewrite of how settings, copy buttons and agent access work, after an in
   - Clicking the **i10-index** row isolates all high-impact papers with $\ge 10$ citations.
   - Seamlessly combines with existing role, ranking (CCF / CORE), year span, and search query filters.
   - The filter bar dynamically shows the active citation threshold (e.g., `≥25 citations`), and clicking the active metric row or clicking the "Clear" button resets the view.
-  - Fully localized across all 30 languages with zero accessibility violations (WCAG 2.1 AAA).
+  - Fully localized across all 30 languages with no axe-core violations in the checked states.
   - Programmatic filtering support added to the agent messaging API (`{ type: "rr:filter", minCitations: N }`).
 
 ## 2.31.0 — 2026-10-14
