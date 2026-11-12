@@ -706,3 +706,11 @@ test("a second read of the exports, 2026-10-30: \"Ii\" after a single given name
   assert.match(f.bibtex([paper({ authors: "Naoki Ii, A B" })]), /^@\w+\{ii2016/);
   assert.equal(f.apaAuthor("RW Heath Jr"), "Heath, R. W., Jr.");
 });
+
+test("a fourteenth review, 2026-11-12: a control character in a title is dropped, not turned into the owner's bold tag in the HTML copies", () => {
+  const p = { id: "x", title: "Deep \u0002learning \u0000x", authors: "A Author, B Writer", me: "B Writer", venue: "Proceedings of the IEEE Conference on Computer Vision, 770-778, 2016", year: 2016 };
+  for (const fn of ["apaHtml", "ieeeHtml", "acmHtml", "gbtHtml"]) {
+    const out = f[fn]([p], { markMe: false });
+    assert.ok(!/&lt;b&gt;|&lt;i&gt;|[\u0000-\u0003]/.test(out) && /Deep\s+learning/.test(out), fn + ": " + out);
+  }
+});

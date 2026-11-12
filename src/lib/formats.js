@@ -15,7 +15,7 @@
 
   const NONE = "none";
   const ROLE_LABEL = { first: "First author", cofirst: "Co-first author", second: "Second author", last: "Last author", middle: "Other positions" };
-  const clean = (s) => String(s == null ? "" : s).replace(/[\r\n\t]+/g, " ").trim();
+  const clean = (s) => String(s == null ? "" : s).replace(/[\u0000-\u001f\u007f]+/g, " ").trim();          // (a control character is no part of a title: \u0002 and \u0003 below mark the owner for the HTML copies)
   const CUT = /^(?:\.\.\.|…)$/;
   // the names of an author line, and whether Scholar cut the list ("A Author, B Writer, …")
   // The owner's place in a reference's author list (`p.me`, the name as the author line prints it), or -1; and the sentinels that mark it for the HTML flavours,

@@ -2796,6 +2796,16 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
       await optsC.bringToFront();
       await optsC.click('[data-act="clear-cache"]');
       await pollPage(optsC, () => chrome.storage.local.get("resolved").then((r) => !r.resolved), null);
+      // (the open page forgets them at once: Read full lists is offered again, and no row keeps a role read from the cleared details)
+      await pg.bringToFront();
+      await eventually(pg, () => document.querySelector('[data-act="resolve"]'));
+      const left = await pg.evaluate((ids) => new Promise((resolve) => {
+        const id = "c" + Math.random();
+        const on = (e) => { if (e.detail.id === id) { document.removeEventListener("better-scholar:response", on); resolve(e.detail.result.papers.filter((p) => ids.includes(p.id) && p.status !== "hidden").length); } };
+        document.addEventListener("better-scholar:response", on);
+        document.dispatchEvent(new CustomEvent("better-scholar:request", { detail: { id, method: "papers", params: { filtered: false } } }));
+      }), first);
+      assert.equal(left, 0, "no cleared paper keeps a role read from its details");
       // more papers, and a second read in the same tab
       await pg.bringToFront();
       await pg.click('[data-act="load-all"]');

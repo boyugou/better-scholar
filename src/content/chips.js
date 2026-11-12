@@ -46,13 +46,25 @@
     if (mark.source === "list") {
       lines.push(t("tipMarkList", [mark.awardLabel || name, mark.venue + " " + mark.year]));
       if (mark.declared) lines.push(t("tipMarkAuthor", [mark.declared]));
+      for (const o of mark.also || []) lines.push(t("tipMarkList", [o.awardLabel || name, o.venue + " " + o.year]));          // (the same kind at another venue: one chip, both named)
     } else lines.push(t("tipMarkAuthor", [mark.text]));
     return h("span", { class: "rr-chip rr-chip-mark rr-chip-mark-" + mark.group, dir: "auto", "data-mark": mark.kind, "data-group": mark.group, "data-source": mark.source,
       ...(MARK_TEXT[mark.kind] ? { "data-rr-label": MARK_TEXT[mark.kind] } : {}), title: lines.join("\n") }, name);
   }
 
+  // A row's chips: a paper's awards of one kind at two venues are one chip (the same words twice say nothing), whose tooltip names both.
+  function markChips(marks) {
+    const out = [], first = new Map();
+    for (const m of marks) {
+      const at = m.source === "list" ? first.get(m.kind) : null;
+      if (at) at.also = [...(at.also || []), m];
+      else { const c = { ...m }; if (m.source === "list") first.set(m.kind, c); out.push(c); }
+    }
+    return out.map(markChip);
+  }
+
   // The kind's name in the interface language, for counts ("Best paper 5 · Honorable mention 47")
   const kindName = (kind) => t(kind === "best-category" ? "mkCategory" : MARK_TEXT[kind] || "mkBest");
 
-  B.chips = { tierChip, ruleText, markChip, markLabel, kindName };
+  B.chips = { tierChip, ruleText, markChip, markChips, markLabel, kindName };
 })();

@@ -201,7 +201,7 @@
       });
       const chips = [], { shown, hidden } = B.prefs.chipLists(prefs, a.venue);
       for (const k of shown) chips.push(chip.tierChip(k, a.venue[k], edition[k], hidden.length ? { kind: hidden[0], info: a.venue[hidden[0]] } : null));
-      for (const m of B.prefs.chipMarks(prefs, a.marks)) chips.push(chip.markChip(m));
+      chips.push(...chip.markChips(B.prefs.chipMarks(prefs, a.marks)));
       if (chips.length) {
         // the chips of a row stay together (they wrap to the next line as one) and start at the text's edge there: a real space before them, no margin
         const space = document.createTextNode(" ");
@@ -744,7 +744,7 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
   // The person's venue mappings changed (the settings page, in any tab): every row is read again
   // The stored paper details were cleared (the settings page): this page forgets them too, and does not write them back
   let freshResolved = () => {};
-  B.store.onResolvedCleared(() => { for (const k of Object.keys(resolvedCache)) delete resolvedCache[k]; freshResolved(); });
+  B.store.onResolvedCleared(() => { for (const k of Object.keys(resolvedCache)) delete resolvedCache[k]; freshResolved(); reanalyze(); refresh(); });          // (the rows go back to the cut lines: "hidden" again, with Read full lists offered)
 
   B.store.onMineChanged((mine) => { resolver = makeResolver(mine); reanalyze(); refresh(); });
 
