@@ -492,6 +492,22 @@
   "ppopp24.sigplan.org": "PPoPP 2024's own site (a SIGPLAN subdomain; researchr)",
   "ppopp25.sigplan.org": "PPoPP 2025's own site (a SIGPLAN subdomain; researchr)",
   "proceedings.mlr.press": "the Proceedings of Machine Learning Research's own site (volume front matter: COLT, UAI, ICML)",
-  "www.learningtheory.org": "the Association for Computational Learning's own site (COLT)"
+  "www.learningtheory.org": "the Association for Computational Learning's own site (COLT)",
+  "2026.euro-par.org": "Euro-Par 2026's own site",
+  "ecai2023.eu": "ECAI 2023's own site",
+  "esem-conferences.org": "the ESEM conference series' own site",
+  "hpdc.sci.utah.edu": "HPDC's own site (the University of Utah hosts the 2025 and 2026 editions)",
+  "ics2022.github.io": "ICS 2022's own site",
+  "icsme2021.github.io": "ICSME 2021's own site",
+  "icsoc2016.servtech.info": "ICSOC 2016's own site (ServTech, ICSOC's steering committee)",
+  "icsoc2021.servtech.info": "ICSOC 2021's own site (ServTech)",
+  "ieee-cas.org": "the IEEE Circuits and Systems Society's own site",
+  "issre2022.github.io": "ISSRE 2022's own site",
+  "sca2018.inria.fr": "SCA 2018's own site",
+  "servtech.info": "ServTech's own site (ICSOC's steering committee)",
+  "www.ecai2024.eu": "ECAI 2024's own site",
+  "www.icpp-conf.org": "ICPP's own site",
+  "www.iscb.org": "the International Society for Computational Biology's own site (ISMB)",
+  "www.program-comprehension.org": "the ICPC conference series' own site"
  }
 }

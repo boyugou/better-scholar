@@ -150,7 +150,7 @@ Real examples. The middle column is what the lists give; by default the panel dr
 
 ### Awards and talks
 
-- **The award list.** The extension holds 11,283 paper awards from official pages: best papers, best student papers, outstanding and distinguished papers, honorable mentions and test-of-time awards. The sources are the ACL Anthology's award data, the Computer Vision Foundation, and the award pages of the conferences and their societies (NeurIPS, ICML, ICLR, CVPR, ICCV, ECCV, ACL, EMNLP, NAACL, AAAI, IJCAI, KDD, SIGCOMM, S&P, CCS, USENIX Security, SIGMOD, VLDB, ICDE, OSDI, SOSP, EuroSys, HPCA, PLDI, POPL, OOPSLA, ICFP, STOC, FOCS, CRYPTO, EUROCRYPT, CHI, IEEE VIS, IEEE VR, AAMAS, ICAPS and many more). A paper matches an award only when the titles are identical, the award's first author is one of the paper's authors and the paper's year fits the award's (for a test-of-time award or its honorable mention, the paper's own year where the award page prints it).
+- **The award list.** The extension holds 11,585 paper awards from official pages: best papers, best student papers, outstanding and distinguished papers, honorable mentions and test-of-time awards. The sources are the ACL Anthology's award data, the Computer Vision Foundation, and the award pages of the conferences and their societies (NeurIPS, ICML, ICLR, CVPR, ICCV, ECCV, ACL, EMNLP, NAACL, AAAI, IJCAI, KDD, SIGCOMM, S&P, CCS, USENIX Security, SIGMOD, VLDB, ICDE, OSDI, SOSP, EuroSys, HPCA, PLDI, POPL, OOPSLA, ICFP, STOC, FOCS, CRYPTO, EUROCRYPT, CHI, IEEE VIS, IEEE VR, AAMAS, ICAPS and many more). A paper matches an award only when the titles are identical, the award's first author is one of the paper's authors and the paper's year fits the award's (for a test-of-time award or its honorable mention, the paper's own year where the award page prints it).
 - **The authors' own words.** The extension reads award words (Best Paper, Outstanding Paper, Test of Time, a best-paper finalist) and the talk kinds Oral, Spotlight and Highlight in the title or the venue line. Its rules leave ordinary words alone: *Oral Oncology* is a journal.
 
 ## Features
@@ -364,7 +364,7 @@ What the extension is made of, counted from its code and its data. Nothing here 
 | **2,500+** · **1,100+** | name forms and acronyms that the matcher looks up | the keys of its indexes |
 | **50+** | venues that the two lists name differently; a match in one list brings the other list's rank | `idx.partners` |
 | **5 · 27** | recognition stages (name, journal word set, acronym, start of a cut name, name with subtitle) and guards that stop a weaker reading from beating a stronger one | the labelled stages of `src/lib/venues.js` and the guard table of `docs/ARCHITECTURE.md` |
-| **7,728** | award-winning papers, plus 3,406 with an honorable mention or a runner-up place (11,283 awards in all), from 262 venues and series, 1990–2026 | `src/data/awards.js` |
+| **8,009** | award-winning papers, plus 3,426 with an honorable mention or a runner-up place (11,585 awards in all), from 268 venues and series, 1990–2026 | `src/data/awards.js` |
 | **22,744** | real venue lines from Scholar; each result was looked at and recorded | `test/fixtures/venues.expected.json` |
 | **600+ · 100+ · 16** | unit tests, end-to-end checks in Chromium with the extension loaded, and checks of the web demo | `test/*.test.js`, `test/e2e/` |
 | **0** | dependencies, and no build step | `package.json` |

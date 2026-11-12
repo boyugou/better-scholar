@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 11283
+  "count": 11587
  },
  "entries": [
   {
@@ -74152,6 +74152,115 @@
   },
   {
    "venue": "ECAI",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper for AI in Social Good",
+   "title": "Attention Based Models for Cell Type Classification on Single-Cell RNA-Seq Data",
+   "authors": [
+    "Tianxu Wang",
+    "Yue Fan",
+    "Xiuli Ma"
+   ],
+   "track": "main",
+   "source": "https://ecai2023.eu/bpa",
+   "evidence": "Outstanding Paper for AI in Social Good Paper ID Title Authors 569 Attention Based Models for Cell Type Classification on Single-Cell RNA-Seq Data Tianxu Wang, Yue Fan, Xiuli Ma"
+  },
+  {
+   "venue": "ECAI",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Selective Learning for Sample-Efficient Training in Multi-Agent Sparse Reward Tasks",
+   "authors": [
+    "Xinning Chen",
+    "Xuan Liu",
+    "Yanwen Ba",
+    "Shigeng Zhang",
+    "Bo Ding",
+    "Kenli Li"
+   ],
+   "track": "main",
+   "source": "https://ecai2023.eu/bpa",
+   "evidence": "ECAI 2023 Outstanding Papers Paper ID Title Authors 1115 Selective Learning for Sample-Efficient Training in Multi-Agent Sparse Reward Tasks Xinning Chen, Xuan Liu, Yanwen Ba, Shigeng Zhang, Bo Ding, Kenli Li"
+  },
+  {
+   "venue": "ECAI",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Theoretical remarks on feudal hierarchies and reinforcement learning",
+   "authors": [
+    "Diogo S Carvalho",
+    "Francisco S. Melo",
+    "Pedro A Santos"
+   ],
+   "track": "main",
+   "source": "https://ecai2023.eu/bpa",
+   "evidence": "ECAI 2023 Outstanding Papers Paper ID Title Authors 1262 Theoretical remarks on feudal hierarchies and reinforcement learning Diogo S Carvalho, Francisco S. Melo, Pedro A Santos"
+  },
+  {
+   "venue": "ECAI",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "FairCognizer: A Model for Accurate Predictions with Inherent Fairness Evaluation",
+   "authors": [
+    "Adda-Akram Bendoukha",
+    "Nesrine Kaaniche",
+    "Aymen Boudguiga",
+    "Renaud Sirdey"
+   ],
+   "track": "main",
+   "source": "https://www.ecai2024.eu/awards/outstanding-paper-awards",
+   "evidence": "Outstanding Paper Awards Each of the following three papers is the winner of an ECAI Outstanding Paper Award: FairCognizer: A Model for Accurate Predictions with Inherent Fairness Evaluation Adda-Akram Bendoukha, Nesrine Kaaniche, Aymen Boudguiga and Renaud Sirdey"
+  },
+  {
+   "venue": "ECAI",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Improving Calibration by Relating Focal Loss, Temperature Scaling, and Properness",
+   "authors": [
+    "Viacheslav Komisarenko",
+    "Meelis Kull"
+   ],
+   "track": "main",
+   "source": "https://www.ecai2024.eu/awards/outstanding-paper-awards",
+   "evidence": "Outstanding Paper Awards Each of the following three papers is the winner of an ECAI Outstanding Paper Award: Improving Calibration by Relating Focal Loss, Temperature Scaling, and Properness Viacheslav Komisarenko and Meelis Kull"
+  },
+  {
+   "venue": "ECAI",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "PAIS Outstanding Paper Award",
+   "title": "More (Enough) Is Better: Towards Few-Shot Illegal Landfill Waste Segmentation",
+   "authors": [
+    "Matias Molina",
+    "Carlos Ferreira",
+    "Bruno Veloso",
+    "Rita P. Ribeiro",
+    "João Gama"
+   ],
+   "track": "main",
+   "source": "https://www.ecai2024.eu/awards/outstanding-paper-awards",
+   "evidence": "And the following paper is the winner of the PAIS Outstanding Paper Award: More (Enough) Is Better: Towards Few-Shot Illegal Landfill Waste Segmentation Matias Molina, Carlos Ferreira, Bruno Veloso, Rita P. Ribeiro and João Gama"
+  },
+  {
+   "venue": "ECAI",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Scale-Adaptive Balancing of Exploration and Exploitation in Classical Planning",
+   "authors": [
+    "Stephen Wissow",
+    "Masataro Asai"
+   ],
+   "track": "main",
+   "source": "https://www.ecai2024.eu/awards/outstanding-paper-awards",
+   "evidence": "Outstanding Paper Awards Each of the following three papers is the winner of an ECAI Outstanding Paper Award: Scale-Adaptive Balancing of Exploration and Exploitation in Classical Planning Stephen Wissow and Masataro Asai"
+  },
+  {
+   "venue": "ECAI",
    "year": 2025,
    "award": "outstanding",
    "awardLabel": "Outstanding Paper Award",
@@ -80590,6 +80699,521 @@
    "evidence": "32nd ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering (ESEC/FSE 2023): Chenyang Ma, Wei Song, Jeff Huang: TransRacer: Function Dependence-Guided Transaction Race Detection for Smart Contracts"
   },
   {
+   "venue": "ESEM",
+   "year": 2008,
+   "award": "distinguished",
+   "awardLabel": "ACM SIGSOFT Distinguished Paper",
+   "title": "Socio-Technical Congruence: A Framework for Assessing the Impact of Technical and Work Dependencies on Software Development Productivity",
+   "authors": [
+    "Marcelo Cataldo",
+    "James D. Herbsleb",
+    "Kathleen M. Carley"
+   ],
+   "track": "main",
+   "source": "https://www2.sigsoft.org/awards/distinguishedpaper/",
+   "evidence": "Distinguished Paper Award … The 2nd International Symposium on Empirical Software Engineering and Measurement (ESEM 2008) October 9-10, 2008, Kaiserslautern, Germany Marcelo Cataldo, James D. Herbsleb and Kathleen M. Carley, Socio-Technical Congruence: A Framework for Assessing the Impact of Technical and Work Dependencies on Software Development Productivity"
+  },
+  {
+   "venue": "ESEM",
+   "year": 2009,
+   "award": "distinguished",
+   "awardLabel": "ACM SIGSOFT Distinguished Paper",
+   "title": "Using Differences among Replications of Software Engineering Experiments to Gain Knowledge",
+   "authors": [
+    "Natalia Juristo",
+    "Sira Vegas"
+   ],
+   "track": "main",
+   "source": "https://www2.sigsoft.org/awards/distinguishedpaper/",
+   "evidence": "Distinguished Paper Award … The 3rd International Symposium on Empirical Software Engineering and Measurement (ESEM 2009) October 15-16, 2009, Lake Buena Vista, FL, USA Natalia Juristo and Sira Vegas, Using Differences among Replications of Software Engineering Experiments to Gain Knowledge"
+  },
+  {
+   "venue": "ESEM",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "Best Full Papers",
+   "title": "Are Developers Complying with the Process: An XP Study",
+   "authors": [
+    "Nico Zazworka",
+    "Kai Stapel",
+    "Eric Knauss",
+    "Forrest Shull",
+    "Victor Basili",
+    "Kurt Schneider"
+   ],
+   "track": "main",
+   "source": "https://esem-conferences.org/best_papers.php",
+   "evidence": "ESEM Best Paper Awards … 2010 Best Full Papers: … Nico Zazworka, Kai Stapel, Eric Knauss, Forrest Shull, Victor Basili and Kurt Schneider. Are Developers Complying with the Process: An XP Study"
+  },
+  {
+   "venue": "ESEM",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "Best Full Papers",
+   "title": "Transition from a Plan-Driven Process to Scrum - A Longitudinal Case Study on Software Quality",
+   "authors": [
+    "Jingyue Li",
+    "Nils B. Moe",
+    "Tore Dyb"
+   ],
+   "track": "main",
+   "source": "https://esem-conferences.org/best_papers.php",
+   "evidence": "ESEM Best Paper Awards … 2010 Best Full Papers: … Jingyue Li, Nils B. Moe and Tore Dyb. Transition from a Plan-Driven Process to Scrum - A Longitudinal Case Study on Software Quality"
+  },
+  {
+   "venue": "ESEM",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "Best Full Papers",
+   "title": "Trust Dynamics in Global Software Engineering",
+   "authors": [
+    "Samireh Jalali",
+    "Cigdem Gencel",
+    "Darja Smite"
+   ],
+   "track": "main",
+   "source": "https://esem-conferences.org/best_papers.php",
+   "evidence": "ESEM Best Paper Awards … 2010 Best Full Papers: Samireh Jalali, Cigdem Gencel and Darja Smite. Trust Dynamics in Global Software Engineering"
+  },
+  {
+   "venue": "ESEM",
+   "year": 2010,
+   "award": "category",
+   "awardLabel": "Best Short Paper",
+   "title": "Data Accumulation and Software Effort Prediction",
+   "authors": [
+    "Stephen MacDonell",
+    "Martin Shepperd"
+   ],
+   "track": "main",
+   "source": "https://esem-conferences.org/best_papers.php",
+   "evidence": "ESEM Best Paper Awards … 2010 … Best Short Paper: Stephen MacDonell and Martin Shepperd. Data Accumulation and Software Effort Prediction"
+  },
+  {
+   "venue": "ESEM",
+   "year": 2011,
+   "award": "category",
+   "awardLabel": "IEEE Software award for the best paper in the industry experience track",
+   "title": "Scrum + Engineering Practices: Experiences of Three Microsoft Teams",
+   "authors": [
+    "Laurie Williams",
+    "Gabe Brown",
+    "Adam Meltzer",
+    "Nachiappan Nagappan"
+   ],
+   "track": "main",
+   "source": "https://esem-conferences.org/best_papers.php",
+   "evidence": "ESEM Best Paper Awards … 2011 … IEEE Software sponsored an award for the best paper in the industry experience track. … The winning paper was: \"Scrum + Engineering Practices: Experiences of Three Microsoft Teams\" by Laurie Williams, Gabe Brown, Adam Meltzer, Nachiappan Nagappan"
+  },
+  {
+   "venue": "ESEM",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best Full Paper",
+   "title": "Experimental Assessment of Software Metrics using Automated Refactoring",
+   "authors": [
+    "Mel Cinnide",
+    "Laurence Tratt",
+    "Mark Harman",
+    "Steven Counsell",
+    "Iman Hemati Moghadam"
+   ],
+   "track": "main",
+   "source": "https://esem-conferences.org/best_papers.php",
+   "evidence": "ESEM Best Paper Awards … 2012 Best Full Paper: Experimental Assessment of Software Metrics using Automated Refactoring; Mel Cinnide, Laurence Tratt, Mark Harman, Steven Counsell and Iman Hemati Moghadam."
+  },
+  {
+   "venue": "ESEM",
+   "year": 2012,
+   "award": "category",
+   "awardLabel": "Best Short Paper",
+   "title": "Handling Categorical Variables in Effort Estimation",
+   "authors": [
+    "Masateru Tsunoda",
+    "Sousuke Amasaki",
+    "Akito Monden"
+   ],
+   "track": "main",
+   "source": "https://esem-conferences.org/best_papers.php",
+   "evidence": "ESEM Best Paper Awards … 2012 … Best Short Paper: Handling Categorical Variables in Effort Estimation; Masateru Tsunoda, Sousuke Amasaki and Akito Monden"
+  },
+  {
+   "venue": "ESEM",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Full Paper",
+   "title": "Benchmarking Usability and Performance of Multicore Languages",
+   "authors": [
+    "Sebastian Nanz",
+    "Scott West",
+    "Kaue Soares Da Silveira",
+    "Bertrand Meyer"
+   ],
+   "track": "main",
+   "source": "https://esem-conferences.org/best_papers.php",
+   "evidence": "ESEM Best Paper Awards … 2013 … Best Full Paper: Sebastian Nanz, Scott West, Kaue Soares Da Silveira and Bertrand Meyer. Benchmarking Usability and Performance of Multicore Languages."
+  },
+  {
+   "venue": "ESEM",
+   "year": 2013,
+   "award": "category",
+   "awardLabel": "Best Short Paper",
+   "title": "Evaluating software product metrics with synthetic defect data",
+   "authors": [
+    "Jeffrey Stuckman",
+    "Kent Wills",
+    "James Purtilo"
+   ],
+   "track": "main",
+   "source": "https://esem-conferences.org/best_papers.php",
+   "evidence": "ESEM Best Paper Awards … 2013 … Best Short Paper: Jeffrey Stuckman, Kent Wills and James Purtilo. Evaluating software product metrics with synthetic defect data."
+  },
+  {
+   "venue": "ESEM",
+   "year": 2013,
+   "award": "category",
+   "awardLabel": "Best Industry Paper",
+   "title": "Towards a Metric Suite Proposal to Quantify Confirmation Biases of Developers",
+   "authors": [
+    "Gul Calikli",
+    "Ayse Bener",
+    "Turgay Aytac",
+    "Ovunc Bozcan"
+   ],
+   "track": "main",
+   "source": "https://esem-conferences.org/best_papers.php",
+   "evidence": "ESEM Best Paper Awards … 2013 … Best Industry Track Paper: Gul Calikli, Ayse Bener, Turgay Aytac and Ovunc Bozcan. Towards a Metric Suite Proposal to Quantify Confirmation Biases of Developers."
+  },
+  {
+   "venue": "ESEM",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Full Paper",
+   "title": "Discovering Buffer Overflow Vulnerabilities In The Wild: An Empirical Study",
+   "authors": [
+    "Ming Fang",
+    "Munawar Hafiz"
+   ],
+   "track": "main",
+   "source": "https://esem-conferences.org/best_papers.php",
+   "evidence": "ESEM Best Paper Awards … 2014 … Best Full Paper: Ming Fang and Munawar Hafiz. \"Discovering Buffer Overflow Vulnerabilities In The Wild: An Empirical Study\" ."
+  },
+  {
+   "venue": "ESEM",
+   "year": 2014,
+   "award": "category",
+   "awardLabel": "Best Short Paper",
+   "title": "Evaluating strategies for study selection in systematic literature studies",
+   "authors": [
+    "Nauman Bin Ali",
+    "Kai Petersen"
+   ],
+   "track": "main",
+   "source": "https://esem-conferences.org/best_papers.php",
+   "evidence": "ESEM Best Paper Awards … 2014 … Best Short Paper: Nauman Bin Ali and Kai Petersen. \"Evaluating strategies for study selection in systematic literature studies\" ."
+  },
+  {
+   "venue": "ESEM",
+   "year": 2014,
+   "award": "category",
+   "awardLabel": "Best Industry Paper",
+   "title": "Networking in a Large-Scale Distributed Agile Project",
+   "authors": [
+    "Nils Brede Moe",
+    "Darja Smite",
+    "Aivars Sablis",
+    "Anne-Lie Brjesson",
+    "Pia Andrasson"
+   ],
+   "track": "main",
+   "source": "https://esem-conferences.org/best_papers.php",
+   "evidence": "ESEM Best Paper Awards … 2014 … Best Industry Track Paper: Nils Brede Moe, Darja Smite, Aivars Sablis, Anne-Lie Brjesson and Pia Andrasson. \"Networking in a Large-Scale Distributed Agile Project\" ."
+  },
+  {
+   "venue": "ESEM",
+   "year": 2014,
+   "award": "category",
+   "awardLabel": "Best Short Paper",
+   "title": "Towards a Framework to Support Large Scale Sampling in Software Engineering Surveys",
+   "authors": [
+    "Rafael Mello",
+    "Pedro Silva",
+    "Per Runeson",
+    "Guilherme Travassos"
+   ],
+   "track": "main",
+   "source": "https://esem-conferences.org/best_papers.php",
+   "evidence": "ESEM Best Paper Awards … 2014 … Best Short Paper: Rafael Mello, Pedro Silva, Per Runeson and Guilherme Travassos. \"Towards a Framework to Support Large Scale Sampling in Software Engineering Surveys\"."
+  },
+  {
+   "venue": "ESEM",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Full Paper",
+   "title": "Don't Call Us, We'll Call You: Characterizing Callbacks in JavaScript",
+   "authors": [
+    "Keheliya Gallaba",
+    "Ali Mesbah",
+    "Ivan Beschastnikh"
+   ],
+   "track": "main",
+   "source": "https://esem-conferences.org/best_papers.php",
+   "evidence": "ESEM Best Paper Awards … 2015 … Best Full Paper: Keheliya Gallaba, Ali Mesbah, and Ivan Beschastnikh. Don't Call Us, We'll Call You: Characterizing Callbacks in JavaScript."
+  },
+  {
+   "venue": "ESEM",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Full Paper",
+   "title": "How to Make Best Use of Cross-Company Data for Web Effort Estimation?",
+   "authors": [
+    "Leandro Minku",
+    "Federica Sarro",
+    "Emilia Mendes",
+    "Filomena Ferrucci"
+   ],
+   "track": "main",
+   "source": "https://esem-conferences.org/best_papers.php",
+   "evidence": "ESEM Best Paper Awards … 2015 … Best Full Paper: Leandro Minku, Federica Sarro, Emilia Mendes, and Filomena Ferrucci. How to Make Best Use of Cross-Company Data for Web Effort Estimation?"
+  },
+  {
+   "venue": "ESEM",
+   "year": 2015,
+   "award": "category",
+   "awardLabel": "Best Short Paper",
+   "title": "An Exploratory Study on the Evolution of C Programming in the Unix Operating System",
+   "authors": [
+    "Diomidis Spinellis",
+    "Panagiotis Louridas",
+    "Maria Kechagia"
+   ],
+   "track": "main",
+   "source": "https://esem-conferences.org/best_papers.php",
+   "evidence": "ESEM Best Paper Awards … 2015 … Best Short Paper: - Diomidis Spinellis, Panagiotis Louridas, and Maria Kechagia. An Exploratory Study on the Evolution of C Programming in the Unix Operating System."
+  },
+  {
+   "venue": "ESEM",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Full Paper",
+   "title": "An External Replication on the Effects of Test-driven Development Using Blind Analysis",
+   "authors": [
+    "Davide Fucci",
+    "Giuseppe Scanniello",
+    "Simone Romano",
+    "Martin Shepperd",
+    "Boyce Sigweni",
+    "Fernando Uyaguari",
+    "Burak Turhan",
+    "Natalia Juristo",
+    "Markku Oivo"
+   ],
+   "track": "main",
+   "source": "https://esem-conferences.org/best_papers.php",
+   "evidence": "ESEM Best Paper Awards … 2016 … Best Full Paper: Davide Fucci, Giuseppe Scanniello, Simone Romano, Martin Shepperd, Boyce Sigweni, Fernando Uyaguari, Burak Turhan, Natalia Juristo and Markku Oivo. An External Replication on the Effects of Test-driven Development Using Blind Analysis."
+  },
+  {
+   "venue": "ESEM",
+   "year": 2016,
+   "award": "category",
+   "awardLabel": "Best Industry Paper",
+   "title": "Experiences from Measuring Learning Potential and Performance in Large-Scale Distributed Software Development",
+   "authors": [
+    "Ricardo Britto",
+    "Darja Smite",
+    "Lars-Ola Damm"
+   ],
+   "track": "main",
+   "source": "https://esem-conferences.org/best_papers.php",
+   "evidence": "ESEM Best Paper Awards … 2016 … Best Industry Paper: Ricardo Britto, Darja Smite and Lars-Ola Damm. Experiences from Measuring Learning Potential and Performance in Large-Scale Distributed Software Development."
+  },
+  {
+   "venue": "ESEM",
+   "year": 2016,
+   "award": "category",
+   "awardLabel": "Best Short Paper",
+   "title": "Using Forward Snowballing to update Systematic Reviews in Software Engineering",
+   "authors": [
+    "Katia Romero Felizardo",
+    "Emilia Mendes",
+    "Marcos Kalinowski",
+    "Erica Ferreira Souza",
+    "Nandamudi Vijaykumar"
+   ],
+   "track": "main",
+   "source": "https://esem-conferences.org/best_papers.php",
+   "evidence": "ESEM Best Paper Awards … 2016 … Best Short Paper: Katia Romero Felizardo, Emilia Mendes, Marcos Kalinowski, Erica Ferreira Souza and Nandamudi Vijaykumar. Using Forward Snowballing to update Systematic Reviews in Software Engineering"
+  },
+  {
+   "venue": "ESEM",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Full Paper",
+   "title": "An empirical analysis of FLOSS repositories to compare One-Time Contributors to Core and Periphery Developers",
+   "authors": [
+    "Amanda Lee",
+    "Jeffrey Carver"
+   ],
+   "track": "main",
+   "source": "https://esem-conferences.org/best_papers.php",
+   "evidence": "ESEM Best Paper Awards … 2017 … Best Full Paper: Amanda Lee and Jeffrey Carver. An empirical analysis of FLOSS repositories to compare One-Time Contributors to Core and Periphery Developers."
+  },
+  {
+   "venue": "ESEM",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Full Paper",
+   "title": "Early Phase Cost Models for Agile Software Processes in the US DoD",
+   "authors": [
+    "Wilson Rosa",
+    "Raymond Madachy",
+    "Bradford Clark",
+    "Barry Boehm"
+   ],
+   "track": "main",
+   "source": "https://esem-conferences.org/best_papers.php",
+   "evidence": "ESEM Best Paper Awards … 2017 … Best Full Paper: Wilson Rosa, Raymond Madachy, Bradford Clark and Barry Boehm. Early Phase Cost Models for Agile Software Processes in the US DoD."
+  },
+  {
+   "venue": "ESEM",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Full Paper",
+   "title": "REACT: An Approach for Capturing Rationale in Chat Messages",
+   "authors": [
+    "Rana Alkadhi",
+    "Jan Ole Johanssen",
+    "Emitza Guzman",
+    "Bernd Bruegge"
+   ],
+   "track": "main",
+   "source": "https://esem-conferences.org/best_papers.php",
+   "evidence": "ESEM Best Paper Awards … 2017 … Best Full Paper: Rana Alkadhi, Jan Ole Johanssen, Emitza Guzman and Bernd Bruegge. REACT: An Approach for Capturing Rationale in Chat Messages."
+  },
+  {
+   "venue": "ESEM",
+   "year": 2017,
+   "award": "category",
+   "awardLabel": "Highly Commended Full Paper",
+   "title": "Quantifying the Transition from Python 2 to 3: An Empirical Study of Python Applications",
+   "authors": [
+    "Brian Malloy",
+    "James Power"
+   ],
+   "track": "main",
+   "source": "https://esem-conferences.org/best_papers.php",
+   "evidence": "ESEM Best Paper Awards … 2017 … Highly Commended Full Paper: Brian Malloy and James Power. Quantifying the Transition from Python 2 to 3: An Empirical Study of Python Applications."
+  },
+  {
+   "venue": "ESEM",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Full Paper",
+   "title": "Comparing Techniques for Aggregating Interrelated Replications in Software Engineering",
+   "authors": [
+    "Adrian Santos Parrilla",
+    "Natalia Juristo"
+   ],
+   "track": "main",
+   "source": "https://esem-conferences.org/best_papers.php",
+   "evidence": "ESEM Best Paper Awards … 2018 … Best Full Paper: Adrian Santos Parrilla and Natalia Juristo. Comparing Techniques for Aggregating Interrelated Replications in Software Engineering."
+  },
+  {
+   "venue": "ESEM",
+   "year": 2018,
+   "award": "category",
+   "awardLabel": "Best Emerging Results Paper",
+   "title": "What if a Bug has a Different Origin? Making Sense of Bugs Without an Explicit Bug Introducing Change",
+   "authors": [
+    "Gema Rodriguez",
+    "Andy Zaidman",
+    "Alexander Serebrenik",
+    "Gregorio Robles",
+    "Jesus M. Gonzalez-Barahona"
+   ],
+   "track": "main",
+   "source": "https://esem-conferences.org/best_papers.php",
+   "evidence": "ESEM Best Paper Awards … 2018 … Best Emerging Results paper (short paper 1): Gema Rodriguez, Andy Zaidman, Alexander Serebrenik, Gregorio Robles and Jesus M. Gonzalez-Barahona. What if a Bug has a Different Origin? Making Sense of Bugs Without an Explicit Bug Introducing Change"
+  },
+  {
+   "venue": "ESEM",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Full Paper",
+   "title": "An Empirical Validation of Cognitive Complexity as a Measure of Source Code Understandability",
+   "authors": [
+    "Marvin Muñoz Barón",
+    "Marvin Wyrich",
+    "Stefan Wagner"
+   ],
+   "track": "main",
+   "source": "https://esem-conferences.org/best_papers.php",
+   "evidence": "ESEM Best Paper Awards … 2020 … Best Full Paper: Marvin Muñoz Barón, Marvin Wyrich and Stefan Wagner. An Empirical Validation of Cognitive Complexity as a Measure of Source Code Understandability."
+  },
+  {
+   "venue": "ESEM",
+   "year": 2020,
+   "award": "category",
+   "awardLabel": "Best Emerging Results Paper",
+   "title": "Beyond Accuracy: ROI-driven Data Analytics of Empirical Data",
+   "authors": [
+    "Gouri Deshpande",
+    "Guenther Ruhe"
+   ],
+   "track": "main",
+   "source": "https://esem-conferences.org/best_papers.php",
+   "evidence": "ESEM Best Paper Awards … 2020 … Best Emerging Results Paper: Gouri Deshpande and Guenther Ruhe. Title: Beyond Accuracy: ROI-driven Data Analytics of Empirical Data."
+  },
+  {
+   "venue": "ESEM",
+   "year": 2020,
+   "award": "category",
+   "awardLabel": "Best Industry Paper",
+   "title": "What Makes Agile Test Artifacts Useful? An Activity-Based Quality Model from a Practitioners' Perspective",
+   "authors": [
+    "Jannik Fischbach",
+    "Henning Femmer",
+    "Daniel Mendéz",
+    "Davide Fucci",
+    "Andreas Vogelsang"
+   ],
+   "track": "main",
+   "source": "https://esem-conferences.org/best_papers.php",
+   "evidence": "ESEM Best Paper Awards … 2020 … Best Industry Paper: Jannik Fischbach, Henning Femmer, Daniel Mendéz, Davide Fucci and Andreas Vogelsang. Title: What Makes Agile Test Artifacts Useful? An Activity-Based Quality Model from a Practitioners' Perspective."
+  },
+  {
+   "venue": "ESEM",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Full Paper",
+   "title": "Tackling Consistency-related Design Challenges of Distributed Data-Intensive Systems: An Action Research Study",
+   "authors": [
+    "Susanne Braun",
+    "Stefan Deßloch",
+    "Eberhard Wolff",
+    "Frank Elberzhager",
+    "Andreas Jedlitschka"
+   ],
+   "track": "main",
+   "source": "https://esem-conferences.org/best_papers.php",
+   "evidence": "ESEM Best Paper Awards … 2021 … Best Full Paper: Susanne Braun, Stefan Deßloch, Eberhard Wolff, Frank Elberzhager, Andreas Jedlitschka: Tackling Consistency-related Design Challenges of Distributed Data-Intensive Systems: An Action Research Study"
+  },
+  {
+   "venue": "ESEM",
+   "year": 2021,
+   "award": "category",
+   "awardLabel": "Best Emerging Results Paper",
+   "title": "Contextual Understanding and Improvement of Metamorphic Testing in Scientific Software Development",
+   "authors": [
+    "Zedong Peng",
+    "Upulee Kanewala",
+    "Nan Niu"
+   ],
+   "track": "main",
+   "source": "https://esem-conferences.org/best_papers.php",
+   "evidence": "ESEM Best Paper Awards … 2021 … Best Emerging Results Paper: Zedong Peng, Upulee Kanewala, Nan Niu.Contextual Understanding and Improvement of Metamorphic Testing in Scientific Software Development"
+  },
+  {
    "venue": "ESOP",
    "year": 2014,
    "award": "best",
@@ -81439,6 +82063,20 @@
    "track": "main",
    "source": "https://2020.euro-par.org/program/conference",
    "evidence": "Best paper (A) [ Slack channel ] Chairs: Morris Riedel Maximizing I/O Bandwidth for Reverse Time Migration on Heterogeneous Large-Scale Systems Tariq Alturkestani, Hatem Ltaief and David Keyes"
+  },
+  {
+   "venue": "Euro-Par",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Accelerating Sharded Data Parallelism at Scale with Federated Learning",
+   "authors": [
+    "Gianluca Mittone",
+    "Marco Aldinucci"
+   ],
+   "track": "main",
+   "source": "https://2026.euro-par.org/program/awards",
+   "evidence": "Thanks to Springer for supporting the following Best Paper, Best Artifact, Best PhD Symposium paper, Best Poster awards: Best Paper Award \" Accelerating Sharded Data Parallelism at Scale with Federated Learning ” Gianluca Mittone and Marco Aldinucci"
   },
   {
    "venue": "EUROCRYPT",
@@ -90651,6 +91289,22 @@
    "paperYear": 2007,
    "source": "https://ieeetcca.org/awards/hpca-test-of-time-award/",
    "evidence": "HPCA 2026 Test of Time Award: Colby Ranger; Ramanan Raghuraman; Arun Penmetsa; Gary Bradski; Christos Kozyrakis “Evaluating MapReduce for Multi-core and Multiprocessor Systems”"
+  },
+  {
+   "venue": "HPDC",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Winner",
+   "title": "Pome: Parallelizing I/Os and Computations for LSM-tree Storage",
+   "authors": [
+    "Yanpeng Hu",
+    "Li Zhu",
+    "Lei Jia",
+    "Chundong Wang"
+   ],
+   "track": "main",
+   "source": "https://hpdc.sci.utah.edu/2026/program.html",
+   "evidence": "Pome: Parallelizing I/Os and Computations for LSM-tree Storage (Best Paper Winner) Authors: Yanpeng Hu , Li Zhu , Lei Jia , Chundong Wang"
   },
   {
    "venue": "HRI",
@@ -100738,6 +101392,36 @@
    "evidence": "Best Student Paper Award “TexTAR : Textual Attribute Recognition in Multi-domain and Multi-lingual Document Images” Rohan Kumar (IIIT Hyderabad), Jyothi Swaroopa Jinka (IIIT Hyderabad), Ravi Kiran Sarvadevabhatla (IIIT Hyderabad)"
   },
   {
+   "venue": "ICDCS",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "ICDCS High Impact Paper Award",
+   "title": "Condor – A Hunter of Idle Workstations",
+   "authors": [
+    "Michael J. Litzkow",
+    "Miron Livny",
+    "Matt W. Mutka"
+   ],
+   "track": "main",
+   "paperYear": 1988,
+   "source": "https://tc.computer.org/tcdp/awardrecipients/",
+   "evidence": "2020 IEEE TDCP ICDCS High Impact Paper Award The committee decided to award the following two ICDCS High Impact Papers to Michael J. Litzkow, Miron Livny and Matt W. Mutka for their paper entitled “Condor – A Hunter of Idle Workstations” in ICDCS 1988."
+  },
+  {
+   "venue": "ICDCS",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "ICDCS High Impact Paper Award",
+   "title": "Scheduling Techniques for Concurrent Systems",
+   "authors": [
+    "John Ousterhout"
+   ],
+   "track": "main",
+   "paperYear": 1982,
+   "source": "https://tc.computer.org/tcdp/awardrecipients/",
+   "evidence": "2020 IEEE TDCP ICDCS High Impact Paper Award The committee decided to award the following two ICDCS High Impact Papers to John Ousterhout, for his paper entitled “Scheduling Techniques for Concurrent Systems” in ICDCS 1982;"
+  },
+  {
    "venue": "ICDE",
    "year": 2005,
    "award": "tot",
@@ -108201,6 +108885,115 @@
   },
   {
    "venue": "ICPC",
+   "year": 2012,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper",
+   "title": "The Role of Concepts in Program Comprehension",
+   "authors": [
+    "Václav Rajlich",
+    "Norman Wilde"
+   ],
+   "track": "main",
+   "paperYear": 2002,
+   "source": "https://www.program-comprehension.org/awards/",
+   "evidence": "Most Influential Paper … 2012 The Role of Concepts in Program Comprehension Václav Rajlich, Norman Wilde IWPC 2002"
+  },
+  {
+   "venue": "ICPC",
+   "year": 2014,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper",
+   "title": "An Effectiveness Measure for Software Clustering Algorithms",
+   "authors": [
+    "Zhihua Wen",
+    "Vassilios Tzerpos"
+   ],
+   "track": "main",
+   "paperYear": 2004,
+   "source": "https://www.program-comprehension.org/awards/",
+   "evidence": "Most Influential Paper … 2014 An Effectiveness Measure for Software Clustering Algorithms Zhihua Wen, Vassilios Tzerpos IWPC 2004"
+  },
+  {
+   "venue": "ICPC",
+   "year": 2015,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper",
+   "title": "Concise and Consistent Naming",
+   "authors": [
+    "Florian Deißenböck",
+    "Markus Pizka"
+   ],
+   "track": "main",
+   "paperYear": 2005,
+   "source": "https://www.program-comprehension.org/awards/",
+   "evidence": "Most Influential Paper … 2015 Concise and Consistent Naming Florian Deißenböck, Markus Pizka IWPC 2005"
+  },
+  {
+   "venue": "ICPC",
+   "year": 2016,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper",
+   "title": "What's in a Name? A Study of Identifiers",
+   "authors": [
+    "Dawn Lawrie",
+    "Christopher Morrell",
+    "Henry Feild",
+    "David Binkley"
+   ],
+   "track": "main",
+   "paperYear": 2006,
+   "source": "https://www.program-comprehension.org/awards/",
+   "evidence": "Most Influential Paper … 2016 What's in a Name? A Study of Identifiers Dawn Lawrie, Christopher Morrell, Henry Feild, David Binkley ICPC 2006"
+  },
+  {
+   "venue": "ICPC",
+   "year": 2017,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper",
+   "title": "Combining Formal Concept Analysis with Information Retrieval for Concept Location in Source Code",
+   "authors": [
+    "Denys Poshyvanyk",
+    "Andrian Marcus"
+   ],
+   "track": "main",
+   "paperYear": 2007,
+   "source": "https://www.program-comprehension.org/awards/",
+   "evidence": "Most Influential Paper … 2017 Combining Formal Concept Analysis with Information Retrieval for Concept Location in Source Code Denys Poshyvanyk, Andrian Marcus ICPC 2007"
+  },
+  {
+   "venue": "ICPC",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper",
+   "title": "NiCad: Accurate Detection of Near-Miss Intentional Clones Using Flexible Pretty-Printing and Code Normalization",
+   "authors": [
+    "Chanchal K. Roy",
+    "James R. Cordy"
+   ],
+   "track": "main",
+   "paperYear": 2008,
+   "source": "https://www.program-comprehension.org/awards/",
+   "evidence": "Most Influential Paper … 2018 NiCad: Accurate Detection of Near-Miss Intentional Clones Using Flexible Pretty-Printing and Code Normalization Chanchal K. Roy, James R. Cordy ICPC 2008"
+  },
+  {
+   "venue": "ICPC",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper",
+   "title": "To CamelCase or Under_score",
+   "authors": [
+    "David Binkley",
+    "Marcia Davis",
+    "Dawn Lawrie",
+    "Christopher Morrell"
+   ],
+   "track": "main",
+   "paperYear": 2009,
+   "source": "https://www.program-comprehension.org/awards/",
+   "evidence": "Most Influential Paper … 2019 To CamelCase or Under_score David Binkley, Marcia Davis, Dawn Lawrie, Christopher Morrell ICPC 2009"
+  },
+  {
+   "venue": "ICPC",
    "year": 2020,
    "award": "distinguished",
    "awardLabel": "ACM SIGSOFT Distinguished Paper",
@@ -108232,6 +109025,291 @@
    "track": "main",
    "source": "https://www2.sigsoft.org/awards/distinguishedpaper/",
    "evidence": "International Conference on Program Comprehension (ICPC 2020): Fengcai Wen, Csaba Nagy, Michele Lanza, and Gabriele Bavota: An Empirical Study of Quick Remedy Commits"
+  },
+  {
+   "venue": "ICPC",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper",
+   "title": "On the Equivalence of Information Retrieval Methods for Automated Traceability Link Recovery",
+   "authors": [
+    "Rocco Oliveto",
+    "Malcom Gethers",
+    "Denys Poshyvanyk",
+    "Andrea De Lucia"
+   ],
+   "track": "main",
+   "paperYear": 2010,
+   "source": "https://www.program-comprehension.org/awards/",
+   "evidence": "Most Influential Paper … 2020 On the Equivalence of Information Retrieval Methods for Automated Traceability Link Recovery Rocco Oliveto, Malcom Gethers, Denys Poshyvanyk, Andrea De Lucia ICPC 2010"
+  },
+  {
+   "venue": "ICPC",
+   "year": 2021,
+   "award": "distinguished",
+   "awardLabel": "ACM SIGSOFT and IEEE TCSE Distinguished Paper Award",
+   "title": "Project-Level Encoding for Neural Source Code Summarization of Subroutines",
+   "authors": [
+    "Aakash Bansal",
+    "Sakib Haque",
+    "Collin McMillan"
+   ],
+   "track": "main",
+   "source": "https://www.program-comprehension.org/awards/",
+   "evidence": "Distinguished papers ACM SIGSOFT and IEEE TCSE distinguished paper awards recognize the top papers of each year's technical program, as selected by the program committee. … 2021 … Project-Level Encoding for Neural Source Code Summarization of Subroutines Aakash Bansal, Sakib Haque, Collin McMillan"
+  },
+  {
+   "venue": "ICPC",
+   "year": 2021,
+   "award": "distinguished",
+   "awardLabel": "ACM SIGSOFT and IEEE TCSE Distinguished Paper Award",
+   "title": "Understanding Code Smell Detection via Code Review: A Study of the OpenStack Community",
+   "authors": [
+    "Xiaofeng Han",
+    "Amjed Tahir",
+    "Peng Liang",
+    "Steve Counsell",
+    "Yajing Luo"
+   ],
+   "track": "main",
+   "source": "https://www.program-comprehension.org/awards/",
+   "evidence": "Distinguished papers ACM SIGSOFT and IEEE TCSE distinguished paper awards recognize the top papers of each year's technical program, as selected by the program committee. … 2021 … Understanding Code Smell Detection via Code Review: A Study of the OpenStack Community Xiaofeng Han, Amjed Tahir, Peng Liang, Steve Counsell, Yajing Luo"
+  },
+  {
+   "venue": "ICPC",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper",
+   "title": "Design Defects Detection and Correction by Example",
+   "authors": [
+    "Marouane Kessentini",
+    "Wael Kessentini",
+    "Houari Sahraoui",
+    "Mounir Assaf",
+    "Ali Ouni"
+   ],
+   "track": "main",
+   "paperYear": 2011,
+   "source": "https://www.program-comprehension.org/awards/",
+   "evidence": "Most Influential Paper … 2021 Design Defects Detection and Correction by Example Marouane Kessentini, Wael Kessentini, Houari Sahraoui, Mounir Assaf, Ali Ouni ICPC 2011"
+  },
+  {
+   "venue": "ICPC",
+   "year": 2022,
+   "award": "distinguished",
+   "awardLabel": "ACM SIGSOFT and IEEE TCSE Distinguished Paper Award",
+   "title": "Anchoring Code Understandability Evaluations Through Task Descriptions",
+   "authors": [
+    "Marvin Wyrich",
+    "Lasse Merz",
+    "Daniel Graziotin"
+   ],
+   "track": "main",
+   "source": "https://www.program-comprehension.org/awards/",
+   "evidence": "Distinguished papers ACM SIGSOFT and IEEE TCSE distinguished paper awards recognize the top papers of each year's technical program, as selected by the program committee. … 2022 … Anchoring Code Understandability Evaluations Through Task Descriptions Marvin Wyrich, Lasse Merz, Daniel Graziotin"
+  },
+  {
+   "venue": "ICPC",
+   "year": 2022,
+   "award": "distinguished",
+   "awardLabel": "ACM SIGSOFT and IEEE TCSE Distinguished Paper Award",
+   "title": "Demystifying Software Release Note Issues on GitHub",
+   "authors": [
+    "Jianyu Wu",
+    "Hao He",
+    "Wenxin Xiao",
+    "Kai Gao",
+    "Minghui Zhou"
+   ],
+   "track": "main",
+   "source": "https://www.program-comprehension.org/awards/",
+   "evidence": "Distinguished papers ACM SIGSOFT and IEEE TCSE distinguished paper awards recognize the top papers of each year's technical program, as selected by the program committee. … 2022 … Demystifying Software Release Note Issues on GitHub Jianyu Wu, Hao He, Wenxin Xiao, Kai Gao, Minghui Zhou"
+  },
+  {
+   "venue": "ICPC",
+   "year": 2022,
+   "award": "distinguished",
+   "awardLabel": "ACM SIGSOFT and IEEE TCSE Distinguished Paper Award",
+   "title": "Find Bugs in Static Bug Finders",
+   "authors": [
+    "Junjie Wang",
+    "Yuchao Huang",
+    "Song Wang",
+    "Qing Wang"
+   ],
+   "track": "main",
+   "source": "https://www.program-comprehension.org/awards/",
+   "evidence": "Distinguished papers ACM SIGSOFT and IEEE TCSE distinguished paper awards recognize the top papers of each year's technical program, as selected by the program committee. … 2022 … Find Bugs in Static Bug Finders Junjie Wang, Yuchao Huang, Song Wang, Qing Wang"
+  },
+  {
+   "venue": "ICPC",
+   "year": 2022,
+   "award": "distinguished",
+   "awardLabel": "ACM SIGSOFT and IEEE TCSE Distinguished Paper Award",
+   "title": "Predicting Change Propagation between Code Clone Instances by Graph-based Deep Learning",
+   "authors": [
+    "Bin Hu",
+    "Yijian Wu",
+    "Xin Peng",
+    "Jun Sun",
+    "Nanjie Zhan",
+    "Jun Wu"
+   ],
+   "track": "main",
+   "source": "https://www.program-comprehension.org/awards/",
+   "evidence": "Distinguished papers ACM SIGSOFT and IEEE TCSE distinguished paper awards recognize the top papers of each year's technical program, as selected by the program committee. … 2022 … Predicting Change Propagation between Code Clone Instances by Graph-based Deep Learning Bin Hu, Yijian Wu, Xin Peng, Jun Sun, Nanjie Zhan, Jun Wu"
+  },
+  {
+   "venue": "ICPC",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper",
+   "title": "Measuring programming experience",
+   "authors": [
+    "Janet Siegmund",
+    "Christian Kästner",
+    "Jörg Liebig",
+    "Sven Apel",
+    "Stefan Hanenberg"
+   ],
+   "track": "main",
+   "paperYear": 2012,
+   "source": "https://www.program-comprehension.org/awards/",
+   "evidence": "Most Influential Paper … 2022 Measuring programming experience Janet Siegmund, Christian Kästner, Jörg Liebig, Sven Apel, Stefan Hanenberg ICPC 2012"
+  },
+  {
+   "venue": "ICPC",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper",
+   "title": "Automatic generation of natural language summaries for Java classes",
+   "authors": [
+    "Laura Moreno",
+    "Jairo Aponte",
+    "Giriprasad Sridhara",
+    "Andrian Marcus",
+    "Lori Pollock",
+    "K. Vijay-Shanker"
+   ],
+   "track": "main",
+   "paperYear": 2013,
+   "source": "https://www.program-comprehension.org/awards/",
+   "evidence": "Most Influential Paper … 2023 Automatic generation of natural language summaries for Java classes Laura Moreno, Jairo Aponte, Giriprasad Sridhara, Andrian Marcus, Lori Pollock, K. Vijay-Shanker ICPC 2013"
+  },
+  {
+   "venue": "ICPC",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper",
+   "title": "Automatic documentation generation via source code summarization of method context",
+   "authors": [
+    "Paul W. McBurney",
+    "Collin McMillan"
+   ],
+   "track": "main",
+   "paperYear": 2014,
+   "source": "https://www.program-comprehension.org/awards/",
+   "evidence": "Most Influential Paper … 2024 Automatic documentation generation via source code summarization of method context Paul W. McBurney, Collin McMillan ICPC 2014"
+  },
+  {
+   "venue": "ICPC",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper",
+   "title": "I know what you did last summer: an investigation of how developers spend their time",
+   "authors": [
+    "Roberto Minelli",
+    "Andrea Mocci",
+    "Michele Lanza"
+   ],
+   "track": "main",
+   "paperYear": 2015,
+   "source": "https://www.program-comprehension.org/awards/",
+   "evidence": "Most Influential Paper … 2025 I know what you did last summer: an investigation of how developers spend their time Roberto Minelli, Andrea Mocci, Michele Lanza ICPC 2015"
+  },
+  {
+   "venue": "ICPC",
+   "year": 2026,
+   "award": "distinguished",
+   "awardLabel": "ACM SIGSOFT and IEEE TCSE Distinguished Paper Award",
+   "title": "Improved Bug Localization with AI Agents Leveraging Hypothesis and Dynamic Cognition",
+   "authors": [
+    "Asif Samir",
+    "Mohammad Masudur Rahman"
+   ],
+   "track": "main",
+   "source": "https://www.program-comprehension.org/awards/",
+   "evidence": "Distinguished papers ACM SIGSOFT and IEEE TCSE distinguished paper awards recognize the top papers of each year's technical program, as selected by the program committee. … 2026 … Improved Bug Localization with AI Agents Leveraging Hypothesis and Dynamic Cognition Asif Samir, Mohammad Masudur Rahman"
+  },
+  {
+   "venue": "ICPC",
+   "year": 2026,
+   "award": "distinguished",
+   "awardLabel": "ACM SIGSOFT and IEEE TCSE Distinguished Paper Award",
+   "title": "Understanding Codebase like a Professional! Human-AI Collaboration for Code Comprehension",
+   "authors": [
+    "Jie Gao",
+    "Yue Xue",
+    "Xiaofei Xie",
+    "Junming Cao",
+    "SoeMin Thant",
+    "Erika Lee",
+    "Bowen Xu"
+   ],
+   "track": "main",
+   "source": "https://www.program-comprehension.org/awards/",
+   "evidence": "Distinguished papers ACM SIGSOFT and IEEE TCSE distinguished paper awards recognize the top papers of each year's technical program, as selected by the program committee. … 2026 … Understanding Codebase like a Professional! Human-AI Collaboration for Code Comprehension Jie Gao, Yue Xue, Xiaofei Xie, Junming Cao, SoeMin Thant, Erika Lee, Bowen Xu"
+  },
+  {
+   "venue": "ICPC",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper",
+   "title": "A Novel Approach for Estimating Truck Factors",
+   "authors": [
+    "Guilherme Avelino",
+    "Leonardo Passos",
+    "Andre Hora",
+    "Marco Tulio Valente"
+   ],
+   "track": "main",
+   "paperYear": 2016,
+   "source": "https://www.program-comprehension.org/awards/",
+   "evidence": "Most Influential Paper … 2026 A Novel Approach for Estimating Truck Factors Guilherme Avelino, Leonardo Passos, Andre Hora, Marco Tulio Valente ICPC 2016"
+  },
+  {
+   "venue": "ICPP",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Characterizing MultiMedia Retrieval Applications",
+   "authors": [
+    "Yunping Lu",
+    "Xin Wang",
+    "Weihua Zhang",
+    "Wenyun Zhao"
+   ],
+   "track": "main",
+   "source": "https://www.icpp-conf.org/2015/",
+   "evidence": "Best Paper ( 3B ) Characterizing MultiMedia Retrieval Applications - Yunping Lu, Xin Wang, Weihua Zhang and Wenyun Zhao"
+  },
+  {
+   "venue": "ICPP",
+   "year": 2015,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "GPGPU Benchmark Suites: How Well Do They Sample the Performance Spectrum",
+   "authors": [
+    "Jee Ho Ryoo",
+    "Saddam Quirem",
+    "Michael Lebeane",
+    "Reena Panda",
+    "Shuang Song",
+    "Lizy John"
+   ],
+   "track": "main",
+   "source": "https://www.icpp-conf.org/2015/",
+   "evidence": "Best Paper Runner-up ( 3C ) GPGPU Benchmark Suites: How Well Do They Sample the Performance Spectrum - Jee Ho Ryoo, Saddam Quirem, Michael Lebeane, Reena Panda, Shuang Song and Lizy John"
   },
   {
    "venue": "ICPP",
@@ -111904,6 +112982,22 @@
   },
   {
    "venue": "ICS",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "SparseLNR: Accelerating Sparse Tensor Computations Using Loop Nest Restructuring",
+   "authors": [
+    "Adhitha Dias",
+    "Kirshanthan Sundararajah",
+    "Charitha Saumya",
+    "Milind Kulkarni"
+   ],
+   "track": "main",
+   "source": "https://ics2022.github.io/program.html",
+   "evidence": "SparseLNR: Accelerating Sparse Tensor Computations Using Loop Nest Restructuring (Best Paper Award!) Adhitha Dias (Purdue University) Kirshanthan Sundararajah (Purdue University) Charitha Saumya (Purdue University) Milind Kulkarni (Purdue University)"
+  },
+  {
+   "venue": "ICS",
    "year": 2024,
    "award": "best",
    "awardLabel": "Best Paper Award",
@@ -114446,6 +115540,182 @@
   },
   {
    "venue": "ICSME",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper",
+   "title": "On Integrating Orthogonal Information Retrieval Methods to Improve Traceability Recovery",
+   "authors": [
+    "Malcom Gethers",
+    "Rocco Oliveto",
+    "Denys Poshyvanyk",
+    "Andrea De Lucia"
+   ],
+   "track": "main",
+   "paperYear": 2011,
+   "source": "https://icsme2021.github.io/program/Awards.html",
+   "evidence": "Awards Most Influential Paper Malcom Gethers, Rocco Oliveto, Denys Poshyvanyk and Andrea De Lucia. On Integrating Orthogonal Information Retrieval Methods to Improve Traceability Recovery"
+  },
+  {
+   "venue": "ICSME",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "An Empirical Study of API Stability and Adoption in the Android Ecosystem",
+   "authors": [
+    "Tyler McDonnell",
+    "Baishakhi Ray",
+    "Miryung Kim"
+   ],
+   "track": "main",
+   "paperYear": 2013,
+   "source": "https://conf.researchr.org/track/icsme-2023/icsme-2023-awards",
+   "evidence": "Most Influential Paper Award (among papers published at ICSME 2013) We are thrilled to announce that the ICSME 2023 MIP Award goes to An Empirical Study of API Stability and Adoption in the Android Ecosystem by Tyler McDonnell, Baishakhi Ray, and Miryung Kim"
+  },
+  {
+   "venue": "ICSME",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "Investigating Developers' Preferences for Learning and Issue Resolution Resources in the ChatGPT Era",
+   "authors": [
+    "Ahmad Tayeb",
+    "Mohammad D. Alahmadi",
+    "Elham Tajik",
+    "Sonia Haiduc"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/program/icsme-2024/program-icsme-2024/",
+   "evidence": "Investigating Developers' Preferences for Learning and Issue Resolution Resources in the ChatGPT Era Distinguished Paper Award Research Track Paper Research Track Ahmad Tayeb , Mohammad D. Alahmadi , Elham Tajik , Sonia Haiduc"
+  },
+  {
+   "venue": "ICSME",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "On the Rationale and Use of Assertion Messages in Test Code: Insights from Software Practitioners",
+   "authors": [
+    "Anthony Peruma",
+    "Taryn Takebayashi",
+    "Rocky Huang",
+    "Joseph Carmelo Averion",
+    "Veronica Hodapp",
+    "Christian D. Newman",
+    "Mohamed Wiem Mkaouer"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/program/icsme-2024/program-icsme-2024/",
+   "evidence": "On the Rationale and Use of Assertion Messages in Test Code: Insights from Software Practitioners Open Research Object Distinguished Paper Award Research Track Paper Research Track Anthony Peruma University of Hawai‘i at Mānoa , Taryn Takebayashi University of Hawai‘i at Mānoa , Rocky Huang University of Hawai‘i at Mānoa , Joseph Carmelo Averion University of Hawai‘i at Mānoa , Veronica Hodapp Columbia University , Christian D. Newman Rochester Institute of Technology , Mohamed Wiem Mkaouer"
+  },
+  {
+   "venue": "ICSME",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "An Empirical Study of Automatic Program Repair Techniques for Injection Vulnerabilities",
+   "authors": [
+    "Tingwei Zhu",
+    "Tongtong Xu",
+    "Kui Liu",
+    "Jiayuan Zhou",
+    "Xing Hu",
+    "Xin Xia",
+    "Tian Zhang",
+    "David Lo"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/program/icsme-2024/program-icsme-2024/",
+   "evidence": "An Empirical Study of Automatic Program Repair Techniques for Injection Vulnerabilities Video presentation Best Student Paper Award Research Track Paper Research Track Tingwei Zhu Nanjing University , Tongtong Xu Huawei , Kui Liu Huawei , Jiayuan Zhou Huawei , Xing Hu Zhejiang University , Xin Xia Huawei , Tian Zhang Nanjing University , David Lo"
+  },
+  {
+   "venue": "ICSME",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "An Exploratory Study on Self-Admitted Technical Debt",
+   "authors": [
+    "Aniket Potdar",
+    "Emad Shihab"
+   ],
+   "track": "main",
+   "paperYear": 2014,
+   "source": "https://conf.researchr.org/track/icsme-2024/icsme-2024-papers",
+   "evidence": "Most Influential Paper Talk: \"An Exploratory Study on Self-Admitted Technical Debt\" Research Track Aniket Potdar , Emad Shihab Concordia University"
+  },
+  {
+   "venue": "ICSME",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "IEEE Computer Society TCSE Distinguished Paper Award",
+   "title": "Boosting Redundancy-based Automated Program Repair by Fine-grained Pattern Mining",
+   "authors": [
+    "Jiajun Jiang",
+    "Fengjie Li",
+    "Zijie Zhao",
+    "Zhirui Ye",
+    "Mengjiao Liu",
+    "Bo Wang",
+    "Hongyu Zhang",
+    "Junjie Chen"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/info/icsme-2025/icsme-2025-awards",
+   "evidence": "IEEE Computer Society TCSE Distinguished Paper Award Boosting Redundancy-based Automated Program Repair by Fine-grained Pattern Mining , by Jiajun Jiang, Fengjie Li, Zijie Zhao, Zhirui Ye, Mengjiao Liu, Bo Wang, Hongyu Zhang and Junjie Chen"
+  },
+  {
+   "venue": "ICSME",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "IEEE Computer Society TCSE Distinguished Paper Award",
+   "title": "Code Property Graph Meets Typestate: A Scalable Framework to Behavioral Bug Detection",
+   "authors": [
+    "Deng Xingjing",
+    "Liu Zhengyao",
+    "Zhong Xitong",
+    "Hong Shuo",
+    "Yang Yixin",
+    "Gao Xiang",
+    "Yan Xuhui",
+    "Sun Hailong"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/info/icsme-2025/icsme-2025-awards",
+   "evidence": "IEEE Computer Society TCSE Distinguished Paper Award Boosting Redundancy-based Automated Program Repair by Fine-grained Pattern Mining , by Jiajun Jiang, Fengjie Li, Zijie Zhao, Zhirui Ye, Mengjiao Liu, Bo Wang, Hongyu Zhang and Junjie Chen Code Property Graph Meets Typestate: A Scalable Framework to Behavioral Bug Detection, by Deng Xingjing , Liu Zhengyao, Zhong Xitong, Hong Shuo, Yang Yixin, Gao Xiang, Yan Xuhui and Sun Hailong"
+  },
+  {
+   "venue": "ICSME",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "IEEE Computer Society TCSE Distinguished Paper Award",
+   "title": "Roseau: Fast, Accurate, Source-based Breaking Change Analysis in Java",
+   "authors": [
+    "Corentin Latappy",
+    "Thomas Degueule",
+    "Jean-Rémy Falleri",
+    "Romain Robbes",
+    "Lina Ochoa Venegas"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/info/icsme-2025/icsme-2025-awards",
+   "evidence": "IEEE Computer Society TCSE Distinguished Paper Award Boosting Redundancy-based Automated Program Repair by Fine-grained Pattern Mining , by Jiajun Jiang, Fengjie Li, Zijie Zhao, Zhirui Ye, Mengjiao Liu, Bo Wang, Hongyu Zhang and Junjie Chen Code Property Graph Meets Typestate: A Scalable Framework to Behavioral Bug Detection, by Deng Xingjing , Liu Zhengyao, Zhong Xitong, Hong Shuo, Yang Yixin, Gao Xiang, Yan Xuhui and Sun Hailong Roseau: Fast, Accurate, Source-based Breaking Change Analysis in Java, by Corentin Latappy , Thomas Degueule, Jean-Rémy Falleri, Romain Robbes and Lina Ochoa Venegas"
+  },
+  {
+   "venue": "ICSME",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "IEEE Computer Society TCSE Distinguished Paper Award",
+   "title": "The Impact of Fine-tuning Large Language Models on Automated Program Repair",
+   "authors": [
+    "Roman Macháček",
+    "Anastasiia Grishina",
+    "Max Hort",
+    "Leon Moonen"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/info/icsme-2025/icsme-2025-awards",
+   "evidence": "IEEE Computer Society TCSE Distinguished Paper Award Boosting Redundancy-based Automated Program Repair by Fine-grained Pattern Mining , by Jiajun Jiang, Fengjie Li, Zijie Zhao, Zhirui Ye, Mengjiao Liu, Bo Wang, Hongyu Zhang and Junjie Chen Code Property Graph Meets Typestate: A Scalable Framework to Behavioral Bug Detection, by Deng Xingjing , Liu Zhengyao, Zhong Xitong, Hong Shuo, Yang Yixin, Gao Xiang, Yan Xuhui and Sun Hailong Roseau: Fast, Accurate, Source-based Breaking Change Analysis in Java, by Corentin Latappy , Thomas Degueule, Jean-Rémy Falleri, Romain Robbes and Lina Ochoa Venegas The Impact of Fine-tuning Large Language Models on Automated Program Repair , by Roman Macháček, Anastasiia Grishina, Max Hort and Leon Moonen"
+  },
+  {
+   "venue": "ICSME",
    "year": 2026,
    "award": "distinguished",
    "awardLabel": "Distinguished Paper Award",
@@ -114525,6 +115795,100 @@
    "track": "main",
    "source": "https://conf.researchr.org/track/icsme-2026/icsme-2026-icsme-plenary-events",
    "evidence": "Most Influential Paper Award Plenary Events at Auditorium Title: “Automated Debugging Considered Harmful” Considered Harmful - A User Study Revisiting the Usefulness of Spectra-Based Fault Localization Techniques with Professionals Using Real Bugs from Large Systems Authors: Xin Xia, Lingfeng Bao, David Lo and Shanping Li"
+  },
+  {
+   "venue": "ICSOC",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Research Paper",
+   "title": "Qualitative Economic Model for Long-Term IaaS Composition",
+   "authors": [
+    "Sajib Mistry",
+    "Athman Bouguettaya",
+    "Hai Dong",
+    "Abdelkarim Erradi"
+   ],
+   "track": "main",
+   "source": "https://icsoc2016.servtech.info/awards.html",
+   "evidence": "ICSOC 2016 Awards Best Research Paper Qualitative Economic Model for Long-Term IaaS Composition Sajib Mistry, Athman Bouguettaya, Hai Dong, Abdelkarim Erradi"
+  },
+  {
+   "venue": "ICSOC",
+   "year": 2016,
+   "award": "category",
+   "awardLabel": "Best Industry Paper",
+   "title": "FitScale: Scalability of Legacy Applications through Migration to Cloud",
+   "authors": [
+    "Jinho Hwang",
+    "Maja Vukovic",
+    "Nikos Anerousis"
+   ],
+   "track": "main",
+   "source": "https://icsoc2016.servtech.info/awards.html",
+   "evidence": "ICSOC 2016 Awards … Best Industry Paper FitScale: Scalability of Legacy Applications through Migration to Cloud Jinho Hwang, Maja Vukovic, and Nikos Anerousis"
+  },
+  {
+   "venue": "ICSOC",
+   "year": 2016,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "A Model-Driven Framework for Interoperable Cloud Resources Management",
+   "authors": [
+    "Denis Weerasiri",
+    "Moshe Chai Barukh",
+    "Boualem Benatallah",
+    "Jian Cao"
+   ],
+   "track": "main",
+   "source": "https://icsoc2016.servtech.info/awards.html",
+   "evidence": "ICSOC 2016 Awards … Best Student Paper A Model-Driven Framework for Interoperable Cloud Resources Management Denis Weerasiri, Moshe Chai Barukh, Boualem Benatallah, Jian Cao"
+  },
+  {
+   "venue": "ICSOC",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Measuring the Fog, Gently",
+   "authors": [
+    "Antonio Brogi",
+    "Stefano Forti",
+    "Marco Gaglianese"
+   ],
+   "track": "main",
+   "source": "https://servtech.info/icsoc-servtech-best-paper-award-2019-goes-to-a-research-group-from-pisa/",
+   "evidence": "ICSOC ServTech Best Paper Award 2019 goes to a research group from Pisa … Antonio Brogi, Stefano Forti, and Marco Gaglianese from the Department of Computer Science at the University of Pisa receive the Best Paper Award of ICSOC 2019 for their contribution “ Measuring the Fog, Gently ”"
+  },
+  {
+   "venue": "ICSOC",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Full Paper Award",
+   "title": "Trustworthy Pre-Processing of Sensor Data in Data On-chaining Workflows for Blockchain-based IoT Applications",
+   "authors": [
+    "Jonathan Heiss",
+    "Anselm Busse",
+    "Stefan Tai"
+   ],
+   "track": "main",
+   "source": "https://icsoc2021.servtech.info/icsoc2021.josueonline.com/awards.html",
+   "evidence": "ICSOC 2021 Best Paper Awards Best Full Paper Award ID Title Authors 98 Trustworthy Pre-Processing of Sensor Data in Data On-chaining Workflows for Blockchain-based IoT Applications Jonathan Heiss, Anselm Busse and Stefan Tai"
+  },
+  {
+   "venue": "ICSOC",
+   "year": 2021,
+   "award": "category",
+   "awardLabel": "Best Short Paper Award",
+   "title": "Joint Optimization of UAV Trajectory and Task Scheduling in SAGIN: Delay Driven",
+   "authors": [
+    "Hongyue Kang",
+    "Xiaolin Chang",
+    "Jelena Mišić",
+    "Vojislav B. Mišić",
+    "Junchao Fan"
+   ],
+   "track": "main",
+   "source": "https://icsoc2021.servtech.info/icsoc2021.josueonline.com/awards.html",
+   "evidence": "Best Short Paper Award ID Title Authors 99 Joint Optimization of UAV Trajectory and Task Scheduling in SAGIN: Delay Driven Hongyue Kang, Xiaolin Chang, Jelena Mišić, Vojislav B. Mišić and Junchao Fan"
   },
   {
    "venue": "ICST",
@@ -118819,6 +120183,51 @@
    "evidence": "2026 ISCA Best Paper Awards: \"Patterns Behind Chaos: Forecasting Data Movement for Efficient Large-Scale MoE LLM Inference\" by Zhongkai Yu, Yue Guan, Zihao Yu, Chenyang Zhou, Zhengding Hu, Shuyi Pei, Yangwook Kang, Yufei Ding, and Po-An Tsai"
   },
   {
+   "venue": "ISCAS",
+   "year": 2018,
+   "award": "student",
+   "awardLabel": "ISCAS Student Best Paper Award",
+   "title": "A 128×128 Current-Mode Ultra-High Frame Rate ISFET Array for Ion Imaging",
+   "authors": [
+    "Junming Zeng",
+    "Nicholas Miscourides",
+    "Pantelis Georgiou"
+   ],
+   "track": "main",
+   "source": "https://ieee-cas.org/paper-award/outstanding-paper-awards/iscas-student-best-paper-award",
+   "evidence": "ISCAS Student Best Paper Award 2018 Paper Paper A 128×128 Current-Mode Ultra-High Frame Rate ISFET Array for Ion Imaging Author(s) Junming Zeng; Nicholas Miscourides; Pantelis Georgiou Publication Date May 2018"
+  },
+  {
+   "venue": "ISCAS",
+   "year": 2018,
+   "award": "student",
+   "awardLabel": "ISCAS Student Best Paper Award",
+   "title": "FPGA Implementation of a Memory-Efficient Hough Parameter Space for the Detection of Lines",
+   "authors": [
+    "David Northcote",
+    "Louise H. Crockett",
+    "Paul Murray"
+   ],
+   "track": "main",
+   "source": "https://ieee-cas.org/paper-award/outstanding-paper-awards/iscas-student-best-paper-award",
+   "evidence": "ISCAS Student Best Paper Award 2018 Paper Paper FPGA Implementation of a Memory-Efficient Hough Parameter Space for the Detection of Lines Author(s) David Northcote; Louise H. Crockett; Paul Murray Publication Date May 2018"
+  },
+  {
+   "venue": "ISCAS",
+   "year": 2018,
+   "award": "student",
+   "awardLabel": "ISCAS Student Best Paper Award",
+   "title": "Low-Power and Wide-Locking-Range Injection-Locked Frequency Divider by Three with Dual-Injection Divide-by-Two Technique",
+   "authors": [
+    "Alessandro Garghetti",
+    "Andrea L. Lacaita",
+    "Salvatore Levantino"
+   ],
+   "track": "main",
+   "source": "https://ieee-cas.org/paper-award/outstanding-paper-awards/iscas-student-best-paper-award",
+   "evidence": "ISCAS Student Best Paper Award 2018 Paper Paper Low-Power and Wide-Locking-Range Injection-Locked Frequency Divider by Three with Dual-Injection Divide-by-Two Technique Author(s) Alessandro Garghetti; Andrea L. Lacaita; Salvatore Levantino Publication Date May 2018"
+  },
+  {
    "venue": "ISESE",
    "year": 2006,
    "award": "distinguished",
@@ -120805,6 +122214,188 @@
    "evidence": "ISMAR 2026 ISMAR Paper Impact Award: Robust Monocular SLAM in Dynamic Environments — Wei Tan, Haomin Liu, Zilong Dong, Guofeng Zhang, and Hujun Bao"
   },
   {
+   "venue": "ISMB",
+   "year": 2016,
+   "award": "student",
+   "awardLabel": "Van Toch Memorial Award for Outstanding Student Paper",
+   "title": "RCK: accurate and efficient inference of sequence and structure-based protein-RNA binding models from RNAcompete data",
+   "authors": [
+    "Yaron Orenstein"
+   ],
+   "track": "main",
+   "source": "https://www.iscb.org/ismb2016/general-info/award-winners",
+   "evidence": "Ian Lawson Van Toch Memorial Award for Outstanding Student Paper TP041: RCK: accurate and efficient inference of sequence and structure-based protein-RNA binding models from RNAcompete data Presenting Author: Yaron Orenstein, MIT, United States"
+  },
+  {
+   "venue": "ISMB",
+   "year": 2017,
+   "award": "student",
+   "awardLabel": "Van Toch Memorial Award for Outstanding Student Paper",
+   "title": "When loss-of-function is loss of function: Assessing mutational signatures and impact of loss-of-function genetic variants",
+   "authors": [
+    "Kymberleigh Pagel"
+   ],
+   "track": "main",
+   "source": "https://www.iscb.org/ismbeccb2017/general-info/award-winners",
+   "evidence": "Ian Lawson Van Toch Memorial Award for Outstanding Student Paper Kymberleigh Pagel, Indiana University, Bloomington When loss-of-function is loss of function: Assessing mutational signatures and impact of loss-of-function genetic variants"
+  },
+  {
+   "venue": "ISMB",
+   "year": 2018,
+   "award": "student",
+   "awardLabel": "Van Toch Memorial Award for Outstanding Student Paper",
+   "title": "GSEA-InContext: Identifying novel and common patterns in expression experiments",
+   "authors": [
+    "Rani Powers"
+   ],
+   "track": "main",
+   "source": "https://www.iscb.org/ismb2018/general-info/award-winners",
+   "evidence": "Ian Lawson Van Toch Memorial Award for Outstanding Student Paper Rani Powers, University of Colorado, United States GSEA-InContext: Identifying novel and common patterns in expression experiments"
+  },
+  {
+   "venue": "ISMB",
+   "year": 2019,
+   "award": "student",
+   "awardLabel": "Van Toch Memorial Award for Outstanding Student Paper",
+   "title": "Robust network inference using response logic",
+   "authors": [
+    "Torsten Gross"
+   ],
+   "track": "main",
+   "source": "https://www.iscb.org/ismbeccb2019/general-info/award-winners",
+   "evidence": "Ian Lawson Van Toch Memorial Award for Outstanding Student Paper Torsten Gross, IRI Life Sciences, Humboldt University, Germany Robust network inference using response logic"
+  },
+  {
+   "venue": "ISMB",
+   "year": 2019,
+   "award": "student",
+   "awardLabel": "Van Toch Memorial Award for Outstanding Student Paper",
+   "title": "Statistical Compression of Protein Sequences and Inference of Marginal Probability Landscapes over Competing Alignments using Finite State Models and Dirichlet Priors",
+   "authors": [
+    "Dinithi Sumanaweera"
+   ],
+   "track": "main",
+   "source": "https://www.iscb.org/ismbeccb2019/general-info/award-winners",
+   "evidence": "Ian Lawson Van Toch Memorial Award for Outstanding Student Paper Dinithi Sumanaweera, Monash University, Australia Statistical Compression of Protein Sequences and Inference of Marginal Probability Landscapes over Competing Alignments using Finite State Models and Dirichlet Priors"
+  },
+  {
+   "venue": "ISMB",
+   "year": 2020,
+   "award": "student",
+   "awardLabel": "Van Toch Memorial Award for Outstanding Student Paper",
+   "title": "Efficient Exact Inference for Dynamical Systems with Noisy Measurements using Sequential Approximate Bayesian Computation",
+   "authors": [
+    "Yannik Schälte"
+   ],
+   "track": "main",
+   "source": "https://www.iscb.org/ismb2020/general-info/award-winners",
+   "evidence": "Ian Lawson Van Toch Memorial Award for Outstanding Student Paper Yannik Schälte, Helmholtz Zentrum München, Germany Efficient Exact Inference for Dynamical Systems with Noisy Measurements using Sequential Approximate Bayesian Computation"
+  },
+  {
+   "venue": "ISMB",
+   "year": 2021,
+   "award": "student",
+   "awardLabel": "Van Toch Memorial Award for Outstanding Student Paper",
+   "title": "Cuttlefish: Fast, parallel, and low-memory compaction of de Bruijn graphs from large-scale genome collections",
+   "authors": [
+    "Jamshed Khan"
+   ],
+   "track": "main",
+   "source": "https://www.iscb.org/ismbeccb2021/general-info/award-winners",
+   "evidence": "Ian Lawson Van Toch Memorial Award for Outstanding Student Paper Jamshed Khan, University of Meryland Cuttlefish: Fast, parallel, and low-memory compaction of de Bruijn graphs from large-scale genome collections"
+  },
+  {
+   "venue": "ISMB",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Van Toch Memorial Award for Outstanding Student Paper, Honorable Mention",
+   "title": "MLGL-MP: A Multi-Label Graph Learning Framework Enhanced by Pathway Interdependence for Metabolic Pathway Prediction",
+   "authors": [
+    "Bing-Xue Du"
+   ],
+   "track": "main",
+   "source": "https://www.iscb.org/ismb2022/general-info/award-winners",
+   "evidence": "Ian Lawson Van Toch Memorial Award for Outstanding Student Paper Honorable Mentions: Bing-Xue Du, School of Life Sciences, Northwestern Polytechnical University, China MLGL-MP: A Multi-Label Graph Learning Framework Enhanced by Pathway Interdependence for Metabolic Pathway Prediction"
+  },
+  {
+   "venue": "ISMB",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Van Toch Memorial Award for Outstanding Student Paper, Honorable Mention",
+   "title": "Phylovar: Towards scalable phylogeny-aware inference of single-nucleotide variations from single-cell DNA sequencing data",
+   "authors": [
+    "Mohammadamin Edrisi"
+   ],
+   "track": "main",
+   "source": "https://www.iscb.org/ismb2022/general-info/award-winners",
+   "evidence": "Ian Lawson Van Toch Memorial Award for Outstanding Student Paper Honorable Mentions: Mohammadamin Edrisi, Rice University, United States Phylovar: Towards scalable phylogeny-aware inference of single-nucleotide variations from single-cell DNA sequencing data"
+  },
+  {
+   "venue": "ISMB",
+   "year": 2022,
+   "award": "student",
+   "awardLabel": "Van Toch Memorial Award for Outstanding Student Paper",
+   "title": "Visualizing hierarchies in scRNA-seq data using a density tree-biased autoencoder",
+   "authors": [
+    "Quentin Garrido"
+   ],
+   "track": "main",
+   "source": "https://www.iscb.org/ismb2022/general-info/award-winners",
+   "evidence": "Ian Lawson Van Toch Memorial Award for Outstanding Student Paper Award Winner: Quentin Garrido, Université Gustave Eiffel, ESIEE Paris, LIGM, France Visualizing hierarchies in scRNA-seq data using a density tree-biased autoencoder"
+  },
+  {
+   "venue": "ISMB",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Van Toch Memorial Award for Outstanding Student Paper, Honorable Mention",
+   "title": "COmic: Convolutional Kernel Networks for Interpretable End-to-End Learning on (Multi-)Omics Data",
+   "authors": [
+    "Jonas Christian Ditz"
+   ],
+   "track": "main",
+   "source": "https://www.iscb.org/ismbeccb2023/general-info/award-winners",
+   "evidence": "Ian Lawson Van Toch Memorial Award for Outstanding Student Paper Honorable mention Jonas Christian Ditz (University of Tübingen, USA) COmic: Convolutional Kernel Networks for Interpretable End-to-End Learning on (Multi-)Omics Data"
+  },
+  {
+   "venue": "ISMB",
+   "year": 2023,
+   "award": "student",
+   "awardLabel": "Van Toch Memorial Award for Outstanding Student Paper",
+   "title": "scKINETICS: inference of regulatory velocity with single-cell transcriptomics data",
+   "authors": [
+    "Cassandra Burdziak"
+   ],
+   "track": "main",
+   "source": "https://www.iscb.org/ismbeccb2023/general-info/award-winners",
+   "evidence": "Ian Lawson Van Toch Memorial Award for Outstanding Student Paper Award Winner Cassandra Burdziak (Memorial Sloan Kettering Cancer Center, New York, USA) scKINETICS: inference of regulatory velocity with single-cell transcriptomics data"
+  },
+  {
+   "venue": "ISMB",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "Van Toch Memorial Award for Outstanding Student Paper",
+   "title": "Deciphering High-order Structures in Spatial Transcriptomes with Graph-guided Tucker Decomposition",
+   "authors": [
+    "Charles Broadbent"
+   ],
+   "track": "main",
+   "source": "https://www.iscb.org/ismb2024/general-info/awards-winners",
+   "evidence": "Ian Lawson Van Toch Memorial Award for Outstanding Student Paper Award Winner Charles Broadbent, University of Minnesota Twin Cities Deciphering High-order Structures in Spatial Transcriptomes with Graph-guided Tucker Decomposition"
+  },
+  {
+   "venue": "ISMB",
+   "year": 2026,
+   "award": "student",
+   "awardLabel": "Van Toch Memorial Award for Outstanding Student Paper",
+   "title": "Riemannian Metric Learning for Alignment of Spatial Multiomics",
+   "authors": [
+    "Peter Halmos"
+   ],
+   "track": "main",
+   "source": "https://www.iscb.org/ismb2026/general-info/awards-winners",
+   "evidence": "Ian Lawson Van Toch Memorial Award for Outstanding Student Paper Peter Halmos, Princeton University, United States Riemannian Metric Learning for Alignment of Spatial Multiomics"
+  },
+  {
    "venue": "ISS",
    "year": 2015,
    "award": "best",
@@ -121488,6 +123079,117 @@
   },
   {
    "venue": "ISSRE",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Research: Best Paper",
+   "title": "Share or Not Share? Towards the Practicability of Deep Models for Unsupervised Anomaly Detection in Modern Online Systems",
+   "authors": [
+    "Zilong He",
+    "Pengfei Chen",
+    "Tao Huang"
+   ],
+   "track": "main",
+   "source": "https://issre2022.github.io/best_papers.html",
+   "evidence": "ISSRE 2022 Best Paper Awards Research: Best Paper Share or Not Share? Towards the Practicability of Deep Models for Unsupervised Anomaly Detection in Modern Online Systems Zilong He, Pengfei Chen and Tao Huang"
+  },
+  {
+   "venue": "ISSRE",
+   "year": 2022,
+   "award": "category",
+   "awardLabel": "Industry: Best Paper",
+   "title": "An unsupervised approach to discover filtering rules from diagnostic logs",
+   "authors": [
+    "Marcello Cinque",
+    "Raffaele Della Corte",
+    "Giorgio Farina",
+    "Stefano Rosiello"
+   ],
+   "track": "main",
+   "source": "https://issre2022.github.io/best_papers.html",
+   "evidence": "Industry: Best Paper An unsupervised approach to discover filtering rules from diagnostic logs Marcello Cinque, Raffaele Della Corte, Giorgio Farina and Stefano Rosiello"
+  },
+  {
+   "venue": "ISSRE",
+   "year": 2022,
+   "award": "category",
+   "awardLabel": "Industry: Best Disruptive Paper",
+   "title": "When malloc() Never Returns NULL-Reliability as an Illusion",
+   "authors": [
+    "Gunnar Kudrjavets",
+    "Jeff Thomas",
+    "Aditya Kumar",
+    "Nachiappan Nagappan",
+    "Ayushi Rastogi"
+   ],
+   "track": "main",
+   "source": "https://issre2022.github.io/best_papers.html",
+   "evidence": "Industry: Best Disruptive Paper When malloc() Never Returns NULL-Reliability as an Illusion Gunnar Kudrjavets, Jeff Thomas, Aditya Kumar, Nachiappan Nagappan and Ayushi Rastogi"
+  },
+  {
+   "venue": "ISSRE",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Test of Time Runners-Up",
+   "title": "Data Loss Prevention Based on Data-Driven Usage Control",
+   "authors": [
+    "Tobias Wüchner",
+    "Alexander Pretschner"
+   ],
+   "track": "main",
+   "paperYear": 2012,
+   "source": "https://issre2022.github.io/test_of_time.html",
+   "evidence": "Test of Time Runners-Up Shared Execution for Efficiently Testing Product Lines Chang Hwan Peter Kim, Sarfraz Khurshid, and Don Batory Data Loss Prevention Based on Data-Driven Usage Control Tobias Wüchner and Alexander Pretschner"
+  },
+  {
+   "venue": "ISSRE",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Test of Time Runners-Up",
+   "title": "Shared Execution for Efficiently Testing Product Lines",
+   "authors": [
+    "Chang Hwan Peter Kim",
+    "Sarfraz Khurshid",
+    "Don Batory"
+   ],
+   "track": "main",
+   "paperYear": 2012,
+   "source": "https://issre2022.github.io/test_of_time.html",
+   "evidence": "Test of Time Runners-Up Shared Execution for Efficiently Testing Product Lines Chang Hwan Peter Kim, Sarfraz Khurshid, and Don Batory"
+  },
+  {
+   "venue": "ISSRE",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "An Empirical Study of Bugs in Machine Learning Systems",
+   "authors": [
+    "Ferdian Thung",
+    "Shaowei Wang",
+    "David Lo",
+    "Lingxiao Jiang"
+   ],
+   "track": "main",
+   "paperYear": 2012,
+   "source": "https://issre2022.github.io/test_of_time.html",
+   "evidence": "ISSRE 2022 Test of Time Award An Empirical Study of Bugs in Machine Learning Systems Ferdian Thung, Shaowei Wang, David Lo, and Lingxiao Jiang"
+  },
+  {
+   "venue": "ISSRE",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Using machine learning techniques to detect metamorphic relations for programs without test oracles",
+   "authors": [
+    "Upulee Kanewala",
+    "James M. Bieman"
+   ],
+   "track": "main",
+   "paperYear": 2013,
+   "source": "https://issre.github.io/2023/test_of_time.html",
+   "evidence": "Test-of-Time Award The Test of Time Award for the 2023 edition is bestowed upon: Using machine learning techniques to detect metamorphic relations for programs without test oracles Kanewala, Upulee, and James M. Bieman 24th International Symposium on Software Reliability Engineering (ISSRE). IEEE, 2013"
+  },
+  {
+   "venue": "ISSRE",
    "year": 2024,
    "award": "best",
    "awardLabel": "Best Paper Award",
@@ -121546,6 +123248,99 @@
    "track": "main",
    "source": "https://issre.github.io/2024/award_best_research.html",
    "evidence": "Best Paper Runner-up Awards The Best Paper Awards for ISSRE 2024 are bestowed upon: LiScopeLens: An Open-Source License Incompatibility Analysis Tool Based on Scope Representation of License Terms Ziang Liu, Xin Liu, Yingli Zhang, Zihao Zhang, Song Li, Weina Niu, Qingguo Zhou, Rui Zhou, and Xiaokang Zhou"
+  },
+  {
+   "venue": "ISSRE",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Predicting Vulnerable Components: Software Metrics vs Text Mining",
+   "authors": [
+    "James Walden",
+    "Jeff Stuckman",
+    "Riccardo Scandariato"
+   ],
+   "track": "main",
+   "paperYear": 2014,
+   "source": "https://issre.github.io/2024/test_of_time.html",
+   "evidence": "Test-of-Time Award The Test of Time Award for the 2024 edition is bestowed upon: Predicting Vulnerable Components: Software Metrics vs Text Mining James Walden, Jeff Stuckman, and Riccardo Scandariato ISSRE 2014, pp. 23-33"
+  },
+  {
+   "venue": "ISSRE",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Understanding Recommendation System Robustness Against Silent Data Corruption: An Empirical Study",
+   "authors": [
+    "Dongning Ma",
+    "Xun Jiao",
+    "Fred Lin",
+    "Daniel Moore",
+    "Sriram Sankar"
+   ],
+   "track": "main",
+   "source": "https://issre.github.io/2025/award_best_research.html",
+   "evidence": "Best Paper Award The Best Paper Award for ISSRE 2025 is bestowed upon: Understanding Recommendation System Robustness Against Silent Data Corruption: An Empirical Study Dongning Ma, Xun Jiao, Fred Lin, Daniel Moore and Sriram Sankar"
+  },
+  {
+   "venue": "ISSRE",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up Awards",
+   "title": "SyzOrch: An Orchestration Framework for Resource-Aware and Composable Kernel Fuzzing",
+   "authors": [
+    "Lukai Xu",
+    "Baosheng Wang",
+    "Bo Yu",
+    "Boyu Chang",
+    "Binbin Zhao",
+    "Shouling Ji",
+    "Danjun Liu",
+    "Lei Zhou",
+    "Qiang Yang",
+    "Yaojia Yang"
+   ],
+   "track": "main",
+   "source": "https://issre.github.io/2025/award_best_research.html",
+   "evidence": "Best Paper Runner-up Awards The Best Paper Awards for ISSRE 2025 are bestowed upon: Too Many Cooks: Assessing the Need for Multi-Source Data in Microservice Failure Diagnosis Shenglin Zhang, Xiaoyu Feng, Runzhou Wang, Minghua Ma, Wenwei Gu, Yongqian Sun, Zedong Jia, Jinrui Sun and Dan Pei SyzOrch: An Orchestration Framework for Resource-Aware and Composable Kernel Fuzzing Lukai Xu, Baosheng Wang, Bo Yu, Boyu Chang, Binbin Zhao, Shouling Ji, Danjun Liu, Lei Zhou, Qiang Yang and Yaojia Yang"
+  },
+  {
+   "venue": "ISSRE",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up Awards",
+   "title": "Too Many Cooks: Assessing the Need for Multi-Source Data in Microservice Failure Diagnosis",
+   "authors": [
+    "Shenglin Zhang",
+    "Xiaoyu Feng",
+    "Runzhou Wang",
+    "Minghua Ma",
+    "Wenwei Gu",
+    "Yongqian Sun",
+    "Zedong Jia",
+    "Jinrui Sun",
+    "Dan Pei"
+   ],
+   "track": "main",
+   "source": "https://issre.github.io/2025/award_best_research.html",
+   "evidence": "Best Paper Runner-up Awards The Best Paper Awards for ISSRE 2025 are bestowed upon: Too Many Cooks: Assessing the Need for Multi-Source Data in Microservice Failure Diagnosis Shenglin Zhang, Xiaoyu Feng, Runzhou Wang, Minghua Ma, Wenwei Gu, Yongqian Sun, Zedong Jia, Jinrui Sun and Dan Pei"
+  },
+  {
+   "venue": "ISSRE",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Experience report: Anomaly detection of cloud application operations using log and cloud metric correlation analysis",
+   "authors": [
+    "Mostafa Farshchi",
+    "Jean-Guy Schneider",
+    "Ingo Weber",
+    "John Grundy"
+   ],
+   "track": "main",
+   "paperYear": 2015,
+   "source": "https://issre.github.io/2025/test_of_time.html",
+   "evidence": "Test-of-Time Award The Test of Time Award for the 2025 edition is bestowed upon: Experience report: Anomaly detection of cloud application operations using log and cloud metric correlation analysis Mostafa Farshchi, Jean-Guy Schneider, Ingo Weber, John Grundy ISSRE 2015, pp. 24-34"
   },
   {
    "venue": "ISSTA",
@@ -129698,6 +131493,1351 @@
   },
   {
    "venue": "MICCAI",
+   "year": 2008,
+   "award": "student",
+   "awardLabel": "Student Best Paper Award",
+   "title": "A Constrained Non-Rigid Registration Algorithm for use in Prostate Image-Guided Radiotherapy",
+   "authors": [
+    "William Greene"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Student Best Paper Awards (prior award) 2008 William Greene A Constrained Non-Rigid Registration Algorithm for use in Prostate Image-Guided Radiotherapy"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2008,
+   "award": "student",
+   "awardLabel": "Student Best Paper Award",
+   "title": "Fully Bayesian Joint Model for MR brain scan tissue and subcortical structure segmentation",
+   "authors": [
+    "Benoit Scherrer"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Student Best Paper Awards (prior award) 2008 Benoit Scherrer Fully Bayesian Joint Model for MR brain scan tissue and subcortical structure segmentation"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2008,
+   "award": "student",
+   "awardLabel": "Student Best Paper Award",
+   "title": "On-the-fly motion-compensated cone-beam CT using an a priori motion model",
+   "authors": [
+    "SImon Rit"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Student Best Paper Awards (prior award) 2008 SImon Rit On-the-fly motion-compensated cone-beam CT using an a priori motion model"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2008,
+   "award": "student",
+   "awardLabel": "Student Best Paper Award",
+   "title": "Passive Ventricular Mechanics Modelling Using Cardiac MR Imaging of Structure and Function",
+   "authors": [
+    "Vicky Wang"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Student Best Paper Awards (prior award) 2008 Vicky Wang Passive Ventricular Mechanics Modelling Using Cardiac MR Imaging of Structure and Function"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2008,
+   "award": "student",
+   "awardLabel": "Student Best Paper Award",
+   "title": "Sparse Approximation of Currents for Statistics on Curves and Surfaces",
+   "authors": [
+    "Stanley Durrleman"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Student Best Paper Awards (prior award) 2008 Stanley Durrleman Sparse Approximation of Currents for Statistics on Curves and Surfaces"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2008,
+   "award": "student",
+   "awardLabel": "Student Best Paper Award",
+   "title": "The Effect of Automated Marker Detection on In Vivo Volumetric Stent Reconstruction",
+   "authors": [
+    "Gert Schoonenberg"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Student Best Paper Awards (prior award) 2008 Gert Schoonenberg The Effect of Automated Marker Detection on In Vivo Volumetric Stent Reconstruction"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2009,
+   "award": "student",
+   "awardLabel": "Student Best Paper Award",
+   "title": "Interventional 4-D Motion Estimation and Reconstruction of Cardiac Vasculature without Motion",
+   "authors": [
+    "Christopher Rohkohl"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Student Best Paper Awards (prior award) 2009 Christopher Rohkohl Interventional 4-D Motion Estimation and Reconstruction of Cardiac Vasculature without Motion"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2009,
+   "award": "student",
+   "awardLabel": "Student Best Paper Award",
+   "title": "Joint Segmentation of Image Ensembles via Latent Atlases",
+   "authors": [
+    "Tammy Riklin Raviv"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Student Best Paper Awards (prior award) 2009 Tammy Riklin Raviv Joint Segmentation of Image Ensembles via Latent Atlases"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2009,
+   "award": "student",
+   "awardLabel": "Student Best Paper Award",
+   "title": "Local White Matter Geometry Indices from Diffusion Tensor Gradients",
+   "authors": [
+    "Peter Savadjiev"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Student Best Paper Awards (prior award) 2009 Peter Savadjiev Local White Matter Geometry Indices from Diffusion Tensor Gradients"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2009,
+   "award": "student",
+   "awardLabel": "Student Best Paper Award",
+   "title": "Parallax-Free Long Bone X-ray Image Stitching",
+   "authors": [
+    "Lejing Wang"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Student Best Paper Awards (prior award) 2009 Lejing Wang Parallax-Free Long Bone X-ray Image Stitching"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2009,
+   "award": "student",
+   "awardLabel": "Student Best Paper Award",
+   "title": "Toward Real-Time Simulation of Blood-Coil Interaction during Aneurysm Embolization",
+   "authors": [
+    "Yiyi Wei"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Student Best Paper Awards (prior award) 2009 Yiyi Wei Toward Real-Time Simulation of Blood-Coil Interaction during Aneurysm Embolization"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2010,
+   "award": "student",
+   "awardLabel": "Student Best Paper Award",
+   "title": "Complete Valvular Heart Apparatus Model from 4D Cardiac CT",
+   "authors": [
+    "Saša Grbić"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Student Best Paper Awards (prior award) 2010 Saša Grbić Complete Valvular Heart Apparatus Model from 4D Cardiac CT"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2010,
+   "award": "student",
+   "awardLabel": "Student Best Paper Award",
+   "title": "Efficient MR Image Reconstruction for Compressed MR Imaging",
+   "authors": [
+    "Junzhou Huang"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Student Best Paper Awards (prior award) 2010 Junzhou Huang Efficient MR Image Reconstruction for Compressed MR Imaging"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2010,
+   "award": "student",
+   "awardLabel": "Student Best Paper Award",
+   "title": "MicroTrack: An Algorithm for Concurrent Projectome and Microstructure Estimation",
+   "authors": [
+    "Anthony Sherbondy"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Student Best Paper Awards (prior award) 2010 Anthony Sherbondy MicroTrack: An Algorithm for Concurrent Projectome and Microstructure Estimation"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2010,
+   "award": "student",
+   "awardLabel": "Student Best Paper Award",
+   "title": "Prostate brachytherapy seed reconstruction using C-Arm rotation measurement and motion compensation",
+   "authors": [
+    "Ehsan Dehghan"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Student Best Paper Awards (prior award) 2010 Ehsan Dehghan Prostate brachytherapy seed reconstruction using C-Arm rotation measurement and motion compensation"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2010,
+   "award": "student",
+   "awardLabel": "Student Best Paper Award",
+   "title": "Spatially Regularized SVM for the Detection of Brain Areas Associated with Stroke Outcome",
+   "authors": [
+    "Rémi Cuingnet"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Student Best Paper Awards (prior award) 2010 Rémi Cuingnet Spatially Regularized SVM for the Detection of Brain Areas Associated with Stroke Outcome"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2011,
+   "award": "student",
+   "awardLabel": "Student Best Paper Award",
+   "title": "Geometry-Aware Multiscale Image Registration Via OBBTree-Based Polyaffine Log-Demons",
+   "authors": [
+    "Christof Seiler"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Student Best Paper Awards (prior award) 2011 Christof Seiler Geometry-Aware Multiscale Image Registration Via OBBTree-Based Polyaffine Log-Demons"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2011,
+   "award": "student",
+   "awardLabel": "Student Best Paper Award",
+   "title": "Mixture of Segmenters with Discriminative Spatial regularization and sparse Weight Selection",
+   "authors": [
+    "Ting Chen"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Student Best Paper Awards (prior award) 2011 Ting Chen Mixture of Segmenters with Discriminative Spatial regularization and sparse Weight Selection"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2011,
+   "award": "student",
+   "awardLabel": "Student Best Paper Award",
+   "title": "Non-local Shape Descriptor: A New Similarity Metric for Deformable Multi-modal Registration",
+   "authors": [
+    "Mattias Heinrich"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Student Best Paper Awards (prior award) 2011 Mattias Heinrich Non-local Shape Descriptor: A New Similarity Metric for Deformable Multi-modal Registration"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2011,
+   "award": "student",
+   "awardLabel": "Student Best Paper Award",
+   "title": "Nonmetalic Rigid-Flexible Outer Sheath with Pneumatic Shapelocking Mechanism and Double Curvature Structure",
+   "authors": [
+    "Siyang Zuo"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Student Best Paper Awards (prior award) 2011 Siyang Zuo Nonmetalic Rigid-Flexible Outer Sheath with Pneumatic Shapelocking Mechanism and Double Curvature Structure"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2011,
+   "award": "student",
+   "awardLabel": "Student Best Paper Award",
+   "title": "Towards Patient-Specific Finite-Element Simulation of Mitral Clip Procedure",
+   "authors": [
+    "T Mansi"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Student Best Paper Awards (prior award) 2011 T Mansi Towards Patient-Specific Finite-Element Simulation of Mitral Clip Procedure"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2012,
+   "award": "student",
+   "awardLabel": "Student Best Paper Award",
+   "title": "Cardiac Mechanical Parameter Calibration based on the Unscented Transform",
+   "authors": [
+    "Stephanie Marchesseau"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Student Best Paper Awards (prior award) 2012 Stephanie Marchesseau Cardiac Mechanical Parameter Calibration based on the Unscented Transform"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2012,
+   "award": "student",
+   "awardLabel": "Student Best Paper Award",
+   "title": "Multi-organ Abdominal CT Segmentation using hierarchically weighted Subject-specific Atlases",
+   "authors": [
+    "Robin Wolz"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Student Best Paper Awards (prior award) 2012 Robin Wolz Multi-organ Abdominal CT Segmentation using hierarchically weighted Subject-specific Atlases"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2012,
+   "award": "student",
+   "awardLabel": "Student Best Paper Award",
+   "title": "Phase Contrast Image Restoration Via Dictionary Representation of Diffraction Patterns",
+   "authors": [
+    "Hang Su"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Student Best Paper Awards (prior award) 2012 Hang Su Phase Contrast Image Restoration Via Dictionary Representation of Diffraction Patterns"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2012,
+   "award": "student",
+   "awardLabel": "Student Best Paper Award",
+   "title": "Recognition in Ultrasound Videos: Where am I?",
+   "authors": [
+    "Roland Kwitt"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Student Best Paper Awards (prior award) 2012 Roland Kwitt Recognition in Ultrasound Videos: Where am I?"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2012,
+   "award": "student",
+   "awardLabel": "Student Best Paper Award",
+   "title": "Registration accuracy: How good is good enough? A statistical power calculation incorporating image registration uncertainty",
+   "authors": [
+    "Eli Gibson"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Student Best Paper Awards (prior award) 2012 Eli Gibson Registration accuracy: How good is good enough? A statistical power calculation incorporating image registration uncertainty"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2013,
+   "award": "student",
+   "awardLabel": "Student Best Paper Award",
+   "title": "A Bayesian approach for spatially adaptive regularization on non-rigid registration",
+   "authors": [
+    "Ivor Simpson"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Student Best Paper Awards (prior award) 2013 Ivor Simpson A Bayesian approach for spatially adaptive regularization on non-rigid registration"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2013,
+   "award": "student",
+   "awardLabel": "Student Best Paper Award",
+   "title": "A histology-based model of quantitative T1 contrast for in-vivo cortical parcellation of high-resolution 7 Tesla brain MR images",
+   "authors": [
+    "Juliane Dinse"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Student Best Paper Awards (prior award) 2013 Juliane Dinse A histology-based model of quantitative T1 contrast for in-vivo cortical parcellation of high-resolution 7 Tesla brain MR images"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2013,
+   "award": "student",
+   "awardLabel": "Student Best Paper Award",
+   "title": "Atlas encoding by randomized forests for efficient label propagation",
+   "authors": [
+    "Darko Zikic"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Student Best Paper Awards (prior award) 2013 Darko Zikic Atlas encoding by randomized forests for efficient label propagation"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2013,
+   "award": "student",
+   "awardLabel": "Student Best Paper Award",
+   "title": "Complex lung motion estimation via adaptive bilateral filtering of the deformation field",
+   "authors": [
+    "Bartolomiej Papiez"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Student Best Paper Awards (prior award) 2013 Bartolomiej Papiez Complex lung motion estimation via adaptive bilateral filtering of the deformation field"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2013,
+   "award": "student",
+   "awardLabel": "Student Best Paper Award",
+   "title": "Fast data-driven calibration of a cardiacelectrophysiology model from images and ECG",
+   "authors": [
+    "Oliver Zettinig"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Student Best Paper Awards (prior award) 2013 Oliver Zettinig Fast data-driven calibration of a cardiacelectrophysiology model from images and ECG"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2014,
+   "award": "student",
+   "awardLabel": "Student Best Paper Award",
+   "title": "A Fully Bayesian Inference Framework for Population Studies of the Brain Microstructure",
+   "authors": [
+    "Maxime Taquet"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Student Best Paper Awards (prior award) 2014 Maxime Taquet A Fully Bayesian Inference Framework for Population Studies of the Brain Microstructure"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2014,
+   "award": "student",
+   "awardLabel": "Student Best Paper Award",
+   "title": "Auto Localization and Segmentation of Occluded Vessels in Robot-Assisted Partial Nephrectomy",
+   "authors": [
+    "Alborz Amir-Khalili"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Student Best Paper Awards (prior award) 2014 Alborz Amir-Khalili Auto Localization and Segmentation of Occluded Vessels in Robot-Assisted Partial Nephrectomy"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2014,
+   "award": "student",
+   "awardLabel": "Student Best Paper Award",
+   "title": "Bayesian Principal Geodesic Analysis in Diffeomorphic Image Registration",
+   "authors": [
+    "Miaomiao Zhang"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Student Best Paper Awards (prior award) 2014 Miaomiao Zhang Bayesian Principal Geodesic Analysis in Diffeomorphic Image Registration"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2014,
+   "award": "student",
+   "awardLabel": "Student Best Paper Award",
+   "title": "Depth-based Shape Analysis",
+   "authors": [
+    "Yi Hong"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Student Best Paper Awards (prior award) 2014 Yi Hong Depth-based Shape Analysis"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2014,
+   "award": "student",
+   "awardLabel": "Student Best Paper Award",
+   "title": "Pico Lantern: A Pick-up Projector for Augmented Reality in Laparoscopic Surgery",
+   "authors": [
+    "Philip Edgcumbe"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Student Best Paper Awards (prior award) 2014 Philip Edgcumbe Pico Lantern: A Pick-up Projector for Augmented Reality in Laparoscopic Surgery"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2015,
+   "award": "student",
+   "awardLabel": "Student Best Paper Award",
+   "title": "GPSSI: Gaussian Process for Sampling Segmentations of Images",
+   "authors": [
+    "Mattieu Le"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Student Best Paper Awards (prior award) 2015 Mattieu Le GPSSI: Gaussian Process for Sampling Segmentations of Images"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2015,
+   "award": "student",
+   "awardLabel": "Student Best Paper Award",
+   "title": "Joint Kernel-Based Supervised Hashing for Scalable Histological Image Analysis",
+   "authors": [
+    "Menglin Jiang"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Student Best Paper Awards (prior award) 2015 Menglin Jiang Joint Kernel-Based Supervised Hashing for Scalable Histological Image Analysis"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2015,
+   "award": "student",
+   "awardLabel": "Student Best Paper Award",
+   "title": "Scandent Tree: A Random Forest Learning Method for Incomplete Multimodal Datasets",
+   "authors": [
+    "Soheil Hor"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Student Best Paper Awards (prior award) 2015 Soheil Hor Scandent Tree: A Random Forest Learning Method for Incomplete Multimodal Datasets"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2015,
+   "award": "student",
+   "awardLabel": "Student Best Paper Award",
+   "title": "Surgical Tool Tracking with Pose Estimation in retinal Microsurgery",
+   "authors": [
+    "Nicola Rieke"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Student Best Paper Awards (prior award) 2015 Nicola Rieke Surgical Tool Tracking with Pose Estimation in retinal Microsurgery"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2016,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "A Continuous Model of Cortical Connectivity",
+   "authors": [
+    "Daniel Moyer"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2016 Daniel Moyer A Continuous Model of Cortical Connectivity"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2016,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "Learning Optimization Updates for Multimodal Registration",
+   "authors": [
+    "Benjamín Gutiérrez-Becker"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2016 Benjamín Gutiérrez-Becker Learning Optimization Updates for Multimodal Registration"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2016,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "Learning-based Multimodal Image Registration for Prostate Cancer Radiation Therapy",
+   "authors": [
+    "Xiaohuan Cao"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2016 Xiaohuan Cao Learning-based Multimodal Image Registration for Prostate Cancer Radiation Therapy"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2016,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "Probabilistic Tractography for Topographically Organized Connectomes",
+   "authors": [
+    "Dogu Baran Aydogan"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2016 Dogu Baran Aydogan Probabilistic Tractography for Topographically Organized Connectomes"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2016,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "SpineNet: Automatically Pinpointing Classification Evidence in Spinal MRIs",
+   "authors": [
+    "Amir Jamaludin"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2016 Amir Jamaludin SpineNet: Automatically Pinpointing Classification Evidence in Spinal MRIs"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2017,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "A Submodular Approach to Create Individualized Parcellations of the Human Brain",
+   "authors": [
+    "Mehraveh Salehi"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2017 Mehraveh Salehi A Submodular Approach to Create Individualized Parcellations of the Human Brain"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2017,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "Bayesian Image Quality Transfer with CNNs: Exploring Uncertainty in dMRI Super-Resolution",
+   "authors": [
+    "Ryutaro Tanno"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2017 Ryutaro Tanno Bayesian Image Quality Transfer with CNNs: Exploring Uncertainty in dMRI Super-Resolution"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2017,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "Full Quantification of Left Ventricle via Deep Multitask Learning Network Respecting Intra- and Inter-Task Relatedness",
+   "authors": [
+    "Wufeng Xue"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2017 Wufeng Xue Full Quantification of Left Ventricle via Deep Multitask Learning Network Respecting Intra- and Inter-Task Relatedness"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2017,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "Robust Multi-Scale Anatomical Landmark Detection in Incomplete 3D-CT Data",
+   "authors": [
+    "Florin-Cristian Ghesu"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2017 Florin-Cristian Ghesu Robust Multi-Scale Anatomical Landmark Detection in Incomplete 3D-CT Data"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2017,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "Surgical Soundtracks: towards automatic musical augmentation of surgical procedures",
+   "authors": [
+    "Sasan Matinfar"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2017 Sasan Matinfar Surgical Soundtracks: towards automatic musical augmentation of surgical procedures"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2018,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "Exploring Uncertainty Measures in Deep Networks for Multiple Sclerosis Lesion Detection and Segmentation",
+   "authors": [
+    "Tanya Nair"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2018 Tanya Nair Exploring Uncertainty Measures in Deep Networks for Multiple Sclerosis Lesion Detection and Segmentation"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2018,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "Roto-Translation Covariant Convolutional Networks for Medical Image Analysis",
+   "authors": [
+    "Erik J. Bekkers"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2018 Erik J. Bekkers Roto-Translation Covariant Convolutional Networks for Medical Image Analysis"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2018,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "Task Driven Generative Modeling for Unsupervised Domain Adaptation: Application to X-ray Image Segmentation",
+   "authors": [
+    "Yue Zhang"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2018 Yue Zhang Task Driven Generative Modeling for Unsupervised Domain Adaptation: Application to X-ray Image Segmentation"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2018,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "The Deep Poincaré Map: A Novel Approach for Left Ventricle Segmentation",
+   "authors": [
+    "Yuanhan Mo"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2018 Yuanhan Mo The Deep Poincaré Map: A Novel Approach for Left Ventricle Segmentation"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2018,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "X-ray-transform Invariant Anatomical Landmark Detection for Pelvic Trauma Surgery",
+   "authors": [
+    "Bastian Bier"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2018 Bastian Bier X-ray-transform Invariant Anatomical Landmark Detection for Pelvic Trauma Surgery"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2019,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "Clustering of longitudinal shape data sets using mixture of separate or branching trajectories",
+   "authors": [
+    "Vianney Debavelaere",
+    "Alexandre Bône",
+    "Stanley Durrleman",
+    "Stéphanie Allassonnière"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2019 Vianney Debavelaere, Alexandre Bône, Stanley Durrleman, Stéphanie Allassonnière. Clustering of longitudinal shape data sets using mixture of separate or branching trajectories"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2019,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "Deep Multi Label Classification in Affine Subspaces",
+   "authors": [
+    "Thomas Kurmann",
+    "Pablo Márquez Neila",
+    "Sebastian Wolf",
+    "Raphael Sznitman"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2019 Thomas Kurmann, Pablo Márquez Neila, Sebastian Wolf, Raphael Sznitman. Deep Multi Label Classification in Affine Subspaces"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2019,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "Diagnosis-guided multi-modal feature selection for prognosis prediction of lung squamous cell carcinoma",
+   "authors": [
+    "Wei Shao",
+    "Tongxin Wang",
+    "Zhi Huang",
+    "Jun Cheng",
+    "Zhi Han",
+    "Daoqiang Zhang",
+    "Kun Huang"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2019 Wei Shao, Tongxin Wang, Zhi Huang, Jun Cheng, Zhi Han, Daoqiang Zhang, Kun Huang. Diagnosis-guided multi-modal feature selection for prognosis prediction of lung squamous cell carcinoma"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2019,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "Fully convolutional boundary regression for retina OCT segmentation",
+   "authors": [
+    "Yufan He",
+    "Aaron Carass",
+    "Yihao Liu",
+    "Bruno Jedynak",
+    "Sharon Solomon",
+    "Shiv Saidha",
+    "Peter Calabresi",
+    "Jerry Prince"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2019 Yufan He, Aaron Carass, Yihao Liu, Bruno Jedynak, Sharon Solomon, Shiv Saidha, Peter Calabresi, Jerry Prince. Fully convolutional boundary regression for retina OCT segmentation"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2019,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "Models Genesis: Generic Autodidactic Models for 3D Medical Image Analysis",
+   "authors": [
+    "Zongwei Zhou",
+    "Vatsal Sodha",
+    "Md Mahfuzur Rahman Siddiquee",
+    "Ruibin Feng",
+    "Nima Tajbakhsh",
+    "Michael Gotway",
+    "Jianming Liang"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2019 Zongwei Zhou, Vatsal Sodha, Md Mahfuzur Rahman Siddiquee, Ruibin Feng, Nima Tajbakhsh, Michael Gotway, Jianming Liang. Models Genesis: Generic Autodidactic Models for 3D Medical Image Analysis"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2020,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "Microtubule Tracking in Electron Microscopy Volumes",
+   "authors": [
+    "Nils Eckstein",
+    "Julia Buhmann",
+    "Matthew Cook",
+    "Jan Funke"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2020 Nils Eckstein, Julia Buhmann, Matthew Cook, Jan Funke. Microtubule Tracking in Electron Microscopy Volumes"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2020,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "Move over there: One-click deformation of preoperative 3D information to intraoperative X-ray during endovascular aortic repair",
+   "authors": [
+    "Katharina Breininger",
+    "Marcus Pfister",
+    "Markus Kowarschik",
+    "Andreas Maier"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2020 Katharina Breininger, Marcus Pfister, Markus Kowarschik, Andreas Maier. Move over there: One-click deformation of preoperative 3D information to intraoperative X-ray during endovascular aortic repair"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2020,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "Recovering Brain Structural Connectivity from Functional Connectivity via Multi-GCN based Generative Adversarial Network",
+   "authors": [
+    "Lu Zhang",
+    "Li Wang",
+    "Dajiang Zhu"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2020 Lu Zhang, Li Wang, Dajiang Zhu. Recovering Brain Structural Connectivity from Functional Connectivity via Multi-GCN based Generative Adversarial Network"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2020,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "Ultra2Speech - A Deep Learning Framework for Formant Frequency Estimation and Tracking from Ultrasound Tongue Images",
+   "authors": [
+    "Pramit Saha",
+    "Yadong Liu",
+    "Bryan Gick",
+    "Sidney Fels"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2020 Pramit Saha, Yadong Liu, Bryan Gick, Sidney Fels. Ultra2Speech - A Deep Learning Framework for Formant Frequency Estimation and Tracking from Ultrasound Tongue Images"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2021,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "C-arm positioning for spinal standard projections in different intra-operative settings",
+   "authors": [
+    "Lisa Kausch",
+    "Sarina Thomas",
+    "Holger Kunze",
+    "Tobias Norajitra",
+    "André Klein",
+    "Jan Siad El Barbari",
+    "Maxim Privalov",
+    "Sven Vetter",
+    "Andreas Mahnken",
+    "Lena Maier-Hein",
+    "Klaus H. Maier-Hein"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2021 Lisa Kausch, Sarina Thomas, Holger Kunze, Tobias Norajitra, André Klein, Jan Siad El Barbari, Maxim Privalov, Sven Vetter, Andreas Mahnken, Lena Maier-Hein, Klaus H. Maier-Hein. C-arm positioning for spinal standard projections in different intra-operative settings."
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2021,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "Detecting when pre-trained nnU-Net models fail silently for Covid-19 lung lesion segmentation",
+   "authors": [
+    "Camila Gonzalez",
+    "Karol Gotkowski",
+    "Andreas Bucher",
+    "Ricarda Fischbach",
+    "Isabel Kaltenborn",
+    "Anirban Mukhopadhyay"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2021 Camila Gonzalez, Karol Gotkowski, Andreas Bucher, Ricarda Fischbach, Isabel Kaltenborn, Anirban Mukhopadhyay. Detecting when pre-trained nnU-Net models fail silently for Covid-19 lung lesion segmentation."
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2021,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "RLP-Net: Recursive Light Propagation Network for 3-D Virtual Refocusing",
+   "authors": [
+    "Changyeop Shin",
+    "Hyun Ryu",
+    "Eun-Seo Cho",
+    "Young-Gyu Yoon"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2021 Changyeop Shin, Hyun Ryu, Eun-Seo Cho, Young-Gyu Yoon. RLP-Net: Recursive Light Propagation Network for 3-D Virtual Refocusing."
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2021,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "Surgical Workflow Anticipation using Instrument Interaction",
+   "authors": [
+    "Kun Yuan",
+    "Shijian Gao",
+    "Won-Sook Lee",
+    "Matthew S Holden"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2021 Kun Yuan, Shijian Gao, Won-Sook Lee, Matthew S Holden. Surgical Workflow Anticipation using Instrument Interaction."
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2021,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "Text2Brain: Synthesis of Brain Activation Maps from Free-form Text Query",
+   "authors": [
+    "Gia H Ngo",
+    "Minh Nguyen",
+    "Nancy Chen",
+    "Mert Sabuncu"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2021 Gia H Ngo, Minh Nguyen, Nancy Chen, Mert Sabuncu. Text2Brain: Synthesis of Brain Activation Maps from Free-form Text Query."
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2022,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "Deep Learning-based Facial Appearance Simulation Driven by Surgically Planned Craniomaxillofacial Bony Movement",
+   "authors": [
+    "Xi Fang",
+    "Daeseung Kim",
+    "Xuanang Xu",
+    "Tianshu Kuang",
+    "Hannah Deng",
+    "Joshua Barber",
+    "Nathan Lampen",
+    "Jaime Gateno",
+    "James Xia",
+    "Pingkun Yan"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2022 Xi Fang, Daeseung Kim, Xuanang Xu, Tianshu Kuang, Hannah Deng, Joshua Barber, Nathan Lampen, Jaime Gateno, James Xia, Pingkun Yan (Rensselaer Polytechinic Institute): Deep Learning-based Facial Appearance Simulation Driven by Surgically Planned Craniomaxillofacial Bony Movement"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2022,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "Discrepancy and Gradient-guided Multi-modal Knowledge Distillation for Pathological Glioma Grading",
+   "authors": [
+    "Xiaohan Xing",
+    "Zhen Chen",
+    "Meilu Zhu",
+    "Yuenan Hou",
+    "Zhifan Gao",
+    "Yixuan Yuan"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2022 Xiaohan Xing, Zhen Chen, Meilu Zhu, Yuenan Hou, Zhifan Gao, Yixuan Yuan (City University of Hong Kong): Discrepancy and Gradient-guided Multi-modal Knowledge Distillation for Pathological Glioma Grading"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2022,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "Identify Consistent Imaging Genomic Biomarkers for Characterizing the Survival-associated Interactions between Tumor-infiltrating Lymphocytes and Tumors",
+   "authors": [
+    "Yingli Zuo",
+    "Yawen Wu",
+    "Zixiao Lu",
+    "Qi Zhu",
+    "Kun Huang",
+    "Daoqiang Zhang",
+    "Wei Shao"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2022 Yingli Zuo, Yawen Wu, Zixiao Lu, Qi Zhu, Kun Huang, Daoqiang Zhang, Wei Shao (Nanjing University of Aeronautics and Astronautics): Identify Consistent Imaging Genomic Biomarkers for Characterizing the Survival-associated Interactions between Tumor-infiltrating Lymphocytes and Tumors"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2022,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "Multimodal-GuideNet: Gaze-Probe Bidirectional Guidance in Obstetric Ultrasound Scanning",
+   "authors": [
+    "Qianhui Men",
+    "Clare Teng",
+    "Lior Drukker",
+    "Aris Papageorghiou",
+    "Alison Noble"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2022 Qianhui Men, Clare Teng, Lior Drukker, Aris Papageorghiou, Alison Noble (University of Oxford): Multimodal-GuideNet: Gaze-Probe Bidirectional Guidance in Obstetric Ultrasound Scanning"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2022,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "Neural Rendering for Stereo 3D Reconstruction of Deformable Tissues in Robotic Surgery",
+   "authors": [
+    "Yuehao Wang",
+    "Yonghao Long",
+    "Siu Hin Fan",
+    "Qi Dou"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2022 Yuehao Wang, Yonghao Long, Siu Hin Fan, Qi Dou (The Chinese University of Hong Kong): Neural Rendering for Stereo 3D Reconstruction of Deformable Tissues in Robotic Surgery"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Robust T-Loss for Medical Image Segmentation",
+   "authors": [
+    "Alvaro Gonzales-Jiminez",
+    "Simone Lionetti",
+    "Philipe Gottfrois",
+    "Fabian Gröger",
+    "Marc Pouly",
+    "Alexander Navarini"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Best Paper Award 2023 Alvaro Gonzales-Jiminez, Simone Lionetti, Philipe Gottfrois, Fabian Gröger, Marc Pouly, Alexander Navarini (University of Basel), Robust T-Loss for Medical Image Segmentation"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2023,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "BigFUSE: Global Context-Aware Image Fusion in Dual-View Light-Sheet Fluorescence Microscopy with Image Formation Prior",
+   "authors": [
+    "Yu Liu",
+    "Gesine Müller",
+    "Nassir Navab",
+    "Carsten Marr",
+    "Jan Huisken",
+    "Tingying Peng"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2023 Yu Liu, Gesine Müller, Nassir Navab, Carsten Marr, Jan Huisken, Tingying Peng (Technical University of Munich) BigFUSE: Global Context-Aware Image Fusion in Dual-View Light-Sheet Fluorescence Microscopy with Image Formation Prior"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2023,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "M3D-NCA: Robust 3D Segmentation with Built-in Quality Control",
+   "authors": [
+    "John Orlando Kalkhof",
+    "Anirban Mukhopadhyay"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2023 John Orlando Kalkhof, Anirban Mukhopadhyay (TU Darmstadt), M3D-NCA: Robust 3D Segmentation with Built-in Quality Control"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2023,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "Neural LerPlane Representations for Fast 4D Reconstruction of Deformable Tissues",
+   "authors": [
+    "Chen Yang",
+    "Kailing Wang",
+    "Yuehao Wang",
+    "Xiaokang Yang",
+    "Wei Shen"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2023 Chen Yang, Kailing Wang, Yuehao Wang, Xiaokang Yang, Wei Shen (Shanghai Jiao Tong University) Neural LerPlane Representations for Fast 4D Reconstruction of Deformable Tissues"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2023,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "ProtoASNet: Dynamic Prototypes for Inherently Interpretable and Uncertainty-Aware Aortic Stenosis Classification in Echocardiography",
+   "authors": [
+    "Hooman Vaseli",
+    "Ang Nan Gu",
+    "S. Neda Ahmadi Amiri",
+    "Michael Tsang",
+    "Andrea Fung",
+    "Nima Kondori",
+    "Armin Saadat",
+    "Purang Abolmaesumi",
+    "Teresa Tsang"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2023 Hooman Vaseli, Ang Nan Gu, S. Neda Ahmadi Amiri, Michael Tsang, Andrea Fung, Nima Kondori, Armin Saadat, Purang Abolmaesumi, Teresa Tsang (University of British Columbia), ProtoASNet: Dynamic Prototypes for Inherently Interpretable and Uncertainty-Aware Aortic Stenosis Classification in Echocardiography"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2023,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "Semantic Segmentation of Surgical Hyperspectral Images under Geometrical Domain Shifts",
+   "authors": [
+    "Jan Sellner",
+    "Silvia Seidlitz",
+    "Alexander Stefan Studier-Fischer",
+    "Allessandro Motta",
+    "Berkin K Oezdemir",
+    "Beat P Müller-Stich",
+    "Felix Nickel",
+    "Lena Maier-Hein"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2023 Jan Sellner, Silvia Seidlitz, Alexander Stefan Studier-Fischer, Allessandro Motta, Berkin K Oezdemir, Beat P Müller-Stich, Felix Nickel, Lena Maier-Hein (German Cancer Research Center) Semantic Segmentation of Surgical Hyperspectral Images under Geometrical Domain Shifts"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention",
+   "title": "Ark: Accruing and Reusing Knowledge for Superior and Robust Performance",
+   "authors": [
+    "DongAo Ma",
+    "Jiaxuan Pang",
+    "Michael Gotway",
+    "Jianming Liang"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Best Paper Award 2023 Honorable Mentions DongAo Ma, Jiaxuan Pang, Michael Gotway, Jianming Liang (Arizona State University), Ark: Accruing and Reusing Knowledge for Superior and Robust Performance"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention",
+   "title": "MI-SegNet: Mutual Information-Based US Segmentation for Unseen Domains Generalization",
+   "authors": [
+    "Yuan Bi",
+    "Zhongliang Jiang",
+    "Ricarda Clarenbach",
+    "Reza Ghotbi",
+    "Angelos Karlas",
+    "Nassir Navab"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Best Paper Award 2023 Honorable Mentions Yuan Bi, Zhongliang Jiang, Ricarda Clarenbach, Reza Ghotbi, Angelos Karlas, Nassir Navab (Technical University of Munich), MI-SegNet: Mutual Information-Based US Segmentation for Unseen Domains Generalization"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "RoCoSDF: Row-Column Scanned Neural Signed Distance Fields for Freehand 3D Ultrasound Imaging Shape Reconstruction",
+   "authors": [
+    "Hongbo Chen",
+    "Yuchong Gao",
+    "Shuhang Zhang",
+    "Jiangjie Wu",
+    "Yuexin Ma",
+    "Rui Zheng"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Best Paper Award 2024 Hongbo Chen, Yuchong Gao, Shuhang Zhang, Jiangjie Wu, Yuexin Ma, Rui Zheng (ShanghaiTech University), RoCoSDF: Row-Column Scanned Neural Signed Distance Fields for Freehand 3D Ultrasound Imaging Shape Reconstruction"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2024,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "MetaAD: Metabolism-Aware Anomaly Detection for Parkinson’s Disease in 3D 18F-FDG PET",
+   "authors": [
+    "Haolin Huang",
+    "Zhengrong Shen",
+    "Jing Wang",
+    "Xinyu Wang",
+    "Jiaying Lu",
+    "Huamei Lin",
+    "Jingjie Ge",
+    "Chuantao Zuo",
+    "Qian Wang"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2024 Haolin Huang, Zhengrong Shen,Jing Wang, Xinyu Wang, Jiaying Lu, Huamei Lin, Jingjie Ge, Chuantao Zuo, Qian Wang (ShanghaiTech University), MetaAD: Metabolism-Aware Anomaly Detection for Parkinson’s Disease in 3D 18F-FDG PET"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2024,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "Ordinal Learning: Longitudinal Attention Alignment Model for Predicting Time to Future Breast Cancer Events from Mammograms",
+   "authors": [
+    "Xin Wang",
+    "Tao Tan",
+    "Yuan Gao",
+    "Eric Marcus",
+    "Luyi Han",
+    "Antonio Portaluri",
+    "Tianyu Zhang",
+    "Chunyao Lu",
+    "Xinglong Liang",
+    "Regina Beets-Tan",
+    "Jonas Teuwen",
+    "Ritse Mann"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2024 Xin Wang, Tao Tan, Yuan Gao, Eric Marcus, Luyi Han, Antonio Portaluri, Tianyu Zhang, Chunyao Lu, Xinglong Liang, Regina Beets-Tan, Jonas Teuwen, Ritse Mann (Netherlands Cancer Institute), Ordinal Learning: Longitudinal Attention Alignment Model for Predicting Time to Future Breast Cancer Events from Mammograms"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2024,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "ProstNFound: Integrating Foundation Models with Ultrasound Domain Knowledge and Clinical Context for Robust Prostate Cancer Detection",
+   "authors": [
+    "Paul F. R. Wilson",
+    "Minh Nguyen Nhat To",
+    "Amoon Jamzad",
+    "Mahdi Gilany",
+    "Mohamed Harmanani",
+    "Tarek Elghareb",
+    "Fahimeh Fooladgar",
+    "Brian Wodlinger",
+    "Purang Abolmaesumi",
+    "Parvin Mousavi"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2024 Paul F. R. Wilson, Minh Nguyen Nhat To, Amoon Jamzad, Mahdi Gilany, Mohamed Harmanani, Tarek Elghareb, Fahimeh Fooladgar, Brian Wodlinger, Purang Abolmaesumi, Parvin Mousavi (Queen's University) ProstNFound: Integrating Foundation Models with Ultrasound Domain Knowledge and Clinical Context for Robust Prostate Cancer Detection"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2024,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "UnWave-Net: Unrolled Wavelet Network for Compton Tomography Image Reconstruction",
+   "authors": [
+    "Ishak Ayad",
+    "Javier Cebeiro",
+    "Maï K. Nguyen"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2024 Ishak Ayad, Ensea, Cy Cergy, Javier Cebeiro, Maï K. Nguyen (Paris University), UnWave-Net: Unrolled Wavelet Network for Compton Tomography Image Reconstruction"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2024,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "WsiCaption: Multiple Instance Generation of Pathology Reports for Gigapixel Whole-Slide Images",
+   "authors": [
+    "Pingyi Chen",
+    "Honglin Li",
+    "Chenglu Zhu",
+    "Sunyi Zheng",
+    "Zhongyi Shui",
+    "Lin Yang"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2024 Pingyi Chen, Honglin Li, Chenglu Zhu, Sunyi Zheng, Zhongyi Shui, Lin Yang (Westlake University), WsiCaption: Multiple Instance Generation of Pathology Reports for Gigapixel Whole-Slide Images"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention",
+   "title": "LighTDiff: Surgical Endoscopic Image Low-Light Enhancement with T-Diffusion",
+   "authors": [
+    "Tong Chen",
+    "Qingcheng Lyu",
+    "Long Bai",
+    "Erjian Guo",
+    "Huxin Gao",
+    "Xiaoxiao Yang",
+    "Hongliang Ren",
+    "Luping Zhou"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Best Paper Award 2024 Honorable Mentions Tong Chen, Qingcheng Lyu, Long Bai, Erjian Guo, Huxin Gao, Xiaoxiao Yang, Hongliang Ren, Luping Zhou (The University of Sydney), LighTDiff: Surgical Endoscopic Image Low-Light Enhancement with T-Diffusion"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention",
+   "title": "ORacle: Large Vision-Language Models for Knowledge-Guided Holistic OR Domain Modeling",
+   "authors": [
+    "Ege Özsoy",
+    "Chantal Pellegrini",
+    "Matthias Keicher",
+    "Nassir Navab"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Best Paper Award 2024 Honorable Mentions Ege Özsoy, Chantal Pellegrini, Matthias Keicher, Nassir Navab (TU Munich), ORacle: Large Vision-Language Models for Knowledge-Guided Holistic OR Domain Modeling"
+  },
+  {
+   "venue": "MICCAI",
    "year": 2025,
    "award": "best",
    "awardLabel": "Best Paper Award",
@@ -129710,6 +132850,103 @@
    "track": "main",
    "source": "https://conferences.miccai.org/2025/en/BEST-PAPER-AWARDS.html",
    "evidence": "MICCAI 2025 Winner: Kushal Vyas, Ashok Veeraraghavan, Guha Balakrishnan (RICE University), \"Fit Pixels, Get Labels: Meta-learned Implicit Networks for Image Segmentation\""
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2025,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "CardiacFlow: 3D+t Four-Chamber Cardiac Shape Completion and Generation via Flow Matching",
+   "authors": [
+    "Qiang Ma",
+    "Qingjie Meng",
+    "Mengyun Qiao",
+    "Paul M. Matthews",
+    "Declan P. O'Regan",
+    "Wenjia Bai"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2025 Qiang Ma, Qingjie Meng, Mengyun Qiao, Paul M. Matthews, Declan P. O'Regan, Wenjia Bai. \"CardiacFlow: 3D+t Four-Chamber Cardiac Shape Completion and Generation via Flow Matching\""
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2025,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "Learning Concept-Driven Logical Rules for Interpretable and Generalizable Medical Image Classification",
+   "authors": [
+    "Yibo Gao",
+    "Hangqi Zhou",
+    "Zheyao Gao",
+    "Bomin Wang",
+    "Shangqi Gao",
+    "Sihan Wang",
+    "Xiahai Zhuang"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2025 Yibo Gao, Hangqi Zhou, Zheyao Gao, Bomin Wang, Shangqi Gao, Sihan Wang, Xiahai Zhuang. \"Learning Concept-Driven Logical Rules for Interpretable and Generalizable Medical Image Classification\""
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2025,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "OsteoOpt: A Bayesian Optimization Framework for Enhancing Bone Union Likelihood in Mandibular Reconstruction Surgery",
+   "authors": [
+    "Hamidreza Aftabi",
+    "John E. Lloyd",
+    "Amanda Ding",
+    "Benedikt Sagl",
+    "Eitan Prisman",
+    "Antony Hodgson",
+    "Sidney Fels"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2025 Hamidreza Aftabi, John E. Lloyd, Amanda Ding, Benedikt Sagl, Eitan Prisman, Antony Hodgson, Sidney Fels. \"OsteoOpt: A Bayesian Optimization Framework for Enhancing Bone Union Likelihood in Mandibular Reconstruction Surgery\""
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2025,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "Reverse Imaging for Wide-spectrum Generalization of Cardiac MRI Segmentation",
+   "authors": [
+    "Yidong Zhao",
+    "Peter Kellman",
+    "Hui Xue",
+    "Tongyun Yang",
+    "Yi Zhang",
+    "Yuchi Han",
+    "Orlando Simonetti",
+    "Qian Tao"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2025 Yidong Zhao, Peter Kellman, Hui Xue, Tongyun Yang, Yi Zhang, Yuchi Han, Orlando Simonetti, Qian Tao \"Reverse Imaging for Wide-spectrum Generalization of Cardiac MRI Segmentation\""
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2025,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "SurgTPGS: Semantic 3D Surgical Scene Understanding with Text Promptable Gaussian Splatting",
+   "authors": [
+    "Yiming Huang",
+    "Long Bai",
+    "Beilei Cui",
+    "Kun Yuan",
+    "Guankun Wang",
+    "Mobarak I. Hoque",
+    "Nicolas Padoy",
+    "Nassir Navab",
+    "Hongliang Ren"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2025 Yiming Huang, Long Bai, Beilei Cui, Kun Yuan, Guankun Wang, Mobarak I. Hoque, Nicolas Padoy, Nassir Navab, Hongliang Ren. \"SurgTPGS: Semantic 3D Surgical Scene Understanding with Text Promptable Gaussian Splatting\""
   },
   {
    "venue": "MICCAI",
@@ -129769,6 +133006,89 @@
    "track": "main",
    "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
    "evidence": "Winners of the Best Paper Award 2026 Julia Walleb, Cristiana Baloescu, Alicia Durrer, Hemant D. Tagare, Xenophon Papademetris. (Yale University) \"Low-Rank-Modulated Functa: Exploring the Latent Space of Implicit Neural Representations for Interpretable Ultrasound Video Analysis\""
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2026,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "CardiacPULSE: Frequency-Aware Self-Supervised Cardiac Phase Detection in Echocardiography",
+   "authors": [
+    "Jiarong Guo",
+    "Jiewen Yang",
+    "Yao Du",
+    "Yi Qin",
+    "Xiaomeng Li"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2026 Jiarong Guo, Jiewen Yang, Yao Du, Yi Qin, Xiaomeng Li. \"CardiacPULSE: Frequency-Aware Self-Supervised Cardiac Phase Detection in Echocardiography\""
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2026,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "Exploiting Longitudinal Context in Clinician-Verified Interactive Lesion Tracking",
+   "authors": [
+    "Yannick Kirchhoff",
+    "Maximilian Rokuss",
+    "Daniel Philipp Mertens",
+    "David Füller",
+    "Benjamin Hamm",
+    "Andreas Schreyer",
+    "Oliver Ritter",
+    "Klaus Maier-Hein"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2026 Yannick Kirchhoff, Maximilian Rokuss, Daniel Philipp Mertens, David Füller, Benjamin Hamm, Andreas Schreyer, Oliver Ritter, Klaus Maier-Hein. \"Exploiting Longitudinal Context in Clinician-Verified Interactive Lesion Tracking\""
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2026,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "Planning the Perfect Burn: Multi-Objective PSO for Multi-Needle Thermal Ablation",
+   "authors": [
+    "Jonas Mehtali",
+    "Juan Manuel Verde",
+    "Caroline Essert"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2026 Jonas Mehtali, Juan Manuel Verde, Caroline Essert. \"Planning the Perfect Burn: Multi-Objective PSO for Multi-Needle Thermal Ablation\""
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2026,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "STAMP: Subtype-Aware Spatio-Temporal Atlases for Personalized Prediction of Longitudinal Alzheimer’s Disease Progression",
+   "authors": [
+    "John Kalkhof",
+    "Marco Lorenzi"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2026 John Kalkhof, Marco Lorenzi. \"STAMP: Subtype-Aware Spatio-Temporal Atlases for Personalized Prediction of Longitudinal Alzheimer’s Disease Progression\""
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2026,
+   "award": "category",
+   "awardLabel": "Young Scientist Award",
+   "title": "TopoOR: A Unified Topological Scene Representation for the Operating Room",
+   "authors": [
+    "Tony Danjun Wang",
+    "Ka Young Kim",
+    "Tolga Birdal",
+    "Nassir Navab",
+    "Lennart Bastian"
+   ],
+   "track": "main",
+   "source": "https://miccai.org/conference-awards/best-paper-award-and-young-scientist-award/",
+   "evidence": "Winners of the Young Scientist Award 2026 Tony Danjun Wang, Ka Young Kim, Tolga Birdal, Nassir Navab, Lennart Bastian. \"TopoOR: A Unified Topological Scene Representation for the Operating Room\""
   },
   {
    "venue": "MICCAI",
@@ -146358,6 +149678,761 @@
   },
   {
    "venue": "RE",
+   "year": 2008,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Revisiting the Core Ontology and Problem in Requirements Engineering",
+   "authors": [
+    "Ivan Jureta",
+    "John Mylopoulos",
+    "Stéphane Faulkner"
+   ],
+   "track": "main",
+   "source": "https://re-conferences.org/REConferenceAwards",
+   "evidence": "Best Paper Awards … 2008 \"Revisiting the Core Ontology and Problem in Requirements Engineering\" Ivan Jureta, John Mylopoulos, and Stéphane Faulkner"
+  },
+  {
+   "venue": "RE",
+   "year": 2008,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Acquiring COTS Software Selection Requirements",
+   "authors": [
+    "Neil A.M. Maiden",
+    "Cornelius Ncube"
+   ],
+   "track": "main",
+   "paperYear": 1998,
+   "source": "https://re-conferences.org/REConferenceAwards",
+   "evidence": "Most Influential Paper Award Papers recognized for lasting impact on the RE field, awarded 10 years after publication. … 2008 for 1998 \"Acquiring COTS Software Selection Requirements\" Neil A.M. Maiden and Cornelius Ncube"
+  },
+  {
+   "venue": "RE",
+   "year": 2009,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Improving the Effectiveness of Visual Representations in Requirements Engineering: An Evaluation of i* Visual Syntax",
+   "authors": [
+    "Daniel L Moody",
+    "Patrick Heymans",
+    "Raimundas Matulevicius"
+   ],
+   "track": "main",
+   "source": "https://re-conferences.org/REConferenceAwards",
+   "evidence": "Best Paper Awards … 2009 Research \"Improving the Effectiveness of Visual Representations in Requirements Engineering: An Evaluation of i* Visual Syntax\" Daniel L Moody, Patrick Heymans, and Raimundas Matulevicius"
+  },
+  {
+   "venue": "RE",
+   "year": 2009,
+   "award": "category",
+   "awardLabel": "Best Paper Award (Industry)",
+   "title": "From Feature Development to Customer Value Creation",
+   "authors": [
+    "Marjo Kauppinen",
+    "Juha Savolainen",
+    "Laura Lehtola",
+    "Marko Komssi",
+    "Harri Töhönen",
+    "Al Davis"
+   ],
+   "track": "main",
+   "source": "https://re-conferences.org/REConferenceAwards",
+   "evidence": "Best Paper Awards … 2009 Industry \"From Feature Development to Customer Value Creation\" Marjo Kauppinen, Juha Savolainen, Laura Lehtola, Marko Komssi, Harri Töhönen, and Al Davis"
+  },
+  {
+   "venue": "RE",
+   "year": 2009,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "ScenIC: A Strategy for Inquiry-Driven Requirements Determination",
+   "authors": [
+    "Colin Potts"
+   ],
+   "track": "main",
+   "paperYear": 1999,
+   "source": "https://re-conferences.org/REConferenceAwards",
+   "evidence": "Most Influential Paper Award Papers recognized for lasting impact on the RE field, awarded 10 years after publication. … 2009 for 1999 \"ScenIC: A Strategy for Inquiry-Driven Requirements Determination\" Colin Potts"
+  },
+  {
+   "venue": "RE",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Extending Nocuous Ambiguity Analysis for Anaphora in Natural Language Requirements",
+   "authors": [
+    "Hui Yang",
+    "Anne de Roeck",
+    "Vincenzo Gervasi",
+    "Alistair Willis",
+    "Bashar Nuseibeh"
+   ],
+   "track": "main",
+   "source": "https://re-conferences.org/REConferenceAwards",
+   "evidence": "Best Paper Awards … 2010 Research \"Extending Nocuous Ambiguity Analysis for Anaphora in Natural Language Requirements\" Hui Yang, Anne de Roeck, Vincenzo Gervasi, Alistair Willis, and Bashar Nuseibeh"
+  },
+  {
+   "venue": "RE",
+   "year": 2010,
+   "award": "category",
+   "awardLabel": "Best Paper Award (Industry)",
+   "title": "Successful Deployment of Requirements Traceability in a Commercial Engineering Organization... Really",
+   "authors": [
+    "Michael Panis"
+   ],
+   "track": "main",
+   "source": "https://re-conferences.org/REConferenceAwards",
+   "evidence": "Best Paper Awards … 2010 Industry \"Successful Deployment of Requirements Traceability in a Commercial Engineering Organization... Really\" Michael Panis"
+  },
+  {
+   "venue": "RE",
+   "year": 2010,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "A Reference Model for Requirements and Specifications",
+   "authors": [
+    "Carl A. Gunter",
+    "Elsa L. Gunter",
+    "Michael Jackson",
+    "Pamela Zave"
+   ],
+   "track": "main",
+   "paperYear": 2000,
+   "source": "https://re-conferences.org/REConferenceAwards",
+   "evidence": "Most Influential Paper Award Papers recognized for lasting impact on the RE field, awarded 10 years after publication. … 2010 for 2000 \"A Reference Model for Requirements and Specifications\" Carl A. Gunter, Elsa L. Gunter, Michael Jackson, and Pamela Zave"
+  },
+  {
+   "venue": "RE",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Power and politics in requirements engineering: A proposed research agenda",
+   "authors": [
+    "Alastair Milne",
+    "Neil Maiden"
+   ],
+   "track": "main",
+   "source": "https://re-conferences.org/REConferenceAwards",
+   "evidence": "Best Paper Awards … 2011 \"Power and politics in requirements engineering: A proposed research agenda\" Alastair Milne and Neil Maiden"
+  },
+  {
+   "venue": "RE",
+   "year": 2011,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Goal-Oriented Requirements Engineering: A Guided Tour (Mini-Tutorial)",
+   "authors": [
+    "Axel van Lamsweerde"
+   ],
+   "track": "main",
+   "paperYear": 2001,
+   "source": "https://re-conferences.org/REConferenceAwards",
+   "evidence": "Most Influential Paper Award Papers recognized for lasting impact on the RE field, awarded 10 years after publication. … 2011 for 2001 \"Goal-Oriented Requirements Engineering: A Guided Tour (Mini-Tutorial)\" Axel van Lamsweerde"
+  },
+  {
+   "venue": "RE",
+   "year": 2012,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Requirements Engineering in Automotive Development — Experience and Challenges",
+   "authors": [
+    "Matthias Weber",
+    "Joachim Weisbrod"
+   ],
+   "track": "main",
+   "paperYear": 2002,
+   "source": "https://re-conferences.org/REConferenceAwards",
+   "evidence": "Most Influential Paper Award Papers recognized for lasting impact on the RE field, awarded 10 years after publication. … 2012 for 2002 \"Requirements Engineering in Automotive Development — Experience and Challenges\" Matthias Weber and Joachim Weisbrod"
+  },
+  {
+   "venue": "RE",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Visual Notation Design 2.0: Towards User Comprehensible Requirements Engineering Notations",
+   "authors": [
+    "Patrice Caire",
+    "Nicolas Genon",
+    "Patrick Heymans",
+    "Daniel L. Moody"
+   ],
+   "track": "main",
+   "source": "https://re-conferences.org/REConferenceAwards",
+   "evidence": "Best Paper Awards … 2013 Research \"Visual Notation Design 2.0: Towards User Comprehensible Requirements Engineering Notations\" Patrice Caire, Nicolas Genon, Patrick Heymans, and Daniel L. Moody"
+  },
+  {
+   "venue": "RE",
+   "year": 2013,
+   "award": "category",
+   "awardLabel": "Best Paper Award (Industry)",
+   "title": "The Impact of Requirements on Software Quality across Three Product Generations",
+   "authors": [
+    "John Terzakis"
+   ],
+   "track": "main",
+   "source": "https://re-conferences.org/REConferenceAwards",
+   "evidence": "Best Paper Awards … 2013 Industry \"The Impact of Requirements on Software Quality across Three Product Generations\" John Terzakis"
+  },
+  {
+   "venue": "RE",
+   "year": 2013,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Improving Requirements Tracing via Information Retrieval",
+   "authors": [
+    "Jane Huffman Hayes",
+    "Alex Dekhtyar",
+    "James Osborne"
+   ],
+   "track": "main",
+   "paperYear": 2003,
+   "source": "https://re-conferences.org/REConferenceAwards",
+   "evidence": "Most Influential Paper Award Papers recognized for lasting impact on the RE field, awarded 10 years after publication. … 2013 for 2003 \"Improving Requirements Tracing via Information Retrieval\" Jane Huffman Hayes, Alex Dekhtyar, and James Osborne"
+  },
+  {
+   "venue": "RE",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "How Practitioners Approach Gameplay Requirements? An Exploration into the Context of Massive Multiplayer Online Role-Playing Games",
+   "authors": [
+    "Maya Daneva"
+   ],
+   "track": "main",
+   "source": "https://re-conferences.org/REConferenceAwards",
+   "evidence": "Best Paper Awards … 2014 Research \"How Practitioners Approach Gameplay Requirements? An Exploration into the Context of Massive Multiplayer Online Role-Playing Games\" Maya Daneva"
+  },
+  {
+   "venue": "RE",
+   "year": 2014,
+   "award": "category",
+   "awardLabel": "Best Paper Award (Industry)",
+   "title": "A Case Study using a Protocol to Derive Safety Functional Requirements from Fault Tree Analysis",
+   "authors": [
+    "Luiz Eduardo Galvão Martins",
+    "Tiago de Oliveira"
+   ],
+   "track": "main",
+   "source": "https://re-conferences.org/REConferenceAwards",
+   "evidence": "Best Paper Awards … 2014 Industry \"A Case Study using a Protocol to Derive Safety Functional Requirements from Fault Tree Analysis\" Luiz Eduardo Galvão Martins, and Tiago de Oliveira"
+  },
+  {
+   "venue": "RE",
+   "year": 2014,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Speeding up Requirements Management in a Product Software Company",
+   "authors": [
+    "Johan Natt och Dag",
+    "Vincenzo Gervasi",
+    "Sjaak Brinkkemper",
+    "Bjorn Regnell"
+   ],
+   "track": "main",
+   "paperYear": 2004,
+   "source": "https://re-conferences.org/REConferenceAwards",
+   "evidence": "Most Influential Paper Award Papers recognized for lasting impact on the RE field, awarded 10 years after publication. … 2014 for 2004 \"Speeding up Requirements Management in a Product Software Company\" Johan Natt och Dag, Vincenzo Gervasi, Sjaak Brinkkemper, and Bjorn Regnell"
+  },
+  {
+   "venue": "RE",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Ambiguity as a Resource to Disclose Tacit Knowledge",
+   "authors": [
+    "Alessio Ferrari",
+    "Paola Spoletini",
+    "Stefania Gnesi"
+   ],
+   "track": "main",
+   "source": "https://re-conferences.org/REConferenceAwards",
+   "evidence": "Best Paper Awards … 2015 Research \"Ambiguity as a Resource to Disclose Tacit Knowledge\" Alessio Ferrari, Paola Spoletini, and Stefania Gnesi"
+  },
+  {
+   "venue": "RE",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Bug Report, Feature Request, or Simply Praise? On Automatically Classifying App Reviews",
+   "authors": [
+    "Walid Maalej",
+    "Hadeer Nabil"
+   ],
+   "track": "main",
+   "source": "https://re-conferences.org/REConferenceAwards",
+   "evidence": "Best Paper Awards … 2015 Research \"Bug Report, Feature Request, or Simply Praise? On Automatically Classifying App Reviews\" Walid Maalej and Hadeer Nabil"
+  },
+  {
+   "venue": "RE",
+   "year": 2015,
+   "award": "category",
+   "awardLabel": "Best Paper Award (Industry)",
+   "title": "Requirements Problems in the Development of a New User Interface for Healthcare Equipment",
+   "authors": [
+    "Jens Bæk Jørgensen",
+    "Maria Holmegaard",
+    "Michael Sørensen Loft",
+    "Martin Stig Stissing"
+   ],
+   "track": "main",
+   "source": "https://re-conferences.org/REConferenceAwards",
+   "evidence": "Best Paper Awards … 2015 Industry \"Requirements Problems in the Development of a New User Interface for Healthcare Equipment\" Jens Bæk Jørgensen, Maria Holmegaard, Michael Sørensen Loft, and Martin Stig Stissing"
+  },
+  {
+   "venue": "RE",
+   "year": 2015,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Modeling Security Requirements through Ownership, Permission, and Delegation",
+   "authors": [
+    "Paolo Giorgini",
+    "Fabio Massacci",
+    "John Mylopoulos",
+    "Nocola Zannone"
+   ],
+   "track": "main",
+   "paperYear": 2005,
+   "source": "https://re-conferences.org/REConferenceAwards",
+   "evidence": "Most Influential Paper Award Papers recognized for lasting impact on the RE field, awarded 10 years after publication. … 2015 for 2005 \"Modeling Security Requirements through Ownership, Permission, and Delegation\" Paolo Giorgini, Fabio Massacci, John Mylopoulos, Nocola Zannone"
+  },
+  {
+   "venue": "RE",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Advancing Repeated Research in Requirements Engineering: A Theoretical Replication of Viewpoint Merging",
+   "authors": [
+    "Nan Niu",
+    "Amy Koshoffer",
+    "Linda Newman",
+    "Charu Khatwani",
+    "Chatura Samarasinghe",
+    "Juha Savolainen"
+   ],
+   "track": "main",
+   "source": "https://re-conferences.org/REConferenceAwards",
+   "evidence": "Best Paper Awards … 2016 Research \"Advancing Repeated Research in Requirements Engineering: A Theoretical Replication of Viewpoint Merging\" Nan Niu, Amy Koshoffer, Linda Newman, Charu Khatwani, Chatura Samarasinghe, and Juha Savolainen"
+  },
+  {
+   "venue": "RE",
+   "year": 2016,
+   "award": "category",
+   "awardLabel": "Best Paper Award (Industry)",
+   "title": "RAMP: Requirements Authors Mentoring Program",
+   "authors": [
+    "John Terzakis",
+    "Sarah Gregory"
+   ],
+   "track": "main",
+   "source": "https://re-conferences.org/REConferenceAwards",
+   "evidence": "Best Paper Awards … 2016 Industry \"RAMP: Requirements Authors Mentoring Program\" John Terzakis and Sarah Gregory"
+  },
+  {
+   "venue": "RE",
+   "year": 2016,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Feature Diagrams: A Survey and A Formal Semantics",
+   "authors": [
+    "Pierre-Yves Schobbens",
+    "Patrick Heymans",
+    "Jean-Christophe Trigaux",
+    "Yves Bontemps"
+   ],
+   "track": "main",
+   "paperYear": 2006,
+   "source": "https://re-conferences.org/REConferenceAwards",
+   "evidence": "Most Influential Paper Award Papers recognized for lasting impact on the RE field, awarded 10 years after publication. … 2016 for 2006 \"Feature Diagrams: A Survey and A Formal Semantics\" Pierre-Yves Schobbens, Patrick Heymans, Jean-Christophe Trigaux, and Yves Bontemps"
+  },
+  {
+   "venue": "RE",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "What do support analysts know about their customers? On the study and prediction of support ticket escalations in large software organizations",
+   "authors": [
+    "Lloyd Montgomery",
+    "Daniela Damian"
+   ],
+   "track": "main",
+   "source": "https://re-conferences.org/REConferenceAwards",
+   "evidence": "Best Paper Awards … 2017 Research \"What do support analysts know about their customers? On the study and prediction of support ticket escalations in large software organizations\" Lloyd Montgomery and Daniela Damian"
+  },
+  {
+   "venue": "RE",
+   "year": 2017,
+   "award": "category",
+   "awardLabel": "Best Paper Award (Industry)",
+   "title": "How Much Undocumented Knowledge is there in Agile Software Development?: Case Study on Industrial Project Using Issue Tracking System and Version Control System",
+   "authors": [
+    "Shinobu Saito",
+    "Yukako Iimura",
+    "Aaron K. Massey",
+    "Annie I. Antón"
+   ],
+   "track": "main",
+   "source": "https://re-conferences.org/REConferenceAwards",
+   "evidence": "Best Paper Awards … 2017 Industry \"How Much Undocumented Knowledge is there in Agile Software Development?: Case Study on Industrial Project Using Issue Tracking System and Version Control System\" Shinobu Saito, Yukako Iimura, Aaron K. Massey, and Annie I. Antón"
+  },
+  {
+   "venue": "RE",
+   "year": 2017,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "On Non-Functional Requirements",
+   "authors": [
+    "Martin Glinz"
+   ],
+   "track": "main",
+   "paperYear": 2007,
+   "source": "https://re-conferences.org/REConferenceAwards",
+   "evidence": "Most Influential Paper Award Papers recognized for lasting impact on the RE field, awarded 10 years after publication. … 2017 for 2007 \"On Non-Functional Requirements\" Martin Glinz"
+  },
+  {
+   "venue": "RE",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Learning from Mistakes: An Empirical Study of Elicitation Interviews Performed by Novices",
+   "authors": [
+    "Muneera Bano",
+    "Didar Zowghi",
+    "Alessio Ferrari",
+    "Paola Spoletini",
+    "Beatrice Donati"
+   ],
+   "track": "main",
+   "source": "https://re-conferences.org/REConferenceAwards",
+   "evidence": "Best Paper Awards … 2018 Research \"Learning from Mistakes: An Empirical Study of Elicitation Interviews Performed by Novices\" Muneera Bano, Didar Zowghi, Alessio Ferrari, Paola Spoletini, and Beatrice Donati"
+  },
+  {
+   "venue": "RE",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Semantic Incompleteness in Privacy Policy Goals",
+   "authors": [
+    "Jaspreet Bhatia",
+    "Travis Breaux"
+   ],
+   "track": "main",
+   "source": "https://re-conferences.org/REConferenceAwards",
+   "evidence": "Best Paper Awards … 2018 Research \"Semantic Incompleteness in Privacy Policy Goals\" Jaspreet Bhatia and Travis Breaux"
+  },
+  {
+   "venue": "RE",
+   "year": 2018,
+   "award": "category",
+   "awardLabel": "Best Paper Award (Industry)",
+   "title": "Towards Development of Complete and Conflict-Free Requirements",
+   "authors": [
+    "Abha Moitra",
+    "Kit Siu",
+    "Andrew Crapo",
+    "Harsh Chamarthi",
+    "Michael Durling",
+    "Meng Li",
+    "Han Yu",
+    "Panagiotis Manolios",
+    "Michael Meiners"
+   ],
+   "track": "main",
+   "source": "https://re-conferences.org/REConferenceAwards",
+   "evidence": "Best Paper Awards … 2018 Industry \"Towards Development of Complete and Conflict-Free Requirements\" Abha Moitra, Kit Siu, Andrew Crapo, Harsh Chamarthi, Michael Durling, Meng Li, Han Yu, Panagiotis Manolios, and Michael Meiners"
+  },
+  {
+   "venue": "RE",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Extracting and Modeling Product Line Functional Requirements",
+   "authors": [
+    "Nan Niu",
+    "Steve Easterbrook"
+   ],
+   "track": "main",
+   "paperYear": 2008,
+   "source": "https://re-conferences.org/REConferenceAwards",
+   "evidence": "Most Influential Paper Award Papers recognized for lasting impact on the RE field, awarded 10 years after publication. … 2018 for 2008 \"Extracting and Modeling Product Line Functional Requirements\" Nan Niu and Steve Easterbrook"
+  },
+  {
+   "venue": "RE",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "A Machine-Learning Approach for Demarcating Requirements in Textual Specifications",
+   "authors": [
+    "Sallam Abualhaija",
+    "Chetan Arora",
+    "Mehrdad Sabetzadeh",
+    "Lionel Briand",
+    "Eduardo Vaz"
+   ],
+   "track": "main",
+   "source": "https://re-conferences.org/REConferenceAwards",
+   "evidence": "Best Paper Awards … 2019 Research \"A Machine-Learning Approach for Demarcating Requirements in Textual Specifications\" Sallam Abualhaija, Chetan Arora, Mehrdad Sabetzadeh, Lionel Briand, and Eduardo Vaz"
+  },
+  {
+   "venue": "RE",
+   "year": 2019,
+   "award": "category",
+   "awardLabel": "Best Paper Award (Industry)",
+   "title": "A Query System for Extracting Requirements-related Information from Legal Texts",
+   "authors": [
+    "Amin Sleimi",
+    "Marcello Ceci",
+    "Nicolas Sannier",
+    "Mehrdad Sabetzadeh",
+    "Lionel Briand",
+    "John Dann"
+   ],
+   "track": "main",
+   "source": "https://re-conferences.org/REConferenceAwards",
+   "evidence": "Best Paper Awards … 2019 Industry \"A Query System for Extracting Requirements-related Information from Legal Texts\" Amin Sleimi, Marcello Ceci, Nicolas Sannier, Mehrdad Sabetzadeh, Lionel Briand, and John Dann"
+  },
+  {
+   "venue": "RE",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Easy Approach to Requirements Syntax (EARS)",
+   "authors": [
+    "Alistair Mavin",
+    "Philip Wilkinson",
+    "Adrian Harwood",
+    "Mark Novak"
+   ],
+   "track": "main",
+   "paperYear": 2009,
+   "source": "https://re-conferences.org/REConferenceAwards",
+   "evidence": "Most Influential Paper Award Papers recognized for lasting impact on the RE field, awarded 10 years after publication. … 2019 for 2009 Industry \"Easy Approach to Requirements Syntax (EARS)\" Alistair Mavin, Philip Wilkinson, Adrian Harwood, and Mark Novak"
+  },
+  {
+   "venue": "RE",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "RELAX: Incorporating Uncertainty into the Specification of Self-Adaptive Systems",
+   "authors": [
+    "Jon Whittle",
+    "Pete Sawyer",
+    "Nelly Bencomo",
+    "Betty H.C. Cheng",
+    "Jean-Michel Bruel"
+   ],
+   "track": "main",
+   "paperYear": 2009,
+   "source": "https://re-conferences.org/REConferenceAwards",
+   "evidence": "Most Influential Paper Award Papers recognized for lasting impact on the RE field, awarded 10 years after publication. … 2019 for 2009 Research \"RELAX: Incorporating Uncertainty into the Specification of Self-Adaptive Systems\" Jon Whittle, Pete Sawyer, Nelly Bencomo, Betty H.C. Cheng, and Jean-Michel Bruel"
+  },
+  {
+   "venue": "RE",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Theory as a Source of Software Requirements",
+   "authors": [
+    "Ruzanna Chitchyan",
+    "Caroline Bird"
+   ],
+   "track": "main",
+   "source": "https://re-conferences.org/REConferenceAwards",
+   "evidence": "Best Paper Awards … 2020 \"Theory as a Source of Software Requirements\" Ruzanna Chitchyan and Caroline Bird"
+  },
+  {
+   "venue": "RE",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Fuzzy Goals for Requirements-Driven Adaptation",
+   "authors": [
+    "Luciano Baresi",
+    "Liliana Pasquale",
+    "Paola Spoletini"
+   ],
+   "track": "main",
+   "paperYear": 2010,
+   "source": "https://re-conferences.org/REConferenceAwards",
+   "evidence": "Most Influential Paper Award Papers recognized for lasting impact on the RE field, awarded 10 years after publication. … 2020 for 2010 \"Fuzzy Goals for Requirements-Driven Adaptation\" Luciano Baresi, Liliana Pasquale, and Paola Spoletini"
+  },
+  {
+   "venue": "RE",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Environment-Driven Abstraction Identification for Requirements-Based Testing",
+   "authors": [
+    "Zedong Peng",
+    "Prachi Rathod",
+    "Nan Niu",
+    "Tanmay Bhowmik",
+    "Hui Liu",
+    "Lin Shi",
+    "Zhi Jin"
+   ],
+   "track": "main",
+   "source": "https://re-conferences.org/REConferenceAwards",
+   "evidence": "Best Paper Awards … 2021 Research \"Environment-Driven Abstraction Identification for Requirements-Based Testing\" Zedong Peng, Prachi Rathod, Nan Niu, Tanmay Bhowmik, Hui Liu, Lin Shi, and Zhi Jin"
+  },
+  {
+   "venue": "RE",
+   "year": 2021,
+   "award": "category",
+   "awardLabel": "Best Paper Award (Industry)",
+   "title": "CrowdRE in a Governmental Setting: Lessons from Two Case Studies",
+   "authors": [
+    "Jelle Wouters",
+    "Rob Janssen",
+    "Bas van Hulst",
+    "John van Veenhuizen",
+    "Fabiano Dalpiaz",
+    "Sjaak Brinkkemper"
+   ],
+   "track": "main",
+   "source": "https://re-conferences.org/REConferenceAwards",
+   "evidence": "Best Paper Awards … 2021 Industry \"CrowdRE in a Governmental Setting: Lessons from Two Case Studies\" Jelle Wouters, Rob Janssen, Bas van Hulst, John van Veenhuizen, Fabiano Dalpiaz, and Sjaak Brinkkemper"
+  },
+  {
+   "venue": "RE",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Requirements are slipping through the gaps — A case study on causes & effects of communication gaps in large-scale software development",
+   "authors": [
+    "Elizabeth Bjarnason",
+    "Krzysztof Wnuk",
+    "Björn Regnell"
+   ],
+   "track": "main",
+   "paperYear": 2011,
+   "source": "https://re-conferences.org/REConferenceAwards",
+   "evidence": "Most Influential Paper Award Papers recognized for lasting impact on the RE field, awarded 10 years after publication. … 2021 for 2011 \"Requirements are slipping through the gaps — A case study on causes & effects of communication gaps in large-scale software development\" Elizabeth Bjarnason, Krzysztof Wnuk, and Björn Regnell"
+  },
+  {
+   "venue": "RE",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Automated Question Answering for Improved Understanding of Compliance Requirements: A Multi-Document Study",
+   "authors": [
+    "Sallam Abualhaija",
+    "Chetan Arora",
+    "Amin Sleimi",
+    "Lionel Briand"
+   ],
+   "track": "main",
+   "source": "https://re-conferences.org/REConferenceAwards",
+   "evidence": "Best Paper Awards … 2022 \"Automated Question Answering for Improved Understanding of Compliance Requirements: A Multi-Document Study\" Sallam Abualhaija, Chetan Arora, Amin Sleimi, and Lionel Briand"
+  },
+  {
+   "venue": "RE",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "How do software architects consider non-functional requirements: An exploratory study",
+   "authors": [
+    "David Ameller",
+    "Claudia Ayala",
+    "Jordi Cabot",
+    "Xavier Franch"
+   ],
+   "track": "main",
+   "paperYear": 2012,
+   "source": "https://re-conferences.org/REConferenceAwards",
+   "evidence": "Most Influential Paper Award Papers recognized for lasting impact on the RE field, awarded 10 years after publication. … 2022 for 2012 \"How do software architects consider non-functional requirements: An exploratory study\" David Ameller, Claudia Ayala, Jordi Cabot, and Xavier Franch"
+  },
+  {
+   "venue": "RE",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "User Driven Functionality Deletion for Mobile Apps",
+   "authors": [
+    "Maleknaz Nayebi",
+    "Konstantin Kuznetsov",
+    "Andreas Zeller",
+    "Guenther Ruhe"
+   ],
+   "track": "main",
+   "source": "https://re-conferences.org/REConferenceAwards",
+   "evidence": "Best Paper Awards … 2023 \"User Driven Functionality Deletion for Mobile Apps\" Maleknaz Nayebi, Konstantin Kuznetsov, Andreas Zeller, Guenther Ruhe"
+  },
+  {
+   "venue": "RE",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "User feedback in the AppStore: An empirical study",
+   "authors": [
+    "Dennis Pagano",
+    "Walid Maalej"
+   ],
+   "track": "main",
+   "paperYear": 2013,
+   "source": "https://re-conferences.org/REConferenceAwards",
+   "evidence": "Most Influential Paper Award Papers recognized for lasting impact on the RE field, awarded 10 years after publication. … 2023 for 2013 \"User feedback in the AppStore: An empirical study\" Dennis Pagano, Walid Maalej"
+  },
+  {
+   "venue": "RE",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "ReqCompletion: Domain-Enhanced Automatic Completion for Software Requirements",
+   "authors": [
+    "Xiaoli Lian",
+    "Jieping Ma",
+    "Heyang Lv",
+    "Li Zhang"
+   ],
+   "track": "main",
+   "source": "https://re-conferences.org/REConferenceAwards",
+   "evidence": "Best Paper Awards … 2024 \"ReqCompletion: Domain-Enhanced Automatic Completion for Software Requirements\" Xiaoli Lian, Jieping Ma, Heyang Lv, Li Zhang"
+  },
+  {
+   "venue": "RE",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "How Do Users Like This Feature? A Fine Grained Sentiment Analysis of App Reviews",
+   "authors": [
+    "Emitzá Guzmán",
+    "Walid Maalej"
+   ],
+   "track": "main",
+   "paperYear": 2014,
+   "source": "https://re-conferences.org/REConferenceAwards",
+   "evidence": "Most Influential Paper Award Papers recognized for lasting impact on the RE field, awarded 10 years after publication. … 2024 for 2014 \"How Do Users Like This Feature? A Fine Grained Sentiment Analysis of App Reviews\" Emitzá Guzmán, Walid Maalej"
+  },
+  {
+   "venue": "RE",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "The Impact of Requirements Artifacts on Efficiency in Agile Development: A Case Study",
+   "authors": [
+    "Sabine Molenaar",
+    "Fabiano Dalpiaz"
+   ],
+   "track": "main",
+   "source": "https://re-conferences.org/REConferenceAwards",
+   "evidence": "Best Paper Awards … 2025 \"The Impact of Requirements Artifacts on Efficiency in Agile Development: A Case Study\" Sabine Molenaar, Fabiano Dalpiaz"
+  },
+  {
+   "venue": "RE",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Bug report, feature request, or simply praise? on automatically classifying app reviews",
+   "authors": [
+    "Walid Maalej",
+    "Hadeer Nabil"
+   ],
+   "track": "main",
+   "paperYear": 2015,
+   "source": "https://re-conferences.org/REConferenceAwards",
+   "evidence": "Most Influential Paper Award Papers recognized for lasting impact on the RE field, awarded 10 years after publication. … 2025 for 2015 \"Bug report, feature request, or simply praise? on automatically classifying app reviews\" Walid Maalej and Hadeer Nabil"
+  },
+  {
+   "venue": "RE",
    "year": 2026,
    "award": "best",
    "awardLabel": "Best Paper Award",
@@ -150594,6 +154669,73 @@
   },
   {
    "venue": "SANER",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "AdvFusion: Adapter-based Knowledge Transfer for Code Summarization on Code Language Models",
+   "authors": [
+    "Iman Saberi",
+    "Amirreza Esmaeili",
+    "Fatemeh Hendijani Fard",
+    "Chen Fuxiang"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/program/saner-2025/program-saner-2025",
+   "evidence": "AdvFusion: Adapter-based Knowledge Transfer for Code Summarization on Code Language Models Best Paper Award Research Papers Iman Saberi University of British Columbia Okanagan , Amirreza Esmaeili University of British Columbia , Fatemeh Hendijani Fard University of British Columbia , Chen Fuxiang"
+  },
+  {
+   "venue": "SANER",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Characterizing Logs in Vulnerability Reports: In-Depth Analysis and Security Implications",
+   "authors": [
+    "Yao Shu",
+    "Lianyu Zheng",
+    "Jinfu Chen",
+    "Jifeng Xuan"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/program/saner-2025/program-saner-2025",
+   "evidence": "Characterizing Logs in Vulnerability Reports: In-Depth Analysis and Security Implications Best Paper Award Research Papers Yao Shu Wuhan University , Lianyu Zheng Wuhan University , Jinfu Chen Wuhan University , Jifeng Xuan"
+  },
+  {
+   "venue": "SANER",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "How to Select Pre-Trained Code Models for Reuse? A Learning Perspective",
+   "authors": [
+    "Zhangqian Bi",
+    "Yao Wan",
+    "Zhaoyang Chu",
+    "Yufei Hu",
+    "Junyi Zhang",
+    "Hongyu Zhang",
+    "Guandong Xu",
+    "Hai Jin"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/program/saner-2025/program-saner-2025",
+   "evidence": "How to Select Pre-Trained Code Models for Reuse? A Learning Perspective Best Paper Award Research Papers Zhangqian Bi Huazhong University of Science and Technology , Yao Wan Huazhong University of Science and Technology , Zhaoyang Chu Huazhong University of Science and Technology , Yufei Hu Huazhong University of Science and Technology , Junyi Zhang Huazhong University of Science and Technology , Hongyu Zhang Chongqing University , Guandong Xu University of Technology , Hai Jin"
+  },
+  {
+   "venue": "SANER",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Why Do Developers Engage with ChatGPT in Issue-Tracker? Investigating Usage and Reliance on ChatGPT-Generated Code",
+   "authors": [
+    "Joy Krishan Das",
+    "Saikat Mondal",
+    "Chanchal K. Roy"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/program/saner-2025/program-saner-2025",
+   "evidence": "Why Do Developers Engage with ChatGPT in Issue-Tracker? Investigating Usage and Reliance on ChatGPT-Generated Code Best Paper Award Research Papers Joy Krishan Das University of Saskatchewan , Saikat Mondal University of Saskatchewan , Chanchal K. Roy"
+  },
+  {
+   "venue": "SANER",
    "year": 2026,
    "award": "distinguished",
    "awardLabel": "Distinguished Paper Awards",
@@ -150656,6 +154798,22 @@
    "track": "main",
    "source": "https://conf.researchr.org/attending/saner-2026/awards",
    "evidence": "The following papers are the recipients of the SANER 2026 Disinguished Paper awards for the Research Track: Lev Sorokin, Ivan Vasilev, Ken Friedl, Andrea Stocco for the paper “STELLAR: A Search-Based Testing Framework for Large Language Model Applications: Amit Kumar, Ethari Hrishikesh, Sonali Agarwal for the paper “Leveraging Commit-Size Context and Hyper Co-Change Graph Centralities for Defect Prediction\" Chunguang Zhang, Bixin Li, Yan Xiao for the paper “Beyond Lexical: Functional Semantics and Fusion for Precise Architecture Recovery\" Yuqing Niu, Jieke Shi, Rundong Han, Ye Liu, Chengyan Ma, Yunbo Lyu, David Lo for the paper “What You Trust Is Insecure: Demystifying How Developers (Mis)Use Trusted Execution Environments in Practice\" … [the page spells it \"Disinguished\"; the award is the Distinguished Paper award of the SANER 2026 Research Track]"
+  },
+  {
+   "venue": "SANER",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper (MIP) Award",
+   "title": "Examining the Impact of Self-admitted Technical Debt on Software Quality",
+   "authors": [
+    "Sultan Wehaibi",
+    "Emad Shihab",
+    "Latifa Guerrouj"
+   ],
+   "track": "main",
+   "paperYear": 2016,
+   "source": "https://conf.researchr.org/attending/saner-2026/awards",
+   "evidence": "The Most Influential Paper (MIP) award of this year goes to the following paper from SANER 2016: \"Examining the Impact of Self-admitted Technical Debt on Software Quality”, that was co-authored by Sultan Wehaibi, Concordia University Emad Shihab, Concordia University Latifa Guerrouj, ETS Montreal"
   },
   {
    "venue": "SAS",
@@ -150885,6 +155043,333 @@
   },
   {
    "venue": "SAT",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "On Freezing and Reactivating Learnt Clauses",
+   "authors": [
+    "Gilles Audemard",
+    "Jean-Marie Lagniez",
+    "Bertrand Mazure",
+    "Lakhdar Sais"
+   ],
+   "track": "main",
+   "source": "https://satassociation.org/awards/",
+   "evidence": "Best Paper Award 2011: “On Freezing and Reactivating Learnt Clauses“, by Gilles Audemard, Jean-Marie Lagniez, Bertrand Mazure and Lakhdar Sais"
+  },
+  {
+   "venue": "SAT",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Soundness of Inprocessing in Clause Sharing SAT Solvers",
+   "authors": [
+    "Norbert Manthey",
+    "Tobias Philipp",
+    "Christoph Wernhard"
+   ],
+   "track": "main",
+   "source": "https://satassociation.org/awards/",
+   "evidence": "Best Paper Award 2013: “Soundness of Inprocessing in Clause Sharing SAT Solvers“, by Norbert Manthey, Tobias Philipp, and Christoph Wernhard"
+  },
+  {
+   "venue": "SAT",
+   "year": 2014,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Impact of Community Structure on SAT Solver Performance",
+   "authors": [
+    "Zack Newsham",
+    "Vijay Ganesh",
+    "Sebastian Fischmeister",
+    "Gilles Audemard",
+    "Laurent Simon"
+   ],
+   "track": "main",
+   "source": "https://satassociation.org/awards/",
+   "evidence": "Best Student Paper Award 2014: “Impact of Community Structure on SAT Solver Performance“, by Zack Newsham, Vijay Ganesh, Sebastian Fischmeister, Gilles Audemard and Laurent Simon"
+  },
+  {
+   "venue": "SAT",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Solving and Verifying the boolean Pythagorean Triples problem via Cube-and-Conquer",
+   "authors": [
+    "Marijn Heule",
+    "Oliver Kullmann",
+    "Victor Marek"
+   ],
+   "track": "main",
+   "source": "https://satassociation.org/awards/",
+   "evidence": "Best Paper Award 2016: “Solving and Verifying the boolean Pythagorean Triples problem via Cube-and-Conquer“, by Marijn Heule, Oliver Kullmann and Victor Marek"
+  },
+  {
+   "venue": "SAT",
+   "year": 2016,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "A SAT Approach to Branchwidth",
+   "authors": [
+    "Neha Lodha",
+    "Sebastian Ordyniak",
+    "Stefan Szeider"
+   ],
+   "track": "main",
+   "source": "https://satassociation.org/awards/",
+   "evidence": "Best Student Paper Award 2016: “A SAT Approach to Branchwidth“, by Neha Lodha, Sebastian Ordyniak and Stefan Szeider"
+  },
+  {
+   "venue": "SAT",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Shortening QBF Proofs with Dependency Schemes",
+   "authors": [
+    "Joshua Blinkhorn",
+    "Olaf Beyersdorff"
+   ],
+   "track": "main",
+   "source": "https://satassociation.org/awards/",
+   "evidence": "Best Paper Award 2017: “Shortening QBF Proofs with Dependency Schemes“, by Joshua Blinkhorn and Olaf Beyersdorff"
+  },
+  {
+   "venue": "SAT",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Best Student Paper Honourable Mention",
+   "title": "An Empirical Study of Branching Heuristics through the Lens of Global Learning Rate",
+   "authors": [
+    "Jia Liang",
+    "Vijay Ganesh",
+    "Krzysztof Czarnecki",
+    "Pascal Poupart",
+    "Hari Govind V K"
+   ],
+   "track": "main",
+   "source": "https://satassociation.org/awards/",
+   "evidence": "Best Student Paper Honourable Mention “An Empirical Study of Branching Heuristics through the Lens of Global Learning Rate“, by Jia Liang, Vijay Ganesh, Krzysztof Czarnecki, Pascal Poupart, and Hari Govind V K DOI: https://doi.org/10.1007/978-3-319-66263-3_8"
+  },
+  {
+   "venue": "SAT",
+   "year": 2017,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Introducing Pareto Minimal Correction Subsets",
+   "authors": [
+    "Miguel Terra-Neves",
+    "Inês Lynce",
+    "Vasco Manquinho"
+   ],
+   "track": "main",
+   "source": "https://satassociation.org/awards/",
+   "evidence": "Best Student Paper Award 2017: “Introducing Pareto Minimal Correction Subsets“, by Miguel Terra-Neves, Inês Lynce, and Vasco Manquinho"
+  },
+  {
+   "venue": "SAT",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Sharpness of the Satisfiability Threshold for Non-Uniform Random k-SAT",
+   "authors": [
+    "Tobias Friedrich",
+    "Ralf Rothenberger"
+   ],
+   "track": "main",
+   "source": "https://satassociation.org/awards/",
+   "evidence": "Best Paper Award 2018: “Sharpness of the Satisfiability Threshold for Non-Uniform Random k-SAT”, by Tobias Friedrich and Ralf Rothenberger"
+  },
+  {
+   "venue": "SAT",
+   "year": 2018,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Fast Sampling of Perfectly Uniform Satisfying Assignments",
+   "authors": [
+    "Dimitris Achlioptas",
+    "Zayd Hammoudeh",
+    "Panos Theodoropoulos"
+   ],
+   "track": "main",
+   "source": "https://satassociation.org/awards/",
+   "evidence": "Best Student Paper Award 2018: “Fast Sampling of Perfectly Uniform Satisfying Assignments”, by Dimitris Achlioptas, Zayd Hammoudeh, and Panos Theodoropoulos"
+  },
+  {
+   "venue": "SAT",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "On Super Strong ETH",
+   "authors": [
+    "Nikhil Vyas",
+    "Ryan Williams"
+   ],
+   "track": "main",
+   "source": "https://satassociation.org/awards/",
+   "evidence": "Best Paper Award 2019: “On Super Strong ETH”, by Nikhil Vyas and Ryan Williams"
+  },
+  {
+   "venue": "SAT",
+   "year": 2019,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Incremental Inprocessing in SAT Solving",
+   "authors": [
+    "Katalin Fazekas",
+    "Armin Biere",
+    "Christoph Scholl"
+   ],
+   "track": "main",
+   "source": "https://satassociation.org/awards/",
+   "evidence": "Best Student Paper Award 2019: “Incremental Inprocessing in SAT Solving”, by Katalin Fazekas, Armin Biere, and Christoph Scholl"
+  },
+  {
+   "venue": "SAT",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Abstract Cores in Implicit Hitting Set MaxSat Solving",
+   "authors": [
+    "Jeremias Berg",
+    "Fahiem Bacchus",
+    "Alex Poole"
+   ],
+   "track": "main",
+   "source": "https://satassociation.org/awards/",
+   "evidence": "Best Paper Award 2020: “Abstract Cores in Implicit Hitting Set MaxSat Solving”, by Jeremias Berg, Fahiem Bacchus and Alex Poole"
+  },
+  {
+   "venue": "SAT",
+   "year": 2020,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Mycielski graphs and PR proofs",
+   "authors": [
+    "Emre Yolcu",
+    "Xinyu Wu",
+    "Marijn J. H. Heule"
+   ],
+   "track": "main",
+   "source": "https://satassociation.org/awards/",
+   "evidence": "Best Student Paper Award 2020: “Mycielski graphs and PR proofs“, by Emre Yolcu, Xinyu Wu, and Marijn J. H. Heule"
+  },
+  {
+   "venue": "SAT",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Deep Cooperation of CDCL and Local Search for SAT",
+   "authors": [
+    "Shaowei Cai",
+    "Xindi Zhang"
+   ],
+   "track": "main",
+   "source": "https://satassociation.org/awards/",
+   "evidence": "Best Paper Award 2021: “Deep Cooperation of CDCL and Local Search for SAT”, by Shaowei Cai and Xindi Zhang"
+  },
+  {
+   "venue": "SAT",
+   "year": 2021,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Characterizing Tseitin-Formulas with Short Regular Resolution Refutations",
+   "authors": [
+    "Alexis de Colnet",
+    "Stefan Mengel"
+   ],
+   "track": "main",
+   "source": "https://satassociation.org/awards/",
+   "evidence": "Best Student Paper Award 2021: “Characterizing Tseitin-Formulas with Short Regular Resolution Refutations”, by Alexis de Colnet and Stefan Mengel"
+  },
+  {
+   "venue": "SAT",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "A generalization of the Satisfiability Coding Lemma and its applications",
+   "authors": [
+    "Milan Mosse",
+    "Harry Sha",
+    "Li-Yang Tan"
+   ],
+   "track": "main",
+   "source": "https://satassociation.org/awards/",
+   "evidence": "Best Paper Award 2022: “A generalization of the Satisfiability Coding Lemma and its applications”, by Milan Mosse, Harry Sha and Li-Yang Tan"
+  },
+  {
+   "venue": "SAT",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Certified CNF Translations for Pseudo-Boolean Solving",
+   "authors": [
+    "Stephan Gocht",
+    "Ruben Martins",
+    "Jakob Nordström",
+    "Andy Oertel"
+   ],
+   "track": "main",
+   "source": "https://satassociation.org/awards/",
+   "evidence": "Best Paper Award 2022: “Certified CNF Translations for Pseudo-Boolean Solving”, by Stephan Gocht, Ruben Martins, Jakob Nordström and Andy Oertel"
+  },
+  {
+   "venue": "SAT",
+   "year": 2022,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "SAT Preprocessors and Symmetry",
+   "authors": [
+    "Markus Anders"
+   ],
+   "track": "main",
+   "source": "https://satassociation.org/awards/",
+   "evidence": "Best Student Paper Award 2022: “SAT Preprocessors and Symmetry”, by Markus Anders"
+  },
+  {
+   "venue": "SAT",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "An Extensible SAT-solver",
+   "authors": [
+    "Niklas Eén",
+    "Niklas Sörensson"
+   ],
+   "track": "main",
+   "paperYear": 2003,
+   "source": "https://satassociation.org/awards/",
+   "evidence": "Test-of-Time Award 2022 “An Extensible SAT-solver”, by Niklas Eén and Niklas Sörensson, presented at SAT 2003"
+  },
+  {
+   "venue": "SAT",
+   "year": 2023,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "QCDCL vs QBF Resolution: Further Insights",
+   "authors": [
+    "Benjamin Böhm",
+    "Olaf Beyersdorff"
+   ],
+   "track": "main",
+   "source": "https://satassociation.org/awards/",
+   "evidence": "Best Student Paper Award 2023: “QCDCL vs QBF Resolution: Further Insights”, by Benjamin Böhm and Olaf Beyersdorff"
+  },
+  {
+   "venue": "SAT",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Resolve and Expand",
+   "authors": [
+    "Armin Biere"
+   ],
+   "track": "main",
+   "paperYear": 2004,
+   "source": "https://satassociation.org/awards/",
+   "evidence": "Test-of-Time Award 2023 “Resolve and Expand” by Armin Biere, presented at SAT 2004"
+  },
+  {
+   "venue": "SAT",
    "year": 2024,
    "award": "best",
    "awardLabel": "Best Paper Award",
@@ -150896,6 +155381,52 @@
    "track": "main",
    "source": "https://satisfiability.org/SAT24/awards/",
    "evidence": "SAT 2024 Best paper award: “The Strength of the Dominance Rule”, by Leszek Aleksander Kołodziejczyk and Neil Thapen"
+  },
+  {
+   "venue": "SAT",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Best Student Paper Runner-up",
+   "title": "eSLIM: Circuit Minimization with SAT Based Local Improvement",
+   "authors": [
+    "Franz-Xaver Reichl",
+    "Friedrich Slivovsky",
+    "Stefan Szeider"
+   ],
+   "track": "main",
+   "source": "https://satisfiability.org/SAT24/awards/",
+   "evidence": "Best student paper runner-up: “eSLIM: Circuit Minimization with SAT Based Local Improvement” by Franz-Xaver Reichl (student author), Friedrich Slivovsky, and Stefan Szeider"
+  },
+  {
+   "venue": "SAT",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Best Student Paper Runner-up",
+   "title": "Optimal Layout Synthesis for Deep Quantum Circuits on NISQ Processors with 100+ Qubits",
+   "authors": [
+    "Irfansha Shaik",
+    "Jaco van de Pol"
+   ],
+   "track": "main",
+   "source": "https://satisfiability.org/SAT24/awards/",
+   "evidence": "Best student paper runner-up: “Optimal Layout Synthesis for Deep Quantum Circuits on NISQ Processors with 100+ Qubits” by Irfansha Shaik (student author) and Jaco van de Pol"
+  },
+  {
+   "venue": "SAT",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Best Student Paper Runner-up",
+   "title": "Quantum Circuit Mapping Based on Incremental and Parallel SAT Solving",
+   "authors": [
+    "Jiong Yang",
+    "Yaroslav A. Kharkov",
+    "Yunong Shi",
+    "Marijn Heule",
+    "Bruno Dutertre"
+   ],
+   "track": "main",
+   "source": "https://satisfiability.org/SAT24/awards/",
+   "evidence": "Best student paper runner-up: “Quantum Circuit Mapping Based on Incremental and Parallel SAT Solving” by Jiong Yang (student author), Yaroslav A. Kharkov, Yunong Shi, Marijn Heule, and Bruno Dutertre"
   },
   {
    "venue": "SAT",
@@ -150912,6 +155443,24 @@
    "track": "main",
    "source": "https://satisfiability.org/SAT24/awards/",
    "evidence": "SAT 2024 Best student paper award: “Speeding-up Pseudo-Boolean Propagation”, by Robert Nieuwenhuis, Albert Oliveras, Enric Rodríguez Carbonell, and Rui Zhao (student author)"
+  },
+  {
+   "venue": "SAT",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Combining Component Caching and Clause Learning for Effective Model Counting",
+   "authors": [
+    "Tian Sang",
+    "Fahiem Bacchus",
+    "Paul Beame",
+    "Henry A. Kautz",
+    "Toniann Pitassi"
+   ],
+   "track": "main",
+   "paperYear": 2004,
+   "source": "https://satisfiability.org/SAT24/awards/",
+   "evidence": "SAT Test-of-Time Award “Combining Component Caching and Clause Learning for Effective Model Counting” by Tian Sang, Fahiem Bacchus, Paul Beame, Henry A. Kautz, and Toniann Pitassi (appeared in Proceedings of SAT 2004)"
   },
   {
    "venue": "SAT",
@@ -150944,6 +155493,21 @@
   },
   {
    "venue": "SAT",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Effective Preprocessing in SAT Through Variable and Clause Elimination",
+   "authors": [
+    "Niklas Eén",
+    "Armin Biere"
+   ],
+   "track": "main",
+   "paperYear": 2005,
+   "source": "https://satassociation.org/awards/",
+   "evidence": "Test-of-Time Award 2025 “Effective Preprocessing in SAT Through Variable and Clause Elimination” by Niklas Eén and Armin Biere, presented at SAT 2005"
+  },
+  {
+   "venue": "SAT",
    "year": 2026,
    "award": "best",
    "awardLabel": "Best Paper Award",
@@ -150973,6 +155537,21 @@
    "track": "main",
    "source": "https://satassociation.org/awards/",
    "evidence": "Best Student Paper Award 2026: “New Algorithms for Parity-SAT and Its Bounded-Occurrence Version”, by Sanjay Jain, Junqiang Peng, Frank Stephan, Haoyun Tang, and Mingyu Xiao [the page misprints the title; the paper is \"New Algorithms for Parity-SAT and Its Bounded-Occurrence Versions\" — data/exclusions.json]"
+  },
+  {
+   "venue": "SAT",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "On Solving the Partial MAX-SAT Problem",
+   "authors": [
+    "Zhaohui Fu",
+    "Sharad Malik"
+   ],
+   "track": "main",
+   "paperYear": 2006,
+   "source": "https://satassociation.org/awards/",
+   "evidence": "Test-of-Time Award 2026 “On Solving the Partial MAX-SAT Problem” by Zhaohui Fu and Sharad Malik"
   },
   {
    "venue": "SC",
@@ -151058,6 +155637,120 @@
    "paperYear": 2005,
    "source": "https://sc25.supercomputing.org/program/awards/",
    "evidence": "SC25 Test of Time Award: The Globus Striped GridFTP Framework and Server — William Allcock, John Bresnahan, Rajkumar Kettimuthu, Michael Link, Catalin Dumitrescu, Ioan Raicu, Ian Foster"
+  },
+  {
+   "venue": "SCA",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Coupled Fluid Density and Motion from Single Views",
+   "authors": [
+    "Marie-Lena Eckert",
+    "Wolfgang Heidrich",
+    "Nils Thuerey"
+   ],
+   "track": "main",
+   "source": "https://sca2018.inria.fr/",
+   "evidence": "SCA’18 Awards Best paper The Best Paper Award was given to Marie-Lena Eckert, for her work in Coupled Fluid Density and Motion from Single Views. Marie-Lena Eckert, Wolfgang Heidrich, Nils Thuerey."
+  },
+  {
+   "venue": "SCA",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention",
+   "title": "Cable Joints",
+   "authors": [
+    "Matthias Muller",
+    "Nuttapong Chentanez",
+    "Stefan Jeschke",
+    "Miles Macklin"
+   ],
+   "track": "main",
+   "source": "https://sca2018.inria.fr/",
+   "evidence": "SCA’18 Awards Best paper Honorable mentions were given to – Matthias Muller, for his work in Cable Joints. Matthias Muller, Nuttapong Chentanez, Stefan Jeschke, Miles Macklin."
+  },
+  {
+   "venue": "SCA",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention",
+   "title": "Strain Rate Dissipation for Elastic Deformations",
+   "authors": [
+    "Rosa Sanchez-Banderas",
+    "Miguel A. Otaduy"
+   ],
+   "track": "main",
+   "source": "https://sca2018.inria.fr/",
+   "evidence": "SCA’18 Awards Best paper Honorable mentions were given to – Rosa Sanchez-Banderas, for her work in Strain Rate Dissipation for Elastic Deformations. Rosa Sanchez-Banderas, Miguel A. Otaduy."
+  },
+  {
+   "venue": "SCA",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "ALLSTEPS: Curriculum-driven Learning of Stepping Stone Skills",
+   "authors": [
+    "Zhaoming Xie",
+    "Hung Yu Ling",
+    "Nam Hee Kim",
+    "Michiel van de Panne"
+   ],
+   "track": "main",
+   "source": "https://computeranimation.org/2020/program.html",
+   "evidence": "ALLSTEPS: Curriculum-driven Learning of Stepping Stone Skills Best Paper Zhaoming Xie, Hung Yu Ling, Nam Hee Kim, Michiel van de Panne"
+  },
+  {
+   "venue": "SCA",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Lifted Curls: A Model for Tightly Coiled Hair Simulation",
+   "authors": [
+    "Alvin Shi",
+    "Haomiao Wu",
+    "Jarred Parr",
+    "A.M. Darke",
+    "Theodore Kim"
+   ],
+   "track": "main",
+   "source": "https://computeranimation.org/2023/awards/",
+   "evidence": "Best Paper Award Lifted Curls: A Model for Tightly Coiled Hair Simulation Authors: Alvin Shi, Haomiao Wu, Jarred Parr, A.M. Darke and Theodore Kim"
+  },
+  {
+   "venue": "SCA",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention",
+   "title": "HDHumans: A Hybrid Approach for High-fidelity Digital Humans",
+   "authors": [
+    "Marc Habermann",
+    "Lingjie Liu",
+    "Weipeng Xu",
+    "Gerard Pons-Moll",
+    "Michael Zollhoefer",
+    "Christian Theobalt"
+   ],
+   "track": "main",
+   "source": "https://computeranimation.org/2023/awards/",
+   "evidence": "Best Paper Honorable Mentions HDHumans: A Hybrid Approach for High-fidelity Digital Humans Authors: Marc Habermann, Lingjie Liu, Weipeng Xu, Gerard Pons-Moll, Michael Zollhoefer and Christian Theobalt"
+  },
+  {
+   "venue": "SCA",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention",
+   "title": "Towards Realtime: A Hybrid Physics-based Method for Hair Animation on GPU",
+   "authors": [
+    "Li Huang",
+    "Fan Yang",
+    "Chendi Wei",
+    "Yu Ju Chen",
+    "Chun Yuan",
+    "Ming Gao"
+   ],
+   "track": "main",
+   "source": "https://computeranimation.org/2023/awards/",
+   "evidence": "Best Paper Honorable Mentions Towards Realtime: A Hybrid Physics-based Method for Hair Animation on GPU Authors: Li Huang, Fan Yang, Chendi Wei, Yu Ju Chen, Chun Yuan and Ming Gao"
   },
   {
    "venue": "SCA",
