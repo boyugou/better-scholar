@@ -366,7 +366,7 @@ What the extension is made of, counted from its code and its data. Nothing here 
 | **5 · 27** | recognition stages (name, journal word set, acronym, start of a cut name, name with subtitle) and guards that stop a weaker reading from beating a stronger one | the labelled stages of `src/lib/venues.js` and the guard table of `docs/ARCHITECTURE.md` |
 | **8,250** | award-winning papers, plus 3,460 with an honorable mention or a runner-up place (11,851 awards in all), from 272 venues and series, 1990–2026 | `src/data/awards.js` |
 | **22,744** | real venue lines from Scholar; each result was looked at and recorded | `test/fixtures/venues.expected.json` |
-| **600+ · 100+ · 16** | unit tests, end-to-end checks in Chromium with the extension loaded, and checks of the web demo | `test/*.test.js`, `test/e2e/` |
+| **600+ · 110+ · 16** | unit tests, end-to-end checks in Chromium with the extension loaded, and checks of the web demo | `test/*.test.js`, `test/e2e/` |
 | **0** | dependencies, and no build step | `package.json` |
 
 `npm run numbers` counts these from the code and the data, and a test keeps the table true. Counts that grow with each fix are rounded down.
