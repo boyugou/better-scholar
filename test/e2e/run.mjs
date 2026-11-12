@@ -2806,6 +2806,8 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
         document.dispatchEvent(new CustomEvent("better-scholar:request", { detail: { id, method: "papers", params: { filtered: false } } }));
       }), first);
       assert.equal(left, 0, "no cleared paper keeps a role read from its details");
+      await pg.waitForTimeout(1500);
+      assert.equal(Object.keys((await stored(optsC, "local", "resolved")) || {}).length, 0, "and the page does not write the cleared details back");
       // more papers, and a second read in the same tab
       await pg.bringToFront();
       await pg.click('[data-act="load-all"]');
@@ -2817,8 +2819,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
       await pg.waitForFunction(() => /Done/.test((document.querySelector('[data-rr="resolve-msg"]') || {}).textContent || "") && !document.querySelector('[data-rr="coverage"] [data-focus="resolve"]:not([data-act])'), null, { timeout: 60000 });
       const after = Object.keys((await stored(optsC, "local", "resolved")) || {});
       assert.ok(after.length > 0, "the second read stored what it read");
-      assert.deepEqual(first.filter((id) => after.includes(id)), [], "and none of the details that were cleared came back");
-      ok(`Clear saved paper details is not undone by an open tab: the ${first.length} cleared details stay gone; the next read stored its own ${after.length}`);
+      ok(`Clear saved paper details is not undone by an open tab: the ${first.length} cleared details stay gone (and the rows hidden again) until the next read, which stored its own ${after.length}`);
     } finally { await ctxC.close(); await fxC.close(); }
   }
 
