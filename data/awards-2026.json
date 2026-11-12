@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 11278
+  "count": 11283
  },
  "entries": [
   {
@@ -117555,6 +117555,30 @@
   },
   {
    "venue": "Interspeech",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "ISCA Award for the Most Influential Paper published in Interspeech (2020–2024)",
+   "title": "Conformer: Convolution-augmented Transformer for Speech Recognition",
+   "authors": [
+    "Anmol Gulati",
+    "James Qin",
+    "Chung-Cheng Chiu",
+    "Niki Parmar",
+    "Yu Zhang",
+    "Jiahui Yu",
+    "Wei Han",
+    "Shibo Wang",
+    "Zhengdong Zhang",
+    "Yonghui Wu",
+    "Ruoming Pang"
+   ],
+   "track": "main",
+   "paperYear": 2020,
+   "source": "https://isca-speech.org/ISCA-Awards",
+   "evidence": "Interspeech 2025, Rotterdam ISCA Award for the Most Influential Paper published in Interspeech (2020–2024) “Conformer: Convolution-augmented Transformer for Speech Recognition” Anmol Gulati, James Qin, Chung-Cheng Chiu, Niki Parmar, Yu Zhang, Jiahui Yu, Wei Han, Shibo Wang, Zhengdong Zhang, Yonghui Wu, Ruoming Pang, Interspeech 2020, pp. 5036-5040."
+  },
+  {
+   "venue": "Interspeech",
    "year": 2026,
    "award": "student",
    "awardLabel": "ISCA Award for Best Student Paper",
@@ -117611,6 +117635,41 @@
     "https://www.isca-archive.org/interspeech_2026/"
    ],
    "evidence": "ISCA Award for Best Student Paper (students in bold) … “VOSSA: Voiceprint Optimization for Streaming Speech Architectures” Mu-Ruei Tseng, Waris Quamer, Ghady Nasrallah, Ricardo Gutierrez-Osuna [ISCA Archive index https://www.isca-archive.org/interspeech_2026/: VOSSA: Voiceprint Optimization for Streaming Speech Architectures Mu-Ruei Tseng, Waris Quamer, Ghady Nasrallah, Ricardo Gutierrez-Osuna]"
+  },
+  {
+   "venue": "Interspeech",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "ISCA Award for the Most Influential Paper published in Interspeech (2021–2025)",
+   "title": "AST: Audio Spectrogram Transformer",
+   "authors": [
+    "Yuan Gong",
+    "Yu-An Chung",
+    "James Glass"
+   ],
+   "track": "main",
+   "paperYear": 2021,
+   "source": "https://isca-speech.org/ISCA-Awards",
+   "evidence": "Interspeech 2026, Sydney ISCA Award for the Most Influential Paper published in Interspeech (2021–2025) \"AST: Audio Spectrogram Transformer\" Yuan Gong, Yu-An Chung, James Glass, Interspeech 2021, pp. 571-575."
+  },
+  {
+   "venue": "Interspeech",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "ISCA Award for the Most Influential Paper published in Interspeech (2021–2025)",
+   "title": "UTMOS: UTokyo-SaruLab System for VoiceMOS Challenge 2022",
+   "authors": [
+    "Takaaki Saeki",
+    "Detai Xin",
+    "Wataru Nakata",
+    "Tomoki Koriyama",
+    "Shinnosuke Takamichi",
+    "Hiroshi Saruwatari"
+   ],
+   "track": "main",
+   "paperYear": 2022,
+   "source": "https://isca-speech.org/ISCA-Awards",
+   "evidence": "Interspeech 2026, Sydney ISCA Award for the Most Influential Paper published in Interspeech (2021–2025) \"UTMOS: UTokyo-SaruLab System for VoiceMOS Challenge 2022\" Takaaki Saeki, Detai Xin, Wataru Nakata, Tomoki Koriyama, Shinnosuke Takamichi, Hiroshi Saruwatari, Interspeech 2022, pp. 4521-4525."
   },
   {
    "venue": "IPDPS",
@@ -130738,6 +130797,37 @@
    "paperYear": 2007,
    "source": "https://www.sigmicro.org/awards/tot/",
    "evidence": "MICRO 2025 Test of Time Award: MICRO 2007: Optimizing NUCA Organizations and Wiring Alternatives for Large Caches with CACTI 6.0 — Naveen Muralimanohar, Rajeev Balasubramonian, Norman P. Jouppi"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Flattened Butterfly Topology for On-Chip Networks",
+   "authors": [
+    "John Kim",
+    "James Balfour",
+    "Bill Dally"
+   ],
+   "track": "main",
+   "paperYear": 2007,
+   "source": "https://www.sigmicro.org/awards/tot/",
+   "evidence": "2026 The following two papers were awarded the thirteenth MICRO Test of Time Award in 2026. These papers were selected from among all the 172 eligible papers published in MICRO conferences that were held between 2004 and 2008 (inclusive). MICRO 2007 Flattened Butterfly Topology for On-Chip Networks John Kim, James Balfour, Bill Dally"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Stall-Time Fair Memory Access Scheduling for Chip Multiprocessors",
+   "authors": [
+    "Onur Mutlu",
+    "Thomas Moscibroda"
+   ],
+   "track": "main",
+   "paperYear": 2007,
+   "source": "https://www.sigmicro.org/awards/tot/",
+   "evidence": "2026 The following two papers were awarded the thirteenth MICRO Test of Time Award in 2026. These papers were selected from among all the 172 eligible papers published in MICRO conferences that were held between 2004 and 2008 (inclusive). MICRO 2007 Stall-Time Fair Memory Access Scheduling for Chip Multiprocessors Onur Mutlu, Thomas Moscibroda"
   },
   {
    "venue": "Middleware",
