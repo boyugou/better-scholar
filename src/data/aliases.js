@@ -423,6 +423,7 @@
     { core: "MMSys", edition: [2018, 9] },
     { ccf: "Inscrypt", edition: [2024, 20] },
     { core: "SECRYPT", edition: [2022, 19] },
+    { core: "WiMob", edition: [2015, 11] },          // (2026-11-12, a reviewer's find: "2015 IEEE 16th Annual Wireless and …" is WAMICON's 16th, unlisted; WiMob held its 11th in 2015)
     { ccf: "ICRA", core: "ICRA", edition: [2009, 26] },          // (the 12th in 1995 and the 26th in 2009, both at Kobe, the 41st at Yokohama in 2024: "2024 IEEE 3rd International Conference on Robotics, Automation, Artificial-Intelligence and Internet-of-Things" is RAAICON)
     // (2026-11-04, from the same measurement: the shared starts that a cut line ends inside, read as the one listed venue they begin)
     { core: "CIDM", reach: "mining" },          // ("… Conference on Computational Intelligence in Data …": ICCIDS)

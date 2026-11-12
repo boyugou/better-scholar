@@ -562,6 +562,11 @@ test("a cut line that stops inside a start many events share is no venue's: it m
   // Meeting of the Special Interest Group on" SIGdial's (not SIGMOD's — whose CORE name is "ACM Special Interest Group on Management of Data Conference")
   assert.equal(brief("2015 IEEE/ACM 10th International Symposium on Software Engineering for …, 2015"), "CORE A SEAMS");
   assert.equal(brief("Proceedings of the 22nd Annual Meeting of the Special Interest Group on …, 2021"), "CORE B SIGdial");
+  // an independent review's finds (2026-11-12): the annual narrowing must not drop a rival that stops short of its reach word, and WiMob's numbering (the 11th in 2015)
+  assert.equal(brief("7th Annual International Conference on Computer Science …, 2016"), "", "CSEIT, not CSL — FedCSIS's start fits too");
+  assert.equal(brief("Proceedings of the 1996 ACM 24th annual conference on Computer science …, 1996"), "", "not CSL");
+  assert.equal(brief("2015 IEEE 16th Annual Wireless and …, 2015"), "", "WAMICON's 16th, not WiMob's 11th");
+  assert.equal(brief("2015 IEEE 11th International Conference on Wireless and Mobile Computing, Networking and Communications (WiMob), 2015"), "CORE B WiMob");
 });
 
 test("names the lists lack: PACT's ACM title without 'Techniques', MASCOTS with 'Computers' (real titles of the corpus, 2026-11-04)", () => {

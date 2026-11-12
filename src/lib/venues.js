@@ -1091,7 +1091,9 @@
       const joint = /\bjoint\b/i.test(p.plain);
       const decideHere = (list) => {
         let x = decide(list, rawWords, true);
-        if (x === "ambiguous" && annual) { const only = list.filter((e) => hasWord(e, "annual")); if (only.length) x = decide(only, rawWords, true); }
+        // (the annual narrowing keeps a rival that stops short of its `reach` word: it cannot be told from the "annual" one, so it stays in the way — "7th Annual … Conference on
+        // Computer Science …" is no CSL badge while FedCSIS's start fits it too)
+        if (x === "ambiguous" && annual) { const only = list.filter((e) => e.short || hasWord(e, "annual")); if (only.some((e) => !e.short)) x = decide(only, rawWords, true); }
         return x && x.short ? "ambiguous" : x;
       };
       const readBy = (listSides) => {

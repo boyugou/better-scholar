@@ -89,7 +89,8 @@
     const toks = r.split(/\s+/).filter(Boolean);
     while (toks.length > 1 && (PREFIXES.has(bare(toks[0])) || (DOTTED_PREFIXES.has(bare(toks[0])) && /\.$/.test(toks[0])))) toks.shift();
     let suffix = "";
-    while (toks.length > 2 && SUFFIXES.has(bare(toks[toks.length - 1]))) { const t = bare(toks.pop()); if (!suffix && GENERATIONAL.has(t)) suffix = t; }          // (not the second word of a two-word name: "Chidi Mba", "Naoki Ii")
+    // (not the second word of a two-word name — "Chidi Mba", "Naoki Ii" — nor a word after a lone initial: "Naoki A Ii")
+    while (toks.length > 2 && SUFFIXES.has(bare(toks[toks.length - 1])) && bare(toks[toks.length - 2]).length > 1) { const t = bare(toks.pop()); if (!suffix && GENERATIONAL.has(t)) suffix = t; }
     return { name: toks.join(" "), suffix };
   }
 
@@ -118,7 +119,8 @@
     // "Naoki Ii" is a Japanese surname). It is kept apart: the owner's only where the owner's own name says the same (matchStrength)
     if (!owner) {
       const m = /[\s,]+(jr|sr|ii|iii|iv)\.?$/i.exec(raw);
-      if (m && raw.slice(0, m.index).trim().split(/\s+/).length >= 2) { suffix = m[1].toLowerCase(); raw = raw.slice(0, m.index); }
+      const before = m ? raw.slice(0, m.index).trim().split(/\s+/) : [];
+      if (m && before.length >= 2 && bare(before[before.length - 1]).length > 1) { suffix = m[1].toLowerCase(); raw = raw.slice(0, m.index); }          // (after a lone initial the word is a surname: "N A Ii")
     }
     const toks = normalize(raw).split(" ").filter(Boolean);
     if (!toks.length) return { givens: [], particles: [], last: "", compound: false, head: "", joined: [], suffix };
@@ -217,6 +219,8 @@
     a.raw = authorText;
     const variants = [owner.name, ...(owner.alternates || [])].filter(Boolean);
     let best = 0, authorCaps;
+    // (the author's printed name, as compared with an owner spelling's own form: without a generational suffix, which the check below has already matched)
+    const authorNorm = () => { if (a.norm === undefined) a.norm = normalize(a.suffix ? a.raw.replace(/[\s,]+(?:jr|sr|ii|iii|iv)\.?$/i, "") : a.raw); return a.norm; };
     for (const v of variants) {
       // a name printed with a generational suffix ("RW Heath Jr") is the owner's only where the spelling says the same ("Robert W. Heath Jr."): "J Smith Jr" is not
       // John Smith's — he may be John Smith Sr. — while "RW Heath" stays Robert W. Heath Jr.'s, as before
@@ -230,9 +234,9 @@
       // a spelling written in initials ("SY Philip", offered from the papers or typed in) is that print form and no other: "S Philip" and "Sam Philip" are other people
       const form = ownerForm(v);
       if (v !== owner.name && form.parts.givens.length && form.parts.givens.every((g) => g.length === 1 || (form.caps && g.length <= 3 && !ownerForm(owner.name).words.includes(g)))) {          // ("JA DOUDNA": in capitals "JA" is two initials, not a name)
-       if (a.norm === undefined) a.norm = normalize(a.raw); best = Math.max(best, a.norm === form.norm ? 3 : 0); continue; }
+       best = Math.max(best, authorNorm() === form.norm ? 3 : 0); continue; }
       // (the name as printed, once the page has chosen its rearrangement: only the identical name is still the owner's — "L Wei" is not "Li Wei" where "W Li" is)
-      if (owner.exactName && v === owner.name) { if (a.norm === undefined) a.norm = normalize(a.raw); best = Math.max(best, a.norm === ownerForm(v).norm ? 3 : 0); continue; }
+      if (owner.exactName && v === owner.name) { best = Math.max(best, authorNorm() === ownerForm(v).norm ? 3 : 0); continue; }
       best = Math.max(best, strength(a, v));
     }
     return best;

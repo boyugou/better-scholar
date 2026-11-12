@@ -368,6 +368,12 @@ test("an author printed with a generational suffix ('RW Heath Jr', 'MS Smith III
   assert.equal(roleOf("John Smith", "J Smith Jr, A Lee"), "absent", "a Jr the profile's name does not say: perhaps the son");
   assert.equal(roleOf("John Smith Sr.", "J Smith Jr, A Lee"), "absent");
   assert.equal(roleOf("Naoki Ii", "A Lee, N Ii"), "last", "two words: a surname, not a suffix");
+  // after a lone initial the word is a surname, not a suffix (an independent review's find, 2026-11-12)
+  assert.equal(roleOf("Naoki Ii", "A Lee, N A Ii"), "last");
+  assert.equal(roleOf("Naoki Ii", "A Lee, Naoki A Ii"), "last");
+  // a suffixed owner whose spelling the page chose exactly, or given in initials, is still found in a suffixed print
+  assert.equal(roleOf("Robert Heath Jr.", "A Lee, Robert Heath Jr.", { exactName: true }), "last");
+  assert.equal(roleOf("Robert Heath Jr.", "A Lee, RW Heath Jr", { alternates: ["RW Heath Jr"] }), "last");
   // (an award's first author is read the same way: "Robert L. Logan IV" is a Logan)
   assert.equal(require("../src/lib/awards.js").surnameKey("Robert L. Logan IV"), "logan");
   assert.equal(require("../src/lib/awards.js").surnameKey("RL Logan IV"), "logan");

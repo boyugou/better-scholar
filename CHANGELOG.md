@@ -189,6 +189,14 @@ give the details and every review):
   Encryption: 23rd International Conference, FSE 2016" is the cryptography FSE (B), not Foundations of Software Engineering (A): venues
   that share an acronym are told apart by the series title. (4) MDPI's journals *AI* and *IoT* are not Artificial Intelligence (A) and
   IEEE IoT-J, nor is the Korean WISA (information security) the Web Information Systems WISA.
+- **From an independent code review (2026-11-12), four fixes.** (1) Matching: the annual narrowing dropped a rival that stops short of its
+  `reach` word, so three cut lines got a wrong badge ("7th Annual … Conference on Computer Science …" CSL, the 1996 ACM "Computer science
+  …" CSL, "2015 IEEE 16th Annual Wireless and …" WiMob): the narrowing keeps such a rival now, and WiMob's numbering (the 11th in 2015)
+  is anchored. (2) Roles: "Naoki A Ii" read its surname as a suffix after a lone initial; a word after a single letter is a surname.
+  (3) Roles: an owner whose spelling the page chose exactly, or one given in initials, was never found in a suffixed print ("Robert Heath
+  Jr."). Left (missing badges only): "A Lee, R Heath, Jr." splits "Jr." as an author, "John Smith (Jr.)" in a profile header loses its
+  suffix, `duplicates.js` has its own, now redundant, suffix rule. The review also ran 110,525 cut lines through the old and the new
+  matcher: nothing else gained a wrong badge.
 - **Best papers of 16 more venues** (214): Euro-Par, RAID, ISS, CSF, SRDS, RTSS, ECSCW, WINE, I3D, SGP, PG, EGSR, CAV, ICCBR, ICNP and ICWS,
   from their own pages. Left out: HPDC (the site carries injected spam), ICSOC (per-year sites under another organisation's domain),
   WINE 2024 (a session title only), second and third places that no label calls a runner-up, and every event whose page names
