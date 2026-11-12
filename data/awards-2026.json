@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 11781
+  "count": 11868
  },
  "entries": [
   {
@@ -10103,6 +10103,192 @@
   },
   {
    "venue": "ASIACRYPT",
+   "year": 2004,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "The XL-Algorithm and a Conjecture from Commutative Algebra",
+   "authors": [
+    "Claus Diem"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2004, ASIACRYPT 2004: The XL-Algorithm and a Conjecture from Commutative Algebra ★ Best Paper. Claus Diem"
+  },
+  {
+   "venue": "ASIACRYPT",
+   "year": 2006,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Finding SHA-1 Characteristics: General Results and Applications",
+   "authors": [
+    "Christophe De Cannière",
+    "Christian Rechberger"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2006, ASIACRYPT 2006: Finding SHA-1 Characteristics: General Results and Applications ★ Best Paper. Christophe De Cannière, Christian Rechberger"
+  },
+  {
+   "venue": "ASIACRYPT",
+   "year": 2007,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Cryptanalysis of Grindahl",
+   "authors": [
+    "Thomas Peyrin"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2007, ASIACRYPT 2007: Cryptanalysis of Grindahl ★ Best Paper. Thomas Peyrin"
+  },
+  {
+   "venue": "ASIACRYPT",
+   "year": 2007,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Faster Addition and Doubling on Elliptic Curves",
+   "authors": [
+    "Daniel J. Bernstein",
+    "Tanja Lange"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2007, ASIACRYPT 2007: Faster Addition and Doubling on Elliptic Curves ★ Best Paper. Daniel J. Bernstein, Tanja Lange"
+  },
+  {
+   "venue": "ASIACRYPT",
+   "year": 2008,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "A Modular Security Analysis of the TLS Handshake Protocol",
+   "authors": [
+    "Paul Morrissey",
+    "Nigel P. Smart",
+    "Bogdan Warinschi"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2008, ASIACRYPT 2008: A Modular Security Analysis of the TLS Handshake Protocol ★ Best Paper. Paul Morrissey, Nigel P. Smart, Bogdan Warinschi"
+  },
+  {
+   "venue": "ASIACRYPT",
+   "year": 2008,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Breaking the F-FCSR-H Stream Cipher in Real Time",
+   "authors": [
+    "Martin Hell",
+    "Thomas Johansson"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2008, ASIACRYPT 2008: Breaking the F-FCSR-H Stream Cipher in Real Time ★ Best Paper. Martin Hell, Thomas Johansson"
+  },
+  {
+   "venue": "ASIACRYPT",
+   "year": 2008,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Speeding Up the Pollard Rho Method on Prime Fields",
+   "authors": [
+    "Jung Hee Cheon",
+    "Jin Hong",
+    "Minkyu Kim"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2008, ASIACRYPT 2008: Speeding Up the Pollard Rho Method on Prime Fields ★ Best Paper. Jung Hee Cheon, Jin Hong, Minkyu Kim"
+  },
+  {
+   "venue": "ASIACRYPT",
+   "year": 2009,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Improved Generic Algorithms for 3-Collisions",
+   "authors": [
+    "Antoine Joux",
+    "Stefan Lucks"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2009, ASIACRYPT 2009: Improved Generic Algorithms for 3-Collisions ★ Best Paper. Antoine Joux, Stefan Lucks"
+  },
+  {
+   "venue": "ASIACRYPT",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Rotational Rebound Attacks on Reduced Skein",
+   "authors": [
+    "Dmitry Khovratovich",
+    "Ivica Nikolic",
+    "Christian Rechberger"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2010, ASIACRYPT 2010: Rotational Rebound Attacks on Reduced Skein ★ Best Paper. Dmitry Khovratovich, Ivica Nikolic, Christian Rechberger"
+  },
+  {
+   "venue": "ASIACRYPT",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "A Framework for Practical Universally Composable Zero-Knowledge Protocols",
+   "authors": [
+    "Jan Camenisch",
+    "Stephan Krenn",
+    "Victor Shoup"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2011, ASIACRYPT 2011: A Framework for Practical Universally Composable Zero-Knowledge Protocols ★ Best Paper. Jan Camenisch, Stephan Krenn, Victor Shoup"
+  },
+  {
+   "venue": "ASIACRYPT",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Counting Points on Genus 2 Curves with Real Multiplication",
+   "authors": [
+    "Pierrick Gaudry",
+    "David Kohel",
+    "Benjamin A. Smith"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2011, ASIACRYPT 2011: Counting Points on Genus 2 Curves with Real Multiplication ★ Best Paper. Pierrick Gaudry, David Kohel, Benjamin A. Smith"
+  },
+  {
+   "venue": "ASIACRYPT",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Shorter Quasi-Adaptive NIZK Proofs for Linear Subspaces",
+   "authors": [
+    "Charanjit S. Jutla",
+    "Arnab Roy"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2013, ASIACRYPT 2013: Shorter Quasi-Adaptive NIZK Proofs for Linear Subspaces ★ Best Paper. Charanjit S. Jutla, Arnab Roy"
+  },
+  {
+   "venue": "ASIACRYPT",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Solving LPN Using Covering Codes",
+   "authors": [
+    "Qian Guo",
+    "Thomas Johansson",
+    "Carl Löndahl"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2014, ASIACRYPT 2014: Solving LPN Using Covering Codes ★ Best Paper. Qian Guo, Thomas Johansson, Carl Löndahl"
+  },
+  {
+   "venue": "ASIACRYPT",
    "year": 2015,
    "award": "best",
    "awardLabel": "Best Paper",
@@ -10135,7 +10321,10 @@
    ],
    "track": "main",
    "source": "https://www.iacr.org/conferences/asiacrypt2016/www.asiacrypt2016.org/indexc583.html?page_id=28",
-   "evidence": "Best Paper Faster Fully Homomorphic Encryption: Bootstrapping in less than 0.1 Seconds; Ilaria Chillotti; Nicolas Gama; Mariya Georgieva; Malika Izabachène"
+   "evidence": "Best Paper Faster Fully Homomorphic Encryption: Bootstrapping in less than 0.1 Seconds; Ilaria Chillotti; Nicolas Gama; Mariya Georgieva; Malika Izabachène",
+   "alsoAt": [
+    "https://iacr.org/cryptodb/data/bestpapers.php"
+   ]
   },
   {
    "venue": "ASIACRYPT",
@@ -10150,7 +10339,10 @@
    ],
    "track": "main",
    "source": "https://asiacrypt.iacr.org/2017/program.html",
-   "evidence": "Best Paper Christian Cachin Identification Protocols and Signature Schemes Based on Supersingular Isogeny Problems Steven D. Galbraith Christophe Petit Javier Silva"
+   "evidence": "Best Paper Christian Cachin Identification Protocols and Signature Schemes Based on Supersingular Isogeny Problems Steven D. Galbraith Christophe Petit Javier Silva",
+   "alsoAt": [
+    "https://iacr.org/cryptodb/data/bestpapers.php"
+   ]
   },
   {
    "venue": "ASIACRYPT",
@@ -10163,7 +10355,10 @@
    ],
    "track": "main",
    "source": "https://asiacrypt.iacr.org/2018/program.html",
-   "evidence": "Best Paper Award Z Block Room 411 (Z411) Thomas Peyrin Block Cipher Invariants as Eigenvectors of Correlation Matrices Tim Beyne"
+   "evidence": "Best Paper Award Z Block Room 411 (Z411) Thomas Peyrin Block Cipher Invariants as Eigenvectors of Correlation Matrices Tim Beyne",
+   "alsoAt": [
+    "https://iacr.org/cryptodb/data/bestpapers.php"
+   ]
   },
   {
    "venue": "ASIACRYPT",
@@ -10178,7 +10373,10 @@
    ],
    "track": "main",
    "source": "https://asiacrypt.iacr.org/2019/program.html",
-   "evidence": "Best Paper KAIRAKU 1&2 Steven Galbraith Wave: A New Family of Trapdoor One-Way Preimage Sampleable Functions Based on Codes Thomas Debris-Alazard Nicolas Sendrier Jean-Pierre Tillich"
+   "evidence": "Best Paper KAIRAKU 1&2 Steven Galbraith Wave: A New Family of Trapdoor One-Way Preimage Sampleable Functions Based on Codes Thomas Debris-Alazard Nicolas Sendrier Jean-Pierre Tillich",
+   "alsoAt": [
+    "https://iacr.org/cryptodb/data/bestpapers.php"
+   ]
   },
   {
    "venue": "ASIACRYPT",
@@ -10272,6 +10470,33 @@
   {
    "venue": "ASIACRYPT",
    "year": 2021,
+   "award": "best",
+   "awardLabel": "Best paper award",
+   "title": "On the hardness of the NTRU problem",
+   "authors": [
+    "Alice Pellet-Mary",
+    "Damien Stehlé"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2021, ASIACRYPT 2021: On the hardness of the NTRU problem ★ Best paper award. Alice Pellet-Mary, Damien Stehlé"
+  },
+  {
+   "venue": "ASIACRYPT",
+   "year": 2021,
+   "award": "category",
+   "awardLabel": "Best Paper by Early Career Researcher",
+   "title": "A Geometric Approach to Linear Cryptanalysis",
+   "authors": [
+    "Tim Beyne"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2021, ASIACRYPT 2021: A Geometric Approach to Linear Cryptanalysis ★ Best Paper by Early Career Researcher. Tim Beyne"
+  },
+  {
+   "venue": "ASIACRYPT",
+   "year": 2021,
    "award": "tot",
    "awardLabel": "Test of Time Award",
    "title": "Simulation-sound NIZK proofs for a practical language and constant size group signatures",
@@ -10282,6 +10507,49 @@
    "paperYear": 2006,
    "source": "https://iacr.org/testoftime/",
    "evidence": "ASIACRYPT 2021 Test of Time Award: Jens Groth “Simulation-sound NIZK proofs for a practical language and constant size group signatures”"
+  },
+  {
+   "venue": "ASIACRYPT",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Full Quantum Equivalence of Group Action DLog and CDH, and More",
+   "authors": [
+    "Hart Montgomery",
+    "Mark Zhandry"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2022, ASIACRYPT 2022: Full Quantum Equivalence of Group Action DLog and CDH, and More ★ Best Paper Award. Hart Montgomery, Mark Zhandry"
+  },
+  {
+   "venue": "ASIACRYPT",
+   "year": 2022,
+   "award": "category",
+   "awardLabel": "Best Paper by Early Career Researcher Award",
+   "title": "Cryptographic Primitives with Hinting Property",
+   "authors": [
+    "Navid Alamati",
+    "Sikhar Patranabis"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2022, ASIACRYPT 2022: Cryptographic Primitives with Hinting Property ★ Best Paper by Early Career Researcher Award. Navid Alamati, Sikhar Patranabis"
+  },
+  {
+   "venue": "ASIACRYPT",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Runner up Best Paper",
+   "title": "SwiftEC: Shallue--van de Woestijne Indifferentiable Function to Elliptic Curves",
+   "authors": [
+    "Jorge Chavez-Saab",
+    "Francisco Rodríguez-Henríquez",
+    "Mehdi Tibouchi"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2022, ASIACRYPT 2022: SwiftEC: Shallue--van de Woestijne Indifferentiable Function to Elliptic Curves ★ Runner up Best Paper. Jorge Chavez-Saab, Francisco Rodríguez-Henríquez, Mehdi Tibouchi"
   },
   {
    "venue": "ASIACRYPT",
@@ -10301,6 +10569,52 @@
   {
    "venue": "ASIACRYPT",
    "year": 2023,
+   "award": "best",
+   "awardLabel": "Best paper award",
+   "title": "Exploiting the Symmetry of $\\mathbb{Z}^n$: Randomization and the Automorphism Problem",
+   "authors": [
+    "Kaijie Jiang",
+    "Anyu Wang",
+    "Hengyi Luo",
+    "Guoxiao Liu",
+    "Yang Yu",
+    "Xiaoyun Wang"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2023, ASIACRYPT 2023: Exploiting the Symmetry of $\\mathbb{Z}^n$: Randomization and the Automorphism Problem ★ Best paper award. Kaijie Jiang, Anyu Wang, Hengyi Luo, Guoxiao Liu, Yang Yu, Xiaoyun Wang"
+  },
+  {
+   "venue": "ASIACRYPT",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best paper award",
+   "title": "On Gaussian sampling, smoothing parameter and application to signatures",
+   "authors": [
+    "Thomas Espitau",
+    "Alexandre Wallet",
+    "Yang Yu"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2023, ASIACRYPT 2023: On Gaussian sampling, smoothing parameter and application to signatures ★ Best paper award. Thomas Espitau, Alexandre Wallet, Yang Yu"
+  },
+  {
+   "venue": "ASIACRYPT",
+   "year": 2023,
+   "award": "category",
+   "awardLabel": "Best Early Career Paper Award",
+   "title": "Exploiting Algebraic Structure in Probing Security",
+   "authors": [
+    "Maxime Plancon"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2023, ASIACRYPT 2023: Exploiting Algebraic Structure in Probing Security ★ Best Early Career Paper Award. Maxime Plancon"
+  },
+  {
+   "venue": "ASIACRYPT",
+   "year": 2023,
    "award": "tot",
    "awardLabel": "Test of Time Award",
    "title": "Preimage Attacks on 3, 4, and 5-Pass HAVAL",
@@ -10312,6 +10626,54 @@
    "paperYear": 2008,
    "source": "https://iacr.org/testoftime/",
    "evidence": "ASIACRYPT 2023 Test of Time Award: Kazumaro Aoki and Yu Sasaki “Preimage Attacks on 3, 4, and 5-Pass HAVAL”"
+  },
+  {
+   "venue": "ASIACRYPT",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Revisiting Key Decomposition Techniques for FHE: Simpler, Faster and More Generic",
+   "authors": [
+    "Mariya Georgieva Belorgey",
+    "Sergiu Carpov",
+    "Nicolas Gama",
+    "Sandra Guasch",
+    "Dimitar Jetchev"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2024, ASIACRYPT 2024: Revisiting Key Decomposition Techniques for FHE: Simpler, Faster and More Generic ★ Best Paper Award. Mariya Georgieva Belorgey, Sergiu Carpov, Nicolas Gama, Sandra Guasch, Dimitar Jetchev"
+  },
+  {
+   "venue": "ASIACRYPT",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "The First Practical Collision for 31-Step SHA-256",
+   "authors": [
+    "Yingxin Li",
+    "Fukang Liu",
+    "Gaoli Wang",
+    "Xiaoyang Dong",
+    "Siwei Sun"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2024, ASIACRYPT 2024: The First Practical Collision for 31-Step SHA-256 ★ Best Paper Award. Yingxin Li, Fukang Liu, Gaoli Wang, Xiaoyang Dong, Siwei Sun"
+  },
+  {
+   "venue": "ASIACRYPT",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Unbounded ABE for Circuits from LWE, Revisited",
+   "authors": [
+    "Valerio Cini",
+    "Hoeteck Wee"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2024, ASIACRYPT 2024: Unbounded ABE for Circuits from LWE, Revisited ★ Best Paper Award. Valerio Cini, Hoeteck Wee"
   },
   {
    "venue": "ASIACRYPT",
@@ -18420,6 +18782,175 @@
   },
   {
    "venue": "CHES",
+   "year": 2005,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Successfully Attacking Masked AES Hardware Implementations",
+   "authors": [
+    "Stefan Mangard",
+    "Norbert Pramstaller",
+    "Elisabeth Oswald"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2005, CHES 2005: Successfully Attacking Masked AES Hardware Implementations ★ Best Paper. Stefan Mangard, Norbert Pramstaller, Elisabeth Oswald"
+  },
+  {
+   "venue": "CHES",
+   "year": 2007,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Arithmetic Operators for Pairing-Based Cryptography",
+   "authors": [
+    "Jean-Luc Beuchat",
+    "Nicolas Brisebarre",
+    "Jérémie Detrey",
+    "Eiji Okamoto"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2007, CHES 2007: Arithmetic Operators for Pairing-Based Cryptography ★ Best Paper. Jean-Luc Beuchat, Nicolas Brisebarre, Jérémie Detrey, Eiji Okamoto"
+  },
+  {
+   "venue": "CHES",
+   "year": 2007,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Side Channel Cryptanalysis of a Higher Order Masking Scheme",
+   "authors": [
+    "Jean-Sébastien Coron",
+    "Emmanuel Prouff",
+    "Matthieu Rivain"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2007, CHES 2007: Side Channel Cryptanalysis of a Higher Order Masking Scheme ★ Best Paper. Jean-Sébastien Coron, Emmanuel Prouff, Matthieu Rivain"
+  },
+  {
+   "venue": "CHES",
+   "year": 2008,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Attack and Improvement of a Secure S-Box Calculation Based on the Fourier Transform",
+   "authors": [
+    "Jean-Sébastien Coron",
+    "Christophe Giraud",
+    "Emmanuel Prouff",
+    "Matthieu Rivain"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2008, CHES 2008: Attack and Improvement of a Secure S-Box Calculation Based on the Fourier Transform ★ Best Paper. Jean-Sébastien Coron, Christophe Giraud, Emmanuel Prouff, Matthieu Rivain"
+  },
+  {
+   "venue": "CHES",
+   "year": 2008,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Time-Area Optimized Public-Key Engines: -Cryptosystems as Replacement for Elliptic Curves?",
+   "authors": [
+    "Andrey Bogdanov",
+    "Thomas Eisenbarth",
+    "Andy Rupp",
+    "Christopher Wolf"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2008, CHES 2008: Time-Area Optimized Public-Key Engines: -Cryptosystems as Replacement for Elliptic Curves? ★ Best Paper. Andrey Bogdanov, Thomas Eisenbarth, Andy Rupp, Christopher Wolf"
+  },
+  {
+   "venue": "CHES",
+   "year": 2009,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "A New Side-Channel Attack on RSA Prime Generation",
+   "authors": [
+    "Thomas Finke",
+    "Max Gebhardt",
+    "Werner Schindler"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2009, CHES 2009: A New Side-Channel Attack on RSA Prime Generation ★ Best Paper. Thomas Finke, Max Gebhardt, Werner Schindler"
+  },
+  {
+   "venue": "CHES",
+   "year": 2009,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Faster and Timing-Attack Resistant AES-GCM",
+   "authors": [
+    "Emilia Käsper",
+    "Peter Schwabe"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2009, CHES 2009: Faster and Timing-Attack Resistant AES-GCM ★ Best Paper. Emilia Käsper, Peter Schwabe"
+  },
+  {
+   "venue": "CHES",
+   "year": 2009,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Hardware Accelerator for the Tate Pairing in Characteristic Three Based on Karatsuba-Ofman Multipliers",
+   "authors": [
+    "Jean-Luc Beuchat",
+    "Jérémie Detrey",
+    "Nicolas Estibals",
+    "Eiji Okamoto",
+    "Francisco Rodríguez-Henríquez"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2009, CHES 2009: Hardware Accelerator for the Tate Pairing in Characteristic Three Based on Karatsuba-Ofman Multipliers ★ Best Paper. Jean-Luc Beuchat, Jérémie Detrey, Nicolas Estibals, Eiji Okamoto, Francisco Rodríguez-Henríquez"
+  },
+  {
+   "venue": "CHES",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Public Key Perturbation of Randomized RSA Implementations",
+   "authors": [
+    "Alexandre Berzati",
+    "Cécile Canovas-Dumas",
+    "Louis Goubin"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2010, CHES 2010: Public Key Perturbation of Randomized RSA Implementations ★ Best Paper. Alexandre Berzati, Cécile Canovas-Dumas, Louis Goubin"
+  },
+  {
+   "venue": "CHES",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Fast Multi-precision Multiplication for Public-Key Cryptography on Embedded Microprocessors",
+   "authors": [
+    "Michael Hutter",
+    "Erich Wenger"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2011, CHES 2011: Fast Multi-precision Multiplication for Public-Key Cryptography on Embedded Microprocessors ★ Best Paper. Michael Hutter, Erich Wenger"
+  },
+  {
+   "venue": "CHES",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Compiler Assisted Masking",
+   "authors": [
+    "Andrew Moss",
+    "Elisabeth Oswald",
+    "Daniel Page",
+    "Michael Tunstall"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2012, CHES 2012: Compiler Assisted Masking ★ Best Paper. Andrew Moss, Elisabeth Oswald, Daniel Page, Michael Tunstall"
+  },
+  {
+   "venue": "CHES",
    "year": 2013,
    "award": "best",
    "awardLabel": "Best Paper Award",
@@ -18432,7 +18963,45 @@
    ],
    "track": "main",
    "source": "https://iacr.org/workshops/ches/ches2013/program.php",
-   "evidence": "Session 6: ECC Chair: Mehdi Tibouchi Thomaz Oliveira (CINVESTAV-IPN, Mexico), Julio Lopez (University of Campinas, Brazil), Diego F. Aranha (University of Brasilia, Brazil) and Francisco Rodriguez-Henriquez (CINVESTAV-IPN, Mexico) Lambda coordinates for binary elliptic curves (Best Paper Award)"
+   "evidence": "Session 6: ECC Chair: Mehdi Tibouchi Thomaz Oliveira (CINVESTAV-IPN, Mexico), Julio Lopez (University of Campinas, Brazil), Diego F. Aranha (University of Brasilia, Brazil) and Francisco Rodriguez-Henriquez (CINVESTAV-IPN, Mexico) Lambda coordinates for binary elliptic curves (Best Paper Award)",
+   "alsoAt": [
+    "https://iacr.org/cryptodb/data/bestpapers.php"
+   ]
+  },
+  {
+   "venue": "CHES",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "EM Attack Is Non-invasive? - Design Methodology and Validity Verification of EM Attack Sensor",
+   "authors": [
+    "Naofumi Homma",
+    "Yu-ichi Hayashi",
+    "Noriyuki Miura",
+    "Daisuke Fujimoto",
+    "Daichi Tanaka",
+    "Makoto Nagata",
+    "Takafumi Aoki"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2014, CHES 2014: EM Attack Is Non-invasive? - Design Methodology and Validity Verification of EM Attack Sensor ★ Best Paper. Naofumi Homma, Yu-ichi Hayashi, Noriyuki Miura, Daisuke Fujimoto, Daichi Tanaka, Makoto Nagata, Takafumi Aoki"
+  },
+  {
+   "venue": "CHES",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "A Physical Approach for Stochastic Modeling of TERO-Based TRNG",
+   "authors": [
+    "Patrick Haddad",
+    "Viktor Fischer",
+    "Florent Bernard",
+    "Jean Nicolai"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2015, CHES 2015: A Physical Approach for Stochastic Modeling of TERO-Based TRNG ★ Best Paper. Patrick Haddad, Viktor Fischer, Florent Bernard, Jean Nicolai"
   },
   {
    "venue": "CHES",
@@ -18448,7 +19017,28 @@
    ],
    "track": "main",
    "source": "https://iacr.org/workshops/ches/ches2016/program.php",
-   "evidence": "CHES Best Paper 2016 Joppe W. Bos; Charles Hubain; Wil Michiels; Philippe Teuwen Differential Computation Analysis: Hiding your White-Box Designs is Not Enough"
+   "evidence": "CHES Best Paper 2016 Joppe W. Bos; Charles Hubain; Wil Michiels; Philippe Teuwen Differential Computation Analysis: Hiding your White-Box Designs is Not Enough",
+   "alsoAt": [
+    "https://iacr.org/cryptodb/data/bestpapers.php"
+   ]
+  },
+  {
+   "venue": "CHES",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Nanofocused X-Ray Beam to Reprogram Secure Circuits",
+   "authors": [
+    "Stéphanie Anceau",
+    "Pierre Bleuet",
+    "Jessy Clédière",
+    "Laurent Maingault",
+    "Jean-luc Rainard",
+    "Rémi Tucoulou"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2017, CHES 2017: Nanofocused X-Ray Beam to Reprogram Secure Circuits ★ Best Paper. Stéphanie Anceau, Pierre Bleuet, Jessy Clédière, Laurent Maingault, Jean-luc Rainard, Rémi Tucoulou"
   },
   {
    "venue": "CHES",
@@ -61013,6 +61603,158 @@
   },
   {
    "venue": "CRYPTO",
+   "year": 2006,
+   "award": "best",
+   "awardLabel": "Best paper",
+   "title": "On the Power of the Randomized Iterate",
+   "authors": [
+    "Iftach Haitner",
+    "Danny Harnik",
+    "Omer Reingold"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2006, CRYPTO 2006: On the Power of the Randomized Iterate ★ Best paper. Iftach Haitner, Danny Harnik, Omer Reingold"
+  },
+  {
+   "venue": "CRYPTO",
+   "year": 2007,
+   "award": "best",
+   "awardLabel": "Best paper",
+   "title": "Cryptography with Constant Input Locality",
+   "authors": [
+    "Benny Applebaum",
+    "Yuval Ishai",
+    "Eyal Kushilevitz"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2007, CRYPTO 2007: Cryptography with Constant Input Locality ★ Best paper. Benny Applebaum, Yuval Ishai, Eyal Kushilevitz"
+  },
+  {
+   "venue": "CRYPTO",
+   "year": 2008,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "The Random Oracle Model and the Ideal Cipher Model Are Equivalent",
+   "authors": [
+    "Jean-Sébastien Coron",
+    "Jacques Patarin",
+    "Yannick Seurin"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2008, CRYPTO 2008: The Random Oracle Model and the Ideal Cipher Model Are Equivalent ★ Best Paper. Jean-Sébastien Coron, Jacques Patarin, Yannick Seurin"
+  },
+  {
+   "venue": "CRYPTO",
+   "year": 2009,
+   "award": "best",
+   "awardLabel": "Best paper",
+   "title": "Short Chosen-Prefix Collisions for MD5 and the Creation of a Rogue CA Certificate",
+   "authors": [
+    "Marc Stevens",
+    "Alexander Sotirov",
+    "Jacob Appelbaum",
+    "Arjen K. Lenstra",
+    "David Molnar",
+    "Dag Arne Osvik",
+    "Benne de Weger"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2009, CRYPTO 2009: Short Chosen-Prefix Collisions for MD5 and the Creation of a Rogue CA Certificate ★ Best paper. Marc Stevens, Alexander Sotirov, Jacob Appelbaum, Arjen K. Lenstra, David Molnar, Dag Arne Osvik, Benne de Weger"
+  },
+  {
+   "venue": "CRYPTO",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "Best paper",
+   "title": "Toward Basing Fully Homomorphic Encryption on Worst-Case Hardness",
+   "authors": [
+    "Craig Gentry"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2010, CRYPTO 2010: Toward Basing Fully Homomorphic Encryption on Worst-Case Hardness ★ Best paper. Craig Gentry"
+  },
+  {
+   "venue": "CRYPTO",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Computer-Aided Security Proofs for the Working Cryptographer",
+   "authors": [
+    "Gilles Barthe",
+    "Benjamin Grégoire",
+    "Sylvain Heraud",
+    "Santiago Zanella-Béguelin"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2011, CRYPTO 2011: Computer-Aided Security Proofs for the Working Cryptographer ★ Best Paper. Gilles Barthe, Benjamin Grégoire, Sylvain Heraud, Santiago Zanella-Béguelin"
+  },
+  {
+   "venue": "CRYPTO",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Efficient Dissection of Composite Problems, with Applications to Cryptanalysis, Knapsacks, and Combinatorial Search Problems",
+   "authors": [
+    "Itai Dinur",
+    "Orr Dunkelman",
+    "Nathan Keller",
+    "Adi Shamir"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2012, CRYPTO 2012: Efficient Dissection of Composite Problems, with Applications to Cryptanalysis, Knapsacks, and Combinatorial Search Problems ★ Best Paper. Itai Dinur, Orr Dunkelman, Nathan Keller, Adi Shamir"
+  },
+  {
+   "venue": "CRYPTO",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "On the Function Field Sieve and the Impact of Higher Splitting Probabilities",
+   "authors": [
+    "Faruk Göloglu",
+    "Robert Granger",
+    "Gary McGuire",
+    "Jens Zumbrägel"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2013, CRYPTO 2013: On the Function Field Sieve and the Impact of Higher Splitting Probabilities ★ Best Paper. Faruk Göloglu, Robert Granger, Gary McGuire, Jens Zumbrägel"
+  },
+  {
+   "venue": "CRYPTO",
+   "year": 2013,
+   "award": "category",
+   "awardLabel": "Best Young-Author Paper",
+   "title": "Counter-cryptanalysis: reconstructing Flame's new variant collision attack",
+   "authors": [
+    "Marc Stevens"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2013, CRYPTO 2013: Counter-cryptanalysis: reconstructing Flame's new variant collision attack ★ Best Young-Author Paper. Marc Stevens"
+  },
+  {
+   "venue": "CRYPTO",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Revisiting the Gentry-Szydlo Algorithm",
+   "authors": [
+    "Hendrik W. Lenstra Jr.",
+    "Alice Silverberg"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2014, CRYPTO 2014: Revisiting the Gentry-Szydlo Algorithm ★ Best Paper. Hendrik W. Lenstra Jr., Alice Silverberg"
+  },
+  {
+   "venue": "CRYPTO",
    "year": 2015,
    "award": "best",
    "awardLabel": "Best Paper Award",
@@ -61022,7 +61764,10 @@
    ],
    "track": "main",
    "source": "https://www.iacr.org/conferences/crypto2015/program.html",
-   "evidence": "Integral Cryptanalysis on Full MISTY1 Yosuke Todo Best Paper Award and Best Young Researcher Award"
+   "evidence": "Integral Cryptanalysis on Full MISTY1 Yosuke Todo Best Paper Award and Best Young Researcher Award",
+   "alsoAt": [
+    "https://iacr.org/cryptodb/data/bestpapers.php"
+   ]
   },
   {
    "venue": "CRYPTO",
@@ -61073,6 +61818,51 @@
   },
   {
    "venue": "CRYPTO",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best paper",
+   "title": "Identity-Based Encryption from the Diffie-Hellman Assumption",
+   "authors": [
+    "Nico Döttling",
+    "Sanjam Garg"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2017, CRYPTO 2017: Identity-Based Encryption from the Diffie-Hellman Assumption ★ Best paper. Nico Döttling, Sanjam Garg"
+  },
+  {
+   "venue": "CRYPTO",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best paper",
+   "title": "The First Collision for Full SHA-1",
+   "authors": [
+    "Marc Stevens",
+    "Elie Bursztein",
+    "Pierre Karpman",
+    "Ange Albertini",
+    "Yarik Markov"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2017, CRYPTO 2017: The First Collision for Full SHA-1 ★ Best paper. Marc Stevens, Elie Bursztein, Pierre Karpman, Ange Albertini, Yarik Markov"
+  },
+  {
+   "venue": "CRYPTO",
+   "year": 2017,
+   "award": "category",
+   "awardLabel": "Best young researcher paper",
+   "title": "Watermarking Cryptographic Functionalities from Standard Lattice Assumptions",
+   "authors": [
+    "Sam Kim",
+    "David J. Wu"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2017, CRYPTO 2017: Watermarking Cryptographic Functionalities from Standard Lattice Assumptions ★ Best young researcher paper. Sam Kim, David J. Wu"
+  },
+  {
+   "venue": "CRYPTO",
    "year": 2018,
    "award": "best",
    "awardLabel": "Best Paper Award",
@@ -61083,7 +61873,10 @@
    ],
    "track": "main",
    "source": "https://crypto.iacr.org/2018/program.html",
-   "evidence": "Yes, There is an Oblivious RAM Lower Bound! Best Paper Award Kasper Green Larsen Jesper Buus Nielsen"
+   "evidence": "Yes, There is an Oblivious RAM Lower Bound! Best Paper Award Kasper Green Larsen Jesper Buus Nielsen",
+   "alsoAt": [
+    "https://iacr.org/cryptodb/data/bestpapers.php"
+   ]
   },
   {
    "venue": "CRYPTO",
@@ -61097,7 +61890,10 @@
    ],
    "track": "main",
    "source": "https://crypto.iacr.org/2018/program.html",
-   "evidence": "Multi-Theorem Preprocessing NIZKs from Lattices Best Young Researcher Paper Award Sam Kim David J. Wu"
+   "evidence": "Multi-Theorem Preprocessing NIZKs from Lattices Best Young Researcher Paper Award Sam Kim David J. Wu",
+   "alsoAt": [
+    "https://iacr.org/cryptodb/data/bestpapers.php"
+   ]
   },
   {
    "venue": "CRYPTO",
@@ -61113,7 +61909,10 @@
    ],
    "track": "main",
    "source": "https://crypto.iacr.org/2019/program.html",
-   "evidence": "Best Paper Lotte Lehmann Hall Session chair: Alexandra Boldyreva Cryptanalysis of OCB2: Attacks on Authenticity and Confidentiality Akiko Inoue Tetsu Iwata Kazuhiko Minematsu Bertram Poettering"
+   "evidence": "Best Paper Lotte Lehmann Hall Session chair: Alexandra Boldyreva Cryptanalysis of OCB2: Attacks on Authenticity and Confidentiality Akiko Inoue Tetsu Iwata Kazuhiko Minematsu Bertram Poettering",
+   "alsoAt": [
+    "https://iacr.org/cryptodb/data/bestpapers.php"
+   ]
   },
   {
    "venue": "CRYPTO",
@@ -61126,7 +61925,10 @@
    ],
    "track": "main",
    "source": "https://crypto.iacr.org/2019/program.html",
-   "evidence": "Best Young Researcher Papers Lotte Lehmann Hall Session chair: Daniele Micciancio Quantum cryptanalysis in the RAM model: Claw-finding attacks on SIKE Samuel Jaques John M. Schanck Media: Fully Secure Attribute-Based Encryption for t-CNF from LWE Rotem Tsabary"
+   "evidence": "Best Young Researcher Papers Lotte Lehmann Hall Session chair: Daniele Micciancio Quantum cryptanalysis in the RAM model: Claw-finding attacks on SIKE Samuel Jaques John M. Schanck Media: Fully Secure Attribute-Based Encryption for t-CNF from LWE Rotem Tsabary",
+   "alsoAt": [
+    "https://iacr.org/cryptodb/data/bestpapers.php"
+   ]
   },
   {
    "venue": "CRYPTO",
@@ -61140,7 +61942,10 @@
    ],
    "track": "main",
    "source": "https://crypto.iacr.org/2019/program.html",
-   "evidence": "Best Young Researcher Papers Lotte Lehmann Hall Session chair: Daniele Micciancio Quantum cryptanalysis in the RAM model: Claw-finding attacks on SIKE Samuel Jaques John M. Schanck Media: Fully Secure Attribute-Based Encryption for t-CNF from LWE Rotem Tsabary"
+   "evidence": "Best Young Researcher Papers Lotte Lehmann Hall Session chair: Daniele Micciancio Quantum cryptanalysis in the RAM model: Claw-finding attacks on SIKE Samuel Jaques John M. Schanck Media: Fully Secure Attribute-Based Encryption for t-CNF from LWE Rotem Tsabary",
+   "alsoAt": [
+    "https://iacr.org/cryptodb/data/bestpapers.php"
+   ]
   },
   {
    "venue": "CRYPTO",
@@ -61246,6 +62051,49 @@
   {
    "venue": "CRYPTO",
    "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "On the Possibility of Basing Cryptography on $\\EXP \\neq \\BPP$",
+   "authors": [
+    "Yanyi Liu",
+    "Rafael Pass"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2021, CRYPTO 2021: On the Possibility of Basing Cryptography on $\\EXP \\neq \\BPP$ ★ Best Paper. Yanyi Liu, Rafael Pass"
+  },
+  {
+   "venue": "CRYPTO",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Honorable mention for best paper",
+   "title": "Efficient Key Recovery for all HFE Signature Variants",
+   "authors": [
+    "Chengdong Tao",
+    "Albrecht Petzoldt",
+    "Jintai Ding"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2021, CRYPTO 2021: Efficient Key Recovery for all HFE Signature Variants ★ Honorable mention for best paper. Chengdong Tao, Albrecht Petzoldt, Jintai Ding"
+  },
+  {
+   "venue": "CRYPTO",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Honorable mention for best paper",
+   "title": "Three Halves Make a Whole? Beating the Half-Gates Lower Bound for Garbled Circuits",
+   "authors": [
+    "Mike Rosulek",
+    "Lawrence Roy"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2021, CRYPTO 2021: Three Halves Make a Whole? Beating the Half-Gates Lower Bound for Garbled Circuits ★ Honorable mention for best paper. Mike Rosulek, Lawrence Roy"
+  },
+  {
+   "venue": "CRYPTO",
+   "year": 2021,
    "award": "tot",
    "awardLabel": "Test of Time Award",
    "title": "New proofs for NMAC and HMAC: Security without collision-resistance",
@@ -61269,7 +62117,10 @@
    ],
    "track": "main",
    "source": "https://crypto.iacr.org/2022/program.php",
-   "evidence": "Batch Arguments for NP and More from Standard Bilinear Group Assumptions best paper Brent Waters David Wu"
+   "evidence": "Batch Arguments for NP and More from Standard Bilinear Group Assumptions best paper Brent Waters David Wu",
+   "alsoAt": [
+    "https://iacr.org/cryptodb/data/bestpapers.php"
+   ]
   },
   {
    "venue": "CRYPTO",
@@ -61282,7 +62133,10 @@
    ],
    "track": "main",
    "source": "https://crypto.iacr.org/2022/program.php",
-   "evidence": "Breaking Rainbow Takes a Weekend on a Laptop best early career researcher paper Ward Beullens"
+   "evidence": "Breaking Rainbow Takes a Weekend on a Laptop best early career researcher paper Ward Beullens",
+   "alsoAt": [
+    "https://iacr.org/cryptodb/data/bestpapers.php"
+   ]
   },
   {
    "venue": "CRYPTO",
@@ -61297,7 +62151,10 @@
    ],
    "track": "main",
    "source": "https://crypto.iacr.org/2022/program.php",
-   "evidence": "Some Easy Instances of Ideal-SVP and Implications to the Partial Vandermonde Knapsack Problem best early career researcher paper Katharina Boudgoust Erell Gachon Alice Pellet-Mary"
+   "evidence": "Some Easy Instances of Ideal-SVP and Implications to the Partial Vandermonde Knapsack Problem best early career researcher paper Katharina Boudgoust Erell Gachon Alice Pellet-Mary",
+   "alsoAt": [
+    "https://iacr.org/cryptodb/data/bestpapers.php"
+   ]
   },
   {
    "venue": "CRYPTO",
@@ -61314,6 +62171,35 @@
    "paperYear": 2007,
    "source": "https://iacr.org/testoftime/",
    "evidence": "CRYPTO 2022 Test of Time Award: Mihir Bellare, Alexandra Boldyreva, and Adam O'Neill “Deterministic and Efficiently Searchable Encryption”"
+  },
+  {
+   "venue": "CRYPTO",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Fast Practical Lattice Reduction through Iterated Compression",
+   "authors": [
+    "Keegan Ryan",
+    "Nadia Heninger"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2023, CRYPTO 2023: Fast Practical Lattice Reduction through Iterated Compression ★ Best Paper Award. Keegan Ryan, Nadia Heninger"
+  },
+  {
+   "venue": "CRYPTO",
+   "year": 2023,
+   "award": "category",
+   "awardLabel": "Best Early Career Paper",
+   "title": "Fully Adaptive Schnorr Threshold Signatures",
+   "authors": [
+    "Elizabeth Crites",
+    "Chelsea Komlo",
+    "Mary Maller"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2023, CRYPTO 2023: Fully Adaptive Schnorr Threshold Signatures ★ Best Early Career Paper. Elizabeth Crites, Chelsea Komlo, Mary Maller"
   },
   {
    "venue": "CRYPTO",
@@ -61343,7 +62229,10 @@
    ],
    "track": "main",
    "source": "https://crypto.iacr.org/2024/program.php",
-   "evidence": "Space-Efficient and Noise-Robust Quantum Factoring Best Paper Award Seyoon Ragavan Vinod Vaikuntanathan"
+   "evidence": "Space-Efficient and Noise-Robust Quantum Factoring Best Paper Award Seyoon Ragavan Vinod Vaikuntanathan",
+   "alsoAt": [
+    "https://iacr.org/cryptodb/data/bestpapers.php"
+   ]
   },
   {
    "venue": "CRYPTO",
@@ -61359,7 +62248,10 @@
    ],
    "track": "main",
    "source": "https://crypto.iacr.org/2024/program.php",
-   "evidence": "STIR: Reed–Solomon Proximity Testing with Fewer Queries Best Paper Award Gal Arnon Alessandro Chiesa Giacomo Fenzi Eylon Yogev"
+   "evidence": "STIR: Reed–Solomon Proximity Testing with Fewer Queries Best Paper Award Gal Arnon Alessandro Chiesa Giacomo Fenzi Eylon Yogev",
+   "alsoAt": [
+    "https://iacr.org/cryptodb/data/bestpapers.php"
+   ]
   },
   {
    "venue": "CRYPTO",
@@ -61373,7 +62265,10 @@
    ],
    "track": "main",
    "source": "https://crypto.iacr.org/2024/program.php",
-   "evidence": "Lossy Cryptography from Code-Based Assumptions Best Paper Authored by Early Career Researchers Quang Dao Aayush Jain"
+   "evidence": "Lossy Cryptography from Code-Based Assumptions Best Paper Authored by Early Career Researchers Quang Dao Aayush Jain",
+   "alsoAt": [
+    "https://iacr.org/cryptodb/data/bestpapers.php"
+   ]
   },
   {
    "venue": "CRYPTO",
@@ -83228,6 +84123,218 @@
   },
   {
    "venue": "EUROCRYPT",
+   "year": 2005,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Cryptanalysis of the Hash Functions MD4 and RIPEMD",
+   "authors": [
+    "Xiaoyun Wang",
+    "Xuejia Lai",
+    "Dengguo Feng",
+    "Hui Chen",
+    "Xiuyuan Yu"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2005, EUROCRYPT 2005: Cryptanalysis of the Hash Functions MD4 and RIPEMD ★ Best Paper. Xiaoyun Wang, Xuejia Lai, Dengguo Feng, Hui Chen, Xiuyuan Yu"
+  },
+  {
+   "venue": "EUROCRYPT",
+   "year": 2005,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "How to Break MD5 and Other Hash Functions",
+   "authors": [
+    "Xiaoyun Wang",
+    "Hongbo Yu"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2005, EUROCRYPT 2005: How to Break MD5 and Other Hash Functions ★ Best Paper. Xiaoyun Wang, Hongbo Yu"
+  },
+  {
+   "venue": "EUROCRYPT",
+   "year": 2006,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Learning a Parallelepiped: Cryptanalysis of GGH and NTRU Signatures",
+   "authors": [
+    "Phong Q. Nguyen",
+    "Oded Regev"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2006, EUROCRYPT 2006: Learning a Parallelepiped: Cryptanalysis of GGH and NTRU Signatures ★ Best Paper. Phong Q. Nguyen, Oded Regev"
+  },
+  {
+   "venue": "EUROCRYPT",
+   "year": 2007,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Zero Knowledge and Soundness Are Symmetric",
+   "authors": [
+    "Shien Jin Ong",
+    "Salil P. Vadhan"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2007, EUROCRYPT 2007: Zero Knowledge and Soundness Are Symmetric ★ Best Paper. Shien Jin Ong, Salil P. Vadhan"
+  },
+  {
+   "venue": "EUROCRYPT",
+   "year": 2008,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Isogenies and the Discrete Logarithm Problem in Jacobians of Genus 3 Hyperelliptic Curves",
+   "authors": [
+    "Benjamin Smith"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2008, EUROCRYPT 2008: Isogenies and the Discrete Logarithm Problem in Jacobians of Genus 3 Hyperelliptic Curves ★ Best Paper. Benjamin Smith"
+  },
+  {
+   "venue": "EUROCRYPT",
+   "year": 2009,
+   "award": "best",
+   "awardLabel": "Best paper",
+   "title": "Practical Chosen Ciphertext Secure Encryption from Factoring",
+   "authors": [
+    "Dennis Hofheinz",
+    "Eike Kiltz"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2009, EUROCRYPT 2009: Practical Chosen Ciphertext Secure Encryption from Factoring ★ Best paper. Dennis Hofheinz, Eike Kiltz"
+  },
+  {
+   "venue": "EUROCRYPT",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Bonsai Trees, or How to Delegate a Lattice Basis",
+   "authors": [
+    "David Cash",
+    "Dennis Hofheinz",
+    "Eike Kiltz",
+    "Chris Peikert"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2010, EUROCRYPT 2010: Bonsai Trees, or How to Delegate a Lattice Basis ★ Best Paper. David Cash, Dennis Hofheinz, Eike Kiltz, Chris Peikert"
+  },
+  {
+   "venue": "EUROCRYPT",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Best paper",
+   "title": "Efficient Authentication from Hard Learning Problems",
+   "authors": [
+    "Eike Kiltz",
+    "Krzysztof Pietrzak",
+    "David Cash",
+    "Abhishek Jain",
+    "Daniele Venturi"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2011, EUROCRYPT 2011: Efficient Authentication from Hard Learning Problems ★ Best paper. Eike Kiltz, Krzysztof Pietrzak, David Cash, Abhishek Jain, Daniele Venturi"
+  },
+  {
+   "venue": "EUROCRYPT",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Cover and Decomposition Index Calculus on Elliptic Curves Made Practical - Application to a Previously Unreachable Curve over $F_(p^6)$",
+   "authors": [
+    "Antoine Joux",
+    "Vanessa Vitse"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2012, EUROCRYPT 2012: Cover and Decomposition Index Calculus on Elliptic Curves Made Practical - Application to a Previously Unreachable Curve over $F_(p^6)$ ★ Best Paper. Antoine Joux, Vanessa Vitse"
+  },
+  {
+   "venue": "EUROCRYPT",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Candidate Multilinear Maps from Ideal Lattices",
+   "authors": [
+    "Sanjam Garg",
+    "Craig Gentry",
+    "Shai Halevi"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2013, EUROCRYPT 2013: Candidate Multilinear Maps from Ideal Lattices ★ Best Paper. Sanjam Garg, Craig Gentry, Shai Halevi"
+  },
+  {
+   "venue": "EUROCRYPT",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "A Heuristic Quasi-Polynomial Algorithm for Discrete Logarithm in Finite Fields of Small Characteristic",
+   "authors": [
+    "Razvan Barbulescu",
+    "Pierrick Gaudry",
+    "Antoine Joux",
+    "Emmanuel Thomé"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2014, EUROCRYPT 2014: A Heuristic Quasi-Polynomial Algorithm for Discrete Logarithm in Finite Fields of Small Characteristic ★ Best Paper. Razvan Barbulescu, Pierrick Gaudry, Antoine Joux, Emmanuel Thomé"
+  },
+  {
+   "venue": "EUROCRYPT",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Unifying Leakage Models: From Probing Attacks to Noisy Leakage",
+   "authors": [
+    "Alexandre Duc",
+    "Stefan Dziembowski",
+    "Sebastian Faust"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2014, EUROCRYPT 2014: Unifying Leakage Models: From Probing Attacks to Noisy Leakage ★ Best Paper. Alexandre Duc, Stefan Dziembowski, Sebastian Faust"
+  },
+  {
+   "venue": "EUROCRYPT",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Cryptanalysis of the Multilinear Map over the Integers",
+   "authors": [
+    "Jung Hee Cheon",
+    "Kyoohyung Han",
+    "Changmin Lee",
+    "Hansol Ryu",
+    "Damien Stehlé"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2015, EUROCRYPT 2015: Cryptanalysis of the Multilinear Map over the Integers ★ Best Paper. Jung Hee Cheon, Kyoohyung Han, Changmin Lee, Hansol Ryu, Damien Stehlé"
+  },
+  {
+   "venue": "EUROCRYPT",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Tightly CCA-Secure Encryption Without Pairings",
+   "authors": [
+    "Romain Gay",
+    "Dennis Hofheinz",
+    "Eike Kiltz",
+    "Hoeteck Wee"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2016, EUROCRYPT 2016: Tightly CCA-Secure Encryption Without Pairings ★ Best Paper. Romain Gay, Dennis Hofheinz, Eike Kiltz, Hoeteck Wee"
+  },
+  {
+   "venue": "EUROCRYPT",
    "year": 2017,
    "award": "best",
    "awardLabel": "Best Paper Award",
@@ -83325,7 +84432,10 @@
    ],
    "track": "main",
    "source": "https://eurocrypt.iacr.org/2019/program.html",
-   "evidence": "Best Paper Quantum Lightning Never Strikes the Same State Twice Mark Zhandry"
+   "evidence": "Best Paper Quantum Lightning Never Strikes the Same State Twice Mark Zhandry",
+   "alsoAt": [
+    "https://iacr.org/cryptodb/data/bestpapers.php"
+   ]
   },
   {
    "venue": "EUROCRYPT",
@@ -83338,7 +84448,10 @@
    ],
    "track": "main",
    "source": "https://eurocrypt.iacr.org/2019/program.html",
-   "evidence": "Best Young Researcher Paper Efficient Verifiable Delay Functions Benjamin Wesolowski"
+   "evidence": "Best Young Researcher Paper Efficient Verifiable Delay Functions Benjamin Wesolowski",
+   "alsoAt": [
+    "https://iacr.org/cryptodb/data/bestpapers.php"
+   ]
   },
   {
    "venue": "EUROCRYPT",
@@ -83368,7 +84481,10 @@
    ],
    "track": "main",
    "source": "https://eurocrypt.iacr.org/2020/program.php",
-   "evidence": "Best Paper Award YouTube Moderators: Yilei Chen and Romain Gay Optimal Broadcast Encryption from Pairings and LWE Shweta Agrawal Shota Yamada"
+   "evidence": "Best Paper Award YouTube Moderators: Yilei Chen and Romain Gay Optimal Broadcast Encryption from Pairings and LWE Shweta Agrawal Shota Yamada",
+   "alsoAt": [
+    "https://iacr.org/cryptodb/data/bestpapers.php"
+   ]
   },
   {
    "venue": "EUROCRYPT",
@@ -83382,7 +84498,10 @@
    ],
    "track": "main",
    "source": "https://eurocrypt.iacr.org/2020/program.php",
-   "evidence": "Best Young Researcher Award YouTube Moderators: Nishanth Chandran and Tancrède Lepoint Private Information Retrieval with Sublinear Online Time Henry Corrigan-Gibbs Dmitry Kogan"
+   "evidence": "Best Young Researcher Award YouTube Moderators: Nishanth Chandran and Tancrède Lepoint Private Information Retrieval with Sublinear Online Time Henry Corrigan-Gibbs Dmitry Kogan",
+   "alsoAt": [
+    "https://iacr.org/cryptodb/data/bestpapers.php"
+   ]
   },
   {
    "venue": "EUROCRYPT",
@@ -83398,6 +84517,51 @@
    "paperYear": 2005,
    "source": "https://iacr.org/testoftime/",
    "evidence": "EUROCRYPT 2020 Test of Time Award: Amit Sahai and Brent Waters “Fuzzy Identity-Based Encryption”"
+  },
+  {
+   "venue": "EUROCRYPT",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "New Representations of the AES Key Schedule",
+   "authors": [
+    "Gaëtan Leurent",
+    "Clara Pernot"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2021, EUROCRYPT 2021: New Representations of the AES Key Schedule ★ Best Paper Award. Gaëtan Leurent, Clara Pernot"
+  },
+  {
+   "venue": "EUROCRYPT",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Non-Interactive Zero Knowledge from Sub-exponential DDH",
+   "authors": [
+    "Abhishek Jain",
+    "Zhengzhong Jin"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2021, EUROCRYPT 2021: Non-Interactive Zero Knowledge from Sub-exponential DDH ★ Best Paper Award. Abhishek Jain, Zhengzhong Jin"
+  },
+  {
+   "venue": "EUROCRYPT",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "On the (in)security of ROS",
+   "authors": [
+    "Fabrice Benhamouda",
+    "Tancrède Lepoint",
+    "Julian Loss",
+    "Michele Orrù",
+    "Mariana Raykova"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2021, EUROCRYPT 2021: On the (in)security of ROS ★ Best Paper Award. Fabrice Benhamouda, Tancrède Lepoint, Julian Loss, Michele Orrù, Mariana Raykova"
   },
   {
    "venue": "EUROCRYPT",
@@ -83427,7 +84591,10 @@
    ],
    "track": "main",
    "source": "https://eurocrypt.iacr.org/2022/program.php",
-   "evidence": "Best paper award talk Cosmos 1/2 Session chair: Yuval Ishai Chat EpiGRAM: Practical Garbled RAM David Heath Vladimir Kolesnikov Rafail Ostrovsky"
+   "evidence": "Best paper award talk Cosmos 1/2 Session chair: Yuval Ishai Chat EpiGRAM: Practical Garbled RAM David Heath Vladimir Kolesnikov Rafail Ostrovsky",
+   "alsoAt": [
+    "https://iacr.org/cryptodb/data/bestpapers.php"
+   ]
   },
   {
    "venue": "EUROCRYPT",
@@ -83456,7 +84623,10 @@
    ],
    "track": "main",
    "source": "https://eurocrypt.iacr.org/2023/program.php",
-   "evidence": "An Efficient Key Recovery Attack on SIDH Best Paper Award Wouter Castryck Thomas Decru"
+   "evidence": "An Efficient Key Recovery Attack on SIDH Best Paper Award Wouter Castryck Thomas Decru",
+   "alsoAt": [
+    "https://iacr.org/cryptodb/data/bestpapers.php"
+   ]
   },
   {
    "venue": "EUROCRYPT",
@@ -83469,7 +84639,10 @@
    ],
    "track": "main",
    "source": "https://eurocrypt.iacr.org/2023/program.php",
-   "evidence": "Worst-Case Subexponential Attacks on PRGs of Constant Degree or Constant Locality Early Career Best Paper Award Akın Ünal"
+   "evidence": "Worst-Case Subexponential Attacks on PRGs of Constant Degree or Constant Locality Early Career Best Paper Award Akın Ünal",
+   "alsoAt": [
+    "https://iacr.org/cryptodb/data/bestpapers.php"
+   ]
   },
   {
    "venue": "EUROCRYPT",
@@ -83486,7 +84659,10 @@
    ],
    "track": "main",
    "source": "https://eurocrypt.iacr.org/2023/program.php",
-   "evidence": "A Direct Key Recovery Attack on SIDH Honourable Mention Luciano Maino Chloe Martindale Lorenz Panny Giacomo Pope Benjamin Wesolowski"
+   "evidence": "A Direct Key Recovery Attack on SIDH Honourable Mention Luciano Maino Chloe Martindale Lorenz Panny Giacomo Pope Benjamin Wesolowski",
+   "alsoAt": [
+    "https://iacr.org/cryptodb/data/bestpapers.php"
+   ]
   },
   {
    "venue": "EUROCRYPT",
@@ -83499,7 +84675,10 @@
    ],
    "track": "main",
    "source": "https://eurocrypt.iacr.org/2023/program.php",
-   "evidence": "Breaking SIDH in Polynomial Time Honourable Mention Damien Robert"
+   "evidence": "Breaking SIDH in Polynomial Time Honourable Mention Damien Robert",
+   "alsoAt": [
+    "https://iacr.org/cryptodb/data/bestpapers.php"
+   ]
   },
   {
    "venue": "EUROCRYPT",
@@ -83564,7 +84743,10 @@
    ],
    "track": "main",
    "source": "https://eurocrypt.iacr.org/2025/program.php",
-   "evidence": "Polynomial Time Cryptanalytic Extraction of Deep Neural Networks in the Hard-Label Setting Best Paper Award Nicholas Carlini Jorge Chávez-Saab Anna Hambitzer Francisco Rodríguez-Henríquez Adi Shamir"
+   "evidence": "Polynomial Time Cryptanalytic Extraction of Deep Neural Networks in the Hard-Label Setting Best Paper Award Nicholas Carlini Jorge Chávez-Saab Anna Hambitzer Francisco Rodríguez-Henríquez Adi Shamir",
+   "alsoAt": [
+    "https://iacr.org/cryptodb/data/bestpapers.php"
+   ]
   },
   {
    "venue": "EUROCRYPT",
@@ -83577,7 +84759,10 @@
    ],
    "track": "main",
    "source": "https://eurocrypt.iacr.org/2025/program.php",
-   "evidence": "The syzygy Distinguisher Best Paper Award Hugues Randriambololona"
+   "evidence": "The syzygy Distinguisher Best Paper Award Hugues Randriambololona",
+   "alsoAt": [
+    "https://iacr.org/cryptodb/data/bestpapers.php"
+   ]
   },
   {
    "venue": "EUROCRYPT",
@@ -83590,7 +84775,10 @@
    ],
    "track": "main",
    "source": "https://eurocrypt.iacr.org/2025/program.php",
-   "evidence": "Improved Cryptanalysis of SNOVA Early-Career Best Paper Award Ward Beullens"
+   "evidence": "Improved Cryptanalysis of SNOVA Early-Career Best Paper Award Ward Beullens",
+   "alsoAt": [
+    "https://iacr.org/cryptodb/data/bestpapers.php"
+   ]
   },
   {
    "venue": "EUROCRYPT",
@@ -148094,6 +149282,75 @@
   },
   {
    "venue": "PKC",
+   "year": 2006,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "New Attacks on RSA with Small Secret CRT-Exponents",
+   "authors": [
+    "Daniel Bleichenbacher",
+    "Alexander May"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2006, PKC 2006: New Attacks on RSA with Small Secret CRT-Exponents ★ Best Paper. Daniel Bleichenbacher, Alexander May"
+  },
+  {
+   "venue": "PKC",
+   "year": 2007,
+   "award": "best",
+   "awardLabel": "Best paper",
+   "title": "Full-Domain Subgroup Hiding and Constant-Size Group Signatures",
+   "authors": [
+    "Xavier Boyen",
+    "Brent Waters"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2007, PKC 2007: Full-Domain Subgroup Hiding and Constant-Size Group Signatures ★ Best paper. Xavier Boyen, Brent Waters"
+  },
+  {
+   "venue": "PKC",
+   "year": 2008,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Lattice-Based Identification Schemes Secure Under Active Attacks",
+   "authors": [
+    "Vadim Lyubashevsky"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2008, PKC 2008: Lattice-Based Identification Schemes Secure Under Active Attacks ★ Best Paper. Vadim Lyubashevsky"
+  },
+  {
+   "venue": "PKC",
+   "year": 2009,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Implicit Factoring: On Polynomial Time Factoring Given Only an Implicit Hint",
+   "authors": [
+    "Alexander May",
+    "Maike Ritzenhofen"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2009, PKC 2009: Implicit Factoring: On Polynomial Time Factoring Given Only an Implicit Hint ★ Best Paper. Alexander May, Maike Ritzenhofen"
+  },
+  {
+   "venue": "PKC",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Chosen-Ciphertext Security from Slightly Lossy Trapdoor Functions",
+   "authors": [
+    "Petros Mol",
+    "Scott Yilek"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2010, PKC 2010: Chosen-Ciphertext Security from Slightly Lossy Trapdoor Functions ★ Best Paper. Petros Mol, Scott Yilek"
+  },
+  {
+   "venue": "PKC",
    "year": 2019,
    "award": "tot",
    "awardLabel": "Test of Time Award",
@@ -148269,7 +149526,10 @@
    ],
    "track": "main",
    "source": "https://pkc.iacr.org/2023/program.php",
-   "evidence": "Post-Quantum Anonymity of Kyber 🏆 Best Paper winner 🏆 Varun Maram Keita Xagawa"
+   "evidence": "Post-Quantum Anonymity of Kyber 🏆 Best Paper winner 🏆 Varun Maram Keita Xagawa",
+   "alsoAt": [
+    "https://iacr.org/cryptodb/data/bestpapers.php"
+   ]
   },
   {
    "venue": "PKC",
@@ -148283,7 +149543,10 @@
    ],
    "track": "main",
    "source": "https://pkc.iacr.org/2023/program.php",
-   "evidence": "The Hidden Number Problem with Small Unknown Multipliers: Cryptanalyzing MEGA in Six Queries and Other Applications 🏆 Best Paper winner 🏆 Nadia Heninger Keegan Ryan"
+   "evidence": "The Hidden Number Problem with Small Unknown Multipliers: Cryptanalyzing MEGA in Six Queries and Other Applications 🏆 Best Paper winner 🏆 Nadia Heninger Keegan Ryan",
+   "alsoAt": [
+    "https://iacr.org/cryptodb/data/bestpapers.php"
+   ]
   },
   {
    "venue": "PKC",
@@ -148299,6 +149562,35 @@
    "paperYear": 2008,
    "source": "https://iacr.org/meetings/pkc/test_of_time_award",
    "evidence": "PKC 2023 Test of Time Award: Benoît Libert and Damien Vergnaud “Unidirectional chosen-ciphertext secure proxy re-encryption”"
+  },
+  {
+   "venue": "PKC",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "An algorithm for efficient detection of (N,N)-splittings and its application to the isogeny problem in dimension 2",
+   "authors": [
+    "Maria Corte-Real Santos",
+    "Craig Costello",
+    "Sam Frengley"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2024, PKC 2024: An algorithm for efficient detection of (N,N)-splittings and its application to the isogeny problem in dimension 2 ★ Best Paper Award. Maria Corte-Real Santos, Craig Costello, Sam Frengley"
+  },
+  {
+   "venue": "PKC",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Quantum CCA-Secure PKE, Revisited",
+   "authors": [
+    "Navid Alamati",
+    "Varun Maram"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2024, PKC 2024: Quantum CCA-Secure PKE, Revisited ★ Best Paper Award. Navid Alamati, Varun Maram"
   },
   {
    "venue": "PKC",
@@ -148334,7 +149626,10 @@
    ],
    "track": "main",
    "source": "https://pkc.iacr.org/2025/program.php",
-   "evidence": "PRISM: Simple And Compact Identification and Signatures From Large Prime Degree Isogenies Best Paper Award Andrea Basso Giacomo Borin Wouter Castryck Maria Corte-Real Santos Riccardo Invernizzi Antonin Leroux Luciano Maino Frederik Vercauteren Benjamin Wesolowski"
+   "evidence": "PRISM: Simple And Compact Identification and Signatures From Large Prime Degree Isogenies Best Paper Award Andrea Basso Giacomo Borin Wouter Castryck Maria Corte-Real Santos Riccardo Invernizzi Antonin Leroux Luciano Maino Frederik Vercauteren Benjamin Wesolowski",
+   "alsoAt": [
+    "https://iacr.org/cryptodb/data/bestpapers.php"
+   ]
   },
   {
    "venue": "PKC",
@@ -175653,6 +176948,73 @@
   },
   {
    "venue": "TCC",
+   "year": 2007,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Tackling Adaptive Corruptions in Multicast Encryption Protocols",
+   "authors": [
+    "Saurabh Panjwani"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2007, TCC 2007: Tackling Adaptive Corruptions in Multicast Encryption Protocols ★ Best Student Paper. Saurabh Panjwani"
+  },
+  {
+   "venue": "TCC",
+   "year": 2010,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Parallel Repetition Theorems for Interactive Arguments",
+   "authors": [
+    "Kai-Min Chung",
+    "Feng-Hao Liu"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2010, TCC 2010: Parallel Repetition Theorems for Interactive Arguments ★ Best Student Paper. Kai-Min Chung, Feng-Hao Liu"
+  },
+  {
+   "venue": "TCC",
+   "year": 2011,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Security Amplification for the Cascade of Arbitrarily Weak PRPs: Tight Bounds via the Interactive Hardcore Lemma",
+   "authors": [
+    "Stefano Tessaro"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2011, TCC 2011: Security Amplification for the Cascade of Arbitrarily Weak PRPs: Tight Bounds via the Interactive Hardcore Lemma ★ Best Student Paper. Stefano Tessaro"
+  },
+  {
+   "venue": "TCC",
+   "year": 2012,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Lower Bounds in Differential Privacy",
+   "authors": [
+    "Anindya De"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2012, TCC 2012: Lower Bounds in Differential Privacy ★ Best Student Paper. Anindya De"
+  },
+  {
+   "venue": "TCC",
+   "year": 2012,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Point Obfuscation and 3-Round Zero-Knowledge",
+   "authors": [
+    "Nir Bitansky",
+    "Omer Paneth"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2012, TCC 2012: Point Obfuscation and 3-Round Zero-Knowledge ★ Best Student Paper. Nir Bitansky, Omer Paneth"
+  },
+  {
+   "venue": "TCC",
    "year": 2015,
    "award": "tot",
    "awardLabel": "Test of Time Award",
@@ -175717,6 +177079,19 @@
   {
    "venue": "TCC",
    "year": 2018,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "On Basing Search SIVP on NP-Hardness",
+   "authors": [
+    "Tianren Liu"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/cryptodb/data/bestpapers.php",
+   "evidence": "IACR Publication Awards (CryptoDB): award year 2018, TCC 2018: On Basing Search SIVP on NP-Hardness ★ Best Student Paper. Tianren Liu"
+  },
+  {
+   "venue": "TCC",
+   "year": 2018,
    "award": "tot",
    "awardLabel": "Test of Time Award",
    "title": "Evaluating 2-DNF Formulas on Ciphertexts",
@@ -175742,7 +177117,10 @@
    ],
    "track": "main",
    "source": "https://tcc.iacr.org/2019/program.html",
-   "evidence": "Best young researcher award Chair: Dennis Hofheinz The Function-Inversion Problem: Barriers and Opportunities Henry Corrigan-Gibbs Dmitry Kogan"
+   "evidence": "Best young researcher award Chair: Dennis Hofheinz The Function-Inversion Problem: Barriers and Opportunities Henry Corrigan-Gibbs Dmitry Kogan",
+   "alsoAt": [
+    "https://iacr.org/cryptodb/data/bestpapers.php"
+   ]
   },
   {
    "venue": "TCC",
@@ -175818,7 +177196,10 @@
    ],
    "track": "main",
    "source": "https://tcc.iacr.org/2022/program.php",
-   "evidence": "The Best Young Researcher Award was given to Nathan Geier. … A Tight Computational Indistinguishability Bound of Product Distributions Nathan Geier"
+   "evidence": "The Best Young Researcher Award was given to Nathan Geier. … A Tight Computational Indistinguishability Bound of Product Distributions Nathan Geier",
+   "alsoAt": [
+    "https://iacr.org/cryptodb/data/bestpapers.php"
+   ]
   },
   {
    "venue": "TCC",
@@ -175847,7 +177228,10 @@
    ],
    "track": "main",
    "source": "https://tcc.iacr.org/2023/program.php",
-   "evidence": "Memory Checking for Parallel RAMs Best Young Researcher Paper Award Surya Mathialagan"
+   "evidence": "Memory Checking for Parallel RAMs Best Young Researcher Paper Award Surya Mathialagan",
+   "alsoAt": [
+    "https://iacr.org/cryptodb/data/bestpapers.php"
+   ]
   },
   {
    "venue": "TCC",
