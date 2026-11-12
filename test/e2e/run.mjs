@@ -2826,6 +2826,55 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     } finally { await ctxC.close(); await fxC.close(); }
   }
 
+  // -- 16g. a page script cannot make Read full lists save another paper's author list under a victim's id (a link naming two citation_for_view values)
+  {
+    const rowsP = [
+      ["A Alpha, B Beta, ...", "Proceedings of the 2020 Conference, 2020", "Bait paper with a cut author list"],
+      ["I Stoica, X Yang", "Proceedings of the 2021 Conference, 2021", "Victim paper where the owner is first"],
+      ["Q Other, R Other, I Stoica", "Proceedings of the 2022 Conference, 2022", "Attacker's own paper"]
+    ];
+    const fxP = await start({ slug: "ion-stoica", pageSize: 20, latency: 0, rows: rowsP });
+    const ctxP = await launch();
+    try {
+      const optsP = await openOptions(ctxP);
+      await setPref(optsP, "autoLoad", false);
+      await ctxP.addInitScript(() => {
+        if (location.hash !== "#attack") return;
+        document.addEventListener("DOMContentLoaded", () => {
+          const a = document.querySelector("#gsc_a_b tr.gsc_a_tr a.gsc_a_at");
+          a.setAttribute("href", "/citations?view_op=view_citation&hl=en&user=TEST&x=citation_for_view=TEST:P001&citation_for_view=TEST:P002");
+        });
+      });
+      const pg = await ctxP.newPage();
+      await pg.goto(fxP.url + "#attack");
+      await pg.waitForSelector("html[data-rr-ready]");
+      await pg.waitForTimeout(1500);
+      if (await pg.locator('[data-act="resolve"]').count()) {
+        await pg.click('[data-act="resolve"]');
+        await pg.waitForSelector('[data-rr="resolve-msg"]', { timeout: 30000 });
+      }
+      const saved = (await stored(optsP, "local", "resolved")) || {};
+      assert.equal(saved["TEST:P001"], undefined, "no saved details under the victim's id: " + JSON.stringify(saved["TEST:P001"]));
+      ok("a link that names two papers is no row to read: nothing is saved under the victim's id");
+      // (and a script's javascript: link is no part of an export)
+      await ctxP.addInitScript(() => {
+        if (location.hash !== "#js") return;
+        document.addEventListener("DOMContentLoaded", () => { for (const a of document.querySelectorAll("#gsc_a_b a.gsc_a_at")) if (/^Victim/.test(a.textContent)) a.setAttribute("href", "javascript:void(0)"); });
+      });
+      const pj = await ctxP.newPage();
+      await pj.goto(fxP.url + "#js");
+      await pj.waitForSelector("html[data-rr-ready]");
+      const urls = await pj.evaluate(() => new Promise((resolve) => {
+        const id = "c" + Math.random();
+        document.addEventListener("better-scholar:response", function on(e) { if (e.detail.id === id) { document.removeEventListener("better-scholar:response", on); resolve(e.detail.result.papers.map((p) => [p.title.slice(0, 6), p.url])); } });
+        document.dispatchEvent(new CustomEvent("better-scholar:request", { detail: { id, method: "papers", params: { filtered: false } } }));
+      }));
+      assert.equal(urls.find(([t]) => t === "Victim")[1], "", "a javascript: link is kept out of the papers list: " + JSON.stringify(urls));
+      assert.ok(urls.filter(([t]) => t !== "Victim").every(([, u]) => /^http:\/\/127\.0\.0\.1/.test(u)), "the others keep their own links");
+      ok("a javascript: link is no part of the papers list or the exports");
+    } finally { await ctxP.close(); await fxP.close(); }
+  }
+
   // -- 16e. a paper's awards of one kind at two venues are one chip, whose tooltip names both (Chaff: test-of-time awards of DAC 2024 and SIGDA 2017)
   {
     const fxT = await start({ slug: "ion-stoica", pageSize: 20, latency: 0, rows: [["MW Moskewicz, CF Madigan, Y Zhao, L Zhang, I Stoica", "Proceedings of the 38th annual Design Automation Conference (DAC), 530-535, 2001", "Chaff: Engineering an Efficient SAT Solver"]] });

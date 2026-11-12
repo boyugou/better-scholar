@@ -44,10 +44,12 @@
     };
     const y = parseInt((((tr.querySelector("td.gsc_a_y") || {}).textContent) || "").trim(), 10);
     const href = link ? link.getAttribute("href") || "" : "";
-    const m = /citation_for_view=([^&]+)/.exec(href);
+    // (the id is the link's one citation_for_view value: a link that names two is no row of this profile, and its id is empty — the page that is fetched and the id it is saved under cannot differ)
+    let id = "";
+    try { const ids = new URL(href, location.href).searchParams.getAll("citation_for_view"); if (ids.length === 1) id = ids[0]; } catch (e) { /* no link */ }
     return {
       tr,
-      id: m ? decodeURIComponent(m[1]) : "",
+      id,
       title: link ? link.textContent.trim() : "",
       href,
       authorsEl: grays[0] || null,

@@ -426,7 +426,7 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
         rank: { ccf: shown.ccf && v.ccf ? { tier: v.ccf.tier, name: v.ccf.name, ...(v.ccf.rule === "mine" ? { mine: true } : {}) } : null,
           core: shown.core && v.core ? { rank: v.core.rank, name: v.core.name, ...(v.core.rule === "mine" ? { mine: true } : {}) } : null },          // (mine: the person's own mapping, not the list's)
         marks: markLabels(a),
-        url: r.raw.href ? new URL(r.raw.href, location.origin).href : ""
+        url: (() => { try { const u = new URL(r.raw.href, location.origin); return r.raw.href && u.origin === location.origin && /^https?:$/.test(u.protocol) ? u.href : ""; } catch (e) { return ""; } })()          // (a link of the page's own origin: a script's link is no part of an export)
       };
     });
   }

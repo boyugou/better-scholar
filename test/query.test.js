@@ -405,3 +405,15 @@ test("a second read of the search, 2026-10-30: a word joined to Chinese or Japan
 test("a third read, 2026-10-30: a word of commas alone goes on with the operator's values", () => {
   assert.deepEqual(query.parse("role: , first").terms, [{ kind: "role", values: ["first"] }]);
 });
+
+test("a fifteenth review, 2026-11-12: a quoted phrase with a run of dashes does not take exponential time", () => {
+  const phrase = '"a' + " -".repeat(12) + ' b"';
+  const parsed = query.parse(phrase);
+  const text = "a" + " -".repeat(32) + " c";
+  const fields = { text: [text], title: [text], authors: [], venue: [], year: 2020, citations: 0, role: null };
+  const t0 = Date.now();
+  assert.equal(query.matches(parsed, fields), false);
+  assert.ok(Date.now() - t0 < 500, "took " + (Date.now() - t0) + " ms");
+  // (the dashes are no part of the phrase: "a - b" is found where the text says "a b" or "a – b")
+  assert.equal(query.matches(query.parse('"a - b"'), { text: ["a b"], title: ["a b"], authors: [], venue: [], year: 2020, citations: 0, role: null }), true);
+});
