@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 10704
+  "count": 10722
  },
  "entries": [
   {
@@ -118212,6 +118212,330 @@
    "track": "main",
    "source": "https://files.sigchi.org/conference/cache/10075/51/program",
    "evidence": "IUI 2022 program, Honorable Mention: Learning User Interface Semantics from Heterogeneous Networks with Multimodal and Positional Attributes — Gary Ang, Ee Peng Lim"
+  },
+  {
+   "venue": "IWQoS",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Software-Defined Label Switching: Scalable Per-flow Control in SDN",
+   "authors": [
+    "Nanyang Huang",
+    "Qing Li",
+    "Dong Lin",
+    "Xiaowen Li",
+    "Gengbiao Shen",
+    "Yong Jiang"
+   ],
+   "track": "main",
+   "source": "https://iwqos2018.ieee-iwqos.org/",
+   "evidence": "Best Paper Award of IWQoS 2018 goes to: “Software-Defined Label Switching: Scalable Per-flow Control in SDN” Nanyang Huang (Tsinghua University, P.R. China); Qing Li (Huawei Technologies Co., Ltd, P.R. China); Dong Lin (Huawei Technologies Ltd Co., Hong Kong); Xiaowen Li and Gengbiao Shen (Tsinghua University, P.R. China); Yong Jiang (Graduate School at Shenzhen, Tsinghua University, P.R. China)"
+  },
+  {
+   "venue": "IWQoS",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "Runner-up",
+   "title": "A Data Center Interconnects Calculus",
+   "authors": [
+    "Hao Wang",
+    "Haoyun Shen",
+    "Philipp Wieder",
+    "Ramin Yahyapour"
+   ],
+   "track": "main",
+   "source": "https://iwqos2018.ieee-iwqos.org/",
+   "evidence": "Two runner-ups are: “How would you like your packets delivered? An SDN-enabled open platform for QoS routing” Chenfei Gao (AT&T Labs Research, USA); Weiyi Zhang (AT&T Research, USA); Vahid Rajabian-Schwart and Jian Tang (Syracuse University, USA); Guoliang Xue (Arizona State University, USA) “A Data Center Interconnects Calculus” Hao Wang (GWDG & University of Göttingen, Germany); Haoyun Shen (GWDG / University of Göttingen, Germany); Philipp Wieder (GWDG, Germany); Ramin Yahyapour (GWDG & University of Göttingen, Germany)"
+  },
+  {
+   "venue": "IWQoS",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "Runner-up",
+   "title": "How would you like your packets delivered? An SDN-enabled open platform for QoS routing",
+   "authors": [
+    "Chenfei Gao",
+    "Weiyi Zhang",
+    "Vahid Rajabian-Schwart",
+    "Jian Tang",
+    "Guoliang Xue"
+   ],
+   "track": "main",
+   "source": "https://iwqos2018.ieee-iwqos.org/",
+   "evidence": "Two runner-ups are: “How would you like your packets delivered? An SDN-enabled open platform for QoS routing” Chenfei Gao (AT&T Labs Research, USA); Weiyi Zhang (AT&T Research, USA); Vahid Rajabian-Schwart and Jian Tang (Syracuse University, USA); Guoliang Xue (Arizona State University, USA)"
+  },
+  {
+   "venue": "IWQoS",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "NFVdeep: Adaptive Online Service Function Chain Deployment with Deep Reinforcement Learning",
+   "authors": [
+    "Yikai Xiao",
+    "Qixia Zhang",
+    "Fangming Liu",
+    "Jia Wang",
+    "Miao Zhao",
+    "Zhongxing Zhang",
+    "Jiaxing Zhang"
+   ],
+   "track": "main",
+   "source": "https://iwqos2019.ieee-iwqos.org/",
+   "evidence": "Best Paper Award of IWQoS 2019 goes to: “NFVdeep: Adaptive Online Service Function Chain Deployment with Deep Reinforcement Learning” Yikai Xiao, Qixia Zhang and Fangming Liu (Huazhong University of Science and Technology, P.R. China); Jia Wang (Hong Kong Polytechnic University, Hong Kong); Miao Zhao (The Hong Kong Polytechnic University, Hong Kong); Zhongxing Zhang and Jiaxing Zhang (Huazhong University of Science and Technology, P.R. China)"
+  },
+  {
+   "venue": "IWQoS",
+   "year": 2019,
+   "award": "runner-up",
+   "awardLabel": "Runner-up",
+   "title": "Litedge: Towards Light-weight Edge Computing for Efficient Wireless Surveillance System",
+   "authors": [
+    "Yutong Liu",
+    "Linghe Kong",
+    "Muhammad Hassan",
+    "Long Cheng",
+    "Guangtao Xue",
+    "Guihai Chen"
+   ],
+   "track": "main",
+   "source": "https://iwqos2019.ieee-iwqos.org/",
+   "evidence": "Two runner-ups are: “Secure Indoor Positioning against Signal Strength Attacks via Optimized Multi-Voting” Yunzhi Li, Yidan Hu and Rui Zhang (University of Delaware, USA); Yanchao Zhang and Terri Hedgpeth (Arizona State University, USA) “Litedge: Towards Light-weight Edge Computing for Efficient Wireless Surveillance System” Yutong Liu, Linghe Kong and Muhammad Hassan (Shanghai Jiao Tong University, P.R. China); Long Cheng (Clemson University, USA); Guangtao Xue and Guihai Chen (Shanghai Jiao Tong University, P.R. China)"
+  },
+  {
+   "venue": "IWQoS",
+   "year": 2019,
+   "award": "runner-up",
+   "awardLabel": "Runner-up",
+   "title": "Secure Indoor Positioning against Signal Strength Attacks via Optimized Multi-Voting",
+   "authors": [
+    "Yunzhi Li",
+    "Yidan Hu",
+    "Rui Zhang",
+    "Yanchao Zhang",
+    "Terri Hedgpeth"
+   ],
+   "track": "main",
+   "source": "https://iwqos2019.ieee-iwqos.org/",
+   "evidence": "Two runner-ups are: “Secure Indoor Positioning against Signal Strength Attacks via Optimized Multi-Voting” Yunzhi Li, Yidan Hu and Rui Zhang (University of Delaware, USA); Yanchao Zhang and Terri Hedgpeth (Arizona State University, USA)"
+  },
+  {
+   "venue": "IWQoS",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "GroupCoach: Compressed Sensing Based Group Activity Monitoring and Correction",
+   "authors": [
+    "Yutong Liu",
+    "Linghe Kong",
+    "Fan Wu",
+    "Guihai Chen"
+   ],
+   "track": "main",
+   "source": "https://iwqos2020.ieee-iwqos.org/program/awards/index.html",
+   "evidence": "Best Paper Award GroupCoach: Compressed Sensing Based Group Activity Monitoring and Correction Yutong Liu, Linghe Kong, Fan Wu and Guihai Chen (Shanghai Jiao Tong University, China)"
+  },
+  {
+   "venue": "IWQoS",
+   "year": 2020,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Award Runner-up",
+   "title": "DeepQoE: Real-time Measurement of Video QoE from Encrypted Traffic with Deep Learning",
+   "authors": [
+    "Meng Shen",
+    "Jinpeng Zhang",
+    "Ke Xu",
+    "Liehuang Zhu",
+    "Jiangchuan Liu",
+    "Xiaojiang Du"
+   ],
+   "track": "main",
+   "source": "https://iwqos2020.ieee-iwqos.org/program/awards/index.html",
+   "evidence": "Best Paper Award Runner-up GuardRider: Reliable WiFi Backscatter Using Reed-Solomon Codes With QoS Guarantee Xin He (University of Science and Technology of China & Anhui Normal University, China); Weiwei Jiang (The University of Melbourne, Australia); Meng Cheng (Japan Advanced Institute of Science and Technology, Japan); Xiaobo Zhou (Tianjin University, China); Panlong Yang (University of Science and Technology of China, China); Brian Michael Kurkoski (Japan Advanced Institute of Science and Technology (JAIST), Japan) DeepQoE: Real-time Measurement of Video QoE from Encrypted Traffic with Deep Learning Meng Shen (Beijing Institute of Technology, China); Jinpeng Zhang (Beijing Institute of Technology, China); Ke Xu (Tsinghua University, China); Liehuang Zhu (Beijing Institute of Technology, China); Jiangchuan Liu (Simon Fraser University, Canada); Xiaojiang Du (Temple University, USA)"
+  },
+  {
+   "venue": "IWQoS",
+   "year": 2020,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Award Runner-up",
+   "title": "GuardRider: Reliable WiFi Backscatter Using Reed-Solomon Codes With QoS Guarantee",
+   "authors": [
+    "Xin He",
+    "Weiwei Jiang",
+    "Meng Cheng",
+    "Xiaobo Zhou",
+    "Panlong Yang",
+    "Brian Michael Kurkoski"
+   ],
+   "track": "main",
+   "source": "https://iwqos2020.ieee-iwqos.org/program/awards/index.html",
+   "evidence": "Best Paper Award Runner-up GuardRider: Reliable WiFi Backscatter Using Reed-Solomon Codes With QoS Guarantee Xin He (University of Science and Technology of China & Anhui Normal University, China); Weiwei Jiang (The University of Melbourne, Australia); Meng Cheng (Japan Advanced Institute of Science and Technology, Japan); Xiaobo Zhou (Tianjin University, China); Panlong Yang (University of Science and Technology of China, China); Brian Michael Kurkoski (Japan Advanced Institute of Science and Technology (JAIST), Japan)"
+  },
+  {
+   "venue": "IWQoS",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "AIQoSer: Building the efficient Inference-QoS for AI Services",
+   "authors": [
+    "Jianxin Li",
+    "Tianchen Zhu",
+    "Haoyi Zhou",
+    "Qingyun Sun",
+    "Chunyang Jiang",
+    "Shuai Zhang",
+    "Chunming Hu"
+   ],
+   "track": "main",
+   "source": "https://iwqos2022.ieee-iwqos.org/program/awards/",
+   "evidence": "Best Paper Award AIQoSer: Building the efficient Inference-QoS for AI Services Jianxin Li, Tianchen Zhu, Haoyi Zhou, Qingyun Sun, Chunyang Jiang, Shuai Zhang and Chunming Hu (Beihang University, China)"
+  },
+  {
+   "venue": "IWQoS",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Award Runner-up",
+   "title": "Towards Sustainable Multi-Tier Space Networking for LEO Satellite Constellations",
+   "authors": [
+    "Yi Ching Chou",
+    "Xiaoqiang Ma",
+    "Feng Wang",
+    "Sami Ma",
+    "Sen Hung Wong",
+    "Jiangchuan Liu"
+   ],
+   "track": "main",
+   "source": "https://iwqos2022.ieee-iwqos.org/program/awards/",
+   "evidence": "Best Paper Award Runner-up Towards Sustainable Multi-Tier Space Networking for LEO Satellite Constellations Yi Ching Chou (Simon Fraser University, Canada); Xiaoqiang Ma (Douglas College, Canada); Feng Wang (University of Mississippi, USA); Sami Ma (Simon Fraser University, Canada); Sen Hung Wong (Hong Kong University of Science and Technology, Hong Kong); Jiangchuan Liu (Simon Fraser University, Canada)"
+  },
+  {
+   "venue": "IWQoS",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Enhancing Fraud Transaction Detection via Unlabeled Suspicious Records",
+   "authors": [
+    "Ye Wang",
+    "Yunpeng Liu",
+    "Ningtao Wang",
+    "Peiyang Li",
+    "Jiahao Hu",
+    "Xing Fu",
+    "Weiqiang Wang",
+    "Kun Sun",
+    "Qi Li",
+    "Ke Xu"
+   ],
+   "track": "main",
+   "source": "https://iwqos2024.ieee-iwqos.org/program/award",
+   "evidence": "Best Paper Award 1570998146｜ Enhancing Fraud Transaction Detection via Unlabeled Suspicious Records Ye Wang and Yunpeng Liu (Tsinghua University, China); Ningtao Wang (Ant Group, China); Peiyang Li (Tsinghua University, China); Jiahao Hu and Xing Fu (Ant Group, China); Weiqiang Wang (Ant Group Inc., China); Kun Sun (George Mason University, USA); Qi Li and Ke Xu (Tsinghua University, China)"
+  },
+  {
+   "venue": "IWQoS",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention Award",
+   "title": "CPM: A Cross-layer Power Management Facility to Enable Highly-efficient Real-time AIoT Systems",
+   "authors": [
+    "Xiaofeng Hou",
+    "Peng Tang",
+    "Tongqiao Xu",
+    "Cheng Xu",
+    "Chao Li",
+    "Minyi Guo"
+   ],
+   "track": "main",
+   "source": "https://iwqos2024.ieee-iwqos.org/program/award",
+   "evidence": "Best Paper Honorable Mention Award 1570991957｜ CPM: A Cross-layer Power Management Facility to Enable Highly-efficient Real-time AIoT Systems Xiaofeng Hou (Shanghai Jiao Tong University & Hong Kong University of Science and Technology, China); Peng Tang, Tongqiao Xu, Cheng Xu, Chao Li and Minyi Guo (Shanghai Jiao Tong University, China)"
+  },
+  {
+   "venue": "IWQoS",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up Award",
+   "title": "Incorporating Startup Delay into Collaborative Edge Computing for Superior Task Efficiency",
+   "authors": [
+    "Changfu Xu",
+    "Jianxiong Guo",
+    "Jiandian Zeng",
+    "Yupeng Li",
+    "Tian Wang",
+    "Jiannong Cao"
+   ],
+   "track": "main",
+   "source": "https://iwqos2024.ieee-iwqos.org/program/award",
+   "evidence": "Best Paper Runner-up Award 1570995464｜ Optimizing Inference Quality with SmartNIC for Recommendation System Ruixin Shi, Ming Yan and Jie Wu (Fudan University, China) 1570998257｜ Incorporating Startup Delay into Collaborative Edge Computing for Superior Task Efficiency Changfu Xu (BNU-HKBU United International College, China); Jianxiong Guo and Jiandian Zeng (Beijing Normal University, China); Yupeng Li (Hong Kong Baptist University, Hong Kong); Tian Wang (Beijing Normal University & UIC, China); Jiannong Cao (Hong Kong Polytechnic University, Hong Kong)"
+  },
+  {
+   "venue": "IWQoS",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up Award",
+   "title": "Optimizing Inference Quality with SmartNIC for Recommendation System",
+   "authors": [
+    "Ruixin Shi",
+    "Ming Yan",
+    "Jie Wu"
+   ],
+   "track": "main",
+   "source": "https://iwqos2024.ieee-iwqos.org/program/award",
+   "evidence": "Best Paper Runner-up Award 1570995464｜ Optimizing Inference Quality with SmartNIC for Recommendation System Ruixin Shi, Ming Yan and Jie Wu (Fudan University, China)"
+  },
+  {
+   "venue": "IWQoS",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention Award",
+   "title": "Reducing Write Tail Latency of Distributed Key-Value Stores Using In-Network Chasing",
+   "authors": [
+    "Jinghui Jiang",
+    "Xiwen Fan",
+    "Zhenpei Huang",
+    "Kairui Zhou",
+    "Qiao Xiang",
+    "Lu Tang",
+    "Qiang Li",
+    "Jiwu Shu"
+   ],
+   "track": "main",
+   "source": "https://iwqos2024.ieee-iwqos.org/program/award",
+   "evidence": "Best Paper Honorable Mention Award 1570991957｜ CPM: A Cross-layer Power Management Facility to Enable Highly-efficient Real-time AIoT Systems Xiaofeng Hou (Shanghai Jiao Tong University & Hong Kong University of Science and Technology, China); Peng Tang, Tongqiao Xu, Cheng Xu, Chao Li and Minyi Guo (Shanghai Jiao Tong University, China) 1570992705｜ TCAMVisor: High-throughput TCAM Virtualization for Multi-tenant Software Defined Networking Ruoshi Sun, Hao Mei, Ruyi Yao and Hao Wang (Fudan University, China); Yiren Zhou (University of California, San Diego, USA); Zixuan Chen, Sen Liu and Yang Xu (Fudan University, China) 1570997871｜ Reducing Write Tail Latency of Distributed Key-Value Stores Using In-Network Chasing Jinghui Jiang, Xiwen Fan, Zhenpei Huang, Kairui Zhou, Qiao Xiang, Lu Tang, Qiang Li and Jiwu Shu (Xiamen University, China)"
+  },
+  {
+   "venue": "IWQoS",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention Award",
+   "title": "TCAMVisor: High-throughput TCAM Virtualization for Multi-tenant Software Defined Networking",
+   "authors": [
+    "Ruoshi Sun",
+    "Hao Mei",
+    "Ruyi Yao",
+    "Hao Wang",
+    "Yiren Zhou",
+    "Zixuan Chen",
+    "Sen Liu",
+    "Yang Xu"
+   ],
+   "track": "main",
+   "source": "https://iwqos2024.ieee-iwqos.org/program/award",
+   "evidence": "Best Paper Honorable Mention Award 1570991957｜ CPM: A Cross-layer Power Management Facility to Enable Highly-efficient Real-time AIoT Systems Xiaofeng Hou (Shanghai Jiao Tong University & Hong Kong University of Science and Technology, China); Peng Tang, Tongqiao Xu, Cheng Xu, Chao Li and Minyi Guo (Shanghai Jiao Tong University, China) 1570992705｜ TCAMVisor: High-throughput TCAM Virtualization for Multi-tenant Software Defined Networking Ruoshi Sun, Hao Mei, Ruyi Yao and Hao Wang (Fudan University, China); Yiren Zhou (University of California, San Diego, USA); Zixuan Chen, Sen Liu and Yang Xu (Fudan University, China)"
+  },
+  {
+   "venue": "IWQoS",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Fed-CAD: Federated Learning with Correlation-aware Adaptive Local Differential Privacy",
+   "authors": [
+    "Bingzhu Zhu",
+    "Shan Chang",
+    "Guanghao Liang",
+    "Hongzi Zhu",
+    "Jie Xu"
+   ],
+   "track": "main",
+   "source": "https://iwqos2024.ieee-iwqos.org/program/award",
+   "evidence": "Best Student Paper Award 1570998224｜ Fed-CAD: Federated Learning with Correlation-aware Adaptive Local Differential Privacy Bingzhu Zhu, Shan Chang and Guanghao Liang (Donghua University, China); Hongzi Zhu (Shanghai Jiao Tong University, China); Jie Xu (Donghua University, China)"
   },
   {
    "venue": "Java VM",

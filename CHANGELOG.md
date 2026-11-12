@@ -189,6 +189,9 @@ give the details and every review):
   Encryption: 23rd International Conference, FSE 2016" is the cryptography FSE (B), not Foundations of Software Engineering (A): venues
   that share an acronym are told apart by the series title. (4) MDPI's journals *AI* and *IoT* are not Artificial Intelligence (A) and
   IEEE IoT-J, nor is the Korean WISA (information security) the Web Information Systems WISA.
+- **IWQoS best papers** (18; 2018–2020, 2022, 2024), from the symposium's own per-year sites, which answered normally to single requests
+  (earlier 418s). Left out: IWQoS 2012's "student paper awards" (a travel-grant award, not clearly a paper award), 2016's "Best Paper Candidates",
+  and ICDCS, whose sites list no winners, time out, or answer a Cloudflare challenge. The list holds 10722 awards.
 - **Researchr-hosted venues read again, one request at a time** (33): SANER 2026, CGO 2015–2023, FM 2026, ISS 2022–2024, VMCAI 2019 and 2024,
   LCTES 2017 and 2024. The earlier blocks (a CAPTCHA on conf.researchr.org) came from about 25 parallel fetches; single requests five seconds
   apart were answered normally. Held out: CGO 2025 and VMCAI 2023 (only a session name marks the paper). The list holds 10,704 awards.

@@ -421,6 +421,11 @@
   "iss2022.acm.org": "ACM ISS 2022's own site (an ACM subdomain)",
   "iss2023.acm.org": "ACM ISS 2023's own site (an ACM subdomain)",
   "iss2024.acm.org": "ACM ISS 2024's own site (an ACM subdomain)",
-  "pldi24.sigplan.org": "PLDI 2024's own site (it hosts LCTES 2024; researchr)"
+  "pldi24.sigplan.org": "PLDI 2024's own site (it hosts LCTES 2024; researchr)",
+  "iwqos2018.ieee-iwqos.org": "IEEE/ACM IWQoS 2018's own site (IEEE ComSoc minisite hosting)",
+  "iwqos2019.ieee-iwqos.org": "IEEE/ACM IWQoS 2019's own site (IEEE ComSoc minisite hosting)",
+  "iwqos2020.ieee-iwqos.org": "IEEE/ACM IWQoS 2020's own site (IEEE ComSoc minisite hosting)",
+  "iwqos2022.ieee-iwqos.org": "IEEE/ACM IWQoS 2022's own site (IEEE ComSoc minisite hosting)",
+  "iwqos2024.ieee-iwqos.org": "IEEE/ACM IWQoS 2024's own site (IEEE ComSoc minisite hosting)"
  }
 }
