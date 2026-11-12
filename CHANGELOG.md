@@ -189,6 +189,10 @@ give the details and every review):
   Encryption: 23rd International Conference, FSE 2016" is the cryptography FSE (B), not Foundations of Software Engineering (A): venues
   that share an acronym are told apart by the series title. (4) MDPI's journals *AI* and *IoT* are not Artificial Intelligence (A) and
   IEEE IoT-J, nor is the Korean WISA (information security) the Web Information Systems WISA.
+- **Best papers of 16 more venues** (214): Euro-Par, RAID, ISS, CSF, SRDS, RTSS, ECSCW, WINE, I3D, SGP, PG, EGSR, CAV, ICCBR, ICNP and ICWS,
+  from their own pages. Left out: HPDC (the site carries injected spam), ICSOC (per-year sites under another organisation's domain),
+  WINE 2024 (a session title only), second and third places that no label calls a runner-up, and every event whose page names
+  candidates only. An independent re-read of 36 sampled entries found none wrong. The list holds 10,671 awards.
 - **Best papers of 27 more venues** (384): ACSAC, CoNEXT, MobiHoc, SECON, IPSN, EDBT, ICMR, ICME, Eurographics, EuroVis, CogSci and
   ESORICS 2023, ECOOP, SoCC, SAS, CONCUR, ICPP, ISSRE, PACT, LCTES and VMCAI — from each conference's or society's own pages (CCF A and B
   venues the list had no award of). Each entry's evidence carries the page's own heading or label. Held out: copies on web.archive.org

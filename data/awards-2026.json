@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 10457
+  "count": 10678
  },
  "entries": [
   {
@@ -14246,6 +14246,114 @@
    "track": "main",
    "source": "https://esweek.org/awards-2025/",
    "evidence": "Test of Time Awards CASES SiblingRivalry: Online Autotuning through Local Competitions Jason Ansel, Maciej Pacula, Yee Lok Wong, Cy Chan, Marek Olszewski, Una-May O’Reilly, Saman Amarasinghe"
+  },
+  {
+   "venue": "CAV",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "A Misconception-Driven Adaptive Tutor for Linear Temporal Logic",
+   "authors": [
+    "Siddhartha Prasad",
+    "Ben Greenman",
+    "Tim Nelson",
+    "Shriram Krishnamurthi"
+   ],
+   "track": "main",
+   "source": "https://conferences.i-cav.org/2025/program/",
+   "evidence": "(Distinguished Paper) A Misconception-Driven Adaptive Tutor for Linear Temporal Logic Siddhartha Prasad (Brown University); Ben Greenman (University of Utah, USA); Tim Nelson, Shriram Krishnamurthi (Brown University)"
+  },
+  {
+   "venue": "CAV",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Approximating Fixpoints of Approximated Functions",
+   "authors": [
+    "Paolo Baldan",
+    "Sebastian Gurke",
+    "Barbara König",
+    "Tommaso Padoan",
+    "Florian Wittbold"
+   ],
+   "track": "main",
+   "source": "https://conferences.i-cav.org/2025/program/",
+   "evidence": "(Distinguished Paper) Approximating Fixpoints of Approximated Functions Paolo Baldan (University of Padova); Sebastian Gurke (University of Duisburg-Essen, Germany); Barbara König (University of Duisburg-Essen); Tommaso Padoan (Università di Trieste); Florian Wittbold (University of Duisburg-Essen)"
+  },
+  {
+   "venue": "CAV",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Introducing Certificates to the Hardware Model Checking Competition",
+   "authors": [
+    "Nils Froleyks",
+    "Emily Yu",
+    "Mathias Preiner",
+    "Armin Biere",
+    "Keijo Heljanko"
+   ],
+   "track": "main",
+   "source": "https://conferences.i-cav.org/2025/program/",
+   "evidence": "(Distinguished Paper) Introducing Certificates to the Hardware Model Checking Competition Nils Froleyks (JKU Linz), Emily Yu (Institute of Science and Technology Austria), Mathias Preiner (Stanford University), Armin Biere (University of Freiburg), Keijo Heljanko (University of Helsinki)"
+  },
+  {
+   "venue": "CAV",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Robust Probabilistic Bisimilarity for Labelled Markov Chains",
+   "authors": [
+    "Franck van Breugel",
+    "Syyeda Zainab Fatmi",
+    "Stefan Kiefer",
+    "David Parker"
+   ],
+   "track": "main",
+   "source": "https://conferences.i-cav.org/2025/program/",
+   "evidence": "(Distinguished Paper) Robust Probabilistic Bisimilarity for Labelled Markov Chains Franck van Breugel (York University); Syyeda Zainab Fatmi, Stefan Kiefer, David Parker (University of Oxford)"
+  },
+  {
+   "venue": "CAV",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "The rIC3 Hardware Model Checker",
+   "authors": [
+    "Yuheng Su",
+    "Qiusong Yang",
+    "Yiwei Ci",
+    "Tianjun Bu",
+    "Ziyu Huang"
+   ],
+   "track": "main",
+   "source": "https://conferences.i-cav.org/2025/program/",
+   "evidence": "(Distinguished Paper) The rIC3 Hardware Model Checker Yuheng Su (University of Chinese Academy of Sciences; Institute of Software, Chinese Academy of Sciences); Qiusong Yang, Yiwei Ci (Institute of Software, Chinese Academy of Sciences, Beijing, China); Tianjun Bu (University of Chinese Academy of Sciences; Institute of Software, Chinese Academy of Sciences); Ziyu Huang (Beijing Forestry University)"
+  },
+  {
+   "venue": "CAV",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "The Vampire Diary",
+   "authors": [
+    "Filip Bartek",
+    "Ahmed Bhayat",
+    "Robin Coutelier",
+    "Marton Hajdu",
+    "Matthias Hetzenberger",
+    "Petra Hozzova",
+    "Laura Kovacs",
+    "Jakob Rath",
+    "Michael Rawson",
+    "Giles Reger",
+    "Martin Suda",
+    "Johannes Schoisswohl",
+    "Andrei Voronkov"
+   ],
+   "track": "main",
+   "source": "https://conferences.i-cav.org/2025/program/",
+   "evidence": "(Distinguished Paper) The Vampire Diary Filip Bartek (Czech Technical University in Prague); Ahmed Bhayat (University of Manchester); Robin Coutelier, Marton Hajdu, Matthias Hetzenberger (TU Wien); Petra Hozzova (Czech Technical University in Prague); Laura Kovacs, Jakob Rath (TU Wien); Michael Rawson (University of Southampton); Giles Reger (The University of Manchester); Martin Suda (Czech Technical University in Prague); Johannes Schoisswohl (TU Wien); Andrei Voronkov (The University of Manchester)"
   },
   {
    "venue": "CC",
@@ -63871,6 +63979,313 @@
    "evidence": "CSCW 2026 program, Honorable Mention: Toward the Development of Online Spiritual Care Communities: A Large-Scale Survey of Spiritual Care Stakeholders to Establish Initial Design Directions, Acceptability, and Feasibility — Jesan Ahammed Ovi, Alemitu Bezabih, Anne-Marie Snider, Shadi Nourriz, Daniel McKenzie, C. Estelle Smith"
   },
   {
+   "venue": "CSF",
+   "year": 2018,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Papers",
+   "title": "Privacy Risk in Machine Learning: Analyzing the Connection to Overfitting",
+   "authors": [
+    "Samuel Yeom",
+    "Irene Giacomelli",
+    "Matt Fredrikson",
+    "Somesh Jha"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/CSFWweb/distinguished.html",
+   "evidence": "The Distinguished Papers are listed by year below. CSF 2025 Nominal State-Separating Proofs Markus Krabbe Larsen, Carsten Schürmann FSLH: Flexible Mechanized Speculative Load Hardening Jonathan Baumann, Roberto Blanco, Léon Ducruet, Sebastian Harwig, Catalin Hritcu CSF 2024 Deciding branching hyperproperties for real time systems Nabarun Deka, Minjian Zhang, Rohit Chadha, Mahesh Viswanathan Explaining epsilon in local differential privacy through the lens of quantitative information flow Natasha Fernandes, Annabelle McIver, Parastoo Sadeghi CSF 2023 Indistinguishability Beyond Diff-Equivalence in ProVerif Vincent Cheval and Itsaka Rakotonirina Smart Contract Synthesis Modulo Hyperproperties Norine Coenen, Bernd Finkbeiner, Jana Hofmann, and Julia Tillman CSF 2022 Cracking the Stateful Nut -- Computational Proofs of Stateful Security Protocols using the Squirrel Proof Assistant David Baelde, Stephanie Delaune, Adrien Koutsos, and Solène Moreau Applying consensus and replication securely with FLAQR Priyanka Mondal, Maximilian Algehed, and Owen Arden CSF 2021 A Quantale of Information Sebastian Hunt and David Sands SSProve: A Foundational Framework for Modular Cryptographic Proofs in Coq Carmine Abate, Philipp G. Haselwarter, Exequiel Rivas, Antoine Van Muylder, Théo Winterhalter, Catalin Hritcu, Kenji Maillard, and Bas Spitters Verifying Hyperproperties with TLA Leslie Lamport and Fred B. Schneider CSF 2020 A Method for Proving Unlinkability of Stateful Protocols David Baelde, Stéphanie Delaune, and Solène Moreau Fifty Shades of Ballot Privacy: Privacy against a Malicious Board Véronique Cortier, Joseph Lallemand, and Bogdan Warinschi Transparent IFC Enforcement: Possibility and (In)Efficiency Results Maximilian Algehed and Cormac Flanagan CSF 2019 Journey Beyond Full Abstraction: Exploring Robust Property Preservation for Secure Compilation Carmine Abate, Roberto Blanco, Deepak Garg, Catalin Hritcu, Marco Patrignani, and Jérémy Thibault Prime, Order Please! Revisiting Small Subgroup and Invalid Curve Attacks on Protocols using Diffie-Hellman Cas Cremers and Dennis Jackson Automated Verification of Accountability in Security Protocols Robert Künnemann, Ilkan Esiyok, and Michael Backes CSF 2018 Secure compilation of side-channel countermeasures: the case of cryptographic “constant-time” Gilles Barthe, Benjamin Grégoire, and Vincent Laporte Types for Information Flow Control: Labeling Granularity and Semantic Models Vineet Rajani and Deepak Garg Privacy Risk in Machine Learning: Analyzing the Connection to Overfitting Samuel Yeom, Irene Giacomelli, Matt Fredrikson, and Somesh Jha"
+  },
+  {
+   "venue": "CSF",
+   "year": 2018,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Papers",
+   "title": "Secure compilation of side-channel countermeasures: the case of cryptographic “constant-time”",
+   "authors": [
+    "Gilles Barthe",
+    "Benjamin Grégoire",
+    "Vincent Laporte"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/CSFWweb/distinguished.html",
+   "evidence": "The Distinguished Papers are listed by year below. CSF 2025 Nominal State-Separating Proofs Markus Krabbe Larsen, Carsten Schürmann FSLH: Flexible Mechanized Speculative Load Hardening Jonathan Baumann, Roberto Blanco, Léon Ducruet, Sebastian Harwig, Catalin Hritcu CSF 2024 Deciding branching hyperproperties for real time systems Nabarun Deka, Minjian Zhang, Rohit Chadha, Mahesh Viswanathan Explaining epsilon in local differential privacy through the lens of quantitative information flow Natasha Fernandes, Annabelle McIver, Parastoo Sadeghi CSF 2023 Indistinguishability Beyond Diff-Equivalence in ProVerif Vincent Cheval and Itsaka Rakotonirina Smart Contract Synthesis Modulo Hyperproperties Norine Coenen, Bernd Finkbeiner, Jana Hofmann, and Julia Tillman CSF 2022 Cracking the Stateful Nut -- Computational Proofs of Stateful Security Protocols using the Squirrel Proof Assistant David Baelde, Stephanie Delaune, Adrien Koutsos, and Solène Moreau Applying consensus and replication securely with FLAQR Priyanka Mondal, Maximilian Algehed, and Owen Arden CSF 2021 A Quantale of Information Sebastian Hunt and David Sands SSProve: A Foundational Framework for Modular Cryptographic Proofs in Coq Carmine Abate, Philipp G. Haselwarter, Exequiel Rivas, Antoine Van Muylder, Théo Winterhalter, Catalin Hritcu, Kenji Maillard, and Bas Spitters Verifying Hyperproperties with TLA Leslie Lamport and Fred B. Schneider CSF 2020 A Method for Proving Unlinkability of Stateful Protocols David Baelde, Stéphanie Delaune, and Solène Moreau Fifty Shades of Ballot Privacy: Privacy against a Malicious Board Véronique Cortier, Joseph Lallemand, and Bogdan Warinschi Transparent IFC Enforcement: Possibility and (In)Efficiency Results Maximilian Algehed and Cormac Flanagan CSF 2019 Journey Beyond Full Abstraction: Exploring Robust Property Preservation for Secure Compilation Carmine Abate, Roberto Blanco, Deepak Garg, Catalin Hritcu, Marco Patrignani, and Jérémy Thibault Prime, Order Please! Revisiting Small Subgroup and Invalid Curve Attacks on Protocols using Diffie-Hellman Cas Cremers and Dennis Jackson Automated Verification of Accountability in Security Protocols Robert Künnemann, Ilkan Esiyok, and Michael Backes CSF 2018 Secure compilation of side-channel countermeasures: the case of cryptographic “constant-time” Gilles Barthe, Benjamin Grégoire, and Vincent Laporte"
+  },
+  {
+   "venue": "CSF",
+   "year": 2018,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Papers",
+   "title": "Types for Information Flow Control: Labeling Granularity and Semantic Models",
+   "authors": [
+    "Vineet Rajani",
+    "Deepak Garg"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/CSFWweb/distinguished.html",
+   "evidence": "The Distinguished Papers are listed by year below. CSF 2025 Nominal State-Separating Proofs Markus Krabbe Larsen, Carsten Schürmann FSLH: Flexible Mechanized Speculative Load Hardening Jonathan Baumann, Roberto Blanco, Léon Ducruet, Sebastian Harwig, Catalin Hritcu CSF 2024 Deciding branching hyperproperties for real time systems Nabarun Deka, Minjian Zhang, Rohit Chadha, Mahesh Viswanathan Explaining epsilon in local differential privacy through the lens of quantitative information flow Natasha Fernandes, Annabelle McIver, Parastoo Sadeghi CSF 2023 Indistinguishability Beyond Diff-Equivalence in ProVerif Vincent Cheval and Itsaka Rakotonirina Smart Contract Synthesis Modulo Hyperproperties Norine Coenen, Bernd Finkbeiner, Jana Hofmann, and Julia Tillman CSF 2022 Cracking the Stateful Nut -- Computational Proofs of Stateful Security Protocols using the Squirrel Proof Assistant David Baelde, Stephanie Delaune, Adrien Koutsos, and Solène Moreau Applying consensus and replication securely with FLAQR Priyanka Mondal, Maximilian Algehed, and Owen Arden CSF 2021 A Quantale of Information Sebastian Hunt and David Sands SSProve: A Foundational Framework for Modular Cryptographic Proofs in Coq Carmine Abate, Philipp G. Haselwarter, Exequiel Rivas, Antoine Van Muylder, Théo Winterhalter, Catalin Hritcu, Kenji Maillard, and Bas Spitters Verifying Hyperproperties with TLA Leslie Lamport and Fred B. Schneider CSF 2020 A Method for Proving Unlinkability of Stateful Protocols David Baelde, Stéphanie Delaune, and Solène Moreau Fifty Shades of Ballot Privacy: Privacy against a Malicious Board Véronique Cortier, Joseph Lallemand, and Bogdan Warinschi Transparent IFC Enforcement: Possibility and (In)Efficiency Results Maximilian Algehed and Cormac Flanagan CSF 2019 Journey Beyond Full Abstraction: Exploring Robust Property Preservation for Secure Compilation Carmine Abate, Roberto Blanco, Deepak Garg, Catalin Hritcu, Marco Patrignani, and Jérémy Thibault Prime, Order Please! Revisiting Small Subgroup and Invalid Curve Attacks on Protocols using Diffie-Hellman Cas Cremers and Dennis Jackson Automated Verification of Accountability in Security Protocols Robert Künnemann, Ilkan Esiyok, and Michael Backes CSF 2018 Secure compilation of side-channel countermeasures: the case of cryptographic “constant-time” Gilles Barthe, Benjamin Grégoire, and Vincent Laporte Types for Information Flow Control: Labeling Granularity and Semantic Models Vineet Rajani and Deepak Garg"
+  },
+  {
+   "venue": "CSF",
+   "year": 2019,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Papers",
+   "title": "Automated Verification of Accountability in Security Protocols",
+   "authors": [
+    "Robert Künnemann",
+    "Ilkan Esiyok",
+    "Michael Backes"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/CSFWweb/distinguished.html",
+   "evidence": "The Distinguished Papers are listed by year below. CSF 2025 Nominal State-Separating Proofs Markus Krabbe Larsen, Carsten Schürmann FSLH: Flexible Mechanized Speculative Load Hardening Jonathan Baumann, Roberto Blanco, Léon Ducruet, Sebastian Harwig, Catalin Hritcu CSF 2024 Deciding branching hyperproperties for real time systems Nabarun Deka, Minjian Zhang, Rohit Chadha, Mahesh Viswanathan Explaining epsilon in local differential privacy through the lens of quantitative information flow Natasha Fernandes, Annabelle McIver, Parastoo Sadeghi CSF 2023 Indistinguishability Beyond Diff-Equivalence in ProVerif Vincent Cheval and Itsaka Rakotonirina Smart Contract Synthesis Modulo Hyperproperties Norine Coenen, Bernd Finkbeiner, Jana Hofmann, and Julia Tillman CSF 2022 Cracking the Stateful Nut -- Computational Proofs of Stateful Security Protocols using the Squirrel Proof Assistant David Baelde, Stephanie Delaune, Adrien Koutsos, and Solène Moreau Applying consensus and replication securely with FLAQR Priyanka Mondal, Maximilian Algehed, and Owen Arden CSF 2021 A Quantale of Information Sebastian Hunt and David Sands SSProve: A Foundational Framework for Modular Cryptographic Proofs in Coq Carmine Abate, Philipp G. Haselwarter, Exequiel Rivas, Antoine Van Muylder, Théo Winterhalter, Catalin Hritcu, Kenji Maillard, and Bas Spitters Verifying Hyperproperties with TLA Leslie Lamport and Fred B. Schneider CSF 2020 A Method for Proving Unlinkability of Stateful Protocols David Baelde, Stéphanie Delaune, and Solène Moreau Fifty Shades of Ballot Privacy: Privacy against a Malicious Board Véronique Cortier, Joseph Lallemand, and Bogdan Warinschi Transparent IFC Enforcement: Possibility and (In)Efficiency Results Maximilian Algehed and Cormac Flanagan CSF 2019 Journey Beyond Full Abstraction: Exploring Robust Property Preservation for Secure Compilation Carmine Abate, Roberto Blanco, Deepak Garg, Catalin Hritcu, Marco Patrignani, and Jérémy Thibault Prime, Order Please! Revisiting Small Subgroup and Invalid Curve Attacks on Protocols using Diffie-Hellman Cas Cremers and Dennis Jackson Automated Verification of Accountability in Security Protocols Robert Künnemann, Ilkan Esiyok, and Michael Backes"
+  },
+  {
+   "venue": "CSF",
+   "year": 2019,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Papers",
+   "title": "Journey Beyond Full Abstraction: Exploring Robust Property Preservation for Secure Compilation",
+   "authors": [
+    "Carmine Abate",
+    "Roberto Blanco",
+    "Deepak Garg",
+    "Catalin Hritcu",
+    "Marco Patrignani",
+    "Jérémy Thibault"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/CSFWweb/distinguished.html",
+   "evidence": "The Distinguished Papers are listed by year below. CSF 2025 Nominal State-Separating Proofs Markus Krabbe Larsen, Carsten Schürmann FSLH: Flexible Mechanized Speculative Load Hardening Jonathan Baumann, Roberto Blanco, Léon Ducruet, Sebastian Harwig, Catalin Hritcu CSF 2024 Deciding branching hyperproperties for real time systems Nabarun Deka, Minjian Zhang, Rohit Chadha, Mahesh Viswanathan Explaining epsilon in local differential privacy through the lens of quantitative information flow Natasha Fernandes, Annabelle McIver, Parastoo Sadeghi CSF 2023 Indistinguishability Beyond Diff-Equivalence in ProVerif Vincent Cheval and Itsaka Rakotonirina Smart Contract Synthesis Modulo Hyperproperties Norine Coenen, Bernd Finkbeiner, Jana Hofmann, and Julia Tillman CSF 2022 Cracking the Stateful Nut -- Computational Proofs of Stateful Security Protocols using the Squirrel Proof Assistant David Baelde, Stephanie Delaune, Adrien Koutsos, and Solène Moreau Applying consensus and replication securely with FLAQR Priyanka Mondal, Maximilian Algehed, and Owen Arden CSF 2021 A Quantale of Information Sebastian Hunt and David Sands SSProve: A Foundational Framework for Modular Cryptographic Proofs in Coq Carmine Abate, Philipp G. Haselwarter, Exequiel Rivas, Antoine Van Muylder, Théo Winterhalter, Catalin Hritcu, Kenji Maillard, and Bas Spitters Verifying Hyperproperties with TLA Leslie Lamport and Fred B. Schneider CSF 2020 A Method for Proving Unlinkability of Stateful Protocols David Baelde, Stéphanie Delaune, and Solène Moreau Fifty Shades of Ballot Privacy: Privacy against a Malicious Board Véronique Cortier, Joseph Lallemand, and Bogdan Warinschi Transparent IFC Enforcement: Possibility and (In)Efficiency Results Maximilian Algehed and Cormac Flanagan CSF 2019 Journey Beyond Full Abstraction: Exploring Robust Property Preservation for Secure Compilation Carmine Abate, Roberto Blanco, Deepak Garg, Catalin Hritcu, Marco Patrignani, and Jérémy Thibault"
+  },
+  {
+   "venue": "CSF",
+   "year": 2019,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Papers",
+   "title": "Prime, Order Please! Revisiting Small Subgroup and Invalid Curve Attacks on Protocols using Diffie-Hellman",
+   "authors": [
+    "Cas Cremers",
+    "Dennis Jackson"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/CSFWweb/distinguished.html",
+   "evidence": "The Distinguished Papers are listed by year below. CSF 2025 Nominal State-Separating Proofs Markus Krabbe Larsen, Carsten Schürmann FSLH: Flexible Mechanized Speculative Load Hardening Jonathan Baumann, Roberto Blanco, Léon Ducruet, Sebastian Harwig, Catalin Hritcu CSF 2024 Deciding branching hyperproperties for real time systems Nabarun Deka, Minjian Zhang, Rohit Chadha, Mahesh Viswanathan Explaining epsilon in local differential privacy through the lens of quantitative information flow Natasha Fernandes, Annabelle McIver, Parastoo Sadeghi CSF 2023 Indistinguishability Beyond Diff-Equivalence in ProVerif Vincent Cheval and Itsaka Rakotonirina Smart Contract Synthesis Modulo Hyperproperties Norine Coenen, Bernd Finkbeiner, Jana Hofmann, and Julia Tillman CSF 2022 Cracking the Stateful Nut -- Computational Proofs of Stateful Security Protocols using the Squirrel Proof Assistant David Baelde, Stephanie Delaune, Adrien Koutsos, and Solène Moreau Applying consensus and replication securely with FLAQR Priyanka Mondal, Maximilian Algehed, and Owen Arden CSF 2021 A Quantale of Information Sebastian Hunt and David Sands SSProve: A Foundational Framework for Modular Cryptographic Proofs in Coq Carmine Abate, Philipp G. Haselwarter, Exequiel Rivas, Antoine Van Muylder, Théo Winterhalter, Catalin Hritcu, Kenji Maillard, and Bas Spitters Verifying Hyperproperties with TLA Leslie Lamport and Fred B. Schneider CSF 2020 A Method for Proving Unlinkability of Stateful Protocols David Baelde, Stéphanie Delaune, and Solène Moreau Fifty Shades of Ballot Privacy: Privacy against a Malicious Board Véronique Cortier, Joseph Lallemand, and Bogdan Warinschi Transparent IFC Enforcement: Possibility and (In)Efficiency Results Maximilian Algehed and Cormac Flanagan CSF 2019 Journey Beyond Full Abstraction: Exploring Robust Property Preservation for Secure Compilation Carmine Abate, Roberto Blanco, Deepak Garg, Catalin Hritcu, Marco Patrignani, and Jérémy Thibault Prime, Order Please! Revisiting Small Subgroup and Invalid Curve Attacks on Protocols using Diffie-Hellman Cas Cremers and Dennis Jackson"
+  },
+  {
+   "venue": "CSF",
+   "year": 2020,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Papers",
+   "title": "A Method for Proving Unlinkability of Stateful Protocols",
+   "authors": [
+    "David Baelde",
+    "Stéphanie Delaune",
+    "Solène Moreau"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/CSFWweb/distinguished.html",
+   "evidence": "The Distinguished Papers are listed by year below. CSF 2025 Nominal State-Separating Proofs Markus Krabbe Larsen, Carsten Schürmann FSLH: Flexible Mechanized Speculative Load Hardening Jonathan Baumann, Roberto Blanco, Léon Ducruet, Sebastian Harwig, Catalin Hritcu CSF 2024 Deciding branching hyperproperties for real time systems Nabarun Deka, Minjian Zhang, Rohit Chadha, Mahesh Viswanathan Explaining epsilon in local differential privacy through the lens of quantitative information flow Natasha Fernandes, Annabelle McIver, Parastoo Sadeghi CSF 2023 Indistinguishability Beyond Diff-Equivalence in ProVerif Vincent Cheval and Itsaka Rakotonirina Smart Contract Synthesis Modulo Hyperproperties Norine Coenen, Bernd Finkbeiner, Jana Hofmann, and Julia Tillman CSF 2022 Cracking the Stateful Nut -- Computational Proofs of Stateful Security Protocols using the Squirrel Proof Assistant David Baelde, Stephanie Delaune, Adrien Koutsos, and Solène Moreau Applying consensus and replication securely with FLAQR Priyanka Mondal, Maximilian Algehed, and Owen Arden CSF 2021 A Quantale of Information Sebastian Hunt and David Sands SSProve: A Foundational Framework for Modular Cryptographic Proofs in Coq Carmine Abate, Philipp G. Haselwarter, Exequiel Rivas, Antoine Van Muylder, Théo Winterhalter, Catalin Hritcu, Kenji Maillard, and Bas Spitters Verifying Hyperproperties with TLA Leslie Lamport and Fred B. Schneider CSF 2020 A Method for Proving Unlinkability of Stateful Protocols David Baelde, Stéphanie Delaune, and Solène Moreau"
+  },
+  {
+   "venue": "CSF",
+   "year": 2020,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Papers",
+   "title": "Fifty Shades of Ballot Privacy: Privacy against a Malicious Board",
+   "authors": [
+    "Véronique Cortier",
+    "Joseph Lallemand",
+    "Bogdan Warinschi"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/CSFWweb/distinguished.html",
+   "evidence": "The Distinguished Papers are listed by year below. CSF 2025 Nominal State-Separating Proofs Markus Krabbe Larsen, Carsten Schürmann FSLH: Flexible Mechanized Speculative Load Hardening Jonathan Baumann, Roberto Blanco, Léon Ducruet, Sebastian Harwig, Catalin Hritcu CSF 2024 Deciding branching hyperproperties for real time systems Nabarun Deka, Minjian Zhang, Rohit Chadha, Mahesh Viswanathan Explaining epsilon in local differential privacy through the lens of quantitative information flow Natasha Fernandes, Annabelle McIver, Parastoo Sadeghi CSF 2023 Indistinguishability Beyond Diff-Equivalence in ProVerif Vincent Cheval and Itsaka Rakotonirina Smart Contract Synthesis Modulo Hyperproperties Norine Coenen, Bernd Finkbeiner, Jana Hofmann, and Julia Tillman CSF 2022 Cracking the Stateful Nut -- Computational Proofs of Stateful Security Protocols using the Squirrel Proof Assistant David Baelde, Stephanie Delaune, Adrien Koutsos, and Solène Moreau Applying consensus and replication securely with FLAQR Priyanka Mondal, Maximilian Algehed, and Owen Arden CSF 2021 A Quantale of Information Sebastian Hunt and David Sands SSProve: A Foundational Framework for Modular Cryptographic Proofs in Coq Carmine Abate, Philipp G. Haselwarter, Exequiel Rivas, Antoine Van Muylder, Théo Winterhalter, Catalin Hritcu, Kenji Maillard, and Bas Spitters Verifying Hyperproperties with TLA Leslie Lamport and Fred B. Schneider CSF 2020 A Method for Proving Unlinkability of Stateful Protocols David Baelde, Stéphanie Delaune, and Solène Moreau Fifty Shades of Ballot Privacy: Privacy against a Malicious Board Véronique Cortier, Joseph Lallemand, and Bogdan Warinschi"
+  },
+  {
+   "venue": "CSF",
+   "year": 2020,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Papers",
+   "title": "Transparent IFC Enforcement: Possibility and (In)Efficiency Results",
+   "authors": [
+    "Maximilian Algehed",
+    "Cormac Flanagan"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/CSFWweb/distinguished.html",
+   "evidence": "The Distinguished Papers are listed by year below. CSF 2025 Nominal State-Separating Proofs Markus Krabbe Larsen, Carsten Schürmann FSLH: Flexible Mechanized Speculative Load Hardening Jonathan Baumann, Roberto Blanco, Léon Ducruet, Sebastian Harwig, Catalin Hritcu CSF 2024 Deciding branching hyperproperties for real time systems Nabarun Deka, Minjian Zhang, Rohit Chadha, Mahesh Viswanathan Explaining epsilon in local differential privacy through the lens of quantitative information flow Natasha Fernandes, Annabelle McIver, Parastoo Sadeghi CSF 2023 Indistinguishability Beyond Diff-Equivalence in ProVerif Vincent Cheval and Itsaka Rakotonirina Smart Contract Synthesis Modulo Hyperproperties Norine Coenen, Bernd Finkbeiner, Jana Hofmann, and Julia Tillman CSF 2022 Cracking the Stateful Nut -- Computational Proofs of Stateful Security Protocols using the Squirrel Proof Assistant David Baelde, Stephanie Delaune, Adrien Koutsos, and Solène Moreau Applying consensus and replication securely with FLAQR Priyanka Mondal, Maximilian Algehed, and Owen Arden CSF 2021 A Quantale of Information Sebastian Hunt and David Sands SSProve: A Foundational Framework for Modular Cryptographic Proofs in Coq Carmine Abate, Philipp G. Haselwarter, Exequiel Rivas, Antoine Van Muylder, Théo Winterhalter, Catalin Hritcu, Kenji Maillard, and Bas Spitters Verifying Hyperproperties with TLA Leslie Lamport and Fred B. Schneider CSF 2020 A Method for Proving Unlinkability of Stateful Protocols David Baelde, Stéphanie Delaune, and Solène Moreau Fifty Shades of Ballot Privacy: Privacy against a Malicious Board Véronique Cortier, Joseph Lallemand, and Bogdan Warinschi Transparent IFC Enforcement: Possibility and (In)Efficiency Results Maximilian Algehed and Cormac Flanagan"
+  },
+  {
+   "venue": "CSF",
+   "year": 2021,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Papers",
+   "title": "A Quantale of Information",
+   "authors": [
+    "Sebastian Hunt",
+    "David Sands"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/CSFWweb/distinguished.html",
+   "evidence": "The Distinguished Papers are listed by year below. CSF 2025 Nominal State-Separating Proofs Markus Krabbe Larsen, Carsten Schürmann FSLH: Flexible Mechanized Speculative Load Hardening Jonathan Baumann, Roberto Blanco, Léon Ducruet, Sebastian Harwig, Catalin Hritcu CSF 2024 Deciding branching hyperproperties for real time systems Nabarun Deka, Minjian Zhang, Rohit Chadha, Mahesh Viswanathan Explaining epsilon in local differential privacy through the lens of quantitative information flow Natasha Fernandes, Annabelle McIver, Parastoo Sadeghi CSF 2023 Indistinguishability Beyond Diff-Equivalence in ProVerif Vincent Cheval and Itsaka Rakotonirina Smart Contract Synthesis Modulo Hyperproperties Norine Coenen, Bernd Finkbeiner, Jana Hofmann, and Julia Tillman CSF 2022 Cracking the Stateful Nut -- Computational Proofs of Stateful Security Protocols using the Squirrel Proof Assistant David Baelde, Stephanie Delaune, Adrien Koutsos, and Solène Moreau Applying consensus and replication securely with FLAQR Priyanka Mondal, Maximilian Algehed, and Owen Arden CSF 2021 A Quantale of Information Sebastian Hunt and David Sands"
+  },
+  {
+   "venue": "CSF",
+   "year": 2021,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Papers",
+   "title": "SSProve: A Foundational Framework for Modular Cryptographic Proofs in Coq",
+   "authors": [
+    "Carmine Abate",
+    "Philipp G. Haselwarter",
+    "Exequiel Rivas",
+    "Antoine Van Muylder",
+    "Théo Winterhalter",
+    "Catalin Hritcu",
+    "Kenji Maillard",
+    "Bas Spitters"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/CSFWweb/distinguished.html",
+   "evidence": "The Distinguished Papers are listed by year below. CSF 2025 Nominal State-Separating Proofs Markus Krabbe Larsen, Carsten Schürmann FSLH: Flexible Mechanized Speculative Load Hardening Jonathan Baumann, Roberto Blanco, Léon Ducruet, Sebastian Harwig, Catalin Hritcu CSF 2024 Deciding branching hyperproperties for real time systems Nabarun Deka, Minjian Zhang, Rohit Chadha, Mahesh Viswanathan Explaining epsilon in local differential privacy through the lens of quantitative information flow Natasha Fernandes, Annabelle McIver, Parastoo Sadeghi CSF 2023 Indistinguishability Beyond Diff-Equivalence in ProVerif Vincent Cheval and Itsaka Rakotonirina Smart Contract Synthesis Modulo Hyperproperties Norine Coenen, Bernd Finkbeiner, Jana Hofmann, and Julia Tillman CSF 2022 Cracking the Stateful Nut -- Computational Proofs of Stateful Security Protocols using the Squirrel Proof Assistant David Baelde, Stephanie Delaune, Adrien Koutsos, and Solène Moreau Applying consensus and replication securely with FLAQR Priyanka Mondal, Maximilian Algehed, and Owen Arden CSF 2021 A Quantale of Information Sebastian Hunt and David Sands SSProve: A Foundational Framework for Modular Cryptographic Proofs in Coq Carmine Abate, Philipp G. Haselwarter, Exequiel Rivas, Antoine Van Muylder, Théo Winterhalter, Catalin Hritcu, Kenji Maillard, and Bas Spitters"
+  },
+  {
+   "venue": "CSF",
+   "year": 2021,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Papers",
+   "title": "Verifying Hyperproperties with TLA",
+   "authors": [
+    "Leslie Lamport",
+    "Fred B. Schneider"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/CSFWweb/distinguished.html",
+   "evidence": "The Distinguished Papers are listed by year below. CSF 2025 Nominal State-Separating Proofs Markus Krabbe Larsen, Carsten Schürmann FSLH: Flexible Mechanized Speculative Load Hardening Jonathan Baumann, Roberto Blanco, Léon Ducruet, Sebastian Harwig, Catalin Hritcu CSF 2024 Deciding branching hyperproperties for real time systems Nabarun Deka, Minjian Zhang, Rohit Chadha, Mahesh Viswanathan Explaining epsilon in local differential privacy through the lens of quantitative information flow Natasha Fernandes, Annabelle McIver, Parastoo Sadeghi CSF 2023 Indistinguishability Beyond Diff-Equivalence in ProVerif Vincent Cheval and Itsaka Rakotonirina Smart Contract Synthesis Modulo Hyperproperties Norine Coenen, Bernd Finkbeiner, Jana Hofmann, and Julia Tillman CSF 2022 Cracking the Stateful Nut -- Computational Proofs of Stateful Security Protocols using the Squirrel Proof Assistant David Baelde, Stephanie Delaune, Adrien Koutsos, and Solène Moreau Applying consensus and replication securely with FLAQR Priyanka Mondal, Maximilian Algehed, and Owen Arden CSF 2021 A Quantale of Information Sebastian Hunt and David Sands SSProve: A Foundational Framework for Modular Cryptographic Proofs in Coq Carmine Abate, Philipp G. Haselwarter, Exequiel Rivas, Antoine Van Muylder, Théo Winterhalter, Catalin Hritcu, Kenji Maillard, and Bas Spitters Verifying Hyperproperties with TLA Leslie Lamport and Fred B. Schneider"
+  },
+  {
+   "venue": "CSF",
+   "year": 2022,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Papers",
+   "title": "Applying consensus and replication securely with FLAQR",
+   "authors": [
+    "Priyanka Mondal",
+    "Maximilian Algehed",
+    "Owen Arden"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/CSFWweb/distinguished.html",
+   "evidence": "The Distinguished Papers are listed by year below. CSF 2025 Nominal State-Separating Proofs Markus Krabbe Larsen, Carsten Schürmann FSLH: Flexible Mechanized Speculative Load Hardening Jonathan Baumann, Roberto Blanco, Léon Ducruet, Sebastian Harwig, Catalin Hritcu CSF 2024 Deciding branching hyperproperties for real time systems Nabarun Deka, Minjian Zhang, Rohit Chadha, Mahesh Viswanathan Explaining epsilon in local differential privacy through the lens of quantitative information flow Natasha Fernandes, Annabelle McIver, Parastoo Sadeghi CSF 2023 Indistinguishability Beyond Diff-Equivalence in ProVerif Vincent Cheval and Itsaka Rakotonirina Smart Contract Synthesis Modulo Hyperproperties Norine Coenen, Bernd Finkbeiner, Jana Hofmann, and Julia Tillman CSF 2022 Cracking the Stateful Nut -- Computational Proofs of Stateful Security Protocols using the Squirrel Proof Assistant David Baelde, Stephanie Delaune, Adrien Koutsos, and Solène Moreau Applying consensus and replication securely with FLAQR Priyanka Mondal, Maximilian Algehed, and Owen Arden"
+  },
+  {
+   "venue": "CSF",
+   "year": 2022,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Papers",
+   "title": "Cracking the Stateful Nut -- Computational Proofs of Stateful Security Protocols using the Squirrel Proof Assistant",
+   "authors": [
+    "David Baelde",
+    "Stephanie Delaune",
+    "Adrien Koutsos",
+    "Solène Moreau"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/CSFWweb/distinguished.html",
+   "evidence": "The Distinguished Papers are listed by year below. CSF 2025 Nominal State-Separating Proofs Markus Krabbe Larsen, Carsten Schürmann FSLH: Flexible Mechanized Speculative Load Hardening Jonathan Baumann, Roberto Blanco, Léon Ducruet, Sebastian Harwig, Catalin Hritcu CSF 2024 Deciding branching hyperproperties for real time systems Nabarun Deka, Minjian Zhang, Rohit Chadha, Mahesh Viswanathan Explaining epsilon in local differential privacy through the lens of quantitative information flow Natasha Fernandes, Annabelle McIver, Parastoo Sadeghi CSF 2023 Indistinguishability Beyond Diff-Equivalence in ProVerif Vincent Cheval and Itsaka Rakotonirina Smart Contract Synthesis Modulo Hyperproperties Norine Coenen, Bernd Finkbeiner, Jana Hofmann, and Julia Tillman CSF 2022 Cracking the Stateful Nut -- Computational Proofs of Stateful Security Protocols using the Squirrel Proof Assistant David Baelde, Stephanie Delaune, Adrien Koutsos, and Solène Moreau"
+  },
+  {
+   "venue": "CSF",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Papers",
+   "title": "Indistinguishability Beyond Diff-Equivalence in ProVerif",
+   "authors": [
+    "Vincent Cheval",
+    "Itsaka Rakotonirina"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/CSFWweb/distinguished.html",
+   "evidence": "The Distinguished Papers are listed by year below. CSF 2025 Nominal State-Separating Proofs Markus Krabbe Larsen, Carsten Schürmann FSLH: Flexible Mechanized Speculative Load Hardening Jonathan Baumann, Roberto Blanco, Léon Ducruet, Sebastian Harwig, Catalin Hritcu CSF 2024 Deciding branching hyperproperties for real time systems Nabarun Deka, Minjian Zhang, Rohit Chadha, Mahesh Viswanathan Explaining epsilon in local differential privacy through the lens of quantitative information flow Natasha Fernandes, Annabelle McIver, Parastoo Sadeghi CSF 2023 Indistinguishability Beyond Diff-Equivalence in ProVerif Vincent Cheval and Itsaka Rakotonirina"
+  },
+  {
+   "venue": "CSF",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Papers",
+   "title": "Smart Contract Synthesis Modulo Hyperproperties",
+   "authors": [
+    "Norine Coenen",
+    "Bernd Finkbeiner",
+    "Jana Hofmann",
+    "Julia Tillman"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/CSFWweb/distinguished.html",
+   "evidence": "The Distinguished Papers are listed by year below. CSF 2025 Nominal State-Separating Proofs Markus Krabbe Larsen, Carsten Schürmann FSLH: Flexible Mechanized Speculative Load Hardening Jonathan Baumann, Roberto Blanco, Léon Ducruet, Sebastian Harwig, Catalin Hritcu CSF 2024 Deciding branching hyperproperties for real time systems Nabarun Deka, Minjian Zhang, Rohit Chadha, Mahesh Viswanathan Explaining epsilon in local differential privacy through the lens of quantitative information flow Natasha Fernandes, Annabelle McIver, Parastoo Sadeghi CSF 2023 Indistinguishability Beyond Diff-Equivalence in ProVerif Vincent Cheval and Itsaka Rakotonirina Smart Contract Synthesis Modulo Hyperproperties Norine Coenen, Bernd Finkbeiner, Jana Hofmann, and Julia Tillman"
+  },
+  {
+   "venue": "CSF",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Papers",
+   "title": "Deciding branching hyperproperties for real time systems",
+   "authors": [
+    "Nabarun Deka",
+    "Minjian Zhang",
+    "Rohit Chadha",
+    "Mahesh Viswanathan"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/CSFWweb/distinguished.html",
+   "evidence": "The Distinguished Papers are listed by year below. CSF 2025 Nominal State-Separating Proofs Markus Krabbe Larsen, Carsten Schürmann FSLH: Flexible Mechanized Speculative Load Hardening Jonathan Baumann, Roberto Blanco, Léon Ducruet, Sebastian Harwig, Catalin Hritcu CSF 2024 Deciding branching hyperproperties for real time systems Nabarun Deka, Minjian Zhang, Rohit Chadha, Mahesh Viswanathan"
+  },
+  {
+   "venue": "CSF",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Papers",
+   "title": "Explaining epsilon in local differential privacy through the lens of quantitative information flow",
+   "authors": [
+    "Natasha Fernandes",
+    "Annabelle McIver",
+    "Parastoo Sadeghi"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/CSFWweb/distinguished.html",
+   "evidence": "The Distinguished Papers are listed by year below. CSF 2025 Nominal State-Separating Proofs Markus Krabbe Larsen, Carsten Schürmann FSLH: Flexible Mechanized Speculative Load Hardening Jonathan Baumann, Roberto Blanco, Léon Ducruet, Sebastian Harwig, Catalin Hritcu CSF 2024 Deciding branching hyperproperties for real time systems Nabarun Deka, Minjian Zhang, Rohit Chadha, Mahesh Viswanathan Explaining epsilon in local differential privacy through the lens of quantitative information flow Natasha Fernandes, Annabelle McIver, Parastoo Sadeghi"
+  },
+  {
+   "venue": "CSF",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Papers",
+   "title": "FSLH: Flexible Mechanized Speculative Load Hardening",
+   "authors": [
+    "Jonathan Baumann",
+    "Roberto Blanco",
+    "Léon Ducruet",
+    "Sebastian Harwig",
+    "Catalin Hritcu"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/CSFWweb/distinguished.html",
+   "evidence": "The Distinguished Papers are listed by year below. CSF 2025 Nominal State-Separating Proofs Markus Krabbe Larsen, Carsten Schürmann FSLH: Flexible Mechanized Speculative Load Hardening Jonathan Baumann, Roberto Blanco, Léon Ducruet, Sebastian Harwig, Catalin Hritcu"
+  },
+  {
+   "venue": "CSF",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Papers",
+   "title": "Nominal State-Separating Proofs",
+   "authors": [
+    "Markus Krabbe Larsen",
+    "Carsten Schürmann"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/CSFWweb/distinguished.html",
+   "evidence": "The Distinguished Papers are listed by year below. CSF 2025 Nominal State-Separating Proofs Markus Krabbe Larsen, Carsten Schürmann"
+  },
+  {
    "venue": "CVPR",
    "year": 1991,
    "award": "best",
@@ -73258,6 +73673,148 @@
    "evidence": "Language-Integrated Recursive QueriesDistinguished paper awardTechnical Papers Anna Herlihy EPFL, Amir Shaikhha University of Edinburgh, Anastasia Ailamaki EPFL, Martin Odersky EPFL"
   },
   {
+   "venue": "ECSCW",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "David B. Martin Best Paper Award",
+   "title": "Paper practices in institutional talk: How financial advisors impress their clients",
+   "authors": [
+    "Mateusz Dolata",
+    "Gerhard Schwabe"
+   ],
+   "track": "main",
+   "source": "https://www.eusset.eu/category/awards/david-b-martin-best-paper-award/page/2/",
+   "evidence": "The winners of the inaugural David B. Martin Best Paper Award are Mateusz Dolata and Gerhard Schwabe (University of Zurich) for their paper “Paper practices in institutional talk: How financial advisors impress their clients"
+  },
+  {
+   "venue": "ECSCW",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "David B. Martin Best Paper Award",
+   "title": "Co-Creating the Workplace: Participatory Efforts to Enable Individual Work at the Hoffice",
+   "authors": [
+    "Chiara Rossitto",
+    "Airi Lampinen"
+   ],
+   "track": "main",
+   "source": "https://www.eusset.eu/category/awards/david-b-martin-best-paper-award/",
+   "evidence": "The David B. Martin Best Paper Award was established 2017 in memory of the late Dr. David Martin, a stalwart member of the ECSCW community and Associate Editor of the CSCW journal. The award is generously sponsored by Naver Labs (previously Xerox Research Centre Europe). Working Practices in Welding: A Qualitative Study on Knowledge and Expertise Sharing in the Welding Industry 2026-09-27 On: 27. September 2026 The winners of the 2026 David B. Martin Award are Nils Böcking, Sarah Reichel, Sven Hoffmann, Aparecido Fabiano Pinatti de Carvalho and Volker Wulf for their paper “Working Practices in Welding: A Qualitative Study on Knowledge and Expertise Sharing in the Welding Industry” Find an interview with the authors here. READ MORE Dimensions of Human-Machine Combination: Prompting the Development of Deployable Intelligent Decision Systems for Situated Clinical Contexts 2025-09-28 On: 28. September 2025 The winner of the 2025 David B. Martin Award is Trine Rask Nielsen for her paper “Dimensions of Human-Machine Combination: Prompting the Development of Deployable Intelligent Decision Systems for Situated Clinical Contexts” (open access via EUSSET DL or Springer). Find an interview with the authors here. Whilst it is commonly READ MORE Cultivating Data Practices Across Boundaries: How Organizations Become Data-driven 2024-12-21 On: 21. December 2024 The winner of the 2024 David B. Martin Award are Asbjørn Malte Pedersen and Claus Bossen for their paper “Cultivating Data Practices Across Boundaries: How Organizations Become Data-driven” (open access via Springer and in the EUSSET DL). Here is an interview with Asbjørn Malte Pedersen conducted in this occasion. Abstract: READ MORE Who Cares About Data? Ambivalence, Translation, and Attentiveness in Asylum Casework 2023-06-30 On: 30. June 2023 The winner of the 2023 David B. Martin Award is Trine Rask Nielsen for her paper “Who Cares About Data? Ambivalence, Translation, and Attentiveness in Asylum Casework” (open access via Springer). Find an interview with the first author here. Abstract. Scholars across Computer-Supported Cooperative Work (CSCW) increasingly focus on the READ MORE Inverted Hierarchies on the Shop Floor: The Organisational Layer of Workarounds for Collaboration in the Metal Industry 2022-09-12 On: 12. September 2022 The winner of the 2022 David B. Martin Award is Frauke Mörike for her paper “Inverted Hierarchies on the Shop Floor: The Organisational Layer of Workarounds for Collaboration in the Metal Industry” (open access via Springer). Find an interview with the first author here. Abstract. Workarounds, or practices that deviate READ MORE Inverted Hierarchies on the Shop Floor 2022-07-01 On: 1. July 2022 The winner of the 2022 David B. Martin Best Paper Award is Frauke Mörike for her paper “Inverted Hierarchies on the Shop Floor: The Organisational Layer of Workarounds for Collaboration in the Metal Industry“. Abstract Workarounds, or practices that deviate from the official pathway to a target, are frequent phenomena in READ MORE (Re)Configuring Hybrid Meetings: Moving from User-Centered Design to Meeting-Centered Design 2021-06-20 On: 20. June 2021 The winners of the 2021 David B. Martin Award are Banu Saatçi, Kaya Akyüz, Sean Rintel, and Clemens Nylandsted Klokmose for their paper “(Re)Configuring Hybrid Meetings: Moving from User-Centered Design to Meeting-Centered Design” (open access via Springer). Find an interview with the first author here. Abstract. Despite sophisticated technologies for READ MORE Time Matters: Flexi-time and women’s retention in the 24/7 workplace 2020-06-30 On: 30. June 2020 The winner of the 2020 David B. Martin Award is Oindrila Matilal for her paper “Time Matters: Flexi-time and women’s retention in the 24/7 workplace” (access via >> EUSSET DL). Find an interview with the winner here. Abstract. Historically, the ability to exercise agency over the scheduling of working-time has shaped women’s retention in the READ MORE Rethinking Financial Inclusion: from Access to Autonomy 2019-06-30 On: 30. June 2019 The winners of the 2019 David B. Martin Award are Srihari Hulikal Muralidhar, Claus Bossen & Jacki O’Neill for their paper “Rethinking Financial Inclusion: from Access to Autonomy” (access via >> EUSSET DL). Abstract. Financial inclusion has been defined and understood primarily in terms of access, thereby constituting ‘inclusion’/‘exclusion’ as a binary. This READ MORE Co-Creating the Workplace: Participatory Efforts to Enable Individual Work at the Hoffice"
+  },
+  {
+   "venue": "ECSCW",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "David B. Martin Award",
+   "title": "Rethinking Financial Inclusion: from Access to Autonomy",
+   "authors": [
+    "Srihari Hulikal Muralidhar",
+    "Claus Bossen",
+    "Jacki O’Neill"
+   ],
+   "track": "main",
+   "source": "https://www.eusset.eu/category/awards/david-b-martin-best-paper-award/",
+   "evidence": "The winners of the 2019 David B. Martin Award are Srihari Hulikal Muralidhar, Claus Bossen & Jacki O’Neill for their paper “Rethinking Financial Inclusion: from Access to Autonomy"
+  },
+  {
+   "venue": "ECSCW",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "David B. Martin Award",
+   "title": "Time Matters: Flexi-time and women’s retention in the 24/7 workplace",
+   "authors": [
+    "Oindrila Matilal"
+   ],
+   "track": "main",
+   "source": "https://www.eusset.eu/category/awards/david-b-martin-best-paper-award/",
+   "evidence": "The winner of the 2020 David B. Martin Award is Oindrila Matilal for her paper “Time Matters: Flexi-time and women’s retention in the 24/7 workplace"
+  },
+  {
+   "venue": "ECSCW",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "David B. Martin Award",
+   "title": "(Re)Configuring Hybrid Meetings: Moving from User-Centered Design to Meeting-Centered Design",
+   "authors": [
+    "Banu Saatçi",
+    "Kaya Akyüz",
+    "Sean Rintel",
+    "Clemens Nylandsted Klokmose"
+   ],
+   "track": "main",
+   "source": "https://www.eusset.eu/category/awards/david-b-martin-best-paper-award/",
+   "evidence": "The winners of the 2021 David B. Martin Award are Banu Saatçi, Kaya Akyüz, Sean Rintel, and Clemens Nylandsted Klokmose for their paper “(Re)Configuring Hybrid Meetings: Moving from User-Centered Design to Meeting-Centered Design"
+  },
+  {
+   "venue": "ECSCW",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "David B. Martin Best Paper Award",
+   "title": "Inverted Hierarchies on the Shop Floor: The Organisational Layer of Workarounds for Collaboration in the Metal Industry",
+   "authors": [
+    "Frauke Mörike"
+   ],
+   "track": "main",
+   "source": "https://www.eusset.eu/category/awards/david-b-martin-best-paper-award/",
+   "evidence": "The winner of the 2022 David B. Martin Best Paper Award is Frauke Mörike for her paper “Inverted Hierarchies on the Shop Floor: The Organisational Layer of Workarounds for Collaboration in the Metal Industry"
+  },
+  {
+   "venue": "ECSCW",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "David B. Martin Award",
+   "title": "Who Cares About Data? Ambivalence, Translation, and Attentiveness in Asylum Casework",
+   "authors": [
+    "Trine Rask Nielsen"
+   ],
+   "track": "main",
+   "source": "https://www.eusset.eu/category/awards/david-b-martin-best-paper-award/",
+   "evidence": "The winner of the 2023 David B. Martin Award is Trine Rask Nielsen for her paper “Who Cares About Data? Ambivalence, Translation, and Attentiveness in Asylum Casework"
+  },
+  {
+   "venue": "ECSCW",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "David B. Martin Award",
+   "title": "Cultivating Data Practices Across Boundaries: How Organizations Become Data-driven",
+   "authors": [
+    "Asbjørn Malte Pedersen",
+    "Claus Bossen"
+   ],
+   "track": "main",
+   "source": "https://www.eusset.eu/category/awards/david-b-martin-best-paper-award/",
+   "evidence": "The winner of the 2024 David B. Martin Award are Asbjørn Malte Pedersen and Claus Bossen for their paper “Cultivating Data Practices Across Boundaries: How Organizations Become Data-driven"
+  },
+  {
+   "venue": "ECSCW",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "David B. Martin Award",
+   "title": "Dimensions of Human-Machine Combination: Prompting the Development of Deployable Intelligent Decision Systems for Situated Clinical Contexts",
+   "authors": [
+    "Trine Rask Nielsen"
+   ],
+   "track": "main",
+   "source": "https://www.eusset.eu/category/awards/david-b-martin-best-paper-award/",
+   "evidence": "The winner of the 2025 David B. Martin Award is Trine Rask Nielsen for her paper “Dimensions of Human-Machine Combination: Prompting the Development of Deployable Intelligent Decision Systems for Situated Clinical Contexts"
+  },
+  {
+   "venue": "ECSCW",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "David B. Martin Award",
+   "title": "Working Practices in Welding: A Qualitative Study on Knowledge and Expertise Sharing in the Welding Industry",
+   "authors": [
+    "Nils Böcking",
+    "Sarah Reichel",
+    "Sven Hoffmann",
+    "Aparecido Fabiano Pinatti de Carvalho",
+    "Volker Wulf"
+   ],
+   "track": "main",
+   "source": "https://www.eusset.eu/category/awards/david-b-martin-best-paper-award/",
+   "evidence": "The winners of the 2026 David B. Martin Award are Nils Böcking, Sarah Reichel, Sven Hoffmann, Aparecido Fabiano Pinatti de Carvalho and Volker Wulf for their paper “Working Practices in Welding: A Qualitative Study on Knowledge and Expertise Sharing in the Welding Industry"
+  },
+  {
    "venue": "EDBT",
    "year": 2019,
    "award": "best",
@@ -73442,6 +73999,97 @@
    "track": "main",
    "source": "https://edbticdt2026.github.io/contents/awards_bp_edbt.html",
    "evidence": "The committee has also selected the following paper as Runner-Up for the Best Paper: \"Thunderbolt: Concurrent Smart Contract Execution with Nonblocking Reconfiguration for Sharded DAGs\" authored by Junchao Chen (University of California, Davis), Alberto Sonnino (MystenLabs & University College London), Lefteris Kokoris-Kogias (MystenLabs), Mohammad Sadoghi (University of California, Davis)"
+  },
+  {
+   "venue": "EGSR",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Importance Sampling Microfacet-Based BSDFs using the Distribution of Visible Normals",
+   "authors": [
+    "Eric Heitz",
+    "Eugene d'Eon"
+   ],
+   "track": "main",
+   "source": "https://egsr2014.liris.cnrs.fr/program.htm",
+   "evidence": "Best Paper Award: Eric Heitz, Eugene d'Eon, \"Importance Sampling Microfacet-Based BSDFs using the Distribution of Visible Normals\""
+  },
+  {
+   "venue": "EGSR",
+   "year": 2014,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Spectral Ray Differentials",
+   "authors": [
+    "Oskar Elek",
+    "Tobias Ritschel",
+    "Pablo Bauszat",
+    "Marcus Magnor",
+    "Hans-Peter Seidel"
+   ],
+   "track": "main",
+   "source": "https://egsr2014.liris.cnrs.fr/program.htm",
+   "evidence": "Best Student Paper Award: Oskar Elek, Tobias Ritschel, Pablo Bauszat, Marcus Magnor, Hans-Peter Seidel, \"Spectral Ray Differentials\""
+  },
+  {
+   "venue": "EGSR",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "A Composite BRDF Model for Hazy Gloss",
+   "authors": [
+    "Pascal Barla",
+    "Romain Pacanowski",
+    "Peter Vangorp"
+   ],
+   "track": "main",
+   "source": "https://cg.ivd.kit.edu/egsr18/program.php",
+   "evidence": "Best Paper Award The best paper award honors excellent work as well as a good presentation at the conference. The winner is selected by an anonymous jury of four members. Works in both the CGF Track and the EI&I track are eligible. This year, the winning paper is: A Composite BRDF Model for Hazy Gloss (CGF Track) Pascal Barla, Romain Pacanowski and Peter Vangorp"
+  },
+  {
+   "venue": "EGSR",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "runner-up for the award",
+   "title": "Progressive multi-jittered sample sequences",
+   "authors": [
+    "Per Christensen",
+    "Andrew Kensler",
+    "Charlie Kilpatrick"
+   ],
+   "track": "main",
+   "source": "https://cg.ivd.kit.edu/egsr18/program.php",
+   "evidence": "the jury decided to additionally name a runner-up for the award: Progressive multi-jittered sample sequences (CGF Track) Per Christensen, Andrew Kensler and Charlie Kilpatrick"
+  },
+  {
+   "venue": "EGSR",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Wavelet Representation and Sampling of Complex Luminaires",
+   "authors": [
+    "Asen Atanasov",
+    "Vladimir Koylazov"
+   ],
+   "track": "main",
+   "source": "https://conferences.eg.org/egsr2025/programme/",
+   "evidence": "Wavelet Representation and Sampling of Complex Luminaires (J) ☆ Best Paper Award ☆ Asen Atanasov, Vladimir Koylazov"
+  },
+  {
+   "venue": "EGSR",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "MatSwap: Light-Aware Material Transfers in Images",
+   "authors": [
+    "Ivan Lopes",
+    "Valentin Deschaintre",
+    "Yannick Hold-Geoffroy",
+    "Raoul de Charette"
+   ],
+   "track": "main",
+   "source": "https://conferences.eg.org/egsr2025/programme/",
+   "evidence": "MatSwap: Light-Aware Material Transfers in Images (J) ☆ Honorable Mention ☆ Ivan Lopes, Valentin Deschaintre, Yannick Hold-Geoffroy, Raoul de Charette"
   },
   {
    "venue": "EMNLP",
@@ -78145,6 +78793,52 @@
    "track": "main",
    "source": "https://etaps.org/awards/best-paper/",
    "evidence": "ETAPS 2026 Distinguished Paper Award: Liyi Li, Anshu Sharma, Zoukarneini Difaizi Tagba, Sean Frett, Alex Potanin. Validating Quantum State Preparation Programs"
+  },
+  {
+   "venue": "Euro-Par",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "BEST PAPER 2019",
+   "title": "Enhancing the Programmability and Performance Portability of GPU Tensor Operations",
+   "authors": [
+    "Arya Mazaheri",
+    "Johannes Schulte",
+    "Matthew W. Moskewicz",
+    "Felix Wolf",
+    "Ali Jannesari"
+   ],
+   "track": "main",
+   "source": "https://2019.euro-par.org/programme/conference",
+   "evidence": "* BEST PAPER 2019 Enhancing the Programmability and Performance Portability of GPU Tensor Operations Arya Mazaheri, Johannes Schulte, Matthew W. Moskewicz, Felix WolfAli Jannesari"
+  },
+  {
+   "venue": "Euro-Par",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "BEST PAPER 2019",
+   "title": "Radio-Astronomical Imaging: FPGAs vs GPUs",
+   "authors": [
+    "Bram Veenboer",
+    "John W. Romein"
+   ],
+   "track": "main",
+   "source": "https://2019.euro-par.org/programme/conference",
+   "evidence": "* BEST PAPER 2019 Radio-Astronomical Imaging: FPGAs vs GPUs Bram Veenboer, John W. Romein"
+  },
+  {
+   "venue": "Euro-Par",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best paper",
+   "title": "Maximizing I/O Bandwidth for Reverse Time Migration on Heterogeneous Large-Scale Systems",
+   "authors": [
+    "Tariq Alturkestani",
+    "Hatem Ltaief",
+    "David Keyes"
+   ],
+   "track": "main",
+   "source": "https://2020.euro-par.org/program/conference",
+   "evidence": "Best paper (A) [ Slack channel ] Chairs: Morris Riedel Maximizing I/O Bandwidth for Reverse Time Migration on Heterogeneous Large-Scale Systems Tariq Alturkestani, Hatem Ltaief and David Keyes"
   },
   {
    "venue": "EUROCRYPT",
@@ -89101,6 +89795,434 @@
    "evidence": "HT 2026 Douglas Engelbart Best Paper Award: Bob Rimington, Jack Brett and Charlie Hargood “Linked Locative Ludonarrative and Heritage Hypertext Harmonies”"
   },
   {
+   "venue": "I3D",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "Best Paper, Winner",
+   "title": "Stochastic Transparency",
+   "authors": [
+    "Eric Enderton",
+    "Erik Sintorn",
+    "Peter Shirley",
+    "David Luebke"
+   ],
+   "track": "main",
+   "source": "https://i3dsymposium.org/2010/",
+   "evidence": "Best Paper Winner Stochastic Transparency Eric Enderton, Erik Sintorn, Peter Shirley and David Luebke"
+  },
+  {
+   "venue": "I3D",
+   "year": 2010,
+   "award": "runner-up",
+   "awardLabel": "Best Paper, Honorable Mention",
+   "title": "Efficient Sparse Voxel Octrees",
+   "authors": [
+    "Samuli Laine",
+    "Tero Karras"
+   ],
+   "track": "main",
+   "source": "https://i3dsymposium.org/2010/",
+   "evidence": "Best Paper Winner Stochastic Transparency Eric Enderton, Erik Sintorn, Peter Shirley and David Luebke Honorable Mention Efficient Sparse Voxel Octrees Samuli Laine and Tero Karras"
+  },
+  {
+   "venue": "I3D",
+   "year": 2010,
+   "award": "runner-up",
+   "awardLabel": "Best Paper, Honorable Mention",
+   "title": "Frankenrigs: Building Character Rigs From Multiple Sources",
+   "authors": [
+    "Christian Miller",
+    "Okan Arikan",
+    "Donald Fussell"
+   ],
+   "track": "main",
+   "source": "https://i3dsymposium.org/2010/",
+   "evidence": "Honorable Mention Efficient Sparse Voxel Octrees Samuli Laine and Tero Karras Radiance Scaling for Versatile Surface Enhancement Romain Vergne, Romain Pacanowski, Pascal Barla, Xavier Granier, and Christophe Schlick Frankenrigs: Building Character Rigs From Multiple Sources Christian Miller, Okan Arikan and Donald Fussell"
+  },
+  {
+   "venue": "I3D",
+   "year": 2010,
+   "award": "runner-up",
+   "awardLabel": "Best Paper, Honorable Mention",
+   "title": "Radiance Scaling for Versatile Surface Enhancement",
+   "authors": [
+    "Romain Vergne",
+    "Romain Pacanowski",
+    "Pascal Barla",
+    "Xavier Granier",
+    "Christophe Schlick"
+   ],
+   "track": "main",
+   "source": "https://i3dsymposium.org/2010/",
+   "evidence": "Honorable Mention Efficient Sparse Voxel Octrees Samuli Laine and Tero Karras Radiance Scaling for Versatile Surface Enhancement Romain Vergne, Romain Pacanowski, Pascal Barla, Xavier Granier, and Christophe Schlick"
+  },
+  {
+   "venue": "I3D",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best Paper - Winner",
+   "title": "A Lightweight, Procedural, Vector Watercolor Painting Engine",
+   "authors": [
+    "Stephen DiVerdi",
+    "Aravind Krishnaswamy",
+    "Radomir Mech",
+    "Daichi Ito"
+   ],
+   "track": "main",
+   "source": "https://i3dsymposium.org/2012/",
+   "evidence": "Best Paper - Winner A Lightweight, Procedural, Vector Watercolor Painting Engine Stephen DiVerdi, Adobe Systems Inc. Aravind Krishnaswamy, Adobe Systems Inc. Radomir Mech, Adobe Systems Inc. Daichi Ito, San Jose State University"
+  },
+  {
+   "venue": "I3D",
+   "year": 2012,
+   "award": "runner-up",
+   "awardLabel": "Best Paper - Honorable Mentions",
+   "title": "4D Parametric Motion Graphs for Interactive Animation",
+   "authors": [
+    "Dan Casas",
+    "Margara Tejera",
+    "Jean-Yves Guillemaut",
+    "Adrian Hilton"
+   ],
+   "track": "main",
+   "source": "https://i3dsymposium.org/2012/",
+   "evidence": "Best Paper - Honorable Mentions 4D Parametric Motion Graphs for Interactive Animation Dan Casas, University of Surrey Margara Tejera, University of Surrey Jean-Yves Guillemaut, University of Surrey Adrian Hilton, University of Surrey"
+  },
+  {
+   "venue": "I3D",
+   "year": 2012,
+   "award": "runner-up",
+   "awardLabel": "Best Paper - Honorable Mentions",
+   "title": "Interactive Rendering of Acquired Materials on Dynamic Geometry using Bandwidth Prediction",
+   "authors": [
+    "Mahdi M. Bagher",
+    "Cyril Soler",
+    "Kartic Subr",
+    "Laurent Belcour",
+    "Nicolas Holzschuch"
+   ],
+   "track": "main",
+   "source": "https://i3dsymposium.org/2012/",
+   "evidence": "Best Paper - Honorable Mentions 4D Parametric Motion Graphs for Interactive Animation Dan Casas, University of Surrey Margara Tejera, University of Surrey Jean-Yves Guillemaut, University of Surrey Adrian Hilton, University of Surrey Interactive Rendering of Acquired Materials on Dynamic Geometry using Bandwidth Prediction Mahdi M. Bagher , Maverick, INRIA Grenoble Rhône-Alpes and Laboratoire Jean Kuntzmann, Université de Grenoble and CNRS Cyril Soler , Maverick, INRIA Grenoble Rhône-Alpes and Laboratoire Jean Kuntzmann, Université de Grenoble and CNRS Kartic Subr , University College London Laurent Belcour , Maverick, INRIA Grenoble Rhône-Alpes and Laboratoire Jean Kuntzmann, Université de Grenoble and CNRS Nicolas Holzschuch , Maverick"
+  },
+  {
+   "venue": "I3D",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Accurate Analytic Approximations For Real-Time Specular Area Lighting",
+   "authors": [
+    "Pascal Lecocq",
+    "Arthur Dufay",
+    "Gaël Sourimant",
+    "Jean-Eudes Marvie"
+   ],
+   "track": "main",
+   "source": "https://i3dsymposium.org/2016/awards.html",
+   "evidence": "Best Paper (selected by the paper chairs based on reviews) Accurate Analytic Approximations For Real-Time Specular Area Lighting Pascal Lecocq, Arthur Dufay, Gaël Sourimant, Jean-Eudes Marvie"
+  },
+  {
+   "venue": "I3D",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper, Winner",
+   "title": "Compressing Color Data for Voxelized Surface Geometry",
+   "authors": [
+    "Dan Dolonius",
+    "Erik Sintorn",
+    "Viktor Kämpe",
+    "Ulf Assarsson"
+   ],
+   "track": "main",
+   "source": "https://i3dsymposium.org/2017/awards.html",
+   "evidence": "Best Paper (selected by the paper chairs based on reviews) Winner Compressing Color Data for Voxelized Surface Geometry Dan Dolonius, Erik Sintorn, Viktor Kämpe, Ulf Assarsson"
+  },
+  {
+   "venue": "I3D",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Best Paper, Second Place",
+   "title": "Scene-Adaptive High Dynamic Range Display for Low Latency Display",
+   "authors": [
+    "Peter Lincoln",
+    "Alex Blate",
+    "Montek Singh",
+    "Andrei State",
+    "Mary C. Whitton",
+    "Turner Whitted",
+    "Henry Fuchs"
+   ],
+   "track": "main",
+   "source": "https://i3dsymposium.org/2017/awards.html",
+   "evidence": "Best Paper (selected by the paper chairs based on reviews) Winner Compressing Color Data for Voxelized Surface Geometry Dan Dolonius, Erik Sintorn, Viktor Kämpe, Ulf Assarsson Second Place Scene-Adaptive High Dynamic Range Display for Low Latency Display Peter Lincoln, Alex Blate, Montek Singh, Andrei State, Mary C. Whitton, Turner Whitted, Henry Fuchs"
+  },
+  {
+   "venue": "I3D",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Conference Paper",
+   "title": "Dual-Split Trees",
+   "authors": [
+    "Daqi Lin",
+    "Konstantin Shkurko",
+    "Ian Mallett",
+    "Cem Yuksel"
+   ],
+   "track": "main",
+   "source": "https://i3dsymposium.org/2019/awards.html",
+   "evidence": "Best Conference Paper “Dual-Split Trees” Daqi Lin, Konstantin Shkurko, Ian Mallett and Cem Yuksel"
+  },
+  {
+   "venue": "I3D",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best PACM Paper",
+   "title": "The Effects of Adaptive Synchronization on Performance and Experience in Gameplay",
+   "authors": [
+    "Benjamin Watson",
+    "Rachit Shrivastava",
+    "Ajinkya Gavane"
+   ],
+   "track": "main",
+   "source": "https://i3dsymposium.org/2019/awards.html",
+   "evidence": "Best PACM Paper “The Effects of Adaptive Synchronization on Performance and Experience in Gameplay” Benjamin Watson, Rachit Shrivastava and Ajinkya Gavane"
+  },
+  {
+   "venue": "I3D",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "The three best papers",
+   "title": "Local Optimization for Robust Signed Distance Field Collision",
+   "authors": [
+    "Miles Macklin",
+    "Kenny Erleben",
+    "Matthias Müller",
+    "Nuttapong Chentanez",
+    "Stefan Jeschke",
+    "Zach Corse"
+   ],
+   "track": "main",
+   "source": "https://i3dsymposium.org/2020/awards.html",
+   "evidence": "The three best papers were selected by a small jury based on their presentation, significance of the contribution, and maturity of the work. They are listed below, in no specific order. Passthrough+: Real-time Stereoscopic View Synthesis for Mobile Mixed Reality Gaurav Chaurasia, Arthur Nieuwoudt, Alexandru-Eugen Ichim, Richard Szeliski, Alexander Sorkine-Hornung Local Optimization for Robust Signed Distance Field Collision Miles Macklin, Kenny Erleben, Matthias Müller, Nuttapong Chentanez, Stefan Jeschke, Zach Corse"
+  },
+  {
+   "venue": "I3D",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "The three best papers",
+   "title": "Passthrough+: Real-time Stereoscopic View Synthesis for Mobile Mixed Reality",
+   "authors": [
+    "Gaurav Chaurasia",
+    "Arthur Nieuwoudt",
+    "Alexandru-Eugen Ichim",
+    "Richard Szeliski",
+    "Alexander Sorkine-Hornung"
+   ],
+   "track": "main",
+   "source": "https://i3dsymposium.org/2020/awards.html",
+   "evidence": "The three best papers were selected by a small jury based on their presentation, significance of the contribution, and maturity of the work. They are listed below, in no specific order. Passthrough+: Real-time Stereoscopic View Synthesis for Mobile Mixed Reality Gaurav Chaurasia, Arthur Nieuwoudt, Alexandru-Eugen Ichim, Richard Szeliski, Alexander Sorkine-Hornung"
+  },
+  {
+   "venue": "I3D",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "The three best papers",
+   "title": "Real-Time Stochastic Lightcuts",
+   "authors": [
+    "Daqi Lin",
+    "Cem Yuksel"
+   ],
+   "track": "main",
+   "source": "https://i3dsymposium.org/2020/awards.html",
+   "evidence": "The three best papers were selected by a small jury based on their presentation, significance of the contribution, and maturity of the work. They are listed below, in no specific order. Passthrough+: Real-time Stereoscopic View Synthesis for Mobile Mixed Reality Gaurav Chaurasia, Arthur Nieuwoudt, Alexandru-Eugen Ichim, Richard Szeliski, Alexander Sorkine-Hornung Local Optimization for Robust Signed Distance Field Collision Miles Macklin, Kenny Erleben, Matthias Müller, Nuttapong Chentanez, Stefan Jeschke, Zach Corse Real-Time Stochastic Lightcuts Daqi Lin, Cem Yuksel"
+  },
+  {
+   "venue": "I3D",
+   "year": 2021,
+   "award": "student",
+   "awardLabel": "Best I3D Student Paper",
+   "title": "Stochastic-Depth Ambient Occlusion",
+   "authors": [
+    "Jop Vermeer",
+    "Leonardo Scandolo",
+    "Elmar Eisemann"
+   ],
+   "track": "main",
+   "source": "https://i3dsymposium.org/2021/awards.html",
+   "evidence": "Best I3D Student Paper “Stochastic-Depth Ambient Occlusion” Jop Vermeer, Leonardo Scandolo, and Elmar Eisemann"
+  },
+  {
+   "venue": "I3D",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper (2-way tie)",
+   "title": "Bringing Linearly Transformed Cosines to Anisotropic GGX",
+   "authors": [
+    "Aakash KT",
+    "Eric Heitz",
+    "Jonathan Dupuy",
+    "Narayanan P. J."
+   ],
+   "track": "main",
+   "source": "https://i3dsymposium.org/2022/awards.html",
+   "evidence": "Best Paper 2-way tie: Permutation Coding for Vertex-Blend Attribute Compression Christoph Peters, Bastian Kuth and Quirin Meyer prize: AMD Radeon RX 6800 and Bringing Linearly Transformed Cosines to Anisotropic GGX Aakash KT, Eric Heitz, Jonathan Dupuy and Narayanan P. J."
+  },
+  {
+   "venue": "I3D",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper (2-way tie)",
+   "title": "Permutation Coding for Vertex-Blend Attribute Compression",
+   "authors": [
+    "Christoph Peters",
+    "Bastian Kuth",
+    "Quirin Meyer"
+   ],
+   "track": "main",
+   "source": "https://i3dsymposium.org/2022/awards.html",
+   "evidence": "Best Paper 2-way tie: Permutation Coding for Vertex-Blend Attribute Compression Christoph Peters, Bastian Kuth and Quirin Meyer"
+  },
+  {
+   "venue": "I3D",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "NeRFahedron: A Primitive for Animatable Neural Rendering with Interactive Speed",
+   "authors": [
+    "Zackary P. T. Sin",
+    "Peter H. F. Ng",
+    "Hong Va Leong"
+   ],
+   "track": "main",
+   "source": "https://i3dsymposium.org/2023/awards.html",
+   "evidence": "Awards Best Paper NeRFahedron: A Primitive for Animatable Neural Rendering with Interactive Speed Zackary P. T. Sin, Peter H. F. Ng and Hong Va Leong"
+  },
+  {
+   "venue": "I3D",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-Up",
+   "title": "Efficient Spatial Resampling Using the PDF Similarity",
+   "authors": [
+    "Yusuke Tokuyoshi"
+   ],
+   "track": "main",
+   "source": "https://i3dsymposium.org/2023/awards.html",
+   "evidence": "Best Paper Runner-Up Efficient Spatial Resampling Using the PDF Similarity Yusuke Tokuyoshi"
+  },
+  {
+   "venue": "I3D",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Filtering After Shading With Stochastic Texture Filtering",
+   "authors": [
+    "Matt Pharr",
+    "Bartlomiej Wronski",
+    "Marco Salvi",
+    "Marcos Fajardo"
+   ],
+   "track": "main",
+   "source": "https://i3dsymposium.org/2024/awards.html",
+   "evidence": "Best Paper Filtering After Shading With Stochastic Texture Filtering Matt Pharr, Bartlomiej Wronski, Marco Salvi and Marcos Fajardo"
+  },
+  {
+   "venue": "I3D",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-Ups",
+   "title": "Transforming a Non-Differentiable Rasterizer into a Differentiable One with Stochastic Gradient Estimation",
+   "authors": [
+    "Thomas Deliot",
+    "Eric Heitz",
+    "Laurent Belcour"
+   ],
+   "track": "main",
+   "source": "https://i3dsymposium.org/2024/awards.html",
+   "evidence": "Best Paper Runner-Ups ZH3: Quadratic Zonal Harmonics Thomas Roughton, Peter-Pike Sloan, Ari Silvennoinen, Michal Iwanicki and Peter Shirley Transforming a Non-Differentiable Rasterizer into a Differentiable One with Stochastic Gradient Estimation Thomas Deliot, Eric Heitz and Laurent Belcour"
+  },
+  {
+   "venue": "I3D",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-Ups",
+   "title": "ZH3: Quadratic Zonal Harmonics",
+   "authors": [
+    "Thomas Roughton",
+    "Peter-Pike Sloan",
+    "Ari Silvennoinen",
+    "Michal Iwanicki",
+    "Peter Shirley"
+   ],
+   "track": "main",
+   "source": "https://i3dsymposium.org/2024/awards.html",
+   "evidence": "Best Paper Runner-Ups ZH3: Quadratic Zonal Harmonics Thomas Roughton, Peter-Pike Sloan, Ari Silvennoinen, Michal Iwanicki and Peter Shirley"
+  },
+  {
+   "venue": "I3D",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "FaceFolds: Meshed Radiance Manifolds for Efficient Volumetric Rendering of Dynamic Faces",
+   "authors": [
+    "Safa Medin",
+    "Gengyan Li",
+    "Ruofei Du",
+    "Stephan Garbin",
+    "Philip Davidson",
+    "Gregory Wornell",
+    "Thabo Beeler",
+    "Abhimitra Meka"
+   ],
+   "track": "main",
+   "source": "https://i3dsymposium.org/2024/awards.html",
+   "evidence": "Best Student Paper Prize: NVIDIA GeForce RTX 4080 FaceFolds: Meshed Radiance Manifolds for Efficient Volumetric Rendering of Dynamic Faces Safa Medin, Gengyan Li, Ruofei Du, Stephan Garbin, Philip Davidson, Gregory Wornell, Thabo Beeler and Abhimitra Meka"
+  },
+  {
+   "venue": "I3D",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Papers",
+   "title": "Gen-C: Populating Virtual Worlds with Generative Crowds",
+   "authors": [
+    "Andreas Panayiotou",
+    "Panayiotis Charalambous",
+    "Ioannis Karamouzas"
+   ],
+   "track": "main",
+   "source": "https://i3dsymposium.org/2026/awards.html",
+   "evidence": "Best Papers ReSTIR PT Enhanced: Algorithmic Advances for Faster and More Robust ReSTIR Path Tracing Daqi Lin, Markus Kettunen and Chris Wyman DOI link Gen-C: Populating Virtual Worlds with Generative Crowds Andreas Panayiotou, Panayiotis Charalambous and Ioannis Karamouzas"
+  },
+  {
+   "venue": "I3D",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Papers",
+   "title": "ReSTIR PT Enhanced: Algorithmic Advances for Faster and More Robust ReSTIR Path Tracing",
+   "authors": [
+    "Daqi Lin",
+    "Markus Kettunen",
+    "Chris Wyman"
+   ],
+   "track": "main",
+   "source": "https://i3dsymposium.org/2026/awards.html",
+   "evidence": "Best Papers ReSTIR PT Enhanced: Algorithmic Advances for Faster and More Robust ReSTIR Path Tracing Daqi Lin, Markus Kettunen and Chris Wyman"
+  },
+  {
+   "venue": "I3D",
+   "year": 2026,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Improving Spatial Domain Repetition of Implicit Surfaces",
+   "authors": [
+    "Clément Magniez",
+    "Cédric Zanni"
+   ],
+   "track": "main",
+   "source": "https://i3dsymposium.org/2026/awards.html",
+   "evidence": "Best Student Paper Improving Spatial Domain Repetition of Implicit Surfaces Clément Magniez and Cédric Zanni"
+  },
+  {
    "venue": "ICAC",
    "year": 2013,
    "award": "best",
@@ -95024,6 +96146,107 @@
    "paperYear": 2016,
    "source": "https://ieee-ceda.org/awards/william-j-mccalla-award",
    "evidence": "ICCAD 2025 Ten Year Retrospective Influential Paper Award: Caffeine: Towards uniformed representation and acceleration for deep convolutional neural networks — Chen Zhang; Zhenman Fang; Peipei Zhou; Peichen Pan; Jason Cong"
+  },
+  {
+   "venue": "ICCBR",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "A General Introspective Reasoning Approach to Web Search for Case Adaptation",
+   "authors": [
+    "David Leake",
+    "Jay Powell"
+   ],
+   "track": "main",
+   "source": "https://iccbr.org/iccbr10/",
+   "evidence": "Best Paper Award A General Introspective Reasoning Approach to Web Search for Case Adaptation, David Leake & Jay Powell"
+  },
+  {
+   "venue": "ICCBR",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Music Recommendation: Audio Neighbourhoods to Discover Music in the Long Tail",
+   "authors": [
+    "Susan Craw",
+    "Ben Horsburgh",
+    "Stewart Massie"
+   ],
+   "track": "main",
+   "source": "https://iccbr.org/iccbr15/",
+   "evidence": "Best Paper Award: The ICCBR 2015 Best Paper Award has been announced. This year's winners are: Susan Craw, Ben Horsburgh and Stewart Massie with their work on Music Recommendation: Audio Neighbourhoods to Discover Music in the Long Tail."
+  },
+  {
+   "venue": "ICCBR",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Ensemble of Adaptations for Classification: Learning Adaptation Rules for Categorical features",
+   "authors": [
+    "Vahid Jalali",
+    "David Leake",
+    "Najmeh Forouzandehmehr"
+   ],
+   "track": "main",
+   "source": "https://iccbr.gatech.edu/iccbr16/index.html",
+   "evidence": "Best Paper Award: Vahid Jalali, David Leake and Najmeh Forouzandehmehr. Ensemble of Adaptations for Classification: Learning Adaptation Rules for Categorical features"
+  },
+  {
+   "venue": "ICCBR",
+   "year": 2016,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Competence Guided Casebase Maintenance for Compositional Adaptation Applications",
+   "authors": [
+    "Ditty Mathew",
+    "Sutanu Chakraborti"
+   ],
+   "track": "main",
+   "source": "https://iccbr.gatech.edu/iccbr16/index.html",
+   "evidence": "Best Student Paper Award: Ditty Mathew and Sutanu Chakraborti. Competence Guided Casebase Maintenance for Compositional Adaptation Applications"
+  },
+  {
+   "venue": "ICCBR",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "best paper",
+   "title": "Running with Cases: A CBR Approach to Running Your Best Marathon",
+   "authors": [
+    "Barry Smyth",
+    "Padraig Cunningham"
+   ],
+   "track": "main",
+   "source": "https://iccbr.org/iccbr17/impressions.html",
+   "evidence": "Awards This year's best paper went to: Running with Cases: A CBR Approach to Running Your Best Marathon by Barry Smyth and Padraig Cunningham"
+  },
+  {
+   "venue": "ICCBR",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Miltos Petridis Best Paper Award",
+   "title": "Harmonizing Case Retrieval and Adaptation with Alternating Optimization",
+   "authors": [
+    "David Leake",
+    "Xiaomeng Ye"
+   ],
+   "track": "main",
+   "source": "https://iccbr.org/iccbr21/",
+   "evidence": "Miltos Petridis Best Paper Award: Harmonizing Case Retrieval and Adaptation with Alternating Optimization - David Leake and Xiaomeng Ye"
+  },
+  {
+   "venue": "ICCBR",
+   "year": 2021,
+   "award": "student",
+   "awardLabel": "Cindy Marling Best Student Paper Award",
+   "title": "Instance-based Counterfactual Explanations for Time Series Classification",
+   "authors": [
+    "Eoin Delaney",
+    "Derek Greene",
+    "Mark Keane"
+   ],
+   "track": "main",
+   "source": "https://iccbr.org/iccbr21/",
+   "evidence": "Cindy Marling Best Student Paper Award: Instance-based Counterfactual Explanations for Time Series Classification - Eoin Delaney, Derek Greene and Mark Keane"
   },
   {
    "venue": "ICCV",
@@ -102692,6 +103915,154 @@
    "evidence": "13/06/2023: Best paper award of ICMR 2023 goes to Giacomo Nebbia and Adriana Kovashka for the paper “Hypernymization of Named Entity-rich captions for grounding-based multi-modal pretraining“"
   },
   {
+   "venue": "ICNP",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Regulating Monopolistic ISPs Without Neutrality",
+   "authors": [
+    "Jing Tang",
+    "Richard T. B. Ma"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-icnp.org/2014/program.html",
+   "evidence": "Regulating Monopolistic ISPs Without Neutrality Jing Tang (Nanyang Technological University, Singapore); Richard T. B. Ma (National University of Singapore, Singapore) Best Paper Award !"
+  },
+  {
+   "venue": "ICNP",
+   "year": 2014,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up Award",
+   "title": "On the MAC for Power-Line Communications: Modeling Assumptions and Performance Tradeoffs",
+   "authors": [
+    "Christina Vlachou",
+    "Albert Banchs",
+    "Julien Herzen",
+    "Patrick Thiran"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-icnp.org/2014/program.html",
+   "evidence": "On the MAC for Power-Line Communications: Modeling Assumptions and Performance Tradeoffs Christina Vlachou (¨¦cole Polytechnique F¨¦d¨¦rale de Lausanne, Switzerland); Albert Banchs (Universidad Carlos III de Madrid, Spain); Julien Herzen (EPFL, Switzerland); Patrick Thiran (EPFL, Switzerland) Best Paper Runner-up Award !"
+  },
+  {
+   "venue": "ICNP",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best paper award",
+   "title": "SQR: In-network Packet Loss Recovery from Link Failures for Highly Reliable Datacenter Networks",
+   "authors": [
+    "Ting Qu",
+    "Raj Joshi",
+    "Mun Choon Chan",
+    "Ben Leong",
+    "Deke Guo",
+    "Zhong Liu"
+   ],
+   "track": "main",
+   "source": "https://icnp19.cs.ucr.edu/program.html",
+   "evidence": "SQR: In-network Packet Loss Recovery from Link Failures for Highly Reliable Datacenter Networks (Long paper) (Best paper award) Ting Qu (National University of Defense Technology); Raj Joshi, Mun Choon Chan, Ben Leong (National University of Singapore); Deke Guo, Zhong Liu (National University of Defense Technology)"
+  },
+  {
+   "venue": "ICNP",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best paper award",
+   "title": "SCIONLab: A Next-Generation Internet Testbed",
+   "authors": [
+    "Jonghoon Kwon",
+    "Juan A. García-Pardo",
+    "Markus Legner",
+    "François Wirz",
+    "Matthias Frei",
+    "David Hausheer",
+    "Adrian Perrig"
+   ],
+   "track": "main",
+   "source": "https://icnp20.cs.ucr.edu/program.html",
+   "evidence": "SCIONLab: A Next-Generation Internet Testbed (Paper, Slides, Video, Best paper award) Jonghoon Kwon, Juan A. García-Pardo, Markus Legner, François Wirz, Matthias Frei (ETH Zürich, Switzerland), David Hausheer (University Magdeburg, Germany), and Adrian Perrig (ETH Zürich, Switzerland)"
+  },
+  {
+   "venue": "ICNP",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best paper award",
+   "title": "Virtual Filter for Non-duplicate Sampling",
+   "authors": [
+    "Chaoyi Ma",
+    "Haibo Wang",
+    "Olufemi O Odegbile",
+    "Shigang Chen"
+   ],
+   "track": "main",
+   "source": "https://icnp21.cs.ucr.edu/program.html",
+   "alsoAt": [
+    "https://icnp21.cs.ucr.edu/"
+   ],
+   "evidence": "Virtual Filter for Non-duplicate Sampling >> Best paper award | paper | teaser @YouTube, @Bilibili | presentation @YouTube, @Bilibili Chaoyi Ma, Haibo Wang, Olufemi O Odegbile, and Shigang Chen (University of Florida)"
+  },
+  {
+   "venue": "ICNP",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Enabling Load Balancing for Lossless Datacenters",
+   "authors": [
+    "Jinbin Hu",
+    "Chaoliang Zeng",
+    "Zilong Wang",
+    "Junxue Zhang",
+    "Kun Guo",
+    "Hong Xu",
+    "Jiawei Huang",
+    "Kai Chen"
+   ],
+   "track": "main",
+   "source": "https://icnp23.cs.ucr.edu/program.html",
+   "alsoAt": [
+    "https://icnp23.cs.ucr.edu/"
+   ],
+   "evidence": "Enabling Load Balancing for Lossless Datacenters Best Paper Jinbin Hu (Hong Kong University of Science and Technology); Chaoliang Zeng (Hong Kong University of Science and Technology); Zilong Wang (Hong Kong University of Science and Technology); Junxue Zhang (Hong Kong University of Science and Technology); kun Guo (FuZhou University); Hong Xu (Chinese University of Hong Kong); Jiawei Huang (Central South University); Kai Chen (Hong Kong University of Science and Technology);"
+  },
+  {
+   "venue": "ICNP",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "High-Throughput Stateless-but-Complex Packet Processing within a Tbps Programmable Switch",
+   "authors": [
+    "Yutaro Yoshinaka",
+    "Yuki Koizumi",
+    "Junji Takemasa",
+    "Toru Hasegawa"
+   ],
+   "track": "main",
+   "source": "https://icnp24.cs.ucr.edu/program.html",
+   "alsoAt": [
+    "https://icnp24.cs.ucr.edu/"
+   ],
+   "evidence": "High-Throughput Stateless-but-Complex Packet Processing within a Tbps Programmable Switch Best Paper Yutaro Yoshinaka (Osaka University); Yuki Koizumi (Osaka University); Junji Takemasa (Osaka University); Toru Hasegawa (Shimane University);"
+  },
+  {
+   "venue": "ICNP",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "VeriNC: Finding Design Risks of In-Network Computing Systems",
+   "authors": [
+    "Tianyu Bai",
+    "Xiaoxi Zhang",
+    "Haoqing Wang",
+    "Ying Zhang",
+    "Wenfei Wu"
+   ],
+   "track": "main",
+   "source": "https://icnp26.cs.ucr.edu/program.html",
+   "alsoAt": [
+    "https://icnp26.cs.ucr.edu/"
+   ],
+   "evidence": "VeriNC: Finding Design Risks of In-Network Computing Systems Best Paper Tianyu Bai (Peking University); Xiaoxi Zhang (Sun Yat-sen University); Haoqing Wang (Peking University); Ying Zhang (Meta); Wenfei Wu (Peking University);"
+  },
+  {
    "venue": "ICPC",
    "year": 2020,
    "award": "distinguished",
@@ -108936,6 +110307,138 @@
    "evidence": "Most Influential Paper Award Plenary Events at Auditorium Title: “Automated Debugging Considered Harmful” Considered Harmful - A User Study Revisiting the Usefulness of Spectra-Based Fault Localization Techniques with Professionals Using Real Bugs from Large Systems Authors: Xin Xia, Lingfeng Bao, David Lo and Shanping Li"
   },
   {
+   "venue": "ICWS",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "R-CASS: Using Algorithm Selection for Self-Adaptive Service Oriented Systems",
+   "authors": [
+    "Niranjana Deshpande",
+    "Naveen Sharma",
+    "Qi Yu",
+    "Daniel E. Krutz"
+   ],
+   "track": "main",
+   "source": "https://conferences.computer.org/services/2021/awards/",
+   "evidence": "ICWS 2021 Best Paper Award: R-CASS: Using Algorithm Selection for Self-Adaptive Service Oriented Systems Niranjana Deshpande, Naveen Sharma, Qi Yu, Daniel E. Krutz"
+  },
+  {
+   "venue": "ICWS",
+   "year": 2021,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Microservice Pre-Deployment Based on Mobility Prediction and Service Composition in Edge",
+   "authors": [
+    "Jiale Deng",
+    "Bing Li",
+    "Jian Wang",
+    "Yuqi Zhao"
+   ],
+   "track": "main",
+   "source": "https://conferences.computer.org/services/2021/awards/",
+   "evidence": "Best Student Paper Award: Microservice Pre-Deployment Based on Mobility Prediction and Service Composition in Edge Jiale Deng, Bing Li, Jian Wang, Yuqi Zhao"
+  },
+  {
+   "venue": "ICWS",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Papers of the affiliated conferences of IEEE SERVICES 2022",
+   "title": "QoS-Aware Distributed Stream Processing through Anticipating Dynamic Workloads",
+   "authors": [
+    "Morgan Geldenhuys",
+    "Dominik Scheinert",
+    "Odej Kao",
+    "Lauritz Thamsen"
+   ],
+   "track": "main",
+   "source": "https://conferences.computer.org/services/2022/awards/",
+   "evidence": "Best Papers of the affiliated conferences of IEEE SERVICES 2022 2022 IEEE CLOUD (International Conference on Cloud Computing) \"DeTrust-FL: Privacy-preserving Federated Learning in Decentralized Trust Setting\" Runhua Xu, Nathalie Baracaldo, Yi Zhou, Ali Anwar, Heiko Ludwig and Swangand Kadhe IBM Research 2022 IEEE EDGE (International Conference on Edge Computing & Communications) “Robustness and Personalization in Federated Learning: A Unified Approach via Regularization” Achintya Kundu, Pengqian Yu, Laura Wynter and Shiau Hong Lim IBM Research 2022 IEEE ICDH (International Conference on Digital Health) “Data-driven Interpretable Policy Construction for Personalized Mobile Health” Dimitris Bertsimas, Predrag Klasnja, Susan Murphy and Liangyuan Na Massachusetts Institute of Technology 2022 IEEE ICWS (International Conference on Web Services) “QoS-Aware Distributed Stream Processing through Anticipating Dynamic Workloads” Morgan Geldenhuys, Dominik Scheinert, Odej Kao and Lauritz Thamsen"
+  },
+  {
+   "venue": "ICWS",
+   "year": 2022,
+   "award": "student",
+   "awardLabel": "Best Student Papers of the affiliated conferences of IEEE SERVICES 2022",
+   "title": "HRA: An Intelligent Holistic Resource Autoscaling Framework for Multi-service Applications",
+   "authors": [
+    "Chunyang Meng",
+    "Jingwan Tong",
+    "Maolin Pan",
+    "Yang Yu"
+   ],
+   "track": "main",
+   "source": "https://conferences.computer.org/services/2022/awards/",
+   "evidence": "Best Student Papers of the affiliated conferences of IEEE SERVICES 2022 2022 IEEE CLOUD (International Conference on Cloud Computing) “SAPPARCHI: An Osmotic Platform to Execute Scalable Applications on Smart City Environments” Arthur Souza, Nelio Cacho, Thais Batista and Rajiv Ranjan Federal University of Rio Grande do Norte; Newcastle University 2022 IEEE EDGE (International Conference on Edge Computing & Communications) “CONTINUER: Maintaining Distributed DNN Services During Edge Failures” Ayesha Abdul Majeed, Peter Kilpatrick, Ivor Spence and Blesson Varghese Queen's University Belfast; University of St Andrews 2022 IEEE ICDH (International Conference on Digital Health) “An mHealth Lifestyle Intervention Service for Improving Blood Pressure using Machine Learning and IoMTs” Jared Leitner, Po-Han Chiang, Brian Khan and Sujit Dey University of California, San Diego 2022 IEEE ICWS (International Conference on Web Services) “HRA: An Intelligent Holistic Resource Autoscaling Framework for Multi-service Applications” Chunyang Meng, Jingwan Tong, Maolin Pan and Yang Yu"
+  },
+  {
+   "venue": "ICWS",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Papers of the Affiliate Conferences of IEEE SERVICES 2023",
+   "title": "An Efficient Customized Blockchain System for Inter-Organizational Processes",
+   "authors": [
+    "Puwei Wang",
+    "Zhouxing Sun",
+    "Rui Li",
+    "Jinchuan Chen",
+    "Ping Gong",
+    "Xiaoyong Du"
+   ],
+   "track": "main",
+   "source": "https://conferences.computer.org/services/2023/awards/",
+   "evidence": "Best Papers of the Affiliate Conferences of IEEE SERVICES 2023 IEEE CLOUD (International Conference on Cloud Computing) \"IRIS: Interference and Resource Aware Predictive Orchestration for ML Inference Serving\" by Aggelos Ferikoglou, Panos Chrysomeris, Achilleas Tzenetopoulos, Manolis Katsaragakis, Dimosthenis Masouros and Dimitrios Soudris, [National Technical University of Athens] IEEE EDGE (International Conference on Edge Computing & Communications) \"AnalogNAS: A Neural Network Design Framework for Accurate Inference with Analog In-Memory Computing\" by Hadjer Benmeziane, Corey Lammie, Irem Boybat, Malte Rasch, Manuel Le Gallo, Hsinyu Tsai, Ramachandran Muralidhar, Smail Niar, Ouarnoughi Hamza, Vijay Narayanan, Abu Sebastian and Kaoutar El Maghraoui [Univ. Polytechnique Hauts-de-France and IBM Research (Almaden, Switzerland, Yorktown)] IEEE ICDH (International Conference on Digital Health) \"An Automated Digital Biomarker of Mobility\" by Tian Hao, Yasunori Yamada, Jeffrey L. Rogers, Kaoru Shinkawa, Miyuki Nemoto, Kiyotaka Nemoto and Tetsuaki Arai [IBM Research (Japan, Yorktown), University of Tsukuba] IEEE ICWS (International Conference on Web Services) \"An Efficient Customized Blockchain System for Inter-Organizational Processes\" by Puwei Wang, Zhouxing Sun, Rui Li, Jinchuan Chen, Ping Gong, and Xiaoyong Du"
+  },
+  {
+   "venue": "ICWS",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Papers of the Affiliate Conferences of IEEE SERVICES 2023",
+   "title": "Container Image Similarity-Aware Resource Provisioning for Serverless Edge Computing",
+   "authors": [
+    "Ao Zhou",
+    "Sisi Li",
+    "Xiao Ma",
+    "Yiran Zhang",
+    "Shangguang Wang"
+   ],
+   "track": "main",
+   "source": "https://conferences.computer.org/services/2023/awards/",
+   "evidence": "Best Papers of the Affiliate Conferences of IEEE SERVICES 2023 IEEE CLOUD (International Conference on Cloud Computing) \"IRIS: Interference and Resource Aware Predictive Orchestration for ML Inference Serving\" by Aggelos Ferikoglou, Panos Chrysomeris, Achilleas Tzenetopoulos, Manolis Katsaragakis, Dimosthenis Masouros and Dimitrios Soudris, [National Technical University of Athens] IEEE EDGE (International Conference on Edge Computing & Communications) \"AnalogNAS: A Neural Network Design Framework for Accurate Inference with Analog In-Memory Computing\" by Hadjer Benmeziane, Corey Lammie, Irem Boybat, Malte Rasch, Manuel Le Gallo, Hsinyu Tsai, Ramachandran Muralidhar, Smail Niar, Ouarnoughi Hamza, Vijay Narayanan, Abu Sebastian and Kaoutar El Maghraoui [Univ. Polytechnique Hauts-de-France and IBM Research (Almaden, Switzerland, Yorktown)] IEEE ICDH (International Conference on Digital Health) \"An Automated Digital Biomarker of Mobility\" by Tian Hao, Yasunori Yamada, Jeffrey L. Rogers, Kaoru Shinkawa, Miyuki Nemoto, Kiyotaka Nemoto and Tetsuaki Arai [IBM Research (Japan, Yorktown), University of Tsukuba] IEEE ICWS (International Conference on Web Services) \"An Efficient Customized Blockchain System for Inter-Organizational Processes\" by Puwei Wang, Zhouxing Sun, Rui Li, Jinchuan Chen, Ping Gong, and Xiaoyong Du [Renmin University of China and Fujian Normal University] \"Container Image Similarity-Aware Resource Provisioning for Serverless Edge Computing\" by Ao Zhou, Sisi Li, Xiao Ma, Yiran Zhang, and Shangguang Wang"
+  },
+  {
+   "venue": "ICWS",
+   "year": 2023,
+   "award": "student",
+   "awardLabel": "Best Student Papers of the Affiliate Conferences of IEEE SERVICES 2023",
+   "title": "Failure-Sentient Composition for Swarm-Based Drone Services",
+   "authors": [
+    "Balsam Alkouz",
+    "Athman Bouguettaya",
+    "Abdallah Lakhdari"
+   ],
+   "track": "main",
+   "source": "https://conferences.computer.org/services/2023/awards/",
+   "evidence": "Best Student Papers of the Affiliate Conferences of IEEE SERVICES 2023 IEEE CLOUD (International Conference on Cloud Computing) \"Storm-RTS: Stream Processing with Stable Performance for Multi-cloud and Cloud-edge\" by Hai Duc Nguyen and Andrew A. Chien [University of Chicago, Argonne National Laboratory] IEEE EDGE (International Conference on Edge Computing & Communications) \"SQuBA: Social Quorum Based Access Control for Open IoT Environments\" by Yixuan Wang, Abhishek Chandra and Jon Weissman [University of Minnesota] IEEE ICDH (International Conference on Digital Health) \"sDREAMER: Self-distilled Hierarchical Mixture-of-Modality-Experts Transformer for Automatic Sleep Staging\" by Jingyuan Chen, Yuan Yao, Mie Anderson, Natalie Hauglund, Celia Kjaerby, Verena Untiet, Maiken Nedergaard and Jiebo Luo [University of Rochester, University of Copenhagen] IEEE ICWS (International Conference on Web Services) \"HSFL: Efficient and Privacy-Preserving Offloading for Split and Federated Learning in IoT Services\" by Ruijun Deng, Xin Du, Zhihui Lu, Qiang Duan, Shih-Chia Huang, and Jie Wu [Fudan University, Ministry of Education, Shanghai Blockchain Engineering Research Center, Pennsylvania State University, National Taipei University of Technology, Fudan University] \"Failure-Sentient Composition for Swarm-Based Drone Services\" by Balsam Alkouz, Athman Bouguettaya and Abdallah Lakhdari"
+  },
+  {
+   "venue": "ICWS",
+   "year": 2023,
+   "award": "student",
+   "awardLabel": "Best Student Papers of the Affiliate Conferences of IEEE SERVICES 2023",
+   "title": "HSFL: Efficient and Privacy-Preserving Offloading for Split and Federated Learning in IoT Services",
+   "authors": [
+    "Ruijun Deng",
+    "Xin Du",
+    "Zhihui Lu",
+    "Qiang Duan",
+    "Shih-Chia Huang",
+    "Jie Wu"
+   ],
+   "track": "main",
+   "source": "https://conferences.computer.org/services/2023/awards/",
+   "evidence": "Best Student Papers of the Affiliate Conferences of IEEE SERVICES 2023 IEEE CLOUD (International Conference on Cloud Computing) \"Storm-RTS: Stream Processing with Stable Performance for Multi-cloud and Cloud-edge\" by Hai Duc Nguyen and Andrew A. Chien [University of Chicago, Argonne National Laboratory] IEEE EDGE (International Conference on Edge Computing & Communications) \"SQuBA: Social Quorum Based Access Control for Open IoT Environments\" by Yixuan Wang, Abhishek Chandra and Jon Weissman [University of Minnesota] IEEE ICDH (International Conference on Digital Health) \"sDREAMER: Self-distilled Hierarchical Mixture-of-Modality-Experts Transformer for Automatic Sleep Staging\" by Jingyuan Chen, Yuan Yao, Mie Anderson, Natalie Hauglund, Celia Kjaerby, Verena Untiet, Maiken Nedergaard and Jiebo Luo [University of Rochester, University of Copenhagen] IEEE ICWS (International Conference on Web Services) \"HSFL: Efficient and Privacy-Preserving Offloading for Split and Federated Learning in IoT Services\" by Ruijun Deng, Xin Du, Zhihui Lu, Qiang Duan, Shih-Chia Huang, and Jie Wu"
+  },
+  {
    "venue": "ICWSM",
    "year": 2007,
    "award": "best",
@@ -113950,6 +115453,446 @@
    "track": "main",
    "source": "https://www.ieeeismar.net/2026/awards/",
    "evidence": "ISMAR 2026 ISMAR Paper Impact Award: Robust Monocular SLAM in Dynamic Environments — Wei Tan, Haomin Liu, Zilong Dong, Guofeng Zhang, and Hujun Bao"
+  },
+  {
+   "venue": "ISS",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "BullsEye: High-Precision Fiducial Tracking for Table-based Tangible Interaction",
+   "authors": [
+    "Clemens N Klokmose",
+    "Janus B Kristensen",
+    "Rolf Bagge",
+    "Kim Halskov"
+   ],
+   "track": "main",
+   "source": "https://iss.acm.org/2015/program/awards/",
+   "evidence": "Best Paper Award BullsEye: High-Precision Fiducial Tracking for Table-based Tangible Interaction Clemens N Klokmose, Janus B Kristensen, Rolf Bagge, Kim Halskov"
+  },
+  {
+   "venue": "ISS",
+   "year": 2015,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mentions",
+   "title": "ActivitySpace: Managing Device Ecologies in an Activity-Centric Conﬁguration Space",
+   "authors": [
+    "Steven Houben",
+    "Paolo Tell",
+    "Jakob E Bardram"
+   ],
+   "track": "main",
+   "source": "https://iss.acm.org/2015/program/awards/",
+   "evidence": "Honorable Mentions ActivitySpace: Managing Device Ecologies in an Activity-Centric Conﬁguration Space Steven Houben, Paolo Tell, Jakob E Bardram"
+  },
+  {
+   "venue": "ISS",
+   "year": 2015,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mentions",
+   "title": "Improving Pre-Kindergarten Touch Performance",
+   "authors": [
+    "Vicente Nacher",
+    "Alejandro Catala",
+    "Javier Jaen",
+    "Elena Navarro",
+    "Pascual Gonzalez"
+   ],
+   "track": "main",
+   "source": "https://iss.acm.org/2015/program/awards/",
+   "evidence": "Honorable Mentions ActivitySpace: Managing Device Ecologies in an Activity-Centric Conﬁguration Space Steven Houben, Paolo Tell, Jakob E Bardram To mitigate multi-device interaction problems (such as lack of control, intelligibility and context), ActivitySpace provides an activity-centric configuration space that enables users to integrate and work across several devices by using the space between the devices. We report on a study with 9 participants that shows that ActivitySpace helps users to easily manage devices and their allocated resources while exposing a number of usage patterns. Web on the Wall Reloaded: Implementation, Replication and Refinement of User-Defined Interaction Sets Michael Nebeling, Alexander Huber, David Ott, Moira Norrie This paper replicates Morris's Web on the Wall guessability study first using Wizard of Oz for multimodal interaction elicitation around Kinect. To obtain reproducible and implementable user-defined interaction sets, the paper argues for extending the methodology to include a draft of the system for mixed-initiative elicitation with real system dialogue. Improving Pre-Kindergarten Touch Performance (Note) Vicente Nacher, Alejandro Catala, Javier Jaen, Elena Navarro, Pascual Gonzalez"
+  },
+  {
+   "venue": "ISS",
+   "year": 2015,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mentions",
+   "title": "Towards Habitable Bits: Digitizing the Built Environment",
+   "authors": [
+    "Yuichiro Takeuchi"
+   ],
+   "track": "main",
+   "source": "https://iss.acm.org/2015/program/awards/",
+   "evidence": "Honorable Mentions ActivitySpace: Managing Device Ecologies in an Activity-Centric Conﬁguration Space Steven Houben, Paolo Tell, Jakob E Bardram To mitigate multi-device interaction problems (such as lack of control, intelligibility and context), ActivitySpace provides an activity-centric configuration space that enables users to integrate and work across several devices by using the space between the devices. We report on a study with 9 participants that shows that ActivitySpace helps users to easily manage devices and their allocated resources while exposing a number of usage patterns. Web on the Wall Reloaded: Implementation, Replication and Refinement of User-Defined Interaction Sets Michael Nebeling, Alexander Huber, David Ott, Moira Norrie This paper replicates Morris's Web on the Wall guessability study first using Wizard of Oz for multimodal interaction elicitation around Kinect. To obtain reproducible and implementable user-defined interaction sets, the paper argues for extending the methodology to include a draft of the system for mixed-initiative elicitation with real system dialogue. Improving Pre-Kindergarten Touch Performance (Note) Vicente Nacher, Alejandro Catala, Javier Jaen, Elena Navarro, Pascual Gonzalez Pre-kindergarten children have problems with double tap and long pressed gestures. We empirically test specific strategies to deal with these issues. The study shows that the implementation of these design guidelines has a positive effect on success rates, becoming feasible their inclusion in future touch based applications for pre-kindergarten children. Towards Habitable Bits: Digitizing the Built Environment Yuichiro Takeuchi"
+  },
+  {
+   "venue": "ISS",
+   "year": 2015,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mentions",
+   "title": "Web on the Wall Reloaded: Implementation, Replication and Refinement of User-Defined Interaction Sets",
+   "authors": [
+    "Michael Nebeling",
+    "Alexander Huber",
+    "David Ott",
+    "Moira Norrie"
+   ],
+   "track": "main",
+   "source": "https://iss.acm.org/2015/program/awards/",
+   "evidence": "Honorable Mentions ActivitySpace: Managing Device Ecologies in an Activity-Centric Conﬁguration Space Steven Houben, Paolo Tell, Jakob E Bardram To mitigate multi-device interaction problems (such as lack of control, intelligibility and context), ActivitySpace provides an activity-centric configuration space that enables users to integrate and work across several devices by using the space between the devices. We report on a study with 9 participants that shows that ActivitySpace helps users to easily manage devices and their allocated resources while exposing a number of usage patterns. Web on the Wall Reloaded: Implementation, Replication and Refinement of User-Defined Interaction Sets Michael Nebeling, Alexander Huber, David Ott, Moira Norrie"
+  },
+  {
+   "venue": "ISS",
+   "year": 2015,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "P.I.A.N.O.: Faster Piano Learning with Interactive Projection",
+   "authors": [
+    "Katja Rogers",
+    "Amrei Röhlig",
+    "Matthias Weing",
+    "Jan Gugenheimer",
+    "Bastian Könings",
+    "Melina Klepsch",
+    "Florian Schaub",
+    "Enrico Rukzio",
+    "Tina Seufert",
+    "Michael Weber"
+   ],
+   "track": "main",
+   "source": "https://iss.acm.org/2015/program/awards/",
+   "evidence": "Best Student Paper Award P.I.A.N.O.: Faster Piano Learning with Interactive Projection Katja Rogers, Amrei Röhlig, Matthias Weing, Jan Gugenheimer, Bastian Könings, Melina Klepsch, Florian Schaub, Enrico Rukzio, Tina Seufert, Michael Weber"
+  },
+  {
+   "venue": "ISS",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "EV-Pen: Leveraging Electrovibration Haptic Feedback in Pen Interaction",
+   "authors": [
+    "Qinglong Wang",
+    "Xiangshi Ren",
+    "Sayan Sarcar",
+    "Xiaoying Sun"
+   ],
+   "track": "main",
+   "source": "https://iss2016.acm.org/program/awards/",
+   "evidence": "Best Paper Award EV-Pen: Leveraging Electrovibration Haptic Feedback in Pen Interaction Qinglong Wang, Xiangshi Ren, Sayan Sarcar, Xiaoying Sun"
+  },
+  {
+   "venue": "ISS",
+   "year": 2016,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "UD Co-Spaces: A Table-Centred Multi-Display Environment for Public Engagement in Urban Design Charrettes",
+   "authors": [
+    "Narges Mahyar",
+    "Kelly J Burke",
+    "Jialiang (Ernest) Xiang",
+    "Siyi (Cathy) Meng",
+    "Kellogg S Booth",
+    "Cynthia L Girling",
+    "Ronald W Kellett"
+   ],
+   "track": "main",
+   "source": "https://iss2016.acm.org/program/awards/",
+   "evidence": "Honorable Mention UD Co-Spaces: A Table-Centred Multi-Display Environment for Public Engagement in Urban Design Charrettes Narges Mahyar, Kelly J Burke, Jialiang (Ernest) Xiang, Siyi (Cathy) Meng, Kellogg S Booth, Cynthia L Girling, Ronald W Kellett"
+  },
+  {
+   "venue": "ISS",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "FireFlies2: Interactive Tangible Pixels to enable Distributed Cognition in Classroom Technologies",
+   "authors": [
+    "David Verweij",
+    "Saskia Bakker",
+    "Berry Eggen"
+   ],
+   "track": "main",
+   "source": "https://iss2017.acm.org/program/awards/",
+   "evidence": "Best Paper Award FireFlies2: Interactive Tangible Pixels to enable Distributed Cognition in Classroom Technologies David Verweij, Saskia Bakker, Berry Eggen"
+  },
+  {
+   "venue": "ISS",
+   "year": 2017,
+   "award": "category",
+   "awardLabel": "Best Application Paper Award",
+   "title": "MeetAlive: Room-Scale Omni-Directional Display System for Multi-User Content and Control Sharing",
+   "authors": [
+    "Andreas Rene Fender",
+    "Hrvoje Benko",
+    "Andy Wilson"
+   ],
+   "track": "main",
+   "source": "https://iss2017.acm.org/program/awards/",
+   "evidence": "Best Application Paper Award MeetAlive: Room-Scale Omni-Directional Display System for Multi-User Content and Control Sharing Andreas Rene Fender, Hrvoje Benko, Andy Wilson"
+  },
+  {
+   "venue": "ISS",
+   "year": 2018,
+   "award": "category",
+   "awardLabel": "Best Application Paper Award",
+   "title": "Design and Evaluation of Semi-Transparent Keyboards on a Touchscreen Tablet",
+   "authors": [
+    "Sunjun Kim",
+    "Geehyuk Lee"
+   ],
+   "track": "main",
+   "source": "https://iss.acm.org/2018/program/awards/",
+   "evidence": "Best Application Paper Award Design and Evaluation of Semi-Transparent Keyboards on a Touchscreen Tablet Sunjun Kim, Geehyuk Lee"
+  },
+  {
+   "venue": "ISS",
+   "year": 2018,
+   "award": "category",
+   "awardLabel": "Best Academic Paper Award",
+   "title": "FingerInput: Capturing Expressive Single-Hand Thumb-to-Finger Microgestures",
+   "authors": [
+    "Mohamed Soliman",
+    "Franziska Mueller",
+    "Lena Hegemann",
+    "Joan Sol Roo",
+    "Christian Theobalt",
+    "Jürgen Steimle"
+   ],
+   "track": "main",
+   "source": "https://iss.acm.org/2018/program/awards/",
+   "evidence": "Best Academic Paper Award FingerInput: Capturing Expressive Single-Hand Thumb-to-Finger Microgestures Mohamed Soliman, Franziska Mueller, Lena Hegemann, Joan Sol Roo, Christian Theobalt, Jürgen Steimle"
+  },
+  {
+   "venue": "ISS",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "Honourable Mentions",
+   "title": "A Small Virtual Keyboard is Better for Intermittent Text Entry on a Pen-Equipped Tablet",
+   "authors": [
+    "Jiseong Gu",
+    "Youngbo Aram Shim",
+    "Sunbum Kim",
+    "Geehyuk Lee"
+   ],
+   "track": "main",
+   "source": "https://iss.acm.org/2018/program/awards/",
+   "evidence": "Honourable Mentions LeviCursor: Dexterous Interaction with a Levitating Object Myroslav Bachynskyi, Viktorija Paneva, Jörg Müller A Small Virtual Keyboard is Better for Intermittent Text Entry on a Pen-Equipped Tablet Jiseong Gu, Youngbo Aram Shim, Sunbum Kim, Geehyuk Lee"
+  },
+  {
+   "venue": "ISS",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "Honourable Mentions",
+   "title": "EagleView: A Video Analysis Tool for Visualising and Querying Spatial Interactions of People and Devices",
+   "authors": [
+    "Frederik Brudy",
+    "Suppachai Suwanwatcharachat",
+    "Wenyu Zhang",
+    "Steven Houben",
+    "Nicolai Marquardt"
+   ],
+   "track": "main",
+   "source": "https://iss.acm.org/2018/program/awards/",
+   "evidence": "Honourable Mentions LeviCursor: Dexterous Interaction with a Levitating Object Myroslav Bachynskyi, Viktorija Paneva, Jörg Müller A Small Virtual Keyboard is Better for Intermittent Text Entry on a Pen-Equipped Tablet Jiseong Gu, Youngbo Aram Shim, Sunbum Kim, Geehyuk Lee Post-meeting Curation of Whiteboard Content Captured with Mobile Devices Danniel Varona-Marin, Jan A. Oberholzer, Edward Tse, Stacey D. Scott EagleView: A Video Analysis Tool for Visualising and Querying Spatial Interactions of People and Devices Frederik Brudy, Suppachai Suwanwatcharachat, Wenyu Zhang, Steven Houben, Nicolai Marquardt"
+  },
+  {
+   "venue": "ISS",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "Honourable Mentions",
+   "title": "LeviCursor: Dexterous Interaction with a Levitating Object",
+   "authors": [
+    "Myroslav Bachynskyi",
+    "Viktorija Paneva",
+    "Jörg Müller"
+   ],
+   "track": "main",
+   "source": "https://iss.acm.org/2018/program/awards/",
+   "evidence": "Honourable Mentions LeviCursor: Dexterous Interaction with a Levitating Object Myroslav Bachynskyi, Viktorija Paneva, Jörg Müller"
+  },
+  {
+   "venue": "ISS",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "Honourable Mentions",
+   "title": "Optimal-T9: An Optimized T9-like Keyboard for Small Touchscreen Devices",
+   "authors": [
+    "Ryan Qin",
+    "Suwen Zhu",
+    "Yu-Hao Lin",
+    "Yu-Jung Ko",
+    "Xiaojun Bi"
+   ],
+   "track": "main",
+   "source": "https://iss.acm.org/2018/program/awards/",
+   "evidence": "Honourable Mentions LeviCursor: Dexterous Interaction with a Levitating Object Myroslav Bachynskyi, Viktorija Paneva, Jörg Müller A Small Virtual Keyboard is Better for Intermittent Text Entry on a Pen-Equipped Tablet Jiseong Gu, Youngbo Aram Shim, Sunbum Kim, Geehyuk Lee Post-meeting Curation of Whiteboard Content Captured with Mobile Devices Danniel Varona-Marin, Jan A. Oberholzer, Edward Tse, Stacey D. Scott EagleView: A Video Analysis Tool for Visualising and Querying Spatial Interactions of People and Devices Frederik Brudy, Suppachai Suwanwatcharachat, Wenyu Zhang, Steven Houben, Nicolai Marquardt Optimal-T9: An Optimized T9-like Keyboard for Small Touchscreen Devices Ryan Qin, Suwen Zhu, Yu-Hao Lin, Yu-Jung Ko, Xiaojun Bi"
+  },
+  {
+   "venue": "ISS",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "Honourable Mentions",
+   "title": "Post-meeting Curation of Whiteboard Content Captured with Mobile Devices",
+   "authors": [
+    "Danniel Varona-Marin",
+    "Jan A. Oberholzer",
+    "Edward Tse",
+    "Stacey D. Scott"
+   ],
+   "track": "main",
+   "source": "https://iss.acm.org/2018/program/awards/",
+   "evidence": "Honourable Mentions LeviCursor: Dexterous Interaction with a Levitating Object Myroslav Bachynskyi, Viktorija Paneva, Jörg Müller A Small Virtual Keyboard is Better for Intermittent Text Entry on a Pen-Equipped Tablet Jiseong Gu, Youngbo Aram Shim, Sunbum Kim, Geehyuk Lee Post-meeting Curation of Whiteboard Content Captured with Mobile Devices Danniel Varona-Marin, Jan A. Oberholzer, Edward Tse, Stacey D. Scott"
+  },
+  {
+   "venue": "ISS",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "ACM Europe Council Best Paper Award",
+   "title": "Collaborative Tabletops for Blind People: The Effect of Auditory Design on Workspace Awareness",
+   "authors": [
+    "Daniel Mendes",
+    "Sofia Reis",
+    "João Guerreiro",
+    "Hugo Nicolau"
+   ],
+   "track": "main",
+   "source": "https://iss.acm.org/2020/program/awards/",
+   "evidence": "ACM Europe Council Best Paper Award Collaborative Tabletops for Blind People: The Effect of Auditory Design on Workspace Awareness Daniel Mendes, Sofia Reis, João Guerreiro and Hugo Nicolau"
+  },
+  {
+   "venue": "ISS",
+   "year": 2020,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention Awards",
+   "title": "Combating the Spread of Coronavirus by Modeling Fomites with Depth Cameras",
+   "authors": [
+    "Andrew D Wilson"
+   ],
+   "track": "main",
+   "source": "https://iss.acm.org/2020/program/awards/",
+   "evidence": "Best Paper Honorable Mention Awards Exploring User Defined Gestures for Ear-Based Interactions Yu-Chun Chen, Chia-Ying Liao, Shuo-wen Hsu and Da-Yuan Huang The human ear is highly sensitive and accessible, making it especially suitable for being used as an interface for interacting with smart earpieces or augmented glasses. However, previous works on ear-based input mainly address gesture sensing technology and researcher-designed gestures. This paper aims to bring more understandings of gesture design. Thus, for a user elicitation study, we recruited 28 participants, each of whom designed gestures for 31 smart device-related tasks. This resulted in a total of 868 gestures generated. Upon the basis of these gestures, we compiled a taxonomy and concluded the considerations underlying the participants’ designs that also offer insights into their design rationales and preferences. Thereafter, based on these study results, we propose a set of user-defined gestures and share interesting findings. We hope this work can shed some light on not only sensing technologies of ear-based input, but also the interface design of future wearable interfaces. Towards Rapid Prototyping of Foldable Graphical User Interfaces with Flecto Iyad Khaddam, Jean Vanderdonckt, Salah Dowaji and Donatien Grolaux * Work demonstrated during the conference Whilst new patents and announcements advertise the technical availability of foldable displays, which are capable to be folded to some extent, there is still a lack of fundamental and applied understanding of how to model, to design, and to prototype graphical user interfaces for these devices before actually implementing them. Without waiting for their off-the-shelf availability and without being tied to any physical foldable mechanism,Flecto defines a model, an associated notation, and a supporting software for prototyping graphical user interfaces running on foldable displays, such as foldable smartphone or assemblies of foldable surfaces. For this purpose,the Yoshizawa-Randlett diagramming system, used to describe the folds of origami models, is extended to characterize a foldable display and define possible interactive actions based on its folding operations. A guiding method for rapidly prototyping foldable user interfaces is devised and supported by Flecto, a design environment where foldable user interfaces are simulated in virtual reality instead of in physical reality. We report on a case study to demonstrate Flecto in action and we gather the feedback from users on Flecto, using Microsoft Product Reaction Cards. Combating the Spread of Coronavirus by Modeling Fomites with Depth Cameras Andrew D Wilson"
+  },
+  {
+   "venue": "ISS",
+   "year": 2020,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention Awards",
+   "title": "Exploring User Defined Gestures for Ear-Based Interactions",
+   "authors": [
+    "Yu-Chun Chen",
+    "Chia-Ying Liao",
+    "Shuo-wen Hsu",
+    "Da-Yuan Huang"
+   ],
+   "track": "main",
+   "source": "https://iss.acm.org/2020/program/awards/",
+   "evidence": "Best Paper Honorable Mention Awards Exploring User Defined Gestures for Ear-Based Interactions Yu-Chun Chen, Chia-Ying Liao, Shuo-wen Hsu and Da-Yuan Huang"
+  },
+  {
+   "venue": "ISS",
+   "year": 2020,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention Awards",
+   "title": "Towards Rapid Prototyping of Foldable Graphical User Interfaces with Flecto",
+   "authors": [
+    "Iyad Khaddam",
+    "Jean Vanderdonckt",
+    "Salah Dowaji",
+    "Donatien Grolaux"
+   ],
+   "track": "main",
+   "source": "https://iss.acm.org/2020/program/awards/",
+   "evidence": "Best Paper Honorable Mention Awards Exploring User Defined Gestures for Ear-Based Interactions Yu-Chun Chen, Chia-Ying Liao, Shuo-wen Hsu and Da-Yuan Huang The human ear is highly sensitive and accessible, making it especially suitable for being used as an interface for interacting with smart earpieces or augmented glasses. However, previous works on ear-based input mainly address gesture sensing technology and researcher-designed gestures. This paper aims to bring more understandings of gesture design. Thus, for a user elicitation study, we recruited 28 participants, each of whom designed gestures for 31 smart device-related tasks. This resulted in a total of 868 gestures generated. Upon the basis of these gestures, we compiled a taxonomy and concluded the considerations underlying the participants’ designs that also offer insights into their design rationales and preferences. Thereafter, based on these study results, we propose a set of user-defined gestures and share interesting findings. We hope this work can shed some light on not only sensing technologies of ear-based input, but also the interface design of future wearable interfaces. Towards Rapid Prototyping of Foldable Graphical User Interfaces with Flecto Iyad Khaddam, Jean Vanderdonckt, Salah Dowaji and Donatien Grolaux"
+  },
+  {
+   "venue": "ISS",
+   "year": 2020,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention Awards",
+   "title": "VibHand: On-Hand Vibrotactile Interface Enhancing Non-Visual Exploration of Digital Graphics",
+   "authors": [
+    "Kaixing ZHAO",
+    "Marcos Serrano",
+    "Bernard Oriola",
+    "Christophe Jouffrais"
+   ],
+   "track": "main",
+   "source": "https://iss.acm.org/2020/program/awards/",
+   "evidence": "Best Paper Honorable Mention Awards Exploring User Defined Gestures for Ear-Based Interactions Yu-Chun Chen, Chia-Ying Liao, Shuo-wen Hsu and Da-Yuan Huang The human ear is highly sensitive and accessible, making it especially suitable for being used as an interface for interacting with smart earpieces or augmented glasses. However, previous works on ear-based input mainly address gesture sensing technology and researcher-designed gestures. This paper aims to bring more understandings of gesture design. Thus, for a user elicitation study, we recruited 28 participants, each of whom designed gestures for 31 smart device-related tasks. This resulted in a total of 868 gestures generated. Upon the basis of these gestures, we compiled a taxonomy and concluded the considerations underlying the participants’ designs that also offer insights into their design rationales and preferences. Thereafter, based on these study results, we propose a set of user-defined gestures and share interesting findings. We hope this work can shed some light on not only sensing technologies of ear-based input, but also the interface design of future wearable interfaces. Towards Rapid Prototyping of Foldable Graphical User Interfaces with Flecto Iyad Khaddam, Jean Vanderdonckt, Salah Dowaji and Donatien Grolaux * Work demonstrated during the conference Whilst new patents and announcements advertise the technical availability of foldable displays, which are capable to be folded to some extent, there is still a lack of fundamental and applied understanding of how to model, to design, and to prototype graphical user interfaces for these devices before actually implementing them. Without waiting for their off-the-shelf availability and without being tied to any physical foldable mechanism,Flecto defines a model, an associated notation, and a supporting software for prototyping graphical user interfaces running on foldable displays, such as foldable smartphone or assemblies of foldable surfaces. For this purpose,the Yoshizawa-Randlett diagramming system, used to describe the folds of origami models, is extended to characterize a foldable display and define possible interactive actions based on its folding operations. A guiding method for rapidly prototyping foldable user interfaces is devised and supported by Flecto, a design environment where foldable user interfaces are simulated in virtual reality instead of in physical reality. We report on a case study to demonstrate Flecto in action and we gather the feedback from users on Flecto, using Microsoft Product Reaction Cards. Combating the Spread of Coronavirus by Modeling Fomites with Depth Cameras Andrew D Wilson * Work demonstrated during the conference Coronavirus is thought to spread through close contact from person to person. While it is believed that the primary means of spread is by inhaling respiratory droplets or aersols, it may also be spread by touching inanimate objects such as doorknobs and handrails that have the virus on it (``fomites''). The Centers for Disease Control and Prevention (CDC) therefore recommends individuals maintain ``social distance'' of more than six feet between one another. It further notes that an individual may be infected by touching a fomite and then touching their own mouth, nose or possibly their eyes. We propose the use of computer vision techniques to combat the spread of coronavirus by sounding an audible alarm when an individual touches their own face, or when multiple individuals come within six feet of one another or shake hands. We propose using depth cameras to track where people touch parts of their physical environment throughout the day, and a simple model of disease transmission among potential fomites. Projection mapping techniques can be used to display likely fomites in realtime, while headworn augmented reality systems can be used by custodial staff to perform more effective cleaning of surfaces. Such techniques may find application in particularly vulnerable settings such as schools, long-term care facilities and physician offices. VibHand: On-Hand Vibrotactile Interface Enhancing Non-Visual Exploration of Digital Graphics Kaixing ZHAO, Marcos Serrano, Bernard Oriola and Christophe Jouffrais"
+  },
+  {
+   "venue": "ISS",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Inclusive Adaptation of Existing Board Games for Gamers with and without Visual Impairments using a Spatial Augmented Reality Framework for Touch Detection and Audio Feedback",
+   "authors": [
+    "Lauren Thevin",
+    "Nicolas Rodier",
+    "Bernard Oriola",
+    "Martin Hachet",
+    "Christophe Jouffrais",
+    "Anke M. Brock"
+   ],
+   "track": "main",
+   "source": "https://iss.acm.org/2021/program/awards/",
+   "evidence": "Best Paper Award Towards Balancing VR Immersion and Bystander Awareness Yoshiki Kudo, Anthony Tang, Kazuyuki Fujita, Isamu Endo, Kazuki Takashima, Yoshifumi Kitamura Head-mounted displays (HMDs) increase immersion into virtual worlds. The problem is that this limits headset users’ awareness of bystanders: headset users cannot attend to bystanders’ presence and activities. We call this HMD boundary. We explore how to make the HMD boundary permeable by comparing different ways of providing informal awareness cues to the headset user about bystanders. We adapted and implemented three visualization techniques (Avatar View, Radar and Presence++) that share bystanders’ location and orientation with headset users. We conducted a hybrid user and simulation study with three different types of VR content (high, medium, low interactively) with twenty participants to compare how these visualization techniques allow people to maintain an awareness of bystanders, and how they affect immersion (compared to a baseline condition). Our study reveals that a see-through avatar representation of bystanders was effective, but led to slightly reduced immersion in the VR content. Based on our findings, we discuss how future awareness visualization techniques can be designed to mitigate the reduction of immersion for the headset user. Inclusive Adaptation of Existing Board Games for Gamers with and without Visual Impairments using a Spatial Augmented Reality Framework for Touch Detection and Audio Feedback Lauren Thevin, Nicolas Rodier, Bernard Oriola, Martin Hachet, Christophe Jouffrais, Anke M. Brock"
+  },
+  {
+   "venue": "ISS",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Towards Balancing VR Immersion and Bystander Awareness",
+   "authors": [
+    "Yoshiki Kudo",
+    "Anthony Tang",
+    "Kazuyuki Fujita",
+    "Isamu Endo",
+    "Kazuki Takashima",
+    "Yoshifumi Kitamura"
+   ],
+   "track": "main",
+   "source": "https://iss.acm.org/2021/program/awards/",
+   "evidence": "Best Paper Award Towards Balancing VR Immersion and Bystander Awareness Yoshiki Kudo, Anthony Tang, Kazuyuki Fujita, Isamu Endo, Kazuki Takashima, Yoshifumi Kitamura"
+  },
+  {
+   "venue": "ISS",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention Awards",
+   "title": "Stepper, Swipe, Tilt, Force: Comparative Evaluation of Four Number Pickers for Smartwatches",
+   "authors": [
+    "Yuan Ren",
+    "Ahmed Sabbir Arif"
+   ],
+   "track": "main",
+   "source": "https://iss.acm.org/2021/program/awards/",
+   "evidence": "Best Paper Honorable Mention Awards Typealike Near-Keyboard Hand Postures for Expanded Laptop Interaction Nalin Chhibber, Hemant Bhaskar, Fabrice Matulic, Daniel Vogel We propose a style of hand postures to trigger commands on a laptop. The key idea is to perform hand-postures while keeping the hands on, beside, or below the keyboard, to align with natural laptop usage. 36 hand-posture variations are explored considering three resting locations, left or right hand, open or closed hand, and three wrist rotation angles. A 30-participant formative study measures posture preferences and generates a dataset of nearly 350K images under different lighting conditions and backgrounds. A deep learning recognizer achieves over 97% accuracy when classifying all 36 postures with 2 additional non-posture classes for typing and non-typing. A second experiment with 20 participants validates the recognizer under real-time usage and compares posture invocation time with keyboard shortcuts. Results find low error rates and fast formation time, indicating postures are close to current typing and pointing postures. Finally, practical use case demonstrations are presented, and further extensions discussed. The MADE-Axis: a Modular Actuated Device to Embody the Axis of a Data Dimension Jim Smiley, Benjamin Lee, Siddhant Tandon, Maxime Cordeil, Lonni Besançon, Jarrod Knibbe, Bernhard Jenny, Tim Dwyer Tangible controls---especially sliders and rotary knobs---have been explored in a wide range of interactive applications for desktop and immersive environments. Studies have shown that they support greater precision and provide proprioceptive benefits, such as support for eyes-free interaction. However, such controls tend to be expressly designed for specific applications. We draw inspiration from a bespoke controller for immersive data visualisation, but decompose this design into a simple, wireless, composable unit featuring two actuated sliders and a rotary encoder. Through these controller units, we explore the interaction opportunities around actuated sliders; supporting precise selection, infinite scrolling, adaptive data representations, and rich haptic feedback; all within a mode-less interaction space. We demonstrate the controllers' use for simple, ad hoc desktop interaction, before moving on to more complex, multi-dimensional interactions in VR and AR. We show that the flexibility and composability of these actuated controllers provides an emergent design space for interaction. Stepper, Swipe, Tilt, Force: Comparative Evaluation of Four Number Pickers for Smartwatches Yuan Ren, Ahmed Sabbir Arif"
+  },
+  {
+   "venue": "ISS",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention Awards",
+   "title": "The MADE-Axis: a Modular Actuated Device to Embody the Axis of a Data Dimension",
+   "authors": [
+    "Jim Smiley",
+    "Benjamin Lee",
+    "Siddhant Tandon",
+    "Maxime Cordeil",
+    "Lonni Besançon",
+    "Jarrod Knibbe",
+    "Bernhard Jenny",
+    "Tim Dwyer"
+   ],
+   "track": "main",
+   "source": "https://iss.acm.org/2021/program/awards/",
+   "evidence": "Best Paper Honorable Mention Awards Typealike Near-Keyboard Hand Postures for Expanded Laptop Interaction Nalin Chhibber, Hemant Bhaskar, Fabrice Matulic, Daniel Vogel We propose a style of hand postures to trigger commands on a laptop. The key idea is to perform hand-postures while keeping the hands on, beside, or below the keyboard, to align with natural laptop usage. 36 hand-posture variations are explored considering three resting locations, left or right hand, open or closed hand, and three wrist rotation angles. A 30-participant formative study measures posture preferences and generates a dataset of nearly 350K images under different lighting conditions and backgrounds. A deep learning recognizer achieves over 97% accuracy when classifying all 36 postures with 2 additional non-posture classes for typing and non-typing. A second experiment with 20 participants validates the recognizer under real-time usage and compares posture invocation time with keyboard shortcuts. Results find low error rates and fast formation time, indicating postures are close to current typing and pointing postures. Finally, practical use case demonstrations are presented, and further extensions discussed. The MADE-Axis: a Modular Actuated Device to Embody the Axis of a Data Dimension Jim Smiley, Benjamin Lee, Siddhant Tandon, Maxime Cordeil, Lonni Besançon, Jarrod Knibbe, Bernhard Jenny, Tim Dwyer"
+  },
+  {
+   "venue": "ISS",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention Awards",
+   "title": "Typealike Near-Keyboard Hand Postures for Expanded Laptop Interaction",
+   "authors": [
+    "Nalin Chhibber",
+    "Hemant Bhaskar",
+    "Fabrice Matulic",
+    "Daniel Vogel"
+   ],
+   "track": "main",
+   "source": "https://iss.acm.org/2021/program/awards/",
+   "evidence": "Best Paper Honorable Mention Awards Typealike Near-Keyboard Hand Postures for Expanded Laptop Interaction Nalin Chhibber, Hemant Bhaskar, Fabrice Matulic, Daniel Vogel"
   },
   {
    "venue": "ISSRE",
@@ -131850,6 +133793,175 @@
    "evidence": "Pervasive 2012 10-year Impact Award: Building Applications for Ubiquitous Computing Environments — Christopher K. Hess, Manuel Roman, Roy H. Campbell"
   },
   {
+   "venue": "PG",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Single-shot High Dynamic Range Imaging Using Coded Electronic Shutter",
+   "authors": [
+    "Hojin Cho",
+    "Seon Joo Kim",
+    "Seungyong Lee"
+   ],
+   "track": "main",
+   "source": "https://graphics.ewha.ac.kr/PG14/",
+   "evidence": "Paper Awards Best Paper Award Single-shot High Dynamic Range Imaging Using Coded Electronic Shutter by Hojin Cho, Seon Joo Kim, Seungyong Lee"
+  },
+  {
+   "venue": "PG",
+   "year": 2014,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Interactive Image-Guided Modeling of Extruded Shapes",
+   "authors": [
+    "Yan-Pei Cao",
+    "Tao Ju",
+    "Zhao Fu",
+    "Shi-Min Hu"
+   ],
+   "track": "main",
+   "source": "https://graphics.ewha.ac.kr/PG14/",
+   "evidence": "Best Student Paper Award Interactive Image-Guided Modeling of Extruded Shapes by Yan-Pei Cao, Tao Ju, Zhao Fu, Shi-Min Hu"
+  },
+  {
+   "venue": "PG",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Dispersion-based Color Projection using Masked Prisms",
+   "authors": [
+    "Rafael Hostettler",
+    "Ralf Habel",
+    "Markus Gross",
+    "Wojciech Jarosz"
+   ],
+   "track": "main",
+   "source": "https://cg.cs.tsinghua.edu.cn/pg2015/",
+   "evidence": "Paper Awards Best Paper Award Dispersion-based Color Projection using Masked Prisms Rafael Hostettler, Ralf Habel, Markus Gross, Wojciech Jarosz"
+  },
+  {
+   "venue": "PG",
+   "year": 2015,
+   "award": "student",
+   "awardLabel": "Best Student Paper Awards",
+   "title": "Interactive Rigging with Intuitive Tools",
+   "authors": [
+    "Seungbae Bang",
+    "Byungkuk Choi",
+    "Roger Blanco i Ribera",
+    "Meekyoung Kim",
+    "Sung-Hee Lee",
+    "Junyong Noh"
+   ],
+   "track": "main",
+   "source": "https://cg.cs.tsinghua.edu.cn/pg2015/",
+   "evidence": "Best Student Paper Awards Interactive Rigging with Intuitive Tools Seungbae Bang, Byungkuk Choi, Roger Blanco i Ribera, Meekyoung Kim, Sung-Hee Lee, Junyong Noh"
+  },
+  {
+   "venue": "PG",
+   "year": 2015,
+   "award": "student",
+   "awardLabel": "Best Student Paper Awards",
+   "title": "Tone- and Feature-Aware Circular Scribble Art",
+   "authors": [
+    "Chun-Chia Chiu",
+    "Yi-Hsiang Lo",
+    "Ruen-Rone Lee",
+    "Hung-Kuo Chu"
+   ],
+   "track": "main",
+   "source": "https://cg.cs.tsinghua.edu.cn/pg2015/",
+   "evidence": "Best Student Paper Awards Interactive Rigging with Intuitive Tools Seungbae Bang, Byungkuk Choi, Roger Blanco i Ribera, Meekyoung Kim, Sung-Hee Lee, Junyong Noh Tone- and Feature-Aware Circular Scribble Art Chun-Chia Chiu, Yi-Hsiang Lo, Ruen-Rone Lee, Hung-Kuo Chu"
+  },
+  {
+   "venue": "PG",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Classifier guided supersampling for real-time rendering",
+   "authors": [
+    "Yu-Xiao Guo",
+    "Guojun Chen",
+    "Yue Dong",
+    "Tong Xin"
+   ],
+   "track": "main",
+   "source": "https://pg2022.org/",
+   "evidence": "PAPER AWARD Best Paper Award: Classifier guided supersampling for real-time rendering Yu-Xiao Guo, Guojun Chen, Yue Dong, Tong Xin"
+  },
+  {
+   "venue": "PG",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention",
+   "title": "User-Controllable Latent Transformer for StyleGAN Image Layout Editing",
+   "authors": [
+    "Yuki Endo"
+   ],
+   "track": "main",
+   "source": "https://pg2022.org/",
+   "evidence": "Best Paper Honorable Mention: User-Controllable Latent Transformer for StyleGAN Image Layout Editing Yuki Endo"
+  },
+  {
+   "venue": "PG",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Conference Track Paper",
+   "title": "By-Example Synthesis of Vector Textures",
+   "authors": [
+    "Christopher Palazzolo",
+    "Oliver van Kaick",
+    "David Mould"
+   ],
+   "track": "main",
+   "source": "https://pg2025.nccu.edu.tw/bestpaper.html",
+   "evidence": "Best Conference Track Paper By-Example Synthesis of Vector Textures Christopher Palazzolo, Oliver van Kaick, and David Mould"
+  },
+  {
+   "venue": "PG",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Projective Displacement Mapping for Ray Traced Editable Surfaces",
+   "authors": [
+    "Rama Hoetzlein"
+   ],
+   "track": "main",
+   "source": "https://pg2025.nccu.edu.tw/bestpaper.html",
+   "evidence": "Best Paper Projective Displacement Mapping for Ray Traced Editable Surfaces Rama Hoetzlein"
+  },
+  {
+   "venue": "PG",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper – Honorable Mention",
+   "title": "Procedural Multiscale Geometry Modeling using Implicit Functions",
+   "authors": [
+    "Bojja Venu",
+    "Adam Bosak",
+    "Juan Raúl Padrón-Griffe"
+   ],
+   "track": "main",
+   "source": "https://pg2025.nccu.edu.tw/bestpaper.html",
+   "evidence": "Best Paper – Honorable Mention Procedural Multiscale Geometry Modeling using Implicit Functions Bojja Venu, Adam Bosak, and Juan Raúl Padrón-Griffe"
+  },
+  {
+   "venue": "PG",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "GNF: Gaussian Neural Fields for Multidimensional Signal Representation and Reconstruction",
+   "authors": [
+    "Abelaziz Bouzidi",
+    "Hamid Laga",
+    "Hazem Wannous",
+    "Ferdous Sohel"
+   ],
+   "track": "main",
+   "source": "https://pg2025.nccu.edu.tw/bestpaper.html",
+   "evidence": "Best Student Paper GNF: Gaussian Neural Fields for Multidimensional Signal Representation and Reconstruction Abelaziz Bouzidi, Hamid Laga, Hazem Wannous, and Ferdous Sohel"
+  },
+  {
    "venue": "PIMRC",
    "year": 2025,
    "award": "best",
@@ -136162,6 +138274,70 @@
    "evidence": "PPoPP 2023 Best Paper Award: Provably Fast and Space-Efficient Parallel Biconnectivity — Xiaojun Dong, Letong Wang, Yan Gu, Yihan Sun"
   },
   {
+   "venue": "RAID",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best paper",
+   "title": "Detection of Electromagnetic Signal Injection Attacks on Actuator Systems",
+   "authors": [
+    "Youqian Zhang",
+    "Kasper Rasmussen"
+   ],
+   "track": "main",
+   "source": "https://raid2022.cs.ucy.ac.cy/",
+   "evidence": "Best paper Detection of Electromagnetic Signal Injection Attacks on Actuator Systems Youqian Zhang, University of Oxford Kasper Rasmussen, University of Oxford"
+  },
+  {
+   "venue": "RAID",
+   "year": 2022,
+   "award": "category",
+   "awardLabel": "Best practical paper",
+   "title": "OAuch: Exploring the Weaknesses of the OAuth 2.0 Ecosystem",
+   "authors": [
+    "Pieter Philippaerts",
+    "Davy Preuveneers",
+    "Wouter Joosen"
+   ],
+   "track": "main",
+   "source": "https://raid2022.cs.ucy.ac.cy/",
+   "evidence": "Best practical paper OAuch: Exploring the Weaknesses of the OAuth 2.0 Ecosystem Pieter Philippaerts, imec-DistriNet, KU Leuven Davy Preuveneers, imec-DistriNet, KU Leuven Wouter Joosen, imec-DistriNet, KU Leuven"
+  },
+  {
+   "venue": "RAID",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Careless Whisper: Exploiting Silent Delivery Receipts to Monitor Users on Mobile Instant Messengers",
+   "authors": [
+    "Gabriel Karl Gegenhuber",
+    "Maximilian Günther",
+    "Markus Maier",
+    "Aljosha Judmayer",
+    "Florian Holzbauer",
+    "Philipp Frenzel",
+    "Johanna Ullrich"
+   ],
+   "track": "main",
+   "source": "https://raid2025.github.io/awards.html",
+   "evidence": "Best Paper Award: Careless Whisper: Exploiting Silent Delivery Receipts to Monitor Users on Mobile Instant Messengers Gabriel Karl Gegenhuber, University of Vienna; Maximilian Günther, University of Vienna; Markus Maier, University of Vienna; Aljosha Judmayer, University of Vienna; Florian Holzbauer, University of Vienna; Philipp Frenzel, SBA Research; Johanna Ullrich, University of Vienna"
+  },
+  {
+   "venue": "RAID",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Practical Paper Award",
+   "title": "SH3ARS: Privilege Reduction for ARMv8.0-A Secure Monitors",
+   "authors": [
+    "Jonas Röckl",
+    "Julian Funk",
+    "Matti Schulze",
+    "Tilo Müller"
+   ],
+   "track": "main",
+   "source": "https://raid2025.github.io/awards.html",
+   "evidence": "Distinguished Practical Paper Award: SH3ARS: Privilege Reduction for ARMv8.0-A Secure Monitors Jonas Röckl, Friedrich-Alexander-Universität Erlangen-Nürnberg; Julian Funk, Friedrich-Alexander-Universität Erlangen-Nürnberg; Matti Schulze, Friedrich-Alexander-Universität Erlangen-Nürnberg; Tilo Müller, Hof University of Applied Sciences"
+  },
+  {
    "venue": "RE",
    "year": 2026,
    "award": "best",
@@ -137662,6 +139838,739 @@
    "track": "main",
    "source": "https://roboticsconference.org/2026/program/awards/",
    "evidence": "RSS 2026 Award Winners, Outstanding Systems Paper in Memory of Seth Teller Award: NeuralActuator: Neural Actuation Modeling for Robot Dynamics and External Force Perception — Zhiyang Dou, John U. Onyemelukwe, Hangxing Zhang, Heng Zhang, Minghao Guo, Yunsheng Tian, Michal Piotr Lipiec, Joshua Jacob, Chao Liu, Peter Yichen Chen, Yuri Ivanov, Wojciech Matusik (Winner: Outstanding Systems Paper in Memory of Seth Teller Award)"
+  },
+  {
+   "venue": "RTSS",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Quality Tradeoffs In Object Tracking With Duty-Cycled Sensor Networks",
+   "authors": [
+    "Sadaf Zahedi",
+    "Mani Srivastava",
+    "Chatschik Bisdikian",
+    "Lance Kaplan"
+   ],
+   "track": "main",
+   "source": "https://cmte.ieee.org/tcrts/awards/best-paper-awards/",
+   "evidence": "RTSS 2010 Best Paper Award: Sadaf Zahedi, Mani Srivastava, Chatschik Bisdikian and Lance Kaplan ( Quality Tradeoffs In Object Tracking With Duty-Cycled Sensor Networks"
+  },
+  {
+   "venue": "RTSS",
+   "year": 2010,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Optimality Results For Multiprocessor Real-Time Locking",
+   "authors": [
+    "Bjorn B. Brandenburg",
+    "James H. Anderson"
+   ],
+   "track": "main",
+   "source": "https://cmte.ieee.org/tcrts/awards/best-paper-awards/",
+   "evidence": "RTSS 2010 Best Paper Award: Sadaf Zahedi, Mani Srivastava, Chatschik Bisdikian and Lance Kaplan ( Quality Tradeoffs In Object Tracking With Duty-Cycled Sensor Networks ) Best Student Paper Award: Bjorn B. Brandenburg, James H. Anderson ( Optimality Results For Multiprocessor Real-Time Locking"
+  },
+  {
+   "venue": "RTSS",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "RUN: Optimal Multiprocessor Real-Time Scheduling via Reduction to Uniprocessor",
+   "authors": [
+    "Paul Regnier",
+    "George Lima",
+    "Ernesto Massa",
+    "Greg Levin",
+    "Scott Brandt"
+   ],
+   "track": "main",
+   "source": "https://cmte.ieee.org/tcrts/awards/best-paper-awards/",
+   "evidence": "RTSS 2011 Best Paper Award: Paul Regnier, George Lima, Ernesto Massa, Greg Levin and Scott Brandt ( RUN: Optimal Multiprocessor Real-Time Scheduling via Reduction to Uniprocessor"
+  },
+  {
+   "venue": "RTSS",
+   "year": 2011,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Multi-core Real-Time Scheduling for Generalized Parallel Task Models",
+   "authors": [
+    "Abusayyed Saifullah",
+    "Kunal Agrawal",
+    "Chenyang Lu",
+    "Christopher Gill"
+   ],
+   "track": "main",
+   "source": "https://cmte.ieee.org/tcrts/awards/best-paper-awards/",
+   "evidence": "RTSS 2011 Best Paper Award: Paul Regnier, George Lima, Ernesto Massa, Greg Levin and Scott Brandt ( RUN: Optimal Multiprocessor Real-Time Scheduling via Reduction to Uniprocessor ) Best Student Paper Award: Abusayyed Saifullah, Kunal Agrawal, Chenyang Lu and Christopher Gill ( Multi-core Real-Time Scheduling for Generalized Parallel Task Models"
+  },
+  {
+   "venue": "RTSS",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Extending Task-Level to Job-Level Fixed Priority Assignment and Schedulability Analysis using Pseudo-Deadlines",
+   "authors": [
+    "Hoon Sung Chwa",
+    "Hyoungbu Back",
+    "Sanjian Chen",
+    "Jinkyu Lee",
+    "Arvind Easwaran",
+    "Insik Shin",
+    "Insup Lee"
+   ],
+   "track": "main",
+   "source": "https://cmte.ieee.org/tcrts/awards/best-paper-awards/",
+   "evidence": "RTSS 2012 Best Paper Award: Hoon Sung Chwa, Hyoungbu Back, Sanjian Chen, Jinkyu Lee, Arvind Easwaran, Insik Shin and Insup Lee ( Extending Task-Level to Job-Level Fixed Priority Assignment and Schedulability Analysis using Pseudo-Deadlines"
+  },
+  {
+   "venue": "RTSS",
+   "year": 2012,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Efficient Admission Control for Enforcing Arbitrary Real-Time Demand-Curve Interfaces",
+   "authors": [
+    "Farhana Dewan",
+    "Nathan Fisher"
+   ],
+   "track": "main",
+   "source": "https://cmte.ieee.org/tcrts/awards/best-paper-awards/",
+   "evidence": "RTSS 2012 Best Paper Award: Hoon Sung Chwa, Hyoungbu Back, Sanjian Chen, Jinkyu Lee, Arvind Easwaran, Insik Shin and Insup Lee ( Extending Task-Level to Job-Level Fixed Priority Assignment and Schedulability Analysis using Pseudo-Deadlines ) Best Student Paper Award: Farhana Dewan and Nathan Fisher ( Efficient Admission Control for Enforcing Arbitrary Real-Time Demand-Curve Interfaces"
+  },
+  {
+   "venue": "RTSS",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "RT-WiFi: Real-Time High-Speed Communication Protocol for Wireless Cyber-Physical Control Applications",
+   "authors": [
+    "Yi-Hung Wei",
+    "Quan Leng",
+    "Song Han",
+    "Aloysius K. Mok",
+    "Wenlong Zhang",
+    "Masayoshi Tomizuka"
+   ],
+   "track": "main",
+   "source": "https://cmte.ieee.org/tcrts/awards/best-paper-awards/",
+   "evidence": "RTSS 2013 Best Paper Award: Yi-Hung Wei, Quan Leng, Song Han, Aloysius K. Mok, Wenlong Zhang and Masayoshi Tomizuka ( RT-WiFi: Real-Time High-Speed Communication Protocol for Wireless Cyber-Physical Control Applications"
+  },
+  {
+   "venue": "RTSS",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "CapNet: a Real-Time Wireless Management Network for Data Center Power Capping",
+   "authors": [
+    "A. Saifullah",
+    "S. Sankar",
+    "J. Liu",
+    "C. Lu",
+    "R. Chandra",
+    "B. Priyantha"
+   ],
+   "track": "main",
+   "source": "https://cmte.ieee.org/tcrts/awards/best-paper-awards/",
+   "evidence": "RTSS 2014 Best Paper Award: A. Saifullah, S. Sankar, J. Liu, C. Lu, R. Chandra and B. Priyantha ( CapNet: a Real-Time Wireless Management Network for Data Center Power Capping"
+  },
+  {
+   "venue": "RTSS",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Uniprocessor Feasibility of Sporadic Tasks Remains coNP-complete Under Bounded Utilization",
+   "authors": [
+    "Pontus Ekberg",
+    "Wang Yi"
+   ],
+   "track": "main",
+   "source": "https://cmte.ieee.org/tcrts/awards/best-paper-awards/",
+   "evidence": "RTSS 2015 Best Paper Award: Pontus Ekberg and Wang Yi ( Uniprocessor Feasibility of Sporadic Tasks Remains coNP-complete Under Bounded Utilization"
+  },
+  {
+   "venue": "RTSS",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Global Scheduling Not Required: Simple, Near-Optimal Multiprocessor Real-Time Scheduling with Semi-Partitioned Reservations",
+   "authors": [
+    "Björn Brandenburg",
+    "Mahircan Gül"
+   ],
+   "track": "main",
+   "source": "https://cmte.ieee.org/tcrts/awards/best-paper-awards/",
+   "evidence": "RTSS 2016 Best Paper Award: Björn Brandenburg and Mahircan Gül ( Global Scheduling Not Required: Simple, Near-Optimal Multiprocessor Real-Time Scheduling with Semi-Partitioned Reservations"
+  },
+  {
+   "venue": "RTSS",
+   "year": 2016,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Exploring Opportunistic Execution for Integrating Security into Legacy Hard Real-Time Systems",
+   "authors": [
+    "Monowar Hasan",
+    "Sibin Mohan",
+    "Rakesh Bobba",
+    "Rodolfo Pellizzoni"
+   ],
+   "track": "main",
+   "source": "https://cmte.ieee.org/tcrts/awards/best-paper-awards/",
+   "evidence": "RTSS 2016 Best Paper Award: Björn Brandenburg and Mahircan Gül ( Global Scheduling Not Required: Simple, Near-Optimal Multiprocessor Real-Time Scheduling with Semi-Partitioned Reservations ) Best Student Paper Award: Monowar Hasan, Sibin Mohan, Rakesh Bobba and Rodolfo Pellizzoni ( Exploring Opportunistic Execution for Integrating Security into Legacy Hard Real-Time Systems"
+  },
+  {
+   "venue": "RTSS",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Fixed-Priority Schedulability of Sporadic Tasks on Uniprocessors is NP-hard",
+   "authors": [
+    "Pontus Ekberg",
+    "Wang Yi"
+   ],
+   "track": "main",
+   "source": "https://2017.rtss.org/",
+   "evidence": "Best Paper Award : Pontus Ekberg and Wang Yi (Fixed-Priority Schedulability of Sporadic Tasks on Uniprocessors is NP-hard)"
+  },
+  {
+   "venue": "RTSS",
+   "year": 2017,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "The Virtual Deadline based Optimization Algorithm for Priority Assignment in Fixed-Priority Scheduling",
+   "authors": [
+    "Yecheng Zhao",
+    "Haibo Zeng"
+   ],
+   "track": "main",
+   "source": "https://2017.rtss.org/",
+   "evidence": "Best Student Paper Award : Yecheng Zhao and Haibo Zeng (The Virtual Deadline based Optimization Algorithm for Priority Assignment in Fixed-Priority Scheduling)"
+  },
+  {
+   "venue": "RTSS",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "On the Off-chip Memory Latency of Real-Time Systems: Is DDR DRAM Really the Best Option?",
+   "authors": [
+    "Mohamed Hassan"
+   ],
+   "track": "main",
+   "source": "https://2018.rtss.org/",
+   "evidence": "Best Paper On the Off-chip Memory Latency of Real-Time Systems: Is DDR DRAM Really the Best Option? Mohamed Hassan"
+  },
+  {
+   "venue": "RTSS",
+   "year": 2018,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Design and Analysis of SIC: A Provably Timing-Predictable Pipelined Processor Core",
+   "authors": [
+    "Sebastian Hahn",
+    "Jan Reineke"
+   ],
+   "track": "main",
+   "source": "https://2018.rtss.org/",
+   "evidence": "Best Student Paper Design and Analysis of SIC: A Provably Timing-Predictable Pipelined Processor Core Sebastian Hahn and Jan Reineke"
+  },
+  {
+   "venue": "RTSS",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Cache Persistence Analysis: Finally Exact",
+   "authors": [
+    "Gregory Stock",
+    "Sebastian Hahn",
+    "Jan Reineke"
+   ],
+   "track": "main",
+   "source": "https://2019.rtss.org/rtss-2019-awards/",
+   "alsoAt": [
+    "https://cmte.ieee.org/tcrts/awards/best-paper-awards/"
+   ],
+   "evidence": "Best Paper Cache Persistence Analysis: Finally Exact Gregory Stock, Sebastian Hahn and Jan Reineke"
+  },
+  {
+   "venue": "RTSS",
+   "year": 2019,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Papers",
+   "title": "Cache Persistence Analysis: Finally Exact",
+   "authors": [
+    "Gregory Stock",
+    "Sebastian Hahn",
+    "Jan Reineke"
+   ],
+   "track": "main",
+   "source": "https://2019.rtss.org/rtss-2019-awards/",
+   "alsoAt": [
+    "https://cmte.ieee.org/tcrts/awards/best-paper-awards/"
+   ],
+   "evidence": "Outstanding Papers Mixed-Criticality Multicore Scheduling of Real-Time Gang Task Systems Ashik Ahmed Bhuiyan, Kecheng Yang, Samsil Arefin, Abusayeed Saifullah, Nan Guan and Zhishan Guo Cache Persistence Analysis: Finally Exact Gregory Stock, Sebastian Hahn and Jan Reineke"
+  },
+  {
+   "venue": "RTSS",
+   "year": 2019,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Papers",
+   "title": "Mixed-Criticality Multicore Scheduling of Real-Time Gang Task Systems",
+   "authors": [
+    "Ashik Ahmed Bhuiyan",
+    "Kecheng Yang",
+    "Samsil Arefin",
+    "Abusayeed Saifullah",
+    "Nan Guan",
+    "Zhishan Guo"
+   ],
+   "track": "main",
+   "source": "https://2019.rtss.org/rtss-2019-awards/",
+   "alsoAt": [
+    "https://cmte.ieee.org/tcrts/awards/best-paper-awards/"
+   ],
+   "evidence": "Outstanding Papers Mixed-Criticality Multicore Scheduling of Real-Time Gang Task Systems Ashik Ahmed Bhuiyan, Kecheng Yang, Samsil Arefin, Abusayeed Saifullah, Nan Guan and Zhishan Guo"
+  },
+  {
+   "venue": "RTSS",
+   "year": 2019,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Papers",
+   "title": "Online Reconfiguration of Regularity-based Resource Partitions in Cyber-Physical Systems",
+   "authors": [
+    "Wei-Ju Chen",
+    "Peng Wu",
+    "Pei-Chi Huang",
+    "Al Mok",
+    "Song Han"
+   ],
+   "track": "main",
+   "source": "https://2019.rtss.org/rtss-2019-awards/",
+   "alsoAt": [
+    "https://cmte.ieee.org/tcrts/awards/best-paper-awards/"
+   ],
+   "evidence": "Outstanding Papers Mixed-Criticality Multicore Scheduling of Real-Time Gang Task Systems Ashik Ahmed Bhuiyan, Kecheng Yang, Samsil Arefin, Abusayeed Saifullah, Nan Guan and Zhishan Guo Cache Persistence Analysis: Finally Exact Gregory Stock, Sebastian Hahn and Jan Reineke Online Reconfiguration of Regularity-based Resource Partitions in Cyber-Physical Systems Wei-Ju Chen, Peng Wu, Pei-Chi Huang, Al Mok and Song Han"
+  },
+  {
+   "venue": "RTSS",
+   "year": 2019,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Mixed-Criticality Multicore Scheduling of Real-Time Gang Task Systems",
+   "authors": [
+    "Ashik Ahmed Bhuiyan",
+    "Kecheng Yang",
+    "Samsil Arefin",
+    "Abusayeed Saifullah",
+    "Nan Guan",
+    "Zhishan Guo"
+   ],
+   "track": "main",
+   "source": "https://2019.rtss.org/rtss-2019-awards/",
+   "alsoAt": [
+    "https://cmte.ieee.org/tcrts/awards/best-paper-awards/"
+   ],
+   "evidence": "Best Student Paper Mixed-Criticality Multicore Scheduling of Real-Time Gang Task Systems Ashik Ahmed Bhuiyan, Kecheng Yang, Samsil Arefin, Abusayeed Saifullah, Nan Guan and Zhishan Guo"
+  },
+  {
+   "venue": "RTSS",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "On Removing Algorithmic Priority Inversion from Mission-critical Machine Inference Pipelines",
+   "authors": [
+    "Shengzhong Liu",
+    "Shuochao Yao",
+    "Xinzhe Fu",
+    "Rohan Tabish",
+    "Simon Yu",
+    "Ayoosh Bansal",
+    "Heechul Yun",
+    "Lui Sha",
+    "Tarek Abdelzaher"
+   ],
+   "track": "main",
+   "source": "https://2020.rtss.org/",
+   "evidence": "Best Paper Award goes to: On Removing Algorithmic Priority Inversion from Mission-critical Machine Inference Pipelines. Shengzhong Liu, Shuochao Yao, Xinzhe Fu, Rohan Tabish, Simon Yu, Ayoosh Bansal, Heechul Yun, Lui Sha and Tarek Abdelzaher."
+  },
+  {
+   "venue": "RTSS",
+   "year": 2020,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "E-WarP: a System-wide Framework for Memory Bandwidth Profiling and Management",
+   "authors": [
+    "Parul Sohal",
+    "Rohan Tabish",
+    "Ulrich Drepper",
+    "Renato Mancuso"
+   ],
+   "track": "main",
+   "source": "https://2020.rtss.org/",
+   "evidence": "Best Student Paper Award goes to: E-WarP: a System-wide Framework for Memory Bandwidth Profiling and Management. Parul Sohal, Rohan Tabish, Ulrich Drepper and Renato Mancuso."
+  },
+  {
+   "venue": "RTSS",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Monte Carlo Response-Time Analysis",
+   "authors": [
+    "Sergey Bozhko",
+    "Georg von der Brüggen",
+    "Björn Brandenburg"
+   ],
+   "track": "main",
+   "source": "https://2021.rtss.org/",
+   "evidence": "Best Paper Award goes to: Monte Carlo Response-Time Analysis, Sergey Bozhko, Georg von der Brüggen, and Björn Brandenburg"
+  },
+  {
+   "venue": "RTSS",
+   "year": 2021,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Automatic Energy-Hotspot Detection and Elimination in Real-Time Deeply Embedded Systems",
+   "authors": [
+    "Mohsen Shekarisaz",
+    "Lothar Thiele",
+    "Mehdi Kargahi"
+   ],
+   "track": "main",
+   "source": "https://2021.rtss.org/",
+   "evidence": "Best Student Paper Award goes to: Automatic Energy-Hotspot Detection and Elimination in Real-Time Deeply Embedded Systems, Mohsen Shekarisaz, Lothar Thiele, and Mehdi Kargahi."
+  },
+  {
+   "venue": "RTSS",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "In-ConcReTeS: Interactive Consistency meets Distributed Real-Time Systems, Again!",
+   "authors": [
+    "Arpan Gujarati",
+    "Ningfeng Yang",
+    "Björn Brandenburg"
+   ],
+   "track": "main",
+   "source": "https://2022.rtss.org/",
+   "evidence": "Best Paper Award goes to: In-ConcReTeS: Interactive Consistency meets Distributed Real-Time Systems, Again! Arpan Gujarati, Ningfeng Yang and Björn Brandenburg"
+  },
+  {
+   "venue": "RTSS",
+   "year": 2022,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Awards",
+   "title": "Bounding the Response Time of DAG Tasks Using Long Paths",
+   "authors": [
+    "Qingqiang He",
+    "Nan Guan",
+    "Mingsong Lv",
+    "Xu Jiang",
+    "Wanli Chang"
+   ],
+   "track": "main",
+   "source": "https://2022.rtss.org/awards/",
+   "evidence": "Outstanding Paper Awards: – Edge-RT: OS Support for Controlled Latency in the Multi-Tenant, Real-Time Edge — Wenyuan Shao, Bite Ye, Huachuan Wang, Gabriel Parmer and Yuxin Ren – In-ConcReTeS: Interactive Consistency meets Distributed Real-Time Systems, Again! — Arpan Gujarati, Ningfeng Yang and Björn Brandenburg – Jellyfish: Timely Inference Serving for Dynamic Edge Networks — Vinod Nigade, Pablo Bauszat, Henri Bal and Lin Wang – Bounding the Response Time of DAG Tasks Using Long Paths— Qingqiang He, Nan Guan, Mingsong Lv, Xu Jiang and Wanli Chang"
+  },
+  {
+   "venue": "RTSS",
+   "year": 2022,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Awards",
+   "title": "Edge-RT: OS Support for Controlled Latency in the Multi-Tenant, Real-Time Edge",
+   "authors": [
+    "Wenyuan Shao",
+    "Bite Ye",
+    "Huachuan Wang",
+    "Gabriel Parmer",
+    "Yuxin Ren"
+   ],
+   "track": "main",
+   "source": "https://2022.rtss.org/awards/",
+   "evidence": "Outstanding Paper Awards: – Edge-RT: OS Support for Controlled Latency in the Multi-Tenant, Real-Time Edge — Wenyuan Shao, Bite Ye, Huachuan Wang, Gabriel Parmer and Yuxin Ren"
+  },
+  {
+   "venue": "RTSS",
+   "year": 2022,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Awards",
+   "title": "In-ConcReTeS: Interactive Consistency meets Distributed Real-Time Systems, Again!",
+   "authors": [
+    "Arpan Gujarati",
+    "Ningfeng Yang",
+    "Björn Brandenburg"
+   ],
+   "track": "main",
+   "source": "https://2022.rtss.org/awards/",
+   "evidence": "Outstanding Paper Awards: – Edge-RT: OS Support for Controlled Latency in the Multi-Tenant, Real-Time Edge — Wenyuan Shao, Bite Ye, Huachuan Wang, Gabriel Parmer and Yuxin Ren – In-ConcReTeS: Interactive Consistency meets Distributed Real-Time Systems, Again! — Arpan Gujarati, Ningfeng Yang and Björn Brandenburg"
+  },
+  {
+   "venue": "RTSS",
+   "year": 2022,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Awards",
+   "title": "Jellyfish: Timely Inference Serving for Dynamic Edge Networks",
+   "authors": [
+    "Vinod Nigade",
+    "Pablo Bauszat",
+    "Henri Bal",
+    "Lin Wang"
+   ],
+   "track": "main",
+   "source": "https://2022.rtss.org/awards/",
+   "evidence": "Outstanding Paper Awards: – Edge-RT: OS Support for Controlled Latency in the Multi-Tenant, Real-Time Edge — Wenyuan Shao, Bite Ye, Huachuan Wang, Gabriel Parmer and Yuxin Ren – In-ConcReTeS: Interactive Consistency meets Distributed Real-Time Systems, Again! — Arpan Gujarati, Ningfeng Yang and Björn Brandenburg – Jellyfish: Timely Inference Serving for Dynamic Edge Networks — Vinod Nigade, Pablo Bauszat, Henri Bal and Lin Wang"
+  },
+  {
+   "venue": "RTSS",
+   "year": 2022,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Edge-RT: OS Support for Controlled Latency in the Multi-Tenant, Real-Time Edge",
+   "authors": [
+    "Wenyuan Shao",
+    "Bite Ye",
+    "Huachuan Wang",
+    "Gabriel Parmer",
+    "Yuxin Ren"
+   ],
+   "track": "main",
+   "source": "https://2022.rtss.org/",
+   "evidence": "Best Student Paper Award goes to: Edge-RT: OS Support for Controlled Latency in the Multi-Tenant, Real-Time Edge. Wenyuan Shao, Bite Ye, Huachuan Wang, Gabriel Parmer and Yuxin Ren"
+  },
+  {
+   "venue": "RTSS",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "SEAM: An Optimal Message Synchronizer in ROS with Well-Bounded Time Disparity",
+   "authors": [
+    "Jinghao Sun",
+    "Tianyi Wang",
+    "Yang Li",
+    "Nan Guan",
+    "Zhishan Guo",
+    "Qingxu Deng",
+    "Guozhen Tan"
+   ],
+   "track": "main",
+   "source": "https://2023.rtss.org/awards/",
+   "evidence": "RTSS 2023 Best Paper Award – SEAM: An Optimal Message Synchronizer in ROS with Well-Bounded Time Disparity, by Jinghao Sun, Tianyi Wang, Yang Li, Nan Guan, Zhishan Guo, Qingxu Deng and Guozhen Tan"
+  },
+  {
+   "venue": "RTSS",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Leveraging LLVM’s ScalarEvolution for Symbolic Data Cache Analysis",
+   "authors": [
+    "Valentin Touzeau",
+    "Jan Reineke"
+   ],
+   "track": "main",
+   "source": "https://2023.rtss.org/awards/",
+   "evidence": "RTSS 2023 Outstanding Paper Award – SEAM: An Optimal Message Synchronizer in ROS with Well-Bounded Time Disparity, by Jinghao Sun, Tianyi Wang, Yang Li, Nan Guan, Zhishan Guo, Qingxu Deng and Guozhen Tan – Who’s Afraid of Butterflies? A Close Examination of the Butterfly Attack, by Sanjoy Baruah, Pontus Ekberg, Mehdi Hosseinzadeh, Ao Li, Bryan Ward and Ning Zhang – Leveraging LLVM’s ScalarEvolution for Symbolic Data Cache Analysis, by Valentin Touzeau and Jan Reineke"
+  },
+  {
+   "venue": "RTSS",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Progressive Neural Compression for Adaptive Image Offloading under Timing Constraints",
+   "authors": [
+    "Ruiqi Wang",
+    "Hanyang Liu",
+    "Jiaming Qiu",
+    "Moran Xu",
+    "Roch Guerin",
+    "Chenyang Lu"
+   ],
+   "track": "main",
+   "source": "https://2023.rtss.org/awards/",
+   "evidence": "RTSS 2023 Outstanding Paper Award – SEAM: An Optimal Message Synchronizer in ROS with Well-Bounded Time Disparity, by Jinghao Sun, Tianyi Wang, Yang Li, Nan Guan, Zhishan Guo, Qingxu Deng and Guozhen Tan – Who’s Afraid of Butterflies? A Close Examination of the Butterfly Attack, by Sanjoy Baruah, Pontus Ekberg, Mehdi Hosseinzadeh, Ao Li, Bryan Ward and Ning Zhang – Leveraging LLVM’s ScalarEvolution for Symbolic Data Cache Analysis, by Valentin Touzeau and Jan Reineke – Progressive Neural Compression for Adaptive Image Offloading under Timing Constraints, by Ruiqi Wang, Hanyang Liu, Jiaming Qiu, Moran Xu, Roch Guerin and Chenyang Lu"
+  },
+  {
+   "venue": "RTSS",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "SEAM: An Optimal Message Synchronizer in ROS with Well-Bounded Time Disparity",
+   "authors": [
+    "Jinghao Sun",
+    "Tianyi Wang",
+    "Yang Li",
+    "Nan Guan",
+    "Zhishan Guo",
+    "Qingxu Deng",
+    "Guozhen Tan"
+   ],
+   "track": "main",
+   "source": "https://2023.rtss.org/awards/",
+   "evidence": "RTSS 2023 Outstanding Paper Award – SEAM: An Optimal Message Synchronizer in ROS with Well-Bounded Time Disparity, by Jinghao Sun, Tianyi Wang, Yang Li, Nan Guan, Zhishan Guo, Qingxu Deng and Guozhen Tan"
+  },
+  {
+   "venue": "RTSS",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Who’s Afraid of Butterflies? A Close Examination of the Butterfly Attack",
+   "authors": [
+    "Sanjoy Baruah",
+    "Pontus Ekberg",
+    "Mehdi Hosseinzadeh",
+    "Ao Li",
+    "Bryan Ward",
+    "Ning Zhang"
+   ],
+   "track": "main",
+   "source": "https://2023.rtss.org/awards/",
+   "evidence": "RTSS 2023 Outstanding Paper Award – SEAM: An Optimal Message Synchronizer in ROS with Well-Bounded Time Disparity, by Jinghao Sun, Tianyi Wang, Yang Li, Nan Guan, Zhishan Guo, Qingxu Deng and Guozhen Tan – Who’s Afraid of Butterflies? A Close Examination of the Butterfly Attack, by Sanjoy Baruah, Pontus Ekberg, Mehdi Hosseinzadeh, Ao Li, Bryan Ward and Ning Zhang"
+  },
+  {
+   "venue": "RTSS",
+   "year": 2023,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Progressive Neural Compression for Adaptive Image Offloading under Timing Constraints",
+   "authors": [
+    "Ruiqi Wang",
+    "Hanyang Liu",
+    "Jiaming Qiu",
+    "Moran Xu",
+    "Roch Guerin",
+    "Chenyang Lu"
+   ],
+   "track": "main",
+   "source": "https://2023.rtss.org/awards/",
+   "evidence": "RTSS 2023 Best Student Paper Award – Progressive Neural Compression for Adaptive Image Offloading under Timing Constraints, by Ruiqi Wang, Hanyang Liu, Jiaming Qiu, Moran Xu, Roch Guerin and Chenyang Lu"
+  },
+  {
+   "venue": "RTSS",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Coherence-Aided Memory Bandwidth Regulation",
+   "authors": [
+    "Ivan Izhbirdeev",
+    "Denis Hoornaert",
+    "Weifan Chen",
+    "Alexander Zuepke",
+    "Youssef Hammad",
+    "Marco Caccamo",
+    "Renato Mancuso"
+   ],
+   "track": "main",
+   "source": "https://cmte.ieee.org/tcrts/awards/best-paper-awards/",
+   "evidence": "RTSS 2024 Best Paper Award: Ivan Izhbirdeev, Denis Hoornaert, Weifan Chen, Alexander Zuepke, Youssef Hammad, Marco Caccamo and Renato Mancuso. “ Coherence-Aided Memory Bandwidth Regulation"
+  },
+  {
+   "venue": "RTSS",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Job-Level Batching for Software-Defined Radio on Multi-Core",
+   "authors": [
+    "Abigail Eisenklam",
+    "Will Hedgecock",
+    "Bryan C Ward"
+   ],
+   "track": "main",
+   "source": "https://cmte.ieee.org/tcrts/awards/best-paper-awards/",
+   "evidence": "RTSS 2024 Best Paper Award: Ivan Izhbirdeev, Denis Hoornaert, Weifan Chen, Alexander Zuepke, Youssef Hammad, Marco Caccamo and Renato Mancuso. “ Coherence-Aided Memory Bandwidth Regulation “ Best Student Paper Award: Abigail Eisenklam, Will Hedgecock and Bryan C Ward. “ Job-Level Batching for Software-Defined Radio on Multi-Core"
+  },
+  {
+   "venue": "RTSS",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Requirement-Based Analysis of Self-Suspending Tasks under EDF",
+   "authors": [
+    "Mario Günzel",
+    "Federico Aromolo",
+    "Alessandro Biondi",
+    "Jian-Jia Chen"
+   ],
+   "track": "main",
+   "source": "https://2025.rtss.org/awards/",
+   "evidence": "Best Paper Award Requirement-Based Analysis of Self-Suspending Tasks under EDF Mario Günzel (TU Dortmund University), Federico Aromolo (Scuola Superiore Sant’Anna – Pisa), Alessandro Biondi (Scuola Superiore Sant’Anna – Pisa), Jian-Jia Chen (TU Dortmund University)"
+  },
+  {
+   "venue": "RTSS",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Awards",
+   "title": "LEFT-RS: A Lock-Free Fault-Tolerant Resource Sharing Protocol for Multicore Real-Time Systems",
+   "authors": [
+    "Nan Chen",
+    "Xiaotian Dai",
+    "Tong Cheng",
+    "Alan Burns",
+    "Iain Bate",
+    "Shuai Zhao"
+   ],
+   "track": "main",
+   "source": "https://2025.rtss.org/awards/",
+   "evidence": "Outstanding Paper Awards Requirement-Based Analysis of Self-Suspending Tasks under EDF Mario Günzel (TU Dortmund University), Federico Aromolo (Scuola Superiore Sant’Anna – Pisa), Alessandro Biondi (Scuola Superiore Sant’Anna – Pisa), Jian-Jia Chen (TU Dortmund University) LEFT-RS: A Lock-Free Fault-Tolerant Resource Sharing Protocol for Multicore Real-Time Systems Nan Chen (University of York), Xiaotian Dai (University of York), Tong Cheng (Sun Yat-sen University), Alan Burns (University of York), Iain Bate (University of York), Shuai Zhao (Sun Yat-sen University)"
+  },
+  {
+   "venue": "RTSS",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Awards",
+   "title": "LeMix: Unified Scheduling for LLM Training and Inference on Multi-GPU Systems",
+   "authors": [
+    "Yufei Li",
+    "Zexin Li",
+    "Yinglun Zhu",
+    "Cong Liu"
+   ],
+   "track": "main",
+   "source": "https://2025.rtss.org/awards/",
+   "evidence": "Outstanding Paper Awards Requirement-Based Analysis of Self-Suspending Tasks under EDF Mario Günzel (TU Dortmund University), Federico Aromolo (Scuola Superiore Sant’Anna – Pisa), Alessandro Biondi (Scuola Superiore Sant’Anna – Pisa), Jian-Jia Chen (TU Dortmund University) LEFT-RS: A Lock-Free Fault-Tolerant Resource Sharing Protocol for Multicore Real-Time Systems Nan Chen (University of York), Xiaotian Dai (University of York), Tong Cheng (Sun Yat-sen University), Alan Burns (University of York), Iain Bate (University of York), Shuai Zhao (Sun Yat-sen University) WCDFP Analysis for Real-Time Tasks with Stochastic Release Patterns using Chernoff Bound Shining Sun (Northeastern University), Chaohai Yu (Northeastern University), Xu Jiang (University of Electronic Science and Technology of China), Qingxu Deng (Northeastern University), Nan Guan (City University of Hong Kong) LeMix: Unified Scheduling for LLM Training and Inference on Multi-GPU Systems Yufei Li (University of California, Riverside), Zexin Li (University of California, Riverside), Yinglun Zhu (University of California, Riverside), Cong Liu (University of California, Riverside)"
+  },
+  {
+   "venue": "RTSS",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Awards",
+   "title": "Requirement-Based Analysis of Self-Suspending Tasks under EDF",
+   "authors": [
+    "Mario Günzel",
+    "Federico Aromolo",
+    "Alessandro Biondi",
+    "Jian-Jia Chen"
+   ],
+   "track": "main",
+   "source": "https://2025.rtss.org/awards/",
+   "evidence": "Outstanding Paper Awards Requirement-Based Analysis of Self-Suspending Tasks under EDF Mario Günzel (TU Dortmund University), Federico Aromolo (Scuola Superiore Sant’Anna – Pisa), Alessandro Biondi (Scuola Superiore Sant’Anna – Pisa), Jian-Jia Chen (TU Dortmund University)"
+  },
+  {
+   "venue": "RTSS",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Awards",
+   "title": "WCDFP Analysis for Real-Time Tasks with Stochastic Release Patterns using Chernoff Bound",
+   "authors": [
+    "Shining Sun",
+    "Chaohai Yu",
+    "Xu Jiang",
+    "Qingxu Deng",
+    "Nan Guan"
+   ],
+   "track": "main",
+   "source": "https://2025.rtss.org/awards/",
+   "evidence": "Outstanding Paper Awards Requirement-Based Analysis of Self-Suspending Tasks under EDF Mario Günzel (TU Dortmund University), Federico Aromolo (Scuola Superiore Sant’Anna – Pisa), Alessandro Biondi (Scuola Superiore Sant’Anna – Pisa), Jian-Jia Chen (TU Dortmund University) LEFT-RS: A Lock-Free Fault-Tolerant Resource Sharing Protocol for Multicore Real-Time Systems Nan Chen (University of York), Xiaotian Dai (University of York), Tong Cheng (Sun Yat-sen University), Alan Burns (University of York), Iain Bate (University of York), Shuai Zhao (Sun Yat-sen University) WCDFP Analysis for Real-Time Tasks with Stochastic Release Patterns using Chernoff Bound Shining Sun (Northeastern University), Chaohai Yu (Northeastern University), Xu Jiang (University of Electronic Science and Technology of China), Qingxu Deng (Northeastern University), Nan Guan (City University of Hong Kong)"
+  },
+  {
+   "venue": "RTSS",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "WCDFP Analysis for Real-Time Tasks with Stochastic Release Patterns using Chernoff Bound",
+   "authors": [
+    "Shining Sun",
+    "Chaohai Yu",
+    "Xu Jiang",
+    "Qingxu Deng",
+    "Nan Guan"
+   ],
+   "track": "main",
+   "source": "https://2025.rtss.org/awards/",
+   "evidence": "Best Student Paper Award WCDFP Analysis for Real-Time Tasks with Stochastic Release Patterns using Chernoff Bound Shining Sun (Northeastern University), Chaohai Yu (Northeastern University), Xu Jiang (University of Electronic Science and Technology of China), Qingxu Deng (Northeastern University), Nan Guan (City University of Hong Kong)"
   },
   {
    "venue": "S&P",
@@ -140592,6 +143501,330 @@
    "paperYear": 2010,
    "source": "https://sensys.acm.org/2026/awards.html",
    "evidence": "SenSys 2026 Test of Time Award: Jiakang Lu, Tamim Sookoor, Vijay Srinivasan, Ge Gao, Brian Holben, John Stankovic, Eric Field, Kamin Whitehouse for: The Smart Thermostat: Using Occupancy Sensors to Save Energy in Homes (SenSys 2010)"
+  },
+  {
+   "venue": "SGP",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "SGP Best Paper Award -1st place",
+   "title": "A Family of Barycentric Coordinates for Co-Dimension 1 Manifolds with Simplicial Facets",
+   "authors": [
+    "Zhipei Yan",
+    "Scott Schaefer"
+   ],
+   "track": "main",
+   "source": "https://sgp2019.di.unimi.it/awards/SGP2019_best_paper_1st_place_scroll.pdf",
+   "evidence": "assigned to Zhipei Yan & Scott Schaefer for the work A Family of Barycentric Coordinates for Co-Dimension 1 Manifolds with Simplicial Facets By providing a flexible, positive barycentric coordinate scheme that can handle nonconvex control structures and skeletons, this work significantly advances the State of the Art for a mathematical formulation at the core of many Geometry Processing tasks. Nina Amenta SGP 2019 Award Committee Chair Marco Tarini SGP 2019 Conference Chair Paolo CignoniSGP 2019 Conference Chair Alessandro Rizzi SGP 2019 Conference Chair Leif Kobbelt SGP Steering Committee Chair SGP Best Paper Award -1st place"
+  },
+  {
+   "venue": "SGP",
+   "year": 2019,
+   "award": "runner-up",
+   "awardLabel": "SGP Best Paper Award: Honorable Mention",
+   "title": "High-quality refinable G-splines for Locally Quad-Dominant Meshes with T-gons",
+   "authors": [
+    "Kestutis Karciauskas",
+    "Jorg Peters"
+   ],
+   "track": "main",
+   "source": "https://sgp2019.di.unimi.it/awards/SGP2019_best_paper_honorable_mention_2_scroll.pdf",
+   "evidence": "High-quality refinable G-splines for Locally Quad-Dominant Meshes with T-gons Kestutis Karciauskas & Jorg Peters SGP Best Paper Award: Honorable Mention"
+  },
+  {
+   "venue": "SGP",
+   "year": 2019,
+   "award": "runner-up",
+   "awardLabel": "SGP Best Paper Award: Honorable Mention",
+   "title": "Parallel Globally Consistent Normal Orientation of Raw Unorganized Point Clouds",
+   "authors": [
+    "Johannes Jakob",
+    "Christoph Buchenau",
+    "Michael Guthe"
+   ],
+   "track": "main",
+   "source": "https://sgp2019.di.unimi.it/awards/SGP2019_best_paper_honorable_mention_3_scroll.pdf",
+   "evidence": "Parallel Globally Consistent Normal Orientation of Raw Unorganized Point Clouds Johannes Jakob , Christoph Buchenau & Michael Guthe SGP Best Paper Award: Honorable Mention"
+  },
+  {
+   "venue": "SGP",
+   "year": 2019,
+   "award": "runner-up",
+   "awardLabel": "SGP Best Paper Award: Honorable Mention",
+   "title": "Structured Regularization of Functional Map Computations",
+   "authors": [
+    "Jing Ren",
+    "Mikhail Panine",
+    "Peter Wonka",
+    "Maks Ovsjanikov"
+   ],
+   "track": "main",
+   "source": "https://sgp2019.di.unimi.it/awards/SGP2019_best_paper_honorable_mention_1_scroll.pdf",
+   "evidence": "Structured Regularization of Functional Map Computations Jing Ren , Mikhail Panine , Peter Wonka & Maks Ovsjanikov SGP Best Paper Award: Honorable Mention"
+  },
+  {
+   "venue": "SGP",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Properties of Laplace Operators for Tetrahedral Meshes",
+   "authors": [
+    "Marc Alexa",
+    "Philipp Herholz",
+    "Max Kohlbrenner",
+    "Olga Sorkine-Hornung"
+   ],
+   "track": "main",
+   "source": "https://awards.geometryprocessing.org/",
+   "evidence": "Best Paper: Properties of Laplace Operators for Tetrahedral Meshes Marc Alexa, Philipp Herholz, Max Kohlbrenner, and Olga Sorkine-Hornung"
+  },
+  {
+   "venue": "SGP",
+   "year": 2020,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "EGGS: Sparsity-Specific Code Generation",
+   "authors": [
+    "Xuan Tang",
+    "Teseo Schneider",
+    "Shoaib Kamil",
+    "Aurojit Panda",
+    "Jinyang Li",
+    "Daniele Panozzo"
+   ],
+   "track": "main",
+   "source": "https://awards.geometryprocessing.org/",
+   "evidence": "2020 Honorable Mention: EGGS: Sparsity-Specific Code Generation Xuan Tang, Teseo Schneider, Shoaib Kamil, Aurojit Panda, Jinyang Li and Daniele Panozzo"
+  },
+  {
+   "venue": "SGP",
+   "year": 2020,
+   "award": "student",
+   "awardLabel": "Best Student paper",
+   "title": "A Laplacian for Nonmanifold Triangle Meshes",
+   "authors": [
+    "Nicholas Sharp",
+    "Keenan Crane"
+   ],
+   "track": "main",
+   "source": "https://awards.geometryprocessing.org/",
+   "evidence": "Best Student paper: A Laplacian for Nonmanifold Triangle Meshes Nicholas Sharp and Keenan Crane"
+  },
+  {
+   "venue": "SGP",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Surface Map Homology Inference",
+   "authors": [
+    "Janis Born",
+    "Patrick Schmidt",
+    "Marcel Campen",
+    "Leif Kobbelt"
+   ],
+   "track": "main",
+   "source": "https://awards.geometryprocessing.org/",
+   "evidence": "2021 Best Paper Award: Surface Map Homology Inference Janis Born, Patrick Schmidt, Marcel Campen, Leif Kobbelt"
+  },
+  {
+   "venue": "SGP",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "TinyAD: Automatic Differentiation in Geometry Processing Made Simple",
+   "authors": [
+    "Patrick Schmidt",
+    "Janis Born",
+    "David Bommes",
+    "Marcel Campen",
+    "Leif Kobbelt"
+   ],
+   "track": "main",
+   "source": "https://awards.geometryprocessing.org/",
+   "evidence": "2022 Best Paper Award: TinyAD: Automatic Differentiation in Geometry Processing Made Simple Patrick Schmidt, Janis Born, David Bommes, Marcel Campen, Leif Kobbelt"
+  },
+  {
+   "venue": "SGP",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Poisson Manifold Reconstruction - Beyond Co-dimension One",
+   "authors": [
+    "Maximilian Kohlbrenner",
+    "Singchun Lee",
+    "Marc Alexa",
+    "Misha Kazhdan"
+   ],
+   "track": "main",
+   "source": "https://awards.geometryprocessing.org/",
+   "evidence": "2023 Best Paper Award: Poisson Manifold Reconstruction - Beyond Co-dimension One Maximilian Kohlbrenner, Singchun Lee, Marc Alexa, Misha Kazhdan"
+  },
+  {
+   "venue": "SGP",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Award Runner up",
+   "title": "BPM: Blended Piecewise Möbius Maps",
+   "authors": [
+    "Shir Rorberg",
+    "Amir Vaxman",
+    "Mirela Ben-Chen"
+   ],
+   "track": "main",
+   "source": "https://awards.geometryprocessing.org/",
+   "evidence": "Best Paper Award Runner up: BPM: Blended Piecewise Möbius Maps Shir Rorberg, Amir Vaxman, and Mirela Ben-Chen"
+  },
+  {
+   "venue": "SGP",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Award Honorable mention",
+   "title": "Singularity-Free Frame Fields for Line Drawing Vectorization",
+   "authors": [
+    "Olga Guțan",
+    "Shreya Hegde",
+    "Erick Jimenez Berumen",
+    "Mikhail Bessmeltsev",
+    "Edward Chien"
+   ],
+   "track": "main",
+   "source": "https://awards.geometryprocessing.org/",
+   "evidence": "Best Paper Award Honorable mention: Singularity-Free Frame Fields for Line Drawing Vectorization Olga Guțan, Shreya Hegde, Erick Jimenez Berumen, Mikhail Bessmeltsev, and Edward Chien"
+  },
+  {
+   "venue": "SGP",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "1-Lipschitz Neural Distance Fields",
+   "authors": [
+    "Guillaume Coiffier",
+    "Louis Bethune"
+   ],
+   "track": "main",
+   "source": "https://awards.geometryprocessing.org/",
+   "evidence": "2024 Best Paper Award: 1-Lipschitz Neural Distance Fields Guillaume Coiffier and Louis Bethune"
+  },
+  {
+   "venue": "SGP",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Award Runner up",
+   "title": "Cascading upper bounds for triangle soup Pompeiu-Hausdorff distance",
+   "authors": [
+    "Leonardo Sacht",
+    "Alec Jacobson"
+   ],
+   "track": "main",
+   "source": "https://awards.geometryprocessing.org/",
+   "evidence": "Best Paper Award Runner up: Cascading upper bounds for triangle soup Pompeiu-Hausdorff distance Leonardo Sacht and Alec Jacobson"
+  },
+  {
+   "venue": "SGP",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Award Runner up",
+   "title": "Integer-Sheet-Pump Quantization for Hexahedral Meshing",
+   "authors": [
+    "Hendrik Brückler",
+    "David Bommes",
+    "Marcel Campen"
+   ],
+   "track": "main",
+   "source": "https://awards.geometryprocessing.org/",
+   "evidence": "Best Paper Award Runner up: Cascading upper bounds for triangle soup Pompeiu-Hausdorff distance Leonardo Sacht and Alec Jacobson Integer-Sheet-Pump Quantization for Hexahedral Meshing Hendrik Brückler, David Bommes, and Marcel Campen"
+  },
+  {
+   "venue": "SGP",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "The Affine Heat Method",
+   "authors": [
+    "Yousuf Soliman",
+    "Nicholas Sharp"
+   ],
+   "track": "main",
+   "source": "https://awards.geometryprocessing.org/",
+   "evidence": "2025 Best Paper Award: The Affine Heat Method Yousuf Soliman and Nicholas Sharp"
+  },
+  {
+   "venue": "SGP",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mentions",
+   "title": "Atomizer: Beyond Non-Planar Slicing for Fused Filament Fabrication",
+   "authors": [
+    "Xavier Chermain",
+    "Giovanni Cocco",
+    "Cédric Zanni",
+    "Eric Garner",
+    "Pierre-Alexandre Hugron",
+    "Sylvain Lefebvre"
+   ],
+   "track": "main",
+   "source": "https://awards.geometryprocessing.org/",
+   "evidence": "Honorable Mentions: GreenCloud: Volumetric Gradient Filtering via Regularized Green's Functions Kenji Tojo & Nobuyuki Umetani Atomizer: Beyond Non-Planar Slicing for Fused Filament Fabrication Xavier Chermain, Giovanni Cocco, Cédric Zanni, Eric Garner, Pierre- Alexandre Hugron & Sylvain Lefebvre"
+  },
+  {
+   "venue": "SGP",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mentions",
+   "title": "GreenCloud: Volumetric Gradient Filtering via Regularized Green's Functions",
+   "authors": [
+    "Kenji Tojo",
+    "Nobuyuki Umetani"
+   ],
+   "track": "main",
+   "source": "https://awards.geometryprocessing.org/",
+   "evidence": "Honorable Mentions: GreenCloud: Volumetric Gradient Filtering via Regularized Green's Functions Kenji Tojo & Nobuyuki Umetani"
+  },
+  {
+   "venue": "SGP",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Phong-Rodrigues Extrinsic Vector-Field Processing",
+   "authors": [
+    "Hongyi Liu",
+    "Oded Stein",
+    "Amir Vaxman",
+    "Mirela Ben-Chen",
+    "Misha Kazhdan"
+   ],
+   "track": "main",
+   "source": "https://awards.geometryprocessing.org/",
+   "evidence": "2026 Best Paper Award: Phong-Rodrigues Extrinsic Vector-Field Processing Hongyi Liu, Oded Stein, Amir Vaxman, Mirela Ben-Chen and Misha Kazhdan"
+  },
+  {
+   "venue": "SGP",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mentions",
+   "title": "Strictly Conservative Neural Distance Fields",
+   "authors": [
+    "Ingmar Ludwig",
+    "Marcel Campen"
+   ],
+   "track": "main",
+   "source": "https://awards.geometryprocessing.org/",
+   "evidence": "Honorable Mentions: Strictly Conservative Neural Distance Fields Ingmar Ludwig and Marcel Campen"
+  },
+  {
+   "venue": "SGP",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mentions",
+   "title": "Tangent Blow-Ups for Processing Non-Manifold Geometry",
+   "authors": [
+    "Alice Petrov",
+    "Mohammad Sina Nabizadeh",
+    "Ana Dodik",
+    "Justin Solomon"
+   ],
+   "track": "main",
+   "source": "https://awards.geometryprocessing.org/",
+   "evidence": "Honorable Mentions: Strictly Conservative Neural Distance Fields Ingmar Ludwig and Marcel Campen Tangent Blow-Ups for Processing Non-Manifold Geometry Alice Petrov, Mohammad Sina Nabizadeh, Ana Dodik and Justin Solomon"
   },
   {
    "venue": "SIGCOMM",
@@ -153090,6 +156323,69 @@
    "track": "main",
    "source": "https://spaa.acm.org/best-paper-award/",
    "evidence": "SPAA 2026 Outstanding Paper Award: Michael A. Bender, Philip Bille, Martin Farach-Colton, Jeremy Fineman, Michael Goodrich, Hanna Komlós, Inge Li Gørtz, Bradley C. Kuszmaul, William Kuszmaul, Rose Silver, Todd Veldhuizen, Renfei Zhou. The Local/Global Disk Problem: How to Use Shared High-Bandwidth Storage Economically"
+  },
+  {
+   "venue": "SRDS",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Robust Fingerprinting of Graphs with FinG",
+   "authors": [
+    "Odysseas Drosis",
+    "Jade Garcia Bourrée",
+    "Anne-Marie Kermarrec",
+    "Othmane Safsafi",
+    "Erwan Le Merrer"
+   ],
+   "track": "main",
+   "source": "https://srds-conference.org/2025/index.php/awards/",
+   "evidence": "Best Paper Award Robust Fingerprinting of Graphs with FinG presented by Odysseas Drosis, Jade Garcia Bourrée, Anne-Marie Kermarrec, Othmane Safsafi, and Erwan Le Merrer"
+  },
+  {
+   "venue": "SRDS",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Towards Stress Testing the Internet Inter-Domain Routing System `in Silico’ with Domino",
+   "authors": [
+    "Elham Ehsani Moghadam",
+    "Fabian E. Bustamante",
+    "Adrian Perrig",
+    "Walter Willinger"
+   ],
+   "track": "main",
+   "source": "https://srds-conference.org/2025/index.php/awards/",
+   "evidence": "Best Student Paper Award Towards Stress Testing the Internet Inter-Domain Routing System `in Silico’ with Domino presented by Elham Ehsani Moghadam, Fabian E. Bustamante, Adrian Perrig, and Walter Willinger"
+  },
+  {
+   "venue": "SRDS",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Cerberus: Latency-Aware Scheduling with Graceful Degradation for Constrained Edge Infrastructures",
+   "authors": [
+    "Yinan Cao",
+    "Etienne Rivière",
+    "Ramin Sadre"
+   ],
+   "track": "main",
+   "source": "https://srds-conference.org/index.php/awards/",
+   "evidence": "Best Paper Award Cerberus: Latency-Aware Scheduling with Graceful Degradation for Constrained Edge Infrastructures presented by Yinan Cao, Etienne Rivière, and Ramin Sadre"
+  },
+  {
+   "venue": "SRDS",
+   "year": 2026,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Assessing the Effect of Timing Faults in Edge AI Accelerators via Driver-Level Fault Injection",
+   "authors": [
+    "Marcello Cinque",
+    "Luigi De Simone",
+    "Nike Di Giacomo"
+   ],
+   "track": "main",
+   "source": "https://srds-conference.org/index.php/awards/",
+   "evidence": "Best Student Paper Award Assessing the Effect of Timing Faults in Edge AI Accelerators via Driver-Level Fault Injection presented by Marcello Cinque, Luigi De Simone, and Nike Di Giacomo"
   },
   {
    "venue": "STOC",
@@ -172821,6 +176117,124 @@
    "track": "main",
    "source": "https://wcnc2026.ieee-wcnc.org/best-paper-awards",
    "evidence": "Best Paper for Track 2: On the Stabilizability and Scheduling of Wireless Control Network Design with RSMA Haijia Jin (Southern University of Science and Technology, China); Weijie Yuan (SUSTECH, Hong Kong); Jun Wu (SUSTech, China); Yuanhao Cui (Big Data Academy, Zhongke, China); Fan Liu (Southeast University, China); Jie Xu (The Chinese University of Hong Kong (Shenzhen), China); Pingzhi Fan (Southwest Jiaotong University, China)"
+  },
+  {
+   "venue": "WINE",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Fast Convergence in the Double Oral Auction",
+   "authors": [
+    "Sepehr Assadi",
+    "Sanjeev Khanna",
+    "Yang Li",
+    "Rakesh Vohra"
+   ],
+   "track": "main",
+   "source": "https://event.cwi.nl/wine2015/best-paper-award/",
+   "evidence": "The WINE 2015 Best Paper Award is given to Sepehr Assadi, Sanjeev Khanna, Yang Li and Rakesh Vohra Fast Convergence in the Double Oral Auction"
+  },
+  {
+   "venue": "WINE",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "A Fine-Grained View on Stable Many-To-One Matching Problems with Lower and Upper Quotas",
+   "authors": [
+    "Niclas Boehmer",
+    "Klaus Heeger"
+   ],
+   "track": "main",
+   "source": "https://econcs.pku.edu.cn/wine2020/Awards.htm",
+   "evidence": "The WINE 2020 Best Paper Award is given to Niclas Boehmer and Klaus Heeger A Fine-Grained View on Stable Many-To-One Matching Problems with Lower and Upper Quotas"
+  },
+  {
+   "venue": "WINE",
+   "year": 2020,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "A Fine-Grained View on Stable Many-To-One Matching Problems with Lower and Upper Quotas",
+   "authors": [
+    "Niclas Boehmer",
+    "Klaus Heeger"
+   ],
+   "track": "main",
+   "source": "https://econcs.pku.edu.cn/wine2020/Awards.htm",
+   "evidence": "This was the first WINE where we had two awards: \"Best Student Paper Award\" (400 euros) and \"Best Paper Award\" (600 euros) generously provided by Springer. This year two awards went to the same paper \"A Fine-Grained View on Stable Many-To-One Matching Problems with Lower and Upper Quotas\" by Niclas Boehmer and Klaus Heeger"
+  },
+  {
+   "venue": "WINE",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "The Limits of Interval-Regulated Price Discrimination",
+   "authors": [
+    "Kamesh Munagala",
+    "Yiheng Shen",
+    "Renzhe Xu"
+   ],
+   "track": "main",
+   "source": "https://wine2025.cs.rutgers.edu/",
+   "evidence": "Best Paper Award The Limits of Interval-Regulated Price Discrimination Kamesh Munagala, Yiheng Shen (Duke University); Renzhe Xu (Shanghai University of Finance and Economics)"
+  },
+  {
+   "venue": "WINE",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Awards",
+   "title": "Bounds on the revenue gap of linear posted pricing for selling a divisible item",
+   "authors": [
+    "Ioannis Caragiannis",
+    "Zhile Jiang",
+    "Apostolis Kerentzis"
+   ],
+   "track": "main",
+   "source": "https://wine2025.cs.rutgers.edu/",
+   "evidence": "Outstanding Paper Awards Improved Budget-Feasible Mechanisms for Submodular Valuations: Beating 4 Deterministically in Linear Time Kai Han, Pinyan Lu (Shanghai University of Finance and Economics) Constant Inapproximability of Pacing Equilibria in Second-Price Auctions Xi Chen, Yuhao Li (Columbia University) Bounds on the revenue gap of linear posted pricing for selling a divisible item Ioannis Caragiannis, Zhile Jiang (Aarhus University); Apostolis Kerentzis (Hellenic Air Force)"
+  },
+  {
+   "venue": "WINE",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Awards",
+   "title": "Constant Inapproximability of Pacing Equilibria in Second-Price Auctions",
+   "authors": [
+    "Xi Chen",
+    "Yuhao Li"
+   ],
+   "track": "main",
+   "source": "https://wine2025.cs.rutgers.edu/",
+   "evidence": "Outstanding Paper Awards Improved Budget-Feasible Mechanisms for Submodular Valuations: Beating 4 Deterministically in Linear Time Kai Han, Pinyan Lu (Shanghai University of Finance and Economics) Constant Inapproximability of Pacing Equilibria in Second-Price Auctions Xi Chen, Yuhao Li (Columbia University)"
+  },
+  {
+   "venue": "WINE",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Awards",
+   "title": "Improved Budget-Feasible Mechanisms for Submodular Valuations: Beating 4 Deterministically in Linear Time",
+   "authors": [
+    "Kai Han",
+    "Pinyan Lu"
+   ],
+   "track": "main",
+   "source": "https://wine2025.cs.rutgers.edu/",
+   "evidence": "Outstanding Paper Awards Improved Budget-Feasible Mechanisms for Submodular Valuations: Beating 4 Deterministically in Linear Time Kai Han, Pinyan Lu (Shanghai University of Finance and Economics)"
+  },
+  {
+   "venue": "WINE",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Degree-bounded Online Bipartite Matching: OCS vs. Ranking",
+   "authors": [
+    "Yilong Feng",
+    "Haolong Li",
+    "Xiaowei Wu",
+    "Shengwei Zhou"
+   ],
+   "track": "main",
+   "source": "https://wine2025.cs.rutgers.edu/",
+   "evidence": "Best Student Paper Award Degree-bounded Online Bipartite Matching: OCS vs. Ranking Yilong Feng, Haolong Li, Xiaowei Wu, Shengwei Zhou (University of Macau)"
   },
   {
    "venue": "WOOT",
