@@ -189,6 +189,11 @@ give the details and every review):
   Encryption: 23rd International Conference, FSE 2016" is the cryptography FSE (B), not Foundations of Software Engineering (A): venues
   that share an acronym are told apart by the series title. (4) MDPI's journals *AI* and *IoT* are not Artificial Intelligence (A) and
   IEEE IoT-J, nor is the Korean WISA (information security) the Web Information Systems WISA.
+- **Earlier years of ML, systems and web conferences** (166): ICML 2007–2016, UAI 2010–2021, COLT 2010–2020, ICLR 2016, INFOCOM 2012–2018, PPoPP,
+  SenSys, WWW 2011–2018, SOSP 2026 and the early years of NSDI, OSDI, USENIX ATC and USENIX Security, from their own pages and the PMLR
+  volumes' front matter. Labels that the author-typed detector would read as the award itself ("Runners-up to best paper") now say "Best Paper
+  Runner-up". Left out: AISTATS (notable papers), ECML PKDD 2011 (host taken over), ICLR 2017, WWW 2018's honorable mentions (16,000-character
+  evidence), SC and ICDE (Cloudflare). An independent re-read of 33 sampled entries found none wrong. The list holds 11,278 awards.
 - **Best papers of 12 more venues** (192): Interspeech 2015–2024 and 2026 (ISCA's best student papers), ICASSP, EACL, COLING 2018, BMVC, 3DV,
   CIKM, ACM MM, IUI, MobileHCI, ICMI and EC (2015–2025), for years the list lacked, from their own pages. Left out: CIKM 2017 (spam links on
   the host), ICASSP 2015–2016 (winners named by person only), 3DV 2026, and every applied, demo or exemplary-track award. An independent

@@ -478,6 +478,20 @@
   "mobilehci.acm.org": "ACM MobileHCI's own site (an ACM subdomain)",
   "www.2017.ieeeicassp.org": "IEEE ICASSP 2017's own site",
   "www.2019.ieeeicassp.org": "IEEE ICASSP 2019's own site",
-  "www.cikm2018.units.it": "CIKM 2018's own site"
+  "www.cikm2018.units.it": "CIKM 2018's own site",
+  "infocom2012.ieee-infocom.org": "IEEE INFOCOM 2012's own site",
+  "infocom2013.ieee-infocom.org": "IEEE INFOCOM 2013's own site",
+  "infocom2014.ieee-infocom.org": "IEEE INFOCOM 2014's own site",
+  "infocom2015.ieee-infocom.org": "IEEE INFOCOM 2015's own site",
+  "infocom2016.ieee-infocom.org": "IEEE INFOCOM 2016's own site",
+  "infocom2017.ieee-infocom.org": "IEEE INFOCOM 2017's own site",
+  "infocom2018.ieee-infocom.org": "IEEE INFOCOM 2018's own site",
+  "ppopp17.sigplan.org": "PPoPP 2017's own site (a SIGPLAN subdomain; researchr)",
+  "ppopp20.sigplan.org": "PPoPP 2020's own site (a SIGPLAN subdomain; researchr)",
+  "ppopp21.sigplan.org": "PPoPP 2021's own site (a SIGPLAN subdomain; researchr)",
+  "ppopp24.sigplan.org": "PPoPP 2024's own site (a SIGPLAN subdomain; researchr)",
+  "ppopp25.sigplan.org": "PPoPP 2025's own site (a SIGPLAN subdomain; researchr)",
+  "proceedings.mlr.press": "the Proceedings of Machine Learning Research's own site (volume front matter: COLT, UAI, ICML)",
+  "www.learningtheory.org": "the Association for Computational Learning's own site (COLT)"
  }
 }

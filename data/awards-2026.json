@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 11111
+  "count": 11278
  },
  "entries": [
   {
@@ -58357,6 +58357,341 @@
   },
   {
    "venue": "COLT",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "best paper award",
+   "title": "Learning Kernel-Based Halfspaces with the Zero-One Loss",
+   "authors": [
+    "Ohad Shamir",
+    "Shai Shalev-Shwartz",
+    "Karthik Sridharan"
+   ],
+   "track": "main",
+   "source": "https://www.learningtheory.org/colt2010/conference-website/awards.html",
+   "evidence": "The best paper award was given to Ohad Shamir, Shai Shalev-Shwartz and Karthik Sridharan for, Learning Kernel-Based Halfspaces with the Zero-One Loss"
+  },
+  {
+   "venue": "COLT",
+   "year": 2010,
+   "award": "student",
+   "awardLabel": "Mark Fulk award for best paper (co)authored by a student",
+   "title": "Theoretical Justification of Popular Link Prediction Heuristics",
+   "authors": [
+    "Purnamrita Sarkar",
+    "Deepayan Chakrabarti",
+    "Andrew Moore"
+   ],
+   "track": "main",
+   "source": "https://www.learningtheory.org/colt2010/conference-website/awards.html",
+   "alsoAt": [
+    "https://www.learningtheory.org/colt2010/conference-website/papers.html"
+   ],
+   "evidence": "The Mark Fulk award for best paper (co)authored by a student was given to Purnamrita Sarkar for Theoretical Justification of Popular Link Prediction Heuristics"
+  },
+  {
+   "venue": "COLT",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "best paper award",
+   "title": "Complexity Theoretic Lower Bounds for Sparse Principal Component Detection",
+   "authors": [
+    "Quentin Berthet",
+    "Philippe Rigollet"
+   ],
+   "track": "main",
+   "source": "https://proceedings.mlr.press/v30/Shalev13.pdf",
+   "alsoAt": [
+    "https://proceedings.mlr.press/v30/"
+   ],
+   "evidence": "The paper “Complexity Theoretic Lower Bounds for Sparse Principal Component Detection” by Berthet and Rigollet received the best paper award."
+  },
+  {
+   "venue": "COLT",
+   "year": 2013,
+   "award": "student",
+   "awardLabel": "Mark Fulk best student paper award",
+   "title": "Honest Compressions and Their Application to Compression Schemes",
+   "authors": [
+    "Roi Livni",
+    "Pierre Simon"
+   ],
+   "track": "main",
+   "source": "https://proceedings.mlr.press/v30/Shalev13.pdf",
+   "alsoAt": [
+    "https://proceedings.mlr.press/v30/"
+   ],
+   "evidence": "The paper “Honest Compressions and Their Application to Compression Schemes” by Livni and Simon, received the Mark Fulk best student paper award."
+  },
+  {
+   "venue": "COLT",
+   "year": 2013,
+   "award": "student",
+   "awardLabel": "best student paper award",
+   "title": "Learning Using Local Membership Queries",
+   "authors": [
+    "Pranjal Awasthi",
+    "Vitaly Feldman",
+    "Varun Kanade"
+   ],
+   "track": "main",
+   "source": "https://proceedings.mlr.press/v30/Shalev13.pdf",
+   "alsoAt": [
+    "https://proceedings.mlr.press/v30/"
+   ],
+   "evidence": "The paper “Learning Using Local Membership Queries” by Awasthi, Feldman, and Kanade, received the best student paper award."
+  },
+  {
+   "venue": "COLT",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "best paper award",
+   "title": "Belief Propagation, Robust Reconstruction and Optimal Recovery of Block Models",
+   "authors": [
+    "Elchanan Mossel",
+    "Joe Neeman",
+    "Allan Sly"
+   ],
+   "track": "main",
+   "source": "https://proceedings.mlr.press/v35/balcan14.pdf",
+   "alsoAt": [
+    "https://proceedings.mlr.press/v35/"
+   ],
+   "evidence": "The paper “Belief Propagation, Robust Reconstruction and Optimal Recovery of Block Models” by Mossel, Neeman, and Sly received the best paper award"
+  },
+  {
+   "venue": "COLT",
+   "year": 2014,
+   "award": "student",
+   "awardLabel": "best student paper award",
+   "title": "The Complexity of Learning Halfspaces using Generalized Linear Methods",
+   "authors": [
+    "Amit Daniely",
+    "Nati Linial",
+    "Shai Shalev-Shwartz"
+   ],
+   "track": "main",
+   "source": "https://proceedings.mlr.press/v35/balcan14.pdf",
+   "alsoAt": [
+    "https://proceedings.mlr.press/v35/"
+   ],
+   "evidence": "the paper “The Complexity of Learning Halfspaces using Generalized Linear Methods” by Daniely, Linial, and Shalev-Shwartz received the best student paper award"
+  },
+  {
+   "venue": "COLT",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "best paper award",
+   "title": "An Almost Optimal PAC Algorithm",
+   "authors": [
+    "Hans-Ulrich Simon"
+   ],
+   "track": "main",
+   "source": "https://proceedings.mlr.press/v40/Grunwald15.pdf",
+   "alsoAt": [
+    "https://proceedings.mlr.press/v40/"
+   ],
+   "evidence": "The paper “An Almost Optimal PAC Algorithm” by Hans-Ulrich Simon received the best paper award."
+  },
+  {
+   "venue": "COLT",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Multi-scale Exploration of Convex Functions and Bandit Convex Optimization",
+   "authors": [
+    "Sébastien Bubeck",
+    "Ronen Eldan"
+   ],
+   "track": "main",
+   "source": "https://proceedings.mlr.press/v49/preface.pdf",
+   "alsoAt": [
+    "https://proceedings.mlr.press/v49/"
+   ],
+   "evidence": "The paper “Multi-scale Exploration of Convex Functions and Bandit Convex Optimization” by S´ebastien Bubeck and Ronen Eldan received the Best Paper Award"
+  },
+  {
+   "venue": "COLT",
+   "year": 2016,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Provably Manipulation-resistant Reputation Systems",
+   "authors": [
+    "Paul Christiano"
+   ],
+   "track": "main",
+   "source": "https://proceedings.mlr.press/v49/preface.pdf",
+   "alsoAt": [
+    "https://proceedings.mlr.press/v49/"
+   ],
+   "evidence": "the paper “Provably Manipulation-resistant Reputation Systems” by Paul Christiano received the Best Student Paper Award"
+  },
+  {
+   "venue": "COLT",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "best paper award",
+   "title": "A Hitting Time Analysis of Stochastic Gradient Langevin Dynamics",
+   "authors": [
+    "Yuchen Zhang",
+    "Percy Liang",
+    "Moses Charikar"
+   ],
+   "track": "main",
+   "source": "https://proceedings.mlr.press/v65/kale17a/kale17a.pdf",
+   "evidence": "The paper “A Hitting Time Analysis of Stochastic Gradient Langevin Dynamics” by Yuchen Zhang, Percy Liang and Moses Charikar received the best paper award."
+  },
+  {
+   "venue": "COLT",
+   "year": 2017,
+   "award": "student",
+   "awardLabel": "best student paper award",
+   "title": "Online Learning Without Prior Information",
+   "authors": [
+    "Ashok Cutkosky",
+    "Kwabena Boahen"
+   ],
+   "track": "main",
+   "source": "https://proceedings.mlr.press/v65/kale17a/kale17a.pdf",
+   "evidence": "The best student paper award was given to the paper “Online Learning Without Prior Information” by Ashok Cutkosky and Kwabena Boahen."
+  },
+  {
+   "venue": "COLT",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "best paper award",
+   "title": "Algorithmic Regularization in Over-parameterized Matrix Sensing and Neural Networks with Quadratic Activations",
+   "authors": [
+    "Yuanzhi Li",
+    "Tengyu Ma",
+    "Hongyang Zhang"
+   ],
+   "track": "main",
+   "source": "https://proceedings.mlr.press/v75/bubeck18a/bubeck18a.pdf",
+   "alsoAt": [
+    "https://proceedings.mlr.press/v75/"
+   ],
+   "evidence": "The paper “Algorithmic Regularization in Over-parameterized Matrix Sensing and Neural Networks with Quadratic Activa- tions” by Yuanzhi Li, Tengyu Ma and Hongyang Zhang received the best paper award."
+  },
+  {
+   "venue": "COLT",
+   "year": 2018,
+   "award": "student",
+   "awardLabel": "best student paper awards",
+   "title": "Logistic Regression: The Importance of Being Improper",
+   "authors": [
+    "Dylan J. Foster",
+    "Satyen Kale",
+    "Haipeng Luo",
+    "Mehryar Mohri",
+    "Karthik Sridharan"
+   ],
+   "track": "main",
+   "source": "https://proceedings.mlr.press/v75/bubeck18a/bubeck18a.pdf",
+   "alsoAt": [
+    "https://proceedings.mlr.press/v75/"
+   ],
+   "evidence": "The best student paper awards were given to the papers “Reducibility and Computational Lower Bounds for Problems with Planted Sparse Structure” by Matthew Brennan, Guy Bresler and Wasim Hulei- hel; and “Logistic Regression: The Importance of Being Improper” by Dylan Foster, Satyen Kale, Haipeng Luo, Mehryar Mohri and Karthik Sridharan."
+  },
+  {
+   "venue": "COLT",
+   "year": 2018,
+   "award": "student",
+   "awardLabel": "best student paper awards",
+   "title": "Reducibility and Computational Lower Bounds for Problems with Planted Sparse Structure",
+   "authors": [
+    "Matthew Brennan",
+    "Guy Bresler",
+    "Wasim Huleihel"
+   ],
+   "track": "main",
+   "source": "https://proceedings.mlr.press/v75/bubeck18a/bubeck18a.pdf",
+   "alsoAt": [
+    "https://proceedings.mlr.press/v75/"
+   ],
+   "evidence": "The best student paper awards were given to the papers “Reducibility and Computational Lower Bounds for Problems with Planted Sparse Structure” by Matthew Brennan, Guy Bresler and Wasim Hulei- hel;"
+  },
+  {
+   "venue": "COLT",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "best paper award",
+   "title": "Statistical Learning with a Nuisance Component",
+   "authors": [
+    "Dylan Foster",
+    "Vasilis Syrgkanis"
+   ],
+   "track": "main",
+   "source": "https://proceedings.mlr.press/v99/beygelzimer19a/beygelzimer19a.pdf",
+   "evidence": "The paper “Statistical Learning with a Nuisance Component” by Dylan Foster and Vasilis Syrgkanis received the best paper award."
+  },
+  {
+   "venue": "COLT",
+   "year": 2019,
+   "award": "student",
+   "awardLabel": "best student paper awards",
+   "title": "The Complexity of Making the Gradient Small in Stochastic Convex Optimization",
+   "authors": [
+    "Dylan Foster",
+    "Ayush Sekhari",
+    "Ohad Shamir",
+    "Nathan Srebro",
+    "Karthik Sridharan",
+    "Blake Woodworth"
+   ],
+   "track": "main",
+   "source": "https://proceedings.mlr.press/v99/beygelzimer19a/beygelzimer19a.pdf",
+   "evidence": "The papers “The Complexity of Making the Gradient Small in Stochastic Convex Optimization” by Dylan Foster, Ayush Sekhari, Ohad Shamir, Nathan Srebro, Karthik Sridharan, and Blake Woodworth;"
+  },
+  {
+   "venue": "COLT",
+   "year": 2019,
+   "award": "student",
+   "awardLabel": "best student paper awards",
+   "title": "VC Classes are Adversarially Robustly Learnable, but Only Improperly",
+   "authors": [
+    "Omar Montasser",
+    "Steve Hanneke",
+    "Nathan Srebro"
+   ],
+   "track": "main",
+   "source": "https://proceedings.mlr.press/v99/beygelzimer19a/beygelzimer19a.pdf",
+   "evidence": "The papers “The Complexity of Making the Gradient Small in Stochastic Convex Optimization” by Dylan Foster, Ayush Sekhari, Ohad Shamir, Nathan Srebro, Karthik Sridharan, and Blake Woodworth; and “VC Classes are Adversarially Robustly Learnable, but Only Improperly” by Omar Montasser, Steve Hanneke, Nathan Srebro shared the best student paper awards."
+  },
+  {
+   "venue": "COLT",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "best paper award",
+   "title": "Proper Learning, Helly Number, and an Optimal SVM Bound",
+   "authors": [
+    "Olivier Bousquet",
+    "Steve Hanneke",
+    "Shay Moran",
+    "Nikita Zhivotovskiy"
+   ],
+   "track": "main",
+   "source": "https://proceedings.mlr.press/v125/abernethy20a/abernethy20a.pdf",
+   "alsoAt": [
+    "https://proceedings.mlr.press/v125/"
+   ],
+   "evidence": "The best paper award went to the paper titled “Proper Learning, Helly Number, and an Optimal SVM Bound” by Nikita Zhivotovskiy, Steve Hanneke, Olivier Bousquet, and Shay Moran."
+  },
+  {
+   "venue": "COLT",
+   "year": 2020,
+   "award": "student",
+   "awardLabel": "best student paper award",
+   "title": "Reducibility and Statistical-Computational Gaps from Secret Leakage",
+   "authors": [
+    "Matthew Brennan",
+    "Guy Bresler"
+   ],
+   "track": "main",
+   "source": "https://proceedings.mlr.press/v125/abernethy20a/abernethy20a.pdf",
+   "evidence": "The best student paper award went to the paper titled “Reducibility and Statistical-Computational Gaps from Secret Leakage” by Matthew Brennan and Guy Bresler."
+  },
+  {
+   "venue": "COLT",
    "year": 2021,
    "award": "best",
    "awardLabel": "Best Paper Award",
@@ -103727,6 +104062,35 @@
   },
   {
    "venue": "ICLR",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Deep Compression: Compressing Deep Neural Networks with Pruning, Trained Quantization and Huffman Coding",
+   "authors": [
+    "Song Han",
+    "Huizi Mao",
+    "Bill Dally"
+   ],
+   "track": "main",
+   "source": "https://iclr.cc/archive/www/doku.php%3Fid=iclr2016:main.html",
+   "evidence": "The recipients of a Best Paper Award for ICLR 2016 are: Neural Programmer-Interpreters Scott Reed, Nando de Freitas Deep Compression: Compressing Deep Neural Networks with Pruning, Trained Quantization and Huffman Coding Song Han, Huizi Mao, Bill Dally"
+  },
+  {
+   "venue": "ICLR",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Neural Programmer-Interpreters",
+   "authors": [
+    "Scott Reed",
+    "Nando de Freitas"
+   ],
+   "track": "main",
+   "source": "https://iclr.cc/archive/www/doku.php%3Fid=iclr2016:main.html",
+   "evidence": "The recipients of a Best Paper Award for ICLR 2016 are: Neural Programmer-Interpreters Scott Reed, Nando de Freitas"
+  },
+  {
+   "venue": "ICLR",
    "year": 2019,
    "award": "best",
    "awardLabel": "Best Paper Awards",
@@ -105421,6 +105785,614 @@
    "track": "main",
    "source": "https://icmi.acm.org/2025/awards/",
    "evidence": "Best Student Paper Zhigang Yin, Ngoc Thi Nguyen, Agustin Zuniga, Mohan Liyanage, Petteri Nurmi, and Huber Flores, “SpikEy: Preventing Drink Spiking using Wearables”"
+  },
+  {
+   "venue": "ICML",
+   "year": 2007,
+   "award": "student",
+   "awardLabel": "Winners of the Best Student Paper Awards",
+   "title": "Conditional Random Fields for Multi-agent Reinforcement Learning",
+   "authors": [
+    "Xinhua Zhang",
+    "Douglas Aberdeen",
+    "S.V.N. Vishwanathan"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/2007/beststudentpapers.html",
+   "evidence": "Winners of the Best Student Paper Awards Sponsored by the Machine Learning Journal * : Student Award Winners Solving MultiClass Support Vector Machines with LaRank [Abstract] [Paper] * Antoine Bordes - LIP, Universite de Paris 6,104 Avenue du Pdt Kennedy, 75016 Paris, France Léon Bottou - NEC Laboratories America, Inc.,, USA Patrick Gallinari - LIP, Universite de Paris 6,104 Avenue du Pdt Kennedy, 75016 Paris, France Jason Weston - NEC Laboratories America, Inc.,, USA Information-Theoretic Metric Learning [Abstract] [Paper] * Jason V. Davis - University of Texas at Austin, USA * Brian Kulis - University of Texas at Austin, USA * Prateek Jain - University of Texas at Austin, USA * Suvrit Sra - University of Texas at Austin, USA Inderjit S. Dhillon - University of Texas at Austin, USA Supervised Clustering of Streaming Data for Email Batch Detection [Abstract] [Paper] * Peter Haider - Max Planck Institute for Computer Science, Germany * Ulf Brefeld - Max Planck Institute for Computer Science, Germany Tobias Scheffer - Max Planck Institute for Computer Science, Germany Conditional Random Fields for Multi-agent Reinforcement Learning [Abstract] [Paper] * Xinhua Zhang - CSL, RSISE, Australian National University, and SML NICTA, Australia Douglas Aberdeen - NICTA, Australian National University, Australia S.V.N. Vishwanathan - SML NICTA, and CSL, RSISE, Australian National University, Australia"
+  },
+  {
+   "venue": "ICML",
+   "year": 2007,
+   "award": "student",
+   "awardLabel": "Winners of the Best Student Paper Awards",
+   "title": "Information-Theoretic Metric Learning",
+   "authors": [
+    "Jason V. Davis",
+    "Brian Kulis",
+    "Prateek Jain",
+    "Suvrit Sra",
+    "Inderjit S. Dhillon"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/2007/beststudentpapers.html",
+   "evidence": "Winners of the Best Student Paper Awards Sponsored by the Machine Learning Journal * : Student Award Winners Solving MultiClass Support Vector Machines with LaRank [Abstract] [Paper] * Antoine Bordes - LIP, Universite de Paris 6,104 Avenue du Pdt Kennedy, 75016 Paris, France Léon Bottou - NEC Laboratories America, Inc.,, USA Patrick Gallinari - LIP, Universite de Paris 6,104 Avenue du Pdt Kennedy, 75016 Paris, France Jason Weston - NEC Laboratories America, Inc.,, USA Information-Theoretic Metric Learning [Abstract] [Paper] * Jason V. Davis - University of Texas at Austin, USA * Brian Kulis - University of Texas at Austin, USA * Prateek Jain - University of Texas at Austin, USA * Suvrit Sra - University of Texas at Austin, USA Inderjit S. Dhillon - University of Texas at Austin, USA"
+  },
+  {
+   "venue": "ICML",
+   "year": 2007,
+   "award": "student",
+   "awardLabel": "Winners of the Best Student Paper Awards",
+   "title": "Solving MultiClass Support Vector Machines with LaRank",
+   "authors": [
+    "Antoine Bordes",
+    "Léon Bottou",
+    "Patrick Gallinari",
+    "Jason Weston"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/2007/beststudentpapers.html",
+   "evidence": "Winners of the Best Student Paper Awards Sponsored by the Machine Learning Journal * : Student Award Winners Solving MultiClass Support Vector Machines with LaRank [Abstract] [Paper] * Antoine Bordes - LIP, Universite de Paris 6,104 Avenue du Pdt Kennedy, 75016 Paris, France Léon Bottou - NEC Laboratories America, Inc.,, USA Patrick Gallinari - LIP, Universite de Paris 6,104 Avenue du Pdt Kennedy, 75016 Paris, France Jason Weston - NEC Laboratories America, Inc.,, USA"
+  },
+  {
+   "venue": "ICML",
+   "year": 2007,
+   "award": "student",
+   "awardLabel": "Winners of the Best Student Paper Awards",
+   "title": "Supervised Clustering of Streaming Data for Email Batch Detection",
+   "authors": [
+    "Peter Haider",
+    "Ulf Brefeld",
+    "Tobias Scheffer"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/2007/beststudentpapers.html",
+   "evidence": "Winners of the Best Student Paper Awards Sponsored by the Machine Learning Journal * : Student Award Winners Solving MultiClass Support Vector Machines with LaRank [Abstract] [Paper] * Antoine Bordes - LIP, Universite de Paris 6,104 Avenue du Pdt Kennedy, 75016 Paris, France Léon Bottou - NEC Laboratories America, Inc.,, USA Patrick Gallinari - LIP, Universite de Paris 6,104 Avenue du Pdt Kennedy, 75016 Paris, France Jason Weston - NEC Laboratories America, Inc.,, USA Information-Theoretic Metric Learning [Abstract] [Paper] * Jason V. Davis - University of Texas at Austin, USA * Brian Kulis - University of Texas at Austin, USA * Prateek Jain - University of Texas at Austin, USA * Suvrit Sra - University of Texas at Austin, USA Inderjit S. Dhillon - University of Texas at Austin, USA Supervised Clustering of Streaming Data for Email Batch Detection [Abstract] [Paper] * Peter Haider - Max Planck Institute for Computer Science, Germany * Ulf Brefeld - Max Planck Institute for Computer Science, Germany Tobias Scheffer - Max Planck Institute for Computer Science, Germany"
+  },
+  {
+   "venue": "ICML",
+   "year": 2009,
+   "award": "best",
+   "awardLabel": "Best overall paper",
+   "title": "Structure Preserving Embedding",
+   "authors": [
+    "Blake Shaw",
+    "Tony Jebara"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/2009/awards.html",
+   "evidence": "Best overall paper A paper the committee feels contains innovative and creative results and best conveys deeper insights that are of interest to researchers both inside and outside of machine learning. Archipelago: Nonparametric Bayesian Semi-Supervised Learning. Ryan Adams and Zoubin Ghahramani paper ID: 258 (* Also a best student paper honorable mention) Winner: Structure Preserving Embedding. Blake Shaw and Tony Jebara paper ID: 418 (* Also a best student paper winner)"
+  },
+  {
+   "venue": "ICML",
+   "year": 2009,
+   "award": "category",
+   "awardLabel": "Best application paper",
+   "title": "Convolutional deep belief networks for scalable unsupervised learning of hierarchical representations",
+   "authors": [
+    "Honglak Lee",
+    "Roger Grosse",
+    "Rajesh Ranganath",
+    "Andrew Ng"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/2009/awards.html",
+   "evidence": "Best application paper A paper the committee feels best demonstrates the promise of machine learning's impact on applications. Winner: Convolutional deep belief networks for scalable unsupervised learning of hierarchical representations. Honglak Lee, Roger Grosse, Rajesh Ranganath and Andrew Ng paper ID: 571 (* Also a best student paper winner)"
+  },
+  {
+   "venue": "ICML",
+   "year": 2009,
+   "award": "runner-up",
+   "awardLabel": "Best student paper honorable mention",
+   "title": "A Scalable Framework for Discovering Coherent Co-clusters in Noisy Data",
+   "authors": [
+    "Meghana Deodhar",
+    "Joydeep Ghosh",
+    "Gunjan Gupta",
+    "Hyuk Cho",
+    "Inderjit Dhillon"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/2009/awards.html",
+   "evidence": "(Papers not marked as winners were honorable mentions.) Best overall paper A paper the committee feels contains innovative and creative results and best conveys deeper insights that are of interest to researchers both inside and outside of machine learning. Archipelago: Nonparametric Bayesian Semi-Supervised Learning. Ryan Adams and Zoubin Ghahramani paper ID: 258 (* Also a best student paper honorable mention) Winner: Structure Preserving Embedding. Blake Shaw and Tony Jebara paper ID: 418 (* Also a best student paper winner) Optimal Reverse Prediction: A Unified Perspective on Supervised, Unsupervised and Semi-supervised Learning. Linli Xu, Martha White and Dale Schuurmans paper ID: 578 Best application paper A paper the committee feels best demonstrates the promise of machine learning's impact on applications. Winner: Convolutional deep belief networks for scalable unsupervised learning of hierarchical representations. Honglak Lee, Roger Grosse, Rajesh Ranganath and Andrew Ng paper ID: 571 (* Also a best student paper winner) Best student paper Papers the committee judges to be a top-notch machine-learning paper and whose first author is a graduate student. We are grateful to a generous contribution from Springer, the publishers of \"Machine Learning\", for helping to fund this award. Tractable Nonparametric Bayesian Inference in Poisson Processes with Gaussian Process Intensities. Ryan Adams, Iain Murray and David MacKay paper ID: 255 Large Margin Training for Hidden Markov Models with Partially Observed States. Trinh-Minh-Tri Do and Thierry Artieres paper ID: 298 A Scalable Framework for Discovering Coherent Co-clusters in Noisy Data. Meghana Deodhar, Joydeep Ghosh, Gunjan Gupta, Hyuk Cho and Inderjit Dhillon paper ID: 316"
+  },
+  {
+   "venue": "ICML",
+   "year": 2009,
+   "award": "runner-up",
+   "awardLabel": "Best overall paper honorable mention",
+   "title": "Archipelago: Nonparametric Bayesian Semi-Supervised Learning",
+   "authors": [
+    "Ryan Adams",
+    "Zoubin Ghahramani"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/2009/awards.html",
+   "evidence": "(Papers not marked as winners were honorable mentions.) Best overall paper A paper the committee feels contains innovative and creative results and best conveys deeper insights that are of interest to researchers both inside and outside of machine learning. Archipelago: Nonparametric Bayesian Semi-Supervised Learning. Ryan Adams and Zoubin Ghahramani paper ID: 258 (* Also a best student paper honorable mention)"
+  },
+  {
+   "venue": "ICML",
+   "year": 2009,
+   "award": "runner-up",
+   "awardLabel": "Best overall paper honorable mention",
+   "title": "Blockwise Coordinate Descent Procedures for the Multi-task Lasso, with Applications to Neural Semantic Basis Discovery",
+   "authors": [
+    "Han Liu",
+    "Mark Palatucci",
+    "Jian Zhang"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/2009/awards.html",
+   "evidence": "Winner: Blockwise Coordinate Descent Procedures for the Multi-task Lasso, with Applications to Neural Semantic Basis Discovery. Han Liu, Mark Palatucci and Jian Zhang paper ID: 168 (* Also a best overall paper honorable mention)"
+  },
+  {
+   "venue": "ICML",
+   "year": 2009,
+   "award": "runner-up",
+   "awardLabel": "Best student paper honorable mention",
+   "title": "Large Margin Training for Hidden Markov Models with Partially Observed States",
+   "authors": [
+    "Trinh-Minh-Tri Do",
+    "Thierry Artieres"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/2009/awards.html",
+   "evidence": "(Papers not marked as winners were honorable mentions.) Best overall paper A paper the committee feels contains innovative and creative results and best conveys deeper insights that are of interest to researchers both inside and outside of machine learning. Archipelago: Nonparametric Bayesian Semi-Supervised Learning. Ryan Adams and Zoubin Ghahramani paper ID: 258 (* Also a best student paper honorable mention) Winner: Structure Preserving Embedding. Blake Shaw and Tony Jebara paper ID: 418 (* Also a best student paper winner) Optimal Reverse Prediction: A Unified Perspective on Supervised, Unsupervised and Semi-supervised Learning. Linli Xu, Martha White and Dale Schuurmans paper ID: 578 Best application paper A paper the committee feels best demonstrates the promise of machine learning's impact on applications. Winner: Convolutional deep belief networks for scalable unsupervised learning of hierarchical representations. Honglak Lee, Roger Grosse, Rajesh Ranganath and Andrew Ng paper ID: 571 (* Also a best student paper winner) Best student paper Papers the committee judges to be a top-notch machine-learning paper and whose first author is a graduate student. We are grateful to a generous contribution from Springer, the publishers of \"Machine Learning\", for helping to fund this award. Tractable Nonparametric Bayesian Inference in Poisson Processes with Gaussian Process Intensities. Ryan Adams, Iain Murray and David MacKay paper ID: 255 Large Margin Training for Hidden Markov Models with Partially Observed States. Trinh-Minh-Tri Do and Thierry Artieres paper ID: 298"
+  },
+  {
+   "venue": "ICML",
+   "year": 2009,
+   "award": "runner-up",
+   "awardLabel": "Best overall paper honorable mention",
+   "title": "Optimal Reverse Prediction: A Unified Perspective on Supervised, Unsupervised and Semi-supervised Learning",
+   "authors": [
+    "Linli Xu",
+    "Martha White",
+    "Dale Schuurmans"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/2009/awards.html",
+   "evidence": "(Papers not marked as winners were honorable mentions.) Best overall paper A paper the committee feels contains innovative and creative results and best conveys deeper insights that are of interest to researchers both inside and outside of machine learning. Archipelago: Nonparametric Bayesian Semi-Supervised Learning. Ryan Adams and Zoubin Ghahramani paper ID: 258 (* Also a best student paper honorable mention) Winner: Structure Preserving Embedding. Blake Shaw and Tony Jebara paper ID: 418 (* Also a best student paper winner) Optimal Reverse Prediction: A Unified Perspective on Supervised, Unsupervised and Semi-supervised Learning. Linli Xu, Martha White and Dale Schuurmans paper ID: 578"
+  },
+  {
+   "venue": "ICML",
+   "year": 2009,
+   "award": "runner-up",
+   "awardLabel": "Best student paper honorable mention",
+   "title": "Tractable Nonparametric Bayesian Inference in Poisson Processes with Gaussian Process Intensities",
+   "authors": [
+    "Ryan Adams",
+    "Iain Murray",
+    "David MacKay"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/2009/awards.html",
+   "evidence": "(Papers not marked as winners were honorable mentions.) Best overall paper A paper the committee feels contains innovative and creative results and best conveys deeper insights that are of interest to researchers both inside and outside of machine learning. Archipelago: Nonparametric Bayesian Semi-Supervised Learning. Ryan Adams and Zoubin Ghahramani paper ID: 258 (* Also a best student paper honorable mention) Winner: Structure Preserving Embedding. Blake Shaw and Tony Jebara paper ID: 418 (* Also a best student paper winner) Optimal Reverse Prediction: A Unified Perspective on Supervised, Unsupervised and Semi-supervised Learning. Linli Xu, Martha White and Dale Schuurmans paper ID: 578 Best application paper A paper the committee feels best demonstrates the promise of machine learning's impact on applications. Winner: Convolutional deep belief networks for scalable unsupervised learning of hierarchical representations. Honglak Lee, Roger Grosse, Rajesh Ranganath and Andrew Ng paper ID: 571 (* Also a best student paper winner) Best student paper Papers the committee judges to be a top-notch machine-learning paper and whose first author is a graduate student. We are grateful to a generous contribution from Springer, the publishers of \"Machine Learning\", for helping to fund this award. Tractable Nonparametric Bayesian Inference in Poisson Processes with Gaussian Process Intensities. Ryan Adams, Iain Murray and David MacKay paper ID: 255"
+  },
+  {
+   "venue": "ICML",
+   "year": 2009,
+   "award": "student",
+   "awardLabel": "Best student paper",
+   "title": "Blockwise Coordinate Descent Procedures for the Multi-task Lasso, with Applications to Neural Semantic Basis Discovery",
+   "authors": [
+    "Han Liu",
+    "Mark Palatucci",
+    "Jian Zhang"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/2009/awards.html",
+   "evidence": "Best student paper Papers the committee judges to be a top-notch machine-learning paper and whose first author is a graduate student. We are grateful to a generous contribution from Springer, the publishers of \"Machine Learning\", for helping to fund this award. Tractable Nonparametric Bayesian Inference in Poisson Processes with Gaussian Process Intensities. Ryan Adams, Iain Murray and David MacKay paper ID: 255 Large Margin Training for Hidden Markov Models with Partially Observed States. Trinh-Minh-Tri Do and Thierry Artieres paper ID: 298 A Scalable Framework for Discovering Coherent Co-clusters in Noisy Data. Meghana Deodhar, Joydeep Ghosh, Gunjan Gupta, Hyuk Cho and Inderjit Dhillon paper ID: 316 Winner: BoltzRank: Learning to Maximize Expected Ranking Gain. Maksims Volkovs and Richard Zemel paper ID: 498 Winner: Blockwise Coordinate Descent Procedures for the Multi-task Lasso, with Applications to Neural Semantic Basis Discovery. Han Liu, Mark Palatucci and Jian Zhang paper ID: 168 (* Also a best overall paper honorable mention)"
+  },
+  {
+   "venue": "ICML",
+   "year": 2009,
+   "award": "student",
+   "awardLabel": "Best student paper",
+   "title": "BoltzRank: Learning to Maximize Expected Ranking Gain",
+   "authors": [
+    "Maksims Volkovs",
+    "Richard Zemel"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/2009/awards.html",
+   "evidence": "Best student paper Papers the committee judges to be a top-notch machine-learning paper and whose first author is a graduate student. We are grateful to a generous contribution from Springer, the publishers of \"Machine Learning\", for helping to fund this award. Tractable Nonparametric Bayesian Inference in Poisson Processes with Gaussian Process Intensities. Ryan Adams, Iain Murray and David MacKay paper ID: 255 Large Margin Training for Hidden Markov Models with Partially Observed States. Trinh-Minh-Tri Do and Thierry Artieres paper ID: 298 A Scalable Framework for Discovering Coherent Co-clusters in Noisy Data. Meghana Deodhar, Joydeep Ghosh, Gunjan Gupta, Hyuk Cho and Inderjit Dhillon paper ID: 316 Winner: BoltzRank: Learning to Maximize Expected Ranking Gain. Maksims Volkovs and Richard Zemel paper ID: 498"
+  },
+  {
+   "venue": "ICML",
+   "year": 2009,
+   "award": "student",
+   "awardLabel": "Best student paper",
+   "title": "Convolutional deep belief networks for scalable unsupervised learning of hierarchical representations",
+   "authors": [
+    "Honglak Lee",
+    "Roger Grosse",
+    "Rajesh Ranganath",
+    "Andrew Ng"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/2009/awards.html",
+   "evidence": "Winner: Convolutional deep belief networks for scalable unsupervised learning of hierarchical representations. Honglak Lee, Roger Grosse, Rajesh Ranganath and Andrew Ng paper ID: 571 (* Also a best student paper winner)"
+  },
+  {
+   "venue": "ICML",
+   "year": 2009,
+   "award": "student",
+   "awardLabel": "Best student paper",
+   "title": "Structure Preserving Embedding",
+   "authors": [
+    "Blake Shaw",
+    "Tony Jebara"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/2009/awards.html",
+   "evidence": "Winner: Structure Preserving Embedding. Blake Shaw and Tony Jebara paper ID: 418 (* Also a best student paper winner)"
+  },
+  {
+   "venue": "ICML",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Hilbert Space Embeddings of Hidden Markov Models",
+   "authors": [
+    "Le Song",
+    "Byron Boots",
+    "Sajid Siddiqi",
+    "Geoffrey Gordon",
+    "Alex Smola"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/2010/awards.html",
+   "evidence": "emerged as the clear winner of the ICML 2010 Best Paper Award: Le Song, Byron Boots, Sajid Siddiqi, Geoffrey Gordon, Alex Smola: Hilbert Space Embeddings of Hidden Markov Models"
+  },
+  {
+   "venue": "ICML",
+   "year": 2010,
+   "award": "runner-up",
+   "awardLabel": "Best Application Paper Award runner-up",
+   "title": "Application of Machine Learning to Epileptic Seizure Detection",
+   "authors": [
+    "Ali Shoeb",
+    "John Guttag"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/2010/awards.html",
+   "evidence": "Best Application Paper Award For the best application, we formed a short list of six candidates with a strong focus on applications. We were excited to give the award to a paper that brings together basic research in transfer learning and cognitive science: Kevin Canini, Mikhail Shashkov, Tom Griffiths: Modeling Transfer Learning in Human Categorization with the Hierarchical Dirichlet Process The runner-up in this category was: Ali Shoeb, John Guttag: Application of Machine Learning to Epileptic Seizure Detection"
+  },
+  {
+   "venue": "ICML",
+   "year": 2010,
+   "award": "runner-up",
+   "awardLabel": "Best Student Paper Runner-up",
+   "title": "Modeling Interaction via the Principle of Maximum Causal Entropy",
+   "authors": [
+    "Brian Ziebart",
+    "Drew Bagnell",
+    "Anind Dey"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/2010/awards.html",
+   "evidence": "Best Student Paper Award The best student papers were selected from the same 19 papers as the best paper awards, again in a two-step selection process. Only those papers that had a student as the primary author were eligible. The following paper won the best student paper award: John Duchi, Lester Mackey, Michael Jordan: On the Consistency of Ranking Algorithms The close runner-up was: Brian Ziebart, Drew Bagnell, Anind Dey: Modeling Interaction via the Principle of Maximum Causal Entropy"
+  },
+  {
+   "venue": "ICML",
+   "year": 2010,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Award runner-up",
+   "title": "The Translation-invariantWishart-Dirichlet Process for Clustering Distance Data",
+   "authors": [
+    "Julia Vogt",
+    "Sandhya Prabhakaran",
+    "Thomas Fuchs",
+    "Volker Roth"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/2010/awards.html",
+   "evidence": "emerged as the clear winner of the ICML 2010 Best Paper Award: Le Song, Byron Boots, Sajid Siddiqi, Geoffrey Gordon, Alex Smola: Hilbert Space Embeddings of Hidden Markov Models The runner-up in this category was the following paper: Julia Vogt, Sandhya Prabhakaran, Thomas Fuchs, Volker Roth: The Translation-invariantWishart-Dirichlet Process for Clustering Distance Data"
+  },
+  {
+   "venue": "ICML",
+   "year": 2010,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "On the Consistency of Ranking Algorithms",
+   "authors": [
+    "John Duchi",
+    "Lester Mackey",
+    "Michael Jordan"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/2010/awards.html",
+   "evidence": "Best Student Paper Award The best student papers were selected from the same 19 papers as the best paper awards, again in a two-step selection process. Only those papers that had a student as the primary author were eligible. The following paper won the best student paper award: John Duchi, Lester Mackey, Michael Jordan: On the Consistency of Ranking Algorithms"
+  },
+  {
+   "venue": "ICML",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Computational Rationalization: The Inverse Equilibrium Problem",
+   "authors": [
+    "Kevin Waugh",
+    "Brian Ziebart",
+    "Drew Bagnell"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/2011/papers.php.html",
+   "evidence": "Best Paper The Best Paper award goes to Kevin Waugh, Brian Ziebart and Drew Bagnell for Computational Rationalization: The Inverse Equilibrium Problem"
+  },
+  {
+   "venue": "ICML",
+   "year": 2011,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Application Paper Awards",
+   "title": "Approximate Dynamic Programming for Storage Problems",
+   "authors": [
+    "Lauren Hannah",
+    "David Dunson"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/2011/papers.php.html",
+   "evidence": "Distinguished Application Paper Awards Lauren Hannah and David Dunson: Approximate Dynamic Programming for Storage Problems"
+  },
+  {
+   "venue": "ICML",
+   "year": 2011,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Awards",
+   "title": "Minimum Probability Flow Learning",
+   "authors": [
+    "Jascha Sohl-Dickstein",
+    "Peter Battaglino",
+    "Michael DeWeese"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/2011/papers.php.html",
+   "evidence": "Distinguished Paper Awards Abhimanyu Das and David Kempe: Submodular meets Spectral: Greedy Algorithms for Subset Selection, Sparse Approximation and Dictionary Selection Miguel Lazaro-Gredilla and Michalis Titsias: Variational Heteroscedastic Gaussian Process Regression Jascha Sohl-Dickstein, Peter Battaglino, and Michael DeWeese: Minimum Probability Flow Learning"
+  },
+  {
+   "venue": "ICML",
+   "year": 2011,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Application Paper Awards",
+   "title": "Parsing Natural Scenes and Natural Language with Recursive Neural Networks",
+   "authors": [
+    "Richard Socher",
+    "Cliff Chiung-Yu Lin",
+    "Andrew Ng",
+    "Chris Manning"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/2011/papers.php.html",
+   "evidence": "Distinguished Application Paper Awards Lauren Hannah and David Dunson: Approximate Dynamic Programming for Storage Problems Sean Gerrish and David Blei: Predicting Legislative Roll Calls from Text Richard Socher, Cliff Chiung-Yu Lin, Andrew Ng, and Chris Manning: Parsing Natural Scenes and Natural Language with Recursive Neural Networks"
+  },
+  {
+   "venue": "ICML",
+   "year": 2011,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Application Paper Awards",
+   "title": "Predicting Legislative Roll Calls from Text",
+   "authors": [
+    "Sean Gerrish",
+    "David Blei"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/2011/papers.php.html",
+   "evidence": "Distinguished Application Paper Awards Lauren Hannah and David Dunson: Approximate Dynamic Programming for Storage Problems Sean Gerrish and David Blei: Predicting Legislative Roll Calls from Text"
+  },
+  {
+   "venue": "ICML",
+   "year": 2011,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Awards",
+   "title": "Submodular meets Spectral: Greedy Algorithms for Subset Selection, Sparse Approximation and Dictionary Selection",
+   "authors": [
+    "Abhimanyu Das",
+    "David Kempe"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/2011/papers.php.html",
+   "evidence": "Distinguished Paper Awards Abhimanyu Das and David Kempe: Submodular meets Spectral: Greedy Algorithms for Subset Selection, Sparse Approximation and Dictionary Selection"
+  },
+  {
+   "venue": "ICML",
+   "year": 2011,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Awards",
+   "title": "Variational Heteroscedastic Gaussian Process Regression",
+   "authors": [
+    "Miguel Lazaro-Gredilla",
+    "Michalis Titsias"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/2011/papers.php.html",
+   "evidence": "Distinguished Paper Awards Abhimanyu Das and David Kempe: Submodular meets Spectral: Greedy Algorithms for Subset Selection, Sparse Approximation and Dictionary Selection Miguel Lazaro-Gredilla and Michalis Titsias: Variational Heteroscedastic Gaussian Process Regression"
+  },
+  {
+   "venue": "ICML",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best paper",
+   "title": "Fast Semidifferential-based Submodular Function Optimization",
+   "authors": [
+    "Rishabh Iyer",
+    "Stefanie Jegelka",
+    "Jeff Bilmes"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/2013/index.html%3Fpage_id=21.html",
+   "evidence": "The best paper is shared between the following two papers: 918 Fast Semidifferential-based Submodular Function Optimization Rishabh Iyer (University of Washington) < rkiyer@u.washington.edu > Stefanie Jegelka (U.C. Berkeley) < stefje@eecs.berkeley.edu > Jeff Bilmes"
+  },
+  {
+   "venue": "ICML",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best paper",
+   "title": "Vanishing Component Analysis",
+   "authors": [
+    "Roi Livni",
+    "David Lehavi",
+    "Sagi Schein",
+    "Hila Nachliely",
+    "Shai Shalev-Shwartz",
+    "Amir Globerson"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/2013/index.html%3Fpage_id=21.html",
+   "evidence": "The best paper is shared between the following two papers: 918 Fast Semidifferential-based Submodular Function Optimization Rishabh Iyer (University of Washington) < rkiyer@u.washington.edu > Stefanie Jegelka (U.C. Berkeley) < stefje@eecs.berkeley.edu > Jeff Bilmes (University of Washington, Dept. of EE) < bilmes@ee.washington.edu > Wednesday 10:30 Track B 408 Vanishing Component Analysis Roi Livni (HUJI) < roi.livni@mail.huji.ac.il > David Lehavi (Hp Research) < david.lehavi@hp.com > Sagi Schein (Hp Research) < sagi.schein@hp.com > Hila Nachliely (Hp Research) < hila.nachlieli@hp.com > Shai Shalev-Shwartz (Hebrew University of Jerusalem) < shais@cs.huji.ac.il > Amir Globerson (Hebrew University)"
+  },
+  {
+   "venue": "ICML",
+   "year": 2013,
+   "award": "runner-up",
+   "awardLabel": "Best paper runner up",
+   "title": "Smooth Sparse Coding via Marginal Regression for Learning Sparse Representations",
+   "authors": [
+    "Krishnakumar Balasubramanian",
+    "Kai Yu",
+    "Guy Lebanon"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/2013/index.html%3Fpage_id=21.html",
+   "evidence": "The best paper runner up is shared between the following: 403 Smooth Sparse Coding via Marginal Regression for Learning Sparse Representations Krishnakumar Balasubramanian (Georgia Tech) < krishnakumar3@gatech.edu > Kai Yu (Baidu) < kai.yu.cool@googlemail.com > Guy Lebanon (Georgia Tech)"
+  },
+  {
+   "venue": "ICML",
+   "year": 2013,
+   "award": "runner-up",
+   "awardLabel": "Best paper runner up",
+   "title": "Sparse coding for multitask and transfer learning",
+   "authors": [
+    "Andreas Maurer",
+    "Massi Pontil",
+    "Bernardino Romera-Paredes"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/2013/index.html%3Fpage_id=21.html",
+   "evidence": "The best paper runner up is shared between the following: 403 Smooth Sparse Coding via Marginal Regression for Learning Sparse Representations Krishnakumar Balasubramanian (Georgia Tech) < krishnakumar3@gatech.edu > Kai Yu (Baidu) < kai.yu.cool@googlemail.com > Guy Lebanon (Georgia Tech) < lebanon@cc.gatech.edu > Monday 2:00 Track B . 657 Sparse coding for multitask and transfer learning Andreas Maurer < am@andreas-maurer.eu > Massi Pontil < m.pontil@cs.ucl.ac.uk > Bernardino Romera-Paredes (University College London)"
+  },
+  {
+   "venue": "ICML",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Understanding the Limiting Factors of Topic Modeling via Posterior Contraction Analysis",
+   "authors": [
+    "Jian Tang",
+    "Zhaoshi Meng",
+    "Xuanlong Nguyen",
+    "Qiaozhu Mei",
+    "Ming Zhang"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/2014/index/article/26.htm",
+   "evidence": "Best Paper Understanding the Limiting Factors of Topic Modeling via Posterior Contraction Analysis Jian Tang, Zhaoshi Meng, Xuanlong Nguyen, Qiaozhu Mei, Ming Zhang"
+  },
+  {
+   "venue": "ICML",
+   "year": 2014,
+   "award": "category",
+   "awardLabel": "Application Paper",
+   "title": "Compositional Morphology for Word Representations and Language Modelling",
+   "authors": [
+    "Jan Botha",
+    "Phil Blunsom"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/2014/index/article/26.htm",
+   "evidence": "ICML 2014 Awards Sponsored by Baidu 10 Year Paper Multiple kernel learning, conic duality, and the SMO algorithm Francis Bach; Gert Lanckriet; Michael Jordan Application Paper Compositional Morphology for Word Representations and Language Modelling Jan Botha, Phil Blunsom"
+  },
+  {
+   "venue": "ICML",
+   "year": 2014,
+   "award": "runner-up",
+   "awardLabel": "Runner Up for Best Paper",
+   "title": "Discrete Chebyshev Classifiers",
+   "authors": [
+    "Elad Eban",
+    "Elad Mezuman",
+    "Amir Globerson"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/2014/index/article/26.htm",
+   "evidence": "Runner Up for Best Paper Discrete Chebyshev Classifiers Elad Eban, Elad Mezuman, Amir Globerson"
+  },
+  {
+   "venue": "ICML",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper Awards",
+   "title": "A Nearly-Linear Time Framework for Graph-Structured Sparsity",
+   "authors": [
+    "Chinmay Hegde",
+    "Piotr Indyk",
+    "Ludwig Schmid"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/2015/index.html%3Fp=51.html",
+   "evidence": "Best Paper Awards Optimal and Adaptive Algorithms for Online Boosting , Alina Beygelzimer, Satyen Kale, Haipeng Luo [PDF] A Nearly-Linear Time Framework for Graph-Structured Sparsity , Chinmay Hegde, Piotr Indyk, Ludwig Schmid"
+  },
+  {
+   "venue": "ICML",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper Awards",
+   "title": "Optimal and Adaptive Algorithms for Online Boosting",
+   "authors": [
+    "Alina Beygelzimer",
+    "Satyen Kale",
+    "Haipeng Luo"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/2015/index.html%3Fp=51.html",
+   "evidence": "Best Paper Awards Optimal and Adaptive Algorithms for Online Boosting , Alina Beygelzimer, Satyen Kale, Haipeng Luo"
+  },
+  {
+   "venue": "ICML",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best paper",
+   "title": "Dueling Network Architectures for Deep Reinforcement Learning",
+   "authors": [
+    "Ziyu Wang",
+    "Tom Schaul",
+    "Matteo Hessel",
+    "Hado van Hasselt",
+    "Marc Lanctot",
+    "Nando de Freitas"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/2016/index.html%3Fp=2009.html",
+   "evidence": "Best paper Monday – Ballroom 3+4 – 12:04 – Dueling Network Architectures for Deep Reinforcement Learning Ziyu Wang Google Inc. , Tom Schaul Google Inc. , Matteo Hessel Google Deepmind , Hado van Hasselt Google DeepMind , Marc Lanctot Google Deepmind , Nando de Freitas University of Oxford"
+  },
+  {
+   "venue": "ICML",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best paper",
+   "title": "Ensuring Rapid Mixing and Low Bias for Asynchronous Gibbs Sampling",
+   "authors": [
+    "Christopher De Sa",
+    "Chris Re",
+    "Kunle Olukotun"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/2016/index.html%3Fp=2009.html",
+   "evidence": "Best paper Monday – Ballroom 3+4 – 12:04 – Dueling Network Architectures for Deep Reinforcement Learning Ziyu Wang Google Inc. , Tom Schaul Google Inc. , Matteo Hessel Google Deepmind , Hado van Hasselt Google DeepMind , Marc Lanctot Google Deepmind , Nando de Freitas University of Oxford Paper | Reviews | Poster session on monday afternoon 3:00pm-7:00pm | Abstract In recent years there have been many successes of using deep representations in reinforcement learning. Still, many of these applications use conventional architectures, such as convolutional networks, LSTMs, or auto-encoders. In this paper, we present a new neural network architecture for model-free reinforcement learning. Our dueling network represents two separate estimators: one for the state value function and one for the state-dependent action advantage function. The main benefit of this factoring is to generalize learning across actions without imposing any change to the underlying reinforcement learning algorithm. Our results show that this architecture leads to better policy evaluation in the presence of many similar-valued actions. Moreover, the dueling architecture enables our RL agent to outperform the state-of-the-art on the Atari 2600 domain. Monday – Ballroom 1+2+Juliard – 03:44 – Pixel Recurrent Neural Networks Aaron Van den Oord Google Deepmind , Nal Kalchbrenner Google Deepmind , Koray Kavukcuoglu Google Deepmind Paper | Reviews | Poster session on tuesday morning 10am-1pm | Abstract Modeling the distribution of natural images is a landmark problem in unsupervised learning. This task requires an image model that is at once expressive, tractable and scalable. We present a deep neural network that sequentially predicts the pixels in an image along the two spatial dimensions. Our method models the discrete probability of the raw pixel values and encodes the complete set of dependencies in the image. Architectural novelties include fast two-dimensional recurrent layers and an effective use of residual connections in deep recurrent networks. We achieve log-likelihood scores on natural images that are considerably better than the previous state of the art. Our main results also provide benchmarks on the diverse ImageNet dataset. Samples generated from the model appear crisp, varied and globally coherent. Tuesday – Soho – 05:44 – Ensuring Rapid Mixing and Low Bias for Asynchronous Gibbs Sampling Christopher De Sa Stanford , Chris Re Stanford University , Kunle Olukotun Stanford"
+  },
+  {
+   "venue": "ICML",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best paper",
+   "title": "Pixel Recurrent Neural Networks",
+   "authors": [
+    "Aaron Van den Oord",
+    "Nal Kalchbrenner",
+    "Koray Kavukcuoglu"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/2016/index.html%3Fp=2009.html",
+   "evidence": "Best paper Monday – Ballroom 3+4 – 12:04 – Dueling Network Architectures for Deep Reinforcement Learning Ziyu Wang Google Inc. , Tom Schaul Google Inc. , Matteo Hessel Google Deepmind , Hado van Hasselt Google DeepMind , Marc Lanctot Google Deepmind , Nando de Freitas University of Oxford Paper | Reviews | Poster session on monday afternoon 3:00pm-7:00pm | Abstract In recent years there have been many successes of using deep representations in reinforcement learning. Still, many of these applications use conventional architectures, such as convolutional networks, LSTMs, or auto-encoders. In this paper, we present a new neural network architecture for model-free reinforcement learning. Our dueling network represents two separate estimators: one for the state value function and one for the state-dependent action advantage function. The main benefit of this factoring is to generalize learning across actions without imposing any change to the underlying reinforcement learning algorithm. Our results show that this architecture leads to better policy evaluation in the presence of many similar-valued actions. Moreover, the dueling architecture enables our RL agent to outperform the state-of-the-art on the Atari 2600 domain. Monday – Ballroom 1+2+Juliard – 03:44 – Pixel Recurrent Neural Networks Aaron Van den Oord Google Deepmind , Nal Kalchbrenner Google Deepmind , Koray Kavukcuoglu Google Deepmind"
   },
   {
    "venue": "ICML",
@@ -115286,6 +116258,298 @@
    "track": "main",
    "source": "https://files.sigchi.org/conference/cache/10050/44/program",
    "evidence": "IMX 2020 program, Honorable Mention: Staying on Track: a Comparative Study on the Use of Optical Flow in 360º Video to Mitigate VIMS — Paulo Bala, Ian Oakley, Valentina Nisi, Nuno Jardim Nunes"
+  },
+  {
+   "venue": "INFOCOM",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best Paper Award Winner",
+   "title": "Multi-Resource Allocation: Fairness-Efficiency Tradeoffs in a Unifying Framework",
+   "authors": [
+    "Carlee Joe-Wong",
+    "Soumya Sen",
+    "Tian Lan",
+    "Mung Chiang"
+   ],
+   "track": "main",
+   "source": "https://infocom2012.ieee-infocom.org/awards.html",
+   "evidence": "IEEE INFOCOM 2012 Best Paper Award Winner Multi-Resource Allocation: Fairness-Efficiency Tradeoffs in a Unifying Framework Carlee Joe-Wong"
+  },
+  {
+   "venue": "INFOCOM",
+   "year": 2012,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Award Runner-up",
+   "title": "Upward Max Min Fairness",
+   "authors": [
+    "Emilie Danna",
+    "Avinatan Hassidim",
+    "Haim Kaplan",
+    "Alok Kumar",
+    "Yishay Mansour",
+    "Danny Raz",
+    "Michal Segalov"
+   ],
+   "track": "main",
+   "source": "https://infocom2012.ieee-infocom.org/awards.html",
+   "evidence": "IEEE INFOCOM 2012 Best Paper Award Runner-up Upward Max Min Fairness Emilie Danna"
+  },
+  {
+   "venue": "INFOCOM",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper Award Winner",
+   "title": "On the Steady-State of Cache Networks",
+   "authors": [
+    "Elisha Rosensweig",
+    "Daniel Menasche",
+    "Jim Kurose"
+   ],
+   "track": "main",
+   "source": "https://infocom2013.ieee-infocom.org/awards.html",
+   "evidence": "IEEE INFOCOM 2013 Best Paper Award Winner \"On the Steady-State of Cache Networks\" Elisha Rosensweig"
+  },
+  {
+   "venue": "INFOCOM",
+   "year": 2013,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Award Runner-up",
+   "title": "Distributed Cross-Layer Optimization in Wireless Networks: A Second-Order Approach",
+   "authors": [
+    "Jia Liu",
+    "Cathy Xia",
+    "Ness B. Shroff",
+    "Hanif Sherali"
+   ],
+   "track": "main",
+   "source": "https://infocom2013.ieee-infocom.org/awards.html",
+   "evidence": "IEEE INFOCOM 2013 Best Paper Award Runner-up \"Distributed Cross-Layer Optimization in Wireless Networks: A Second-Order Approach\" Jia Liu"
+  },
+  {
+   "venue": "INFOCOM",
+   "year": 2013,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Award Runner-up",
+   "title": "On Finding an Optimal TCAM Encoding Scheme for Packet Classification",
+   "authors": [
+    "Ori Rottenstreich",
+    "Isaac Keslassy",
+    "Avinatan Hassidim",
+    "Haim Kaplan",
+    "Ely Porat"
+   ],
+   "track": "main",
+   "source": "https://infocom2013.ieee-infocom.org/awards.html",
+   "evidence": "IEEE INFOCOM 2013 Best Paper Award Runner-up \"Distributed Cross-Layer Optimization in Wireless Networks: A Second-Order Approach\" Jia Liu (Ohio State University, USA) Cathy Xia (Ohio-State University, USA) Ness B. Shroff (The Ohio State University, USA) Hanif Sherali (Virginia Tech, USA) \"On Finding an Optimal TCAM Encoding Scheme for Packet Classification\" Ori Rottenstreich"
+  },
+  {
+   "venue": "INFOCOM",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper Award Winners",
+   "title": "Joint Static and Dynamic Traffic Scheduling in Data Center Networks",
+   "authors": [
+    "Zizhong Cao",
+    "M. Kodialam",
+    "T. V. Lakshman"
+   ],
+   "track": "main",
+   "source": "https://infocom2014.ieee-infocom.org/Program_awards_BP.html",
+   "evidence": "IEEE INFOCOM 2014 Best Paper Award Winners Joint Static and Dynamic Traffic Scheduling in Data Center Networks Zizhong Cao"
+  },
+  {
+   "venue": "INFOCOM",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper Award Winners",
+   "title": "Performance Evaluation and Asymptotics for Content Delivery Networks",
+   "authors": [
+    "Virag Shah",
+    "Gustavo de Veciana"
+   ],
+   "track": "main",
+   "source": "https://infocom2014.ieee-infocom.org/Program_awards_BP.html",
+   "evidence": "IEEE INFOCOM 2014 Best Paper Award Winners Joint Static and Dynamic Traffic Scheduling in Data Center Networks Zizhong Cao (Polytechnic Institute of New York University, USA) M. Kodialam (Bell Labs, Alcatel-Lucent, USA) T. V. Lakshman (Bell Labs, Alcatel-Lucent, USA) Performance Evaluation and Asymptotics for Content Delivery Networks Virag Shah"
+  },
+  {
+   "venue": "INFOCOM",
+   "year": 2014,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Award Runner-up",
+   "title": "A Social Group Utility Maximization Framework with Applications in Database Assisted Spectrum Access",
+   "authors": [
+    "Xu Chen",
+    "Xiaowen Gong",
+    "Lei Yang",
+    "Junshan Zhang"
+   ],
+   "track": "main",
+   "source": "https://infocom2014.ieee-infocom.org/Program_awards_BPR.html",
+   "evidence": "INFOCOM 2014 Best Paper Award Runner-up A Social Group Utility Maximization Framework with Applications in Database Assisted Spectrum Access Xu Chen"
+  },
+  {
+   "venue": "INFOCOM",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "The Power of Slightly More than One Sample in Randomized Load Balancing",
+   "authors": [
+    "Lei Ying",
+    "R. Srikant",
+    "Xiaohan Kang"
+   ],
+   "track": "main",
+   "source": "https://infocom2015.ieee-infocom.org/content/best-paper-award-runner.html",
+   "evidence": "2015 IEEE INFOCOM Best Paper Award \"The Power of Slightly More than One Sample in Randomized Load Balancing,\" Lei Ying"
+  },
+  {
+   "venue": "INFOCOM",
+   "year": 2015,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Award Runner-up",
+   "title": "On the Efficiency of Social Recommender Networks",
+   "authors": [
+    "Felix Ming Fai Wong",
+    "Zhenming Liu",
+    "Mung Chiang"
+   ],
+   "track": "main",
+   "source": "https://infocom2015.ieee-infocom.org/content/best-paper-award-runner.html",
+   "evidence": "2015 IEEE INFOCOM Best Paper Award Runner-up \"On the Efficiency of Social Recommender Networks,\" Felix Ming Fai Wong"
+  },
+  {
+   "venue": "INFOCOM",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Heavy-Ball: A New Approach to Tame Delay and Convergence in Wireless Network Optimization",
+   "authors": [
+    "Jia Liu",
+    "Atilla Eryilmaz",
+    "Ness B. Shroff",
+    "Elizabeth Serena Bentley"
+   ],
+   "track": "main",
+   "source": "https://infocom2016.ieee-infocom.org/content/best-paper-award-runner.html",
+   "evidence": "2016 IEEE INFOCOM Best Paper Award Heavy-Ball: A New Approach to Tame Delay and Convergence in Wireless Network Optimization, Jia Liu"
+  },
+  {
+   "venue": "INFOCOM",
+   "year": 2016,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Award Runner-up",
+   "title": "FLIP the (Flow) Table: Fast LIghtweight Policy-preserving SDN Updates",
+   "authors": [
+    "Stefano Vissicchio",
+    "Luca Cittadini"
+   ],
+   "track": "main",
+   "source": "https://infocom2016.ieee-infocom.org/content/best-paper-award-runner.html",
+   "evidence": "2016 IEEE INFOCOM Best Paper Award Runner-up FLIP the (Flow) Table: Fast LIghtweight Policy-preserving SDN Updates, Stefano Vissicchio"
+  },
+  {
+   "venue": "INFOCOM",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "One Step at a Time: Optimizing SDN Upgrades in ISP Networks",
+   "authors": [
+    "Konstantinos Poularakis",
+    "George Iosifidis",
+    "Georgios Smaragdakis",
+    "Leandros Tassiulas"
+   ],
+   "track": "main",
+   "source": "https://infocom2017.ieee-infocom.org/content/awards.html",
+   "evidence": "Best Paper Award \"One Step at a Time: Optimizing SDN Upgrades in ISP Networks\" Konstantinos Poularakis"
+  },
+  {
+   "venue": "INFOCOM",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runners up Awards",
+   "title": "A Parity Check Analog Decoder for Molecular Communication Based on Biological Circuits",
+   "authors": [
+    "Alessio Marcone",
+    "Massimiliano Pierobon",
+    "Maurizio Magarini"
+   ],
+   "track": "main",
+   "source": "https://infocom2017.ieee-infocom.org/content/awards.html",
+   "evidence": "Best Paper Runners up Awards: \"A Parity Check Analog Decoder for Molecular Communication Based on Biological Circuits\" Alessio Marcone"
+  },
+  {
+   "venue": "INFOCOM",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runners up Awards",
+   "title": "DyMo: Dynamic Monitoring of Large Scale LTE-Multicast Systems",
+   "authors": [
+    "Yigal Bejerano",
+    "Chandru Raman",
+    "Chun-Nam Yu",
+    "Varun Gupta",
+    "Craig Gutterman",
+    "Tomas Young",
+    "Hugo Infante",
+    "Yousef Abdelmalek",
+    "Gil Zussman"
+   ],
+   "track": "main",
+   "source": "https://infocom2017.ieee-infocom.org/content/awards.html",
+   "evidence": "Best Paper Runners up Awards: \"A Parity Check Analog Decoder for Molecular Communication Based on Biological Circuits\" Alessio Marcone (Politecnico di Milano, Italy); Massimiliano Pierobon (University of Nebraska­ Lincoln, USA); Maurizio Magarini (Politecnico di Milano, Italy) \"DyMo: Dynamic Monitoring of Large Scale LTE-Multicast Systems\" Yigal Bejerano"
+  },
+  {
+   "venue": "INFOCOM",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Awards",
+   "title": "Optimizing Age of Information in Wireless Networks with Throughput Constraints",
+   "authors": [
+    "Igor Kadota",
+    "Abhishek Sinha",
+    "Eytan Modiano"
+   ],
+   "track": "main",
+   "source": "https://infocom2018.ieee-infocom.org/awards.html",
+   "evidence": "IEEE INFOCOM Best Paper Awards Understanding Ethereum via Graph Analysis Ting Chen (University of Electronic Science and Technology of China (UESTC), P.R. China); Yuxiao Zhu (School of Management, Guangdong University of Technology, P.R. China); Zihao Li (University of Electronic Science and Technology of China (UESTC), P.R. China); Jiachi Chen (The Hong Kong Polytechnic University, Hong Kong); Xiaoqi Li (The Hong Kong Polytechnic University, Hong Kong); Xiapu Luo (The Hong Kong Polytechnic University, Hong Kong); Xiaodong Lin (Wilfrid Laurier University, Canada); Xiaosong Zhang (University of Electronic Science and Technology of China, P.R. China) WiFED: WiFi Friendly Energy Delivery with Distributed Beamforming Subhramoy Mohanti (Northeastern University, USA); Elif Bozkaya (Istanbul Technical University & National Defense University Naval Academy, Turkey); M. Yousof Naderi (Northeastern University, USA); Berk Canberk (Istanbul Technical University, Turkey); Kaushik Chowdhury (Northeastern University, USA) Optimizing Age of Information in Wireless Networks with Throughput Constraints Igor Kadota"
+  },
+  {
+   "venue": "INFOCOM",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Awards",
+   "title": "Understanding Ethereum via Graph Analysis",
+   "authors": [
+    "Ting Chen",
+    "Yuxiao Zhu",
+    "Zihao Li",
+    "Jiachi Chen",
+    "Xiaoqi Li",
+    "Xiapu Luo",
+    "Xiaodong Lin",
+    "Xiaosong Zhang"
+   ],
+   "track": "main",
+   "source": "https://infocom2018.ieee-infocom.org/awards.html",
+   "evidence": "IEEE INFOCOM Best Paper Awards Understanding Ethereum via Graph Analysis Ting Chen"
+  },
+  {
+   "venue": "INFOCOM",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Awards",
+   "title": "WiFED: WiFi Friendly Energy Delivery with Distributed Beamforming",
+   "authors": [
+    "Subhramoy Mohanti",
+    "Elif Bozkaya",
+    "M. Yousof Naderi",
+    "Berk Canberk",
+    "Kaushik Chowdhury"
+   ],
+   "track": "main",
+   "source": "https://infocom2018.ieee-infocom.org/awards.html",
+   "evidence": "IEEE INFOCOM Best Paper Awards Understanding Ethereum via Graph Analysis Ting Chen (University of Electronic Science and Technology of China (UESTC), P.R. China); Yuxiao Zhu (School of Management, Guangdong University of Technology, P.R. China); Zihao Li (University of Electronic Science and Technology of China (UESTC), P.R. China); Jiachi Chen (The Hong Kong Polytechnic University, Hong Kong); Xiaoqi Li (The Hong Kong Polytechnic University, Hong Kong); Xiapu Luo (The Hong Kong Polytechnic University, Hong Kong); Xiaodong Lin (Wilfrid Laurier University, Canada); Xiaosong Zhang (University of Electronic Science and Technology of China, P.R. China) WiFED: WiFi Friendly Energy Delivery with Distributed Beamforming Subhramoy Mohanti"
   },
   {
    "venue": "INFOCOM",
@@ -135886,6 +137150,65 @@
   },
   {
    "venue": "NSDI",
+   "year": 2005,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Detecting BGP Configuration Faults with Static Analysis",
+   "authors": [
+    "Nick Feamster",
+    "Hari Balakrishnan"
+   ],
+   "track": "main",
+   "source": "https://www.usenix.org/legacy/events/nsdi05/tech/",
+   "evidence": "Awarded Best Paper! Detecting BGP Configuration Faults with Static Analysis Nick Feamster"
+  },
+  {
+   "venue": "NSDI",
+   "year": 2005,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Botz-4-Sale: Surviving Organized DDoS Attacks That Mimic Flash Crowds",
+   "authors": [
+    "Srikanth Kandula",
+    "Dina Katabi",
+    "Matthias Jacob",
+    "Arthur Berger"
+   ],
+   "track": "main",
+   "source": "https://www.usenix.org/legacy/events/nsdi05/tech/",
+   "evidence": "Awarded Best Student Paper! Botz-4-Sale: Surviving Organized DDoS Attacks That Mimic Flash Crowds Srikanth Kandula"
+  },
+  {
+   "venue": "NSDI",
+   "year": 2006,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Availability of Multi-Object Operations",
+   "authors": [
+    "Haifeng Yu",
+    "Phillip B. Gibbons",
+    "Suman Nath"
+   ],
+   "track": "main",
+   "source": "https://www.usenix.org/legacy/events/nsdi06/tech/tech.html",
+   "evidence": "Awarded Best Paper! Availability of Multi-Object Operations Haifeng Yu"
+  },
+  {
+   "venue": "NSDI",
+   "year": 2006,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Experience with an Object Reputation System for Peer-to-Peer Filesharing",
+   "authors": [
+    "Kevin Walsh",
+    "Emin Gün Sirer"
+   ],
+   "track": "main",
+   "source": "https://www.usenix.org/legacy/events/nsdi06/tech/tech.html",
+   "evidence": "Awarded Best Paper! Experience with an Object Reputation System for Peer-to-Peer Filesharing Kevin Walsh"
+  },
+  {
+   "venue": "NSDI",
    "year": 2007,
    "award": "best",
    "awardLabel": "USENIX Best Paper",
@@ -138797,6 +140120,43 @@
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
    "evidence": "OSDI '04: Using Model Checking to Find Serious File System Errors — Junfeng Yang, Stanford University; Paul Twohey, Stanford University; Dawson Engler, Stanford University; Madanlal Musuvathi, Microsoft Research"
+  },
+  {
+   "venue": "OSDI",
+   "year": 2006,
+   "award": "best",
+   "awardLabel": "Best Papers",
+   "title": "Bigtable: A Distributed Storage System for Structured Data",
+   "authors": [
+    "Fay Chang",
+    "Jeffrey Dean",
+    "Sanjay Ghemawat",
+    "Wilson C. Hsieh",
+    "Deborah A. Wallach",
+    "Mike Burrows",
+    "Tushar Chandra",
+    "Andrew Fikes",
+    "Robert E. Gruber"
+   ],
+   "track": "main",
+   "source": "https://www.usenix.org/legacy/events/osdi06/",
+   "evidence": "Check Out the Best Papers The Best Papers are now available online and open to everyone: \"Rethink the Sync\" by Edmund B. Nightingale, Kaushik Veeraraghavan, Peter M. Chen, and Jason Flinn \"Bigtable: A Distributed Storage System for Structured Data\" by Fay Chang, Jeffrey Dean, Sanjay Ghemawat, Wilson C. Hsieh, Deborah A. Wallach, Mike Burrows, Tushar Chandra, Andrew Fikes, and Robert E. Gruber"
+  },
+  {
+   "venue": "OSDI",
+   "year": 2006,
+   "award": "best",
+   "awardLabel": "Best Papers",
+   "title": "Rethink the Sync",
+   "authors": [
+    "Edmund B. Nightingale",
+    "Kaushik Veeraraghavan",
+    "Peter M. Chen",
+    "Jason Flinn"
+   ],
+   "track": "main",
+   "source": "https://www.usenix.org/legacy/events/osdi06/",
+   "evidence": "Check Out the Best Papers The Best Papers are now available online and open to everyone: \"Rethink the Sync\" by Edmund B. Nightingale"
   },
   {
    "venue": "OSDI",
@@ -144669,6 +146029,55 @@
   },
   {
    "venue": "PPoPP",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best paper award winner",
+   "title": "Tapir: Embedding Fork-Join Parallelism into LLVM's Intermediate Representation",
+   "authors": [
+    "Tao B. Schardl",
+    "William S. Moses",
+    "Charles E. Leiserson"
+   ],
+   "track": "main",
+   "source": "https://ppopp17.sigplan.org/",
+   "evidence": "Best paper award winner in PPoPP 2017 is : \" Tapir: Embedding Fork-Join Parallelism into LLVM's Intermediate Representation , by Tao B. Schardl"
+  },
+  {
+   "venue": "PPoPP",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Non-Blocking Interpolation Search Trees with Doubly-Logarithmic Running Time",
+   "authors": [
+    "Trevor Brown",
+    "Aleksandar Prokopec",
+    "Dan Alistarh"
+   ],
+   "track": "main",
+   "source": "https://ppopp20.sigplan.org/",
+   "evidence": "Best Paper Award Non-Blocking Interpolation Search Trees with Doubly-Logarithmic Running Time Trevor Brown"
+  },
+  {
+   "venue": "PPoPP",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Synthesizing Optimal Collective Algorithms",
+   "authors": [
+    "Zixian Cai",
+    "Zhengyang Liu",
+    "Saeed Maleki",
+    "Madanlal Musuvathi",
+    "Todd Mytkowicz",
+    "Jacob Nelson",
+    "Olli Saarikivi"
+   ],
+   "track": "main",
+   "source": "https://ppopp21.sigplan.org/",
+   "evidence": "Best Paper Award Synthesizing Optimal Collective Algorithms Zixian Cai"
+  },
+  {
+   "venue": "PPoPP",
    "year": 2022,
    "award": "best",
    "awardLabel": "Best Paper Award",
@@ -144727,6 +146136,71 @@
    "track": "main",
    "source": "https://ppopp23.sigplan.org/",
    "evidence": "PPoPP 2023 Best Paper Award: Provably Fast and Space-Efficient Parallel Biconnectivity — Xiaojun Dong, Letong Wang, Yan Gu, Yihan Sun"
+  },
+  {
+   "venue": "PPoPP",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "ConvStencil: Transform Stencil Computation to Matrix Multiplication on Tensor Cores",
+   "authors": [
+    "Yuetao Chen",
+    "Kun Li",
+    "Yuhao Wang",
+    "Donglin Bai",
+    "Lei Wang",
+    "Lingxiao Ma",
+    "Liang Yuan",
+    "Yunquan Zhang",
+    "Ting Cao",
+    "Mao Yang"
+   ],
+   "track": "main",
+   "source": "https://ppopp24.sigplan.org/program/program-PPoPP-2024/",
+   "evidence": "ConvStencil: Transform Stencil Computation to Matrix Multiplication on Tensor Cores Best Paper Award Main Conference Yuetao Chen"
+  },
+  {
+   "venue": "PPoPP",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Papers",
+   "title": "BerryBees: Breadth First Search by Bit-Tensor-Cores",
+   "authors": [
+    "Yuyao Niu",
+    "Marc Casas"
+   ],
+   "track": "main",
+   "source": "https://ppopp25.sigplan.org/",
+   "evidence": "Distinguished Papers BerryBees: Breadth First Search by Bit-Tensor-Cores Yuyao Niu"
+  },
+  {
+   "venue": "PPoPP",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Papers",
+   "title": "EVeREST: An Effective and Versatile Runtime Energy Saving Tool for GPUs",
+   "authors": [
+    "Anna Yue",
+    "Pen-Chung Yew",
+    "Sanyam Mehta"
+   ],
+   "track": "main",
+   "source": "https://ppopp25.sigplan.org/",
+   "evidence": "Distinguished Papers BerryBees: Breadth First Search by Bit-Tensor-Cores Yuyao Niu (Barcelona Supercomputing Center (BSC) - Universitat Politècnica de Catalunya (UPC)), Marc Casas (Barcelona Supercomputing Center) EVeREST: An Effective and Versatile Runtime Energy Saving Tool for GPUs Anna Yue"
+  },
+  {
+   "venue": "PPoPP",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Papers",
+   "title": "Publish on Ping: A Better Way to Publish Reservations in Memory Reclamation for Concurrent Data Structures",
+   "authors": [
+    "Ajay Singh",
+    "Trevor Brown"
+   ],
+   "track": "main",
+   "source": "https://ppopp25.sigplan.org/",
+   "evidence": "Distinguished Papers BerryBees: Breadth First Search by Bit-Tensor-Cores Yuyao Niu (Barcelona Supercomputing Center (BSC) - Universitat Politècnica de Catalunya (UPC)), Marc Casas (Barcelona Supercomputing Center) EVeREST: An Effective and Versatile Runtime Energy Saving Tool for GPUs Anna Yue (University of Minnesota at Twin Cities), Pen-Chung Yew (University of Minnesota at Twin Cities), Sanyam Mehta (HPE) Publish on Ping: A Better Way to Publish Reservations in Memory Reclamation for Concurrent Data Structures Ajay Singh"
   },
   {
    "venue": "RAID",
@@ -150130,6 +151604,70 @@
   },
   {
    "venue": "SenSys",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Aveksha: A Hardware-Software Approach for Non-intrusive Tracing and Profiling of Wireless Embedded Systems",
+   "authors": [
+    "Matthew Tancreti",
+    "Mohammad Sajjad Hossain",
+    "Saurabh Bagchi",
+    "Vijay Raghunathan"
+   ],
+   "track": "main",
+   "source": "https://sensys.acm.org/2011/",
+   "evidence": "Best Paper Award: \"Aveksha: A Hardware-Software Approach for Non-intrusive Tracing and Profiling of Wireless Embedded Systems\", by Matthew Tancreti"
+  },
+  {
+   "venue": "SenSys",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Energy-Efficient GPS Sensing with Cloud Offloading",
+   "authors": [
+    "Jie Liu",
+    "Bodhi Priyantha",
+    "Ted Hart",
+    "Heitor Ramos",
+    "Antonio A F Loureiro",
+    "Qiang Wang"
+   ],
+   "track": "main",
+   "source": "https://sensys.acm.org/2012/",
+   "evidence": "Best Paper: Energy-Efficient GPS Sensing with Cloud Offloading by Jie Liu"
+  },
+  {
+   "venue": "SenSys",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Chaos: Versatile and Efficient All-to-All Data Sharing and In-Network Processing at Scale",
+   "authors": [
+    "Olaf Landsiedel",
+    "Federico Ferrari",
+    "Marco Zimmerling"
+   ],
+   "track": "main",
+   "source": "https://sensys.acm.org/2013/prog.html",
+   "evidence": "Best Paper Chaos: Versatile and Efficient All-to-All Data Sharing and In-Network Processing at Scale Olaf Landsiedel"
+  },
+  {
+   "venue": "SenSys",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Ekho: Realistic and Repeatable Experimentation for Tiny Energy-Harvesting Sensors",
+   "authors": [
+    "Josiah Hester",
+    "Timothy Scott",
+    "Jacob Sorber"
+   ],
+   "track": "main",
+   "source": "https://sensys.acm.org/2014/",
+   "evidence": "Best Paper Ekho: Realistic and Repeatable Experimentation for Tiny Energy-Harvesting Sensors Josiah Hester"
+  },
+  {
+   "venue": "SenSys",
    "year": 2014,
    "award": "tot",
    "awardLabel": "Test of Time Award",
@@ -150162,6 +151700,22 @@
   {
    "venue": "SenSys",
    "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "When Pipelines Meet Fountain: Fast Data Dissemination in Wireless Sensor Networks",
+   "authors": [
+    "Wan Du",
+    "Jansen Christian Liando",
+    "Huanle Zhang",
+    "Mo Li"
+   ],
+   "track": "main",
+   "source": "https://sensys.acm.org/2015/",
+   "evidence": "Best Paper When Pipelines Meet Fountain: Fast Data Dissemination in Wireless Sensor Networks Wan Du"
+  },
+  {
+   "venue": "SenSys",
+   "year": 2015,
    "award": "tot",
    "awardLabel": "Test of Time Award",
    "title": "An analysis of a large scale habitat monitoring application",
@@ -150179,6 +151733,20 @@
   {
    "venue": "SenSys",
    "year": 2017,
+   "award": "best",
+   "awardLabel": "Best paper award winner",
+   "title": "SmartLight: Light-weight 3D Indoor Localization Using a Single LED Lamp",
+   "authors": [
+    "Song Liu",
+    "Tian He"
+   ],
+   "track": "main",
+   "source": "https://sensys.acm.org/2017/program/",
+   "evidence": "SmartLight: Light-weight 3D Indoor Localization Using a Single LED Lamp (Best paper award winner) Song Liu"
+  },
+  {
+   "venue": "SenSys",
+   "year": 2017,
    "award": "tot",
    "awardLabel": "Test of Time Award",
    "title": "Hardware Design Experiences in Zebranet",
@@ -150191,6 +151759,113 @@
    "track": "main",
    "source": "https://sensys.acm.org/tot/",
    "evidence": "SenSys 2017 Test of Time Award: Pei Zhang, christopher Sadler, Stephen Lyon, and Margaret Martonosi “Hardware Design Experiences in Zebranet”"
+  },
+  {
+   "venue": "SenSys",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best paper award",
+   "title": "3D Localization for Sub-Centimeter Sized Devices",
+   "authors": [
+    "Rajalakshmi Nandakumar",
+    "Vikram Iyer",
+    "Shyamnath Gollakota"
+   ],
+   "track": "main",
+   "source": "https://sensys.acm.org/2018/program/",
+   "evidence": "Best paper award: 3D Localization for Sub-Centimeter Sized Devices Rajalakshmi Nandakumar"
+  },
+  {
+   "venue": "SenSys",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "Best paper runner-up awards",
+   "title": "CapBand: Battery-free Successive Capacitance Sensing Wristband for Hand Gesture Recognition",
+   "authors": [
+    "Hoang Truong",
+    "Shuo Zhang",
+    "Ufuk Muncuk",
+    "Phuc Nguyen",
+    "Nam Bui",
+    "Anh Nguyen",
+    "Qin Lv",
+    "Kaushik Chowdhury",
+    "Thang Dinh",
+    "Tam Vu"
+   ],
+   "track": "main",
+   "source": "https://sensys.acm.org/2018/program/",
+   "evidence": "Best paper runner-up awards: CapBand: Battery-free Successive Capacitance Sensing Wristband for Hand Gesture Recognition Hoang Truong"
+  },
+  {
+   "venue": "SenSys",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "Best paper runner-up awards",
+   "title": "E-Eye: Hidden Electronics Recognition through mmWave Nonlinear Effects",
+   "authors": [
+    "Zhengxiong Li",
+    "Zhuolin Yang",
+    "Chen Song",
+    "Changzhi Li",
+    "Zhengyu Peng",
+    "Wenyao Xu"
+   ],
+   "track": "main",
+   "source": "https://sensys.acm.org/2018/program/",
+   "evidence": "Best paper runner-up awards: CapBand: Battery-free Successive Capacitance Sensing Wristband for Hand Gesture Recognition Hoang Truong, Shuo Zhang (University of Colorado Boulder); Ufuk Muncuk (Northeastern University); Phuc Nguyen, Nam Bui, Anh Nguyen, Qin Lv (University of Colorado Boulder); Kaushik Chowdhury (Northeastern University); Thang Dinh (Virginia Commonwealth University); Tam Vu (University of Colorado Boulder) Passive ZigBee: Enabling ZigBee Communication in IoT networks with 1000x Less Power Consumption Yan Li, Zicheng Chi, Xin Liu, Ting Zhu (UMBC) E-Eye: Hidden Electronics Recognition through mmWave Nonlinear Effects Zhengxiong Li"
+  },
+  {
+   "venue": "SenSys",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "Best paper runner-up awards",
+   "title": "Passive ZigBee: Enabling ZigBee Communication in IoT networks with 1000x Less Power Consumption",
+   "authors": [
+    "Yan Li",
+    "Zicheng Chi",
+    "Xin Liu",
+    "Ting Zhu"
+   ],
+   "track": "main",
+   "source": "https://sensys.acm.org/2018/program/",
+   "evidence": "Best paper runner-up awards: CapBand: Battery-free Successive Capacitance Sensing Wristband for Hand Gesture Recognition Hoang Truong, Shuo Zhang (University of Colorado Boulder); Ufuk Muncuk (Northeastern University); Phuc Nguyen, Nam Bui, Anh Nguyen, Qin Lv (University of Colorado Boulder); Kaushik Chowdhury (Northeastern University); Thang Dinh (Virginia Commonwealth University); Tam Vu (University of Colorado Boulder) Passive ZigBee: Enabling ZigBee Communication in IoT networks with 1000x Less Power Consumption Yan Li"
+  },
+  {
+   "venue": "SenSys",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "Best paper runner-up awards",
+   "title": "System Architecture Directions for Post-SoC/32-bit Networked Sensors",
+   "authors": [
+    "Hyung-Sin Kim",
+    "Michael P Andersen",
+    "Kaifei Chen",
+    "Sam Kumar",
+    "William J. Zhao",
+    "Kevin Ma",
+    "David E. Culler"
+   ],
+   "track": "main",
+   "source": "https://sensys.acm.org/2018/program/",
+   "evidence": "Best paper runner-up awards: CapBand: Battery-free Successive Capacitance Sensing Wristband for Hand Gesture Recognition Hoang Truong, Shuo Zhang (University of Colorado Boulder); Ufuk Muncuk (Northeastern University); Phuc Nguyen, Nam Bui, Anh Nguyen, Qin Lv (University of Colorado Boulder); Kaushik Chowdhury (Northeastern University); Thang Dinh (Virginia Commonwealth University); Tam Vu (University of Colorado Boulder) Passive ZigBee: Enabling ZigBee Communication in IoT networks with 1000x Less Power Consumption Yan Li, Zicheng Chi, Xin Liu, Ting Zhu (UMBC) E-Eye: Hidden Electronics Recognition through mmWave Nonlinear Effects Zhengxiong Li, Zhuolin Yang, Chen Song (SUNY University at Buffalo); Changzhi Li, Zhengyu Peng (Texas Tech University); Wenyao Xu (SUNY University at Buffalo) UbiTap: Leveraging Acoustic Dispersion for Ubiquitous Touch Interface on Solid Surfaces Hyosu Kim, Anish Byanjankar (KAIST); Yunxin Liu, Yuanchao Shu (Microsoft Research); Insik Shin (KAIST) System Architecture Directions for Post-SoC/32-bit Networked Sensors Hyung-Sin Kim"
+  },
+  {
+   "venue": "SenSys",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "Best paper runner-up awards",
+   "title": "UbiTap: Leveraging Acoustic Dispersion for Ubiquitous Touch Interface on Solid Surfaces",
+   "authors": [
+    "Hyosu Kim",
+    "Anish Byanjankar",
+    "Yunxin Liu",
+    "Yuanchao Shu",
+    "Insik Shin"
+   ],
+   "track": "main",
+   "source": "https://sensys.acm.org/2018/program/",
+   "evidence": "Best paper runner-up awards: CapBand: Battery-free Successive Capacitance Sensing Wristband for Hand Gesture Recognition Hoang Truong, Shuo Zhang (University of Colorado Boulder); Ufuk Muncuk (Northeastern University); Phuc Nguyen, Nam Bui, Anh Nguyen, Qin Lv (University of Colorado Boulder); Kaushik Chowdhury (Northeastern University); Thang Dinh (Virginia Commonwealth University); Tam Vu (University of Colorado Boulder) Passive ZigBee: Enabling ZigBee Communication in IoT networks with 1000x Less Power Consumption Yan Li, Zicheng Chi, Xin Liu, Ting Zhu (UMBC) E-Eye: Hidden Electronics Recognition through mmWave Nonlinear Effects Zhengxiong Li, Zhuolin Yang, Chen Song (SUNY University at Buffalo); Changzhi Li, Zhengyu Peng (Texas Tech University); Wenyao Xu (SUNY University at Buffalo) UbiTap: Leveraging Acoustic Dispersion for Ubiquitous Touch Interface on Solid Surfaces Hyosu Kim"
   },
   {
    "venue": "SenSys",
@@ -150226,6 +151901,26 @@
    "track": "main",
    "source": "https://sensys.acm.org/tot/",
    "evidence": "SenSys 2018 Test of Time Award: Emiliano Miluzzo, Nicholas D. Lane, Kristóf Fodor, Ronald Peterson, Hong Lu, Mirco Musolesi, Shane B Eisenman, Xiao Zheng, Andrew T. Campbell “Sensing Meets Mobile Social Networks: Design, Implementation and Evaluation of the Cenceme Application”"
+  },
+  {
+   "venue": "SenSys",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "FerroTag: A Paper-based mmWave-Scannable Tagging Infrastructure",
+   "authors": [
+    "Zhengxiong Li",
+    "Baicheng Chen",
+    "Zhuolin Yang",
+    "Huining Li",
+    "Chenhan Xu",
+    "Xingyu Chen",
+    "Kun Wang",
+    "Wenyao Xu"
+   ],
+   "track": "main",
+   "source": "https://sensys.acm.org/2019/program/",
+   "evidence": "Best Paper Award FerroTag: A Paper-based mmWave-Scannable Tagging Infrastructure Zhengxiong Li"
   },
   {
    "venue": "SenSys",
@@ -150334,6 +152029,41 @@
    "track": "main",
    "source": "https://sensys.acm.org/2021/",
    "evidence": "SenSys 2021 Best Paper Runner-up: LIMU-BERT: Unleashing the Potential of Unlabeled Data for IMU Sensing Applications — H. Xu, P. Zhou, R. Tan, M. Li, G. Shen"
+  },
+  {
+   "venue": "SenSys",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Bracelet+: Harvesting the Leaked RF Energy in VLC with Wearable Bracelet Antenna",
+   "authors": [
+    "Minhao Cui",
+    "Qing Wang",
+    "Jie Xiong"
+   ],
+   "track": "main",
+   "source": "https://sensys.acm.org/2022/award/",
+   "evidence": "Best Paper Award Bracelet+: Harvesting the Leaked RF Energy in VLC with Wearable Bracelet Antenna Minhao Cui"
+  },
+  {
+   "venue": "SenSys",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up Award",
+   "title": "MicNest: Long-Range Instant Acoustic Localization of Drones in Precise Landing",
+   "authors": [
+    "Weiguo Wang",
+    "Luca Mottola",
+    "Yuan He",
+    "Jinming Li",
+    "Yimiao Sun",
+    "Shuai Li",
+    "Hua Jing",
+    "Yulei Wang"
+   ],
+   "track": "main",
+   "source": "https://sensys.acm.org/2022/award/",
+   "evidence": "Best Paper Runner-up Award MicNest: Long-Range Instant Acoustic Localization of Drones in Precise Landing Weiguo Wang"
   },
   {
    "venue": "SenSys",
@@ -150552,6 +152282,92 @@
    "track": "main",
    "source": "https://sensys.acm.org/2024/program/",
    "evidence": "SenSys 2024 Best Paper Runner-up: MagicStream: Bandwidth-conserving Immersive Telepresence via Semantic Communication — Ruizhi Cheng, Nan Wu, Vu Le, Eugene Chai, Matteo Varvello, Bo Han"
+  },
+  {
+   "venue": "SenSys",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "RAM-Hand: Robust Acoustic Multi-Hand Pose Reconstruction Using a Microphone Array",
+   "authors": [
+    "Shiyang Wang",
+    "Henglin Pu",
+    "Qiming Cao",
+    "Wenjun Jiang",
+    "Xingchen Wang",
+    "Tianci Liu",
+    "Zhengxin Jiang",
+    "Hongfei Xue",
+    "Lu Su"
+   ],
+   "track": "main",
+   "source": "https://sensys.acm.org/2025/awards.html",
+   "evidence": "Best Paper Award RAM-Hand: Robust Acoustic Multi-Hand Pose Reconstruction Using a Microphone Array Shiyang Wang"
+  },
+  {
+   "venue": "SenSys",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention",
+   "title": "Argus: Multi-View Egocentric Human Mesh Reconstruction with Wearable mmWave Add-on",
+   "authors": [
+    "Di Duan",
+    "Shengzhe Lyu",
+    "Mu Yuan",
+    "Hongfei Xue",
+    "Tianxing Li",
+    "Weitao Xu",
+    "Kaishun Wu",
+    "Guoliang Xing"
+   ],
+   "track": "main",
+   "source": "https://sensys.acm.org/2025/awards.html",
+   "evidence": "Best Paper Honorable Mention Argus: Multi-View Egocentric Human Mesh Reconstruction with Wearable mmWave Add-on Di Duan"
+  },
+  {
+   "venue": "SenSys",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-Up",
+   "title": "Geoduck: Nanosatellite Constellation Scheduling for Low Latency Event Detection",
+   "authors": [
+    "Zhuo Cheng",
+    "Brandon Lucia"
+   ],
+   "track": "main",
+   "source": "https://sensys.acm.org/2025/awards.html",
+   "evidence": "Best Paper Runner-Up Geoduck: Nanosatellite Constellation Scheduling for Low Latency Event Detection Zhuo Cheng"
+  },
+  {
+   "venue": "SenSys",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention",
+   "title": "RoboTera: Non-Contact Friction Sensing via Wireless Sub-Terahertz Perception",
+   "authors": [
+    "Vahid Yazdnian",
+    "Ruiyi Shen",
+    "Yasaman Ghasempour"
+   ],
+   "track": "main",
+   "source": "https://sensys.acm.org/2025/awards.html",
+   "evidence": "Best Paper Honorable Mention Argus: Multi-View Egocentric Human Mesh Reconstruction with Wearable mmWave Add-on Di Duan, Shengzhe Lyu, Mu Yuan, Hongfei Xue, Tianxing Li, Weitao Xu, Kaishun Wu, and Guoliang Xing RoboTera: Non-Contact Friction Sensing via Wireless Sub-Terahertz Perception Vahid Yazdnian"
+  },
+  {
+   "venue": "SenSys",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-Up",
+   "title": "TOCTOU: Resilient Attestation for IoT Networks",
+   "authors": [
+    "Pavel Frolikov",
+    "Youngil Kim",
+    "Renascence Tarafder Prapty",
+    "Gene Tsudik"
+   ],
+   "track": "main",
+   "source": "https://sensys.acm.org/2025/awards.html",
+   "evidence": "Best Paper Runner-Up Geoduck: Nanosatellite Constellation Scheduling for Low Latency Event Detection Zhuo Cheng and Brandon Lucia TOCTOU: Resilient Attestation for IoT Networks Pavel Frolikov"
   },
   {
    "venue": "SenSys",
@@ -162594,6 +164410,45 @@
    "evidence": "SOSP 2025 program: Prove It to the Kernel: Precise Extension Analysis via Proof-Guided Abstraction Refinement — Hao Sun, Zhendong Su (ETH Zurich) — Best Paper Award"
   },
   {
+   "venue": "SOSP",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Ahead-of-time Analysis of Shell Program Effects",
+   "authors": [
+    "Lukas Lazarek",
+    "Evangelos Lamprou",
+    "George Kapetanakis",
+    "Anirudh Narsipur",
+    "Eric Zhao",
+    "Zhiwen Zheng",
+    "Michael Greenberg",
+    "Konstantinos Kallas",
+    "Nikos Vasilakis"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/s/conferences/sosp/2026/",
+   "evidence": "Best Paper Award It's the Kernel's Fault! Custom Page Fault Handling With bpf_fault Tal Zussman, Riju Dey, Hasan Zengin, Yiming Fang (Columbia University), David Hildenbrand (Technical University of Munich and Arm Germany GmbH), Asaf Cidon (Columbia University) Ahead-of-time Analysis of Shell Program Effects Lukas Lazarek"
+  },
+  {
+   "venue": "SOSP",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "It's the Kernel's Fault! Custom Page Fault Handling With bpf_fault",
+   "authors": [
+    "Tal Zussman",
+    "Riju Dey",
+    "Hasan Zengin",
+    "Yiming Fang",
+    "David Hildenbrand",
+    "Asaf Cidon"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/s/conferences/sosp/2026/",
+   "evidence": "Best Paper Award It's the Kernel's Fault! Custom Page Fault Handling With bpf_fault Tal Zussman"
+  },
+  {
    "venue": "SOUPS",
    "year": 2018,
    "award": "best",
@@ -166406,6 +168261,491 @@
    "track": "main",
    "source": "https://files.sigchi.org/conference/cache/10143/88/program",
    "evidence": "TEI 2026 program, Honorable Mention: PileUp: A Tufting Approach to Soft, Tactile, and Volumetric E-Textile Interfaces — Seoyoung Choi, Rashmi Balegar Mohan, Heather Jin Hee Kim, Jisoo Ha, Jeyeon Jo"
+  },
+  {
+   "venue": "UAI",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "best paper award",
+   "title": "A Convex Formulation for Learning Task Relationships in Multi-Task Learning",
+   "authors": [
+    "Yu Zhang",
+    "Dit-Yan Yeung"
+   ],
+   "track": "main",
+   "source": "https://event.cwi.nl/uai2010/schedule.html",
+   "evidence": "A Convex Formulation for Learning Task Relationships in Multi-Task Learning (best paper award) Yu Zhang, Dit-Yan Yeung"
+  },
+  {
+   "venue": "UAI",
+   "year": 2010,
+   "award": "student",
+   "awardLabel": "best student paper award",
+   "title": "Inferring deterministic causal relations",
+   "authors": [
+    "Povilas Daniušis",
+    "Dominik Janzing",
+    "Joris Mooij",
+    "Jakob Zscheischler",
+    "Bastian Steudel",
+    "Kun Zhang",
+    "Bernhard Schölkopf"
+   ],
+   "track": "main",
+   "source": "https://event.cwi.nl/uai2010/schedule.html",
+   "evidence": "Inferring deterministic causal relations (best student paper award) Povilas Daniušis, Dominik Janzing, Joris Mooij, Jakob Zscheischler, Bastian Steudel, Kun Zhang, Bernhard Schölkopf"
+  },
+  {
+   "venue": "UAI",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Microsoft Best Paper Award",
+   "title": "Sum-Product Networks: A New Deep Architecture",
+   "authors": [
+    "Hoifung Poon",
+    "Pedro Domingos"
+   ],
+   "track": "main",
+   "source": "https://auai.org/uai2011/schedule.html",
+   "evidence": "Microsoft Best Paper Award: Sum-Product Networks: A New Deep Architecture, by Hoifung Poon and Pedro Domingos"
+  },
+  {
+   "venue": "UAI",
+   "year": 2011,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-Up",
+   "title": "A Sequence of Relaxations Constraining Hidden Variable Models",
+   "authors": [
+    "Greg Ver Steeg",
+    "Aram Galstyan"
+   ],
+   "track": "main",
+   "source": "https://auai.org/uai2011/schedule.html",
+   "evidence": "Best Paper Runner-Up: A Sequence of Relaxations Constraining Hidden Variable Models by Greg Ver Steeg and Aram Galstyan"
+  },
+  {
+   "venue": "UAI",
+   "year": 2011,
+   "award": "runner-up",
+   "awardLabel": "Student Paper Runner-Up",
+   "title": "Graph Cuts is a Max-Product Algorithm",
+   "authors": [
+    "Daniel Tarlow",
+    "Inmar Givoni",
+    "Richard Zemel",
+    "Brendan Frey"
+   ],
+   "track": "main",
+   "source": "https://auai.org/uai2011/schedule.html",
+   "evidence": "Student Paper Runner-Up: Graph Cuts is a Max-Product Algorithm by Daniel Tarlow, Inmar Givoni, Richard Zemel and Brendan Frey"
+  },
+  {
+   "venue": "UAI",
+   "year": 2011,
+   "award": "student",
+   "awardLabel": "Google Student Paper Award",
+   "title": "Generalised Wishart Processes",
+   "authors": [
+    "Andrew Wilson",
+    "Zoubin Ghahramani"
+   ],
+   "track": "main",
+   "source": "https://auai.org/uai2011/schedule.html",
+   "evidence": "Google Student Paper Award: Generalised Wishart Processes by Andrew Wilson and Zoubin Ghahramani"
+  },
+  {
+   "venue": "UAI",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "best paper award",
+   "title": "A Bayesian Approach to Constraint Based Causal Inference",
+   "authors": [
+    "T. Claassen",
+    "T. Heskes"
+   ],
+   "track": "main",
+   "source": "https://auai.org/uai2012/proceedings.pdf",
+   "evidence": "the best paper award was given to T. Claassen and T. Heskes for their paper entitled “A Bayesian Approach to Constraint Based Causal Inference”."
+  },
+  {
+   "venue": "UAI",
+   "year": 2012,
+   "award": "student",
+   "awardLabel": "best student paper award",
+   "title": "Exploiting compositionality to explore a large space of model structures",
+   "authors": [
+    "R. Grosse",
+    "R. Salakhutdinov",
+    "W. Freeman",
+    "J. Tenenbaum"
+   ],
+   "track": "main",
+   "source": "https://auai.org/uai2012/proceedings.pdf",
+   "evidence": "the best student paper award was given to R. Grosse (co-authored with R. Salakhutdinov, W. Freeman, and J. Tenenbaum) for their paper entitled “Exploiting compositionality to explore a large space of model structures”."
+  },
+  {
+   "venue": "UAI",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best paper award - sponsored by Microsoft ($1000)",
+   "title": "Scalable Matrix-valued Kernel Learning for High-dimensional Nonlinear Multivariate Regression and Granger Causality",
+   "authors": [
+    "Vikas Sindhwani",
+    "Ha Quang Minh",
+    "Aurelie Lozano"
+   ],
+   "track": "main",
+   "source": "https://auai.org/uai2013/prints/proceedings.pdf",
+   "evidence": "Best Paper Awards Best paper award - sponsored by Microsoft ($1000) Scalable Matrix-valued Kernel Learning for High-dimensional Nonlinear Multivariate Regression and Granger Causality Vikas Sindhwani, Ha Quang Minh, Aurelie Lozano"
+  },
+  {
+   "venue": "UAI",
+   "year": 2013,
+   "award": "runner-up",
+   "awardLabel": "Best Student Paper Runner-up",
+   "title": "Optimization With Parity Constraints: From Binary Codes to Discrete Integration",
+   "authors": [
+    "Stefano Ermon",
+    "Carla Gomes",
+    "Ashish Sabharwal",
+    "Bart Selman"
+   ],
+   "track": "main",
+   "source": "https://auai.org/uai2013/prints/proceedings.pdf",
+   "evidence": "Facebook Best Student Paper (and oﬃcial Runner up/Honourable mention) ($1000) Optimization With Parity Constraints: From Binary Codes to Discrete Integration Stefano Ermon, Carla Gomes, Ashish Sabharwal, Bart Selman"
+  },
+  {
+   "venue": "UAI",
+   "year": 2013,
+   "award": "student",
+   "awardLabel": "Amazon Best Student Paper ($1000)",
+   "title": "Constrained Bayesian Inference for Low Rank Multitask Learning",
+   "authors": [
+    "Oluwasanmi Koyejo",
+    "Joydeep Ghosh"
+   ],
+   "track": "main",
+   "source": "https://auai.org/uai2013/prints/proceedings.pdf",
+   "evidence": "Amazon Best Student Paper ($1000) Constrained Bayesian Inference for Low Rank Multitask Learning Oluwasanmi Koyejo, Joydeep Ghosh"
+  },
+  {
+   "venue": "UAI",
+   "year": 2013,
+   "award": "student",
+   "awardLabel": "Google Best Student Paper ($1000)",
+   "title": "On the Complexity of Strong and Epistemic Credal Networks",
+   "authors": [
+    "Denis Maua",
+    "Cassio de Campos",
+    "Alessio Benavoli",
+    "Alessandro Antonucci"
+   ],
+   "track": "main",
+   "source": "https://auai.org/uai2013/prints/proceedings.pdf",
+   "evidence": "Google Best Student Paper ($1000) On the Complexity of Strong and Epistemic Credal Networks Denis Maua, Cassio de Campos, Alessio Benavoli, Alessandro Antonucci"
+  },
+  {
+   "venue": "UAI",
+   "year": 2013,
+   "award": "student",
+   "awardLabel": "Facebook Best Student Paper",
+   "title": "Optimization With Parity Constraints: From Binary Codes to Discrete Integration",
+   "authors": [
+    "Stefano Ermon",
+    "Carla Gomes",
+    "Ashish Sabharwal",
+    "Bart Selman"
+   ],
+   "track": "main",
+   "source": "https://auai.org/uai2013/prints/proceedings.pdf",
+   "evidence": "Facebook Best Student Paper (and oﬃcial Runner up/Honourable mention) ($1000) Optimization With Parity Constraints: From Binary Codes to Discrete Integration Stefano Ermon, Carla Gomes, Ashish Sabharwal, Bart Selman"
+  },
+  {
+   "venue": "UAI",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Microsoft Best Paper",
+   "title": "Firefly Monte Carlo: Exact MCMC with Subsets of Data",
+   "authors": [
+    "Dougal Maclaurin",
+    "Ryan Adams"
+   ],
+   "track": "main",
+   "source": "https://auai.org/uai2014/schedule.shtml",
+   "evidence": "Firefly Monte Carlo: Exact MCMC with Subsets of Data ( Microsoft Best Paper ) Dougal Maclaurin, Ryan Adams"
+  },
+  {
+   "venue": "UAI",
+   "year": 2014,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-Up",
+   "title": "Optimal Resource Allocation with Semi-Bandit Feedback",
+   "authors": [
+    "Tor Lattimore",
+    "Koby Crammer",
+    "Csaba Szepesvari"
+   ],
+   "track": "main",
+   "source": "https://auai.org/uai2014/schedule.shtml",
+   "evidence": "Optimal Resource Allocation with Semi-Bandit Feedback ( Best Paper Runner-Up ) Tor Lattimore, Koby Crammer, Csaba Szepesvari"
+  },
+  {
+   "venue": "UAI",
+   "year": 2014,
+   "award": "student",
+   "awardLabel": "IBM Best Student Paper",
+   "title": "Constructing Separators and Adjustment Sets in Ancestral Graphs",
+   "authors": [
+    "Benito van der Zander",
+    "Maciej Liskiewicz",
+    "Johannes Textor"
+   ],
+   "track": "main",
+   "source": "https://auai.org/uai2014/schedule.shtml",
+   "evidence": "Constructing Separators and Adjustment Sets in Ancestral Graphs ( IBM Best Student Paper ) Benito van der Zander, Maciej Liskiewicz, Johannes Textor"
+  },
+  {
+   "venue": "UAI",
+   "year": 2014,
+   "award": "student",
+   "awardLabel": "Google Best Student Paper",
+   "title": "Near-optimal Adaptive Pool-based Active Learning with General Loss",
+   "authors": [
+    "Nguyen Viet Cuong",
+    "Wee Sun Lee",
+    "Nan Ye"
+   ],
+   "track": "main",
+   "source": "https://auai.org/uai2014/schedule.shtml",
+   "evidence": "Near-optimal Adaptive Pool-based Active Learning with General Loss ( Google Best Student Paper ) Nguyen Viet Cuong, Wee Sun Lee, Nan Ye"
+  },
+  {
+   "venue": "UAI",
+   "year": 2014,
+   "award": "student",
+   "awardLabel": "Facebook Best Student Paper",
+   "title": "Universal Convexification via Risk-Aversion",
+   "authors": [
+    "Krishnamurthy Dvijotham",
+    "Maryam Fazel",
+    "Emanuel Todorov"
+   ],
+   "track": "main",
+   "source": "https://auai.org/uai2014/schedule.shtml",
+   "evidence": "Universal Convexification via Risk-Aversion ( Facebook Best Student Paper ) Krishnamurthy Dvijotham, Maryam Fazel, Emanuel Todorov"
+  },
+  {
+   "venue": "UAI",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best paper award",
+   "title": "Stability of Causal Inference",
+   "authors": [
+    "Leonard Schulman",
+    "Piyush Srivastava"
+   ],
+   "track": "main",
+   "source": "https://auai.org/uai2016/program.php",
+   "evidence": "ID: 214 | (Best paper award) Stability of Causal Inference | Leonard Schulman, California Institute of Technology; Piyush Srivastava, California Institute of Techno"
+  },
+  {
+   "venue": "UAI",
+   "year": 2016,
+   "award": "student",
+   "awardLabel": "Best student paper award",
+   "title": "Thompson Sampling is Asymptotically Optimal in General Environments",
+   "authors": [
+    "Jan Leike",
+    "Tor Lattimore",
+    "Laurent Orseau",
+    "Marcus Hutter"
+   ],
+   "track": "main",
+   "source": "https://auai.org/uai2016/program.php",
+   "evidence": "ID: 20 | (Best student paper award) Thompson Sampling is Asymptotically Optimal in General Environments | Jan Leike, Australian National University; Tor Lattimore, University of Alberta; Laurent Orseau, Google DeepMind; Marcus Hutter,"
+  },
+  {
+   "venue": "UAI",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Importance Sampling for Fair Policy Selection",
+   "authors": [
+    "Shayan Doroudi",
+    "Philip Thomas",
+    "Emma Brusnkill"
+   ],
+   "track": "main",
+   "source": "https://auai.org/uai2017/accepted.php",
+   "evidence": "Best Paper Importance Sampling for Fair Policy Selection Shayan Doroudi; Philip Thomas; Emma Brusnkill"
+  },
+  {
+   "venue": "UAI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Best Student Paper Honorable Mention",
+   "title": "An Efficient Minibatch Acceptance Test for Metropolis-Hastings",
+   "authors": [
+    "Daniel Seita",
+    "Xinlei Pan",
+    "Haoyu Chen",
+    "John Canny"
+   ],
+   "track": "main",
+   "source": "https://auai.org/uai2017/accepted.php",
+   "evidence": "Best Student Paper Honorable Mention An Efficient Minibatch Acceptance Test for Metropolis-Hastings Daniel Seita; Xinlei Pan; Haoyu Chen; John Canny"
+  },
+  {
+   "venue": "UAI",
+   "year": 2017,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Why Rules are Complex: Real-Valued Probabilistic Logic Programs are not Fully Expressive",
+   "authors": [
+    "David Buchman",
+    "David Poole"
+   ],
+   "track": "main",
+   "source": "https://auai.org/uai2017/accepted.php",
+   "evidence": "Best Student Paper Why Rules are Complex: Real-Valued Probabilistic Logic Programs are not Fully Expressive David Buchman; David Poole"
+  },
+  {
+   "venue": "UAI",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "A Dual Approach to Scalable Verification of Deep Networks",
+   "authors": [
+    "Krishnamurthy Dvijotham",
+    "Robert Stanforth",
+    "Sven Gowal",
+    "Timothy Mann",
+    "Pushmeet Kohli"
+   ],
+   "track": "main",
+   "source": "https://auai.org/uai2018/schedule.php",
+   "evidence": "A Dual Approach to Scalable Verification of Deep Networks (Best Paper Award) [Video] Krishnamurthy Dvijotham, Robert Stanforth, Sven Gowal, Timothy Mann, Pushmeet Kohli"
+  },
+  {
+   "venue": "UAI",
+   "year": 2018,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Causal Identification under Markov Equivalence",
+   "authors": [
+    "Amin Jaber",
+    "Jiji Zhang",
+    "Elias Bareinboim"
+   ],
+   "track": "main",
+   "source": "https://auai.org/uai2018/schedule.php",
+   "evidence": "Causal Identification under Markov Equivalence (Best Student Paper Award) [Video] Amin Jaber, Jiji Zhang, Elias Bareinboim"
+  },
+  {
+   "venue": "UAI",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "General Identifiability with Arbitrary Surrogate Experiments",
+   "authors": [
+    "Sanghack Lee",
+    "Juan D. Correa",
+    "Elias Bareinboim"
+   ],
+   "track": "main",
+   "source": "https://proceedings.mlr.press/v115/adams20a/adams20a.pdf",
+   "evidence": "the Best Paper Award was awarded to Sanghack Lee, Juan D. Correa, and Elias Bareinboim for their paper “General Identifiability with Arbitrary Surrogate Experiments.”"
+  },
+  {
+   "venue": "UAI",
+   "year": 2019,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Exact Sampling of Directed Acyclic Graphs from Modular Distributions",
+   "authors": [
+    "Topi Talvitie",
+    "Aleksis Vuoksenmaa",
+    "Mikko Koivisto"
+   ],
+   "track": "main",
+   "source": "https://proceedings.mlr.press/v115/adams20a/adams20a.pdf",
+   "evidence": "The Best Student Paper Award was awarded to Topi Talvitie, Aleksis Vuoksenmaa, and Mikko Koivisto for their paper “Exact Sampling of Directed Acyclic Graphs from Modular Distributions.”"
+  },
+  {
+   "venue": "UAI",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best paper",
+   "title": "Measuring data leakage in machine-learning models with Fisher information",
+   "authors": [
+    "Awni Hannun",
+    "Chuan Guo",
+    "Laurens van der Maaten"
+   ],
+   "track": "main",
+   "source": "https://proceedings.mlr.press/v161/campos21a/campos21a.pdf",
+   "evidence": "Best paper: • “Measuring data leakage in machine-learning models with Fisher information” by Awni Hannun, Chuan Guo, and Laurens van der Maaten."
+  },
+  {
+   "venue": "UAI",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "Approximate implication with d-separation",
+   "authors": [
+    "Batya Kenig"
+   ],
+   "track": "main",
+   "source": "https://proceedings.mlr.press/v161/campos21a/campos21a.pdf",
+   "evidence": "Runner-ups to best paper: • “Unbiased gradient estimation for variational auto- encoders using coupled Markov chains” by Francisco Proceedings of the Thirty-Seventh Conference on Uncertainty in Artificial Intelligence (UAI 2021), PMLR 161:1–11. Ruiz, Michalis Titsias, Taylan Cemgil, and Arnaud Doucet. • “Approximate implication with d-separation” by Batya Kenig."
+  },
+  {
+   "venue": "UAI",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Best Student Paper Runner-up",
+   "title": "Classification with abstention but without disparities",
+   "authors": [
+    "Nicolas Schreuder",
+    "Evgenii Chzhen"
+   ],
+   "track": "main",
+   "source": "https://proceedings.mlr.press/v161/campos21a/campos21a.pdf",
+   "evidence": "Runner-up to best student paper: • “Classification with abstention but without disparities” by Nicolas Schreuder and Evgenii Chzhen."
+  },
+  {
+   "venue": "UAI",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "Unbiased gradient estimation for variational auto-encoders using coupled Markov chains",
+   "authors": [
+    "Francisco Ruiz",
+    "Michalis Titsias",
+    "Taylan Cemgil",
+    "Arnaud Doucet"
+   ],
+   "track": "main",
+   "source": "https://proceedings.mlr.press/v161/campos21a/campos21a.pdf",
+   "evidence": "Runner-ups to best paper: • “Unbiased gradient estimation for variational auto- encoders using coupled Markov chains” by Francisco Proceedings of the Thirty-Seventh Conference on Uncertainty in Artificial Intelligence (UAI 2021), PMLR 161:1–11. Ruiz, Michalis Titsias, Taylan Cemgil, and Arnaud Doucet."
+  },
+  {
+   "venue": "UAI",
+   "year": 2021,
+   "award": "student",
+   "awardLabel": "Best student paper",
+   "title": "Extendability of causal graphical models: algorithms and computational complexity",
+   "authors": [
+    "Marcel Wienöbst",
+    "Max Bannach",
+    "Maciej Liśkiewicz"
+   ],
+   "track": "main",
+   "source": "https://proceedings.mlr.press/v161/campos21a/campos21a.pdf",
+   "alsoAt": [
+    "https://proceedings.mlr.press/v161/"
+   ],
+   "evidence": "Best student paper: • “Extendability of causal graphical models: algorithms and computational complexity” by Marcel Wienöbst, Max Bannach, and Maciej Li´skiewicz."
   },
   {
    "venue": "UAI",
@@ -170991,6 +173331,37 @@
   },
   {
    "venue": "USENIX ATC",
+   "year": 2006,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Optimizing Network Virtualization in Xen",
+   "authors": [
+    "Aravind Menon",
+    "Alan L. Cox",
+    "Willy Zwaenepoel"
+   ],
+   "track": "main",
+   "source": "https://www.usenix.org/legacy/events/usenix06/tech/",
+   "evidence": "Awarded Best Paper! Optimizing Network Virtualization in Xen Aravind Menon"
+  },
+  {
+   "venue": "USENIX ATC",
+   "year": 2006,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Replay Debugging for Distributed Applications",
+   "authors": [
+    "Dennis Geels",
+    "Gautam Altekar",
+    "Scott Shenker",
+    "Ion Stoica"
+   ],
+   "track": "main",
+   "source": "https://www.usenix.org/legacy/events/usenix06/tech/",
+   "evidence": "Awarded Best Paper! Replay Debugging for Distributed Applications Dennis Geels"
+  },
+  {
+   "venue": "USENIX ATC",
    "year": 2007,
    "award": "best",
    "awardLabel": "USENIX Best Paper",
@@ -171078,6 +173449,39 @@
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
    "evidence": "USENIX ATC '09: Tolerating File-System Mistakes with EnvyFS — Lakshmi N. Bairavasundaram, NetApp, Inc.; Swaminathan Sundararaman, University of Wisconsin—Madison; Andrea C. Arpaci-Dusseau, University of Wisconsin—Madison; Remzi H. Arpaci-Dusseau, University of Wisconsin—Madison"
+  },
+  {
+   "venue": "USENIX ATC",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "LiteGreen: Saving Energy in Networked Desktops Using Virtualization",
+   "authors": [
+    "Tathagata Das",
+    "Pradeep Padala",
+    "Venkat Padmanabhan",
+    "Ram Ramjee",
+    "Kang G. Shin"
+   ],
+   "track": "main",
+   "source": "https://www.usenix.org/legacy/events/atc10/tech/",
+   "evidence": "Awarded Best Paper! LiteGreen: Saving Energy in Networked Desktops Using Virtualization Tathagata Das"
+  },
+  {
+   "venue": "USENIX ATC",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "ZooKeeper: Wait-free Coordination for Internet-scale Systems",
+   "authors": [
+    "Patrick Hunt",
+    "Mahadev Konar",
+    "Flavio P. Junqueira",
+    "Benjamin Reed"
+   ],
+   "track": "main",
+   "source": "https://www.usenix.org/legacy/events/atc10/tech/",
+   "evidence": "Awarded Best Paper! ZooKeeper: Wait-free Coordination for Internet-scale Systems Patrick Hunt"
   },
   {
    "venue": "USENIX ATC",
@@ -171946,6 +174350,36 @@
   },
   {
    "venue": "USENIX Security",
+   "year": 2009,
+   "award": "student",
+   "awardLabel": "Outstanding Student Paper",
+   "title": "Compromising Electromagnetic Emanations of Wired and Wireless Keyboards",
+   "authors": [
+    "Martin Vuagnoux",
+    "Sylvain Pasini"
+   ],
+   "track": "main",
+   "source": "https://www.usenix.org/legacy/events/sec09/tech/",
+   "evidence": "Awarded Outstanding Student Paper! Compromising Electromagnetic Emanations of Wired and Wireless Keyboards Martin Vuagnoux"
+  },
+  {
+   "venue": "USENIX Security",
+   "year": 2009,
+   "award": "student",
+   "awardLabel": "Outstanding Student Paper",
+   "title": "Vanish: Increasing Data Privacy with Self-Destructing Data",
+   "authors": [
+    "Roxana Geambasu",
+    "Tadayoshi Kohno",
+    "Amit A. Levy",
+    "Henry M. Levy"
+   ],
+   "track": "main",
+   "source": "https://www.usenix.org/legacy/events/sec09/tech/",
+   "evidence": "Awarded Outstanding Student Paper! Vanish: Increasing Data Privacy with Self-Destructing Data Roxana Geambasu"
+  },
+  {
+   "venue": "USENIX Security",
    "year": 2010,
    "award": "best",
    "awardLabel": "USENIX Best Paper",
@@ -171975,6 +174409,40 @@
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
    "evidence": "USENIX Security '10: VEX: Vetting Browser Extensions for Security Vulnerabilities — Sruthi Bandhakavi, University of Illinois at Urbana-Champaign; Samuel T. King, University of Illinois at Urbana-Champaign; P. Madhusudan, University of Illinois at Urbana-Champaign; Marianne Winslett, University of Illinois at Urbana-Champaign"
+  },
+  {
+   "venue": "USENIX Security",
+   "year": 2011,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Measuring Pay-per-Install : The Commoditization of Malware Distribution",
+   "authors": [
+    "Juan Caballero",
+    "Chris Grier",
+    "Christian Kreibich",
+    "Vern Paxson"
+   ],
+   "track": "main",
+   "source": "https://www.usenix.org/legacy/events/sec11/tech/",
+   "evidence": "Awarded Outstanding Paper! Measuring Pay-per-Install : The Commoditization of Malware Distribution Juan Caballero"
+  },
+  {
+   "venue": "USENIX Security",
+   "year": 2011,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Why (Special Agent) Johnny (Still) Can't Encrypt: A Security Analysis of the APCO Project 25 Two-Way Radio System",
+   "authors": [
+    "Sandy Clark",
+    "Travis Goodspeed",
+    "Perry Metzger",
+    "Zachary Wasserman",
+    "Kevin Xu",
+    "Matt Blaze"
+   ],
+   "track": "main",
+   "source": "https://www.usenix.org/legacy/events/sec11/tech/",
+   "evidence": "Awarded Outstanding Paper! Why (Special Agent) Johnny (Still) Can't Encrypt: A Security Analysis of the APCO Project 25 Two-Way Radio System Sandy Clark"
   },
   {
    "venue": "USENIX Security",
@@ -184322,6 +186790,98 @@
   },
   {
    "venue": "WWW",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Towards a Theory Model for Product Search",
+   "authors": [
+    "Beibei Li",
+    "Anindya Ghose",
+    "Panagiotis G. Ipeirotis"
+   ],
+   "track": "main",
+   "source": "https://archives.iw3c2.org/www2011/",
+   "evidence": "Best Paper Award Towards a Theory Model for Product Search Beibei Li"
+  },
+  {
+   "venue": "WWW",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best paper award",
+   "title": "Counting beyond a Yottabyte, or how SPARQL 1.1 Property Paths will prevent adoption of the standard",
+   "authors": [
+    "Marcelo Arenas",
+    "Sebastián Conca",
+    "Jorge Pérez"
+   ],
+   "track": "main",
+   "source": "https://archives.iw3c2.org/www2012/post-documents/best-papers/",
+   "evidence": "Best paper award Runners up: Build Your Own Music Recommender by Modeling Internet Radio Streams Natalie Aizenberg, Yehuda Koren and Oren Somek. Implementing Optimal Outcomes in Social Computing: A Game-Theoretic Approach Arpita Ghosh and Patrick Hummel. And the winner is: Counting beyond a Yottabyte, or how SPARQL 1.1 Property Paths will prevent adoption of the standard Marcelo Arenas"
+  },
+  {
+   "venue": "WWW",
+   "year": 2012,
+   "award": "runner-up",
+   "awardLabel": "Best paper award, Runners up",
+   "title": "Build Your Own Music Recommender by Modeling Internet Radio Streams",
+   "authors": [
+    "Natalie Aizenberg",
+    "Yehuda Koren",
+    "Oren Somek"
+   ],
+   "track": "main",
+   "source": "https://archives.iw3c2.org/www2012/post-documents/best-papers/",
+   "evidence": "Best paper award Runners up: Build Your Own Music Recommender by Modeling Internet Radio Streams Natalie Aizenberg"
+  },
+  {
+   "venue": "WWW",
+   "year": 2012,
+   "award": "runner-up",
+   "awardLabel": "Best paper award, Runners up",
+   "title": "Implementing Optimal Outcomes in Social Computing: A Game-Theoretic Approach",
+   "authors": [
+    "Arpita Ghosh",
+    "Patrick Hummel"
+   ],
+   "track": "main",
+   "source": "https://archives.iw3c2.org/www2012/post-documents/best-papers/",
+   "evidence": "Best paper award Runners up: Build Your Own Music Recommender by Modeling Internet Radio Streams Natalie Aizenberg, Yehuda Koren and Oren Somek. Implementing Optimal Outcomes in Social Computing: A Game-Theoretic Approach Arpita Ghosh"
+  },
+  {
+   "venue": "WWW",
+   "year": 2012,
+   "award": "runner-up",
+   "awardLabel": "Best student paper award, Runners up",
+   "title": "Musubi: Disintermediated Interactive Social Feeds for Mobile Devices",
+   "authors": [
+    "Ben Dodson",
+    "Tj Purtell",
+    "Ian Vo",
+    "Monica Lam"
+   ],
+   "track": "main",
+   "source": "https://archives.iw3c2.org/www2012/post-documents/best-papers/",
+   "evidence": "Best student paper award Runners up: Musubi: Disintermediated Interactive Social Feeds for Mobile Devices Ben Dodson"
+  },
+  {
+   "venue": "WWW",
+   "year": 2012,
+   "award": "student",
+   "awardLabel": "Best student paper award",
+   "title": "Who Killed My Battery: Analyzing Mobile Browser Energy Consumption",
+   "authors": [
+    "Narendran Thiagarajan",
+    "Gaurav Aggarwal",
+    "Angela Nicoara",
+    "Dan Boneh",
+    "Jatinder Singh"
+   ],
+   "track": "main",
+   "source": "https://archives.iw3c2.org/www2012/post-documents/best-papers/",
+   "evidence": "Best student paper award Runners up: Musubi: Disintermediated Interactive Social Feeds for Mobile Devices Ben Dodson, Tj Purtell, Ian Vo and Monica Lam. And the winner is: Who Killed My Battery: Analyzing Mobile Browser Energy Consumption Narendran Thiagarajan"
+  },
+  {
+   "venue": "WWW",
    "year": 2015,
    "award": "best",
    "awardLabel": "Best Paper Award",
@@ -184365,6 +186925,36 @@
    "track": "main",
    "source": "https://www.iw3c2.org/ToT/",
    "evidence": "The Web Conference 2015 Seoul Test of Time Award: Sergey Brin and Larry Page for their paper “The Anatomy of a Large-Scale Hypertextual Web Search Engine”"
+  },
+  {
+   "venue": "WWW",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Social Networks Under Stress",
+   "authors": [
+    "Daniel Romero",
+    "Brian Uzzi",
+    "Jon Kleinberg"
+   ],
+   "track": "main",
+   "source": "https://archives.iw3c2.org/www2016/program/bestpapercandidate.html",
+   "evidence": "Social Networks Under Stress (WINNER - BEST PAPER AWARD) Daniel Romero"
+  },
+  {
+   "venue": "WWW",
+   "year": 2016,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Using Hierarchical Skills for Optimized Task Assignment in Knowledge-intensive Crowdsourcing",
+   "authors": [
+    "Panagiotis Mavridis",
+    "David Gross-Amblard",
+    "Zoltan Miklos"
+   ],
+   "track": "main",
+   "source": "https://archives.iw3c2.org/www2016/program/bestpapercandidate.html",
+   "evidence": "Using Hierarchical Skills for Optimized Task Assignment in Knowledge-intensive Crowdsourcing (WINNER - BEST STUDENT PAPER AWARD) Panagiotis Mavridis"
   },
   {
    "venue": "WWW",
@@ -184416,6 +187006,65 @@
    "track": "main",
    "source": "https://www2018.thewebconf.org/awards/",
    "evidence": "WWW 2018 Best Paper: HighLife: Higher-arity Fact Harvesting — Patrick Ernst, Amy Siu, Gerhard Weikum"
+  },
+  {
+   "venue": "WWW",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "Research Paper Honorable Mentions",
+   "title": "A Short-term Intervention for Long-term Fairness in the Labor Market",
+   "authors": [
+    "Lily Hu",
+    "Yiling Chen"
+   ],
+   "track": "main",
+   "source": "https://www2018.thewebconf.org/awards/",
+   "evidence": "Research Paper Honorable Mentions These papers are tagged with a ★ in the program pages A Short-term Intervention for Long-term Fairness in the Labor Market Authors : Lily Hu and Yiling Chen"
+  },
+  {
+   "venue": "WWW",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "Research Paper Honorable Mentions",
+   "title": "Aesthetic-based Clothing Recommendation",
+   "authors": [
+    "Wenhui Yu",
+    "Huidi Zhang",
+    "Xiangnan He",
+    "Xu Chen",
+    "Li Xiong",
+    "Zheng Qin"
+   ],
+   "track": "main",
+   "source": "https://www2018.thewebconf.org/awards/",
+   "evidence": "Research Paper Honorable Mentions These papers are tagged with a ★ in the program pages A Short-term Intervention for Long-term Fairness in the Labor Market Authors : Lily Hu and Yiling Chen Keywords : fairness, game theory, labor market Abstract : The persistence of racial inequality in the U.S. labor market against a general backdrop of formal equality of opportunity is a troubling phenomenon that has significant ramifications on the design of hiring policies. In this paper, we show that current group disparate outcomes may be immovable even when hiring decisions are bound by an input-output notion of “”individual fairness.”” Instead, we construct a dynamic reputational model of the labor market that illustrates the reinforcing nature of asymmetric outcomes resulting from groups’ divergent access to resources and as a result, investment choices. To address these disparities, we adopt a dual labor market composed of a Temporary Labor Market (TLM), in which firms’ hiring strategies are constrained to ensure statistical parity of workers granted entry into the pipeline, and a Permanent Labor Market (PLM), in which firms hire top performers as desired. Individual worker reputations produce externalities for their group; the corresponding feedback loop raises the collective reputation of the initially disadvantaged group via a TLM fairness intervention that need not be permanent. We show that such a restriction on hiring practices induces an equilibrium that, under particular market conditions, Pareto-dominates those arising from strategies that employ statistical discrimination or a “”group-blind”” criterion. The enduring nature of equilibria that are both inequitable and Pareto suboptimal suggests that fairness interventions beyond procedural checks of hiring decisions will be of critical importance in a world where machines play a greater role in the employment process. Aesthetic-based Clothing Recommendation Authors : Wenhui Yu, Huidi Zhang, Xiangnan He, Xu Chen, Li Xiong and Zheng Qin"
+  },
+  {
+   "venue": "WWW",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "Research Paper Honorable Mentions",
+   "title": "An Automated Approach to Auditing Disclosure of Third-Party Data Collection in Website Privacy Policies",
+   "authors": [
+    "Timothy Libert"
+   ],
+   "track": "main",
+   "source": "https://www2018.thewebconf.org/awards/",
+   "evidence": "Research Paper Honorable Mentions These papers are tagged with a ★ in the program pages A Short-term Intervention for Long-term Fairness in the Labor Market Authors : Lily Hu and Yiling Chen Keywords : fairness, game theory, labor market Abstract : The persistence of racial inequality in the U.S. labor market against a general backdrop of formal equality of opportunity is a troubling phenomenon that has significant ramifications on the design of hiring policies. In this paper, we show that current group disparate outcomes may be immovable even when hiring decisions are bound by an input-output notion of “”individual fairness.”” Instead, we construct a dynamic reputational model of the labor market that illustrates the reinforcing nature of asymmetric outcomes resulting from groups’ divergent access to resources and as a result, investment choices. To address these disparities, we adopt a dual labor market composed of a Temporary Labor Market (TLM), in which firms’ hiring strategies are constrained to ensure statistical parity of workers granted entry into the pipeline, and a Permanent Labor Market (PLM), in which firms hire top performers as desired. Individual worker reputations produce externalities for their group; the corresponding feedback loop raises the collective reputation of the initially disadvantaged group via a TLM fairness intervention that need not be permanent. We show that such a restriction on hiring practices induces an equilibrium that, under particular market conditions, Pareto-dominates those arising from strategies that employ statistical discrimination or a “”group-blind”” criterion. The enduring nature of equilibria that are both inequitable and Pareto suboptimal suggests that fairness interventions beyond procedural checks of hiring decisions will be of critical importance in a world where machines play a greater role in the employment process. Aesthetic-based Clothing Recommendation Authors : Wenhui Yu, Huidi Zhang, Xiangnan He, Xu Chen, Li Xiong and Zheng Qin Keywords : Clothing recommendation, side information, aesthetic features, tensor factorization, dynamic collaborative filtering Abstract : Recently, product images gain increasing concern in clothing recommendation since the visual appearance of the items have a significant impact on consumers’ decision. Existing models usually extract conventional features, such as convolutional neural network (CNN) features, scale-invariant feature transform (SIFT) features, and color histograms, to represent item image characters and capture user visual preferences. However, one important feature, aesthetic feature, is typically ignored. It is vital in recommendation since users’ decision depends largely on if the clothing is in line with their aesthetic while the conventional image features cannot portray this directly. To bridge this gap, we propose to introduce aesthetic information which is more related with users’ preference into the field of clothing recommender system. To do so, we first present the aesthetic features extracted by an pre-trained neural network, which is a brain inspired deep structure trained for aesthetic assessment task. Considering the aesthetic preference shows diversity with different people and time, we propose a novel tensor factorization model as a basic model and then incorporate the aesthetic features into it. Finally, extensive experiments on real-world datasets demonstrate that our approach can capture the aesthetic preference of consumers and outperform several state-of-the-art models significantly. An Automated Approach to Auditing Disclosure of Third-Party Data Collection in Website Privacy Policies Authors : Timothy Libert"
+  },
+  {
+   "venue": "WWW",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "Research Paper Honorable Mentions",
+   "title": "Did You Really Just Have a Heart Attack?: Towards Robust Detection of Personal Health Mentions in Social Media",
+   "authors": [
+    "Payam Karisani",
+    "Eugene Agichtein"
+   ],
+   "track": "main",
+   "source": "https://www2018.thewebconf.org/awards/",
+   "evidence": "Research Paper Honorable Mentions These papers are tagged with a ★ in the program pages A Short-term Intervention for Long-term Fairness in the Labor Market Authors : Lily Hu and Yiling Chen Keywords : fairness, game theory, labor market Abstract : The persistence of racial inequality in the U.S. labor market against a general backdrop of formal equality of opportunity is a troubling phenomenon that has significant ramifications on the design of hiring policies. In this paper, we show that current group disparate outcomes may be immovable even when hiring decisions are bound by an input-output notion of “”individual fairness.”” Instead, we construct a dynamic reputational model of the labor market that illustrates the reinforcing nature of asymmetric outcomes resulting from groups’ divergent access to resources and as a result, investment choices. To address these disparities, we adopt a dual labor market composed of a Temporary Labor Market (TLM), in which firms’ hiring strategies are constrained to ensure statistical parity of workers granted entry into the pipeline, and a Permanent Labor Market (PLM), in which firms hire top performers as desired. Individual worker reputations produce externalities for their group; the corresponding feedback loop raises the collective reputation of the initially disadvantaged group via a TLM fairness intervention that need not be permanent. We show that such a restriction on hiring practices induces an equilibrium that, under particular market conditions, Pareto-dominates those arising from strategies that employ statistical discrimination or a “”group-blind”” criterion. The enduring nature of equilibria that are both inequitable and Pareto suboptimal suggests that fairness interventions beyond procedural checks of hiring decisions will be of critical importance in a world where machines play a greater role in the employment process. Aesthetic-based Clothing Recommendation Authors : Wenhui Yu, Huidi Zhang, Xiangnan He, Xu Chen, Li Xiong and Zheng Qin Keywords : Clothing recommendation, side information, aesthetic features, tensor factorization, dynamic collaborative filtering Abstract : Recently, product images gain increasing concern in clothing recommendation since the visual appearance of the items have a significant impact on consumers’ decision. Existing models usually extract conventional features, such as convolutional neural network (CNN) features, scale-invariant feature transform (SIFT) features, and color histograms, to represent item image characters and capture user visual preferences. However, one important feature, aesthetic feature, is typically ignored. It is vital in recommendation since users’ decision depends largely on if the clothing is in line with their aesthetic while the conventional image features cannot portray this directly. To bridge this gap, we propose to introduce aesthetic information which is more related with users’ preference into the field of clothing recommender system. To do so, we first present the aesthetic features extracted by an pre-trained neural network, which is a brain inspired deep structure trained for aesthetic assessment task. Considering the aesthetic preference shows diversity with different people and time, we propose a novel tensor factorization model as a basic model and then incorporate the aesthetic features into it. Finally, extensive experiments on real-world datasets demonstrate that our approach can capture the aesthetic preference of consumers and outperform several state-of-the-art models significantly. An Automated Approach to Auditing Disclosure of Third-Party Data Collection in Website Privacy Policies Authors : Timothy Libert Keywords : Web Privacy, Web Security, Internet Policy, Internet Regulation Abstract : A dominant regulatory model for web privacy is “”notice and choice””. In this model, users are notified of data collection and provided with options to control it. To examine the efficacy of this approach, this study presents the first large-scale audit of disclosure of third-party data collection in website privacy policies. Data flows on one million websites are analyzed and over 200,000 website’s privacy policies are audited to determine if users are notified of the names of the companies which collect their data. Policies from 25 prominent third-party data collectors are also examined to provide deeper insights into the totality of the policy environment. Policies are additionally audited to determine if the choice expressed by the “”Do Not Track”” browser setting is respected. It is found that third-party data collection is wide-spread, but only 15% of attributed data flows are disclosed. The third-parties most likely to be disclosed are those with consumer services users may be aware of, those without consumer services are less likely to be mentioned. Policies are difficult to understand and the average time requirement to read both a given site’s policy and the associated third-party policies exceeds 85 minutes. Only 7% of first-party site policies mention the “”Do Not Track”” signal, and the majority of such mentions are to specify that the signal is ignored. Among third-party policies examined, none offer unqualified support for the “”Do Not Track”” signal. Findings indicate that current implementations of “”Notice and Choice”” fail to provide notice or respect choice. Did You Really Just Have a Heart Attack?: Towards Robust Detection of Personal Health Mentions in Social Media Authors : Payam Karisani and Eugene Agichtein"
   },
   {
    "venue": "WWW",
