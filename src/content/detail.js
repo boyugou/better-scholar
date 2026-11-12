@@ -53,10 +53,10 @@
     for (const item of items) {
       if ((signal && signal.aborted) || B.dom.orphaned()) return { done, stopped: "cancelled" };          // (and when the extension was switched off or removed under the page)
       // Semantic Scholar first when the settings allow it (items carry the title); a miss or a slow-down sends the paper to Scholar's own page
-      if (!cache[item.id] && askSemantic && item.title && (typeof semantic === "function" ? semantic() : semantic)) {
+      if (!B.analysis.detailOf(cache[item.id], item.title) && askSemantic && item.title && (typeof semantic === "function" ? semantic() : semantic)) {
         try {
           const d = await B.semantic.lookup(item.title, signal, { authorsText: item.authorsText, year: item.year });
-          if (d) cache[item.id] = { authors: d.authors, venue: d.venue, ts: Date.now(), via: "semantic" };
+          if (d) cache[item.id] = { authors: d.authors, venue: d.venue, t: B.analysis.titleSig(item.title), ts: Date.now(), via: "semantic" };
         } catch (e) {
           if (e.name === "AbortError") return { done, stopped: "cancelled" };
           if (e.limited) { askSemantic = false; limited = true; }
@@ -65,10 +65,10 @@
         }
         await sleep(B.semantic.PACE());
       }
-      if (!cache[item.id]) {
+      if (!B.analysis.detailOf(cache[item.id], item.title)) {
         try {
           const d = await fetchDetail(item.href, signal);
-          if (d.authors) { cache[item.id] = { authors: d.authors, venue: d.venue, ...(d.pages ? { pages: d.pages } : {}), ts: Date.now() }; unread = 0; }
+          if (d.authors) { cache[item.id] = { authors: d.authors, venue: d.venue, t: B.analysis.titleSig(item.title), ...(d.pages ? { pages: d.pages } : {}), ts: Date.now() }; unread = 0; }
           else if (++unread >= 2) return { done, stopped: "unreadable" };
         } catch (e) {
           if (e.name === "AbortError") return { done, stopped: "cancelled" };
@@ -81,7 +81,7 @@
         await sleep(PACE());
       }
       done++;
-      if (cache[item.id] && onResult) onResult(item.id, cache[item.id]);
+      if (B.analysis.detailOf(cache[item.id], item.title) && onResult) onResult(item.id, cache[item.id]);
       if (onProgress) onProgress(done, items.length);
     }
     return { done, stopped: null, semanticLimited: limited, semanticKey: badKey };

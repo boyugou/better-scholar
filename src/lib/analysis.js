@@ -16,8 +16,11 @@
   // raw:  { authorsText, venueText, title?, citations?, year? }   — straight from the Scholar list view
   // ctx:  { owner: {name, alternates?}, resolver, resolved?: { authors?, venue? }, venueWord?, awards? }
   //       `resolved` is what a paper's detail page said (full author list, clean venue).
+  // The saved details of a paper (`t`: the title they were read for) apply only to a row of that title: an id alone can be set by a script on the page
+  const titleSig = (t) => String(t == null ? "" : t).toLowerCase().replace(/[^\p{L}\p{N}]+/gu, "");
+  const detailOf = (entry, title) => (entry && entry.t && entry.t === titleSig(title) ? entry : null);
   function analyzeRow(raw, ctx) {
-    const resolved = ctx.resolved || null;
+    const resolved = detailOf(ctx.resolved, raw.title);
     const authorsText = (resolved && resolved.authors) || raw.authorsText || "";
     const cls = names.classifyRow(authorsText, ctx.owner);
     const venueText = raw.venueText || "";
@@ -107,5 +110,5 @@
   // invisible behind Scholar's "…" truncation.
   const needsDetail = (a) => a.status === "hidden" && !a.fromDetail;
 
-  return { ROLE_KEYS, analyzeRow, isHighlighted, needsDetail, queryMatcher };
+  return { ROLE_KEYS, analyzeRow, isHighlighted, needsDetail, queryMatcher, titleSig, detailOf };
 });

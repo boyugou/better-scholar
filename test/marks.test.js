@@ -156,7 +156,7 @@ test("analyzeRow carries the marks, from the list text and from a resolved paper
   // the list text lost it to truncation; the paper's own page still has it
   const trunc = { title: "Fast Things", authorsText: "J Doe, A Smith, ...", venueText: "Advances in neural information processing systems 35 (NeurIPS …, 2022", year: 2022 };
   assert.deepEqual(analysis.analyzeRow(trunc, { owner, resolver }).marks, []);
-  const b = analysis.analyzeRow(trunc, { owner, resolver, resolved: { authors: "J Doe, A Smith, B Lee", venue: "NeurIPS 2022 (Spotlight)" } });
+  const b = analysis.analyzeRow(trunc, { owner, resolver, resolved: { authors: "J Doe, A Smith, B Lee", venue: "NeurIPS 2022 (Spotlight)", t: analysis.titleSig(trunc.title) } });
   assert.deepEqual(b.marks.map((m) => m.kind), ["spotlight"]);
   // an ordinary row has none, and a row without a title field still works
   assert.deepEqual(analysis.analyzeRow({ authorsText: "J Doe", venueText: "Nature 521, 2015" }, { owner, resolver }).marks, []);
@@ -330,4 +330,17 @@ test("a third read, 2026-10-30: every form of a test-of-time nominee or finalist
   for (const v of ["Test of Time Award (Nominee)", "Test of Time Award - Finalist", "Test of Time Award: Nominee", "Nominee for the Test of Time Award", "Finalist for the Test of Time Award", "Nominated for a Test of Time Award", "10-Year Test of Time Award nominee"])
     assert.deepEqual(marks.detect({ venue: v }).map((m) => m.kind), [], v);
   assert.deepEqual(marks.detect({ venue: "10-Year Test of Time Award" }).map((m) => m.kind), ["tot"]);
+});
+
+test("a fifteenth review, 2026-11-12: saved paper details apply only to a row of the title they were read for", () => {
+  const analysis = require("../src/lib/analysis.js"), names = require("../src/lib/names.js");
+  const venues = require("../src/lib/venues.js");
+  const resolver = venues.createResolver ? venues.createResolver({ ccf: [], core: [] }) : { resolve: () => ({}) };
+  const owner = { name: "I Stoica" };
+  const row = { authorsText: "A Alpha, B Beta, ...", venueText: "Conf, 2020", title: "Victim paper", year: 2020, id: "P1" };
+  const entry = { authors: "Q Other, R Other, I Stoica", venue: "Conf", t: analysis.titleSig("Attacker's own paper"), ts: 1 };
+  assert.equal(analysis.analyzeRow(row, { owner, resolver, resolved: entry }).fromDetail, false, "details read for another title are not used");
+  assert.equal(analysis.analyzeRow(row, { owner, resolver, resolved: { ...entry, t: analysis.titleSig("VICTIM paper!") } }).fromDetail, true, "the same title (any case and punctuation) is");
+  assert.equal(analysis.analyzeRow(row, { owner, resolver, resolved: { authors: entry.authors } }).fromDetail, false, "an entry with no title is not used");
+  assert.equal(analysis.detailOf(entry, "Attacker's own paper"), entry);
 });

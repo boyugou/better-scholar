@@ -43,12 +43,12 @@ const resolver = venues.createResolver({ ccf: ccf.venues, core: core.venues, ali
 function expected(profile, { resolveHidden = false, extraOwner } = {}) {
   const owner = { name: profile.owner, alternates: extraOwner || [] };
   return profile.rows.map((r) => {
-    const raw = { authorsText: r.authors, venueText: r.venue, citations: r.cites, year: r.year };
+    const raw = { authorsText: r.authors, venueText: r.venue, citations: r.cites, year: r.year, title: r.title };
     let resolved = null;
     // only papers whose owner is hidden behind the truncation get looked up
     if (resolveHidden && analysis.needsDetail(analysis.analyzeRow(raw, { owner, resolver }))) {
       const visible = r.authors.split(/,\s*/).filter((t) => t && !/^\.\.\.$|…/.test(t));
-      resolved = { authors: [...visible, profile.owner].join(", ") };
+      resolved = { authors: [...visible, profile.owner].join(", "), t: analysis.titleSig(r.title) };
     }
     const a = analysis.analyzeRow(raw, { owner, resolver, resolved });
     return { status: a.status, role: a.role, venue: a.venue, citations: a.citations, year: a.year, highlighted: a.status === "found" && ["first", "cofirst", "second", "last"].includes(a.role), venueText: a.venueText };

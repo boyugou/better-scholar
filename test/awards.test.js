@@ -97,7 +97,7 @@ test("analyzeRow adds the list's awards, using a resolved page's full author lis
   // the list-view author text hides the first author; the paper page has it
   const hidden = { ...raw, authorsText: "...", };
   assert.deepEqual(analysis.analyzeRow(hidden, { owner, resolver, awards: index }).marks, []);
-  assert.equal(analysis.analyzeRow(hidden, { owner, resolver, awards: index, resolved: { authors: "Kaiming He, Xiangyu Zhang, Shaoqing Ren, Jian Sun" } }).marks.length, 1);
+  assert.equal(analysis.analyzeRow(hidden, { owner, resolver, awards: index, resolved: { authors: "Kaiming He, Xiangyu Zhang, Shaoqing Ren, Jian Sun", t: analysis.titleSig(hidden.title) } }).marks.length, 1);
 });
 
 // ---- the shipped list --------------------------------------------------------------------------

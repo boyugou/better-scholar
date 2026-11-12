@@ -62,7 +62,7 @@
   const owner = () => ({ name: matchName, alternates: [...scriptName, ...variants, ...hints.auto.map((v) => v.name)], exactName: hints.auto.length > 0 });
   // true when the automatic spellings changed (the rows must then be analysed again)
   function updateHints() {
-    const next = names.suggestVariants(state.rows.map((r) => (resolvedCache[r.raw.id] && resolvedCache[r.raw.id].authors) || r.raw.authorsText), { name: matchName, alternates: [...scriptName, ...variants] });
+    const next = names.suggestVariants(state.rows.map((r) => ((analysis.detailOf(resolvedCache[r.raw.id], r.raw.title) || {}).authors) || r.raw.authorsText), { name: matchName, alternates: [...scriptName, ...variants] });
     const key = (x) => x.auto.map((v) => v.name).join("|");
     const changed = key(next) !== key(hints);
     hints = next;
@@ -411,7 +411,7 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
   function paperRecords(filtered = true) {
     const shown = B.prefs.lists(prefs);
     return shownRows(filtered).map((r) => {
-      const a = r.a, v = a.venue || {}, resolved = resolvedCache[r.raw.id];
+      const a = r.a, v = a.venue || {}, resolved = analysis.detailOf(resolvedCache[r.raw.id], r.raw.title);
       return {
         id: r.raw.id, title: r.raw.title,
         authors: (resolved && resolved.authors) || r.raw.authorsText,                // (the whole list once "Read full lists" has read it)

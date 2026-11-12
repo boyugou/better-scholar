@@ -47,7 +47,7 @@ In `chrome.storage.local`, on this device only (`content/store.js`):
 
 - `ui`: whether the panel is folded, and which list (CCF or CORE) its table shows.
 - `resolved`: what *Read full lists* found. For each paper: Scholar's id for the paper on that profile, the full author list,
-  the venue, the page range when the page gives one, the time it was read, and whether it came from Semantic Scholar. An entry older than 90 days is not used, and is
+  the venue, the page range when the page gives one, the time it was read, whether it came from Semantic Scholar, and a lower-case form of the paper's title (the entry is used only for a row of that title). An entry older than 90 days is not used, and is
   deleted the next time a profile or the settings page reads the cache. At most 3,000 papers and three million characters are kept (the newest first).
 - `s2key`: the Semantic Scholar API key, only if you enter one in the settings. It is never synced.
 - `askVenue`: a venue text that you asked the settings page to check, with *Check* beside a venue of the unranked list (at most

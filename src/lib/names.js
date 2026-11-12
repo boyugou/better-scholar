@@ -287,9 +287,11 @@
     const src = String(text || "");
     const truncated = new RegExp(CUT.source, "i").test(src);
     // what stands after a cut has no known position in the list: it can be neither the first, the second nor the last author
-    const tokens = src.split(CUT).flatMap((part, seg) => part.split(SEPARATOR)
+    // (a generational suffix set off by a comma — "Robert W. Heath, Jr." — is the name's own, not one more author: "Ii" alone is left, a Japanese surname)
+    const joinSuffix = (list) => list.reduce((out, t) => { if (out.length && /^(?:jr|sr|iii|iv)\.?$/i.test(t)) out[out.length - 1] += " " + t; else out.push(t); return out; }, []);
+    const tokens = src.split(CUT).flatMap((part, seg) => joinSuffix(part.split(SEPARATOR)
       .map((t) => t.trim())
-      .filter(Boolean)
+      .filter(Boolean))
       .map(splitCofirst)
       .filter((t) => t.name.length > 1)
       .map((t) => (seg > 0 ? { ...t, afterCut: true } : t)));

@@ -495,3 +495,12 @@ test("a third read, 2026-10-30: a header in another script is matched by its bra
   for (const [h, want] of [["张伟 (Dr. Wei Zhang)", "Wei Zhang"], ["张伟 (Wei Zhang, PhD)", "Wei Zhang"], ["张伟 (Zhang, Wei)", "Zhang Wei"], ["张伟 (张大伟) (Wei Zhang)", "Wei Zhang"], ["贝多芬 (Ludwig van Beethoven)", "Ludwig van Beethoven"],
     ["张伟 (Hong Kong)", ""], ["张伟 (Microsoft Research)", ""], ["张伟 (Tsinghua Univ.)", ""], ["张伟 (Research Scientist)", ""]]) assert.equal(names.bracketName(h), want, h);
 });
+
+test("a fifteenth review, 2026-11-12: a generational suffix set off by a comma is part of the name, not one more author", () => {
+  const names = require("../src/lib/names.js");
+  const r = names.classifyRow("Angel Lozano, Robert W. Heath, Jr.", { name: "Robert W. Heath Jr." });
+  assert.equal(r.role, "last");
+  assert.equal(names.parseAuthors("A Smith, B Jones, Jr., C Lee").tokens.length, 3);
+  assert.equal(names.parseAuthors("A Smith, John Doe, III").tokens.length, 2);
+  assert.equal(names.parseAuthors("A Smith, Ii, B Jones").tokens.length, 3, "a bare Ii is a Japanese surname, left alone");
+});

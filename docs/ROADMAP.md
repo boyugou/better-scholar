@@ -163,8 +163,7 @@ of HotStorage, and the year written with a hyphen or jammed onto a mixed-case wo
 - **Typed winning marks and a runner-up of another venue** (review 13, 2026-11-12): `merge`'s `lostThen` clears the authors' typed best-paper marks
   whenever the list names the paper a runner-up without a `paperYear` — also for an award of another venue (RAPPOR: PETS 2015 runner-up, typed
   "CCS 2014 best paper" would go). The cost is a missing chip. Fix when a real profile shows it: have `detect` keep the venue text a mark came
-  from, and clear only a mark that names the runner-up's venue or none. Likewise ", Jr." after a comma in a full author list ("A Lozano,
-  Robert W. Heath, Jr.") reads "Jr." as an author; no real Scholar string yet (`SEPARATOR` in `src/lib/names.js`).
+  from, and clear only a mark that names the runner-up's venue or none. (", Jr." after a comma in a full author list is read as part of the name since 2026-11-12.)
 
 - **Name spellings beyond today's rules** (one rule went in on 2026-11-05 without a real Scholar string: a generational suffix, "RW Heath Jr",
   is the owner's only where the profile's own name says the same — safe by construction, as it only adds a match where both sides carry

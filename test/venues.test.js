@@ -2236,7 +2236,7 @@ test("the venue mappings, from an independent review: the paper page's ranked li
   // the paper page's own line, ranked by the lists' rules, goes before the person's mapping of the profile line
   const owner = { name: "A Author" };
   const a = analysis.analyzeRow({ authorsText: "A Author", venueText: "2018 International Joint Conference on Things, 2018", title: "T", year: 2018 },
-    { owner, resolver: r, resolved: { venue: "2018 International Joint Conference on Neural Networks (IJCNN), 1-8, 2018" } });
+    { owner, resolver: r, resolved: { venue: "2018 International Joint Conference on Neural Networks (IJCNN), 1-8, 2018", t: "t" } });
   assert.equal(a.venue.ccf.abbr, "IJCNN"); assert.notEqual(a.venue.ccf.rule, "mine");
   // without a ranked page line, the mapping stands
   const b = analysis.analyzeRow({ authorsText: "A Author", venueText: "2018 International Joint Conference on Things, 2018", title: "T", year: 2018 }, { owner, resolver: r });
@@ -2260,7 +2260,7 @@ test("the venue mappings, second review: a page line that is a track goes first,
   ] });
   const owner = { name: "A Author" };
   for (const page of ["IJCAI Workshop on Odd Things, 2018", "Proceedings of the IJCAI 2018 Workshops, 2018", "Companion of The Web Conference 2018, 2018"]) {
-    const a = analysis.analyzeRow({ authorsText: "A Author", venueText: "Odd Things Meeting, 2018", title: "T", year: 2018 }, { owner, resolver: r, resolved: { venue: page } });
+    const a = analysis.analyzeRow({ authorsText: "A Author", venueText: "Odd Things Meeting, 2018", title: "T", year: 2018 }, { owner, resolver: r, resolved: { venue: page, t: "t" } });
     assert.ok(!a.venue.ccf && !a.venue.core, page);
   }
   assert.equal(r.resolve("International Joint Conference on, 2020").ccf, null, "a stored cut text is no key");
