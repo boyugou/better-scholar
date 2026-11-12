@@ -198,7 +198,7 @@ test("the bundled list: theory and networking winners (SIGACT's STOC pages, SIGC
   assert.deepEqual(find("Undirected ST-connectivity in log-space", "O Reingold"), ["STOC 2005 best", "STOC 2026 tot"]);
   assert.deepEqual(find("The PCP theorem via gap amplification", "I Dinur"), ["STOC 2006 best"]);
   assert.deepEqual(find("Quantum lower bounds by quantum arguments", "A Ambainis"), ["STOC 2000 best-student"]);
-  assert.deepEqual(find("Fully homomorphic encryption using ideal lattices", "C Gentry"), ["STOC 2022 tot"]);
+  assert.deepEqual(find("Fully homomorphic encryption using ideal lattices", "C Gentry"), ["PETS 2010 outstanding", "STOC 2022 tot"]);
   assert.deepEqual(find("Swift: Delay is simple and effective for congestion control in the datacenter", "G Kumar, N Dukkipati, K Jang, HMG Wassel"), ["SIGCOMM 2020 best"]);
   assert.deepEqual(find("Multi-resource fair queueing for packet processing", "A Ghodsi, V Sekar, M Zaharia, I Stoica"), ["SIGCOMM 2012 best"]);
   assert.deepEqual(find("Graph isomorphism in quasipolynomial time", "A Smith, B Jones"), []);
@@ -368,7 +368,7 @@ test("the bundled list: security and database winners from ACM CCS's and the VLD
   assert.deepEqual(find("DolphinAttack: Inaudible voice commands", "G Zhang, C Yan, X Ji, T Zhang, T Zhang, W Xu"), ["CCS 2017 best"]);
   assert.deepEqual(find("Large language models for code: Security hardening and adversarial testing", "J He, M Vechev"), ["CCS 2023 distinguished"]);
   assert.deepEqual(find("Control-flow integrity", "M Abadi, M Budiu, U Erlingsson, J Ligatti"), ["CCS 2015 tot"]);
-  assert.deepEqual(find("Rappor: Randomized aggregatable privacy-preserving ordinal response", "Ú Erlingsson, V Pihur, A Korolova"), ["CCS 2024 tot"]);
+  assert.deepEqual(find("Rappor: Randomized aggregatable privacy-preserving ordinal response", "Ú Erlingsson, V Pihur, A Korolova"), ["CCS 2024 tot", "PETS 2015 runner-up"]);
   assert.deepEqual(find("C-Store: a column-oriented DBMS", "M Stonebraker, DJ Abadi, A Batkin, X Chen, M Cherniack"), ["VLDB 2015 tot"]);
   assert.deepEqual(find("Dremel: interactive analysis of web-scale datasets", "S Melnik, A Gubarev, JJ Long, G Romer"), ["VLDB 2020 tot"]);
   assert.deepEqual(find("Fast algorithms for mining association rules in large databases", "R Agrawal, R Srikant"), ["VLDB 2004 tot"]);

@@ -508,6 +508,10 @@
   "www.ecai2024.eu": "ECAI 2024's own site",
   "www.icpp-conf.org": "ICPP's own site",
   "www.iscb.org": "the International Society for Computational Biology's own site (ISMB)",
-  "www.program-comprehension.org": "the ICPC conference series' own site"
+  "www.program-comprehension.org": "the ICPC conference series' own site",
+  "acmmm2025.org": "ACM Multimedia 2025's own site",
+  "iros2022.org": "IROS 2022's own site (read 2026-11-12; the domain still serves the conference's pages)",
+  "www.acmmm2023.org": "ACM Multimedia 2023's own site",
+  "www.disc-conference.org": "the DISC symposium's own site"
  }
 }

@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 11587
+  "count": 11781
  },
  "entries": [
   {
@@ -7296,6 +7296,21 @@
   {
    "venue": "ACM MM",
    "year": 2023,
+   "award": "category",
+   "awardLabel": "Brave New Idea Award",
+   "title": "Semantics2Hands: Transferring Hand Motion Semantics between Avatars",
+   "authors": [
+    "Zijie Ye",
+    "Jia Jia",
+    "Junliang Xing"
+   ],
+   "track": "main",
+   "source": "https://www.acmmm2023.org/",
+   "evidence": "Brave New Idea Award Presented to: Zijie Ye, Jia Jia, Junliang Xing for the paper titled: Semantics2Hands: Transferring Hand Motion Semantics between Avatars"
+  },
+  {
+   "venue": "ACM MM",
+   "year": 2023,
    "award": "runner-up",
    "awardLabel": "Honorable Mention Award",
    "title": "RefineTAD: Learning Proposal-free Refinement for Temporal Action Detection",
@@ -7515,6 +7530,269 @@
    "track": "main",
    "source": "https://2025.acmmm.org/awards",
    "evidence": "ACM MM 2025 Best Paper: Open-Vocabulary 3D Afordance Understanding via Functional Text Enhancement and Multilevel Representation Alignment — Lin Wu, Wei Wei, Peizhuo Yu, Jianglin Lan"
+  },
+  {
+   "venue": "ACM MM",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Papers in Systems Theme",
+   "title": "ASTER: Adaptive Dynamic Layer-Skipping for Efficient Transformer Inference via Markov Decision Process",
+   "authors": [
+    "Fangxin Liu",
+    "Junjie Wang",
+    "Ning Yang",
+    "Zongwu Wang",
+    "Junping Zhao",
+    "Li Jiang",
+    "Haibing Guan"
+   ],
+   "track": "main",
+   "source": "https://acmmm2025.org/awards/",
+   "evidence": "Outstanding Papers in Systems Theme “ASTER: Adaptive Dynamic Layer-Skipping for Efficient Transformer Inference via Markov Decision Process” Authors: Fangxin Liu, Junjie Wang, Ning Yang, Zongwu Wang, Junping Zhao, Li Jiang, Haibing Guan"
+  },
+  {
+   "venue": "ACM MM",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Papers in Content Theme",
+   "title": "CalibCLIP: Contextual Calibration of Dominant Semantics for Text-Driven Image Retrieval",
+   "authors": [
+    "Bin Kang",
+    "BIN CHEN",
+    "Junjie Wang",
+    "Yulin Li",
+    "Junzhi Zhao",
+    "Junle Wang",
+    "Zhuotao Tian"
+   ],
+   "track": "main",
+   "source": "https://acmmm2025.org/awards/",
+   "evidence": "Outstanding Papers in Content Theme “CalibCLIP: Contextual Calibration of Dominant Semantics for Text-Driven Image Retrieval” Authors: Bin Kang, BIN CHEN, Junjie Wang, Yulin Li, Junzhi Zhao, Junle Wang, Zhuotao Tian"
+  },
+  {
+   "venue": "ACM MM",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Papers in Generation Theme",
+   "title": "Differentially Private Visual Learning with Public Subspace Augmented by Synthetic Data",
+   "authors": [
+    "Haichao Sha",
+    "Yuncheng Wu",
+    "Ruixuan Liu",
+    "YANG CAO",
+    "Hong Chen"
+   ],
+   "track": "main",
+   "source": "https://acmmm2025.org/awards/",
+   "evidence": "Outstanding Papers in Generation Theme “Differentially Private Visual Learning with Public Subspace Augmented by Synthetic Data” Authors: Haichao Sha, Yuncheng Wu, Ruixuan Liu, YANG CAO, Hong Chen"
+  },
+  {
+   "venue": "ACM MM",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Papers in Systems Theme",
+   "title": "Generalizing to New Area: Self-Distillation Curriculum Learning for Fine-Grained Cross View Localization",
+   "authors": [
+    "Fenghao Tian",
+    "Mingtao Feng",
+    "Jianqiao Luo",
+    "Zijie Wu",
+    "Longlong Mei",
+    "Lijie Yang",
+    "Weisheng Dong",
+    "Yaonan Wang"
+   ],
+   "track": "main",
+   "source": "https://acmmm2025.org/awards/",
+   "evidence": "Outstanding Papers in Systems Theme “Generalizing to New Area: Self-Distillation Curriculum Learning for Fine-Grained Cross View Localization” Authors: Fenghao Tian, Mingtao Feng, Jianqiao Luo, Zijie Wu, Longlong Mei, Lijie Yang, Weisheng Dong, Yaonan Wang"
+  },
+  {
+   "venue": "ACM MM",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Papers in Experience Theme",
+   "title": "GeoQE: Enhancing Quality of Experience in Point Cloud Streaming",
+   "authors": [
+    "Junzhe Zhang",
+    "Chengfeng Han",
+    "Dandan Ding",
+    "Zhan Ma"
+   ],
+   "track": "main",
+   "source": "https://acmmm2025.org/awards/",
+   "evidence": "Outstanding Papers in Experience Theme “GeoQE: Enhancing Quality of Experience in Point Cloud Streaming” Authors: Junzhe Zhang, Chengfeng Han, Dandan Ding, Zhan Ma"
+  },
+  {
+   "venue": "ACM MM",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Papers in Engagement Theme",
+   "title": "IM-POI: Bridging ID and Multi-modal Gaps in Next POI Recommendation",
+   "authors": [
+    "SiyuanHuang",
+    "Jiahui Jin",
+    "Xin Lin",
+    "Xigang Sun",
+    "Yukun Ban"
+   ],
+   "track": "main",
+   "source": "https://acmmm2025.org/awards/",
+   "evidence": "Outstanding Papers in Engagement Theme “IM-POI: Bridging ID and Multi-modal Gaps in Next POI Recommendation” Authors: SiyuanHuang, Jiahui Jin, Xin Lin, Xigang Sun, Yukun Ban"
+  },
+  {
+   "venue": "ACM MM",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Papers in Content Theme",
+   "title": "Interpreting Radiologist’s Intention from Eye Movements in Chest X-ray Diagnosis",
+   "authors": [
+    "Trong-Thang Pham",
+    "Anh Nguyen",
+    "Zhigang Deng",
+    "Carol C. Wu",
+    "Hien Van Nguyen",
+    "Ngan Le"
+   ],
+   "track": "main",
+   "source": "https://acmmm2025.org/awards/",
+   "evidence": "Outstanding Papers in Content Theme “Interpreting Radiologist’s Intention from Eye Movements in Chest X-ray Diagnosis” Authors: Trong-Thang Pham, Anh Nguyen, Zhigang Deng, Carol C. Wu, Hien Van Nguyen, Ngan Le"
+  },
+  {
+   "venue": "ACM MM",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Papers in Engagement Theme",
+   "title": "MoCERNet: A Modality-Complete Modeling Framework for Emotion Recognition in Physiological Signals under Imperfect Modal Matching",
+   "authors": [
+    "Tianzuo Xin",
+    "Jing Wang",
+    "Xiyuan Jin",
+    "Xiaojun Ning",
+    "Zhiyang Feng",
+    "Youfang Lin"
+   ],
+   "track": "main",
+   "source": "https://acmmm2025.org/awards/",
+   "evidence": "Outstanding Papers in Engagement Theme “MoCERNet: A Modality-Complete Modeling Framework for Emotion Recognition in Physiological Signals under Imperfect Modal Matching” Authors: Tianzuo Xin, Jing Wang, Xiyuan Jin, Xiaojun Ning, Zhiyang Feng, Youfang Lin"
+  },
+  {
+   "venue": "ACM MM",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Papers in Engagement Theme",
+   "title": "Multi-faceted Complementary Learning for Incomplete Multi-view Multi-label Classification",
+   "authors": [
+    "Xinyu Xiao",
+    "Peixi Peng",
+    "Qiang Wang",
+    "XingChao",
+    "Shuhan Qi"
+   ],
+   "track": "main",
+   "source": "https://acmmm2025.org/awards/",
+   "evidence": "Outstanding Papers in Engagement Theme “Multi-faceted Complementary Learning for Incomplete Multi-view Multi-label Classification” Authors: Xinyu Xiao, Peixi Peng, Qiang Wang, XingChao, Shuhan Qi"
+  },
+  {
+   "venue": "ACM MM",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Papers in Generation Theme",
+   "title": "RadLAS: A Foundation Model for Interpretable Radiography Image Analysis with Lesion-Aware Self-Supervised Pre-training",
+   "authors": [
+    "Yihang Liu",
+    "Ying Wen",
+    "Longzhen Yang",
+    "Lianghua He",
+    "Heng Tao Shen"
+   ],
+   "track": "main",
+   "source": "https://acmmm2025.org/awards/",
+   "evidence": "Outstanding Papers in Generation Theme “RadLAS: A Foundation Model for Interpretable Radiography Image Analysis with Lesion-Aware Self-Supervised Pre-training” Authors: Yihang Liu, Ying Wen, Longzhen Yang, Lianghua He, Heng Tao Shen"
+  },
+  {
+   "venue": "ACM MM",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Papers in Content Theme",
+   "title": "Robust Multi-view Clustering via Pseudo Label Guided Universum Learning",
+   "authors": [
+    "Zhenxi Wang",
+    "Zongyao Yin",
+    "Yujie Hou",
+    "Xianchuan Yu"
+   ],
+   "track": "main",
+   "source": "https://acmmm2025.org/awards/",
+   "evidence": "Outstanding Papers in Content Theme “Robust Multi-view Clustering via Pseudo Label Guided Universum Learning” Authors: Zhenxi Wang, Zongyao Yin, Yujie Hou, Xianchuan Yu"
+  },
+  {
+   "venue": "ACM MM",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Papers in Experience Theme",
+   "title": "SimViews: An Interactive Multi-Agent System Simulating Visitor-to-Visitor Conversational Patterns to Present Diverse Perspectives of Artifacts in Virtual Museums",
+   "authors": [
+    "Mingyang Su",
+    "Chao LIU",
+    "Jingling Zhang",
+    "WU Shuang",
+    "Mingming Fan"
+   ],
+   "track": "main",
+   "source": "https://acmmm2025.org/awards/",
+   "evidence": "Outstanding Papers in Experience Theme “SimViews: An Interactive Multi-Agent System Simulating Visitor-to-Visitor Conversational Patterns to Present Diverse Perspectives of Artifacts in Virtual Museums” Authors: Mingyang Su, Chao LIU, Jingling Zhang, WU Shuang, Mingming Fan"
+  },
+  {
+   "venue": "ACM MM",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Papers in Generation Theme",
+   "title": "SyMuPe: Affective and Controllable Symbolic Music Performance",
+   "authors": [
+    "Ilya Borovik",
+    "Dmitrii Gavrilev",
+    "Vladimir Viro"
+   ],
+   "track": "main",
+   "source": "https://acmmm2025.org/awards/",
+   "evidence": "Outstanding Papers in Generation Theme “SyMuPe: Affective and Controllable Symbolic Music Performance” Authors: Ilya Borovik, Dmitrii Gavrilev, Vladimir Viro"
+  },
+  {
+   "venue": "ACM MM",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Papers in Systems Theme",
+   "title": "Towards Effective Open-set Graph Class-incremental Learning",
+   "authors": [
+    "Jiazhen Chen",
+    "Zheng Ma",
+    "Sichao Fu",
+    "Mingbin Feng",
+    "Tony S. Wirjanto",
+    "Weihua Ou"
+   ],
+   "track": "main",
+   "source": "https://acmmm2025.org/awards/",
+   "evidence": "Outstanding Papers in Systems Theme “Towards Effective Open-set Graph Class-incremental Learning” Authors: Jiazhen Chen, Zheng Ma, Sichao Fu, Mingbin Feng, Tony S. Wirjanto, Weihua Ou"
+  },
+  {
+   "venue": "ACM MM",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Papers in Experience Theme",
+   "title": "Unified Medical Image Segmentation with State Space Modeling Snake",
+   "authors": [
+    "Ruicheng Zhang",
+    "Haowei Guo",
+    "Kanghui Tian",
+    "Jun Zhou",
+    "Mingliang Yan",
+    "Zeyu Zhang",
+    "Shen Zhao"
+   ],
+   "track": "main",
+   "source": "https://acmmm2025.org/awards/",
+   "evidence": "Outstanding Papers in Experience Theme “Unified Medical Image Segmentation with State Space Modeling Snake” Authors: Ruicheng Zhang, Haowei Guo, Kanghui Tian, Jun Zhou, Mingliang Yan, Zeyu Zhang, Shen Zhao"
   },
   {
    "venue": "ACM MM",
@@ -18139,6 +18417,22 @@
    "track": "main",
    "source": "https://conf.researchr.org/home/cgo-2023",
    "evidence": "Distinguished Paper Awards This year’s distinguished papers are: D2X: An eXtensible conteXtual Debugger for Modern DSLs by Ajay Brahmakshatriya, Saman Amarasinghe To Pack or Not to Pack: A Generalized Packing Analysis and Transformation by Caio Salvador Rohwedder, Nathan Henderson, João P. L. De Carvalho, Yufei Chen, Jose Nelson Amaral"
+  },
+  {
+   "venue": "CHES",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Lambda coordinates for binary elliptic curves",
+   "authors": [
+    "Thomaz Oliveira",
+    "Julio Lopez",
+    "Diego F. Aranha",
+    "Francisco Rodriguez-Henriquez"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/workshops/ches/ches2013/program.php",
+   "evidence": "Session 6: ECC Chair: Mehdi Tibouchi Thomaz Oliveira (CINVESTAV-IPN, Mexico), Julio Lopez (University of Campinas, Brazil), Diego F. Aranha (University of Brasilia, Brazil) and Francisco Rodriguez-Henriquez (CINVESTAV-IPN, Mexico) Lambda coordinates for binary elliptic curves (Best Paper Award)"
   },
   {
    "venue": "CHES",
@@ -66041,6 +66335,49 @@
   },
   {
    "venue": "CSF",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "A formal framework and evaluation method for network denial of service",
+   "authors": [
+    "Catherine Meadows"
+   ],
+   "track": "main",
+   "paperYear": 1999,
+   "source": "https://www.ieee-security.org/CSFWweb/distinguished.html",
+   "evidence": "Papers awarded Test-of-Time Awards … CSF 2023 A formal framework and evaluation method for network denial of service Catherine Meadows Published in CSFW 1999"
+  },
+  {
+   "venue": "CSF",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "An Efficient Cryptographic Protocol Verifier Based on Prolog Rules",
+   "authors": [
+    "Bruno Blanchet"
+   ],
+   "track": "main",
+   "paperYear": 2001,
+   "source": "https://www.ieee-security.org/CSFWweb/distinguished.html",
+   "evidence": "Papers awarded Test-of-Time Awards … CSF 2023 An Efficient Cryptographic Protocol Verifier Based on Prolog Rules Bruno Blanchet Published in CSFW 2001"
+  },
+  {
+   "venue": "CSF",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Hyperproperties",
+   "authors": [
+    "Michael R. Clarkson",
+    "Fred B. Schneider"
+   ],
+   "track": "main",
+   "paperYear": 2008,
+   "source": "https://www.ieee-security.org/CSFWweb/distinguished.html",
+   "evidence": "Papers awarded Test-of-Time Awards … CSF 2023 Hyperproperties Michael R. Clarkson and Fred B. Schneider Published in CSF 2008"
+  },
+  {
+   "venue": "CSF",
    "year": 2024,
    "award": "distinguished",
    "awardLabel": "Distinguished Papers",
@@ -66069,6 +66406,68 @@
    "track": "main",
    "source": "https://www.ieee-security.org/CSFWweb/distinguished.html",
    "evidence": "The Distinguished Papers are listed by year below. CSF 2025 Nominal State-Separating Proofs Markus Krabbe Larsen, Carsten Schürmann FSLH: Flexible Mechanized Speculative Load Hardening Jonathan Baumann, Roberto Blanco, Léon Ducruet, Sebastian Harwig, Catalin Hritcu CSF 2024 Deciding branching hyperproperties for real time systems Nabarun Deka, Minjian Zhang, Rohit Chadha, Mahesh Viswanathan Explaining epsilon in local differential privacy through the lens of quantitative information flow Natasha Fernandes, Annabelle McIver, Parastoo Sadeghi"
+  },
+  {
+   "venue": "CSF",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "A Hierarchy of Authentication Specifications",
+   "authors": [
+    "Gavin Lowe"
+   ],
+   "track": "main",
+   "paperYear": 1997,
+   "source": "https://www.ieee-security.org/CSFWweb/distinguished.html",
+   "evidence": "Papers awarded Test-of-Time Awards … CSF 2024 A Hierarchy of Authentication Specifications. Gavin Lowe Published in CSFW 1997"
+  },
+  {
+   "venue": "CSF",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Authenticity by Typing for Security Protocols",
+   "authors": [
+    "Andrew D. Gordon",
+    "Alan Jeffrey"
+   ],
+   "track": "main",
+   "paperYear": 2001,
+   "source": "https://www.ieee-security.org/CSFWweb/distinguished.html",
+   "evidence": "Papers awarded Test-of-Time Awards … CSF 2024 Authenticity by Typing for Security Protocols Andrew D. Gordon and Alan Jeffrey Published in CSFW 2001"
+  },
+  {
+   "venue": "CSF",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Measuring Information Leakage Using Generalized Gain Functions",
+   "authors": [
+    "Mário S. Alvim",
+    "Konstantinos Chatzikokolakis",
+    "Catuscia Palamidessi",
+    "Geoffrey Smith"
+   ],
+   "track": "main",
+   "paperYear": 2012,
+   "source": "https://www.ieee-security.org/CSFWweb/distinguished.html",
+   "evidence": "Papers awarded Test-of-Time Awards … CSF 2024 Measuring Information Leakage Using Generalized Gain Functions Mário S. Alvim, Konstantinos Chatzikokolakis, Catuscia Palamidessi, and Geoffrey Smith Published in CSF 2012"
+  },
+  {
+   "venue": "CSF",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Secure Information Flow by Self-Composition",
+   "authors": [
+    "Gilles Barthe",
+    "Pedro R. D'Argenio",
+    "Tamara Rezk"
+   ],
+   "track": "main",
+   "paperYear": 2004,
+   "source": "https://www.ieee-security.org/CSFWweb/distinguished.html",
+   "evidence": "Papers awarded Test-of-Time Awards … CSF 2024 Secure Information Flow by Self-Composition Gilles Barthe, Pedro R. D'Argenio, and Tamara Rezk Published in CSFW 2004"
   },
   {
    "venue": "CSF",
@@ -72778,6 +73177,755 @@
    "track": "main",
    "source": "https://files.sigchi.org/conference/cache/10148/31/program",
    "evidence": "DIS 2026 program, Honorable Mention: Who Owns the Robot Matters: How Robot Ownership Shapes Belonging and Social Roles in Human Groups — Tuan Vu Pham, Judith Dörrenbächer, Thomas H. Weisswange, Marc Hassenzahl"
+  },
+  {
+   "venue": "DISC",
+   "year": 1998,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "The Arrow Distributed Directory Protocol",
+   "authors": [
+    "Michael J. Demmer",
+    "Maurice Herlihy"
+   ],
+   "track": "main",
+   "source": "https://www.disc-conference.org/wp/outstanding-papers/",
+   "evidence": "Outstanding Papers 1998 Best Student Paper … Michael J. Demmer and Maurice Herlihy “The Arrow Distributed Directory Protocol”"
+  },
+  {
+   "venue": "DISC",
+   "year": 1999,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Revising the Weakest Failure Detector for Uniform Reliable Broadcast",
+   "authors": [
+    "Marcos Kawazoe Aguilera",
+    "Sam Toueg",
+    "Borislav Deianov"
+   ],
+   "track": "main",
+   "source": "https://www.disc-conference.org/wp/outstanding-papers/",
+   "evidence": "Outstanding Papers 1999 Best Student Paper … Marcos Kawazoe Aguilera , Sam Toueg and Borislav Deianov “Revising the Weakest Failure Detector for Uniform Reliable Broadcast”"
+  },
+  {
+   "venue": "DISC",
+   "year": 2000,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Polynominal and Adaptive Long-Lived (2-1)-Renaming",
+   "authors": [
+    "Hagit Attiya",
+    "Arie Fouren"
+   ],
+   "track": "main",
+   "source": "https://www.disc-conference.org/wp/outstanding-papers/",
+   "evidence": "Outstanding Papers 2000 Best Student Paper … Hagit Attiya and Arie Fouren “Polynominal and Adaptive Long-Lived (2-1)-Renaming”"
+  },
+  {
+   "venue": "DISC",
+   "year": 2001,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "A Time Complexity Bound for Adaptive Mutual Exclusion",
+   "authors": [
+    "Yong-Jik Kim",
+    "James H. Anderson"
+   ],
+   "track": "main",
+   "source": "https://www.disc-conference.org/wp/outstanding-papers/",
+   "evidence": "Outstanding Papers 2001 Best Student Paper … Yong-Jik Kim and James H. Anderson “A Time Complexity Bound for Adaptive Mutual Exclusion”"
+  },
+  {
+   "venue": "DISC",
+   "year": 2002,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Assignment-based Partitioning in a Condition Monitoring System",
+   "authors": [
+    "Yongqiang Huang",
+    "Hector Garcia-Molina"
+   ],
+   "track": "main",
+   "source": "https://www.disc-conference.org/wp/outstanding-papers/",
+   "evidence": "Outstanding Papers 2002 Best Student Paper … Yongqiang Huang and Hector Garcia-Molina “Assignment-based Partitioning in a Condition Monitoring System”"
+  },
+  {
+   "venue": "DISC",
+   "year": 2003,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Probabilistic Quorums for Dynamic Systems",
+   "authors": [
+    "Ittai Abraham",
+    "Dahlia Malkhi"
+   ],
+   "track": "main",
+   "source": "https://www.disc-conference.org/wp/outstanding-papers/",
+   "evidence": "Outstanding Papers 2003 Best Student Paper … Ittai Abraham and Dahlia Malkhi ” Probabilistic Quorums for Dynamic Systems”"
+  },
+  {
+   "venue": "DISC",
+   "year": 2004,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Coupling and Self-Stabilization",
+   "authors": [
+    "Laurent Fribourg",
+    "Stephane Messika",
+    "Claudine Picaronny"
+   ],
+   "track": "main",
+   "source": "https://www.disc-conference.org/wp/outstanding-papers/",
+   "evidence": "Outstanding Papers 2004 Best Student Paper … Laurent Fribourg , Stephane Messika and Claudine Picaronny “Coupling and Self-Stabilization”"
+  },
+  {
+   "venue": "DISC",
+   "year": 2004,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Efficient Adaptive Collect using Randomization",
+   "authors": [
+    "Hagit Attiya",
+    "Fabian Kuhn",
+    "Mirjam Wattenhofer",
+    "Roger Wattenhofer"
+   ],
+   "track": "main",
+   "source": "https://www.disc-conference.org/wp/outstanding-papers/",
+   "evidence": "Outstanding Papers 2004 Best Student Paper … Hagit Attiya , Fabian Kuhn , Mirjam Wattenhofer and Roger Wattenhofer “Efficient Adaptive Collect using Randomization”"
+  },
+  {
+   "venue": "DISC",
+   "year": 2005,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "General Compact Labeling Schemes for Dynamic Trees",
+   "authors": [
+    "A. Korman"
+   ],
+   "track": "main",
+   "source": "https://www.disc-conference.org/wp/outstanding-papers/",
+   "evidence": "Outstanding Papers 2005 Best Student Paper … Korman, A. “General Compact Labeling Schemes for Dynamic Trees”"
+  },
+  {
+   "venue": "DISC",
+   "year": 2006,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "A Fast Distributed Approximation Algorithm for Minimum Spanning Trees",
+   "authors": [
+    "Maleq Khan",
+    "Gopal Pandurangan"
+   ],
+   "track": "main",
+   "source": "https://www.disc-conference.org/wp/outstanding-papers/",
+   "evidence": "Outstanding Papers 2006 Best Student Paper … Maleq Khan and Gopal Pandurangan “A Fast Distributed Approximation Algorithm for Minimum Spanning Trees”"
+  },
+  {
+   "venue": "DISC",
+   "year": 2007,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "A Simple Population Protocol for Fast Robust Approximate Majority",
+   "authors": [
+    "Dana Angluin",
+    "James Aspnes",
+    "David Eisenstat"
+   ],
+   "track": "main",
+   "source": "https://www.disc-conference.org/wp/outstanding-papers/",
+   "evidence": "Outstanding Papers 2007 Best Student Paper … Dana Angluin , James Aspnes and David Eisenstat “A Simple Population Protocol for Fast Robust Approximate Majority”"
+  },
+  {
+   "venue": "DISC",
+   "year": 2008,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Closing the Complexity Gap between FCFS Mutual Exclusion and Mutual Exclusion",
+   "authors": [
+    "Robert Danek",
+    "Wojciech Golab"
+   ],
+   "track": "main",
+   "source": "https://www.disc-conference.org/wp/outstanding-papers/",
+   "evidence": "Outstanding Papers 2008 Best Paper … Robert Danek and Wojciech Golab “Closing the Complexity Gap between FCFS Mutual Exclusion and Mutual Exclusion”"
+  },
+  {
+   "venue": "DISC",
+   "year": 2008,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Fast distributed approximations in planar graphs",
+   "authors": [
+    "Andrzej Czygrinow",
+    "Michal Hanckowiak",
+    "Wojciech Wawrzyniak"
+   ],
+   "track": "main",
+   "source": "https://www.disc-conference.org/wp/outstanding-papers/",
+   "evidence": "Outstanding Papers 2008 Best Student Paper … Andrzej Czygrinow , Michal Hanckowiak and Wojciech Wawrzyniak “Fast distributed approximations in planar graphs”"
+  },
+  {
+   "venue": "DISC",
+   "year": 2009,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "The Disagreement Power of an Adversary",
+   "authors": [
+    "Carole Delporte-Gallet",
+    "Hugues Fauconnier",
+    "Rachid Guerraoui",
+    "Andreas Tielmann"
+   ],
+   "track": "main",
+   "source": "https://www.disc-conference.org/wp/outstanding-papers/",
+   "evidence": "Outstanding Papers 2009 Best Paper … Carole Delporte-Gallet , Hugues Fauconnier , Rachid Guerraoui and Andreas Tielmann “The Disagreement Power of an Adversary”"
+  },
+  {
+   "venue": "DISC",
+   "year": 2009,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Randomization Can Be a Healer: Consensus with Dynamic Omission Failures",
+   "authors": [
+    "Henrique Moniz",
+    "Nuno Ferreira Neves",
+    "Miguel Correia",
+    "Paulo Veríssimo"
+   ],
+   "track": "main",
+   "source": "https://www.disc-conference.org/wp/outstanding-papers/",
+   "evidence": "Outstanding Papers 2009 Best Student Paper … Henrique Moniz , Nuno Ferreira Neves , Miguel Correia and Paulo Veríssimo “Randomization Can Be a Healer: Consensus with Dynamic Omission Failures”"
+  },
+  {
+   "venue": "DISC",
+   "year": 2010,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Anonymous Asynchronous Systems: the Case of Failure Detectors",
+   "authors": [
+    "François Bonnet",
+    "Michel Raynal"
+   ],
+   "track": "main",
+   "source": "https://www.disc-conference.org/wp/outstanding-papers/",
+   "evidence": "Outstanding Papers 2010 Best Student Paper … François Bonnet and Michel Raynal “Anonymous Asynchronous Systems: the Case of Failure Detectors”"
+  },
+  {
+   "venue": "DISC",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Locality and Checkability in Wait-free Computing",
+   "authors": [
+    "Pierre Fraigniaud",
+    "Sergio Rajsbaum",
+    "Corentin Travers"
+   ],
+   "track": "main",
+   "source": "https://www.disc-conference.org/wp/outstanding-papers/",
+   "evidence": "Outstanding Papers 2011 Best Paper … Pierre Fraigniaud , Sergio Rajsbaum and Corentin Travers “Locality and Checkability in Wait-free Computing”"
+  },
+  {
+   "venue": "DISC",
+   "year": 2011,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Fast and Scalable Rendezvousing",
+   "authors": [
+    "Yehuda Afek",
+    "Michael Hakimi",
+    "Adam Morrison"
+   ],
+   "track": "main",
+   "source": "https://www.disc-conference.org/wp/outstanding-papers/",
+   "evidence": "Outstanding Papers 2011 Best Student Paper … Yehuda Afek , Michael Hakimi and Adam Morrison “Fast and Scalable Rendezvousing”"
+  },
+  {
+   "venue": "DISC",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "No Sublogarithmic-Time Approximation Scheme for Bipartite Vertex Cover",
+   "authors": [
+    "Mika Goos",
+    "Jukka Suomela"
+   ],
+   "track": "main",
+   "source": "https://www.disc-conference.org/wp/outstanding-papers/",
+   "evidence": "Outstanding Papers 2012 Best Paper … Mika Goos and Jukka Suomela “No Sublogarithmic-Time Approximation Scheme for Bipartite Vertex Cover”"
+  },
+  {
+   "venue": "DISC",
+   "year": 2012,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "CBTree: A Practical Concurrent Self-Adjusting Search Tree",
+   "authors": [
+    "Yehuda Afek",
+    "Haim Kaplan",
+    "Boris Korenfeld",
+    "Adam Morisson",
+    "Robert E. Tarjan"
+   ],
+   "track": "main",
+   "source": "https://www.disc-conference.org/wp/outstanding-papers/",
+   "evidence": "Outstanding Papers 2012 Best Student Paper … Yehuda Afek, Haim Kaplan, Boris Korenfeld, Adam Morisson and Robert E. Tarjan “CBTree: A Practical Concurrent Self-Adjusting Search Tree”"
+  },
+  {
+   "venue": "DISC",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Distributed Minimum Cut Approximation",
+   "authors": [
+    "Mohsen Ghaffari",
+    "Fabian Kuhn"
+   ],
+   "track": "main",
+   "source": "https://www.disc-conference.org/wp/outstanding-papers/",
+   "evidence": "Outstanding Papers 2013 Best Paper … Mohsen Ghaffari and Fabian Kuhn “Distributed Minimum Cut Approximation”"
+  },
+  {
+   "venue": "DISC",
+   "year": 2013,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Lock-Free Iterators",
+   "authors": [
+    "Shahar Timnat",
+    "Erez Petrank"
+   ],
+   "track": "main",
+   "source": "https://www.disc-conference.org/wp/outstanding-papers/",
+   "evidence": "Outstanding Papers 2013 Best Student Paper … Shahar Timnat and Erez Petrank “Lock-Free Iterators”"
+  },
+  {
+   "venue": "DISC",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Speed Faults in Computation by Chemical Reaction Networks",
+   "authors": [
+    "Ho-Lin Chen",
+    "Rachel Cummings",
+    "David Doty",
+    "David Soloveichik"
+   ],
+   "track": "main",
+   "source": "https://www.disc-conference.org/wp/outstanding-papers/",
+   "evidence": "Outstanding Papers 2014 Best Paper … Ho-Lin Chen, Rachel Cummings, David Doty and David Soloveichik “Speed Faults in Computation by Chemical Reaction Networks”"
+  },
+  {
+   "venue": "DISC",
+   "year": 2014,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Vertex Fault Tolerant Additive Spanners",
+   "authors": [
+    "Merav Parter"
+   ],
+   "track": "main",
+   "source": "https://www.disc-conference.org/wp/outstanding-papers/",
+   "evidence": "Outstanding Papers 2014 Best Student Paper … Merav Parter “Vertex Fault Tolerant Additive Spanners”"
+  },
+  {
+   "venue": "DISC",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "On the Optimal Space Complexity of Consensus for Anonymous Processes",
+   "authors": [
+    "Rati Gelashvili"
+   ],
+   "track": "main",
+   "source": "https://www.disc-conference.org/wp/outstanding-papers/",
+   "evidence": "Outstanding Papers 2015 Best Paper … Rati Gelashvili “On the Optimal Space Complexity of Consensus for Anonymous Processes”"
+  },
+  {
+   "venue": "DISC",
+   "year": 2015,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Local Information in Influence Networks",
+   "authors": [
+    "Yuezhou Lv"
+   ],
+   "track": "main",
+   "source": "https://www.disc-conference.org/wp/outstanding-papers/",
+   "evidence": "Outstanding Papers 2015 Best Student Paper … Yuezhou Lv “Local Information in Influence Networks”"
+  },
+  {
+   "venue": "DISC",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Polynomial Lower Bound for Distributed Graph Coloring in a Weak LOCAL Model",
+   "authors": [
+    "Dan Hefetz",
+    "Fabian Kuhn",
+    "Yannic Maus",
+    "Angelika Steger"
+   ],
+   "track": "main",
+   "source": "https://www.disc-conference.org/wp/outstanding-papers/",
+   "evidence": "Outstanding Papers 2016 Best Paper … Dan Hefetz, Fabian Kuhn, Yannic Maus and Angelika Steger “Polynomial Lower Bound for Distributed Graph Coloring in a Weak LOCAL Model”"
+  },
+  {
+   "venue": "DISC",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Improved Distributed Degree Splitting and Edge Coloring",
+   "authors": [
+    "Mohsen Ghaffari",
+    "Juho Hirvonen",
+    "Fabian Kuhn",
+    "Yannic Maus",
+    "Jukka Suomela",
+    "Jara Uitto"
+   ],
+   "track": "main",
+   "source": "https://www.disc-conference.org/wp/outstanding-papers/",
+   "evidence": "Outstanding Papers 2017 Best Paper … Mohsen Ghaffari, Juho Hirvonen, Fabian Kuhn, Yannic Maus, Jukka Suomela and Jara Uitto “Improved Distributed Degree Splitting and Edge Coloring”"
+  },
+  {
+   "venue": "DISC",
+   "year": 2017,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Improved Deterministic Distributed Matching via Rounding",
+   "authors": [
+    "Manuela Fischer"
+   ],
+   "track": "main",
+   "source": "https://www.disc-conference.org/wp/outstanding-papers/",
+   "evidence": "Outstanding Papers 2017 Best Student Paper … Manuela Fischer “Improved Deterministic Distributed Matching via Rounding”"
+  },
+  {
+   "venue": "DISC",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Broadcast and minimum spanning tree with o(m) messages in the asynchronous CONGEST model",
+   "authors": [
+    "Ali Mashreghi",
+    "Valerie King"
+   ],
+   "track": "main",
+   "source": "https://www.disc-conference.org/wp/outstanding-papers/",
+   "evidence": "Outstanding Papers 2018 Best Paper … Ali Mashreghi and Valerie King “Broadcast and minimum spanning tree with o(m) messages in the asynchronous CONGEST model”"
+  },
+  {
+   "venue": "DISC",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Multi-Shot Distributed Transaction Commit",
+   "authors": [
+    "Gregory Chockler",
+    "Alexey Gotsman"
+   ],
+   "track": "main",
+   "source": "https://www.disc-conference.org/wp/outstanding-papers/",
+   "evidence": "Outstanding Papers 2018 Best Paper … Gregory Chockler and Alexey Gotsman “Multi-Shot Distributed Transaction Commit”"
+  },
+  {
+   "venue": "DISC",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "A Distributed Algorithm for Directed Minimum-Weight Spanning Tree",
+   "authors": [
+    "Orr Fischer",
+    "Rotem Oshman"
+   ],
+   "track": "main",
+   "source": "https://www.disc-conference.org/wp/outstanding-papers/",
+   "evidence": "Outstanding Papers 2019 Best Paper … Orr Fischer and Rotem Oshman: “A Distributed Algorithm for Directed Minimum-Weight Spanning Tree”"
+  },
+  {
+   "venue": "DISC",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Scalable Byzantine Reliable Broadcast",
+   "authors": [
+    "Rachid Guerraoui",
+    "Petr Kuznetsov",
+    "Matteo Monti",
+    "Matej Pavlovic",
+    "Dragos-Adrian Seredinschi"
+   ],
+   "track": "main",
+   "source": "https://www.disc-conference.org/wp/outstanding-papers/",
+   "evidence": "Outstanding Papers 2019 Best Paper … Rachid Guerraoui, Petr Kuznetsov, Matteo Monti, Matej Pavlovic and Dragos-Adrian Seredinschi: “Scalable Byzantine Reliable Broadcast”"
+  },
+  {
+   "venue": "DISC",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Improved Bounds for Distributed Load Balancing",
+   "authors": [
+    "Sepehr Assadi",
+    "Aaron Bernstein",
+    "Zachary Langley"
+   ],
+   "track": "main",
+   "source": "https://www.disc-conference.org/wp/outstanding-papers/",
+   "evidence": "Outstanding Papers 2020 Best Paper … Sepehr Assadi, Aaron Bernstein and Zachary Langley “Improved Bounds for Distributed Load Balancing”"
+  },
+  {
+   "venue": "DISC",
+   "year": 2020,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Intermediate Value Linearizability: A Quantitative Correctness Criterion",
+   "authors": [
+    "Arik Rinberg",
+    "Idit Keidar"
+   ],
+   "track": "main",
+   "source": "https://www.disc-conference.org/wp/outstanding-papers/",
+   "evidence": "Outstanding Papers 2020 Best Student Paper … Arik Rinberg and Idit Keidar “Intermediate Value Linearizability: A Quantitative Correctness Criterion”"
+  },
+  {
+   "venue": "DISC",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Lower Bounds for Shared-Memory Leader Election under Bounded Write Contention",
+   "authors": [
+    "Dan Alistarh",
+    "Giorgi Nadiradze",
+    "Rati Gelashvili"
+   ],
+   "track": "main",
+   "source": "https://www.disc-conference.org/wp/outstanding-papers/",
+   "evidence": "Outstanding Papers 2021 Best Paper … Dan Alistarh, Giorgi Nadiradze and Rati Gelashvili “Lower Bounds for Shared-Memory Leader Election under Bounded Write Contention”"
+  },
+  {
+   "venue": "DISC",
+   "year": 2021,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Broadcast CONGEST Algorithms against Adversarial Edges",
+   "authors": [
+    "Yael Hitron",
+    "Merav Parter"
+   ],
+   "track": "main",
+   "source": "https://www.disc-conference.org/wp/outstanding-papers/",
+   "evidence": "Outstanding Papers 2021 Best Student Paper … Yael Hitron and Merav Parter “Broadcast CONGEST Algorithms against Adversarial Edges”"
+  },
+  {
+   "venue": "DISC",
+   "year": 2021,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "General CONGEST Compilers against Adversarial Edges",
+   "authors": [
+    "Yael Hitron",
+    "Merav Parter"
+   ],
+   "track": "main",
+   "source": "https://www.disc-conference.org/wp/outstanding-papers/",
+   "evidence": "Outstanding Papers 2021 Best Student Paper … Yael Hitron and Merav Parter “General CONGEST Compilers against Adversarial Edges”"
+  },
+  {
+   "venue": "DISC",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Smoothed Analysis of Information Spreading in Dynamic Networks",
+   "authors": [
+    "Michael Dinitz",
+    "Jeremy Fineman",
+    "Seth Gilbert",
+    "Calvin Newport"
+   ],
+   "track": "main",
+   "source": "https://www.disc-conference.org/wp/outstanding-papers/",
+   "evidence": "Outstanding Papers 2022 Best Paper … Michael Dinitz, Jeremy Fineman, Seth Gilbert and Calvin Newport “Smoothed Analysis of Information Spreading in Dynamic Networks”"
+  },
+  {
+   "venue": "DISC",
+   "year": 2022,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Byzantine Consensus Is Θ(n^2): The Dolev-Reischuk Bound Is Tight Even in Partial Synchrony!",
+   "authors": [
+    "Pierre Civit",
+    "Muhammad Ayaz Dzulfikar",
+    "Seth Gilbert",
+    "Vincent Gramoli",
+    "Rachid Guerraoui",
+    "Jovan Komatovic",
+    "Manuel Vidigueira"
+   ],
+   "track": "main",
+   "source": "https://www.disc-conference.org/wp/outstanding-papers/",
+   "evidence": "Outstanding Papers 2022 Best Student Paper … Pierre Civit, Muhammad Ayaz Dzulfikar, Seth Gilbert, Vincent Gramoli, Rachid Guerraoui, Jovan Komatovic and Manuel Vidigueira “Byzantine Consensus Is Θ(n^2): The Dolev-Reischuk Bound Is Tight Even in Partial Synchrony!”"
+  },
+  {
+   "venue": "DISC",
+   "year": 2022,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Polynomial-Time Verification and Testing of Implementations of the Snapshot Data Structure",
+   "authors": [
+    "Gal Amram",
+    "Avi Hayoun",
+    "Lior Mizrahi",
+    "Gera Weiss"
+   ],
+   "track": "main",
+   "source": "https://www.disc-conference.org/wp/outstanding-papers/",
+   "evidence": "Outstanding Papers 2022 Best Student Paper … Gal Amram, Avi Hayoun, Lior Mizrahi and Gera Weiss “Polynomial-Time Verification and Testing of Implementations of the Snapshot Data Structure”"
+  },
+  {
+   "venue": "DISC",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Every Bit Counts in Consensus",
+   "authors": [
+    "Pierre Civit",
+    "Seth Gilbert",
+    "Rachid Guerraoui",
+    "Jovan Komatovic",
+    "Matteo Monti",
+    "Manuel Vidigueira"
+   ],
+   "track": "main",
+   "source": "https://www.disc-conference.org/wp/outstanding-papers/",
+   "evidence": "Outstanding Papers 2023 Best Paper … Pierre Civit, Seth Gilbert, Rachid Guerraoui, Jovan Komatovic, Matteo Monti and Manuel Vidigueira “Every Bit Counts in Consensus”"
+  },
+  {
+   "venue": "DISC",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "On the Node-Averaged Complexity of Locally Checkable Problems on Trees",
+   "authors": [
+    "Alkida Balliu",
+    "Sebastian Brandt",
+    "Fabian Kuhn",
+    "Dennis Olivetti",
+    "Gustav Schmid"
+   ],
+   "track": "main",
+   "source": "https://www.disc-conference.org/wp/outstanding-papers/",
+   "evidence": "Outstanding Papers 2023 Best Paper … Alkida Balliu, Sebastian Brandt, Fabian Kuhn, Dennis Olivetti and Gustav Schmid “On the Node-Averaged Complexity of Locally Checkable Problems on Trees”"
+  },
+  {
+   "venue": "DISC",
+   "year": 2023,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "The FIDS Theorems: Tensions between Multinode and Multicore Performance in Transactional Systems",
+   "authors": [
+    "Naama Ben-David",
+    "Gal Sela",
+    "Adriana Szekeres"
+   ],
+   "track": "main",
+   "source": "https://www.disc-conference.org/wp/outstanding-papers/",
+   "evidence": "Outstanding Papers 2023 Best Student Paper … Naama Ben-David, Gal Sela and Adriana Szekeres “The FIDS Theorems: Tensions between Multinode and Multicore Performance in Transactional Systems”"
+  },
+  {
+   "venue": "DISC",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper (Co-Winner)",
+   "title": "Hyperproperty-Preserving Register Specifications",
+   "authors": [
+    "Yoav Ben Shimon",
+    "Ori Lahav",
+    "Sharon Shoham"
+   ],
+   "track": "main",
+   "source": "https://www.disc-conference.org/wp/disc2024/detailed-program/",
+   "evidence": "Session 6: The Latest on Linearizability (Chair: Sean Ovens) 10:00 – 10:20 Hyperproperty-Preserving Register Specifications (Best Paper Co-Winner / Best Student Paper) Yoav Ben Shimon, Ori Lahav, Sharon Shoham"
+  },
+  {
+   "venue": "DISC",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper (Co-Winner)",
+   "title": "Lock-Free Augmented Trees",
+   "authors": [
+    "Panagiota Fatourou",
+    "Eric Ruppert"
+   ],
+   "track": "main",
+   "source": "https://www.disc-conference.org/wp/disc2024/detailed-program/",
+   "evidence": "Session 1: Shared-Memory Algorithms (Chair: Dan Alistarh) 10:05 – 10:25 Lock-Free Augmented Trees (Best Paper Co-Winner) Panagiota Fatourou, Eric Ruppert"
+  },
+  {
+   "venue": "DISC",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Hyperproperty-Preserving Register Specifications",
+   "authors": [
+    "Yoav Ben Shimon",
+    "Ori Lahav",
+    "Sharon Shoham"
+   ],
+   "track": "main",
+   "source": "https://www.disc-conference.org/wp/disc2024/detailed-program/",
+   "evidence": "Session 6: The Latest on Linearizability (Chair: Sean Ovens) 10:00 – 10:20 Hyperproperty-Preserving Register Specifications (Best Paper Co-Winner / Best Student Paper) Yoav Ben Shimon, Ori Lahav, Sharon Shoham"
+  },
+  {
+   "venue": "DISC",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Complexity landscape for local certification",
+   "authors": [
+    "Nicolas Bousquet",
+    "Laurent Feuilloley",
+    "Sébastien Zeitoun"
+   ],
+   "track": "main",
+   "source": "https://www.disc-conference.org/wp/disc2025/keynotes-awards-and-highlights/",
+   "evidence": "Awards and Highlights The Program Committee of DISC 2025 has selected the following paper to receive the DISC 2025 Best Paper Award : Complexity landscape for local certification by Nicolas Bousquet, Laurent Feuilloley, and Sébastien Zeitoun."
+  },
+  {
+   "venue": "DISC",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Content-Oblivious Leader Election in 2-Edge-Connected Networks",
+   "authors": [
+    "Jérémie Chalopin",
+    "Yi-Jun Chang",
+    "Lyuting Chen",
+    "Giuseppe A. Di Luna",
+    "Haoran Zhou"
+   ],
+   "track": "main",
+   "source": "https://www.disc-conference.org/wp/disc2025/keynotes-awards-and-highlights/",
+   "evidence": "The Program Committee of DISC 2025 has selected the following papers to share the DISC 2025 Best Student Paper Award : Content-Oblivious Leader Election in 2-Edge-Connected Networks by Jérémie Chalopin, Yi-Jun Chang, Lyuting Chen, Giuseppe A. Di Luna, and Haoran Zhou and pod: An Optimal-Latency, Censorship-Free, and Accountable Generalized Consensus Layer"
+  },
+  {
+   "venue": "DISC",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "pod: An Optimal-Latency, Censorship-Free, and Accountable Generalized Consensus Layer",
+   "authors": [
+    "Orestis Alpos",
+    "Bernardo David",
+    "Jakov Mitrovski",
+    "Odysseas Sofikitis",
+    "Dionysis Zindros"
+   ],
+   "track": "main",
+   "source": "https://www.disc-conference.org/wp/disc2025/keynotes-awards-and-highlights/",
+   "evidence": "The Program Committee of DISC 2025 has selected the following papers to share the DISC 2025 Best Student Paper Award : Content-Oblivious Leader Election in 2-Edge-Connected Networks by Jérémie Chalopin, Yi-Jun Chang, Lyuting Chen, Giuseppe A. Di Luna, and Haoran Zhou and pod: An Optimal-Latency, Censorship-Free, and Accountable Generalized Consensus Layer by Orestis Alpos, Bernardo David, Jakov Mitrovski, Odysseas Sofikitis, and Dionysis Zindros."
   },
   {
    "venue": "DocEng",
@@ -119590,6 +120738,462 @@
    "evidence": "Best Paper Runner-ups LiDARSpectra: Indoor Spectral Mapping with Low-cost LiDARs Jiawei Hu, Yanxiang Wang, Hong Jia, Cheng Jiang, Mahbub Hassan, Brano Kusy, Wen Hu"
   },
   {
+   "venue": "IROS",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "IROS Best Paper Award",
+   "title": "SpeedFolding: Learning Efficient Bimanual Folding of Garments",
+   "authors": [
+    "Yahav Avigal",
+    "Lars Berscheid",
+    "Tamim Asfour",
+    "Torsten Kroeger",
+    "Ken Goldberg"
+   ],
+   "track": "main",
+   "source": "https://iros2022.org/2022/10/30/award-winners/",
+   "evidence": "Winner of IROS 2022 Best Paper Award SpeedFolding: Learning Efficient Bimanual Folding of Garments Yahav Avigal, Lars Berscheid, Tamim Asfour, Torsten Kroeger, and Ken Goldberg"
+  },
+  {
+   "venue": "IROS",
+   "year": 2022,
+   "award": "category",
+   "awardLabel": "IROS Best Paper Award for Industrial Robotics Research for Applications",
+   "title": "Absolute Position Detection in 7-Phase Sensorless Electric Stepper Motor",
+   "authors": [
+    "Vincent Groenhuis",
+    "Gijs Rolff",
+    "Koen Bosman",
+    "Leon Abelmann",
+    "Stefano Stramigioli"
+   ],
+   "track": "main",
+   "source": "https://iros2022.org/2022/10/30/award-winners/",
+   "evidence": "Winner of IROS Best Paper Award for Industrial Robotics Research for Applications sponsored by Mujin Inc. Absolute Position Detection in 7-Phase Sensorless Electric Stepper Motor Vincent Groenhuis, Gijs Rolff, Koen Bosman, Leon Abelmann, and Stefano Stramigioli"
+  },
+  {
+   "venue": "IROS",
+   "year": 2022,
+   "award": "category",
+   "awardLabel": "IROS Best Paper Award on Robot Mechanisms and Design",
+   "title": "Aerial Grasping and the Velocity Sufficiency Region",
+   "authors": [
+    "Tony G. Chen",
+    "Kenneth Hoffmann",
+    "JunEn Low",
+    "Keiko Nagami",
+    "David Lentink",
+    "Mark Cutkosky"
+   ],
+   "track": "main",
+   "source": "https://iros2022.org/2022/10/30/award-winners/",
+   "evidence": "Winner of IROS Best Paper Award on Robot Mechanisms and Design sponsored by ROBOTIS Aerial Grasping and the Velocity Sufficiency Region Tony G. Chen, Kenneth Hoffmann, JunEn Low, Keiko Nagami, David Lentink, and Mark Cutkosky"
+  },
+  {
+   "venue": "IROS",
+   "year": 2022,
+   "award": "category",
+   "awardLabel": "IROS Best Paper Award on Agri-Robotics",
+   "title": "Explicitly Incorporating Spatial Information to Recurrent Networks for Agriculture",
+   "authors": [
+    "Claus Smitt",
+    "Michael Allan Halstead",
+    "Alireza Ahmadi",
+    "Christopher Steven McCool"
+   ],
+   "track": "main",
+   "source": "https://iros2022.org/2022/10/30/award-winners/",
+   "evidence": "Winner of IROS Best Paper Award on Agri-Robotics sponsored by YANMAR Explicitly Incorporating Spatial Information to Recurrent Networks for Agriculture Claus Smitt, Michael Allan Halstead, Alireza Ahmadi, and Christopher Steven McCool"
+  },
+  {
+   "venue": "IROS",
+   "year": 2022,
+   "award": "category",
+   "awardLabel": "IROS Best Paper Award on Cognitive Robotics",
+   "title": "Gesture2Vec: Clustering Gestures using Representation Learning Methods for Co-speech Gesture Generation",
+   "authors": [
+    "Payam Jome Yazdian",
+    "Mo Chen",
+    "Angelica Lim"
+   ],
+   "track": "main",
+   "source": "https://iros2022.org/2022/10/30/award-winners/",
+   "evidence": "Winner of IROS Best Paper Award on Cognitive Robotics sponsored by KROS Gesture2Vec: Clustering Gestures using Representation Learning Methods for Co-speech Gesture Generation Payam Jome Yazdian, Mo Chen, and Angelica Lim"
+  },
+  {
+   "venue": "IROS",
+   "year": 2022,
+   "award": "category",
+   "awardLabel": "IROS Best Paper Award on Safety, Security, and Rescue Robotics",
+   "title": "Power-based Safety Layer for Aerial Vehicles in Physical Interaction using Lyapunov Exponents",
+   "authors": [
+    "Eugenio Cuniato",
+    "Nicholas Lawrance",
+    "Marco Tognon",
+    "Roland Siegwart"
+   ],
+   "track": "main",
+   "source": "https://iros2022.org/2022/10/30/award-winners/",
+   "evidence": "Winner of IROS Best Paper Award on Safety, Security, and Rescue Robotics in memory of Motohiro Kisoi sponsored by IRS Power-based Safety Layer for Aerial Vehicles in Physical Interaction using Lyapunov Exponents Eugenio Cuniato, Nicholas Lawrance, Marco Tognon, and Roland Siegwart"
+  },
+  {
+   "venue": "IROS",
+   "year": 2022,
+   "award": "category",
+   "awardLabel": "IROS Best RoboCup Paper Award",
+   "title": "RCareWorld: A Human-centric Simulation World for Caregiving Robots",
+   "authors": [
+    "Ruolin Ye",
+    "Wenqiang Xu",
+    "Haoyuan Fu",
+    "Rajat Kumar Jenamani",
+    "Vy Nguyen",
+    "Cewu Lu",
+    "Katherine Dimitropoulou",
+    "Tapomayukh Bhattacharjee"
+   ],
+   "track": "main",
+   "source": "https://iros2022.org/2022/10/30/award-winners/",
+   "evidence": "Winners of IROS Best RoboCup Paper Award sponsored by RoboCup Federation RCareWorld: A Human-centric Simulation World for Caregiving Robots Ruolin Ye, Wenqiang Xu, Haoyuan Fu, Rajat Kumar, Jenamani, Vy Nguyen, Cewu Lu, Katherine Dimitropoulou, and Tapomayukh Bhattacharjee"
+  },
+  {
+   "venue": "IROS",
+   "year": 2022,
+   "award": "category",
+   "awardLabel": "IROS Best Paper Award on Mobile Manipulation",
+   "title": "Robot Learning of Mobile Manipulation with Reachability Behavior Priors",
+   "authors": [
+    "Snehal Jauhri",
+    "Jan Peters",
+    "Georgia Chalvatzaki"
+   ],
+   "track": "main",
+   "source": "https://iros2022.org/2022/10/30/award-winners/",
+   "evidence": "Winner of IROS Best Paper Award on Mobile Manipulation sponsored by OMRON Sinic X Corp. Robot Learning of Mobile Manipulation with Reachability Behavior Priors Snehal Jauhri, Jan Peters, and Georgia Chalvatzaki"
+  },
+  {
+   "venue": "IROS",
+   "year": 2022,
+   "award": "category",
+   "awardLabel": "IROS Best Entertainment and Amusement Paper Award",
+   "title": "Robot Learning to Paint from Demonstrations",
+   "authors": [
+    "Younghyo Park",
+    "Seunghun Jeon",
+    "Taeyoon Lee"
+   ],
+   "track": "main",
+   "source": "https://iros2022.org/2022/10/30/award-winners/",
+   "evidence": "Winner of IROS Best Entertainment and Amusement Paper Award sponsored by JTCF Robot Learning to Paint from Demonstrations Younghyo Park, Seunghun Jeon, and Taeyoon Lee"
+  },
+  {
+   "venue": "IROS",
+   "year": 2022,
+   "award": "category",
+   "awardLabel": "IROS Best Application Paper Award",
+   "title": "Soft Tissue Characterisation Using a Novel Robotic Medical Percussion Device with Acoustic Analysis and Neural Networks",
+   "authors": [
+    "Pilar Zhang Qiu",
+    "Yongxuan Tan",
+    "Oliver Thompson",
+    "Bennet Cobley",
+    "Thrishantha Nanayakkara"
+   ],
+   "track": "main",
+   "source": "https://iros2022.org/2022/10/30/award-winners/",
+   "evidence": "Winner of IROS Best Application Paper Award sponsored by ICROS Soft Tissue Characterisation Using a Novel Robotic Medical Percussion Device with Acoustic Analysis and Neural Networks Pilar Zhang Qiu, Yongxuan Tan, Oliver Thompson, Bennet Cobley, and Thrishantha Nanayakkara"
+  },
+  {
+   "venue": "IROS",
+   "year": 2022,
+   "award": "category",
+   "awardLabel": "IROS Best RoboCup Paper Award",
+   "title": "SpeedFolding: Learning Efficient Bimanual Folding of Garments",
+   "authors": [
+    "Yahav Avigal",
+    "Lars Burscheid",
+    "Tamim Asfour",
+    "Torsten Kroeger",
+    "Ken Goldberg"
+   ],
+   "track": "main",
+   "source": "https://iros2022.org/2022/10/30/award-winners/",
+   "evidence": "Winners of IROS Best RoboCup Paper Award sponsored by RoboCup Federation SpeedFolding: Learning Efficient Bimanual Folding of Garments Yahav Avigal, Lars Burscheid, Tamim Asfour, Torsten Kroeger, and Ken Goldberg"
+  },
+  {
+   "venue": "IROS",
+   "year": 2022,
+   "award": "student",
+   "awardLabel": "IROS ABB Best Student Paper Award",
+   "title": "FAR Planner: Fast, Attemptable Route Planner using Dynamic Visibility Update",
+   "authors": [
+    "Fan Yang",
+    "Chao Cao",
+    "Hongbiao Zhu",
+    "Jean Oh",
+    "Ji Zhang"
+   ],
+   "track": "main",
+   "source": "https://iros2022.org/2022/10/30/award-winners/",
+   "evidence": "Winner of IROS 2022 ABB Best Student Paper Award FAR Planner: Fast, Attemptable Route Planner using Dynamic Visibility Update Fan Yang, Chao Cao, Hongbiao Zhu, Jean Oh, and Ji Zhang"
+  },
+  {
+   "venue": "ISAAC",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Optimal Composition Ordering Problems for Piecewise Linear Functions",
+   "authors": [
+    "Yasushi Kawase",
+    "Kazuhisa Makino",
+    "Kento Seimi"
+   ],
+   "track": "main",
+   "source": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol064-isaac2016/LIPIcs.ISAAC.2016.0/LIPIcs.ISAAC.2016.0.pdf",
+   "evidence": "The best paper award was given to “Optimal Composition Ordering Problems for Piecewise Linear Functions” by Yasushi Kawase, Kazuhisa Makino and Kento Seimi. Selected from submissions authored by students only, the best student paper award was given to “Adaptivity vs. Postselection, and Hardness Amplification in Polynomial Approximation” by Lijie Chen. … Optimal Composition Ordering Problems for Piecewise Linear Functions Yasushi Kawase, Kazuhisa Makino, and Kento Seimi"
+  },
+  {
+   "venue": "ISAAC",
+   "year": 2016,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Adaptivity vs. Postselection, and Hardness Amplification for Polynomial Approximation",
+   "authors": [
+    "Lijie Chen"
+   ],
+   "track": "main",
+   "source": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol064-isaac2016/LIPIcs.ISAAC.2016.0/LIPIcs.ISAAC.2016.0.pdf",
+   "evidence": "The best paper award was given to “Optimal Composition Ordering Problems for Piecewise Linear Functions” by Yasushi Kawase, Kazuhisa Makino and Kento Seimi. Selected from submissions authored by students only, the best student paper award was given to “Adaptivity vs. Postselection, and Hardness Amplification in Polynomial Approximation” by Lijie Chen. … Adaptivity vs. Postselection, and Hardness Amplification for Polynomial Approximation Lijie Chen"
+  },
+  {
+   "venue": "ISAAC",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Crossing Number for Graphs with Bounded Pathwidth",
+   "authors": [
+    "Therese Biedl",
+    "Markus Chimani",
+    "Martin Derka",
+    "Petra Mutzel"
+   ],
+   "track": "main",
+   "source": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol092-isaac2017/LIPIcs.ISAAC.2017.0/LIPIcs.ISAAC.2017.0.pdf",
+   "evidence": "The best paper award was given to “Crossing Number for Graphs with Bounded Pathwidth” by Therese Biedl, Markus Chimani, Martin Derka and Petra Mutzel. Selected from submissions authored by students only, the best student paper award was given to “Fully Dynamic Connectivity Oracles under General Vertex Updates” by Kengo Nakamura. … Crossing Number for Graphs with Bounded Pathwidth Therese Biedl, Markus Chimani, Martin Derka, and Petra Mutzel"
+  },
+  {
+   "venue": "ISAAC",
+   "year": 2017,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Fully Dynamic Connectivity Oracles under General Vertex Updates",
+   "authors": [
+    "Kengo Nakamura"
+   ],
+   "track": "main",
+   "source": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol092-isaac2017/LIPIcs.ISAAC.2017.0/LIPIcs.ISAAC.2017.0.pdf",
+   "evidence": "The best paper award was given to “Crossing Number for Graphs with Bounded Pathwidth” by Therese Biedl, Markus Chimani, Martin Derka and Petra Mutzel. Selected from submissions authored by students only, the best student paper award was given to “Fully Dynamic Connectivity Oracles under General Vertex Updates” by Kengo Nakamura. … Fully Dynamic Connectivity Oracles under General Vertex Updates Kengo Nakamura"
+  },
+  {
+   "venue": "ISAAC",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Exploiting Sparsity for Bipartite Hamiltonicity",
+   "authors": [
+    "Andreas Björklund"
+   ],
+   "track": "main",
+   "source": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol123-isaac2018/LIPIcs.ISAAC.2018.0/LIPIcs.ISAAC.2018.0.pdf",
+   "evidence": "The best paper award was given to “Exploiting Sparseness for Bipartite Hamiltonicity” by Andreas Björklund. Selected from submissions authored by students only, the best student paper award was given to “Opinion Forming in Erdős-Rényi Random Graph and Expanders” by Ahad N. Zehmakan. … Exploiting Sparsity for Bipartite Hamiltonicity Andreas Björklund"
+  },
+  {
+   "venue": "ISAAC",
+   "year": 2018,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Opinion Forming in Erdős–Rényi Random Graph and Expanders",
+   "authors": [
+    "Ahad N. Zehmakan"
+   ],
+   "track": "main",
+   "source": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol123-isaac2018/LIPIcs.ISAAC.2018.0/LIPIcs.ISAAC.2018.0.pdf",
+   "evidence": "The best paper award was given to “Exploiting Sparseness for Bipartite Hamiltonicity” by Andreas Björklund. Selected from submissions authored by students only, the best student paper award was given to “Opinion Forming in Erdős-Rényi Random Graph and Expanders” by Ahad N. Zehmakan. … Opinion Forming in Erdős–Rényi Random Graph and Expanders Ahad N. Zehmakan"
+  },
+  {
+   "venue": "ISAAC",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "On One-Round Discrete Voronoi Games",
+   "authors": [
+    "Mark de Berg",
+    "Sándor Kisfaludi-Bak",
+    "Mehran Mehr"
+   ],
+   "track": "main",
+   "source": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol149-isaac2019/LIPIcs.ISAAC.2019.0/LIPIcs.ISAAC.2019.0.pdf",
+   "evidence": "The committee selected the following two papers as the recipients of the ISAAC 2019 Best Paper Award and Best Student Paper respectively: Best Paper. Mark de Berg, Sándor Kisfaludi-Bak and Mehran Mehr: On One-Round Discrete Voronoi Games Best Student Paper. Ahad N. Zehmakan: Two Phase Transitions in Two-way Bootstrap Percolation … On One-Round Discrete Voronoi Games Mark de Berg, Sándor Kisfaludi-Bak, and Mehran Mehr"
+  },
+  {
+   "venue": "ISAAC",
+   "year": 2019,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Two Phase Transitions in Two-Way Bootstrap Percolation",
+   "authors": [
+    "Ahad N. Zehmakan"
+   ],
+   "track": "main",
+   "source": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol149-isaac2019/LIPIcs.ISAAC.2019.0/LIPIcs.ISAAC.2019.0.pdf",
+   "evidence": "The committee selected the following two papers as the recipients of the ISAAC 2019 Best Paper Award and Best Student Paper respectively: Best Paper. Mark de Berg, Sándor Kisfaludi-Bak and Mehran Mehr: On One-Round Discrete Voronoi Games Best Student Paper. Ahad N. Zehmakan: Two Phase Transitions in Two-way Bootstrap Percolation … Two Phase Transitions in Two-Way Bootstrap Percolation Ahad N. Zehmakan"
+  },
+  {
+   "venue": "ISAAC",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award (co-winner)",
+   "title": "Counting 4-Patterns in Permutations Is Equivalent to Counting 4-Cycles in Graphs",
+   "authors": [
+    "Bartłomiej Dudek",
+    "Paweł Gawrychowski"
+   ],
+   "track": "main",
+   "source": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol181-isaac2020/LIPIcs.ISAAC.2020.0/LIPIcs.ISAAC.2020.0.pdf",
+   "evidence": "The program committee selected the following two papers as the co-winners of the ISAAC 2020 Best Paper Awards: Gourds: a sliding-block puzzle with turning, by Joep Hamersma, Marc Van Kreveld, Yushi Uno, and Tom van der Zanden; and Counting 4-patterns in permutations is equivalent to counting 4-cycles in graphs, by Bartlomiej Dudek and Pawel Gawrychowski. … Counting 4-Patterns in Permutations Is Equivalent to Counting 4-Cycles in Graphs Bartłomiej Dudek and Paweł Gawrychowski"
+  },
+  {
+   "venue": "ISAAC",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award (co-winner)",
+   "title": "Gourds: A Sliding-Block Puzzle with Turning",
+   "authors": [
+    "Joep Hamersma",
+    "Marc van Kreveld",
+    "Yushi Uno",
+    "Tom C. van der Zanden"
+   ],
+   "track": "main",
+   "source": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol181-isaac2020/LIPIcs.ISAAC.2020.0/LIPIcs.ISAAC.2020.0.pdf",
+   "evidence": "The program committee selected the following two papers as the co-winners of the ISAAC 2020 Best Paper Awards: Gourds: a sliding-block puzzle with turning, by Joep Hamersma, Marc Van Kreveld, Yushi Uno, and Tom van der Zanden; and Counting 4-patterns in permutations is equivalent to counting 4-cycles in graphs, by Bartlomiej Dudek and Pawel Gawrychowski. … Gourds: A Sliding-Block Puzzle with Turning Joep Hamersma, Marc van Kreveld, Yushi Uno, and Tom C. van der Zanden"
+  },
+  {
+   "venue": "ISAAC",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "On Maximizing Sums of Non-Monotone Submodular and Linear Functions",
+   "authors": [
+    "Benjamin Qi"
+   ],
+   "track": "main",
+   "source": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol248-isaac2022/LIPIcs.ISAAC.2022.0/LIPIcs.ISAAC.2022.0.pdf",
+   "evidence": "The program committee selected the following paper as the winner of the ISAAC 2022 Best Paper Award: On Maximizing Sums of Non-Monotone Submodular and Linear Functions by Benjamin Qi. … On Maximizing Sums of Non-Monotone Submodular and Linear Functions Benjamin Qi"
+  },
+  {
+   "venue": "ISAAC",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Clustering What Matters in Constrained Settings: Improved Outlier to Outlier-Free Reductions",
+   "authors": [
+    "Ragesh Jaiswal",
+    "Amit Kumar"
+   ],
+   "track": "main",
+   "source": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol283-isaac2023/LIPIcs.ISAAC.2023.0/LIPIcs.ISAAC.2023.0.pdf",
+   "evidence": "The program committee selected the following papers as the recipients of the ISAAC 2023 Best Paper and Best Student Paper Awards. Best Paper. Carl Feghali, Felicia Lucke, Daniël Paulusma, and Bernard Ries: Matching Cuts in Graphs of High Girth and H-Free Graphs. Best Paper. Ragesh Jaiswal and Amit Kumar: Clustering What Matters in Constrained Settings: Improved Outlier to Outlier-Free Reductions. Best Student Paper. Nicola Cotumaccio: Prefix Sorting DFAs: a Recursive Algorithm. … Clustering What Matters in Constrained Settings: Improved Outlier to Outlier-Free Reductions Ragesh Jaiswal and Amit Kumar"
+  },
+  {
+   "venue": "ISAAC",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Matching Cuts in Graphs of High Girth and H-Free Graphs",
+   "authors": [
+    "Carl Feghali",
+    "Felicia Lucke",
+    "Daniël Paulusma",
+    "Bernard Ries"
+   ],
+   "track": "main",
+   "source": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol283-isaac2023/LIPIcs.ISAAC.2023.0/LIPIcs.ISAAC.2023.0.pdf",
+   "evidence": "The program committee selected the following papers as the recipients of the ISAAC 2023 Best Paper and Best Student Paper Awards. Best Paper. Carl Feghali, Felicia Lucke, Daniël Paulusma, and Bernard Ries: Matching Cuts in Graphs of High Girth and H-Free Graphs. Best Paper. Ragesh Jaiswal and Amit Kumar: Clustering What Matters in Constrained Settings: Improved Outlier to Outlier-Free Reductions. Best Student Paper. Nicola Cotumaccio: Prefix Sorting DFAs: a Recursive Algorithm. … Matching Cuts in Graphs of High Girth and H-Free Graphs Carl Feghali, Felicia Lucke, Daniël Paulusma, and Bernard Ries"
+  },
+  {
+   "venue": "ISAAC",
+   "year": 2023,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Prefix Sorting DFAs: A Recursive Algorithm",
+   "authors": [
+    "Nicola Cotumaccio"
+   ],
+   "track": "main",
+   "source": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol283-isaac2023/LIPIcs.ISAAC.2023.0/LIPIcs.ISAAC.2023.0.pdf",
+   "evidence": "The program committee selected the following papers as the recipients of the ISAAC 2023 Best Paper and Best Student Paper Awards. Best Paper. Carl Feghali, Felicia Lucke, Daniël Paulusma, and Bernard Ries: Matching Cuts in Graphs of High Girth and H-Free Graphs. Best Paper. Ragesh Jaiswal and Amit Kumar: Clustering What Matters in Constrained Settings: Improved Outlier to Outlier-Free Reductions. Best Student Paper. Nicola Cotumaccio: Prefix Sorting DFAs: a Recursive Algorithm. … Prefix Sorting DFAs: A Recursive Algorithm Nicola Cotumaccio"
+  },
+  {
+   "venue": "ISAAC",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Complexity Framework for Forbidden Subgraphs II: Edge Subdivision and the “H”-Graphs",
+   "authors": [
+    "Vadim Lozin",
+    "Barnaby Martin",
+    "Sukanya Pandey",
+    "Daniel Paulusma",
+    "Mark Siggers",
+    "Siani Smith",
+    "Erik Jan van Leeuwen"
+   ],
+   "track": "main",
+   "source": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol322-isaac2024/LIPIcs.ISAAC.2024.0/LIPIcs.ISAAC.2024.0.pdf",
+   "evidence": "The program committee selected the following papers as the recipients of the ISAAC 2024 Best Paper and Best Student Paper Awards. Best Paper Vadim Lozin, Barnaby Martin, Sukanya Pandey, Daniel Paulusma, Mark Siggers, Siani Smith and Erik Jan van Leeuwen. Complexity Framework for Forbidden Subgraphs II: Edge Subdivision and the “H”-graphs. Best Student Paper Koustav Bhanja. Optimal Sensitivity Oracle for Steiner Mincut. … Complexity Framework for Forbidden Subgraphs II: Edge Subdivision and the “H”-Graphs Vadim Lozin, Barnaby Martin, Sukanya Pandey, Daniel Paulusma, Mark Siggers, Siani Smith, and Erik Jan van Leeuwen"
+  },
+  {
+   "venue": "ISAAC",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Optimal Sensitivity Oracle for Steiner Mincut",
+   "authors": [
+    "Koustav Bhanja"
+   ],
+   "track": "main",
+   "source": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol322-isaac2024/LIPIcs.ISAAC.2024.0/LIPIcs.ISAAC.2024.0.pdf",
+   "evidence": "The program committee selected the following papers as the recipients of the ISAAC 2024 Best Paper and Best Student Paper Awards. Best Paper Vadim Lozin, Barnaby Martin, Sukanya Pandey, Daniel Paulusma, Mark Siggers, Siani Smith and Erik Jan van Leeuwen. Complexity Framework for Forbidden Subgraphs II: Edge Subdivision and the “H”-graphs. Best Student Paper Koustav Bhanja. Optimal Sensitivity Oracle for Steiner Mincut. … Optimal Sensitivity Oracle for Steiner Mincut Koustav Bhanja"
+  },
+  {
+   "venue": "ISAAC",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "New Approximate Distance Oracles and Their Applications",
+   "authors": [
+    "Avi Kadria",
+    "Liam Roditty"
+   ],
+   "track": "main",
+   "source": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol359-isaac2025/LIPIcs.ISAAC.2025.0/LIPIcs.ISAAC.2025.0.pdf",
+   "evidence": "The program committee selected the following papers as the recipients of ISAAC 2025 Best Paper and Best Student Paper Awards. Best Paper: New Approximate Distance Oracles and Their Applications by Avi Kadria and Liam Roditty"
+  },
+  {
+   "venue": "ISAAC",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Simple, Strict, Proper, and Directed: Comparing Reachability in Directed and Undirected Temporal Graphs",
+   "authors": [
+    "Michelle Döring"
+   ],
+   "track": "main",
+   "source": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol359-isaac2025/LIPIcs.ISAAC.2025.0/LIPIcs.ISAAC.2025.0.pdf",
+   "evidence": "The program committee selected the following papers as the recipients of ISAAC 2025 Best Paper and Best Student Paper Awards. Best Student Paper: Simple, Strict, Proper, and Directed: Comparing Reachability in Directed and Undirected Temporal Graphs by Michelle Döring"
+  },
+  {
    "venue": "ISCA",
    "year": 2003,
    "award": "tot",
@@ -144514,6 +146118,996 @@
   },
   {
    "venue": "PETS",
+   "year": 2008,
+   "award": "outstanding",
+   "awardLabel": "Caspar Bowden PET Award",
+   "title": "Robust De-anonymization of Large Sparse Datasets",
+   "authors": [
+    "Arvind Narayanan",
+    "Vitaly Shmatikov"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2008 Winner is: Arvind Narayanan and Vitaly Shmatikov. Robust De-anonymization of Large Sparse Datasets. Proceedings of the 2008 IEEE Symposium on Security and Privacy (S&P 2008). [ PDF ]"
+  },
+  {
+   "venue": "PETS",
+   "year": 2008,
+   "award": "runner-up",
+   "awardLabel": "Caspar Bowden PET Award, Runner-up",
+   "title": "Making P2P Accountable without Losing Privacy",
+   "authors": [
+    "Mira Belenkiy",
+    "Melissa Chase",
+    "C. Chris Erway",
+    "John Jannotti",
+    "Alptekin Küpçü",
+    "Anna Lysyanskaya",
+    "Eric Rachlin"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2008 runners-up were: Mira Belenkiy, Melissa Chase, C. Chris Erway, John Jannotti, Alptekin Küpçü, Anna Lysyanskaya, and Eric Rachlin. Making P2P Accountable without Losing Privacy. Proceedings of the 2007 ACM Workshop on Privacy in the Electronic Society (WPES 2007)."
+  },
+  {
+   "venue": "PETS",
+   "year": 2008,
+   "award": "runner-up",
+   "awardLabel": "Caspar Bowden PET Award, Runner-up",
+   "title": "Sampled Traffic Analysis by Internet-Exchange-Level Adversaries",
+   "authors": [
+    "Steven J. Murdoch",
+    "Piotr Zielinski"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2008 runners-up were: Steven J. Murdoch and Piotr Zielinski. Sampled Traffic Analysis by Internet-Exchange-Level Adversaries. Proceedings of the 2007 Privacy Enhancing Technologies Workshop (PET 2007)."
+  },
+  {
+   "venue": "PETS",
+   "year": 2009,
+   "award": "outstanding",
+   "awardLabel": "Caspar Bowden PET Award",
+   "title": "An Ad Omnia Approach to Defining and Achieving Private Data Analysis",
+   "authors": [
+    "Cynthia Dwork"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2009 Winners are: Cynthia Dwork. An Ad Omnia Approach to Defining and Achieving Private Data Analysis. ACM SIGKDD International Workshop on Privacy, Security, and Trust in KDD (PinKDD 2007). [ website ]"
+  },
+  {
+   "venue": "PETS",
+   "year": 2009,
+   "award": "outstanding",
+   "awardLabel": "Caspar Bowden PET Award",
+   "title": "Mechanism Design via Differential Privacy",
+   "authors": [
+    "Frank McSherry",
+    "Kunal Talwar"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2009 Winners are: Frank McSherry and Kunal Talwar. Mechanism Design via Differential Privacy. IEEE Symposium on Foundations of Computer Science (FOCS 2007). [ website ]"
+  },
+  {
+   "venue": "PETS",
+   "year": 2009,
+   "award": "runner-up",
+   "awardLabel": "Caspar Bowden PET Award, Runner-up",
+   "title": "Blacklistable anonymous credentials: blocking misbehaving users without TTPs",
+   "authors": [
+    "Patrick Tsang",
+    "Man Ho Au",
+    "Apu Kapadia",
+    "Sean Smith"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2009 runners-up were: Patrick Tsang, Man Ho Au, Apu Kapadia, and Sean Smith. Blacklistable anonymous credentials: blocking misbehaving users without TTPs. ACM Conference on Computer and Communication Security (CCS 2007). [ PDF ]"
+  },
+  {
+   "venue": "PETS",
+   "year": 2009,
+   "award": "runner-up",
+   "awardLabel": "Caspar Bowden PET Award, Runner-up",
+   "title": "PEREA: Towards Practical TTP-Free Revocation in Anonymous Authentication",
+   "authors": [
+    "Patrick Tsang",
+    "Man Ho Au",
+    "Apu Kapadia",
+    "Sean Smith"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2009 runners-up were: Patrick Tsang, Man Ho Au, Apu Kapadia, and Sean Smith. PEREA: Towards Practical TTP-Free Revocation in Anonymous Authentication. ACM Conference on Computer and Communication Security (CCS 2008). [ PDF ]"
+  },
+  {
+   "venue": "PETS",
+   "year": 2010,
+   "award": "outstanding",
+   "awardLabel": "Caspar Bowden PET Award",
+   "title": "Fully Homomorphic Encryption using Ideal Lattices",
+   "authors": [
+    "Craig Gentry"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2010 Winner is: Craig Gentry. Fully Homomorphic Encryption using Ideal Lattices. ACM Symposium Symposium on Theory of Computing (STOC) 2009."
+  },
+  {
+   "venue": "PETS",
+   "year": 2010,
+   "award": "runner-up",
+   "awardLabel": "Caspar Bowden PET Award, Runner-up",
+   "title": "Detecting Privacy Leaks Using Corpus-based Association Rules",
+   "authors": [
+    "R. Chow",
+    "P. Golle",
+    "J. Staddon"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2010 runners-up were: R. Chow, P. Golle, and J. Staddon. Detecting Privacy Leaks Using Corpus-based Association Rules. ACM SIGKDD international conference on Knowledge discovery and data mining (KDD) 2008."
+  },
+  {
+   "venue": "PETS",
+   "year": 2010,
+   "award": "runner-up",
+   "awardLabel": "Caspar Bowden PET Award, Runner-up",
+   "title": "Engineering Privacy",
+   "authors": [
+    "S. Spiekermann",
+    "L. Cranor"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2010 runners-up were: S. Spiekermann and L. Cranor. Engineering Privacy. IEEE Transactions on Software Engineering, 35(1), 2009, pp. 67-82."
+  },
+  {
+   "venue": "PETS",
+   "year": 2010,
+   "award": "runner-up",
+   "awardLabel": "Caspar Bowden PET Award, Runner-up",
+   "title": "Resolving individuals contributing trace amounts of DNA to highly complex mixtures using high-density SNP genotyping microarrays",
+   "authors": [
+    "N. Homer",
+    "S. Szelinger",
+    "M. Redman",
+    "D. Duggan",
+    "W. Tembe",
+    "J. Muehling",
+    "J.V. Pearson",
+    "DA Stephan",
+    "S.F. Nelson",
+    "D.W. Craig"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2010 runners-up were: N. Homer, S. Szelinger, M. Redman, D. Duggan, W. Tembe, J. Muehling, J.V. Pearson, DA Stephan, S.F. Nelson, and D.W. Craig. Resolving individuals contributing trace amounts of DNA to highly complex mixtures using high-density SNP genotyping microarrays. PlOS Genet, 2008."
+  },
+  {
+   "venue": "PETS",
+   "year": 2011,
+   "award": "outstanding",
+   "awardLabel": "Caspar Bowden PET Award",
+   "title": "Learning your identity and disease from research papers: information leaks in genome wide association study",
+   "authors": [
+    "R. Wang",
+    "Y. Li",
+    "X. Wang",
+    "H. Tang",
+    "X. Zhou"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2011 Winners are: R. Wang, Y. Li, X. Wang, H. Tang, X. Zhou. \"Learning your identity and disease from research papers: information leaks in genome wide association study,\" ACM Conference on Computer and Communications Security, 2009, pp. 534-544. [ PDF ]"
+  },
+  {
+   "venue": "PETS",
+   "year": 2011,
+   "award": "outstanding",
+   "awardLabel": "Caspar Bowden PET Award",
+   "title": "Privacy Violations Using Microtargeted Ads: A Case Study",
+   "authors": [
+    "A. Korolova"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2011 Winners are: A. Korolova. \"Privacy Violations Using Microtargeted Ads: A Case Study,\" IEEE International Workshop on Privacy Aspects of Data Mining (PADM ’2010). [ PDF ]"
+  },
+  {
+   "venue": "PETS",
+   "year": 2011,
+   "award": "runner-up",
+   "awardLabel": "Caspar Bowden PET Award, Runner-up",
+   "title": "How Unique is Your Web Browser?",
+   "authors": [
+    "P. Eckersley"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2011 runners-up were: P. Eckersley. \"How Unique is Your Web Browser?\" Privacy Enhancing Technologies, 10th International Symposium, PETS 2010. [ PDF ]"
+  },
+  {
+   "venue": "PETS",
+   "year": 2011,
+   "award": "runner-up",
+   "awardLabel": "Caspar Bowden PET Award, Runner-up",
+   "title": "Side-Channel Leaks in Web Applications: a Reality Today, a Challenge Tomorrow",
+   "authors": [
+    "S. Chen",
+    "R. Wang",
+    "X. Wang",
+    "K. Zhang"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2011 runners-up were: S. Chen, R. Wang, X. Wang, K. Zhang. \"Side-Channel Leaks in Web Applications: a Reality Today, a Challenge Tomorrow,\" IEEE Symposium on Security and Privacy, IEEE Computer Society, May 2010. [ website ]"
+  },
+  {
+   "venue": "PETS",
+   "year": 2011,
+   "award": "student",
+   "awardLabel": "Andreas Pfitzmann Best Student Paper Award",
+   "title": "How Unique and Traceable are Usernames?",
+   "authors": [
+    "Daniele Perito",
+    "Claude Castelluccia",
+    "Mohamed Ali Kaafar",
+    "Pere Manils"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/student-paper-award.php",
+   "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2011 How Unique and Traceable are Usernames? Daniele Perito, Claude Castelluccia, Mohamed Ali Kaafar, and Pere Manils (INRIA)"
+  },
+  {
+   "venue": "PETS",
+   "year": 2012,
+   "award": "outstanding",
+   "awardLabel": "Caspar Bowden PET Award",
+   "title": "Phonotactic Reconstruction of Encrypted VoIP Conversations: Hookt on fon-iks",
+   "authors": [
+    "Andrew M. White",
+    "Austin R. Matthews",
+    "Kevin Z. Snow",
+    "Fabian Monrose"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2012 Winner is: Andrew M. White, Austin R. Matthews, Kevin Z. Snow and Fabian Monrose, \"Phonotactic Reconstruction of Encrypted VoIP Conversations: Hookt on fon-iks.\" IEEE Symposium on Security and Privacy, 2011. [ PDF ]"
+  },
+  {
+   "venue": "PETS",
+   "year": 2012,
+   "award": "runner-up",
+   "awardLabel": "Caspar Bowden PET Award, Runner-up",
+   "title": "Quantifying Location Privacy",
+   "authors": [
+    "Reza Shokri",
+    "George Theodorakopoulos",
+    "Jean-Yves Le Boudec",
+    "Jean-Pierre Hubaux"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2012 runners-up were: Reza Shokri, George Theodorakopoulos, Jean-Yves Le Boudec, and Jean-Pierre Hubaux. \"Quantifying Location Privacy.\" IEEE Symposium on Security and Privacy, 2011. [ PDF ]"
+  },
+  {
+   "venue": "PETS",
+   "year": 2012,
+   "award": "runner-up",
+   "awardLabel": "Caspar Bowden PET Award, Runner-up",
+   "title": "Telex: Anticensorship in the Network Infrastructure",
+   "authors": [
+    "Eric Wustrow",
+    "Scott Wolchok",
+    "Ian Goldberg",
+    "J. Alex Halderman"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2012 runners-up were: Eric Wustrow, Scott Wolchok, Ian Goldberg, and J. Alex Halderman. \"Telex: Anticensorship in the Network Infrastructure.\" USENIX Security Symposium, 2011. [ PDF ]"
+  },
+  {
+   "venue": "PETS",
+   "year": 2012,
+   "award": "student",
+   "awardLabel": "Andreas Pfitzmann Best Student Paper Award",
+   "title": "Use Fewer Instances of the Letter “i”: Toward Writing Style Anonymization",
+   "authors": [
+    "Andrew McDonald",
+    "Sadia Afroz",
+    "Aylin Caliskan",
+    "Ariel Stolerman",
+    "Rachel Greenstadt"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/student-paper-award.php",
+   "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2012 Use Fewer Instances of the Letter ``i'': Toward Writing Style Anonymization Andrew McDonald, Sadia Afroz, Aylin Caliskan, Ariel Stolerman and Rachel Greenstadt (Drexel University)"
+  },
+  {
+   "venue": "PETS",
+   "year": 2013,
+   "award": "outstanding",
+   "awardLabel": "Caspar Bowden PET Award",
+   "title": "Adversarial Stylometry: Circumventing Authorship Recognition to Preserve Privacy and Anonymity",
+   "authors": [
+    "Michael Brennan",
+    "Sadia Afroz",
+    "Rachel Greenstadt"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2013 Winner is: Michael Brennan, Sadia Afroz, and Rachel Greenstadt, \"Adversarial Stylometry: Circumventing Authorship Recognition to Preserve Privacy and Anonymity\". ACM Transactions on Information and System Security (TISSEC).Volume 15 Issue 3, November 2012, Article No. 12. [ publisher's website ]"
+  },
+  {
+   "venue": "PETS",
+   "year": 2013,
+   "award": "runner-up",
+   "awardLabel": "Caspar Bowden PET Award, Runner-up",
+   "title": "Eternal Sunshine of the Spotless Machine: Protecting Privacy with Ephemeral Channels",
+   "authors": [
+    "Alan M. Dunn",
+    "Michael Z. Lee",
+    "Suman Jana",
+    "Sangman Kim",
+    "Mark Silberstein",
+    "Yuanzhong Xu",
+    "Vitaly Shmatikov",
+    "Emmett Witchel"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2013 runners-up were: Alan M. Dunn, Michael Z. Lee, Suman Jana, Sangman Kim, Mark Silberstein, Yuanzhong Xu, Vitaly Shmatikov, and Emmett Witchel, \"Eternal Sunshine of the Spotless Machine: Protecting Privacy with Ephemeral Channels\". 10th USENIX Symposium on Operating System Design and Implementation (OSDI), October 2012. [ PDF ]"
+  },
+  {
+   "venue": "PETS",
+   "year": 2013,
+   "award": "runner-up",
+   "awardLabel": "Caspar Bowden PET Award, Runner-up",
+   "title": "Shadow: Running Tor in a Box for Accurate and Efficient Experimentation",
+   "authors": [
+    "Rob Jansen",
+    "Nicholas Hopper"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2013 runners-up were: Rob Jansen and Nicholas Hopper, \"Shadow: Running Tor in a Box for Accurate and Efficient Experimentation\". 19th Annual ISOC Network and Distributed System Security Symposium, NDSS 2012. [ PDF ]"
+  },
+  {
+   "venue": "PETS",
+   "year": 2013,
+   "award": "student",
+   "awardLabel": "Andreas Pfitzmann Best Student Paper Award",
+   "title": "How Low Can You Go: Balancing Performance with Anonymity in Tor",
+   "authors": [
+    "John Geddes",
+    "Rob Jansen",
+    "Nicholas Hopper"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/student-paper-award.php",
+   "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2013 How Low Can You Go: Balancing Performance with Anonymity in Tor John Geddes (University of Minnesota, Minneapolis), Rob Jansen (U.S. Naval Research Laboratory) and Nicholas Hopper (University of Minnesota, Minneapolis)"
+  },
+  {
+   "venue": "PETS",
+   "year": 2013,
+   "award": "student",
+   "awardLabel": "Andreas Pfitzmann Best Student Paper Award",
+   "title": "The Path Less Travelled: Overcoming Tor's Bottlenecks with Traffic Splitting",
+   "authors": [
+    "Mashael Alsabah",
+    "Kevin Bauer",
+    "Tariq Elahi",
+    "Ian Goldberg"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/student-paper-award.php",
+   "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2013 The Path Less Travelled: Overcoming Tor's Bottlenecks with Traffic Splitting Mashael Alsabah, Kevin Bauer, Tariq Elahi and Ian Goldberg (University of Waterloo)"
+  },
+  {
+   "venue": "PETS",
+   "year": 2014,
+   "award": "outstanding",
+   "awardLabel": "Caspar Bowden PET Award",
+   "title": "A Scanner Darkly: Protecting User Privacy from Perceptual Applications",
+   "authors": [
+    "Suman Jana",
+    "Arvind Narayanan",
+    "Vitaly Shmatikov"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2014 Winner is: Suman Jana, Arvind Narayanan, Vitaly Shmatikov. \"A Scanner Darkly: Protecting User Privacy from Perceptual Applications\". 34th IEEE Symposium on Security and Privacy, May 2013. [ PDF ]"
+  },
+  {
+   "venue": "PETS",
+   "year": 2014,
+   "award": "runner-up",
+   "awardLabel": "Caspar Bowden PET Award, Runner-up",
+   "title": "Protocol Misidentification Made Easy with Format-Transforming Encryption",
+   "authors": [
+    "Kevin Dyer",
+    "Scott Coull",
+    "Thomas Ristenpart",
+    "Thomas Shrimpton"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2014 runners-up were: Kevin Dyer, Scott Coull, Thomas Ristenpart, Thomas Shrimpton. \"Protocol Misidentification Made Easy with Format-Transforming Encryption\". 2013 ACM Conference on Computer and Communications Security, November 2013. [ publisher's website ]"
+  },
+  {
+   "venue": "PETS",
+   "year": 2014,
+   "award": "runner-up",
+   "awardLabel": "Caspar Bowden PET Award, Runner-up",
+   "title": "Zerocoin: Anonymous Distributed E-Cash from Bitcoin",
+   "authors": [
+    "Ian Miers",
+    "Christina Garman",
+    "Matthew Green",
+    "Aviel D. Rubin"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2014 runners-up were: Ian Miers, Christina Garman, Matthew Green, Aviel D. Rubin. \"Zerocoin: Anonymous Distributed E-Cash from Bitcoin\". 34th IEEE Symposium on Security and Privacy, May 2013. [ PDF ]"
+  },
+  {
+   "venue": "PETS",
+   "year": 2014,
+   "award": "student",
+   "awardLabel": "Andreas Pfitzmann Best Student Paper Award",
+   "title": "I Know Why You Went to the Clinic: Risks and Realization of HTTPS Traffic Analysis",
+   "authors": [
+    "Brad Miller",
+    "Ling Huang",
+    "A. D. Joseph",
+    "J. D. Tygar"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/student-paper-award.php",
+   "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2014 I Know Why You Went to the Clinic: Risks and Realization of HTTPS Traffic Analysis Brad Miller (UC Berkeley), Ling Huang (Intel Labs), A. D. Joseph (UC Berkeley) and J. D. Tygar (UC Berkeley)"
+  },
+  {
+   "venue": "PETS",
+   "year": 2015,
+   "award": "outstanding",
+   "awardLabel": "Caspar Bowden PET Award",
+   "title": "Security of Symmetric Encryption against Mass Surveillance",
+   "authors": [
+    "Mihir Bellare",
+    "Kenny Paterson",
+    "Phillip Rogaway"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2015 Winner is: Mihir Bellare, Kenny Paterson, and Phillip Rogaway. \"Security of Symmetric Encryption against Mass Surveillance\". CRYPTO 2014. [ PDF ]"
+  },
+  {
+   "venue": "PETS",
+   "year": 2015,
+   "award": "runner-up",
+   "awardLabel": "Caspar Bowden PET Award, Runner-up",
+   "title": "FPDetective: Dusting the Web for Fingerprinters",
+   "authors": [
+    "Gunes Acar",
+    "Marc Juarez",
+    "Nick Nikiforakis",
+    "Claudia Diaz",
+    "Seda Gürses",
+    "Frank Piessens",
+    "Bart Preneel"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2015 runners-up were: Gunes Acar, Marc Juarez, Nick Nikiforakis, Claudia Diaz, Seda Gürses, Frank Piessens, and Bart Preneel. \"FPDetective: Dusting the Web for Fingerprinters\". 2013 ACM Conference on Computer and Communications Security, November 2013. [ PDF ]"
+  },
+  {
+   "venue": "PETS",
+   "year": 2015,
+   "award": "runner-up",
+   "awardLabel": "Caspar Bowden PET Award, Runner-up",
+   "title": "RAPPOR: Randomized Aggregatable Privacy-Preserving Ordinal Response",
+   "authors": [
+    "Úlfar Erlingsson",
+    "Vasyl Pihur",
+    "Aleksandra Korolova"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2015 runners-up were: Úlfar Erlingsson, Vasyl Pihur, and Aleksandra Korolova. \"RAPPOR: Randomized Aggregatable Privacy-Preserving Ordinal Response\". 2014 ACM Conference on Computer and Communications Security, November 2014. [ PDF ]"
+  },
+  {
+   "venue": "PETS",
+   "year": 2015,
+   "award": "student",
+   "awardLabel": "Andreas Pfitzmann Best Student Paper Award",
+   "title": "Blocking-resistant communication through domain fronting",
+   "authors": [
+    "David Fifield",
+    "Chang Lan",
+    "Rod Hynes",
+    "Percy Wegmann",
+    "Vern Paxson"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/student-paper-award.php",
+   "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2015 Blocking-resistant communication through domain fronting David Fifield (University of California, Berkeley), Chang Lan (University of California, Berkeley), Rod Hynes (Psiphon Inc), Percy Wegmann (Brave New Software), and Vern Paxson(University of California, Berkeley and the International Computer Science Institute)"
+  },
+  {
+   "venue": "PETS",
+   "year": 2016,
+   "award": "outstanding",
+   "awardLabel": "Caspar Bowden PET Award",
+   "title": "Riposte: An Anonymous Messaging System Handling Millions of Users",
+   "authors": [
+    "Henry Corrigan-Gibbs",
+    "Dan Boneh",
+    "David Mazières"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2016 Winner is: Henry Corrigan-Gibbs, Dan Boneh, and David Mazières. \"Riposte: An Anonymous Messaging System Handling Millions of Users\". IEEE Symposium on Security and Privacy 2015. [ PDF ]"
+  },
+  {
+   "venue": "PETS",
+   "year": 2016,
+   "award": "runner-up",
+   "awardLabel": "Caspar Bowden PET Award, Runner-up",
+   "title": "Too Much Choice: End-User Privacy Decisions in the Context of Choice Proliferation",
+   "authors": [
+    "Stefan Korff",
+    "Rainer Böhme"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2016 runner-up is: Stefan Korff and Rainer Böhme. \"Too Much Choice: End-User Privacy Decisions in the Context of Choice Proliferation\". Symposium on Usable Privacy and Security 2014. [ PDF ]"
+  },
+  {
+   "venue": "PETS",
+   "year": 2016,
+   "award": "student",
+   "awardLabel": "Andreas Pfitzmann Best Student Paper Award",
+   "title": "Access Denied! Contrasting Data Access in the United States and Ireland",
+   "authors": [
+    "Samuel Grogan",
+    "Aleecia M. McDonald"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/student-paper-award.php",
+   "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2016 Access Denied! Contrasting Data Access in the United States and Ireland Samuel Grogan (Queen Mary, University of London) and Aleecia M. McDonald (Non-resident Fellow, Stanford Center for Internet and Society)"
+  },
+  {
+   "venue": "PETS",
+   "year": 2016,
+   "award": "student",
+   "awardLabel": "Andreas Pfitzmann Best Student Paper Award",
+   "title": "Are You Sure You Want to Contact Us? Quantifying the Leakage of PII via Website Contact Forms",
+   "authors": [
+    "Oleksii Starov",
+    "Phillipa Gill",
+    "Nick Nikiforakis"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/student-paper-award.php",
+   "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2016 Are You Sure You Want to Contact Us? Quantifying the Leakage of PII via Website Contact Forms Oleksii Starov, Phillipa Gill, and Nick Nikiforakis (Stony Brook University)"
+  },
+  {
+   "venue": "PETS",
+   "year": 2016,
+   "award": "student",
+   "awardLabel": "Andreas Pfitzmann Best Student Paper Award",
+   "title": "Don't Interrupt Me While I Type: Inferring Text Entered Through Gesture Typing on Android Keyboards",
+   "authors": [
+    "Laurent Simon",
+    "Wenduan Xu",
+    "Ross Anderson"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/student-paper-award.php",
+   "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2016 Don't Interrupt Me While I Type: Inferring Text Entered Through Gesture Typing on Android Keyboards Laurent Simon, Wenduan Xu, and Ross Anderson (University of Cambridge)"
+  },
+  {
+   "venue": "PETS",
+   "year": 2017,
+   "award": "outstanding",
+   "awardLabel": "Caspar Bowden PET Award",
+   "title": "CONIKS: Bringing Key Transparency to End Users",
+   "authors": [
+    "Marcela S. Melara",
+    "Aaron Blankstein",
+    "Joseph Bonneau",
+    "Edward W. Felten",
+    "Michael J. Freedman"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2017 Winner is: Marcela S. Melara, Aaron Blankstein, Joseph Bonneau, Edward W. Felten, Michael J. Freedman. \"CONIKS: Bringing Key Transparency to End Users\". USENIX Security Symposium 2015. [ PDF ]"
+  },
+  {
+   "venue": "PETS",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Caspar Bowden PET Award, Runner-up",
+   "title": "Students and Taxes: a Privacy-Preserving Study Using Secure Computation",
+   "authors": [
+    "Dan Bogdanov",
+    "Liina Kamm",
+    "Baldur Kubo",
+    "Reimo Rebane",
+    "Ville Sokk",
+    "Riivo Talviste"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2017 runner-up is: Dan Bogdanov, Liina Kamm, Baldur Kubo, Reimo Rebane, Ville Sokk, and Riivo Talviste. \"Students and Taxes: a Privacy-Preserving Study Using Secure Computation\". Proceedings on Privacy Enhancing Technologies, Volume 2016, Issue 3. [ PDF ]"
+  },
+  {
+   "venue": "PETS",
+   "year": 2017,
+   "award": "student",
+   "awardLabel": "Andreas Pfitzmann Best Student Paper Award",
+   "title": "Bayes, not Naïve: Security Bounds on Website Fingerprinting Defenses",
+   "authors": [
+    "Giovanni Cherubin"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/student-paper-award.php",
+   "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2017 Bayes, not Naïve: Security Bounds on Website Fingerprinting Defenses Giovanni Cherubin (Royal Holloway University of London)"
+  },
+  {
+   "venue": "PETS",
+   "year": 2017,
+   "award": "student",
+   "awardLabel": "Andreas Pfitzmann Best Student Paper Award",
+   "title": "Social Engineering Attacks on Government Opponents: Target Perspectives and Defenses",
+   "authors": [
+    "William Marczak",
+    "Vern Paxson"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/student-paper-award.php",
+   "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2017 Social Engineering Attacks on Government Opponents: Target Perspectives and Defenses William Marczak and Vern Paxson (UC Berkeley)"
+  },
+  {
+   "venue": "PETS",
+   "year": 2018,
+   "award": "outstanding",
+   "awardLabel": "Caspar Bowden PET Award",
+   "title": "Lower-Cost epsilon-Private Information Retrieval",
+   "authors": [
+    "Raphael R. Toledo",
+    "George Danezis",
+    "Ian Goldberg"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2018 Winners are: Raphael R. Toledo, George Danezis, and Ian Goldberg. \"Lower-Cost epsilon-Private Information Retrieval\". Proceedings on Privacy Enhancing Technologies, Volume 2016, Issue 4, October 2016. [ PDF ]"
+  },
+  {
+   "venue": "PETS",
+   "year": 2018,
+   "award": "outstanding",
+   "awardLabel": "Caspar Bowden PET Award",
+   "title": "Membership Inference Attacks against Machine Learning Models",
+   "authors": [
+    "Reza Shokri",
+    "Marco Stronati",
+    "Congzheng Song",
+    "Vitaly Shmatikov"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2018 Winners are: Reza Shokri, Marco Stronati, Congzheng Song, and Vitaly Shmatikov. \"Membership Inference Attacks against Machine Learning Models\". IEEE Symposium on Security and Privacy 2017. [ PDF ]"
+  },
+  {
+   "venue": "PETS",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "Caspar Bowden PET Award, Runner-up",
+   "title": "How Unique is Your .onion?: An Analysis of the Fingerprintability of Tor Onion Services",
+   "authors": [
+    "Rebekah Overdorf",
+    "Marc Juarez",
+    "Gunes Acar",
+    "Rachel Greenstadt",
+    "Claudia Diaz"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2018 runners-up are: Rebekah Overdorf, Marc Juarez, Gunes Acar, Rachel Greenstadt, and Claudia Diaz. \"How Unique is Your .onion?: An Analysis of the Fingerprintability of Tor Onion Services\". Proceedings of ACM Conference on Computer and Communications Security (CCS'17). [ PDF ]"
+  },
+  {
+   "venue": "PETS",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "Caspar Bowden PET Award, Runner-up",
+   "title": "Improved Strongly Deniable Authenticated Key Exchanges for Secure Messaging",
+   "authors": [
+    "Nik Unger",
+    "Ian Goldberg"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2018 runners-up are: Nik Unger and Ian Goldberg. \"Improved Strongly Deniable Authenticated Key Exchanges for Secure Messaging\". Proceedings on Privacy Enhancing Technologies, Volume 2018, Issue 1, January 2018. [ PDF ]"
+  },
+  {
+   "venue": "PETS",
+   "year": 2018,
+   "award": "student",
+   "awardLabel": "Andreas Pfitzmann Best Student Paper Award",
+   "title": "NoMoAds: Effective and Efficient Cross-App Mobile Ad-Blocking",
+   "authors": [
+    "Anastasia Shuba",
+    "Athina Markopoulou",
+    "Zubair Shafiq"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/student-paper-award.php",
+   "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2018 Award Chair: Paul Syverson NoMoAds: Effective and Efficient Cross-App Mobile Ad-Blocking Anastasia Shuba (UC Irvine), Athina Markopoulou (UC Irvine), and Zubair Shafiq (University of Iowa)"
+  },
+  {
+   "venue": "PETS",
+   "year": 2018,
+   "award": "student",
+   "awardLabel": "Andreas Pfitzmann Best Student Paper Award",
+   "title": "Privacy Pass: Bypassing Internet Challenges Anonymously",
+   "authors": [
+    "Alex Davidson",
+    "Ian Goldberg",
+    "Nick Sullivan",
+    "George Tankersley",
+    "Filippo Valsorda"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/student-paper-award.php",
+   "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2018 Award Chair: Paul Syverson Privacy Pass: Bypassing Internet Challenges Anonymously Alex Davidson (Royal Holloway, University of London), Ian Goldberg (University of Waterloo), Nick Sullivan (Cloudflare), George Tankersley (Independent), and Filippo Valsorda (Independent)"
+  },
+  {
+   "venue": "PETS",
+   "year": 2018,
+   "award": "student",
+   "awardLabel": "Andreas Pfitzmann Best Student Paper Award",
+   "title": "Turtles, Locks, and Bathrooms: Understanding Mental Models of Privacy Through Illustration",
+   "authors": [
+    "Maggie Oates",
+    "Yama Ahmadullah",
+    "Abigail Marsh",
+    "Chelse Swoopes",
+    "Shikun Zhang",
+    "Rebecca Balebako",
+    "Lorrie Cranor"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/student-paper-award.php",
+   "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2018 Award Chair: Paul Syverson Turtles, Locks, and Bathrooms: Understanding Mental Models of Privacy Through Illustration Maggie Oates, Yama Ahmadullah, Abigail Marsh, Chelse Swoopes, Shikun Zhang, Rebecca Balebako, and Lorrie Cranor (Carnegie Mellon University)"
+  },
+  {
+   "venue": "PETS",
+   "year": 2019,
+   "award": "outstanding",
+   "awardLabel": "Caspar Bowden PET Award",
+   "title": "Bridging the Gap between Computer Science and Legal Approaches to Privacy",
+   "authors": [
+    "Kobbi Nissim",
+    "Aaron Bembenek",
+    "Alexandra Wood",
+    "Mark Bun",
+    "Marco Gaboardi",
+    "Urs Gasser",
+    "David R. O’Brien",
+    "Thomas Steinke",
+    "Salil Vadhan"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2019 Winners are: Kobbi Nissim, Aaron Bembenek, Alexandra Wood, Mark Bun, Marco Gaboardi, Urs Gasser, David R. O’Brien, Thomas Steinke, and Salil Vadhan. \"Bridging the Gap between Computer Science and Legal Approaches to Privacy\". Harvard Journal of Law & Technology 2016. [ PDF ]"
+  },
+  {
+   "venue": "PETS",
+   "year": 2019,
+   "award": "outstanding",
+   "awardLabel": "Caspar Bowden PET Award",
+   "title": "Polisis: Automated Analysis and Presentation of Privacy Policies Using Deep Learning",
+   "authors": [
+    "Hamza Harkous",
+    "Kassem Fawaz",
+    "Rémi Lebret",
+    "Florian Schaub",
+    "Kang G. Shin",
+    "Karl Aberer"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2019 Winners are: Hamza Harkous, Kassem Fawaz, Rémi Lebret, Florian Schaub, Kang G. Shin, and Karl Aberer. \"Polisis: Automated Analysis and Presentation of Privacy Policies Using Deep Learning\". USENIX Security Symposium 2018 [ PDF ]"
+  },
+  {
+   "venue": "PETS",
+   "year": 2019,
+   "award": "runner-up",
+   "awardLabel": "Caspar Bowden PET Award, Runner-up",
+   "title": "Detecting Violations of Differential Privacy",
+   "authors": [
+    "Zeyu Ding",
+    "Yuxin Wang",
+    "Guanhong Wang",
+    "Danfeng Zhang",
+    "Daniel Kifer"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2019 runners-up are: Zeyu Ding, Yuxin Wang, Guanhong Wang, Danfeng Zhang and Daniel Kifer. \"Detecting Violations of Differential Privacy\". Proceedings of ACM Conference on Computer and Communications Security (CCS'18) [ PDF ]"
+  },
+  {
+   "venue": "PETS",
+   "year": 2019,
+   "award": "runner-up",
+   "awardLabel": "Caspar Bowden PET Award, Runner-up",
+   "title": "Privacy Risks with Facebook's PII-based Targeting: Auditing a Data Broker's Advertising Interface",
+   "authors": [
+    "Giridhari Venkatadri",
+    "Athanasios Andreou",
+    "Yabing Liu",
+    "Alan Mislove",
+    "Krishna P. Gummadi",
+    "Patrick Loiseau",
+    "Oana Goga"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2019 runners-up are: Giridhari Venkatadri, Athanasios Andreou, Yabing Liu, Alan Mislove, Krishna P. Gummadi, Patrick Loiseau, and Oana Goga. \"Privacy Risks with Facebook's PII-based Targeting: Auditing a Data Broker's Advertising Interface\". IEEE Symposium on Security and Privacy 2018. [ PDF ]"
+  },
+  {
+   "venue": "PETS",
+   "year": 2019,
+   "award": "student",
+   "awardLabel": "Andreas Pfitzmann Best Student Paper Award",
+   "title": "Cardinality Estimators do not Preserve Privacy",
+   "authors": [
+    "Damien Desfontaines",
+    "Andreas Lochbihler",
+    "David Basin"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/student-paper-award.php",
+   "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2019 Award Chairs: Claudia Diaz and Steven Murdoch Cardinality Estimators do not Preserve Privacy Damien Desfontaines (ETH Zürich / Google), Andreas Lochbihler (Digital Asset), and David Basin (ETH Zürich)"
+  },
+  {
+   "venue": "PETS",
+   "year": 2019,
+   "award": "student",
+   "awardLabel": "Andreas Pfitzmann Best Student Paper Award",
+   "title": "Investigating sources of PII used in Facebook’s targeted advertising",
+   "authors": [
+    "Giridhari Venkatadri",
+    "Elena Lucherini",
+    "Piotr Sapiezynski",
+    "Alan Mislove"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/student-paper-award.php",
+   "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2019 Award Chairs: Claudia Diaz and Steven Murdoch Investigating sources of PII used in Facebook’s targeted advertising Giridhari Venkatadri (Northeastern University), Elena Lucherini (Northeastern University), Piotr Sapiezynski (Northeastern University), and Alan Mislove (Northeastern University)"
+  },
+  {
+   "venue": "PETS",
+   "year": 2019,
+   "award": "student",
+   "awardLabel": "Andreas Pfitzmann Best Student Paper Award",
+   "title": "On Privacy Notions in Anonymous Communication",
+   "authors": [
+    "Christiane Kuhn",
+    "Martin Beck",
+    "Stefan Schiffner",
+    "Eduard Jorswieck",
+    "Thorsten Strufe"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/student-paper-award.php",
+   "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2019 Award Chairs: Claudia Diaz and Steven Murdoch On Privacy Notions in Anonymous Communication Christiane Kuhn (TU Dresden), Martin Beck (TU Dresden), Stefan Schiffner (Université du Luxembourg), Eduard Jorswieck (TU Dresden), and Thorsten Strufe (TU Dresden)"
+  },
+  {
+   "venue": "PETS",
+   "year": 2020,
+   "award": "outstanding",
+   "awardLabel": "Caspar Bowden PET Award",
+   "title": "“Won’t Somebody Think of the Children?” Examining COPPA Compliance at Scale",
+   "authors": [
+    "Irwin Reyes",
+    "Primal Wijesekera",
+    "Joel Reardon",
+    "Amit Elazari Bar On",
+    "Abbas Razaghpanah",
+    "Narseo Vallina-Rodriguez",
+    "Serge Egelman"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2020 Winner is: Irwin Reyes, Primal Wijesekera, Joel Reardon, Amit Elazari Bar On, Abbas Razaghpanah, NarseoVallina-Rodriguez, and Serge Egelman. \"“Won’t Somebody Think of the Children?” Examining COPPA Compliance at Scale\". Proceedings on Privacy Enhancing Technologies 2018.3 [ PDF ]"
+  },
+  {
+   "venue": "PETS",
+   "year": 2020,
+   "award": "runner-up",
+   "awardLabel": "Caspar Bowden PET Award, Runner-up",
+   "title": "Bamboozling Certificate Authorities with BGP",
+   "authors": [
+    "Henry Birge-Lee",
+    "Yixin Sun",
+    "Anne Edmundson",
+    "Jennifer Rexford",
+    "Prateek Mittal"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2020 runner-up is: Henry Birge-Lee, Yixin Sun, Anne Edmundson, Jennifer Rexford, and Prateek Mittal. \"Bamboozling Certificate Authorities with BGP\". USENIX Security Symposium 2018. [ PDF ]"
+  },
+  {
+   "venue": "PETS",
+   "year": 2020,
+   "award": "student",
+   "awardLabel": "Andreas Pfitzmann Best Student Paper Award",
+   "title": "Automatic Discovery of Privacy-Utility Pareto Fronts",
+   "authors": [
+    "Brendan Avent",
+    "Javier González",
+    "Tom Diethe",
+    "Andrei Paleyes",
+    "Borja Balle"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/student-paper-award.php",
+   "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2020 Award Chairs: Nikita Borisov and Nick Hopper Automatic Discovery of Privacy-Utility Pareto Fronts Brendan Avent (University of Southern California), Javier González (Amazon), Tom Diethe (Amazon), Andrei Paleyes (University of Cambridge), and Borja Balle (DeepMind)"
+  },
+  {
+   "venue": "PETS",
+   "year": 2020,
+   "award": "student",
+   "awardLabel": "Andreas Pfitzmann Best Student Paper Award",
+   "title": "Protecting Private Inputs: Bounded Distortion Guarantees With Randomised Approximations",
+   "authors": [
+    "Patrick Ah-Fat",
+    "Michael Huth"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/student-paper-award.php",
+   "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2020 Award Chairs: Nikita Borisov and Nick Hopper Protecting Private Inputs: Bounded Distortion Guarantees With Randomised Approximations Patrick Ah-Fat (Imperial College London) and Michael Huth (Imperial College London)"
+  },
+  {
+   "venue": "PETS",
+   "year": 2021,
+   "award": "outstanding",
+   "awardLabel": "Caspar Bowden PET Award",
+   "title": "Does Learning Require Memorization? A Short Tale about a Long Tail",
+   "authors": [
+    "Vitaly Feldman"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2021 Winner is: Vitaly Feldman. \"Does Learning Require Memorization? A Short Tale about a Long Tail\". ACM Symposium on Theory of Computing 2020. [ PDF ]"
+  },
+  {
+   "venue": "PETS",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Caspar Bowden PET Award, Runner-up",
+   "title": "DatashareNetwork: A Decentralized Privacy-Preserving Search Engine for Investigative Journalists",
+   "authors": [
+    "Kasra Edalatnejad",
+    "Wouter Lueks",
+    "Julien Pierre Martin",
+    "Soline Ledésert",
+    "Anne L'Hôte",
+    "Bruno Thomas",
+    "Laurent Girod",
+    "Carmela Troncoso"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2021 runners-up are: Kasra Edalatnejad, Wouter Lueks, Julien Pierre Martin, Soline Ledésert, Anne L'Hôte, Bruno Thomas, Laurent Girod, and Carmela Troncoso. \"DatashareNetwork: A Decentralized Privacy-Preserving Search Engine for Investigative Journalists\". USENIX Security Symposium 2020. [ PDF ]"
+  },
+  {
+   "venue": "PETS",
    "year": 2021,
    "award": "runner-up",
    "awardLabel": "Andreas Pfitzmann Best Student Paper Award, Runners-up",
@@ -144541,6 +147135,27 @@
    "track": "main",
    "source": "https://petsymposium.org/student-paper-award.php",
    "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2021 Award Chairs: Apu Kapadia and David Evans Winners Residue-Free Computing Logan Arkema (Georgetown University) … Runners-up Fast Privacy-Preserving Punch Cards Saba Eskandarian (Stanford University) The CNAME of the Game: Large-scale Analysis of DNS-based Tracking Evasion"
+  },
+  {
+   "venue": "PETS",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Caspar Bowden PET Award, Runner-up",
+   "title": "Watching You Watch: The Tracking Ecosystem of Over-the-Top TV Streaming Devices",
+   "authors": [
+    "H. Moghaddam",
+    "G. Acar",
+    "B. Burgess",
+    "A. Mathur",
+    "D. Huang",
+    "N. Feamster",
+    "E. Felten",
+    "P. Mittal",
+    "A. Narayanan"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2021 runners-up are: H. Moghaddam, G. Acar, B. Burgess, A. Mathur, D. Huang, N. Feamster, E. Felten, P. Mittal, A. Narayanan. \"Watching You Watch: The Tracking Ecosystem of Over-the-Top TV Streaming Devices\". ACM SIGSAC Conference on Computer and Communications Security 2019. [ PDF ]"
   },
   {
    "venue": "PETS",
@@ -144581,6 +147196,22 @@
   {
    "venue": "PETS",
    "year": 2022,
+   "award": "outstanding",
+   "awardLabel": "Caspar Bowden PET Award",
+   "title": "Decision Making with Differential Privacy under the Fairness Lens",
+   "authors": [
+    "Cuong Tran",
+    "Ferdinando Fioretto",
+    "Pascal Van Hentenryck",
+    "Zhiyan Yao"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2022 Winner is: Cuong Tran, Ferdinando Fioretto, Pascal Van Hentenryck, and Zhiyan Yao. \"Decision Making with Differential Privacy under the Fairness Lens\". Proceedings of the Thirtieth International Joint Conference on Artificial Intelligence (IJCAI-21). [ PDF ]"
+  },
+  {
+   "venue": "PETS",
+   "year": 2022,
    "award": "runner-up",
    "awardLabel": "Andreas Pfitzmann Best Student Paper Award, Runners-up",
    "title": "ATOM: Ad-network Tomography",
@@ -144591,6 +147222,24 @@
    "track": "main",
    "source": "https://petsymposium.org/student-paper-award.php",
    "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2022 Award Chairs: Veelasha Moonsamy and Jeremiah Blocki Winners CoverDrop: Blowing the Whistle Through A News App Mansoor Ahmed-Rengers (University of Cambridge) … Runners-up ATOM: Ad-network Tomography"
+  },
+  {
+   "venue": "PETS",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Caspar Bowden PET Award, Runner-up",
+   "title": "Experiences Deploying Multi-Vantage-Point Domain Validation at Let's Encrypt",
+   "authors": [
+    "Henry Birge-Lee",
+    "Liang Wang",
+    "Daniel McCarney",
+    "Roland Shoemaker",
+    "Jennifer Rexford",
+    "Prateek Mittal"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2022 runner-up is: Henry Birge-Lee, Liang Wang, Daniel McCarney, Roland Shoemaker, Jennifer Rexford, Prateek Mittal. \"Experiences Deploying Multi-Vantage-Point Domain Validation at Let's Encrypt\". USENIX Security 21. [ PDF ]"
   },
   {
    "venue": "PETS",
@@ -144645,6 +147294,32 @@
   {
    "venue": "PETS",
    "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Caspar Bowden PET Award",
+   "title": "The 2020 Census Disclosure Avoidance System TopDown Algorithm",
+   "authors": [
+    "John M. Abowd",
+    "Robert Ashmead",
+    "Ryan Cumings-Menon",
+    "Simson Garfinkel",
+    "Micah Heineck",
+    "Christine Heiss",
+    "Robert Johns",
+    "Daniel Kifer",
+    "Philip Leclerc",
+    "Ashwin Machanavajjhala",
+    "Brett Moran",
+    "William Sexton",
+    "Matthew Spence",
+    "Pavel Zhuravlev"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2023 winner is: John M. Abowd, Robert Ashmead, Ryan Cumings-Menon, Simson Garfinkel, Micah Heineck, Christine Heiss, Robert Johns, Daniel Kifer, Philip Leclerc, Ashwin Machanavajjhala, Brett Moran, William Sexton, Matthew Spence, Pavel Zhuravlev. \"The 2020 Census Disclosure Avoidance System TopDown Algorithm\". Harvard Data Science Review Special Issue 2: Differential Privacy for the 2020 U.S. Census. [ HTML ]"
+  },
+  {
+   "venue": "PETS",
+   "year": 2023,
    "award": "runner-up",
    "awardLabel": "Andreas Pfitzmann Best Student Paper Award, Runners-up",
    "title": "Convolutions in Overdrive: Maliciously Secure Convolutions for MPC",
@@ -144657,6 +147332,30 @@
    "track": "main",
    "source": "https://petsymposium.org/student-paper-award.php",
    "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2023 Award Chairs: Wouter Lueks (CISPA) … Runners-up Convolutions in Overdrive: Maliciously Secure Convolutions for MPC"
+  },
+  {
+   "venue": "PETS",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Caspar Bowden PET Award, Runner-up",
+   "title": "Extracting Training Data from Large Language Models",
+   "authors": [
+    "Nicholas Carlini",
+    "Florian Tramèr",
+    "Eric Wallace",
+    "Matthew Jagielski",
+    "Ariel Herbert-Voss",
+    "Katherine Lee",
+    "Adam Roberts",
+    "Tom Brown",
+    "Dawn Song",
+    "Úlfar Erlingsson",
+    "Alina Oprea",
+    "Colin Raffel"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2023 runner-up is: Nicholas Carlini, Florian Tramèr, Eric Wallace, Matthew Jagielski, Ariel Herbert-Voss, Katherine Lee, Adam Roberts, Tom Brown, Dawn Song, Úlfar Erlingsson, Alina Oprea, Colin Raffel. \"Extracting Training Data from Large Language Models\". USENIX Security Symposium 2021 [ PDF ]"
   },
   {
    "venue": "PETS",
@@ -144744,6 +147443,21 @@
   {
    "venue": "PETS",
    "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Caspar Bowden PET Award",
+   "title": "The Discrete Gaussian for Differential Privacy",
+   "authors": [
+    "Clement Canonne",
+    "Gautam Kamath",
+    "Thomas Steinke"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2024 winner is: Canonne, Clement, Gautam Kamath, and Thomas Steinke. 2022. \"The Discrete Gaussian for Differential Privacy\". Journal of Privacy and Confidentiality 12 (1). https://doi.org/10.29012/jpc.784. [ PDF ]"
+  },
+  {
+   "venue": "PETS",
+   "year": 2024,
    "award": "runner-up",
    "awardLabel": "Andreas Pfitzmann Best Student Paper Award, Runners-up",
    "title": "Exploring the Privacy Experiences of Closeted Users of Online Dating Services in the US",
@@ -144755,6 +147469,23 @@
    "track": "main",
    "source": "https://petsymposium.org/student-paper-award.php",
    "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2024 Award Chairs: Wouter Lueks (CISPA) … Runners-up Exploring the Privacy Experiences of Closeted Users of Online Dating Services in the US"
+  },
+  {
+   "venue": "PETS",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Caspar Bowden PET Award, Runner-up",
+   "title": "I Still Know What You Watched Last Sunday: Privacy of the HbbTV Protocol in the European Smart TV Landscape",
+   "authors": [
+    "Carlotta Tagliaro",
+    "Florian Hahn",
+    "Riccardo Sepe",
+    "Alessio Aceti",
+    "Martina Lindorfer"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2024 runners-up are: Carlotta Tagliaro, Florian Hahn, Riccardo Sepe, Alessio Aceti, Martina Lindorfer. \"I Still Know What You Watched Last Sunday: Privacy of the HbbTV Protocol in the European Smart TV Landscape\". Network and Distributed System Security (NDSS) Symposium 2023. [ PDF ]"
   },
   {
    "venue": "PETS",
@@ -144804,6 +147535,28 @@
   {
    "venue": "PETS",
    "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Caspar Bowden PET Award, Runner-up",
+   "title": "Tracking, Profiling, and Ad Targeting in the Alexa Echo Smart Speaker Ecosystem",
+   "authors": [
+    "Umar Iqbal",
+    "Pouneh Nikkhah Bahrami",
+    "Rahmadi Trimananda",
+    "Hao Cui",
+    "Alexander Gamero-Garrido",
+    "Daniel J. Dubois",
+    "David Choffnes",
+    "Athina Markopoulou",
+    "Franziska Roesner",
+    "Zubair Shafiq"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2024 runners-up are: Iqbal, Umar and Bahrami, Pouneh Nikkhah and Trimananda, Rahmadi and Cui, Hao and Gamero-Garrido, Alexander and Dubois, Daniel J. and Choffnes, David and Markopoulou, Athina and Roesner, Franziska and Shafiq, Zubair. \"Tracking, Profiling, and Ad Targeting in the Alexa Echo Smart Speaker Ecosystem\". IMC '23: Proceedings of the 2023 ACM on Internet Measurement Conference. [ PDF ]"
+  },
+  {
+   "venue": "PETS",
+   "year": 2024,
    "award": "student",
    "awardLabel": "Andreas Pfitzmann Best Student Paper Award",
    "title": "Client-side and Server-side Tracking on Meta: Effectiveness and Accuracy",
@@ -144832,6 +147585,42 @@
    "track": "main",
    "source": "https://petsymposium.org/student-paper-award.php",
    "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2024 Award Chairs: Wouter Lueks (CISPA) … Winners MixMatch: Flow Matching for Mixnet Traffic"
+  },
+  {
+   "venue": "PETS",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Caspar Bowden PET Award",
+   "title": "Surveilling the Masses with Wi-Fi-Based Positioning Systems",
+   "authors": [
+    "Erik Rye",
+    "Dave Levin"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2025 winner is: Erik Rye and Dave Levin, \"Surveilling the Masses with Wi-Fi-Based Positioning Systems,\" 2024 IEEE Symposium on Security and Privacy (SP), San Francisco, CA, USA, 2024, pp. 2831-2846. [ PDF ]"
+  },
+  {
+   "venue": "PETS",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Caspar Bowden PET Award, Runner-up",
+   "title": "How the Great Firewall of China Detects and Blocks Fully Encrypted Traffic",
+   "authors": [
+    "Mingshi Wu",
+    "Jackson Sippe",
+    "Danesh Sivakumar",
+    "Jack Burg",
+    "Peter Anderson",
+    "Xiaokang Wang",
+    "Kevin Bock",
+    "Amir Houmansadr",
+    "Dave Levin",
+    "Eric Wustrow"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2025 runner-up is: Mingshi Wu, Jackson Sippe, Danesh Sivakumar, Jack Burg, Peter Anderson, Xiaokang Wang, Kevin Bock, Amir Houmansadr, Dave Levin, and Eric Wustrow, \"How the Great Firewall of China Detects and Blocks Fully Encrypted Traffic\", USENIX Security Symposium, 2023. [ PDF ]"
   },
   {
    "venue": "PETS",
@@ -144887,6 +147676,33 @@
   {
    "venue": "PETS",
    "year": 2026,
+   "award": "outstanding",
+   "awardLabel": "Caspar Bowden PET Award",
+   "title": "A Simulated Reconstruction and Reidentification Attack on the 2010 U.S. Census",
+   "authors": [
+    "John M. Abowd",
+    "Tamara Adams",
+    "Robert Ashmead",
+    "David Darais",
+    "Sourya Dey",
+    "Simson L. Garfinkel",
+    "Nathan Goldschlag",
+    "Michael B. Hawes",
+    "Daniel Kifer",
+    "Philip Leclerc",
+    "Ethan Lew",
+    "Scott Moore",
+    "Rolando A. Rodríguez",
+    "Ramy N. Tadros",
+    "Lars Vilhuber"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2026 winner is: John M. Abowd, Tamara Adams, Robert Ashmead, David Darais, Sourya Dey, Simson L. Garfinkel, Nathan Goldschlag, Michael B. Hawes, Daniel Kifer, Philip Leclerc, Ethan Lew, Scott Moore, Rolando A. Rodríguez, Ramy N. Tadros, And Lars Vilhuber, \"A Simulated Reconstruction and Reidentification Attack on the 2010 U.S. Census,\" Harvard Data Science Review, Volume 7.3 (2025). [ HTML ]"
+  },
+  {
+   "venue": "PETS",
+   "year": 2026,
    "award": "runner-up",
    "awardLabel": "Andreas Pfitzmann Best Student Paper Award, Runners-up",
    "title": "Cryptographically-Secured Domain Validation",
@@ -144901,6 +147717,30 @@
    "track": "main",
    "source": "https://petsymposium.org/student-paper-award.php",
    "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2026 Award Chair: Nick Hopper (University of Minnesota) … Runners-up Issue 1 PriVA-C: Defending Voice Assistants from Fingerprinting Attacks Dilawer Ahmed (North Carolina State University), Aafaq Sabir (North Carolina State University), Ahsan Zafar (North Carolina State University), and Anupam Das (North Carolina State University) Issue 2 Cryptographically-Secured Domain Validation"
+  },
+  {
+   "venue": "PETS",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Caspar Bowden PET Award, Runner-up",
+   "title": "Differentially Private Fine-tuning of Language Models",
+   "authors": [
+    "Da Yu",
+    "Saurabh Naik",
+    "Arturs Backurs",
+    "Sivakanth Gopi",
+    "Huseyin A Inan",
+    "Gautam Kamath",
+    "Janardhan Kulkarni",
+    "Yin Tat Lee",
+    "Andre Manoel",
+    "Lukas Wutschitz",
+    "Sergey Yekhanin",
+    "Huishuai Zhang"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/award/winners.php",
+   "evidence": "The Caspar Bowden Award for Outstanding Research in Privacy Enhancing Technologies … The 2026 runner-up is: Da Yu, Saurabh Naik, Arturs Backurs, Sivakanth Gopi, Huseyin A Inan, Gautam Kamath, Janardhan Kulkarni, Yin Tat Lee, Andre Manoel, Lukas Wutschitz, Sergey Yekhanin, Huishuai Zhang, \"Differentially Private Fine-tuning of Language Models\", Journal of Privacy and Confidentiality, Vol. 14 (2) 2024. [ PDF ]"
   },
   {
    "venue": "PETS",
@@ -168622,6 +171462,50 @@
   },
   {
    "venue": "SoCG",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Algorithms for Diametral Pairs and Convex Hulls That Are Optimal, Randomized, and Incremental",
+   "authors": [
+    "Kenneth L. Clarkson",
+    "Peter W. Shor"
+   ],
+   "track": "main",
+   "paperYear": 1988,
+   "source": "https://computational-geometry.org/cg-week/awards/",
+   "evidence": "SoCG Test of Time Winners 2020 Kenneth L. Clarkson and Peter W. Shor, “Algorithms for Diametral Pairs and Convex Hulls That Are Optimal, Randomized, and Incremental” (4th SoCG, 1988)"
+  },
+  {
+   "venue": "SoCG",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Applications of Random Sampling in Computational Geometry, II",
+   "authors": [
+    "Kenneth L. Clarkson"
+   ],
+   "track": "main",
+   "paperYear": 1988,
+   "source": "https://computational-geometry.org/cg-week/awards/",
+   "evidence": "SoCG Test of Time Winners 2020 Kenneth L. Clarkson, “Applications of Random Sampling in Computational Geometry, II” (4th SoCG, 1988)"
+  },
+  {
+   "venue": "SoCG",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Epsilon-Nets and Simplex Range Queries",
+   "authors": [
+    "David Haussler",
+    "Emo Welzl"
+   ],
+   "track": "main",
+   "paperYear": 1986,
+   "source": "https://computational-geometry.org/cg-week/awards/",
+   "evidence": "SoCG Test of Time Winners 2020 David Haussler and Emo Welzl, “Epsilon-Nets and Simplex Range Queries” (2nd SoCG, 1986)"
+  },
+  {
+   "venue": "SoCG",
    "year": 2021,
    "award": "best",
    "awardLabel": "Best Paper Award",
@@ -168633,6 +171517,39 @@
    "track": "main",
    "source": "https://computational-geometry.org/cg-week/awards/",
    "evidence": "SoCG Best Paper 2021: Peyman Afshani and Pingan Cheng, “Lower Bounds for Semialgebraic Range Searching and Stabbing Problems”"
+  },
+  {
+   "venue": "SoCG",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Constrained Delaunay Triangulations",
+   "authors": [
+    "L. Paul Chew"
+   ],
+   "track": "main",
+   "paperYear": 1987,
+   "source": "https://computational-geometry.org/cg-week/awards/",
+   "evidence": "SoCG Test of Time Winners 2021 L. Paul Chew, “Constrained Delaunay Triangulations” (3rd SoCG, 1987)"
+  },
+  {
+   "venue": "SoCG",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "The Analysis of a Simple k-Means Clustering Algorithm",
+   "authors": [
+    "Tapas Kanungo",
+    "David M. Mount",
+    "Nathan S. Netanyahu",
+    "Christine D. Piatko",
+    "Ruth Silverman",
+    "Angela Y. Wu"
+   ],
+   "track": "main",
+   "paperYear": 2000,
+   "source": "https://computational-geometry.org/cg-week/awards/",
+   "evidence": "SoCG Test of Time Winners 2021 Tapas Kanungo, David M. Mount, Nathan S. Netanyahu, Christine D. Piatko, Ruth Silverman, and Angela Y. Wu, “The Analysis of a Simple k-Means Clustering Algorithm” (16th SoCG, 2000)"
   },
   {
    "venue": "SoCG",
@@ -168650,6 +171567,35 @@
   },
   {
    "venue": "SoCG",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Efficient Partition Trees",
+   "authors": [
+    "Jiří Matoušek"
+   ],
+   "track": "main",
+   "paperYear": 1991,
+   "source": "https://computational-geometry.org/cg-week/awards/",
+   "evidence": "SoCG Test of Time Winners 2022 Jiří Matoušek, “Efficient Partition Trees” (7th SoCG, 1991)"
+  },
+  {
+   "venue": "SoCG",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Measuring the Resemblance of Polygonal Curves",
+   "authors": [
+    "Helmut Alt",
+    "Michael Godau"
+   ],
+   "track": "main",
+   "paperYear": 1992,
+   "source": "https://computational-geometry.org/cg-week/awards/",
+   "evidence": "SoCG Test of Time Winners 2022 Helmut Alt and Michael Godau, “Measuring the Resemblance of Polygonal Curves” (8th SoCG, 1992)"
+  },
+  {
+   "venue": "SoCG",
    "year": 2023,
    "award": "best",
    "awardLabel": "Best Paper Award",
@@ -168662,6 +171608,22 @@
    "track": "main",
    "source": "https://computational-geometry.org/cg-week/awards/",
    "evidence": "SoCG Best Paper 2023: Mickaël Buchet, Bianca B. Dornelas, and Michael Kerber, “Sparse Higher Order Čech Filtrations”"
+  },
+  {
+   "venue": "SoCG",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "The Complexity of Many Faces in Arrangements of Lines and of Segments",
+   "authors": [
+    "Herbert Edelsbrunner",
+    "Leonidas J. Guibas",
+    "Micha Sharir"
+   ],
+   "track": "main",
+   "paperYear": 1988,
+   "source": "https://computational-geometry.org/cg-week/awards/",
+   "evidence": "SoCG Test of Time Winners 2023 Herbert Edelsbrunner, Leonidas J. Guibas, and Micha Sharir, “The Complexity of Many Faces in Arrangements of Lines and of Segments” (4th SoCG, 1988)"
   },
   {
    "venue": "SoCG",
@@ -168692,6 +171654,36 @@
   },
   {
    "venue": "SoCG",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "A Pivoting Algorithm for Convex Hulls and Vertex Enumeration of Arrangements and Polyhedra",
+   "authors": [
+    "David Avis",
+    "Komei Fukuda"
+   ],
+   "track": "main",
+   "paperYear": 1991,
+   "source": "https://computational-geometry.org/cg-week/awards/",
+   "evidence": "SoCG Test of Time Winners 2024 David Avis and Komei Fukuda, “A Pivoting Algorithm for Convex Hulls and Vertex Enumeration of Arrangements and Polyhedra” (7th SoCG, 1991)"
+  },
+  {
+   "venue": "SoCG",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Surface Reconstruction by Voronoi Filtering",
+   "authors": [
+    "Nina Amenta",
+    "Marshall W. Bern"
+   ],
+   "track": "main",
+   "paperYear": 1998,
+   "source": "https://computational-geometry.org/cg-week/awards/",
+   "evidence": "SoCG Test of Time Winners 2024 Nina Amenta and Marshall W. Bern, “Surface Reconstruction by Voronoi Filtering” (14th SoCG, 1998)"
+  },
+  {
+   "venue": "SoCG",
    "year": 2025,
    "award": "best",
    "awardLabel": "Best Paper Award",
@@ -168716,6 +171708,36 @@
    "track": "main",
    "source": "https://computational-geometry.org/cg-week/awards/",
    "evidence": "SoCG Best Student Paper 2025: Ángel Javier Alonso, “A Sparse Multicover Bifiltration of Linear Size”"
+  },
+  {
+   "venue": "SoCG",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Linear Programming and Convex Hulls Made Easy",
+   "authors": [
+    "Raimund Seidel"
+   ],
+   "track": "main",
+   "paperYear": 1990,
+   "source": "https://computational-geometry.org/cg-week/awards/",
+   "evidence": "SoCG Test of Time Winners 2025 Raimund Seidel, “Linear Programming and Convex Hulls Made Easy” (6th SoCG, 1990)"
+  },
+  {
+   "venue": "SoCG",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Stability of Persistence Diagrams",
+   "authors": [
+    "David Cohen-Steiner",
+    "Herbert Edelsbrunner",
+    "John Harer"
+   ],
+   "track": "main",
+   "paperYear": 2005,
+   "source": "https://computational-geometry.org/cg-week/awards/",
+   "evidence": "SoCG Test of Time Winners 2025 David Cohen-Steiner, Herbert Edelsbrunner, and John Harer, “Stability of Persistence Diagrams” (21st SoCG, 2005)"
   },
   {
    "venue": "SoCG",
@@ -168757,6 +171779,38 @@
    "track": "main",
    "source": "https://computational-geometry.org/cg-week/awards/",
    "evidence": "SoCG Best Student Paper 2026: Lotte Blank, “Fréchet Distance in the Imbalanced Case”"
+  },
+  {
+   "venue": "SoCG",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "An Efficient Algorithm for Planning Collision-Free Translational Motion of a Convex Polygonal Object in 2-dimensional Space Amidst Polygonal Obstacles",
+   "authors": [
+    "Klara Kedem",
+    "Micha Sharir"
+   ],
+   "track": "main",
+   "paperYear": 1985,
+   "source": "https://computational-geometry.org/cg-week/awards/",
+   "evidence": "SoCG Test of Time Winners 2026 Klara Kedem and Micha Sharir, “An Efficient Algorithm for Planning Collision-Free Translational Motion of a Convex Polygonal Object in 2-dimensional Space Amidst Polygonal Obstacles” (1st SoCG, 1985)"
+  },
+  {
+   "venue": "SoCG",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Locality-Sensitive Hashing Scheme Based on p-stable Distributions",
+   "authors": [
+    "Mayur Datar",
+    "Nicole Immorlica",
+    "Piotr Indyk",
+    "Vahab S. Mirrokni"
+   ],
+   "track": "main",
+   "paperYear": 2004,
+   "source": "https://computational-geometry.org/cg-week/awards/",
+   "evidence": "SoCG Test of Time Winners 2026 Mayur Datar, Nicole Immorlica, Piotr Indyk, and Vahab S. Mirrokni, “Locality-Sensitive Hashing Scheme Based on p-stable Distributions” (20th SoCG, 2004)"
   },
   {
    "venue": "SOSP",
@@ -172163,6 +175217,60 @@
    "track": "main",
    "source": "https://sui.acm.org/2024/",
    "evidence": "SUI 2024 Best Paper: Augmenting Virtual Spatial UIs with Physics- and Direction-Based Visual Motion Cues to Non-Disruptively Mitigate Motion Sickness — Zhanyan Qiu, Mark McGill, Katharina Margareta Theresa Pöhlmann, Stephen Anthony Brewster"
+  },
+  {
+   "venue": "SWAT",
+   "year": 2016,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "A Simple Mergeable Dictionary",
+   "authors": [
+    "Adam Karczmarz"
+   ],
+   "track": "main",
+   "source": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol053-swat2016/LIPIcs.SWAT.2016.0/LIPIcs.SWAT.2016.0.pdf",
+   "evidence": "The program committee decided to give the best student paper to Adam Karczmarz for his paper A Simple Mergeable Dictionary."
+  },
+  {
+   "venue": "SWAT",
+   "year": 2022,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Lions and Contamination: Monotone Clearings",
+   "authors": [
+    "Daniel Bertschinger",
+    "Meghana M. Reddy",
+    "Enrico Mann"
+   ],
+   "track": "main",
+   "source": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol227-swat2022/LIPIcs.SWAT.2022.0/LIPIcs.SWAT.2022.0.pdf",
+   "evidence": "The Program Committee selected the following paper for the best student paper award (for a paper that is solely authored by students): Daniel Bertschinger, Meghana M. Reddy and Enrico Mann. Lions and Contamination: Monotone Clearings."
+  },
+  {
+   "venue": "SWAT",
+   "year": 2026,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Faster Approximate Linear Matroid Intersection",
+   "authors": [
+    "Tatsuya Terao"
+   ],
+   "track": "main",
+   "source": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol370-swat2026/LIPIcs.SWAT.2026.0/LIPIcs.SWAT.2026.0.pdf",
+   "evidence": "Kimon Boehmer (ENS Paris), and Tatsuya Terao (Kyoto University) received the best student-paper award. … Faster Approximate Linear Matroid Intersection Tatsuya Terao"
+  },
+  {
+   "venue": "SWAT",
+   "year": 2026,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Submodular Max-Min Allocation Under Identical Valuations",
+   "authors": [
+    "Kimon Boehmer"
+   ],
+   "track": "main",
+   "source": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol370-swat2026/LIPIcs.SWAT.2026.0/LIPIcs.SWAT.2026.0.pdf",
+   "evidence": "Kimon Boehmer (ENS Paris), and Tatsuya Terao (Kyoto University) received the best student-paper award. … Submodular Max-Min Allocation Under Identical Valuations Kimon Boehmer"
   },
   {
    "venue": "TACAS",
