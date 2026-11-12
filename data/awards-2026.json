@@ -4,9 +4,241 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 10919
+  "count": 11111
  },
  "entries": [
+  {
+   "venue": "3DV",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "3DV Best Paper Award",
+   "title": "Towards Probabilistic Volumetric Reconstruction using Ray Potentials",
+   "authors": [
+    "Ali Ulusoy",
+    "Andreas Geiger",
+    "Michael Black"
+   ],
+   "track": "main",
+   "source": "https://3dv2015.inria.fr/",
+   "evidence": "Awards: 3DV Best Paper Award Ali Ulusoy, Andreas Geiger, and Michael Black Towards Probabilistic Volumetric Reconstruction using Ray Potentials"
+  },
+  {
+   "venue": "3DV",
+   "year": 2015,
+   "award": "runner-up",
+   "awardLabel": "3DV Best Paper Runner Up Award",
+   "title": "x-hour Outdoor Photometric Stereo",
+   "authors": [
+    "Yannick Hold-Geoffroy",
+    "Jinsong Zhang",
+    "Paulo F. U. Gotardo",
+    "Jean-Francois Lalonde"
+   ],
+   "track": "main",
+   "source": "https://3dv2015.inria.fr/",
+   "evidence": "Awards: … 3DV Best Paper Runner Up Award Yannick Hold-Geoffroy, Jinsong Zhang, Paulo F. U. Gotardo, and Jean-Francois Lalonde x-hour Outdoor Photometric Stereo"
+  },
+  {
+   "venue": "3DV",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Learning Human Motion Models for Long-term Predictions",
+   "authors": [
+    "Partha Ghosh",
+    "Jie Song",
+    "Emre Aksan",
+    "Otmar Hilliges"
+   ],
+   "track": "main",
+   "source": "https://irc.cs.sdu.edu.cn/3dv/index.html",
+   "evidence": "Awards Best Paper Award Learning Human Motion Models for Long-term Predictions Partha Ghosh (ETH Zurich), Jie Song (ETH Zurich), Emre Aksan (ETH Zurich), Otmar Hilliges (ETH Zurich)"
+  },
+  {
+   "venue": "3DV",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention",
+   "title": "Fast Incremental Bundle Adjustment with Covariance Recovery",
+   "authors": [
+    "Viorela Ila",
+    "Lukas Polok",
+    "Marek Solony",
+    "Klemen Istenic"
+   ],
+   "track": "main",
+   "source": "https://irc.cs.sdu.edu.cn/3dv/index.html",
+   "evidence": "Awards … Best Paper Honorable Mention Fast Incremental Bundle Adjustment with Covariance Recovery Viorela Ila (ANU), Lukas Polok (Brno Univ. of Technology), Marek Solony (VUT), Klemen Istenic (UDG)"
+  },
+  {
+   "venue": "3DV",
+   "year": 2017,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Sparsity Invariant CNNs",
+   "authors": [
+    "Jonas Uhrig",
+    "Nick Schneider",
+    "Lukas Schneider",
+    "Thomas Brox",
+    "Andreas Geiger"
+   ],
+   "track": "main",
+   "source": "https://irc.cs.sdu.edu.cn/3dv/index.html",
+   "evidence": "Awards … Best Student Paper Award Sparsity Invariant CNNs Jonas Uhrig (Daimler AG), Nick Schneider (Daimler AG), Lukas Schneider (Daimler), Thomas Brox (Univ. of Freiburg), Andreas Geiger (Max Planck Institute)"
+  },
+  {
+   "venue": "3DV",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best paper",
+   "title": "Robust Fitting of Subdivision Surfaces for Smooth Shape Analysis",
+   "authors": [
+    "Virginia Estellers",
+    "Frank R Schmidt",
+    "Daniel Cremers"
+   ],
+   "track": "main",
+   "source": "https://3dv18.uniud.it/",
+   "evidence": "Awards Best paper Robust Fitting of Subdivision Surfaces for Smooth Shape Analysis. Virginia Estellers; Frank R Schmidt; Daniel Cremers"
+  },
+  {
+   "venue": "3DV",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "Honorable mention",
+   "title": "PCN: Point Completion Network",
+   "authors": [
+    "Wentao Yuan",
+    "Tejas Khot",
+    "David Held",
+    "Christoph Mertz",
+    "Martial Hebert"
+   ],
+   "track": "main",
+   "source": "https://3dv18.uniud.it/",
+   "evidence": "Awards … Honorable mention PCN: Point Completion Network Wentao Yuan; Tejas Khot; David Held; Christoph Mertz; Martial Hebert"
+  },
+  {
+   "venue": "3DV",
+   "year": 2018,
+   "award": "student",
+   "awardLabel": "Best student paper",
+   "title": "Neural Body Fitting: Unifying Deep Learning and Model Based Human Pose and Shape Estimation",
+   "authors": [
+    "Mohamed Omran",
+    "Christoph Lassner",
+    "Gerard Pons-Moll",
+    "Peter Gehler",
+    "Bernt Schiele"
+   ],
+   "track": "main",
+   "source": "https://3dv18.uniud.it/",
+   "evidence": "Awards … Best student paper Neural Body Fitting: Unifying Deep Learning and Model Based Human Pose and Shape Estimation Mohamed Omran; Christoph Lassner; Gerard Pons-Moll; Peter Gehler; Bernt Schiele"
+  },
+  {
+   "venue": "3DV",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Smooth Non-Rigid Shape Matching via Effective Dirichlet Energy Optimization",
+   "authors": [
+    "Robin Magnet",
+    "Jing Ren",
+    "Olga Sorkine-Hornung",
+    "Maks Ovsjanikov"
+   ],
+   "track": "main",
+   "source": "https://3dvconf.github.io/2022/prizes/",
+   "evidence": "Prizes Best Paper Award Smooth Non-Rigid Shape Matching via Effective Dirichlet Energy Optimization Robin Magnet (Ecole Polytechnique); Jing Ren (ETH Zurich); Olga Sorkine-Hornung (ETH Zurich); Maks Ovsjanikov (Ecole polytechnique)"
+  },
+  {
+   "venue": "3DV",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention",
+   "title": "Any-Shot GIN: Generalizing Implicit Networks for Reconstructing Novel Classes",
+   "authors": [
+    "Yongqin Xian",
+    "Julian Chibane",
+    "Bharat Lal Bhatnagar",
+    "Zeynep Akata",
+    "Bernt Schiele",
+    "Gerard Pons-Moll"
+   ],
+   "track": "main",
+   "source": "https://3dvconf.github.io/2022/prizes/",
+   "evidence": "Prizes … Best Paper Honorable Mention Any-Shot GIN: Generalizing Implicit Networks for Reconstructing Novel Classes Yongqin Xian (ETH Zurich); Julian Chibane (Max Planck Institute for Informatics, University of Wuerzburg); Bharat Lal Bhatnagar (University of Tübingen, MPI informatik); Zeynep Akata (University of Tübingen); Bernt Schiele (MPI Informatics); Gerard Pons-Moll (University of Tübingen)"
+  },
+  {
+   "venue": "3DV",
+   "year": 2022,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "MoCapDeform: Monocular 3D Human Motion Capture in Deformable Scenes",
+   "authors": [
+    "Zhi Li",
+    "Soshi Shimada",
+    "Bernt Schiele",
+    "Christian Theobalt",
+    "Vladislav Golyanik"
+   ],
+   "track": "main",
+   "source": "https://3dvconf.github.io/2022/prizes/",
+   "evidence": "Prizes … Best Student Paper Award MoCapDeform: Monocular 3D Human Motion Capture in Deformable Scenes Zhi Li (Max Planck Institute for Informatics); Soshi Shimada (MPI for Informatics); Bernt Schiele (MPI Informatics); Christian Theobalt (MPI Informatik); Vladislav Golyanik (MPI for Informatics)"
+  },
+  {
+   "venue": "3DV",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "An Object is Worth 64x64 Pixels: Generating 3D Object via Image Diffusion",
+   "authors": [
+    "Xingguang Yan",
+    "Han-Hung Lee",
+    "Ziyu Wan",
+    "Angel X. Chang"
+   ],
+   "track": "main",
+   "source": "https://3dvconf.github.io/2025/awards/",
+   "evidence": "The final awards go to: Best Paper Award: An Object is Worth 64x64 Pixels: Generating 3D Object via Image Diffusion Xingguang Yan, Han-Hung Lee, Ziyu Wan, Angel X. Chang"
+  },
+  {
+   "venue": "3DV",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention Award",
+   "title": "MeshUp: Multi-Target Mesh Deformation via Blended Score Distillation",
+   "authors": [
+    "Hyunwoo Kim",
+    "Itai Lang",
+    "Thibault Groueix",
+    "Noam Aigerman",
+    "Vladimir Kim",
+    "Rana Hanocka"
+   ],
+   "track": "main",
+   "source": "https://3dvconf.github.io/2025/awards/",
+   "evidence": "The final awards go to: … Best Paper Honorable Mention Award: MeshUp: Multi-Target Mesh Deformation via Blended Score Distillation Hyunwoo Kim, Itai Lang, Thibault Groueix, Noam Aigerman, Vladimir Kim, Rana Hanocka"
+  },
+  {
+   "venue": "3DV",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "MASt3R-SfM: a Fully-Integrated Solution for Unconstrained Structure-from-Motion",
+   "authors": [
+    "Bardienus Pieter Duisterhof",
+    "Lojze Zust",
+    "Philippe Weinzaepfel",
+    "Vincent Leroy",
+    "Yohann Cabon",
+    "Jerome Revaud"
+   ],
+   "track": "main",
+   "source": "https://3dvconf.github.io/2025/awards/",
+   "evidence": "The final awards go to: … Best Student Paper Award: MASt3R-SfM: a Fully-Integrated Solution for Unconstrained Structure-from-Motion Bardienus Pieter Duisterhof, Lojze Zust, Philippe Weinzaepfel, Vincent Leroy, Yohann Cabon, Jerome Revaud"
+  },
   {
    "venue": "5th Annual Tcl/Tk Workshop",
    "year": 1997,
@@ -6973,6 +7205,79 @@
   },
   {
    "venue": "ACM MM",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "PiRhDy: Learning Pitch-, Rhythm-, and Dynamics-aware Embeddings for Symbolic Music",
+   "authors": [
+    "Hongru Liang",
+    "Wenqiang Lei",
+    "Paul Yaozhu Chan",
+    "Zhenglu Yang",
+    "Maosong Sun",
+    "Tat-Seng Chua"
+   ],
+   "track": "main",
+   "source": "https://2020.acmmm.org/awards.html",
+   "evidence": "Best Paper Award PiRhDy: Learning Pitch-, Rhythm-, and Dynamics-aware Embeddings for Symbolic Music Hongru Liang (Nankai University) Wenqiang Lei (National University of Singapore) Paul Yaozhu Chan (A*STAR) Zhenglu Yang (Nankai University) Maosong Sun (Tsinghua University) Tat-Seng Chua (National University of Singapore)"
+  },
+  {
+   "venue": "ACM MM",
+   "year": 2020,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Learning from the Past: Meta-Continual Learning with Knowledge Embedding for Jointly Sketch, Cartoon, and Caricature Face Recognition",
+   "authors": [
+    "Wenbo Zheng",
+    "Lan Yan",
+    "Chao Gou",
+    "Fei-Yue Wang"
+   ],
+   "track": "main",
+   "source": "https://2020.acmmm.org/awards.html",
+   "evidence": "Best Student Paper Award Learning from the Past: Meta-Continual Learning with Knowledge Embedding for Jointly Sketch, Cartoon, and Caricature Face Recognition Wenbo Zheng (Xi'an Jiaotong University) Lan Yan (Institute of Automation, Chinese Academy of Sciences) Chao Gou (Sun Yat-sen University) Fei-Yue Wang (Institute of Automation, Chinese Academy of Sciences)"
+  },
+  {
+   "venue": "ACM MM",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Video Background Music Generation with Controllable Music Transformer",
+   "authors": [
+    "Shangzhe Di",
+    "Zeren Jiang",
+    "Si Liu",
+    "Zhaokai Wang",
+    "Leyan Zhu",
+    "Zexin He",
+    "Hongming Liu",
+    "Shuicheng Yan"
+   ],
+   "track": "main",
+   "source": "https://2021.acmmm.org/awards",
+   "evidence": "{type:\"primaryTitle\",text:\"Best Paper Award\"},{type:\"secondaryTitle\",text:\"<b>Video Background Music Generation with Controllable Music Transformer</b>\"},{type:\"text\",text:\"\"},{type:\"secondaryTitle2\",text:\"<b>Shangzhe Di</b> (Beihang University, China)\"},{type:\"secondaryTitle2\",text:\"<b>Zeren Jiang</b> (Beihang University, China)\"},{type:\"secondaryTitle2\",text:\"<b>Si Liu</b> (Beihang University, China)*\"},{type:\"secondaryTitle2\",text:\"<b>Zhaokai Wang</b> (Beihang University, China)\"},{type:\"secondaryTitle2\",text:\"<b>Leyan Zhu</b> (Beihang University, China)\"},{type:\"secondaryTitle2\",text:\"<b>Zexin He</b> (Beihang University, China)\"},{type:\"secondaryTitle2\",text:\"<b>Hongming Liu</b> (Charterhouse School, United Kingdom)\"},{type:\"secondaryTitle2\",text:\"<b>Shuicheng Yan</b> (Sea AI Labs, Singapore)\"}"
+  },
+  {
+   "venue": "ACM MM",
+   "year": 2021,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "aBio: Active Bi-Olfactory Display Using Subwoofers for Virtual Reality",
+   "authors": [
+    "You-Yang Hu",
+    "Yao-Fu Jan",
+    "Kuan-Wei Tseng",
+    "You-Shin Tsai",
+    "Hung-Ming Sung",
+    "Jin-Yao Lin",
+    "Yi-Ping Hung"
+   ],
+   "track": "main",
+   "source": "https://2021.acmmm.org/awards",
+   "evidence": "{type:\"primaryTitle\",text:\"Best Student Paper Award\"},{type:\"secondaryTitle\",text:\"<b>aBio: Active Bi-Olfactory Display Using Subwoofers for Virtual Reality</b>\"},{type:\"text\",text:\"\"},{type:\"secondaryTitle2\",text:\"<b>You-Yang Hu</b> (NTU)*\"},{type:\"secondaryTitle2\",text:\"<b>Yao-Fu Jan</b> (NTU)\"},{type:\"secondaryTitle2\",text:\"<b>Kuan-Wei Tseng</b> (NTU)\"},{type:\"secondaryTitle2\",text:\"<b>You-Shin Tsai</b> (NTU)\"},{type:\"secondaryTitle2\",text:\"<b>Hung-Ming Sung</b> (NTU)\"},{type:\"secondaryTitle2\",text:\"<b>Jin-Yao Lin</b> (TNNUA)\"},{type:\"secondaryTitle2\",text:\"<b>Yi-Ping Hung</b> (NTU)\"}"
+  },
+  {
+   "venue": "ACM MM",
    "year": 2023,
    "award": "best",
    "awardLabel": "Best Paper Award",
@@ -6991,6 +7296,23 @@
   {
    "venue": "ACM MM",
    "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention Award",
+   "title": "RefineTAD: Learning Proposal-free Refinement for Temporal Action Detection",
+   "authors": [
+    "Yue Feng",
+    "Zhengye Zhang",
+    "Rong Quan",
+    "Limin Wang",
+    "Jie Qin"
+   ],
+   "track": "main",
+   "source": "https://2023.acmmm.org/",
+   "evidence": "Honorable Mention Award Presented to: Yue Feng, Zhengye Zhang, Rong Quan, Limin Wang, Jie Qin for the paper titled: RefineTAD: Learning Proposal-free Refinement for Temporal Action Detection"
+  },
+  {
+   "venue": "ACM MM",
+   "year": 2023,
    "award": "student",
    "awardLabel": "Best Student Paper Award",
    "title": "Cal-SFDA: Source-Free Domain-adaptive Semantic Segmentation with Differentiable Expected Calibration Error",
@@ -7004,6 +7326,179 @@
    "track": "main",
    "source": "https://2023.acmmm.org/",
    "evidence": "ACM MM 2023 Best Student Paper: Cal-SFDA: Source-Free Domain-adaptive Semantic Segmentation with Differentiable Expected Calibration Error — Zixin Wang, Yadan Luo, Zhi Chen, Sen Wang, Zi Huang"
+  },
+  {
+   "venue": "ACM MM",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "From Speaker to Dubber: Movie Dubbing with Prosody and Duration Consistency Learning",
+   "authors": [
+    "Zhedong Zhang",
+    "Liang Li",
+    "Gaoxiang Cong",
+    "Haibing YIN",
+    "Yuhan Gao",
+    "Chenggang Yan",
+    "Anton van den Hengel",
+    "Yuankai Qi"
+   ],
+   "track": "main",
+   "source": "https://2024.acmmm.org/awards",
+   "evidence": "{type:\"primaryTitle\",text:\"Best Paper Award\"} … {type:\"paperTitle\",text:\"<b>From Speaker to Dubber: Movie Dubbing with Prosody and Duration Consistency Learning</b>\"},{type:\"paperAuthor\",text:\"Zhedong Zhang, Liang Li, Gaoxiang Cong, Haibing YIN, Yuhan Gao, Chenggang Yan, Anton van den Hengel, Yuankai Qi\"}"
+  },
+  {
+   "venue": "ACM MM",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Honourable Mention Award",
+   "title": "4D Gaussian Splatting with Scale-aware Residual Field and Adaptive Optimization for Real-time Rendering of Temporally Complex Dynamic Scenes",
+   "authors": [
+    "Jinbo Yan",
+    "Rui Peng",
+    "Luyang Tang",
+    "Ronggang Wang"
+   ],
+   "track": "main",
+   "source": "https://2024.acmmm.org/awards",
+   "evidence": "{type:\"primaryTitle\",text:\"Honourable Mention Award\"} … {type:\"paperTitle\",text:\"<b>4D Gaussian Splatting with Scale-aware Residual Field and Adaptive Optimization for Real-time Rendering of Temporally Complex Dynamic Scenes</b>\"},{type:\"paperAuthor\",text:\"Jinbo Yan, Rui Peng, Luyang Tang, Ronggang Wang\"}"
+  },
+  {
+   "venue": "ACM MM",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Honourable Mention Award",
+   "title": "Leveraging Knowledge of Modality Experts for Incomplete Multimodal Learning",
+   "authors": [
+    "Wenxin Xu",
+    "Hexin Jiang",
+    "Xuefeng Liang"
+   ],
+   "track": "main",
+   "source": "https://2024.acmmm.org/awards",
+   "evidence": "{type:\"primaryTitle\",text:\"Honourable Mention Award\"} … {type:\"paperTitle\",text:\"<b>Leveraging Knowledge of Modality Experts for Incomplete Multimodal Learning</b>\"},{type:\"paperAuthor\",text:\"Wenxin Xu, Hexin Jiang, Xuefeng Liang\"}"
+  },
+  {
+   "venue": "ACM MM",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Honourable Mention Award",
+   "title": "LoopGaussian: Creating 3D Cinemagraph with Multi-view Images via Eulerian Motion Field",
+   "authors": [
+    "Jiyang Li",
+    "Lechao Cheng",
+    "Zhangye Wang",
+    "Tingting Mu",
+    "Jingxuan He"
+   ],
+   "track": "main",
+   "source": "https://2024.acmmm.org/awards",
+   "evidence": "{type:\"primaryTitle\",text:\"Honourable Mention Award\"} … {type:\"paperTitle\",text:\"<b>LoopGaussian: Creating 3D Cinemagraph with Multi-view Images via Eulerian Motion Field</b>\"},{type:\"paperAuthor\",text:\"Jiyang Li, Lechao Cheng, Zhangye Wang, Tingting Mu, Jingxuan He\"}"
+  },
+  {
+   "venue": "ACM MM",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Honourable Mention Award",
+   "title": "Multi-Modal Diffusion Model for Recommendation",
+   "authors": [
+    "Yangqin Jiang",
+    "Lianghao Xia",
+    "Wei Wei",
+    "Da Luo",
+    "Kangyi Lin",
+    "Chao Huang"
+   ],
+   "track": "main",
+   "source": "https://2024.acmmm.org/awards",
+   "evidence": "{type:\"primaryTitle\",text:\"Honourable Mention Award\"} … {type:\"paperTitle\",text:\"<b>Multi-Modal Diffusion Model for Recommendation</b>\"},{type:\"paperAuthor\",text:\"Yangqin Jiang, Lianghao Xia, Wei Wei, Da Luo, Kangyi Lin, Chao Huang\"}"
+  },
+  {
+   "venue": "ACM MM",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Honourable Mention Award",
+   "title": "Not All Pairs are Equal: Hierarchical Learning for Average-Precision-Oriented Video Retrieval",
+   "authors": [
+    "Yang Liu",
+    "Qianqian Xu",
+    "Peisong Wen",
+    "Siran Dai",
+    "Qingming Huang"
+   ],
+   "track": "main",
+   "source": "https://2024.acmmm.org/awards",
+   "evidence": "{type:\"primaryTitle\",text:\"Honourable Mention Award\"} … {type:\"paperTitle\",text:\"<b>Not All Pairs are Equal: Hierarchical Learning for Average-Precision-Oriented Video Retrieval</b>\"},{type:\"paperAuthor\",text:\"Yang Liu, Qianqian Xu, Peisong Wen, Siran Dai, Qingming Huang\"}"
+  },
+  {
+   "venue": "ACM MM",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Honourable Mention Award",
+   "title": "Once-for-all: Efficient Visual Face Privacy Protection via Person-specific Veils",
+   "authors": [
+    "Zixuan Yang",
+    "Yushu Zhang",
+    "Tao Wang",
+    "Zhongyun Hua",
+    "Zhihua Xia",
+    "Jian Weng"
+   ],
+   "track": "main",
+   "source": "https://2024.acmmm.org/awards",
+   "evidence": "{type:\"primaryTitle\",text:\"Honourable Mention Award\"} … {type:\"paperTitle\",text:\"<b>Once-for-all: Efficient Visual Face Privacy Protection via Person-specific Veils</b>\"},{type:\"paperAuthor\",text:\"Zixuan Yang, Yushu Zhang, Tao Wang, Zhongyun Hua, Zhihua Xia, Jian Weng\"}"
+  },
+  {
+   "venue": "ACM MM",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Honourable Mention Award",
+   "title": "VR-Mediated Cognitive Defusion: A Comparative Study for Managing Negative Thoughts",
+   "authors": [
+    "Kento Shigyo",
+    "Yi-Fan Cao",
+    "Kentaro Takahira",
+    "Mingming Fan",
+    "Huamin Qu"
+   ],
+   "track": "main",
+   "source": "https://2024.acmmm.org/awards",
+   "evidence": "{type:\"primaryTitle\",text:\"Honourable Mention Award\"} … {type:\"paperTitle\",text:\"<b>VR-Mediated Cognitive Defusion: A Comparative Study for Managing Negative Thoughts</b>\"},{type:\"paperAuthor\",text:\"Kento Shigyo, Yi-Fan Cao, Kentaro Takahira, Mingming Fan, Huamin Qu\"}"
+  },
+  {
+   "venue": "ACM MM",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "An In-depth Study of Bandwidth Allocation across Media Sources in Video Conferencing",
+   "authors": [
+    "Zejun Zhang",
+    "Xiao Zhu",
+    "Anlan Zhang",
+    "Feng Qian"
+   ],
+   "track": "main",
+   "source": "https://2024.acmmm.org/awards",
+   "evidence": "{type:\"primaryTitle\",text:\"Best Student Paper Award\"} … {type:\"paperTitle\",text:\"<b>An In-depth Study of Bandwidth Allocation across Media Sources in Video Conferencing</b>\"},{type:\"paperAuthor\",text:\"Zejun Zhang, Xiao Zhu, Anlan Zhang, Feng Qian\"}"
+  },
+  {
+   "venue": "ACM MM",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "AV-Deepfake1M: A Large-Scale LLM-Driven Audio-Visual Deepfake Dataset",
+   "authors": [
+    "Zhixi Cai",
+    "Shreya Ghosh",
+    "Aman Pankaj Adatia",
+    "Munawar Hayat",
+    "Abhinav Dhall",
+    "Tom Gedeon",
+    "Kalin Stefanov"
+   ],
+   "track": "main",
+   "source": "https://2024.acmmm.org/awards",
+   "evidence": "{type:\"primaryTitle\",text:\"Best Student Paper Award\"} … {type:\"paperTitle\",text:\"<b>AV-Deepfake1M: A Large-Scale LLM-Driven Audio-Visual Deepfake Dataset</b>\"},{type:\"paperAuthor\",text:\"Zhixi Cai, Shreya Ghosh, Aman Pankaj Adatia, Munawar Hayat, Abhinav Dhall, Tom Gedeon, Kalin Stefanov\"}"
   },
   {
    "venue": "ACM MM",
@@ -11310,6 +11805,373 @@
     "https://www.auto-ui.org/24/proceedings/main-proceedings/"
    ],
    "evidence": "AutomotiveUI 2024 Best Paper Award: What Characterizes “Situations” in Situation Awareness? Findings from a Human-centered Investigation — Philipp Michael Markus Peter Asteriou, Heike Christiane Kotsios, Philipp Wintersberger"
+  },
+  {
+   "venue": "BMVC",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Industry Paper",
+   "title": "Deep Perceptual Mapping for Thermal to Visible Face Recognition",
+   "authors": [
+    "M. Saquib Sarfraz",
+    "Rainer Stiefelhagen"
+   ],
+   "track": "main",
+   "source": "https://bmva-archive.org.uk/bmvc/2015/awards.html",
+   "evidence": "We are pleased to announce the following awards presented at BMVC 2015 … Best Industry Paper Deep Perceptual Mapping for Thermal to Visible Face Recognition M. Saquib Sarfraz and Rainer Stiefelhagen"
+  },
+  {
+   "venue": "BMVC",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Science Paper",
+   "title": "Sketch-a-Net that Beats Humans",
+   "authors": [
+    "Qian Yu",
+    "Yongxin Yang",
+    "Yi-Zhe Song",
+    "Tao Xiang",
+    "Timothy Hospedales"
+   ],
+   "track": "main",
+   "source": "https://bmva-archive.org.uk/bmvc/2015/awards.html",
+   "evidence": "We are pleased to announce the following awards presented at BMVC 2015 … Best Science Paper Sketch-a-Net that Beats Humans Qian Yu, Yongxin Yang, Yi-Zhe Song, Tao Xiang and Timothy Hospedales"
+  },
+  {
+   "venue": "BMVC",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Industry Related Paper",
+   "title": "EMVS: Event-based Multi-View Stereo",
+   "authors": [
+    "Henri Rebecq",
+    "Guillermo Gallego",
+    "Davide Scaramuzza"
+   ],
+   "track": "main",
+   "source": "https://bmva-archive.org.uk/bmvc/2016/awards.html",
+   "evidence": "We are pleased to announce the following awards presented at BMVC 2016 … Best Industry Related Paper (sponsored by nvidia and BMVA) EMVS: Event-based Multi-View Stereo Henri Rebecq, Guillermo Gallego and Davide Scaramuzza"
+  },
+  {
+   "venue": "BMVC",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Science Paper",
+   "title": "Mapping Auto-context to a Deep, Sparse ConvNet for Semantic Segmentation",
+   "authors": [
+    "David Richmond",
+    "Dagmar Kainmueller",
+    "Michael Yang",
+    "Eugene Myers",
+    "Carsten Rother"
+   ],
+   "track": "main",
+   "source": "https://bmva-archive.org.uk/bmvc/2016/awards.html",
+   "evidence": "We are pleased to announce the following awards presented at BMVC 2016 … Best Science Paper (sponsored by Springer and BMVA) Mapping Auto-context to a Deep, Sparse ConvNet for Semantic Segmentation David Richmond, Dagmar Kainmueller, Michael Yang, Eugene Myers and Carsten Rother"
+  },
+  {
+   "venue": "BMVC",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Science Paper Award",
+   "title": "DEFORMABLE PART-BASED FULLY CONVOLUTIONAL NETWORK FOR OBJECT DETECTION",
+   "authors": [
+    "Taylor Mordan",
+    "Nicolas Thome",
+    "Matthieu Cord",
+    "Gilles Henaff"
+   ],
+   "track": "main",
+   "source": "https://bmva-archive.org.uk/bmvc/2017/awards.html",
+   "evidence": "We are pleased to announce the following awards presented at BMVC 2017 … BEST SCIENCE PAPER AWARD (sponsored by Snap Inc. and BMVA) DEFORMABLE PART-BASED FULLY CONVOLUTIONAL NETWORK FOR OBJECT DETECTION Taylor Mordan, Nicolas Thome, Matthieu Cord and Gilles Henaff"
+  },
+  {
+   "venue": "BMVC",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Industrial Paper Award",
+   "title": "SLANTED STIXELS: REPRESENTING SAN FRANCISCO'S STEEPEST STREETS",
+   "authors": [
+    "Daniel Hernandez-Juarez",
+    "Lukas Schneider",
+    "Antonio Espinosa",
+    "David Vazquez",
+    "Antonio Lopez",
+    "Uwe Franke",
+    "Marc Pollefeys",
+    "Juan Moure"
+   ],
+   "track": "main",
+   "source": "https://bmva-archive.org.uk/bmvc/2017/awards.html",
+   "evidence": "We are pleased to announce the following awards presented at BMVC 2017 … BEST INDUSTRIAL PAPER AWARD SLANTED STIXELS: REPRESENTING SAN FRANCISCO'S STEEPEST STREETS Daniel Hernandez-Juarez, Lukas Schneider, Antonio Espinosa, David Vazquez, Antonio Lopez, Uwe Franke, Marc Pollefeys and Juan Moure"
+  },
+  {
+   "venue": "BMVC",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Best Industrial Paper Honourable Mention",
+   "title": "CROSS-DOMAIN FORENSIC SHOEPRINT MATCHING",
+   "authors": [
+    "Bailey Kong",
+    "James Supancic",
+    "Deva Ramanan",
+    "Charless Fowlkes"
+   ],
+   "track": "main",
+   "source": "https://bmva-archive.org.uk/bmvc/2017/awards.html",
+   "evidence": "We are pleased to announce the following awards presented at BMVC 2017 … BEST INDUSTRIAL PAPER HONOURABLE MENTION CROSS-DOMAIN FORENSIC SHOEPRINT MATCHING Bailey Kong, James Supancic, Deva Ramanan and Charless Fowlkes"
+  },
+  {
+   "venue": "BMVC",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Best Science Paper Honourable Mention",
+   "title": "MULTIPLE-KERNEL LOCAL-PATCH DESCRIPTOR",
+   "authors": [
+    "Arun Mukundan",
+    "Giorgos Tolias",
+    "Ondrej Chum"
+   ],
+   "track": "main",
+   "source": "https://bmva-archive.org.uk/bmvc/2017/awards.html",
+   "evidence": "We are pleased to announce the following awards presented at BMVC 2017 … BEST SCIENCE PAPER HONOURABLE MENTION MULTIPLE-KERNEL LOCAL-PATCH DESCRIPTOR Arun Mukundan, Giorgos Tolias and Ondrej Chum"
+  },
+  {
+   "venue": "BMVC",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Industry Paper",
+   "title": "Automatic Semantic Content Removal by Learning to Neglect",
+   "authors": [
+    "Siyang Qin",
+    "Jiahui Wei",
+    "Roberto Manduchi"
+   ],
+   "track": "main",
+   "source": "https://bmva-archive.org.uk/bmva-news/2018-09.pdf",
+   "evidence": "BMVC – Prizes and Awards The following prizes and awards were presented at the Conference Banquet: … 3. Best Industry Paper: Automatic Semantic Content Removal by Learning to Neglect Siyang Qin, Jiahui Wei, Roberto Manduchi"
+  },
+  {
+   "venue": "BMVC",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Science Paper",
+   "title": "Non-smooth M-estimator for Maximum Consensus Estimation",
+   "authors": [
+    "Huu Le",
+    "Anders Eriksson",
+    "Michael Milford",
+    "Thanh-Toan Do",
+    "Tat-Jun Chin",
+    "David Suter"
+   ],
+   "track": "main",
+   "source": "https://bmva-archive.org.uk/bmva-news/2018-09.pdf",
+   "evidence": "BMVC – Prizes and Awards The following prizes and awards were presented at the Conference Banquet: … 1. Best Science Paper: Non-smooth M-estimator for Maximum Consensus Estimation Huu Le, Anders Eriksson, Michael Milford, Thanh-Toan Do, Tat-Jun Chin, David Suter"
+  },
+  {
+   "venue": "BMVC",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "Best Science Paper Honourable Mention",
+   "title": "Deep Network for Simultaneous Stereo Matching and Dehazing",
+   "authors": [
+    "Taeyong Song",
+    "Youngjung Kim",
+    "Changjae Oh",
+    "Kwanghoon Sohn"
+   ],
+   "track": "main",
+   "source": "https://bmva-archive.org.uk/bmva-news/2018-09.pdf",
+   "evidence": "BMVC – Prizes and Awards The following prizes and awards were presented at the Conference Banquet: … 2. Best Science Paper Honourable Mention: Deep Network for Simultaneous Stereo Matching and Dehazing Taeyong Song, Youngjung Kim, Changjae Oh, Kwanghoon Sohn"
+  },
+  {
+   "venue": "BMVC",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "Best Student Paper Honourable Mention",
+   "title": "Learning on the Edge: Explicit Boundary Handling in CNNs",
+   "authors": [
+    "Carlo Innamorati",
+    "Tobias Ritschel",
+    "Tim Weyrich",
+    "Niloy Mitra"
+   ],
+   "track": "main",
+   "source": "https://bmva-archive.org.uk/bmva-news/2018-09.pdf",
+   "evidence": "BMVC – Prizes and Awards The following prizes and awards were presented at the Conference Banquet: … 6. Best Student Paper Honourable Mention: Learning on the Edge: Explicit Boundary Handling in CNNs Carlo Innamorati, Tobias Ritschel, Tim Weyrich, Niloy Mitra"
+  },
+  {
+   "venue": "BMVC",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "Best Industry Paper Honourable Mention",
+   "title": "Semantic Priors for Intrinsic Image Decomposition",
+   "authors": [
+    "Saurabh Saini",
+    "P.J. Narayanan"
+   ],
+   "track": "main",
+   "source": "https://bmva-archive.org.uk/bmva-news/2018-09.pdf",
+   "evidence": "BMVC – Prizes and Awards The following prizes and awards were presented at the Conference Banquet: … 4. Best Industry Paper Honourable Mention: Semantic Priors for Intrinsic Image Decomposition Saurabh Saini, P.J. Narayanan"
+  },
+  {
+   "venue": "BMVC",
+   "year": 2018,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "QuaterNet: A Quaternion-based Recurrent Model for Human Motion",
+   "authors": [
+    "Dario Pavllo",
+    "David Grangier",
+    "Michael Auli"
+   ],
+   "track": "main",
+   "source": "https://bmva-archive.org.uk/bmva-news/2018-09.pdf",
+   "evidence": "BMVC – Prizes and Awards The following prizes and awards were presented at the Conference Banquet: … 5. Best Student Paper: QuaterNet: A Quaternion-based Recurrent Model for Human Motion Dario Pavllo, David Grangier, Michael Auli"
+  },
+  {
+   "venue": "BMVC",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Industry Paper",
+   "title": "A CNN Based Approach for the Near-Field Photometric Stereo Problem",
+   "authors": [
+    "Fotios Logothetis",
+    "Ignas Budvytis",
+    "Roberto Mecca",
+    "Roberto Cipolla"
+   ],
+   "track": "main",
+   "source": "https://bmva-archive.org.uk/bmvc/2020/programme/paper-awards/",
+   "evidence": "We are delighted to announce the following paper awards. … Best Industry Paper A CNN Based Approach for the Near-Field Photometric Stereo Problem Fotios Logothetis, Ignas Budvytis, Roberto Mecca and Roberto Cipolla"
+  },
+  {
+   "venue": "BMVC",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Delving Deeper into Anti-aliasing in ConvNets",
+   "authors": [
+    "Xueyan Zou",
+    "Fanyi Xiao",
+    "Zhiding Yu",
+    "Yong Jae Lee"
+   ],
+   "track": "main",
+   "source": "https://bmva-archive.org.uk/bmvc/2020/programme/paper-awards/",
+   "evidence": "We are delighted to announce the following paper awards. … Best Paper Delving Deeper into Anti-aliasing in ConvNets Xueyan Zou, Fanyi Xiao, Zhiding Yu and Yong Jae Lee"
+  },
+  {
+   "venue": "BMVC",
+   "year": 2020,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner Up",
+   "title": "Key-Nets: Optical Transformation Convolutional Networks for Privacy Preserving Vision Sensors",
+   "authors": [
+    "Jeffrey Byrne",
+    "Brian DeCann",
+    "Scott Bloom"
+   ],
+   "track": "main",
+   "source": "https://bmva-archive.org.uk/bmvc/2020/programme/paper-awards/",
+   "evidence": "We are delighted to announce the following paper awards. … Best Paper Runner Up Key-Nets: Optical Transformation Convolutional Networks for Privacy Preserving Vision Sensors Jeffrey Byrne (STR, Visym Labs), Brian DeCann and Scott Bloom"
+  },
+  {
+   "venue": "BMVC",
+   "year": 2020,
+   "award": "runner-up",
+   "awardLabel": "Best Student Paper Runner Up",
+   "title": "Weakly-supervised Salient Instance Detection",
+   "authors": [
+    "Xin Tian",
+    "Ke Xu",
+    "Xin Yang",
+    "Baocai Yin",
+    "Rynson Lau"
+   ],
+   "track": "main",
+   "source": "https://bmva-archive.org.uk/bmvc/2020/programme/paper-awards/",
+   "evidence": "We are delighted to announce the following paper awards. … Best Student Paper Runner Up Weakly-supervised Salient Instance Detection Xin Tian, Ke Xu, Xin Yang, Baocai Yin and Rynson Lau"
+  },
+  {
+   "venue": "BMVC",
+   "year": 2020,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Video Region Annotation with Sparse Bounding Boxes",
+   "authors": [
+    "Yuzheng Xu",
+    "Yang Wu",
+    "Nur Sabrina binti Zuraimi",
+    "Shohei Nobuhara",
+    "Ko Nishino"
+   ],
+   "track": "main",
+   "source": "https://bmva-archive.org.uk/bmvc/2020/programme/paper-awards/",
+   "evidence": "We are delighted to announce the following paper awards. … Best Student Paper Video Region Annotation with Sparse Bounding Boxes Yuzheng Xu, Yang Wu, Nur Sabrina binti Zuraimi, Shohei Nobuhara and Ko Nishino"
+  },
+  {
+   "venue": "BMVC",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "DISCO: accurate Discrete Scale Convolutions",
+   "authors": [
+    "Ivan Sosnovik",
+    "Artem Moskalev",
+    "Arnold W.M. Smeulders"
+   ],
+   "track": "main",
+   "source": "https://bmva-archive.org.uk/bmvc/2021/programme/paper-awards/",
+   "evidence": "We are delighted to announce the following paper awards. … Best Paper DISCO: accurate Discrete Scale Convolutions Ivan Sosnovik, Artem Moskalev and Arnold W.M. Smeulders"
+  },
+  {
+   "venue": "BMVC",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Best Student Paper Runner Up",
+   "title": "Few-Shot Domain Adaptation for Low Light RAW Image Enhancement",
+   "authors": [
+    "Ram K Prabhakar",
+    "Vishal Vinod",
+    "Nihar R. Sahoo",
+    "Venkatesh Babu Radhakrishnan"
+   ],
+   "track": "main",
+   "source": "https://bmva-archive.org.uk/bmvc/2021/programme/paper-awards/",
+   "evidence": "We are delighted to announce the following paper awards. … Best Student Paper Runner Up Few-Shot Domain Adaptation for Low Light RAW Image Enhancement Ram K Prabhakar, Vishal Vinod, Nihar R. Sahoo and Venkatesh Babu RADHAKRISHNAN"
+  },
+  {
+   "venue": "BMVC",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner Up",
+   "title": "Geometry-Aware Multi-Task Learning for Binaural Audio Generation from Video",
+   "authors": [
+    "Rishabh Garg",
+    "Ruohan Gao",
+    "Kristen Grauman"
+   ],
+   "track": "main",
+   "source": "https://bmva-archive.org.uk/bmvc/2021/programme/paper-awards/",
+   "evidence": "We are delighted to announce the following paper awards. … Best Paper Runner Up Geometry-Aware Multi-Task Learning for Binaural Audio Generation from Video Rishabh Garg, Ruohan Gao and Kristen Grauman"
+  },
+  {
+   "venue": "BMVC",
+   "year": 2021,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "The Curious Layperson: Fine-Grained Image Recognition without Expert Labels",
+   "authors": [
+    "Subhabrata Choudhury",
+    "Iro Laina",
+    "Christian Rupprecht",
+    "Andrea Vedaldi"
+   ],
+   "track": "main",
+   "source": "https://bmva-archive.org.uk/bmvc/2021/programme/paper-awards/",
+   "evidence": "We are delighted to announce the following paper awards. … Best Student Paper The Curious Layperson: Fine-Grained Image Recognition without Expert Labels Subhabrata Choudhury, Iro Laina, Christian Rupprecht and Andrea Vedaldi"
   },
   {
    "venue": "BMVC",
@@ -55054,6 +55916,36 @@
   },
   {
    "venue": "CIKM",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Overall Paper",
+   "title": "Relevance Estimation with Multiple Information Sources on Search Engine Result Pages",
+   "authors": [
+    "Junqi Zhang",
+    "Yiqun Liu",
+    "Shaoping Ma",
+    "Qi Tian"
+   ],
+   "track": "main",
+   "source": "https://www.cikm2018.units.it/CIKM2018bestpapers.html",
+   "evidence": "CIKM 2018 Best Overall Paper Junqi Zhang, Yiqun Liu, Shaoping Ma, Qi Tian, Relevance Estimation with Multiple Information Sources on Search Engine Result Pages"
+  },
+  {
+   "venue": "CIKM",
+   "year": 2018,
+   "award": "category",
+   "awardLabel": "Best Short Paper",
+   "title": "Empirical Evidence for Search Effectiveness Models",
+   "authors": [
+    "Alfan Farizki Wicaksono",
+    "Alistair Moffat"
+   ],
+   "track": "main",
+   "source": "https://www.cikm2018.units.it/CIKM2018bestpapers.html",
+   "evidence": "CIKM 2018 Best Short Paper Alfan Farizki Wicaksono, Alistair Moffat, Empirical Evidence for Search Effectiveness Models"
+  },
+  {
+   "venue": "CIKM",
    "year": 2021,
    "award": "best",
    "awardLabel": "Best Paper Award",
@@ -55269,6 +56161,83 @@
    "track": "main",
    "source": "https://www.cikm2021.org/programme/best-paper-nominations",
    "evidence": "CIKM 2021 Best Paper Runner-up: Principled Multi-Aspect Evaluation Measures of Rankings — Maria Maistro, Lucas Chaves Lima, Jakob Grue Simonsen, Christina Lioma"
+  },
+  {
+   "venue": "CIKM",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Full Paper",
+   "title": "Reconsidering the Performance of GAE in Link Prediction",
+   "authors": [
+    "Weishuo Ma",
+    "Yanbo Wang",
+    "Xiyuan Wang",
+    "Muhan Zhang"
+   ],
+   "track": "main",
+   "source": "https://cikm2025.org/program/awards",
+   "evidence": "Best Full Paper Reconsidering the Performance of GAE in Link Prediction by Weishuo Ma, Yanbo Wang, Xiyuan Wang and Muhan Zhang"
+  },
+  {
+   "venue": "CIKM",
+   "year": 2025,
+   "award": "category",
+   "awardLabel": "Best Short Paper",
+   "title": "DP-COMET: A Differential Privacy Contextual Obfuscation MEchanism for Texts in Natural Language Processing",
+   "authors": [
+    "Francesco Luigi De Faveri",
+    "Guglielmo Faggioli",
+    "Nicola Ferro"
+   ],
+   "track": "main",
+   "source": "https://cikm2025.org/program/awards",
+   "evidence": "Best Short Paper DP-COMET: A Differential Privacy Contextual Obfuscation MEchanism for Texts in Natural Language Processing by Francesco Luigi De Faveri, Guglielmo Faggioli and Nicola Ferro"
+  },
+  {
+   "venue": "CIKM",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Full Paper Runner-up",
+   "title": "Data-centric Prompt Tuning for Dynamic Graphs",
+   "authors": [
+    "Yufei Peng",
+    "Cheng Yang",
+    "Zhengjie Fan",
+    "Chuan Shi"
+   ],
+   "track": "main",
+   "source": "https://cikm2025.org/program/awards",
+   "evidence": "Best Full Paper Runner-up Transferable Deep Clustering Model by Zheng Zhang and Liang Zhao Data-centric Prompt Tuning for Dynamic Graphs by Yufei Peng, Cheng Yang, Zhengjie Fan and Chuan Shi"
+  },
+  {
+   "venue": "CIKM",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Full Paper Runner-up",
+   "title": "Transferable Deep Clustering Model",
+   "authors": [
+    "Zheng Zhang",
+    "Liang Zhao"
+   ],
+   "track": "main",
+   "source": "https://cikm2025.org/program/awards",
+   "evidence": "Best Full Paper Runner-up Transferable Deep Clustering Model by Zheng Zhang and Liang Zhao"
+  },
+  {
+   "venue": "CIKM",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Best Student Full Paper",
+   "title": "A Cost-Effective Framework to Evaluate LLM-Generated Relevance Judgements",
+   "authors": [
+    "Simone Merlo",
+    "Stefano Marchesin",
+    "Guglielmo Faggioli",
+    "Nicola Ferro"
+   ],
+   "track": "main",
+   "source": "https://cikm2025.org/program/awards",
+   "evidence": "Best Student Full Paper A Cost-Effective Framework to Evaluate LLM-Generated Relevance Judgements by Simone Merlo, Stefano Marchesin, Guglielmo Faggioli and Nicola Ferro"
   },
   {
    "venue": "CODES+ISSS",
@@ -57022,6 +57991,127 @@
     "https://cognitivesciencesociety.org/wp-content/uploads/2025/08/DeArmond-CogSci-2025-program_Aug1.pdf"
    ],
    "evidence": "Marr Prize Nathaniel Braswell, Yale University Wild Possibilities: Evidence of Modal Cognition in Free-Ranging Rhesus"
+  },
+  {
+   "venue": "COLING",
+   "year": 2018,
+   "award": "category",
+   "awardLabel": "Best survey paper",
+   "title": "A Survey on Open Information Extraction",
+   "authors": [
+    "Christina Niklaus",
+    "Matthias Cetto",
+    "André Freitas",
+    "Siegfried Handschuh"
+   ],
+   "track": "main",
+   "source": "https://coling2018.org/pc-blog/",
+   "evidence": "COLING 2018 Best papers Posted on June 14, 2018 by Leon Derczynski 4 There are multiple categories of award at COLING 2018, as we laid out in an earlier blog post. We received 44 nominations for best papers over ten categories, and conferred best paper awards in the categories as follows: … Best survey paper: A Survey on Open Information Extraction, by Christina Niklaus, Matthias Cetto, André Freitas and Siegfried Handschuh"
+  },
+  {
+   "venue": "COLING",
+   "year": 2018,
+   "award": "category",
+   "awardLabel": "Best resource paper",
+   "title": "AnlamVer: Semantic Model Evaluation Dataset for Turkish – Word Similarity and Relatedness",
+   "authors": [
+    "Gökhan Ercan",
+    "Olcay Taner Yıldız"
+   ],
+   "track": "main",
+   "source": "https://coling2018.org/pc-blog/",
+   "evidence": "COLING 2018 Best papers Posted on June 14, 2018 by Leon Derczynski 4 There are multiple categories of award at COLING 2018, as we laid out in an earlier blog post. We received 44 nominations for best papers over ten categories, and conferred best paper awards in the categories as follows: … Best resource paper: AnlamVer: Semantic Model Evaluation Dataset for Turkish – Word Similarity and Relatedness, by Gökhan Ercan and Olcay Taner Yıldız"
+  },
+  {
+   "venue": "COLING",
+   "year": 2018,
+   "award": "category",
+   "awardLabel": "Best position paper",
+   "title": "Arguments and Adjuncts in Universal Dependencies",
+   "authors": [
+    "Adam Przepiórkowski",
+    "Agnieszka Patejuk"
+   ],
+   "track": "main",
+   "source": "https://coling2018.org/pc-blog/",
+   "evidence": "COLING 2018 Best papers Posted on June 14, 2018 by Leon Derczynski 4 There are multiple categories of award at COLING 2018, as we laid out in an earlier blog post. We received 44 nominations for best papers over ten categories, and conferred best paper awards in the categories as follows: … Best position paper: Arguments and Adjuncts in Universal Dependencies, by Adam Przepiórkowski and Agnieszka Patejuk"
+  },
+  {
+   "venue": "COLING",
+   "year": 2018,
+   "award": "category",
+   "awardLabel": "Best NLP engineering experiment",
+   "title": "Authorless Topic Models: Biasing Models Away from Known Structure",
+   "authors": [
+    "Laure Thompson",
+    "David Mimno"
+   ],
+   "track": "main",
+   "source": "https://coling2018.org/pc-blog/",
+   "evidence": "COLING 2018 Best papers Posted on June 14, 2018 by Leon Derczynski 4 There are multiple categories of award at COLING 2018, as we laid out in an earlier blog post. We received 44 nominations for best papers over ten categories, and conferred best paper awards in the categories as follows: … Best NLP engineering experiment: Authorless Topic Models: Biasing Models Away from Known Structure, by Laure Thompson and David Mimno"
+  },
+  {
+   "venue": "COLING",
+   "year": 2018,
+   "award": "category",
+   "awardLabel": "Most reproducible",
+   "title": "Design Challenges and Misconceptions in Neural Sequence Labeling",
+   "authors": [
+    "Jie Yang",
+    "Shuailong Liang",
+    "Yue Zhang"
+   ],
+   "track": "main",
+   "source": "https://coling2018.org/pc-blog/",
+   "evidence": "COLING 2018 Best papers Posted on June 14, 2018 by Leon Derczynski 4 There are multiple categories of award at COLING 2018, as we laid out in an earlier blog post. We received 44 nominations for best papers over ten categories, and conferred best paper awards in the categories as follows: … Most reproducible: Design Challenges and Misconceptions in Neural Sequence Labeling, by Jie Yang, Shuailong Liang and Yue Zhang"
+  },
+  {
+   "venue": "COLING",
+   "year": 2018,
+   "award": "category",
+   "awardLabel": "Best linguistic analysis",
+   "title": "Distinguishing affixoid formations from compounds",
+   "authors": [
+    "Josef Ruppenhofer",
+    "Michael Wiegand",
+    "Rebecca Wilm",
+    "Katja Markert"
+   ],
+   "track": "main",
+   "source": "https://coling2018.org/pc-blog/",
+   "evidence": "COLING 2018 Best papers Posted on June 14, 2018 by Leon Derczynski 4 There are multiple categories of award at COLING 2018, as we laid out in an earlier blog post. We received 44 nominations for best papers over ten categories, and conferred best paper awards in the categories as follows: … Best linguistic analysis: Distinguishing affixoid formations from compounds, by Josef Ruppenhofer, Michael Wiegand, Rebecca Wilm and Katja Markert"
+  },
+  {
+   "venue": "COLING",
+   "year": 2018,
+   "award": "category",
+   "awardLabel": "Best reproduction paper",
+   "title": "Neural Network Models for Paraphrase Identification, Semantic Textual Similarity, Natural Language Inference, and Question Answering",
+   "authors": [
+    "Wuwei Lan",
+    "Wei Xu"
+   ],
+   "track": "main",
+   "source": "https://coling2018.org/pc-blog/",
+   "evidence": "COLING 2018 Best papers Posted on June 14, 2018 by Leon Derczynski 4 There are multiple categories of award at COLING 2018, as we laid out in an earlier blog post. We received 44 nominations for best papers over ten categories, and conferred best paper awards in the categories as follows: … Best reproduction paper: Neural Network Models for Paraphrase Identification, Semantic Textual Similarity, Natural Language Inference, and Question Answering, by Wuwei Lan and Wei Xu"
+  },
+  {
+   "venue": "COLING",
+   "year": 2018,
+   "award": "category",
+   "awardLabel": "Best error analysis; Best evaluation",
+   "title": "SGM: Sequence Generation Model for Multi-label Classification",
+   "authors": [
+    "Pengcheng Yang",
+    "Xu Sun",
+    "Wei Li",
+    "Shuming Ma",
+    "Wei Wu",
+    "Houfeng Wang"
+   ],
+   "track": "main",
+   "source": "https://coling2018.org/pc-blog/",
+   "evidence": "COLING 2018 Best papers Posted on June 14, 2018 by Leon Derczynski 4 There are multiple categories of award at COLING 2018, as we laid out in an earlier blog post. We received 44 nominations for best papers over ten categories, and conferred best paper awards in the categories as follows: … Best error analysis: SGM: Sequence Generation Model for Multi-label Classification, by Pengcheng Yang, Xu Sun, Wei Li, Shuming Ma, Wei Wu and Houfeng Wang. Best evaluation: SGM: Sequence Generation Model for Multi-label Classification, by Pengcheng Yang, Xu Sun, Wei Li, Shuming Ma, Wei Wu and Houfeng Wang"
   },
   {
    "venue": "COLING",
@@ -71864,6 +72954,36 @@
   {
    "venue": "EACL",
    "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Short Paper Awards",
+   "title": "Multilingual LAMA: Investigating Knowledge in Multilingual Pretrained Language Models",
+   "authors": [
+    "Nora Kassner",
+    "Philipp Dufter",
+    "Hinrich Schütze"
+   ],
+   "track": "main",
+   "source": "https://2021.eacl.org/best-paper/",
+   "evidence": "Best Short Paper Awards … Multilingual LAMA: Investigating Knowledge in Multilingual Pretrained Language Models Nora Kassner, Philipp Dufter and Hinrich Schütze"
+  },
+  {
+   "venue": "EACL",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Short Paper Awards",
+   "title": "Question and Answer Test-Train Overlap in Open-Domain Question Answering Datasets",
+   "authors": [
+    "Patrick Lewis",
+    "Pontus Stenetorp",
+    "Sebastian Riedel"
+   ],
+   "track": "main",
+   "source": "https://2021.eacl.org/best-paper/",
+   "evidence": "Best Short Paper Awards Question and Answer Test-Train Overlap in Open-Domain Question Answering Datasets Patrick Lewis, Pontus Stenetorp and Sebastian Riedel"
+  },
+  {
+   "venue": "EACL",
+   "year": 2021,
    "award": "runner-up",
    "awardLabel": "Honorable Mention for Best Long Paper",
    "title": "A phonetic model of non-native spoken word processing",
@@ -71877,6 +72997,21 @@
    "track": "main",
    "source": "https://aclanthology.org/2021.eacl-main.127/",
    "evidence": "A phonetic model of non-native spoken word processing — Honorable Mention for Best Long Paper"
+  },
+  {
+   "venue": "EACL",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Honourable Mention Papers",
+   "title": "Applying the Transformer to Character-level Transduction",
+   "authors": [
+    "Shijie Wu",
+    "Ryan Cotterell",
+    "Mans Hulden"
+   ],
+   "track": "main",
+   "source": "https://2021.eacl.org/best-paper/",
+   "evidence": "Best Short Paper Awards … Honourable Mention Papers … Applying the Transformer to Character-level Transduction Shijie Wu, Ryan Cotterell and Mans Hulden"
   },
   {
    "venue": "EACL",
@@ -71912,6 +73047,68 @@
    "track": "main",
    "source": "https://aclanthology.org/2021.eacl-main.211/",
    "evidence": "Hidden Biases in Unreliable News Detection Datasets — Honorable Mention for Best Long Paper"
+  },
+  {
+   "venue": "EACL",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Honourable Mention Papers",
+   "title": "ProFormer: Towards On-Device LSH Projection Based Transformers",
+   "authors": [
+    "Chinnadhurai Sankar",
+    "Sujith Ravi",
+    "Zornitsa Kozareva"
+   ],
+   "track": "main",
+   "source": "https://2021.eacl.org/best-paper/",
+   "evidence": "Best Short Paper Awards … Honourable Mention Papers … ProFormer: Towards On-Device LSH Projection Based Transformers Chinnadhurai Sankar, Sujith Ravi and Zornitsa Kozareva"
+  },
+  {
+   "venue": "EACL",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Honourable Mention Papers",
+   "title": "We Need To Talk About Random Splits",
+   "authors": [
+    "Anders Søgaard",
+    "Sebastian Ebert",
+    "Jasmijn Bastings",
+    "Katja Filippova"
+   ],
+   "track": "main",
+   "source": "https://2021.eacl.org/best-paper/",
+   "evidence": "Best Short Paper Awards … Honourable Mention Papers We Need To Talk About Random Splits Anders Søgaard, Sebastian Ebert, Jasmijn Bastings and Katja Filippova"
+  },
+  {
+   "venue": "EACL",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Long Paper Awards",
+   "title": "COMPS: Conceptual Minimal Pair Sentences for testing Robust Property Knowledge and its Inheritance in Pre-trained Language Models",
+   "authors": [
+    "Kanishka Misra",
+    "Julia Rayz",
+    "Allyson Ettinger"
+   ],
+   "track": "main",
+   "source": "https://2023.eacl.org/program/best-paper/",
+   "evidence": "Best Long Paper Awards COMPS: Conceptual Minimal Pair Sentences for testing Robust Property Knowledge and its Inheritance in Pre-trained Language Models. Kanishka Misra, Julia Rayz and Allyson Ettinger."
+  },
+  {
+   "venue": "EACL",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Long Paper Awards",
+   "title": "WINODICT: Probing language models for in-context word acquisition",
+   "authors": [
+    "Julian Martin Eisenschlos",
+    "Jeremy R. Cole",
+    "Fangyu Liu",
+    "William Cohen"
+   ],
+   "track": "main",
+   "source": "https://2023.eacl.org/program/best-paper/",
+   "evidence": "Best Long Paper Awards … WINODICT: Probing language models for in-context word acquisition. Julian Martin Eisenschlos, Jeremy R. Cole, Fangyu Liu and William Cohen."
   },
   {
    "venue": "EACL",
@@ -72104,6 +73301,22 @@
    "venue": "EACL",
    "year": 2024,
    "award": "category",
+   "awardLabel": "Evaluation and Model Insight Award",
+   "title": "Diffusion-NAT: Self-Prompting Discrete Diffusion for Non-Autoregressive Text Generation",
+   "authors": [
+    "Kun Zhou",
+    "Yifan Li",
+    "Xin Zhao",
+    "Ji-Rong Wen"
+   ],
+   "track": "main",
+   "source": "https://2024.eacl.org/program/best-paper/",
+   "evidence": "Evaluation and Model Insight Award Diffusion-NAT: Self-Prompting Discrete Diffusion for Non-Autoregressive Text Generation Kun Zhou, Yifan Li, Xin Zhao, Ji-Rong Wen."
+  },
+  {
+   "venue": "EACL",
+   "year": 2024,
+   "award": "category",
    "awardLabel": "Best Non-publicized Paper Award",
    "title": "Leak, Cheat, Repeat: Data Contamination and Evaluation Malpractices in Closed-Source LLMs",
    "authors": [
@@ -72115,6 +73328,66 @@
    "track": "main",
    "source": "https://aclanthology.org/2024.eacl-long.5/",
    "evidence": "Leak, Cheat, Repeat: Data Contamination and Evaluation Malpractices in Closed-Source LLMs — Best Non-publicized Paper Award"
+  },
+  {
+   "venue": "EACL",
+   "year": 2024,
+   "award": "category",
+   "awardLabel": "Resource Paper Award",
+   "title": "M4: Multi-generator, Multi-domain, and Multi-lingual Black-Box Machine-Generated Text Detection",
+   "authors": [
+    "Yuxia Wang",
+    "Jonibek Mansurov",
+    "Petar Ivanov",
+    "Jinyan Su",
+    "Artem Shelmanov",
+    "Akim Tsvigun",
+    "Chenxi Whitehouse",
+    "Osama Mohammed Afzal",
+    "Tarek Mahmoud",
+    "Toru Sasaki",
+    "Thomas Arnold",
+    "Alham Aji",
+    "Nizar Habash",
+    "Iryna Gurevych",
+    "Preslav Nakov"
+   ],
+   "track": "main",
+   "source": "https://2024.eacl.org/program/best-paper/",
+   "evidence": "Resource Paper Award M4: Multi-generator, Multi-domain, and Multi-lingual Black-Box Machine-Generated Text Detection Yuxia Wang, Jonibek Mansurov, Petar Ivanov, Jinyan Su, Artem Shelmanov, Akim Tsvigun, Chenxi Whitehouse, Osama Mohammed Afzal, Tarek Mahmoud, Toru Sasaki, Thomas Arnold, Alham Aji, Nizar Habash, Iryna Gurevych, Preslav Nakov."
+  },
+  {
+   "venue": "EACL",
+   "year": 2024,
+   "award": "category",
+   "awardLabel": "Low-Resource Paper Award",
+   "title": "Quality Does Matter: A Detailed Look at the Quality and Utility of Web-Mined Parallel Corpora",
+   "authors": [
+    "Surangika Ranathunga",
+    "Nisansa De Silva",
+    "Velayuthan Menan",
+    "Aloka Fernando",
+    "Charitha Rathnayake"
+   ],
+   "track": "main",
+   "source": "https://2024.eacl.org/program/best-paper/",
+   "evidence": "Low-Resource Paper Award Quality Does Matter: A Detailed Look at the Quality and Utility of Web-Mined Parallel Corpora Surangika Ranathunga, Nisansa De Silva, Velayuthan Menan, Aloka Fernando, Charitha Rathnayake."
+  },
+  {
+   "venue": "EACL",
+   "year": 2024,
+   "award": "category",
+   "awardLabel": "Social Impact Award",
+   "title": "Sensitivity, Performance, Robustness: Deconstructing the Effect of Sociodemographic Prompting",
+   "authors": [
+    "Tilman Beck",
+    "Hendrik Schuff",
+    "Anne Lauscher",
+    "Iryna Gurevych"
+   ],
+   "track": "main",
+   "source": "https://2024.eacl.org/program/best-paper/",
+   "evidence": "Social Impact Award Sensitivity, Performance, Robustness: Deconstructing the Effect of Sociodemographic Prompting Tilman Beck, Hendrik Schuff, Anne Lauscher, Iryna Gurevych."
   },
   {
    "venue": "EACL",
@@ -72248,6 +73521,299 @@
    "track": "main",
    "source": "https://conf.researchr.org/program/ease-2026/program-ease-2026/",
    "evidence": "MoEKD: Mixture-of-Experts Knowledge Distillation for Robust and High-Performing Compressed Code ModelsBest Paper AwardResearch Papers"
+  },
+  {
+   "venue": "EC",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Econometrics for Learning Agents",
+   "authors": [
+    "Denis Nekipelov",
+    "Vasilis Syrgkanis",
+    "Eva Tardos"
+   ],
+   "track": "main",
+   "source": "https://sigecom.org/award-paper.html",
+   "evidence": "2015 Best Paper Econometrics for Learning Agents Denis Nekipelov, Vasilis Syrgkanis, and Eva Tardos"
+  },
+  {
+   "venue": "EC",
+   "year": 2015,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Why Prices Need Algorithms",
+   "authors": [
+    "Tim Roughgarden",
+    "Inbal Talgam-Cohen"
+   ],
+   "track": "main",
+   "source": "https://sigecom.org/award-paper.html",
+   "evidence": "Best Student Paper Why Prices Need Algorithms Tim Roughgarden and Inbal Talgam-Cohen"
+  },
+  {
+   "venue": "EC",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Which Is the Fairest (Rent Division) of Them All?",
+   "authors": [
+    "Ya'akov (Kobi) Gal",
+    "Moshe Mash",
+    "Ariel D. Procaccia",
+    "Yair Zick"
+   ],
+   "track": "main",
+   "source": "https://sigecom.org/award-paper.html",
+   "evidence": "2016 Best Paper Which Is the Fairest (Rent Division) of Them All? Ya'akov (Kobi) Gal, Moshe Mash, Ariel D. Procaccia and Yair Zick"
+  },
+  {
+   "venue": "EC",
+   "year": 2016,
+   "award": "student",
+   "awardLabel": "Best Paper with a Student Lead Author",
+   "title": "Deferred Acceptance with Compensation Chains",
+   "authors": [
+    "Piotr Dworczak"
+   ],
+   "track": "main",
+   "source": "https://sigecom.org/award-paper.html",
+   "evidence": "Best Paper with a Student Lead Author Deferred Acceptance with Compensation Chains Piotr Dworczak"
+  },
+  {
+   "venue": "EC",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Combinatorial Cost Sharing",
+   "authors": [
+    "Shahar Dobzinski",
+    "Shahar Ovadia"
+   ],
+   "track": "main",
+   "source": "https://sigecom.org/award-paper.html",
+   "evidence": "2017 Best Paper Combinatorial Cost Sharing Shahar Dobzinski and Shahar Ovadia"
+  },
+  {
+   "venue": "EC",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Credible Mechanisms",
+   "authors": [
+    "Mohammad Akbarpour",
+    "Shengwu Li"
+   ],
+   "track": "main",
+   "source": "https://sigecom.org/award-paper.html",
+   "evidence": "2018 Best Paper Credible Mechanisms Mohammad Akbarpour and Shengwu Li"
+  },
+  {
+   "venue": "EC",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Full Paper",
+   "title": "Selling to a No-Regret Buyer",
+   "authors": [
+    "Mark Braverman",
+    "Jieming Mao",
+    "Jon Schneider",
+    "S. Matthew Weinberg"
+   ],
+   "track": "main",
+   "source": "https://sigecom.org/award-paper.html",
+   "evidence": "Best Full Paper and Best Paper with a Student Lead Author Selling to a No-Regret Buyer Mark Braverman, Jieming Mao, Jon Schneider, and S. Matthew Weinberg"
+  },
+  {
+   "venue": "EC",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper and Exemplary Theory Track Paper",
+   "title": "Obvious Dominance and Random Priority",
+   "authors": [
+    "Peter Troyan",
+    "Marek Pycia"
+   ],
+   "track": "main",
+   "source": "https://sigecom.org/award-paper.html",
+   "evidence": "2019 Best Paper and Exemplary Theory Track Paper Obvious Dominance and Random Priority Peter Troyan and Marek Pycia"
+  },
+  {
+   "venue": "EC",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Full Paper",
+   "title": "Prophet Inequalities for i.i.d. Random Variables from an Unknown Distribution",
+   "authors": [
+    "Jose Correa",
+    "Paul Duetting",
+    "Felix Fischer",
+    "Kevin Schewior"
+   ],
+   "track": "main",
+   "source": "https://sigecom.org/award-paper.html",
+   "evidence": "Best Full Paper Prophet Inequalities for i.i.d. Random Variables from an Unknown Distribution Jose Correa, Paul Duetting, Felix Fischer, and Kevin Schewior"
+  },
+  {
+   "venue": "EC",
+   "year": 2019,
+   "award": "student",
+   "awardLabel": "Best Paper with a Student Lead Author",
+   "title": "Combinatorial Auctions with Interdependent Valuations: SOS to the Rescue",
+   "authors": [
+    "Alon Eden",
+    "Michal Feldman",
+    "Amos Fiat",
+    "Kira Goldner",
+    "Anna Karlin"
+   ],
+   "track": "main",
+   "source": "https://sigecom.org/award-paper.html",
+   "evidence": "Best Paper with a Student Lead Author Combinatorial Auctions with Interdependent Valuations: SOS to the Rescue Alon Eden, Michal Feldman, Amos Fiat, Kira Goldner, and Anna Karlin"
+  },
+  {
+   "venue": "EC",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Feasible Joint Posterior Beliefs",
+   "authors": [
+    "Itai Arieli",
+    "Yakov Babichenko",
+    "Fedor Sandomirskiy",
+    "Omer Tamuz"
+   ],
+   "track": "main",
+   "source": "https://sigecom.org/award-paper.html",
+   "evidence": "2020 Best Paper Feasible Joint Posterior Beliefs Itai Arieli, Yakov Babichenko, Fedor Sandomirskiy, and Omer Tamuz"
+  },
+  {
+   "venue": "EC",
+   "year": 2020,
+   "award": "student",
+   "awardLabel": "Best Paper with a Student Lead Author and Exemplary Theory Track Paper",
+   "title": "EFX Exists for Three Agents",
+   "authors": [
+    "Bhaskar Ray Chaudhury",
+    "Jugal Garg",
+    "Kurt Mehlhorn"
+   ],
+   "track": "main",
+   "source": "https://sigecom.org/award-paper.html",
+   "evidence": "Best Paper with a Student Lead Author and Exemplary Theory Track Paper EFX Exists for Three Agents Bhaskar Ray Chaudhury, Jugal Garg, and Kurt Mehlhorn"
+  },
+  {
+   "venue": "EC",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Aggregative efficiency of Bayesian learning in networks",
+   "authors": [
+    "K. Dasaratha",
+    "K. He"
+   ],
+   "track": "main",
+   "source": "https://ec21.sigecom.org/program/awards/",
+   "evidence": "Best Paper Award Aggregative efficiency of Bayesian learning in networks (K. Dasaratha; K. He)"
+  },
+  {
+   "venue": "EC",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "The Science of the Deal: Optimal Bargaining on eBay Using Deep Reinforcement Learning",
+   "authors": [
+    "Etan Green",
+    "Barry Plunkett"
+   ],
+   "track": "main",
+   "source": "https://ec22.sigecom.org/program/awards/",
+   "evidence": "Best Paper Award The Science of the Deal: Optimal Bargaining on eBay Using Deep Reinforcement Learning (Etan Green and Barry Plunkett)"
+  },
+  {
+   "venue": "EC",
+   "year": 2022,
+   "award": "student",
+   "awardLabel": "Best Paper with a Student Lead Author Award and Exemplary Theory Track Paper",
+   "title": "Computationally Tractable Choice",
+   "authors": [
+    "Modibo Camara"
+   ],
+   "track": "main",
+   "source": "https://ec22.sigecom.org/program/awards/",
+   "evidence": "Best Paper with a Student Lead Author Award and Exemplary Theory Track Paper Computationally Tractable Choice (Modibo Camara)"
+  },
+  {
+   "venue": "EC",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Which Wage Distributions are Consistent with Statistical Discrimination?",
+   "authors": [
+    "Rahul Deb",
+    "Ludovic Renou"
+   ],
+   "track": "main",
+   "source": "https://ec23.sigecom.org/program/plenary-speakers/",
+   "evidence": "Best Paper: Rahul Deb and Ludavic Renou, “Which Wage Distributions are Consistent with Statistical Discrimination?”"
+  },
+  {
+   "venue": "EC",
+   "year": 2023,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Dynamic Concern for Misspecification",
+   "authors": [
+    "Giacomo Lanzani"
+   ],
+   "track": "main",
+   "source": "https://ec23.sigecom.org/program/plenary-speakers/",
+   "evidence": "Best Student Paper: Giacomo Lanzani, “Dynamic Concern for Misspecification.”"
+  },
+  {
+   "venue": "EC",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award and Exemplary Applied Modeling Track Paper",
+   "title": "When Geography Shapes Preferences: Redesigning Teacher Assignment in Italy",
+   "authors": [
+    "Mariagrazia Cavallo",
+    "Battal Dogan"
+   ],
+   "track": "main",
+   "source": "https://ec24.sigecom.org/program/main-technical-program/",
+   "evidence": "Best Paper Award and Exemplary Applied Modeling Track Paper When Geography Shapes Preferences: Redesigning Teacher Assignment in Italy Mariagrazia Cavallo, Battal Dogan"
+  },
+  {
+   "venue": "EC",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "Best Paper with a Student Lead Author Award",
+   "title": "Learning About Informativeness",
+   "authors": [
+    "Wanying Huang"
+   ],
+   "track": "main",
+   "source": "https://ec24.sigecom.org/program/main-technical-program/",
+   "evidence": "Best Paper with a Student Lead Author Award Learning About Informativeness Wanying Huang"
+  },
+  {
+   "venue": "EC",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Swap Regret and Correlated Equilibria Beyond Normal-Form Games",
+   "authors": [
+    "Eshwar Ram Arunachaleswaran",
+    "Natalie Collina",
+    "Yishay Mansour",
+    "Mehryar Mohri",
+    "Jon Schneider",
+    "Balasubramanian Sivan"
+   ],
+   "track": "main",
+   "source": "https://ec25.sigecom.org/main-technical-program/",
+   "evidence": "Best Paper: Swap Regret and Correlated Equilibria Beyond Normal-Form Games Eshwar Ram Arunachaleswaran (University of Pennsylvania), Natalie Collina (University of Pennsylvania), Yishay Mansour (Google Research), Mehryar Mohri (Google Research), Jon Schneider (Google Research), Balasubramanian Sivan (Google Research)"
   },
   {
    "venue": "ECAI",
@@ -94298,6 +95864,225 @@
   },
   {
    "venue": "ICASSP",
+   "year": 2017,
+   "award": "student",
+   "awardLabel": "Student Paper Contest Winners: 1st Place",
+   "title": "Unified Analysis of Co-Array Interpolation for Direction-of-Arrival Estimation",
+   "authors": [
+    "Heng Qiao",
+    "Piya Pal"
+   ],
+   "track": "main",
+   "source": "https://www.2017.ieeeicassp.org/student-paper-contest.html",
+   "evidence": "Student Paper Contest Winners 1st Place: SAM-L1 Unified Analysis of Co-Array Interpolation for Direction-of-Arrival Estimation Heng Qiao, Piya Pal"
+  },
+  {
+   "venue": "ICASSP",
+   "year": 2019,
+   "award": "student",
+   "awardLabel": "Best Student Paper Awards",
+   "title": "A VARIATIONAL ADAPTIVE POPULATION IMPORTANCE SAMPLER",
+   "authors": [
+    "Yousef El-Laham"
+   ],
+   "track": "main",
+   "source": "https://www.2019.ieeeicassp.org/2019.ieeeicassp.org/program.html",
+   "evidence": "Best Student Paper Awards Paper Title of the paper Student name Institution Award sponsored by … 2439 A VARIATIONAL ADAPTIVE POPULATION IMPORTANCE SAMPLER Yousef El-Laham"
+  },
+  {
+   "venue": "ICASSP",
+   "year": 2019,
+   "award": "student",
+   "awardLabel": "Best Student Paper Awards",
+   "title": "BLHUC: BAYESIAN LEARNING OF HIDDEN UNIT CONTRIBUTIONS FOR DEEP NEURAL NETWORK SPEAKER ADAPTATION",
+   "authors": [
+    "Xurong Xie"
+   ],
+   "track": "main",
+   "source": "https://www.2019.ieeeicassp.org/2019.ieeeicassp.org/program.html",
+   "evidence": "Best Student Paper Awards Paper Title of the paper Student name Institution Award sponsored by … 2731 BLHUC: BAYESIAN LEARNING OF HIDDEN UNIT CONTRIBUTIONS FOR DEEP NEURAL NETWORK SPEAKER ADAPTATION Xurong Xie"
+  },
+  {
+   "venue": "ICASSP",
+   "year": 2019,
+   "award": "student",
+   "awardLabel": "Best Student Paper Awards",
+   "title": "CONVERGENCE BOUNDS FOR COMPRESSED GRADIENT METHODS WITH MEMORY BASED ERROR COMPENSATION",
+   "authors": [
+    "Sarit Khirirat"
+   ],
+   "track": "main",
+   "source": "https://www.2019.ieeeicassp.org/2019.ieeeicassp.org/program.html",
+   "evidence": "Best Student Paper Awards Paper Title of the paper Student name Institution Award sponsored by … 2077 CONVERGENCE BOUNDS FOR COMPRESSED GRADIENT METHODS WITH MEMORY BASED ERROR COMPENSATION Sarit Khirirat"
+  },
+  {
+   "venue": "ICASSP",
+   "year": 2019,
+   "award": "student",
+   "awardLabel": "Best Student Paper Awards",
+   "title": "DEEP SPLINE NETWORKS WITH CONTROL OF LIPSCHITZ REGULARITY",
+   "authors": [
+    "Shayan Aziznejad"
+   ],
+   "track": "main",
+   "source": "https://www.2019.ieeeicassp.org/2019.ieeeicassp.org/program.html",
+   "evidence": "Best Student Paper Awards Paper Title of the paper Student name Institution Award sponsored by … 4608 DEEP SPLINE NETWORKS WITH CONTROL OF LIPSCHITZ REGULARITY Shayan Aziznejad"
+  },
+  {
+   "venue": "ICASSP",
+   "year": 2019,
+   "award": "student",
+   "awardLabel": "Best Student Paper Awards",
+   "title": "FEEDFORWARD SPATIAL ACTIVE NOISE CONTROL BASED ON KERNEL INTERPOLATION OF SOUND FIELD",
+   "authors": [
+    "Hayato Ito"
+   ],
+   "track": "main",
+   "source": "https://www.2019.ieeeicassp.org/2019.ieeeicassp.org/program.html",
+   "evidence": "Best Student Paper Awards Paper Title of the paper Student name Institution Award sponsored by 1814 FEEDFORWARD SPATIAL ACTIVE NOISE CONTROL BASED ON KERNEL INTERPOLATION OF SOUND FIELD Hayato Ito"
+  },
+  {
+   "venue": "ICASSP",
+   "year": 2019,
+   "award": "student",
+   "awardLabel": "Best Student Paper Awards",
+   "title": "HIGHER-ORDER NONNEGATIVE CANDECOMP/PARAFAC TENSOR DECOMPOSITION USING PROXIMAL ALGORITHM",
+   "authors": [
+    "Deqing Wang"
+   ],
+   "track": "main",
+   "source": "https://www.2019.ieeeicassp.org/2019.ieeeicassp.org/program.html",
+   "evidence": "Best Student Paper Awards Paper Title of the paper Student name Institution Award sponsored by … 2082 HIGHER-ORDER NONNEGATIVE CANDECOMP/PARAFAC TENSOR DECOMPOSITION USING PROXIMAL ALGORITHM Deqing Wang"
+  },
+  {
+   "venue": "ICASSP",
+   "year": 2019,
+   "award": "student",
+   "awardLabel": "Best Student Paper Awards",
+   "title": "IDENTIFYING STRUCTURAL BRAIN NETWORKS FROM FUNCTIONAL CONNECTIVITY: A NETWORK DECONVOLUTION APPROACH",
+   "authors": [
+    "Yang Li"
+   ],
+   "track": "main",
+   "source": "https://www.2019.ieeeicassp.org/2019.ieeeicassp.org/program.html",
+   "evidence": "Best Student Paper Awards Paper Title of the paper Student name Institution Award sponsored by … 1876 IDENTIFYING STRUCTURAL BRAIN NETWORKS FROM FUNCTIONAL CONNECTIVITY: A NETWORK DECONVOLUTION APPROACH Yang Li"
+  },
+  {
+   "venue": "ICASSP",
+   "year": 2019,
+   "award": "student",
+   "awardLabel": "Best Student Paper Awards",
+   "title": "ONE-BIT UNLIMITED SAMPLING",
+   "authors": [
+    "Olga Graf"
+   ],
+   "track": "main",
+   "source": "https://www.2019.ieeeicassp.org/2019.ieeeicassp.org/program.html",
+   "evidence": "Best Student Paper Awards Paper Title of the paper Student name Institution Award sponsored by … 5257 ONE-BIT UNLIMITED SAMPLING Olga Graf"
+  },
+  {
+   "venue": "ICASSP",
+   "year": 2019,
+   "award": "student",
+   "awardLabel": "Best Student Paper Awards",
+   "title": "PARAMETER UNCERTAINTY FOR END-TO-END SPEECH RECOGNITION",
+   "authors": [
+    "Stefan Braun"
+   ],
+   "track": "main",
+   "source": "https://www.2019.ieeeicassp.org/2019.ieeeicassp.org/program.html",
+   "evidence": "Best Student Paper Awards Paper Title of the paper Student name Institution Award sponsored by … 3168 PARAMETER UNCERTAINTY FOR END-TO-END SPEECH RECOGNITION Stefan Braun"
+  },
+  {
+   "venue": "ICASSP",
+   "year": 2019,
+   "award": "student",
+   "awardLabel": "Best Student Paper Awards",
+   "title": "RANDOMIZED TENSOR RING DECOMPOSITION AND ITS APPLICATION TO LARGE-SCALE DATA RECONSTRUCTION",
+   "authors": [
+    "Longhao Yuan"
+   ],
+   "track": "main",
+   "source": "https://www.2019.ieeeicassp.org/2019.ieeeicassp.org/program.html",
+   "evidence": "Best Student Paper Awards Paper Title of the paper Student name Institution Award sponsored by … 4538 RANDOMIZED TENSOR RING DECOMPOSITION AND ITS APPLICATION TO LARGE-SCALE DATA RECONSTRUCTION Longhao Yuan"
+  },
+  {
+   "venue": "ICASSP",
+   "year": 2019,
+   "award": "student",
+   "awardLabel": "Best Student Paper Awards",
+   "title": "STATISTICAL RANK SELECTION FOR INCOMPLETE LOW-RANK MATRICES",
+   "authors": [
+    "Rui Zhang"
+   ],
+   "track": "main",
+   "source": "https://www.2019.ieeeicassp.org/2019.ieeeicassp.org/program.html",
+   "evidence": "Best Student Paper Awards Paper Title of the paper Student name Institution Award sponsored by … 3249 STATISTICAL RANK SELECTION FOR INCOMPLETE LOW-RANK MATRICES Rui Zhang"
+  },
+  {
+   "venue": "ICASSP",
+   "year": 2019,
+   "award": "student",
+   "awardLabel": "Best Student Paper Awards",
+   "title": "STOCHASTIC ADAPTIVE NEURAL ARCHITECTURE SEARCH FOR KEYWORD SPOTTING",
+   "authors": [
+    "Tom Véniat"
+   ],
+   "track": "main",
+   "source": "https://www.2019.ieeeicassp.org/2019.ieeeicassp.org/program.html",
+   "evidence": "Best Student Paper Awards Paper Title of the paper Student name Institution Award sponsored by … 4575 STOCHASTIC ADAPTIVE NEURAL ARCHITECTURE SEARCH FOR KEYWORD SPOTTING Tom Véniat"
+  },
+  {
+   "venue": "ICASSP",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Better safe than sorry: risk-aware nonlinear Bayesian estimation",
+   "authors": [
+    "Dionysios Kalogerias",
+    "Luiz Chamon",
+    "George Pappas",
+    "Alejandro Ribeiro"
+   ],
+   "track": "main",
+   "source": "https://2020.ieeeicassp.org/general/icassp-best-paper-awards/index.html",
+   "evidence": "Best Paper Award Dionysios Kalogerias, Luiz Chamon, George Pappas, Alejandro Ribeiro. “Better safe than sorry: risk-aware nonlinear Bayesian estimation”"
+  },
+  {
+   "venue": "ICASSP",
+   "year": 2020,
+   "award": "student",
+   "awardLabel": "Student Best Paper Awards",
+   "title": "Approximate Bayesian Computation with the Sliced-Wasserstein Distance",
+   "authors": [
+    "Kimia Nadjahi",
+    "Valentin De Bortoli",
+    "Alain Durmus",
+    "Roland Badeau",
+    "Umut Simsekli"
+   ],
+   "track": "main",
+   "source": "https://2020.ieeeicassp.org/general/icassp-best-paper-awards/index.html",
+   "evidence": "Student Best Paper Awards … Kimia Nadjahi, Valentin De Bortoli, Alain Durmus, Roland Badeau, Umut Simsekli, “Approximate Bayesian Computation with the Sliced-Wasserstein Distance”"
+  },
+  {
+   "venue": "ICASSP",
+   "year": 2020,
+   "award": "student",
+   "awardLabel": "Student Best Paper Awards",
+   "title": "The Empirical Duality Gap of Constrained Statistical Learning",
+   "authors": [
+    "Luiz Chamon",
+    "Santiago Paternain",
+    "Miguel Calvo-Fullana",
+    "Alejandro Ribeiro"
+   ],
+   "track": "main",
+   "source": "https://2020.ieeeicassp.org/general/icassp-best-paper-awards/index.html",
+   "evidence": "Student Best Paper Awards Luiz Chamon, Santiago Paternain, Miguel Calvo-Fullana, Alejandro Ribeiro, “The Empirical Duality Gap of Constrained Statistical Learning”"
+  },
+  {
+   "venue": "ICASSP",
    "year": 2023,
    "award": "best",
    "awardLabel": "Best Paper Award",
@@ -103314,6 +105099,328 @@
    "track": "main",
    "source": "https://2026.ieeeicme.org/awards/",
    "evidence": "Best Student Paper Award Paper Title: Modularized Dynamic-Granularity Video LLM for Multi-Event Long Video Understanding Authors: Wei Feng, Xin Wang, Yu-Wei Zhan, Yuwei Zhou, Wenwu Zhu"
+  },
+  {
+   "venue": "ICMI",
+   "year": 2015,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Combining Two Perspectives on Classifying Multimodal Data for Recognizing Speaker Traits",
+   "authors": [
+    "Moitreya Chatterjee",
+    "Sughyun Park",
+    "Stefan Scherer",
+    "Louis-Philippe Morency"
+   ],
+   "track": "main",
+   "source": "https://icmi.acm.org/2015/index.php?id=award",
+   "evidence": "Outstanding Paper Award Moitreya Chatterjee, Sughyun Park, Stefan Scherer, Louis-Philippe Mordancy \"Combining Two Perspectives on Classifying Multimodal Data for Recognizing Speaker Traits\""
+  },
+  {
+   "venue": "ICMI",
+   "year": 2015,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention Award",
+   "title": "Visual Saliency and Crowdsourcing-based Priors for an In-car Situated Dialog System",
+   "authors": [
+    "T. Misu"
+   ],
+   "track": "main",
+   "source": "https://icmi.acm.org/2015/index.php?id=award",
+   "evidence": "Honorable Mention Award T. Misu \"Visual Saliency and Crowdsourcing-based Priors for an In-car Situated Dialog System\""
+  },
+  {
+   "venue": "ICMI",
+   "year": 2015,
+   "award": "student",
+   "awardLabel": "Outstanding Student Paper Award",
+   "title": "Gaze+Gesture: Expressive, Precise and Targeted Free-Space Interactions",
+   "authors": [
+    "Ishan Chatterjee",
+    "Robert Xiao",
+    "Chris Harrison"
+   ],
+   "track": "main",
+   "source": "https://icmi.acm.org/2015/index.php?id=award",
+   "evidence": "Outstanding Student Paper Award Ishan Chatterjee, Robert Xiao, Chris Harrison \"Gaze+Gesture: Expressive, Precise and Targeted Free-Space Interactions\""
+  },
+  {
+   "venue": "ICMI",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Awards",
+   "title": "Dynamic Adaptive Gesturing Predicts Domain Expertise in Mathematics",
+   "authors": [
+    "Abishek Sriramulu",
+    "Jionghao Lin",
+    "Sharon Oviatt"
+   ],
+   "track": "main",
+   "source": "https://icmi.acm.org/2019/index.php?id=award",
+   "evidence": "Best Paper Awards Dynamic Adaptive Gesturing Predicts Domain Expertise in Mathematics* Abishek Sriramulu; Jionghao Lin; Sharon Oviatt"
+  },
+  {
+   "venue": "ICMI",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Awards",
+   "title": "Multimodal Analysis and Estimation of Intimate Self-Disclosure",
+   "authors": [
+    "Mohammad Soleymani",
+    "Kalin Stefanov",
+    "Sin-Hwa Kang",
+    "Jan Ondras",
+    "Jonathan Gratch"
+   ],
+   "track": "main",
+   "source": "https://icmi.acm.org/2019/index.php?id=award",
+   "evidence": "Best Paper Awards Dynamic Adaptive Gesturing Predicts Domain Expertise in Mathematics* Abishek Sriramulu; Jionghao Lin; Sharon Oviatt Multimodal Analysis and Estimation of Intimate Self-Disclosure* Mohammad Soleymani; Kalin Stefanov; Sin-Hwa Kang; Jan Ondras; Jonathan Gratch"
+  },
+  {
+   "venue": "ICMI",
+   "year": 2019,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-ups",
+   "title": "\"Paint that object yellow\": Multimodal Interaction to Enhance Creativity During Design Tasks in VR",
+   "authors": [
+    "Erik Wolf",
+    "Sara Klüber",
+    "Chris Zimmerer",
+    "Jean-Luc Lugrin",
+    "Marc Erich Latoschik"
+   ],
+   "track": "main",
+   "source": "https://icmi.acm.org/2019/index.php?id=award",
+   "evidence": "Best Paper Runner-ups Multitask Prediction of Exchange-Level Annotations for Multimodal Dialogue Systems. Yuki Hirano; Shogo Okada; Haruto Nishimoto; Kazunori Komatani Multi-modal Active Learning From Human Data: A Deep Reinforcement Learning Approach. Ognjen Rudovic; Meiru Zhang; Bjorn Schuller; Rosalind Picard \"Paint that object yellow\": Multimodal Interaction to Enhance Creativity During Design Tasks in VR. Erik Wolf; Sara Klüber; Chris Zimmerer; Jean-Luc Lugrin; Marc Erich Latoschik"
+  },
+  {
+   "venue": "ICMI",
+   "year": 2019,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-ups",
+   "title": "Ask-independent Multimodal Prediction of Group Performance Based on Product Dimensions",
+   "authors": [
+    "Go Miura",
+    "Shogo Okada"
+   ],
+   "track": "main",
+   "source": "https://icmi.acm.org/2019/index.php?id=award",
+   "evidence": "Best Paper Runner-ups Multitask Prediction of Exchange-Level Annotations for Multimodal Dialogue Systems. Yuki Hirano; Shogo Okada; Haruto Nishimoto; Kazunori Komatani Multi-modal Active Learning From Human Data: A Deep Reinforcement Learning Approach. Ognjen Rudovic; Meiru Zhang; Bjorn Schuller; Rosalind Picard \"Paint that object yellow\": Multimodal Interaction to Enhance Creativity During Design Tasks in VR. Erik Wolf; Sara Klüber; Chris Zimmerer; Jean-Luc Lugrin; Marc Erich Latoschik Ask-independent Multimodal Prediction of Group Performance Based on Product Dimensions. Go Miura; Shogo Okada"
+  },
+  {
+   "venue": "ICMI",
+   "year": 2019,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-ups",
+   "title": "Multi-modal Active Learning From Human Data: A Deep Reinforcement Learning Approach",
+   "authors": [
+    "Ognjen Rudovic",
+    "Meiru Zhang",
+    "Bjorn Schuller",
+    "Rosalind Picard"
+   ],
+   "track": "main",
+   "source": "https://icmi.acm.org/2019/index.php?id=award",
+   "evidence": "Best Paper Runner-ups Multitask Prediction of Exchange-Level Annotations for Multimodal Dialogue Systems. Yuki Hirano; Shogo Okada; Haruto Nishimoto; Kazunori Komatani Multi-modal Active Learning From Human Data: A Deep Reinforcement Learning Approach. Ognjen Rudovic; Meiru Zhang; Bjorn Schuller; Rosalind Picard"
+  },
+  {
+   "venue": "ICMI",
+   "year": 2019,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-ups",
+   "title": "Multitask Prediction of Exchange-Level Annotations for Multimodal Dialogue Systems",
+   "authors": [
+    "Yuki Hirano",
+    "Shogo Okada",
+    "Haruto Nishimoto",
+    "Kazunori Komatani"
+   ],
+   "track": "main",
+   "source": "https://icmi.acm.org/2019/index.php?id=award",
+   "evidence": "Best Paper Runner-ups Multitask Prediction of Exchange-Level Annotations for Multimodal Dialogue Systems. Yuki Hirano; Shogo Okada; Haruto Nishimoto; Kazunori Komatani"
+  },
+  {
+   "venue": "ICMI",
+   "year": 2019,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Modeling Team-Level Multimodal Dynamics during Multiparty Collaboration",
+   "authors": [
+    "Lucca Eloy",
+    "Angela E.B. Stewart",
+    "Mary J. Amon",
+    "Caroline Reinhardt",
+    "Amanda Michaels",
+    "Chen Sun",
+    "Valerie Shute",
+    "Nicholas D. Duran",
+    "Sidney K. D'Mello"
+   ],
+   "track": "main",
+   "source": "https://icmi.acm.org/2019/index.php?id=award",
+   "evidence": "Best Student Paper Award Modeling Team-Level Multimodal Dynamics during Multiparty Collaboration* Lucca Eloy; Angela E.B. Stewart; Mary J. Amon; Caroline Reinhardt; Amanda Michaels; Chen Sun; Valerie Shute; Nicholas D. Duran; Sidney K. D'Mello"
+  },
+  {
+   "venue": "ICMI",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best paper award",
+   "title": "Gesticulator: A Framework for Semantically-aware Speech-driven Gesture Generation",
+   "authors": [
+    "Taras Kucherenko",
+    "Patrik Jonell",
+    "Sanne van Waveren",
+    "Gustav Henter",
+    "Simon Alexandersson",
+    "Iolanda Leite",
+    "Hedvig Kjellström"
+   ],
+   "track": "main",
+   "source": "https://icmi.acm.org/2020/index.php?id=award",
+   "evidence": "Best paper award Gesticulator: A Framework for Semantically-aware Speech-driven Gesture Generation. Taras Kucherenko, Patrik Jonell, Sanne van Waveren, Gustav Henter, Simon Alexandersson, Iolanda Leite, Hedvig Kjellström"
+  },
+  {
+   "venue": "ICMI",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best paper award",
+   "title": "SmellControl: The Study of Sense of Agency in Smell",
+   "authors": [
+    "Patricia Cornelio",
+    "Emanuela Maggioni",
+    "Giada Brianza",
+    "Sriram Subramanian",
+    "Marianna Obrist"
+   ],
+   "track": "main",
+   "source": "https://icmi.acm.org/2020/index.php?id=award",
+   "evidence": "Best paper award Gesticulator: A Framework for Semantically-aware Speech-driven Gesture Generation. Taras Kucherenko, Patrik Jonell, Sanne van Waveren, Gustav Henter, Simon Alexandersson, Iolanda Leite, Hedvig Kjellström SmellControl: The Study of Sense of Agency in Smell. Patricia Cornelio, Emanuela Maggioni, Giada Brianza, Sriram Subramanian, Marianna Obrist"
+  },
+  {
+   "venue": "ICMI",
+   "year": 2020,
+   "award": "student",
+   "awardLabel": "Best student paper award",
+   "title": "A Neural Architecture for Detecting User Confusion in Eye-tracking Data",
+   "authors": [
+    "Shane Sims",
+    "Cristina Conati"
+   ],
+   "track": "main",
+   "source": "https://icmi.acm.org/2020/index.php?id=award",
+   "evidence": "Best student paper award A Neural Architecture for Detecting User Confusion in Eye-tracking Data. Shane Sims, Cristina Conati"
+  },
+  {
+   "venue": "ICMI",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Awards",
+   "title": "AQ-GT: a Temporally Aligned and Quantized GRU-Transformer for Co-Speech Gesture Synthesis",
+   "authors": [
+    "Hendric Voß",
+    "Stefan Kopp"
+   ],
+   "track": "main",
+   "source": "https://icmi.acm.org/2023/awards",
+   "evidence": "Best Paper Awards EEG-based Cognitive Load Classification using Feature Masked Autoencoding and Emotion Transfer Learning Dustin Pulver, Prithila Angkan, Paul Hungler and Ali Etemad AQ-GT: a Temporally Aligned and Quantized GRU-Transformer for Co-Speech Gesture Synthesis Hendric Voß and Stefan Kopp"
+  },
+  {
+   "venue": "ICMI",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Awards",
+   "title": "EEG-based Cognitive Load Classification using Feature Masked Autoencoding and Emotion Transfer Learning",
+   "authors": [
+    "Dustin Pulver",
+    "Prithila Angkan",
+    "Paul Hungler",
+    "Ali Etemad"
+   ],
+   "track": "main",
+   "source": "https://icmi.acm.org/2023/awards",
+   "evidence": "Best Paper Awards EEG-based Cognitive Load Classification using Feature Masked Autoencoding and Emotion Transfer Learning Dustin Pulver, Prithila Angkan, Paul Hungler and Ali Etemad"
+  },
+  {
+   "venue": "ICMI",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Mitigation of gender bias in automatic facial non-verbal behaviors generation for interactive social agents",
+   "authors": [
+    "A. Delbosc",
+    "M. Ochs",
+    "N. Sabouret",
+    "B. Ravenet",
+    "S. Ayache"
+   ],
+   "track": "main",
+   "source": "https://icmi.acm.org/2024/awards/",
+   "evidence": "Best Paper Award Mitigation of gender bias in automatic facial non-verbal behaviors generation for interactive social agents A. Delbosc, M. Ochs, N. Sabouret, B. Ravenet, and S. Ayache"
+  },
+  {
+   "venue": "ICMI",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner Up",
+   "title": "Online Multimodal End-of-Turn Prediction for Three-party Conversations",
+   "authors": [
+    "M. C. Lee",
+    "Z. Deng"
+   ],
+   "track": "main",
+   "source": "https://icmi.acm.org/2024/awards/",
+   "evidence": "Best Paper Runner Up Online Multimodal End-of-Turn Prediction for Three-party Conversations M. C. Lee and Z. Deng"
+  },
+  {
+   "venue": "ICMI",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Speech-to-Joy: Self-Supervised Features for Enjoyment Prediction in Human–Robot Conversation",
+   "authors": [
+    "Ricardo Santana",
+    "Bahar Irfan",
+    "Erik Lagerstedt",
+    "Gabriel Skantze",
+    "Andre Pereira"
+   ],
+   "track": "main",
+   "source": "https://icmi.acm.org/2025/awards/",
+   "evidence": "Best Paper Awards Best Paper Ricardo Santana, Bahar Irfan, Erik Lagerstedt, Gabriel Skantze, and Andre Pereira, “Speech-to-Joy: Self-Supervised Features for Enjoyment Prediction in Human–Robot Conversation”"
+  },
+  {
+   "venue": "ICMI",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best paper Runner Up",
+   "title": "Exploring the effects of force feedback on VR Keyboards with varying visual designs",
+   "authors": [
+    "Zhenxing Li",
+    "Jari Kangas",
+    "Ahmed Farooq",
+    "Roope Raisamo"
+   ],
+   "track": "main",
+   "source": "https://icmi.acm.org/2025/awards/",
+   "evidence": "Best paper Runner Up Zhenxing Li, Jari Kangas, Ahmed Farooq, and Roope Raisamo, “Exploring the effects of force feedback on VR Keyboards with varying visual designs”"
+  },
+  {
+   "venue": "ICMI",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "SpikEy: Preventing Drink Spiking using Wearables",
+   "authors": [
+    "Zhigang Yin",
+    "Ngoc Thi Nguyen",
+    "Agustin Zuniga",
+    "Mohan Liyanage",
+    "Petteri Nurmi",
+    "Huber Flores"
+   ],
+   "track": "main",
+   "source": "https://icmi.acm.org/2025/awards/",
+   "evidence": "Best Student Paper Zhigang Yin, Ngoc Thi Nguyen, Agustin Zuniga, Mohan Liyanage, Petteri Nurmi, and Huber Flores, “SpikEy: Preventing Drink Spiking using Wearables”"
   },
   {
    "venue": "ICML",
@@ -113505,6 +115612,521 @@
   },
   {
    "venue": "Interspeech",
+   "year": 2015,
+   "award": "student",
+   "awardLabel": "ISCA Award for Best Student Paper",
+   "title": "A time delay neural network architecture for efficient modeling of long temporal contexts",
+   "authors": [
+    "Vijayaditya Peddinti",
+    "Daniel Povey",
+    "Sanjeev Khudanpur"
+   ],
+   "track": "main",
+   "source": "https://isca-speech.org/ISCA-Awards",
+   "alsoAt": [
+    "https://www.isca-archive.org/interspeech_2015/"
+   ],
+   "evidence": "ISCA Award for the best student paper at Interspeech 2015 (students in bold) … \"A Time Delay Neural Network Architecture for Efficient Modeling of Lang Temporal Context\", Peddinti, V., Povey, D., and Khudanpur, S. [ISCA Archive index https://www.isca-archive.org/interspeech_2015/: A time delay neural network architecture for efficient modeling of long temporal contexts Vijayaditya Peddinti, Daniel Povey, Sanjeev Khudanpur]"
+  },
+  {
+   "venue": "Interspeech",
+   "year": 2015,
+   "award": "student",
+   "awardLabel": "ISCA Award for Best Student Paper",
+   "title": "Adapting machine translation models toward misrecognized speech with text-to-speech pronunciation rules and acoustic confusability",
+   "authors": [
+    "Nicholas Ruiz",
+    "Qin Gao",
+    "William Lewis",
+    "Marcello Federico"
+   ],
+   "track": "main",
+   "source": "https://isca-speech.org/ISCA-Awards",
+   "alsoAt": [
+    "https://www.isca-archive.org/interspeech_2015/"
+   ],
+   "evidence": "ISCA Award for the best student paper at Interspeech 2015 (students in bold) \"Adapting Machine Translation Models towards Misrecognized Speech with Test-to-Speech Pronunciation Rules and Acoustic Confusability\", Ruis, N., Gao, Q, Lewis, W., and Federico, M. [ISCA Archive index https://www.isca-archive.org/interspeech_2015/: Adapting machine translation models toward misrecognized speech with text-to-speech pronunciation rules and acoustic confusability Nicholas Ruiz, Qin Gao, William Lewis, Marcello Federico]"
+  },
+  {
+   "venue": "Interspeech",
+   "year": 2015,
+   "award": "student",
+   "awardLabel": "ISCA Award for Best Student Paper",
+   "title": "Objective intelligibility assessment of text-to-speech systems through utterance verification",
+   "authors": [
+    "Raphael Ullmann",
+    "Ramya Rasipuram",
+    "Mathew Magimai-Doss",
+    "Hervé Bourlard"
+   ],
+   "track": "main",
+   "source": "https://isca-speech.org/ISCA-Awards",
+   "alsoAt": [
+    "https://www.isca-archive.org/interspeech_2015/"
+   ],
+   "evidence": "ISCA Award for the best student paper at Interspeech 2015 (students in bold) … \"Objective Intelligibility Assessment of Text-to-Speech Systems Systems through Utterance Verfication\", Ullmann, R., Rasipuram, R., Magimai-Dos, M., and Bourlard, H. [ISCA Archive index https://www.isca-archive.org/interspeech_2015/: Objective intelligibility assessment of text-to-speech systems through utterance verification Raphael Ullmann, Ramya Rasipuram, Mathew Magimai-Doss, Hervé Bourlard]"
+  },
+  {
+   "venue": "Interspeech",
+   "year": 2016,
+   "award": "student",
+   "awardLabel": "ISCA Award for Best Student Paper",
+   "title": "Characterizing Vocal Tract Dynamics Across Speakers Using Real-Time MRI",
+   "authors": [
+    "Tanner Sorensen",
+    "Asterios Toutios",
+    "Louis Goldstein",
+    "Shrikanth S. Narayanan"
+   ],
+   "track": "main",
+   "source": "https://isca-speech.org/ISCA-Awards",
+   "alsoAt": [
+    "https://www.isca-archive.org/interspeech_2016/"
+   ],
+   "evidence": "ISCA Award for Best Student Paper at Interspeech 2016 (students in bold) Characterizing Vocal Tract Dynamics Across Speakers Using Real-Time MRI\", Sorensen, T., Toutios, A., Goldstein, L., Narayanan, S. [ISCA Archive index https://www.isca-archive.org/interspeech_2016/: Characterizing Vocal Tract Dynamics Across Speakers Using Real-Time MRI Tanner Sorensen, Asterios Toutios, Louis Goldstein, Shrikanth S. Narayanan]"
+  },
+  {
+   "venue": "Interspeech",
+   "year": 2016,
+   "award": "student",
+   "awardLabel": "ISCA Award for Best Student Paper",
+   "title": "GlottDNN — A Full-Band Glottal Vocoder for Statistical Parametric Speech Synthesis",
+   "authors": [
+    "Manu Airaksinen",
+    "Bajibabu Bollepalli",
+    "Lauri Juvela",
+    "Zhizheng Wu",
+    "Simon King",
+    "Paavo Alku"
+   ],
+   "track": "main",
+   "source": "https://isca-speech.org/ISCA-Awards",
+   "alsoAt": [
+    "https://www.isca-archive.org/interspeech_2016/"
+   ],
+   "evidence": "ISCA Award for Best Student Paper at Interspeech 2016 (students in bold) … GlottDNN - A Full-Band Glottal Vocoder for Statistical Parametric Speech Synthesis\", Airaksinen, M., Bollepalli, B., Juvela, L., Wu, Zh, King, S., Alku, P. [ISCA Archive index https://www.isca-archive.org/interspeech_2016/: GlottDNN — A Full-Band Glottal Vocoder for Statistical Parametric Speech Synthesis Manu Airaksinen, Bajibabu Bollepalli, Lauri Juvela, Zhizheng Wu, Simon King, Paavo Alku]"
+  },
+  {
+   "venue": "Interspeech",
+   "year": 2016,
+   "award": "student",
+   "awardLabel": "ISCA Award for Best Student Paper",
+   "title": "The Rhythmic Constraint on Prosodic Boundaries in Mandarin Chinese Based on Corpora of Silent Reading and Speech Perception",
+   "authors": [
+    "Wei Lai",
+    "Jiahong Yuan",
+    "Ya Li",
+    "Xiaoying Xu",
+    "Mark Liberman"
+   ],
+   "track": "main",
+   "source": "https://isca-speech.org/ISCA-Awards",
+   "alsoAt": [
+    "https://www.isca-archive.org/interspeech_2016/"
+   ],
+   "evidence": "ISCA Award for Best Student Paper at Interspeech 2016 (students in bold) … The Rhythmic Constraint on Prosodic Boundaries in Mandarin Chinese Based on Corpora of Silent Reading and Speech Perception\",Wei, L, Yuan, J. Li, Y, Xu, X, Liberman, M. [ISCA Archive index https://www.isca-archive.org/interspeech_2016/: The Rhythmic Constraint on Prosodic Boundaries in Mandarin Chinese Based on Corpora of Silent Reading and Speech Perception Wei Lai, Jiahong Yuan, Ya Li, Xiaoying Xu, Mark Liberman]"
+  },
+  {
+   "venue": "Interspeech",
+   "year": 2017,
+   "award": "student",
+   "awardLabel": "ISCA Award for Best Student Paper",
+   "title": "Hidden Markov Model Variational Autoencoder for Acoustic Unit Discovery",
+   "authors": [
+    "Janek Ebbers",
+    "Jahn Heymann",
+    "Lukas Drude",
+    "Thomas Glarner",
+    "Reinhold Haeb-Umbach",
+    "Bhiksha Raj"
+   ],
+   "track": "main",
+   "source": "https://isca-speech.org/ISCA-Awards",
+   "alsoAt": [
+    "https://www.isca-archive.org/interspeech_2017/"
+   ],
+   "evidence": "ISCA Award for Best Student Paper (students in bold): \"Hidden Markof Model Variational Autoencoder for Acoustic Unit Discovery\", Ebbers, J., Heymann, J., Drude, L., Glarner, Th., Haeb-Umbach, R., Raj, Bh. [ISCA Archive index https://www.isca-archive.org/interspeech_2017/: Hidden Markov Model Variational Autoencoder for Acoustic Unit Discovery Janek Ebbers, Jahn Heymann, Lukas Drude, Thomas Glarner, Reinhold Haeb-Umbach, Bhiksha Raj]"
+  },
+  {
+   "venue": "Interspeech",
+   "year": 2017,
+   "award": "student",
+   "awardLabel": "ISCA Award for Best Student Paper",
+   "title": "Residual Memory Networks in Language Modeling: Improving the Reputation of Feed-Forward Networks",
+   "authors": [
+    "Karel Beneš",
+    "Murali Karthick Baskar",
+    "Lukáš Burget"
+   ],
+   "track": "main",
+   "source": "https://isca-speech.org/ISCA-Awards",
+   "alsoAt": [
+    "https://www.isca-archive.org/interspeech_2017/"
+   ],
+   "evidence": "ISCA Award for Best Student Paper (students in bold): … \"Residual Memory Networks in Language Modeling: Improving the Reputation of Feed-Forward Networks\", Beneš, K., Baskar, M., Burget, L. [ISCA Archive index https://www.isca-archive.org/interspeech_2017/: Residual Memory Networks in Language Modeling: Improving the Reputation of Feed-Forward Networks Karel Beneš, Murali Karthick Baskar, Lukáš Burget]"
+  },
+  {
+   "venue": "Interspeech",
+   "year": 2017,
+   "award": "student",
+   "awardLabel": "ISCA Award for Best Student Paper",
+   "title": "VoxCeleb: A Large-Scale Speaker Identification Dataset",
+   "authors": [
+    "Arsha Nagrani",
+    "Joon Son Chung",
+    "Andrew Zisserman"
+   ],
+   "track": "main",
+   "source": "https://isca-speech.org/ISCA-Awards",
+   "alsoAt": [
+    "https://www.isca-archive.org/interspeech_2017/"
+   ],
+   "evidence": "ISCA Award for Best Student Paper (students in bold): … \"VoxCeleb: A large-scale speaker identification dataset\", Nagrani, A., Son Chung, J. and Zisserman, A. [ISCA Archive index https://www.isca-archive.org/interspeech_2017/: VoxCeleb: A Large-Scale Speaker Identification Dataset Arsha Nagrani, Joon Son Chung, Andrew Zisserman]"
+  },
+  {
+   "venue": "Interspeech",
+   "year": 2018,
+   "award": "student",
+   "awardLabel": "ISCA Award for Best Student Paper",
+   "title": "Detecting Depression with Audio/Text Sequence Modeling of Interviews",
+   "authors": [
+    "Tuka Al Hanai",
+    "Mohammad Ghassemi",
+    "James Glass"
+   ],
+   "track": "main",
+   "source": "https://isca-speech.org/ISCA-Awards",
+   "alsoAt": [
+    "https://www.isca-archive.org/interspeech_2018/"
+   ],
+   "evidence": "ISCA Award for Best Student Paper (students in bold): … “Detecting Depression with Audio/Text Sequence Modeling of Interviews”, Tuka Al Hanai, Mohammad Ghassemi and James Glass [ISCA Archive index https://www.isca-archive.org/interspeech_2018/: Detecting Depression with Audio/Text Sequence Modeling of Interviews Tuka Al Hanai, Mohammad Ghassemi, James Glass]"
+  },
+  {
+   "venue": "Interspeech",
+   "year": 2018,
+   "award": "student",
+   "awardLabel": "ISCA Award for Best Student Paper",
+   "title": "Joint Learning of Interactive Spoken Content Retrieval and Trainable User Simulator",
+   "authors": [
+    "Pei-Hung Chung",
+    "Kuan Tung",
+    "Ching-Lun Tai",
+    "Hung-yi Lee"
+   ],
+   "track": "main",
+   "source": "https://isca-speech.org/ISCA-Awards",
+   "alsoAt": [
+    "https://www.isca-archive.org/interspeech_2018/"
+   ],
+   "evidence": "ISCA Award for Best Student Paper (students in bold): … “Joint Learning of Interactive Spoken Content Retrieval and Trainable User Simulator”, Pei-Hung Chung, Kuan Tung, Ching-Lun Taiand Hung-yi Lee [ISCA Archive index https://www.isca-archive.org/interspeech_2018/: Joint Learning of Interactive Spoken Content Retrieval and Trainable User Simulator Pei-Hung Chung, Kuan Tung, Ching-Lun Tai, Hung-yi Lee]"
+  },
+  {
+   "venue": "Interspeech",
+   "year": 2018,
+   "award": "student",
+   "awardLabel": "ISCA Award for Best Student Paper",
+   "title": "Multi-Modal Data Augmentation for End-to-end ASR",
+   "authors": [
+    "Adithya Renduchintala",
+    "Shuoyang Ding",
+    "Matthew Wiesner",
+    "Shinji Watanabe"
+   ],
+   "track": "main",
+   "source": "https://isca-speech.org/ISCA-Awards",
+   "alsoAt": [
+    "https://www.isca-archive.org/interspeech_2018/"
+   ],
+   "evidence": "ISCA Award for Best Student Paper (students in bold): “Multi-Modal Data Augmentation for End-to-end ASR”, Adithya Renduchintala, Shuoyang Ding, Matthew Wiesner and Shinji Watanabe [ISCA Archive index https://www.isca-archive.org/interspeech_2018/: Multi-Modal Data Augmentation for End-to-end ASR Adithya Renduchintala, Shuoyang Ding, Matthew Wiesner, Shinji Watanabe]"
+  },
+  {
+   "venue": "Interspeech",
+   "year": 2019,
+   "award": "student",
+   "awardLabel": "ISCA Award for Best Student Paper",
+   "title": "Adversarially Trained End-to-End Korean Singing Voice Synthesis System",
+   "authors": [
+    "Juheon Lee",
+    "Hyeong-Seok Choi",
+    "Chang-Bin Jeon",
+    "Junghyun Koo",
+    "Kyogu Lee"
+   ],
+   "track": "main",
+   "source": "https://isca-speech.org/ISCA-Awards",
+   "alsoAt": [
+    "https://www.isca-archive.org/interspeech_2019/"
+   ],
+   "evidence": "ISCA Award for Best Student Paper (students in bold): \"Adversarially Trained End-to-end Korean Singing Voice Synthesis System\", Juheon Lee, Hyeong-Seok Choi, Chang-Bin Jeon, Junghyun Koo, Kyogu Lee [ISCA Archive index https://www.isca-archive.org/interspeech_2019/: Adversarially Trained End-to-End Korean Singing Voice Synthesis System Juheon Lee, Hyeong-Seok Choi, Chang-Bin Jeon, Junghyun Koo, Kyogu Lee]"
+  },
+  {
+   "venue": "Interspeech",
+   "year": 2019,
+   "award": "student",
+   "awardLabel": "ISCA Award for Best Student Paper",
+   "title": "Evaluating Near End Listening Enhancement Algorithms in Realistic Environments",
+   "authors": [
+    "Carol Chermaz",
+    "Cassia Valentini-Botinhao",
+    "Henning Schepker",
+    "Simon King"
+   ],
+   "track": "main",
+   "source": "https://isca-speech.org/ISCA-Awards",
+   "alsoAt": [
+    "https://www.isca-archive.org/interspeech_2019/"
+   ],
+   "evidence": "ISCA Award for Best Student Paper (students in bold): … \"Evaluating Near End Listening Enhancement Algorithms in Realistic Environments\", Carol Chermaz, Cassia Valentini-Botinhao, Henning Schepker, Simon King [ISCA Archive index https://www.isca-archive.org/interspeech_2019/: Evaluating Near End Listening Enhancement Algorithms in Realistic Environments Carol Chermaz, Cassia Valentini-Botinhao, Henning Schepker, Simon King]"
+  },
+  {
+   "venue": "Interspeech",
+   "year": 2019,
+   "award": "student",
+   "awardLabel": "ISCA Award for Best Student Paper",
+   "title": "Language Modeling with Deep Transformers",
+   "authors": [
+    "Kazuki Irie",
+    "Albert Zeyer",
+    "Ralf Schlüter",
+    "Hermann Ney"
+   ],
+   "track": "main",
+   "source": "https://isca-speech.org/ISCA-Awards",
+   "alsoAt": [
+    "https://www.isca-archive.org/interspeech_2019/"
+   ],
+   "evidence": "ISCA Award for Best Student Paper (students in bold): … \"Language Modeling with Deep Transformers\", Kazuki Irie, Albert Zeyer, Ralf Schlueter, Hermann Ney [ISCA Archive index https://www.isca-archive.org/interspeech_2019/: Language Modeling with Deep Transformers Kazuki Irie, Albert Zeyer, Ralf Schlüter, Hermann Ney]"
+  },
+  {
+   "venue": "Interspeech",
+   "year": 2020,
+   "award": "student",
+   "awardLabel": "ISCA Award for Best Student Paper",
+   "title": "FaceFilter: Audio-Visual Speech Separation Using Still Images",
+   "authors": [
+    "Soo-Whan Chung",
+    "Soyeon Choe",
+    "Joon Son Chung",
+    "Hong-Goo Kang"
+   ],
+   "track": "main",
+   "source": "https://isca-speech.org/ISCA-Awards",
+   "alsoAt": [
+    "https://www.isca-archive.org/interspeech_2020/"
+   ],
+   "evidence": "ISCA Award for Best Student Paper (students in bold): … \"FaceFilter: Audio-visual speech separation using still images\", Soo-Whan Chung, Soyeon Choe, Joon Son Chung and Hong-Goo Kang [ISCA Archive index https://www.isca-archive.org/interspeech_2020/: FaceFilter: Audio-Visual Speech Separation Using Still Images Soo-Whan Chung, Soyeon Choe, Joon Son Chung, Hong-Goo Kang]"
+  },
+  {
+   "venue": "Interspeech",
+   "year": 2020,
+   "award": "student",
+   "awardLabel": "ISCA Award for Best Student Paper",
+   "title": "Phonetic Accommodation of L2 German Speakers to the Virtual Language Learning Tutor Mirabella",
+   "authors": [
+    "Iona Gessinger",
+    "Bernd Möbius",
+    "Bistra Andreeva",
+    "Eran Raveh",
+    "Ingmar Steiner"
+   ],
+   "track": "main",
+   "source": "https://isca-speech.org/ISCA-Awards",
+   "alsoAt": [
+    "https://www.isca-archive.org/interspeech_2020/"
+   ],
+   "evidence": "ISCA Award for Best Student Paper (students in bold): … \"Phonetic Accommodation of L2 German Speakers to the Virtual Language Learning Tutor Mirabella\", Iona Gessinger, Bernd Möbius, Bistra Andreeva, Eran Raveh and Ingmar Steiner [ISCA Archive index https://www.isca-archive.org/interspeech_2020/: Phonetic Accommodation of L2 German Speakers to the Virtual Language Learning Tutor Mirabella Iona Gessinger, Bernd Möbius, Bistra Andreeva, Eran Raveh, Ingmar Steiner]"
+  },
+  {
+   "venue": "Interspeech",
+   "year": 2020,
+   "award": "student",
+   "awardLabel": "ISCA Award for Best Student Paper",
+   "title": "Vector-Quantized Autoregressive Predictive Coding",
+   "authors": [
+    "Yu-An Chung",
+    "Hao Tang",
+    "James Glass"
+   ],
+   "track": "main",
+   "source": "https://isca-speech.org/ISCA-Awards",
+   "alsoAt": [
+    "https://www.isca-archive.org/interspeech_2020/"
+   ],
+   "evidence": "ISCA Award for Best Student Paper (students in bold): \"Vector-Quantized Autoregressive Predictive Coding\", Yu-An Chung, Hao Tang and James Glass [ISCA Archive index https://www.isca-archive.org/interspeech_2020/: Vector-Quantized Autoregressive Predictive Coding Yu-An Chung, Hao Tang, James Glass]"
+  },
+  {
+   "venue": "Interspeech",
+   "year": 2021,
+   "award": "student",
+   "awardLabel": "ISCA Award for Best Student Paper",
+   "title": "Exploring the Potential of Lexical Paraphrases for Mitigating Noise-Induced Comprehension Errors",
+   "authors": [
+    "Anupama Chingacham",
+    "Vera Demberg",
+    "Dietrich Klakow"
+   ],
+   "track": "main",
+   "source": "https://isca-speech.org/ISCA-Awards",
+   "alsoAt": [
+    "https://www.interspeech2021.org/best-student-paper-awards"
+   ],
+   "evidence": "ISCA Award for Best Student Paper (students in bold): \"Exploring the Potential of Lexical Paraphrases for Mitigating Noise-Induced Comprehension Errors\", Anupama Chingacham, Vera Demberg and Dietrich Klakow"
+  },
+  {
+   "venue": "Interspeech",
+   "year": 2021,
+   "award": "student",
+   "awardLabel": "ISCA Award for Best Student Paper",
+   "title": "Optimally Encoding Inductive Biases into the Transformer Improves End-to-End Speech Translation",
+   "authors": [
+    "Piyush Vyas",
+    "Anastasia Kuznetsova",
+    "Donald Williamson"
+   ],
+   "track": "main",
+   "source": "https://isca-speech.org/ISCA-Awards",
+   "alsoAt": [
+    "https://www.interspeech2021.org/best-student-paper-awards"
+   ],
+   "evidence": "ISCA Award for Best Student Paper (students in bold): … \"Optimally Encoding Inductive Biases into the Transformer Improves End-to-End Speech Translation\", Piyush Vyas, Anastasia Kuznetsova and Donald Williamson"
+  },
+  {
+   "venue": "Interspeech",
+   "year": 2021,
+   "award": "student",
+   "awardLabel": "ISCA Award for Best Student Paper",
+   "title": "StarGANv2-VC: A Diverse, Unsupervised, Non-parallel Framework for Natural-Sounding Voice Conversion",
+   "authors": [
+    "Yinghao Li",
+    "Ali Zare",
+    "Nima Mesgarani"
+   ],
+   "track": "main",
+   "source": "https://isca-speech.org/ISCA-Awards",
+   "alsoAt": [
+    "https://www.interspeech2021.org/best-student-paper-awards"
+   ],
+   "evidence": "ISCA Award for Best Student Paper (students in bold): … \"StarGANv2-VC: A Diverse, Unsupervised, Non-parallel Framework for Natural-Sounding Voice Conversion\", Yinghao Li, Ali Zare and Nima Mesgarani"
+  },
+  {
+   "venue": "Interspeech",
+   "year": 2022,
+   "award": "student",
+   "awardLabel": "ISCA Award for Best Student Paper",
+   "title": "Investigating perception of spoken dialogue acceptability through surprisal",
+   "authors": [
+    "Sarenne Carrol Wallbridge",
+    "Catherine Lai",
+    "Peter Bell"
+   ],
+   "track": "main",
+   "source": "https://isca-speech.org/ISCA-Awards",
+   "alsoAt": [
+    "https://www.interspeech2022.org/students/"
+   ],
+   "evidence": "ISCA Award for Best Student Paper (students in bold): … \"Investigating perception of spoken dialogue acceptability through surprisal\", Sarenne Carrol Wallbridge, Catherine Lai and Peter Bell"
+  },
+  {
+   "venue": "Interspeech",
+   "year": 2022,
+   "award": "student",
+   "awardLabel": "ISCA Award for Best Student Paper",
+   "title": "Transfer Learning Framework for Low-Resource Text-to-Speech using a Large-Scale Unlabeled Speech Corpus",
+   "authors": [
+    "Minchan Kim",
+    "Myeonghun Jeong",
+    "Byoung Jin Choi",
+    "Sunghwan Ahn",
+    "Joun Yeop Lee",
+    "Nam Soo Kim"
+   ],
+   "track": "main",
+   "source": "https://isca-speech.org/ISCA-Awards",
+   "alsoAt": [
+    "https://www.interspeech2022.org/students/"
+   ],
+   "evidence": "ISCA Award for Best Student Paper (students in bold): \"Transfer Learning Framework for Low-Resource Text-to-Speech using a Large-Scale Unlabeled Speech Corpus \", Minchan Kim, Myeonghun Jeong, Byoung Jin Choi, Sunghwan Ahn, Joun Yeop Lee and Nam Soo Kim"
+  },
+  {
+   "venue": "Interspeech",
+   "year": 2022,
+   "award": "student",
+   "awardLabel": "ISCA Award for Best Student Paper",
+   "title": "Tree-constrained Pointer Generator with Graph Neural Network Encodings for Contextual Speech Recognition",
+   "authors": [
+    "Guangzhi Sun",
+    "Chao Zhang",
+    "Phil Woodland"
+   ],
+   "track": "main",
+   "source": "https://isca-speech.org/ISCA-Awards",
+   "alsoAt": [
+    "https://www.interspeech2022.org/students/"
+   ],
+   "evidence": "ISCA Award for Best Student Paper (students in bold): … \"Tree-constrained Pointer Generator with Graph Neural Network Encodings for Contextual Speech Recognition\", Guangzhi Sun, Chao Zhang and Phil Woodland"
+  },
+  {
+   "venue": "Interspeech",
+   "year": 2023,
+   "award": "student",
+   "awardLabel": "ISCA Award for Best Student Paper",
+   "title": "Diverse and Expressive Speech Prosody Prediction with Denoising Diffusion Probabilistic Model",
+   "authors": [
+    "Xiang Li",
+    "Songxiang Liu",
+    "Max W. Y. Lam",
+    "Zhiyong Wu",
+    "Chao Weng",
+    "Helen Meng"
+   ],
+   "track": "main",
+   "source": "https://isca-speech.org/ISCA-Awards",
+   "alsoAt": [
+    "https://www.isca-archive.org/interspeech_2023/"
+   ],
+   "evidence": "ISCA Award for Best Student Paper (students in bold): \"Diverse and Expressive Speech Prosody Prediction with Denoising Diffusion Probabilistic Model\", Xiang Li, Songxiang Liu, Max W. Y. Lam, Zhiyong Wu, Chao Weng and Helen Meng [ISCA Archive index https://www.isca-archive.org/interspeech_2023/: Diverse and Expressive Speech Prosody Prediction with Denoising Diffusion Probabilistic Model Xiang Li, Songxiang Liu, Max W. Y. Lam, Zhiyong Wu, Chao Weng, Helen Meng]"
+  },
+  {
+   "venue": "Interspeech",
+   "year": 2023,
+   "award": "student",
+   "awardLabel": "ISCA Award for Best Student Paper",
+   "title": "Multimodal Turn-Taking Model Using Visual Cues for End-of-Utterance Prediction in Spoken Dialogue Systems",
+   "authors": [
+    "Fuma Kurata",
+    "Mao Saeki",
+    "Shinya Fujie",
+    "Yoichi Matsuyama"
+   ],
+   "track": "main",
+   "source": "https://isca-speech.org/ISCA-Awards",
+   "alsoAt": [
+    "https://www.isca-archive.org/interspeech_2023/"
+   ],
+   "evidence": "ISCA Award for Best Student Paper (students in bold): … \"Multimodal Turn-Taking Model Using Visual Cues for End-of-Utterance Prediction in Spoken Dialogue Systems\", Fuma Kurata, Mao Saeki, Shinya Fujie and Yoichi Matsuyama [ISCA Archive index https://www.isca-archive.org/interspeech_2023/: Multimodal Turn-Taking Model Using Visual Cues for End-of-Utterance Prediction in Spoken Dialogue Systems Fuma Kurata, Mao Saeki, Shinya Fujie, Yoichi Matsuyama]"
+  },
+  {
+   "venue": "Interspeech",
+   "year": 2023,
+   "award": "student",
+   "awardLabel": "ISCA Award for Best Student Paper",
+   "title": "Sociodemographic and Attitudinal Effects on Dialect Speakers’ Articulation of the Standard Language: Evidence from German-Speaking Switzerland",
+   "authors": [
+    "Carina Steiner",
+    "Dieter Studer-Joho",
+    "Corinne Lanthemann",
+    "Andrin Büchler",
+    "Adrian Leemann"
+   ],
+   "track": "main",
+   "source": "https://isca-speech.org/ISCA-Awards",
+   "alsoAt": [
+    "https://www.isca-archive.org/interspeech_2023/"
+   ],
+   "evidence": "ISCA Award for Best Student Paper (students in bold): … \"Sociodemographic and Attitudinal Effects on Dialect Speakers’ Articulation of the Standard Language: Evidence from German-Speaking Switzerland\", Carina Steiner, Dieter Studer-Joho, Corinne Lanthemann, Andrin Büchler and Adrian Leemann [ISCA Archive index https://www.isca-archive.org/interspeech_2023/: Sociodemographic and Attitudinal Effects on Dialect Speakers’ Articulation of the Standard Language: Evidence from German-Speaking Switzerland Carina Steiner, Dieter Studer-Joho, Corinne Lanthemann, Andrin Büchler, Adrian Leemann]"
+  },
+  {
+   "venue": "Interspeech",
    "year": 2024,
    "award": "best",
    "awardLabel": "Best Paper Award",
@@ -113535,6 +116157,65 @@
    "track": "main",
    "source": "https://interspeech2024.org/best-paper-award-2024/",
    "evidence": "Interspeech 2024 Best Paper Award: EFFUSE: Efficient Self-Supervised Feature Fusion for E2E ASR in Low Resource and Multilingual Scenarios — Tejes Srivastava, Jiatong Shi, William Chen, Shinji Watanabe"
+  },
+  {
+   "venue": "Interspeech",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "ISCA Award for Best Student Paper",
+   "title": "A Contrastive Learning Approach to Mitigate Bias in Speech Models",
+   "authors": [
+    "Alkis Koudounas",
+    "Flavio Giobergia",
+    "Eliana Pastor",
+    "Elena Baralis"
+   ],
+   "track": "main",
+   "source": "https://isca-speech.org/ISCA-Awards",
+   "alsoAt": [
+    "https://www.isca-archive.org/interspeech_2024/"
+   ],
+   "evidence": "ISCA Award for Best Student Paper (students in bold): … \"A Contrastive Learning Approach to Mitigate Bias in Speech Models\", Alkis Koudounas, Flavio Giobergia, Eliana Pastor and Elena Baralis [ISCA Archive index https://www.isca-archive.org/interspeech_2024/: A Contrastive Learning Approach to Mitigate Bias in Speech Models Alkis Koudounas, Flavio Giobergia, Eliana Pastor, Elena Baralis]"
+  },
+  {
+   "venue": "Interspeech",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "ISCA Award for Best Student Paper",
+   "title": "Analysis of articulatory setting for L1 and L2 English speakers using MRI data",
+   "authors": [
+    "Kevin Huang",
+    "Jack Goldberg",
+    "Louis Goldstein",
+    "Shrikanth Narayanan"
+   ],
+   "track": "main",
+   "source": "https://isca-speech.org/ISCA-Awards",
+   "alsoAt": [
+    "https://www.isca-archive.org/interspeech_2024/"
+   ],
+   "evidence": "ISCA Award for Best Student Paper (students in bold): \"Analysis of articulatory setting for L1 and L2 English speakers using MRI data\", Kevin Huang, Jack Goldberg, Louis Goldstein and Shrikanth Narayanan [ISCA Archive index https://www.isca-archive.org/interspeech_2024/: Analysis of articulatory setting for L1 and L2 English speakers using MRI data Kevin Huang, Jack Goldberg, Louis Goldstein, Shrikanth Narayanan]"
+  },
+  {
+   "venue": "Interspeech",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "ISCA Award for Best Student Paper",
+   "title": "SimpleSpeech: Towards Simple and Efficient Text-to-Speech with Scalar Latent Transformer Diffusion Models",
+   "authors": [
+    "Dongchao Yang",
+    "Dingdong Wang",
+    "Haohan Guo",
+    "Xueyuan Chen",
+    "Xixin Wu",
+    "Helen Meng"
+   ],
+   "track": "main",
+   "source": "https://isca-speech.org/ISCA-Awards",
+   "alsoAt": [
+    "https://www.isca-archive.org/interspeech_2024/"
+   ],
+   "evidence": "ISCA Award for Best Student Paper (students in bold): … SimpleSpeech: Towards Simple and Efficient Text-to-Speech with Scalar Latent Transformer Diffusion Models \", Dongchao Yang, Dingdong Wang, Haohan Guo, Xueyuan Chen, Xixin Wu and Helen Meng [ISCA Archive index https://www.isca-archive.org/interspeech_2024/: SimpleSpeech: Towards Simple and Efficient Text-to-Speech with Scalar Latent Transformer Diffusion Models Dongchao Yang, Dingdong Wang, Haohan Guo, Xueyuan Chen, Xixin Wu, Helen Meng]"
   },
   {
    "venue": "Interspeech",
@@ -113607,6 +116288,65 @@
    "track": "main",
    "source": "https://www.interspeech2025.org/best-student-papers",
    "evidence": "\"OWSM v4: Improving Open Whisper-Style Speech Models via Data Scaling and Cleaning Models\", Yifan Peng, Muhammad Shakeel, Yui Sudo, William Chen, Jinchuan Tian, Chyi-Jiunn Lin and Shinji Watanabe [the page's nominee list prints the title without \"Models\": Yifan Peng, Shakeel Muhammad, Yui Sudo, William Chen, Jinchuan Tian, Chyi-Jiunn Lin, Shinji Watanabe, \"OWSM v4: Improving Open Whisper-Style Speech Models via Data Scaling and Cleaning\".]"
+  },
+  {
+   "venue": "Interspeech",
+   "year": 2026,
+   "award": "student",
+   "awardLabel": "ISCA Award for Best Student Paper",
+   "title": "Lightweight Detection and Model Attribution of Synthetic Speech via Residual Statistical Fingerprints",
+   "authors": [
+    "Matías Pizarro",
+    "Mike Laszkiewicz",
+    "Dorothea Kolossa",
+    "Asja Fischer"
+   ],
+   "track": "main",
+   "source": "https://isca-speech.org/ISCA-Awards",
+   "alsoAt": [
+    "https://www.isca-archive.org/interspeech_2026/"
+   ],
+   "evidence": "ISCA Award for Best Student Paper (students in bold) … “Lightweight Detection and Model Attribution of Synthetic Speech via Residual Statistical Fingerprints” Matías Pizarro, Mike Laszkiewicz, Dorothea Kolossa, Asja Fischer [ISCA Archive index https://www.isca-archive.org/interspeech_2026/: Lightweight Detection and Model Attribution of Synthetic Speech via Residual Statistical Fingerprints Matías Pizarro, Mike Laszkiewicz, Dorothea Kolossa, Asja Fischer]"
+  },
+  {
+   "venue": "Interspeech",
+   "year": 2026,
+   "award": "student",
+   "awardLabel": "ISCA Award for Best Student Paper",
+   "title": "MOV-AAD: A Large-Scale Multimodal Dataset for Auditory Attention Decoding During Moving Conversations",
+   "authors": [
+    "Xiaomin He",
+    "Vishal Choudhari",
+    "Tristan J. Spratt",
+    "Aarya Raghavan",
+    "Richard T. Lee",
+    "Nima Mesgarani"
+   ],
+   "track": "main",
+   "source": "https://isca-speech.org/ISCA-Awards",
+   "alsoAt": [
+    "https://www.isca-archive.org/interspeech_2026/"
+   ],
+   "evidence": "ISCA Award for Best Student Paper (students in bold) \"MOV-AAD: A Large-Scale Multimodal Dataset for Auditory Attention Decoding During Moving Conversations\" Xiaomin He, Vishal Choudhari, Tristan J. Spratt, Aarya Raghavan, Richard T. Lee, Nima Mesgarani [ISCA Archive index https://www.isca-archive.org/interspeech_2026/: MOV-AAD: A Large-Scale Multimodal Dataset for Auditory Attention Decoding During Moving Conversations Xiaomin He, Vishal Choudhari, Tristan J. Spratt, Aarya Raghavan, Richard T. Lee, Nima Mesgarani]"
+  },
+  {
+   "venue": "Interspeech",
+   "year": 2026,
+   "award": "student",
+   "awardLabel": "ISCA Award for Best Student Paper",
+   "title": "VOSSA: Voiceprint Optimization for Streaming Speech Architectures",
+   "authors": [
+    "Mu-Ruei Tseng",
+    "Waris Quamer",
+    "Ghady Nasrallah",
+    "Ricardo Gutierrez-Osuna"
+   ],
+   "track": "main",
+   "source": "https://isca-speech.org/ISCA-Awards",
+   "alsoAt": [
+    "https://www.isca-archive.org/interspeech_2026/"
+   ],
+   "evidence": "ISCA Award for Best Student Paper (students in bold) … “VOSSA: Voiceprint Optimization for Streaming Speech Architectures” Mu-Ruei Tseng, Waris Quamer, Ghady Nasrallah, Ricardo Gutierrez-Osuna [ISCA Archive index https://www.isca-archive.org/interspeech_2026/: VOSSA: Voiceprint Optimization for Streaming Speech Architectures Mu-Ruei Tseng, Waris Quamer, Ghady Nasrallah, Ricardo Gutierrez-Osuna]"
   },
   {
    "venue": "IPDPS",
@@ -119772,6 +122512,286 @@
    "track": "main",
    "source": "https://itcs-conf.org/itcs26/itcs26-program.html",
    "evidence": "Hardness of Range Avoidance and Proof Complexity Generators from Demi-Bits [ video ] H. Ren, Y. Wang, Y. Zhong Best student paper award"
+  },
+  {
+   "venue": "IUI",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Long Paper",
+   "title": "Binary Space Partitioning Layouts To Help Build Better Information Dashboards",
+   "authors": [
+    "Patrick Hertzog"
+   ],
+   "track": "main",
+   "source": "https://iui.acm.org/2015/program.html",
+   "evidence": "Long Best Long Paper Binary Space Partitioning Layouts To Help Build Better Information Dashboards Patrick Hertzog"
+  },
+  {
+   "venue": "IUI",
+   "year": 2015,
+   "award": "category",
+   "awardLabel": "Best Short Paper",
+   "title": "Inferring Meal Eating Activities in Real World Settings from Ambient Sounds: A Feasibility Study",
+   "authors": [
+    "Edison Thomaz",
+    "Cheng Zhang",
+    "Irfan Essa",
+    "Gregory Abowd"
+   ],
+   "track": "main",
+   "source": "https://iui.acm.org/2015/program.html",
+   "evidence": "Short Best Short Paper Inferring Meal Eating Activities in Real World Settings from Ambient Sounds: A Feasibility Study Edison Thomaz, Georgia Institute of Technology; Cheng Zhang, Georgia Institute of Technology; Irfan Essa, Georgia Institute of Technology; Gregory Abowd"
+  },
+  {
+   "venue": "IUI",
+   "year": 2015,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Automatic Detection of Learning-Centered Affective States in the Wild",
+   "authors": [
+    "Nigel Bosch",
+    "Sidney D'Mello",
+    "Ryan Baker",
+    "Jaclyn Ocumpaugh",
+    "Valerie Shute",
+    "Matthew Ventura",
+    "Lubin Wang",
+    "Weinan Zhao"
+   ],
+   "track": "main",
+   "source": "https://iui.acm.org/2015/program.html",
+   "evidence": "Long Honorable Mention Automatic Detection of Learning-Centered Affective States in the Wild Nigel Bosch, University of Notre Dame; Sidney D'Mello, University of Notre Dame; Ryan Baker, Teachers College, Columbia University; Jaclyn Ocumpaugh, Columbia University; Valerie Shute, Florida State University; Matthew Ventura, Florida State University; Lubin Wang, Florida State University; Weinan Zhao"
+  },
+  {
+   "venue": "IUI",
+   "year": 2015,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "User-directed Non-Disruptive Topic Model Update for Effective Exploration of Dynamic Content",
+   "authors": [
+    "Yi Yang",
+    "Shimei Pan",
+    "Yangqiu Song",
+    "Jie Lu",
+    "Mercan Topkara"
+   ],
+   "track": "main",
+   "source": "https://iui.acm.org/2015/program.html",
+   "evidence": "Long Honorable Mention User-directed Non-Disruptive Topic Model Update for Effective Exploration of Dynamic Content Yi Yang, Northwestern University; Shimei Pan, UMBC; Yangqiu Song, University of Illinois at Urbana-Champaign; Jie Lu, IBM T.J. Watson Research Center; Mercan Topkara"
+  },
+  {
+   "venue": "IUI",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "UI X-Ray: Interactive Mobile UI Testing Based on Computer Vision",
+   "authors": [
+    "Chun-Fu Chen",
+    "Marco Pistoia",
+    "Conglei Shi",
+    "Paolo Girolami",
+    "Joseph Ligman",
+    "Yong Wang"
+   ],
+   "track": "main",
+   "source": "https://iui.acm.org/2017/awards.html",
+   "evidence": "Best Paper Award \"UI X-Ray: Interactive Mobile UI Testing Based on Computer Vision\" Chun-Fu Chen, Marco Pistoia, Conglei Shi, Paolo Girolami, Joseph Ligman, Yong Wang"
+  },
+  {
+   "venue": "IUI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honourable Mention",
+   "title": "Don't Just Swipe Left, Tell Me Why: Enhancing Gesture-based Feedback with Reason Bins",
+   "authors": [
+    "Juan Beltran",
+    "Ziqi Huang",
+    "Azza Abouzied",
+    "Arnab Nandi"
+   ],
+   "track": "main",
+   "source": "https://iui.acm.org/2017/awards.html",
+   "evidence": "Best Paper Honourable Mention \"Don't Just Swipe Left, Tell Me Why: Enhancing Gesture-based Feedback with Reason Bins\" Juan Beltran, Ziqi Huang, Azza Abouzied, Arnab Nandi"
+  },
+  {
+   "venue": "IUI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Best Student Paper Honourable Mention",
+   "title": "DyFAV: Dynamic Feature Selection and Voting for real-time recognition of fingerspelled alphabet using wearables",
+   "authors": [
+    "Prajwal Paudyal",
+    "Junghyo Lee",
+    "Ayan Banerjee",
+    "Sandeep Gupta"
+   ],
+   "track": "main",
+   "source": "https://iui.acm.org/2017/awards.html",
+   "evidence": "Best Student Paper Honourable Mention \"DyFAV: Dynamic Feature Selection and Voting for real-time recognition of fingerspelled alphabet using wearables\" Prajwal Paudyal, Junghyo Lee, Ayan Banerjee, Sandeep Gupta"
+  },
+  {
+   "venue": "IUI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Best Student Paper Honourable Mention",
+   "title": "Help, It Looks Confusing: GUI Task Automation Through Demonstration and Follow-up Questions",
+   "authors": [
+    "Thanapong Intharah",
+    "Daniyar Turmukhambetov",
+    "Gabriel Brostow"
+   ],
+   "track": "main",
+   "source": "https://iui.acm.org/2017/awards.html",
+   "evidence": "Best Student Paper Honourable Mention \"Help, It Looks Confusing: GUI Task Automation Through Demonstration and Follow-up Questions\" Thanapong Intharah, Daniyar Turmukhambetov, Gabriel Brostow"
+  },
+  {
+   "venue": "IUI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honourable Mention",
+   "title": "Social Intelligence Modeling using Wearable Devices",
+   "authors": [
+    "Alaeddine Mihoub",
+    "Grégoire Lefebvre"
+   ],
+   "track": "main",
+   "source": "https://iui.acm.org/2017/awards.html",
+   "evidence": "Best Paper Honourable Mention \"Social Intelligence Modeling using Wearable Devices\" Alaeddine Mihoub, Grégoire Lefebvre"
+  },
+  {
+   "venue": "IUI",
+   "year": 2017,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "CogniLearn: A Deep Learning-based Interface for Cognitive Behavior Assessment",
+   "authors": [
+    "Srujana Gattupalli",
+    "Dylan Ebert",
+    "Michalis Papakostas",
+    "Fillia Makedon",
+    "Vassilis Athitsos"
+   ],
+   "track": "main",
+   "source": "https://iui.acm.org/2017/awards.html",
+   "evidence": "Best Student Paper Award \"CogniLearn: A Deep Learning-based Interface for Cognitive Behavior Assessment\" Srujana Gattupalli, Dylan Ebert, Michalis Papakostas, Fillia Makedon, Vassilis Athitsos"
+  },
+  {
+   "venue": "IUI",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Long Paper Award",
+   "title": "Photo Sleuth: Combining Human Expertise and Face Recognition to Identify Historical Portraits",
+   "authors": [
+    "Vikram Mohanty",
+    "David Thames",
+    "Sneha Mehta",
+    "Kurt Luther"
+   ],
+   "track": "main",
+   "source": "https://iui.acm.org/2019/program.html",
+   "evidence": "Best Long Paper Award Photo Sleuth: Combining Human Expertise and Face Recognition to Identify Historical Portraits … Photo sleuth: combining human expertise and face recognition to identify historical portraits Vikram Mohanty David Thames Sneha Mehta Kurt Luther"
+  },
+  {
+   "venue": "IUI",
+   "year": 2019,
+   "award": "category",
+   "awardLabel": "Best Short Paper Award",
+   "title": "The Effects of Example-Based Explanations in a Machine Learning Interface",
+   "authors": [
+    "Carrie J. Cai",
+    "Jonas Jongejan",
+    "Jess Holbrook"
+   ],
+   "track": "main",
+   "source": "https://iui.acm.org/2019/program.html",
+   "evidence": "Best Short Paper Award The Effects of Example-Based Explanations in a Machine Learning Interface … The effects of example-based explanations in a machine learning interface Carrie J. Cai Jonas Jongejan Jess Holbrook"
+  },
+  {
+   "venue": "IUI",
+   "year": 2019,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Explaining Models: An Empirical Study of How Explanations Impact Fairness Judgment",
+   "authors": [
+    "Jonathan Dodge",
+    "Q. Vera Liao",
+    "Yunfeng Zhang",
+    "Rachel K. E. Bellamy",
+    "Casey Dugan"
+   ],
+   "track": "main",
+   "source": "https://iui.acm.org/2019/program.html",
+   "evidence": "Outstanding Paper Award Explaining Models: An Empirical Study of How Explanations Impact Fairness Judgment … Explaining models: an empirical study of how explanations impact fairness judgment Jonathan Dodge Q. Vera Liao Yunfeng Zhang Rachel K. E. Bellamy Casey Dugan"
+  },
+  {
+   "venue": "IUI",
+   "year": 2019,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Personalized Explanations for Hybrid Recommender Systems",
+   "authors": [
+    "Pigi Kouki",
+    "James Schaffer",
+    "Jay Pujara",
+    "John O'Donovan",
+    "Lise Getoor"
+   ],
+   "track": "main",
+   "source": "https://iui.acm.org/2019/program.html",
+   "evidence": "Outstanding Paper Award Personalized Explanations for Hybrid Recommender Systems … Personalized explanations for hybrid recommender systems Pigi Kouki James Schaffer Jay Pujara John O'Donovan Lise Getoor"
+  },
+  {
+   "venue": "IUI",
+   "year": 2019,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Smell Pittsburgh: Community-Empowered Mobile Smell Reporting System",
+   "authors": [
+    "Yen-Chia Hsu",
+    "Jennifer Cross",
+    "Paul Dille",
+    "Michael Tasota",
+    "Beatrice Dias",
+    "Randy Sargent",
+    "Ting-Hao (Kenneth) Huang",
+    "Illah Nourbakhsh"
+   ],
+   "track": "main",
+   "source": "https://iui.acm.org/2019/program.html",
+   "evidence": "Outstanding Paper Award Smell Pittsburgh: Community-Empowered Mobile Smell Reporting System … Smell Pittsburgh: community-empowered mobile smell reporting system Yen-Chia Hsu Jennifer Cross Paul Dille Michael Tasota Beatrice Dias Randy Sargent Ting-Hao (Kenneth) Huang Illah Nourbakhsh"
+  },
+  {
+   "venue": "IUI",
+   "year": 2019,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "The Effect of Explanations and Algorithmic Accuracy on Visual Recommender Systems of Artistic Images",
+   "authors": [
+    "Vicente Dominguez",
+    "Pablo Messina",
+    "Ivania Donoso-Guzmán",
+    "Denis Parra"
+   ],
+   "track": "main",
+   "source": "https://iui.acm.org/2019/program.html",
+   "evidence": "Outstanding Paper Award The Effect of Explanations and Algorithmic Accuracy on Visual Recommender Systems of Artistic Images … The effect of explanations and algorithmic accuracy on visual recommender systems of artistic images Vicente Dominguez Pablo Messina Ivania Donoso-Guzmán Denis Parra"
+  },
+  {
+   "venue": "IUI",
+   "year": 2019,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "When People and Algorithms Meet: User-reported Problems in Intelligent Everyday Applications",
+   "authors": [
+    "Malin Eiband",
+    "Sarah Theres Völkel",
+    "Daniel Buschek",
+    "Sophia Cook",
+    "Heinrich Hussmann"
+   ],
+   "track": "main",
+   "source": "https://iui.acm.org/2019/program.html",
+   "evidence": "Outstanding Paper Award When People and Algorithms Meet: Assessing User-reported Problems to Inform Support in Intelligent Everyday Applications … When people and algorithms meet: user-reported problems in intelligent everyday applications Malin Eiband Sarah Theres Völkel Daniel Buschek Sophia Cook Heinrich Hussmann"
   },
   {
    "venue": "IUI",
@@ -128783,6 +131803,141 @@
    "track": "main",
    "source": "https://www.sigmobile.org/mobihoc/2025/awards.html",
    "evidence": "Local-Cloud Inference Offloading for LLMs in Multi-Modal, Multi-Task, Multi-Dialogue Settings Liangqi Yuan (Purdue University); Dong-Jun Han (Yonsei University); Shiqiang Wang (IBM Research); Christopher Brinton (Purdue University)"
+  },
+  {
+   "venue": "MobileHCI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honourable Mention",
+   "title": "CETA: Designing Mixed-reality Tangible Interaction to Enhance Mathematical Learning",
+   "authors": [
+    "Sebastian Marichal",
+    "Andrea Rosales",
+    "Fernando Gonzalez-Perilli",
+    "Ana Cristina Pires",
+    "Ewelina Bakala",
+    "Gustavo Sansone",
+    "Josep Blat"
+   ],
+   "track": "main",
+   "source": "https://mobilehci.acm.org/2017/program.html",
+   "evidence": "CETA: Designing Mixed-reality Tangible Interaction to Enhance Mathematical Learning <img src=\"img/honMention.png\" width=\"5%\" alt=\"Paper Awarded Honourable Mention\"/><br></strong>Sebastian Marichal, Andrea Rosales, Fernando Gonzalez-Perilli, Ana Cristina Pires, Ewelina Bakala, Gustavo Sansone, Josep Blat"
+  },
+  {
+   "venue": "MobileHCI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honourable Mention",
+   "title": "Investigating Current Techniques for Opposite-Hand Smartwatch Interaction",
+   "authors": [
+    "Frederic Kerber",
+    "Tobias Kiefer",
+    "Markus Löchtefeld",
+    "Antonio Krüger"
+   ],
+   "track": "main",
+   "source": "https://mobilehci.acm.org/2017/program.html",
+   "evidence": "Investigating Current Techniques for Opposite-Hand Smartwatch Interaction <img src=\"img/honMention.png\" width=\"5%\" alt=\"Paper Awarded Honourable Mention\"/><br></strong>Frederic Kerber, Tobias Kiefer, Markus Löchtefeld, Antonio Krüger"
+  },
+  {
+   "venue": "MobileHCI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honourable Mention",
+   "title": "Productive, Anxious, Lonely - 24 Hours Without Push Notifications",
+   "authors": [
+    "Martin Pielot",
+    "Luz Rello"
+   ],
+   "track": "main",
+   "source": "https://mobilehci.acm.org/2017/program.html",
+   "evidence": "Productive, Anxious, Lonely - 24 Hours Without Push Notifications <img src=\"img/honMention.png\" width=\"5%\" alt=\"Paper Awarded Honourable Mention\"/> <br></strong>Martin Pielot, Luz Rello"
+  },
+  {
+   "venue": "MobileHCI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honourable Mention",
+   "title": "SpeCam: Sensing Surface Color and Material with the Front-Facing Camera of a Mobile Device",
+   "authors": [
+    "Hui-Shyong Yeo",
+    "Juyoung Lee",
+    "Andrea Bianchi",
+    "David Harris-Birtill",
+    "Aaron Quigley"
+   ],
+   "track": "main",
+   "source": "https://mobilehci.acm.org/2017/program.html",
+   "evidence": "SpeCam: Sensing Surface Color and Material with the Front-Facing Camera of a Mobile Device <img src=\"img/honMention.png\" width=\"5%\" alt=\"Paper Awarded Honourable Mention\"/><br></strong>Hui-Shyong Yeo, Juyoung Lee, Andrea Bianchi, David Harris-Birtill, Aaron Quigley"
+  },
+  {
+   "venue": "MobileHCI",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honourable Mention",
+   "title": "Understanding the Ergonomic Constraints in Designing for Touch Surfaces",
+   "authors": [
+    "Sven Mayer",
+    "Perihan Gad",
+    "Katrin Wolf",
+    "Paweł Woźniak",
+    "Niels Henze"
+   ],
+   "track": "main",
+   "source": "https://mobilehci.acm.org/2017/program.html",
+   "evidence": "Understanding the Ergonomic Constraints in Designing for Touch Surfaces<img src=\"img/honMention.png\" width=\"5%\" alt=\"Paper Awarded Honourable Mention\"/><br></strong>Sven Mayer, Perihan Gad, Katrin Wolf, Paweł Woźniak, Niels Henze"
+  },
+  {
+   "venue": "MobileHCI",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Towards Transparent Behavior of Automated Vehicles: Design and Evaluation of HUD Concepts to Support System Predictability Through Motion Intent Communication",
+   "authors": [
+    "Henrik Detjen",
+    "Maurizio Salini",
+    "Jan Kronenberger",
+    "Stefan Geisler",
+    "Stefan Schneegass"
+   ],
+   "track": "main",
+   "source": "https://mobilehci.acm.org/2021/attending/program",
+   "evidence": "Towards Transparent Behavior of Automated Vehicles: Design and Evaluation of HUD Concepts to Support System Predictability Through Motion Intent Communication BEST PAPER AWARD Henrik Detjen, Maurizio Salini, Jan Kronenberger, Stefan Geisler, and Stefan Schneegass"
+  },
+  {
+   "venue": "MobileHCI",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention Award",
+   "title": "SF-LG: Space-Filling Line Graphs for Visualizing Interrelated Time-series Data on Smartwatches",
+   "authors": [
+    "Ali Neshati",
+    "Fouad Alallah",
+    "Bradley Rey",
+    "Yumiko Sakamoto",
+    "Marcos Serrano",
+    "Pourang Irani"
+   ],
+   "track": "main",
+   "source": "https://mobilehci.acm.org/2021/attending/program",
+   "evidence": "SF-LG: Space-Filling Line Graphs for Visualizing Interrelated Time-series Data on Smartwatches HONORABLE MENTION AWARD Ali Neshati, Fouad Alallah, Bradley Rey, Yumiko Sakamoto, Marcos Serrano, and Pourang Irani"
+  },
+  {
+   "venue": "MobileHCI",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention Award",
+   "title": "StressShoe: A DIY Toolkit for just-in-time Personalised Stress Interventions for Office Workers Performing Sedentary Tasks",
+   "authors": [
+    "Don Samitha Elvitigala",
+    "Philipp Scholl",
+    "Hussel Suriyaarachchi",
+    "Vipula Dissanayake",
+    "Suranga Nanayakkara"
+   ],
+   "track": "main",
+   "source": "https://mobilehci.acm.org/2021/attending/program",
+   "evidence": "StressShoe: A DIY Toolkit for just-in-time Personalised Stress Interventions for Office Workers Performing Sedentary Tasks HONORABLE MENTION AWARD Don Samitha Elvitigala, Philipp Scholl, Hussel Suriyaarachchi, Vipula Dissanayake, and Suranga Nanayakkara"
   },
   {
    "venue": "MobileHCI",

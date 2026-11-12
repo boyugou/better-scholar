@@ -189,6 +189,11 @@ give the details and every review):
   Encryption: 23rd International Conference, FSE 2016" is the cryptography FSE (B), not Foundations of Software Engineering (A): venues
   that share an acronym are told apart by the series title. (4) MDPI's journals *AI* and *IoT* are not Artificial Intelligence (A) and
   IEEE IoT-J, nor is the Korean WISA (information security) the Web Information Systems WISA.
+- **Best papers of 12 more venues** (192): Interspeech 2015–2024 and 2026 (ISCA's best student papers), ICASSP, EACL, COLING 2018, BMVC, 3DV,
+  CIKM, ACM MM, IUI, MobileHCI, ICMI and EC (2015–2025), for years the list lacked, from their own pages. Left out: CIKM 2017 (spam links on
+  the host), ICASSP 2015–2016 (winners named by person only), 3DV 2026, and every applied, demo or exemplary-track award. An independent
+  re-read of 38 sampled entries found none wrong; the one judgement (Interspeech 2026: ISCA's block of three papers, against the conference
+  page's 16 nominees) was checked by hand. The list holds 11,111 awards.
 - **Best papers of 15 more venues** (112): ICST, SEAMS, ICSA, EASE, LAK, AIED, ICER, PETS, AsiaCCS, ITCS, MMSys, ICDAR, GD, FOGA and ISLPED, from
   their own pages. PETS's years 2015–2020 are left out (the page lists several papers without saying which won), as are ICER 2020's "Best
   Reviewed Papers" and ISLPED 2023–2025. An independent re-read of 33 sampled entries found none wrong. The list holds 10,919 awards.
