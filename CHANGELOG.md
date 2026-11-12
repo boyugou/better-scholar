@@ -189,6 +189,9 @@ give the details and every review):
   Encryption: 23rd International Conference, FSE 2016" is the cryptography FSE (B), not Foundations of Software Engineering (A): venues
   that share an acronym are told apart by the series title. (4) MDPI's journals *AI* and *IoT* are not Artificial Intelligence (A) and
   IEEE IoT-J, nor is the Korean WISA (information security) the Web Information Systems WISA.
+- **Best papers of 7 more venues** (85): RTAS 2012–2026, ITC 2012–2024, DCC (the Capocelli Prize), CAiSE 2024–2026, MSST, VEE and Performance,
+  from their own pages, read one request at a time. BIBM names no winners. An independent re-read of 20 sampled entries found none wrong.
+  The list holds 10,807 awards.
 - **IWQoS best papers** (18; 2018–2020, 2022, 2024), from the symposium's own per-year sites, which answered normally to single requests
   (earlier 418s). Left out: IWQoS 2012's "student paper awards" (a travel-grant award, not clearly a paper award), 2016's "Best Paper Candidates",
   and ICDCS, whose sites list no winners, time out, or answer a Cloudflare challenge. The list holds 10722 awards.

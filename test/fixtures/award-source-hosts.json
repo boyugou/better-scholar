@@ -426,6 +426,14 @@
   "iwqos2019.ieee-iwqos.org": "IEEE/ACM IWQoS 2019's own site (IEEE ComSoc minisite hosting)",
   "iwqos2020.ieee-iwqos.org": "IEEE/ACM IWQoS 2020's own site (IEEE ComSoc minisite hosting)",
   "iwqos2022.ieee-iwqos.org": "IEEE/ACM IWQoS 2022's own site (IEEE ComSoc minisite hosting)",
-  "iwqos2024.ieee-iwqos.org": "IEEE/ACM IWQoS 2024's own site (IEEE ComSoc minisite hosting)"
+  "iwqos2024.ieee-iwqos.org": "IEEE/ACM IWQoS 2024's own site (IEEE ComSoc minisite hosting)",
+  "caise-conference.diag.uniroma1.it": "the CAiSE steering committee's own site (its Awards page)",
+  "datacompressionconference.org": "the Data Compression Conference's own site (the Capocelli Prize page)",
+  "dcc2022.signalprocessingsociety.org": "DCC 2022's own site (hosted by the IEEE Signal Processing Society)",
+  "performance2018.sciencesconf.org": "IFIP Performance 2018's own site",
+  "storageconference.us": "MSST's own site (its per-year pages)",
+  "www.itctestweek.org": "IEEE ITC's own site (the Test Week awards page)",
+  "www.performance2020.deib.polimi.it": "IFIP Performance 2020's own site",
+  "www.performance2021.deib.polimi.it": "IFIP Performance 2021's own site"
  }
 }

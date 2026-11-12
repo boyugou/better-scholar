@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 10722
+  "count": 10807
  },
  "entries": [
   {
@@ -12648,6 +12648,143 @@
    "track": "main",
    "source": "https://cadeinc.org/Best-Paper-Award",
    "evidence": "CADE 2025 Best Student Paper Award: Guilherme Toledo, Benjamin Przybocki and Yoni Zohar - Being Polite is Not Enough (and Other Limits of Theory Combination)"
+  },
+  {
+   "venue": "CAiSE",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Multi-Perspective Concept Drift Detection: Including the Actor Perspective",
+   "authors": [
+    "Eva Klijn",
+    "Felix Mannhardt",
+    "Dirk Fahland"
+   ],
+   "track": "main",
+   "source": "https://caise-conference.diag.uniroma1.it/conferences/awards",
+   "evidence": "CAiSE 2024 Best Paper Award to Eva Klijn, Felix Mannhardt, and Dirk Fahland for “Multi-Perspective Concept Drift Detection: Including the Actor Perspective."
+  },
+  {
+   "venue": "CAiSE",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "Comparing MDD and CcD in the Bug Localization Context: An Empirical Evaluation in Video Games",
+   "authors": [
+    "Isis Roca",
+    "África Domingo",
+    "Oscar Pastor",
+    "Carlos Cetina",
+    "Lorena Arcega"
+   ],
+   "track": "main",
+   "source": "https://caise-conference.diag.uniroma1.it/conferences/awards",
+   "evidence": "CAiSE 2024 Best Paper Award to Eva Klijn, Felix Mannhardt, and Dirk Fahland for “Multi-Perspective Concept Drift Detection: Including the Actor Perspective.” Distinguished Paper Award to Isis Roca, África Domingo, Oscar Pastor, Carlos Cetina, and Lorena Arcega for “Comparing MDD and CcD in the Bug Localization Context: An Empirical Evaluation in Video Games."
+  },
+  {
+   "venue": "CAiSE",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "Stochastic Directly-Follows Process Discovery Using Grammatical Inference",
+   "authors": [
+    "Hanan Alkhammash",
+    "Artem Polyvyanyy",
+    "Alistair Moffat"
+   ],
+   "track": "main",
+   "source": "https://caise-conference.diag.uniroma1.it/conferences/awards",
+   "evidence": "CAiSE 2024 Best Paper Award to Eva Klijn, Felix Mannhardt, and Dirk Fahland for “Multi-Perspective Concept Drift Detection: Including the Actor Perspective.” Distinguished Paper Award to Isis Roca, África Domingo, Oscar Pastor, Carlos Cetina, and Lorena Arcega for “Comparing MDD and CcD in the Bug Localization Context: An Empirical Evaluation in Video Games.” Distinguished Paper Award to Hanan Alkhammash, Artem Polyvyanyy, and Alistair Moffat for “Stochastic Directly-Follows Process Discovery Using Grammatical Inference."
+  },
+  {
+   "venue": "CAiSE",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Federated Stochastic Process Discovery Using Grammatical Inference",
+   "authors": [
+    "Hootan Zhian",
+    "Rajkumar Buyya",
+    "Artem Polyvyanyy"
+   ],
+   "track": "main",
+   "source": "https://caise-conference.diag.uniroma1.it/conferences/awards",
+   "evidence": "CAiSE 202 5 Best Paper Award to Hootan Zhian, Rajkumar Buyya and Artem Polyvyanyy for \" Federated Stochastic Process Discovery Using Grammatical Inference"
+  },
+  {
+   "venue": "CAiSE",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "On the Use of Steady-State Detection for Process Mining: Achieving More Accurate Insights",
+   "authors": [
+    "Alexander Kraus",
+    "Keyvan Amiri Elyasi",
+    "Han van der Aa"
+   ],
+   "track": "main",
+   "source": "https://caise-conference.diag.uniroma1.it/conferences/awards",
+   "evidence": "CAiSE 202 5 Best Paper Award to Hootan Zhian, Rajkumar Buyya and Artem Polyvyanyy for \" Federated Stochastic Process Discovery Using Grammatical Inference\" Best Paper Runner-up to Alexander Kraus, Keyvan Amiri Elyasi and Han van der Aa for \"On the Use of Steady-State Detection for Process Mining: Achieving More Accurate Insights"
+  },
+  {
+   "venue": "CAiSE",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "The Role of Explanation Styles and Perceived Accuracy on Decision Making in Predictive Process Monitoring",
+   "authors": [
+    "Soobin Chae",
+    "Suhwan Lee",
+    "Hanna Hauptmann",
+    "Hajo A. Reijers",
+    "Xixi Lu"
+   ],
+   "track": "main",
+   "source": "https://caise-conference.diag.uniroma1.it/conferences/awards",
+   "evidence": "CAiSE 202 5 Best Paper Award to Hootan Zhian, Rajkumar Buyya and Artem Polyvyanyy for \" Federated Stochastic Process Discovery Using Grammatical Inference\" Best Paper Runner-up to Alexander Kraus, Keyvan Amiri Elyasi and Han van der Aa for \"On the Use of Steady-State Detection for Process Mining: Achieving More Accurate Insights\" Best Paper Runner-up to Soobin Chae, Suhwan Lee, Hanna Hauptmann, Hajo A. Reijers and Xixi Lu for \"The Role of Explanation Styles and Perceived Accuracy on Decision Making in Predictive Process Monitoring"
+  },
+  {
+   "venue": "CAiSE",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Shortcut or Understanding? Diagnosing LLM Type Prediction in Conceptual Models",
+   "authors": [
+    "S. J. Ali",
+    "Z. Zheng",
+    "D. Bork"
+   ],
+   "track": "main",
+   "source": "https://caise-conference.diag.uniroma1.it/conferences/awards",
+   "evidence": "CAiSE 202 6 Best Paper Award to S. J. Ali, Z. Zheng and D. Bork for \"Shortcut or Understanding? Diagnosing LLM Type Prediction in Conceptual Models"
+  },
+  {
+   "venue": "CAiSE",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "Computational Foundations for Strategic Coopetition: Bridging Conceptual Modeling and Game Theory in Multi-Stakeholder Information Systems",
+   "authors": [
+    "V. Pant",
+    "E. Yu"
+   ],
+   "track": "main",
+   "source": "https://caise-conference.diag.uniroma1.it/conferences/awards",
+   "evidence": "CAiSE 202 6 Best Paper Award to S. J. Ali, Z. Zheng and D. Bork for \"Shortcut or Understanding? Diagnosing LLM Type Prediction in Conceptual Models\" Best Paper Runner-up to V. Pant and E. Yu. for \"Computational Foundations for Strategic Coopetition: Bridging Conceptual Modeling and Game Theory in Multi-Stakeholder Information Systems"
+  },
+  {
+   "venue": "CAiSE",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "Mind the Gap: On Formal Relationships Between Log Complexity and the Complexity of Discovered Models",
+   "authors": [
+    "P. Schalk",
+    "A. Polyvyanyy"
+   ],
+   "track": "main",
+   "source": "https://caise-conference.diag.uniroma1.it/conferences/awards",
+   "evidence": "CAiSE 202 6 Best Paper Award to S. J. Ali, Z. Zheng and D. Bork for \"Shortcut or Understanding? Diagnosing LLM Type Prediction in Conceptual Models\" Best Paper Runner-up to V. Pant and E. Yu. for \"Computational Foundations for Strategic Coopetition: Bridging Conceptual Modeling and Game Theory in Multi-Stakeholder Information Systems\" Best Paper Runner-up to P. Schalk and A. Polyvyanyy for \"Mind the Gap: On Formal Relationships Between Log Complexity and the Complexity of Discovered Models"
   },
   {
    "venue": "CASE",
@@ -68988,6 +69125,244 @@
    "evidence": "DATE 2026 Best Paper Awards, D_high Track Design Methods and Tools: Torrent: A distributed DMA for Efficient and Flexible Point-to-Multipoint Data Movement — Yunhao Deng1, Fanchen Kong2, Xiaoling Yi2, Ryan Antonio3 and Marian Verhelst2, 1MICAS - KU Leuven, BE; 2KU Leuven, BE; 3MICAS KU Leuven, BE"
   },
   {
+   "venue": "DCC",
+   "year": 2012,
+   "award": "student",
+   "awardLabel": "Capocelli Prize (student-authored paper)",
+   "title": "Mixing Strategies in Data Compression",
+   "authors": [
+    "Christopher Mattern"
+   ],
+   "track": "main",
+   "source": "https://dcc2022.signalprocessingsociety.org/CapocelliPrize.html",
+   "alsoAt": [
+    "https://datacompressionconference.org/capocelli-prize/"
+   ],
+   "evidence": "Previous Capocelli Prize winners: 2022 Nicola Cotumaccio, Gran Sasso Science Institute \"Graphs can be succinctly indexed for pattern matching in O(|E| 2 + |V| 5/2 ) time\" 2019 Jarno N. Alanko and Louisa Seelbach Benkner, University of Helsinki and University of Siegen \"Tunneling of Wheeler Graphs\" (coauthored with Travis Gagie and Gonzalo Navarro) 2018 Bichuan Guo, Tsinghua University \"Convex Optimization based Bit Allocation for Light Field Compression under Weighting and Consistency Constraint\" (coauthored with Yuxing Han and Jiangtao Wen) and Adriàn Gòmez Brandòn, Universidade da Coruña \"Two-Dimensional Block Trees\" (coauthored with Nieves R. Brisaboa, Travis Gagie, and Gonzalo Navarro) 2017 Qin Huang, University of Southern California \"Measure and Prediction of HEVC Perceptually Lossy/Lossless Boundary QP Values\" (coauthored with Sung Chang Lim, Hui Yong Kim, Se Yoon Jeong, and C.-C. Jay Kuo) 2016 Naoufal Amrani, Universitat Autònoma de Barcelona \"Regression Wavelet Analysis for Progressive-Lossy-to-Lossless Coding of Remote-Sensing Data\" (coauthored with Joan Serra-Sagristà, Miguel Hernández-Cabronero, and Michael Marcellin) and Héctor Ferrada, University of Chile \"Improved Range Minimum Queries\" (coauthored with Gonzalo Navarro) 2015 Julian Shun, Carnegie Mellon University \"Parallel Wavelet Tree Construction\" 2014 David M. Chen, Stanford University \"Interframe Coding of Global Image Signatures for Mobile Augmented Reality\" (coauthored with Mina Makar, Andre F. Araujo, and Bernd Girod) 2013 Roberto Konow, University of Chile \"Faster Compact Top-k Document Retrieval\" (coauthored with Gonzalo Navarro) 2012 Christopher Mattern, Technische Universität Ilmenau \"Mixing Strategies in Data Compression"
+  },
+  {
+   "venue": "DCC",
+   "year": 2013,
+   "award": "student",
+   "awardLabel": "Capocelli Prize (student-authored paper)",
+   "title": "Faster Compact Top-k Document Retrieval",
+   "authors": [
+    "Roberto Konow",
+    "Gonzalo Navarro"
+   ],
+   "track": "main",
+   "source": "https://dcc2022.signalprocessingsociety.org/CapocelliPrize.html",
+   "alsoAt": [
+    "https://datacompressionconference.org/capocelli-prize/"
+   ],
+   "evidence": "Previous Capocelli Prize winners: 2022 Nicola Cotumaccio, Gran Sasso Science Institute \"Graphs can be succinctly indexed for pattern matching in O(|E| 2 + |V| 5/2 ) time\" 2019 Jarno N. Alanko and Louisa Seelbach Benkner, University of Helsinki and University of Siegen \"Tunneling of Wheeler Graphs\" (coauthored with Travis Gagie and Gonzalo Navarro) 2018 Bichuan Guo, Tsinghua University \"Convex Optimization based Bit Allocation for Light Field Compression under Weighting and Consistency Constraint\" (coauthored with Yuxing Han and Jiangtao Wen) and Adriàn Gòmez Brandòn, Universidade da Coruña \"Two-Dimensional Block Trees\" (coauthored with Nieves R. Brisaboa, Travis Gagie, and Gonzalo Navarro) 2017 Qin Huang, University of Southern California \"Measure and Prediction of HEVC Perceptually Lossy/Lossless Boundary QP Values\" (coauthored with Sung Chang Lim, Hui Yong Kim, Se Yoon Jeong, and C.-C. Jay Kuo) 2016 Naoufal Amrani, Universitat Autònoma de Barcelona \"Regression Wavelet Analysis for Progressive-Lossy-to-Lossless Coding of Remote-Sensing Data\" (coauthored with Joan Serra-Sagristà, Miguel Hernández-Cabronero, and Michael Marcellin) and Héctor Ferrada, University of Chile \"Improved Range Minimum Queries\" (coauthored with Gonzalo Navarro) 2015 Julian Shun, Carnegie Mellon University \"Parallel Wavelet Tree Construction\" 2014 David M. Chen, Stanford University \"Interframe Coding of Global Image Signatures for Mobile Augmented Reality\" (coauthored with Mina Makar, Andre F. Araujo, and Bernd Girod) 2013 Roberto Konow, University of Chile \"Faster Compact Top-k Document Retrieval"
+  },
+  {
+   "venue": "DCC",
+   "year": 2014,
+   "award": "student",
+   "awardLabel": "Capocelli Prize (student-authored paper)",
+   "title": "Interframe Coding of Global Image Signatures for Mobile Augmented Reality",
+   "authors": [
+    "David M. Chen",
+    "Mina Makar",
+    "Andre F. Araujo",
+    "Bernd Girod"
+   ],
+   "track": "main",
+   "source": "https://dcc2022.signalprocessingsociety.org/CapocelliPrize.html",
+   "alsoAt": [
+    "https://datacompressionconference.org/capocelli-prize/"
+   ],
+   "evidence": "Previous Capocelli Prize winners: 2022 Nicola Cotumaccio, Gran Sasso Science Institute \"Graphs can be succinctly indexed for pattern matching in O(|E| 2 + |V| 5/2 ) time\" 2019 Jarno N. Alanko and Louisa Seelbach Benkner, University of Helsinki and University of Siegen \"Tunneling of Wheeler Graphs\" (coauthored with Travis Gagie and Gonzalo Navarro) 2018 Bichuan Guo, Tsinghua University \"Convex Optimization based Bit Allocation for Light Field Compression under Weighting and Consistency Constraint\" (coauthored with Yuxing Han and Jiangtao Wen) and Adriàn Gòmez Brandòn, Universidade da Coruña \"Two-Dimensional Block Trees\" (coauthored with Nieves R. Brisaboa, Travis Gagie, and Gonzalo Navarro) 2017 Qin Huang, University of Southern California \"Measure and Prediction of HEVC Perceptually Lossy/Lossless Boundary QP Values\" (coauthored with Sung Chang Lim, Hui Yong Kim, Se Yoon Jeong, and C.-C. Jay Kuo) 2016 Naoufal Amrani, Universitat Autònoma de Barcelona \"Regression Wavelet Analysis for Progressive-Lossy-to-Lossless Coding of Remote-Sensing Data\" (coauthored with Joan Serra-Sagristà, Miguel Hernández-Cabronero, and Michael Marcellin) and Héctor Ferrada, University of Chile \"Improved Range Minimum Queries\" (coauthored with Gonzalo Navarro) 2015 Julian Shun, Carnegie Mellon University \"Parallel Wavelet Tree Construction\" 2014 David M. Chen, Stanford University \"Interframe Coding of Global Image Signatures for Mobile Augmented Reality"
+  },
+  {
+   "venue": "DCC",
+   "year": 2015,
+   "award": "student",
+   "awardLabel": "Capocelli Prize (student-authored paper)",
+   "title": "Parallel Wavelet Tree Construction",
+   "authors": [
+    "Julian Shun"
+   ],
+   "track": "main",
+   "source": "https://dcc2022.signalprocessingsociety.org/CapocelliPrize.html",
+   "alsoAt": [
+    "https://datacompressionconference.org/capocelli-prize/"
+   ],
+   "evidence": "Previous Capocelli Prize winners: 2022 Nicola Cotumaccio, Gran Sasso Science Institute \"Graphs can be succinctly indexed for pattern matching in O(|E| 2 + |V| 5/2 ) time\" 2019 Jarno N. Alanko and Louisa Seelbach Benkner, University of Helsinki and University of Siegen \"Tunneling of Wheeler Graphs\" (coauthored with Travis Gagie and Gonzalo Navarro) 2018 Bichuan Guo, Tsinghua University \"Convex Optimization based Bit Allocation for Light Field Compression under Weighting and Consistency Constraint\" (coauthored with Yuxing Han and Jiangtao Wen) and Adriàn Gòmez Brandòn, Universidade da Coruña \"Two-Dimensional Block Trees\" (coauthored with Nieves R. Brisaboa, Travis Gagie, and Gonzalo Navarro) 2017 Qin Huang, University of Southern California \"Measure and Prediction of HEVC Perceptually Lossy/Lossless Boundary QP Values\" (coauthored with Sung Chang Lim, Hui Yong Kim, Se Yoon Jeong, and C.-C. Jay Kuo) 2016 Naoufal Amrani, Universitat Autònoma de Barcelona \"Regression Wavelet Analysis for Progressive-Lossy-to-Lossless Coding of Remote-Sensing Data\" (coauthored with Joan Serra-Sagristà, Miguel Hernández-Cabronero, and Michael Marcellin) and Héctor Ferrada, University of Chile \"Improved Range Minimum Queries\" (coauthored with Gonzalo Navarro) 2015 Julian Shun, Carnegie Mellon University \"Parallel Wavelet Tree Construction"
+  },
+  {
+   "venue": "DCC",
+   "year": 2016,
+   "award": "student",
+   "awardLabel": "Capocelli Prize (student-authored paper)",
+   "title": "Improved Range Minimum Queries",
+   "authors": [
+    "Héctor Ferrada",
+    "Gonzalo Navarro"
+   ],
+   "track": "main",
+   "source": "https://dcc2022.signalprocessingsociety.org/CapocelliPrize.html",
+   "alsoAt": [
+    "https://datacompressionconference.org/capocelli-prize/"
+   ],
+   "evidence": "Previous Capocelli Prize winners: 2022 Nicola Cotumaccio, Gran Sasso Science Institute \"Graphs can be succinctly indexed for pattern matching in O(|E| 2 + |V| 5/2 ) time\" 2019 Jarno N. Alanko and Louisa Seelbach Benkner, University of Helsinki and University of Siegen \"Tunneling of Wheeler Graphs\" (coauthored with Travis Gagie and Gonzalo Navarro) 2018 Bichuan Guo, Tsinghua University \"Convex Optimization based Bit Allocation for Light Field Compression under Weighting and Consistency Constraint\" (coauthored with Yuxing Han and Jiangtao Wen) and Adriàn Gòmez Brandòn, Universidade da Coruña \"Two-Dimensional Block Trees\" (coauthored with Nieves R. Brisaboa, Travis Gagie, and Gonzalo Navarro) 2017 Qin Huang, University of Southern California \"Measure and Prediction of HEVC Perceptually Lossy/Lossless Boundary QP Values\" (coauthored with Sung Chang Lim, Hui Yong Kim, Se Yoon Jeong, and C.-C. Jay Kuo) 2016 Naoufal Amrani, Universitat Autònoma de Barcelona \"Regression Wavelet Analysis for Progressive-Lossy-to-Lossless Coding of Remote-Sensing Data\" (coauthored with Joan Serra-Sagristà, Miguel Hernández-Cabronero, and Michael Marcellin) and Héctor Ferrada, University of Chile \"Improved Range Minimum Queries"
+  },
+  {
+   "venue": "DCC",
+   "year": 2016,
+   "award": "student",
+   "awardLabel": "Capocelli Prize (student-authored paper)",
+   "title": "Regression Wavelet Analysis for Progressive-Lossy-to-Lossless Coding of Remote-Sensing Data",
+   "authors": [
+    "Naoufal Amrani",
+    "Joan Serra-Sagristà",
+    "Miguel Hernández-Cabronero",
+    "Michael Marcellin"
+   ],
+   "track": "main",
+   "source": "https://dcc2022.signalprocessingsociety.org/CapocelliPrize.html",
+   "alsoAt": [
+    "https://datacompressionconference.org/capocelli-prize/"
+   ],
+   "evidence": "Previous Capocelli Prize winners: 2022 Nicola Cotumaccio, Gran Sasso Science Institute \"Graphs can be succinctly indexed for pattern matching in O(|E| 2 + |V| 5/2 ) time\" 2019 Jarno N. Alanko and Louisa Seelbach Benkner, University of Helsinki and University of Siegen \"Tunneling of Wheeler Graphs\" (coauthored with Travis Gagie and Gonzalo Navarro) 2018 Bichuan Guo, Tsinghua University \"Convex Optimization based Bit Allocation for Light Field Compression under Weighting and Consistency Constraint\" (coauthored with Yuxing Han and Jiangtao Wen) and Adriàn Gòmez Brandòn, Universidade da Coruña \"Two-Dimensional Block Trees\" (coauthored with Nieves R. Brisaboa, Travis Gagie, and Gonzalo Navarro) 2017 Qin Huang, University of Southern California \"Measure and Prediction of HEVC Perceptually Lossy/Lossless Boundary QP Values\" (coauthored with Sung Chang Lim, Hui Yong Kim, Se Yoon Jeong, and C.-C. Jay Kuo) 2016 Naoufal Amrani, Universitat Autònoma de Barcelona \"Regression Wavelet Analysis for Progressive-Lossy-to-Lossless Coding of Remote-Sensing Data"
+  },
+  {
+   "venue": "DCC",
+   "year": 2017,
+   "award": "student",
+   "awardLabel": "Capocelli Prize (student-authored paper)",
+   "title": "Measure and Prediction of HEVC Perceptually Lossy/Lossless Boundary QP Values",
+   "authors": [
+    "Qin Huang",
+    "Sung Chang Lim",
+    "Hui Yong Kim",
+    "Se Yoon Jeong",
+    "C.-C. Jay Kuo"
+   ],
+   "track": "main",
+   "source": "https://dcc2022.signalprocessingsociety.org/CapocelliPrize.html",
+   "alsoAt": [
+    "https://datacompressionconference.org/capocelli-prize/"
+   ],
+   "evidence": "Previous Capocelli Prize winners: 2022 Nicola Cotumaccio, Gran Sasso Science Institute \"Graphs can be succinctly indexed for pattern matching in O(|E| 2 + |V| 5/2 ) time\" 2019 Jarno N. Alanko and Louisa Seelbach Benkner, University of Helsinki and University of Siegen \"Tunneling of Wheeler Graphs\" (coauthored with Travis Gagie and Gonzalo Navarro) 2018 Bichuan Guo, Tsinghua University \"Convex Optimization based Bit Allocation for Light Field Compression under Weighting and Consistency Constraint\" (coauthored with Yuxing Han and Jiangtao Wen) and Adriàn Gòmez Brandòn, Universidade da Coruña \"Two-Dimensional Block Trees\" (coauthored with Nieves R. Brisaboa, Travis Gagie, and Gonzalo Navarro) 2017 Qin Huang, University of Southern California \"Measure and Prediction of HEVC Perceptually Lossy/Lossless Boundary QP Values"
+  },
+  {
+   "venue": "DCC",
+   "year": 2018,
+   "award": "student",
+   "awardLabel": "Capocelli Prize (student-authored paper)",
+   "title": "Convex Optimization based Bit Allocation for Light Field Compression under Weighting and Consistency Constraint",
+   "authors": [
+    "Bichuan Guo",
+    "Yuxing Han",
+    "Jiangtao Wen"
+   ],
+   "track": "main",
+   "source": "https://dcc2022.signalprocessingsociety.org/CapocelliPrize.html",
+   "alsoAt": [
+    "https://datacompressionconference.org/capocelli-prize/"
+   ],
+   "evidence": "Previous Capocelli Prize winners: 2022 Nicola Cotumaccio, Gran Sasso Science Institute \"Graphs can be succinctly indexed for pattern matching in O(|E| 2 + |V| 5/2 ) time\" 2019 Jarno N. Alanko and Louisa Seelbach Benkner, University of Helsinki and University of Siegen \"Tunneling of Wheeler Graphs\" (coauthored with Travis Gagie and Gonzalo Navarro) 2018 Bichuan Guo, Tsinghua University \"Convex Optimization based Bit Allocation for Light Field Compression under Weighting and Consistency Constraint"
+  },
+  {
+   "venue": "DCC",
+   "year": 2018,
+   "award": "student",
+   "awardLabel": "Capocelli Prize (student-authored paper)",
+   "title": "Two-Dimensional Block Trees",
+   "authors": [
+    "Adriàn Gòmez Brandòn",
+    "Nieves R. Brisaboa",
+    "Travis Gagie",
+    "Gonzalo Navarro"
+   ],
+   "track": "main",
+   "source": "https://dcc2022.signalprocessingsociety.org/CapocelliPrize.html",
+   "alsoAt": [
+    "https://datacompressionconference.org/capocelli-prize/"
+   ],
+   "evidence": "Previous Capocelli Prize winners: 2022 Nicola Cotumaccio, Gran Sasso Science Institute \"Graphs can be succinctly indexed for pattern matching in O(|E| 2 + |V| 5/2 ) time\" 2019 Jarno N. Alanko and Louisa Seelbach Benkner, University of Helsinki and University of Siegen \"Tunneling of Wheeler Graphs\" (coauthored with Travis Gagie and Gonzalo Navarro) 2018 Bichuan Guo, Tsinghua University \"Convex Optimization based Bit Allocation for Light Field Compression under Weighting and Consistency Constraint\" (coauthored with Yuxing Han and Jiangtao Wen) and Adriàn Gòmez Brandòn, Universidade da Coruña \"Two-Dimensional Block Trees"
+  },
+  {
+   "venue": "DCC",
+   "year": 2019,
+   "award": "student",
+   "awardLabel": "Capocelli Prize (student-authored paper)",
+   "title": "Tunneling of Wheeler Graphs",
+   "authors": [
+    "Jarno N. Alanko",
+    "Louisa Seelbach Benkner",
+    "Travis Gagie",
+    "Gonzalo Navarro"
+   ],
+   "track": "main",
+   "source": "https://dcc2022.signalprocessingsociety.org/CapocelliPrize.html",
+   "alsoAt": [
+    "https://datacompressionconference.org/capocelli-prize/"
+   ],
+   "evidence": "Previous Capocelli Prize winners: 2022 Nicola Cotumaccio, Gran Sasso Science Institute \"Graphs can be succinctly indexed for pattern matching in O(|E| 2 + |V| 5/2 ) time\" 2019 Jarno N. Alanko and Louisa Seelbach Benkner, University of Helsinki and University of Siegen \"Tunneling of Wheeler Graphs"
+  },
+  {
+   "venue": "DCC",
+   "year": 2022,
+   "award": "student",
+   "awardLabel": "Capocelli Prize (student-authored paper)",
+   "title": "Graphs can be succinctly indexed for pattern matching in O(|E| 2 + |V| 5/2 ) time",
+   "authors": [
+    "Nicola Cotumaccio"
+   ],
+   "track": "main",
+   "source": "https://dcc2022.signalprocessingsociety.org/CapocelliPrize.html",
+   "alsoAt": [
+    "https://datacompressionconference.org/capocelli-prize/"
+   ],
+   "evidence": "Previous Capocelli Prize winners: 2022 Nicola Cotumaccio, Gran Sasso Science Institute \"Graphs can be succinctly indexed for pattern matching in O(|E| 2 + |V| 5/2 ) time"
+  },
+  {
+   "venue": "DCC",
+   "year": 2023,
+   "award": "student",
+   "awardLabel": "Capocelli Prize (student-authored paper)",
+   "title": "Constructing the CDAWG CFG Using LCP-Intervals",
+   "authors": [
+    "Jordan Dood",
+    "A. Cleary"
+   ],
+   "track": "main",
+   "source": "https://datacompressionconference.org/capocelli-prize/",
+   "evidence": "Capocelli Prize winners: 2025 Dan Jacobellis, The University of Texas at Austin “Learned Compression for Compressed Learning” (coauthored with N. J. Yadwadkar) 2024 Siming Sun, California Institute of Technology “Almost Lossless Onion Peeling Data Compression” (coauthored with M. Effros) 2023 Jordan Dood, Montana State University “Constructing the CDAWG CFG Using LCP-Intervals"
+  },
+  {
+   "venue": "DCC",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "Capocelli Prize (student-authored paper)",
+   "title": "Almost Lossless Onion Peeling Data Compression",
+   "authors": [
+    "Siming Sun",
+    "M. Effros"
+   ],
+   "track": "main",
+   "source": "https://datacompressionconference.org/capocelli-prize/",
+   "evidence": "Capocelli Prize winners: 2025 Dan Jacobellis, The University of Texas at Austin “Learned Compression for Compressed Learning” (coauthored with N. J. Yadwadkar) 2024 Siming Sun, California Institute of Technology “Almost Lossless Onion Peeling Data Compression"
+  },
+  {
+   "venue": "DCC",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Capocelli Prize (student-authored paper)",
+   "title": "Learned Compression for Compressed Learning",
+   "authors": [
+    "Dan Jacobellis",
+    "N. J. Yadwadkar"
+   ],
+   "track": "main",
+   "source": "https://datacompressionconference.org/capocelli-prize/",
+   "evidence": "Capocelli Prize winners: 2025 Dan Jacobellis, The University of Texas at Austin “Learned Compression for Compressed Learning"
+  },
+  {
    "venue": "DIS",
    "year": 2024,
    "award": "best",
@@ -118137,6 +118512,407 @@
    "evidence": "SWSA Ten-Year Award RDF2Vec: RDF Graph Embeddings for Data Mining Petar Ristoski and Heiko Paulheim"
   },
   {
+   "venue": "ITC",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best",
+   "title": "Algorithm for Dramatically Improved Efficiency in ADC Linearity Test",
+   "authors": [
+    "Z. Yu",
+    "D. Chen"
+   ],
+   "track": "main",
+   "source": "https://www.itctestweek.org/best-paper-awards/",
+   "evidence": "2012 Best “Algorithm for Dramatically Improved Efficiency in ADC Linearity Test,” Z. Yu and D. Chen, Iowa State University"
+  },
+  {
+   "venue": "ITC",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best",
+   "title": "Test Time Reduction with SATOM : Simultaneous AC-DC Test with Orthogonal Multi-excitations",
+   "authors": [
+    "D. Chen",
+    "Z. Yu",
+    "K. Maniar",
+    "M. Nowrozi"
+   ],
+   "track": "main",
+   "source": "https://www.itctestweek.org/best-paper-awards/",
+   "evidence": "2013 Best “Test Time Reduction with SATOM : Simultaneous AC-DC Test with Orthogonal Multi-excitations,” D. Chen, Z. Yu, Iowa State University;K. Maniar, M. Nowrozi, Texas Instruments"
+  },
+  {
+   "venue": "ITC",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best",
+   "title": "Yield Optimization Using Advanced Statistical Correlation Methods",
+   "authors": [
+    "Jeffrey Tikkanen",
+    "Sebastian Siatkowski",
+    "Nik Sumikawa",
+    "Li-C Wang",
+    "Magdy Abadir"
+   ],
+   "track": "main",
+   "source": "https://www.itctestweek.org/best-paper-awards/",
+   "evidence": "2014 Best “Yield Optimization Using Advanced Statistical Correlation Methods,” Jeffrey Tikkanen, Sebastian Siatkowski, Nik Sumikawa, Li-C Wang and Magdy Abadir"
+  },
+  {
+   "venue": "ITC",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best",
+   "title": "A Structured Approach to Post Silicon Validation and Debug using Symbolic Quick Error Detect",
+   "authors": [
+    "David Lin",
+    "Eshan Singh",
+    "Clark Barrett",
+    "Subhasish Mitra"
+   ],
+   "track": "main",
+   "source": "https://www.itctestweek.org/best-paper-awards/",
+   "evidence": "2015 Best “A Structured Approach to Post Silicon Validation and Debug using Symbolic Quick Error Detect,” David Lin, Eshan Singh, Clark Barrett and Subhasish Mitra"
+  },
+  {
+   "venue": "ITC",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best",
+   "title": "Power Supply Impedance Emulation to Eliminate Overkills and Underkills Due to the Impedance Difference Between ATE and Customer Board",
+   "authors": [
+    "T. Nakura",
+    "N. Terao",
+    "M. Ishida",
+    "R. Ikeno",
+    "T. Kusaka",
+    "T. Iizuka",
+    "K. Asada"
+   ],
+   "track": "main",
+   "source": "https://www.itctestweek.org/best-paper-awards/",
+   "evidence": "2016 Best “Power Supply Impedance Emulation to Eliminate Overkills and Underkills Due to the Impedance Difference Between ATE and Customer Board,” T. Nakura, N. Terao, M. Ishida, R. Ikeno, T. Kusaka, T. Iizuka, K. Asada"
+  },
+  {
+   "venue": "ITC",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best",
+   "title": "A Single-Pin Test Control for Low-Pin-Count Big A, little d Devices",
+   "authors": [
+    "M. Laisne",
+    "H. M. von Staudt",
+    "S. Bhalerao",
+    "M. Eason"
+   ],
+   "track": "main",
+   "source": "https://www.itctestweek.org/best-paper-awards/",
+   "evidence": "2017 Best “A Single-Pin Test Control for Low-Pin-Count Big A, little d Devices,” M. Laisne, H. M. von Staudt, S. Bhalerao, M. Eason"
+  },
+  {
+   "venue": "ITC",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Honorable",
+   "title": "Safety Analysis for Integrated Circuits in the Context of Hybrid Systems",
+   "authors": [
+    "V. Prasanth",
+    "R. Parekhji",
+    "B Amrutur"
+   ],
+   "track": "main",
+   "source": "https://www.itctestweek.org/best-paper-awards/",
+   "evidence": "2017 Best “A Single-Pin Test Control for Low-Pin-Count Big A, little d Devices,” M. Laisne, H. M. von Staudt, S. Bhalerao, M. Eason 2017 Honorable “Safety Analysis for Integrated Circuits in the Context of Hybrid Systems,” V. Prasanth, R. Parekhji, B Amrutur"
+  },
+  {
+   "venue": "ITC",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best",
+   "title": "Fast and accurate linearity test for DACs with various architectures using segmented models",
+   "authors": [
+    "Shravan Chaganti",
+    "Abalhassan Sheikh",
+    "Sumit Dubey",
+    "Frank Ankapong",
+    "Nitin Agarwal",
+    "Degang Chen"
+   ],
+   "track": "main",
+   "source": "https://www.itctestweek.org/best-paper-awards/",
+   "evidence": "2018 Best “Fast and accurate linearity test for DACs with various architectures using segmented models,” Shravan Chaganti, Abalhassan Sheikh, Sumit Dubey, Frank Ankapong, Nitin Agarwal and Degang Chen"
+  },
+  {
+   "venue": "ITC",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "Honorable",
+   "title": "Concept Recognition in Production Yield Data Analytics",
+   "authors": [
+    "Matt Nero",
+    "Jay (Chuanhe) Shan",
+    "Li-C Wang"
+   ],
+   "track": "main",
+   "source": "https://www.itctestweek.org/best-paper-awards/",
+   "evidence": "2018 Best “Fast and accurate linearity test for DACs with various architectures using segmented models,” Shravan Chaganti, Abalhassan Sheikh, Sumit Dubey, Frank Ankapong, Nitin Agarwal and Degang Chen 2018 Honorable “Concept Recognition in Production Yield Data Analytics,” Matt Nero, Jay (Chuanhe) Shan, Li-C Wang"
+  },
+  {
+   "venue": "ITC",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best",
+   "title": "Efficient Analog Defect Simulation",
+   "authors": [
+    "Steve Sunter"
+   ],
+   "track": "main",
+   "source": "https://www.itctestweek.org/best-paper-awards/",
+   "evidence": "2019 Best “Efficient Analog Defect Simulation,” Steve Sunter"
+  },
+  {
+   "venue": "ITC",
+   "year": 2019,
+   "award": "runner-up",
+   "awardLabel": "Honorable",
+   "title": "Deploying a Machine Learning Solution as a Surrogate",
+   "authors": [
+    "Jay (Chuanhe) Shan",
+    "Li-C Wang",
+    "Ahmed Wahba",
+    "Nik Sumikawa"
+   ],
+   "track": "main",
+   "source": "https://www.itctestweek.org/best-paper-awards/",
+   "evidence": "2019 Best “Efficient Analog Defect Simulation,” Steve Sunter 2019 Honorable “Deploying a Machine Learning Solution as a Surrogate,” Jay (Chuanhe) Shan, Li-C Wang, Ahmed Wahba, Nik Sumikawa"
+  },
+  {
+   "venue": "ITC",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best",
+   "title": "Learning A Wafer Feature With One Training Sample",
+   "authors": [
+    "Jenny Zeng",
+    "Li-C. Wang",
+    "Jay Shan",
+    "Nik Sumikawa"
+   ],
+   "track": "main",
+   "source": "https://www.itctestweek.org/best-paper-awards/",
+   "evidence": "2020 Best “Learning A Wafer Feature With One Training Sample”, Jenny Zeng, Li-C. Wang, Jay Shan, Nik Sumikawa"
+  },
+  {
+   "venue": "ITC",
+   "year": 2020,
+   "award": "runner-up",
+   "awardLabel": "Honorable",
+   "title": "Characterization, Modeling and Test of Synthetic Anti-Ferromagnet Flip Defect in STT-MRAMs",
+   "authors": [
+    "Lizhou Wu",
+    "Siddharth Rao",
+    "Mottaqiallah Taouil",
+    "Erik Jan Marinissen",
+    "Gouri Sankar Kar",
+    "Said Hamdioui"
+   ],
+   "track": "main",
+   "source": "https://www.itctestweek.org/best-paper-awards/",
+   "evidence": "2020 Best “Learning A Wafer Feature With One Training Sample”, Jenny Zeng, Li-C. Wang, Jay Shan, Nik Sumikawa 2020 Honorable “Characterization, Modeling and Test of Synthetic Anti-Ferromagnet Flip Defect in STT-MRAMs”, Lizhou Wu, Siddharth Rao, Mottaqiallah Taouil, Erik Jan Marinissen, Gouri Sankar Kar, and Said Hamdioui"
+  },
+  {
+   "venue": "ITC",
+   "year": 2020,
+   "award": "runner-up",
+   "awardLabel": "Honorable",
+   "title": "Industrial Application of IJTAG Standards to the Test of Big-A/little-d devices",
+   "authors": [
+    "Hans Martin von Staudt",
+    "Mohamed (Anas) Benhebibi",
+    "Jeff Rearick",
+    "Michael Laisne"
+   ],
+   "track": "main",
+   "source": "https://www.itctestweek.org/best-paper-awards/",
+   "evidence": "2020 Best “Learning A Wafer Feature With One Training Sample”, Jenny Zeng, Li-C. Wang, Jay Shan, Nik Sumikawa 2020 Honorable “Characterization, Modeling and Test of Synthetic Anti-Ferromagnet Flip Defect in STT-MRAMs”, Lizhou Wu, Siddharth Rao, Mottaqiallah Taouil, Erik Jan Marinissen, Gouri Sankar Kar, and Said Hamdioui 2020 Honorable “Industrial Application of IJTAG Standards to the Test of Big-A/little-d devices,” Hans Martin von Staudt, Mohamed (Anas) Benhebibi, Jeff Rearick, and Michael Laisne"
+  },
+  {
+   "venue": "ITC",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best",
+   "title": "Exploiting Application Tolerance for Functional Safety",
+   "authors": [
+    "Prasanth Viswanathan",
+    "Rubin Parekhji",
+    "Bharadwaj Amrutur"
+   ],
+   "track": "main",
+   "source": "https://www.itctestweek.org/best-paper-awards/",
+   "evidence": "2021 Best “Exploiting Application Tolerance for Functional Safety,”, Prasanth Viswanathan, Rubin Parekhji, and Bharadwaj Amrutur"
+  },
+  {
+   "venue": "ITC",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Honorable",
+   "title": "A Fast and Low Cost Embedded Test Solution for CMOS Image Sensors",
+   "authors": [
+    "Julia Lefevre",
+    "Philippe Debaud",
+    "Patrick Girard",
+    "Arnaud Virazel"
+   ],
+   "track": "main",
+   "source": "https://www.itctestweek.org/best-paper-awards/",
+   "evidence": "2021 Best “Exploiting Application Tolerance for Functional Safety,”, Prasanth Viswanathan, Rubin Parekhji, and Bharadwaj Amrutur 2021 Honorable “Improving Volume Diagnosis and Debug with Test Failure Clustering and Reorganization,”, Mu-Ting Wu, Cheng-Sian Kuo, James Chien-Mo Li, Chris Nigh, and Gaurav Bhargava 2021 Honorable “A Fast and Low Cost Embedded Test Solution for CMOS Image Sensors,” Julia Lefevre, Philippe Debaud, Patrick Girard, and Arnaud Virazel"
+  },
+  {
+   "venue": "ITC",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Honorable",
+   "title": "Improving Volume Diagnosis and Debug with Test Failure Clustering and Reorganization",
+   "authors": [
+    "Mu-Ting Wu",
+    "Cheng-Sian Kuo",
+    "James Chien-Mo Li",
+    "Chris Nigh",
+    "Gaurav Bhargava"
+   ],
+   "track": "main",
+   "source": "https://www.itctestweek.org/best-paper-awards/",
+   "evidence": "2021 Best “Exploiting Application Tolerance for Functional Safety,”, Prasanth Viswanathan, Rubin Parekhji, and Bharadwaj Amrutur 2021 Honorable “Improving Volume Diagnosis and Debug with Test Failure Clustering and Reorganization,”, Mu-Ting Wu, Cheng-Sian Kuo, James Chien-Mo Li, Chris Nigh, and Gaurav Bhargava"
+  },
+  {
+   "venue": "ITC",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best",
+   "title": "Language Driven Analytics for Failure Pattern Feedforward and Feedback",
+   "authors": [
+    "Min Jian Yang",
+    "Yueling (Jenny) Zeng",
+    "Li-C. Wang"
+   ],
+   "track": "main",
+   "source": "https://www.itctestweek.org/best-paper-awards/",
+   "evidence": "2022 Best “Language Driven Analytics for Failure Pattern Feedforward and Feedback”, Min Jian Yang, Yueling (Jenny) Zeng and Li-C. Wang"
+  },
+  {
+   "venue": "ITC",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Honorable",
+   "title": "DEFCON: Defect Acceleration through Content Optimization",
+   "authors": [
+    "Suriyaprakash Natarajan",
+    "Abhijit Sathaye",
+    "Chaitali Oak",
+    "Nipun Chaplot",
+    "Suvadeep Banerjee"
+   ],
+   "track": "main",
+   "source": "https://www.itctestweek.org/best-paper-awards/",
+   "evidence": "2022 Best “Language Driven Analytics for Failure Pattern Feedforward and Feedback”, Min Jian Yang, Yueling (Jenny) Zeng and Li-C. Wang 2022 Honorable “PPA Optimization of Test Points in Automotive Designs”, Brian Foutz, Sarthak Singhal, Prateek Kumar Rai, Krishna Chakravadhanula, Vivek Chickermane, Bharath Nandakumar, Sameer Chillarige, Christos Papameletis and Satish Ravichandran 2022 Honorable “DEFCON: Defect Acceleration through Content Optimization”, Suriyaprakash Natarajan, Abhijit Sathaye, Chaitali Oak, Nipun Chaplot and Suvadeep Banerjee"
+  },
+  {
+   "venue": "ITC",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Honorable",
+   "title": "PPA Optimization of Test Points in Automotive Designs",
+   "authors": [
+    "Brian Foutz",
+    "Sarthak Singhal",
+    "Prateek Kumar Rai",
+    "Krishna Chakravadhanula",
+    "Vivek Chickermane",
+    "Bharath Nandakumar",
+    "Sameer Chillarige",
+    "Christos Papameletis",
+    "Satish Ravichandran"
+   ],
+   "track": "main",
+   "source": "https://www.itctestweek.org/best-paper-awards/",
+   "evidence": "2022 Best “Language Driven Analytics for Failure Pattern Feedforward and Feedback”, Min Jian Yang, Yueling (Jenny) Zeng and Li-C. Wang 2022 Honorable “PPA Optimization of Test Points in Automotive Designs”, Brian Foutz, Sarthak Singhal, Prateek Kumar Rai, Krishna Chakravadhanula, Vivek Chickermane, Bharath Nandakumar, Sameer Chillarige, Christos Papameletis and Satish Ravichandran"
+  },
+  {
+   "venue": "ITC",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best",
+   "title": "IEA-Plot: Conducting Wafer-Based Data Analytics Through Chat",
+   "authors": [
+    "M. Dupree",
+    "M. Yang",
+    "Y. (Jenny) Zeng",
+    "L-C. Wang"
+   ],
+   "track": "main",
+   "source": "https://www.itctestweek.org/best-paper-awards/",
+   "evidence": "2023 Best “IEA-Plot: Conducting Wafer-Based Data Analytics Through Chat”, M. Dupree, M. Yang, * Y. (Jenny) Zeng, L-C. Wang"
+  },
+  {
+   "venue": "ITC",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Honorable",
+   "title": "ARC-FSM-G: Automatic Security Rule Checking for Finite State Machine at the Netlist Abstraction",
+   "authors": [
+    "R. Kibria",
+    "F. Farahmandi",
+    "M. Tehranipoor"
+   ],
+   "track": "main",
+   "source": "https://www.itctestweek.org/best-paper-awards/",
+   "evidence": "2023 Best “IEA-Plot: Conducting Wafer-Based Data Analytics Through Chat”, M. Dupree, M. Yang, * Y. (Jenny) Zeng, L-C. Wang 2023 Honorable “ARC-FSM-G: Automatic Security Rule Checking for Finite State Machine at the Netlist Abstraction”, R. Kibria, F. Farahmandi, M. Tehranipoor"
+  },
+  {
+   "venue": "ITC",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best",
+   "title": "WM-Graph: Graph-Based Approach for Wafermap Analytics",
+   "authors": [
+    "Min Jian Yang",
+    "Yueling (Jenny) Zeng",
+    "Li-C. Wang"
+   ],
+   "track": "main",
+   "source": "https://www.itctestweek.org/best-paper-awards/",
+   "evidence": "2024 Best “WM-Graph: Graph-Based Approach for Wafermap Analytics”, Min Jian Yang, Yueling (Jenny) Zeng, Li-C. Wang"
+  },
+  {
+   "venue": "ITC",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Honorable",
+   "title": "Digital Scan and ATPG for Analog Circuits",
+   "authors": [
+    "Stephen Sunter",
+    "Krzysztof Jurga"
+   ],
+   "track": "main",
+   "source": "https://www.itctestweek.org/best-paper-awards/",
+   "evidence": "2024 Best “WM-Graph: Graph-Based Approach for Wafermap Analytics”, Min Jian Yang, Yueling (Jenny) Zeng, Li-C. Wang 2024 Honorable “Generation and Quality Evaluation of Synthetic Process Control Monitoring Data”, Matthew Nigh, John Carulli, and Yiorgos Makris 2024 Honorable “Digital Scan and ATPG for Analog Circuits”, Stephen Sunter and Krzysztof Jurga"
+  },
+  {
+   "venue": "ITC",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Honorable",
+   "title": "Generation and Quality Evaluation of Synthetic Process Control Monitoring Data",
+   "authors": [
+    "Matthew Nigh",
+    "John Carulli",
+    "Yiorgos Makris"
+   ],
+   "track": "main",
+   "source": "https://www.itctestweek.org/best-paper-awards/",
+   "evidence": "2024 Best “WM-Graph: Graph-Based Approach for Wafermap Analytics”, Min Jian Yang, Yueling (Jenny) Zeng, Li-C. Wang 2024 Honorable “Generation and Quality Evaluation of Synthetic Process Control Monitoring Data”, Matthew Nigh, John Carulli, and Yiorgos Makris"
+  },
+  {
    "venue": "IUI",
    "year": 2022,
    "award": "best",
@@ -127712,6 +128488,40 @@
    "evidence": "The 22nd International Conference on Mining Software Repositories (MSR 2025): Shrey Tiwari, Serena Chen, Alexander Joukov, Peter Vandervelde, Ao Li, Rohan Padhye: It’s About Time: An Empirical Study of Date and Time Bugs in Open-Source Python Software"
   },
   {
+   "venue": "MSST",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "MSST Best Paper Award",
+   "title": "Classifying Data to Reduce Long Term Data Movement in Shingled Write Disks",
+   "authors": [
+    "Stephanie Jones",
+    "Ethan Miller",
+    "Darrell Long",
+    "Rekha Pitchumani",
+    "Christina Strong",
+    "Ahmed Amer"
+   ],
+   "track": "main",
+   "source": "https://storageconference.us/MSST-history/2015/index.html",
+   "evidence": "MSST Best Paper Award: Classifying Data to Reduce Long Term Data Movement in Shingled Write Disks ( Paper , Presentation ) Stephanie Jones*, Ethan Miller, Darrell Long, Rekha Pitchumani, Christina Strong, University of California, Santa Cruz Ahmed Amer"
+  },
+  {
+   "venue": "MSST",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award Winner",
+   "title": "Revisiting HDD Rules of Thumb: 1/3 Is Not (Quite) the Average Seek Distance",
+   "authors": [
+    "Serkay Olmez",
+    "John Bent",
+    "Remzi Arpaci-Dusseau",
+    "Yifan Dai"
+   ],
+   "track": "main",
+   "source": "https://storageconference.us/2024/index.html",
+   "evidence": "Revisiting HDD Rules of Thumb: 1/3 Is Not (Quite) the Average Seek Distance — Best Paper Award Winner [ Video ] [ PDF ] Serkay Olmez (MIT Lincoln Laboratory); John Bent (LANL); Remzi Arpaci-Dusseau, Yifan Dai (UW–Madison)"
+  },
+  {
    "venue": "NAACL",
    "year": 2015,
    "award": "best",
@@ -134451,6 +135261,78 @@
    "evidence": "As part of PACT 2022, the following contributions received awards: Best Paper: Slice-and-Forge: Making Better Use of Caches for Graph Convolutional Network Accelerators (#520) M. Yoo, J. Song, H. Lee, J. Lee, N. Kim, Y. Kim, J. Lee"
   },
   {
+   "venue": "Performance",
+   "year": 2018,
+   "award": "student",
+   "awardLabel": "best student paper award",
+   "title": "SRPT for Multiserver Systems",
+   "authors": [
+    "Isaac Grosof",
+    "Ziv Scully",
+    "Mor Harchol-Balter"
+   ],
+   "track": "main",
+   "source": "https://performance2018.sciencesconf.org/resource/page/id/27.html",
+   "evidence": "Best Paper Award The following paper received the best student paper award in IFIP WG PERFORMANCE 2018. Congratulations! SRPT for Multiserver Systems. Isaac Grosof (Carnegie Mellon University), Ziv Scully (Carnegie Mellon University), Mor Harchol-Balter (Carnegie Mellon University)"
+  },
+  {
+   "venue": "Performance",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best paper award",
+   "title": "Network Speed Scaling",
+   "authors": [
+    "Rahul Vaze",
+    "Jayakrishnan Nair"
+   ],
+   "track": "main",
+   "source": "https://www.performance2020.deib.polimi.it/index.html%3Fp=1312.html",
+   "evidence": "Best paper award: Rahul Vaze and Jayakrishnan Nair. Network Speed Scaling"
+  },
+  {
+   "venue": "Performance",
+   "year": 2020,
+   "award": "student",
+   "awardLabel": "Best student paper award",
+   "title": "A Theory of Auto-Scaling for Resource Reservation in Cloud Services",
+   "authors": [
+    "Konstantinos Psychas",
+    "Javad Ghaderi"
+   ],
+   "track": "main",
+   "source": "https://www.performance2020.deib.polimi.it/index.html%3Fp=1312.html",
+   "evidence": "Best paper award: Rahul Vaze and Jayakrishnan Nair. Network Speed Scaling . Best student paper award: Konstantinos Psychas and Javad Ghaderi. A Theory of Auto-Scaling for Resource Reservation in Cloud Services"
+  },
+  {
+   "venue": "Performance",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best paper award",
+   "title": "On the Quantum Performance Evaluation of Two Distributed Quantum Architectures",
+   "authors": [
+    "Gayane Vardoyan",
+    "Matthew Skrzypczyk",
+    "Stephanie Wehner"
+   ],
+   "track": "main",
+   "source": "https://www.performance2021.deib.polimi.it/www.performance2021.deib.polimi.it/best-paper-awards/index.html",
+   "evidence": "Awards Best paper award: Gayane Vardoyan, Matthew Skrzypczyk, Stephanie Wehner. On the Quantum Performance Evaluation of Two Distributed Quantum Architectures"
+  },
+  {
+   "venue": "Performance",
+   "year": 2021,
+   "award": "student",
+   "awardLabel": "Stephen S. Lavenberg Best student paper award",
+   "title": "A Heavy Traffic Theory of Two-Sided Queues",
+   "authors": [
+    "Sushil Mahavir Varma",
+    "Siva Theja Maguluri"
+   ],
+   "track": "main",
+   "source": "https://www.performance2021.deib.polimi.it/www.performance2021.deib.polimi.it/best-paper-awards/index.html",
+   "evidence": "Awards Best paper award: Gayane Vardoyan, Matthew Skrzypczyk, Stephanie Wehner. On the Quantum Performance Evaluation of Two Distributed Quantum Architectures. Stephen S. Lavenberg Best student paper award: Sushil Mahavir Varma, Siva Theja Maguluri. A Heavy Traffic Theory of Two-Sided Queues"
+  },
+  {
    "venue": "Pervasive",
    "year": 2005,
    "award": "best",
@@ -140638,6 +141520,466 @@
    "track": "main",
    "source": "https://roboticsconference.org/2026/program/awards/",
    "evidence": "RSS 2026 Award Winners, Outstanding Systems Paper in Memory of Seth Teller Award: NeuralActuator: Neural Actuation Modeling for Robot Dynamics and External Force Perception — Zhiyang Dou, John U. Onyemelukwe, Hangxing Zhang, Heng Zhang, Minghao Guo, Yunsheng Tian, Michal Piotr Lipiec, Joshua Jacob, Chao Liu, Peter Yichen Chen, Yuri Ivanov, Wojciech Matusik (Winner: Outstanding Systems Paper in Memory of Seth Teller Award)"
+  },
+  {
+   "venue": "RTAS",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "MultiNets: Policy Oriented Real-Time Switching of Wireless Interfaces on Mobile Devices",
+   "authors": [
+    "Shahriar Nirjon",
+    "Angela Nicoara",
+    "Cheng-Hsin Hsu",
+    "Jatinder Singh",
+    "John Stankovic"
+   ],
+   "track": "main",
+   "source": "https://cmte.ieee.org/tcrts/awards/best-paper-awards/",
+   "evidence": "RTAS 2012 Best Paper Award: Shahriar Nirjon, Angela Nicoara, Cheng-Hsin Hsu, Jatinder Singh and John Stankovic ( MultiNets: Policy Oriented Real-Time Switching of Wireless Interfaces on Mobile Devices"
+  },
+  {
+   "venue": "RTAS",
+   "year": 2012,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "From Verification to Implementation: A Model Translation Tool and a Pacemaker Case Study",
+   "authors": [
+    "Miroslav Pajic",
+    "Zhihao Jiang",
+    "Insup Lee",
+    "Oleg Sokolsky",
+    "Rahul Mangharam"
+   ],
+   "track": "main",
+   "source": "https://cmte.ieee.org/tcrts/awards/best-paper-awards/",
+   "evidence": "RTAS 2012 Best Paper Award: Shahriar Nirjon, Angela Nicoara, Cheng-Hsin Hsu, Jatinder Singh and John Stankovic ( MultiNets: Policy Oriented Real-Time Switching of Wireless Interfaces on Mobile Devices) Best Student Paper Award: Miroslav Pajic, Zhihao Jiang, Insup Lee, Oleg Sokolsky and Rahul Mangharam ( From Verification to Implementation: A Model Translation Tool and a Pacemaker Case Study"
+  },
+  {
+   "venue": "RTAS",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Sequoll: A framework for model checking binaries",
+   "authors": [
+    "Bernard Blackham",
+    "Gernot Heiser"
+   ],
+   "track": "main",
+   "source": "https://cmte.ieee.org/tcrts/awards/best-paper-awards/",
+   "evidence": "RTAS 2013 Best Paper Award: Bernard Blackham and Gernot Heiser ( Sequoll: A framework for model checking binaries"
+  },
+  {
+   "venue": "RTAS",
+   "year": 2013,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Real-Time Cache Management Framework for Multi-core Architectures",
+   "authors": [
+    "Renato Mancuso",
+    "Roman Dudko",
+    "Emiliano Betti",
+    "Marco Cesati",
+    "Marco Caccamo",
+    "Rodolfo Pellizzoni"
+   ],
+   "track": "main",
+   "source": "https://cmte.ieee.org/tcrts/awards/best-paper-awards/",
+   "evidence": "RTAS 2013 Best Paper Award: Bernard Blackham and Gernot Heiser ( Sequoll: A framework for model checking binaries ) Best Student Paper Award: Renato Mancuso, Roman Dudko, Emiliano Betti, Marco Cesati, Marco Caccamo and Rodolfo Pellizzoni ( Real-Time Cache Management Framework for Multi-core Architectures"
+  },
+  {
+   "venue": "RTAS",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Bounding Memory Interference Delay in COTS-based Multi-Core Systems",
+   "authors": [
+    "Hyoseung Kim",
+    "Dionisio de Niz",
+    "Björn Andersson",
+    "Mark Klein",
+    "Onur Mutlu",
+    "Raj Rajkumar"
+   ],
+   "track": "main",
+   "source": "https://cmte.ieee.org/tcrts/awards/best-paper-awards/",
+   "evidence": "RTAS 2014 Best Paper Award: Hyoseung Kim, Dionisio de Niz, Björn Andersson, Mark Klein, Onur Mutlu and Raj Rajkumar ( Bounding Memory Interference Delay in COTS-based Multi-Core Systems"
+  },
+  {
+   "venue": "RTAS",
+   "year": 2014,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "FJOS: Practical, Predictable, and Efficient System Support for Fork/Join Parallelism",
+   "authors": [
+    "Qi Wang",
+    "Gabriel Parmer"
+   ],
+   "track": "main",
+   "source": "https://cmte.ieee.org/tcrts/awards/best-paper-awards/",
+   "evidence": "RTAS 2014 Best Paper Award: Hyoseung Kim, Dionisio de Niz, Björn Andersson, Mark Klein, Onur Mutlu and Raj Rajkumar ( Bounding Memory Interference Delay in COTS-based Multi-Core Systems ) Best Student Paper Award: Qi Wang and Gabriel Parmer ( FJOS: Practical, Predictable, and Efficient System Support for Fork/Join Parallelism"
+  },
+  {
+   "venue": "RTAS",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "dOSEK: The Design and Implementation of a Dependability-Oriented Static Embedded Kernel",
+   "authors": [
+    "Martin Hoffmann",
+    "Florian Lukas",
+    "Christian Dietrich",
+    "Daniel Lohmann"
+   ],
+   "track": "main",
+   "source": "https://cmte.ieee.org/tcrts/awards/best-paper-awards/",
+   "evidence": "RTAS 2015 Best Paper Award: Martin Hoffmann, Florian Lukas, Christian Dietrich and Daniel Lohmann ( dOSEK: The Design and Implementation of a Dependability-Oriented Static Embedded Kernel"
+  },
+  {
+   "venue": "RTAS",
+   "year": 2015,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Jfair: A Scheduling Algorithm to Stabilize Control Application",
+   "authors": [
+    "Amir Aminifar",
+    "Petru Eles",
+    "Zebo Peng"
+   ],
+   "track": "main",
+   "source": "https://cmte.ieee.org/tcrts/awards/best-paper-awards/",
+   "evidence": "RTAS 2015 Best Paper Award: Martin Hoffmann, Florian Lukas, Christian Dietrich and Daniel Lohmann ( dOSEK: The Design and Implementation of a Dependability-Oriented Static Embedded Kernel ) Best Student Paper Award: Amir Aminifar, Petru Eles and Zebo Peng ( Jfair: A Scheduling Algorithm to Stabilize Control Application"
+  },
+  {
+   "venue": "RTAS",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Taming Non-blocking Caches to Improve Isolation in Multicore Real-Time Systems",
+   "authors": [
+    "Prathap Kumar Valsan",
+    "Heechul Yun",
+    "Farzad Farshchi"
+   ],
+   "track": "main",
+   "source": "https://cmte.ieee.org/tcrts/awards/best-paper-awards/",
+   "evidence": "RTAS 2016 Best Paper Award: Prathap Kumar Valsan, Heechul Yun and Farzad Farshchi ( Taming Non-blocking Caches to Improve Isolation in Multicore Real-Time Systems"
+  },
+  {
+   "venue": "RTAS",
+   "year": 2016,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Attacking the One-Out-Of-m Multicore Problem by Combining Hardware Management with Mixed-Criticality Provisioning",
+   "authors": [
+    "Namhoon Kim",
+    "Bryan C. Ward",
+    "Micaiah Chisholm",
+    "Cheng-Yang Fu",
+    "James H. Anderson",
+    "F. Donelson Smith"
+   ],
+   "track": "main",
+   "source": "https://cmte.ieee.org/tcrts/awards/best-paper-awards/",
+   "evidence": "RTAS 2016 Best Paper Award: Prathap Kumar Valsan, Heechul Yun and Farzad Farshchi ( Taming Non-blocking Caches to Improve Isolation in Multicore Real-Time Systems ) Best Student Paper Award: Namhoon Kim, Bryan C. Ward, Micaiah Chisholm, Cheng-Yang Fu, James H. Anderson and F. Donelson Smith ( Attacking the One-Out-Of-m Multicore Problem by Combining Hardware Management with Mixed-Criticality Provisioning"
+  },
+  {
+   "venue": "RTAS",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "TimerShield: Protecting High-Priority Tasks from Low-Priority Timer Interference",
+   "authors": [
+    "Pratyush Patel",
+    "Manohar Vanga",
+    "Björn Brandenburg"
+   ],
+   "track": "main",
+   "source": "https://cmte.ieee.org/tcrts/awards/best-paper-awards/",
+   "evidence": "RTAS 2017 Best Paper Award: Pratyush Patel, Manohar Vanga, and Björn Brandenburg ( TimerShield: Protecting High-Priority Tasks from Low-Priority Timer Interference"
+  },
+  {
+   "venue": "RTAS",
+   "year": 2017,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Building Real-Time Embedded Applications on QduinoMC: A Web-connected 3D Printer Case Study",
+   "authors": [
+    "Zhuoqun Cheng",
+    "Richard West",
+    "Ying Ye"
+   ],
+   "track": "main",
+   "source": "https://cmte.ieee.org/tcrts/awards/best-paper-awards/",
+   "evidence": "RTAS 2017 Best Paper Award: Pratyush Patel, Manohar Vanga, and Björn Brandenburg ( TimerShield: Protecting High-Priority Tasks from Low-Priority Timer Interference ) Best Student Paper Award: Zhuoqun Cheng, Richard West, and Ying Ye ( Building Real-Time Embedded Applications on QduinoMC: A Web-connected 3D Printer Case Study"
+  },
+  {
+   "venue": "RTAS",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "S^3DNN: Supervised Streaming and Scheduling for GPU-accelerated Real-Time DNN Workloads",
+   "authors": [
+    "Husheng Zhou",
+    "Soroush Bateni",
+    "Cong Liu"
+   ],
+   "track": "main",
+   "source": "https://cmte.ieee.org/tcrts/awards/best-paper-awards/",
+   "evidence": "RTAS 2018 Best Paper Award: Husheng Zhou, Soroush Bateni, and Cong Liu (S^3DNN: Supervised Streaming and Scheduling for GPU-accelerated Real-Time DNN Workloads"
+  },
+  {
+   "venue": "RTAS",
+   "year": 2018,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Scalable Memory Reclamation for Multi-Core, Real-Time Systems",
+   "authors": [
+    "Yuxin Ren",
+    "Guyue Liu",
+    "Gabriel Parmer",
+    "Björn Brandenburg"
+   ],
+   "track": "main",
+   "source": "https://cmte.ieee.org/tcrts/awards/best-paper-awards/",
+   "evidence": "RTAS 2018 Best Paper Award: Husheng Zhou, Soroush Bateni, and Cong Liu (S^3DNN: Supervised Streaming and Scheduling for GPU-accelerated Real-Time DNN Workloads) Best Student Paper Award: Yuxin Ren, Guyue Liu, Gabriel Parmer, and Björn Brandenburg (Scalable Memory Reclamation for Multi-Core, Real-Time Systems"
+  },
+  {
+   "venue": "RTAS",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Holistic Resource Allocation for Multicore Real-Time Systems",
+   "authors": [
+    "Meng Xu",
+    "Linh Thi Xuan Phan",
+    "Hyon-Young Choi",
+    "Yuhan Lin",
+    "Haoran Li",
+    "Chenyang Lu",
+    "Insup Lee"
+   ],
+   "track": "main",
+   "source": "https://cmte.ieee.org/tcrts/awards/best-paper-awards/",
+   "evidence": "RTAS 2019 Best Paper Award: Meng Xu, Linh Thi Xuan Phan, Hyon-Young Choi, Yuhan Lin, Haoran Li, Chenyang Lu, and Insup Lee. “ Holistic Resource Allocation for Multicore Real-Time Systems"
+  },
+  {
+   "venue": "RTAS",
+   "year": 2019,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "RTNF: Predictable Latency for Network Function Virtualization",
+   "authors": [
+    "Saeed Abedi",
+    "Neeraj Gandhi",
+    "Henri Maxime Demoulin",
+    "Yang Li",
+    "Yang Wu",
+    "Linh Thi Xuan Phan"
+   ],
+   "track": "main",
+   "source": "https://cmte.ieee.org/tcrts/awards/best-paper-awards/",
+   "evidence": "RTAS 2019 Best Paper Award: Meng Xu, Linh Thi Xuan Phan, Hyon-Young Choi, Yuhan Lin, Haoran Li, Chenyang Lu, and Insup Lee. “ Holistic Resource Allocation for Multicore Real-Time Systems “ Best Student Paper Award: Saeed Abedi, Neeraj Gandhi, Henri Maxime Demoulin, Yang Li, Yang Wu, and Linh Thi Xuan Phan. “ RTNF: Predictable Latency for Network Function Virtualization"
+  },
+  {
+   "venue": "RTAS",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "The Potential of Programmable Logic in the Middle: Cache Bleaching",
+   "authors": [
+    "Shahin Roozkhosh",
+    "Renato Mancuso"
+   ],
+   "track": "main",
+   "source": "https://cmte.ieee.org/tcrts/awards/best-paper-awards/",
+   "evidence": "RTAS 2020 Best Paper Award: Shahin Roozkhosh and Renato Mancuso. “ The Potential of Programmable Logic in the Middle: Cache Bleaching"
+  },
+  {
+   "venue": "RTAS",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "No Crash, No Exploit: Automated Verification of Embedded Kernels",
+   "authors": [
+    "Olivier Nicole",
+    "Matthieu Lemerre",
+    "Sébastien Bardin",
+    "Xavier Rival"
+   ],
+   "track": "main",
+   "source": "https://cmte.ieee.org/tcrts/awards/best-paper-awards/",
+   "evidence": "RTAS 2021 Best Paper Award: Olivier Nicole, Matthieu Lemerre, Sébastien Bardin, Xavier Rival. “ No Crash, No Exploit: Automated Verification of Embedded Kernels"
+  },
+  {
+   "venue": "RTAS",
+   "year": 2021,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Constrained Data-Age with Job-Level Dependencies: How to Reconcile Tight Bounds and Overheads",
+   "authors": [
+    "Tobias Klaus",
+    "Matthias Becker",
+    "Wolfgang Schröder-Preikschat",
+    "Peter Ulbrich"
+   ],
+   "track": "main",
+   "source": "https://cmte.ieee.org/tcrts/awards/best-paper-awards/",
+   "evidence": "RTAS 2021 Best Paper Award: Olivier Nicole, Matthieu Lemerre, Sébastien Bardin, Xavier Rival. “ No Crash, No Exploit: Automated Verification of Embedded Kernels “ Best Student Paper Award: Tobias Klaus, Matthias Becker, Wolfgang Schröder-Preikschat, Peter Ulbrich. “ Constrained Data-Age with Job-Level Dependencies: How to Reconcile Tight Bounds and Overheads"
+  },
+  {
+   "venue": "RTAS",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Partial-Order Reduction for Schedule-Abstraction-based Response-Time Analyses of Non-Preemptive Tasks",
+   "authors": [
+    "Sayra Ranjha",
+    "Geoffrey Nelissen",
+    "Mitra Nasri"
+   ],
+   "track": "main",
+   "source": "https://cmte.ieee.org/tcrts/awards/best-paper-awards/",
+   "evidence": "RTAS 2022 Best Paper Award: Sayra Ranjha, Geoffrey Nelissen, and Mitra Nasri. “ Partial-Order Reduction for Schedule-Abstraction-based Response-Time Analyses of Non-Preemptive Tasks"
+  },
+  {
+   "venue": "RTAS",
+   "year": 2022,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "FlyOS: Integrated Modular Avionics for Autonomous Multicopters",
+   "authors": [
+    "Anam Farrukh",
+    "Richard West"
+   ],
+   "track": "main",
+   "source": "https://cmte.ieee.org/tcrts/awards/best-paper-awards/",
+   "evidence": "RTAS 2022 Best Paper Award: Sayra Ranjha, Geoffrey Nelissen, and Mitra Nasri. “ Partial-Order Reduction for Schedule-Abstraction-based Response-Time Analyses of Non-Preemptive Tasks “ Best Student Paper Award: Anam Farrukh and Richard West. “ FlyOS: Integrated Modular Avionics for Autonomous Multicopters"
+  },
+  {
+   "venue": "RTAS",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "G(IP)2C: Temporally Isolated Multiprocessor Real-Time IPC with Server-to-Server Invocations",
+   "authors": [
+    "Cédric Courtaud",
+    "Björn Brandenburg"
+   ],
+   "track": "main",
+   "source": "https://cmte.ieee.org/tcrts/awards/best-paper-awards/",
+   "evidence": "RTAS 2023 Best Paper Award: Cédric Courtaud and Björn Brandenburg. “ G(IP)2C: Temporally Isolated Multiprocessor Real-Time IPC with Server-to-Server Invocations"
+  },
+  {
+   "venue": "RTAS",
+   "year": 2023,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Shedding Light on Static Partitioning Hypervisors for Arm-based Mixed-Criticality Systems",
+   "authors": [
+    "José Martins",
+    "Sandro Pinto"
+   ],
+   "track": "main",
+   "source": "https://cmte.ieee.org/tcrts/awards/best-paper-awards/",
+   "evidence": "RTAS 2023 Best Paper Award: Cédric Courtaud and Björn Brandenburg. “ G(IP)2C: Temporally Isolated Multiprocessor Real-Time IPC with Server-to-Server Invocations” Best Student Paper Award: José Martins and Sandro Pinto. “ Shedding Light on Static Partitioning Hypervisors for Arm-based Mixed-Criticality Systems"
+  },
+  {
+   "venue": "RTAS",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "PAAM: A Framework for Coordinated and Priority-Driven Accelerator Management in ROS 2",
+   "authors": [
+    "D. Enright",
+    "Y. Xiang",
+    "H. Choi",
+    "H. Kim"
+   ],
+   "track": "main",
+   "source": "https://cmte.ieee.org/tcrts/awards/best-paper-awards/",
+   "evidence": "RTAS 2024 Best Paper Award: D. Enright, Y. Xiang, H. Choi, H. Kim. “ PAAM: A Framework for Coordinated and Priority-Driven Accelerator Management in ROS 2"
+  },
+  {
+   "venue": "RTAS",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "PAAM: A Framework for Coordinated and Priority-Driven Accelerator Management in ROS 2",
+   "authors": [
+    "D. Enright",
+    "Y. Xiang",
+    "H. Choi",
+    "H. Kim"
+   ],
+   "track": "main",
+   "source": "https://cmte.ieee.org/tcrts/awards/best-paper-awards/",
+   "evidence": "RTAS 2024 Best Paper Award: D. Enright, Y. Xiang, H. Choi, H. Kim. “ PAAM: A Framework for Coordinated and Priority-Driven Accelerator Management in ROS 2 “ Best Student Paper Award: D. Enright, Y. Xiang, H. Choi, H. Kim. “ PAAM: A Framework for Coordinated and Priority-Driven Accelerator Management in ROS 2"
+  },
+  {
+   "venue": "RTAS",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "CROS-RT: Cross-Layer Priority Scheduling for Predictable Inter-Process Communication in ROS 2",
+   "authors": [
+    "Sohyun Kim",
+    "Juho Song",
+    "Kilho Lee",
+    "Sangeun Oh",
+    "Hoon Sung Chwa"
+   ],
+   "track": "main",
+   "source": "https://cmte.ieee.org/tcrts/awards/best-paper-awards/",
+   "evidence": "RTAS 2025 Best Paper Award: Sohyun Kim, Juho Song, Kilho Lee, Sangeun Oh, and Hoon Sung Chwa. “ CROS-RT: Cross-Layer Priority Scheduling for Predictable Inter-Process Communication in ROS 2"
+  },
+  {
+   "venue": "RTAS",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "A Unified Framework for Quantitative Cache Analysis",
+   "authors": [
+    "Sophie Kahlen",
+    "Jan Reineke"
+   ],
+   "track": "main",
+   "source": "https://cmte.ieee.org/tcrts/awards/best-paper-awards/",
+   "evidence": "RTAS 2025 Best Paper Award: Sohyun Kim, Juho Song, Kilho Lee, Sangeun Oh, and Hoon Sung Chwa. “ CROS-RT: Cross-Layer Priority Scheduling for Predictable Inter-Process Communication in ROS 2 ” Best Student Paper Award: Sophie Kahlen and Jan Reineke. “ A Unified Framework for Quantitative Cache Analysis"
+  },
+  {
+   "venue": "RTAS",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "ZeroSwap: Minimizing Swap Overhead for Real-Time Multi-DNN Inference via SSD-based GPU Memory Extension",
+   "authors": [
+    "Woosung Kang",
+    "Filippo Muzzini",
+    "Gianluca Brilli",
+    "Jong-Chan Kim",
+    "Jinkyu Lee",
+    "Hoon Sung Chwa"
+   ],
+   "track": "main",
+   "source": "https://cmte.ieee.org/tcrts/awards/best-paper-awards/",
+   "evidence": "RTAS 2026 Best Paper Award: Woosung Kang, Filippo Muzzini, Gianluca Brilli, Jong-Chan Kim, Jinkyu Lee, and Hoon Sung Chwa. “ ZeroSwap: Minimizing Swap Overhead for Real-Time Multi-DNN Inference via SSD-based GPU Memory Extension"
+  },
+  {
+   "venue": "RTAS",
+   "year": 2026,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Per-Bank Memory Bandwidth Regulation for Predictable and Performant Real-Time Systems",
+   "authors": [
+    "Connor Sullivan",
+    "Amin Mamandipoor",
+    "Cole Strickler",
+    "Heechul Yun"
+   ],
+   "track": "main",
+   "source": "https://cmte.ieee.org/tcrts/awards/best-paper-awards/",
+   "evidence": "RTAS 2026 Best Paper Award: Woosung Kang, Filippo Muzzini, Gianluca Brilli, Jong-Chan Kim, Jinkyu Lee, and Hoon Sung Chwa. “ ZeroSwap: Minimizing Swap Overhead for Real-Time Multi-DNN Inference via SSD-based GPU Memory Extension “ Best Student Paper Award: Connor Sullivan, Amin Mamandipoor, Cole Strickler, and Heechul Yun. “ Per-Bank Memory Bandwidth Regulation for Predictable and Performant Real-Time Systems"
   },
   {
    "venue": "RTSS",
@@ -167876,6 +169218,25 @@
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
    "evidence": "USITS '03: SkipNet: A Scalable Overlay Network with Practical Locality Properties — Nicholas J. A. Harvey, Microsoft Research and University of Washington; Michael B. Jones, Microsoft Research; Stefan Saroiu, University of Washington; Marvin Theimer, Microsoft Research; Alec Wolman, Microsoft Research"
+  },
+  {
+   "venue": "VEE",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Building A KVM-based Hypervisor for A Heterogeneous System Architecture Compliant System",
+   "authors": [
+    "Yu-Ju Huang",
+    "Hsuan-Heng Wu",
+    "Yeh-Ching Chung",
+    "Wei-Chung Hsu"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/track/vee-2016/Program",
+   "alsoAt": [
+    "https://conf.researchr.org/home/vee-2016"
+   ],
+   "evidence": "Building A KVM-based Hypervisor for A Heterogeneous System Architecture Compliant System Yu-Ju Huang (National Chiao Tung University, Taiwan), Hsuan-Heng Wu (National Taiwan University, Taiwan), Yeh-Ching Chung (National Tsing Hua University, Taiwan), and Wei-Chung Hsu (National Taiwan University, Taiwan) [Presentation] Won the Best Paper Award!"
   },
   {
    "venue": "VehicleSec",
