@@ -662,7 +662,6 @@
   "optThemeSoft": {
     "message": "Sanft"
   },
-
   "markSpotlightHighlight": {
     "message": "Spotlight und Highlight"
   },
@@ -694,7 +693,7 @@
     "message": "Autorenlisten zuerst über Semantic Scholar lesen"
   },
   "optSemanticLabelHint": {
-    "message": "Beim Klick auf „Ganze Listen lesen“ wird bei Semantic Scholar zuerst die vollständige Autorenliste jedes Papers abgefragt. Gesendet wird nur der Titel des Papers, sonst nichts. Die Scholar-Seite selbst wird dann nur für die Paper geöffnet, die Semantic Scholar nicht kennt. Weniger Anfragen an Scholar bedeuten weniger CAPTCHAs."
+    "message": "Beim Klick auf „Ganze Listen lesen“ wird bei Semantic Scholar zuerst die vollständige Autorenliste jedes Papers abgefragt. Gesendet wird nur der Titel des Papers (und dein API-Schlüssel, falls du einen eingetragen hast), sonst nichts. Die Scholar-Seite selbst wird dann im Hintergrund gelesen, und zwar nur für die Paper, die Semantic Scholar nicht kennt oder nicht mit demselben Paper beantwortet, und für alle übrigen, sobald Semantic Scholar ablehnt. Weniger Anfragen an Scholar bedeuten weniger CAPTCHAs."
   },
   "yearsTitle": {
     "message": "Hervorgehobene Paper nach Jahr"
@@ -1116,7 +1115,7 @@
     "message": "Keine Farbe"
   },
   "optSaveFailed": {
-    "message": "Nicht gespeichert: Chrome begrenzt, wie oft Einstellungen geschrieben werden können. Warte einen Moment und ändere sie noch einmal."
+    "message": "Noch nicht gespeichert: Chrome begrenzt, wie oft Einstellungen geschrieben werden können. Es wird in wenigen Sekunden erneut gespeichert."
   },
   "optNameTip": {
     "message": "Ein eigener Name dafür, in allen Sprachen. Leer: der Standardname."

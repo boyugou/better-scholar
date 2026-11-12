@@ -662,7 +662,6 @@
   "optThemeSoft": {
     "message": "Lágy"
   },
-
   "markSpotlightHighlight": {
     "message": "Spotlight és Highlight"
   },
@@ -694,7 +693,7 @@
     "message": "Szerzői listák olvasása először a Semantic Scholarból"
   },
   "optSemanticLabelHint": {
-    "message": "A „Teljes listák olvasása” gombra kattintva először a Semantic Scholartól kéri le minden cikk teljes szerzői listáját. Csak a cikk címe kerül elküldésre, semmi más. A Scholar saját oldalát csak azokhoz a cikkekhez nyitja meg, amelyeket a Semantic Scholar nem ismer. Kevesebb kérés megy a Scholarhoz, így kevesebb CAPTCHA is."
+    "message": "A „Teljes listák olvasása” gombra kattintva először a Semantic Scholartól kéri le minden cikk teljes szerzői listáját. Csak a cikk címe kerül elküldésre (és az API-kulcs, ha megadtad), semmi más. A Scholar saját oldalát a háttérben olvassa be azoknál a cikkeknél, amelyeket a Semantic Scholar nem ismer, vagy amelyekhez nem ugyanazt a cikket adja vissza, a többinél pedig, miután a Semantic Scholar elutasítja a kérést. Kevesebb kérés megy a Scholarhoz, így kevesebb CAPTCHA is."
   },
   "yearsTitle": {
     "message": "Kiemelt cikkek évenként"
@@ -1116,7 +1115,7 @@
     "message": "Nincs szín"
   },
   "optSaveFailed": {
-    "message": "Nem mentve: a Chrome korlátozza, milyen gyakran írhatók a beállítások. Várj egy kicsit, aztán próbáld újra."
+    "message": "Még nincs mentve: a Chrome korlátozza, milyen gyakran írhatók a beállítások. Néhány másodperc múlva újra mentésre kerül."
   },
   "optNameTip": {
     "message": "Saját neved ehhez, minden nyelven. Üres: az alapnév."

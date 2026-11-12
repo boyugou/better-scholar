@@ -662,7 +662,6 @@
   "optThemeSoft": {
     "message": "柔和"
   },
-
   "markSpotlightHighlight": {
     "message": "Spotlight 与 Highlight"
   },
@@ -694,7 +693,7 @@
     "message": "优先用 Semantic Scholar 补全作者列表"
   },
   "optSemanticLabelHint": {
-    "message": "点“补全”时，先向 Semantic Scholar 询问每篇论文的完整作者列表。它只收到论文标题，不收到其他信息。只有 Semantic Scholar 不认识的论文，才会去读 Scholar 自己的页面。对 Scholar 的请求减少，意味着验证码也会减少。"
+    "message": "点“补全”时，先向 Semantic Scholar 询问每篇论文的完整作者列表。它只收到论文标题（以及已填写的 API 密钥），不收到其他信息。Scholar 自己的页面会在后台读取：针对 Semantic Scholar 不认识或返回的不是同一篇论文的论文；其余论文则在 Semantic Scholar 拒绝请求后读取。对 Scholar 的请求减少，意味着验证码也会减少。"
   },
   "yearsTitle": {
     "message": "各年份的高亮论文"
@@ -1116,7 +1115,7 @@
     "message": "不上色"
   },
   "optSaveFailed": {
-    "message": "未保存：Chrome 限制了设置的写入频率。请稍候片刻后再修改。"
+    "message": "尚未保存：Chrome 限制了设置的写入频率。更改将在几秒后再次保存。"
   },
   "optNameTip": {
     "message": "你为此设置的名称，适用于所有语言。留空：使用标准名称。"

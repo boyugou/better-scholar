@@ -662,7 +662,6 @@
   "optThemeSoft": {
     "message": "Jemný"
   },
-
   "markSpotlightHighlight": {
     "message": "Spotlight a highlight"
   },
@@ -694,7 +693,7 @@
     "message": "Nejprve číst seznamy autorů ze Semantic Scholar"
   },
   "optSemanticLabelHint": {
-    "message": "Po stisku „Přečíst celé seznamy“ rozšíření nejprve požádá Semantic Scholar o úplný seznam autorů každé práce. Dostane jen název práce, nic víc. Stránka samotného Scholar se pak otevře jen pro práce, které Semantic Scholar nezná. Méně dotazů na Scholar, tedy méně CAPTCHA."
+    "message": "Po stisku „Přečíst celé seznamy“ rozšíření nejprve požádá Semantic Scholar o úplný seznam autorů každé práce. Dostane jen název práce (a API klíč, pokud jste ho zadali), nic víc. Stránka samotného Scholar se pak přečte na pozadí jen pro práce, které Semantic Scholar nezná nebo ke kterým nevrátí tutéž práci, a pro všechny ostatní, jakmile Semantic Scholar odmítne. Méně dotazů na Scholar, tedy méně CAPTCHA."
   },
   "yearsTitle": {
     "message": "Zvýrazněné práce podle roku"
@@ -1116,7 +1115,7 @@
     "message": "Bez barvy"
   },
   "optSaveFailed": {
-    "message": "Neuloženo: Chrome omezuje, jak často lze nastavení zapisovat. Počkejte chvíli a zkuste to znovu."
+    "message": "Zatím neuloženo: Chrome omezuje, jak často lze nastavení zapisovat. Uloží se znovu za pár sekund."
   },
   "optNameTip": {
     "message": "Váš vlastní název pro toto, ve všech jazycích. Prázdné: standardní název."

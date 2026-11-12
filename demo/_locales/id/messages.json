@@ -662,7 +662,6 @@
   "optThemeSoft": {
     "message": "Lembut"
   },
-
   "markSpotlightHighlight": {
     "message": "Spotlight & highlight"
   },
@@ -694,7 +693,7 @@
     "message": "Baca daftar penulis dari Semantic Scholar lebih dulu"
   },
   "optSemanticLabelHint": {
-    "message": "Saat Anda menekan “Baca daftar lengkap”, Semantic Scholar lebih dulu ditanya tentang daftar penulis lengkap setiap makalah. Hanya judul makalah yang dikirim, tidak ada yang lain. Halaman Scholar sendiri hanya dibuka untuk makalah yang tidak diketahui Semantic Scholar. Permintaan ke Scholar berkurang, jadi CAPTCHA juga berkurang."
+    "message": "Saat Anda menekan “Baca daftar lengkap”, Semantic Scholar lebih dulu ditanya tentang daftar penulis lengkap setiap makalah. Hanya judul makalah yang dikirim (beserta kunci API Anda, jika Anda memasukkannya), tidak ada yang lain. Halaman Scholar sendiri dibaca di latar belakang untuk makalah yang tidak diketahui Semantic Scholar atau yang tidak dijawab dengan makalah yang sama, dan untuk semua makalah lainnya begitu Semantic Scholar menolak permintaan. Permintaan ke Scholar berkurang, jadi CAPTCHA juga berkurang."
   },
   "yearsTitle": {
     "message": "Makalah yang disorot per tahun"
@@ -1116,7 +1115,7 @@
     "message": "Tanpa warna"
   },
   "optSaveFailed": {
-    "message": "Tidak tersimpan: Chrome membatasi seberapa sering pengaturan dapat ditulis. Tunggu sebentar, lalu coba lagi."
+    "message": "Belum tersimpan: Chrome membatasi seberapa sering pengaturan dapat ditulis. Akan disimpan lagi dalam beberapa detik."
   },
   "optNameTip": {
     "message": "Nama Anda sendiri untuk ini, dalam semua bahasa. Kosong: nama standar."

@@ -662,7 +662,6 @@
   "optThemeSoft": {
     "message": "Yumuşak"
   },
-
   "markSpotlightHighlight": {
     "message": "Spotlight ve highlight"
   },
@@ -694,7 +693,7 @@
     "message": "Yazar listelerini önce Semantic Scholar'dan oku"
   },
   "optSemanticLabelHint": {
-    "message": "“Tam listeleri oku”ya basıldığında önce her makalenin tam yazar listesi için Semantic Scholar'a sorulur. Semantic Scholar yalnızca makalenin başlığını alır, başka bir şey almaz. Scholar'ın kendi sayfası yalnızca Semantic Scholar'ın bilmediği makaleler için açılır. Scholar'a daha az istek gitmesi, daha az CAPTCHA demektir."
+    "message": "“Tam listeleri oku”ya basıldığında önce her makalenin tam yazar listesi için Semantic Scholar'a sorulur. Semantic Scholar yalnızca makalenin başlığını (varsa API anahtarınızı da) alır, başka bir şey almaz. Scholar'ın kendi sayfası, Semantic Scholar'ın bilmediği ya da aynı makaleyle yanıt vermediği makaleler için arka planda okunur; geri kalan tüm makaleler için ise Semantic Scholar istekleri reddettiğinde okunur. Scholar'a daha az istek gitmesi, daha az CAPTCHA demektir."
   },
   "yearsTitle": {
     "message": "Yıllara göre vurgulanan makaleler"
@@ -1116,7 +1115,7 @@
     "message": "Renk yok"
   },
   "optSaveFailed": {
-    "message": "Kaydedilmedi: Chrome, ayarların ne sıklıkla yazılabileceğini sınırlar. Bir süre bekleyip yeniden değiştirin."
+    "message": "Henüz kaydedilmedi: Chrome, ayarların ne sıklıkla yazılabileceğini sınırlar. Değişiklik birkaç saniye içinde yeniden kaydedilecek."
   },
   "optNameTip": {
     "message": "Bunun için kendi adınız, her dilde. Boş: standart ad."

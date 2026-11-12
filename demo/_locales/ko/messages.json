@@ -662,7 +662,6 @@
   "optThemeSoft": {
     "message": "부드러운 색"
   },
-
   "markSpotlightHighlight": {
     "message": "Spotlight 및 Highlight"
   },
@@ -694,7 +693,7 @@
     "message": "Semantic Scholar에서 저자 목록을 먼저 읽기"
   },
   "optSemanticLabelHint": {
-    "message": "“전체 목록 읽기”를 누르면 먼저 Semantic Scholar에 각 논문의 전체 저자 목록을 묻습니다. Semantic Scholar는 논문 제목 외에는 아무것도 받지 않습니다. Scholar 자체 페이지는 Semantic Scholar가 알지 못하는 논문에 대해서만 엽니다. Scholar에 대한 요청이 줄어 CAPTCHA도 줄어듭니다."
+    "message": "“전체 목록 읽기”를 누르면 먼저 Semantic Scholar에 각 논문의 전체 저자 목록을 묻습니다. Semantic Scholar는 논문 제목(API 키를 입력했다면 API 키도) 외에는 아무것도 받지 않습니다. Scholar 자체 페이지는 Semantic Scholar가 알지 못하거나 같은 논문으로 응답하지 않는 논문에 대해서는 백그라운드에서 읽고, 나머지 논문은 Semantic Scholar가 요청을 거부하면 백그라운드에서 읽습니다. Scholar에 대한 요청이 줄어 CAPTCHA도 줄어듭니다."
   },
   "yearsTitle": {
     "message": "연도별 강조된 논문"
@@ -1116,7 +1115,7 @@
     "message": "색 없음"
   },
   "optSaveFailed": {
-    "message": "저장되지 않았습니다. Chrome은 설정을 기록하는 빈도를 제한합니다. 잠시 후 다시 변경해 주세요."
+    "message": "아직 저장되지 않았습니다. Chrome은 설정을 기록하는 빈도를 제한합니다. 몇 초 후에 다시 저장됩니다."
   },
   "optNameTip": {
     "message": "이 항목에 쓸 내 이름(모든 언어 공통). 비우면 기본 이름."

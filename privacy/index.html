@@ -22,9 +22,9 @@
 <tr><td>Account, analytics, tracking, advertising?</td><td>None.</td></tr>
 <tr><td>Where does the work happen?</td><td>In your browser. The rank lists and the award list are inside the extension.</td></tr>
 <tr><td>What goes over the network?</td><td>Requests to the Google Scholar site that you have open: Scholar's own <em>Show more</em> button, and the paper pages that <em>Read full lists</em> asks for after your click. A paper's title to Semantic Scholar, only if you turn that on (it is off by default).</td></tr>
-<tr><td>What is stored?</td><td>Your settings, your name spellings and your venue mappings (Chrome's synced storage). The full author lists that <em>Read full lists</em> found, for 90 days (this device only).</td></tr>
+<tr><td>What is stored?</td><td>Your settings, your name spellings and your venue mappings (Chrome's synced storage). The full author lists that <em>Read full lists</em> found, for 90 days, and the Semantic Scholar API key if you enter one (this device only).</td></tr>
 <tr><td>What is never sent?</td><td>Your settings, your name spellings, your venue mappings, the saved paper details, and anything from your clipboard.</td></tr>
-<tr><td>Which permissions?</td><td>One: <code>storage</code>.</td></tr>
+<tr><td>Which permissions?</td><td>One: <code>storage</code>. (Chrome also lists the Scholar sites that the content scripts run on, as site access, when you install.)</td></tr>
 </tbody></table></div>
 <h2 id="where-it-runs">Where it runs</h2>
 <ul>
@@ -55,7 +55,7 @@
 <li><code>sessionStorage</code> of the settings page, key <code>rr-config-report</code>: what <em>Apply configuration</em> applied and left out, kept only across the reload that a new interface language makes, and removed when the page shows it (<code>options/options.js</code>).</li>
 <li><code>sessionStorage</code>, key <code>rr-hl</code>: a language code and a time. It is written when <em>Open Scholar in</em> reopens a page, so that a page is never reopened in a loop. It is removed once the page is in that language (<code>content/lang-redirect.js</code>).</li>
 </ul>
-<p>To see or delete what is stored, use the <em>Saved data</em> card on the settings page: <em>View saved details</em>, <em>Clear saved paper details</em> (a profile tab that is open forgets them too, and does not write them back), and <em>Reset to defaults</em> (every setting back to its default). To remove a name spelling, click the × beside it in the panel. To remove a venue mapping, use <em>Remove</em> in the list under <em>Check a venue</em>.</p>
+<p>To see or delete what is stored, use the <em>Saved data</em> card on the settings page: <em>View saved details</em>, <em>Clear saved paper details</em> (a profile tab that is open forgets them too, and does not write them back), and <em>Reset to defaults</em> (every setting back to its default; the Semantic Scholar key stays, so empty its field to delete it). To remove a name spelling, click the × beside it in the panel. To remove a venue mapping, use <em>Remove</em> in the list under <em>Check a venue</em>.</p>
 <p>The extension stores nothing else. It creates no account and no identifier of you.</p>
 <h2 id="what-it-sends">What it sends</h2>
 <p>Requests to Google Scholar, the site of the page that you have open:</p>
@@ -81,7 +81,7 @@
 </ul>
 <p>Links, which open only when you click them:</p>
 <ul>
-<li>The <em>Report</em> links of the panel and the popup open a new issue on this project's GitHub tracker. The panel's links fill in the text: the unranked venue strings that it lists or, when Scholar's page layout cannot be read, the page's address without the host, with the profile's <code>user=</code> id replaced by &quot;…&quot;.</li>
+<li>The <em>Report</em> links of the panel and the popup open a new issue on this project's GitHub tracker. The panel's links fill in the text: up to six of the unranked venue strings that it lists or, when Scholar's page layout cannot be read, the page's address without the host, with the profile's <code>user=</code> id replaced by &quot;…&quot;.</li>
 <li>The footer of the settings page links to the privacy page, the issue tracker and the GitHub repository. The toolbar popup links to Google Scholar and to Scholar's own &quot;My profile&quot; page (<code>scholar.google.com/citations</code>) when the open tab is not a profile.</li>
 <li>For a CCF venue, <em>Check a venue</em> on the settings page shows a link to the venue's page on DBLP (<code>https://dblp.org/db/…</code>, the address that the CCF list itself gives). It is a plain link with <code>rel=&quot;noopener noreferrer&quot;</code>. The extension sends nothing, and the page opens only when you click the link.</li>
 </ul>
@@ -121,7 +121,7 @@
 <h2 id="the-website-s-demo">The website's demo</h2>
 <p>The project's website has a page that runs the extension's settings page in an ordinary browser tab, so that you can try it (<code>/demo/</code>, also shown inside the home page). It is not the extension: it reads no Scholar page, sends nothing and has no account. It keeps your choices in this website's <code>localStorage</code> (keys that begin with <code>rr-demo:</code>), in your own browser, until you clear the site's data. It does not keep the Semantic Scholar key field of that page at all. GitHub Pages serves the website, and sees the requests for its files as any web host does.</p>
 <h2 id="permissions">Permissions</h2>
-<p>The extension asks for one permission: <code>storage</code>. It declares no host permissions (its scripts run only on the Scholar pages listed in <code>manifest.json</code>). It asks for no <code>tabs</code>, <code>activeTab</code>, <code>scripting</code>, <code>cookies</code> or <code>webRequest</code> permission. The toolbar popup asks Chrome for the active tab's id and whether that tab is still loading, and sends a message to the extension's own script in that tab.</p>
+<p>The extension asks for one permission: <code>storage</code>. It declares no <code>host_permissions</code> entry; its content scripts run only on the Scholar pages listed in <code>manifest.json</code> (187 Scholar domains), and Chrome counts those match patterns as site access and says so when you install. It asks for no <code>tabs</code>, <code>activeTab</code>, <code>scripting</code>, <code>cookies</code> or <code>webRequest</code> permission. The toolbar popup asks Chrome for the active tab's id and whether that tab is still loading, and sends a message to the extension's own script in that tab.</p>
 <h2 id="chrome-web-store-user-data-policy">Chrome Web Store user data policy</h2>
 <p>Better Scholar's use of the information it reads complies with the Chrome Web Store User Data Policy, including the Limited Use requirements:</p>
 <ul>

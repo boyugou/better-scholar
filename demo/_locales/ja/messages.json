@@ -662,7 +662,6 @@
   "optThemeSoft": {
     "message": "ソフト"
   },
-
   "markSpotlightHighlight": {
     "message": "Spotlight と Highlight"
   },
@@ -694,7 +693,7 @@
     "message": "まず Semantic Scholar から著者リストを読み取る"
   },
   "optSemanticLabelHint": {
-    "message": "「著者リストを補完」を押すと、まず Semantic Scholar に各論文の完全な著者リストを問い合わせます。送るのは論文のタイトルだけで、ほかは送りません。Scholar 自身のページは、Semantic Scholar が知らない論文についてだけ開きます。Scholar へのリクエストが減り、CAPTCHA も減ります。"
+    "message": "「著者リストを補完」を押すと、まず Semantic Scholar に各論文の完全な著者リストを問い合わせます。送るのは論文のタイトル（APIキーを入力していればそれも）だけで、ほかは送りません。Scholar 自身のページは、Semantic Scholar が知らない論文や、同じ論文を返さない論文についてはバックグラウンドで読み込み、それ以外の論文は、Semantic Scholar がリクエストを拒否した後にバックグラウンドで読み込みます。Scholar へのリクエストが減り、CAPTCHA も減ります。"
   },
   "yearsTitle": {
     "message": "年別のハイライト論文"
@@ -1116,7 +1115,7 @@
     "message": "色なし"
   },
   "optSaveFailed": {
-    "message": "保存されませんでした。Chrome は設定を書き込める回数を制限しています。少し待ってから、もう一度変更してください。"
+    "message": "まだ保存されていません。Chrome は設定を書き込める回数を制限しています。数秒後に再び保存されます。"
   },
   "optNameTip": {
     "message": "この項目に付ける自分の名前（すべての言語で共通）。空欄なら標準の名前。"

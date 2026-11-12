@@ -662,7 +662,6 @@
   "optThemeSoft": {
     "message": "Soft"
   },
-
   "markSpotlightHighlight": {
     "message": "Spotlight & highlight"
   },
@@ -694,7 +693,7 @@
     "message": "Read author lists from Semantic Scholar first"
   },
   "optSemanticLabelHint": {
-    "message": "When you press Read full lists, first ask Semantic Scholar for each paper's full author list. It gets the paper's title and nothing else. Scholar's own page is then opened only for the papers that Semantic Scholar does not know. Fewer requests to Scholar mean fewer CAPTCHAs."
+    "message": "When you press Read full lists, first ask Semantic Scholar for each paper's full author list. It gets the paper's title (and your API key, if you entered one) and nothing else. Scholar's own page is then read in the background for the papers that Semantic Scholar does not know or does not answer with the same paper, and for all the rest once Semantic Scholar refuses. Fewer requests to Scholar mean fewer CAPTCHAs."
   },
   "yearsTitle": {
     "message": "Highlighted papers by year"
@@ -1116,7 +1115,7 @@
     "message": "No colour"
   },
   "optSaveFailed": {
-    "message": "Not saved: Chrome limits how often settings can be written. Wait a moment and change it again."
+    "message": "Not saved yet: Chrome limits how often settings can be written. It will be saved again in a few seconds."
   },
   "optNameTip": {
     "message": "Your own name for this, in every language. Empty: the standard name."
