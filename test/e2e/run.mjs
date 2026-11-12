@@ -70,7 +70,10 @@ const awardsLib = require(path.join(repo, "src/lib/awards.js"));
 const testAwards = { meta: { label: "test list", edition: "test", count: 2 }, items: [
   [awardsLib.titleKey("A Plain Preprint"), awardsLib.surnameKey("A Smith"), "ICLR", 2023, "best", "Best Paper Award"],
   [awardsLib.titleKey("Deep Things for Recognition"), awardsLib.surnameKey("J Doe"), "CVPR", 2016, "best", "Best Paper Award"],
-  [awardsLib.titleKey("Fast Recovery for Disaggregated Memory"), awardsLib.surnameKey("C Writer"), "OSDI", 2023, "best", "Best Paper Award"]   // the fictional showcase profile
+  [awardsLib.titleKey("Fast Recovery for Disaggregated Memory"), awardsLib.surnameKey("C Writer"), "OSDI", 2023, "best", "Best Paper Award"],   // the fictional showcase profile
+  // one paper, two test-of-time awards of one kind (check 16e)
+  [awardsLib.titleKey("Chaff: Engineering an Efficient SAT Solver"), awardsLib.surnameKey("MW Moskewicz"), "DAC", 2024, "tot", "Most Influential Paper Award", 2001],
+  [awardsLib.titleKey("Chaff: Engineering an Efficient SAT Solver"), awardsLib.surnameKey("MW Moskewicz"), "SIGDA", 2017, "tot", "A. Richard Newton Technical Impact Award in EDA", 2001]
 ] };
 fs.writeFileSync(path.join(extDir, "data", "awards.js"),
   `(globalThis.RolesRanks = globalThis.RolesRanks || {}).data = Object.assign(globalThis.RolesRanks.data || {}, { awards: ${JSON.stringify(testAwards)} });\n`);
@@ -2821,6 +2824,22 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
       assert.ok(after.length > 0, "the second read stored what it read");
       ok(`Clear saved paper details is not undone by an open tab: the ${first.length} cleared details stay gone (and the rows hidden again) until the next read, which stored its own ${after.length}`);
     } finally { await ctxC.close(); await fxC.close(); }
+  }
+
+  // -- 16e. a paper's awards of one kind at two venues are one chip, whose tooltip names both (Chaff: test-of-time awards of DAC 2024 and SIGDA 2017)
+  {
+    const fxT = await start({ slug: "ion-stoica", pageSize: 20, latency: 0, rows: [["MW Moskewicz, CF Madigan, Y Zhao, L Zhang, I Stoica", "Proceedings of the 38th annual Design Automation Conference (DAC), 530-535, 2001", "Chaff: Engineering an Efficient SAT Solver"]] });
+    const ctxT = await launch();
+    try {
+      const pg = await ctxT.newPage();
+      await pg.goto(fxT.url);
+      await pg.bringToFront();
+      await pg.waitForSelector('#gsc_a_b .rr-chip-mark[data-mark="tot"]', { timeout: 30000 });
+      assert.equal(await pg.locator('#gsc_a_b .rr-chip-mark[data-mark="tot"]').count(), 1, "one chip for two test-of-time awards");
+      const tip = await pg.locator('#gsc_a_b .rr-chip-mark[data-mark="tot"]').getAttribute("title");
+      assert.ok(/DAC 2024/.test(tip) && /SIGDA 2017/.test(tip), "its tooltip names both awards: " + tip);
+      ok("a paper's two test-of-time awards are one chip whose tooltip names both venues");
+    } finally { await ctxT.close(); await fxT.close(); }
   }
 
   // -- 16c. under the h-index button every count lists what it says: a table cell (a pick never moves the minimum) and a venue row (its count is what its click lists) —
