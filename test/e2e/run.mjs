@@ -2826,6 +2826,40 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     } finally { await ctxC.close(); await fxC.close(); }
   }
 
+  // -- 16h. the same through Semantic Scholar: a script gives a bait row the victim's id; the answer for the bait's title is saved under that id, but only a row of that title uses it
+  {
+    const rowsS = [
+      ["A Alpha, B Beta, ...", "Proceedings of the 2020 Conference, 2020", "A Rather Long Title of the Bait Paper"],
+      ["I Stoica, X Yang", "Proceedings of the 2021 Conference, 2021", "Victim paper where the owner is first"]
+    ];
+    const fxS = await start({ slug: "ion-stoica", pageSize: 20, latency: 0, rows: rowsS });
+    const ctxS = await launch();
+    try {
+      const optsS = await openOptions(ctxS);
+      await setPref(optsS, "autoLoad", false);
+      await setPref(optsS, "semanticScholar", true);
+      await ctxS.route("https://api.semanticscholar.org/**", (route) => route.fulfill({ status: 200, contentType: "application/json", headers: { "access-control-allow-origin": "*" },
+        body: JSON.stringify({ data: [{ title: "A Rather Long Title of the Bait Paper", year: 2020, authors: [{ name: "A Alpha" }, { name: "B Beta" }, { name: "C Gamma" }, { name: "I Stoica" }] }] }) }));
+      await ctxS.addInitScript(() => {
+        if (location.hash !== "#s2") return;
+        document.addEventListener("DOMContentLoaded", () => { document.querySelector("#gsc_a_b tr.gsc_a_tr a.gsc_a_at").setAttribute("href", "/citations?view_op=view_citation&hl=en&user=TEST&citation_for_view=TEST:P001"); });
+      });
+      const pg = await ctxS.newPage();
+      await pg.goto(fxS.url + "#s2");
+      await pg.waitForSelector('[data-act="resolve"]');
+      await pg.click('[data-act="resolve"]');
+      await pg.waitForSelector('[data-rr="resolve-msg"]', { timeout: 30000 });
+      const victim = await pg.evaluate(() => new Promise((resolve) => {
+        const id = "c" + Math.random();
+        document.addEventListener("better-scholar:response", function on(e) { if (e.detail.id === id) { document.removeEventListener("better-scholar:response", on); resolve(e.detail.result.papers.find((p) => p.title.startsWith("Victim"))); } });
+        document.dispatchEvent(new CustomEvent("better-scholar:request", { detail: { id, method: "papers", params: { filtered: false } } }));
+      }));
+      assert.equal(victim.authors, "I Stoica, X Yang", "the victim keeps its own author list: " + victim.authors);
+      assert.equal(victim.role, "first");
+      ok("an answer of Semantic Scholar saved under another paper's id is not used for that paper");
+    } finally { await ctxS.close(); await fxS.close(); }
+  }
+
   // -- 16g. a page script cannot make Read full lists save another paper's author list under a victim's id (a link naming two citation_for_view values)
   {
     const rowsP = [
