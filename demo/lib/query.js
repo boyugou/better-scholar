@@ -128,8 +128,9 @@
     if (!p) {
       if (!/[a-z0-9]/.test(term.text)) p = { test: (s) => s.includes(term.text) };
       else {
-        const last = term.text.split(" ").pop();
-        p = new RegExp("(?<!" + WORD + ")" + term.text.split(" ").map(escape).join("[^\\p{L}\\p{N}]+") + (/^[\p{L}\p{N}]{1,2}$/u.test(last) ? "(?!" + WORD + ")" : ""), "u");
+        // (a word with no letter or digit — a dash — is no part of the pattern: next to the separator that matches it too, a run of them made the match take exponential time)
+        const words = term.text.split(" ").filter((w) => /[\p{L}\p{N}]/u.test(w)), last = words[words.length - 1];
+        p = new RegExp("(?<!" + WORD + ")" + words.map(escape).join("[^\\p{L}\\p{N}]+") + (/^[\p{L}\p{N}]{1,2}$/u.test(last) ? "(?!" + WORD + ")" : ""), "u");
       }
       PATTERNS.set(term, p);
     }
