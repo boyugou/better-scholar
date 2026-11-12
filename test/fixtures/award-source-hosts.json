@@ -411,6 +411,16 @@
   "srds-conference.org": "SRDS's own site",
   "wine2025.cs.rutgers.edu": "WINE 2025's own site",
   "www.eusset.eu": "EUSSET's own site (the David B. Martin award pages)",
-  "www.ieee-icnp.org": "IEEE ICNP's own site"
+  "www.ieee-icnp.org": "IEEE ICNP's own site",
+  "2015.cgo.org": "CGO 2015's own site",
+  "2016.cgo.org": "CGO 2016's own site",
+  "2017.cgo.org": "CGO 2017's own site",
+  "2018.cgo.org": "CGO 2018's own site",
+  "2019.cgo.org": "CGO 2019's own site",
+  "2020.cgo.org": "CGO 2020's own site",
+  "iss2022.acm.org": "ACM ISS 2022's own site (an ACM subdomain)",
+  "iss2023.acm.org": "ACM ISS 2023's own site (an ACM subdomain)",
+  "iss2024.acm.org": "ACM ISS 2024's own site (an ACM subdomain)",
+  "pldi24.sigplan.org": "PLDI 2024's own site (it hosts LCTES 2024; researchr)"
  }
 }

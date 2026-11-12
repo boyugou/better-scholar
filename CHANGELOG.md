@@ -189,6 +189,9 @@ give the details and every review):
   Encryption: 23rd International Conference, FSE 2016" is the cryptography FSE (B), not Foundations of Software Engineering (A): venues
   that share an acronym are told apart by the series title. (4) MDPI's journals *AI* and *IoT* are not Artificial Intelligence (A) and
   IEEE IoT-J, nor is the Korean WISA (information security) the Web Information Systems WISA.
+- **Researchr-hosted venues read again, one request at a time** (33): SANER 2026, CGO 2015–2023, FM 2026, ISS 2022–2024, VMCAI 2019 and 2024,
+  LCTES 2017 and 2024. The earlier blocks (a CAPTCHA on conf.researchr.org) came from about 25 parallel fetches; single requests five seconds
+  apart were answered normally. Held out: CGO 2025 and VMCAI 2023 (only a session name marks the paper). The list holds 10,704 awards.
 - **From an independent code review (2026-11-12), four fixes.** (1) Matching: the annual narrowing dropped a rival that stops short of its
   `reach` word, so three cut lines got a wrong badge ("7th Annual … Conference on Computer Science …" CSL, the 1996 ACM "Computer science
   …" CSL, "2015 IEEE 16th Annual Wireless and …" WiMob): the narrowing keeps such a rival now, and WiMob's numbering (the 11th in 2015)

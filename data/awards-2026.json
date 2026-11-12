@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 10678
+  "count": 10704
  },
  "entries": [
   {
@@ -16886,6 +16886,194 @@
    "track": "main",
    "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-tta.html",
    "evidence": "CCS 2025 Test-of-Time Award: Reza Shokri, Vitaly Shmatikov: Privacy-Preserving Deep Learning"
+  },
+  {
+   "venue": "CGO",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Approximating Flow-Sensitive Pointer Analysis Using Frequent Itemset Mining",
+   "authors": [
+    "Vaivaswatha Nagaraj",
+    "R. Govindarajan"
+   ],
+   "track": "main",
+   "source": "https://2015.cgo.org/",
+   "evidence": "CGO 2015 Awards - Best Paper Award : Approximating Flow-Sensitive Pointer Analysis Using Frequent Itemset Mining. Vaivaswatha Nagaraj and R. Govindarajan (Indian Institute of Science)."
+  },
+  {
+   "venue": "CGO",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Exploiting Mixed SIMD Parallelism by Reducing Data Reorganization Overhead",
+   "authors": [
+    "Hao Zhou",
+    "Jingling Xue"
+   ],
+   "track": "main",
+   "source": "https://2016.cgo.org/",
+   "evidence": "Awards - Best Paper Award Exploiting Mixed SIMD Parallelism by Reducing Data Reorganization Overhead. Hao Zhou and Jingling Xue, (UNSW, Australia)."
+  },
+  {
+   "venue": "CGO",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Synthesizing Benchmarks for Predictive Modeling",
+   "authors": [
+    "Chris Cummins",
+    "Pavlos Petoumenos",
+    "Zheng Wang",
+    "Hugh Leather"
+   ],
+   "track": "main",
+   "source": "https://2017.cgo.org/",
+   "evidence": "Awards Best Paper Award Synthesizing Benchmarks for Predictive Modeling. Chris Cummins, Pavlos Petoumenos (University of Edinburgh)"
+  },
+  {
+   "venue": "CGO",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "High Performance Stencil Code Generation with LIFT",
+   "authors": [
+    "Bastian Hagedorn",
+    "Larisa Stoltzfus",
+    "Michel Steuwer",
+    "Sergei Gorlatch",
+    "Christophe Dubach"
+   ],
+   "track": "main",
+   "source": "https://2018.cgo.org/",
+   "evidence": "Congratulations to CGO award winners! Best Paper Award High Performance Stencil Code Generation with LIFT. Bastian Hagedorn, Larisa Stoltzfus, Michel Steuwer, Sergei Gorlatch, and Christophe Dubach (University of Münster, Germany; University of Edinburgh, UK; University of Glasgow, UK)"
+  },
+  {
+   "venue": "CGO",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Function Merging by Sequence Alignment",
+   "authors": [
+    "Rodrigo C. O. Rocha",
+    "Pavlos Petoumenos",
+    "Zheng Wang",
+    "Murray Cole",
+    "Hugh Leather"
+   ],
+   "track": "main",
+   "source": "https://2019.cgo.org/awards/index.html",
+   "alsoAt": [
+    "https://2019.cgo.org/"
+   ],
+   "evidence": "Best Paper Award Function Merging by Sequence Alignment . Rodrigo C. O. Rocha and Pavlos Petoumenos (University of Edinburgh, UK); Zheng Wang (Lancaster University, UK); Murray Cole and Hugh Leather (University of Edinburgh, UK) ."
+  },
+  {
+   "venue": "CGO",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Testing Static Analyses for Precision and Soundness",
+   "authors": [
+    "Jubi Taneja",
+    "Zhengyang Liu",
+    "John Regehr"
+   ],
+   "track": "main",
+   "source": "https://2020.cgo.org/",
+   "evidence": "Best Paper Award: \"Testing Static Analyses for Precision and Soundness\" by Jubi Taneja, Zhengyang Liu and John Regehr."
+  },
+  {
+   "venue": "CGO",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Compiling Graph Applications for GPUs with GraphIt",
+   "authors": [
+    "Ajay Brahmakshatriya",
+    "Yunming Zhang",
+    "Changwan Hong",
+    "Shoaib Kamil",
+    "Julian Shun",
+    "Saman Amarasinghe"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/home/cgo-2021",
+   "alsoAt": [
+    "https://conf.researchr.org/track/cgo-2021/cgo-2021-papers"
+   ],
+   "evidence": "Awards Best Paper Award Compiler Graph Applications for GPUs with GraphIt Ajay Brahmakshatriya, Yunming Zhang, Changwan Hong, Shoaib Kamil, Julian Shun, Saman Amarasinghe [the program of the same site, https://conf.researchr.org/track/cgo-2021/cgo-2021-papers, prints the paper as: Compiling Graph Applications for GPUs with GraphItMain Conference Ajay Brahmakshatriya Massachusetts Institute of Technology, Yunming Zhang , Changwan Hong Massachusetts Institute of Technology, Shoaib Kamil Adobe Research, Julian Shun MIT, Saman Amarasinghe Massachusetts Institute of Technology]"
+  },
+  {
+   "venue": "CGO",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Awards",
+   "title": "CompilerGym: Robust, Performant Compiler Optimization Environments for AI Research",
+   "authors": [
+    "Chris Cummins",
+    "Bram Wasti",
+    "Jiadong Guo",
+    "Brandon Cui",
+    "Jason Ansel",
+    "Sahir Gomez",
+    "Somya Jain",
+    "Jia Liu",
+    "Olivier Teytaud",
+    "Benoit Steiner",
+    "Yuandong Tian",
+    "Hugh Leather"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/home/cgo-2022",
+   "evidence": "Best Paper Awards CompilerGym: Robust, Performant Compiler Optimization Environments for AI Research Chris Cummins, Bram Wasti, Jiadong Guo, Brandon Cui, Jason Ansel, Sahir Gomez, Somya Jain, Jia Liu, Olivier Teytaud, Benoit Steiner, Yuandong Tian, Hugh Leather"
+  },
+  {
+   "venue": "CGO",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Awards",
+   "title": "Sound, Precise, and Fast Abstract Interpretation with Tristate Numbers",
+   "authors": [
+    "Harishankar Vishwanathan",
+    "Matan Shachnai",
+    "Srinivas Narayana",
+    "Santosh Nagarakatte"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/home/cgo-2022",
+   "evidence": "Best Paper Awards CompilerGym: Robust, Performant Compiler Optimization Environments for AI Research Chris Cummins, Bram Wasti, Jiadong Guo, Brandon Cui, Jason Ansel, Sahir Gomez, Somya Jain, Jia Liu, Olivier Teytaud, Benoit Steiner, Yuandong Tian, Hugh Leather Sound, Precise, and Fast Abstract Interpretation with Tristate Numbers Harishankar Vishwanathan, Matan Shachnai, Srinivas Narayana, Santosh Nagarakatte"
+  },
+  {
+   "venue": "CGO",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Awards",
+   "title": "D2X: An eXtensible conteXtual Debugger for Modern DSLs",
+   "authors": [
+    "Ajay Brahmakshatriya",
+    "Saman Amarasinghe"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/home/cgo-2023",
+   "evidence": "Distinguished Paper Awards This year’s distinguished papers are: D2X: An eXtensible conteXtual Debugger for Modern DSLs by Ajay Brahmakshatriya, Saman Amarasinghe"
+  },
+  {
+   "venue": "CGO",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Awards",
+   "title": "To Pack or Not to Pack: A Generalized Packing Analysis and Transformation",
+   "authors": [
+    "Caio Salvador Rohwedder",
+    "Nathan Henderson",
+    "João P. L. De Carvalho",
+    "Yufei Chen",
+    "Jose Nelson Amaral"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/home/cgo-2023",
+   "evidence": "Distinguished Paper Awards This year’s distinguished papers are: D2X: An eXtensible conteXtual Debugger for Modern DSLs by Ajay Brahmakshatriya, Saman Amarasinghe To Pack or Not to Pack: A Generalized Packing Analysis and Transformation by Caio Salvador Rohwedder, Nathan Henderson, João P. L. De Carvalho, Yufei Chen, Jose Nelson Amaral"
   },
   {
    "venue": "CHES",
@@ -83118,6 +83306,22 @@
    "evidence": "Feedback Computing '13: Online Resource Management for Data Center with Energy Capping — A. S. M. Hasan Mahmud, Florida International University; Shaolei Ren, Florida International University"
   },
   {
+   "venue": "FM",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Verifying Sampling Algorithms via Distributional Invariants",
+   "authors": [
+    "Daniel Zilken",
+    "Kevin Batz",
+    "Joost-Pieter Katoen",
+    "Tobias Winkler"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/home/fm-2026",
+   "evidence": "Awards The following awards recognize outstanding contributions to FM 2026. Best Paper Award Verifying Sampling Algorithms via Distributional Invariants: Daniel Zilken, Kevin Batz, Joost-Pieter Katoen, and Tobias Winkler"
+  },
+  {
    "venue": "FMCAD",
    "year": 2016,
    "award": "best",
@@ -115895,6 +116099,248 @@
    "evidence": "Best Paper Honorable Mention Awards Typealike Near-Keyboard Hand Postures for Expanded Laptop Interaction Nalin Chhibber, Hemant Bhaskar, Fabrice Matulic, Daniel Vogel"
   },
   {
+   "venue": "ISS",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Push, Tap, Dwell, and Pinch: Evaluation of Four Mid-Air Selection Methods Augmented with Ultrasonic Haptic Feedback",
+   "authors": [
+    "Tafadzwa Joseph Dube",
+    "Yuan Ren",
+    "Hannah Limerick",
+    "Scott MacKenzie",
+    "Ahmed Arif"
+   ],
+   "track": "main",
+   "source": "https://iss2022.acm.org/info/awards",
+   "alsoAt": [
+    "https://iss2022.acm.org/"
+   ],
+   "evidence": "Best Paper Push, Tap, Dwell, and Pinch: Evaluation of Four Mid-Air Selection Methods Augmented with Ultrasonic Haptic Feedback. Tafadzwa Joseph Dube, Yuan Ren, Hannah Limerick, Scott MacKenzie, Ahmed Arif."
+  },
+  {
+   "venue": "ISS",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Honourable Mention",
+   "title": "A Survey of Augmented Piano Prototypes: Has Augmentation Improved Learning Experiences?",
+   "authors": [
+    "Jordan Aiko Deja",
+    "Sven Mayer",
+    "Klen Čopič Pucihar",
+    "Matjaž Kljun"
+   ],
+   "track": "main",
+   "source": "https://iss2022.acm.org/info/awards",
+   "alsoAt": [
+    "https://iss2022.acm.org/"
+   ],
+   "evidence": "Honourable Mention A Survey of Augmented Piano Prototypes: Has Augmentation Improved Learning Experiences? Jordan Aiko Deja, Sven Mayer, Klen Čopič Pucihar, Matjaž Kljun"
+  },
+  {
+   "venue": "ISS",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Honourable Mention",
+   "title": "Investigating the Use of AR Glasses for Content Annotation on Mobile Devices",
+   "authors": [
+    "Francesco Riccardo Di Gioia",
+    "Eugenie Brasier",
+    "Emmanuel Pietriga",
+    "Caroline Appert"
+   ],
+   "track": "main",
+   "source": "https://iss2022.acm.org/info/awards",
+   "alsoAt": [
+    "https://iss2022.acm.org/"
+   ],
+   "evidence": "Honourable Mention A Survey of Augmented Piano Prototypes: Has Augmentation Improved Learning Experiences? Jordan Aiko Deja, Sven Mayer, Klen Čopič Pucihar, Matjaž Kljun Investigating the Use of AR Glasses for Content Annotation on Mobile Devices. Francesco Riccardo Di Gioia, Eugenie Brasier, Emmanuel Pietriga, Caroline Appert"
+  },
+  {
+   "venue": "ISS",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Honourable Mention",
+   "title": "NoteWordy: Investigating Touch and Speech Input on Smartphones for Personal Data Capture",
+   "authors": [
+    "Yuhan Luo",
+    "Bongshin Lee",
+    "Young-Ho Kim",
+    "Eun Kyoung Choe"
+   ],
+   "track": "main",
+   "source": "https://iss2022.acm.org/info/awards",
+   "alsoAt": [
+    "https://iss2022.acm.org/"
+   ],
+   "evidence": "Honourable Mention A Survey of Augmented Piano Prototypes: Has Augmentation Improved Learning Experiences? Jordan Aiko Deja, Sven Mayer, Klen Čopič Pucihar, Matjaž Kljun Investigating the Use of AR Glasses for Content Annotation on Mobile Devices. Francesco Riccardo Di Gioia, Eugenie Brasier, Emmanuel Pietriga, Caroline Appert NoteWordy: Investigating Touch and Speech Input on Smartphones for Personal Data Capture. Yuhan Luo, Bongshin Lee, Young-Ho Kim, Eun Kyoung Choe."
+  },
+  {
+   "venue": "ISS",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Honourable Mention",
+   "title": "Players and Performance: Opportunities for Social Interaction with Augmented Tabletop Games at Centres for Children with Autism",
+   "authors": [
+    "Qin Wu",
+    "Rao Xu",
+    "Yuantong Liu",
+    "Danielle Lottridge",
+    "Suranga Nanayakkara"
+   ],
+   "track": "main",
+   "source": "https://iss2022.acm.org/info/awards",
+   "alsoAt": [
+    "https://iss2022.acm.org/"
+   ],
+   "evidence": "Honourable Mention A Survey of Augmented Piano Prototypes: Has Augmentation Improved Learning Experiences? Jordan Aiko Deja, Sven Mayer, Klen Čopič Pucihar, Matjaž Kljun Investigating the Use of AR Glasses for Content Annotation on Mobile Devices. Francesco Riccardo Di Gioia, Eugenie Brasier, Emmanuel Pietriga, Caroline Appert NoteWordy: Investigating Touch and Speech Input on Smartphones for Personal Data Capture. Yuhan Luo, Bongshin Lee, Young-Ho Kim, Eun Kyoung Choe. Players and Performance: Opportunities for Social Interaction with Augmented Tabletop Games at Centres for Children with Autism. Qin Wu, Rao Xu, Yuantong Liu, Danielle Lottridge, Suranga Nanayakkara."
+  },
+  {
+   "venue": "ISS",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "BlendMR: A Computational Method to Create Ambient Mixed Reality Interfaces",
+   "authors": [
+    "Violet Yinuo Han",
+    "Hyunsung Cho",
+    "Kiyosu Maeda",
+    "Alexandra Ion",
+    "David Lindlbauer"
+   ],
+   "track": "main",
+   "source": "https://iss2023.acm.org/",
+   "evidence": "Awarded Papers Title BlendMR: A Computational Method to Create Ambient Mixed Reality InterfacesBest PaperPapers A: Violet Yinuo Han, A: Hyunsung Cho, A: Kiyosu Maeda, A: Alexandra Ion, A: David Lindlbauer"
+  },
+  {
+   "venue": "ISS",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Evaluating the Applicability of GUI-Based Steering Laws to VR Car Driving: A Case of Curved Constrained Paths",
+   "authors": [
+    "Shota Yamanaka",
+    "Takumi Takaku",
+    "Yukina Funazaki",
+    "Noboru Seto",
+    "Satoshi Nakamura"
+   ],
+   "track": "main",
+   "source": "https://iss2023.acm.org/",
+   "evidence": "Awarded Papers Title BlendMR: A Computational Method to Create Ambient Mixed Reality InterfacesBest PaperPapers A: Violet Yinuo Han, A: Hyunsung Cho, A: Kiyosu Maeda, A: Alexandra Ion, A: David Lindlbauer DOI Evaluating the Applicability of GUI-Based Steering Laws to VR Car Driving: A Case of Curved Constrained PathsHonorable MentionPapers A: Shota Yamanaka, A: Takumi Takaku, A: Yukina Funazaki, A: Noboru Seto, A: Satoshi Nakamura"
+  },
+  {
+   "venue": "ISS",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Hum-ble Beginnings: Developing Touch- and Proximity-Input-Based Interfaces for Zoo-Housed Giraffes’ Audio Enrichment",
+   "authors": [
+    "Alana Grant",
+    "Vilma Kankaanpää",
+    "Ilyena Hirskyj-Douglas"
+   ],
+   "track": "main",
+   "source": "https://iss2023.acm.org/",
+   "evidence": "Awarded Papers Title BlendMR: A Computational Method to Create Ambient Mixed Reality InterfacesBest PaperPapers A: Violet Yinuo Han, A: Hyunsung Cho, A: Kiyosu Maeda, A: Alexandra Ion, A: David Lindlbauer DOI Evaluating the Applicability of GUI-Based Steering Laws to VR Car Driving: A Case of Curved Constrained PathsHonorable MentionPapers A: Shota Yamanaka, A: Takumi Takaku, A: Yukina Funazaki, A: Noboru Seto, A: Satoshi Nakamura DOI Hum-ble Beginnings: Developing Touch- and Proximity-Input-Based Interfaces for Zoo-Housed Giraffes’ Audio EnrichmentHonorable MentionPapers A: Alana Grant, A: Vilma Kankaanpää, A: Ilyena Hirskyj-Douglas"
+  },
+  {
+   "venue": "ISS",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Interactions across Displays and Space: A Study of Virtual Reality Streaming Practices on Twitch",
+   "authors": [
+    "Liwei Wu",
+    "Qing Liu",
+    "Jian Zhao",
+    "Edward Lank"
+   ],
+   "track": "main",
+   "source": "https://iss2023.acm.org/",
+   "evidence": "Awarded Papers Title BlendMR: A Computational Method to Create Ambient Mixed Reality InterfacesBest PaperPapers A: Violet Yinuo Han, A: Hyunsung Cho, A: Kiyosu Maeda, A: Alexandra Ion, A: David Lindlbauer DOI Evaluating the Applicability of GUI-Based Steering Laws to VR Car Driving: A Case of Curved Constrained PathsHonorable MentionPapers A: Shota Yamanaka, A: Takumi Takaku, A: Yukina Funazaki, A: Noboru Seto, A: Satoshi Nakamura DOI Hum-ble Beginnings: Developing Touch- and Proximity-Input-Based Interfaces for Zoo-Housed Giraffes’ Audio EnrichmentHonorable MentionPapers A: Alana Grant, A: Vilma Kankaanpää, A: Ilyena Hirskyj-Douglas DOI Interactions across Displays and Space: A Study of Virtual Reality Streaming Practices on TwitchHonorable MentionPapers A: Liwei Wu, A: Qing Liu, A: Jian Zhao, A: Edward Lank"
+  },
+  {
+   "venue": "ISS",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Reality and Beyond: Proxemics as a Lens for Designing Handheld Collaborative Augmented Reality",
+   "authors": [
+    "Mille Skovhus Lunding",
+    "Jens Emil Grønbæk",
+    "Nicolai Grymer",
+    "Thomas Wells",
+    "Steven Houben",
+    "Marianne Graves Petersen"
+   ],
+   "track": "main",
+   "source": "https://iss2023.acm.org/",
+   "evidence": "Awarded Papers Title BlendMR: A Computational Method to Create Ambient Mixed Reality InterfacesBest PaperPapers A: Violet Yinuo Han, A: Hyunsung Cho, A: Kiyosu Maeda, A: Alexandra Ion, A: David Lindlbauer DOI Evaluating the Applicability of GUI-Based Steering Laws to VR Car Driving: A Case of Curved Constrained PathsHonorable MentionPapers A: Shota Yamanaka, A: Takumi Takaku, A: Yukina Funazaki, A: Noboru Seto, A: Satoshi Nakamura DOI Hum-ble Beginnings: Developing Touch- and Proximity-Input-Based Interfaces for Zoo-Housed Giraffes’ Audio EnrichmentHonorable MentionPapers A: Alana Grant, A: Vilma Kankaanpää, A: Ilyena Hirskyj-Douglas DOI Interactions across Displays and Space: A Study of Virtual Reality Streaming Practices on TwitchHonorable MentionPapers A: Liwei Wu, A: Qing Liu, A: Jian Zhao, A: Edward Lank DOI Reality and Beyond: Proxemics as a Lens for Designing Handheld Collaborative Augmented RealityHonorable MentionPapers A: Mille Skovhus Lunding, A: Jens Emil Grønbæk, A: Nicolai Grymer, A: Thomas Wells, A: Steven Houben, A: Marianne Graves Petersen"
+  },
+  {
+   "venue": "ISS",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "GestureGPT: Toward Zero-Shot Free-Form Hand Gesture Understanding with Large Language Model Agents",
+   "authors": [
+    "Xin Zeng",
+    "Xiaoyu Wang",
+    "Tengxiang Zhang",
+    "Chun Yu",
+    "Shengdong Zhao",
+    "Yiqiang Chen"
+   ],
+   "track": "main",
+   "source": "https://iss2024.acm.org/info/awards",
+   "alsoAt": [
+    "https://iss2024.acm.org/"
+   ],
+   "evidence": "Best Paper GestureGPT: Toward Zero-Shot Free-Form Hand Gesture Understanding with Large Language Model Agents. Xin Zeng, Xiaoyu Wang, Tengxiang Zhang, Chun Yu, Shengdong Zhao and Yiqiang Chen."
+  },
+  {
+   "venue": "ISS",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Honourable Mention",
+   "title": "Experimental Analysis of Freehand Multi-object Selection Techniques in Virtual Reality Head-Mounted Displays",
+   "authors": [
+    "Rongkai Shi",
+    "Yushi Wei",
+    "Xuning Hu",
+    "Yu Liu",
+    "Yong Yue",
+    "Lingyun Yu",
+    "Hai-Ning Liang"
+   ],
+   "track": "main",
+   "source": "https://iss2024.acm.org/info/awards",
+   "alsoAt": [
+    "https://iss2024.acm.org/"
+   ],
+   "evidence": "Honourable Mention MoiréTag: A Low-Cost Tag for High-Precision Tangible Interactions without Active Components. Peiyu Zhang, Wen Ying, Sara L Riggs, and Seongkook Heo. Experimental Analysis of Freehand Multi-object Selection Techniques in Virtual Reality Head-Mounted Displays. Rongkai Shi, Yushi Wei, Xuning Hu, Yu Liu, Yong Yue, Lingyun Yu, and Hai-Ning Liang."
+  },
+  {
+   "venue": "ISS",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Honourable Mention",
+   "title": "MoiréTag: A Low-Cost Tag for High-Precision Tangible Interactions without Active Components",
+   "authors": [
+    "Peiyu Zhang",
+    "Wen Ying",
+    "Sara L Riggs",
+    "Seongkook Heo"
+   ],
+   "track": "main",
+   "source": "https://iss2024.acm.org/info/awards",
+   "alsoAt": [
+    "https://iss2024.acm.org/"
+   ],
+   "evidence": "Honourable Mention MoiréTag: A Low-Cost Tag for High-Precision Tangible Interactions without Active Components. Peiyu Zhang, Wen Ying, Sara L Riggs, and Seongkook Heo."
+  },
+  {
    "venue": "ISSRE",
    "year": 2024,
    "award": "best",
@@ -120917,6 +121363,36 @@
    "paperYear": 2002,
    "source": "https://proceedings.kr.org/2026/kr2026-preface.pdf",
    "evidence": "KR 2026 preface: This year the KR Test of Time Award goes to Sheila McIlraith and Son Tran, for their KR 2002 paper “Adapting Golog for Composition of Semantic Web Services”."
+  },
+  {
+   "venue": "LCTES",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Towards Memory-Efficient Processing-in-Memory Architecture for Convolutional Neural Networks",
+   "authors": [
+    "Yi Wang",
+    "Mingxu Zhang",
+    "Jing Yang"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/track/LCTES-2017/LCTES-2017-papers",
+   "evidence": "Best Paper Award: Towards Memory-Efficient Processing-in-Memory Architecture for Convolutional Neural Networks Yi Wang, Mingxu Zhang, Jing Yang"
+  },
+  {
+   "venue": "LCTES",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "TinySeg: Model Optimizing Framework for Image Segmentation on Tiny Embedded Systems",
+   "authors": [
+    "Byungchul Chae",
+    "Jiae Kim",
+    "Seonyeong Heo"
+   ],
+   "track": "main",
+   "source": "https://pldi24.sigplan.org/home/LCTES-2024",
+   "evidence": "Best Paper Award TinySeg: Model Optimizing Framework for Image Segmentation on Tiny Embedded Systems Byungchul Chae, Jiae Kim, Seonyeong Heo"
   },
   {
    "venue": "LCTES",
@@ -142112,6 +142588,71 @@
    "paperYear": 2012,
    "source": "https://sp2026.ieee-security.org/awards_tot.html",
    "evidence": "S&P 2026 Test of Time Awards: The Quest to Replace Passwords: A Framework for Comparative Evaluation of Web Authentication Schemes — Joseph Bonneau, Cormac Herley, Paul C. van Oorschot, Frank Stajano (IEEE S&P 2012) – For its lasting influence on research and systematization of knowledge in web authentication"
+  },
+  {
+   "venue": "SANER",
+   "year": 2026,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Awards",
+   "title": "Beyond Lexical: Functional Semantics and Fusion for Precise Architecture Recovery",
+   "authors": [
+    "Chunguang Zhang",
+    "Bixin Li",
+    "Yan Xiao"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/attending/saner-2026/awards",
+   "evidence": "The following papers are the recipients of the SANER 2026 Disinguished Paper awards for the Research Track: Lev Sorokin, Ivan Vasilev, Ken Friedl, Andrea Stocco for the paper “STELLAR: A Search-Based Testing Framework for Large Language Model Applications: Amit Kumar, Ethari Hrishikesh, Sonali Agarwal for the paper “Leveraging Commit-Size Context and Hyper Co-Change Graph Centralities for Defect Prediction\" Chunguang Zhang, Bixin Li, Yan Xiao for the paper “Beyond Lexical: Functional Semantics and Fusion for Precise Architecture Recovery\""
+  },
+  {
+   "venue": "SANER",
+   "year": 2026,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Awards",
+   "title": "Leveraging Commit-Size Context and Hyper Co-Change Graph Centralities for Defect Prediction",
+   "authors": [
+    "Amit Kumar",
+    "Ethari Hrishikesh",
+    "Sonali Agarwal"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/attending/saner-2026/awards",
+   "evidence": "The following papers are the recipients of the SANER 2026 Disinguished Paper awards for the Research Track: Lev Sorokin, Ivan Vasilev, Ken Friedl, Andrea Stocco for the paper “STELLAR: A Search-Based Testing Framework for Large Language Model Applications: Amit Kumar, Ethari Hrishikesh, Sonali Agarwal for the paper “Leveraging Commit-Size Context and Hyper Co-Change Graph Centralities for Defect Prediction\""
+  },
+  {
+   "venue": "SANER",
+   "year": 2026,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Awards",
+   "title": "STELLAR: A Search-Based Testing Framework for Large Language Model Applications",
+   "authors": [
+    "Lev Sorokin",
+    "Ivan Vasilev",
+    "Ken Friedl",
+    "Andrea Stocco"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/attending/saner-2026/awards",
+   "evidence": "The following papers are the recipients of the SANER 2026 Disinguished Paper awards for the Research Track: Lev Sorokin, Ivan Vasilev, Ken Friedl, Andrea Stocco for the paper “STELLAR: A Search-Based Testing Framework for Large Language Model Applications:"
+  },
+  {
+   "venue": "SANER",
+   "year": 2026,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Awards",
+   "title": "What You Trust Is Insecure: Demystifying How Developers (Mis)Use Trusted Execution Environments in Practice",
+   "authors": [
+    "Yuqing Niu",
+    "Jieke Shi",
+    "Rundong Han",
+    "Ye Liu",
+    "Chengyan Ma",
+    "Yunbo Lyu",
+    "David Lo"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/attending/saner-2026/awards",
+   "evidence": "The following papers are the recipients of the SANER 2026 Disinguished Paper awards for the Research Track: Lev Sorokin, Ivan Vasilev, Ken Friedl, Andrea Stocco for the paper “STELLAR: A Search-Based Testing Framework for Large Language Model Applications: Amit Kumar, Ethari Hrishikesh, Sonali Agarwal for the paper “Leveraging Commit-Size Context and Hyper Co-Change Graph Centralities for Defect Prediction\" Chunguang Zhang, Bixin Li, Yan Xiao for the paper “Beyond Lexical: Functional Semantics and Fusion for Precise Architecture Recovery\" Yuqing Niu, Jieke Shi, Rundong Han, Ye Liu, Chengyan Ma, Yunbo Lyu, David Lo for the paper “What You Trust Is Insecure: Demystifying How Developers (Mis)Use Trusted Execution Environments in Practice\""
   },
   {
    "venue": "SAS",
@@ -173513,6 +174054,41 @@
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
    "evidence": "VM '04: Semantic Remote Attestation—A Virtual Machine Directed Approach to Trusted Computing — Vivek Haldar, University of California, Irvine; Deepak Chandra, University of California, Irvine; Michael Franz, University of California, Irvine"
+  },
+  {
+   "venue": "VMCAI",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Static Analysis of Binary Code with Memory Indirections Using Polyhedra",
+   "authors": [
+    "Clément Ballabriga",
+    "Julien Forget",
+    "Laure Gonnord",
+    "Giuseppe Lipari",
+    "Jordy Ruiz"
+   ],
+   "track": "main",
+   "source": "https://popl19.sigplan.org/track/VMCAI-2019",
+   "evidence": "Best Paper Award Congratulations to Clément Ballabriga, Julien Forget, Laure Gonnord, Giuseppe Lipari and Jordy Ruiz for winning the best paper award for their paper “Static Analysis of Binary Code with Memory Indirections Using Polyhedra” !"
+  },
+  {
+   "venue": "VMCAI",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Correctness Witness Validation by Abstract Interpretation",
+   "authors": [
+    "Simmo Saan",
+    "Michael Schwarz",
+    "Julian Erhard",
+    "Helmut Seidl",
+    "Sarah Tilscher",
+    "Vesal Vojdani"
+   ],
+   "track": "main",
+   "source": "https://popl24.sigplan.org/home/VMCAI-2024",
+   "evidence": "Best Paper Award The receiver of the best paper award at VMCAI 2024 is the paper “Correctness Witness Validation by Abstract Interpretation”. Congratulations to the authors Simmo Saan, Michael Schwarz, Julian Erhard, Helmut Seidl, Sarah Tilscher, and Vesal Vojdani!"
   },
   {
    "venue": "VMCAI",
