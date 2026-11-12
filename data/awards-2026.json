@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 10807
+  "count": 10919
  },
  "entries": [
   {
@@ -7784,6 +7784,38 @@
    "evidence": "Distinguished Paper – \"MoEvil: Poisoning Experts to Compromise the Safety of Mixture-of-Experts LLMs\""
   },
   {
+   "venue": "AIED",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "BEST PAPER",
+   "title": "How to Teach Programming in the AI Era? Using LLMs as a Teachable Agent for Debugging",
+   "authors": [
+    "Qianou Ma",
+    "Hua Shen",
+    "Kenneth Koedinger",
+    "Sherry Tongshuang Wu"
+   ],
+   "track": "main",
+   "source": "https://aied2024.cesar.school/program/best-papers",
+   "evidence": "Best papers BEST PAPER Qianou Ma, Hua Shen, Kenneth Koedinger and Sherry Tongshuang Wu; How to Teach Programming in the AI Era? Using LLMs as a Teachable Agent for Debugging"
+  },
+  {
+   "venue": "AIED",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "BEST STUDENT PAPER",
+   "title": "Improving the Validity of Automatically Generated Feedback via Reinforcement Learning",
+   "authors": [
+    "Alexander Scarlatos",
+    "Digory Smith",
+    "Simon Woodhead",
+    "Andrew Lan"
+   ],
+   "track": "main",
+   "source": "https://aied2024.cesar.school/program/best-papers",
+   "evidence": "BEST STUDENT PAPER Alexander Scarlatos, Digory Smith, Simon Woodhead and Andrew Lan; Improving the Validity of Automatically Generated Feedback via Reinforcement Learning"
+  },
+  {
    "venue": "AISTATS",
    "year": 2021,
    "award": "best",
@@ -9261,6 +9293,40 @@
    "track": "main",
    "source": "https://conf.researchr.org/track/ase-2026/ase-2026-research-track",
    "evidence": "ASE 2026 Research Papers, ACM SIGSOFT Distinguished Paper Award: When Compression Becomes an Attack Surface: Black-Box Attacks on Prompt-Compressed LLM Agents — Zesen Liu, Zhixiang Zhang, Yuchong Xie, Dongdong She"
+  },
+  {
+   "venue": "AsiaCCS",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Awards (Main Conference)",
+   "title": "Adversarial Fog: Exploiting the Vulnerabilities of LiDAR Point Cloud Preprocessing Filters",
+   "authors": [
+    "Yuna Tanaka",
+    "Kazuki Nomoto",
+    "Ryunosuke Kobayashi",
+    "Go Tsuruoka",
+    "Tatsuya Mori"
+   ],
+   "track": "main",
+   "source": "https://asiaccs2025.hust.edu.vn/awards/",
+   "evidence": "Best Paper Awards (Main Conference) … Adversarial Fog: Exploiting the Vulnerabilities of LiDAR Point Cloud Preprocessing Filters Yuna Tanaka, Kazuki Nomoto (Waseda University / Deloitte Tohmatsu Cyber LLC), Ryunosuke Kobayashi, Go Tsuruoka (Waseda University) and Tatsuya Mori (Waseda University / NICT / RIKEN)"
+  },
+  {
+   "venue": "AsiaCCS",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Awards (Main Conference)",
+   "title": "Breaking Bad: How Compilers Break Constant-Time Implementations",
+   "authors": [
+    "Moritz Schneider",
+    "Daniele Lain",
+    "Ivan Puddu",
+    "Nicolas Dutly",
+    "Srdjan Capkun"
+   ],
+   "track": "main",
+   "source": "https://asiaccs2025.hust.edu.vn/awards/",
+   "evidence": "Best Paper Awards (Main Conference) Breaking Bad: How Compilers Break Constant-Time Implementations Moritz Schneider, Daniele Lain, Ivan Puddu, Nicolas Dutly and Srdjan Capkun (ETH Zurich)"
   },
   {
    "venue": "ASIACRYPT",
@@ -72114,6 +72180,76 @@
    "evidence": "Semantic Sensitivities and Inconsistent Predictions: Measuring the Fragility of NLI Models — Outstanding Paper Award"
   },
   {
+   "venue": "EASE",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "A Catalog of Transformations to Remove Test Smells From Natural Language Tests",
+   "authors": [
+    "Manoel Aranda III",
+    "Naelson Oliveira",
+    "Elvys Soares",
+    "Márcio Ribeiro",
+    "Davi Romão",
+    "Ullyanne Patriota",
+    "Rohit Gheyi",
+    "Emerson Paulo Soares de Souza",
+    "Ivan Machado"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/program/ease-2024/program-ease-2024/",
+   "evidence": "A Catalog of Transformations to Remove Test Smells From Natural Language TestsDistinguished Paper AwardResearch Papers"
+  },
+  {
+   "venue": "EASE",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "Context Switch Sensitive Fault Localization",
+   "authors": [
+    "Ferenc Horváth",
+    "Roland Aszmann",
+    "Péter Attila Soha",
+    "Árpád Beszédes",
+    "Tibor Gyimothy"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/program/ease-2024/program-ease-2024/",
+   "evidence": "Context Switch Sensitive Fault LocalizationDistinguished Paper AwardResearch Papers"
+  },
+  {
+   "venue": "EASE",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "Towards Semi-Automated Merge Conflict Resolution: Is It Easier Than We Expected?",
+   "authors": [
+    "Alexander Boll",
+    "Yael van Dok",
+    "Manuel Ohrndorf",
+    "Alexander Schultheiß",
+    "Timo Kehrer"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/program/ease-2024/program-ease-2024/",
+   "evidence": "Towards Semi-Automated Merge Conflict Resolution: Is It Easier Than We Expected?Distinguished Paper AwardResearch Papers"
+  },
+  {
+   "venue": "EASE",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "MoEKD: Mixture-of-Experts Knowledge Distillation for Robust and High-Performing Compressed Code Models",
+   "authors": [
+    "Md. Abdul Awal",
+    "Mrigank Rochan",
+    "Chanchal K. Roy"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/program/ease-2026/program-ease-2026/",
+   "evidence": "MoEKD: Mixture-of-Experts Knowledge Distillation for Robust and High-Performing Compressed Code ModelsBest Paper AwardResearch Papers"
+  },
+  {
    "venue": "ECAI",
    "year": 2025,
    "award": "outstanding",
@@ -84885,6 +85021,20 @@
    "evidence": "FOCS 2025 Test of Time Award (2005): Subhash A.Khot, Nisheeth K. Vishnoi: The Unique Games Conjecture, Integrality Gap for Cut Problems and Embeddability of Negative Type"
   },
   {
+   "venue": "FOGA",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Generalized Drift Analysis in Continuous Domain: Linear Convergence of (1+1)-ES on Strongly Convex Functions with Lipschitz Continuous Gradients",
+   "authors": [
+    "D. Morinaga",
+    "Y. Akimoto"
+   ],
+   "track": "main",
+   "source": "https://sig.sigevo.org/FOGA-Best-Paper-Awards",
+   "evidence": "From 2019 on, Best Paper Awards were awarded at FOGA. 2019 : Generalized Drift Analysis in Continuous Domain:Linear Convergence of (1+1)-ES on Strongly Convex Functions with Lipschitz Continuous Gradients by D. Morinaga and Y. Akimoto"
+  },
+  {
    "venue": "FoSSaCS",
    "year": 2011,
    "award": "student",
@@ -86160,6 +86310,77 @@
    "track": "main",
    "source": "https://conf.researchr.org/track/fse-2026/fse-2026-research-papers",
    "evidence": "FSE26 Distinguished Paper Awards: Understanding Binary Code Similarity for Real-World Vulnerability Detection: A Large-Scale Empirical Study — Jingdong Guo, Chaopeng Dong, Yimo Ren, Siyuan Li, Jie Liu, Hong Li, Hongsong Zhu"
+  },
+  {
+   "venue": "GD",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Track 2)",
+   "title": "GraphTrials: Visual Proofs of Graph Properties",
+   "authors": [
+    "Henry Förster",
+    "Felix Klesen",
+    "Tim Dwyer",
+    "Peter Eades",
+    "Seok-Hee Hong",
+    "Stephen Kobourov",
+    "Giuseppe Liotta",
+    "Kazuo Misue",
+    "Fabrizio Montecchiani",
+    "Alexander Pastukhov",
+    "Falk Schreiber"
+   ],
+   "track": "main",
+   "source": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol320-gd2024/LIPIcs.GD.2024.0/LIPIcs.GD.2024.0.pdf",
+   "evidence": "The conference gave out best paper awards in Track 1 and Track 2, as well as a best presentation award and a best poster award. The award for the best paper in Track 1 was given to “The Density Formula: One Lemma to Bound Them All” by Michael Kaufmann, Boris Klemz, Kristin Knorr, Meghana M. Reddy, Felix Schröder and Torsten Ueckerdt (Paper 7 in this volume), and the award for the best paper in Track 2 was given to “GraphTrials: Visual Proofs of Graph Properties” by Henry Förster, Felix Klesen, Tim Dwyer, Peter Eades, Seok-Hee Hong, Stephen Kobourov, Giuseppe Liotta, Kazuo Misue, Fabrizio Montecchiani, Alexander Pastukhov and Falk Schreiber (Paper 16)."
+  },
+  {
+   "venue": "GD",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Track 1)",
+   "title": "The Density Formula: One Lemma to Bound Them All",
+   "authors": [
+    "Michael Kaufmann",
+    "Boris Klemz",
+    "Kristin Knorr",
+    "Meghana M. Reddy",
+    "Felix Schröder",
+    "Torsten Ueckerdt"
+   ],
+   "track": "main",
+   "source": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol320-gd2024/LIPIcs.GD.2024.0/LIPIcs.GD.2024.0.pdf",
+   "evidence": "The conference gave out best paper awards in Track 1 and Track 2, as well as a best presentation award and a best poster award. The award for the best paper in Track 1 was given to “The Density Formula: One Lemma to Bound Them All” by Michael Kaufmann, Boris Klemz, Kristin Knorr, Meghana M. Reddy, Felix Schröder and Torsten Ueckerdt (Paper 7 in this volume), and the award for the best paper in Track 2 was given to “GraphTrials: Visual Proofs of Graph Properties” by Henry Förster, Felix Klesen, Tim Dwyer, Peter Eades, Seok-Hee Hong, Stephen Kobourov, Giuseppe Liotta, Kazuo Misue, Fabrizio Montecchiani, Alexander Pastukhov and Falk Schreiber (Paper 16)."
+  },
+  {
+   "venue": "GD",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Track 1)",
+   "title": "Characterizing and Recognizing Twistedness",
+   "authors": [
+    "Oswin Aichholzer",
+    "Alfredo Garcia",
+    "Javier Tejel",
+    "Birgit Vogtenhuber",
+    "Alexandra Weinberger"
+   ],
+   "track": "main",
+   "source": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol357-gd2025/LIPIcs.GD.2025.0/LIPIcs.GD.2025.0.pdf",
+   "evidence": "The conference gave out best paper awards in Track 1 and Track 2, as well as a best presentation award and a best poster award. The award for the best paper in Track 1 was given to “Characterizing and Recognizing Twistedness” by Oswin Aichholzer, Alfredo Garcia, Javier Tejel, Birgit Vogtenhuber and Alexandra Weinberger, and the award for the best paper in Track 2 was given to “OOPS: Optimized One-Planarity Solver via SAT” by Sergey Pupyrev."
+  },
+  {
+   "venue": "GD",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Track 2)",
+   "title": "OOPS: Optimized One-Planarity Solver via SAT",
+   "authors": [
+    "Sergey Pupyrev"
+   ],
+   "track": "main",
+   "source": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol357-gd2025/LIPIcs.GD.2025.0/LIPIcs.GD.2025.0.pdf",
+   "evidence": "The conference gave out best paper awards in Track 1 and Track 2, as well as a best presentation award and a best poster award. The award for the best paper in Track 1 was given to “Characterizing and Recognizing Twistedness” by Oswin Aichholzer, Alfredo Garcia, Javier Tejel, Birgit Vogtenhuber and Alexandra Weinberger, and the award for the best paper in Track 2 was given to “OOPS: Optimized One-Planarity Solver via SAT” by Sergey Pupyrev."
   },
   {
    "venue": "GECCO",
@@ -98250,6 +98471,153 @@
    "evidence": "Helmholtz Prize: 2025 “Fast R-CNN” R. Girshick"
   },
   {
+   "venue": "ICDAR",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "IAPR/ICDAR 2021 Best Paper Award",
+   "title": "ViBERTgrid: A Jointly Trained Multi-Modal 2D Document Representation for Key Information Extraction from Documents",
+   "authors": [
+    "Weihong Lin",
+    "Qifang Gao",
+    "Lei Sun",
+    "Zhuoyao Zhong",
+    "Kai Hu",
+    "Qin Ren",
+    "Qiang Huo"
+   ],
+   "track": "main",
+   "source": "https://iapr.org/archives/icdar2021/index.html%3Fp=30255.html",
+   "evidence": "ICDAR 2021 Award Winners: IAPR/ICDAR 2021 Best Paper Award: Weihong Lin, Qifang Gao, Lei Sun, Zhuoyao Zhong, Kai Hu, Qin Ren and Qiang Huo for their paper “ViBERTgrid: A Jointly Trained Multi-Modal 2D Document Representation for Key Information Extraction from Documents”"
+  },
+  {
+   "venue": "ICDAR",
+   "year": 2021,
+   "award": "student",
+   "awardLabel": "Itesoft/yooz ICDAR 2021 Best Student Paper Award",
+   "title": "SmartPatch: Improving Handwritten Word Imitation with Patch Discriminators",
+   "authors": [
+    "Alexander Mattick",
+    "Martin Mayr",
+    "Mathias Seuret",
+    "Andreas Maier",
+    "Vincent Christlein"
+   ],
+   "track": "main",
+   "source": "https://iapr.org/archives/icdar2021/index.html%3Fp=30255.html",
+   "evidence": "Itesoft/yooz ICDAR 2021 Best Student Paper Award: Alexander Mattick, Martin Mayr, Mathias Seuret, Andreas Maier and Vincent Christlein for their paper “SmartPatch: Improving Handwritten Word Imitation with Patch Discriminators”"
+  },
+  {
+   "venue": "ICDAR",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "IAPR Best Paper Award",
+   "title": "A Hybrid Model for Multilingual OCR",
+   "authors": [
+    "David Etter",
+    "Cameron Carpenter",
+    "Nolan King"
+   ],
+   "track": "main",
+   "source": "https://iapr.org/archives/icdar2023/",
+   "evidence": "IAPR Best Paper Award “A Hybrid Model for Multilingual OCR” David Etter, Cameron Carpenter, and Nolan King"
+  },
+  {
+   "venue": "ICDAR",
+   "year": 2023,
+   "award": "student",
+   "awardLabel": "IAPR Best Student Paper Award",
+   "title": "Character Queries: A Transformer-based Approach to On-Line Handwritten Character Segmentation",
+   "authors": [
+    "Michael Jungo",
+    "Beat Wolf",
+    "Andrii Maksai",
+    "Claudiu Musat",
+    "Andreas Fischer"
+   ],
+   "track": "main",
+   "source": "https://iapr.org/archives/icdar2023/",
+   "evidence": "IAPR Best Student Paper Award “Character Queries: A Transformer-based Approach to On-Line Handwritten Character Segmentation” Michael Jungo, Beat Wolf, Andrii Maksai, Claudiu Musat, and Andreas Fischer"
+  },
+  {
+   "venue": "ICDAR",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Template-Guided Cascaded Diffusion for Stylized Handwritten Chinese Text-Line Generation",
+   "authors": [
+    "Honglie Wang",
+    "Minsi Ren",
+    "Yan-Ming Zhang",
+    "Fei Yin",
+    "Cheng-Lin Liu"
+   ],
+   "track": "main",
+   "source": "https://iapr.org/archives/icdar2025/awards",
+   "evidence": "Best Paper Award “Template-Guided Cascaded Diffusion for Stylized Handwritten Chinese Text-Line Generation” Honglie Wang (CASIA), Minsi Ren (CASIA), Yan-Ming Zhang (CASIA), Fei Yin (CASIA), Cheng-Lin Liu (CASIA)"
+  },
+  {
+   "venue": "ICDAR",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Student Paper Honourable Mention",
+   "title": "DCC: Plug-and-Play Dynamic Category Compression for Enhanced Handwritten Text Generation",
+   "authors": [
+    "Yiming Wang",
+    "Hongxi Wei",
+    "Heng Wang",
+    "Shiwen Sun"
+   ],
+   "track": "main",
+   "source": "https://iapr.org/archives/icdar2025/awards",
+   "evidence": "Best Student Paper Honourable Mention “DCC: Plug-and-Play Dynamic Category Compression for Enhanced Handwritten Text Generation” Yiming Wang (Inner Mongolia University), Hongxi Wei (Inner Mongolia University), Heng Wang (Inner Mongolia University), Shiwen Sun (Inner Mongolia University)"
+  },
+  {
+   "venue": "ICDAR",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Student Paper Honourable Mention",
+   "title": "IndicDLP: A Foundational Dataset for Multi-Lingual and Multi-Domain Document Layout Parsing",
+   "authors": [
+    "Oikantik Nath",
+    "Sahithi Kukkala",
+    "Mitesh Khapra",
+    "Ravi Kiran Sarvadevabhatla"
+   ],
+   "track": "main",
+   "source": "https://iapr.org/archives/icdar2025/awards",
+   "evidence": "Best Student Paper Honourable Mention “IndicDLP: A Foundational Dataset for Multi-Lingual and Multi-Domain Document Layout Parsing” Oikantik Nath (IIT Madras), Sahithi Kukkala (IIIT Hyderabad), Mitesh Khapra (IIT Madras), Ravi Kiran Sarvadevabhatla (IIIT Hyderabad)"
+  },
+  {
+   "venue": "ICDAR",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honourable Mention",
+   "title": "LDTR: Linear Object Detection Transformer for Accurate Graph Generation by Learning the N-hop Connectivity Information",
+   "authors": [
+    "Weiwei Duan",
+    "Yao-Yi Chiang",
+    "Craig Knoblock"
+   ],
+   "track": "main",
+   "source": "https://iapr.org/archives/icdar2025/awards",
+   "evidence": "Best Paper Honourable Mention “LDTR: Linear Object Detection Transformer for Accurate Graph Generation by Learning the N-hop Connectivity Information” Weiwei Duan (InferLink Corporation), Yao-Yi Chiang (University of Minnesota), Craig Knoblock (USC Information Sciences Institute)"
+  },
+  {
+   "venue": "ICDAR",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "TexTAR: Textual Attribute Recognition in Multi-domain and Multi-lingual Document Images",
+   "authors": [
+    "Rohan Kumar",
+    "Jyothi Swaroopa Jinka",
+    "Ravi Kiran Sarvadevabhatla"
+   ],
+   "track": "main",
+   "source": "https://iapr.org/archives/icdar2025/awards",
+   "evidence": "Best Student Paper Award “TexTAR : Textual Attribute Recognition in Multi-domain and Multi-lingual Document Images” Rohan Kumar (IIIT Hyderabad), Jyothi Swaroopa Jinka (IIIT Hyderabad), Ravi Kiran Sarvadevabhatla (IIIT Hyderabad)"
+  },
+  {
    "venue": "ICDE",
    "year": 2005,
    "award": "tot",
@@ -100419,6 +100787,117 @@
    "paperYear": 2016,
    "source": "https://edbticdt2026.github.io/contents/ICDT_Test-of-time.html",
    "evidence": "ICDT 2026 Test-of-Time Award will be awarded to the following paper: Vince Bárány, Balder ten Cate, Benny Kimelfeld, Dan Olteanu, Zografoula Vagena: Declarative Probabilistic Programming with Datalog."
+  },
+  {
+   "venue": "ICER",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Re-Examining Inequalities in Computer Science Participation from a Bourdieusian Sociological Perspective",
+   "authors": [
+    "Maria Kallia",
+    "Quintin Cutts"
+   ],
+   "track": "main",
+   "source": "https://icer2021.acm.org/track/icer-2021-papers",
+   "evidence": "Re-Examining Inequalities in Computer Science Participation from a Bourdieusian Sociological PerspectiveBest Paper"
+  },
+  {
+   "venue": "ICER",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Evaluating Proof Blocks Problems as Exam Questions",
+   "authors": [
+    "Seth Poulsen",
+    "Mahesh Viswanathan",
+    "Geoffrey Herman",
+    "Matthew West"
+   ],
+   "track": "main",
+   "source": "https://icer2021.acm.org/track/icer-2021-papers",
+   "evidence": "Evaluating Proof Blocks Problems as Exam QuestionsHonorable Mention"
+  },
+  {
+   "venue": "ICER",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Identifying SQL Misconceptions of Novices: Findings from a Think-Aloud Study",
+   "authors": [
+    "Daphne Miedema",
+    "Efthimia Aivaloglou",
+    "George Fletcher"
+   ],
+   "track": "main",
+   "source": "https://icer2021.acm.org/track/icer-2021-papers",
+   "evidence": "Identifying SQL Misconceptions of Novices: Findings from a Think-Aloud StudyHonorable Mention"
+  },
+  {
+   "venue": "ICER",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Identity in K-12 Computer Education Research: A Systematic Literature Review",
+   "authors": [
+    "Gregor Große-Bölting",
+    "Dietrich Gerstenberger",
+    "Lara Gildehaus",
+    "Andreas Mühling",
+    "Carsten Schulte"
+   ],
+   "track": "main",
+   "source": "https://icer2021.acm.org/track/icer-2021-papers",
+   "evidence": "Identity in K-12 Computer Education Research: A Systematic Literature ReviewHonorable Mention"
+  },
+  {
+   "venue": "ICER",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Automatic Generation of Programming Exercises and Code Explanations Using Large Language Models",
+   "authors": [
+    "Sami Sarsa",
+    "Paul Denny",
+    "Arto Hellas",
+    "Juho Leinonen"
+   ],
+   "track": "main",
+   "source": "https://icer2022.acm.org/track/icer-2022-papers",
+   "evidence": "Automatic Generation of Programming Exercises and Code Explanations Using Large Language ModelsBest Paper"
+  },
+  {
+   "venue": "ICER",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "When Rhetorical Logic Meets Programming: Collective Argumentative Reasoning in Problem-Solving in Programming",
+   "authors": [
+    "Maria Kallia",
+    "Quintin Cutts",
+    "Nicola Looker"
+   ],
+   "track": "main",
+   "source": "https://icer2022.acm.org/track/icer-2022-papers",
+   "evidence": "When Rhetorical Logic Meets Programming: Collective Argumentative Reasoning in Problem-Solving in ProgrammingHonorable Mention"
+  },
+  {
+   "venue": "ICER",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "best paper award",
+   "title": "Needles in a Haystack: Student Struggles with Working on Large Code Bases",
+   "authors": [
+    "Anshul Shah",
+    "Thomas Rexin",
+    "Anya Chernova",
+    "Gonzalo Allen-Perez",
+    "William G. Griswold",
+    "Adalbert Gerald Soosai Raj"
+   ],
+   "track": "main",
+   "source": "https://icer2025.acm.org/",
+   "evidence": "We are pleased to announce that the best paper award at ICER 2025 was awarded to “Needles in a Haystack: Student Struggles with Working on Large Code Bases” by Anshul Shah, Thomas Rexin, Anya Chernova, Gonzalo Allen-Perez, William G. Griswold and Adalbert Gerald Soosai Raj"
   },
   {
    "venue": "ICFP",
@@ -108460,6 +108939,89 @@
    "evidence": "Best Paper Award Hanieh Toutouni, Suman Chakraborty, Yicheng Tu, Jiajun Huang OCTANE: Breaking the Neighbor-List Bottleneck in GPU Molecular Dynamics"
   },
   {
+   "venue": "ICSA",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "An Empirical Study of Architectural Decay in Open-Source Software",
+   "authors": [
+    "Duc Le",
+    "Daniel Link",
+    "Arman Shahbazian",
+    "Nenad Medvidovic"
+   ],
+   "track": "main",
+   "source": "https://icsa-conferences.org/2018/attending/program/",
+   "evidence": "An Empirical Study of Architectural Decay in Open-Source Software (Duc Le, Daniel Link, Arman Shahbazian and Nenad Medvidovic) -- Best Paper Award"
+  },
+  {
+   "venue": "ICSA",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Infrastructure-as-Code for Data-Intensive Architectures: A Model-Driven Development Approach",
+   "authors": [
+    "Matej Artač",
+    "Tadej Borovšak",
+    "Elisabetta Di Nitto",
+    "Michele Guerriero",
+    "Diego Perez-Palacin",
+    "Damian Andrew Tamburri"
+   ],
+   "track": "main",
+   "source": "https://icsa-conferences.org/2018/attending/program/",
+   "evidence": "Infrastructure-as-Code for Data-Intensive Architectures: A Model-Driven Development Approach (Matej Artač, Tadej Borovšak, Elisabetta Di Nitto, Michele Guerriero, Diego Perez-Palacin and Damian Andrew Tamburri) -- Best Paper Award"
+  },
+  {
+   "venue": "ICSA",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Improving the Consistency and Usefulness of Architecture Descriptions: Two Industrial Surveys",
+   "authors": [
+    "Rebekka Wohlrab",
+    "Ulf Eliasson",
+    "Patrizio Pelliccione",
+    "Rogardt Heldal"
+   ],
+   "track": "main",
+   "source": "https://icsa-conferences.org/2019/attending/awards/",
+   "evidence": "Best Paper Award Rebekka Wohlrab, Ulf Eliasson, Patrizio Pelliccione and Rogardt Heldal for the paper Improving the Consistency and Usefulness of Architecture Descriptions: Two Industrial Surveys"
+  },
+  {
+   "venue": "ICSA",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Distinguish Best Paper Award - Research Track",
+   "title": "Informed and Assessable Observability Design Decisions in Cloud-native Microservice Applications",
+   "authors": [
+    "Maria C Borges",
+    "Joshua Bauer",
+    "Sebastian Werner",
+    "Michael Gebauer",
+    "Stefan Tai"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/info/icsa-2024/awards",
+   "evidence": "Distinguish Best Paper Award - Research Track Informed and Assessable Observability Design Decisions in Cloud-native Microservice Applications, Maria C Borges, Joshua Bauer, Sebastian Werner, Michael Gebauer, Stefan Tai"
+  },
+  {
+   "venue": "ICSA",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "A Comprehensive Experimentation Framework for Energy Efficient Design of Cloud-Native Applications",
+   "authors": [
+    "Sebastian Werner",
+    "Karl Wolf",
+    "Maria C. Borges",
+    "Stefan Tai"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/info/icsa-2025/awards",
+   "evidence": "Best Paper Award Presented to Sebastian Werner, Karl Wolf, Maria C. Borges and Stefan Tai “A Comprehensive Experimentation Framework for Energy Efficient Design of Cloud-Native Applications"
+  },
+  {
    "venue": "ICSE",
    "year": 1990,
    "award": "tot",
@@ -110884,6 +111446,89 @@
    "track": "main",
    "source": "https://conf.researchr.org/track/icsme-2026/icsme-2026-icsme-plenary-events",
    "evidence": "Most Influential Paper Award Plenary Events at Auditorium Title: “Automated Debugging Considered Harmful” Considered Harmful - A User Study Revisiting the Usefulness of Spectra-Based Fault Localization Techniques with Professionals Using Real Bugs from Large Systems Authors: Xin Xia, Lingfeng Bao, David Lo and Shanping Li"
+  },
+  {
+   "venue": "ICST",
+   "year": 2026,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "DANTE: Data-Driven Test Case Selection and Prioritization for Long-Running Test Suites",
+   "authors": [
+    "Simone Reale",
+    "Elisabetta Di Nitto",
+    "Luciano Baresi",
+    "Massimiliano Di Penta",
+    "Giovanni Quattrocchi"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/program/icst-2026/program-icst-2026/",
+   "evidence": "DANTE: Data-Driven Test Case Selection and Prioritization for Long-Running Test SuitesDistinguished Paper AwardResearch Papers"
+  },
+  {
+   "venue": "ICST",
+   "year": 2026,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "Dynasto: Validity-Aware Dynamic–Static Parameter Optimization for Autonomous Driving Testing",
+   "authors": [
+    "Dmytro Humeniuk",
+    "Mohammad Hamdaqa",
+    "Houssem Ben Braiek",
+    "Amel Bennaceur",
+    "Foutse Khomh"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/program/icst-2026/program-icst-2026/",
+   "evidence": "Dynasto: Validity-Aware Dynamic–Static Parameter Optimization for Autonomous Driving TestingDistinguished Paper AwardResearch Papers"
+  },
+  {
+   "venue": "ICST",
+   "year": 2026,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "FALCON: Efficient Test Case Prioritization via Submodular Optimization",
+   "authors": [
+    "Twumasi Mensah-Boateng",
+    "Jing Yuan",
+    "Hyunsook Do"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/program/icst-2026/program-icst-2026/",
+   "evidence": "FALCON: Efficient Test Case Prioritization via Submodular OptimizationDistinguished Paper AwardResearch Papers"
+  },
+  {
+   "venue": "ICST",
+   "year": 2026,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "SemLink: A Semantic-Aware Automated Test Oracle for Hyperlink Verification using Siamese Sentence-BERT",
+   "authors": [
+    "Guan-Yan Yang",
+    "Wei-Ling Wen",
+    "Shu Yuan Ku",
+    "Farn Wang",
+    "Kuo-Hui Yeh"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/program/icst-2026/program-icst-2026/",
+   "evidence": "SemLink: A Semantic-Aware Automated Test Oracle for Hyperlink Verification using Siamese Sentence-BERTDistinguished Paper AwardResearch Papers"
+  },
+  {
+   "venue": "ICST",
+   "year": 2026,
+   "award": "student",
+   "awardLabel": "Best Student Award",
+   "title": "How Effective Is Coverage-Guided Fuzzing to Test Deep Learning Library APIs?",
+   "authors": [
+    "Feiran Qin",
+    "M M Abid Naziri",
+    "Hengyu Ai",
+    "Saikat Dutta",
+    "Marcelo d'Amorim"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/program/icst-2026/program-icst-2026/",
+   "evidence": "How Effective Is Coverage-Guided Fuzzing to Test Deep Learning Library APIs?Best Student AwardResearch Papers"
   },
   {
    "venue": "ICWS",
@@ -114123,6 +114768,69 @@
    "track": "main",
    "source": "https://www2.sigsoft.org/awards/distinguishedpaper/",
    "evidence": "International Symposium on Empirical Software Engineering (ISESE 2006): Chris Lokan, Emilia Mendes, Cross-company and Single-company Effort Models using the ISBSG Database: a Further Replicated Study"
+  },
+  {
+   "venue": "ISLPED",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "An Energy-Aware Approach to Noise-Robust Moving Object Detection for Low-Power Wireless Image Sensor Platforms",
+   "authors": [
+    "Jong Hwan Ko",
+    "Saibal Mukhopadhyay"
+   ],
+   "track": "main",
+   "source": "https://islped.org/2016/adv-program.html",
+   "evidence": "An Energy-Aware Approach to Noise-Robust Moving Object Detection for Low-Power Wireless Image Sensor Platforms Best Paper Award! Jong Hwan Ko and Saibal Mukhopadhyay"
+  },
+  {
+   "venue": "ISLPED",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Soft Response Generation and Thresholding Strategies for Linear and Feed-Forward MUX PUFs",
+   "authors": [
+    "Chen Zhou",
+    "Saroj Satapathy",
+    "Yingjie Lao",
+    "Keshab K. Parhi",
+    "Chris H. Kim"
+   ],
+   "track": "main",
+   "source": "https://islped.org/2016/adv-program.html",
+   "evidence": "Soft Response Generation and Thresholding Strategies for Linear and Feed-Forward MUX PUFs Best Paper Award! Chen Zhou, Saroj Satapathy, Yingjie Lao, Keshab K. Parhi and Chris H. Kim"
+  },
+  {
+   "venue": "ISLPED",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "A Data Remanence based Approach to Generate 100% Stable Keys from an SRAM Physical Unclonable Function",
+   "authors": [
+    "Muqing Liu",
+    "Chen Zhou",
+    "Qianying Tang",
+    "Keshab K. Parhi",
+    "Chris H. Kim"
+   ],
+   "track": "main",
+   "source": "https://islped.org/2017/",
+   "evidence": "Best Paper Award Battery Assignment and Scheduling for Drone Delivery Businesses Sangyoung Park, Licong Zhang and Samarjit Chakraborty TU Műnchen A Data Remanence based Approach to Generate 100% Stable Keys from an SRAM Physical Unclonable Function Muqing Liu, Chen Zhou, Qianying Tang, Keshab K. Parhi and Chris H. Kim University of Minnesota"
+  },
+  {
+   "venue": "ISLPED",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Battery Assignment and Scheduling for Drone Delivery Businesses",
+   "authors": [
+    "Sangyoung Park",
+    "Licong Zhang",
+    "Samarjit Chakraborty"
+   ],
+   "track": "main",
+   "source": "https://islped.org/2017/",
+   "evidence": "Best Paper Award Battery Assignment and Scheduling for Drone Delivery Businesses Sangyoung Park, Licong Zhang and Samarjit Chakraborty TU Műnchen A Data Remanence based Approach to Generate 100% Stable Keys from an SRAM Physical Unclonable Function Muqing Liu, Chen Zhou, Qianying Tang, Keshab K. Parhi and Chris H. Kim University of Minnesota"
   },
   {
    "venue": "ISMAR",
@@ -118913,6 +119621,159 @@
    "evidence": "2024 Best “WM-Graph: Graph-Based Approach for Wafermap Analytics”, Min Jian Yang, Yueling (Jenny) Zeng, Li-C. Wang 2024 Honorable “Generation and Quality Evaluation of Synthetic Process Control Monitoring Data”, Matthew Nigh, John Carulli, and Yiorgos Makris"
   },
   {
+   "venue": "ITCS",
+   "year": 2017,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Detecting communities is hard and counting them is even harder",
+   "authors": [
+    "Aviad Rubinstein"
+   ],
+   "track": "main",
+   "source": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol067-itcs2017/LIPIcs.ITCS.2017.0/LIPIcs.ITCS.2017.0.pdf",
+   "evidence": "Other than that, there is no best paper award at ITCS. The best student paper award was shared by these two papers: “Towards Hardness of Approximation for Polynomial Time Problems” by Amir Abboud and Arturs Backurs and “Detecting communities is hard and counting them is even harder,” by Aviad Rubinstein."
+  },
+  {
+   "venue": "ITCS",
+   "year": 2017,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Towards Hardness of Approximation for Polynomial Time Problems",
+   "authors": [
+    "Amir Abboud",
+    "Arturs Backurs"
+   ],
+   "track": "main",
+   "source": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol067-itcs2017/LIPIcs.ITCS.2017.0/LIPIcs.ITCS.2017.0.pdf",
+   "evidence": "Other than that, there is no best paper award at ITCS. The best student paper award was shared by these two papers: “Towards Hardness of Approximation for Polynomial Time Problems” by Amir Abboud and Arturs Backurs and “Detecting communities is hard and counting them is even harder,” by Aviad Rubinstein."
+  },
+  {
+   "venue": "ITCS",
+   "year": 2021,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Bounds on the QAC0 Complexity of Approximating Parity",
+   "authors": [
+    "Gregory Rosenthal"
+   ],
+   "track": "main",
+   "source": "https://itcs-conf.org/itcs21/program.html",
+   "evidence": "Bounds on the QAC0 Complexity of Approximating Parity [ video | slack ] Best Student Paper Award Gregory Rosenthal (University of Toronto)"
+  },
+  {
+   "venue": "ITCS",
+   "year": 2022,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "A Gaussian Fixed Point Random Walk",
+   "authors": [
+    "Yang P. Liu",
+    "Ashwin Sah",
+    "Mehtaab Sawhney"
+   ],
+   "track": "main",
+   "source": "https://itcs-conf.org/itcs22/schedule-itcs22.html",
+   "evidence": "A Gaussian Fixed Point Random Walk [ paper , video ] Yang P. Liu (Stanford University); Ashwin Sah and Mehtaab Sawhney (MIT) (Best Student Paper Award)"
+  },
+  {
+   "venue": "ITCS",
+   "year": 2022,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Deterministic Dynamic Matching In Worst-Case Update Time",
+   "authors": [
+    "Peter Kiss"
+   ],
+   "track": "main",
+   "source": "https://itcs-conf.org/itcs22/schedule-itcs22.html",
+   "evidence": "Deterministic Dynamic Matching In Worst-Case Update Time [ paper , video ] Peter Kiss (University of Warwick) (Best Student Paper Award)"
+  },
+  {
+   "venue": "ITCS",
+   "year": 2023,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Comparative Learning: A Sample Complexity Theory for Two Hypothesis Classes",
+   "authors": [
+    "Lunjia Hu",
+    "Charlotte Peale"
+   ],
+   "track": "main",
+   "source": "https://itcs-conf.org/itcs23/itcs23-program.html",
+   "evidence": "🏆 Best Student Paper: Comparative Learning: A Sample Complexity Theory for Two Hypothesis Classes Video Authors: Lunjia Hu, Charlotte Peale (Stanford University)"
+  },
+  {
+   "venue": "ITCS",
+   "year": 2023,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Low-Stabilizer-Complexity Quantum States Are Not Pseudorandom",
+   "authors": [
+    "Sabee Grewal",
+    "Vishnu Iyer",
+    "William Kretschmer",
+    "Daniel Liang"
+   ],
+   "track": "main",
+   "source": "https://itcs-conf.org/itcs23/itcs23-program.html",
+   "evidence": "🏆 Best Student Paper: Low-Stabilizer-Complexity Quantum States Are Not Pseudorandom Video Authors: Sabee Grewal, Vishnu Iyer, William Kretschmer, Daniel Liang (University of Texas at Austin)"
+  },
+  {
+   "venue": "ITCS",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Distributional PAC-Learning from Nisan's Natural Proofs",
+   "authors": [
+    "Ari Karchmer"
+   ],
+   "track": "main",
+   "source": "https://itcs-conf.org/itcs24/itcs24-program.html",
+   "evidence": "Best Student Paper: 🏆 Distributional PAC-Learning from Nisan's Natural Proofs [ video , paper ] Ari Karchmer (Boston University)"
+  },
+  {
+   "venue": "ITCS",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Error Correction for Message Streams",
+   "authors": [
+    "Rachel Yun Zhang",
+    "Meghal Gupta"
+   ],
+   "track": "main",
+   "source": "https://itcs-conf.org/itcs25/itcs25-program.html",
+   "evidence": "Error Correction for Message Streams Best Student Paper Award Rachel Yun Zhang (MIT); Meghal Gupta (UC Berkeley)"
+  },
+  {
+   "venue": "ITCS",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Random Restrictions of Bounded Low Degree Polynomials Are Juntas",
+   "authors": [
+    "Sreejata Kishor Bhattacharya"
+   ],
+   "track": "main",
+   "source": "https://itcs-conf.org/itcs25/itcs25-program.html",
+   "evidence": "Random Restrictions of Bounded Low Degree Polynomials Are Juntas Best Student Paper Award Sreejata Kishor Bhattacharya (Tata Institute of Fundamental Research)"
+  },
+  {
+   "venue": "ITCS",
+   "year": 2026,
+   "award": "student",
+   "awardLabel": "Best student paper award",
+   "title": "Hardness of Range Avoidance and Proof Complexity Generators from Demi-Bits",
+   "authors": [
+    "H. Ren",
+    "Y. Wang",
+    "Y. Zhong"
+   ],
+   "track": "main",
+   "source": "https://itcs-conf.org/itcs26/itcs26-program.html",
+   "evidence": "Hardness of Range Avoidance and Proof Complexity Generators from Demi-Bits [ video ] H. Ren, Y. Wang, Y. Zhong Best student paper award"
+  },
+  {
    "venue": "IUI",
    "year": 2022,
    "award": "best",
@@ -122463,6 +123324,38 @@
    "paperYear": 2002,
    "source": "https://proceedings.kr.org/2026/kr2026-preface.pdf",
    "evidence": "KR 2026 preface: This year the KR Test of Time Award goes to Sheila McIlraith and Son Tran, for their KR 2002 paper “Adapting Golog for Composition of Semantic Web Services”."
+  },
+  {
+   "venue": "LAK",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best full paper",
+   "title": "Focused or stuck together: multimodal patterns reveal triads' performance in collaborative problem solving",
+   "authors": [
+    "Hana Vrzakova",
+    "Mary Jean Amon",
+    "Angela Stewart",
+    "Sidney K. D'Mello"
+   ],
+   "track": "main",
+   "source": "https://www.solaresearch.org/events/lak/lak20/",
+   "evidence": "Awards Best full paper: Focused or stuck together: multimodal patterns reveal triads' performance in collaborative problem solving Hana Vrzakova, Mary Jean Amon, Angela Stewart, Sidney K. D'Mello"
+  },
+  {
+   "venue": "LAK",
+   "year": 2020,
+   "award": "category",
+   "awardLabel": "Best short paper",
+   "title": "Automated Insightful Drill-Down Recommendations for Learning Analytics Dashboards",
+   "authors": [
+    "Shiva Shabaninejad",
+    "Hassan Khosravi",
+    "Marta Indulska",
+    "Pedro Isaias"
+   ],
+   "track": "main",
+   "source": "https://www.solaresearch.org/events/lak/lak20/",
+   "evidence": "Awards Best full paper: … Best short paper: Automated Insightful Drill-Down Recommendations for Learning Analytics Dashboards Shiva Shabaninejad, Hassan Khosravi, Marta Indulska, Pedro Isaias"
   },
   {
    "venue": "LCTES",
@@ -126417,6 +127310,226 @@
    "paperYear": 2015,
    "source": "https://middleware-conf.github.io/awards/test-of-time/",
    "evidence": "Middleware 2025 Test of Time Award: R-Storm: Resource-Aware Scheduling in Storm — Boyang Peng, Mohammad Hosseini, Zhihao Hong (UIUC, USA), Reza Farivar (Yahoo, USA) and Roy Campbell (UIUC, USA)"
+  },
+  {
+   "venue": "MMSys",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Distributed Rate Allocation in Switch-Based Multiparty Videoconference",
+   "authors": [
+    "Stefano D’Aronco",
+    "Sergio Mena",
+    "Pascal Frossard"
+   ],
+   "track": "main",
+   "source": "https://2016.acmmmsys.org/",
+   "evidence": "The 7th ACM MMSys issued the following awards: a best paper award, a best student paper award, and for the first time the excellence in DASH award sponsored by the DASH-IF. Best Student Paper The best paper award goes to “ Distributed Rate Allocation in Switch-Based Multiparty Videoconference ” by Stefano D’bronco (EPFL), Sergio Mena (Cisco Systems), Pascal Frossard (EPFL) … Distributed Rate Allocation in Switch-Based Multiparty Videoconference Authors: Stefano D’Aronco (EPFL), Sergio Mena (Cisco Systems), and Pascal Frossard (EPFL)"
+  },
+  {
+   "venue": "MMSys",
+   "year": 2016,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Network-assisted Control for HTTP Adaptive Video Streaming",
+   "authors": [
+    "Giuseppe Cofano",
+    "Luca De Cicco",
+    "Thomas Zinner",
+    "Anh Nguyen-Ngoc",
+    "Phuoc Tran-Gia",
+    "Saverio Mascolo"
+   ],
+   "track": "main",
+   "source": "https://2016.acmmmsys.org/",
+   "evidence": "The 7th ACM MMSys issued the following awards: a best paper award, a best student paper award … the best student paper award goes to “ Network-assisted Control for HTTP Adaptive Video Streaming ” by Giuseppe Cofano (Politecnico di Bari, Italy), Luca De Cicco (Telecom SudParis, France), Thomas Zinner (University of Würzburg, Germany), Anh Nguyen-Ngoc (University of Würzburg, Germany), Phuoc Tran-Gia (University of Würzburg, Germany), Saverio Mascolo (Politecnico di Bari, Italy)"
+  },
+  {
+   "venue": "MMSys",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "best-paper award",
+   "title": "Dynamic Adaptive Streaming for Multi-Viewpoint Omnidirectional Videos",
+   "authors": [
+    "Xavier Corbillon",
+    "Francesca De Simone",
+    "Gwendal Simon",
+    "Pascal Frossard"
+   ],
+   "track": "main",
+   "source": "https://2018.acmmmsys.org/program/awards/",
+   "evidence": "Best paper awards at MMSys … 9th ACM International Conference on Multimedia System (MMSys 2018) best-paper award (Sponsored by Comcast): Xavier Corbillon, Francesca De Simone, Gwendal Simon and Pascal Frossard Dynamic Adaptive Streaming for Multi-Viewpoint Omnidirectional Videos"
+  },
+  {
+   "venue": "MMSys",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "best student paper honorable mention",
+   "title": "Dynamic Input Anomaly Detection in Interactive Multimedia Services",
+   "authors": [
+    "Mohammed Shatnawi",
+    "Mohamed Hefeeda"
+   ],
+   "track": "main",
+   "source": "https://2018.acmmmsys.org/program/awards/",
+   "evidence": "Best paper awards at MMSys … 9th ACM International Conference on Multimedia System (MMSys 2018) best student paper honorable mention: Mohammed Shatnawi, Mohamed Hefeeda Dynamic Input Anomaly Detection in Interactive Multimedia Services"
+  },
+  {
+   "venue": "MMSys",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "best paper honorable mention",
+   "title": "From Theory to Practice: Improving Bitrate Adaptation in the DASH Reference Player",
+   "authors": [
+    "Kevin Spiteri",
+    "Ramesh Sitaraman",
+    "Daniel Sparacio"
+   ],
+   "track": "main",
+   "source": "https://2018.acmmmsys.org/program/awards/",
+   "evidence": "Best paper awards at MMSys … 9th ACM International Conference on Multimedia System (MMSys 2018) best paper honorable mention: Kevin Spiteri, Ramesh Sitaraman and Daniel Sparacio From Theory to Practice: Improving Bitrate Adaptation in the DASH Reference Player"
+  },
+  {
+   "venue": "MMSys",
+   "year": 2018,
+   "award": "student",
+   "awardLabel": "best student-paper award",
+   "title": "Want to Play DASH? A Game Theoretic Approach for Adaptive Streaming over HTTP",
+   "authors": [
+    "Abdelhak Bentaleb",
+    "Ali C. Begen",
+    "Saad Harous",
+    "Roger Zimmermann"
+   ],
+   "track": "main",
+   "source": "https://2018.acmmmsys.org/program/awards/",
+   "evidence": "Best paper awards at MMSys … 9th ACM International Conference on Multimedia System (MMSys 2018) best student-paper award (Sponsored by Comcast): Abdelhak Bentaleb, Ali C. Begen, Saad Harous and Roger Zimmermann Want to Play DASH? A Game Theoretic Approach for Adaptive Streaming over HTTP"
+  },
+  {
+   "venue": "MMSys",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Cost-Driven Framework for Progressive Compression of Textured Meshes",
+   "authors": [
+    "Cédric Portaneri",
+    "Pierre Alliez",
+    "Michael Hemmer",
+    "Lukos Birklein",
+    "Elmar Schoemer"
+   ],
+   "track": "main",
+   "source": "https://2019.acmmmsys.org/",
+   "evidence": "Congratulations to all the winners!!! Comcast Best Paper Awards Best Paper: Cédric Portaneri, Pierre Alliez, Michael Hemmer, Lukos Birklein, Elmar Schoemer - Cost-Driven Framework for Progressive Compression of Textured Meshes"
+  },
+  {
+   "venue": "MMSys",
+   "year": 2019,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Content-aware Video Encoding for Cloud Gaming",
+   "authors": [
+    "Mohamed Hegazy",
+    "Khaled Diab",
+    "Mehdi Saeedi",
+    "Boris Ivanovic",
+    "Ihab Amer",
+    "Yang Liu",
+    "Gabor Sines",
+    "Mohamed Hefeeda"
+   ],
+   "track": "main",
+   "source": "https://2019.acmmmsys.org/",
+   "evidence": "Comcast Best Paper Awards Best Paper: Cédric Portaneri, Pierre Alliez, Michael Hemmer, Lukos Birklein, Elmar Schoemer - Cost-Driven Framework for Progressive Compression of Textured Meshes … Best Student Paper: Mohamed Hegazy, Khaled Diab, Mehdi Saeedi, Boris Ivanovic, Ihab Amer, Yang Liu, Gabor Sines, Mohamed Hefeeda - Content-aware Video Encoding for Cloud Gaming"
+  },
+  {
+   "venue": "MMSys",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "QuRate: Power-Efficient Mobile Immersive Video Streaming",
+   "authors": [
+    "Nan Jiang",
+    "Yao Liu",
+    "Tian Guo",
+    "Wenyao Xu",
+    "Viswanathan Swaminathan",
+    "Lisong Xu",
+    "Sheng Wei"
+   ],
+   "track": "main",
+   "source": "https://2020.acmmmsys.org/",
+   "alsoAt": [
+    "https://2020.acmmmsys.org/program.php"
+   ],
+   "evidence": "ACM MMSys 2020 Paper Awards: - Best Paper (€750): QuRate: Power-Efficient Mobile Immersive Video Streaming … QuRate: Power-Efficient Mobile Immersive Video Streaming Nan Jiang (University of Nebraska-Lincoln) Yao Liu (SUNY Binghamton) Tian Guo (Worcester Polytechnic Institute) Wenyao Xu (SUNY Buffalo) Viswanathan Swaminathan (Adobe Research) Lisong Xu (University of Nebraska-Lincoln) Sheng Wei (Rutgers University)"
+  },
+  {
+   "venue": "MMSys",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Livelyzer: Analyzing the First-Mile Ingest Performance of Live Video Streaming",
+   "authors": [
+    "Xiao Zhu",
+    "Subhabrata Sen",
+    "Z. Morley Mao"
+   ],
+   "track": "main",
+   "source": "https://2021.acmmmsys.org/",
+   "alsoAt": [
+    "https://2021.acmmmsys.org/program.php"
+   ],
+   "evidence": "Best Paper Award Livelyzer: Analyzing the First-Mile Ingest Performance of Live Video Streaming (€750) … Livelyzer: Analyzing the First-Mile Ingest Performance of Live Video Streaming Xiao Zhu (University of Michigan) Subhabrata Sen (AT&T Labs -- Research) Z. Morley Mao (University of Michigan)"
+  },
+  {
+   "venue": "MMSys",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Deep Variational Learning for Multiple Trajectory Prediction of 360° Head Movements",
+   "authors": [
+    "Quentin Guimard",
+    "Lucile Sassatelli",
+    "Francesco Marchetti",
+    "Federico Becattini",
+    "Lorenzo Seidenari",
+    "Alberto Del Bimbo"
+   ],
+   "track": "main",
+   "source": "https://mmsys2022.ie/program/awards",
+   "evidence": "MMSys 2022 Awards Best Paper Award “Deep Variational Learning for Multiple Trajectory Prediction of 360° Head Movements” - Quentin Guimard, Lucile Sassatelli, Francesco Marchetti, Federico Becattini, Lorenzo Seidenari, Alberto Del Bimbo"
+  },
+  {
+   "venue": "MMSys",
+   "year": 2022,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Context-aware Image Compression Optimization for Visual Analytics Offloading",
+   "authors": [
+    "Bo Chen",
+    "Zhisheng Yan",
+    "Klara Nahrstedt"
+   ],
+   "track": "main",
+   "source": "https://mmsys2022.ie/program/awards",
+   "evidence": "Best Student Paper “Context-aware Image Compression Optimization for Visual Analytics Offloading” - Bo Chen, Zhisheng Yan, Klara Nahrstedt"
+  },
+  {
+   "venue": "MMSys",
+   "year": 2022,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Encrypted Video Search: Scalable, Modular, and Content-Similar",
+   "authors": [
+    "Yu Zheng",
+    "Minxin Du",
+    "Chong Fu",
+    "Heng Tian"
+   ],
+   "track": "main",
+   "source": "https://mmsys2022.ie/program/awards",
+   "evidence": "Best Student Paper “Encrypted Video Search: Scalable, Modular, and Content-Similar” - Yu Zheng, Minxin Du, Chong Fu, Heng Tian"
   },
   {
    "venue": "MobiCom",
@@ -135473,6 +136586,511 @@
    "paperYear": 2002,
    "source": "https://ubicomp.org/sc/awards.html",
    "evidence": "Pervasive 2012 10-year Impact Award: Building Applications for Ubiquitous Computing Environments — Christopher K. Hess, Manuel Roman, Roy H. Campbell"
+  },
+  {
+   "venue": "PETS",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Andreas Pfitzmann Best Student Paper Award, Runners-up",
+   "title": "Fast Privacy-Preserving Punch Cards",
+   "authors": [
+    "Saba Eskandarian"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/student-paper-award.php",
+   "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2021 Award Chairs: Apu Kapadia and David Evans Winners Residue-Free Computing Logan Arkema (Georgetown University) … Runners-up Fast Privacy-Preserving Punch Cards"
+  },
+  {
+   "venue": "PETS",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Andreas Pfitzmann Best Student Paper Award, Runners-up",
+   "title": "The CNAME of the Game: Large-scale Analysis of DNS-based Tracking Evasion",
+   "authors": [
+    "Yana Dimova",
+    "Gunes Acar",
+    "Lukasz Olejnik",
+    "Wouter Joosen",
+    "Tom Van Goethem"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/student-paper-award.php",
+   "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2021 Award Chairs: Apu Kapadia and David Evans Winners Residue-Free Computing Logan Arkema (Georgetown University) … Runners-up Fast Privacy-Preserving Punch Cards Saba Eskandarian (Stanford University) The CNAME of the Game: Large-scale Analysis of DNS-based Tracking Evasion"
+  },
+  {
+   "venue": "PETS",
+   "year": 2021,
+   "award": "student",
+   "awardLabel": "Andreas Pfitzmann Best Student Paper Award",
+   "title": "Oblivious DNS over HTTPS (ODoH): A Practical Privacy Enhancement to DNS",
+   "authors": [
+    "Sudheesh Singanamalla",
+    "Suphanat Chunhapanya",
+    "Jonathan Hoyland",
+    "Marek Vavruša",
+    "Tanya Verma",
+    "Peter Wu",
+    "Marwan Fayed",
+    "Kurtis Heimerl",
+    "Nick Sullivan",
+    "Christopher Wood"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/student-paper-award.php",
+   "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2021 Award Chairs: Apu Kapadia and David Evans Winners Residue-Free Computing Logan Arkema (Georgetown University) … Winners Residue-Free Computing Logan Arkema (Georgetown University) and Micah Sherr (Georgetown University) Oblivious DNS over HTTPS (ODoH): A Practical Privacy Enhancement to DNS"
+  },
+  {
+   "venue": "PETS",
+   "year": 2021,
+   "award": "student",
+   "awardLabel": "Andreas Pfitzmann Best Student Paper Award",
+   "title": "Residue-Free Computing",
+   "authors": [
+    "Logan Arkema",
+    "Micah Sherr"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/student-paper-award.php",
+   "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2021 Award Chairs: Apu Kapadia and David Evans Winners Residue-Free Computing Logan Arkema (Georgetown University) … Winners Residue-Free Computing"
+  },
+  {
+   "venue": "PETS",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Andreas Pfitzmann Best Student Paper Award, Runners-up",
+   "title": "ATOM: Ad-network Tomography",
+   "authors": [
+    "Maaz Bin Musa",
+    "Rishab Nithyanand"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/student-paper-award.php",
+   "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2022 Award Chairs: Veelasha Moonsamy and Jeremiah Blocki Winners CoverDrop: Blowing the Whistle Through A News App Mansoor Ahmed-Rengers (University of Cambridge) … Runners-up ATOM: Ad-network Tomography"
+  },
+  {
+   "venue": "PETS",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Andreas Pfitzmann Best Student Paper Award, Runners-up",
+   "title": "Leveraging Strategic Connection Migration-Powered Traffic Splitting for Privacy",
+   "authors": [
+    "Mona Wang",
+    "Anunay Kulshrestha",
+    "Liang Wang",
+    "Prateek Mittal"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/student-paper-award.php",
+   "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2022 Award Chairs: Veelasha Moonsamy and Jeremiah Blocki Winners CoverDrop: Blowing the Whistle Through A News App Mansoor Ahmed-Rengers (University of Cambridge) … Runners-up ATOM: Ad-network Tomography Maaz Bin Musa (University of Iowa) and Rishab Nithyanand (University of Iowa) Leveraging Strategic Connection Migration-Powered Traffic Splitting for Privacy"
+  },
+  {
+   "venue": "PETS",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Andreas Pfitzmann Best Student Paper Award, Runners-up",
+   "title": "On Defeating Graph Analysis of Anonymous Transactions",
+   "authors": [
+    "Christoph Egger",
+    "Russell W. F. Lai",
+    "Viktoria Ronge",
+    "Ivy K. Y. Woo",
+    "Hoover H. F. Yin"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/student-paper-award.php",
+   "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2022 Award Chairs: Veelasha Moonsamy and Jeremiah Blocki Winners CoverDrop: Blowing the Whistle Through A News App Mansoor Ahmed-Rengers (University of Cambridge) … Runners-up ATOM: Ad-network Tomography Maaz Bin Musa (University of Iowa) and Rishab Nithyanand (University of Iowa) Leveraging Strategic Connection Migration-Powered Traffic Splitting for Privacy Mona Wang (Princeton University), Anunay Kulshrestha (Princeton University), Liang Wang (Princeton University), and Prateek Mittal (Princeton University) On Defeating Graph Analysis of Anonymous Transactions"
+  },
+  {
+   "venue": "PETS",
+   "year": 2022,
+   "award": "student",
+   "awardLabel": "Andreas Pfitzmann Best Student Paper Award",
+   "title": "CoverDrop: Blowing the Whistle Through A News App",
+   "authors": [
+    "Mansoor Ahmed-Rengers",
+    "Diana A. Vasile",
+    "Daniel Hugenroth",
+    "Alastair R. Beresford",
+    "Ross Anderson"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/student-paper-award.php",
+   "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2022 Award Chairs: Veelasha Moonsamy and Jeremiah Blocki Winners CoverDrop: Blowing the Whistle Through A News App Mansoor Ahmed-Rengers (University of Cambridge) … Winners CoverDrop: Blowing the Whistle Through A News App"
+  },
+  {
+   "venue": "PETS",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Andreas Pfitzmann Best Student Paper Award, Runners-up",
+   "title": "Convolutions in Overdrive: Maliciously Secure Convolutions for MPC",
+   "authors": [
+    "Marc Rivinius",
+    "Pascal Reisert",
+    "Sebastian Hasler",
+    "Ralf Küsters"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/student-paper-award.php",
+   "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2023 Award Chairs: Wouter Lueks (CISPA) … Runners-up Convolutions in Overdrive: Maliciously Secure Convolutions for MPC"
+  },
+  {
+   "venue": "PETS",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Andreas Pfitzmann Best Student Paper Award, Runners-up",
+   "title": "Not Your Average App: A Large-scale Privacy Analysis of Android Browsers",
+   "authors": [
+    "Amogh Pradeep",
+    "Álvaro Feal",
+    "Julien Gamba",
+    "Ashwin Rao",
+    "Martina Lindorfer",
+    "Narseo Vallina-Rodriguez",
+    "David Choffnes"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/student-paper-award.php",
+   "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2023 Award Chairs: Wouter Lueks (CISPA) … Runners-up Convolutions in Overdrive: Maliciously Secure Convolutions for MPC Marc Rivinius (University of Stuttgart), Pascal Reisert (University of Stuttgart), Sebastian Hasler (University of Stuttgart), Ralf Küsters (University of Stuttgart) Not Your Average App: A Large-scale Privacy Analysis of Android Browsers"
+  },
+  {
+   "venue": "PETS",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Andreas Pfitzmann Best Student Paper Award, Runners-up",
+   "title": "Story Beyond the Eye: Glyph Positions Break PDF Text Redaction",
+   "authors": [
+    "Maxwell Bland",
+    "Anushya Iyer",
+    "Kirill Levchenko"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/student-paper-award.php",
+   "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2023 Award Chairs: Wouter Lueks (CISPA) … Runners-up Convolutions in Overdrive: Maliciously Secure Convolutions for MPC Marc Rivinius (University of Stuttgart), Pascal Reisert (University of Stuttgart), Sebastian Hasler (University of Stuttgart), Ralf Küsters (University of Stuttgart) Not Your Average App: A Large-scale Privacy Analysis of Android Browsers Amogh Pradeep (Northeastern University), Álvaro Feal (IMDEA Networks Institute / Universidad Carlos III de Madrid), Julien Gamba (IMDEA Networks Institute / Universidad Carlos III de Madrid), Ashwin Rao (University of Helsinki), Martina Lindorfer (TU Wien), Narseo Vallina-Rodriguez (IMDEA Networks Institute / AppCensus Inc.), David Choffnes (Northeastern University) Story Beyond the Eye: Glyph Positions Break PDF Text Redaction"
+  },
+  {
+   "venue": "PETS",
+   "year": 2023,
+   "award": "student",
+   "awardLabel": "Andreas Pfitzmann Best Student Paper Award",
+   "title": "Everybody's Looking for SSOmething: A large-scale evaluation on the privacy of OAuth authentication on the web",
+   "authors": [
+    "Yana Dimova",
+    "Tom Van Goethem",
+    "Wouter Joosen"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/student-paper-award.php",
+   "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2023 Award Chairs: Wouter Lueks (CISPA) … Winners Researchers’ Experiences in Analyzing Privacy Policies: Challenges and Opportunities Abraham Mhaidli (University of Michigan), Selin Fidan (University of Michigan), An Doan (University of Michigan), Gina Herakovic (University of Michigan), Mukund Srinath (Penn State University), Lee Matheson (Future for Privacy Forum), Shomir Wilson (Penn State University), and Florian Schaub (University of Michigan) Lox: Protecting the Social Graph in Bridge Distribution Lindsey Tulloch (University of Waterloo), Ian Goldberg (University of Waterloo) Everybody's Looking for SSOmething: A large-scale evaluation on the privacy of OAuth authentication on the web"
+  },
+  {
+   "venue": "PETS",
+   "year": 2023,
+   "award": "student",
+   "awardLabel": "Andreas Pfitzmann Best Student Paper Award",
+   "title": "Lox: Protecting the Social Graph in Bridge Distribution",
+   "authors": [
+    "Lindsey Tulloch",
+    "Ian Goldberg"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/student-paper-award.php",
+   "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2023 Award Chairs: Wouter Lueks (CISPA) … Winners Researchers’ Experiences in Analyzing Privacy Policies: Challenges and Opportunities Abraham Mhaidli (University of Michigan), Selin Fidan (University of Michigan), An Doan (University of Michigan), Gina Herakovic (University of Michigan), Mukund Srinath (Penn State University), Lee Matheson (Future for Privacy Forum), Shomir Wilson (Penn State University), and Florian Schaub (University of Michigan) Lox: Protecting the Social Graph in Bridge Distribution"
+  },
+  {
+   "venue": "PETS",
+   "year": 2023,
+   "award": "student",
+   "awardLabel": "Andreas Pfitzmann Best Student Paper Award",
+   "title": "Researchers’ Experiences in Analyzing Privacy Policies: Challenges and Opportunities",
+   "authors": [
+    "Abraham Mhaidli",
+    "Selin Fidan",
+    "An Doan",
+    "Gina Herakovic",
+    "Mukund Srinath",
+    "Lee Matheson",
+    "Shomir Wilson",
+    "Florian Schaub"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/student-paper-award.php",
+   "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2023 Award Chairs: Wouter Lueks (CISPA) … Winners Researchers’ Experiences in Analyzing Privacy Policies: Challenges and Opportunities"
+  },
+  {
+   "venue": "PETS",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Andreas Pfitzmann Best Student Paper Award, Runners-up",
+   "title": "Exploring the Privacy Experiences of Closeted Users of Online Dating Services in the US",
+   "authors": [
+    "Elijah Bouma-Sims",
+    "Sanjnah Ananda Kumar",
+    "Lorrie Faith Cranor"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/student-paper-award.php",
+   "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2024 Award Chairs: Wouter Lueks (CISPA) … Runners-up Exploring the Privacy Experiences of Closeted Users of Online Dating Services in the US"
+  },
+  {
+   "venue": "PETS",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Andreas Pfitzmann Best Student Paper Award, Runners-up",
+   "title": "Interest-disclosing Mechanisms for Advertising are Privacy-Exposing (not Preserving)",
+   "authors": [
+    "Yohan Beugin",
+    "Patrick McDaniel"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/student-paper-award.php",
+   "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2024 Award Chairs: Wouter Lueks (CISPA) … Runners-up Exploring the Privacy Experiences of Closeted Users of Online Dating Services in the US Elijah Bouma-Sims (Carnegie Mellon University), Sanjnah Ananda Kumar (Carnegie Mellon University), Lorrie Faith Cranor (Carnegie Mellon University) Media talks Privacy: Unraveling a Decade of Privacy Discourse around the World Shujaat Mirza (New York University), Corban Villa (New York University Abu Dhabi), and Christina Poepper (New York University Abu Dhabi) Over Fences and Into Yards: Privacy Threats and Concerns of Commercial Satellites Rachel McAmis (University of Washington), Mattea Sim (University of Indiana Bloomington), Mia Bennett (University of Washington), Tadayoshi Kohno (University of Washington) Interest-disclosing Mechanisms for Advertising are Privacy-Exposing (not Preserving)"
+  },
+  {
+   "venue": "PETS",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Andreas Pfitzmann Best Student Paper Award, Runners-up",
+   "title": "Media talks Privacy: Unraveling a Decade of Privacy Discourse around the World",
+   "authors": [
+    "Shujaat Mirza",
+    "Corban Villa",
+    "Christina Poepper"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/student-paper-award.php",
+   "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2024 Award Chairs: Wouter Lueks (CISPA) … Runners-up Exploring the Privacy Experiences of Closeted Users of Online Dating Services in the US Elijah Bouma-Sims (Carnegie Mellon University), Sanjnah Ananda Kumar (Carnegie Mellon University), Lorrie Faith Cranor (Carnegie Mellon University) Media talks Privacy: Unraveling a Decade of Privacy Discourse around the World"
+  },
+  {
+   "venue": "PETS",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Andreas Pfitzmann Best Student Paper Award, Runners-up",
+   "title": "Over Fences and Into Yards: Privacy Threats and Concerns of Commercial Satellites",
+   "authors": [
+    "Rachel McAmis",
+    "Mattea Sim",
+    "Mia Bennett",
+    "Tadayoshi Kohno"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/student-paper-award.php",
+   "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2024 Award Chairs: Wouter Lueks (CISPA) … Runners-up Exploring the Privacy Experiences of Closeted Users of Online Dating Services in the US Elijah Bouma-Sims (Carnegie Mellon University), Sanjnah Ananda Kumar (Carnegie Mellon University), Lorrie Faith Cranor (Carnegie Mellon University) Media talks Privacy: Unraveling a Decade of Privacy Discourse around the World Shujaat Mirza (New York University), Corban Villa (New York University Abu Dhabi), and Christina Poepper (New York University Abu Dhabi) Over Fences and Into Yards: Privacy Threats and Concerns of Commercial Satellites"
+  },
+  {
+   "venue": "PETS",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "Andreas Pfitzmann Best Student Paper Award",
+   "title": "Client-side and Server-side Tracking on Meta: Effectiveness and Accuracy",
+   "authors": [
+    "Asmaa EL FRAIHI",
+    "Nardjes AMIEUR",
+    "Oana GOGA",
+    "Walter Rudametkin"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/student-paper-award.php",
+   "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2024 Award Chairs: Wouter Lueks (CISPA) … Winners MixMatch: Flow Matching for Mixnet Traffic Lennart Oldenburg (COSIC, KU Leuven), Marc Juarez (University of Edinburgh), Enrique Argones Rúa (COSIC, KU Leuven), Claudia Diaz (COSIC, KU Leuven, and Nym Technologies, SA) Client-side and Server-side Tracking on Meta: Effectiveness and Accuracy"
+  },
+  {
+   "venue": "PETS",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "Andreas Pfitzmann Best Student Paper Award",
+   "title": "MixMatch: Flow Matching for Mixnet Traffic",
+   "authors": [
+    "Lennart Oldenburg",
+    "Marc Juarez",
+    "Enrique Argones Rúa",
+    "Claudia Diaz"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/student-paper-award.php",
+   "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2024 Award Chairs: Wouter Lueks (CISPA) … Winners MixMatch: Flow Matching for Mixnet Traffic"
+  },
+  {
+   "venue": "PETS",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Andreas Pfitzmann Best Student Paper Award, Runners-up",
+   "title": "Okay Google, Where’s My Tracker? Security, Privacy, and Performance Evaluation of Google's Find My Device Network",
+   "authors": [
+    "Leon Böttger",
+    "Alexander Matern",
+    "Dennis Arndt",
+    "Matthias Hollick"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/student-paper-award.php",
+   "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2025 Award Chairs: Nick Hopper (University of Minnesota) … Runners-up Teaching an Old Dog New Tricks: Verifiable FHE Using Commodity Hardware Jules Drean (MIT CSAIL), Fisher Jepsen (MIT CSAIL), Edward Suh (NVIDIA), Srini Devadas (MIT CSAIL), Aamer Jaleel (NVIDIA), Gururaj Saileshwar (University of Toronto) Okay Google, Where’s My Tracker? Security, Privacy, and Performance Evaluation of Google's Find My Device Network"
+  },
+  {
+   "venue": "PETS",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Andreas Pfitzmann Best Student Paper Award, Runners-up",
+   "title": "Teaching an Old Dog New Tricks: Verifiable FHE Using Commodity Hardware",
+   "authors": [
+    "Jules Drean",
+    "Fisher Jepsen",
+    "Edward Suh",
+    "Srini Devadas",
+    "Aamer Jaleel",
+    "Gururaj Saileshwar"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/student-paper-award.php",
+   "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2025 Award Chairs: Nick Hopper (University of Minnesota) … Runners-up Teaching an Old Dog New Tricks: Verifiable FHE Using Commodity Hardware"
+  },
+  {
+   "venue": "PETS",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Andreas Pfitzmann Best Student Paper Award",
+   "title": "Tracker Installations Are Not Created Equal: Understanding Tracker Configuration of Form Data Collection",
+   "authors": [
+    "Julia B. Kieserman",
+    "Athanasios Andreou",
+    "Chris Geeng",
+    "Tobias Lauinger",
+    "Damon McCoy"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/student-paper-award.php",
+   "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2025 Award Chairs: Nick Hopper (University of Minnesota) … Winners Tracker Installations Are Not Created Equal: Understanding Tracker Configuration of Form Data Collection"
+  },
+  {
+   "venue": "PETS",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Andreas Pfitzmann Best Student Paper Award, Runners-up",
+   "title": "Cryptographically-Secured Domain Validation",
+   "authors": [
+    "Grace H. Cimaszewski",
+    "Henry Birge-Lee",
+    "Cyrill Krähenbühl",
+    "Liang Wang",
+    "Aaron Gable",
+    "Prateek Mittal"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/student-paper-award.php",
+   "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2026 Award Chair: Nick Hopper (University of Minnesota) … Runners-up Issue 1 PriVA-C: Defending Voice Assistants from Fingerprinting Attacks Dilawer Ahmed (North Carolina State University), Aafaq Sabir (North Carolina State University), Ahsan Zafar (North Carolina State University), and Anupam Das (North Carolina State University) Issue 2 Cryptographically-Secured Domain Validation"
+  },
+  {
+   "venue": "PETS",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Andreas Pfitzmann Best Student Paper Award, Runners-up",
+   "title": "EXADPrinter: Semi-Exhaustive Permissionless Device Fingerprinting Within the Android Ecosystem",
+   "authors": [
+    "Sihem Bouhenniche",
+    "Pierre Laperdrix",
+    "Walter Rudametkin"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/student-paper-award.php",
+   "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2026 Award Chair: Nick Hopper (University of Minnesota) … Runners-up Issue 1 PriVA-C: Defending Voice Assistants from Fingerprinting Attacks Dilawer Ahmed (North Carolina State University), Aafaq Sabir (North Carolina State University), Ahsan Zafar (North Carolina State University), and Anupam Das (North Carolina State University) Issue 2 Cryptographically-Secured Domain Validation Grace H. Cimaszewski (Princeton University), Henry Birge-Lee (Princeton University), Cyrill Krähenbühl (Princeton University), Liang Wang (Princeton University), Aaron Gable (Lets Encrypt), Prateek Mittal (Princeton University) Issue 3 EXADPrinter: Semi-Exhaustive Permissionless Device Fingerprinting Within the Android Ecosystem"
+  },
+  {
+   "venue": "PETS",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Andreas Pfitzmann Best Student Paper Award, Runners-up",
+   "title": "PriVA-C: Defending Voice Assistants from Fingerprinting Attacks",
+   "authors": [
+    "Dilawer Ahmed",
+    "Aafaq Sabir",
+    "Ahsan Zafar",
+    "Anupam Das"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/student-paper-award.php",
+   "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2026 Award Chair: Nick Hopper (University of Minnesota) … Runners-up Issue 1 PriVA-C: Defending Voice Assistants from Fingerprinting Attacks"
+  },
+  {
+   "venue": "PETS",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Andreas Pfitzmann Best Student Paper Award, Runners-up",
+   "title": "SoK: Offline Finding Protocols for Lightweight Location Tracking",
+   "authors": [
+    "Akshaya Kumar",
+    "Carolina Ortega Pérez",
+    "Joseph Jaeger",
+    "Thomas Ristenpart",
+    "Michael Specter"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/student-paper-award.php",
+   "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2026 Award Chair: Nick Hopper (University of Minnesota) … Runners-up Issue 1 PriVA-C: Defending Voice Assistants from Fingerprinting Attacks Dilawer Ahmed (North Carolina State University), Aafaq Sabir (North Carolina State University), Ahsan Zafar (North Carolina State University), and Anupam Das (North Carolina State University) Issue 2 Cryptographically-Secured Domain Validation Grace H. Cimaszewski (Princeton University), Henry Birge-Lee (Princeton University), Cyrill Krähenbühl (Princeton University), Liang Wang (Princeton University), Aaron Gable (Lets Encrypt), Prateek Mittal (Princeton University) Issue 3 EXADPrinter: Semi-Exhaustive Permissionless Device Fingerprinting Within the Android Ecosystem Sihem Bouhenniche (Univ. Lille, CNRS, Inria), Pierre Laperdrix (Univ. Lille, CNRS, Inria), and Walter Rudametkin (Univ. Rennes, CNRS, Inria) Issue 4 SoK: Offline Finding Protocols for Lightweight Location Tracking"
+  },
+  {
+   "venue": "PETS",
+   "year": 2026,
+   "award": "student",
+   "awardLabel": "Andreas Pfitzmann Best Student Paper Award",
+   "title": "Analysis and Attacks on the Reputation System of Nym",
+   "authors": [
+    "Xinmu Alexis Cao",
+    "Matthew Green"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/student-paper-award.php",
+   "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2026 Award Chair: Nick Hopper (University of Minnesota) … Winners Issue 1 Evaluating connection migration based QUIC censorship circumvention Seungju Lee (Princeton University), Mona Wang (Princeton University), Watson Jia (Princeton University), Qiang Wu (GFW Report), Henry Birge-Lee (Princeton University), Liang Wang (Princeton University), and Prateek Mittal (Princeton University) Issue 2 Analysis and Attacks on the Reputation System of Nym"
+  },
+  {
+   "venue": "PETS",
+   "year": 2026,
+   "award": "student",
+   "awardLabel": "Andreas Pfitzmann Best Student Paper Award",
+   "title": "Evaluating connection migration based QUIC censorship circumvention",
+   "authors": [
+    "Seungju Lee",
+    "Mona Wang",
+    "Watson Jia",
+    "Qiang Wu",
+    "Henry Birge-Lee",
+    "Liang Wang",
+    "Prateek Mittal"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/student-paper-award.php",
+   "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2026 Award Chair: Nick Hopper (University of Minnesota) … Winners Issue 1 Evaluating connection migration based QUIC censorship circumvention"
+  },
+  {
+   "venue": "PETS",
+   "year": 2026,
+   "award": "student",
+   "awardLabel": "Andreas Pfitzmann Best Student Paper Award",
+   "title": "No Privacy for Privates: How Military Communities Experience and Perceive the Privacy Risks of Military-Marketed Mobile Apps",
+   "authors": [
+    "Joshua Shinkle",
+    "Chandrika Mukherjee",
+    "Abdullah Imran",
+    "Arjun Arunasalam",
+    "Donna Artusy",
+    "Antonio Bianchi",
+    "Z. Berkay Celik",
+    "Alexander Master"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/student-paper-award.php",
+   "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2026 Award Chair: Nick Hopper (University of Minnesota) … Winners Issue 1 Evaluating connection migration based QUIC censorship circumvention Seungju Lee (Princeton University), Mona Wang (Princeton University), Watson Jia (Princeton University), Qiang Wu (GFW Report), Henry Birge-Lee (Princeton University), Liang Wang (Princeton University), and Prateek Mittal (Princeton University) Issue 2 Analysis and Attacks on the Reputation System of Nym Xinmu Alexis Cao (Johns Hopkins University) and Matthew Green (Johns Hopkins University) Issue 3 Quantifying Classifier Utility under Local Differential Privacy Ye Zheng (Rochester Institute of Technology) and Yidan Hu (Rochester Institute of Technology) Issue 4 No Privacy for Privates: How Military Communities Experience and Perceive the Privacy Risks of Military-Marketed Mobile Apps"
+  },
+  {
+   "venue": "PETS",
+   "year": 2026,
+   "award": "student",
+   "awardLabel": "Andreas Pfitzmann Best Student Paper Award",
+   "title": "Quantifying Classifier Utility under Local Differential Privacy",
+   "authors": [
+    "Ye Zheng",
+    "Yidan Hu"
+   ],
+   "track": "main",
+   "source": "https://petsymposium.org/student-paper-award.php",
+   "evidence": "The Andreas Pfitzmann Best Student Paper Award … 2026 Award Chair: Nick Hopper (University of Minnesota) … Winners Issue 1 Evaluating connection migration based QUIC censorship circumvention Seungju Lee (Princeton University), Mona Wang (Princeton University), Watson Jia (Princeton University), Qiang Wu (GFW Report), Henry Birge-Lee (Princeton University), Liang Wang (Princeton University), and Prateek Mittal (Princeton University) Issue 2 Analysis and Attacks on the Reputation System of Nym Xinmu Alexis Cao (Johns Hopkins University) and Matthew Green (Johns Hopkins University) Issue 3 Quantifying Classifier Utility under Local Differential Privacy"
   },
   {
    "venue": "PG",
@@ -144887,6 +146505,202 @@
    "track": "main",
    "source": "https://computeranimation.org/awards",
    "evidence": "SCA 2026 Best Paper, Honourable Mention: Prior-First, Condition-Second: Scalable and Controllable Hand Motion Completion — Mingyi Shi, Xuelin Chen, Taku Komura"
+  },
+  {
+   "venue": "SEAMS",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "best paper award",
+   "title": "Requirements and Specifications for Adaptive Security: Concepts and Analysis",
+   "authors": [
+    "Thein Tun",
+    "Mu Yang",
+    "Arosha Bandara",
+    "Yijun Yu",
+    "Armstrong Nhlabatsi",
+    "Niamul Khan",
+    "Khaled Khan",
+    "Bashar Nuseibeh"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/home/seams-2018",
+   "evidence": "The SEAMS 2018 best paper award goes to “Requirements and Specifications for Adaptive Security: Concepts and Analysis” by Thein Tun, Mu Yang, Arosha Bandara, Yijun Yu, Armstrong Nhlabatsi, Niamul Khan, Khaled Khan, and Bashar Nuseibeh"
+  },
+  {
+   "venue": "SEAMS",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Defeating Denial-of-Service Attacks in a Self-Managing N-Variant System",
+   "authors": [
+    "Jessica Jones",
+    "Jason Hiser",
+    "Jack Davidson",
+    "Stephanie Forrest"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/home/seams-2019",
+   "evidence": "Awards Best Paper Award Defeating Denial-of-Service Attacks in a Self-Managing N-Variant System by Jessica Jones, Jason Hiser, Jack Davidson and Stephanie Forrest"
+  },
+  {
+   "venue": "SEAMS",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "SEAMS 2020 Best Paper Award",
+   "title": "Dynamic Adaptation of Software-defined Networks for IoT Systems: A Search-based Approach",
+   "authors": [
+    "Seung Yeob Shin",
+    "Shiva Nejati",
+    "Mehrdad Sabetzadeh",
+    "Lionel Briand",
+    "Chetan Arora",
+    "Frank Zimmer"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/home/seams-2020",
+   "evidence": "Congratulations to the winners of SEAMS 2020 Awards! SEAMS 2020 Best Paper Award Dynamic Adaptation of Software-defined Networks for IoT Systems: A Search-based Approach Authors: Seung Yeob Shin, Shiva Nejati, Mehrdad Sabetzadeh, Lionel Briand, Chetan Arora, and Frank Zimmer"
+  },
+  {
+   "venue": "SEAMS",
+   "year": 2020,
+   "award": "student",
+   "awardLabel": "SEAMS 2020 Best Student Paper Award",
+   "title": "DATESSO: Self-Adapting Service Composition with Debt-Aware Two Levels Constraint Reasoning",
+   "authors": [
+    "Satish Kumar",
+    "Tao Chen",
+    "Rami Bahsoon",
+    "Rajkumar Buyya"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/home/seams-2020",
+   "evidence": "Congratulations to the winners of SEAMS 2020 Awards! … SEAMS 2020 Best Student Paper Award DATESSO: Self-Adapting Service Composition with Debt-Aware Two Levels Constraint Reasoning Authors: Satish Kumar, Tao Chen, Rami Bahsoon, and Rajkumar Buyya"
+  },
+  {
+   "venue": "SEAMS",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "NEPTUNE: Network- and GPU-aware Management of Serverless Functions at the Edge",
+   "authors": [
+    "Luciano Baresi",
+    "Davide Yi Xian Hu",
+    "Giovanni Quattrocchi",
+    "Luca Terracciano"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/news/seams-2022",
+   "evidence": "Best Papers Awarded!(Fri 20 May 2022) Best Paper Award: NEPTUNE: Network- and GPU-aware Management of Serverless Functions at the Edge Luciano Baresi, Davide Yi Xian Hu, Giovanni Quattrocchi, Luca Terracciano"
+  },
+  {
+   "venue": "SEAMS",
+   "year": 2022,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Lifelong Self-Adaptation: Self-Adaptation Meets Lifelong Machine Learning",
+   "authors": [
+    "Omid Gheibi",
+    "Danny Weyns"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/news/seams-2022",
+   "evidence": "Best Papers Awarded!(Fri 20 May 2022) … Best Student Paper: Lifelong Self-Adaptation: Self-Adaptation Meets Lifelong Machine Learning Omid Gheibi Katholieke, Danny Weyns"
+  },
+  {
+   "venue": "SEAMS",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "SPARQ: A QoS-aware Framework for Mitigating Cyber Risk in Self-Protecting IoT Systems",
+   "authors": [
+    "Alessandro Palma",
+    "Houssam Hajj Hassan",
+    "Georgios Bouloukakis"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/home/seams-2025",
+   "evidence": "As in previous years, we awarded distinguished papers with awards: Best Paper Award Alessandro Palma, Houssam Hajj Hassan, Georgios Bouloukakis: SPARQ: A QoS-aware Framework for Mitigating Cyber Risk in Self-Protecting IoT Systems"
+  },
+  {
+   "venue": "SEAMS",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Robust Probabilistic Model Checking with Continuous Reward Domains",
+   "authors": [
+    "Xiaotong Ji",
+    "Hanchun Wang",
+    "Antonio Filieri",
+    "Ilenia Epifani"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/home/seams-2025",
+   "evidence": "As in previous years, we awarded distinguished papers with awards: … Best Student Paper Award Xiaotong Ji, Hanchun Wang, Antonio Filieri, Ilenia Epifani: Robust Probabilistic Model Checking with Continuous Reward Domains"
+  },
+  {
+   "venue": "SEAMS",
+   "year": 2026,
+   "award": "distinguished",
+   "awardLabel": "ACM SIGSOFT Distinguished Paper Award",
+   "title": "Verify, Augment, Improve: Self-Adaptation Repair via Automated Knowledge Augmentation from Mistakes",
+   "authors": [
+    "Pietro Benecchi",
+    "Luigi Cardone",
+    "Matteo Camilli",
+    "Livia Lestingi",
+    "Raffaela Mirandola"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/info/seams-2026/awards",
+   "evidence": "ACM SIGSOFT Distinguished Paper Award Verify, Augment, Improve: Self-Adaptation Repair via Automated Knowledge Augmentation from Mistakes. Pietro Benecchi, Luigi Cardone, Matteo Camilli, Livia Lestingi, Raffaela Mirandola"
+  },
+  {
+   "venue": "SEAMS",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Best Student Paper Runner-up",
+   "title": "Leveraging Low-Parameter LLMs for Self-Healing in Kubernetes-Based Container Orchestration",
+   "authors": [
+    "Yann Wiesinger",
+    "Marcus Engelhardt",
+    "Roman Laas"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/info/seams-2026/awards",
+   "evidence": "Best Student Paper Runner-up Leveraging Low-Parameter LLMs for Self-Healing in Kubernetes-Based Container Orchestration Yann Wiesinger, Marcus Engelhardt, Roman Laas"
+  },
+  {
+   "venue": "SEAMS",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Best Distinguished Paper Runner-up",
+   "title": "Using Context-Role-Oriented Programming for Swarms to Alleviate the Micro-Macro Problem",
+   "authors": [
+    "Sebastian Götz",
+    "Christian Gutsche",
+    "Adrian Scholze",
+    "Uwe Aßmann"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/info/seams-2026/awards",
+   "evidence": "Best Distinguished Paper Runner-up Using Context-Role-Oriented Programming for Swarms to Alleviate the Micro-Macro Problem Sebastian Götz, Christian Gutsche, Adrian Scholze, Uwe Aßmann"
+  },
+  {
+   "venue": "SEAMS",
+   "year": 2026,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Ripple: A Long-Sighted Self-Adaptation Approach to Retrain Machine Learning-Enabled Systems",
+   "authors": [
+    "Maria Casimiro",
+    "Valentim Romão",
+    "Paolo Romano",
+    "Luis Rodrigues",
+    "David Garlan"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/info/seams-2026/awards",
+   "evidence": "Best Student Paper Award Ripple: A Long-Sighted Self-Adaptation Approach to Retrain Machine Learning-Enabled Systems Maria Casimiro, Valentim Romão, Paolo Romano, Luis Rodrigues, David Garlan"
   },
   {
    "venue": "SECON",

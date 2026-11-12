@@ -434,6 +434,24 @@
   "storageconference.us": "MSST's own site (its per-year pages)",
   "www.itctestweek.org": "IEEE ITC's own site (the Test Week awards page)",
   "www.performance2020.deib.polimi.it": "IFIP Performance 2020's own site",
-  "www.performance2021.deib.polimi.it": "IFIP Performance 2021's own site"
+  "www.performance2021.deib.polimi.it": "IFIP Performance 2021's own site",
+  "2016.acmmmsys.org": "ACM MMSys 2016's own site",
+  "2018.acmmmsys.org": "ACM MMSys 2018's own site",
+  "2019.acmmmsys.org": "ACM MMSys 2019's own site",
+  "2020.acmmmsys.org": "ACM MMSys 2020's own site",
+  "2021.acmmmsys.org": "ACM MMSys 2021's own site",
+  "aied2024.cesar.school": "AIED 2024's own site (a custom domain)",
+  "asiaccs2025.hust.edu.vn": "ACM AsiaCCS 2025's own site",
+  "drops.dagstuhl.de": "Schloss Dagstuhl's LIPIcs (proceedings front matter)",
+  "iapr.org": "the IAPR's own site (ICDAR archive pages)",
+  "icer2021.acm.org": "ACM ICER 2021's own site (an ACM subdomain)",
+  "icer2022.acm.org": "ACM ICER 2022's own site (an ACM subdomain)",
+  "icer2025.acm.org": "ACM ICER 2025's own site (an ACM subdomain)",
+  "icsa-conferences.org": "the ICSA conference series' own site",
+  "islped.org": "ISLPED's own site",
+  "itcs-conf.org": "ITCS's own site",
+  "mmsys2022.ie": "ACM MMSys 2022's own site",
+  "petsymposium.org": "the PETS Advisory Board's own site (award pages)",
+  "www.solaresearch.org": "SoLAR's own site (LAK's society)"
  }
 }

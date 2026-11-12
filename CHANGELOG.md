@@ -189,6 +189,9 @@ give the details and every review):
   Encryption: 23rd International Conference, FSE 2016" is the cryptography FSE (B), not Foundations of Software Engineering (A): venues
   that share an acronym are told apart by the series title. (4) MDPI's journals *AI* and *IoT* are not Artificial Intelligence (A) and
   IEEE IoT-J, nor is the Korean WISA (information security) the Web Information Systems WISA.
+- **Best papers of 15 more venues** (112): ICST, SEAMS, ICSA, EASE, LAK, AIED, ICER, PETS, AsiaCCS, ITCS, MMSys, ICDAR, GD, FOGA and ISLPED, from
+  their own pages. PETS's years 2015–2020 are left out (the page lists several papers without saying which won), as are ICER 2020's "Best
+  Reviewed Papers" and ISLPED 2023–2025. An independent re-read of 33 sampled entries found none wrong. The list holds 10,919 awards.
 - **Best papers of 7 more venues** (85): RTAS 2012–2026, ITC 2012–2024, DCC (the Capocelli Prize), CAiSE 2024–2026, MSST, VEE and Performance,
   from their own pages, read one request at a time. BIBM names no winners. An independent re-read of 20 sampled entries found none wrong.
   The list holds 10,807 awards.
