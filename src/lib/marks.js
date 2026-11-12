@@ -143,7 +143,8 @@
   function detect(fields, opts = {}) {
     const venueWord = opts.venueWord;
     const found = new Map();
-    const add = (m, field) => { if (!found.has(m.kind)) found.set(m.kind, { kind: m.kind, group: GROUP[m.kind], label: m.label, text: m.text.trim(), field, source: "author" }); };
+    // (`years`: the years the venue line names, for a mark from a venue line — merge uses them to tell an award of this paper's own conference from the list's award of another venue)
+    const add = (m, field, line) => { if (!found.has(m.kind)) found.set(m.kind, { kind: m.kind, group: GROUP[m.kind], label: m.label, text: m.text.trim(), field, source: "author", ...(line ? { years: (line.match(/\b(?:19|20)\d{2}\b/g) || []).map(Number) } : {}) }); };
 
     const venues = [].concat(fields.venue || []).map(norm).filter(Boolean);
     for (const v of venues) {
@@ -151,7 +152,7 @@
         if (OTHER_PAPERS.test(v.slice(0, m.start))) continue;
         // ("Oral, 2022", "Spotlight 4 (2)": the word is a journal's name; "SPIE Spotlight", "BMJ Spotlight": a publisher's series)
         if (m.talk && (!standsAlone(v, m, venueWord) || (!v.slice(0, m.start).trim() && /^[\s\d,.()–-]*$/.test(v.slice(m.end))) || /\b(?:spie|bmj|mdpi|iop|osa|optica|ieee|acm|springer|elsevier|wiley)\s*$/i.test(v.slice(0, m.start)))) continue;
-        add(m, "venue");
+        add(m, "venue", v);
       }
     }
     const title = norm(fields.title);
@@ -173,11 +174,14 @@
   const TOP = new Set(["best", "best-student", "outstanding", "distinguished", "best-category"]);
   // (an award for an older paper — a test-of-time award, or a runner-up of one, whose page names the paper's year — says nothing of the paper's own conference)
   const lostThen = (m) => (m.kind === "runner-up" && !m.paperYear) || m.kind === "finalist";
+  // (a winning mark the authors typed is cleared by the list's runner-up of the same paper — unless the typed venue line names years, none of them the runner-up's: that award is of another venue, as a
+  // PET Award runner-up of 2015 for a paper that won its own conference's best paper award in 2014)
+  const clearedBy = (typed, listed) => !!typed && !(typed.years && typed.years.length && listed.filter(lostThen).every((m) => !typed.years.includes(m.year)));
   function merge(declared, listed) {
     const byKind = new Map();
     for (const m of declared || []) byKind.set(m.kind, m);
     if ((listed || []).some((m) => TOP.has(m.kind))) byKind.delete("finalist");          // (a paper the list says won is no mere finalist, whatever its authors typed)
-    else if ((listed || []).some(lostThen)) for (const k of TOP) byKind.delete(k);          // (and one the list names as a runner-up or a finalist did not win, whatever its authors typed; a test-of-time award, or its runner-up, says nothing of that)
+    else if ((listed || []).some(lostThen)) for (const k of TOP) if (clearedBy(byKind.get(k), listed)) byKind.delete(k);          // (and one the list names as a runner-up or a finalist did not win, whatever its authors typed; a test-of-time award, or its runner-up, says nothing of that)
     // (a paper can hold one kind of award at two venues — Lamport's test-of-time awards of PODC 2000 and SIGOPS 2007: the list's marks all stay, the first one remembers the authors' words)
     const fromList = new Map();
     for (const m of listed || []) {
@@ -258,7 +262,7 @@
       const typed = new Map(out[r.into].filter((m) => m.source !== "list").map((m) => [m.kind, m]));
       const replaced = new Set(arriving.map((m) => m.kind).filter((k) => typed.has(k)));
       if (arriving.some((m) => TOP.has(m.kind))) replaced.add("finalist");          // (merge's two rules across kinds: a winner is no finalist, a runner-up no winner)
-      else if (arriving.some(lostThen)) for (const k of TOP) replaced.add(k);
+      else if (arriving.some(lostThen)) for (const k of TOP) if (clearedBy(typed.get(k), arriving)) replaced.add(k);
       out[r.into] = [...out[r.into].filter((m) => m.source === "list" || !replaced.has(m.kind)), ...arriving.map((m) => (typed.has(m.kind) && !m.declared ? { ...m, declared: typed.get(m.kind).text } : m))];
       out[r.into].sort((x, y) => KINDS.indexOf(x.kind) - KINDS.indexOf(y.kind));          // (in the order merge gives: most notable first)
     });

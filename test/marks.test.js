@@ -344,3 +344,15 @@ test("a fifteenth review, 2026-11-12: saved paper details apply only to a row of
   assert.equal(analysis.analyzeRow(row, { owner, resolver, resolved: { authors: entry.authors } }).fromDetail, false, "an entry with no title is not used");
   assert.equal(analysis.detailOf(entry, "Attacker's own paper"), entry);
 });
+
+test("a fifteenth review, 2026-11-12: a list's runner-up of another venue does not clear the best paper the authors typed for their own conference", () => {
+  const typed = marks.detect({ venue: "Proceedings of the ACM CCS 2014 (Best Paper Award)" });
+  assert.deepEqual(typed.map((m) => m.kind), ["best"]);
+  // RAPPOR: a PET Award runner-up (PETS 2015) beside the typed CCS 2014 best paper
+  assert.deepEqual(marks.merge(typed, [{ kind: "runner-up", venue: "PETS", year: 2015 }]).map((m) => m.kind), ["best", "runner-up"]);
+  // the list's runner-up of the typed line's own year still clears it (the list says the paper did not win)
+  assert.deepEqual(marks.merge(typed, [{ kind: "runner-up", venue: "CCS", year: 2014 }]).map((m) => m.kind), ["runner-up"]);
+  // a typed mark with no year on its line, or from the title, is cleared as before
+  assert.deepEqual(marks.merge(marks.detect({ venue: "Best Paper Award" }), [{ kind: "runner-up", venue: "CCS", year: 2014 }]).map((m) => m.kind), ["runner-up"]);
+  assert.deepEqual(marks.merge(marks.detect({ title: "A Paper (Best Paper Award)" }), [{ kind: "runner-up", venue: "CCS", year: 2014 }]).map((m) => m.kind), ["runner-up"]);
+});
