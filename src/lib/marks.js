@@ -178,14 +178,17 @@
     for (const m of declared || []) byKind.set(m.kind, m);
     if ((listed || []).some((m) => TOP.has(m.kind))) byKind.delete("finalist");          // (a paper the list says won is no mere finalist, whatever its authors typed)
     else if ((listed || []).some(lostThen)) for (const k of TOP) byKind.delete(k);          // (and one the list names as a runner-up or a finalist did not win, whatever its authors typed; a test-of-time award, or its runner-up, says nothing of that)
+    // (a paper can hold one kind of award at two venues — Lamport's test-of-time awards of PODC 2000 and SIGOPS 2007: the list's marks all stay, the first one remembers the authors' words)
+    const fromList = new Map();
     for (const m of listed || []) {
       const prev = byKind.get(m.kind);
-      byKind.set(m.kind, {
+      const mark = {
         kind: m.kind, group: GROUP[m.kind], label: m.kind === "best-category" ? categoryLabel(m.awardLabel) : LABEL[m.kind], text: "", field: "list", source: "list",
-        venue: m.venue, year: m.year, awardLabel: m.awardLabel || "", ...(m.paperYear ? { paperYear: m.paperYear } : {}), ...(prev ? { declared: prev.text } : {})
-      });
+        venue: m.venue, year: m.year, awardLabel: m.awardLabel || "", ...(m.paperYear ? { paperYear: m.paperYear } : {}), ...(prev && !fromList.has(m.kind) ? { declared: prev.text } : {})
+      };
+      fromList.set(m.kind, [...(fromList.get(m.kind) || []), mark]);
     }
-    return KINDS.filter((k) => byKind.has(k)).map((k) => byKind.get(k));
+    return KINDS.flatMap((k) => fromList.get(k) || (byKind.has(k) ? [byKind.get(k)] : []));
   }
 
   // The panel's rows. Talk levels may be shown together: "pair" puts spotlight and highlight in one row, "talks" puts oral too.

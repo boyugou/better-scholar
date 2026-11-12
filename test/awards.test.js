@@ -478,10 +478,10 @@ test("a row of another year is another publication of the same title: the journa
   const find = (year) => idx.lookup({ title: key, authorsText: `A ${surname.charAt(0).toUpperCase() + surname.slice(1)}`, year }).filter((a) => a.kind === "tot");
   assert.equal(find(awardYear - 10).length >= 1, true, JSON.stringify(entry));
   assert.equal(find(awardYear + 3).length, 0, "a paper younger than its test-of-time award is another paper");
-  // the duplicates of the official pages: one paper listed for two years — the row's year picks one
+  // the duplicates of the official pages: one paper listed for two years (data/exclusions.json keeps the year the paper appeared in; a row of the other year has no award)
   const fast = (year) => idx.lookup({ title: "Fast Image Search for Learned Metrics", authorsText: "P Jain, B Kulis, K Grauman", year }).map((a) => a.year);
   assert.deepEqual(fast(2008), [2008]);
-  assert.deepEqual(fast(2006), [2006]);
+  assert.deepEqual(fast(2006), []);
 });
 
 test("the ICSE 2008 distinguished paper is found under its whole title (the page ran it into the author list)", () => {
@@ -505,4 +505,22 @@ test("a badge read from a conference's researchr (or SIGPLAN, SPLASH) page is a 
     assert.match(e.evidence || "", /distinguished paper/i, `${e.venue} ${e.year} ${e.title}`);
     assert.doesNotMatch(e.evidence || "", /artifact/i, `${e.venue} ${e.year} ${e.title}`);
   }
+});
+
+test("a thirteenth review, 2026-11-12: one paper's awards of one kind at two venues all stay, and a TeX symbol is the symbol Scholar prints", () => {
+  const idx = awards.createIndex(require("../src/data/awards.js").items);
+  const pipe = (title, authorsText, year) => marks.merge([], idx.lookup({ title, authorsText, year })).map((m) => `${m.kind}@${m.venue} ${m.year}`);
+  // (Lamport's paper holds test-of-time awards of PODC 2000 and SIGOPS 2007; merge kept only the last)
+  assert.deepEqual(pipe("Time, clocks, and the ordering of events in a distributed system", "L Lamport", 1978), ["tot@PODC 2000", "tot@SIGOPS 2007"]);
+  // (the Nash equilibrium paper holds two test-of-time awards and its 2009 reprint none: both go to the earliest row, whatever order the list gives)
+  const T = "The complexity of computing a Nash equilibrium", A = "C Daskalakis, PW Goldberg, CH Papadimitriou";
+  const rows = [2006, 2009].map((y) => ({ title: T, year: y, venue: "", abbrs: [], marks: marks.merge([], idx.lookup({ title: T, authorsText: A, year: y })) }));
+  const kept = marks.listedOnce(rows, awards.titleKey);
+  assert.equal(kept[1].length, 0);
+  assert.deepEqual(marks.summarizeKinds(kept.map((m) => ({ marks: m }))), { tot: 1 });
+  // (a typed mark's words still go to the first listed mark of its kind)
+  const typed = marks.merge([{ kind: "tot", group: "award", label: "x", text: "Test of Time Award", field: "venue" }], [{ kind: "tot", venue: "A", year: 2001 }, { kind: "tot", venue: "B", year: 2002 }]);
+  assert.deepEqual(typed.map((m) => [m.venue, m.declared]), [["A", "Test of Time Award"], ["B", undefined]]);
+  assert.equal(awards.titleKey("Approximate $CVP_{\\infty}$ in time $2^{0.802 n}$"), awards.titleKey("Approximate CVP_∞ in time 2^{0.802 n}"));
+  assert.equal(awards.titleKey("On the Possibility of Basing Cryptography on $\\EXP \\neq \\BPP$"), awards.titleKey("On the possibility of basing cryptography on EXP≠BPP"));
 });

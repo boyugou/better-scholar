@@ -19,7 +19,7 @@
   // A little LaTeX survives in some official titles — "Understanding Dataset Difficulty with $\mathcal{V}$-Usable Information" —
   // while Scholar prints "V-usable": the markup around a letter is dropped.
   // (an accent command — \tilde O(mn) is Scholar's "Õ(mn)" — leaves its letter: the command word goes)
-  const untex = (s) => s.replace(/\\(?:widetilde|tilde|widehat|hat|overline|bar|vec|ddot|dot|check|breve)(?![A-Za-z])\s*/g, "").replace(/\\(?:mathcal|mathbf|mathrm|mathit|mathbb|textbf|textit|textrm|text|emph)\s*\{([^{}]*)\}/g, "$1").replace(/\$/g, "");
+  const untex = (s) => s.replace(/\\(?:widetilde|tilde|widehat|hat|overline|bar|vec|ddot|dot|check|breve)(?![A-Za-z])\s*/g, "").replace(/\\(?:mathcal|mathbf|mathrm|mathit|mathbb|textbf|textit|textrm|text|emph)\s*\{([^{}]*)\}/g, "$1").replace(/\\(?:neq?|infty)(?![A-Za-z])/g, "").replace(/\$/g, "");          // (a symbol Scholar prints as "∞" or "≠": the key drops it too)
 
   // "Deep Residual Learning for Image Recognition" → "deepresiduallearningforimagerecognition"
   function titleKey(s) {

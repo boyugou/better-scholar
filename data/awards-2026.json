@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 11868
+  "count": 11851
  },
  "entries": [
   {
@@ -7629,7 +7629,7 @@
    "awardLabel": "Outstanding Papers in Engagement Theme",
    "title": "IM-POI: Bridging ID and Multi-modal Gaps in Next POI Recommendation",
    "authors": [
-    "SiyuanHuang",
+    "Siyuan Huang",
     "Jiahui Jin",
     "Xin Lin",
     "Xigang Sun",
@@ -10825,20 +10825,6 @@
    "track": "main",
    "source": "https://ieee-ceda.org/paper-award/asp-dac-best-paper-award",
    "evidence": "ASP-DAC 2007 Best Paper Award: A New Methodology for Interconnect Parasitics Extraction Considering Photo-Lithography Effects — Y. Zhou, Z. Li, Y. Tian, W. Shi and F. Liu"
-  },
-  {
-   "venue": "ASP-DAC",
-   "year": 2007,
-   "award": "best",
-   "awardLabel": "Best Paper Award",
-   "title": "Post-Routing Redundant Via Insertion for Yield/Reliability Improvement",
-   "authors": [
-    "Kuang-Yao Lee",
-    "Ting-Chi Wang"
-   ],
-   "track": "main",
-   "source": "https://ieee-ceda.org/paper-award/asp-dac-best-paper-award",
-   "evidence": "ASP-DAC 2007 Best Paper Award: Post-Routing Redundant Via Insertion for Yield/Reliability Improvement — Kuang-Yao Lee and Ting-Chi Wang"
   },
   {
    "venue": "ASP-DAC",
@@ -64968,24 +64954,6 @@
    "year": 2022,
    "award": "runner-up",
    "awardLabel": "Honorable Mention",
-   "title": "Exploring the Utility Versus Intrusiveness of Dynamic Audience Selection on Facebook",
-   "authors": [
-    "Sindhu Kiranmai Ernala",
-    "Stephanie S Yang",
-    "Yuxi Wu",
-    "Rachel Chen",
-    "Kristen Wells",
-    "Sauvik Das"
-   ],
-   "track": "main",
-   "source": "https://files.sigchi.org/conference/cache/10080/108/program",
-   "evidence": "CSCW 2022 program, Honorable Mention: Exploring the Utility Versus Intrusiveness of Dynamic Audience Selection on Facebook — Sindhu Kiranmai Ernala, Stephanie S Yang, Yuxi Wu, Rachel Chen, Kristen Wells, Sauvik Das"
-  },
-  {
-   "venue": "CSCW",
-   "year": 2022,
-   "award": "runner-up",
-   "awardLabel": "Honorable Mention",
    "title": "Hostile Ecologies: Navigating the Barriers to Community-Led Innovation",
    "authors": [
     "Udayan Tandon",
@@ -67850,21 +67818,6 @@
    "track": "main",
    "source": "https://www.thecvf.com/?page_id=413#CVPRBestHonorable",
    "evidence": "CVPR Best Paper Honorable Mention Award: 2006 “Incremental learning of object detectors using a visual shape alphabet” A. Opelt, A. Pinz, A. Zisserman"
-  },
-  {
-   "venue": "CVPR",
-   "year": 2006,
-   "award": "student",
-   "awardLabel": "Best Student Paper",
-   "title": "Fast Image Search for Learned Metrics",
-   "authors": [
-    "P. Jain",
-    "B. Kulis",
-    "K. Grauman"
-   ],
-   "track": "main",
-   "source": "https://www.thecvf.com/?page_id=413#CVPRBestStudent",
-   "evidence": "CVPR Best Student Paper Award: 2006 “Fast Image Search for Learned Metrics” P. Jain, B. Kulis, K. Grauman"
   },
   {
    "venue": "CVPR",
@@ -92351,199 +92304,6 @@
    "evidence": "GECCO 2025 Best Paper Award, GECH + THEORY Tracks: Why Dominance Is Not Enough: Lessons from Practical Evolutionary Multi-Objective Algorithms — Duc-Cuong Dang, Andre Opris, Dirk Sudholt"
   },
   {
-   "venue": "GECCO",
-   "year": 2026,
-   "award": "best",
-   "awardLabel": "Best Paper Award (GA + SI)",
-   "title": "Congestion-Aware Multi-Agent Path Planning for Pick-up and Delivery Tasks",
-   "authors": [
-    "Mehrdad Asadi",
-    "Ann Nowé",
-    "Javad Ghofrani"
-   ],
-   "track": "main",
-   "source": "https://gecco-2026.sigevo.org/Best-Paper-Awards",
-   "evidence": "GECCO 2026 Best Paper Award, GA + SI Tracks: Congestion-Aware Multi-Agent Path Planning for Pick-up and Delivery Tasks — Mehrdad Asadi, Ann Nowé, Javad Ghofrani"
-  },
-  {
-   "venue": "GECCO",
-   "year": 2026,
-   "award": "best",
-   "awardLabel": "Best Paper Award (L4EC)",
-   "title": "Deep reinforcement learning for instance-specific algorithm configuration",
-   "authors": [
-    "Elias Schede",
-    "Moritz Seiler",
-    "Kevin Tierney",
-    "Heike Trautmann"
-   ],
-   "track": "main",
-   "source": "https://gecco-2026.sigevo.org/Best-Paper-Awards",
-   "evidence": "GECCO 2026 Best Paper Award, L4EC Track: Deep reinforcement learning for instance-specific algorithm configuration — Elias Schede, Moritz Seiler, Kevin Tierney, Heike Trautmann"
-  },
-  {
-   "venue": "GECCO",
-   "year": 2026,
-   "award": "best",
-   "awardLabel": "Best Paper Award (GA + SI)",
-   "title": "Empirical Linkage Learning Provably Builds Truthful Models on Concatenated Traps and H-IFF",
-   "authors": [
-    "Marcus Schmidbauer",
-    "Dirk Sudholt"
-   ],
-   "track": "main",
-   "source": "https://gecco-2026.sigevo.org/Best-Paper-Awards",
-   "evidence": "GECCO 2026 Best Paper Award, GA + SI Tracks: Empirical Linkage Learning Provably Builds Truthful Models on Concatenated Traps and H-IFF — Marcus Schmidbauer, Dirk Sudholt"
-  },
-  {
-   "venue": "GECCO",
-   "year": 2026,
-   "award": "best",
-   "awardLabel": "Best Paper Award (EML)",
-   "title": "Evolution of Inherently Interpretable Visual Control Policies",
-   "authors": [
-    "Camilo De La Torre",
-    "Giorgia Nadizar",
-    "Yuri Lavinas",
-    "Hervé Luga",
-    "Dennis Wilson",
-    "Sylvain Cussat-Blanc"
-   ],
-   "track": "main",
-   "source": "https://gecco-2026.sigevo.org/Best-Paper-Awards",
-   "evidence": "GECCO 2026 Best Paper Award, EML Track: Evolution of Inherently Interpretable Visual Control Policies — Camilo De La Torre, Giorgia Nadizar, Yuri Lavinas, Hervé Luga, Dennis Wilson, Sylvain Cussat-Blanc"
-  },
-  {
-   "venue": "GECCO",
-   "year": 2026,
-   "award": "best",
-   "awardLabel": "Best Paper Award (EMO)",
-   "title": "Exploring Phase-Specific Configuration of Interactive Evolutionary Multiobjective Optimization Methods",
-   "authors": [
-    "Giomara Larraga",
-    "Kaisa Miettinen"
-   ],
-   "track": "main",
-   "source": "https://gecco-2026.sigevo.org/Best-Paper-Awards",
-   "evidence": "GECCO 2026 Best Paper Award, EMO Track: Exploring Phase-Specific Configuration of Interactive Evolutionary Multiobjective Optimization Methods — Giomara Larraga, Kaisa Miettinen"
-  },
-  {
-   "venue": "GECCO",
-   "year": 2026,
-   "award": "best",
-   "awardLabel": "Best Paper Award (CS + NE)",
-   "title": "Extract-QD Framework: A Generic Approach for Quality-Diversity in Noisy, Stochastic or Uncertain Domains",
-   "authors": [
-    "Manon Flageat",
-    "Johann Huber",
-    "François Helenon",
-    "Stephane Doncieux",
-    "Antoine Cully"
-   ],
-   "track": "main",
-   "source": "https://gecco-2026.sigevo.org/Best-Paper-Awards",
-   "evidence": "GECCO 2026 Best Paper Award, CS + NE Tracks: Extract-QD Framework: A Generic Approach for Quality-Diversity in Noisy, Stochastic or Uncertain Domains — Manon Flageat, Johann Huber, François Helenon, Stephane Doncieux, Antoine Cully"
-  },
-  {
-   "venue": "GECCO",
-   "year": 2026,
-   "award": "best",
-   "awardLabel": "Best Paper Award (ECOM)",
-   "title": "On Revealing the Hidden Problem Structure in Real-World and Theoretical Problems Using Walsh Coefficient Influence",
-   "authors": [
-    "Michal Witold Przewozniczek",
-    "Francisco Chicano",
-    "Renato Tinós",
-    "Jakub Nalepa",
-    "Bogdan Ruszczak",
-    "Agata Maria Wijata"
-   ],
-   "track": "main",
-   "source": "https://gecco-2026.sigevo.org/Best-Paper-Awards",
-   "evidence": "GECCO 2026 Best Paper Award, ECOM Track: On Revealing the Hidden Problem Structure in Real-World and Theoretical Problems Using Walsh Coefficient Influence — Michal Witold Przewozniczek, Francisco Chicano, Renato Tinós, Jakub Nalepa, Bogdan Ruszczak, Agata Maria Wijata"
-  },
-  {
-   "venue": "GECCO",
-   "year": 2026,
-   "award": "best",
-   "awardLabel": "Best Paper Award (L4EC)",
-   "title": "On the Importance of Reward Design in Reinforcement Learning-based Dynamic Algorithm Configuration: A Case Study on OneMax with (1+λ, λ)-GA",
-   "authors": [
-    "Tai Nguyen",
-    "Phong Le",
-    "André Biedenkapp",
-    "Carola Doerr",
-    "Nguyen Dang"
-   ],
-   "track": "main",
-   "source": "https://gecco-2026.sigevo.org/Best-Paper-Awards",
-   "evidence": "GECCO 2026 Best Paper Award, L4EC Track: On the Importance of Reward Design in Reinforcement Learning-based Dynamic Algorithm Configuration: A Case Study on OneMax with (1+λ, λ)-GA — Tai Nguyen, Phong Le, André Biedenkapp, Carola Doerr, Nguyen Dang"
-  },
-  {
-   "venue": "GECCO",
-   "year": 2026,
-   "award": "best",
-   "awardLabel": "Best Paper Award (RWA)",
-   "title": "Tomographic Reconstruction with Real-time a priori Acquisition",
-   "authors": [
-    "Muhammad Wishal Khan",
-    "Hooman Oroojeni",
-    "Bal Sanghera",
-    "Tim Blackwell",
-    "Mohammad Majid al-Rifaie"
-   ],
-   "track": "main",
-   "source": "https://gecco-2026.sigevo.org/Best-Paper-Awards",
-   "evidence": "GECCO 2026 Best Paper Award, RWA Track: Tomographic Reconstruction with Real-time a priori Acquisition — Muhammad Wishal Khan, Hooman Oroojeni, Bal Sanghera, Tim Blackwell, Mohammad Majid al-Rifaie"
-  },
-  {
-   "venue": "GECCO",
-   "year": 2026,
-   "award": "best",
-   "awardLabel": "Best Paper Award (GP)",
-   "title": "Transformer Semantic Genetic Programming for Symbolic Regression",
-   "authors": [
-    "Philipp Anthes",
-    "Dominik Sobania",
-    "Franz Rothlauf"
-   ],
-   "track": "main",
-   "source": "https://gecco-2026.sigevo.org/Best-Paper-Awards",
-   "evidence": "GECCO 2026 Best Paper Award, GP Track: Transformer Semantic Genetic Programming for Symbolic Regression — Philipp Anthes, Dominik Sobania, Franz Rothlauf"
-  },
-  {
-   "venue": "GECCO",
-   "year": 2026,
-   "award": "best",
-   "awardLabel": "Best Paper Award (BBSR + ENUM)",
-   "title": "When Does Neuroevolution Outcompete Reinforcement Learning in Transfer Learning Tasks?",
-   "authors": [
-    "Eleni Nisioti",
-    "Erwan Plantec",
-    "Milton Llera Montero",
-    "Joachim Winther Pedersen",
-    "Sebastian Risi"
-   ],
-   "track": "main",
-   "source": "https://gecco-2026.sigevo.org/Best-Paper-Awards",
-   "evidence": "GECCO 2026 Best Paper Award, BBSR + ENUM Tracks: When Does Neuroevolution Outcompete Reinforcement Learning in Transfer Learning Tasks? — Eleni Nisioti, Erwan Plantec, Milton Llera Montero, Joachim Winther Pedersen, Sebastian Risi"
-  },
-  {
-   "venue": "GECCO",
-   "year": 2026,
-   "award": "best",
-   "awardLabel": "Best Paper Award (GECH + THEORY)",
-   "title": "Why Dominance Is Not Enough: Lessons from Practical Evolutionary Multi-Objective Algorithms",
-   "authors": [
-    "Duc-Cuong Dang",
-    "Andre Opris",
-    "Dirk Sudholt"
-   ],
-   "track": "main",
-   "source": "https://gecco-2026.sigevo.org/Best-Paper-Awards",
-   "evidence": "GECCO 2026 Best Paper Award, GECH + THEORY Tracks: Why Dominance Is Not Enough: Lessons from Practical Evolutionary Multi-Objective Algorithms — Duc-Cuong Dang, Andre Opris, Dirk Sudholt"
-  },
-  {
    "venue": "GLOBECOM",
    "year": 2022,
    "award": "best",
@@ -112468,20 +112228,6 @@
   },
   {
    "venue": "ICRA",
-   "year": 2006,
-   "award": "student",
-   "awardLabel": "ICRA Best Student Paper Award",
-   "title": "Needle Insertion Modeling and Simulation",
-   "authors": [
-    "Simon P. DiMaio",
-    "S. E. Salcudean"
-   ],
-   "track": "main",
-   "source": "https://www.ieee-ras.org/awards-recognition/conference-awards/ieee-icra-best-student-paper-award/",
-   "evidence": "ICRA Best Student Paper Award 2006: Simon P. DiMaio (Student Author), S. E. Salcudean — “Needle Insertion Modeling and Simulation”"
-  },
-  {
-   "venue": "ICRA",
    "year": 2007,
    "award": "best",
    "awardLabel": "ICRA Best Conference Paper Award",
@@ -112645,7 +112391,7 @@
    "awardLabel": "ICRA Best Paper Award in Automation",
    "title": "Design and Calibration of a Microfabricated 6-Axis Force-Torque Sensor for Microbotic Applications",
    "authors": [
-    "Felix Beyeley",
+    "Felix Beyeler",
     "Simon Muntwyler",
     "Bradley E. Nelson"
    ],
@@ -112711,7 +112457,7 @@
    "authors": [
     "Felix Beyeler",
     "Simon Muntwyler",
-    "Bradley J. Nelson"
+    "Bradley E. Nelson"
    ],
    "track": "main",
    "source": "https://www.ieee-ras.org/awards-recognition/conference-awards/ieee-icra-best-student-paper-award/",
@@ -146387,7 +146133,7 @@
    "awardLabel": "USENIX Best Paper",
    "title": "DryadLINQ: A System for General-Purpose Distributed Data-Parallel Computing Using a High-Level Language",
    "authors": [
-    "Yuan Ylleyu",
+    "Yuan Yu",
     "Michael Isard",
     "Dennis Fetterly",
     "Mihai Budiu",
@@ -149685,7 +149431,7 @@
    "awardLabel": "Test of Time Award",
    "title": "Implicit Factoring: On Polynomial Time Factoring Given Only an Implicit Hint",
    "authors": [
-    "Alexander Ma",
+    "Alexander May",
     "Maike Ritzenhofen"
    ],
    "track": "main",
@@ -172282,7 +172028,8 @@
    ],
    "track": "main",
    "source": "https://www.sigspatial.org/people/award-recipients/",
-   "evidence": "SIGSPATIAL 2020 10-Year Impact Award Honorable Mention: Jing Yuan, Yu Zheng, Chengyang Zhang, Wenlei Xie, Xing Xie, Guangzhong Sun, Yan Huang “T-Drive: Driving Directions Based on Taxi Trajectories”"
+   "evidence": "SIGSPATIAL 2020 10-Year Impact Award Honorable Mention: Jing Yuan, Yu Zheng, Chengyang Zhang, Wenlei Xie, Xing Xie, Guangzhong Sun, Yan Huang “T-Drive: Driving Directions Based on Taxi Trajectories”",
+   "paperYear": 2010
   },
   {
    "venue": "SIGSPATIAL",
@@ -195953,7 +195700,8 @@
    ],
    "track": "main",
    "source": "https://www.wsdm-conference.org/2024/wsdm-best-papers/",
-   "evidence": "Honorable Mentions (Test of Time Award) … Overlapping community detection at scale: a nonnegative matrix factorization approach Jaewon Yang, Jure Leskovec"
+   "evidence": "Honorable Mentions (Test of Time Award) … Overlapping community detection at scale: a nonnegative matrix factorization approach Jaewon Yang, Jure Leskovec",
+   "paperYear": 2013
   },
   {
    "venue": "WSDM",
