@@ -33,6 +33,7 @@
     return {
       status: cls.status,
       role: cls.role,
+      ambiguous: !!cls.ambiguous,
       index: cls.index,
       authorCount: cls.tokens.length,
       truncated: cls.truncated,
@@ -104,8 +105,8 @@
   }
 
   // The rows that would benefit from a look at the paper's own page: the owner is
-  // invisible behind Scholar's "…" truncation.
-  const needsDetail = (a) => a.status === "hidden" && !a.fromDetail;
+  // hidden by a cut author list or matches multiple positions in the list.
+  const needsDetail = (a) => !a.fromDetail && (a.status === "hidden" || a.ambiguous);
 
   return { ROLE_KEYS, analyzeRow, isHighlighted, needsDetail, queryMatcher };
 });

@@ -45,8 +45,8 @@ function expected(profile, { resolveHidden = false, extraOwner } = {}) {
   return profile.rows.map((r) => {
     const raw = { authorsText: r.authors, venueText: r.venue, citations: r.cites, year: r.year };
     let resolved = null;
-    // only papers whose owner is hidden behind the truncation get looked up
-    if (resolveHidden && analysis.needsDetail(analysis.analyzeRow(raw, { owner, resolver }))) {
+    // The fixture extends truncated lists when their detail pages are read.
+    if (resolveHidden && analysis.analyzeRow(raw, { owner, resolver }).status === "hidden") {
       const visible = r.authors.split(/,\s*/).filter((t) => t && !/^\.\.\.$|…/.test(t));
       resolved = { authors: [...visible, profile.owner].join(", ") };
     }
@@ -247,6 +247,51 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     await seed.click('label.seg-btn:has(input[data-pref="rows.prefer"][value="both"])');
     await settle(seed);
     await seed.close();
+    // A complete list can still be ambiguous when Scholar abbreviates two names alike.
+    const collision = await start({ slug: "hinton", header: "Jane Lee", rows: [
+      ["A Smith, J Lee, B Jones, J Lee", "ICML, 2022", "Author initials collide"],
+      ["A Smith, J Lee, B Jones, J Lee", "ICML, 2023", "Full names still collide"],
+      ["A Smith, J Lee, B Jones, J Lee", "ICML, 2024", "Lists disagree"]
+    ] });
+    const collisionContext = await launch();
+    const collisionPage = await collisionContext.newPage();
+    try {
+      let requests = 0;
+      await collisionPage.route("**/citations?view_op=view_citation*", async (route) => {
+        requests++;
+        const id = new URL(route.request().url()).searchParams.get("citation_for_view");
+        const second = id.endsWith("001") ? "Jane Lee" : "Jordan Lee";
+        const third = id.endsWith("002") ? "Casey Chen" : "Blair Jones";
+        await route.fulfill({ contentType: "text/html", body:
+          '<div id="gsc_oci_table"><div class="gs_scl"><div class="gsc_oci_field">Authors</div>' +
+          `<div class="gsc_oci_value">Alex Smith, ${second}, ${third}, Jane Lee</div></div></div>` });
+      });
+      await collisionPage.goto(collision.url);
+      const readLists = collisionPage.locator('[data-act="resolve"]');
+      await readLists.waitFor();
+      assert.equal(requests, 0, "detail lookup waits for a click");
+      assert.equal(await collisionPage.locator(".rr-r-last").count(), 0);
+      await readLists.click();
+      const name = collisionPage.locator("tr.rr-r-last .rr-name-last");
+      await name.waitFor();
+      assert.equal(await name.textContent(), "J Lee");
+      assert.equal(await name.evaluate((el) => el.previousSibling.textContent), "A Smith, J Lee, B Jones, ");
+      await collisionPage.locator('[data-rr="resolve-msg"]').waitFor();
+      assert.equal(requests, 3);
+      assert.equal(await collisionPage.locator("tr.rr-r-last").filter({ hasText: "Full names still collide" }).count(), 0);
+      const mismatch = collisionPage.locator("tr.rr-r-last").filter({ hasText: "Lists disagree" });
+      assert.equal(await mismatch.count(), 1, "the full list still determines the row's role");
+      assert.equal(await mismatch.locator(".rr-name-last").count(), 0, "mismatched lists do not highlight a name");
+      assert.equal(await readLists.count(), 0, "already-read details do not need another lookup");
+      await collisionPage.reload();
+      await name.waitFor();
+      assert.equal(requests, 3, "cached full names still highlight the correct position");
+      ok("colliding initials are resolved on request and only the right name is highlighted");
+    } finally {
+      await collisionContext.close();
+      await collision.close();
+    }
+
     const page = await context.newPage();
     await page.goto(fx.url);
     await page.waitForSelector("#rr-panel");

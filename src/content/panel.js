@@ -610,9 +610,11 @@
         if (c.loadMessage) status.push(h("div", { class: "rr-faint", "data-rr": "load-msg", ...P("panel.status.loaded") }, c.loadMessage));
       }
       if (sp.cutoff) {
-        if (c.hidden > 0 || c.resolving) {
+        if (c.hidden > 0 || (c.hasAmbiguous && !c.loadingAll) || c.resolving) {
           status.push(h("div", { class: "rr-cover-line", ...P("panel.status.cutoff") },
-            h("span", { class: "rr-note" }, c.resolving ? t("resolving", [String(c.resolving.done), String(c.resolving.total)]) : tn("coverHidden", c.hidden, [String(c.hidden)])),
+            c.resolving || c.hidden > 0
+              ? h("span", { class: "rr-note" }, c.resolving ? t("resolving", [String(c.resolving.done), String(c.resolving.total)]) : tn("coverHidden", c.hidden, [String(c.hidden)]))
+              : null,
             c.resolving ? h("button", { class: "rr-link", type: "button", "data-focus": "resolve", onClick: () => cb.onCancelResolve() }, t("cancel"))
               : c.loadingAll ? null          // (not while the list is loading: Scholar would get both at once, and the papers still to come would be left out)
               : h("button", { class: "rr-link", type: "button", "data-focus": "resolve", "data-act": "resolve", ...L("resolveBtn"), onClick: () => cb.onResolve() }, t("resolveBtn"))));
