@@ -68,6 +68,7 @@
     hints = next;
     return changed;
   }
+  const canResolve = (r) => !r.dupHidden && analysis.needsDetail(r.a) && r.raw.id && r.raw.href;
   const analyzeRaw = (raw) => analysis.analyzeRow(raw, { owner: owner(), resolver, resolved: resolvedCache[raw.id], venueWord, awards });
   // the ranking the panel's table uses (null when both lists are switched off)
   const currentSource = () => B.prefs.source(prefs, ui);
@@ -163,15 +164,23 @@
     if (!row.highlighted) return;
     const tip = roleTip(row.a);
     const tipOnLine = () => { el.title = tip; el.dataset.rrTip = ""; };
-    if (!prefs.rows.name || row.a.fromDetail) return tipOnLine();
+    if (!prefs.rows.name) return tipOnLine();
     const text = el.textContent;
+    let tokens = row.a.tokens;
+    if (row.a.fromDetail) {
+      // The detail page gives the index. Only mark a visible name if both lists align.
+      const visible = names.parseAuthors(text);
+      if (row.a.truncated || visible.truncated || visible.tokens.length !== tokens.length ||
+          !visible.tokens.every((token, i) => names.matchesAuthor(token.name, { name: tokens[i].name }))) return tipOnLine();
+      tokens = visible.tokens;
+    }
     let cursor = 0, pos = -1;
-    row.a.tokens.forEach((tok, i) => {
+    tokens.forEach((tok, i) => {
       const at = text.indexOf(tok.name, cursor);
       if (at >= 0) { if (i === row.a.index) pos = at; cursor = at + tok.name.length; }
     });
     if (pos < 0) return tipOnLine();
-    const nameLen = row.a.tokens[row.a.index].name.length;
+    const nameLen = tokens[row.a.index].name.length;
     el.dataset.rrOrig = text;
     el.replaceChildren(text.slice(0, pos), h("span", { class: "rr-name rr-name-" + row.a.role, title: tip }, text.slice(pos, pos + nameLen)), text.slice(pos + nameLen));
   }
@@ -378,6 +387,7 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
       coverage: {
         loaded: list.length, canLoadMore: B.scholar.canLoadMore(), complete: listComplete(), loadingAll: state.loadingAll, loadMessage: state.loadMessage,
         repeats: prefs.mergeDuplicates ? 0 : B.duplicates.plan(state.rows.map(dupEntry)).keep.filter((k) => !k).length,
+        hasAmbiguous: state.rows.some((r) => r.a.ambiguous && canResolve(r)),
         hidden: whole.hidden, absent: whole.absent, resolving: state.resolving, resolveMessage: state.resolveMessage, layoutBroken: layoutBroken(), updated: state.updated,
         unmatched: metrics.unmatchedVenues(list), mapped: source ? mappedCount(tableRows(true), [source]) : 0
       },
@@ -621,7 +631,7 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
     async onResolve() {
       if (state.resolving) return;
       const items = state.rows
-        .filter((r) => !r.dupHidden && analysis.needsDetail(r.a) && r.raw.id && r.raw.href)
+        .filter(canResolve)
         .sort((x, y) => y.a.citations - x.a.citations)
         .map((r) => ({ id: r.raw.id, href: r.raw.href, title: r.raw.title, authorsText: r.raw.authorsText, year: r.raw.year }));
       if (!items.length) return;
